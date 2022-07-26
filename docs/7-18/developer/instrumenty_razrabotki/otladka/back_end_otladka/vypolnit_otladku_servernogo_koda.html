@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# ">
+  
+<!-- Mirrored from academy.terrasoft.ua/docs/7-18/developer/instrumenty_razrabotki/otladka/back_end_otladka/vypolnit_otladku_servernogo_koda by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Mar 2022 03:28:34 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+          <!-- Google Tag Manager -->
+      <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          '../../../../../../../www.googletagmanager.com/gtm5445.html?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-KLLB8G');</script>
+      <!-- End Google Tag Manager -->
+        <meta charset="utf-8" />
+<link rel="canonical" href="vypolnit_otladku_servernogo_koda.html" />
+<meta name="description" content="1. Выполнить настройку приложения 
+
+Для выполнения отладки необходимо внести изменения в конфигурационные файлы приложения.
+
+Чтобы выполнить настройку приложения:
+
+Настройте &quot;внешний&quot; Web.config.
+
+	В файле Web.config, расположенном в корневом каталоге приложения, для атрибута debug элемента &lt;compilation&gt; установите значение true." />
+<meta property="og:url" content="https://academy.terrasoft.ua/docs/7-18/developer/instrumenty_razrabotki/otladka/back_end_otladka/vypolnit_otladku_servernogo_koda" />
+<meta property="og:title" content="Выполнить отладку серверного кода" />
+<meta property="og:description" content="1. Выполнить настройку приложения 
+
+Для выполнения отладки необходимо внести изменения в конфигурационные файлы приложения.
+
+Чтобы выполнить настройку приложения:
+
+Настройте &quot;внешний&quot; Web.config.
+
+	В файле Web.config, расположенном в корневом каталоге приложения, для атрибута debug элемента &lt;compilation&gt; установите значение true." />
+<meta name="Generator" content="Drupal 9 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="../../../../../themes/custom/creatio/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="revision" href="vypolnit_otladku_servernogo_koda.html" />
+
+    <title>Выполнить отладку серверного кода | Creatio Academy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&amp;family=Open+Sans:ital,wght@0,300;0,400;0,600;1,400&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" media="all" href="../../../../../sites/default/files/css/css_6lTP66__-yc6QXFp1zOwoeJ0HVigoYZP-SeoLLii000.css" />
+<link rel="stylesheet" media="all" href="../../../../../sites/default/files/css/css_XQJDNhkF3xH5SZCcY-PI89Zu4nYIzQ5oR3SnUKyfXJU.css" />
+<link rel="stylesheet" media="print" href="../../../../../sites/default/files/css/css_Zn4VHvcniOOtUwkIVwXzYr_0AI9gUVgZcPqaH4ViagU.css" />
+
+    
+  </head>
+  <body class="path-node page-node-type-case">
+          <!-- Google Tag Manager (noscript) -->
+      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KLLB8G"
+                        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+      <!-- End Google Tag Manager (noscript) -->
+    
+        
+      <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    <div class="creatio-page d-flex flex-column">
+        <div class="region region-informer">
+    <div id="block-terrasoftpidtrimueukrainu" class="block block-simple-block block-simple-blockterrasoft-pidtrimue-ukrainu">
+  
+    
+      <style type="text/css">
+<!--/*--><![CDATA[/* ><!--*/
+@import url(../../../../../../../www.terrasoft.ua/themes/custom/creatio/css/components/informer.css)
+
+/*--><!]]>*/
+</style><div class="ts-swu">
+<div class="creatio-container">
+<div class="ts-swu__cont">
+<div><a class="ts-swu__link" href="https://www.terrasoft.ua/terrasoft-stands-with-ukraine" target="_blank">Україна понад усе!</a> <span><a href="https://www.terrasoft.ua/terrasoft-stands-with-ukraine" target="_blank">Приєднуйтеся</a> до допомоги!</span></div>
+</div>
+</div></div>
+
+  </div>
+
+  </div>
+
+  
+  <header role="banner">
+          <div class="creatio-region creatio-region_top">
+        <div class="creatio-container">
+            <div class="region region-top">
+    <div id="block-menutoggle" class="block block-simple-block block-simple-blockmenu-toggle">
+  
+    
+      <div class="menu-toggle"><span> </span></div>
+
+  </div>
+<div id="block-logowhite-2" class="block block-simple-block block-simple-blocklogo-white">
+  
+    
+      <p><a class="site-logo" href="../../../../../../index.html" rel="home"><img src="../../../../../themes/custom/creatio/logo-white.svg" /></a></p>
+
+  </div>
+<div id="block-search" class="block block-simple-block block-simple-blocksearch">
+  
+    
+      <div class="search">
+<form action="https://academy.terrasoft.ua/search" class="search-form" method="get"><input class="search-form__input" name="search" placeholder="Поиск" type="search" /><input class="search-form__button" type="submit" value="Поиск" /> </form>
+
+<div class="search-toggle"> </div>
+</div>
+
+  </div>
+<nav role="navigation" aria-labelledby="block-sitesua-menu" id="block-sitesua" class="block block-menu navigation menu--sites-ua">
+            
+  <h2 class="visually-hidden" id="block-sitesua-menu">Sites UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="https://www.terrasoft.ua/" rel="nofollow" target="_blank">Terrasoft</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://community.terrasoft.ua/" rel="nofollow" target="_blank">Community</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://marketplace.terrasoft.ua/" rel="nofollow" target="_blank">Marketplace</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+<div id="block-usermenu" class="block block-ts-user block-ts-user-menu-block">
+  
+    
+      <ul class="user-menu">
+      <li class="user-menu__item">
+      <a class="user-menu__link" href="https://profile.terrasoft.ua/user/login?destination=academy/ua/docs/7-18/developer/instrumenty_razrabotki/otladka/back_end_otladka/vypolnit_otladku_servernogo_koda">Войти</a>
+    </li>
+  </ul>
+
+  </div>
+<div id="block-usermenumobile" class="block block-ts-user block-ts-user-menu-mobile-block">
+  
+    
+      <ul class="user-menu-mobile">
+      <li class="user-menu-mobile__item">
+      <div class="user-menu-mobile__user user-menu-mobile__user_icon"></div>
+      <ul class="user-menu-mobile__submenu">
+        <li class="user-menu-mobile__subitem">
+          <a class="user-menu-mobile__sublink" href="https://profile.terrasoft.ua/user/login?destination=academy/ua/docs/7-18/developer/instrumenty_razrabotki/otladka/back_end_otladka/vypolnit_otladku_servernogo_koda">Войти</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  </div>
+
+  </div>
+
+        </div>
+      </div>
+              <div class="creatio-region creatio-region_header">
+        <div class="creatio-container">
+            <div class="region region-header">
+    <div id="block-logo" class="block block-simple-block block-simple-blocklogo">
+  
+    
+      <p><a class="site-logo" href="../../../../../../index.html" rel="home"><img src="../../../../../themes/custom/creatio/logo.svg" /></a></p>
+
+  </div>
+<nav role="navigation" aria-labelledby="block-osnovnayanavigaciyaua-menu" id="block-osnovnayanavigaciyaua" class="block block-menu navigation menu--main-ua">
+            
+  <h2 class="visually-hidden" id="block-osnovnayanavigaciyaua-menu">Основная навигация UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="../../../../../index.html" data-drupal-link-system-path="&lt;front&gt;">Документация</a>
+              </li>
+                <li class="menu-item">
+        <a href="../../../../../../trainings.html">Тренинги</a>
+              </li>
+                <li class="menu-item">
+        <a href="../../../../../certification.html" data-drupal-link-system-path="node/3084">Сертификация и тестирование</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+<nav role="navigation" aria-labelledby="block-sitesua-2-menu" id="block-sitesua-2" class="block block-menu navigation menu--sites-ua">
+            
+  <h2 class="visually-hidden" id="block-sitesua-2-menu">Sites UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="https://www.terrasoft.ua/" rel="nofollow" target="_blank">Terrasoft</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://community.terrasoft.ua/" rel="nofollow" target="_blank">Community</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://marketplace.terrasoft.ua/" rel="nofollow" target="_blank">Marketplace</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+
+  </div>
+
+        </div>
+      </div>
+              <div class="creatio-region creatio-region_breadcrumb">
+        <div class="creatio-container">
+            <div class="region region-breadcrumb">
+    <div id="block-logowhite" class="block block-simple-block block-simple-blocklogo-white">
+  
+    
+      <p><a class="site-logo" href="../../../../../../index.html" rel="home"><img src="../../../../../themes/custom/creatio/logo-white.svg" /></a></p>
+
+  </div>
+<div id="block-breadcrumbnaviagtion" class="block block-ts-nav block-ts-nav-bread">
+  
+    
+      <nav class="breadcrumb"><ol class="ts-nav-breadcrumb__list"><li class="ts-nav-breadcrumb__item"><a href="../../../../../index.html" class="ts-nav-breadcrumb__link" title="Документация">Документация</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../../../index2132.html?vid_1=2" class="ts-nav-breadcrumb__link" title="Для разработчика">Для разработчика</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../instrumenty_razrabotki.html" class="ts-nav-breadcrumb__link" title="Инструменты разработки" hreflang="zxx">Инструменты разработки</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../otladka.html" class="ts-nav-breadcrumb__link" title="Отладка" hreflang="zxx">Отладка</a></li>
+<li class="ts-nav-breadcrumb__item ts-nav-breadcrumb__item_mobile"><a href="../../../development_tools/debugging/back_end_otladka.html" class="ts-nav-breadcrumb__link" title="Back-end отладка" hreflang="ru">Back-end отладка</a></li>
+<li class="ts-nav-breadcrumb__item"><span class="ts-nav-breadcrumb__link ts-nav-breadcrumb__link_current" title="Выполнить отладку серверного кода">Выполнить отладку серверного кода</span></li>
+</ol>
+</nav>
+
+  </div>
+<div id="block-search-2" class="block block-simple-block block-simple-blocksearch">
+  
+    
+      <div class="search">
+<form action="https://academy.terrasoft.ua/search" class="search-form" method="get"><input class="search-form__input" name="search" placeholder="Поиск" type="search" /><input class="search-form__button" type="submit" value="Поиск" /> </form>
+
+<div class="search-toggle"> </div>
+</div>
+
+  </div>
+
+  </div>
+
+        </div>
+      </div>
+      </header>
+
+  <div class="creatio-region creatio-region_main">
+    <div class="creatio-container">
+                <div class="region region-breadcrumb-mobile">
+    <div id="block-breadcrumbnaviagtion-2" class="block block-ts-nav block-ts-nav-bread">
+  
+    
+      <nav class="breadcrumb"><ol class="ts-nav-breadcrumb__list"><li class="ts-nav-breadcrumb__item"><a href="../../../../../index.html" class="ts-nav-breadcrumb__link" title="Документация">Документация</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../../../index2132.html?vid_1=2" class="ts-nav-breadcrumb__link" title="Для разработчика">Для разработчика</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../instrumenty_razrabotki.html" class="ts-nav-breadcrumb__link" title="Инструменты разработки" hreflang="zxx">Инструменты разработки</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../otladka.html" class="ts-nav-breadcrumb__link" title="Отладка" hreflang="zxx">Отладка</a></li>
+<li class="ts-nav-breadcrumb__item ts-nav-breadcrumb__item_mobile"><a href="../../../development_tools/debugging/back_end_otladka.html" class="ts-nav-breadcrumb__link" title="Back-end отладка" hreflang="ru">Back-end отладка</a></li>
+<li class="ts-nav-breadcrumb__item"><span class="ts-nav-breadcrumb__link ts-nav-breadcrumb__link_current" title="Выполнить отладку серверного кода">Выполнить отладку серверного кода</span></li>
+</ol>
+</nav>
+
+  </div>
+
+  </div>
+
+      
+      <main class="creatio-main" role="main">
+                                                    
+        <div class="creatio-content creatio-content_small">
+          <div class="creatio-content__inner creatio-content__inner_bg">
+                            <div class="region region-messages">
+    <div data-drupal-messages-fallback class="hidden"></div>
+
+  </div>
+
+            
+              <div class="region region-content">
+    <div id="block-creatio-page-title" class="block block-core block-page-title-block">
+  
+    
+      
+  <h1 class="page-title"><span class="field field--name-title field--type-string field--label-hidden">Выполнить отладку серверного кода</span>
+</h1>
+
+
+  </div>
+<div id="block-creatio-content" class="block block-system block-system-main-block">
+  
+    
+      
+<article data-history-node-id="2124" role="article" about="/docs/7-18/developer/instrumenty_razrabotki/otladka/back_end_otladka/vypolnit_otladku_servernogo_koda" class="node node--type-case node--view-mode-full">
+
+  
+    
+
+  
+  <div class="node__content">
+      <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocknodecasefield-difficulty">
+  
+    
+      
+            <div class="field field--name-field-difficulty field--type-entity-reference field--label-hidden field__item"><div about="/docs/7-18/taxonomy/term/169" id="taxonomy-term-169" class="taxonomy-term vocabulary-difficulty">
+  
+  
+  <div class="content">
+      <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocktaxonomy-termdifficultyfield-icon">
+  
+    
+      
+            <div class="field field--name-field-icon field--type-image field--label-hidden field__item">  <img src="../../../../../sites/default/files/difficulty/advanced.svg" alt="" loading="lazy" typeof="foaf:Image" />
+
+</div>
+      
+  </div>
+<div class="block block-layout-builder block-field-blocktaxonomy-termdifficultyname">
+  
+    
+      
+            <div class="field field--name-name field--type-string field--label-hidden field__item"><span style="color: #EF4524;">Сложный</span></div>
+      
+  </div>
+
+    </div>
+  </div>
+
+  </div>
+</div>
+</div>
+      
+  </div>
+<div class="block block-ts-doc block-ts-doc-downloads">
+  
+    
+      <a href="../../../../../sites/default/files/pdf/node/2124/Vypolnit_otladku_servernogo_koda_.pdf" target="_blank">PDF</a>
+  </div>
+<div class="block block-ts-doc block-ts-doc-versions">
+  
+    
+        <div class="ts-doc-versions">
+    <select class="ts-doc-versions__select">
+                              <option value="/docs/8-0/developer/instrumenty_razrabotki/otladka/back_end_otladka/vypolnit_otladku_servernogo_koda">Версия 8.0</option>
+                                                <option value="/docs/7-18/developer/instrumenty_razrabotki/otladka/back_end_otladka/vypolnit_otladku_servernogo_koda" selected>Версия 7.18</option>
+                              <option value="/docs/7-17/developer/instrumenty_razrabotki/otladka/back_end_otladka/vypolnit_otladku_servernogo_koda">Версия 7.17</option>
+                              <option value="/docs/7-16/developer/instrumenty_razrabotki/otladka/back_end_otladka/vypolnit_otladku_servernogo_koda">Версия 7.16</option>
+          </select>
+  </div>
+
+  </div>
+
+    </div>
+  </div>
+  <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocknodecasebody">
+  
+    
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><h2>1. Выполнить настройку приложения<a class="title-anchor" href="#title-2124-1" id="title-2124-1"> </a></h2>
+
+<p>Для выполнения отладки необходимо внести изменения в конфигурационные файлы приложения.</p>
+
+<p>Чтобы <strong>выполнить настройку приложения</strong>:</p>
+
+<ol><li>Настройте "внешний" <span class="filled">Web.config</span>.
+
+	<p>В файле <span class="filled">Web.config</span>, расположенном в корневом каталоге приложения, для атрибута <span class="filled">debug</span> элемента <span class="filled">&lt;compilation&gt;</span> установите значение <span class="filled">true</span>.</p>
+
+	<div class="code">
+	<div class="code__widgets">
+	<div class="code__top">
+	<div class="code__title"><span class="filled">Web.config</span></div>
+	</div>
+
+	<div class="code__source">
+	<pre class="prettyprint">
+&lt;compilation debug="true" targetFramework="4.5" /&gt;
+</pre>
+	</div>
+	</div>
+	</div>
+
+	<p>После внесения изменений сохраните файл.</p>
+	</li>
+	<li>Настройте "внутренний" <span class="filled">Web.config</span>.
+	<p>В файле <span class="filled">Web.config</span>, расположенном в каталоге <span class="filled">Terrasoft.WebApp</span> приложения, укажите значения для следующих элементов:</p>
+
+	<ul><li><span class="filled">IncludeDebugInformation</span> — <span class="filled">true</span>.</li>
+		<li><span class="filled">ExtractAllCompilerSources</span> — <span class="filled">true</span>, если необходимо выгружать все схемы при выполнении действия <span class="key">Компилировать</span> (<span class="key">Compile</span>) раздела <span class="key">Конфигурация</span> (<span class="key">Configuration</span>)</li>
+		<li><span class="filled">ExtractAllCompilerSources</span> — <span class="filled">false</span>, если необходимо выгружать только измененные схемы (значение по умолчанию).</li>
+	</ul><div class="code">
+	<div class="code__widgets">
+	<div class="code__top">
+	<div class="code__title"><span class="filled">Web.config</span></div>
+	</div>
+
+	<div class="code__source">
+	<pre class="prettyprint">
+<span>&lt;</span><span>add </span><span>key</span><span>="IncludeDebugInformation"</span><span> value</span><span>="true"</span><span> </span><span>/&gt;</span>
+<span>&lt;</span><span>add </span><span>key</span><span>="ExtractAllCompilerSources"</span><span> value</span><span>="false"</span><span> </span><span>/&gt;</span>
+</pre>
+	</div>
+	</div>
+	</div>
+
+	<p>После внесения изменений сохраните файл.</p>
+	</li>
+</ol><h2>2. Выгрузить исходные коды конфигурации<a class="title-anchor" href="#title-2124-6" id="title-2124-6"> </a></h2>
+
+<p>В разделе <span class="key">Конфигурация</span> (<span class="key">Configuration</span>) приложения выполните действие <span class="key">Компилировать все</span> (<span class="key">Compile all </span>).</p>
+
+<div class="media">
+<div class="media__element"><img alt="" border="0" src="../../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/ServerCodeDebug/scr_compile_all.png" /></div>
+</div>
+
+<p>Во время компиляции в папку <span class="filled">../Terrasoft.WebApp/Terrasoft.Configuration/Autogenerated/Src</span> будут выгружены файлы с исходными кодами конфигурационных схем приложения, а также конфигурационные библиотеки, их модули и файлы с отладочной информацией (*.pdb). Исходные коды схем будут выгружены заново при каждой последующей компиляции приложения.</p>
+
+<p>Файлы выгруженных исходных кодов конфигурационных схем именуются в определенном формате: <span class="filled">[Название схемы в конфигурации].[Название пакета]_[Тип схемы].cs</span>.</p>
+
+<p>Например: <span class="filled">Contact.Base_Entity.cs</span>, <span class="filled">ContractReport.Base_Report.cs</span>.</p>
+
+<h2>3. Создать проект Visual Studio для отладки<a class="title-anchor" href="#title-2124-2" id="title-2124-2"> </a></h2>
+
+<div class="message message_warning">
+<p><span class="message__bold message__bold_warning">Важно.</span> Для отладки исходного кода создавать проект Visual Studio не обязательно. Достаточно открыть в Visual Studio нужные файлы. Однако если отладка выполняется часто или необходимо работать с большим количеством файлов одновременно, то создание проекта сделает работу более удобной.</p>
+</div>
+
+<p>Чтобы<strong> создать проект Visual Studio</strong> для отладки: </p>
+
+<ol><li>В Visual Studio выполните команду меню <span class="key">File</span> —&gt; <span class="key">New</span> —&gt; <span class="key">Project</span>.
+
+	<div class="media">
+	<div class="media__element"><img alt="" border="0" src="../../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/ServerCodeDebug/scr_new_project.png" /></div>
+	</div>
+	</li>
+	<li>В окне свойств создаваемого проекта выберите тип проекта <span class="key">Class Library (.NET Framework)</span>, укажите название и расположение проекта.
+	<div class="media">
+	<div class="media__element"><img alt="" border="0" src="../../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/ServerCodeDebug/scr_new_project_props.png" /></div>
+	</div>
+	</li>
+	<li>После создания проекта удалите из него файл  <span class="filled">Class1.cs</span>, который был создан по умолчанию, и сохраните проект.</li>
+</ol><h2>4. Добавить в проект файлы с исходным кодом<a class="title-anchor" href="#title-2124-3" id="title-2124-3"> </a></h2>
+
+<ol><li>В контекстном меню проекта в проводнике решения выберите команду <span class="key">Add</span> —&gt; <span class="key">Existing Item</span>.</li>
+	<li>Перейдите в каталог с выгруженными файлами с исходным кодом и выберите все файлы.
+	<div class="media">
+	<div class="media__element"><img alt="" border="0" src="../../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/ServerCodeDebug/scr_select_files.png" /></div>
+	</div>
+
+	<div class="message">
+	<p><span class="message__bold">На заметку.</span> В проект Visual Studio можно добавлять только необходимые для отладки файлы. Но тогда переход между методами при отладке будет ограничен только методами классов, реализованных в добавленных в проект файлах.</p>
+	</div>
+	</li>
+	<li>После добавления файлов сохраните проект.</li>
+</ol><h2>5. Подключить проект к рабочему процессу IIS<a class="title-anchor" href="#title-2124-4" id="title-2124-4"> </a></h2>
+
+<ol><li>В меню Visual Studio выберите команду <span class="key">Debug</span> —&gt; <span class="key">Attach to process</span>.
+
+	<div class="media">
+	<div class="media__element"><img alt="" border="0" src="../../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/ServerCodeDebug/scr_attach_mnu.png" /></div>
+	</div>
+	</li>
+	<li>В списке процессов выберите рабочий процесс IIS, в котором запущен пул приложения Creatio.
+	<div class="media">
+	<div class="media__element"><img alt="" border="0" src="../../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/ServerCodeDebug/scr_attach_iis.png" /></div>
+	</div>
+
+	<div class="message message_warning">
+	<p><span class="message__bold message__bold_warning">Важно.</span> Название рабочего процесса может различаться в зависимости от конфигурации используемого сервера IIS. Для полнофункционального IIS Web Server процесс называется <span class="filled">w3wp.exe</span>, для IIS Express — <span class="filled">iisexpress.exe</span>.</p>
+	</div>
+
+	<p>По умолчанию рабочий процесс IIS запущен под учетной записью, имя которой совпадает с именем пула приложения. Чтобы отобразить процессы всех пользователей, а не только текущего, необходимо установить признак <span class="key">Show processes from all users</span>.</p>
+	</li>
+</ol><h2>6. Выполнить отладку<a class="title-anchor" href="#title-2124-10" id="title-2124-10"> </a></h2>
+
+<p>Откройте файл с необходимым исходным кодом и установите точку останова.</p>
+
+<div class="media">
+<div class="media__element"><img alt="" border="0" src="../../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/ServerCodeDebug/scr_debug_ctor.png" /></div>
+</div>
+
+<p>Как только будет задействован метод, на котором была установлена точка останова, программа будет остановлена и можно будет проверить текущее состояние переменных и выполнить трассировку кода.</p>
+
+<div class="media">
+<div class="media__element"><img alt="" border="0" src="../../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/ServerCodeDebug/scr_breakpoint.png" /></div>
+</div>
+</div>
+      
+  </div>
+<div class="block block-layout-builder block-field-blocknodecasefield-resources">
+  
+    
+      
+  <div class="field field--name-field-resources field--type-link field--label-above">
+    <div class="field__label">Ресурсы</div>
+          <div class="field__items">
+              <div class="field__item"><a href="https://docs.microsoft.com/en-us/visualstudio/debugger/jit-optimization-and-debugging" target="_blank">Оптимизированный и неоптимизированный код во время отладки</a></div>
+              </div>
+      </div>
+
+  </div>
+
+    </div>
+  </div>
+
+  </div>
+
+</article>
+
+  </div>
+
+  </div>
+
+          </div>
+        </div>
+
+                  <aside class="creatio-sidebar creatio-sidebar_first" role="complementary">
+              <div class="region region-sidebar-first">
+    <div id="block-documentationnaviagtion" class="block block-ts-nav block-ts-nav-doc-nav">
+  
+    
+      <div class="ts-nav-block"><a href="../../../../../index.html" class="ts-nav-block__link">Документация</a><div class="ts-nav-block__title">Для разработчика</div>
+</div>
+<div class="ts-nav-container"><ul class="ts-nav-menu"><li class="ts-nav-menu__item">
+  <a href="../../../s_chego_nachat.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">С чего начать&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../architecture.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Архитектура&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../instrumenty_razrabotki.html" class="ts-nav-menu__link ts-nav-menu__link_expanded ts-nav-menu__link_open" hreflang="zxx">Инструменты разработки&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+      <ul class="ts-nav-menu__children">
+      <li class="ts-nav-menu__item">
+  <a href="../../creatio_ide.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Creatio IDE&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../vneshnie_ide.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Внешние IDE&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../pakety.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Пакеты&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../sistemy_kontrolya_versij.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Системы контроля версий&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../development_tools/testirovanie.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Тестирование&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../development_tools/instrumenty_dlya_bazy_dannykh.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Инструменты для базы данных&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../logirovanie.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Логирование&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../otladka.html" class="ts-nav-menu__link ts-nav-menu__link_expanded ts-nav-menu__link_open" hreflang="zxx">Отладка&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+      <ul class="ts-nav-menu__children">
+      <li class="ts-nav-menu__item">
+  <a href="../../../development_tools/debugging/back_end_otladka.html" class="ts-nav-menu__link ts-nav-menu__link_expanded ts-nav-menu__link_open" hreflang="ru">Back-end отладка&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+      <ul class="ts-nav-menu__children">
+      <li class="ts-nav-menu__item">
+  <a href="obzor.html" class="ts-nav-menu__link ts-nav-menu__link_guide" hreflang="ru">Обзор</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="vypolnit_otladku_servernogo_koda.html" class="ts-nav-menu__link ts-nav-menu__link_case ts-nav-menu__link_active" hreflang="ru">Выполнить отладку серверного кода</a>
+  </li>
+
+    </ul>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../front_end_otladka/obzor.html" class="ts-nav-menu__link" hreflang="ru">Front-end отладка</a>
+  </li>
+
+    </ul>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../upravlenie_postavkami.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Управление поставками&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+
+    </ul>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../back_end_razrabotka.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Back-end разработка&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../front_end_razrabotka.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Front-end разработка&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../integratsiya_i_vneshnij_api.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Интеграция и внешний API&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../ehlementy_interfejsa.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Элементы интерфейса&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../komponenty_prilozheniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Компоненты приложения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../razrabotka_mobilnogo_prilozheniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Разработка мобильного приложения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../razrabotka_marketplace_prilozheniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Разработка Marketplace-приложения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+</ul>
+</div>
+
+  </div>
+
+  </div>
+
+            <div class="creatio-sidebar__toggle"></div>
+          </aside>
+        
+                  <aside class="creatio-sidebar creatio-sidebar_second" role="complementary">
+              <div class="region region-sidebar-second">
+    <div id="block-example" class="block block-ts-nav block-ts-nav-page-nav">
+  
+    
+      <div class="ts-nav-page">
+  </div>
+
+  </div>
+<div id="block-adminfeedbackblock" class="block block-admin-feedback block-admin-feedback-block">
+  
+    
+      <div id="feedback-message"><div id="upper-feedback-content"><h2>Был ли данный материал полезен?</h2>
+<input class="feedback-btn feedback-btn__yes button js-form-submit form-submit" data-node-id="2124" data-feedback="yes" type="submit" name="op" value="Да" />
+<input class="feedback-btn feedback-btn__no button js-form-submit form-submit" data-node-id="2124" data-feedback="no" type="submit" name="op" value="Нет" />
+</div>
+<form class="admin-feedback-form" data-drupal-selector="admin-feedback-form" action="https://academy.terrasoft.ua/docs/7-18/developer/instrumenty_razrabotki/otladka/back_end_otladka/vypolnit_otladku_servernogo_koda" method="post" id="admin-feedback-form" accept-charset="UTF-8">
+  <div id="feedback-msg-result"></div><div class="js-form-item form-item js-form-type-textarea form-type-textarea js-form-item-feedback-message form-item-feedback-message form-no-label">
+        <div class="form-textarea-wrapper">
+  <textarea id="edit-feedback-msg" data-drupal-selector="edit-feedback-message" name="feedback_message" rows="5" cols="60" class="form-textarea resize-vertical"></textarea>
+</div>
+
+        </div>
+<input id="feedback-id" data-drupal-selector="edit-feedback-id" type="hidden" name="feedback_id" value="" />
+<input class="feedback-btn feedback-btn__send-comment button js-form-submit form-submit" data-drupal-selector="edit-feedback-send" type="submit" id="edit-feedback-send" name="op" value="Отправить" />
+<input autocomplete="off" data-drupal-selector="form-sz-xleha8qjcwjkgo42q-fkaeqnmymuf7pnsdabjtku" type="hidden" name="form_build_id" value="form-sZ-XLEHA8qJcwJkGo42Q_FKAEqNMYmuF7pnsDabjTKU" />
+<input data-drupal-selector="edit-admin-feedback-form" type="hidden" name="form_id" value="admin_feedback_form" />
+
+</form>
+</div>
+
+  </div>
+
+  </div>
+
+          </aside>
+              </main>
+    </div>
+  </div>
+
+  <footer role="contentinfo">
+    <div class="creatio-region creatio-region_footer">
+      <div class="creatio-container">
+          <div class="region region-footer">
+    <div id="block-footerua" class="block block-simple-block block-simple-blockfooter-ua">
+  
+    
+      <div class="footer">
+<div class="footer-left">
+<ul class="footer-socials"><li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_fb" href="https://www.facebook.com/terrasoft.ua" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_in" href="https://www.linkedin.com/company/terrasoft/" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_yt" href="https://www.youtube.com/c/TerrasoftUkraine" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_tg" href="https://t.me/Terrasoft_UA" target="_blank"> </a></li>
+</ul></div>
+
+<div class="footer-contact">
+<div class="footer-title">Будьте на связи!</div>
+
+<div class="footer-content">
+<div class="footer-items">
+<div class="footer-item"><a class="footer__link footer__link_phone" href="tel:+380443633133">+38 (044) 363-31-33</a></div>
+</div>
+
+<div class="footer-items">
+<div class="footer-item"><a class="footer__link footer__link_email" href="mailto:support@terrasoft.ua">support@terrasoft.ua</a></div>
+</div>
+</div>
+</div>
+</div>
+
+  </div>
+
+  </div>
+
+      </div>
+    </div>
+    <div class="creatio-region creatio-region_bottom">
+      <div class="creatio-container">
+          <div class="region region-bottom">
+    <div id="block-allrightsreservedua" class="block block-simple-block block-simple-blockfooter-bottom-ua">
+  
+    
+      <p>© 2002-2022 Terrasoft.  |  <a href="https://www.terrasoft.ua/privacy-policy" target="_blank">Конфиденциальность</a></p>
+
+  </div>
+
+  </div>
+
+      </div>
+    </div>
+  </footer>
+</div>
+<div class="creatio-bg"></div>
+
+
+  </div>
+
+    
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/docs\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/2124","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"ru"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"ajaxPageState":{"libraries":"admin_feedback\/admin_feedback_block,admin_feedback\/admin_feedback_css,classy\/base,classy\/messages,classy\/node,core\/drupal.ajax,core\/jquery.form,core\/normalize,creatio\/fancybox,creatio\/global,layout_discovery\/onecol,system\/base,ts_doc\/doc_version,ts_feedback\/ts_feedback,ts_nav\/breadcrumb,ts_nav\/doc_nav,ts_nav\/page_nav,ts_title_anchor\/ts_title_anchor","theme":"creatio","theme_token":null},"ajaxTrustedUrl":{"form_action_p_pvdeGsVG5zNF_XLGPTvYSKCf43t8qZYSwcfZl2uzM":true,"\/docs\/7-18\/developer\/instrumenty_razrabotki\/otladka\/back_end_otladka\/vypolnit_otladku_servernogo_koda?ajax_form=1":true},"admin_feedback":{"yes_response":"\u0421\u043f\u0430\u0441\u0438\u0431\u043e \u0437\u0430 \u043e\u0431\u0440\u0430\u0442\u043d\u0443\u044e \u0441\u0432\u044f\u0437\u044c!","no_response":"\u0421\u043f\u0430\u0441\u0438\u0431\u043e \u0437\u0430 \u043e\u0431\u0440\u0430\u0442\u043d\u0443\u044e \u0441\u0432\u044f\u0437\u044c!","custom_text_response_on_no":{"value":"","format":"full_html"},"feedback_prompt_on_yes":true,"feedback_prompt_on_no":true,"feedback_enable_predefined_answers":false,"feedback_prompt":"\u041a\u0430\u043a \u043c\u043e\u0436\u043d\u043e \u0443\u043b\u0443\u0447\u0448\u0438\u0442\u044c \u044d\u0442\u0443 \u0441\u0442\u0430\u0442\u044c\u044e?"},"ajax":{"edit-feedback-send":{"callback":"::validateFeedbackMsg","event":"mousedown","keypress":true,"prevent":"click","url":"\/docs\/7-18\/developer\/instrumenty_razrabotki\/otladka\/back_end_otladka\/vypolnit_otladku_servernogo_koda?ajax_form=1","dialogType":"ajax","submit":{"_triggering_element_name":"op","_triggering_element_value":"\u041e\u0442\u043f\u0440\u0430\u0432\u0438\u0442\u044c"}}},"user":{"uid":0,"permissionsHash":"9c2367dfcaba0fa15f0375f97aed64e146c908cee68508d13b79e3ee80e5162d"}}</script>
+<script src="../../../../../sites/default/files/js/js_Rr-7TvYD7NposuRFJwUqThxM7yJmw8vs03PQwu5gWd8.js"></script>
+
+
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+      <g id="svg-copy" class="svg-icon svg-icon_copy">
+        <path d="M15.111,18H1.889A1.848,1.848,0,0,1,0,16.2V3.6A1.848,1.848,0,0,1,1.889,1.8H5.837a2.87,2.87,0,0,1,5.326,0h3.948A1.848,1.848,0,0,1,17,3.6V16.2A1.848,1.848,0,0,1,15.111,18ZM3.777,12.6v1.8h6.611V12.6Zm0-3.6v1.8h9.445V9Zm0-3.6V7.2h9.445V5.4ZM8.5,1.8a.924.924,0,0,0-.944.9.945.945,0,0,0,1.889,0A.924.924,0,0,0,8.5,1.8Z"/>
+      </g>
+
+      <g id="svg-prev" class="svg-icon svg-icon_arrow">
+        <path d="M5.488,12.779,0,6.39,5.488,0" transform="translate(1 0.652)"/>
+      </g>
+
+      <g id="svg-next" class="svg-icon svg-icon_arrow">
+        <path d="M0,12.779,5.488,6.39,0,0" transform="translate(0.759 0.652)"/>
+      </g>
+    </svg>
+  </body>
+
+<!-- Mirrored from academy.terrasoft.ua/docs/7-18/developer/instrumenty_razrabotki/otladka/back_end_otladka/vypolnit_otladku_servernogo_koda by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Mar 2022 03:28:35 GMT -->
+</html>

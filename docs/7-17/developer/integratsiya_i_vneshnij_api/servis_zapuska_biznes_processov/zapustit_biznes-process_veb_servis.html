@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# ">
+  
+<!-- Mirrored from academy.terrasoft.ua/docs/7-17/developer/integratsiya_i_vneshnij_api/servis_zapuska_biznes_processov/zapustit_biznes-process_veb_servis by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Mar 2022 03:39:51 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+          <!-- Google Tag Manager -->
+      <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          '../../../../../../www.googletagmanager.com/gtm5445.html?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-KLLB8G');</script>
+      <!-- End Google Tag Manager -->
+        <meta charset="utf-8" />
+<link rel="canonical" href="zapustit_biznes-process_veb_servis.html" />
+<meta name="description" content="Пример. Используя веб-сервис ProcessEngineService.svc, из строки навигации браузера или из консольного приложения запустить демонстрационные бизнес-процессы создания и считывания контактов Creatio, ." />
+<meta property="og:url" content="https://academy.terrasoft.ua/docs/7-17/developer/integratsiya_i_vneshnij_api/servis_zapuska_biznes_processov/zapustit_biznes-process_veb_servis" />
+<meta property="og:title" content="Запустить бизнес-процесс через веб-сервис" />
+<meta property="og:description" content="Пример. Используя веб-сервис ProcessEngineService.svc, из строки навигации браузера или из консольного приложения запустить демонстрационные бизнес-процессы создания и считывания контактов Creatio, ." />
+<meta name="Generator" content="Drupal 9 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="../../../../themes/custom/creatio/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="revision" href="zapustit_biznes-process_veb_servis.html" />
+
+    <title>Запустить бизнес-процесс через веб-сервис | Creatio Academy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&amp;family=Open+Sans:ital,wght@0,300;0,400;0,600;1,400&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" media="all" href="../../../../sites/default/files/css/css_6lTP66__-yc6QXFp1zOwoeJ0HVigoYZP-SeoLLii000.css" />
+<link rel="stylesheet" media="all" href="../../../../sites/default/files/css/css_XQJDNhkF3xH5SZCcY-PI89Zu4nYIzQ5oR3SnUKyfXJU.css" />
+<link rel="stylesheet" media="print" href="../../../../sites/default/files/css/css_Zn4VHvcniOOtUwkIVwXzYr_0AI9gUVgZcPqaH4ViagU.css" />
+
+    
+  </head>
+  <body class="path-node page-node-type-case">
+          <!-- Google Tag Manager (noscript) -->
+      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KLLB8G"
+                        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+      <!-- End Google Tag Manager (noscript) -->
+    
+        
+      <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    <div class="creatio-page d-flex flex-column">
+        <div class="region region-informer">
+    <div id="block-terrasoftpidtrimueukrainu" class="block block-simple-block block-simple-blockterrasoft-pidtrimue-ukrainu">
+  
+    
+      <style type="text/css">
+<!--/*--><![CDATA[/* ><!--*/
+@import url(../../../../../../www.terrasoft.ua/themes/custom/creatio/css/components/informer.css)
+
+/*--><!]]>*/
+</style><div class="ts-swu">
+<div class="creatio-container">
+<div class="ts-swu__cont">
+<div><a class="ts-swu__link" href="https://www.terrasoft.ua/terrasoft-stands-with-ukraine" target="_blank">Україна понад усе!</a> <span><a href="https://www.terrasoft.ua/terrasoft-stands-with-ukraine" target="_blank">Приєднуйтеся</a> до допомоги!</span></div>
+</div>
+</div></div>
+
+  </div>
+
+  </div>
+
+  
+  <header role="banner">
+          <div class="creatio-region creatio-region_top">
+        <div class="creatio-container">
+            <div class="region region-top">
+    <div id="block-menutoggle" class="block block-simple-block block-simple-blockmenu-toggle">
+  
+    
+      <div class="menu-toggle"><span> </span></div>
+
+  </div>
+<div id="block-logowhite-2" class="block block-simple-block block-simple-blocklogo-white">
+  
+    
+      <p><a class="site-logo" href="../../../../../index.html" rel="home"><img src="../../../../themes/custom/creatio/logo-white.svg" /></a></p>
+
+  </div>
+<div id="block-search" class="block block-simple-block block-simple-blocksearch">
+  
+    
+      <div class="search">
+<form action="https://academy.terrasoft.ua/search" class="search-form" method="get"><input class="search-form__input" name="search" placeholder="Поиск" type="search" /><input class="search-form__button" type="submit" value="Поиск" /> </form>
+
+<div class="search-toggle"> </div>
+</div>
+
+  </div>
+<nav role="navigation" aria-labelledby="block-sitesua-menu" id="block-sitesua" class="block block-menu navigation menu--sites-ua">
+            
+  <h2 class="visually-hidden" id="block-sitesua-menu">Sites UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="https://www.terrasoft.ua/" rel="nofollow" target="_blank">Terrasoft</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://community.terrasoft.ua/" rel="nofollow" target="_blank">Community</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://marketplace.terrasoft.ua/" rel="nofollow" target="_blank">Marketplace</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+<div id="block-usermenu" class="block block-ts-user block-ts-user-menu-block">
+  
+    
+      <ul class="user-menu">
+      <li class="user-menu__item">
+      <a class="user-menu__link" href="https://profile.terrasoft.ua/user/login?destination=academy/ua/docs/7-17/developer/integratsiya_i_vneshnij_api/servis_zapuska_biznes_processov/zapustit_biznes-process_veb_servis">Войти</a>
+    </li>
+  </ul>
+
+  </div>
+<div id="block-usermenumobile" class="block block-ts-user block-ts-user-menu-mobile-block">
+  
+    
+      <ul class="user-menu-mobile">
+      <li class="user-menu-mobile__item">
+      <div class="user-menu-mobile__user user-menu-mobile__user_icon"></div>
+      <ul class="user-menu-mobile__submenu">
+        <li class="user-menu-mobile__subitem">
+          <a class="user-menu-mobile__sublink" href="https://profile.terrasoft.ua/user/login?destination=academy/ua/docs/7-17/developer/integratsiya_i_vneshnij_api/servis_zapuska_biznes_processov/zapustit_biznes-process_veb_servis">Войти</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  </div>
+
+  </div>
+
+        </div>
+      </div>
+              <div class="creatio-region creatio-region_header">
+        <div class="creatio-container">
+            <div class="region region-header">
+    <div id="block-logo" class="block block-simple-block block-simple-blocklogo">
+  
+    
+      <p><a class="site-logo" href="../../../../../index.html" rel="home"><img src="../../../../themes/custom/creatio/logo.svg" /></a></p>
+
+  </div>
+<nav role="navigation" aria-labelledby="block-osnovnayanavigaciyaua-menu" id="block-osnovnayanavigaciyaua" class="block block-menu navigation menu--main-ua">
+            
+  <h2 class="visually-hidden" id="block-osnovnayanavigaciyaua-menu">Основная навигация UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="../../../../index.html" data-drupal-link-system-path="&lt;front&gt;">Документация</a>
+              </li>
+                <li class="menu-item">
+        <a href="../../../../../trainings.html">Тренинги</a>
+              </li>
+                <li class="menu-item">
+        <a href="../../../../certification.html" data-drupal-link-system-path="node/3084">Сертификация и тестирование</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+<nav role="navigation" aria-labelledby="block-sitesua-2-menu" id="block-sitesua-2" class="block block-menu navigation menu--sites-ua">
+            
+  <h2 class="visually-hidden" id="block-sitesua-2-menu">Sites UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="https://www.terrasoft.ua/" rel="nofollow" target="_blank">Terrasoft</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://community.terrasoft.ua/" rel="nofollow" target="_blank">Community</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://marketplace.terrasoft.ua/" rel="nofollow" target="_blank">Marketplace</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+
+  </div>
+
+        </div>
+      </div>
+              <div class="creatio-region creatio-region_breadcrumb">
+        <div class="creatio-container">
+            <div class="region region-breadcrumb">
+    <div id="block-logowhite" class="block block-simple-block block-simple-blocklogo-white">
+  
+    
+      <p><a class="site-logo" href="../../../../../index.html" rel="home"><img src="../../../../themes/custom/creatio/logo-white.svg" /></a></p>
+
+  </div>
+<div id="block-breadcrumbnaviagtion" class="block block-ts-nav block-ts-nav-bread">
+  
+    
+      <nav class="breadcrumb"><ol class="ts-nav-breadcrumb__list"><li class="ts-nav-breadcrumb__item"><a href="../../../../index.html" class="ts-nav-breadcrumb__link" title="Документация">Документация</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../../index2132.html?vid_1=2" class="ts-nav-breadcrumb__link" title="Для разработчика">Для разработчика</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../integratsiya_i_vneshnij_api.html" class="ts-nav-breadcrumb__link" title="Интеграция и внешний API" hreflang="zxx">Интеграция и внешний API</a></li>
+<li class="ts-nav-breadcrumb__item ts-nav-breadcrumb__item_mobile"><a href="../servis_zapuska_biznes_processov.html" class="ts-nav-breadcrumb__link" title="Сервис запуска бизнес-процессов" hreflang="ru">Сервис запуска бизнес-процессов</a></li>
+<li class="ts-nav-breadcrumb__item"><span class="ts-nav-breadcrumb__link ts-nav-breadcrumb__link_current" title="Запустить бизнес-процесс (веб-сервис)">Запустить бизнес-процесс (веб-сервис)</span></li>
+</ol>
+</nav>
+
+  </div>
+<div id="block-search-2" class="block block-simple-block block-simple-blocksearch">
+  
+    
+      <div class="search">
+<form action="https://academy.terrasoft.ua/search" class="search-form" method="get"><input class="search-form__input" name="search" placeholder="Поиск" type="search" /><input class="search-form__button" type="submit" value="Поиск" /> </form>
+
+<div class="search-toggle"> </div>
+</div>
+
+  </div>
+
+  </div>
+
+        </div>
+      </div>
+      </header>
+
+  <div class="creatio-region creatio-region_main">
+    <div class="creatio-container">
+                <div class="region region-breadcrumb-mobile">
+    <div id="block-breadcrumbnaviagtion-2" class="block block-ts-nav block-ts-nav-bread">
+  
+    
+      <nav class="breadcrumb"><ol class="ts-nav-breadcrumb__list"><li class="ts-nav-breadcrumb__item"><a href="../../../../index.html" class="ts-nav-breadcrumb__link" title="Документация">Документация</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../../index2132.html?vid_1=2" class="ts-nav-breadcrumb__link" title="Для разработчика">Для разработчика</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../integratsiya_i_vneshnij_api.html" class="ts-nav-breadcrumb__link" title="Интеграция и внешний API" hreflang="zxx">Интеграция и внешний API</a></li>
+<li class="ts-nav-breadcrumb__item ts-nav-breadcrumb__item_mobile"><a href="../servis_zapuska_biznes_processov.html" class="ts-nav-breadcrumb__link" title="Сервис запуска бизнес-процессов" hreflang="ru">Сервис запуска бизнес-процессов</a></li>
+<li class="ts-nav-breadcrumb__item"><span class="ts-nav-breadcrumb__link ts-nav-breadcrumb__link_current" title="Запустить бизнес-процесс (веб-сервис)">Запустить бизнес-процесс (веб-сервис)</span></li>
+</ol>
+</nav>
+
+  </div>
+
+  </div>
+
+      
+      <main class="creatio-main" role="main">
+                                                    
+        <div class="creatio-content creatio-content_small">
+          <div class="creatio-content__inner creatio-content__inner_bg">
+                            <div class="region region-messages">
+    <div data-drupal-messages-fallback class="hidden"></div>
+
+  </div>
+
+            
+              <div class="region region-content">
+    <div id="block-creatio-page-title" class="block block-core block-page-title-block">
+  
+    
+      
+  <h1 class="page-title"><span class="field field--name-title field--type-string field--label-hidden">Запустить бизнес-процесс через веб-сервис</span>
+</h1>
+
+
+  </div>
+<div id="block-creatio-content" class="block block-system block-system-main-block">
+  
+    
+      
+<article data-history-node-id="2322" role="article" about="/docs/7-17/developer/integratsiya_i_vneshnij_api/servis_zapuska_biznes_processov/zapustit_biznes-process_veb_servis" class="node node--type-case node--view-mode-full">
+
+  
+    
+
+  
+  <div class="node__content">
+      <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocknodecasefield-difficulty">
+  
+    
+      
+            <div class="field field--name-field-difficulty field--type-entity-reference field--label-hidden field__item"><div about="/docs/7-17/taxonomy/term/169" id="taxonomy-term-169" class="taxonomy-term vocabulary-difficulty">
+  
+  
+  <div class="content">
+      <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocktaxonomy-termdifficultyfield-icon">
+  
+    
+      
+            <div class="field field--name-field-icon field--type-image field--label-hidden field__item">  <img src="../../../../sites/default/files/difficulty/advanced.svg" alt="" loading="lazy" typeof="foaf:Image" />
+
+</div>
+      
+  </div>
+<div class="block block-layout-builder block-field-blocktaxonomy-termdifficultyname">
+  
+    
+      
+            <div class="field field--name-name field--type-string field--label-hidden field__item"><span style="color: #EF4524;">Сложный</span></div>
+      
+  </div>
+
+    </div>
+  </div>
+
+  </div>
+</div>
+</div>
+      
+  </div>
+<div class="block block-ts-doc block-ts-doc-downloads">
+  
+    
+      <a href="../../../../sites/default/files/pdf/node/2322/Zapustit_biznes_process_cherez_veb_servis_.pdf" target="_blank">PDF</a>
+  </div>
+<div class="block block-ts-doc block-ts-doc-versions">
+  
+    
+        <div class="ts-doc-versions">
+    <select class="ts-doc-versions__select">
+                              <option value="/docs/8-0/developer/integratsiya_i_vneshnij_api/servis_zapuska_biznes_processov/zapustit_biznes-process_veb_servis">Версия 8.0</option>
+                              <option value="/docs/7-18/developer/integratsiya_i_vneshnij_api/servis_zapuska_biznes_processov/zapustit_biznes-process_veb_servis">Версия 7.18</option>
+                                                <option value="/docs/7-17/developer/integratsiya_i_vneshnij_api/servis_zapuska_biznes_processov/zapustit_biznes-process_veb_servis" selected>Версия 7.17</option>
+                              <option value="/docs/7-16/developer/integratsiya_i_vneshnij_api/servis_zapuska_biznes_processov/zapustit_biznes-process_veb_servis">Версия 7.16</option>
+          </select>
+  </div>
+
+  </div>
+
+    </div>
+  </div>
+  <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocknodecasebody">
+  
+    
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><div class="message message_example">
+<p><span class="message__bold message__bold_example">Пример.</span> Используя веб-сервис <span class="filled">ProcessEngineService.svc</span>, из строки навигации браузера или из консольного приложения запустить демонстрационные бизнес-процессы создания и считывания контактов Creatio, .</p>
+</div>
+
+<h2>1. Создать процесс добавления контакта<a class="title-anchor" href="#title-2322-2" id="title-2322-2"> </a></h2>
+
+<div class="message">
+<p><span class="message__bold">На заметку.</span> Особенности и лучшие практики создания бизнес-процессов в Creatio подробно описаны в <a href="../../../../user/biznes_processy.html" target="_blank">документации по настройке процессов</a>.</p>
+</div>
+
+<ol><li>Создайте пользовательский пакет и установите его в качестве текущего.</li>
+	<li>Перейдите в <a href="../../../user/biznes_processy/nastrojka_processov/obzor_bp/dizayner_processov.html">дизайнер процессов</a>.</li>
+	<li>
+	<p>Заполните значения <strong>свойств бизнес-процесса</strong>:</p>
+
+	<ul><li><span class="key">Название</span> (<span class="key">Name</span>) — "<span class="consolas">Add New External Contact</span>".</li>
+		<li><span class="key">Код</span> (<span class="key">Code</span>) — "<span class="consolas">UsrAddNewExternalContact</span>".</li>
+	</ul><p>Для остальных свойств оставьте значения по умолчанию.</p>
+
+	<div class="media">
+	<div class="media__element"><img alt="" border="0" src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/WorkWithBpmByWebService/scr_add_contact_bp.png" /></div>
+	</div>
+	</li>
+	<li>
+	<p>Добавьте параметры бизнес-процесса.</p>
+
+	<p>С помощью параметров в процесс передаются реквизиты добавляемого контакта — имя и телефон.</p>
+
+	<p><strong>Значения свойств</strong> параметра <span class="filled"><span class="consolas">ContactName</span></span>:</p>
+
+	<ul><li><span class="key">Заголовок</span> (<span class="key">Title</span>) — "Имя контакта" ("Contact Name").</li>
+		<li><span class="key">Код</span> (<span class="key">Code</span>) — "<span class="consolas">ContactName</span>".</li>
+		<li><span class="key">Тип данных</span> (<span class="key">Data type</span>) — "Текст (50 символов)" ("Text (50 characters)").</li>
+	</ul><p><strong>Значения свойств</strong> параметра <span class="filled"><span class="consolas">ContactPhone</span></span>:</p>
+
+	<ul><li><span class="key">Заголовок</span> (<span class="key">Title</span>) — "Телефон контакта" ("Contact Phone").</li>
+		<li><span class="key">Код</span> (<span class="key">Code</span>) — "<span class="consolas">ContactPhone</span>".</li>
+		<li><span class="key">Тип данных</span> (<span class="key">Data type</span>) — "Текст (50 символов)" ("Text (50 characters)").</li>
+	</ul><div class="media">
+	<div class="media__element"><img alt="" border="0" src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/WorkWithBpmByWebService/scr_add_contact_params.png" /></div>
+	</div>
+	</li>
+	<li>
+	<p>Добавьте элемент <span class="key">Задание-сценарий</span> (<span class="key">ScriptTask</span>).</p>
+
+	<p>Значения <strong>свойств элемента</strong>:</p>
+
+	<ul><li><span class="key">Название</span> (<span class="key">Name</span>) — "<span class="consolas">Add contact</span>".</li>
+		<li><span class="key">Код</span> (<span class="key">Code</span>) — "<span class="consolas">ScriptTaskAddContact</span>".</li>
+	</ul></li>
+	<li>
+	<p>Реализуйте логику добавления нового контакта.</p>
+
+	<p>Чтобы редактировать код сценария, дважды щелкните по элементу на диаграмме. На панели настройки элемента откроется окно для ввода и редактирования программного кода.</p>
+
+	<div class="code">
+	<div class="code__widgets">
+	<div class="code__top">
+	<div class="code__title"><span class="filled">ScriptTaskAddContact</span></div>
+
+	<div class="code__source">
+	<pre class="prettyprint">
+/* Создание экземпляра схемы объекта [Контакт]. */
+var schema = UserConnection.EntitySchemaManager.GetInstanceByName("Contact");
+/* Создание экземпляра нового объекта. */
+var entity = schema.CreateEntity(UserConnection);
+/* Установка значений по умолчанию для колонок объекта. */
+entity.SetDefColumnValues();
+string contactName = Get&lt;string&gt;("ContactName");
+string contactPhone = Get&lt;string&gt;("ContactPhone");
+/* Установка значения колонки [Name] из параметра процесса. */
+entity.SetColumnValue("Name", contactName);
+/* Установка значения колонки [Phone] из параметра процесса. */
+entity.SetColumnValue("Phone", contactPhone);
+/* Сохранение нового контакта. */
+entity.Save();
+return true;
+</pre>
+	</div>
+	</div>
+	</div>
+	</div>
+	</li>
+	<li>После внесения изменений сохраните бизнес-процесс, нажав на кнопку <span class="key">Сохранить</span> (<span class="key">Save</span>) на панели инструментов дизайнера процессов.</li>
+</ol><h2>2. Создать процесс чтения контактов<a class="title-anchor" href="#title-2322-4" id="title-2322-4"> </a></h2>
+
+<p>Бизнес-процесс, формирующий список всех контактов, также содержит один элемент <span class="key">Задание-сценарий</span> (<span class="key">ScriptTask</span>), в котором реализуется необходимая логика.</p>
+
+<p>Значения <strong>свойств бизнес-процесса</strong>:</p>
+
+<ul><li><span class="key">Название</span> (<span class="key">Name</span>) — "<span class="consolas">Get All Contacts</span>".</li>
+	<li><span class="key">Код</span> (<span class="key">Code</span>) — "<span class="consolas">UsrGetAllContacts</span>".</li>
+</ul><p>Для остальных свойств оставьте значения по умолчанию.</p>
+
+<div class="media">
+<div class="media__element"><img alt="" border="0" src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/WorkWithBpmByWebService/scr_get_contacts_bp.png" /></div>
+</div>
+
+<p>Процесс <span class="filled">UsrGetAllContacts</span> содержит единственный параметр <span class="filled">ContactList</span>, через который процесс будет возвращать список всех контактов системы в виде JSON-объекта. Тип параметра — <strong>строка неограниченной длины</strong>.</p>
+
+<div class="media">
+<div class="media__element"><img alt="" border="0" src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/WorkWithBpmByWebService/scr_get_contacts_param.png" /></div>
+</div>
+
+<p>Логику выборки контактов реализуйте в элементе процесса <span class="key">Задание-сценарий</span> (<span class="key">ScriptTask</span>).</p>
+
+<p>Значения <strong>свойств элемента</strong>:</p>
+
+<ul><li><span class="key">Название</span> (<span class="key">Name</span>) — "<span class="consolas">Get all contacts</span>".</li>
+	<li><span class="key">Код</span> (<span class="key">Code</span>) — "<span class="consolas">ScriptTaskGetAllContacts</span>".</li>
+</ul><div class="code">
+<div class="code__widgets">
+<div class="code__top">
+<div class="code__title"><span class="filled">ScriptTaskGetAllContacts</span></div>
+</div>
+
+<div class="code__source">
+<pre class="prettyprint">
+/* Создание экземпляра EntitySchemaQuery. */
+EntitySchemaQuery query = new EntitySchemaQuery(UserConnection.EntitySchemaManager, "Contact");
+/* Признак для обязательного выбора первичной колонки [Id]. */
+query.PrimaryQueryColumn.IsAlwaysSelect = true;
+/* Добавление в запрос колонок. */
+query.AddColumn("Name");
+query.AddColumn("Phone");
+/* Получение результирующей коллекции. */
+var entities = query.GetEntityCollection(UserConnection);
+/* Формирование списка контактов для сериализации в JSON. */
+List&lt;object&gt; contacts = new List&lt;object&gt;();
+foreach (var item in entities)
+{
+    var contact = new
+    {
+        Id = item.GetTypedColumnValue&lt;Guid&gt;("Id"),
+        Name = item.GetTypedColumnValue&lt;string&gt;("Name"),
+        Phone = item.GetTypedColumnValue&lt;string&gt;("Phone")
+    };
+    contacts.Add(contact);
+}
+/* Сохранение сериализованной в JSON коллекции контактов в параметр ContactList. */
+string contactList = JsonConvert.SerializeObject(contacts);
+Set&lt;string&gt;("ContactList", contactList);
+return true;
+</pre>
+</div>
+</div>
+</div>
+
+<p>После внесения изменений сохраните и опубликуйте бизнес-процесс.</p>
+
+<h2>3. Запустить выполнение бизнес-процессов из строки навигации браузера<a class="title-anchor" href="#title-2322-5" id="title-2322-5"> </a></h2>
+
+<p>Поскольку вызов метода сервиса возможен с помощью <span class="filled">GET</span>-запроса, то для выполнения запуска бизнес-процесса можно использовать браузер.</p>
+
+<p>Для запуска процесса создания нового контакта в строку навигации браузера введите URL:</p>
+
+<div class="code">
+<div class="code__widgets">
+<div class="code__top">
+<div class="code__title">URL для запуска процесса создания нового контакта</div>
+</div>
+
+<div class="code__source">
+<pre class="prettyprint">
+http[s]://[Адрес<wbr></wbr> приложения<wbr></wbr> Creatio]/<wbr></wbr>0/<wbr></wbr>ServiceModel/<wbr></wbr>ProcessEngineService.svc/<wbr></wbr>UsrAddNewExternalContact/<wbr></wbr>Execute?ContactName=John Johanson&amp;ContactPhone=1 111 111 1111
+</pre>
+</div>
+</div>
+</div>
+
+<p>После перехода по указанному URL, в приложении будет добавлен новый контакт.</p>
+
+<div class="media">
+<div class="media__element"><img alt="" border="0" src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/WorkWithBpmByWebService/scr_add_contact_result01.png" /></div>
+</div>
+
+<div class="message message_warning">
+<p><span class="message__bold message__bold_warning">Важно.</span> Новый контакт будет создан при каждом успешном запросе к сервису. Если выполнить несколько запросов с одинаковыми параметрами, будет создано несколько контактов-дублей.</p>
+</div>
+
+<p>Для запуска процесса чтения всех контактов в строку навигации браузера введите URL:</p>
+
+<div class="code">
+<div class="code__widgets">
+<div class="code__top">
+<div class="code__title">URL для запуска процесса чтения всех контактов</div>
+</div>
+
+<div class="code__source">
+<pre class="prettyprint">
+http[s]://[Адрес<wbr></wbr> приложения<wbr></wbr> Creatio]/<wbr></wbr>0/<wbr></wbr>ServiceModel/<wbr></wbr>ProcessEngineService.svc/<wbr></wbr>UsrGetAllContacts/<wbr></wbr>Execute?ResultParameterName=ContactList
+</pre>
+</div>
+</div>
+</div>
+
+<p>После выполнения перехода по указанному URL, в окне браузера будет отображен JSON-объект, содержащий коллекцию контактов.</p>
+
+<div class="media">
+<div class="media__element"><img alt="" border="0" src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/WorkWithBpmByWebService/scr_get_contacts_result01.png" /></div>
+</div>
+
+<h2>4. Запустить выполнение бизнес-процессов из консольного приложения<a class="title-anchor" href="#title-2322-6" id="title-2322-6"> </a></h2>
+
+<p>Полностью исходный код консольного пользовательского приложения, предназначенного для запуска бизнес-процессов с помощью сервиса <span class="filled">ProcessEngineService.svc</span>, доступен на <a href="https://github.com/bpmonline-academy/DevelopmentGuide/tree/master/Examples/WorkWithBpmByWebServices" target="_blank">GitHub</a>.</p>
+
+<p>Чтобы <strong>запустить выполнение</strong> бизнес-процессов из консольного приложения:</p>
+
+<ol><li>Выполните <strong>аутентификацию</strong>. Для этого предназначен сервис аутентификации <a data-auto-update-caption="dlue" href="../autentifikatsiya/obzor.html#reference-2298">AuthService.svc</a>. Консольное приложение для <a href="../autentifikatsiya/obzor.html#case-2297">выполнения аутентификации</a> можно взять за основу для примера, приведенного ниже.</li>
+	<li>Для формирования запросов к сервису <span class="filled">ProcessEngineService.svc</span> в исходный код класса <span class="filled">Program</span> добавьте строковое поле, содержащее базовый URL сервиса.
+	<div class="code">
+	<div class="code__widgets">
+	<div class="code__top">
+	<div class="code__title">URL для формирования запросов к сервису <span class="filled">ProcessEngineService.svc</span></div>
+	</div>
+
+	<div class="code__source">
+	<pre class="prettyprint">
+<span>private</span> <span>const</span> <span>string</span> processServiceUri = baseUri + <span>@"/0/ServiceModel/ProcessEngineService.svc/"</span>;
+</pre>
+	</div>
+	</div>
+	</div>
+	</li>
+	<li>Для выполнения запуска бизнес-процесса добавления контакта в исходный код класса <span class="filled">Program</span> добавьте метод <span class="filled">GET</span>.
+	<div class="code">
+	<div class="code__widgets">
+	<div class="code__top">
+	<div class="code__title">Метод <span class="filled">GET</span> для выполнения запуска бизнес-процесса</div>
+	</div>
+
+	<div class="code__source">
+	<pre class="prettyprint">
+public static void AddContact(string contactName, string contactPhone)
+{
+    /* Формирование URL запроса. */
+    string requestString = string.Format(processServiceUri +
+            "UsrAddNewExternalContact/Execute?ContactName={0}&amp;ContactPhone={1}",
+                             contactName, contactPhone);
+    /* Создание Http-запроса. */
+    HttpWebRequest request = HttpWebRequest.Create(requestString) as HttpWebRequest;
+    request.Method = "GET";
+    request.CookieContainer = AuthCookie;
+    /* Выполнение запроса и анализ Http-ответа. */
+    using (var response = request.GetResponse())
+    {
+        /* Поскольку сервис вернет пустую строку, то можно вывести свойства http-ответа. */
+        Console.WriteLine(response.ContentLength);
+        Console.WriteLine(response.Headers.Count);
+    }
+}
+</pre>
+	</div>
+	</div>
+	</div>
+	</li>
+	<li>Добавьте метод запуска процесса чтения контактов.
+	<div class="code">
+	<div class="code__widgets">
+	<div class="code__top">
+	<div class="code__title">Метод <span class="filled">GET</span> для выполнения запуска бизнес-процесса</div>
+	</div>
+
+	<div class="code__source">
+	<pre class="prettyprint">
+public static void GetAllContacts()
+{
+    /* Формирование URL запроса. */
+    string requestString = processServiceUri +
+                       "UsrGetAllContacts/Execute?ResultParameterName=ContactList";
+    HttpWebRequest request = HttpWebRequest.Create(requestString) as HttpWebRequest;
+    request.Method = "GET";
+    request.CookieContainer = AuthCookie;
+    /* Создание Http-запроса. */
+    using (var response = request.GetResponse())
+    {
+        /* Выполнение запроса и вывод результата. */
+        using (var reader = new StreamReader(response.GetResponseStream()))
+        {
+            string responseText = reader.ReadToEnd();
+            Console.WriteLine(responseText);
+        }
+    }
+}
+</pre>
+	</div>
+	</div>
+	</div>
+	</li>
+	<li>Вызов добавленных методов выполните в главном методе программы после успешной аутентификации.
+	<div class="code">
+	<div class="code__widgets">
+	<div class="code__top">
+	<div class="code__title">Вызов методов</div>
+	</div>
+
+	<div class="code__source">
+	<pre class="prettyprint">
+static void Main(string[] args)
+{
+    if (!TryLogin("Supervisor", "Supervisor"))
+    {
+        Console.WriteLine("Wrong login or password. Application will be terminated.");
+    }
+    else
+    {
+        try
+        {
+            /* Вызов методов запуска бизнес-процессов. */
+            AddContact("John Johanson", "+1 111 111 1111");
+            GetAllContacts();
+        }
+        catch (Exception)
+        {
+            /* Обработка исключений. */
+            throw;
+        }
+    };
+    Console.WriteLine("Press ENTER to exit...");
+    Console.ReadLine();
+}
+</pre>
+	</div>
+	</div>
+	</div>
+	</li>
+</ol><div class="media">
+<div class="media__caption">Результат выполнения пользовательского приложения</div>
+
+<div class="media__element"><img alt="" border="0" src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/WorkWithBpmByWebService/scr_result.png" /></div>
+</div>
+</div>
+      
+  </div>
+<div class="block block-layout-builder block-field-blocknodecasefield-resources">
+  
+    
+      
+  <div class="field field--name-field-resources field--type-link field--label-above">
+    <div class="field__label">Ресурсы</div>
+          <div class="field__items">
+              <div class="field__item"><a href="https://github.com/bpmonline-academy/DevelopmentGuide/tree/master/Examples/WorkWithBpmByWebServices" target="_blank">Пример консольного приложения для запуска бизнес-процессов на GitHub</a></div>
+              </div>
+      </div>
+
+  </div>
+
+    </div>
+  </div>
+
+  </div>
+
+</article>
+
+  </div>
+
+  </div>
+
+          </div>
+        </div>
+
+                  <aside class="creatio-sidebar creatio-sidebar_first" role="complementary">
+              <div class="region region-sidebar-first">
+    <div id="block-documentationnaviagtion" class="block block-ts-nav block-ts-nav-doc-nav">
+  
+    
+      <div class="ts-nav-block"><a href="../../../../index.html" class="ts-nav-block__link">Документация</a><div class="ts-nav-block__title">Для разработчика</div>
+</div>
+<div class="ts-nav-container"><ul class="ts-nav-menu"><li class="ts-nav-menu__item">
+  <a href="../../s_chego_nachat.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">С чего начать&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../architecture.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Архитектура&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../instrumenty_razrabotki.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Инструменты разработки&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../back_end_razrabotka.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Back-end разработка&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../front_end_razrabotka.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Front-end разработка&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../integratsiya_i_vneshnij_api.html" class="ts-nav-menu__link ts-nav-menu__link_expanded ts-nav-menu__link_open" hreflang="zxx">Интеграция и внешний API&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+      <ul class="ts-nav-menu__children">
+      <li class="ts-nav-menu__item">
+  <a href="../vozmozhnosti_integratsii/obzor.html" class="ts-nav-menu__link" hreflang="ru">Возможности интеграции</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../autentifikatsiya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Аутентификация&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../servisy_raboty_s_dannymi.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Сервисы работы с данными&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../servis_zapuska_biznes_processov.html" class="ts-nav-menu__link ts-nav-menu__link_expanded ts-nav-menu__link_open" hreflang="ru">Сервис запуска бизнес-процессов&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+      <ul class="ts-nav-menu__children">
+      <li class="ts-nav-menu__item">
+  <a href="obzor.html" class="ts-nav-menu__link ts-nav-menu__link_guide" hreflang="ru">Обзор</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="zapustit_biznes-process_veb_servis.html" class="ts-nav-menu__link ts-nav-menu__link_case ts-nav-menu__link_active" hreflang="ru">Запустить бизнес-процесс (веб-сервис)</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="zapustit_process_klientskij_modul.html" class="ts-nav-menu__link ts-nav-menu__link_case" hreflang="ru">Запустить процесс (клиентский модуль)</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="processengineservice_svc.html" class="ts-nav-menu__link ts-nav-menu__link_reference" data-type="API" hreflang="ru">ProcessEngineService.svc</a>
+  </li>
+
+    </ul>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../instrumenty_testirovaniya_zaprosov.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Инструменты тестирования запросов&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+
+    </ul>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../ehlementy_interfejsa.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Элементы интерфейса&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../komponenty_prilozheniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Компоненты приложения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../razrabotka_mobilnogo_prilozheniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Разработка мобильного приложения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../razrabotka_marketplace_prilozheniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Разработка Marketplace-приложения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+</ul>
+</div>
+
+  </div>
+
+  </div>
+
+            <div class="creatio-sidebar__toggle"></div>
+          </aside>
+        
+                  <aside class="creatio-sidebar creatio-sidebar_second" role="complementary">
+              <div class="region region-sidebar-second">
+    <div id="block-example" class="block block-ts-nav block-ts-nav-page-nav">
+  
+    
+      <div class="ts-nav-page">
+  </div>
+
+  </div>
+<div id="block-adminfeedbackblock" class="block block-admin-feedback block-admin-feedback-block">
+  
+    
+      <div id="feedback-message"><div id="upper-feedback-content"><h2>Был ли данный материал полезен?</h2>
+<input class="feedback-btn feedback-btn__yes button js-form-submit form-submit" data-node-id="2322" data-feedback="yes" type="submit" name="op" value="Да" />
+<input class="feedback-btn feedback-btn__no button js-form-submit form-submit" data-node-id="2322" data-feedback="no" type="submit" name="op" value="Нет" />
+</div>
+<form class="admin-feedback-form" data-drupal-selector="admin-feedback-form" action="https://academy.terrasoft.ua/docs/7-17/developer/integratsiya_i_vneshnij_api/servis_zapuska_biznes_processov/zapustit_biznes-process_veb_servis" method="post" id="admin-feedback-form" accept-charset="UTF-8">
+  <div id="feedback-msg-result"></div><div class="js-form-item form-item js-form-type-textarea form-type-textarea js-form-item-feedback-message form-item-feedback-message form-no-label">
+        <div class="form-textarea-wrapper">
+  <textarea id="edit-feedback-msg" data-drupal-selector="edit-feedback-message" name="feedback_message" rows="5" cols="60" class="form-textarea resize-vertical"></textarea>
+</div>
+
+        </div>
+<input id="feedback-id" data-drupal-selector="edit-feedback-id" type="hidden" name="feedback_id" value="" />
+<input class="feedback-btn feedback-btn__send-comment button js-form-submit form-submit" data-drupal-selector="edit-feedback-send" type="submit" id="edit-feedback-send" name="op" value="Отправить" />
+<input autocomplete="off" data-drupal-selector="form-fyaattmkt-6adel00vz1yzcgezqpr-jhtc9nvuloi5m" type="hidden" name="form_build_id" value="form-FyaatTmKt-6adeL00vz1YZCgEzQPr-JHtC9NvuLoi5M" />
+<input data-drupal-selector="edit-admin-feedback-form" type="hidden" name="form_id" value="admin_feedback_form" />
+
+</form>
+</div>
+
+  </div>
+
+  </div>
+
+          </aside>
+              </main>
+    </div>
+  </div>
+
+  <footer role="contentinfo">
+    <div class="creatio-region creatio-region_footer">
+      <div class="creatio-container">
+          <div class="region region-footer">
+    <div id="block-footerua" class="block block-simple-block block-simple-blockfooter-ua">
+  
+    
+      <div class="footer">
+<div class="footer-left">
+<ul class="footer-socials"><li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_fb" href="https://www.facebook.com/terrasoft.ua" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_in" href="https://www.linkedin.com/company/terrasoft/" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_yt" href="https://www.youtube.com/c/TerrasoftUkraine" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_tg" href="https://t.me/Terrasoft_UA" target="_blank"> </a></li>
+</ul></div>
+
+<div class="footer-contact">
+<div class="footer-title">Будьте на связи!</div>
+
+<div class="footer-content">
+<div class="footer-items">
+<div class="footer-item"><a class="footer__link footer__link_phone" href="tel:+380443633133">+38 (044) 363-31-33</a></div>
+</div>
+
+<div class="footer-items">
+<div class="footer-item"><a class="footer__link footer__link_email" href="mailto:support@terrasoft.ua">support@terrasoft.ua</a></div>
+</div>
+</div>
+</div>
+</div>
+
+  </div>
+
+  </div>
+
+      </div>
+    </div>
+    <div class="creatio-region creatio-region_bottom">
+      <div class="creatio-container">
+          <div class="region region-bottom">
+    <div id="block-allrightsreservedua" class="block block-simple-block block-simple-blockfooter-bottom-ua">
+  
+    
+      <p>© 2002-2022 Terrasoft.  |  <a href="https://www.terrasoft.ua/privacy-policy" target="_blank">Конфиденциальность</a></p>
+
+  </div>
+
+  </div>
+
+      </div>
+    </div>
+  </footer>
+</div>
+<div class="creatio-bg"></div>
+
+
+  </div>
+
+    
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/docs\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/2322","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"ru"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"ajaxPageState":{"libraries":"admin_feedback\/admin_feedback_block,admin_feedback\/admin_feedback_css,classy\/base,classy\/messages,classy\/node,core\/drupal.ajax,core\/jquery.form,core\/normalize,creatio\/fancybox,creatio\/global,layout_discovery\/onecol,system\/base,ts_doc\/doc_version,ts_feedback\/ts_feedback,ts_nav\/breadcrumb,ts_nav\/doc_nav,ts_nav\/page_nav,ts_title_anchor\/ts_title_anchor","theme":"creatio","theme_token":null},"ajaxTrustedUrl":{"form_action_p_pvdeGsVG5zNF_XLGPTvYSKCf43t8qZYSwcfZl2uzM":true,"\/docs\/7-17\/developer\/integratsiya_i_vneshnij_api\/servis_zapuska_biznes_processov\/zapustit_biznes-process_veb_servis?ajax_form=1":true},"admin_feedback":{"yes_response":"\u0421\u043f\u0430\u0441\u0438\u0431\u043e \u0437\u0430 \u043e\u0431\u0440\u0430\u0442\u043d\u0443\u044e \u0441\u0432\u044f\u0437\u044c!","no_response":"\u0421\u043f\u0430\u0441\u0438\u0431\u043e \u0437\u0430 \u043e\u0431\u0440\u0430\u0442\u043d\u0443\u044e \u0441\u0432\u044f\u0437\u044c!","custom_text_response_on_no":{"value":"","format":"full_html"},"feedback_prompt_on_yes":true,"feedback_prompt_on_no":true,"feedback_enable_predefined_answers":false,"feedback_prompt":"\u041a\u0430\u043a \u043c\u043e\u0436\u043d\u043e \u0443\u043b\u0443\u0447\u0448\u0438\u0442\u044c \u044d\u0442\u0443 \u0441\u0442\u0430\u0442\u044c\u044e?"},"ajax":{"edit-feedback-send":{"callback":"::validateFeedbackMsg","event":"mousedown","keypress":true,"prevent":"click","url":"\/docs\/7-17\/developer\/integratsiya_i_vneshnij_api\/servis_zapuska_biznes_processov\/zapustit_biznes-process_veb_servis?ajax_form=1","dialogType":"ajax","submit":{"_triggering_element_name":"op","_triggering_element_value":"\u041e\u0442\u043f\u0440\u0430\u0432\u0438\u0442\u044c"}}},"user":{"uid":0,"permissionsHash":"9c2367dfcaba0fa15f0375f97aed64e146c908cee68508d13b79e3ee80e5162d"}}</script>
+<script src="../../../../sites/default/files/js/js_Rr-7TvYD7NposuRFJwUqThxM7yJmw8vs03PQwu5gWd8.js"></script>
+
+
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+      <g id="svg-copy" class="svg-icon svg-icon_copy">
+        <path d="M15.111,18H1.889A1.848,1.848,0,0,1,0,16.2V3.6A1.848,1.848,0,0,1,1.889,1.8H5.837a2.87,2.87,0,0,1,5.326,0h3.948A1.848,1.848,0,0,1,17,3.6V16.2A1.848,1.848,0,0,1,15.111,18ZM3.777,12.6v1.8h6.611V12.6Zm0-3.6v1.8h9.445V9Zm0-3.6V7.2h9.445V5.4ZM8.5,1.8a.924.924,0,0,0-.944.9.945.945,0,0,0,1.889,0A.924.924,0,0,0,8.5,1.8Z"/>
+      </g>
+
+      <g id="svg-prev" class="svg-icon svg-icon_arrow">
+        <path d="M5.488,12.779,0,6.39,5.488,0" transform="translate(1 0.652)"/>
+      </g>
+
+      <g id="svg-next" class="svg-icon svg-icon_arrow">
+        <path d="M0,12.779,5.488,6.39,0,0" transform="translate(0.759 0.652)"/>
+      </g>
+    </svg>
+  </body>
+
+<!-- Mirrored from academy.terrasoft.ua/docs/7-17/developer/integratsiya_i_vneshnij_api/servis_zapuska_biznes_processov/zapustit_biznes-process_veb_servis by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Mar 2022 03:39:51 GMT -->
+</html>

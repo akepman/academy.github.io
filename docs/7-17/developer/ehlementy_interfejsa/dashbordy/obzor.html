@@ -1,0 +1,1075 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# ">
+  
+<!-- Mirrored from academy.terrasoft.ua/docs/7-17/developer/ehlementy_interfejsa/dashbordy/obzor by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Mar 2022 05:04:50 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+          <!-- Google Tag Manager -->
+      <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          '../../../../../../www.googletagmanager.com/gtm5445.html?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-KLLB8G');</script>
+      <!-- End Google Tag Manager -->
+        <meta charset="utf-8" />
+<link rel="canonical" href="obzor.html" />
+<meta name="description" content="Дашборд (блок итогов) — визуальное представление разных типов аналитических данных, например, в виде графика или виджета. Для работы с аналитикой раздела необходимо перейти в представление аналитики необходимого раздела. Если же необходима работа с данными всех разделов приложения, то нужно перейти в раздел Итоги." />
+<meta property="og:url" content="https://academy.terrasoft.ua/docs/7-17/developer/ehlementy_interfejsa/dashbordy/obzor" />
+<meta property="og:title" content="Дашборды" />
+<meta property="og:description" content="Дашборд (блок итогов) — визуальное представление разных типов аналитических данных, например, в виде графика или виджета. Для работы с аналитикой раздела необходимо перейти в представление аналитики необходимого раздела. Если же необходима работа с данными всех разделов приложения, то нужно перейти в раздел Итоги." />
+<meta name="Generator" content="Drupal 9 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="../../../../themes/custom/creatio/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="revision" href="obzor.html" />
+
+    <title>Дашборды | Creatio Academy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&amp;family=Open+Sans:ital,wght@0,300;0,400;0,600;1,400&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" media="all" href="../../../../sites/default/files/css/css_6lTP66__-yc6QXFp1zOwoeJ0HVigoYZP-SeoLLii000.css" />
+<link rel="stylesheet" media="all" href="../../../../sites/default/files/css/css_XQJDNhkF3xH5SZCcY-PI89Zu4nYIzQ5oR3SnUKyfXJU.css" />
+<link rel="stylesheet" media="print" href="../../../../sites/default/files/css/css_Zn4VHvcniOOtUwkIVwXzYr_0AI9gUVgZcPqaH4ViagU.css" />
+
+    
+  </head>
+  <body class="path-node page-node-type-developer-documentation">
+          <!-- Google Tag Manager (noscript) -->
+      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KLLB8G"
+                        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+      <!-- End Google Tag Manager (noscript) -->
+    
+        
+      <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    <div class="creatio-page d-flex flex-column">
+        <div class="region region-informer">
+    <div id="block-terrasoftpidtrimueukrainu" class="block block-simple-block block-simple-blockterrasoft-pidtrimue-ukrainu">
+  
+    
+      <style type="text/css">
+<!--/*--><![CDATA[/* ><!--*/
+@import url(../../../../../../www.terrasoft.ua/themes/custom/creatio/css/components/informer.css)
+
+/*--><!]]>*/
+</style><div class="ts-swu">
+<div class="creatio-container">
+<div class="ts-swu__cont">
+<div><a class="ts-swu__link" href="https://www.terrasoft.ua/terrasoft-stands-with-ukraine" target="_blank">Україна понад усе!</a> <span><a href="https://www.terrasoft.ua/terrasoft-stands-with-ukraine" target="_blank">Приєднуйтеся</a> до допомоги!</span></div>
+</div>
+</div></div>
+
+  </div>
+
+  </div>
+
+  
+  <header role="banner">
+          <div class="creatio-region creatio-region_top">
+        <div class="creatio-container">
+            <div class="region region-top">
+    <div id="block-menutoggle" class="block block-simple-block block-simple-blockmenu-toggle">
+  
+    
+      <div class="menu-toggle"><span> </span></div>
+
+  </div>
+<div id="block-logowhite-2" class="block block-simple-block block-simple-blocklogo-white">
+  
+    
+      <p><a class="site-logo" href="../../../../../index.html" rel="home"><img src="../../../../themes/custom/creatio/logo-white.svg" /></a></p>
+
+  </div>
+<div id="block-search" class="block block-simple-block block-simple-blocksearch">
+  
+    
+      <div class="search">
+<form action="https://academy.terrasoft.ua/search" class="search-form" method="get"><input class="search-form__input" name="search" placeholder="Поиск" type="search" /><input class="search-form__button" type="submit" value="Поиск" /> </form>
+
+<div class="search-toggle"> </div>
+</div>
+
+  </div>
+<nav role="navigation" aria-labelledby="block-sitesua-menu" id="block-sitesua" class="block block-menu navigation menu--sites-ua">
+            
+  <h2 class="visually-hidden" id="block-sitesua-menu">Sites UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="https://www.terrasoft.ua/" rel="nofollow" target="_blank">Terrasoft</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://community.terrasoft.ua/" rel="nofollow" target="_blank">Community</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://marketplace.terrasoft.ua/" rel="nofollow" target="_blank">Marketplace</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+<div id="block-usermenu" class="block block-ts-user block-ts-user-menu-block">
+  
+    
+      <ul class="user-menu">
+      <li class="user-menu__item">
+      <a class="user-menu__link" href="https://profile.terrasoft.ua/user/login?destination=academy/ua/docs/7-17/developer/ehlementy_interfejsa/dashbordy/obzor">Войти</a>
+    </li>
+  </ul>
+
+  </div>
+<div id="block-usermenumobile" class="block block-ts-user block-ts-user-menu-mobile-block">
+  
+    
+      <ul class="user-menu-mobile">
+      <li class="user-menu-mobile__item">
+      <div class="user-menu-mobile__user user-menu-mobile__user_icon"></div>
+      <ul class="user-menu-mobile__submenu">
+        <li class="user-menu-mobile__subitem">
+          <a class="user-menu-mobile__sublink" href="https://profile.terrasoft.ua/user/login?destination=academy/ua/docs/7-17/developer/ehlementy_interfejsa/dashbordy/obzor">Войти</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  </div>
+
+  </div>
+
+        </div>
+      </div>
+              <div class="creatio-region creatio-region_header">
+        <div class="creatio-container">
+            <div class="region region-header">
+    <div id="block-logo" class="block block-simple-block block-simple-blocklogo">
+  
+    
+      <p><a class="site-logo" href="../../../../../index.html" rel="home"><img src="../../../../themes/custom/creatio/logo.svg" /></a></p>
+
+  </div>
+<nav role="navigation" aria-labelledby="block-osnovnayanavigaciyaua-menu" id="block-osnovnayanavigaciyaua" class="block block-menu navigation menu--main-ua">
+            
+  <h2 class="visually-hidden" id="block-osnovnayanavigaciyaua-menu">Основная навигация UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="../../../../index.html" data-drupal-link-system-path="&lt;front&gt;">Документация</a>
+              </li>
+                <li class="menu-item">
+        <a href="../../../../../trainings.html">Тренинги</a>
+              </li>
+                <li class="menu-item">
+        <a href="../../../../certification.html" data-drupal-link-system-path="node/3084">Сертификация и тестирование</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+<nav role="navigation" aria-labelledby="block-sitesua-2-menu" id="block-sitesua-2" class="block block-menu navigation menu--sites-ua">
+            
+  <h2 class="visually-hidden" id="block-sitesua-2-menu">Sites UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="https://www.terrasoft.ua/" rel="nofollow" target="_blank">Terrasoft</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://community.terrasoft.ua/" rel="nofollow" target="_blank">Community</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://marketplace.terrasoft.ua/" rel="nofollow" target="_blank">Marketplace</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+
+  </div>
+
+        </div>
+      </div>
+              <div class="creatio-region creatio-region_breadcrumb">
+        <div class="creatio-container">
+            <div class="region region-breadcrumb">
+    <div id="block-logowhite" class="block block-simple-block block-simple-blocklogo-white">
+  
+    
+      <p><a class="site-logo" href="../../../../../index.html" rel="home"><img src="../../../../themes/custom/creatio/logo-white.svg" /></a></p>
+
+  </div>
+<div id="block-breadcrumbnaviagtion" class="block block-ts-nav block-ts-nav-bread">
+  
+    
+      <nav class="breadcrumb"><ol class="ts-nav-breadcrumb__list"><li class="ts-nav-breadcrumb__item"><a href="../../../../index.html" class="ts-nav-breadcrumb__link" title="Документация">Документация</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../../index2132.html?vid_1=2" class="ts-nav-breadcrumb__link" title="Для разработчика">Для разработчика</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../ehlementy_interfejsa.html" class="ts-nav-breadcrumb__link" title="Элементы интерфейса" hreflang="ru">Элементы интерфейса</a></li>
+<li class="ts-nav-breadcrumb__item ts-nav-breadcrumb__item_mobile"><a href="../dashbordy.html" class="ts-nav-breadcrumb__link" title="Дашборды" hreflang="ru">Дашборды</a></li>
+<li class="ts-nav-breadcrumb__item"><span class="ts-nav-breadcrumb__link ts-nav-breadcrumb__link_current" title="Обзор">Обзор</span></li>
+</ol>
+</nav>
+
+  </div>
+<div id="block-search-2" class="block block-simple-block block-simple-blocksearch">
+  
+    
+      <div class="search">
+<form action="https://academy.terrasoft.ua/search" class="search-form" method="get"><input class="search-form__input" name="search" placeholder="Поиск" type="search" /><input class="search-form__button" type="submit" value="Поиск" /> </form>
+
+<div class="search-toggle"> </div>
+</div>
+
+  </div>
+
+  </div>
+
+        </div>
+      </div>
+      </header>
+
+  <div class="creatio-region creatio-region_main">
+    <div class="creatio-container">
+                <div class="region region-breadcrumb-mobile">
+    <div id="block-breadcrumbnaviagtion-2" class="block block-ts-nav block-ts-nav-bread">
+  
+    
+      <nav class="breadcrumb"><ol class="ts-nav-breadcrumb__list"><li class="ts-nav-breadcrumb__item"><a href="../../../../index.html" class="ts-nav-breadcrumb__link" title="Документация">Документация</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../../index2132.html?vid_1=2" class="ts-nav-breadcrumb__link" title="Для разработчика">Для разработчика</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../ehlementy_interfejsa.html" class="ts-nav-breadcrumb__link" title="Элементы интерфейса" hreflang="ru">Элементы интерфейса</a></li>
+<li class="ts-nav-breadcrumb__item ts-nav-breadcrumb__item_mobile"><a href="../dashbordy.html" class="ts-nav-breadcrumb__link" title="Дашборды" hreflang="ru">Дашборды</a></li>
+<li class="ts-nav-breadcrumb__item"><span class="ts-nav-breadcrumb__link ts-nav-breadcrumb__link_current" title="Обзор">Обзор</span></li>
+</ol>
+</nav>
+
+  </div>
+
+  </div>
+
+      
+      <main class="creatio-main" role="main">
+                                                    
+        <div class="creatio-content creatio-content_small">
+          <div class="creatio-content__inner creatio-content__inner_bg">
+                            <div class="region region-messages">
+    <div data-drupal-messages-fallback class="hidden"></div>
+
+  </div>
+
+            
+              <div class="region region-content">
+    <div id="block-creatio-page-title" class="block block-core block-page-title-block">
+  
+    
+      
+  <h1 class="page-title"><span class="field field--name-title field--type-string field--label-hidden">Дашборды</span>
+</h1>
+
+
+  </div>
+<div id="block-creatio-content" class="block block-system block-system-main-block">
+  
+    
+      
+<article data-history-node-id="2344" role="article" about="/docs/7-17/developer/ehlementy_interfejsa/dashbordy/obzor" class="node node--type-developer-documentation node--view-mode-full">
+
+  
+    
+
+  
+  <div class="node__content">
+      <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocknodedeveloper-documentationfield-difficulty">
+  
+    
+      
+            <div class="field field--name-field-difficulty field--type-entity-reference field--label-hidden field__item"><div about="/docs/7-17/taxonomy/term/169" id="taxonomy-term-169" class="taxonomy-term vocabulary-difficulty">
+  
+  
+  <div class="content">
+      <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocktaxonomy-termdifficultyfield-icon">
+  
+    
+      
+            <div class="field field--name-field-icon field--type-image field--label-hidden field__item">  <img src="../../../../sites/default/files/difficulty/advanced.svg" alt="" loading="lazy" typeof="foaf:Image" />
+
+</div>
+      
+  </div>
+<div class="block block-layout-builder block-field-blocktaxonomy-termdifficultyname">
+  
+    
+      
+            <div class="field field--name-name field--type-string field--label-hidden field__item"><span style="color: #EF4524;">Сложный</span></div>
+      
+  </div>
+
+    </div>
+  </div>
+
+  </div>
+</div>
+</div>
+      
+  </div>
+<div class="block block-ts-doc block-ts-doc-downloads">
+  
+    
+      <a href="../../../../sites/default/files/pdf/node/2344/Dashbordy_.pdf" target="_blank">PDF</a>
+  </div>
+<div class="block block-ts-doc block-ts-doc-versions">
+  
+    
+        <div class="ts-doc-versions">
+    <select class="ts-doc-versions__select">
+                              <option value="/docs/8-0/developer/ehlementy_interfejsa/dashbordy/obzor">Версия 8.0</option>
+                              <option value="/docs/7-18/developer/ehlementy_interfejsa/dashbordy/obzor">Версия 7.18</option>
+                                                <option value="/docs/7-17/developer/ehlementy_interfejsa/dashbordy/obzor" selected>Версия 7.17</option>
+                              <option value="/docs/7-16/developer/ehlementy_interfejsa/dashbordy/obzor">Версия 7.16</option>
+          </select>
+  </div>
+
+  </div>
+
+    </div>
+  </div>
+  <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocknodedeveloper-documentationbody">
+  
+    
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><p><strong>Дашборд (блок итогов)</strong> — визуальное представление разных типов аналитических данных, например, в виде графика или виджета. Для работы с аналитикой раздела необходимо перейти в представление аналитики необходимого раздела. Если же необходима работа с данными всех разделов приложения, то нужно перейти в раздел <span class="key">Итоги</span>.</p>
+
+<h2>Структура данных для хранения информации по итогам<a class="title-anchor" href="#title-2344-1" id="title-2344-1"> </a></h2>
+
+<p>Раздел итогов представляет собой зависящий от прав пользователя набор элементов-вкладок. Механизм работы с итогами реализован с помощью клиентского менеджера итогов <span class="filled">DashboardManager</span> и элементов <span class="filled">DashboardManagerItem,</span> которые и представляют вкладки. За итоги в системе отвечает объект <span class="filled">SysDashboard</span>. Свойства объекта <span class="filled">SysDashboard</span> описаны в таблице.</p>
+
+<div class="table">
+<div class="table__caption">Описание свойств объекта <span class="filled">SysDashboard</span></div>
+
+<div class="table">
+<table border="1" cellpadding="1" cellspacing="1"><thead><tr><th>Название</th>
+			<th>Заголовок</th>
+			<th>Тип</th>
+			<th>Описание</th>
+		</tr></thead><tbody><tr><td><span class="filled">Caption</span></td>
+			<td>Заголовок</td>
+			<td>String</td>
+			<td>Данная информация отображается в заголовке вкладки.</td>
+		</tr><tr><td><span class="filled">Position</span></td>
+			<td>Позиция</td>
+			<td>Number</td>
+			<td>Если позиция не задана, элементы отображаются в алфавитном порядке заголовков.</td>
+		</tr><tr><td><span class="filled">Section</span></td>
+			<td>Раздел</td>
+			<td>Lookup</td>
+			<td>Раздел системы.</td>
+		</tr><tr><td><span class="filled">ViewConfig</span></td>
+			<td>Конфигурация отображения элементов (дашбордов)</td>
+			<td>Array</td>
+			<td>
+			<div class="code">
+			<div class="code__widgets">
+			<div class="code__source">
+			<pre class="prettyprint">
+[{
+    <span>//Тип элемента (Terrasoft.ViewItemType).
+</span>     itemType: <span>"4"</span>,
+     <span>// Название элемента.
+</span>     name: <span>"SomeInvoiceChart"</span>,
+     <span>// Конфигурация отображения.
+</span>     layout: {
+          columns: 4,
+          rows: 4,
+          colspan: 4,
+          rowspan: 4
+     }
+ },
+{...}]
+</pre>
+			</div>
+			</div>
+			</div>
+			</td>
+		</tr><tr><td><span class="filled">Items</span></td>
+			<td>Конфигурация модулей элементов (дашбордов)</td>
+			<td>JSON Object</td>
+			<td>
+			<div class="code">
+			<div class="code__widgets">
+			<div class="code__source">
+			<pre class="prettyprint">
+{
+   <span>// Название элемента, для которого определяются настройки модуля.
+</span>   <span>"SomeInvoiceChart"</span>: {
+      <span>// Название модуля для отображения элемента DashboardItem.
+</span>      “widgetType”: <span>"Chart"</span>,
+      <span>// Параметры, необходимые для отображения данных конкретного элемента DashboardItem.
+</span>      “parameters”: {
+         “caption”: <span>"some caption"</span>,
+       ...
+      },
+   },
+   {...}
+}
+</pre>
+			</div>
+			</div>
+			</div>
+			</td>
+		</tr></tbody></table></div>
+
+<h2>Реализация функциональности в режиме просмотра итогов<a class="title-anchor" href="#title-2344-2" id="title-2344-2"> </a></h2>
+
+<p>Иерархия классов, реализующих функциональность в режиме просмотра итогов:</p>
+
+<div class="media">
+<div class="media__element"><img alt="scr_dashboards_runtime.png" border="0" src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/AnalyticsElements/scr_dashboards_runtime.png" /></div>
+</div>
+
+<p>Модуль <span class="filled">SectionDashboardModule</span>:</p>
+
+<ul><li><span class="filled">SectionDashboardBuilder</span> — класс, инкапсулирующий в себе логику генерации представления и класса модели представления для модуля раздела итогов.</li>
+	<li><span class="filled">SectionDashboardsViewModel</span> — класс модели представления раздела итогов.</li>
+	<li><span class="filled">SectionDashboardsModule</span> — класс модуля раздела итогов.</li>
+</ul><p>Модуль <span class="filled">DashboardModule</span>:</p>
+
+<ul><li><span class="filled">DashboardViewConfig</span> — класс, генерирующий конфигурацию представления для модуля страницы итогов.</li>
+	<li><span class="filled">BaseDashboardViewModel</span> — базовый класс модели представления страницы итогов.</li>
+	<li><span class="filled">DashboardModule</span> — класс, содержащий функциональность по работе с модулями итогов.</li>
+</ul><p>Модуль <span class="filled">DashboardBuilder</span>:</p>
+
+<ul><li><span class="filled">DashboardsViewConfig</span> — класс, генерирующий конфигурацию представления для модуля итогов.</li>
+	<li><span class="filled">BaseDashboardsViewModel</span> — базовый класс модели представления итогов.</li>
+	<li><span class="filled">DashboardBuilder</span> — класс построения модуля итогов.</li>
+</ul><h2>Реализация функциональности в режиме настройки итогов<a class="title-anchor" href="#title-2344-3" id="title-2344-3"> </a></h2>
+
+<p>Иерархия классов, реализующих функциональность в режиме настройки итогов:</p>
+
+<div class="media">
+<div class="media__element"><img alt="scr_dashboards_designtime.png" border="0" src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/AnalyticsElements/scr_dashboards_designtime.png" /></div>
+</div>
+
+<p>Модуль <span class="filled">DashboardDesigner</span>:</p>
+
+<ul><li><span class="filled">DashboardDesignerViewConfig</span> — класс, генерирующий конфигурацию представления для модуля дизайнера итогов.</li>
+	<li><span class="filled">DashboardDesignerViewModel</span> — класс модели представления дизайнера итогов.</li>
+	<li><span class="filled">DashboardDesigner</span> — класс визуального модуля итогов.</li>
+</ul><h2>Базовые классы, реализующие функциональность дашборда<a class="title-anchor" href="#title-2344-4" id="title-2344-4"> </a></h2>
+
+<p><span class="filled">BaseWidgetViewModelClass</span> — базовый класс модели представления дашбордов. Для использования класса необходимо зарегистрировать в модуле такие сообщения:</p>
+
+<ul><li><span class="filled">GetHistoryState (publish; ptp)</span>;</li>
+	<li><span class="filled">ReplaceHistoryState (publish; broadcast)</span>;</li>
+	<li><span class="filled">HistoryStateChanged (subscribe; broadcast)</span>;</li>
+	<li><span class="filled">GetWidgetParameters (subscribe; ptp)</span>;</li>
+	<li><span class="filled">PushWidgetParameters (subscribe; ptp)</span> — если используется получение параметров от модулей <span class="filled">(useCustomParameterMethods = true)</span>.</li>
+</ul><p><span class="filled">BaseWidgetDesigner</span> — базовая схема представления настройки дашбордов. Основные методы:</p>
+
+<ul><li><span class="filled">getWidgetConfig()</span> — возвращает объект актуальных настроек дашборда.</li>
+	<li><span class="filled">getWidgetConfigMessage()</span> — возвращает название сообщения получения настроек модуля дашборда.</li>
+	<li><span class="filled">getWidgetModuleName()</span> — возвращает название модуля дашборда.</li>
+	<li><span class="filled">getWidgetRefreshMessage()</span> — возвращает название сообщения обновления дашборда.</li>
+	<li><span class="filled">getWidgetModulePropertiesTranslator()</span> — возвращает объект соотношения свойств модуля дашборда и модуля настройки дашборда.</li>
+</ul><p><span class="filled">BaseAggregationWidgetDesigner</span> — содержит методы для работы с агрегирующими колонками и типами агрегации.</p>
+
+<p><span class="filled">DashboardEnums</span> — содержит перечисление свойств, используемых в дашбордах.</p>
+
+<p><span class="filled">Terrasoft.DashboardEnums.WidgetType</span> — содержит конфигурацию дашбордов для режима просмотра (view) и режима настройки (design) итогов. Конфигурация определяется следующими свойствами:</p>
+
+<ul><li><span class="filled">moduleName</span> — название модуля дашборда.</li>
+	<li><span class="filled">configurationMessage</span> — название сообщения получения настроек модуля.</li>
+	<li><span class="filled">resultMessage</span> — название сообщения для отдачи параметров настройки модуля дизайнера дашборда.</li>
+	<li><span class="filled">stateConfig (stateObj)</span> — название схемы дизайнера дашборда.</li>
+</ul><h2>Виды дашбордов<a class="title-anchor" href="#title-2344-5" id="title-2344-5"> </a></h2>
+
+<h3>График<a class="title-anchor" href="#title-2344-6" id="title-2344-6"> </a></h3>
+
+<p><a href="../../../user/kastomizacija_no_code/analitika/nastrojka/nastroit_dashbordy.html#title-2526-1">График</a> в наглядной форме отображает множественные данные из системы. С помощью графика можно отобразить, например, распределение контрагентов по типам. График может отображать информацию в виде диаграмм разных типов, либо в виде реестра данных.</p>
+
+<div class="media">
+<div class="media__element"><img alt="" border="0" src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/AnalyticsElements/scr_dashboards_chart.png" /></div>
+</div>
+
+<h4>Классы, реализующие функциональность графиков<a class="title-anchor" href="#title-2344-7" id="title-2344-7"> </a></h4>
+
+<p><span class="filled">ChartViewModel</span> — модель представления графиков.</p>
+
+<p><span class="filled">ChartViewConfig</span> — генерирует конфигурацию представления модуля графика.</p>
+
+<p><span class="filled">ChartModule</span> — модуль, предназначенный для работы с графиками.</p>
+
+<p><span class="filled">ChartDesigner</span> — схема представления страницы графиков.</p>
+
+<p><span class="filled">ChartModuleHelper</span> — используется для формирования запроса с помощью объекта <span class="filled">Terrasoft.EntitySchemaQuery</span>.</p>
+
+<p><span class="filled">ChartDrillDownProvider</span> — содержит методы для работы с функциональностью углубления в элементы (для работы с сериями в графиках).</p>
+
+<h4>Параметры настройки графика<a class="title-anchor" href="#title-2344-8" id="title-2344-8"> </a></h4>
+
+<p>Для настройки графика необходимо в конфигурацию модулей дашбордов добавить конфигурационный JSON-объект с настройками свойств графика. Конфигурация модуля дашборда определяется свойством <span class="filled">Items</span> объекта <span class="filled">SysDashboard</span>. Подробнее об объекте <span class="filled">SysDashboard</span> и его свойствах можно узнать из <a href="obzor.html#title-2344-1">статьи</a>.</p>
+
+<p>В конфигурационном JSON-объекте с настройками дашборда необходимо установить значение "<span class="consolas">Chart</span>" свойству <span class="filled">widgetType</span>. Кроме того, свойству <span class="filled">parameters</span> нужно присвоить объект с необходимыми параметрами. Возможные параметры графика приведены в таблице.</p>
+
+<div class="table">
+<div class="table__caption">Параметры настройки графика</div>
+
+<table><tbody><tr><th>Название</th>
+			<th>Тип</th>
+			<th>Описание</th>
+		</tr><tr><td><span class="filled">seriesConfig</span></td>
+			<td><span class="filled">object</span></td>
+			<td>Настройки вложенного графика из серии.</td>
+		</tr><tr><td><span class="filled">orderBy</span></td>
+			<td><span class="filled">string</span></td>
+			<td>Поле сортировки.</td>
+		</tr><tr><td><span class="filled">orderDirection</span></td>
+			<td><span class="filled">string</span></td>
+			<td>Направление сортировки.</td>
+		</tr><tr><td><span class="filled">caption</span></td>
+			<td><span class="filled">string</span></td>
+			<td>Заголовок графика.</td>
+		</tr><tr><td><span class="filled">sectionId</span></td>
+			<td><span class="filled">string</span></td>
+			<td>Идентификатор раздела.</td>
+		</tr><tr><td><span class="filled">xAxisDefaultCaption</span></td>
+			<td><span class="filled">string</span></td>
+			<td>Заголовок оси X по умолчанию.</td>
+		</tr><tr><td><span class="filled">yAxisDefaultCaption</span></td>
+			<td><span class="filled">string</span></td>
+			<td>Заголовок оси Y по умолчанию.</td>
+		</tr><tr><td><span class="filled">primaryColumnName</span></td>
+			<td><span class="filled">string</span></td>
+			<td>Название первичной колонки. По умолчанию первичной является колонка Id.</td>
+		</tr><tr><td><span class="filled">yAxisConfig</span></td>
+			<td><span class="filled">object</span></td>
+			<td>Массив настроек подписи оси Y.</td>
+		</tr><tr><td><span class="filled">schemaName</span></td>
+			<td><span class="filled">string</span></td>
+			<td>Объект, по которому строится график.</td>
+		</tr><tr><td><span class="filled">sectionBindingColumn</span></td>
+			<td><span class="filled">string</span></td>
+			<td>Колонка связи с разделом.</td>
+		</tr><tr><td><span class="filled">func</span></td>
+			<td><span class="filled">string</span></td>
+			<td>Агрегирующая функция.</td>
+		</tr><tr><td><span class="filled">type</span></td>
+			<td><span class="filled">string</span></td>
+			<td>Тип графика.</td>
+		</tr><tr><td><span class="filled">XAxisCaption</span></td>
+			<td><span class="filled">string</span></td>
+			<td>Заголовок оси X.</td>
+		</tr><tr><td><span class="filled">YAxisCaption</span></td>
+			<td><span class="filled">string</span></td>
+			<td>Заголовок оси Y.</td>
+		</tr><tr><td><span class="filled">xAxisColumn</span></td>
+			<td><span class="filled">string</span></td>
+			<td>Колонка группировки оси X.</td>
+		</tr><tr><td><span class="filled">yAxisColumn</span></td>
+			<td><span class="filled">string</span></td>
+			<td>Колонка группировки оси Y.</td>
+		</tr><tr><td><span class="filled">styleColor</span></td>
+			<td><span class="filled">string</span></td>
+			<td>Цвет графика.</td>
+		</tr><tr><td><span class="filled">filterData</span></td>
+			<td><span class="filled">object</span></td>
+			<td>Настройка фильтрации.</td>
+		</tr></tbody></table></div>
+
+<h3>Показатель<a class="title-anchor" href="#title-2344-9" id="title-2344-9"> </a></h3>
+
+<p><a href="../../../user/kastomizacija_no_code/analitika/nastrojka/nastroit_dashbordy.html#title-2526-4">Дашборд “Показатель”</a> отображает расчетное числовое значение или дату по определенным данным системы, например, общее количество сотрудников отдела..</p>
+
+<div class="media">
+<div class="media__element"><img alt="" border="0" src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/AnalyticsElements/scr_dashboards_metric.png" /></div>
+</div>
+
+<h4>Классы, реализующие функциональность показателей<a class="title-anchor" href="#title-2344-10" id="title-2344-10"> </a></h4>
+
+<p><span class="filled">IndicatorViewModel</span> — модель представления показателя.</p>
+
+<p><span class="filled">IndicatorViewConfig</span> — генерирует конфигурацию представления модуля показателя.</p>
+
+<p><span class="filled">IndicatorModule</span> — модуль, предназначенный для работы с показателями.</p>
+
+<p><span class="filled">IndicatorDesigner</span> — схема представления страницы показателя.</p>
+
+<h4>Параметры настройки показателя<a class="title-anchor" href="#title-2344-11" id="title-2344-11"> </a></h4>
+
+<p>Для настройки показателя необходимо в конфигурацию модулей дашбордов добавить конфигурационный JSON-объект с настройками свойств показателя. Конфигурация модуля дашборда определяется свойством <span class="filled">Items</span> объекта <span class="filled">SysDashboard</span>. Подробнее об объекте <span class="filled">SysDashboard</span> и его свойствах можно узнать из <a href="obzor.html#title-2344-1">статьи</a>.</p>
+
+<p>В конфигурационном JSON-объекте с настройками дашборда необходимо установить значение "<span class="consolas">Indicator</span>" свойству <span class="filled">widgetType</span>. Кроме того, свойству <span class="filled">parameters</span> нужно присвоить объект с необходимыми параметрами. Возможные параметры показателя приведены в таблице.</p>
+
+<div class="table">
+<div class="table__caption">Параметры настройки показателя</div>
+
+<table><tbody><tr><th>Название</th>
+			<th>Тип</th>
+			<th>Описание</th>
+		</tr><tr><td><span class="filled">caption</span></td>
+			<td><span class="filled">string</span></td>
+			<td>Заголовок показателя.</td>
+		</tr><tr><td><span class="filled">sectionId</span></td>
+			<td><span class="filled">string</span></td>
+			<td>Идентификатор раздела.</td>
+		</tr><tr><td><span class="filled">entitySchemaName</span></td>
+			<td><span class="filled">string</span></td>
+			<td>Объект, по которому строится показатель.</td>
+		</tr><tr><td><span class="filled">sectionBindingColumn</span></td>
+			<td><span class="filled">string</span></td>
+			<td>Колонка связи с разделом.</td>
+		</tr><tr><td><span class="filled">columnName</span></td>
+			<td><span class="filled">string</span></td>
+			<td>Название агрегирующей колонки.</td>
+		</tr><tr><td><span class="filled">format</span></td>
+			<td><span class="filled">object</span></td>
+			<td>Формат показателя.</td>
+		</tr><tr><td><span class="filled">filterData</span></td>
+			<td><span class="filled">object</span></td>
+			<td>Настройка фильтрации.</td>
+		</tr><tr><td><span class="filled">aggregationType</span></td>
+			<td><span class="filled">number</span></td>
+			<td>Тип агрегирующей функции.</td>
+		</tr><tr><td><span class="filled">style</span></td>
+			<td><span class="filled">string</span></td>
+			<td>Цвет показателя.</td>
+		</tr></tbody></table></div>
+
+<h3>Шкала<a class="title-anchor" href="#title-2344-12" id="title-2344-12"> </a></h3>
+
+<p><a href="../../../user/kastomizacija_no_code/analitika/nastrojka/nastroit_dashbordy.html#title-2526-6">Шкала</a> отображает число, полученное в результате запроса к данным системы, относительно нормативных значений. С помощью шкалы можно отобразить, например, реальное количество выполненных активностей относительно запланированного количества.</p>
+
+<div class="media">
+<div class="media__element"><img alt="" border="0" src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/AnalyticsElements/scr_dashboards_speedometer.png" /></div>
+</div>
+
+<h4>Классы, реализующие функциональность дашборда "Шкала"<a class="title-anchor" href="#title-2344-13" id="title-2344-13"> </a></h4>
+
+<p><span class="filled">GaugeViewModel —</span> модель представления шкалы.</p>
+
+<p><span class="filled">GaugeViewConfig</span> — генерирует конфигурацию представления модуля шкалы.</p>
+
+<p><span class="filled">GaugeModule</span> — модуль, предназначенный для работы со шкалой.</p>
+
+<p><span class="filled">GaugeChart</span> — реализует компонент графика типа шкала.</p>
+
+<p><span class="filled">GaugeDesigner</span> — схема представления страницы шкалы.</p>
+
+<h4>Параметры настройки шкалы<a class="title-anchor" href="#title-2344-14" id="title-2344-14"> </a></h4>
+
+<p>Для настройки шкалы необходимо в конфигурацию модулей дашбордов добавить конфигурационный JSON-объект с настройками свойств шкалы. Конфигурация модуля дашборда определяется свойством <span class="filled">Items</span> объекта <span class="filled">SysDashboard</span>. Подробнее об объекте <span class="filled">SysDashboard</span> и его свойствах можно узнать из <a href="obzor.html#title-2344-1">статьи</a>.</p>
+
+<p>В конфигурационном JSON-объекте с настройками дашборда необходимо установить значение "<span class="consolas">Gauge</span>" свойству <span class="filled">widgetType</span>. Кроме того, свойству <span class="filled">parameters</span> нужно присвоить объект с необходимыми параметрами. Возможные параметры шкалы приведены в таблице.</p>
+
+<div class="table">
+<div class="table__caption">Параметры настройки шкалы</div>
+
+<table><tbody><tr><th>Название</th>
+			<th>Тип</th>
+			<th>Описание</th>
+		</tr><tr><td><span class="filled">caption</span></td>
+			<td><span class="filled">string</span></td>
+			<td>Заголовок шкалы.</td>
+		</tr><tr><td><span class="filled">sectionId</span></td>
+			<td><span class="filled">string</span></td>
+			<td>Идентификатор раздела.</td>
+		</tr><tr><td><span class="filled">entitySchemaName</span></td>
+			<td><span class="filled">string</span></td>
+			<td>Объект, по которому строится шкала.</td>
+		</tr><tr><td><span class="filled">sectionBindingColumn</span></td>
+			<td><span class="filled">string</span></td>
+			<td>Колонка связи с разделом.</td>
+		</tr></tbody></table></div>
+
+<h3>Список<a class="title-anchor" href="#title-2344-15" id="title-2344-15"> </a></h3>
+
+<p><a href="../../../user/kastomizacija_no_code/analitika/nastrojka/nastroit_dashbordy.html#title-2526-8">Список</a> отображает информацию из системы в виде списка с заданным количеством позиций. С помощью списка можно отобразить, например, десятку самых продуктивных менеджеров по количеству закрытых сделок.</p>
+
+<div class="media">
+<div class="media__element"><img alt="" border="0" src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/AnalyticsElements/scr_dashboards_list.png" /></div>
+</div>
+
+<h4>Классы, реализующие функциональность списков<a class="title-anchor" href="#title-2344-16" id="title-2344-16"> </a></h4>
+
+<p><span class="filled">DashboardGridViewModel</span> — модель представления списка.</p>
+
+<p><span class="filled">DashboardGridViewConfig</span> — генерирует конфигурацию представления модуля списка.</p>
+
+<p><span class="filled">DashboardGridModule</span> — модуль, предназначенный для работы со списками.</p>
+
+<p><span class="filled">DashboardGridDesigner</span> — схема представления страницы списка.</p>
+
+<h4>Параметры настройки списка<a class="title-anchor" href="#title-2344-17" id="title-2344-17"> </a></h4>
+
+<p>Для настройки списка необходимо в конфигурацию модулей дашбордов добавить конфигурационный JSON-объект с настройками свойств списка. Конфигурация модуля дашборда определяется свойством <span class="filled">Items</span> объекта <span class="filled">SysDashboard</span>. Подробнее об объекте <span class="filled">SysDashboard</span> и его свойствах можно узнать из <a href="obzor.html#title-2344-1">статьи</a>.</p>
+
+<p>В конфигурационном JSON-объекте с настройками дашборда необходимо установить значение "<span class="consolas">DashboardGrid</span>" свойству <span class="filled">widgetType</span>. А также свойству <span class="filled">parameters</span> нужно присвоить объект с необходимыми параметрами. Возможные параметры списка приведены в таблице.</p>
+
+<div class="table">
+<div class="table__caption">Параметры настройки списка</div>
+
+<table><tbody><tr><th>Название</th>
+			<th>Тип</th>
+			<th>Описание</th>
+		</tr><tr><td><span class="filled">caption</span></td>
+			<td><span class="filled">string</span></td>
+			<td>Заголовок списка.</td>
+		</tr><tr><td><span class="filled">sectionBindingColumn</span></td>
+			<td><span class="filled">string</span></td>
+			<td>Колонка связи с разделом.</td>
+		</tr><tr><td><span class="filled">filterData</span></td>
+			<td><span class="filled">object</span></td>
+			<td>Настройка фильтрации.</td>
+		</tr><tr><td><span class="filled">sectionId</span></td>
+			<td><span class="filled">string</span></td>
+			<td>Идентификатор раздела.</td>
+		</tr><tr><td><span class="filled">entitySchemaName</span></td>
+			<td><span class="filled">string</span></td>
+			<td>Объект, по которому строится список.</td>
+		</tr><tr><td><span class="filled">style</span></td>
+			<td><span class="filled">string</span></td>
+			<td>Цвет списка.</td>
+		</tr><tr><td><span class="filled">orderDirection</span></td>
+			<td><span class="filled">number</span></td>
+			<td>Направление сортировки (1 — по возрастанию, 2 — по убыванию).</td>
+		</tr><tr><td><span class="filled">orderColumn</span></td>
+			<td><span class="filled">string</span></td>
+			<td>Колонка, по которой сортируется список.</td>
+		</tr><tr><td><span class="filled">rowCount</span></td>
+			<td><span class="filled">number</span></td>
+			<td>Количество рядов для отображения.</td>
+		</tr><tr><td><span class="filled">gridConfig</span></td>
+			<td><span class="filled">object</span></td>
+			<td>Конфигурация списка.</td>
+		</tr></tbody></table></div>
+
+<h3>Web-страница<a class="title-anchor" href="#title-2344-18" id="title-2344-18"> </a></h3>
+
+<p><a href="../../../user/kastomizacija_no_code/analitika/nastrojka/nastroit_dashbordy.html#title-2526-17">Дашборд "Web-страница"</a> предназначен для отображения интернет-страниц на панели итогов. Например, это может быть онлайн-калькулятор валют или ваш корпоративный сайт.</p>
+
+<h4>Классы, реализующие функциональность Web-страниц<a class="title-anchor" href="#title-2344-19" id="title-2344-19"> </a></h4>
+
+<p><span class="filled">WebPageViewModel</span> — модель представления Web-страницы.</p>
+
+<p><span class="filled">WebPageViewConfig</span> — генерирует конфигурацию представления модуля Web-страницы.</p>
+
+<p><span class="filled">WebPageModule</span> — модуль, предназначенный для работы с Web-страницами.</p>
+
+<p><span class="filled">WebPageDesigner</span> — схема представления страницы дашборда Web-страницы.</p>
+
+<h4>Параметры настройки Web-страницы<a class="title-anchor" href="#title-2344-20" id="title-2344-20"> </a></h4>
+
+<p>Для настройки Web-страницы необходимо в конфигурацию модулей дашбордов добавить конфигурационный JSON-объект с настройками свойств Web-страницы. Конфигурация модуля дашборда определяется свойством <span class="filled">Items</span> объекта <span class="filled">SysDashboard</span>. Подробнее об объекте <span class="filled">SysDashboard</span> и его свойствах можно узнать из <a href="obzor.html#title-2344-1">статьи</a>.</p>
+
+<p>В конфигурационном JSON-объекте с настройками дашборда необходимо установить значение "<span class="consolas">WebPage</span>" свойству <span class="filled">widgetType</span>. Кроме того, свойству <span class="filled">parameters</span> нужно присвоить объект с необходимыми параметрами. Возможные параметры Web-страницы приведены в таблице.</p>
+
+<div class="table">
+<div class="table__caption">Параметры настройки Web-страницы</div>
+
+<table><tbody><tr><th>Название</th>
+			<th>Тип</th>
+			<th>Описание</th>
+		</tr><tr><td><span class="filled">caption</span></td>
+			<td><span class="filled">string</span></td>
+			<td>Заголовок дашборда Web-страницы.</td>
+		</tr><tr><td><span class="filled">sectionId</span></td>
+			<td><span class="filled">string</span></td>
+			<td>Идентификатор раздела.</td>
+		</tr><tr><td><span class="filled">url</span></td>
+			<td><span class="filled">string</span></td>
+			<td>Ссылка на Web-страницу.</td>
+		</tr><tr><td><span class="filled">style</span></td>
+			<td><span class="filled">string</span></td>
+			<td>CSS стили дашборда Web-страницы.</td>
+		</tr></tbody></table></div>
+
+<h3>Воронка продаж<a class="title-anchor" href="#title-2344-21" id="title-2344-21"> </a></h3>
+
+<p><a href="../../../user/kastomizacija_no_code/analitika/nastrojka/nastroit_dashbordy.html#title-2526-15">Дашборд "Воронка продаж"</a> используется для анализа динамики продвижения продаж по стадиям.</p>
+
+<h4>Классы, реализующие функциональность воронки продаж<a class="title-anchor" href="#title-2344-22" id="title-2344-22"> </a></h4>
+
+<p><span class="filled">OpportunityFunnelChart</span> — класс, унаследованный от <span class="filled">Chart</span>.</p>
+
+<h4>Параметры настройки воронки продаж<a class="title-anchor" href="#title-2344-23" id="title-2344-23"> </a></h4>
+
+<p>Для настройки воронки продаж необходимо в конфигурацию модулей дашбордов добавить конфигурационный JSON-объект с настройками свойств воронки. Конфигурация модуля дашборда определяется свойством <span class="filled">Items</span> объекта <span class="filled">SysDashboard</span>. Подробнее об объекте <span class="filled">SysDashboard</span> и его свойствах можно узнать из <a href="obzor.html#title-2344-1">статьи</a>.</p>
+
+<p>В конфигурационном JSON-объекте с настройками дашборда необходимо установить значение "<span class="consolas">OpportunityFunnel</span>" свойству <span class="filled">widgetType</span>. Кроме того, свойству <span class="filled">parameters</span> нужно присвоить объект с необходимыми параметрами. Возможные параметры воронки продаж приведены в таблице.</p>
+
+<div class="table">
+<div class="table__caption">Параметры настройки воронки продаж</div>
+
+<table><tbody><tr><th>Название</th>
+			<th>Тип</th>
+			<th>Описание</th>
+		</tr><tr><td><span class="filled">caption</span></td>
+			<td><span class="filled">string</span></td>
+			<td>Заголовок дашборда воронки.</td>
+		</tr><tr><td><span class="filled">sectionId</span></td>
+			<td><span class="filled">string</span></td>
+			<td>Идентификатор раздела.</td>
+		</tr><tr><td><span class="filled">defPeriod</span></td>
+			<td><span class="filled">string</span></td>
+			<td>Период воронки (по умолчанию последняя неделя).</td>
+		</tr><tr><td><span class="filled">sectionBindingColumn</span></td>
+			<td><span class="filled">string</span></td>
+			<td>Колонка связи с разделом.</td>
+		</tr><tr><td><span class="filled">type</span></td>
+			<td><span class="filled">string</span></td>
+			<td>Тип графика (“funnel”).</td>
+		</tr><tr><td><span class="filled">filterData</span></td>
+			<td><span class="filled">object</span></td>
+			<td>Настройка фильтрации.</td>
+		</tr></tbody></table></div>
+</div>
+</div>
+      
+  </div>
+
+    </div>
+  </div>
+
+  </div>
+
+</article>
+
+  </div>
+
+  </div>
+
+          </div>
+        </div>
+
+                  <aside class="creatio-sidebar creatio-sidebar_first" role="complementary">
+              <div class="region region-sidebar-first">
+    <div id="block-documentationnaviagtion" class="block block-ts-nav block-ts-nav-doc-nav">
+  
+    
+      <div class="ts-nav-block"><a href="../../../../index.html" class="ts-nav-block__link">Документация</a><div class="ts-nav-block__title">Для разработчика</div>
+</div>
+<div class="ts-nav-container"><ul class="ts-nav-menu"><li class="ts-nav-menu__item">
+  <a href="../../s_chego_nachat.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">С чего начать&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../architecture.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Архитектура&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../instrumenty_razrabotki.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Инструменты разработки&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../back_end_razrabotka.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Back-end разработка&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../front_end_razrabotka.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Front-end разработка&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../integratsiya_i_vneshnij_api.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Интеграция и внешний API&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../ehlementy_interfejsa.html" class="ts-nav-menu__link ts-nav-menu__link_expanded ts-nav-menu__link_open" hreflang="ru">Элементы интерфейса&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+      <ul class="ts-nav-menu__children">
+      <li class="ts-nav-menu__item">
+  <a href="../glavnoe_menyu/obzor.html" class="ts-nav-menu__link" hreflang="ru">Главное меню</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../razdel.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Раздел&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../stranica_zapisi.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Страница записи&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../1215/detail.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Деталь&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../mini_kartochka.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Мини-карточка&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../modalnoe_okno.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Модальное окно&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../kommunikacionnaya_panel.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Коммуникационная панель&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../komandnaya_stroka/obzor.html" class="ts-nav-menu__link" hreflang="ru">Командная строка</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../dashbordy.html" class="ts-nav-menu__link ts-nav-menu__link_expanded ts-nav-menu__link_open" hreflang="ru">Дашборды&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+      <ul class="ts-nav-menu__children">
+      <li class="ts-nav-menu__item">
+  <a href="obzor.html" class="ts-nav-menu__link ts-nav-menu__link_guide ts-nav-menu__link_active" hreflang="ru">Обзор</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="izmenit_raschety_v_voronke_prodazh.html" class="ts-nav-menu__link ts-nav-menu__link_case" hreflang="ru">Изменить расчеты в воронке продаж</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="podklyuchit_dopolnitelnuyu_filtraciyu_k_voronke.html" class="ts-nav-menu__link ts-nav-menu__link_case" hreflang="ru">Подключить дополнительную фильтрацию к воронке</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="dobavit_dashbord.html" class="ts-nav-menu__link ts-nav-menu__link_case" hreflang="ru">Добавить дашборд</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="basewidgetdesigner.html" class="ts-nav-menu__link ts-nav-menu__link_reference" data-type="JS" hreflang="ru">BaseWidgetDesigner</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="dashboardenums.html" class="ts-nav-menu__link ts-nav-menu__link_reference" data-type="JS" hreflang="ru">DashboardEnums</a>
+  </li>
+
+    </ul>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../chaty.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Чаты&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../upravlenie_ehlementami_interfejsa.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Управление элементами интерфейса&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+
+    </ul>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../komponenty_prilozheniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Компоненты приложения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../razrabotka_mobilnogo_prilozheniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Разработка мобильного приложения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../razrabotka_marketplace_prilozheniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Разработка Marketplace-приложения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+</ul>
+</div>
+
+  </div>
+
+  </div>
+
+            <div class="creatio-sidebar__toggle"></div>
+          </aside>
+        
+                  <aside class="creatio-sidebar creatio-sidebar_second" role="complementary">
+              <div class="region region-sidebar-second">
+    <div id="block-example" class="block block-ts-nav block-ts-nav-page-nav">
+  
+    
+      <div class="ts-nav-page">
+  </div>
+
+  </div>
+<div id="block-adminfeedbackblock" class="block block-admin-feedback block-admin-feedback-block">
+  
+    
+      <div id="feedback-message"><div id="upper-feedback-content"><h2>Был ли данный материал полезен?</h2>
+<input class="feedback-btn feedback-btn__yes button js-form-submit form-submit" data-node-id="2344" data-feedback="yes" type="submit" name="op" value="Да" />
+<input class="feedback-btn feedback-btn__no button js-form-submit form-submit" data-node-id="2344" data-feedback="no" type="submit" name="op" value="Нет" />
+</div>
+<form class="admin-feedback-form" data-drupal-selector="admin-feedback-form" action="https://academy.terrasoft.ua/docs/7-17/developer/ehlementy_interfejsa/dashbordy/obzor" method="post" id="admin-feedback-form" accept-charset="UTF-8">
+  <div id="feedback-msg-result"></div><div class="js-form-item form-item js-form-type-textarea form-type-textarea js-form-item-feedback-message form-item-feedback-message form-no-label">
+        <div class="form-textarea-wrapper">
+  <textarea id="edit-feedback-msg" data-drupal-selector="edit-feedback-message" name="feedback_message" rows="5" cols="60" class="form-textarea resize-vertical"></textarea>
+</div>
+
+        </div>
+<input id="feedback-id" data-drupal-selector="edit-feedback-id" type="hidden" name="feedback_id" value="" />
+<input class="feedback-btn feedback-btn__send-comment button js-form-submit form-submit" data-drupal-selector="edit-feedback-send" type="submit" id="edit-feedback-send" name="op" value="Отправить" />
+<input autocomplete="off" data-drupal-selector="form-vbcq98bil5xof94fqm1u-siqs2wemmyamqqkbvovk-4" type="hidden" name="form_build_id" value="form-VBcQ98bIL5XoF94FQM1U_sIQs2WeMmyAmqQKbvoVk-4" />
+<input data-drupal-selector="edit-admin-feedback-form" type="hidden" name="form_id" value="admin_feedback_form" />
+
+</form>
+</div>
+
+  </div>
+
+  </div>
+
+          </aside>
+              </main>
+    </div>
+  </div>
+
+  <footer role="contentinfo">
+    <div class="creatio-region creatio-region_footer">
+      <div class="creatio-container">
+          <div class="region region-footer">
+    <div id="block-footerua" class="block block-simple-block block-simple-blockfooter-ua">
+  
+    
+      <div class="footer">
+<div class="footer-left">
+<ul class="footer-socials"><li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_fb" href="https://www.facebook.com/terrasoft.ua" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_in" href="https://www.linkedin.com/company/terrasoft/" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_yt" href="https://www.youtube.com/c/TerrasoftUkraine" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_tg" href="https://t.me/Terrasoft_UA" target="_blank"> </a></li>
+</ul></div>
+
+<div class="footer-contact">
+<div class="footer-title">Будьте на связи!</div>
+
+<div class="footer-content">
+<div class="footer-items">
+<div class="footer-item"><a class="footer__link footer__link_phone" href="tel:+380443633133">+38 (044) 363-31-33</a></div>
+</div>
+
+<div class="footer-items">
+<div class="footer-item"><a class="footer__link footer__link_email" href="mailto:support@terrasoft.ua">support@terrasoft.ua</a></div>
+</div>
+</div>
+</div>
+</div>
+
+  </div>
+
+  </div>
+
+      </div>
+    </div>
+    <div class="creatio-region creatio-region_bottom">
+      <div class="creatio-container">
+          <div class="region region-bottom">
+    <div id="block-allrightsreservedua" class="block block-simple-block block-simple-blockfooter-bottom-ua">
+  
+    
+      <p>© 2002-2022 Terrasoft.  |  <a href="https://www.terrasoft.ua/privacy-policy" target="_blank">Конфиденциальность</a></p>
+
+  </div>
+
+  </div>
+
+      </div>
+    </div>
+  </footer>
+</div>
+<div class="creatio-bg"></div>
+
+
+  </div>
+
+    
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/docs\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/2344","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"ru"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"ajaxPageState":{"libraries":"admin_feedback\/admin_feedback_block,admin_feedback\/admin_feedback_css,classy\/base,classy\/messages,classy\/node,core\/drupal.ajax,core\/jquery.form,core\/normalize,creatio\/fancybox,creatio\/global,layout_discovery\/onecol,system\/base,ts_doc\/doc_version,ts_feedback\/ts_feedback,ts_nav\/breadcrumb,ts_nav\/doc_nav,ts_nav\/page_nav,ts_title_anchor\/ts_title_anchor","theme":"creatio","theme_token":null},"ajaxTrustedUrl":{"form_action_p_pvdeGsVG5zNF_XLGPTvYSKCf43t8qZYSwcfZl2uzM":true,"\/docs\/7-17\/developer\/ehlementy_interfejsa\/dashbordy\/obzor?ajax_form=1":true},"admin_feedback":{"yes_response":"\u0421\u043f\u0430\u0441\u0438\u0431\u043e \u0437\u0430 \u043e\u0431\u0440\u0430\u0442\u043d\u0443\u044e \u0441\u0432\u044f\u0437\u044c!","no_response":"\u0421\u043f\u0430\u0441\u0438\u0431\u043e \u0437\u0430 \u043e\u0431\u0440\u0430\u0442\u043d\u0443\u044e \u0441\u0432\u044f\u0437\u044c!","custom_text_response_on_no":{"value":"","format":"full_html"},"feedback_prompt_on_yes":true,"feedback_prompt_on_no":true,"feedback_enable_predefined_answers":false,"feedback_prompt":"\u041a\u0430\u043a \u043c\u043e\u0436\u043d\u043e \u0443\u043b\u0443\u0447\u0448\u0438\u0442\u044c \u044d\u0442\u0443 \u0441\u0442\u0430\u0442\u044c\u044e?"},"ajax":{"edit-feedback-send":{"callback":"::validateFeedbackMsg","event":"mousedown","keypress":true,"prevent":"click","url":"\/docs\/7-17\/developer\/ehlementy_interfejsa\/dashbordy\/obzor?ajax_form=1","dialogType":"ajax","submit":{"_triggering_element_name":"op","_triggering_element_value":"\u041e\u0442\u043f\u0440\u0430\u0432\u0438\u0442\u044c"}}},"user":{"uid":0,"permissionsHash":"9c2367dfcaba0fa15f0375f97aed64e146c908cee68508d13b79e3ee80e5162d"}}</script>
+<script src="../../../../sites/default/files/js/js_Rr-7TvYD7NposuRFJwUqThxM7yJmw8vs03PQwu5gWd8.js"></script>
+
+
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+      <g id="svg-copy" class="svg-icon svg-icon_copy">
+        <path d="M15.111,18H1.889A1.848,1.848,0,0,1,0,16.2V3.6A1.848,1.848,0,0,1,1.889,1.8H5.837a2.87,2.87,0,0,1,5.326,0h3.948A1.848,1.848,0,0,1,17,3.6V16.2A1.848,1.848,0,0,1,15.111,18ZM3.777,12.6v1.8h6.611V12.6Zm0-3.6v1.8h9.445V9Zm0-3.6V7.2h9.445V5.4ZM8.5,1.8a.924.924,0,0,0-.944.9.945.945,0,0,0,1.889,0A.924.924,0,0,0,8.5,1.8Z"/>
+      </g>
+
+      <g id="svg-prev" class="svg-icon svg-icon_arrow">
+        <path d="M5.488,12.779,0,6.39,5.488,0" transform="translate(1 0.652)"/>
+      </g>
+
+      <g id="svg-next" class="svg-icon svg-icon_arrow">
+        <path d="M0,12.779,5.488,6.39,0,0" transform="translate(0.759 0.652)"/>
+      </g>
+    </svg>
+  </body>
+
+<!-- Mirrored from academy.terrasoft.ua/docs/7-17/developer/ehlementy_interfejsa/dashbordy/obzor by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Mar 2022 05:04:51 GMT -->
+</html>

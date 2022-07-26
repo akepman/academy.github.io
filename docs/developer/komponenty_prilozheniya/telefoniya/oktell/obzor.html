@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# ">
+  
+<!-- Mirrored from academy.terrasoft.ua/docs/developer/komponenty_prilozheniya/telefoniya/oktell/obzor by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Mar 2022 00:45:26 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+          <!-- Google Tag Manager -->
+      <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          '../../../../../../www.googletagmanager.com/gtm5445.html?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-KLLB8G');</script>
+      <!-- End Google Tag Manager -->
+        <meta charset="utf-8" />
+<link rel="canonical" href="obzor.html" />
+<meta name="description" content="Интеграция Oktell с Creatio реализована на клиентском уровне с помощью библиотеки oktell.js. Исходный код библиотеки oktell.js находится в конфигурационной схеме OktellModule пакета CTIBase." />
+<meta property="og:url" content="https://academy.terrasoft.ua/docs/developer/komponenty_prilozheniya/telefoniya/oktell/obzor" />
+<meta property="og:title" content="Интеграция с Oktell" />
+<meta property="og:description" content="Интеграция Oktell с Creatio реализована на клиентском уровне с помощью библиотеки oktell.js. Исходный код библиотеки oktell.js находится в конфигурационной схеме OktellModule пакета CTIBase." />
+<meta name="Generator" content="Drupal 9 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="../../../../themes/custom/creatio/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="revision" href="obzor.html" />
+
+    <title>Интеграция с Oktell | Creatio Academy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&amp;family=Open+Sans:ital,wght@0,300;0,400;0,600;1,400&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" media="all" href="../../../../sites/default/files/css/css_6lTP66__-yc6QXFp1zOwoeJ0HVigoYZP-SeoLLii000.css" />
+<link rel="stylesheet" media="all" href="../../../../sites/default/files/css/css_XQJDNhkF3xH5SZCcY-PI89Zu4nYIzQ5oR3SnUKyfXJU.css" />
+<link rel="stylesheet" media="print" href="../../../../sites/default/files/css/css_Zn4VHvcniOOtUwkIVwXzYr_0AI9gUVgZcPqaH4ViagU.css" />
+
+    
+  </head>
+  <body class="path-node page-node-type-developer-documentation">
+          <!-- Google Tag Manager (noscript) -->
+      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KLLB8G"
+                        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+      <!-- End Google Tag Manager (noscript) -->
+    
+        
+      <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    <div class="creatio-page d-flex flex-column">
+        <div class="region region-informer">
+    <div id="block-terrasoftpidtrimueukrainu" class="block block-simple-block block-simple-blockterrasoft-pidtrimue-ukrainu">
+  
+    
+      <style type="text/css">
+<!--/*--><![CDATA[/* ><!--*/
+@import url(../../../../../../www.terrasoft.ua/themes/custom/creatio/css/components/informer.css)
+
+/*--><!]]>*/
+</style><div class="ts-swu">
+<div class="creatio-container">
+<div class="ts-swu__cont">
+<div><a class="ts-swu__link" href="https://www.terrasoft.ua/terrasoft-stands-with-ukraine" target="_blank">Україна понад усе!</a> <span><a href="https://www.terrasoft.ua/terrasoft-stands-with-ukraine" target="_blank">Приєднуйтеся</a> до допомоги!</span></div>
+</div>
+</div></div>
+
+  </div>
+
+  </div>
+
+  
+  <header role="banner">
+          <div class="creatio-region creatio-region_top">
+        <div class="creatio-container">
+            <div class="region region-top">
+    <div id="block-menutoggle" class="block block-simple-block block-simple-blockmenu-toggle">
+  
+    
+      <div class="menu-toggle"><span> </span></div>
+
+  </div>
+<div id="block-logowhite-2" class="block block-simple-block block-simple-blocklogo-white">
+  
+    
+      <p><a class="site-logo" href="../../../../../index.html" rel="home"><img src="../../../../themes/custom/creatio/logo-white.svg" /></a></p>
+
+  </div>
+<div id="block-search" class="block block-simple-block block-simple-blocksearch">
+  
+    
+      <div class="search">
+<form action="https://academy.terrasoft.ua/search" class="search-form" method="get"><input class="search-form__input" name="search" placeholder="Поиск" type="search" /><input class="search-form__button" type="submit" value="Поиск" /> </form>
+
+<div class="search-toggle"> </div>
+</div>
+
+  </div>
+<nav role="navigation" aria-labelledby="block-sitesua-menu" id="block-sitesua" class="block block-menu navigation menu--sites-ua">
+            
+  <h2 class="visually-hidden" id="block-sitesua-menu">Sites UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="https://www.terrasoft.ua/" rel="nofollow" target="_blank">Terrasoft</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://community.terrasoft.ua/" rel="nofollow" target="_blank">Community</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://marketplace.terrasoft.ua/" rel="nofollow" target="_blank">Marketplace</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+<div id="block-usermenu" class="block block-ts-user block-ts-user-menu-block">
+  
+    
+      <ul class="user-menu">
+      <li class="user-menu__item">
+      <a class="user-menu__link" href="https://profile.terrasoft.ua/user/login?destination=academy/ua/docs/developer/komponenty_prilozheniya/telefoniya/oktell/obzor">Войти</a>
+    </li>
+  </ul>
+
+  </div>
+<div id="block-usermenumobile" class="block block-ts-user block-ts-user-menu-mobile-block">
+  
+    
+      <ul class="user-menu-mobile">
+      <li class="user-menu-mobile__item">
+      <div class="user-menu-mobile__user user-menu-mobile__user_icon"></div>
+      <ul class="user-menu-mobile__submenu">
+        <li class="user-menu-mobile__subitem">
+          <a class="user-menu-mobile__sublink" href="https://profile.terrasoft.ua/user/login?destination=academy/ua/docs/developer/komponenty_prilozheniya/telefoniya/oktell/obzor">Войти</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  </div>
+
+  </div>
+
+        </div>
+      </div>
+              <div class="creatio-region creatio-region_header">
+        <div class="creatio-container">
+            <div class="region region-header">
+    <div id="block-logo" class="block block-simple-block block-simple-blocklogo">
+  
+    
+      <p><a class="site-logo" href="../../../../../index.html" rel="home"><img src="../../../../themes/custom/creatio/logo.svg" /></a></p>
+
+  </div>
+<nav role="navigation" aria-labelledby="block-osnovnayanavigaciyaua-menu" id="block-osnovnayanavigaciyaua" class="block block-menu navigation menu--main-ua">
+            
+  <h2 class="visually-hidden" id="block-osnovnayanavigaciyaua-menu">Основная навигация UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="../../../../index.html" data-drupal-link-system-path="&lt;front&gt;">Документация</a>
+              </li>
+                <li class="menu-item">
+        <a href="../../../../../trainings.html">Тренинги</a>
+              </li>
+                <li class="menu-item">
+        <a href="../../../../certification.html" data-drupal-link-system-path="node/3084">Сертификация и тестирование</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+<nav role="navigation" aria-labelledby="block-sitesua-2-menu" id="block-sitesua-2" class="block block-menu navigation menu--sites-ua">
+            
+  <h2 class="visually-hidden" id="block-sitesua-2-menu">Sites UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="https://www.terrasoft.ua/" rel="nofollow" target="_blank">Terrasoft</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://community.terrasoft.ua/" rel="nofollow" target="_blank">Community</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://marketplace.terrasoft.ua/" rel="nofollow" target="_blank">Marketplace</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+
+  </div>
+
+        </div>
+      </div>
+              <div class="creatio-region creatio-region_breadcrumb">
+        <div class="creatio-container">
+            <div class="region region-breadcrumb">
+    <div id="block-logowhite" class="block block-simple-block block-simple-blocklogo-white">
+  
+    
+      <p><a class="site-logo" href="../../../../../index.html" rel="home"><img src="../../../../themes/custom/creatio/logo-white.svg" /></a></p>
+
+  </div>
+<div id="block-breadcrumbnaviagtion" class="block block-ts-nav block-ts-nav-bread">
+  
+    
+      <nav class="breadcrumb"><ol class="ts-nav-breadcrumb__list"><li class="ts-nav-breadcrumb__item"><a href="../../../../index.html" class="ts-nav-breadcrumb__link" title="Документация">Документация</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../../index2132.html?vid_1=2" class="ts-nav-breadcrumb__link" title="Для разработчика">Для разработчика</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../komponenty_prilozheniya.html" class="ts-nav-breadcrumb__link" title="Компоненты приложения" hreflang="zxx">Компоненты приложения</a></li>
+<li class="ts-nav-breadcrumb__item ts-nav-breadcrumb__item_mobile"><a href="../../telefoniya.html" class="ts-nav-breadcrumb__link" title="Телефония" hreflang="zxx">Телефония</a></li>
+<li class="ts-nav-breadcrumb__item"><span class="ts-nav-breadcrumb__link ts-nav-breadcrumb__link_current" title="Обзор">Обзор</span></li>
+</ol>
+</nav>
+
+  </div>
+<div id="block-search-2" class="block block-simple-block block-simple-blocksearch">
+  
+    
+      <div class="search">
+<form action="https://academy.terrasoft.ua/search" class="search-form" method="get"><input class="search-form__input" name="search" placeholder="Поиск" type="search" /><input class="search-form__button" type="submit" value="Поиск" /> </form>
+
+<div class="search-toggle"> </div>
+</div>
+
+  </div>
+
+  </div>
+
+        </div>
+      </div>
+      </header>
+
+  <div class="creatio-region creatio-region_main">
+    <div class="creatio-container">
+                <div class="region region-breadcrumb-mobile">
+    <div id="block-breadcrumbnaviagtion-2" class="block block-ts-nav block-ts-nav-bread">
+  
+    
+      <nav class="breadcrumb"><ol class="ts-nav-breadcrumb__list"><li class="ts-nav-breadcrumb__item"><a href="../../../../index.html" class="ts-nav-breadcrumb__link" title="Документация">Документация</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../../index2132.html?vid_1=2" class="ts-nav-breadcrumb__link" title="Для разработчика">Для разработчика</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../komponenty_prilozheniya.html" class="ts-nav-breadcrumb__link" title="Компоненты приложения" hreflang="zxx">Компоненты приложения</a></li>
+<li class="ts-nav-breadcrumb__item ts-nav-breadcrumb__item_mobile"><a href="../../telefoniya.html" class="ts-nav-breadcrumb__link" title="Телефония" hreflang="zxx">Телефония</a></li>
+<li class="ts-nav-breadcrumb__item"><span class="ts-nav-breadcrumb__link ts-nav-breadcrumb__link_current" title="Обзор">Обзор</span></li>
+</ol>
+</nav>
+
+  </div>
+
+  </div>
+
+      
+      <main class="creatio-main" role="main">
+                                                    
+        <div class="creatio-content creatio-content_small">
+          <div class="creatio-content__inner creatio-content__inner_bg">
+                            <div class="region region-messages">
+    <div data-drupal-messages-fallback class="hidden"></div>
+
+  </div>
+
+            
+              <div class="region region-content">
+    <div id="block-creatio-page-title" class="block block-core block-page-title-block">
+  
+    
+      
+  <h1 class="page-title"><span class="field field--name-title field--type-string field--label-hidden">Интеграция с Oktell</span>
+</h1>
+
+
+  </div>
+<div id="block-creatio-content" class="block block-system block-system-main-block">
+  
+    
+      
+<article data-history-node-id="2359" role="article" about="/docs/developer/komponenty_prilozheniya/telefoniya/oktell/obzor" class="node node--type-developer-documentation node--view-mode-full">
+
+  
+    
+
+  
+  <div class="node__content">
+      <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocknodedeveloper-documentationfield-difficulty">
+  
+    
+      
+            <div class="field field--name-field-difficulty field--type-entity-reference field--label-hidden field__item"><div about="/docs/taxonomy/term/169" id="taxonomy-term-169" class="taxonomy-term vocabulary-difficulty">
+  
+  
+  <div class="content">
+      <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocktaxonomy-termdifficultyfield-icon">
+  
+    
+      
+            <div class="field field--name-field-icon field--type-image field--label-hidden field__item">  <img src="../../../../sites/default/files/difficulty/advanced.svg" alt="" loading="lazy" typeof="foaf:Image" />
+
+</div>
+      
+  </div>
+<div class="block block-layout-builder block-field-blocktaxonomy-termdifficultyname">
+  
+    
+      
+            <div class="field field--name-name field--type-string field--label-hidden field__item"><span style="color: #EF4524;">Сложный</span></div>
+      
+  </div>
+
+    </div>
+  </div>
+
+  </div>
+</div>
+</div>
+      
+  </div>
+<div class="block block-ts-doc block-ts-doc-downloads">
+  
+    
+      <a href="../../../../sites/default/files/pdf/node/2359/Integraciya_s_Oktell_.pdf" target="_blank">PDF</a>
+  </div>
+<div class="block block-ts-doc block-ts-doc-versions">
+  
+    
+        <div class="ts-doc-versions">
+    <select class="ts-doc-versions__select">
+                                                <option value="/docs/8-0/developer/komponenty_prilozheniya/telefoniya/oktell/obzor" selected>Версия 8.0</option>
+                              <option value="/docs/7-18/developer/komponenty_prilozheniya/telefoniya/oktell/obzor">Версия 7.18</option>
+                              <option value="/docs/7-17/developer/komponenty_prilozheniya/telefoniya/oktell/obzor">Версия 7.17</option>
+                              <option value="/docs/7-16/developer/komponenty_prilozheniya/telefoniya/oktell/obzor">Версия 7.16</option>
+          </select>
+  </div>
+
+  </div>
+
+    </div>
+  </div>
+  <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocknodedeveloper-documentationbody">
+  
+    
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><p>Интеграция Oktell с Creatio реализована на клиентском уровне с помощью библиотеки <span class="filled">oktell.js</span>. Исходный код библиотеки <span class="filled">oktell.js</span> находится в конфигурационной схеме <span class="filled">OktellModule</span> пакета <span class="filled">CTIBase</span>.</p>
+
+<p>Сервер Oktell взаимодействует с телефонами и с конечными клиентами (браузерами). При таком способе интеграции в Creatio не требуется наличие собственного WebSocket-сервера. Каждый клиент подключается по WebSocket-протоколу непосредственно к серверу Oktell. Сервер приложения Creatio занимается формированием страниц и предоставлением данных из базы данных приложения. Непосредственная взаимосвязь между серверами Creatio и Oktell отсутствует, доступ не требуется, клиенты самостоятельно обрабатывают и объединяют данные двух систем. По такому принципу реализованы Web-клиент Oktell и плагин <span class="filled">oktell.js</span>, доступный для встраивания в другие проекты.</p>
+
+<div class="media">
+<div class="media__element"><img alt="" border="0" src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/Telephony/scr_oktell_integration.png" /></div>
+</div>
+
+<h2>Oktell.js<a class="title-anchor" href="#title-2359-1" id="title-2359-1"> </a></h2>
+
+<p><strong><span class="filled">Oktell.js</span></strong> — javascript-библиотека для встраивания функциональности управления звонками в CRM-систему. <span class="filled">Oktell.js</span> использует протокол Oktell WebSocket для соединения с сервером Oktell. Преимущество этого протокола заключается в создании постоянного асинхронного соединения с сервером, которое позволяет без задержек получать события с сервера Oktell и выполнять определенные команды. Поскольку протокол Oktell WebSocket достаточно сложен для реализации, библиотека <span class="filled">Oktell.js</span> оборачивает внутри себя методы WebSocket-протокола, предоставляя простую функциональность для управления.</p>
+
+<h3>Передача голоса между абонентами<a class="title-anchor" href="#title-2359-2" id="title-2359-2"> </a></h3>
+
+<p>Голос при разговоре между операторами oktell Creatio передается по протоколу <a href="https://ru.wikipedia.org/w/index.php?title=%d0%9f%d1%80%d0%be%d1%82%d0%be%d0%ba%d0%be%d0%bb_%d1%83%d1%81%d1%82%d0%b0%d0%bd%d0%be%d0%b2%d0%bb%d0%b5%d0%bd%d0%b8%d1%8f_%d1%81%d0%b5%d0%b0%d0%bd%d1%81%d0%b0&amp;oldid=105400600" target="_blank">Session Initiation Protocol</a> (SIP). Для этого требуется использование либо <a href="https://ru.wikipedia.org/w/index.php?title=IP-%d1%82%d0%b5%d0%bb%d0%b5%d1%84%d0%be%d0%bd%d0%b8%d1%8f&amp;oldid=107344520" target="_blank">IP-телефона</a>, либо установленного на компьютер оператора <a href="https://ru.wikipedia.org/w/index.php?title=%d0%a1%d0%be%d1%84%d1%82%d1%84%d0%be%d0%bd&amp;oldid=104884787" target="_blank">софтфона</a>.</p>
+
+<h3>Взаимодействие компонентов<a class="title-anchor" href="#title-2359-3" id="title-2359-3"> </a></h3>
+
+<p>Взаимодействие с библиотекой <span class="filled">oktell.js</span> осуществляется с помощью класса <span class="filled">OktellCtiProvider</span>, который является связующим звеном между <span class="filled">CtiModel</span> и <span class="filled">OktellModule</span>, в котором находится код <span class="filled">oktell.js</span>. Класс <span class="filled"><a href="../../../../../jscoresdk/index.html#!/api/Terrasoft.integration.telephony.oktell.OktellCtiProvider" target="_blank">OktellCtiProvider</a></span> реализует интерфейс класса <span class="filled"><a href="../../../../../jscoresdk/index.html#!/api/Terrasoft.integration.telephony.BaseCtiProvider" target="_blank">BaseCtiProvider</a></span>.</p>
+
+<div class="media">
+<div class="media__element"><img alt="" border="0" src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/Telephony/scr_oktell_interaction.png" /></div>
+</div>
+
+<p>Примеры взаимодействия CtiModel, OktellCtiProvider и OktlellModule:</p>
+
+<div class="media">
+<div class="media__caption">Исходящий звонок оператора абоненту с установкой звонка на удержание абонентом, снятием с удержания абонентом и завершением звонка оператором</div>
+
+<div class="media__element"><img alt="scr_oktell_events_01.png" border="0" src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/Telephony/scr_oktell_events_01.png" /></div>
+</div>
+
+<div class="media">
+<div class="media__caption">Входящий звонок абонента 1 оператору с консультационным звонком абоненту 2, с последующим соединением оператором абонента 1 и абонента 2</div>
+
+<div class="media__element"><img alt="scr_oktell_events_02.png" border="0" src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/Telephony/scr_oktell_events_02.png" /></div>
+</div>
+
+<p>Список поддерживаемых событий класса библиотеки <span class="filled">oktell.js</span> перечислен в таблице.</p>
+
+<div class="table">
+<div class="table__caption">Список поддерживаемых событий класса библиотеки <span class="filled">oktell.js</span></div>
+
+<table><tbody><tr><th>Событие</th>
+			<th>Описание</th>
+		</tr><tr><td>connect</td>
+			<td>Событие успешного соединения с сервером</td>
+		</tr><tr><td>connectError</td>
+			<td>Событие ошибки соединения с сервером в методе connect. Коды ошибок такие же, как для callback-функции метода connect</td>
+		</tr><tr><td>disconnect</td>
+			<td>Событие закрытия соединения с сервером. В callback-функцию передается объект с описанием причины разрыва соединения</td>
+		</tr><tr><td>statusChange</td>
+			<td>Событие изменения состояния агента. В callback-функцию передается два строковых параметра — новое и прошлое состояние</td>
+		</tr><tr><td>ringStart</td>
+			<td>Событие начала входящего вызова</td>
+		</tr><tr><td>ringStop</td>
+			<td>Событие завершения входящего вызова</td>
+		</tr><tr><td>backRingStart</td>
+			<td>Событие начала обратного вызова</td>
+		</tr><tr><td>backRingStop</td>
+			<td>Событие завершения обратного вызова</td>
+		</tr><tr><td>callStart</td>
+			<td>Событие начала исходящего вызова</td>
+		</tr><tr><td>callStop</td>
+			<td>Событие смены UUID звонка</td>
+		</tr><tr><td>talkStart</td>
+			<td>Событие начала разговора</td>
+		</tr><tr><td>talkStop</td>
+			<td>Событие окончания разговора</td>
+		</tr><tr><td>holdAbonentLeave</td>
+			<td>Событие выхода абонента из удержания. В callback-функцию передается объект abonent с информацией по абоненту</td>
+		</tr><tr><td>holdAbonentEnter</td>
+			<td>Событие входа абонента в удержание. В callback-функцию передается объект abonent с информацией по абоненту</td>
+		</tr><tr><td>holdStateChange</td>
+			<td>Событие изменения состояния удержания. В callback-функцию передается информация по удержанию</td>
+		</tr><tr><td>stateChange</td>
+			<td>Событие изменения состояния линии</td>
+		</tr><tr><td>abonentsChange</td>
+			<td>Событие изменения списка текущих абонентов</td>
+		</tr><tr><td>flashstatechanged</td>
+			<td>Низкоуровневое событие изменения состояния удержания</td>
+		</tr><tr><td>userstatechanged</td>
+			<td>Низкоуровневое событие изменения состояния пользователя</td>
+		</tr></tbody></table></div>
+</div>
+      
+  </div>
+
+    </div>
+  </div>
+
+  </div>
+
+</article>
+
+  </div>
+
+  </div>
+
+          </div>
+        </div>
+
+                  <aside class="creatio-sidebar creatio-sidebar_first" role="complementary">
+              <div class="region region-sidebar-first">
+    <div id="block-documentationnaviagtion" class="block block-ts-nav block-ts-nav-doc-nav">
+  
+    
+      <div class="ts-nav-block"><a href="../../../../index.html" class="ts-nav-block__link">Документация</a><div class="ts-nav-block__title">Для разработчика</div>
+</div>
+<div class="ts-nav-container"><ul class="ts-nav-menu"><li class="ts-nav-menu__item">
+  <a href="../../../s_chego_nachat.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">С чего начать&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../architecture.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Архитектура&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../instrumenty_razrabotki.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Инструменты разработки&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../back_end_razrabotka.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Back-end разработка&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../front_end_razrabotka_freedom_ui.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Front-end разработка Freedom UI&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../front_end_razrabotka.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Front-end разработка&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../integratsiya_i_vneshnij_api.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Интеграция и внешний API&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../ehlementy_interfejsa.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Элементы интерфейса&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../komponenty_prilozheniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded ts-nav-menu__link_open" hreflang="zxx">Компоненты приложения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+      <ul class="ts-nav-menu__children">
+      <li class="ts-nav-menu__item">
+  <a href="../../otchety.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Отчеты&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../komponenty_marketing.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Компоненты Marketing&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../komponenty_sales.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Компоненты Sales&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../komponenty_service.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Компоненты Service&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../portal.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Портал&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../lendingi.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Лендинги&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../telefoniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded ts-nav-menu__link_open" hreflang="zxx">Телефония&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+      <ul class="ts-nav-menu__children">
+      <li class="ts-nav-menu__item">
+  <a href="../obshchie_principy_raboty_integracii_s_telefoniej/obzor.html" class="ts-nav-menu__link" hreflang="ru">Обзор</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="obzor.html" class="ts-nav-menu__link ts-nav-menu__link_open" hreflang="ru">Oktell</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../webitel/obzor.html" class="ts-nav-menu__link" hreflang="ru">Webitel</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../asterisk/obzor.html" class="ts-nav-menu__link" hreflang="ru">Asterisk</a>
+  </li>
+
+    </ul>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../mashinnoe_obuchenie.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Машинное обучение&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../elements_and_components/email_soobshcheniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Email-сообщения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../obogashchenie_kontaktov_iz_email/obzor.html" class="ts-nav-menu__link" hreflang="ru">Обогащение контактов из email</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../sinkhronizaciya_sync_engine.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Синхронизация Sync Engine&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../planirovshchik_zadanij/obzor.html" class="ts-nav-menu__link" hreflang="ru">Планировщик заданий</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../bandlirovanie_staticheskogo_kontenta.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Бандлирование статического контента&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+
+    </ul>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../razrabotka_mobilnogo_prilozheniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Разработка мобильного приложения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../razrabotka_marketplace_prilozheniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Разработка Marketplace-приложения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+</ul>
+</div>
+
+  </div>
+
+  </div>
+
+            <div class="creatio-sidebar__toggle"></div>
+          </aside>
+        
+                  <aside class="creatio-sidebar creatio-sidebar_second" role="complementary">
+              <div class="region region-sidebar-second">
+    <div id="block-example" class="block block-ts-nav block-ts-nav-page-nav">
+  
+    
+      <div class="ts-nav-page">
+  </div>
+
+  </div>
+<div id="block-adminfeedbackblock" class="block block-admin-feedback block-admin-feedback-block">
+  
+    
+      <div id="feedback-message"><div id="upper-feedback-content"><h2>Был ли данный материал полезен?</h2>
+<input class="feedback-btn feedback-btn__yes button js-form-submit form-submit" data-node-id="2359" data-feedback="yes" type="submit" name="op" value="Да" />
+<input class="feedback-btn feedback-btn__no button js-form-submit form-submit" data-node-id="2359" data-feedback="no" type="submit" name="op" value="Нет" />
+</div>
+<form class="admin-feedback-form" data-drupal-selector="admin-feedback-form" action="https://academy.terrasoft.ua/docs/developer/komponenty_prilozheniya/telefoniya/oktell/obzor" method="post" id="admin-feedback-form" accept-charset="UTF-8">
+  <div id="feedback-msg-result"></div><div class="js-form-item form-item js-form-type-textarea form-type-textarea js-form-item-feedback-message form-item-feedback-message form-no-label">
+        <div class="form-textarea-wrapper">
+  <textarea id="edit-feedback-msg" data-drupal-selector="edit-feedback-message" name="feedback_message" rows="5" cols="60" class="form-textarea resize-vertical"></textarea>
+</div>
+
+        </div>
+<input id="feedback-id" data-drupal-selector="edit-feedback-id" type="hidden" name="feedback_id" value="" />
+<input class="feedback-btn feedback-btn__send-comment button js-form-submit form-submit" data-drupal-selector="edit-feedback-send" type="submit" id="edit-feedback-send" name="op" value="Отправить" />
+<input autocomplete="off" data-drupal-selector="form-mb2-t1k2evbrcjtkkwtimlbdsfweonftayirmnpm1am" type="hidden" name="form_build_id" value="form-MB2_T1K2evbrCJTkkwtImLBDsfweoNftAyiRmnpM1AM" />
+<input data-drupal-selector="edit-admin-feedback-form" type="hidden" name="form_id" value="admin_feedback_form" />
+
+</form>
+</div>
+
+  </div>
+
+  </div>
+
+          </aside>
+              </main>
+    </div>
+  </div>
+
+  <footer role="contentinfo">
+    <div class="creatio-region creatio-region_footer">
+      <div class="creatio-container">
+          <div class="region region-footer">
+    <div id="block-footerua" class="block block-simple-block block-simple-blockfooter-ua">
+  
+    
+      <div class="footer">
+<div class="footer-left">
+<ul class="footer-socials"><li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_fb" href="https://www.facebook.com/terrasoft.ua" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_in" href="https://www.linkedin.com/company/terrasoft/" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_yt" href="https://www.youtube.com/c/TerrasoftUkraine" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_tg" href="https://t.me/Terrasoft_UA" target="_blank"> </a></li>
+</ul></div>
+
+<div class="footer-contact">
+<div class="footer-title">Будьте на связи!</div>
+
+<div class="footer-content">
+<div class="footer-items">
+<div class="footer-item"><a class="footer__link footer__link_phone" href="tel:+380443633133">+38 (044) 363-31-33</a></div>
+</div>
+
+<div class="footer-items">
+<div class="footer-item"><a class="footer__link footer__link_email" href="mailto:support@terrasoft.ua">support@terrasoft.ua</a></div>
+</div>
+</div>
+</div>
+</div>
+
+  </div>
+
+  </div>
+
+      </div>
+    </div>
+    <div class="creatio-region creatio-region_bottom">
+      <div class="creatio-container">
+          <div class="region region-bottom">
+    <div id="block-allrightsreservedua" class="block block-simple-block block-simple-blockfooter-bottom-ua">
+  
+    
+      <p>© 2002-2022 Terrasoft.  |  <a href="https://www.terrasoft.ua/privacy-policy" target="_blank">Конфиденциальность</a></p>
+
+  </div>
+
+  </div>
+
+      </div>
+    </div>
+  </footer>
+</div>
+<div class="creatio-bg"></div>
+
+
+  </div>
+
+    
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/docs\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/2359","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"ru"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"ajaxPageState":{"libraries":"admin_feedback\/admin_feedback_block,admin_feedback\/admin_feedback_css,classy\/base,classy\/messages,classy\/node,core\/drupal.ajax,core\/jquery.form,core\/normalize,creatio\/fancybox,creatio\/global,layout_discovery\/onecol,system\/base,ts_doc\/doc_version,ts_feedback\/ts_feedback,ts_nav\/breadcrumb,ts_nav\/doc_nav,ts_nav\/page_nav,ts_title_anchor\/ts_title_anchor","theme":"creatio","theme_token":null},"ajaxTrustedUrl":{"form_action_p_pvdeGsVG5zNF_XLGPTvYSKCf43t8qZYSwcfZl2uzM":true,"\/docs\/developer\/komponenty_prilozheniya\/telefoniya\/oktell\/obzor?ajax_form=1":true},"admin_feedback":{"yes_response":"\u0421\u043f\u0430\u0441\u0438\u0431\u043e \u0437\u0430 \u043e\u0431\u0440\u0430\u0442\u043d\u0443\u044e \u0441\u0432\u044f\u0437\u044c!","no_response":"\u0421\u043f\u0430\u0441\u0438\u0431\u043e \u0437\u0430 \u043e\u0431\u0440\u0430\u0442\u043d\u0443\u044e \u0441\u0432\u044f\u0437\u044c!","custom_text_response_on_no":{"value":"","format":"full_html"},"feedback_prompt_on_yes":true,"feedback_prompt_on_no":true,"feedback_enable_predefined_answers":false,"feedback_prompt":"\u041a\u0430\u043a \u043c\u043e\u0436\u043d\u043e \u0443\u043b\u0443\u0447\u0448\u0438\u0442\u044c \u044d\u0442\u0443 \u0441\u0442\u0430\u0442\u044c\u044e?"},"ajax":{"edit-feedback-send":{"callback":"::validateFeedbackMsg","event":"mousedown","keypress":true,"prevent":"click","url":"\/docs\/developer\/komponenty_prilozheniya\/telefoniya\/oktell\/obzor?ajax_form=1","dialogType":"ajax","submit":{"_triggering_element_name":"op","_triggering_element_value":"\u041e\u0442\u043f\u0440\u0430\u0432\u0438\u0442\u044c"}}},"user":{"uid":0,"permissionsHash":"9c2367dfcaba0fa15f0375f97aed64e146c908cee68508d13b79e3ee80e5162d"}}</script>
+<script src="../../../../sites/default/files/js/js_Rr-7TvYD7NposuRFJwUqThxM7yJmw8vs03PQwu5gWd8.js"></script>
+
+
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+      <g id="svg-copy" class="svg-icon svg-icon_copy">
+        <path d="M15.111,18H1.889A1.848,1.848,0,0,1,0,16.2V3.6A1.848,1.848,0,0,1,1.889,1.8H5.837a2.87,2.87,0,0,1,5.326,0h3.948A1.848,1.848,0,0,1,17,3.6V16.2A1.848,1.848,0,0,1,15.111,18ZM3.777,12.6v1.8h6.611V12.6Zm0-3.6v1.8h9.445V9Zm0-3.6V7.2h9.445V5.4ZM8.5,1.8a.924.924,0,0,0-.944.9.945.945,0,0,0,1.889,0A.924.924,0,0,0,8.5,1.8Z"/>
+      </g>
+
+      <g id="svg-prev" class="svg-icon svg-icon_arrow">
+        <path d="M5.488,12.779,0,6.39,5.488,0" transform="translate(1 0.652)"/>
+      </g>
+
+      <g id="svg-next" class="svg-icon svg-icon_arrow">
+        <path d="M0,12.779,5.488,6.39,0,0" transform="translate(0.759 0.652)"/>
+      </g>
+    </svg>
+  </body>
+
+<!-- Mirrored from academy.terrasoft.ua/docs/developer/komponenty_prilozheniya/telefoniya/oktell/obzor by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Mar 2022 00:45:31 GMT -->
+</html>

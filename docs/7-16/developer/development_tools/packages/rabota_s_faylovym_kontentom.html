@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# ">
+  
+<!-- Mirrored from academy.terrasoft.ua/docs/7-16/developer/development_tools/packages/rabota_s_faylovym_kontentom by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 22 Mar 2022 21:36:13 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+          <!-- Google Tag Manager -->
+      <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          '../../../../../../www.googletagmanager.com/gtm5445.html?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-KLLB8G');</script>
+      <!-- End Google Tag Manager -->
+        <meta charset="utf-8" />
+<link rel="canonical" href="rabota_s_faylovym_kontentom.html" />
+<meta name="description" content="Файловый контент пакетов — файлы (*.js, *.css, изображения и др.), добавленные в пользовательские пакеты приложения. Файловый контент является статическим и не обрабатывается веб-сервером, что позволяет повысить скорость работы приложения.
+
+Виды файлового контента:
+
+Клиентский контент, генерируемый в режиме реального времени.
+	Предварительно сгенерированный клиентский контент.
+Особенности использования клиентского контента, генерируемого в режиме реального времени:" />
+<meta property="og:url" content="https://academy.terrasoft.ua/docs/7-16/developer/development_tools/packages/rabota_s_faylovym_kontentom" />
+<meta property="og:title" content="Файловый контент пакетов" />
+<meta property="og:description" content="Файловый контент пакетов — файлы (*.js, *.css, изображения и др.), добавленные в пользовательские пакеты приложения. Файловый контент является статическим и не обрабатывается веб-сервером, что позволяет повысить скорость работы приложения.
+
+Виды файлового контента:
+
+Клиентский контент, генерируемый в режиме реального времени.
+	Предварительно сгенерированный клиентский контент.
+Особенности использования клиентского контента, генерируемого в режиме реального времени:" />
+<meta name="Generator" content="Drupal 9 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="../../../../themes/custom/creatio/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="revision" href="rabota_s_faylovym_kontentom.html" />
+
+    <title>Файловый контент пакетов | Creatio Academy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&amp;family=Open+Sans:ital,wght@0,300;0,400;0,600;1,400&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" media="all" href="../../../../sites/default/files/css/css_6lTP66__-yc6QXFp1zOwoeJ0HVigoYZP-SeoLLii000.css" />
+<link rel="stylesheet" media="all" href="../../../../sites/default/files/css/css_XQJDNhkF3xH5SZCcY-PI89Zu4nYIzQ5oR3SnUKyfXJU.css" />
+<link rel="stylesheet" media="print" href="../../../../sites/default/files/css/css_Zn4VHvcniOOtUwkIVwXzYr_0AI9gUVgZcPqaH4ViagU.css" />
+
+    
+  </head>
+  <body class="path-node page-node-type-developer-documentation">
+          <!-- Google Tag Manager (noscript) -->
+      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KLLB8G"
+                        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+      <!-- End Google Tag Manager (noscript) -->
+    
+        
+      <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    <div class="creatio-page d-flex flex-column">
+        <div class="region region-informer">
+    <div id="block-terrasoftpidtrimueukrainu" class="block block-simple-block block-simple-blockterrasoft-pidtrimue-ukrainu">
+  
+    
+      <style type="text/css">
+<!--/*--><![CDATA[/* ><!--*/
+@import url(../../../../../../www.terrasoft.ua/themes/custom/creatio/css/components/informer.css)
+
+/*--><!]]>*/
+</style><div class="ts-swu">
+<div class="creatio-container">
+<div class="ts-swu__cont">
+<div><a class="ts-swu__link" href="https://www.terrasoft.ua/terrasoft-stands-with-ukraine" target="_blank">Україна понад усе!</a> <span><a href="https://www.terrasoft.ua/terrasoft-stands-with-ukraine" target="_blank">Приєднуйтеся</a> до допомоги!</span></div>
+</div>
+</div></div>
+
+  </div>
+
+  </div>
+
+  
+  <header role="banner">
+          <div class="creatio-region creatio-region_top">
+        <div class="creatio-container">
+            <div class="region region-top">
+    <div id="block-menutoggle" class="block block-simple-block block-simple-blockmenu-toggle">
+  
+    
+      <div class="menu-toggle"><span> </span></div>
+
+  </div>
+<div id="block-logowhite-2" class="block block-simple-block block-simple-blocklogo-white">
+  
+    
+      <p><a class="site-logo" href="../../../../../index.html" rel="home"><img src="../../../../themes/custom/creatio/logo-white.svg" /></a></p>
+
+  </div>
+<div id="block-search" class="block block-simple-block block-simple-blocksearch">
+  
+    
+      <div class="search">
+<form action="https://academy.terrasoft.ua/search" class="search-form" method="get"><input class="search-form__input" name="search" placeholder="Поиск" type="search" /><input class="search-form__button" type="submit" value="Поиск" /> </form>
+
+<div class="search-toggle"> </div>
+</div>
+
+  </div>
+<nav role="navigation" aria-labelledby="block-sitesua-menu" id="block-sitesua" class="block block-menu navigation menu--sites-ua">
+            
+  <h2 class="visually-hidden" id="block-sitesua-menu">Sites UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="https://www.terrasoft.ua/" rel="nofollow" target="_blank">Terrasoft</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://community.terrasoft.ua/" rel="nofollow" target="_blank">Community</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://marketplace.terrasoft.ua/" rel="nofollow" target="_blank">Marketplace</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+<div id="block-usermenu" class="block block-ts-user block-ts-user-menu-block">
+  
+    
+      <ul class="user-menu">
+      <li class="user-menu__item">
+      <a class="user-menu__link" href="https://profile.terrasoft.ua/user/login?destination=academy/ua/docs/7-16/developer/development_tools/packages/rabota_s_faylovym_kontentom">Войти</a>
+    </li>
+  </ul>
+
+  </div>
+<div id="block-usermenumobile" class="block block-ts-user block-ts-user-menu-mobile-block">
+  
+    
+      <ul class="user-menu-mobile">
+      <li class="user-menu-mobile__item">
+      <div class="user-menu-mobile__user user-menu-mobile__user_icon"></div>
+      <ul class="user-menu-mobile__submenu">
+        <li class="user-menu-mobile__subitem">
+          <a class="user-menu-mobile__sublink" href="https://profile.terrasoft.ua/user/login?destination=academy/ua/docs/7-16/developer/development_tools/packages/rabota_s_faylovym_kontentom">Войти</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  </div>
+
+  </div>
+
+        </div>
+      </div>
+              <div class="creatio-region creatio-region_header">
+        <div class="creatio-container">
+            <div class="region region-header">
+    <div id="block-logo" class="block block-simple-block block-simple-blocklogo">
+  
+    
+      <p><a class="site-logo" href="../../../../../index.html" rel="home"><img src="../../../../themes/custom/creatio/logo.svg" /></a></p>
+
+  </div>
+<nav role="navigation" aria-labelledby="block-osnovnayanavigaciyaua-menu" id="block-osnovnayanavigaciyaua" class="block block-menu navigation menu--main-ua">
+            
+  <h2 class="visually-hidden" id="block-osnovnayanavigaciyaua-menu">Основная навигация UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="../../../../index.html" data-drupal-link-system-path="&lt;front&gt;">Документация</a>
+              </li>
+                <li class="menu-item">
+        <a href="../../../../../trainings.html">Тренинги</a>
+              </li>
+                <li class="menu-item">
+        <a href="../../../../certification.html" data-drupal-link-system-path="node/3084">Сертификация и тестирование</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+<nav role="navigation" aria-labelledby="block-sitesua-2-menu" id="block-sitesua-2" class="block block-menu navigation menu--sites-ua">
+            
+  <h2 class="visually-hidden" id="block-sitesua-2-menu">Sites UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="https://www.terrasoft.ua/" rel="nofollow" target="_blank">Terrasoft</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://community.terrasoft.ua/" rel="nofollow" target="_blank">Community</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://marketplace.terrasoft.ua/" rel="nofollow" target="_blank">Marketplace</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+
+  </div>
+
+        </div>
+      </div>
+              <div class="creatio-region creatio-region_breadcrumb">
+        <div class="creatio-container">
+            <div class="region region-breadcrumb">
+    <div id="block-logowhite" class="block block-simple-block block-simple-blocklogo-white">
+  
+    
+      <p><a class="site-logo" href="../../../../../index.html" rel="home"><img src="../../../../themes/custom/creatio/logo-white.svg" /></a></p>
+
+  </div>
+<div id="block-breadcrumbnaviagtion" class="block block-ts-nav block-ts-nav-bread">
+  
+    
+      <nav class="breadcrumb"><ol class="ts-nav-breadcrumb__list"><li class="ts-nav-breadcrumb__item"><a href="../../../../index.html" class="ts-nav-breadcrumb__link" title="Документация">Документация</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../../index2132.html?vid_1=2" class="ts-nav-breadcrumb__link" title="Для разработчика">Для разработчика</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../instrumenty_razrabotki.html" class="ts-nav-breadcrumb__link" title="Инструменты разработки" hreflang="zxx">Инструменты разработки</a></li>
+<li class="ts-nav-breadcrumb__item ts-nav-breadcrumb__item_mobile"><a href="../../instrumenty_razrabotki/pakety.html" class="ts-nav-breadcrumb__link" title="Пакеты" hreflang="ru">Пакеты</a></li>
+<li class="ts-nav-breadcrumb__item"><span class="ts-nav-breadcrumb__link ts-nav-breadcrumb__link_current" title="Файловый контент пакетов">Файловый контент пакетов</span></li>
+</ol>
+</nav>
+
+  </div>
+<div id="block-search-2" class="block block-simple-block block-simple-blocksearch">
+  
+    
+      <div class="search">
+<form action="https://academy.terrasoft.ua/search" class="search-form" method="get"><input class="search-form__input" name="search" placeholder="Поиск" type="search" /><input class="search-form__button" type="submit" value="Поиск" /> </form>
+
+<div class="search-toggle"> </div>
+</div>
+
+  </div>
+
+  </div>
+
+        </div>
+      </div>
+      </header>
+
+  <div class="creatio-region creatio-region_main">
+    <div class="creatio-container">
+                <div class="region region-breadcrumb-mobile">
+    <div id="block-breadcrumbnaviagtion-2" class="block block-ts-nav block-ts-nav-bread">
+  
+    
+      <nav class="breadcrumb"><ol class="ts-nav-breadcrumb__list"><li class="ts-nav-breadcrumb__item"><a href="../../../../index.html" class="ts-nav-breadcrumb__link" title="Документация">Документация</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../../index2132.html?vid_1=2" class="ts-nav-breadcrumb__link" title="Для разработчика">Для разработчика</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../instrumenty_razrabotki.html" class="ts-nav-breadcrumb__link" title="Инструменты разработки" hreflang="zxx">Инструменты разработки</a></li>
+<li class="ts-nav-breadcrumb__item ts-nav-breadcrumb__item_mobile"><a href="../../instrumenty_razrabotki/pakety.html" class="ts-nav-breadcrumb__link" title="Пакеты" hreflang="ru">Пакеты</a></li>
+<li class="ts-nav-breadcrumb__item"><span class="ts-nav-breadcrumb__link ts-nav-breadcrumb__link_current" title="Файловый контент пакетов">Файловый контент пакетов</span></li>
+</ol>
+</nav>
+
+  </div>
+
+  </div>
+
+      
+      <main class="creatio-main" role="main">
+                                                    
+        <div class="creatio-content creatio-content_small">
+          <div class="creatio-content__inner creatio-content__inner_bg">
+                            <div class="region region-messages">
+    <div data-drupal-messages-fallback class="hidden"></div>
+
+  </div>
+
+            
+              <div class="region region-content">
+    <div id="block-creatio-page-title" class="block block-core block-page-title-block">
+  
+    
+      
+  <h1 class="page-title"><span class="field field--name-title field--type-string field--label-hidden">Файловый контент пакетов</span>
+</h1>
+
+
+  </div>
+<div id="block-creatio-content" class="block block-system block-system-main-block">
+  
+    
+      
+<article data-history-node-id="2102" role="article" about="/docs/7-16/developer/development_tools/packages/rabota_s_faylovym_kontentom" class="node node--type-developer-documentation node--view-mode-full">
+
+  
+    
+
+  
+  <div class="node__content">
+      <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocknodedeveloper-documentationfield-difficulty">
+  
+    
+      
+            <div class="field field--name-field-difficulty field--type-entity-reference field--label-hidden field__item"><div about="/docs/7-16/taxonomy/term/169" id="taxonomy-term-169" class="taxonomy-term vocabulary-difficulty">
+  
+  
+  <div class="content">
+      <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocktaxonomy-termdifficultyfield-icon">
+  
+    
+      
+            <div class="field field--name-field-icon field--type-image field--label-hidden field__item">  <img src="../../../../sites/default/files/difficulty/advanced.svg" alt="" loading="lazy" typeof="foaf:Image" />
+
+</div>
+      
+  </div>
+<div class="block block-layout-builder block-field-blocktaxonomy-termdifficultyname">
+  
+    
+      
+            <div class="field field--name-name field--type-string field--label-hidden field__item"><span style="color: #EF4524;">Сложный</span></div>
+      
+  </div>
+
+    </div>
+  </div>
+
+  </div>
+</div>
+</div>
+      
+  </div>
+<div class="block block-ts-doc block-ts-doc-downloads">
+  
+    
+      <a href="../../../../sites/default/files/pdf/node/2102/Faylovyy_kontent_paketov_.pdf" target="_blank">PDF</a>
+  </div>
+<div class="block block-ts-doc block-ts-doc-versions">
+  
+    
+        <div class="ts-doc-versions">
+    <select class="ts-doc-versions__select">
+                              <option value="/docs/8-0/developer/instrumenty_razrabotki/pakety/fajlovyj_kontent/obzor">Версия 8.0</option>
+                              <option value="/docs/7-18/developer/instrumenty_razrabotki/pakety/fajlovyj_kontent/obzor">Версия 7.18</option>
+                              <option value="/docs/7-17/developer/instrumenty_razrabotki/pakety/fajlovyj_kontent/obzor">Версия 7.17</option>
+                                                <option value="/docs/7-16/developer/development_tools/packages/rabota_s_faylovym_kontentom" selected>Версия 7.16</option>
+          </select>
+  </div>
+
+  </div>
+
+    </div>
+  </div>
+  <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocknodedeveloper-documentationbody">
+  
+    
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><p><strong>Файловый контент пакетов</strong> — файлы (*.js, *.css, изображения и др.), добавленные в пользовательские пакеты приложения. Файловый контент является статическим и не обрабатывается веб-сервером, что позволяет повысить скорость работы приложения.</p>
+
+<p><strong>Виды</strong> файлового контента:</p>
+
+<ul><li>Клиентский контент, генерируемый в режиме реального времени.</li>
+	<li>Предварительно сгенерированный клиентский контент.</li>
+</ul><p><strong>Особенности использования</strong> клиентского контента, генерируемого в режиме реального времени:</p>
+
+<ul><li>Нет необходимости предварительно генерировать клиентский контент.</li>
+	<li>При вычислении иерархии пакетов, схем и формировании контента присутствует нагрузка на процессор (CPU).</li>
+	<li>При получении иерархии пакетов, схем и формировании контента присутствует нагрузка на базу данных.</li>
+	<li>Потребление памяти для кэширования клиентского контента.</li>
+</ul><p><strong>Особенности использования</strong> предварительно сгенерированного клиентского контента:</p>
+
+<ul><li>Присутствует минимальная нагрузка на процессор.</li>
+	<li>Необходимо предварительно генерировать клиентский контент.</li>
+	<li>Отсутствуют запросы в базу данных.</li>
+	<li>Клиентский контент кэшируется средствами IIS.</li>
+</ul><h2>Структура хранения файлового контента пакета<a class="title-anchor" href="#title-2102-2" id="title-2102-2"> </a></h2>
+
+<p>Файловый контент является частью пакета. Для повышения производительности приложения и снижения нагрузки на базу данных весь файловый контент можно предварительно сгенерировать в специальной папке приложения <span class="filled">...\Terrasoft.WebApp\Terrasoft.Configuration\Pkg\&lt;НазваниеПакета&gt;\Files</span>. При запросе сервер IIS ищет запрашиваемый контент в этой папке и сразу же отправляет его приложению. В пакет могут быть добавлены любые файлы, однако использоваться будут только файлы, необходимые для клиентской части Creatio.</p>
+
+<p>Рекомендуется использовать <strong>структуру</strong> папки <span class="filled">Files</span>, приведенную ниже.</p>
+
+<div class="code">
+<div class="code__widgets">
+<div class="code__top">
+<div class="code__title">Рекомендуемая структура папки <span class="filled">Files</span></div>
+</div>
+
+<div class="code__source">
+<pre class="prettyprint">
+-PackageName
+    ...
+    -Files
+        -src
+            -js
+                bootstrap.js
+                [другие *.js-файлы]
+            -css
+                [*.css-файлы]
+            -less
+                [*.less-файлы]
+            -img
+                [файлы изображений]
+            -res
+                [файлы ресурсов]
+        descriptor.json
+    ...
+descriptor.json
+</pre>
+</div>
+</div>
+</div>
+
+<p><span class="filled">js</span> — папка с *.js-файлами исходных кодов на языке JavaScript.</p>
+
+<p><span class="filled">css</span> — папка с *.css-файлами стилей.</p>
+
+<p><span class="filled">less</span> — папка с *.less-файлами стилей.</p>
+
+<p><span class="filled">img</span> — папка с изображениями.</p>
+
+<p><span class="filled">res</span> — папка с файлами ресурсов.</p>
+
+<p><span class="filled">descriptor.json</span> — дескриптор файлового контента, который хранит информацию о bootstrap-файлах пакета.</p>
+
+<p>Структура файла <span class="filled">descriptor.json</span> представлена ниже.</p>
+
+<div class="SimpleTabContainer" data-itemid="JSON" data-title="JSON" id="Syntax_JSON">
+<div class="code">
+<div class="code__widgets">
+<div class="code__source" data-tab="Структура файла descriptor.json">
+<pre class="prettyprint">
+{
+    "bootstraps": [
+        ... // Массив строк, содержащих относительные пути к bootstrap-файлам.
+    ]
+}
+</pre>
+</div>
+
+<div class="code__source" data-tab="Пример файла descriptor.json">
+<pre class="prettyprint">
+{
+    "bootstraps": [
+        "src/js/bootstrap.js",
+        "src/js/anotherBootstrap.js"
+    ]
+}
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<p>Чтобы добавить файловый контент в пакет, необходимо поместить файл в соответствующую вложенную папку папки <span class="filled">Files</span> необходимого пакета.</p>
+
+<h2>Bootstrap-файлы пакета<a class="title-anchor" href="#title-2102-4" id="title-2102-4"> </a></h2>
+
+<p><strong>Bootstrap-файлы</strong> пакета — это *.js-файлы, которые позволяют управлять загрузкой клиентской конфигурационной логики. Структура файла может варьироваться.</p>
+
+<div class="SimpleTabContainer" data-itemid="JSON" data-title="JSON" id="Syntax_JSON">
+<div class="code">
+<div class="code__widgets">
+<div class="code__source" data-tab="Структура файла bootstrap.js">
+<pre class="prettyprint">
+(function() {
+    require.config({
+        paths: {
+            "Название модуля": "Ссылка на файловый контент",
+            ...
+        }
+    });
+})();
+</pre>
+</div>
+
+<div class="code__source" data-tab="Пример файла bootstrap.js">
+<pre class="prettyprint">
+(function() {
+    require.config({
+        paths: {
+            "MyPackage1-ContactSectionV2": Terrasoft.getFileContentUrl("MyPackage1", "src/js/ContactSectionV2.js"),
+            "MyPackage1-Utilities": Terrasoft.getFileContentUrl("MyPackage1", "src/js/Utilities.js")
+        }
+    });
+})();
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<p>Bootstrap-файлы загружаются асинхронно после загрузки ядра, но до загрузки конфигурации. Для корректной загрузки bootstrap-файлов в папке статического контента генерируется вспомогательный файл <span class="filled">_FileContentBootstraps.js</span>, который содержит информацию о bootstrap-файлах всех пакетов.</p>
+
+<div class="code">
+<div class="code__widgets">
+<div class="code__top">
+<div class="code__title">Пример содержимого файла <span class="filled">_FileContentBootstraps.js</span></div>
+</div>
+
+<div class="code__source">
+<pre class="prettyprint">
+var Terrasoft = Terrasoft || {};
+Terrasoft.configuration = Terrasoft.configuration || {};
+Terrasoft.configuration.FileContentBootstraps = {
+    "MyPackage1": [
+        "src/js/bootstrap.js"
+    ]
+};
+</pre>
+</div>
+</div>
+</div>
+
+<h2>Версионность файлового контента<a class="title-anchor" href="#title-2102-6" id="title-2102-6"> </a></h2>
+
+<p>Для корректной работы версионности файлового контента в папке статического контента генерируется вспомогательный файл <span class="filled">_FileContentDescriptors.js</span>. Это файл, в котором в виде коллекции "ключ-значение" содержится информация о файлах в файловом контенте всех пакетов. Каждому ключу (названию файла) соответствует значение — уникальный хэш-код. Таким образом обеспечивается гарантированная загрузка в браузер актуальной версии файла.</p>
+
+<div class="code">
+<div class="code__widgets">
+<div class="code__top">
+<div class="code__title">Пример содержимого файла <span class="filled">_FileContentDescriptors.js</span></div>
+</div>
+
+<div class="code__source">
+<pre class="prettyprint">
+var Terrasoft = Terrasoft || {};
+Terrasoft.configuration = Terrasoft.configuration || {};
+Terrasoft.configuration.FileContentDescriptors = {
+    "MyPackage1/descriptor.json": {
+        "Hash": "5d4e779e7ff24396a132a0e39cca25cc"
+    },
+    "MyPackage1/Files/src/js/Utilities.js": {
+        "Hash": "6d5e776e7ff24596a135a0e39cc525gc"
+    }
+};
+</pre>
+</div>
+</div>
+</div>
+
+<h2>Генерация вспомогательных файлов<a class="title-anchor" href="#title-2102-7" id="title-2102-7"> </a></h2>
+
+<p>Для <strong>генерации вспомогательных файлов</strong> (<span class="filled">_FileContentBootstraps.js</span> и <span class="filled">FileContentDescriptors.js</span>) необходимо с помощью <a href="../../instrumenty_razrabotki/upravlenie_postavkami/workspaceconsole/obzor.html">утилиты WorkspaceConsole</a> выполнить операцию <span class="filled">BuildConfiguration</span>.</p>
+
+<div class="table">
+<div class="table__caption">Параметры операции <span class="filled">BuildConfiguration</span></div>
+
+<table><tbody><tr><th>Параметр</th>
+			<th>Описание</th>
+		</tr><tr><th><span class="filled">operation</span></th>
+			<td>Название операции. Необходимо установить значение <span class="filled">BuildConfiguration</span> — операция компиляции конфигурации.</td>
+		</tr><tr><th><span class="filled">useStaticFileContent</span></th>
+			<td>Признак использования статического контента. Необходимо установить значение <span class="filled">false</span>.</td>
+		</tr><tr><th><span class="filled">usePackageFileContent</span></th>
+			<td>Признак использования файлового контента пакетов. Необходимо установить значение <span class="filled">true</span>.</td>
+		</tr></tbody></table></div>
+
+<div class="code">
+<div class="code__widgets">
+<div class="code__top">
+<div class="code__title">Генерация вспомогательных файлов</div>
+</div>
+
+<div class="code__source">
+<pre class="prettyprint">
+Terrasoft.Tools.WorkspaceConsole.exe -operation=BuildConfiguration -workspaceName=Default -destinationPath=Terrasoft.WebApp\ -configurationPath=Terrasoft.WebApp\Terrasoft.Configuration\ -useStaticFileContent=false -usePackageFileContent=true -autoExit=true
+</pre>
+</div>
+</div>
+</div>
+
+<p>В результате выполнения операции в папке со статическим контентом <span class="filled">...\Terrasoft.WebApp\conf\content</span> будут сгенерированы вспомогательные файлы <span class="filled">_FileContentBootstraps.js</span> и <span class="filled">_FileContentDescriptors.js</span>.</p>
+
+<p>Описание параметров утилиты WorkspaceConsole содержится в статье <a href="../../instrumenty_razrabotki/upravlenie_postavkami/workspaceconsole/obzor.html#reference-2137">Параметры утилиты WorkspaceConsole</a>.</p>
+
+<h2>Предварительная генерация статического файлового контента<a class="title-anchor" href="#title-2102-8" id="title-2102-8"> </a></h2>
+
+<p>Файловый контент генерируется в специальную папку <span class="filled">.\Terrasoft.WebApp\conf</span>, которая содержит *.js-файлы с исходным кодом схем, *.css-файлы стилей и *.js-файлы ресурсов для всех культур приложения, а также изображения.</p>
+
+<div class="message message_warning">
+<p><span class="message__bold message__bold_warning">Важно.</span> Для генерации статического контента папки <span class="filled">.\Terrasoft.WebApp\conf</span> пользователю пула IIS, в котором запущено приложение, необходимо иметь права на модификацию. Права настраиваются на уровне сервера в секции Handler Mappings. Подробнее описано в статье <a href="../../../../user/razvertyvanie_onsite/windows_net_framework/nastroika_iis/nastroit_server_prilozheniya_na_iis.html#title-2519-2">Настроить сервер приложения на IIS</a>.</p>
+
+<p>Имя пользователя пула IIS устанавливается в свойстве <span class="key">Identity</span>. Доступ к этому свойству можно получить в менеджере IIS на вкладке <span class="key">Application Pools</span> через команду <span class="key">Advanced Settings</span>.</p>
+</div>
+
+<p><strong>Условия</strong> для выполнения первичной или повторной генерации статического файлового контента:</p>
+
+<ul><li>Сохранение схемы через дизайнеры клиентских схем и объектов.</li>
+	<li>Сохранение через мастера разделов и деталей.</li>
+	<li>Установка и удаление приложений из Marketplace и *.zip-архива.</li>
+	<li>Применение переводов.</li>
+	<li>Действия <span class="key">Компилировать</span> (<span class="key">Compile</span>) и <span class="key">Перекомпилировать все</span> (<span class="key">Compile all</span>) раздела <span class="key">Конфигурация</span> (<span class="key">Configuration</span>).
+	<p>Эти действия необходимо выполнять при <strong>удалении схем или пакетов</strong> из раздела <span class="key">Конфигурация</span> (<span class="key">Configuration</span>).</p>
+
+	<p>Действие <span class="key">Перекомпилировать все</span> (<span class="key">Compile all</span>) необходимо выполнять при <strong>установке или обновлении пакета</strong> из системы контроля версий <a href="../version_control_system/kontrol_versiy_v_subversion.html">SVN</a>.</p>
+	</li>
+</ul><div class="message">
+<p><span class="message__bold">На заметку.</span> Действие <span class="key">Перекомпилировать все</span> (<span class="key">Compile all</span>) выполняет полную перегенерацию файлового статического контента. Остальные действия в системе выполняют перегенерацию только измененных схем.</p>
+</div>
+
+<h2>Генерация файлового контента<a class="title-anchor" href="#title-2102-10" id="title-2102-10"> </a></h2>
+
+<p>Для <strong>генерации файлового контента</strong> необходимо с помощью <a href="../../instrumenty_razrabotki/upravlenie_postavkami/workspaceconsole/obzor.html">утилиты WorkspaceConsole</a> выполнить операцию <span class="filled">BuildConfiguration</span>.</p>
+
+<div class="table">
+<div class="table__caption">Параметры операции <span class="filled">BuildConfiguration</span></div>
+
+<table><tbody><tr><th>Параметр</th>
+			<th>Описание</th>
+		</tr><tr><th><span class="filled">workspaceName</span></th>
+			<td>Название рабочего пространства. По умолчанию — <span class="filled">Default</span>.</td>
+		</tr><tr><th><span class="filled">destinationPath</span></th>
+			<td>Папка, в которую будет сгенерирован статический контент.</td>
+		</tr><tr><th><span class="filled">webApplicationPath</span></th>
+			<td>
+			<p>Путь к веб-приложению, из которого будет вычитана информация по соединению с базой данных.</p>
+
+			<p>Необязательный параметр. Если значение не указано, то соединение будет установлено с базой данных, указанной в строке соединения в файле <span class="filled">Terrasoft.Tools.WorkspaceConsole.config</span>. Если значение указано, то соединение будет установлено с базой данных из файла <span class="filled">ConnectionStrings.config</span> веб-приложения.</p>
+			</td>
+		</tr><tr><th><span class="filled">force</span></th>
+			<td>
+			<p>Необязательный параметр. По умолчанию — <span class="filled">false</span> (выполняется генерация файлового контента для измененных схем).</p>
+
+			<p>Если установлено значение <span class="filled">true</span>, то выполняется генерация файлового контента по всем схемам.</p>
+			</td>
+		</tr></tbody></table></div>
+
+<div class="SimpleTabContainer" data-itemid="JSON" data-title="JSON" id="Syntax_JSON">
+<div class="code">
+<div class="code__widgets">
+<div class="code__source" data-tab="Генерация файлового контента (вариант 1)">
+<pre class="prettyprint">
+Terrasoft.Tools.WorkspaceConsole.exe -operation=BuildConfiguration -workspaceName=Default -destinationPath="C:\WebApplication\Creatio\Terrasoft.WebApp" -force=true -logPath=C:\wc\log
+</pre>
+</div>
+
+<div class="code__source" data-tab="Генерация файлового контента (вариант 2)">
+<pre class="prettyprint">
+Terrasoft.Tools.WorkspaceConsole.exe -operation=BuildConfiguration -workspaceName=Default -webApplicationPath="C:\WebApplication\Creatio" -destinationPath="C:\WebApplication\Creatio\Terrasoft.WebApp" -force=true -logPath=C:\wc\log
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<h3>Генерация клиентского контента при добавлении новой культуры<a class="title-anchor" href="#title-2102-13" id="title-2102-13"> </a></h3>
+
+<p>После <strong>добавления новых культур</strong> из интерфейса приложения необходимо в разделе <span class="key">Конфигурация</span> (<span class="key">Configuration</span>) выполнить действие <span class="key">Перекомпилировать все</span> (<span class="key">Compile all</span>).</p>
+
+<div class="message message_warning">
+<p><span class="message__bold message__bold_warning">Важно.</span> Если пользователь не может войти в систему после добавления новой культуры, то необходимо перейти в раздел <span class="key">Конфигурация</span> (<span class="key">Configuration</span>) по ссылке <span class="filled">http://[Путь к приложению]/0/dev</span>.</p>
+</div>
+
+<h3>Получение URL изображения<a class="title-anchor" href="#title-2102-14" id="title-2102-14"> </a></h3>
+
+<p>Изображения в клиентской части Creatio запрашиваются браузером по URL, который устанавливается в атрибуте <span class="filled">src</span> html-элемента <span class="filled">img</span>. Для формирования этого URL в Creatio используется модуль <span class="filled">Terrasoft.ImageUrlBuilder (imageurlbuilder.js)</span>, в котором реализован <span class="filled">getUrl(config)</span> — публичный метод для получения URL изображения. Этот метод принимает конфигурационный JavaScript-объект <span class="filled">config</span>, в свойстве <span class="filled">params</span> которого содержится объект параметров. На основе этого свойства формируется URL изображения для вставки на страницу.</p>
+
+<div class="code">
+<div class="code__widgets">
+<div class="code__top">
+<div class="code__title">Структура объекта <span class="filled">params</span></div>
+</div>
+
+<div class="code__source">
+<pre class="prettyprint">
+config: {
+    params: {
+        schemaName: "",
+        resourceItemName: "",
+        hash: "",
+        resourceItemExtension: ""
+    }
+}
+</pre>
+</div>
+</div>
+</div>
+
+<p><span class="filled">schemaName</span> — название схемы (строка).</p>
+
+<p><span class="filled">resourceItemName</span> — название изображения в Creatio (строка).</p>
+
+<p><span class="filled">hash</span> — хэш изображения (строка).</p>
+
+<p><span class="filled">resourceItemExtension</span> — расширение файла изображения (например, ".png").</p>
+
+<p>Пример формирования конфигурационного объекта параметров для получения URL статического изображения представлен ниже.</p>
+
+<div class="code">
+<div class="code__widgets">
+<div class="code__top">
+<div class="code__title">Пример формирования конфигурационного объекта параметров</div>
+</div>
+
+<div class="code__source">
+<pre class="prettyprint">
+var localizableImages = {
+    AddButtonImage: {
+        source: 3,
+        params: {
+            schemaName: "ActivityMiniPage",
+            resourceItemName: "AddButtonImage",
+            hash: "c15d635407f524f3bbe4f1810b82d315",
+            resourceItemExtension: ".png"
+        }
+    }
+}
+</pre>
+</div>
+</div>
+</div>
+
+<h2>Совместимость с режимом разработки в файловой системе<a class="title-anchor" href="#title-2102-12" id="title-2102-12"> </a></h2>
+
+<p>Режим разработки в файловой системе несовместим с получением клиентского контента из предварительно сгенерированных файлов. Для корректной работы с режимом разработки в файловой системе необходимо <strong>отключить получение статического клиентского контента</strong> из файловой системы. Для отключения данной функциональности необходимо в файле <span class="filled">Web.config</span> для флага <span class="filled">UseStaticFileContent</span> установить значение <span class="filled">false</span>.</p>
+
+<div class="code">
+<div class="code__widgets">
+<div class="code__top">
+<div class="code__title">Отключить получение статического клиентского контента из файловой системы</div>
+</div>
+
+<div class="code__source">
+<pre class="prettyprint">
+&lt;fileDesignMode enabled="true" /&gt;
+...
+&lt;add key="UseStaticFileContent" value="false" /&gt;
+</pre>
+</div>
+</div>
+</div>
+
+<h2>Перенос изменений между рабочими средами<a class="title-anchor" href="#title-2102-11" id="title-2102-11"> </a></h2>
+
+<p>Файловый контент является неотъемлемой частью пакета. Он фиксируется в хранилище системы контроля версий наравне с остальным содержимым пакета. В дальнейшем файловый контент может быть <strong>перенесен на другую рабочую среду</strong>:</p>
+
+<ul><li>Для переноса изменений на <a href="../../instrumenty_razrabotki/upravlenie_postavkami/rabochaya_sreda/obzor.html#title-3270-1">среду разработки</a> рекомендуется использовать систему контроля версий SVN.</li>
+	<li>Для переноса изменений на <a href="../../instrumenty_razrabotki/upravlenie_postavkami/rabochaya_sreda/obzor.html#title-3270-2">предпромышленную</a> и <a href="../../instrumenty_razrabotki/upravlenie_postavkami/rabochaya_sreda/obzor.html#title-3270-3">промышленную</a> среды рекомендуется использовать механизм <a href="../transferring_solutions/perenos_resheniy__v_creatio_ide.html#case-2942">экспорта и импорта</a> Creatio IDE.</li>
+</ul><div class="message message_warning">
+<p><span class="message__bold message__bold_warning">Важно.</span> При установке пакетов папка <span class="filled">Files</span> будет создана только в том случае, если она не пустая. Если эта папка не была создана, то для начала разработки ее необходимо создать вручную.</p>
+</div>
+</div>
+      
+  </div>
+
+    </div>
+  </div>
+
+  </div>
+
+</article>
+
+  </div>
+
+  </div>
+
+          </div>
+        </div>
+
+                  <aside class="creatio-sidebar creatio-sidebar_first" role="complementary">
+              <div class="region region-sidebar-first">
+    <div id="block-documentationnaviagtion" class="block block-ts-nav block-ts-nav-doc-nav">
+  
+    
+      <div class="ts-nav-block"><a href="../../../../index.html" class="ts-nav-block__link">Документация</a><div class="ts-nav-block__title">Для разработчика</div>
+</div>
+<div class="ts-nav-container"><ul class="ts-nav-menu"><li class="ts-nav-menu__item">
+  <a href="../../s_chego_nachat.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">С чего начать&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../architecture.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Архитектура&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../instrumenty_razrabotki.html" class="ts-nav-menu__link ts-nav-menu__link_expanded ts-nav-menu__link_open" hreflang="zxx">Инструменты разработки&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+      <ul class="ts-nav-menu__children">
+      <li class="ts-nav-menu__item">
+  <a href="../../instrumenty_razrabotki/creatio_ide.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Creatio IDE&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../instrumenty_razrabotki/vneshnie_ide.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Внешние IDE&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../instrumenty_razrabotki/pakety.html" class="ts-nav-menu__link ts-nav-menu__link_expanded ts-nav-menu__link_open" hreflang="ru">Пакеты&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+      <ul class="ts-nav-menu__children">
+      <li class="ts-nav-menu__item">
+  <a href="../../instrumenty_razrabotki/pakety/paket_proekt/obzor.html" class="ts-nav-menu__link" hreflang="ru">Пакет-проект</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="fajlovyj_kontent.html" class="ts-nav-menu__link" hreflang="ru">Файловый контент</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="rabota_s_faylovym_kontentom.html" class="ts-nav-menu__link ts-nav-menu__link_guide ts-nav-menu__link_active" hreflang="ru">Файловый контент пакетов</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../instrumenty_razrabotki/pakety/pakety.html" class="ts-nav-menu__link ts-nav-menu__link_guide" hreflang="ru">Пакеты</a>
+  </li>
+
+    </ul>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../instrumenty_razrabotki/sistemy_kontrolya_versij.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Системы контроля версий&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../testirovanie.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Тестирование&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../instrumenty_dlya_bazy_dannykh.html" class="ts-nav-menu__link" hreflang="ru">Инструменты для базы данных</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../instrumenty_razrabotki/logirovanie.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Логирование&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../instrumenty_razrabotki/otladka.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Отладка&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../instrumenty_razrabotki/upravlenie_postavkami.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Управление поставками&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+
+    </ul>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../back_end_razrabotka.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Back-end разработка&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../front_end_razrabotka.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Front-end разработка&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../integratsiya_i_vneshnij_api.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Интеграция и внешний API&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../ehlementy_interfejsa.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Элементы интерфейса&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../komponenty_prilozheniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Компоненты приложения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../razrabotka_mobilnogo_prilozheniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Разработка мобильного приложения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../razrabotka_marketplace_prilozheniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Разработка Marketplace-приложения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+</ul>
+</div>
+
+  </div>
+
+  </div>
+
+            <div class="creatio-sidebar__toggle"></div>
+          </aside>
+        
+                  <aside class="creatio-sidebar creatio-sidebar_second" role="complementary">
+              <div class="region region-sidebar-second">
+    <div id="block-example" class="block block-ts-nav block-ts-nav-page-nav">
+  
+    
+      <div class="ts-nav-page">
+  </div>
+
+  </div>
+<div id="block-adminfeedbackblock" class="block block-admin-feedback block-admin-feedback-block">
+  
+    
+      <div id="feedback-message"><div id="upper-feedback-content"><h2>Был ли данный материал полезен?</h2>
+<input class="feedback-btn feedback-btn__yes button js-form-submit form-submit" data-node-id="2102" data-feedback="yes" type="submit" name="op" value="Да" />
+<input class="feedback-btn feedback-btn__no button js-form-submit form-submit" data-node-id="2102" data-feedback="no" type="submit" name="op" value="Нет" />
+</div>
+<form class="admin-feedback-form" data-drupal-selector="admin-feedback-form" action="https://academy.terrasoft.ua/docs/7-16/developer/development_tools/packages/rabota_s_faylovym_kontentom" method="post" id="admin-feedback-form" accept-charset="UTF-8">
+  <div id="feedback-msg-result"></div><div class="js-form-item form-item js-form-type-textarea form-type-textarea js-form-item-feedback-message form-item-feedback-message form-no-label">
+        <div class="form-textarea-wrapper">
+  <textarea id="edit-feedback-msg" data-drupal-selector="edit-feedback-message" name="feedback_message" rows="5" cols="60" class="form-textarea resize-vertical"></textarea>
+</div>
+
+        </div>
+<input id="feedback-id" data-drupal-selector="edit-feedback-id" type="hidden" name="feedback_id" value="" />
+<input class="feedback-btn feedback-btn__send-comment button js-form-submit form-submit" data-drupal-selector="edit-feedback-send" type="submit" id="edit-feedback-send" name="op" value="Отправить" />
+<input autocomplete="off" data-drupal-selector="form-yytjkqdue6czjgk-vos-zpseo1ff2pz5anqd-va-k0" type="hidden" name="form_build_id" value="form-YytjKQduE6cZjgk--vOS-zPSeO1Ff2Pz5AnQD-vA_K0" />
+<input data-drupal-selector="edit-admin-feedback-form" type="hidden" name="form_id" value="admin_feedback_form" />
+
+</form>
+</div>
+
+  </div>
+
+  </div>
+
+          </aside>
+              </main>
+    </div>
+  </div>
+
+  <footer role="contentinfo">
+    <div class="creatio-region creatio-region_footer">
+      <div class="creatio-container">
+          <div class="region region-footer">
+    <div id="block-footerua" class="block block-simple-block block-simple-blockfooter-ua">
+  
+    
+      <div class="footer">
+<div class="footer-left">
+<ul class="footer-socials"><li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_fb" href="https://www.facebook.com/terrasoft.ua" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_in" href="https://www.linkedin.com/company/terrasoft/" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_yt" href="https://www.youtube.com/c/TerrasoftUkraine" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_tg" href="https://t.me/Terrasoft_UA" target="_blank"> </a></li>
+</ul></div>
+
+<div class="footer-contact">
+<div class="footer-title">Будьте на связи!</div>
+
+<div class="footer-content">
+<div class="footer-items">
+<div class="footer-item"><a class="footer__link footer__link_phone" href="tel:+380443633133">+38 (044) 363-31-33</a></div>
+</div>
+
+<div class="footer-items">
+<div class="footer-item"><a class="footer__link footer__link_email" href="mailto:support@terrasoft.ua">support@terrasoft.ua</a></div>
+</div>
+</div>
+</div>
+</div>
+
+  </div>
+
+  </div>
+
+      </div>
+    </div>
+    <div class="creatio-region creatio-region_bottom">
+      <div class="creatio-container">
+          <div class="region region-bottom">
+    <div id="block-allrightsreservedua" class="block block-simple-block block-simple-blockfooter-bottom-ua">
+  
+    
+      <p>© 2002-2022 Terrasoft.  |  <a href="https://www.terrasoft.ua/privacy-policy" target="_blank">Конфиденциальность</a></p>
+
+  </div>
+
+  </div>
+
+      </div>
+    </div>
+  </footer>
+</div>
+<div class="creatio-bg"></div>
+
+
+  </div>
+
+    
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/docs\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/2102","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"ru"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"ajaxPageState":{"libraries":"admin_feedback\/admin_feedback_block,admin_feedback\/admin_feedback_css,classy\/base,classy\/messages,classy\/node,core\/drupal.ajax,core\/jquery.form,core\/normalize,creatio\/fancybox,creatio\/global,layout_discovery\/onecol,system\/base,ts_doc\/doc_version,ts_feedback\/ts_feedback,ts_nav\/breadcrumb,ts_nav\/doc_nav,ts_nav\/page_nav,ts_title_anchor\/ts_title_anchor","theme":"creatio","theme_token":null},"ajaxTrustedUrl":{"form_action_p_pvdeGsVG5zNF_XLGPTvYSKCf43t8qZYSwcfZl2uzM":true,"\/docs\/7-16\/developer\/development_tools\/packages\/rabota_s_faylovym_kontentom?ajax_form=1":true},"admin_feedback":{"yes_response":"\u0421\u043f\u0430\u0441\u0438\u0431\u043e \u0437\u0430 \u043e\u0431\u0440\u0430\u0442\u043d\u0443\u044e \u0441\u0432\u044f\u0437\u044c!","no_response":"\u0421\u043f\u0430\u0441\u0438\u0431\u043e \u0437\u0430 \u043e\u0431\u0440\u0430\u0442\u043d\u0443\u044e \u0441\u0432\u044f\u0437\u044c!","custom_text_response_on_no":{"value":"","format":"full_html"},"feedback_prompt_on_yes":true,"feedback_prompt_on_no":true,"feedback_enable_predefined_answers":false,"feedback_prompt":"\u041a\u0430\u043a \u043c\u043e\u0436\u043d\u043e \u0443\u043b\u0443\u0447\u0448\u0438\u0442\u044c \u044d\u0442\u0443 \u0441\u0442\u0430\u0442\u044c\u044e?"},"ajax":{"edit-feedback-send":{"callback":"::validateFeedbackMsg","event":"mousedown","keypress":true,"prevent":"click","url":"\/docs\/7-16\/developer\/development_tools\/packages\/rabota_s_faylovym_kontentom?ajax_form=1","dialogType":"ajax","submit":{"_triggering_element_name":"op","_triggering_element_value":"\u041e\u0442\u043f\u0440\u0430\u0432\u0438\u0442\u044c"}}},"user":{"uid":0,"permissionsHash":"9c2367dfcaba0fa15f0375f97aed64e146c908cee68508d13b79e3ee80e5162d"}}</script>
+<script src="../../../../sites/default/files/js/js_Rr-7TvYD7NposuRFJwUqThxM7yJmw8vs03PQwu5gWd8.js"></script>
+
+
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+      <g id="svg-copy" class="svg-icon svg-icon_copy">
+        <path d="M15.111,18H1.889A1.848,1.848,0,0,1,0,16.2V3.6A1.848,1.848,0,0,1,1.889,1.8H5.837a2.87,2.87,0,0,1,5.326,0h3.948A1.848,1.848,0,0,1,17,3.6V16.2A1.848,1.848,0,0,1,15.111,18ZM3.777,12.6v1.8h6.611V12.6Zm0-3.6v1.8h9.445V9Zm0-3.6V7.2h9.445V5.4ZM8.5,1.8a.924.924,0,0,0-.944.9.945.945,0,0,0,1.889,0A.924.924,0,0,0,8.5,1.8Z"/>
+      </g>
+
+      <g id="svg-prev" class="svg-icon svg-icon_arrow">
+        <path d="M5.488,12.779,0,6.39,5.488,0" transform="translate(1 0.652)"/>
+      </g>
+
+      <g id="svg-next" class="svg-icon svg-icon_arrow">
+        <path d="M0,12.779,5.488,6.39,0,0" transform="translate(0.759 0.652)"/>
+      </g>
+    </svg>
+  </body>
+
+<!-- Mirrored from academy.terrasoft.ua/docs/7-16/developer/development_tools/packages/rabota_s_faylovym_kontentom by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 22 Mar 2022 21:36:18 GMT -->
+</html>

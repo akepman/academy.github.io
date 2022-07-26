@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# ">
+  
+<!-- Mirrored from academy.terrasoft.ua/docs/developer/instrumenty_razrabotki/otladka/front_end_otladka/obzor by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 22 Mar 2022 21:41:50 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+          <!-- Google Tag Manager -->
+      <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          '../../../../../../www.googletagmanager.com/gtm5445.html?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-KLLB8G');</script>
+      <!-- End Google Tag Manager -->
+        <meta charset="utf-8" />
+<link rel="canonical" href="obzor.html" />
+<meta name="description" content="Front-end отладка — отладка клиентской части приложения Creatio, которая представлена конфигурационными схемами (модулями), написанными на языке JavaScript.
+
+Интегрированные инструменты отладки 
+
+Отладка исходного кода конфигурационных схем выполняется непосредственно из браузера. Для этого используются интегрированные инструменты разработчика, которые предоставляют все браузеры, поддерживаемые Creatio." />
+<meta property="og:url" content="https://academy.terrasoft.ua/docs/developer/instrumenty_razrabotki/otladka/front_end_otladka/obzor" />
+<meta property="og:title" content="Front-end отладка" />
+<meta property="og:description" content="Front-end отладка — отладка клиентской части приложения Creatio, которая представлена конфигурационными схемами (модулями), написанными на языке JavaScript.
+
+Интегрированные инструменты отладки 
+
+Отладка исходного кода конфигурационных схем выполняется непосредственно из браузера. Для этого используются интегрированные инструменты разработчика, которые предоставляют все браузеры, поддерживаемые Creatio." />
+<meta name="Generator" content="Drupal 9 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="../../../../themes/custom/creatio/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="revision" href="obzor.html" />
+
+    <title>Front-end отладка | Creatio Academy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&amp;family=Open+Sans:ital,wght@0,300;0,400;0,600;1,400&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" media="all" href="../../../../sites/default/files/css/css_6lTP66__-yc6QXFp1zOwoeJ0HVigoYZP-SeoLLii000.css" />
+<link rel="stylesheet" media="all" href="../../../../sites/default/files/css/css_XQJDNhkF3xH5SZCcY-PI89Zu4nYIzQ5oR3SnUKyfXJU.css" />
+<link rel="stylesheet" media="print" href="../../../../sites/default/files/css/css_Zn4VHvcniOOtUwkIVwXzYr_0AI9gUVgZcPqaH4ViagU.css" />
+
+    
+  </head>
+  <body class="path-node page-node-type-developer-documentation">
+          <!-- Google Tag Manager (noscript) -->
+      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KLLB8G"
+                        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+      <!-- End Google Tag Manager (noscript) -->
+    
+        
+      <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    <div class="creatio-page d-flex flex-column">
+        <div class="region region-informer">
+    <div id="block-terrasoftpidtrimueukrainu" class="block block-simple-block block-simple-blockterrasoft-pidtrimue-ukrainu">
+  
+    
+      <style type="text/css">
+<!--/*--><![CDATA[/* ><!--*/
+@import url(../../../../../../www.terrasoft.ua/themes/custom/creatio/css/components/informer.css)
+
+/*--><!]]>*/
+</style><div class="ts-swu">
+<div class="creatio-container">
+<div class="ts-swu__cont">
+<div><a class="ts-swu__link" href="https://www.terrasoft.ua/terrasoft-stands-with-ukraine" target="_blank">Україна понад усе!</a> <span><a href="https://www.terrasoft.ua/terrasoft-stands-with-ukraine" target="_blank">Приєднуйтеся</a> до допомоги!</span></div>
+</div>
+</div></div>
+
+  </div>
+
+  </div>
+
+  
+  <header role="banner">
+          <div class="creatio-region creatio-region_top">
+        <div class="creatio-container">
+            <div class="region region-top">
+    <div id="block-menutoggle" class="block block-simple-block block-simple-blockmenu-toggle">
+  
+    
+      <div class="menu-toggle"><span> </span></div>
+
+  </div>
+<div id="block-logowhite-2" class="block block-simple-block block-simple-blocklogo-white">
+  
+    
+      <p><a class="site-logo" href="../../../../../index.html" rel="home"><img src="../../../../themes/custom/creatio/logo-white.svg" /></a></p>
+
+  </div>
+<div id="block-search" class="block block-simple-block block-simple-blocksearch">
+  
+    
+      <div class="search">
+<form action="https://academy.terrasoft.ua/search" class="search-form" method="get"><input class="search-form__input" name="search" placeholder="Поиск" type="search" /><input class="search-form__button" type="submit" value="Поиск" /> </form>
+
+<div class="search-toggle"> </div>
+</div>
+
+  </div>
+<nav role="navigation" aria-labelledby="block-sitesua-menu" id="block-sitesua" class="block block-menu navigation menu--sites-ua">
+            
+  <h2 class="visually-hidden" id="block-sitesua-menu">Sites UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="https://www.terrasoft.ua/" rel="nofollow" target="_blank">Terrasoft</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://community.terrasoft.ua/" rel="nofollow" target="_blank">Community</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://marketplace.terrasoft.ua/" rel="nofollow" target="_blank">Marketplace</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+<div id="block-usermenu" class="block block-ts-user block-ts-user-menu-block">
+  
+    
+      <ul class="user-menu">
+      <li class="user-menu__item">
+      <a class="user-menu__link" href="https://profile.terrasoft.ua/user/login?destination=academy/ua/docs/developer/instrumenty_razrabotki/otladka/front_end_otladka/obzor">Войти</a>
+    </li>
+  </ul>
+
+  </div>
+<div id="block-usermenumobile" class="block block-ts-user block-ts-user-menu-mobile-block">
+  
+    
+      <ul class="user-menu-mobile">
+      <li class="user-menu-mobile__item">
+      <div class="user-menu-mobile__user user-menu-mobile__user_icon"></div>
+      <ul class="user-menu-mobile__submenu">
+        <li class="user-menu-mobile__subitem">
+          <a class="user-menu-mobile__sublink" href="https://profile.terrasoft.ua/user/login?destination=academy/ua/docs/developer/instrumenty_razrabotki/otladka/front_end_otladka/obzor">Войти</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  </div>
+
+  </div>
+
+        </div>
+      </div>
+              <div class="creatio-region creatio-region_header">
+        <div class="creatio-container">
+            <div class="region region-header">
+    <div id="block-logo" class="block block-simple-block block-simple-blocklogo">
+  
+    
+      <p><a class="site-logo" href="../../../../../index.html" rel="home"><img src="../../../../themes/custom/creatio/logo.svg" /></a></p>
+
+  </div>
+<nav role="navigation" aria-labelledby="block-osnovnayanavigaciyaua-menu" id="block-osnovnayanavigaciyaua" class="block block-menu navigation menu--main-ua">
+            
+  <h2 class="visually-hidden" id="block-osnovnayanavigaciyaua-menu">Основная навигация UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="../../../../index.html" data-drupal-link-system-path="&lt;front&gt;">Документация</a>
+              </li>
+                <li class="menu-item">
+        <a href="../../../../../trainings.html">Тренинги</a>
+              </li>
+                <li class="menu-item">
+        <a href="../../../../certification.html" data-drupal-link-system-path="node/3084">Сертификация и тестирование</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+<nav role="navigation" aria-labelledby="block-sitesua-2-menu" id="block-sitesua-2" class="block block-menu navigation menu--sites-ua">
+            
+  <h2 class="visually-hidden" id="block-sitesua-2-menu">Sites UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="https://www.terrasoft.ua/" rel="nofollow" target="_blank">Terrasoft</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://community.terrasoft.ua/" rel="nofollow" target="_blank">Community</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://marketplace.terrasoft.ua/" rel="nofollow" target="_blank">Marketplace</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+
+  </div>
+
+        </div>
+      </div>
+              <div class="creatio-region creatio-region_breadcrumb">
+        <div class="creatio-container">
+            <div class="region region-breadcrumb">
+    <div id="block-logowhite" class="block block-simple-block block-simple-blocklogo-white">
+  
+    
+      <p><a class="site-logo" href="../../../../../index.html" rel="home"><img src="../../../../themes/custom/creatio/logo-white.svg" /></a></p>
+
+  </div>
+<div id="block-breadcrumbnaviagtion" class="block block-ts-nav block-ts-nav-bread">
+  
+    
+      <nav class="breadcrumb"><ol class="ts-nav-breadcrumb__list"><li class="ts-nav-breadcrumb__item"><a href="../../../../index.html" class="ts-nav-breadcrumb__link" title="Документация">Документация</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../../index2132.html?vid_1=2" class="ts-nav-breadcrumb__link" title="Для разработчика">Для разработчика</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../instrumenty_razrabotki.html" class="ts-nav-breadcrumb__link" title="Инструменты разработки" hreflang="zxx">Инструменты разработки</a></li>
+<li class="ts-nav-breadcrumb__item ts-nav-breadcrumb__item_mobile"><a href="../../otladka.html" class="ts-nav-breadcrumb__link" title="Отладка" hreflang="zxx">Отладка</a></li>
+<li class="ts-nav-breadcrumb__item"><span class="ts-nav-breadcrumb__link ts-nav-breadcrumb__link_current" title="Обзор">Обзор</span></li>
+</ol>
+</nav>
+
+  </div>
+<div id="block-search-2" class="block block-simple-block block-simple-blocksearch">
+  
+    
+      <div class="search">
+<form action="https://academy.terrasoft.ua/search" class="search-form" method="get"><input class="search-form__input" name="search" placeholder="Поиск" type="search" /><input class="search-form__button" type="submit" value="Поиск" /> </form>
+
+<div class="search-toggle"> </div>
+</div>
+
+  </div>
+
+  </div>
+
+        </div>
+      </div>
+      </header>
+
+  <div class="creatio-region creatio-region_main">
+    <div class="creatio-container">
+                <div class="region region-breadcrumb-mobile">
+    <div id="block-breadcrumbnaviagtion-2" class="block block-ts-nav block-ts-nav-bread">
+  
+    
+      <nav class="breadcrumb"><ol class="ts-nav-breadcrumb__list"><li class="ts-nav-breadcrumb__item"><a href="../../../../index.html" class="ts-nav-breadcrumb__link" title="Документация">Документация</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../../index2132.html?vid_1=2" class="ts-nav-breadcrumb__link" title="Для разработчика">Для разработчика</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../instrumenty_razrabotki.html" class="ts-nav-breadcrumb__link" title="Инструменты разработки" hreflang="zxx">Инструменты разработки</a></li>
+<li class="ts-nav-breadcrumb__item ts-nav-breadcrumb__item_mobile"><a href="../../otladka.html" class="ts-nav-breadcrumb__link" title="Отладка" hreflang="zxx">Отладка</a></li>
+<li class="ts-nav-breadcrumb__item"><span class="ts-nav-breadcrumb__link ts-nav-breadcrumb__link_current" title="Обзор">Обзор</span></li>
+</ol>
+</nav>
+
+  </div>
+
+  </div>
+
+      
+      <main class="creatio-main" role="main">
+                                                    
+        <div class="creatio-content creatio-content_small">
+          <div class="creatio-content__inner creatio-content__inner_bg">
+                            <div class="region region-messages">
+    <div data-drupal-messages-fallback class="hidden"></div>
+
+  </div>
+
+            
+              <div class="region region-content">
+    <div id="block-creatio-page-title" class="block block-core block-page-title-block">
+  
+    
+      
+  <h1 class="page-title"><span class="field field--name-title field--type-string field--label-hidden">Front-end отладка</span>
+</h1>
+
+
+  </div>
+<div id="block-creatio-content" class="block block-system block-system-main-block">
+  
+    
+      
+<article data-history-node-id="2127" role="article" about="/docs/developer/instrumenty_razrabotki/otladka/front_end_otladka/obzor" class="node node--type-developer-documentation node--view-mode-full">
+
+  
+    
+
+  
+  <div class="node__content">
+      <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocknodedeveloper-documentationfield-difficulty">
+  
+    
+      
+            <div class="field field--name-field-difficulty field--type-entity-reference field--label-hidden field__item"><div about="/docs/taxonomy/term/169" id="taxonomy-term-169" class="taxonomy-term vocabulary-difficulty">
+  
+  
+  <div class="content">
+      <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocktaxonomy-termdifficultyfield-icon">
+  
+    
+      
+            <div class="field field--name-field-icon field--type-image field--label-hidden field__item">  <img src="../../../../sites/default/files/difficulty/advanced.svg" alt="" loading="lazy" typeof="foaf:Image" />
+
+</div>
+      
+  </div>
+<div class="block block-layout-builder block-field-blocktaxonomy-termdifficultyname">
+  
+    
+      
+            <div class="field field--name-name field--type-string field--label-hidden field__item"><span style="color: #EF4524;">Сложный</span></div>
+      
+  </div>
+
+    </div>
+  </div>
+
+  </div>
+</div>
+</div>
+      
+  </div>
+<div class="block block-ts-doc block-ts-doc-downloads">
+  
+    
+      <a href="../../../../sites/default/files/pdf/node/2127/Front_end_otladka_.pdf" target="_blank">PDF</a>
+  </div>
+<div class="block block-ts-doc block-ts-doc-versions">
+  
+    
+        <div class="ts-doc-versions">
+    <select class="ts-doc-versions__select">
+                                                <option value="/docs/8-0/developer/instrumenty_razrabotki/otladka/front_end_otladka/obzor" selected>Версия 8.0</option>
+                              <option value="/docs/7-18/developer/instrumenty_razrabotki/otladka/front_end_otladka/obzor">Версия 7.18</option>
+                              <option value="/docs/7-17/developer/instrumenty_razrabotki/otladka/front_end_otladka/obzor">Версия 7.17</option>
+                              <option value="/docs/7-16/developer/instrumenty_razrabotki/otladka/front_end_otladka/obzor">Версия 7.16</option>
+          </select>
+  </div>
+
+  </div>
+
+    </div>
+  </div>
+  <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocknodedeveloper-documentationbody">
+  
+    
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><p><strong>Front-end отладка</strong> — отладка клиентской части приложения Creatio, которая представлена <a href="../../../front_end_razrabotka/moduli/vidy_modulej/obzor.html">конфигурационными схемами (модулями)</a>, написанными на языке JavaScript.</p>
+
+<h2>Интегрированные инструменты отладки<a class="title-anchor" href="#title-2127-1" id="title-2127-1"> </a></h2>
+
+<p>Отладка исходного кода конфигурационных схем выполняется непосредственно из браузера. Для этого используются интегрированные инструменты разработчика, которые предоставляют все браузеры, поддерживаемые Creatio.</p>
+
+<p>Чтобы <strong>запустить инструменты отладки</strong>, необходимо в браузере выполнить команду:</p>
+
+<ul><li>Chrome: <span class="filled">F12</span> или <span class="filled">Ctrl + Shift + I</span>.</li>
+	<li>Firefox: <span class="filled">F12</span>.</li>
+	<li>Internet Explorer: <span class="filled">F12</span>.</li>
+</ul><p>Все поддерживаемые браузеры предоставляют одинаковый набор инструментов отладки клиентского кода. Наиболее распространенные и часто используемые инструменты отладки описаны ниже. Более детально возможности отладки с помощью браузерных инструментов описаны в документации:</p>
+
+<ul><li><a href="https://developers.google.com/web/tools/chrome-devtools/">Инструменты разработчика Chrome</a></li>
+	<li><a href="https://developer.mozilla.org/en-US/docs/Tools/Tools_Toolbox">Инструменты разработчика Firefox</a></li>
+	<li><a href="https://msdn.microsoft.com/library/bg182326(v=vs.85)">Средства разработчика Internet Explorer</a></li>
+</ul><h2>Скрипты и точки останова<a class="title-anchor" href="#title-2127-2" id="title-2127-2"> </a></h2>
+
+<p>С помощью инструментов разработчика можно посмотреть полный список скриптов, подключенных к странице и загруженных на клиент. Открыв любой скрипт, можно установить <strong>точку останова (breakpoint)</strong> в том месте, где необходимо остановить выполнение программного кода. В остановленном коде можно просмотреть текущие значения переменных, выполнить команды и т. д.</p>
+
+<p>Чтобы <strong>установить точку останова</strong>:</p>
+
+<ol><li>Откройте необходимый файл скрипта (например, выполнив его поиск по имени комбинацией клавиш <span class="filled">Ctrl+O</span> или <span class="filled">Ctrl+P</span>).</li>
+	<li>Перейдите к строке кода, на которой необходимо установить точку останова (например, выполнив поиск по скрипту по имени метода).</li>
+	<li>
+	<p>Установите точку останова.</p>
+
+	<p>Способы <strong>добавления точки останова</strong>:</p>
+
+	<ul><li>Щелкните по номеру строки.</li>
+		<li>Нажмите клавишу <span class="filled">F9</span>.</li>
+		<li>Выберите в контекстном меню <span class="key">Добавить точку останова</span> .</li>
+	</ul></li>
+</ol><p>Кроме этого, можно использовать <strong>условную точку останова</strong> <strong>(conditional breakpoint)</strong>, для которой задается условие, при котором точка останова сработает.</p>
+
+<p>Остановку выполнения также можно инициировать непосредственно из кода командой <span class="filled">debugger</span>.</p>
+
+<div class="code">
+<div class="code__top">
+<div class="code__title">Пример инициирования остановки выполнения в исходном коде</div>
+</div>
+
+<div class="code__widgets">
+<div class="code__source">
+<pre class="prettyprint">
+function customFunc (args) {
+    ...
+    debugger; // &lt;-- Отладчик остановится здесь.
+    ...
+}</pre>
+</div>
+</div>
+</div>
+
+<h2>Управление выполнением отладки<a class="title-anchor" href="#title-2127-3" id="title-2127-3"> </a></h2>
+
+<p>После того как выполнение кода прерывается в точке останова, выполняется проверка значений переменных стека вызовов. Затем выполняется трассировка кода с целью поиска фрагментов, в которых поведение программы отклоняется от предполагаемого.</p>
+
+<p>Команды для<strong> пошаговой навигации</strong> по коду в отладчиках браузеров:</p>
+
+<ul><li>приостановить/продолжить выполнение скрипта (1);</li>
+	<li>выполнить шаг, не заходя в функцию (2);</li>
+	<li>выполнить шаг, заходя в функцию (3);</li>
+	<li>выполнять до выхода из текущей функции (4).</li>
+</ul><div class="media">
+<div class="media__caption">Навигационная панель в отладчике браузера Firefox</div>
+
+<div class="media__element"><img alt="" border="0" src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/ClientCodeDebug/src_ClientCodeDebug2_ru.png" /></div>
+</div>
+
+<div class="media">
+<div class="media__caption">Навигационная панель в отладчике браузера Internet Explorer</div>
+
+<div class="media__element"><img alt="" border="0" src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/ClientCodeDebug/src_ClientCodeDebug3_ru.png" /></div>
+</div>
+
+<p>Дополнительно браузер Chrome предоставляет еще две команды для управления выполнением:</p>
+
+<ul><li>отключить все точки останова (5);</li>
+	<li>включить/отключить автоматическую остановку при ошибке (6).</li>
+</ul><div class="media">
+<div class="media__caption">Навигационная панель в отладчике браузера Chrome</div>
+
+<div class="media__element"><img alt="" border="0" src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/ClientCodeDebug/src_ClientCodeDebug1_ru.png" /></div>
+</div>
+
+<p>Детальную информацию о возможностях и командах навигационной панели для конкретного браузера смотрите в соответствующей документации.</p>
+
+<h2>Использование консоли браузера<a class="title-anchor" href="#title-2127-4" id="title-2127-4"> </a></h2>
+
+<p>Консоль браузера позволяет:</p>
+
+<ul><li>выполнять команды JavaScript;</li>
+	<li>выводить отладочную информацию;</li>
+	<li>выводить трассировочную информацию;</li>
+	<li>выполнять замеры и профилирование кода.</li>
+</ul><p>Для этого используется объект <span class="filled">console</span>.</p>
+
+<h3>Вызов команд JavaScript<a class="title-anchor" href="#title-2127-5" id="title-2127-5"> </a></h3>
+
+<ol><li>Откройте консоль браузера, перейдя на вкладку <span class="key">Console</span>, либо откройте ее в дополнение к отладчику клавишей <span class="consolas">Esc</span>.</li>
+	<li>Вводите в консоли команды на языке JavaScript и запускайте их на выполнение нажатием <span class="consolas">Enter</span>.</li>
+</ol><h3>Вывод отладочной информации<a class="title-anchor" href="#title-2127-6" id="title-2127-6"> </a></h3>
+
+<p>В консоли можно выводить отладочную информацию различного характера:</p>
+
+<ul><li>информационные сообщения;</li>
+	<li>предупреждения;</li>
+	<li>сообщения об ошибках.</li>
+</ul><p>Для этого используются соответствующие методы объекта <span class="filled">console</span>.</p>
+
+<div class="table">
+<table><tbody><tr><th>Метод</th>
+			<th>Описание</th>
+			<th>Chrome</th>
+			<th>Firefox</th>
+			<th>Internet Explorer</th>
+		</tr><tr><th><span class="filled">console.log(object [, object, ...])</span></th>
+			<td>Выводит в консоль аргументы, разделяя их запятыми. Используется для вывода различных сообщений общего назначения.</td>
+			<td>+</td>
+			<td>+</td>
+			<td>+</td>
+		</tr><tr><th><span class="filled">console.info(object [, object, ...])</span></th>
+			<td>Аналогичен методу <span class="filled">log()</span>, но выводит сообщения в другом стиле, за счет чего позволяет акцентировать внимание на их важности.</td>
+			<td>+</td>
+			<td>+</td>
+			<td>+</td>
+		</tr><tr><th><span class="filled">console.warn(object [, object, ...])</span></th>
+			<td>Выводит в консоль сообщение предупреждающего характера.</td>
+			<td>+</td>
+			<td>+</td>
+			<td>+</td>
+		</tr><tr><th><span class="filled">console.error(object [, object, ...])</span></th>
+			<td>Выводит в консоль сообщение об ошибке.</td>
+			<td>+</td>
+			<td>+</td>
+			<td>+ (8+)</td>
+		</tr></tbody></table></div>
+
+<p>Для каждого типа выводимого сообщения в консоли применяется свой стиль.</p>
+
+<div class="media">
+<div class="media__element"><img alt="" border="0" src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/ClientCodeDebug/src_ClientCodeDebug4_ru.png" /></div>
+</div>
+
+<p>Приведенные методы <span class="filled">console</span> поддерживают форматирование выводимых сообщений. То есть, можно использовать в тексте выводимых сообщений специальные <strong>управляющие последовательности</strong> (шаблоны), которые при выводе будут заменяться на соответствующие им значения  — аргументы, дополнительно передаваемые в функцию, в порядке их очередности.</p>
+
+<p>Методы <span class="filled">console</span> поддерживают следующие <strong>шаблоны форматирования</strong>.</p>
+
+<div class="table">
+<table><tbody><tr><th>Шаблон</th>
+			<th>Тип данных</th>
+			<th>Пример использования</th>
+		</tr><tr><th><span class="filled">%s</span></th>
+			<td>Строка</td>
+			<td><span class="filled">console.log("%s — один из флагманских продуктов компании %s", "Creatio sales", "Terrasoft");</span></td>
+		</tr><tr><th><span class="filled">%d</span>, <span class="filled">%i</span></th>
+			<td>Число</td>
+			<td><span class="filled">console.log("Платформа %s впервые была выпущена в %d году", "Creatio", 2011);</span></td>
+		</tr><tr><th><span class="filled">%f</span></th>
+			<td>Число с плавающей точкой</td>
+			<td><span class="filled">console.log("Число Пи равно %f", Math.PI);</span></td>
+		</tr><tr><th><span class="filled">%o</span></th>
+			<td>DOM-элемент (не поддерживается IE)</td>
+			<td><span class="filled">console.log("DOM-представление элемента &lt;body/&gt;: %o", document.getElementsByTagName("body")[0]);</span></td>
+		</tr><tr><th><span class="filled">%O</span></th>
+			<td>Объект Java Script (не поддерживается IE, Firefox)</td>
+			<td><span class="filled">console.log("Объект: %O", {a:1, b:2});</span></td>
+		</tr><tr><th><span class="filled">%c</span></th>
+			<td>Стиль CSS (не поддерживается IE)</td>
+			<td><span class="filled">console.log("%cЗеленый текст, %cКрасный текст на синем фоне, %cБольшие буквы, %cОбычный текст", "color:green;", "color:red; background:blue;", "font-size:20px;", "font:normal; color:normal; background:normal");</span></td>
+		</tr></tbody></table></div>
+
+<h3>Трассировка и проверки<a class="title-anchor" href="#title-2127-7" id="title-2127-7"> </a></h3>
+
+<p>С помощью методов консоли браузера можно выполнять трассировку и проверку выражений.</p>
+
+<div class="table">
+<table><tbody><tr><th>Метод</th>
+			<th>Описание</th>
+			<th>Chrome</th>
+			<th>Firefox</th>
+			<th>Internet Explorer</th>
+		</tr><tr><th><span class="filled">console.trace()</span></th>
+			<td>Выводит стек вызовов из точки кода, откуда был вызван метод. Стек вызовов включает в себя имена файлов, номера строк, а также счетчик вызовов метода <span class="filled">trace()</span> из одной и той же точки.</td>
+			<td>+</td>
+			<td>+</td>
+			<td>+ (11+)</td>
+		</tr><tr><th><span class="filled">console.assert(expression[, object, ...])</span></th>
+			<td>Выполняет проверку выражения, переданного в качестве параметра <span class="filled">expression</span>. Если выражение ложно, то выводит в консоль ошибку вместе со стеком вызовов (<span class="filled">console.error()</span>), иначе — ничего не выводит.  Метод позволяет обеспечить соблюдение правил в коде и быть уверенным, что результаты выполнения кода соответствуют ожиданиям. С его помощью можно выполнять <strong>тестирование кода</strong> — если результат выполнения будет неудовлетворительным, будет отображено исключение.</td>
+			<td>+</td>
+			<td>+ (28+)</td>
+			<td>+</td>
+		</tr></tbody></table></div>
+
+<div class="code">
+<div class="code__top">
+<div class="code__title">Пример использования метода <span class="filled">console.assert()</span> для тестирования результатов</div>
+</div>
+
+<div class="code__widgets">
+<div class="code__source">
+<pre class="prettyprint">
+var a = 1, b = "1";
+console.assert(a === b, "A не равно B");</pre>
+</div>
+</div>
+</div>
+
+<h3>Профилирование и замеры<a class="title-anchor" href="#title-2127-8" id="title-2127-8"> </a></h3>
+
+<p>С помощью методов консоли браузера можно <strong>замерять время выполнения кода</strong>.</p>
+
+<div class="table">
+<table><tbody><tr><th>Метод</th>
+			<th>Описание</th>
+			<th>Chrome</th>
+			<th>Firefox</th>
+			<th>Internet Explorer</th>
+		</tr><tr><th><span class="filled">console.time(label)</span></th>
+			<td>Включает счетчик миллисекунд с меткой <span class="filled">label</span>.</td>
+			<td>+</td>
+			<td>+</td>
+			<td>+ (11+)</td>
+		</tr><tr><th><span class="filled">console.timeEnd(label)</span></th>
+			<td>Останавливает счетчик миллисекунд с меткой <span class="filled">label</span> и публикует результат в консоли.</td>
+			<td>+</td>
+			<td>+</td>
+			<td>+ (11+)</td>
+		</tr></tbody></table></div>
+
+<div class="code">
+<div class="code__top">
+<div class="code__title">Пример использования методов<span class="filled"> console.time()</span> и <span class="filled">console.timeEnd()</span></div>
+</div>
+
+<div class="code__widgets">
+<div class="code__source">
+<pre class="prettyprint">
+var myArray = new Array();
+// Включение счетчика с меткой Initialize myArray.
+console.time("Initialize myArray");
+myArray[0] = myArray[1] = 1;
+for (i = 2; i&lt;10; i++)
+{
+    myArray[i] = myArray[i-1] + myArray[i-2];
+}
+// Выключение счетчика с меткой Initialize myArray.
+console.timeEnd("Initialize myArray");</pre>
+</div>
+</div>
+</div>
+
+<p>С помощью методов консоли можно выполнить <strong>профилирование кода</strong> и вывести <strong>стек профилирования</strong>, содержащий подробную информацию о том, сколько времени и на какие операции было потрачено браузером.</p>
+
+<div class="table">
+<table><tbody><tr><th>Метод</th>
+			<th>Описание</th>
+			<th>Chrome</th>
+			<th>Firefox</th>
+			<th>Internet Explorer</th>
+		</tr><tr><th><span class="filled">console.profile(label)</span></th>
+			<td>Запускает профайлер Java Script, затем показывает результаты под меткой <span class="filled">label</span>.</td>
+			<td>+</td>
+			<td>+ (при открытой панели DevTools)</td>
+			<td>+ (10+)</td>
+		</tr><tr><th><span class="filled">console.profileEnd(label)</span></th>
+			<td>Останавливает профайлер Java Script.</td>
+			<td>+</td>
+			<td>+ (при открытой панели DevTools)</td>
+			<td>+ (10+)</td>
+		</tr></tbody></table></div>
+
+<p><strong>Результаты профилирования </strong>отображаются в браузерах:</p>
+
+<ul><li>Chrome —  на вкладке <span class="key">Profiles</span>;</li>
+	<li>Firefox — на вкладке <span class="key">Perfomance</span>;</li>
+	<li>Internet Explorer — на вкладке <span class="key">Profiler</span>.</li>
+</ul><h2>Режим клиентской отладки <span class="filled">isDebug</span><a class="title-anchor" href="#title-2127-9" id="title-2127-9"> </a></h2>
+
+<p>Режим клиентской отладки <span class="filled">isDebug</span> необходим для получения подробной информации об ошибках приложения Creatio и их отслеживании в коде.</p>
+
+<p>В обычном режиме работы в браузере выполняется <a href="https://ru.wikipedia.org/w/index.php?title=%D0%9C%D0%B8%D0%BD%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D1%8F_(%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5)&amp;oldid=110248156" target="_blank">минификация кода</a>. Это означает что сборка клиентских скриптов осуществляется в файл <span class="filled">all-combined.js</span>. Файл собирается в момент создания сборки и содержит всю функциональность. Включение режима <span class="filled">isDebug</span> отключает сборку и минификацию *.js-файлов и позволяет получить перечень клиентских скриптов в виде отдельных файлов.</p>
+
+<h3>Настройка режима отладки <span class="filled">isDebug</span><a class="title-anchor" href="#title-2127-19" id="title-2127-19"> </a></h3>
+
+<ol><li>
+	<p>Определите <strong>текущий статус</strong> режима клиентской отладки.</p>
+
+	<p>Откройте консоль браузера по клавише <span class="filled">F12</span> или с помощью комбинации клавиш <span class="filled">Ctrl+Shift+I</span>.</p>
+
+	<p>Кроме статуса режима клиентской отладки, в консоли будет отображен<strong> код для его активации или деактивации.</strong></p>
+
+	<div class="media">
+	<div class="media__element"><img alt="" border="0" src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/DebugMode/scr_debugmode_console.png" /></div>
+	</div>
+	</li>
+	<li>
+	<p><strong>Включите режим клиентской отладки</strong></p>
+
+	<p>Это можно сделать следующими <strong>способами</strong>:</p>
+
+	<ul><li>Выполнить в консоли браузера код:
+		<div class="code">
+		<div class="code__widgets">
+		<div class="code__source">
+		<pre class="prettyprint">
+Terrasoft.SysSettings.postPersonalSysSettingsValue("IsDebug", true)
+</pre>
+		</div>
+		</div>
+		</div>
+		</li>
+		<li>Изменить системную настройку <span class="key">Режим отладки</span> (код <span class="key">isDebug</span>).
+		<div class="media">
+		<div class="media__element"><img alt="" border="0" src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/DebugMode/DebugMode_on1.gif" /></div>
+		</div>
+		</li>
+	</ul></li>
+	<li>
+	<p>Чтобы применить изменения, обновите страницу или нажмите <span class="filled">F5</span>.</p>
+
+	<p>После включения режима клиентской отладки возле номера версии сайта отобразится <strong>индикатор </strong><span class="filled"><span class="consolas">Debug</span></span>.</p>
+
+	<div class="media">
+	<div class="media__element"><img alt="" border="0" src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/DebugMode/scr_debugmode_indicator.png" /></div>
+	</div>
+
+	<div class="message">
+	<p><span class="message__bold">На заметку.</span> Включение режима клиентской отладки влияет на производительность сайта, например, увеличивается время открытия страниц.</p>
+	</div>
+	</li>
+</ol><p>На рисунках ниже показаны примеры отображения в консоли информации об ошибке при выключенном и включенном режиме <span class="filled">isDebug</span>.</p>
+
+<div class="media">
+<div class="media__caption">Отображение информации об ошибке (<span class="filled">isDebug</span> выключен)</div>
+
+<div class="media__element"><img alt="" border="0" src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/DebugMode/scr_debugmode_off.png" /></div>
+</div>
+
+<div class="media">
+<div class="media__caption">Отображение информации об ошибке (<span class="filled">isDebug</span> включен)</div>
+
+<div class="media__element"><img alt="" border="0" src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/DebugMode/scr_debugmode_on.png" /></div>
+</div>
+</div>
+      
+  </div>
+<div class="block block-layout-builder block-field-blocknodedeveloper-documentationfield-resources">
+  
+    
+      
+  <div class="field field--name-field-resources field--type-link field--label-above">
+    <div class="field__label">Ресурсы</div>
+          <div class="field__items">
+              <div class="field__item"><a href="https://developers.google.com/web/tools/chrome-devtools/" target="_blank">Инструменты разработчика Chrome</a></div>
+          <div class="field__item"><a href="https://developer.mozilla.org/en-US/docs/Tools/Tools_Toolbox" target="_blank">Инструменты разработчика FireFox</a></div>
+          <div class="field__item"><a href="https://msdn.microsoft.com/library/bg182326(v=vs.85)" target="_blank">Средства разработчика Internet Explorer</a></div>
+              </div>
+      </div>
+
+  </div>
+
+    </div>
+  </div>
+
+  </div>
+
+</article>
+
+  </div>
+
+  </div>
+
+          </div>
+        </div>
+
+                  <aside class="creatio-sidebar creatio-sidebar_first" role="complementary">
+              <div class="region region-sidebar-first">
+    <div id="block-documentationnaviagtion" class="block block-ts-nav block-ts-nav-doc-nav">
+  
+    
+      <div class="ts-nav-block"><a href="../../../../index.html" class="ts-nav-block__link">Документация</a><div class="ts-nav-block__title">Для разработчика</div>
+</div>
+<div class="ts-nav-container"><ul class="ts-nav-menu"><li class="ts-nav-menu__item">
+  <a href="../../../s_chego_nachat.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">С чего начать&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../architecture.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Архитектура&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../instrumenty_razrabotki.html" class="ts-nav-menu__link ts-nav-menu__link_expanded ts-nav-menu__link_open" hreflang="zxx">Инструменты разработки&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+      <ul class="ts-nav-menu__children">
+      <li class="ts-nav-menu__item">
+  <a href="../../creatio_ide.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Creatio IDE&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../vneshnie_ide.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Внешние IDE&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../pakety.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Пакеты&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../sistemy_kontrolya_versij.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Системы контроля версий&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../development_tools/testirovanie.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Тестирование&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../development_tools/instrumenty_dlya_bazy_dannykh.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Инструменты для базы данных&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../logirovanie.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Логирование&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../otladka.html" class="ts-nav-menu__link ts-nav-menu__link_expanded ts-nav-menu__link_open" hreflang="zxx">Отладка&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+      <ul class="ts-nav-menu__children">
+      <li class="ts-nav-menu__item">
+  <a href="../../../development_tools/debugging/back_end_otladka.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Back-end отладка&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="obzor.html" class="ts-nav-menu__link ts-nav-menu__link_open" hreflang="ru">Front-end отладка</a>
+  </li>
+
+    </ul>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../upravlenie_postavkami.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Управление поставками&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+
+    </ul>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../back_end_razrabotka.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Back-end разработка&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../front_end_razrabotka_freedom_ui.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Front-end разработка Freedom UI&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../front_end_razrabotka.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Front-end разработка&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../integratsiya_i_vneshnij_api.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Интеграция и внешний API&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../ehlementy_interfejsa.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Элементы интерфейса&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../komponenty_prilozheniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Компоненты приложения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../razrabotka_mobilnogo_prilozheniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Разработка мобильного приложения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../razrabotka_marketplace_prilozheniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Разработка Marketplace-приложения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+</ul>
+</div>
+
+  </div>
+
+  </div>
+
+            <div class="creatio-sidebar__toggle"></div>
+          </aside>
+        
+                  <aside class="creatio-sidebar creatio-sidebar_second" role="complementary">
+              <div class="region region-sidebar-second">
+    <div id="block-example" class="block block-ts-nav block-ts-nav-page-nav">
+  
+    
+      <div class="ts-nav-page">
+  </div>
+
+  </div>
+<div id="block-adminfeedbackblock" class="block block-admin-feedback block-admin-feedback-block">
+  
+    
+      <div id="feedback-message"><div id="upper-feedback-content"><h2>Был ли данный материал полезен?</h2>
+<input class="feedback-btn feedback-btn__yes button js-form-submit form-submit" data-node-id="2127" data-feedback="yes" type="submit" name="op" value="Да" />
+<input class="feedback-btn feedback-btn__no button js-form-submit form-submit" data-node-id="2127" data-feedback="no" type="submit" name="op" value="Нет" />
+</div>
+<form class="admin-feedback-form" data-drupal-selector="admin-feedback-form" action="https://academy.terrasoft.ua/docs/developer/instrumenty_razrabotki/otladka/front_end_otladka/obzor" method="post" id="admin-feedback-form" accept-charset="UTF-8">
+  <div id="feedback-msg-result"></div><div class="js-form-item form-item js-form-type-textarea form-type-textarea js-form-item-feedback-message form-item-feedback-message form-no-label">
+        <div class="form-textarea-wrapper">
+  <textarea id="edit-feedback-msg" data-drupal-selector="edit-feedback-message" name="feedback_message" rows="5" cols="60" class="form-textarea resize-vertical"></textarea>
+</div>
+
+        </div>
+<input id="feedback-id" data-drupal-selector="edit-feedback-id" type="hidden" name="feedback_id" value="" />
+<input class="feedback-btn feedback-btn__send-comment button js-form-submit form-submit" data-drupal-selector="edit-feedback-send" type="submit" id="edit-feedback-send" name="op" value="Отправить" />
+<input autocomplete="off" data-drupal-selector="form-q6kyc-xngxa5pae7d0pn8jk8cfnrosheuzamohox4y8" type="hidden" name="form_build_id" value="form-q6kYc-xngXA5pAE7d0pn8JK8CFnroSHeuZAmOhox4y8" />
+<input data-drupal-selector="edit-admin-feedback-form" type="hidden" name="form_id" value="admin_feedback_form" />
+
+</form>
+</div>
+
+  </div>
+
+  </div>
+
+          </aside>
+              </main>
+    </div>
+  </div>
+
+  <footer role="contentinfo">
+    <div class="creatio-region creatio-region_footer">
+      <div class="creatio-container">
+          <div class="region region-footer">
+    <div id="block-footerua" class="block block-simple-block block-simple-blockfooter-ua">
+  
+    
+      <div class="footer">
+<div class="footer-left">
+<ul class="footer-socials"><li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_fb" href="https://www.facebook.com/terrasoft.ua" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_in" href="https://www.linkedin.com/company/terrasoft/" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_yt" href="https://www.youtube.com/c/TerrasoftUkraine" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_tg" href="https://t.me/Terrasoft_UA" target="_blank"> </a></li>
+</ul></div>
+
+<div class="footer-contact">
+<div class="footer-title">Будьте на связи!</div>
+
+<div class="footer-content">
+<div class="footer-items">
+<div class="footer-item"><a class="footer__link footer__link_phone" href="tel:+380443633133">+38 (044) 363-31-33</a></div>
+</div>
+
+<div class="footer-items">
+<div class="footer-item"><a class="footer__link footer__link_email" href="mailto:support@terrasoft.ua">support@terrasoft.ua</a></div>
+</div>
+</div>
+</div>
+</div>
+
+  </div>
+
+  </div>
+
+      </div>
+    </div>
+    <div class="creatio-region creatio-region_bottom">
+      <div class="creatio-container">
+          <div class="region region-bottom">
+    <div id="block-allrightsreservedua" class="block block-simple-block block-simple-blockfooter-bottom-ua">
+  
+    
+      <p>© 2002-2022 Terrasoft.  |  <a href="https://www.terrasoft.ua/privacy-policy" target="_blank">Конфиденциальность</a></p>
+
+  </div>
+
+  </div>
+
+      </div>
+    </div>
+  </footer>
+</div>
+<div class="creatio-bg"></div>
+
+
+  </div>
+
+    
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/docs\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/2127","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"ru"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"ajaxPageState":{"libraries":"admin_feedback\/admin_feedback_block,admin_feedback\/admin_feedback_css,classy\/base,classy\/messages,classy\/node,core\/drupal.ajax,core\/jquery.form,core\/normalize,creatio\/fancybox,creatio\/global,layout_discovery\/onecol,system\/base,ts_doc\/doc_version,ts_feedback\/ts_feedback,ts_nav\/breadcrumb,ts_nav\/doc_nav,ts_nav\/page_nav,ts_title_anchor\/ts_title_anchor","theme":"creatio","theme_token":null},"ajaxTrustedUrl":{"form_action_p_pvdeGsVG5zNF_XLGPTvYSKCf43t8qZYSwcfZl2uzM":true,"\/docs\/developer\/instrumenty_razrabotki\/otladka\/front_end_otladka\/obzor?ajax_form=1":true},"admin_feedback":{"yes_response":"\u0421\u043f\u0430\u0441\u0438\u0431\u043e \u0437\u0430 \u043e\u0431\u0440\u0430\u0442\u043d\u0443\u044e \u0441\u0432\u044f\u0437\u044c!","no_response":"\u0421\u043f\u0430\u0441\u0438\u0431\u043e \u0437\u0430 \u043e\u0431\u0440\u0430\u0442\u043d\u0443\u044e \u0441\u0432\u044f\u0437\u044c!","custom_text_response_on_no":{"value":"","format":"full_html"},"feedback_prompt_on_yes":true,"feedback_prompt_on_no":true,"feedback_enable_predefined_answers":false,"feedback_prompt":"\u041a\u0430\u043a \u043c\u043e\u0436\u043d\u043e \u0443\u043b\u0443\u0447\u0448\u0438\u0442\u044c \u044d\u0442\u0443 \u0441\u0442\u0430\u0442\u044c\u044e?"},"ajax":{"edit-feedback-send":{"callback":"::validateFeedbackMsg","event":"mousedown","keypress":true,"prevent":"click","url":"\/docs\/developer\/instrumenty_razrabotki\/otladka\/front_end_otladka\/obzor?ajax_form=1","dialogType":"ajax","submit":{"_triggering_element_name":"op","_triggering_element_value":"\u041e\u0442\u043f\u0440\u0430\u0432\u0438\u0442\u044c"}}},"user":{"uid":0,"permissionsHash":"9c2367dfcaba0fa15f0375f97aed64e146c908cee68508d13b79e3ee80e5162d"}}</script>
+<script src="../../../../sites/default/files/js/js_Rr-7TvYD7NposuRFJwUqThxM7yJmw8vs03PQwu5gWd8.js"></script>
+
+
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+      <g id="svg-copy" class="svg-icon svg-icon_copy">
+        <path d="M15.111,18H1.889A1.848,1.848,0,0,1,0,16.2V3.6A1.848,1.848,0,0,1,1.889,1.8H5.837a2.87,2.87,0,0,1,5.326,0h3.948A1.848,1.848,0,0,1,17,3.6V16.2A1.848,1.848,0,0,1,15.111,18ZM3.777,12.6v1.8h6.611V12.6Zm0-3.6v1.8h9.445V9Zm0-3.6V7.2h9.445V5.4ZM8.5,1.8a.924.924,0,0,0-.944.9.945.945,0,0,0,1.889,0A.924.924,0,0,0,8.5,1.8Z"/>
+      </g>
+
+      <g id="svg-prev" class="svg-icon svg-icon_arrow">
+        <path d="M5.488,12.779,0,6.39,5.488,0" transform="translate(1 0.652)"/>
+      </g>
+
+      <g id="svg-next" class="svg-icon svg-icon_arrow">
+        <path d="M0,12.779,5.488,6.39,0,0" transform="translate(0.759 0.652)"/>
+      </g>
+    </svg>
+  </body>
+
+<!-- Mirrored from academy.terrasoft.ua/docs/developer/instrumenty_razrabotki/otladka/front_end_otladka/obzor by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 22 Mar 2022 21:41:55 GMT -->
+</html>

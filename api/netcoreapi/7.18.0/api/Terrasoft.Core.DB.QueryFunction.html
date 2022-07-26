@@ -1,0 +1,907 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  
+<!-- Mirrored from academy.terrasoft.ua/api/netcoreapi/7.18.0/api/Terrasoft.Core.DB.QueryFunction.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Mar 2022 03:31:47 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class QueryFunction
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class QueryFunction
+   ">
+    <meta name="generator" content="docfx 2.58.0.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-default ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="https://academy.terrasoft.ru/docs/developer/back-end_development">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Terrasoft.Core.DB.QueryFunction">
+  
+  
+  <h1 id="Terrasoft_Core_DB_QueryFunction" data-uid="Terrasoft.Core.DB.QueryFunction" class="text-break">Class QueryFunction
+  </h1>
+  <div class="markdown level0 summary"><p>Базовый класс функции выражения.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">QueryFunction</span></div>
+      <div class="level2"><a class="xref" href="Terrasoft.Core.DB.AggregationQueryFunction.html">AggregationQueryFunction</a></div>
+      <div class="level2"><a class="xref" href="Terrasoft.Core.DB.CastQueryFunction.html">CastQueryFunction</a></div>
+      <div class="level2"><a class="xref" href="Terrasoft.Core.DB.CoalesceQueryFunction.html">CoalesceQueryFunction</a></div>
+      <div class="level2"><a class="xref" href="Terrasoft.Core.DB.ConcatQueryFunction.html">ConcatQueryFunction</a></div>
+      <div class="level2"><a class="xref" href="Terrasoft.Core.DB.CreateGuidQueryFunction.html">CreateGuidQueryFunction</a></div>
+      <div class="level2"><a class="xref" href="Terrasoft.Core.DB.CurrentDateTimeQueryFunction.html">CurrentDateTimeQueryFunction</a></div>
+      <div class="level2"><a class="xref" href="Terrasoft.Core.DB.CustomQueryFunction.html">CustomQueryFunction</a></div>
+      <div class="level2"><a class="xref" href="Terrasoft.Core.DB.DataLengthQueryFunction.html">DataLengthQueryFunction</a></div>
+      <div class="level2"><a class="xref" href="Terrasoft.Core.DB.DateAddQueryFunction.html">DateAddQueryFunction</a></div>
+      <div class="level2"><a class="xref" href="Terrasoft.Core.DB.DateDiffQueryFunction.html">DateDiffQueryFunction</a></div>
+      <div class="level2"><a class="xref" href="Terrasoft.Core.DB.DatePartQueryFunction.html">DatePartQueryFunction</a></div>
+      <div class="level2"><a class="xref" href="Terrasoft.Core.DB.IsNullQueryFunction.html">IsNullQueryFunction</a></div>
+      <div class="level2"><a class="xref" href="Terrasoft.Core.DB.LengthQueryFunction.html">LengthQueryFunction</a></div>
+      <div class="level2"><a class="xref" href="Terrasoft.Core.DB.RowNumberQueryFunction.html">RowNumberQueryFunction</a></div>
+      <div class="level2"><a class="xref" href="Terrasoft.Core.DB.SubstringQueryFunction.html">SubstringQueryFunction</a></div>
+      <div class="level2"><a class="xref" href="Terrasoft.Core.DB.TrimQueryFunction.html">TrimQueryFunction</a></div>
+      <div class="level2"><a class="xref" href="Terrasoft.Core.DB.UpperQueryFunction.html">UpperQueryFunction</a></div>
+      <div class="level2"><a class="xref" href="Terrasoft.Core.DB.WindowQueryFunction.html">WindowQueryFunction</a></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="Terrasoft.Core.DB.IQueryColumnExpressionConvertible.html">IQueryColumnExpressionConvertible</a></div>
+    <div><a class="xref" href="Terrasoft.Core.DB.IQueryColumnExpressionsCollector.html">IQueryColumnExpressionsCollector</a></div>
+    <div><span class="xref">System.ICloneable</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Terrasoft.Core.DB.html">Terrasoft.Core.DB</a></h6>
+  <h6><strong>Assembly</strong>: Terrasoft.Core.dll</h6>
+  <h5 id="Terrasoft_Core_DB_QueryFunction_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract class QueryFunction : IQueryColumnExpressionConvertible, IQueryColumnExpressionsCollector, ICloneable</code></pre>
+  </div>
+  <h3 id="methods">Methods
+  </h3>
+  
+  
+  <a id="Terrasoft_Core_DB_QueryFunction_Add_" data-uid="Terrasoft.Core.DB.QueryFunction.Add*"></a>
+  <h4 id="Terrasoft_Core_DB_QueryFunction_Add_Terrasoft_Core_DB_QueryFunction_Terrasoft_Core_DB_QueryFunction_" data-uid="Terrasoft.Core.DB.QueryFunction.Add(Terrasoft.Core.DB.QueryFunction,Terrasoft.Core.DB.QueryFunction)">Add(QueryFunction, QueryFunction)</h4>
+  <div class="markdown level1 summary"><p>Возвращает выражение арифметического сложения переданных функций выражения.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static QueryColumnExpression Add(QueryFunction leftOperand, QueryFunction rightOperand)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.QueryFunction.html">QueryFunction</a></td>
+        <td><span class="parametername">leftOperand</span></td>
+        <td><p>Функция выражения - левый операнд в операции сложения.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.QueryFunction.html">QueryFunction</a></td>
+        <td><span class="parametername">rightOperand</span></td>
+        <td><p>Функция выражения - правый операнд в операции сложения.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.QueryColumnExpression.html">QueryColumnExpression</a></td>
+        <td><p>Экземпляр <a class="xref" href="Terrasoft.Core.DB.QueryColumnExpression.html">QueryColumnExpression</a>, представляющий сумму операндов
+<code data-dev-comment-type="paramref" class="paramref">leftOperand</code> И <code data-dev-comment-type="paramref" class="paramref">rightOperand</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_DB_QueryFunction_AddQueryColumnExpressions_" data-uid="Terrasoft.Core.DB.QueryFunction.AddQueryColumnExpressions*"></a>
+  <h4 id="Terrasoft_Core_DB_QueryFunction_AddQueryColumnExpressions_Terrasoft_Core_DB_QueryColumnExpressionCollection_" data-uid="Terrasoft.Core.DB.QueryFunction.AddQueryColumnExpressions(Terrasoft.Core.DB.QueryColumnExpressionCollection)">AddQueryColumnExpressions(QueryColumnExpressionCollection)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected abstract void AddQueryColumnExpressions(QueryColumnExpressionCollection collection)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.QueryColumnExpressionCollection.html">QueryColumnExpressionCollection</a></td>
+        <td><span class="parametername">collection</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_DB_QueryFunction_AddUsingParameters_" data-uid="Terrasoft.Core.DB.QueryFunction.AddUsingParameters*"></a>
+  <h4 id="Terrasoft_Core_DB_QueryFunction_AddUsingParameters_Terrasoft_Core_DB_QueryParameterCollection_" data-uid="Terrasoft.Core.DB.QueryFunction.AddUsingParameters(Terrasoft.Core.DB.QueryParameterCollection)">AddUsingParameters(QueryParameterCollection)</h4>
+  <div class="markdown level1 summary"><p>Добавляет переданную коллекцию параметров в аргументы функции.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void AddUsingParameters(QueryParameterCollection resultParameters)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.QueryParameterCollection.html">QueryParameterCollection</a></td>
+        <td><span class="parametername">resultParameters</span></td>
+        <td><p>Коллекция параметров запроса, которые добавляются в аргументы функции.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_DB_QueryFunction_BuildSqlText_" data-uid="Terrasoft.Core.DB.QueryFunction.BuildSqlText*"></a>
+  <h4 id="Terrasoft_Core_DB_QueryFunction_BuildSqlText_System_Text_StringBuilder_Terrasoft_Core_DB_DBEngine_" data-uid="Terrasoft.Core.DB.QueryFunction.BuildSqlText(System.Text.StringBuilder,Terrasoft.Core.DB.DBEngine)">BuildSqlText(StringBuilder, DBEngine)</h4>
+  <div class="markdown level1 summary"><p>Формирует текст запроса с использованием переданных экземпляра <span class="xref">System.Text.StringBuilder</span> и
+построителя запросов <a class="xref" href="Terrasoft.Core.DB.DBEngine.html">DBEngine</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract void BuildSqlText(StringBuilder sb, DBEngine dbEngine)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Text.StringBuilder</span></td>
+        <td><span class="parametername">sb</span></td>
+        <td><p>Экземпляр <span class="xref">System.Text.StringBuilder</span>, с помощью которого формируется
+текст запроса.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.DBEngine.html">DBEngine</a></td>
+        <td><span class="parametername">dbEngine</span></td>
+        <td><p>Экземпляр построителя запросов к базе данных.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_DB_QueryFunction_Clone_" data-uid="Terrasoft.Core.DB.QueryFunction.Clone*"></a>
+  <h4 id="Terrasoft_Core_DB_QueryFunction_Clone" data-uid="Terrasoft.Core.DB.QueryFunction.Clone">Clone()</h4>
+  <div class="markdown level1 summary"><p>Создает копию текущего экземпляра <a class="xref" href="Terrasoft.Core.DB.QueryFunction.html">QueryFunction</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract object Clone()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><p>Новый экземпляр <a class="xref" href="Terrasoft.Core.DB.QueryFunction.html">QueryFunction</a>, представляющий копию текущего экземпляра.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_DB_QueryFunction_Divide_" data-uid="Terrasoft.Core.DB.QueryFunction.Divide*"></a>
+  <h4 id="Terrasoft_Core_DB_QueryFunction_Divide_Terrasoft_Core_DB_QueryFunction_Terrasoft_Core_DB_QueryFunction_" data-uid="Terrasoft.Core.DB.QueryFunction.Divide(Terrasoft.Core.DB.QueryFunction,Terrasoft.Core.DB.QueryFunction)">Divide(QueryFunction, QueryFunction)</h4>
+  <div class="markdown level1 summary"><p>Возвращает выражение деления переданной левой функции выражения на переданную правую функцию выражения.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static QueryColumnExpression Divide(QueryFunction leftOperand, QueryFunction rightOperand)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.QueryFunction.html">QueryFunction</a></td>
+        <td><span class="parametername">leftOperand</span></td>
+        <td><p>Функция выражения - левый операнд в операции деления.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.QueryFunction.html">QueryFunction</a></td>
+        <td><span class="parametername">rightOperand</span></td>
+        <td><p>Функция выражения - правый операнд в операции деления.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.QueryColumnExpression.html">QueryColumnExpression</a></td>
+        <td><p>Экземпляр <a class="xref" href="Terrasoft.Core.DB.QueryColumnExpression.html">QueryColumnExpression</a>, представляющий частное от деления операнда
+<code data-dev-comment-type="paramref" class="paramref">leftOperand</code> на операнд <code data-dev-comment-type="paramref" class="paramref">rightOperand</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_DB_QueryFunction_GetQueryColumnExpression_" data-uid="Terrasoft.Core.DB.QueryFunction.GetQueryColumnExpression*"></a>
+  <h4 id="Terrasoft_Core_DB_QueryFunction_GetQueryColumnExpression" data-uid="Terrasoft.Core.DB.QueryFunction.GetQueryColumnExpression">GetQueryColumnExpression()</h4>
+  <div class="markdown level1 summary"><p>Возвращает выражение колонки запроса для текущей функции запроса.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public QueryColumnExpression GetQueryColumnExpression()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.QueryColumnExpression.html">QueryColumnExpression</a></td>
+        <td><p>Экземпляр <a class="xref" href="Terrasoft.Core.DB.QueryColumnExpression.html">QueryColumnExpression</a> для текущей функции запроса.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_DB_QueryFunction_GetQueryColumnExpressions_" data-uid="Terrasoft.Core.DB.QueryFunction.GetQueryColumnExpressions*"></a>
+  <h4 id="Terrasoft_Core_DB_QueryFunction_GetQueryColumnExpressions" data-uid="Terrasoft.Core.DB.QueryFunction.GetQueryColumnExpressions">GetQueryColumnExpressions()</h4>
+  <div class="markdown level1 summary"><p>Возвращает коллекцию выражений колонки запроса для текущей функции запроса.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public QueryColumnExpressionCollection GetQueryColumnExpressions()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.QueryColumnExpressionCollection.html">QueryColumnExpressionCollection</a></td>
+        <td><p>Коллекция <a class="xref" href="Terrasoft.Core.DB.QueryColumnExpression.html">QueryColumnExpression</a> для текущей функции запроса.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_DB_QueryFunction_Multiply_" data-uid="Terrasoft.Core.DB.QueryFunction.Multiply*"></a>
+  <h4 id="Terrasoft_Core_DB_QueryFunction_Multiply_Terrasoft_Core_DB_QueryFunction_Terrasoft_Core_DB_QueryFunction_" data-uid="Terrasoft.Core.DB.QueryFunction.Multiply(Terrasoft.Core.DB.QueryFunction,Terrasoft.Core.DB.QueryFunction)">Multiply(QueryFunction, QueryFunction)</h4>
+  <div class="markdown level1 summary"><p>Возвращает выражение умножения переданных функций выражений.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static QueryColumnExpression Multiply(QueryFunction leftOperand, QueryFunction rightOperand)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.QueryFunction.html">QueryFunction</a></td>
+        <td><span class="parametername">leftOperand</span></td>
+        <td><p>Функция выражения - левый операнд в операции умножения.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.QueryFunction.html">QueryFunction</a></td>
+        <td><span class="parametername">rightOperand</span></td>
+        <td><p>Функция выражения - правый операнд в операции умножения.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.QueryColumnExpression.html">QueryColumnExpression</a></td>
+        <td><p>Экземпляр <a class="xref" href="Terrasoft.Core.DB.QueryColumnExpression.html">QueryColumnExpression</a>, являющийся произведением операндов
+<code data-dev-comment-type="paramref" class="paramref">leftOperand</code> и <code data-dev-comment-type="paramref" class="paramref">rightOperand</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_DB_QueryFunction_Negate_" data-uid="Terrasoft.Core.DB.QueryFunction.Negate*"></a>
+  <h4 id="Terrasoft_Core_DB_QueryFunction_Negate_Terrasoft_Core_DB_QueryFunction_" data-uid="Terrasoft.Core.DB.QueryFunction.Negate(Terrasoft.Core.DB.QueryFunction)">Negate(QueryFunction)</h4>
+  <div class="markdown level1 summary"><p>Возвращает выражение отрицания значения переданной функции.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static QueryColumnExpression Negate(QueryFunction operand)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.QueryFunction.html">QueryFunction</a></td>
+        <td><span class="parametername">operand</span></td>
+        <td><p>Функция выражения.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.QueryColumnExpression.html">QueryColumnExpression</a></td>
+        <td><p>Выражение колонки, представляющее отрицание функции выражения <code data-dev-comment-type="paramref" class="paramref">operand</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_DB_QueryFunction_Subtract_" data-uid="Terrasoft.Core.DB.QueryFunction.Subtract*"></a>
+  <h4 id="Terrasoft_Core_DB_QueryFunction_Subtract_Terrasoft_Core_DB_QueryFunction_Terrasoft_Core_DB_QueryFunction_" data-uid="Terrasoft.Core.DB.QueryFunction.Subtract(Terrasoft.Core.DB.QueryFunction,Terrasoft.Core.DB.QueryFunction)">Subtract(QueryFunction, QueryFunction)</h4>
+  <div class="markdown level1 summary"><p>Возвращает выражение вычитания переданной правой функции выражения из переданной левой функции выражения.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static QueryColumnExpression Subtract(QueryFunction leftOperand, QueryFunction rightOperand)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.QueryFunction.html">QueryFunction</a></td>
+        <td><span class="parametername">leftOperand</span></td>
+        <td><p>Функция выражения - левый операнд в операции вычитания.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.QueryFunction.html">QueryFunction</a></td>
+        <td><span class="parametername">rightOperand</span></td>
+        <td><p>Функция выражения - правый операнд в функции вычитания.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.QueryColumnExpression.html">QueryColumnExpression</a></td>
+        <td><p>Экземпляр <a class="xref" href="Terrasoft.Core.DB.QueryColumnExpression.html">QueryColumnExpression</a>, представляющий разность между операндами
+<code data-dev-comment-type="paramref" class="paramref">leftOperand</code> и <code data-dev-comment-type="paramref" class="paramref">rightOperand</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="operators">Operators
+  </h3>
+  
+  
+  <a id="Terrasoft_Core_DB_QueryFunction_op_Addition_" data-uid="Terrasoft.Core.DB.QueryFunction.op_Addition*"></a>
+  <h4 id="Terrasoft_Core_DB_QueryFunction_op_Addition_Terrasoft_Core_DB_QueryFunction_Terrasoft_Core_DB_QueryFunction_" data-uid="Terrasoft.Core.DB.QueryFunction.op_Addition(Terrasoft.Core.DB.QueryFunction,Terrasoft.Core.DB.QueryFunction)">Addition(QueryFunction, QueryFunction)</h4>
+  <div class="markdown level1 summary"><p>Перегрузка оператора сложения двух функций выражений.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static QueryColumnExpression operator +(QueryFunction leftOperand, QueryFunction rightOperand)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.QueryFunction.html">QueryFunction</a></td>
+        <td><span class="parametername">leftOperand</span></td>
+        <td><p>Функция выражения - левый операнд в операции сложения.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.QueryFunction.html">QueryFunction</a></td>
+        <td><span class="parametername">rightOperand</span></td>
+        <td><p>Функция выражения - правый операнд в операции сложения.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.QueryColumnExpression.html">QueryColumnExpression</a></td>
+        <td><p>Экземпляр <a class="xref" href="Terrasoft.Core.DB.QueryColumnExpression.html">QueryColumnExpression</a>, представляющий сумму операндов
+<code data-dev-comment-type="paramref" class="paramref">leftOperand</code> и <code data-dev-comment-type="paramref" class="paramref">rightOperand</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_DB_QueryFunction_op_Division_" data-uid="Terrasoft.Core.DB.QueryFunction.op_Division*"></a>
+  <h4 id="Terrasoft_Core_DB_QueryFunction_op_Division_Terrasoft_Core_DB_QueryFunction_Terrasoft_Core_DB_QueryFunction_" data-uid="Terrasoft.Core.DB.QueryFunction.op_Division(Terrasoft.Core.DB.QueryFunction,Terrasoft.Core.DB.QueryFunction)">Division(QueryFunction, QueryFunction)</h4>
+  <div class="markdown level1 summary"><p>Перегрузка оператора деления функций выражений.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static QueryColumnExpression operator /(QueryFunction leftOperand, QueryFunction rightOperand)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.QueryFunction.html">QueryFunction</a></td>
+        <td><span class="parametername">leftOperand</span></td>
+        <td><p>Функция выражения - левый операнд в операции деления.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.QueryFunction.html">QueryFunction</a></td>
+        <td><span class="parametername">rightOperand</span></td>
+        <td><p>Функция выражения - правый операнд в операции деления.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.QueryColumnExpression.html">QueryColumnExpression</a></td>
+        <td><p>Экземпляр <a class="xref" href="Terrasoft.Core.DB.QueryColumnExpression.html">QueryColumnExpression</a>, представляющий частное от деления операнда
+<code data-dev-comment-type="paramref" class="paramref">leftOperand</code> на операнд <code data-dev-comment-type="paramref" class="paramref">rightOperand</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_DB_QueryFunction_op_Multiply_" data-uid="Terrasoft.Core.DB.QueryFunction.op_Multiply*"></a>
+  <h4 id="Terrasoft_Core_DB_QueryFunction_op_Multiply_Terrasoft_Core_DB_QueryFunction_Terrasoft_Core_DB_QueryFunction_" data-uid="Terrasoft.Core.DB.QueryFunction.op_Multiply(Terrasoft.Core.DB.QueryFunction,Terrasoft.Core.DB.QueryFunction)">Multiply(QueryFunction, QueryFunction)</h4>
+  <div class="markdown level1 summary"><p>Перегрузка оператора умножения двух функций выражений.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static QueryColumnExpression operator *(QueryFunction leftOperand, QueryFunction rightOperand)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.QueryFunction.html">QueryFunction</a></td>
+        <td><span class="parametername">leftOperand</span></td>
+        <td><p>Функция запроса - левый операнд в операции умножения.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.QueryFunction.html">QueryFunction</a></td>
+        <td><span class="parametername">rightOperand</span></td>
+        <td><p>Функция запроса - правый операнд в операции умножения.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.QueryColumnExpression.html">QueryColumnExpression</a></td>
+        <td><p>Экземпляр <a class="xref" href="Terrasoft.Core.DB.QueryColumnExpression.html">QueryColumnExpression</a>, представляющий произведение операндов
+<code data-dev-comment-type="paramref" class="paramref">leftOperand</code> и <code data-dev-comment-type="paramref" class="paramref">rightOperand</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_DB_QueryFunction_op_Subtraction_" data-uid="Terrasoft.Core.DB.QueryFunction.op_Subtraction*"></a>
+  <h4 id="Terrasoft_Core_DB_QueryFunction_op_Subtraction_Terrasoft_Core_DB_QueryFunction_Terrasoft_Core_DB_QueryFunction_" data-uid="Terrasoft.Core.DB.QueryFunction.op_Subtraction(Terrasoft.Core.DB.QueryFunction,Terrasoft.Core.DB.QueryFunction)">Subtraction(QueryFunction, QueryFunction)</h4>
+  <div class="markdown level1 summary"><p>Перегрузка оператора вычитания правой функции выражения из левого функции выражения.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static QueryColumnExpression operator -(QueryFunction leftOperand, QueryFunction rightOperand)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.QueryFunction.html">QueryFunction</a></td>
+        <td><span class="parametername">leftOperand</span></td>
+        <td><p>Функция выражения - левый операнд в операции вычитания.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.QueryFunction.html">QueryFunction</a></td>
+        <td><span class="parametername">rightOperand</span></td>
+        <td><p>Функция выражения - правый операнд в операции вычитания.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.QueryColumnExpression.html">QueryColumnExpression</a></td>
+        <td><p>Экземпляр <a class="xref" href="Terrasoft.Core.DB.QueryColumnExpression.html">QueryColumnExpression</a>, представляющий разность между операндами
+<code data-dev-comment-type="paramref" class="paramref">leftOperand</code> и <code data-dev-comment-type="paramref" class="paramref">rightOperand</code></p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_DB_QueryFunction_op_UnaryNegation_" data-uid="Terrasoft.Core.DB.QueryFunction.op_UnaryNegation*"></a>
+  <h4 id="Terrasoft_Core_DB_QueryFunction_op_UnaryNegation_Terrasoft_Core_DB_QueryFunction_" data-uid="Terrasoft.Core.DB.QueryFunction.op_UnaryNegation(Terrasoft.Core.DB.QueryFunction)">UnaryNegation(QueryFunction)</h4>
+  <div class="markdown level1 summary"><p>Перегрузка оператора отрицания переданной функции выражения.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static QueryColumnExpression operator -(QueryFunction operand)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.QueryFunction.html">QueryFunction</a></td>
+        <td><span class="parametername">operand</span></td>
+        <td><p>Функция выражения.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.QueryColumnExpression.html">QueryColumnExpression</a></td>
+        <td><p>Отрицание значения функции выражения <code data-dev-comment-type="paramref" class="paramref">operand</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="Terrasoft.Core.DB.IQueryColumnExpressionConvertible.html">IQueryColumnExpressionConvertible</a>
+  </div>
+  <div>
+      <a class="xref" href="Terrasoft.Core.DB.IQueryColumnExpressionsCollector.html">IQueryColumnExpressionsCollector</a>
+  </div>
+  <div>
+      <span class="xref">System.ICloneable</span>
+  </div>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="Terrasoft.Common.ReflectionUtilities.html#Terrasoft_Common_ReflectionUtilities_GetPropertyValue_System_Object_System_String_">ReflectionUtilities.GetPropertyValue(Object, String)</a>
+  </div>
+  <div>
+      <a class="xref" href="Terrasoft.Common.ReflectionUtilities.html#Terrasoft_Common_ReflectionUtilities_GetPropertyDefValue_System_Object_System_String_System_Object_">ReflectionUtilities.GetPropertyDefValue(Object, String, Object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Terrasoft.Common.ReflectionUtilities.html#Terrasoft_Common_ReflectionUtilities_TryGetPropertyValue_System_Object_System_String_System_Object__">ReflectionUtilities.TryGetPropertyValue(Object, String, out Object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Terrasoft.Common.ReflectionUtilities.html#Terrasoft_Common_ReflectionUtilities_HasProperty_System_Object_System_String_">ReflectionUtilities.HasProperty(Object, String)</a>
+  </div>
+  <div>
+      <a class="xref" href="Terrasoft.Common.ReflectionUtilities.html#Terrasoft_Common_ReflectionUtilities_GetPropertyValue_System_Object_System_String_System_Reflection_BindingFlags_">ReflectionUtilities.GetPropertyValue(Object, String, BindingFlags)</a>
+  </div>
+  <div>
+      <a class="xref" href="Terrasoft.Common.ReflectionUtilities.html#Terrasoft_Common_ReflectionUtilities_GetPropertyValueByPath_System_Object_System_String_">ReflectionUtilities.GetPropertyValueByPath(Object, String)</a>
+  </div>
+  <div>
+      <a class="xref" href="Terrasoft.Common.ReflectionUtilities.html#Terrasoft_Common_ReflectionUtilities_SetPropertyValue_System_Object_System_String_System_Object_">ReflectionUtilities.SetPropertyValue(Object, String, Object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Terrasoft.Common.ReflectionUtilities.html#Terrasoft_Common_ReflectionUtilities_TrySetPropertyValue_System_Object_System_String_System_Object_">ReflectionUtilities.TrySetPropertyValue(Object, String, Object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Terrasoft.Common.ValidateUtilities.html#Terrasoft_Common_ValidateUtilities_CheckArgumentNull_System_Object_System_String_">ValidateUtilities.CheckArgumentNull(Object, String)</a>
+  </div>
+  <div>
+      <a class="xref" href="Terrasoft.Common.ValidateUtilities.html#Terrasoft_Common_ValidateUtilities_CheckDependencyNull_System_Object_System_String_">ValidateUtilities.CheckDependencyNull(Object, String)</a>
+  </div>
+  <div>
+      <a class="xref" href="Terrasoft.Common.ValidateUtilities.html#Terrasoft_Common_ValidateUtilities_EnsureDependencyNotNull__1___0_System_String_">ValidateUtilities.EnsureDependencyNotNull&lt;T&gt;(T, String)</a>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>© 2021 Creatio. All rights reserved.</span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+
+<!-- Mirrored from academy.terrasoft.ua/api/netcoreapi/7.18.0/api/Terrasoft.Core.DB.QueryFunction.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Mar 2022 03:31:47 GMT -->
+</html>

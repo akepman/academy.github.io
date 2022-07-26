@@ -1,0 +1,1120 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# ">
+  
+<!-- Mirrored from academy.terrasoft.ua/docs/user/kastomizacija_no_code/web_servisy/soap/nastroit_integraciyu_s_web_servisom_soap by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 22 Mar 2022 20:05:56 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+          <!-- Google Tag Manager -->
+      <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          '../../../../../../www.googletagmanager.com/gtm5445.html?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-KLLB8G');</script>
+      <!-- End Google Tag Manager -->
+        <meta charset="utf-8" />
+<link rel="canonical" href="nastroit_integraciyu_s_web_servisom_soap.html" />
+<meta name="description" content="Creatio поддерживает интеграцию с пользовательскими SOAP-сервисами с помощью инструментов low-code. Creatio сгенерирует и отправит запрос веб-сервису, получит ответ и предоставит необходимые данные. Данные, полученные от веб-сервиса, можно использовать для создания или обновления записей в Creatio, а также для реализации пользовательской бизнес-логики или автоматизации.
+
+Общая последовательность настройки одинакова для всех SOAP-сервисов, детали во многом зависят от специфики веб-сервиса.
+
+Этапы настройки интеграции с веб-сервисом:" />
+<meta property="og:url" content="https://academy.terrasoft.ua/docs/user/kastomizacija_no_code/web_servisy/soap/nastroit_integraciyu_s_web_servisom_soap" />
+<meta property="og:title" content="Настроить интеграцию с веб-сервисом SOAP" />
+<meta property="og:description" content="Creatio поддерживает интеграцию с пользовательскими SOAP-сервисами с помощью инструментов low-code. Creatio сгенерирует и отправит запрос веб-сервису, получит ответ и предоставит необходимые данные. Данные, полученные от веб-сервиса, можно использовать для создания или обновления записей в Creatio, а также для реализации пользовательской бизнес-логики или автоматизации.
+
+Общая последовательность настройки одинакова для всех SOAP-сервисов, детали во многом зависят от специфики веб-сервиса.
+
+Этапы настройки интеграции с веб-сервисом:" />
+<meta name="Generator" content="Drupal 9 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="../../../../themes/custom/creatio/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="revision" href="nastroit_integraciyu_s_web_servisom_soap.html" />
+
+    <title>Настроить интеграцию с веб-сервисом SOAP | Creatio Academy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&amp;family=Open+Sans:ital,wght@0,300;0,400;0,600;1,400&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" media="all" href="../../../../sites/default/files/css/css_6lTP66__-yc6QXFp1zOwoeJ0HVigoYZP-SeoLLii000.css" />
+<link rel="stylesheet" media="all" href="../../../../sites/default/files/css/css_XQJDNhkF3xH5SZCcY-PI89Zu4nYIzQ5oR3SnUKyfXJU.css" />
+<link rel="stylesheet" media="print" href="../../../../sites/default/files/css/css_Zn4VHvcniOOtUwkIVwXzYr_0AI9gUVgZcPqaH4ViagU.css" />
+
+    
+  </head>
+  <body class="path-node page-node-type-user-documentation">
+          <!-- Google Tag Manager (noscript) -->
+      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KLLB8G"
+                        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+      <!-- End Google Tag Manager (noscript) -->
+    
+        
+      <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    <div class="creatio-page d-flex flex-column">
+        <div class="region region-informer">
+    <div id="block-terrasoftpidtrimueukrainu" class="block block-simple-block block-simple-blockterrasoft-pidtrimue-ukrainu">
+  
+    
+      <style type="text/css">
+<!--/*--><![CDATA[/* ><!--*/
+@import url(../../../../../../www.terrasoft.ua/themes/custom/creatio/css/components/informer.css)
+
+/*--><!]]>*/
+</style><div class="ts-swu">
+<div class="creatio-container">
+<div class="ts-swu__cont">
+<div><a class="ts-swu__link" href="https://www.terrasoft.ua/terrasoft-stands-with-ukraine" target="_blank">Україна понад усе!</a> <span><a href="https://www.terrasoft.ua/terrasoft-stands-with-ukraine" target="_blank">Приєднуйтеся</a> до допомоги!</span></div>
+</div>
+</div></div>
+
+  </div>
+
+  </div>
+
+  
+  <header role="banner">
+          <div class="creatio-region creatio-region_top">
+        <div class="creatio-container">
+            <div class="region region-top">
+    <div id="block-menutoggle" class="block block-simple-block block-simple-blockmenu-toggle">
+  
+    
+      <div class="menu-toggle"><span> </span></div>
+
+  </div>
+<div id="block-logowhite-2" class="block block-simple-block block-simple-blocklogo-white">
+  
+    
+      <p><a class="site-logo" href="../../../../../index.html" rel="home"><img src="../../../../themes/custom/creatio/logo-white.svg" /></a></p>
+
+  </div>
+<div id="block-search" class="block block-simple-block block-simple-blocksearch">
+  
+    
+      <div class="search">
+<form action="https://academy.terrasoft.ua/search" class="search-form" method="get"><input class="search-form__input" name="search" placeholder="Поиск" type="search" /><input class="search-form__button" type="submit" value="Поиск" /> </form>
+
+<div class="search-toggle"> </div>
+</div>
+
+  </div>
+<nav role="navigation" aria-labelledby="block-sitesua-menu" id="block-sitesua" class="block block-menu navigation menu--sites-ua">
+            
+  <h2 class="visually-hidden" id="block-sitesua-menu">Sites UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="https://www.terrasoft.ua/" rel="nofollow" target="_blank">Terrasoft</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://community.terrasoft.ua/" rel="nofollow" target="_blank">Community</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://marketplace.terrasoft.ua/" rel="nofollow" target="_blank">Marketplace</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+<div id="block-usermenu" class="block block-ts-user block-ts-user-menu-block">
+  
+    
+      <ul class="user-menu">
+      <li class="user-menu__item">
+      <a class="user-menu__link" href="https://profile.terrasoft.ua/user/login?destination=academy/ua/docs/user/kastomizacija_no_code/web_servisy/soap/nastroit_integraciyu_s_web_servisom_soap">Войти</a>
+    </li>
+  </ul>
+
+  </div>
+<div id="block-usermenumobile" class="block block-ts-user block-ts-user-menu-mobile-block">
+  
+    
+      <ul class="user-menu-mobile">
+      <li class="user-menu-mobile__item">
+      <div class="user-menu-mobile__user user-menu-mobile__user_icon"></div>
+      <ul class="user-menu-mobile__submenu">
+        <li class="user-menu-mobile__subitem">
+          <a class="user-menu-mobile__sublink" href="https://profile.terrasoft.ua/user/login?destination=academy/ua/docs/user/kastomizacija_no_code/web_servisy/soap/nastroit_integraciyu_s_web_servisom_soap">Войти</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  </div>
+
+  </div>
+
+        </div>
+      </div>
+              <div class="creatio-region creatio-region_header">
+        <div class="creatio-container">
+            <div class="region region-header">
+    <div id="block-logo" class="block block-simple-block block-simple-blocklogo">
+  
+    
+      <p><a class="site-logo" href="../../../../../index.html" rel="home"><img src="../../../../themes/custom/creatio/logo.svg" /></a></p>
+
+  </div>
+<nav role="navigation" aria-labelledby="block-osnovnayanavigaciyaua-menu" id="block-osnovnayanavigaciyaua" class="block block-menu navigation menu--main-ua">
+            
+  <h2 class="visually-hidden" id="block-osnovnayanavigaciyaua-menu">Основная навигация UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="../../../../index.html" data-drupal-link-system-path="&lt;front&gt;">Документация</a>
+              </li>
+                <li class="menu-item">
+        <a href="../../../../../trainings.html">Тренинги</a>
+              </li>
+                <li class="menu-item">
+        <a href="../../../../certification.html" data-drupal-link-system-path="node/3084">Сертификация и тестирование</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+<nav role="navigation" aria-labelledby="block-sitesua-2-menu" id="block-sitesua-2" class="block block-menu navigation menu--sites-ua">
+            
+  <h2 class="visually-hidden" id="block-sitesua-2-menu">Sites UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="https://www.terrasoft.ua/" rel="nofollow" target="_blank">Terrasoft</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://community.terrasoft.ua/" rel="nofollow" target="_blank">Community</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://marketplace.terrasoft.ua/" rel="nofollow" target="_blank">Marketplace</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+
+  </div>
+
+        </div>
+      </div>
+              <div class="creatio-region creatio-region_breadcrumb">
+        <div class="creatio-container">
+            <div class="region region-breadcrumb">
+    <div id="block-logowhite" class="block block-simple-block block-simple-blocklogo-white">
+  
+    
+      <p><a class="site-logo" href="../../../../../index.html" rel="home"><img src="../../../../themes/custom/creatio/logo-white.svg" /></a></p>
+
+  </div>
+<div id="block-breadcrumbnaviagtion" class="block block-ts-nav block-ts-nav-bread">
+  
+    
+      <nav class="breadcrumb"><ol class="ts-nav-breadcrumb__list"><li class="ts-nav-breadcrumb__item"><a href="../../../../index.html" class="ts-nav-breadcrumb__link" title="Документация">Документация</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../../indexd993.html?vid_1=1" class="ts-nav-breadcrumb__link" title="Для пользователя">Для пользователя</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../instrumenty_kastomizacii.html" class="ts-nav-breadcrumb__link" title="Инструменты кастомизации" hreflang="zxx">Инструменты кастомизации</a></li>
+<li class="ts-nav-breadcrumb__item ts-nav-breadcrumb__item_mobile"><a href="../../../instrumenty_kastomizacii/web_servisy.html" class="ts-nav-breadcrumb__link" title="Веб-сервисы" hreflang="zxx">Веб-сервисы</a></li>
+<li class="ts-nav-breadcrumb__item"><span class="ts-nav-breadcrumb__link ts-nav-breadcrumb__link_current" title="Настроить интеграцию с веб-сервисом SOAP">Настроить интеграцию с веб-сервисом SOAP</span></li>
+</ol>
+</nav>
+
+  </div>
+<div id="block-search-2" class="block block-simple-block block-simple-blocksearch">
+  
+    
+      <div class="search">
+<form action="https://academy.terrasoft.ua/search" class="search-form" method="get"><input class="search-form__input" name="search" placeholder="Поиск" type="search" /><input class="search-form__button" type="submit" value="Поиск" /> </form>
+
+<div class="search-toggle"> </div>
+</div>
+
+  </div>
+
+  </div>
+
+        </div>
+      </div>
+      </header>
+
+  <div class="creatio-region creatio-region_main">
+    <div class="creatio-container">
+                <div class="region region-breadcrumb-mobile">
+    <div id="block-breadcrumbnaviagtion-2" class="block block-ts-nav block-ts-nav-bread">
+  
+    
+      <nav class="breadcrumb"><ol class="ts-nav-breadcrumb__list"><li class="ts-nav-breadcrumb__item"><a href="../../../../index.html" class="ts-nav-breadcrumb__link" title="Документация">Документация</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../../indexd993.html?vid_1=1" class="ts-nav-breadcrumb__link" title="Для пользователя">Для пользователя</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../instrumenty_kastomizacii.html" class="ts-nav-breadcrumb__link" title="Инструменты кастомизации" hreflang="zxx">Инструменты кастомизации</a></li>
+<li class="ts-nav-breadcrumb__item ts-nav-breadcrumb__item_mobile"><a href="../../../instrumenty_kastomizacii/web_servisy.html" class="ts-nav-breadcrumb__link" title="Веб-сервисы" hreflang="zxx">Веб-сервисы</a></li>
+<li class="ts-nav-breadcrumb__item"><span class="ts-nav-breadcrumb__link ts-nav-breadcrumb__link_current" title="Настроить интеграцию с веб-сервисом SOAP">Настроить интеграцию с веб-сервисом SOAP</span></li>
+</ol>
+</nav>
+
+  </div>
+
+  </div>
+
+      
+      <main class="creatio-main" role="main">
+                                                    
+        <div class="creatio-content creatio-content_small">
+          <div class="creatio-content__inner creatio-content__inner_bg">
+                            <div class="region region-messages">
+    <div data-drupal-messages-fallback class="hidden"></div>
+
+  </div>
+
+            
+              <div class="region region-content">
+    <div id="block-creatio-page-title" class="block block-core block-page-title-block">
+  
+    
+      
+  <h1 class="page-title"><span class="field field--name-title field--type-string field--label-hidden">Настроить интеграцию с веб-сервисом SOAP</span>
+</h1>
+
+
+  </div>
+<div id="block-creatio-content" class="block block-system block-system-main-block">
+  
+    
+      
+<article data-history-node-id="3400" role="article" about="/docs/user/kastomizacija_no_code/web_servisy/soap/nastroit_integraciyu_s_web_servisom_soap" class="node node--type-user-documentation node--view-mode-full">
+
+  
+    
+
+  
+  <div class="node__content">
+      <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-ts-doc block-ts-doc-downloads">
+  
+    
+      <a href="../../../../sites/default/files/pdf/node/3400/Nastroit_integraciyu_s_veb_servisom_SOAP_.pdf" target="_blank">PDF</a>
+  </div>
+<div class="block block-ts-doc block-ts-doc-versions">
+  
+    
+        <div class="ts-doc-versions">
+    <select class="ts-doc-versions__select">
+                                                <option value="/docs/8-0/user/kastomizacija_no_code/web_servisy/soap/nastroit_integraciyu_s_web_servisom_soap" selected>Версия 8.0</option>
+                              <option value="/docs/7-18/user/kastomizacija_no_code/web_servisy/soap/nastroit_integraciyu_s_web_servisom_soap">Версия 7.18</option>
+                              <option value="/docs/7-17/user/kastomizacija_no_code/web_servisy/soap/nastroit_integraciyu_s_web_servisom_soap">Версия 7.17</option>
+          </select>
+  </div>
+
+  </div>
+
+    </div>
+  </div>
+  <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocknodeuser-documentationfield-product">
+  
+    
+      
+  <div class="field field--name-field-product field--type-entity-reference field--label-above">
+    <div class="field__label">Продукты</div>
+          <div class="field__items">
+              <div class="field__item">Все продукты</div>
+              </div>
+      </div>
+
+  </div>
+<div class="block block-layout-builder block-field-blocknodeuser-documentationbody">
+  
+    
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><p>Creatio поддерживает интеграцию с пользовательскими SOAP-сервисами с помощью инструментов low-code. Creatio сгенерирует и отправит запрос веб-сервису, получит ответ и предоставит необходимые данные. Данные, полученные от веб-сервиса, можно использовать для создания или обновления записей в Creatio, а также для реализации пользовательской бизнес-логики или автоматизации.</p>
+
+<p>Общая последовательность настройки одинакова для всех SOAP-сервисов, детали во многом зависят от специфики веб-сервиса.</p>
+
+<p><strong>Этапы</strong> настройки интеграции с веб-сервисом:</p>
+
+<ol><li><a href="../../../../7-17/user/kastomizacija_no_code/web_servisy/soap/nastroit_integraciyu_s_web_servisom_soap/index.html#title-3271-1">Добавление веб-сервиса и настройка</a> его свойств и методов.</li>
+	<li>Настройка аутентификации веб-сервиса (опциональный шаг). <a href="../autentifikatsiya/nastroit_autentifikaciyu_s_veb_servisom/index.html">Настройка аутентификации</a> идентична для REST и SOAP-сервисов.</li>
+	<li><a href="../../../../7-17/user/kastomizacija_no_code/web_servisy/soap/nastroit_integraciyu_s_web_servisom_soap/index.html#title-3271-7">Проверка настройки интеграции с веб-сервисом</a>.</li>
+</ol><p>После этого можно использовать интеграцию с веб-сервисом в пользовательских бизнес-процессах. Пример настройки процесса описан в статье <a data-auto-update-caption="true" href="../../../biznes_processy/primery_nastrojki_processov/integracija_s_veb_servisami/ispolzovat_integraciju_s_veb_servisami_dlja_avtomaticheskogo_obnovlenija_kursov_valjut.html?id=2364&amp;ver=7">Использовать интеграцию с веб-сервисами для автоматического обновления курсов валют</a>.</p>
+
+<div class="message message_example">
+<p><span class="message__bold message__bold_example">Пример.</span> Настроить интеграцию с SOAP-сервисом “PhoneVerify” (<a href="https://ws.cdyne.com/phoneverify/phoneverify.asmx">https://ws.cdyne.com/phoneverify/phoneverify.asmx</a>) для получения информации по номеру телефона.</p>
+
+<p>Необходимо реализовать поддержку следующих параметров:</p>
+
+<ul><li>“<strong>CheckPhoneNumber</strong>” — метод, который возвращает информацию по номеру телефона.</li>
+	<li>“<strong>PhoneNumber</strong>” — параметр запроса. В него необходимо передать номер телефона. Обязательный параметр.</li>
+	<li>“<strong>LicenseKey</strong>” — параметр запроса. В него необходимо передать ключ.</li>
+	<li>“<strong>Company</strong>” — параметр ответа. Содержит название компании.</li>
+	<li>“<strong>Valid</strong>” — параметр ответа. Содержит информацию о корректности полученной информации.</li>
+</ul></div>
+
+<p>Creatio позволяет импортировать wsdl-файл или настроить интеграцию вручную.</p>
+
+<div class="message">
+<p><span class="message__bold">На заметку.</span> wsdl-файл содержит документацию SOAP-сервиса. wsdl-файл можно получить из открытых источников сервиса, с которым планируется интеграция.</p>
+</div>
+
+<h2>Автоматическая настройка свойств и методов веб-сервиса<a class="title-anchor" href="#title-3271-1" id="title-3271-1"> </a></h2>
+
+<ol><li>Перейдите в рабочее место <span class="key">Студия</span> и откройте раздел <span class="key">Веб-сервисы</span>.</li>
+	<li>Нажмите <span class="key">Добавить веб-сервис</span> —&gt; <span class="key">SOAP сервис</span>.</li>
+	<li>В окне “Быстрая настройка SOAP веб-сервиса” нажмите <span class="key">Выбрать файл</span> или добавьте ссылку на wsdl-файл с описанием веб-сервиса, интеграцию с которым необходимо настроить.</li>
+	<li>В окне “Настройка SOAP веб-сервиса” выберите, какой сервис и версию SOAP использовать. Также настройте методы, которые необходимо вызывать, и параметры вызова методов. Нажмите <span class="key">Далее</span>.</li>
+	<li>В окне “Настройка SOAP веб-сервиса” выберите необходимые параметры ответов методов. Нажмите <span class="key">Сохранить</span> (Рис. 1).
+	<div class="media">
+	<div class="media__caption">Рис. 1 — Автоматическая настройка веб-сервиса</div>
+
+	<div class="media__element"><img alt="" data-entity-type="file" data-entity-uuid="42b47725-23c0-49f5-acb3-cc29a5d9fe7f" height="866" src="../../../../sites/default/files/images/NoCode_Customization/web_soap_service/scr_add_soap_web_service_blur.gif" width="1395" loading="lazy" /></div>
+	</div>
+	</li>
+</ol><p>Настройка веб-сервиса выполнена. Все свойства и методы на странице сервиса будут заполнены автоматически. Далее переходите к <a href="#title-3271-7">проверке интеграции с SOAP-сервисом</a>.</p>
+
+<p>Ниже приведен альтернативный способ настройки свойств и методов веб-сервиса.</p>
+
+<h2>Ручная настройка свойств и методов веб-сервиса<a class="title-anchor" href="#title-3271-2" id="title-3271-2"> </a></h2>
+
+<ol><li>Перейдите в рабочее место <span class="key">Студия</span> и откройте раздел <span class="key">Веб-сервисы</span>.</li>
+	<li>Нажмите <span class="key">Добавить веб-сервис</span> —&gt; <span class="key">SOAP сервис</span>.</li>
+	<li>В окне “Быстрая настройка SOAP веб-сервиса” нажмите <span class="key">Пропустить быструю настройку</span>.</li>
+	<li>Изучите документацию веб-сервиса. В нашем примере используется следующий код.
+	<div class="code">
+	<div class="code__widgets">
+	<div class="code__source">
+	<pre class="prettyprint">
+&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;wsdl:definitions xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://ws.cdyne.com/PhoneVerify/query" xmlns:s1="http://ws.cdyne.com/PhoneVerify/query/AbstractTypes" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" targetNamespace="http://ws.cdyne.com/PhoneVerify/query" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"&gt;
+...
+&lt;/wsdl:definitions&gt;
+</pre>
+	</div>
+	</div>
+	</div>
+	</li>
+	<li>Заполните <strong>поля страницы свойств</strong> веб-сервиса (Рис. 2).
+	<div class="table">
+	<table><thead><tr><th width="10%">Поле</th>
+				<th width="50%">Комментарий</th>
+				<th>Пример</th>
+			</tr></thead><tbody><tr><th>Название</th>
+				<td>Название будет отображаться в поле <span class="key">Какой сервис вызывать?</span> области свойств элемента процесса <span class="key">Вызвать веб-сервис</span>.</td>
+				<td>Сервис получения информации по телефонному номеру</td>
+			</tr><tr><th>Код</th>
+				<td>Используется разработчиками для взаимодействия с веб-сервисом в программном коде Creatio. В данном случае уникальное имя интеграции с веб-сервисом состоит из его названия и префикса “Usr”.</td>
+				<td>UsrPhone<wbr></wbr>VerifyService</td>
+			</tr><tr><th>Пространства имен</th>
+				<td>Необходимо указывать только пространства имен, которые используются для методов и их параметров. Набор пространств имен задается в формате “Префикс пространства имен”:“Пространство имен”, разделенных символом “;” или переводом строки. Если пространство имен только одно, то его можно задать без префикса. Это пространство имен будет применено ко всему запросу.</td>
+				<td>http://ws.cdyne.com/<wbr></wbr>PhoneVerify/<wbr></wbr>query</td>
+			</tr><tr><th>URI сервиса</th>
+				<td>Полный адрес вызова веб-сервиса будет состоять из этого URI и настроек, указанных на странице настройки метода.<br />
+				Используйте такой же протокол (http/https), как и у сайта вашего приложения Creatio.<br />
+				Если веб-сервис содержится в недоступном для редактирования пакете, то его URI будет доступен для редактирования.</td>
+				<td>http://ws.cdyne.com/<wbr></wbr>phoneverify/<wbr></wbr>phoneverify.asmx?<wbr></wbr>WSDL</td>
+			</tr><tr><th>Повторов вызова при ошибках</th>
+				<td>Если ответ от веб-сервиса пришел с кодом ошибки или истек тайм-аут ответа, то запрос будет повторен указанное количество раз. При заполнении этого поля учитывайте тайм-аут ответа, который будет указан для методов веб-сервиса.</td>
+				<td>По умолчанию — 0</td>
+			</tr><tr><th>Пакет</th>
+				<td>Пакет, в котором будет сохранена данная интеграция с веб-сервисом. В списке отображаются пакеты, которые доступны для изменения текущим пользователем.</td>
+				<td>SoapWeb<wbr></wbr>ServicePackage</td>
+			</tr></tbody></table></div>
+
+	<div class="media">
+	<div class="media__caption">Рис. 2 — Заполнение страницы свойств веб-сервиса</div>
+
+	<div class="media__element"><img alt="scr_soap_web_service.gif" src="../../../../sites/default/files/images/NoCode_Customization/web_soap_service/scr_soap_web_service.gif" /></div>
+	</div>
+	</li>
+</ol><div class="message">
+<p><span class="message__bold">На заметку.</span> Интеграции с веб-сервисами сохраняются в виде элементов конфигурации. Если такой элемент конфигурации находится в пакете, который недоступен для редактирования, то вы сможете изменить только URI веб-сервиса. Для внесения других изменений (например, для добавления методов) в такие интеграции с веб-сервисами скопируйте соответствующие элементы конфигурации в доступный для редактирования пакет.</p>
+</div>
+
+<h3>Настроить вызов метода<a class="title-anchor" href="#title-3271-3" id="title-3271-3"> </a></h3>
+
+<p>Для каждого веб-сервиса необходимо настроить вызов методов. При этом для одного веб-сервиса можно настроить несколько методов.</p>
+
+<div class="message">
+<p><span class="message__bold">На заметку.</span> В рамках одного процесса можно вызывать любое количество методов, используя несколько <span><a href="../../../biznes_processy/spravka_po_elementam_processov/dejstviya_sistemy/vyzvat_veb_servis/element_processa_vyzvat_web_servcie.html?product=BPMS&amp;ver=7&amp;id=7141">элементов процесса <span class="key">Вызвать веб-сервис</span></a></span>, с передачей значений параметров между ними.</p>
+</div>
+
+<ol><li>На детали <span class="key">Методы</span> страницы настройки интеграции с веб-сервисом при помощи кнопки <img alt="scr_add_button.png" src="../../../../sites/default/files/inline-images/scr_add_button.png" /> добавьте методы.</li>
+	<li>Изучите документацию веб-сервиса. В нашем примере используется следующий код.
+	<div class="code">
+	<div class="code__widgets">
+	<div class="code__source">
+	<pre class="prettyprint">
+&lt;wsdl:types&gt;
+    &lt;s:schema elementFormDefault="qualified" targetNamespace="http://ws.cdyne.com/PhoneVerify/query"&gt;
+        &lt;s:element name="CheckPhoneNumber"&gt;
+        ...
+        &lt;/s:element&gt;
+&lt;/wsdl:types&gt;
+</pre>
+	</div>
+	</div>
+	</div>
+	</li>
+	<li>Заполните <strong>свойства метода</strong> (Рис. 3).
+	<div class="table">
+	<table><thead><tr><th width="10%">Поле</th>
+				<th width="50%">Комментарий</th>
+				<th>Пример</th>
+			</tr></thead><tbody><tr><th>Название</th>
+				<td>Название будет отображаться в поле <span class="key">Какой сервис вызывать?</span> области свойств элемента процесса <span class="key">Вызвать веб-сервис</span>.</td>
+				<td>Проверить номер телефона</td>
+			</tr><tr><th>Код (на английском)</th>
+				<td>Используется разработчиками для взаимодействия с веб-сервисом в программном коде Creatio. В данном случае уникальное имя интеграции с веб-сервисом состоит из его названия и префикса “Usr”.</td>
+				<td>UsrCheck<wbr></wbr>PhoneNumber</td>
+			</tr><tr><th>Код элемента сообщения</th>
+				<td>Название узла XML, который является корневым внутри &lt;soap:Body&gt;. Часто совпадает с названием операции в WSDL. Например, это будет “MessageElementName” в следующем теле запроса:
+				<div class="code">
+				<div class="code__widgets">
+				<div class="code__source">
+				<pre class="prettyprint">
+&lt;soap:Body&gt;
+    &lt;MessageElementName&gt;
+        &lt;Parameters&gt;
+        ...
+        &lt;/Parameters&gt;
+    &lt;/MessageElementName&gt;
+&lt;/soap:Body&gt;
+</pre>
+				</div>
+				</div>
+				</div>
+				</td>
+				<td>CheckPhoneNumber</td>
+			</tr><tr><th>SOAP Action</th>
+				<td>Для определения данного значения используется документация веб-сервиса.<br />
+				Например, у веб-сервиса “PhoneVerify” есть “конечная точка” “CheckPhoneNumber”, которая возвращает информацию по номеру телефона.</td>
+				<td>http://ws.cdyne.com/<wbr></wbr>PhoneVerify/<wbr></wbr>query/<wbr></wbr>CheckPhoneNumber</td>
+			</tr><tr><th>Тайм-аут ответа, мс</th>
+				<td>Время ожидания ответа от веб-сервиса. Если после отправки запроса не был получен ответ, либо был получен код ошибки, то по истечении этого времени Creatio повторит запрос (если еще остались неиспользованные попытки повторного вызова).</td>
+				<td>По умолчанию — 5 000</td>
+			</tr><tr><th>Использовать аутентификацию</th>
+				<td>Использовать аутентификацию для доступа к веб-сервису. Необходимо настроить аутентификацию на детали <span class="key">Аутентификация</span> страницы настройки интеграции с веб-сервисом. Подробнее: <a data-auto-update-caption="true" href="../autentifikatsiya/nastroit_autentifikaciyu_s_veb_servisom.html">Аутентификация веб-сервиса</a>.</td>
+				<td>По умолчанию — false</td>
+			</tr></tbody></table></div>
+
+	<div class="media">
+	<div class="media__caption">Рис. 3 — Свойства метода веб-сервиса</div>
+
+	<div class="media__element"><img alt="scr_soap_web_service_method_properties.png" src="../../../../sites/default/files/images/NoCode_Customization/web_soap_service/7.18/scr_soap_web_service_method_properties.png" /></div>
+	</div>
+	</li>
+</ol><h3>Настроить параметры запроса<a class="title-anchor" href="#title-3271-4" id="title-3271-4"> </a></h3>
+
+<p>Параметры запроса используются для генерации URL-адреса конечной точки, который Creatio будет использовать при вызове веб-сервиса.</p>
+
+<p>Количество и типы параметров запроса определяются спецификой веб-сервиса. Параметры необходимо добавлять относительно метода.</p>
+
+<p>Доступны следующие <strong>типы параметров запроса</strong>:</p>
+
+<div class="table">
+<table><tbody><tr><th>Параметр тела</th>
+			<td>Этот тип параметра используется для отправки любых типов данных (включая коллекции) в теле запроса. Подробнее о методе POST запроса читайте в <a href="https://ru.wikipedia.org/w/index.php?title=POST_(HTTP)&amp;oldid=112783808">Википедии</a>.</td>
+		</tr><tr><th>Параметр заголовка</th>
+			<td>Этот тип параметра используется для генерации заголовка запроса. Подробнее об HTTP-заголовках читайте в <a href="https://ru.wikipedia.org/w/index.php?title=%d0%a1%d0%bf%d0%b8%d1%81%d0%be%d0%ba_%d0%b7%d0%b0%d0%b3%d0%be%d0%bb%d0%be%d0%b2%d0%ba%d0%be%d0%b2_HTTP&amp;oldid=112721782">Википедии</a>.</td>
+		</tr><tr><th>Параметр cookies</th>
+			<td>Параметры этого типа используются для передачи файлов cookie в запросах к сервису. Например, можно передать полученный ранее cookie для аутентификации. Подробнее о cookie читайте в <a href="https://ru.wikipedia.org/w/index.php?title=Cookie&amp;oldid=112937207">Википедии</a>.</td>
+		</tr></tbody></table></div>
+
+<p>Для настройки параметров запроса:</p>
+
+<ol><li>Изучите документацию веб-сервиса. В нашем примере используется следующий код.
+	<div class="code">
+	<div class="code__widgets">
+	<div class="code__source">
+	<pre class="prettyprint">
+&lt;s:element name="CheckPhoneNumber"&gt;
+    &lt;s:complexType&gt;
+        &lt;s:sequence&gt;
+            &lt;s:element minOccurs="0" maxOccurs="1" name="PhoneNumber" type="s:string" /&gt;
+            &lt;s:element minOccurs="0" maxOccurs="1" name="LicenseKey" type="s:string" /&gt;
+        &lt;/s:sequence&gt;
+    &lt;/s:complexType&gt;
+&lt;/s:element&gt;
+</pre>
+	</div>
+	</div>
+	</div>
+	</li>
+	<li>Добавьте <strong>параметры запроса</strong>:
+	<ol><li>На вкладке <span class="key">Параметры вызова</span> нажмите кнопку <span class="key">Добавить параметр</span>.</li>
+		<li>Добавьте параметр “Номер телефона” и заполните его свойства (Рис. 4).
+		<div class="table">
+		<table><thead><tr><th width="10%">Поле</th>
+					<th width="50%">Комментарий</th>
+					<th>Пример</th>
+				</tr></thead><tbody><tr><th>Название</th>
+					<td>Название параметра сервиса.</td>
+					<td>Номер телефона</td>
+				</tr><tr><th>Тип параметра</th>
+					<td>Тип параметра сервиса.</td>
+					<td>Параметр тела</td>
+				</tr><tr><th>Путь к элементу</th>
+					<td>Если для параметра используется пространство имен, то оно указывается в формате “Префикс пространства имен”:“Путь к параметру”.</td>
+					<td>PhoneNumber</td>
+				</tr><tr><th>Код в Creatio</th>
+					<td>Используется разработчиками для взаимодействия с веб-сервисом в программном коде Creatio. В данном случае уникальное имя интеграции с веб-сервисом состоит из его названия и префикса “Usr”.</td>
+					<td>Usr<wbr></wbr>PhoneNumber</td>
+				</tr><tr><th>Тип данных</th>
+					<td>Тип данных параметров сервиса. Параметр с вложенными элементами должен иметь тип данных “Объект”.</td>
+					<td>Текст</td>
+				</tr><tr><th>Является массивом</th>
+					<td>Значение параметра-массива нельзя задать в элементе “Вызвать веб-сервис” в дизайнере процессов. Необходимо использовать элемент “Задание-сценарий”. Параметр с типом данных “Объект” обязательно должен быть массивом.</td>
+					<td>По умолчанию признак снят</td>
+				</tr><tr><th>Обязательный</th>
+					<td>При установленном признаке параметр будет обязательным в дизайнере процессов. Признак недоступен для редактирования при выборе значения по умолчанию.</td>
+					<td>По умолчанию признак установлен</td>
+				</tr><tr><th>Значение по умолчанию</th>
+					<td>Значение параметра по умолчанию.</td>
+					<td>Константа</td>
+				</tr></tbody></table></div>
+
+		<div class="media">
+		<div class="media__caption">Рис. 4 — Настройка параметра “Номер телефона”</div>
+
+		<div class="media__element"><span contenteditable="false" tabindex="-1"><img alt="scr_soap_web_service_parameter1_properties.png" src="../../../../sites/default/files/images/NoCode_Customization/web_soap_service/scr_soap_web_service_parameter1_properties.png" /></span></div>
+		</div>
+		</li>
+		<li>
+		<p>Добавьте параметр “Ключ” и заполните его свойства (Рис. 5).</p>
+
+		<div class="table">
+		<table><thead><tr><th width="10%">Поле</th>
+					<th width="50%">Комментарий</th>
+					<th>Пример</th>
+				</tr></thead><tbody><tr><th>Название</th>
+					<td>Название параметра сервиса.</td>
+					<td>Ключ</td>
+				</tr><tr><th>Тип параметра</th>
+					<td>Тип параметра сервиса.</td>
+					<td>Параметр тела</td>
+				</tr><tr><th>Путь к элементу</th>
+					<td>Если для параметра используется пространство имен, то оно указывается в формате “Префикс пространства имен”:“Путь к параметру”.</td>
+					<td>LicenseKey</td>
+				</tr><tr><th>Код в Creatio</th>
+					<td>Используется разработчиками для взаимодействия с веб-сервисом в программном коде Creatio. В данном случае уникальное имя интеграции с веб-сервисом состоит из его названия и префикса “Usr”.</td>
+					<td>Usr<wbr></wbr>LicenseKey</td>
+				</tr><tr><th>Тип данных</th>
+					<td>Тип данных параметров сервиса. Параметр с вложенными элементами должен иметь тип данных “Объект”.</td>
+					<td>Текст</td>
+				</tr><tr><th>Является массивом</th>
+					<td>Значение параметра-массива нельзя задать в элементе “Вызвать веб-сервис” в дизайнере процессов. Необходимо использовать элемент “Задание-сценарий”. Параметр с типом данных “Объект” обязательно должен быть массивом.</td>
+					<td>По умолчанию признак снят</td>
+				</tr><tr><th>Обязательный</th>
+					<td>При установленном признаке параметр будет обязательным в дизайнере процессов. Признак недоступен для редактирования при выборе значения по умолчанию.</td>
+					<td>По умолчанию признак установлен</td>
+				</tr><tr><th>Значение по умолчанию</th>
+					<td>Значение параметра по умолчанию.</td>
+					<td>Константа</td>
+				</tr></tbody></table></div>
+
+		<div class="media">
+		<div class="media__caption">Рис. 5 — Настройка параметра “Ключ”</div>
+
+		<div class="media__element"><img alt="scr_soap_web_service_parameter2_properties" src="../../../../sites/default/files/images/NoCode_Customization/web_soap_service/scr_soap_web_service_parameter2_properties.png" /></div>
+		</div>
+		</li>
+	</ol></li>
+</ol><h3>Настроить параметры ответа<a class="title-anchor" href="#title-3271-5" id="title-3271-5"> </a></h3>
+
+<p>Для настройки параметров ответа:</p>
+
+<ol><li>Изучите документацию веб-сервиса. В нашем примере используется следующий код.
+	<div class="code">
+	<div class="code__widgets">
+	<div class="code__source">
+	<pre class="prettyprint">
+&lt;wsdl:types&gt;
+    &lt;s:schema elementFormDefault="qualified" targetNamespace="http://ws.cdyne.com/PhoneVerify/query"&gt;
+        &lt;s:element name="CheckPhoneNumberResponse"&gt;
+            &lt;s:complexType&gt;
+                &lt;s:sequence&gt;
+                    &lt;s:element minOccurs="1" maxOccurs="1" name="CheckPhoneNumberResult" type="tns:PhoneReturn" /&gt;
+                &lt;/s:sequence&gt;
+            &lt;/s:complexType&gt;
+        &lt;/s:element&gt;
+        &lt;s:complexType name="PhoneReturn"&gt;
+            &lt;s:sequence&gt;
+                &lt;s:element minOccurs="0" maxOccurs="1" name="Company" type="s:string" /&gt;
+                &lt;s:element minOccurs="1" maxOccurs="1" name="Valid" type="s:boolean" /&gt;
+                ...
+		    &lt;/s:sequence&gt;
+        &lt;/s:complexType&gt;
+	...
+&lt;/wsdl:types&gt;
+</pre>
+	</div>
+	</div>
+	</div>
+	</li>
+	<li>Добавьте <strong>параметры обработки ответа</strong>:
+	<ol><li>На вкладке <span class="key">Обработка ответа</span> нажмите кнопку <span class="key">Добавить параметр</span>.</li>
+		<li>Добавьте параметр “Компания” и заполните его свойства (Рис. 6).
+		<div class="table">
+		<table><thead><tr><th width="10%">Поле</th>
+					<th width="50%">Комментарий</th>
+					<th>Пример</th>
+				</tr></thead><tbody><tr><th>Название</th>
+					<td>Название параметра сервиса.</td>
+					<td>Компания</td>
+				</tr><tr><th>Тип параметра</th>
+					<td>Тип параметра сервиса.</td>
+					<td>Параметр тела</td>
+				</tr><tr><th>Путь к элементу</th>
+					<td>Если для параметра используется пространство имен, то оно указывается в формате “Префикс пространства имен”:“Путь к параметру”.</td>
+					<td>CheckPhoneNumberResponse/<wbr></wbr>CheckPhoneNumberResult/<wbr></wbr>Company</td>
+				</tr><tr><th>Код в Creatio</th>
+					<td>Используется разработчиками для взаимодействия с веб-сервисом в программном коде Creatio. В данном случае уникальное имя интеграции с веб-сервисом состоит из его названия и префикса “Usr”.</td>
+					<td>Usr<wbr></wbr>Company</td>
+				</tr><tr><th>Тип данных</th>
+					<td>Тип данных параметров сервиса. Параметр с вложенными элементами должен иметь тип данных “Объект”.</td>
+					<td>Текст</td>
+				</tr><tr><th>Является массивом</th>
+					<td>Значение параметра-массива нельзя задать в элементе “Вызвать веб-сервис” в дизайнере процессов. Необходимо использовать элемент “Задание-сценарий”. Параметр с типом данных “Объект” обязательно должен быть массивом.</td>
+					<td>По умолчанию признак снят</td>
+				</tr><tr><th>Значение по умолчанию</th>
+					<td>Значение параметра по умолчанию.</td>
+					<td>Константа</td>
+				</tr></tbody></table></div>
+
+		<div class="media">
+		<div class="media__caption">Рис. 6 — Настройка параметра “Компания”</div>
+
+		<div class="media__element"><img alt="scr_soap_web_service_response_parameter1_properties.png" src="../../../../sites/default/files/images/NoCode_Customization/web_soap_service/scr_soap_web_service_response_parameter1_properties.png" /></div>
+		</div>
+		</li>
+		<li>Добавьте параметр “Валидно” и заполните его свойства (Рис. 7).
+		<div class="table">
+		<table><thead><tr><th width="10%">Поле</th>
+					<th width="50%">Комментарий</th>
+					<th>Пример</th>
+				</tr></thead><tbody><tr><th>Название</th>
+					<td>Название параметра сервиса.</td>
+					<td>Валидно</td>
+				</tr><tr><th>Тип параметра</th>
+					<td>Тип параметра сервиса.</td>
+					<td>Параметр тела</td>
+				</tr><tr><th>Путь к элементу</th>
+					<td>Если для параметра используется пространство имен, то оно указывается в формате “Префикс пространства имен”:“Путь к параметру”.</td>
+					<td>CheckPhoneNumberResponse/<wbr></wbr>CheckPhoneNumberResult/<wbr></wbr>Valid</td>
+				</tr><tr><th>Код в Creatio</th>
+					<td>Используется разработчиками для взаимодействия с веб-сервисом в программном коде Creatio. В данном случае уникальное имя интеграции с веб-сервисом состоит из его названия и префикса “Usr”.</td>
+					<td>Usr<wbr></wbr>Valid</td>
+				</tr><tr><th>Тип данных</th>
+					<td>Тип данных параметров сервиса. Параметр с вложенными элементами должен иметь тип данных “Объект”.</td>
+					<td>Логическое</td>
+				</tr><tr><th>Является массивом</th>
+					<td>Значение параметра-массива нельзя задать в элементе “Вызвать веб-сервис” в дизайнере процессов. Необходимо использовать элемент “Задание-сценарий”. Параметр с типом данных “Объект” обязательно должен быть массивом.</td>
+					<td>По умолчанию признак снят</td>
+				</tr><tr><th>Значение по умолчанию</th>
+					<td>Значение параметра по умолчанию.</td>
+					<td>Константа</td>
+				</tr></tbody></table></div>
+
+		<div class="media">
+		<div class="media__caption">Рис. 7 — Настройка параметра “Валидно”</div>
+
+		<div class="media__element"><img alt="scr_soap_web_service_response_parameter2_properties.png" src="../../../../sites/default/files/images/NoCode_Customization/web_soap_service/scr_soap_web_service_response_parameter2_properties.png" /></div>
+		</div>
+		</li>
+	</ol></li>
+</ol><p>Нажмите кнопку <span class="key">Ок</span> для сохранения настроек.</p>
+
+<h3>Настроить параметры запроса и ответа типа “коллекция”<a class="title-anchor" href="#title-3271-6" id="title-3271-6"> </a></h3>
+
+<p>Коллекцией (или массивом) является набор элементов. Creatio может передавать коллекции данных в веб-сервис и обрабатывать его ответы, содержащие коллекции. Если веб-сервис поддерживает получение и/или отправку массивов данных, то параметры типа “коллекция” можно использовать как для вызова веб-сервиса, так и для обработки его ответа.</p>
+
+<p><strong>Типы параметров коллекции</strong>:</p>
+
+<ul><li><strong>Простая коллекция</strong>. Любой параметр можно представить в виде коллекции, установив в свойствах параметров признак “Является массивом”. Простые коллекции являются массивами значений одного типа данных. Каждое значение является отдельным элементом коллекции. Например, “1, 2, 3” — это простой массив значений целых чисел, а “Бостон, Нью Йорк, Чикаго” — простой массив текстовых значений.</li>
+	<li><strong>Коллекция объекта</strong>. Коллекция представляет собой корневой параметр (т. н. объект), который содержит вложенные параметры.</li>
+</ul><p>Для настройки коллекции:</p>
+
+<ol><li>Изучите документацию веб-сервиса. В нашем примере используется следующий код.
+	<div class="code">
+	<div class="code__widgets">
+	<div class="code__source">
+	<pre class="prettyprint">
+&lt;s:element name="CheckPhoneNumbers"&gt;
+    &lt;s:complexType&gt;
+        &lt;s:sequence&gt;
+            &lt;s:element minOccurs="0" maxOccurs="1" name="PhoneNumbers" type="tns:ArrayOfString" /&gt;
+            &lt;s:element minOccurs="0" maxOccurs="1" name="LicenseKey" type="s:string" /&gt;
+        &lt;/s:sequence&gt;
+    &lt;/s:complexType&gt;
+&lt;/s:element&gt;
+&lt;s:complexType name="ArrayOfString"&gt;
+    &lt;s:sequence&gt;
+        &lt;s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" /&gt;
+    &lt;/s:sequence&gt;
+&lt;/s:complexType&gt;
+</pre>
+	</div>
+	</div>
+	</div>
+	</li>
+	<li>Добавьте метод “CheckPhoneNumbers”. Поля методов описаны на шаге <a data-auto-update-caption="true" href="../../../../7-17/user/kastomizacija_no_code/web_servisy/soap/nastroit_integraciyu_s_web_servisom_soap.html#title-3271-3">Настроить вызов метода</a>.</li>
+	<li>
+	<p>Настройте <strong>параметры запроса</strong>. Поля параметров описаны на шаге <a data-auto-update-caption="true" href="../../../../7-17/user/kastomizacija_no_code/web_servisy/soap/nastroit_integraciyu_s_web_servisom_soap.html#title-3271-4">Настроить параметры запроса</a>.</p>
+
+	<p>Обратите внимание, что в соответствии с документацией веб-сервиса параметр запроса “ArrayOfString” — комплексный тип, который состоит из массива элементов “string”. Для настройки параметров запроса, который является коллекцией:</p>
+
+	<ol><li>В поле <span class="key">Тип параметра</span> выберите “Параметр тела”.</li>
+		<li>Установите признак <span class="key">Является массивом</span>.</li>
+		<li>В поле <span class="key">Название элемента массива</span> укажите “string” (Рис. 8). По умолчанию — “item” (для простых массивов).
+		<div class="media">
+		<div class="media__caption">Рис. 8 — Настройка параметров запроса</div>
+
+		<div class="media__element"><img alt="scr_add_collection_parameter.png" src="../../../../sites/default/files/images/NoCode_Customization/web_soap_service/scr_add_collection_parameter.png" /></div>
+		</div>
+		</li>
+	</ol></li>
+	<li>Изучите документацию веб-сервиса. В нашем примере используется следующий код.
+	<div class="code">
+	<div class="code__widgets">
+	<div class="code__source">
+	<pre class="prettyprint">
+&lt;s:element name="CheckPhoneNumbersResponse"&gt;
+    &lt;s:complexType&gt;
+        &lt;s:sequence&gt;
+            &lt;s:element minOccurs="0" maxOccurs="1" name="CheckPhoneNumbersResult" type="tns:ArrayOfPhoneReturn" /&gt;
+        &lt;/s:sequence&gt;
+    &lt;/s:complexType&gt;
+&lt;/s:element&gt;
+&lt;s:complexType name="ArrayOfPhoneReturn"&gt;
+    &lt;s:sequence&gt;
+        &lt;s:element minOccurs="0" maxOccurs="unbounded" name="PhoneReturn" type="tns:PhoneReturn" /&gt;
+    &lt;/s:sequence&gt;
+&lt;/s:complexType&gt;
+&lt;s:element name="PhoneReturn" type="tns:PhoneReturn" /&gt;
+&lt;s:element name="ArrayOfPhoneReturn" nillable="true" type="tns:ArrayOfPhoneReturn" /&gt;
+&lt;s:complexType name="PhoneReturn"&gt;
+    &lt;s:sequence&gt;
+        &lt;s:element minOccurs="0" maxOccurs="1" name="Company" type="s:string" /&gt;
+        &lt;s:element minOccurs="1" maxOccurs="1" name="Valid" type="s:boolean" /&gt;
+        ...
+	&lt;/s:sequence&gt;
+&lt;/s:complexType&gt;	  
+</pre>
+	</div>
+	</div>
+	</div>
+	</li>
+	<li>
+	<p>Настройте <strong>параметры ответа</strong>. Поля методов описаны на шаге <a data-auto-update-caption="true" href="../../../../7-17/user/kastomizacija_no_code/web_servisy/soap/nastroit_integraciyu_s_web_servisom_soap.html#title-3271-5">Настроить параметры ответа</a>.</p>
+
+	<p>В поле <span class="key">Тип данных</span> выберите “Объект”. После этого станут доступны вложенные параметры (Рис. 9).</p>
+
+	<div class="media">
+	<div class="media__caption">Рис. 9 — Настройка типа данных</div>
+
+	<div class="media__element"><img alt="scr_add_collection_response_parameter.png" src="../../../../sites/default/files/images/NoCode_Customization/web_soap_service/scr_add_collection_response_parameter.png" /></div>
+	</div>
+	</li>
+</ol><p>Параметры ответа веб-сервиса типа “коллекция” могут использоваться в качестве входящих параметров элемента бизнес-процесса <span class="key">Вызвать веб-сервис</span>. Подробнее: <a href="../../../biznes_processy/spravka_po_elementam_processov/dejstviya_sistemy/vyzvat_veb_servis/element_processa_vyzvat_web_servcie.html?product=BPMS&amp;ver=7&amp;id=7141">Элемент процесса <span class="key">Вызвать веб-сервис</span></a>.</p>
+
+<h2>Проверить настройку интеграции с SOAP-сервисом<a class="title-anchor" href="#title-3271-7" id="title-3271-7"> </a></h2>
+
+<p>Для дальнейшего использования данных от сервиса в пользовательских бизнес-задачах необходимо проверить настройку интеграции.</p>
+
+<p>Начиная с версии 7.18.0 появилась возможность проверить настройку интеграции с SOAP-сервисом из интерфейса приложения, без создания <a href="../../../../7-17/user/kastomizacija_no_code/web_servisy/nastroit_integraciyu_s_web_servisom_soap.html#title-3271-7">тестового бизнес-процесса</a>.</p>
+
+<p>Чтобы <strong>проверить настройку интеграции с SOAP-сервисом</strong>:</p>
+
+<ol><li>Перейдите в рабочее место <span class="key">Студия</span> и откройте раздел <span class="key">Веб-сервисы</span>.</li>
+	<li>Откройте страницу веб-сервиса, интеграцию с которым необходимо проверить. В нашем примере это “Сервис получения информации по телефонному номеру”.</li>
+	<li>На детали <span class="key">Методы</span> страницы настройки интеграции с веб-сервисом откройте метод “Проверить номер телефона”.</li>
+	<li>На странице настройки метода нажмите <span class="key">Отправить тестовый запрос</span>.</li>
+	<li>Задайте значения параметров вызова метода.
+	<div class="table">
+	<table><thead><tr><th>Параметр</th>
+				<th>Значение</th>
+			</tr></thead><tbody><tr><th>Номер телефона</th>
+				<td>+1 617 765 7997</td>
+			</tr></tbody></table></div>
+	</li>
+	<li>Нажмите <span class="key">Отправить запрос</span> (Рис. 10).</li>
+</ol><p>В результате выполнения тестового запроса будет получен ответ от веб-сервиса. Значения параметров ответа отображены на вкладке <span class="key">Параметры ответа</span> в соответствующих полях (Рис. 10). Другие вкладки позволяют посмотреть запрос и ответ на запрос на языках XML и HTTP (формат данных raw).</p>
+
+<div class="media">
+<div class="media__caption">Рис. 10 — Проверка интеграции с SOAP-сервисом</div>
+
+<div class="media__element"><img alt="scr_send_test_request.gif" src="../../../../sites/default/files/images/NoCode_Customization/web_soap_service/7.18/scr_send_test_request.gif" /></div>
+</div>
+
+<p>Если при настройке интеграции с веб-сервисом была допущена ошибка, то в результате тестового запроса будет получен ответ с пустыми значениями параметров. В этом случае проверьте все настройки сервиса и повторите попытку.</p>
+
+<p>После проверки вы можете использовать интеграцию с веб-сервисом в пользовательских бизнес-процессах. Подробнее данный пример описан в статье <a data-auto-update-caption="true" href="../../../biznes_processy/primery_nastrojki_processov/integracija_s_veb_servisami/ispolzovat_integraciju_s_veb_servisami_dlja_avtomaticheskogo_obnovlenija_kursov_valjut.html?id=2364&amp;ver=7">Использовать интеграцию с веб-сервисами для автоматического обновления курсов валют</a>.</p>
+
+<p>В зависимости от особенностей веб-сервиса, прежде чем он станет доступным для использования, может потребоваться выполнить процедуру аутентификации. Подробнее: <a href="../autentifikatsiya/nastroit_autentifikaciyu_s_veb_servisom/index.html">Настроить аутентификацию веб-сервиса</a>.</p>
+</div>
+      
+  </div>
+<div class="block block-layout-builder block-field-blocknodeuser-documentationfield-linked-link">
+  
+    
+      
+  <div class="field field--name-field-linked-link field--type-link field--label-above">
+    <div class="field__label">Смотрите также</div>
+          <div class="field__items">
+              <div class="field__item"><a href="../obsor/nachalo_raboty_s_low_code_integraciey_veb_servisov.html">Начало работы с low-code интеграцией веб-сервисов </a></div>
+          <div class="field__item"><a href="../autentifikatsiya/nastroit_autentifikaciyu_s_veb_servisom.html">Настроить аутентификацию веб-сервиса</a></div>
+              </div>
+      </div>
+
+  </div>
+<div class="block block-layout-builder block-field-blocknodeuser-documentationfield-video">
+  
+    
+      
+  <div class="field field--name-field-video field--type-link field--label-above">
+    <div class="field__label">Онлайн-курсы</div>
+          <div class="field__items">
+              <div class="field__item"><a href="https://www.youtube.com/watch?v=gw9Jyh0EtaI">Tech Hour: Настраивай интеграции like a boss в Creatio, часть 1</a></div>
+              </div>
+      </div>
+
+  </div>
+
+    </div>
+  </div>
+
+  </div>
+
+</article>
+
+  </div>
+
+  </div>
+
+          </div>
+        </div>
+
+                  <aside class="creatio-sidebar creatio-sidebar_first" role="complementary">
+              <div class="region region-sidebar-first">
+    <div id="block-documentationnaviagtion" class="block block-ts-nav block-ts-nav-doc-nav">
+  
+    
+      <div class="ts-nav-block"><a href="../../../../index.html" class="ts-nav-block__link">Документация</a><div class="ts-nav-block__title">Для пользователя</div>
+</div>
+<div class="ts-nav-container"><ul class="ts-nav-menu"><li class="ts-nav-menu__item">
+  <a href="../../../nocode_platforma.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">No-сode платформа&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../bazis_platformy.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Базис платформы&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../instrumenty_crm.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Инструменты CRM&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../instrumenty_kastomizacii.html" class="ts-nav-menu__link ts-nav-menu__link_expanded ts-nav-menu__link_open" hreflang="zxx">Инструменты кастомизации&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+      <ul class="ts-nav-menu__children">
+      <li class="ts-nav-menu__item">
+  <a href="../../../instrumenty_kastomizacii/analitika.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Аналитика&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../instrumenty_kastomizacii/nastrojka_biznes_logiki.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Настройка интерфейса и бизнес-логики&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../instrumenty_kastomizacii/web_servisy.html" class="ts-nav-menu__link ts-nav-menu__link_expanded ts-nav-menu__link_open" hreflang="zxx">Веб-сервисы&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+      <ul class="ts-nav-menu__children">
+      <li class="ts-nav-menu__item">
+  <a href="../obsor/nachalo_raboty_s_low_code_integraciey_veb_servisov.html" class="ts-nav-menu__link" hreflang="ru">Обзор</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="nastroit_integraciyu_s_web_servisom_soap.html" class="ts-nav-menu__link ts-nav-menu__link_active ts-nav-menu__link_open" hreflang="ru">SOAP</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../rest/nastroit_integraciyu_s_veb_servisom_rest.html" class="ts-nav-menu__link" hreflang="ru">REST</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../autentifikatsiya/nastroit_autentifikaciyu_s_veb_servisom.html" class="ts-nav-menu__link" hreflang="ru">Аутентификация</a>
+  </li>
+
+    </ul>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../instrumenty_kastomizacii/instrumenty_iskusstvennogo_intellekta.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Инструменты ИИ&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../instrumenty_kastomizacii/otchety_i_pechatnye_formy.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Отчеты и печатные формы&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../instrumenty_kastomizacii/nastrojka_vneshnego_vida.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Настройка внешнего вида&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../instrumenty_kastomizacii/nastrojka_mobilnogo_prilozhenija.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Настройка мобильного приложения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../instrumenty_kastomizacii/polzovatelskaja_lokalizacija.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Пользовательская локализация&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../upravlenie_prilozhenijami/prilozhenie_marketplace/ustanovit_prilozhenie_marketplace.html" class="ts-nav-menu__link" hreflang="ru">Приложения Marketplace</a>
+  </li>
+
+    </ul>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../biznes_processy.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Бизнес-процессы&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../instrumenty_marketinga.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Инструменты маркетинга&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../instrumenty_prodazh.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Инструменты продаж&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../instrumenty_servisa.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Инструменты сервиса&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../ustanovka_i_administrirovanie.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Администрирование&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../razvertyvanie_onsite.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Развертывание on-site&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../banki_i_finansy.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Банки и финансы&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../drugie_reshenija.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Другие решения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+</ul>
+</div>
+
+  </div>
+
+  </div>
+
+            <div class="creatio-sidebar__toggle"></div>
+          </aside>
+        
+                  <aside class="creatio-sidebar creatio-sidebar_second" role="complementary">
+              <div class="region region-sidebar-second">
+    <div id="block-example" class="block block-ts-nav block-ts-nav-page-nav">
+  
+    
+        <div class="ts-nav-title">SOAP</div>
+<div class="ts-nav-page">
+      <ul class="ts-nav-page__list">
+                                                <li class="ts-nav-page__item ts-nav-page__item_expanded ts-nav-page__item_open"><a href="nastroit_integraciyu_s_web_servisom_soap.html" class="ts-nav-page__link ts-nav-page__link_expanded ts-nav-page__link_active">Настроить интеграцию с веб-сервисом SOAP&nbsp;<span class="ts-nav-page__link-arrow"></span></a></li>
+          </ul>
+  </div>
+
+  </div>
+<div id="block-adminfeedbackblock" class="block block-admin-feedback block-admin-feedback-block">
+  
+    
+      <div id="feedback-message"><div id="upper-feedback-content"><h2>Был ли данный материал полезен?</h2>
+<input class="feedback-btn feedback-btn__yes button js-form-submit form-submit" data-node-id="3400" data-feedback="yes" type="submit" name="op" value="Да" />
+<input class="feedback-btn feedback-btn__no button js-form-submit form-submit" data-node-id="3400" data-feedback="no" type="submit" name="op" value="Нет" />
+</div>
+<form class="admin-feedback-form" data-drupal-selector="admin-feedback-form" action="https://academy.terrasoft.ua/docs/user/kastomizacija_no_code/web_servisy/soap/nastroit_integraciyu_s_web_servisom_soap" method="post" id="admin-feedback-form" accept-charset="UTF-8">
+  <div id="feedback-msg-result"></div><div class="js-form-item form-item js-form-type-textarea form-type-textarea js-form-item-feedback-message form-item-feedback-message form-no-label">
+        <div class="form-textarea-wrapper">
+  <textarea id="edit-feedback-msg" data-drupal-selector="edit-feedback-message" name="feedback_message" rows="5" cols="60" class="form-textarea resize-vertical"></textarea>
+</div>
+
+        </div>
+<input id="feedback-id" data-drupal-selector="edit-feedback-id" type="hidden" name="feedback_id" value="" />
+<input class="feedback-btn feedback-btn__send-comment button js-form-submit form-submit" data-drupal-selector="edit-feedback-send" type="submit" id="edit-feedback-send" name="op" value="Отправить" />
+<input autocomplete="off" data-drupal-selector="form-hblv7xskzky1unovraiga8hdkhkn4ojsjhwplw8vpsk" type="hidden" name="form_build_id" value="form-hBlv7xsKZKY1UNOVraigA8HDKhkN4OJSJHwplW8vPSk" />
+<input data-drupal-selector="edit-admin-feedback-form" type="hidden" name="form_id" value="admin_feedback_form" />
+
+</form>
+</div>
+
+  </div>
+
+  </div>
+
+          </aside>
+              </main>
+    </div>
+  </div>
+
+  <footer role="contentinfo">
+    <div class="creatio-region creatio-region_footer">
+      <div class="creatio-container">
+          <div class="region region-footer">
+    <div id="block-footerua" class="block block-simple-block block-simple-blockfooter-ua">
+  
+    
+      <div class="footer">
+<div class="footer-left">
+<ul class="footer-socials"><li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_fb" href="https://www.facebook.com/terrasoft.ua" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_in" href="https://www.linkedin.com/company/terrasoft/" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_yt" href="https://www.youtube.com/c/TerrasoftUkraine" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_tg" href="https://t.me/Terrasoft_UA" target="_blank"> </a></li>
+</ul></div>
+
+<div class="footer-contact">
+<div class="footer-title">Будьте на связи!</div>
+
+<div class="footer-content">
+<div class="footer-items">
+<div class="footer-item"><a class="footer__link footer__link_phone" href="tel:+380443633133">+38 (044) 363-31-33</a></div>
+</div>
+
+<div class="footer-items">
+<div class="footer-item"><a class="footer__link footer__link_email" href="mailto:support@terrasoft.ua">support@terrasoft.ua</a></div>
+</div>
+</div>
+</div>
+</div>
+
+  </div>
+
+  </div>
+
+      </div>
+    </div>
+    <div class="creatio-region creatio-region_bottom">
+      <div class="creatio-container">
+          <div class="region region-bottom">
+    <div id="block-allrightsreservedua" class="block block-simple-block block-simple-blockfooter-bottom-ua">
+  
+    
+      <p>© 2002-2022 Terrasoft.  |  <a href="https://www.terrasoft.ua/privacy-policy" target="_blank">Конфиденциальность</a></p>
+
+  </div>
+
+  </div>
+
+      </div>
+    </div>
+  </footer>
+</div>
+<div class="creatio-bg"></div>
+
+
+  </div>
+
+    
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/docs\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/3400","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"ru"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"ajaxPageState":{"libraries":"admin_feedback\/admin_feedback_block,admin_feedback\/admin_feedback_css,classy\/base,classy\/messages,classy\/node,core\/drupal.ajax,core\/jquery.form,core\/normalize,creatio\/creatio.lists,creatio\/fancybox,creatio\/global,layout_discovery\/onecol,system\/base,ts_doc\/doc_version,ts_feedback\/ts_feedback,ts_nav\/breadcrumb,ts_nav\/doc_nav,ts_nav\/page_nav,ts_title_anchor\/ts_title_anchor","theme":"creatio","theme_token":null},"ajaxTrustedUrl":{"form_action_p_pvdeGsVG5zNF_XLGPTvYSKCf43t8qZYSwcfZl2uzM":true,"\/docs\/user\/kastomizacija_no_code\/web_servisy\/soap\/nastroit_integraciyu_s_web_servisom_soap?ajax_form=1":true},"admin_feedback":{"yes_response":"\u0421\u043f\u0430\u0441\u0438\u0431\u043e \u0437\u0430 \u043e\u0431\u0440\u0430\u0442\u043d\u0443\u044e \u0441\u0432\u044f\u0437\u044c!","no_response":"\u0421\u043f\u0430\u0441\u0438\u0431\u043e \u0437\u0430 \u043e\u0431\u0440\u0430\u0442\u043d\u0443\u044e \u0441\u0432\u044f\u0437\u044c!","custom_text_response_on_no":{"value":"","format":"full_html"},"feedback_prompt_on_yes":true,"feedback_prompt_on_no":true,"feedback_enable_predefined_answers":false,"feedback_prompt":"\u041a\u0430\u043a \u043c\u043e\u0436\u043d\u043e \u0443\u043b\u0443\u0447\u0448\u0438\u0442\u044c \u044d\u0442\u0443 \u0441\u0442\u0430\u0442\u044c\u044e?"},"ajax":{"edit-feedback-send":{"callback":"::validateFeedbackMsg","event":"mousedown","keypress":true,"prevent":"click","url":"\/docs\/user\/kastomizacija_no_code\/web_servisy\/soap\/nastroit_integraciyu_s_web_servisom_soap?ajax_form=1","dialogType":"ajax","submit":{"_triggering_element_name":"op","_triggering_element_value":"\u041e\u0442\u043f\u0440\u0430\u0432\u0438\u0442\u044c"}}},"user":{"uid":0,"permissionsHash":"9c2367dfcaba0fa15f0375f97aed64e146c908cee68508d13b79e3ee80e5162d"}}</script>
+<script src="../../../../sites/default/files/js/js_F2-Y4EzgTnESr58XByoLYEnsbi7ysTfMIKN1RvsMSWY.js"></script>
+
+
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+      <g id="svg-copy" class="svg-icon svg-icon_copy">
+        <path d="M15.111,18H1.889A1.848,1.848,0,0,1,0,16.2V3.6A1.848,1.848,0,0,1,1.889,1.8H5.837a2.87,2.87,0,0,1,5.326,0h3.948A1.848,1.848,0,0,1,17,3.6V16.2A1.848,1.848,0,0,1,15.111,18ZM3.777,12.6v1.8h6.611V12.6Zm0-3.6v1.8h9.445V9Zm0-3.6V7.2h9.445V5.4ZM8.5,1.8a.924.924,0,0,0-.944.9.945.945,0,0,0,1.889,0A.924.924,0,0,0,8.5,1.8Z"/>
+      </g>
+
+      <g id="svg-prev" class="svg-icon svg-icon_arrow">
+        <path d="M5.488,12.779,0,6.39,5.488,0" transform="translate(1 0.652)"/>
+      </g>
+
+      <g id="svg-next" class="svg-icon svg-icon_arrow">
+        <path d="M0,12.779,5.488,6.39,0,0" transform="translate(0.759 0.652)"/>
+      </g>
+    </svg>
+  </body>
+
+<!-- Mirrored from academy.terrasoft.ua/docs/user/kastomizacija_no_code/web_servisy/soap/nastroit_integraciyu_s_web_servisom_soap by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 22 Mar 2022 20:06:05 GMT -->
+</html>

@@ -1,0 +1,1074 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# ">
+  
+<!-- Mirrored from academy.terrasoft.ua/docs/8-0/developer/integratsiya_i_vneshnij_api/servisy_raboty_s_dannymi/odata/primery_zaprosov_s_tipom_dannykh_stream by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Mar 2022 06:18:54 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+          <!-- Google Tag Manager -->
+      <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          '../../../../../../../www.googletagmanager.com/gtm5445.html?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-KLLB8G');</script>
+      <!-- End Google Tag Manager -->
+        <meta charset="utf-8" />
+<link rel="canonical" href="primery_zaprosov_s_tipom_dannykh_stream.html" />
+<meta name="description" content="Элементы с типом данных Stream:
+
+Изображения.
+	Файлы.
+	Двоичные данные.
+Для работы с типом данных Stream используются стандартные методы:" />
+<meta property="og:url" content="https://academy.terrasoft.ua/docs/8-0/developer/integratsiya_i_vneshnij_api/servisy_raboty_s_dannymi/odata/primery_zaprosov_s_tipom_dannykh_stream" />
+<meta property="og:title" content="Примеры запросов с типом данных Stream" />
+<meta property="og:description" content="Элементы с типом данных Stream:
+
+Изображения.
+	Файлы.
+	Двоичные данные.
+Для работы с типом данных Stream используются стандартные методы:" />
+<meta name="Generator" content="Drupal 9 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="../../../../../themes/custom/creatio/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="revision" href="primery_zaprosov_s_tipom_dannykh_stream.html" />
+
+    <title>Примеры запросов с типом данных Stream | Creatio Academy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&amp;family=Open+Sans:ital,wght@0,300;0,400;0,600;1,400&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" media="all" href="../../../../../sites/default/files/css/css_6lTP66__-yc6QXFp1zOwoeJ0HVigoYZP-SeoLLii000.css" />
+<link rel="stylesheet" media="all" href="../../../../../sites/default/files/css/css_XQJDNhkF3xH5SZCcY-PI89Zu4nYIzQ5oR3SnUKyfXJU.css" />
+<link rel="stylesheet" media="print" href="../../../../../sites/default/files/css/css_Zn4VHvcniOOtUwkIVwXzYr_0AI9gUVgZcPqaH4ViagU.css" />
+
+    
+  </head>
+  <body class="path-node page-node-type-case">
+          <!-- Google Tag Manager (noscript) -->
+      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KLLB8G"
+                        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+      <!-- End Google Tag Manager (noscript) -->
+    
+        
+      <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    <div class="creatio-page d-flex flex-column">
+        <div class="region region-informer">
+    <div id="block-terrasoftpidtrimueukrainu" class="block block-simple-block block-simple-blockterrasoft-pidtrimue-ukrainu">
+  
+    
+      <style type="text/css">
+<!--/*--><![CDATA[/* ><!--*/
+@import url(../../../../../../../www.terrasoft.ua/themes/custom/creatio/css/components/informer.css)
+
+/*--><!]]>*/
+</style><div class="ts-swu">
+<div class="creatio-container">
+<div class="ts-swu__cont">
+<div><a class="ts-swu__link" href="https://www.terrasoft.ua/terrasoft-stands-with-ukraine" target="_blank">Україна понад усе!</a> <span><a href="https://www.terrasoft.ua/terrasoft-stands-with-ukraine" target="_blank">Приєднуйтеся</a> до допомоги!</span></div>
+</div>
+</div></div>
+
+  </div>
+
+  </div>
+
+  
+  <header role="banner">
+          <div class="creatio-region creatio-region_top">
+        <div class="creatio-container">
+            <div class="region region-top">
+    <div id="block-menutoggle" class="block block-simple-block block-simple-blockmenu-toggle">
+  
+    
+      <div class="menu-toggle"><span> </span></div>
+
+  </div>
+<div id="block-logowhite-2" class="block block-simple-block block-simple-blocklogo-white">
+  
+    
+      <p><a class="site-logo" href="../../../../../../index.html" rel="home"><img src="../../../../../themes/custom/creatio/logo-white.svg" /></a></p>
+
+  </div>
+<div id="block-search" class="block block-simple-block block-simple-blocksearch">
+  
+    
+      <div class="search">
+<form action="https://academy.terrasoft.ua/search" class="search-form" method="get"><input class="search-form__input" name="search" placeholder="Поиск" type="search" /><input class="search-form__button" type="submit" value="Поиск" /> </form>
+
+<div class="search-toggle"> </div>
+</div>
+
+  </div>
+<nav role="navigation" aria-labelledby="block-sitesua-menu" id="block-sitesua" class="block block-menu navigation menu--sites-ua">
+            
+  <h2 class="visually-hidden" id="block-sitesua-menu">Sites UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="https://www.terrasoft.ua/" rel="nofollow" target="_blank">Terrasoft</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://community.terrasoft.ua/" rel="nofollow" target="_blank">Community</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://marketplace.terrasoft.ua/" rel="nofollow" target="_blank">Marketplace</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+<div id="block-usermenu" class="block block-ts-user block-ts-user-menu-block">
+  
+    
+      <ul class="user-menu">
+      <li class="user-menu__item">
+      <a class="user-menu__link" href="https://profile.terrasoft.ua/user/login?destination=academy/ua/docs/8-0/developer/integratsiya_i_vneshnij_api/servisy_raboty_s_dannymi/odata/primery_zaprosov_s_tipom_dannykh_stream">Войти</a>
+    </li>
+  </ul>
+
+  </div>
+<div id="block-usermenumobile" class="block block-ts-user block-ts-user-menu-mobile-block">
+  
+    
+      <ul class="user-menu-mobile">
+      <li class="user-menu-mobile__item">
+      <div class="user-menu-mobile__user user-menu-mobile__user_icon"></div>
+      <ul class="user-menu-mobile__submenu">
+        <li class="user-menu-mobile__subitem">
+          <a class="user-menu-mobile__sublink" href="https://profile.terrasoft.ua/user/login?destination=academy/ua/docs/8-0/developer/integratsiya_i_vneshnij_api/servisy_raboty_s_dannymi/odata/primery_zaprosov_s_tipom_dannykh_stream">Войти</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  </div>
+
+  </div>
+
+        </div>
+      </div>
+              <div class="creatio-region creatio-region_header">
+        <div class="creatio-container">
+            <div class="region region-header">
+    <div id="block-logo" class="block block-simple-block block-simple-blocklogo">
+  
+    
+      <p><a class="site-logo" href="../../../../../../index.html" rel="home"><img src="../../../../../themes/custom/creatio/logo.svg" /></a></p>
+
+  </div>
+<nav role="navigation" aria-labelledby="block-osnovnayanavigaciyaua-menu" id="block-osnovnayanavigaciyaua" class="block block-menu navigation menu--main-ua">
+            
+  <h2 class="visually-hidden" id="block-osnovnayanavigaciyaua-menu">Основная навигация UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="../../../../../index.html" data-drupal-link-system-path="&lt;front&gt;">Документация</a>
+              </li>
+                <li class="menu-item">
+        <a href="../../../../../../trainings.html">Тренинги</a>
+              </li>
+                <li class="menu-item">
+        <a href="../../../../../certification.html" data-drupal-link-system-path="node/3084">Сертификация и тестирование</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+<nav role="navigation" aria-labelledby="block-sitesua-2-menu" id="block-sitesua-2" class="block block-menu navigation menu--sites-ua">
+            
+  <h2 class="visually-hidden" id="block-sitesua-2-menu">Sites UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="https://www.terrasoft.ua/" rel="nofollow" target="_blank">Terrasoft</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://community.terrasoft.ua/" rel="nofollow" target="_blank">Community</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://marketplace.terrasoft.ua/" rel="nofollow" target="_blank">Marketplace</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+
+  </div>
+
+        </div>
+      </div>
+              <div class="creatio-region creatio-region_breadcrumb">
+        <div class="creatio-container">
+            <div class="region region-breadcrumb">
+    <div id="block-logowhite" class="block block-simple-block block-simple-blocklogo-white">
+  
+    
+      <p><a class="site-logo" href="../../../../../../index.html" rel="home"><img src="../../../../../themes/custom/creatio/logo-white.svg" /></a></p>
+
+  </div>
+<div id="block-breadcrumbnaviagtion" class="block block-ts-nav block-ts-nav-bread">
+  
+    
+      <nav class="breadcrumb"><ol class="ts-nav-breadcrumb__list"><li class="ts-nav-breadcrumb__item"><a href="../../../../../index.html" class="ts-nav-breadcrumb__link" title="Документация">Документация</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../../../index2132.html?vid_1=2" class="ts-nav-breadcrumb__link" title="Для разработчика">Для разработчика</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../integratsiya_i_vneshnij_api.html" class="ts-nav-breadcrumb__link" title="Интеграция и внешний API" hreflang="zxx">Интеграция и внешний API</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../servisy_raboty_s_dannymi.html" class="ts-nav-breadcrumb__link" title="Сервисы работы с данными" hreflang="zxx">Сервисы работы с данными</a></li>
+<li class="ts-nav-breadcrumb__item ts-nav-breadcrumb__item_mobile"><a href="../../../integrations_and_api/data_services/odata.html" class="ts-nav-breadcrumb__link" title="OData" hreflang="ru">OData</a></li>
+<li class="ts-nav-breadcrumb__item"><span class="ts-nav-breadcrumb__link ts-nav-breadcrumb__link_current" title="Примеры запросов с типом данных Stream">Примеры запросов с типом данных Stream</span></li>
+</ol>
+</nav>
+
+  </div>
+<div id="block-search-2" class="block block-simple-block block-simple-blocksearch">
+  
+    
+      <div class="search">
+<form action="https://academy.terrasoft.ua/search" class="search-form" method="get"><input class="search-form__input" name="search" placeholder="Поиск" type="search" /><input class="search-form__button" type="submit" value="Поиск" /> </form>
+
+<div class="search-toggle"> </div>
+</div>
+
+  </div>
+
+  </div>
+
+        </div>
+      </div>
+      </header>
+
+  <div class="creatio-region creatio-region_main">
+    <div class="creatio-container">
+                <div class="region region-breadcrumb-mobile">
+    <div id="block-breadcrumbnaviagtion-2" class="block block-ts-nav block-ts-nav-bread">
+  
+    
+      <nav class="breadcrumb"><ol class="ts-nav-breadcrumb__list"><li class="ts-nav-breadcrumb__item"><a href="../../../../../index.html" class="ts-nav-breadcrumb__link" title="Документация">Документация</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../../../index2132.html?vid_1=2" class="ts-nav-breadcrumb__link" title="Для разработчика">Для разработчика</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../integratsiya_i_vneshnij_api.html" class="ts-nav-breadcrumb__link" title="Интеграция и внешний API" hreflang="zxx">Интеграция и внешний API</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../servisy_raboty_s_dannymi.html" class="ts-nav-breadcrumb__link" title="Сервисы работы с данными" hreflang="zxx">Сервисы работы с данными</a></li>
+<li class="ts-nav-breadcrumb__item ts-nav-breadcrumb__item_mobile"><a href="../../../integrations_and_api/data_services/odata.html" class="ts-nav-breadcrumb__link" title="OData" hreflang="ru">OData</a></li>
+<li class="ts-nav-breadcrumb__item"><span class="ts-nav-breadcrumb__link ts-nav-breadcrumb__link_current" title="Примеры запросов с типом данных Stream">Примеры запросов с типом данных Stream</span></li>
+</ol>
+</nav>
+
+  </div>
+
+  </div>
+
+      
+      <main class="creatio-main" role="main">
+                                                    
+        <div class="creatio-content creatio-content_small">
+          <div class="creatio-content__inner creatio-content__inner_bg">
+                            <div class="region region-messages">
+    <div data-drupal-messages-fallback class="hidden"></div>
+
+  </div>
+
+            
+              <div class="region region-content">
+    <div id="block-creatio-page-title" class="block block-core block-page-title-block">
+  
+    
+      
+  <h1 class="page-title"><span class="field field--name-title field--type-string field--label-hidden">Примеры запросов с типом данных Stream</span>
+</h1>
+
+
+  </div>
+<div id="block-creatio-content" class="block block-system block-system-main-block">
+  
+    
+      
+<article data-history-node-id="2301" role="article" about="/docs/8-0/developer/integratsiya_i_vneshnij_api/servisy_raboty_s_dannymi/odata/primery_zaprosov_s_tipom_dannykh_stream" class="node node--type-case node--view-mode-full">
+
+  
+    
+
+  
+  <div class="node__content">
+      <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocknodecasefield-difficulty">
+  
+    
+      
+            <div class="field field--name-field-difficulty field--type-entity-reference field--label-hidden field__item"><div about="/docs/8-0/taxonomy/term/169" id="taxonomy-term-169" class="taxonomy-term vocabulary-difficulty">
+  
+  
+  <div class="content">
+      <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocktaxonomy-termdifficultyfield-icon">
+  
+    
+      
+            <div class="field field--name-field-icon field--type-image field--label-hidden field__item">  <img src="../../../../../sites/default/files/difficulty/advanced.svg" alt="" loading="lazy" typeof="foaf:Image" />
+
+</div>
+      
+  </div>
+<div class="block block-layout-builder block-field-blocktaxonomy-termdifficultyname">
+  
+    
+      
+            <div class="field field--name-name field--type-string field--label-hidden field__item"><span style="color: #EF4524;">Сложный</span></div>
+      
+  </div>
+
+    </div>
+  </div>
+
+  </div>
+</div>
+</div>
+      
+  </div>
+<div class="block block-ts-doc block-ts-doc-downloads">
+  
+    
+      <a href="../../../../../sites/default/files/pdf/node/2301/Primery_zaprosov_s_tipom_dannykh_Stream_.pdf" target="_blank">PDF</a>
+  </div>
+<div class="block block-ts-doc block-ts-doc-versions">
+  
+    
+        <div class="ts-doc-versions">
+    <select class="ts-doc-versions__select">
+                                                <option value="/docs/8-0/developer/integratsiya_i_vneshnij_api/servisy_raboty_s_dannymi/odata/primery_zaprosov_s_tipom_dannykh_stream" selected>Версия 8.0</option>
+                              <option value="/docs/7-18/developer/integratsiya_i_vneshnij_api/servisy_raboty_s_dannymi/odata/primery_zaprosov_s_tipom_dannykh_stream">Версия 7.18</option>
+                              <option value="/docs/7-17/developer/integratsiya_i_vneshnij_api/servisy_raboty_s_dannymi/odata/primery_zaprosov_s_tipom_dannykh_stream">Версия 7.17</option>
+                              <option value="/docs/7-16/developer/integratsiya_i_vneshnij_api/servisy_raboty_s_dannymi/odata/primery_zaprosov_s_tipom_dannykh_stream">Версия 7.16</option>
+          </select>
+  </div>
+
+  </div>
+
+    </div>
+  </div>
+  <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocknodecasebody">
+  
+    
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><p><strong>Элементы</strong> с типом данных Stream:</p>
+
+<ul><li>Изображения.</li>
+	<li>Файлы.</li>
+	<li>Двоичные данные.</li>
+</ul><p>Для работы с типом данных Stream используются стандартные <strong>методы</strong>:</p>
+
+<ul><li><span class="filled">GET</span> — получение данных.</li>
+	<li><span class="filled">POST</span> — добавление данных.</li>
+	<li><span class="filled">PUT</span> — изменение данных.</li>
+	<li><span class="filled">DELETE</span> — удаление данных.</li>
+</ul><p>Для отображения результата выполнения запросов к Creatio при работе с типом данных Stream необходимо очистить кэш браузера.</p>
+
+<h2>Получить данные<a class="title-anchor" href="#title-2301-1" id="title-2301-1"> </a></h2>
+
+<div class="message message_example">
+<p><span class="message__bold message__bold_example">Пример.</span> Используя сервис работы с данными OData, получить фото контакта "New user".</p>
+</div>
+
+<h3>Реализация примера<a class="title-anchor" href="#title-2301-2" id="title-2301-2"> </a></h3>
+
+<ol><li>
+	<p>Получите идентификатор фото контакта "New user".</p>
+
+	<p>Фото контакта содержится в колонке <span class="filled">[Data]</span> таблицы <span class="filled">[SysImage]</span> базы данных. Чтобы <strong>получить идентификатор фото контакта</strong> "New user", выполните следующий SQL-запрос.</p>
+
+	<div class="SimpleTabContainer" data-itemid="JSON" data-title="JSON" id="Syntax_JSON">
+	<div class="code">
+	<div class="code__widgets">
+	<div class="code__source" data-tab="SQL-запрос">
+	<pre class="prettyprint">
+select Id from SysImage where Id = (select PhotoId from Contact where Name = 'New user')
+</pre>
+	</div>
+
+	<div class="code__source" data-tab="Ответ на SQL-запрос">
+	<pre class="prettyprint">
+29FE7EDF-4DB9-4E09-92B0-018047BA1F71
+</pre>
+	</div>
+	</div>
+	</div>
+	</div>
+	</li>
+	<li>
+	<p>Получите фото контакта "New user".</p>
+
+	<p>Чтобы <strong>получить фото контакта</strong> "New user", выполните следующий запрос.</p>
+
+	<div class="SimpleTabContainer" data-itemid="JSON" data-title="JSON" id="Syntax_JSON">
+	<div class="code">
+	<div class="code__widgets">
+	<div class="code__source" data-tab="Запрос">
+	<pre class="prettyprint">
+// Получить значение поля [Data] экземпляра объекта с [Id] 29FE7EDF-4DB9-4E09-92B0-018047BA1F71 коллекции [SysImage].
+GET http://mycreatio.com/0/odata/SysImage(29FE7EDF-4DB9-4E09-92B0-018047BA1F71)/Data
+</pre>
+	</div>
+
+	<div class="code__source" data-tab="Ответ на запрос">
+	<pre class="prettyprint">
+Status: <span class="status-code">200 OK</span>
+</pre>
+
+	<div class="media">
+	<div class="media__element"><img alt="" border="0" src="../../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/StreamData/7.18/scr_ContactPhoto.png" /></div>
+	</div>
+	</div>
+
+	<div class="code__source" data-tab="Результат в приложении Creatio">
+	<div class="media">
+	<div class="media__element"><img alt="" border="0" src="../../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/StreamData/7.18/scr_GetImage.png" /></div>
+	</div>
+	</div>
+	</div>
+	</div>
+	</div>
+	</li>
+</ol><h2>Добавить данные<a class="title-anchor" href="#title-2301-3" id="title-2301-3"> </a></h2>
+
+<div class="message message_example">
+<p><span class="message__bold message__bold_example">Пример.</span> Используя сервис работы с данными OData, добавить контакт "New user". Затем добавить контакту фото.</p>
+
+<div class="media">
+<div class="media__element"><img alt="" border="0" src="../../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/StreamData/7.18/scr_NewContactPhoto.png" /></div>
+</div>
+</div>
+
+<h3>Реализация примера<a class="title-anchor" href="#title-2301-4" id="title-2301-4"> </a></h3>
+
+<ol><li>
+	<p>Добавьте контакт "New user".</p>
+
+	<p>Все контакты содержатся в таблице <span class="filled">[Contact]</span> базы данных. Чтобы <strong>добавить контакт</strong> "New user", выполните следующий запрос.</p>
+
+	<div class="SimpleTabContainer" data-itemid="JSON" data-title="JSON" id="Syntax_JSON">
+	<div class="code">
+	<div class="code__widgets">
+	<div class="code__source" data-tab="Запрос">
+	<pre class="prettyprint">
+// Добавить экземпляр объекта коллекции [Contact].
+POST http://mycreatio.com/0/odata/Contact
+
+Accept: application/json; odata=verbose
+Content-Type: application/json; odata=verbose; IEEE754Compatible=true
+BPMCSRF: OpK/NuJJ1w/SQxmPvwNvfO
+
+{
+    // В поле [Name] записать имя контакта "New user".
+    "Name": "New user"
+}
+</pre>
+	</div>
+
+	<div class="code__source" data-tab="Ответ на запрос ">
+	<pre class="prettyprint">
+Status: <span class="status-code">201 Created</span>
+
+{
+    "@odata.context": "http://mycreatio.com/0/odata/$metadata#Contact/$entity",
+    "Id": "4c63c8fa-467b-48a6-973f-b2069298404f",
+    "Name": "New user",
+    "OwnerId": "410006e1-ca4e-4502-a9ec-e54d922d2c00",
+    "CreatedOn": "2021-01-14T08:33:29.009023Z",
+    "CreatedById": "410006e1-ca4e-4502-a9ec-e54d922d2c00",
+    "ModifiedOn": "2021-01-14T08:33:29.009023Z",
+    "ModifiedById": "410006e1-ca4e-4502-a9ec-e54d922d2c00",
+    "ProcessListeners": 0,
+    "Dear": "",
+    "SalutationTypeId": "00000000-0000-0000-0000-000000000000",
+    "GenderId": "00000000-0000-0000-0000-000000000000",
+    "AccountId": "00000000-0000-0000-0000-000000000000",
+    "DecisionRoleId": "00000000-0000-0000-0000-000000000000",
+    "TypeId": "00000000-0000-0000-0000-000000000000",
+    "JobId": "00000000-0000-0000-0000-000000000000",
+    "JobTitle": "",
+    "DepartmentId": "00000000-0000-0000-0000-000000000000",
+    "BirthDate": "0001-01-01T00:00:00Z",
+    "Phone": "",
+    "MobilePhone": "",
+    "HomePhone": "",
+    "Skype": "",
+    "Email": "",
+    "AddressTypeId": "00000000-0000-0000-0000-000000000000",
+    "Address": "",
+    "CityId": "00000000-0000-0000-0000-000000000000",
+    "RegionId": "00000000-0000-0000-0000-000000000000",
+    "Zip": "",
+    "CountryId": "00000000-0000-0000-0000-000000000000",
+    "DoNotUseEmail": false,
+    "DoNotUseCall": false,
+    "DoNotUseFax": false,
+    "DoNotUseSms": false,
+    "DoNotUseMail": false,
+    "Notes": "",
+    "Facebook": "",
+    "LinkedIn": "",
+    "Twitter": "",
+    "FacebookId": "",
+    "LinkedInId": "",
+    "TwitterId": "",
+    "ContactPhoto@odata.mediaEditLink": "Contact(4c63c8fa-467b-48a6-973f-b2069298404f)/ContactPhoto",
+    "ContactPhoto@odata.mediaReadLink": "Contact(4c63c8fa-467b-48a6-973f-b2069298404f)/ContactPhoto",
+    "ContactPhoto@odata.mediaContentType": "application/octet-stream",
+    "TwitterAFDAId": "00000000-0000-0000-0000-000000000000",
+    "FacebookAFDAId": "00000000-0000-0000-0000-000000000000",
+    "LinkedInAFDAId": "00000000-0000-0000-0000-000000000000",
+    "PhotoId": "00000000-0000-0000-0000-000000000000",
+    "GPSN": "",
+    "GPSE": "",
+    "Surname": "user",
+    "GivenName": "New",
+    "MiddleName": "",
+    "Confirmed": true,
+    "IsNonActualEmail": false,
+    "Completeness": 0,
+    "LanguageId": "6ebc31fa-ee6c-48e9-81bf-8003ac03b019",
+    "Age": 0
+}
+</pre>
+	</div>
+
+	<div class="code__source" data-tab="Результат в приложении Creatio">
+	<div class="media">
+	<div class="media__element"><img alt="" border="0" src="../../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/StreamData/7.18/scr_CreateUser.png" /></div>
+	</div>
+	</div>
+	</div>
+	</div>
+	</div>
+
+	<p>Идентификатор контакта "New user" "4c63c8fa-467b-48a6-973f-b2069298404f".</p>
+	</li>
+	<li>
+	<p>Добавьте фото контакта "New user".</p>
+
+	<p>Фото контакта должно содержаться в колонке <span class="filled">[Data]</span> таблицы <span class="filled">[SysImage]</span> базы данных. Для созданного контакта запись в таблице отсутствует, поэтому ее необходимо добавить. Чтобы <strong>добавить запись в таблицу</strong>, выполните следующий запрос.</p>
+
+	<div class="SimpleTabContainer" data-itemid="JSON" data-title="JSON" id="Syntax_JSON">
+	<div class="code">
+	<div class="code__widgets">
+	<div class="code__source" data-tab="Запрос">
+	<pre class="prettyprint">
+// Добавить экземпляр объекта коллекции [SysImage].
+POST http://mycreatio.com/0/odata/SysImage
+
+Accept: application/json; odata=verbose
+Content-Type: application/json; odata=verbose; IEEE754Compatible=true
+BPMCSRF: OpK/NuJJ1w/SQxmPvwNvfO
+
+{
+    // В поле [Name] записать название файла с фото контакта.
+    "Name": "scr_NewContactPhoto.png",
+    // В поле [Id] записать произвольный идентификатор записи в таблице [SysImage].
+    "Id": "410006E1-CA4E-4502-A9EC-E54D922D2C01",
+    // В поле [MimeType] записать тип файла с фото контакта.
+    "MimeType": "image/png"
+}
+</pre>
+	</div>
+
+	<div class="code__source" data-tab="Ответ на запрос ">
+	<pre class="prettyprint">
+Status: <span class="status-code">201 Created</span>
+
+{
+    "@odata.context": "http://mycreatio.com/0/odata/$metadata#SysImage/$entity",
+    "Id": "410006e1-ca4e-4502-a9ec-e54d922d2c01",
+    "CreatedOn": "2021-01-14T08:52:47.7573789Z",
+    "CreatedById": "410006e1-ca4e-4502-a9ec-e54d922d2c00",
+    "ModifiedOn": "2021-01-14T08:52:47.7573789Z",
+    "ModifiedById": "410006e1-ca4e-4502-a9ec-e54d922d2c00",
+    "ProcessListeners": 0,
+    "UploadedOn": "0001-01-01T00:00:00Z",
+    "Name": "scr_NewContactPhoto.png",
+    "Data@odata.mediaEditLink": "SysImage(410006e1-ca4e-4502-a9ec-e54d922d2c01)/Data",
+    "Data@odata.mediaReadLink": "SysImage(410006e1-ca4e-4502-a9ec-e54d922d2c01)/Data",
+    "Data@odata.mediaContentType": "application/octet-stream",
+    "MimeType": "image/png",
+    "HasRef": false,
+    "PreviewData@odata.mediaEditLink": "SysImage(410006e1-ca4e-4502-a9ec-e54d922d2c01)/PreviewData",
+    "PreviewData@odata.mediaReadLink": "SysImage(410006e1-ca4e-4502-a9ec-e54d922d2c01)/PreviewData",
+    "PreviewData@odata.mediaContentType": "application/octet-stream"
+}
+</pre>
+	</div>
+	</div>
+	</div>
+	</div>
+
+	<p>В таблицу <span class="filled">[SysImage]</span> базы данных была добавлена запись, но колонка <span class="filled">[Data]</span> содержит значение "0х".</p>
+
+	<p>Изображение необходимо передать в теле запроса, а название изображения должно совпадать из значением поля <span class="filled">[Name]</span>. Чтобы <strong>добавить фото контакта</strong> в колонку <span class="filled">[Data]</span>, выполните следующий запрос.</p>
+
+	<div class="SimpleTabContainer" data-itemid="JSON" data-title="JSON" id="Syntax_JSON">
+	<div class="code">
+	<div class="code__widgets">
+	<div class="code__source" data-tab="Запрос">
+	<pre class="prettyprint">
+// Изменить значение поля [Data] экземпляра объекта с [Id] 410006e1-ca4e-4502-a9ec-e54d922d2c01 коллекции [SysImage].
+PUT http://mycreatio.com/0/odata/SysImage(410006e1-ca4e-4502-a9ec-e54d922d2c01)/Data
+
+Accept: application/json; text/plain; */*
+Content-Type: application/octet-stream; IEEE754Compatible=true
+BPMCSRF: OpK/NuJJ1w/SQxmPvwNvfO
+</pre>
+
+	<div class="media">
+	<div class="media__element"><img alt="" border="0" src="../../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/StreamData/7.18/scr_NewContactPhoto.png" /></div>
+	</div>
+	</div>
+
+	<div class="code__source" data-tab="Ответ на запрос ">
+	<pre class="prettyprint">
+Status: <span class="status-code">200 OK</span>
+</pre>
+	</div>
+	</div>
+	</div>
+	</div>
+	</li>
+	<li>
+	<p>Выполните привязку добавленного фото к контакту "New user".</p>
+
+	<p>Для выполнения привязки фото к контакту "New user" необходимо установить связь между полем <span class="filled">[Data]</span> таблицы <span class="filled">[SysImage]</span> и полем <span class="filled">[PhotoId]</span> таблицы <span class="filled">[Contact]</span>. Чтобы <strong>установить привязку</strong>, выполните следующий запрос.</p>
+
+	<div class="SimpleTabContainer" data-itemid="JSON" data-title="JSON" id="Syntax_JSON">
+	<div class="code">
+	<div class="code__widgets">
+	<div class="code__source" data-tab="Запрос">
+	<pre class="prettyprint">
+// Изменить поле [PhotoId] экземпляра объекта с [Id] 4c63c8fa-467b-48a6-973f-b2069298404f коллекции [Contact].
+PATCH http://mycreatio.com/0/odata/Contact(4c63c8fa-467b-48a6-973f-b2069298404f)
+
+Accept: application/json;odata=verbose
+Content-Type: application/json; odata=verbose; IEEE754Compatible=true
+BPMCSRF: OpK/NuJJ1w/SQxmPvwNvfO
+
+{
+    // В поле [PhotoId] записать идентификатор записи в таблице [SysImage].
+    "PhotoId": "410006e1-ca4e-4502-a9ec-e54d922d2c01"
+}
+</pre>
+	</div>
+
+	<div class="code__source" data-tab="Ответ на запрос ">
+	<pre class="prettyprint">
+Status: <span class="status-code">204 No Content</span>
+</pre>
+	</div>
+
+	<div class="code__source" data-tab="Результат в приложении Creatio">
+	<div class="media">
+	<div class="media__element"><img alt="" border="0" src="../../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/StreamData/7.18/scr_AddImage.png" /></div>
+	</div>
+	</div>
+	</div>
+	</div>
+	</div>
+	</li>
+</ol><p>Чтобы <strong>добавить фото существующему контакту</strong> выполните:</p>
+
+<ol><li><span class="filled">POST</span>-запрос на добавление экземпляра объекта коллекции <span class="filled">[SysImage]</span>.</li>
+	<li><span class="filled">PUT</span>-запрос на изменение значения поля <span class="filled">[Data]</span> экземпляра объекта коллекции <span class="filled">[SysImage]</span>.</li>
+	<li><span class="filled">PATCH</span>-запрос на выполнение привязку добавленного фото к контакту "New user".</li>
+</ol><h2>Изменить данные<a class="title-anchor" href="#title-2301-5" id="title-2301-5"> </a></h2>
+
+<div class="message message_example">
+<p><span class="message__bold message__bold_example">Пример.</span> Используя сервис работы с данными OData, изменить фото существующего контакта "New user".</p>
+
+<div class="media">
+<div class="media__element"><img alt="" border="0" src="../../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/StreamData/7.18/scr_NewContactPhoto.png" /></div>
+</div>
+</div>
+
+<h3>Реализация примера<a class="title-anchor" href="#title-2301-7" id="title-2301-7"> </a></h3>
+
+<ol><li>
+	<p>Получите идентификатор фото контакта "New user".</p>
+
+	<p>Фото контакта содержится в колонке <span class="filled">[Data]</span> таблицы <span class="filled">[SysImage]</span> базы данных. Чтобы <strong>получить идентификатор фото контакта</strong> "New user", выполните следующий SQL-запрос.</p>
+
+	<div class="SimpleTabContainer" data-itemid="JSON" data-title="JSON" id="Syntax_JSON">
+	<div class="code">
+	<div class="code__widgets">
+	<div class="code__source" data-tab="SQL-запрос">
+	<pre class="prettyprint">
+select Id from SysImage where Id = (select PhotoId from Contact where Name = 'New user')
+</pre>
+	</div>
+
+	<div class="code__source" data-tab="Ответ на SQL-запрос">
+	<pre class="prettyprint">
+29FE7EDF-4DB9-4E09-92B0-018047BA1F71
+</pre>
+	</div>
+	</div>
+	</div>
+	</div>
+	</li>
+	<li>
+	<p>Измените фото контакта "<span class="consolas">New user</span>".</p>
+
+	<p>Чтобы <strong>изменить фото контакта</strong> "New user", выполните следующий запрос.</p>
+
+	<div class="SimpleTabContainer" data-itemid="JSON" data-title="JSON" id="Syntax_JSON">
+	<div class="code">
+	<div class="code__widgets">
+	<div class="code__source" data-tab="Запрос">
+	<pre class="prettyprint">
+// Изменить поле [Data] экземпляра объекта с [Id] 29FE7EDF-4DB9-4E09-92B0-018047BA1F71 коллекции [SysImage].
+PUT http://mycreatio.com/0/odata/SysImage(29FE7EDF-4DB9-4E09-92B0-018047BA1F71)/Data
+
+Accept: application/json; text/plain; */*
+Content-Type: application/octet-stream; IEEE754Compatible=true
+BPMCSRF: OpK/NuJJ1w/SQxmPvwNvfO
+</pre>
+
+	<div class="media">
+	<div class="media__element"><img alt="" border="0" src="../../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/StreamData/7.18/scr_NewContactPhoto.png" /></div>
+	</div>
+	</div>
+
+	<div class="code__source" data-tab="Ответ на запрос ">
+	<pre class="prettyprint">
+Status: <span class="status-code">200 OK</span>
+</pre>
+	</div>
+
+	<div class="code__source" data-tab="Результат в приложении Creatio">
+	<div class="media">
+	<div class="media__element"><img alt="" border="0" src="../../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/StreamData/7.18/scr_PutImage.png" /></div>
+	</div>
+	</div>
+	</div>
+	</div>
+	</div>
+	</li>
+</ol><h2>Удалить данные<a class="title-anchor" href="#title-2301-6" id="title-2301-6"> </a></h2>
+
+<div class="message message_example">
+<p><span class="message__bold message__bold_example">Пример.</span> Используя сервис работы с данными OData, удалить фото контакта "New user".</p>
+</div>
+
+<h3>Реализация примера<a class="title-anchor" href="#title-2301-8" id="title-2301-8"> </a></h3>
+
+<ol><li>
+	<p>Получите идентификатор фото контакта "New user".</p>
+
+	<p>Фото контакта содержится в колонке <span class="filled">[Data]</span> таблицы <span class="filled">[SysImage]</span> базы данных. Чтобы <strong>получить идентификатор фото контакта</strong> "New user", выполните следующий SQL-запрос.</p>
+
+	<div class="SimpleTabContainer" data-itemid="JSON" data-title="JSON" id="Syntax_JSON">
+	<div class="code">
+	<div class="code__widgets">
+	<div class="code__source" data-tab="SQL-запрос">
+	<pre class="prettyprint">
+select Id from SysImage where Id = (select PhotoId from Contact where Name = 'New user')
+</pre>
+	</div>
+
+	<div class="code__source" data-tab="Ответ на SQL-запрос">
+	<pre class="prettyprint">
+29FE7EDF-4DB9-4E09-92B0-018047BA1F71
+</pre>
+	</div>
+	</div>
+	</div>
+	</div>
+	</li>
+	<li>
+	<p>Удалить фото контакта "New user".</p>
+
+	<p>Чтобы <strong>удалить фото контакта</strong> "New user", выполните следующий запрос.</p>
+
+	<div class="SimpleTabContainer" data-itemid="JSON" data-title="JSON" id="Syntax_JSON">
+	<div class="code">
+	<div class="code__widgets">
+	<div class="code__source" data-tab="Запрос">
+	<pre class="prettyprint">
+// Удалить значение поля [Data] экземпляра объекта с [Id] 29FE7EDF-4DB9-4E09-92B0-018047BA1F71 коллекции [SysImage].
+DELETE http://mycreatio.com/0/odata/SysImage(29FE7EDF-4DB9-4E09-92B0-018047BA1F71)/Data
+
+Accept: application/json; text/plain; */*
+Content-Type: application/json; charset=utf-8; IEEE754Compatible=true
+BPMCSRF: OpK/NuJJ1w/SQxmPvwNvfO
+</pre>
+	</div>
+
+	<div class="code__source" data-tab="Ответ на запрос ">
+	<pre class="prettyprint">
+Status: <span class="status-code">204 No Content</span>
+</pre>
+	</div>
+
+	<div class="code__source" data-tab="Результат в приложении Creatio">
+	<div class="media">
+	<div class="media__element"><img alt="" border="0" src="../../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/StreamData/7.18/scr_DeleteImage.png" /></div>
+	</div>
+	</div>
+	</div>
+	</div>
+	</div>
+	</li>
+</ol></div>
+      
+  </div>
+<div class="block block-layout-builder block-field-blocknodecasefield-resources">
+  
+    
+      
+  <div class="field field--name-field-resources field--type-link field--label-above">
+    <div class="field__label">Ресурсы</div>
+          <div class="field__items">
+              <div class="field__item"><a href="https://documenter.getpostman.com/view/10204500/SztHX5Qb?version=latest" target="_blank">Creatio API документация</a></div>
+              </div>
+      </div>
+
+  </div>
+
+    </div>
+  </div>
+
+  </div>
+
+</article>
+
+  </div>
+
+  </div>
+
+          </div>
+        </div>
+
+                  <aside class="creatio-sidebar creatio-sidebar_first" role="complementary">
+              <div class="region region-sidebar-first">
+    <div id="block-documentationnaviagtion" class="block block-ts-nav block-ts-nav-doc-nav">
+  
+    
+      <div class="ts-nav-block"><a href="../../../../../index.html" class="ts-nav-block__link">Документация</a><div class="ts-nav-block__title">Для разработчика</div>
+</div>
+<div class="ts-nav-container"><ul class="ts-nav-menu"><li class="ts-nav-menu__item">
+  <a href="../../../s_chego_nachat.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">С чего начать&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../architecture.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Архитектура&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../instrumenty_razrabotki.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Инструменты разработки&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../back_end_razrabotka.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Back-end разработка&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../front_end_razrabotka_freedom_ui.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Front-end разработка Freedom UI&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../front_end_razrabotka.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Front-end разработка&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../integratsiya_i_vneshnij_api.html" class="ts-nav-menu__link ts-nav-menu__link_expanded ts-nav-menu__link_open" hreflang="zxx">Интеграция и внешний API&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+      <ul class="ts-nav-menu__children">
+      <li class="ts-nav-menu__item">
+  <a href="../../vozmozhnosti_integratsii/obzor.html" class="ts-nav-menu__link" hreflang="ru">Возможности интеграции</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../autentifikatsiya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Аутентификация&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../servisy_raboty_s_dannymi.html" class="ts-nav-menu__link ts-nav-menu__link_expanded ts-nav-menu__link_open" hreflang="zxx">Сервисы работы с данными&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+      <ul class="ts-nav-menu__children">
+      <li class="ts-nav-menu__item">
+  <a href="../../../integrations_and_api/data_services/dataservice.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">DataService&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../integrations_and_api/data_services/odata.html" class="ts-nav-menu__link ts-nav-menu__link_expanded ts-nav-menu__link_open" hreflang="ru">OData&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+      <ul class="ts-nav-menu__children">
+      <li class="ts-nav-menu__item">
+  <a href="obzor.html" class="ts-nav-menu__link ts-nav-menu__link_guide" hreflang="ru">Обзор</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="primery_integracij.html" class="ts-nav-menu__link ts-nav-menu__link_case" hreflang="ru">Примеры интеграций</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="primery_zaprosov_s_tipom_dannykh_stream.html" class="ts-nav-menu__link ts-nav-menu__link_case ts-nav-menu__link_active" hreflang="ru">Примеры запросов с типом данных Stream</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="primery_paketnykh_zaprosov.html" class="ts-nav-menu__link ts-nav-menu__link_case" hreflang="ru">Примеры пакетных запросов</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="primery_zaprosov_v_wcf_kliente.html" class="ts-nav-menu__link ts-nav-menu__link_case" hreflang="ru">Примеры запросов в WCF-клиенте</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="odata_odata_4.html" class="ts-nav-menu__link ts-nav-menu__link_reference" data-type="API" hreflang="ru">odata (OData 4)</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="entitydataservice_svc_odata_3.html" class="ts-nav-menu__link ts-nav-menu__link_reference" data-type="API" hreflang="ru">EntityDataService.svc (OData 3)</a>
+  </li>
+
+    </ul>
+  </li>
+
+    </ul>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../servis_zapuska_biznes_processov.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Сервис запуска бизнес-процессов&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../instrumenty_testirovaniya_zaprosov.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Инструменты тестирования запросов&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+
+    </ul>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../ehlementy_interfejsa.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Элементы интерфейса&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../komponenty_prilozheniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Компоненты приложения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../razrabotka_mobilnogo_prilozheniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Разработка мобильного приложения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../razrabotka_marketplace_prilozheniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Разработка Marketplace-приложения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+</ul>
+</div>
+
+  </div>
+
+  </div>
+
+            <div class="creatio-sidebar__toggle"></div>
+          </aside>
+        
+                  <aside class="creatio-sidebar creatio-sidebar_second" role="complementary">
+              <div class="region region-sidebar-second">
+    <div id="block-example" class="block block-ts-nav block-ts-nav-page-nav">
+  
+    
+      <div class="ts-nav-page">
+  </div>
+
+  </div>
+<div id="block-adminfeedbackblock" class="block block-admin-feedback block-admin-feedback-block">
+  
+    
+      <div id="feedback-message"><div id="upper-feedback-content"><h2>Был ли данный материал полезен?</h2>
+<input class="feedback-btn feedback-btn__yes button js-form-submit form-submit" data-node-id="2301" data-feedback="yes" type="submit" name="op" value="Да" />
+<input class="feedback-btn feedback-btn__no button js-form-submit form-submit" data-node-id="2301" data-feedback="no" type="submit" name="op" value="Нет" />
+</div>
+<form class="admin-feedback-form" data-drupal-selector="admin-feedback-form" action="https://academy.terrasoft.ua/docs/8-0/developer/integratsiya_i_vneshnij_api/servisy_raboty_s_dannymi/odata/primery_zaprosov_s_tipom_dannykh_stream" method="post" id="admin-feedback-form" accept-charset="UTF-8">
+  <div id="feedback-msg-result"></div><div class="js-form-item form-item js-form-type-textarea form-type-textarea js-form-item-feedback-message form-item-feedback-message form-no-label">
+        <div class="form-textarea-wrapper">
+  <textarea id="edit-feedback-msg" data-drupal-selector="edit-feedback-message" name="feedback_message" rows="5" cols="60" class="form-textarea resize-vertical"></textarea>
+</div>
+
+        </div>
+<input id="feedback-id" data-drupal-selector="edit-feedback-id" type="hidden" name="feedback_id" value="" />
+<input class="feedback-btn feedback-btn__send-comment button js-form-submit form-submit" data-drupal-selector="edit-feedback-send" type="submit" id="edit-feedback-send" name="op" value="Отправить" />
+<input autocomplete="off" data-drupal-selector="form-lt-kbh8utqf4vkbauhbdvuhzd7fiqnwcsw3mbwjtgky" type="hidden" name="form_build_id" value="form-LT_KBH8utqF4VkBaUHBdvUhZD7FIqnWCSw3MbWjTgkY" />
+<input data-drupal-selector="edit-admin-feedback-form" type="hidden" name="form_id" value="admin_feedback_form" />
+
+</form>
+</div>
+
+  </div>
+
+  </div>
+
+          </aside>
+              </main>
+    </div>
+  </div>
+
+  <footer role="contentinfo">
+    <div class="creatio-region creatio-region_footer">
+      <div class="creatio-container">
+          <div class="region region-footer">
+    <div id="block-footerua" class="block block-simple-block block-simple-blockfooter-ua">
+  
+    
+      <div class="footer">
+<div class="footer-left">
+<ul class="footer-socials"><li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_fb" href="https://www.facebook.com/terrasoft.ua" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_in" href="https://www.linkedin.com/company/terrasoft/" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_yt" href="https://www.youtube.com/c/TerrasoftUkraine" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_tg" href="https://t.me/Terrasoft_UA" target="_blank"> </a></li>
+</ul></div>
+
+<div class="footer-contact">
+<div class="footer-title">Будьте на связи!</div>
+
+<div class="footer-content">
+<div class="footer-items">
+<div class="footer-item"><a class="footer__link footer__link_phone" href="tel:+380443633133">+38 (044) 363-31-33</a></div>
+</div>
+
+<div class="footer-items">
+<div class="footer-item"><a class="footer__link footer__link_email" href="mailto:support@terrasoft.ua">support@terrasoft.ua</a></div>
+</div>
+</div>
+</div>
+</div>
+
+  </div>
+
+  </div>
+
+      </div>
+    </div>
+    <div class="creatio-region creatio-region_bottom">
+      <div class="creatio-container">
+          <div class="region region-bottom">
+    <div id="block-allrightsreservedua" class="block block-simple-block block-simple-blockfooter-bottom-ua">
+  
+    
+      <p>© 2002-2022 Terrasoft.  |  <a href="https://www.terrasoft.ua/privacy-policy" target="_blank">Конфиденциальность</a></p>
+
+  </div>
+
+  </div>
+
+      </div>
+    </div>
+  </footer>
+</div>
+<div class="creatio-bg"></div>
+
+
+  </div>
+
+    
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/docs\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/2301","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"ru"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"ajaxPageState":{"libraries":"admin_feedback\/admin_feedback_block,admin_feedback\/admin_feedback_css,classy\/base,classy\/messages,classy\/node,core\/drupal.ajax,core\/jquery.form,core\/normalize,creatio\/fancybox,creatio\/global,layout_discovery\/onecol,system\/base,ts_doc\/doc_version,ts_feedback\/ts_feedback,ts_nav\/breadcrumb,ts_nav\/doc_nav,ts_nav\/page_nav,ts_title_anchor\/ts_title_anchor","theme":"creatio","theme_token":null},"ajaxTrustedUrl":{"form_action_p_pvdeGsVG5zNF_XLGPTvYSKCf43t8qZYSwcfZl2uzM":true,"\/docs\/8-0\/developer\/integratsiya_i_vneshnij_api\/servisy_raboty_s_dannymi\/odata\/primery_zaprosov_s_tipom_dannykh_stream?ajax_form=1":true},"admin_feedback":{"yes_response":"\u0421\u043f\u0430\u0441\u0438\u0431\u043e \u0437\u0430 \u043e\u0431\u0440\u0430\u0442\u043d\u0443\u044e \u0441\u0432\u044f\u0437\u044c!","no_response":"\u0421\u043f\u0430\u0441\u0438\u0431\u043e \u0437\u0430 \u043e\u0431\u0440\u0430\u0442\u043d\u0443\u044e \u0441\u0432\u044f\u0437\u044c!","custom_text_response_on_no":{"value":"","format":"full_html"},"feedback_prompt_on_yes":true,"feedback_prompt_on_no":true,"feedback_enable_predefined_answers":false,"feedback_prompt":"\u041a\u0430\u043a \u043c\u043e\u0436\u043d\u043e \u0443\u043b\u0443\u0447\u0448\u0438\u0442\u044c \u044d\u0442\u0443 \u0441\u0442\u0430\u0442\u044c\u044e?"},"ajax":{"edit-feedback-send":{"callback":"::validateFeedbackMsg","event":"mousedown","keypress":true,"prevent":"click","url":"\/docs\/8-0\/developer\/integratsiya_i_vneshnij_api\/servisy_raboty_s_dannymi\/odata\/primery_zaprosov_s_tipom_dannykh_stream?ajax_form=1","dialogType":"ajax","submit":{"_triggering_element_name":"op","_triggering_element_value":"\u041e\u0442\u043f\u0440\u0430\u0432\u0438\u0442\u044c"}}},"user":{"uid":0,"permissionsHash":"9c2367dfcaba0fa15f0375f97aed64e146c908cee68508d13b79e3ee80e5162d"}}</script>
+<script src="../../../../../sites/default/files/js/js_Rr-7TvYD7NposuRFJwUqThxM7yJmw8vs03PQwu5gWd8.js"></script>
+
+
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+      <g id="svg-copy" class="svg-icon svg-icon_copy">
+        <path d="M15.111,18H1.889A1.848,1.848,0,0,1,0,16.2V3.6A1.848,1.848,0,0,1,1.889,1.8H5.837a2.87,2.87,0,0,1,5.326,0h3.948A1.848,1.848,0,0,1,17,3.6V16.2A1.848,1.848,0,0,1,15.111,18ZM3.777,12.6v1.8h6.611V12.6Zm0-3.6v1.8h9.445V9Zm0-3.6V7.2h9.445V5.4ZM8.5,1.8a.924.924,0,0,0-.944.9.945.945,0,0,0,1.889,0A.924.924,0,0,0,8.5,1.8Z"/>
+      </g>
+
+      <g id="svg-prev" class="svg-icon svg-icon_arrow">
+        <path d="M5.488,12.779,0,6.39,5.488,0" transform="translate(1 0.652)"/>
+      </g>
+
+      <g id="svg-next" class="svg-icon svg-icon_arrow">
+        <path d="M0,12.779,5.488,6.39,0,0" transform="translate(0.759 0.652)"/>
+      </g>
+    </svg>
+  </body>
+
+<!-- Mirrored from academy.terrasoft.ua/docs/8-0/developer/integratsiya_i_vneshnij_api/servisy_raboty_s_dannymi/odata/primery_zaprosov_s_tipom_dannykh_stream by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Mar 2022 06:18:54 GMT -->
+</html>

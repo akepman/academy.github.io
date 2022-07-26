@@ -1,0 +1,1318 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# ">
+  
+<!-- Mirrored from academy.terrasoft.ua/docs/7-18/user/drugie_reshenija/portal/administrirovanie_v_osnovnom_prilozhenii/administrirovanie_portala_v_osnovnom_prilojenii by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Mar 2022 03:53:00 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+          <!-- Google Tag Manager -->
+      <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          '../../../../../../../www.googletagmanager.com/gtm5445.html?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-KLLB8G');</script>
+      <!-- End Google Tag Manager -->
+        <meta charset="utf-8" />
+<link rel="canonical" href="administrirovanie_portala_v_osnovnom_prilojenii.html" />
+<meta name="description" content="В данной статье рассмотрено управление пользователями портала и настройка прав доступа на портале администратором основного приложения Creatio.
+
+Некоторые настройки также могут выполняться администратором портала. Подробнее: Администрирование в профиле организации на портале." />
+<meta property="og:url" content="https://academy.terrasoft.ua/docs/7-18/user/drugie_reshenija/portal/administrirovanie_v_osnovnom_prilozhenii/administrirovanie_portala_v_osnovnom_prilojenii" />
+<meta property="og:title" content="Администрирование портала в основном приложении" />
+<meta property="og:description" content="В данной статье рассмотрено управление пользователями портала и настройка прав доступа на портале администратором основного приложения Creatio.
+
+Некоторые настройки также могут выполняться администратором портала. Подробнее: Администрирование в профиле организации на портале." />
+<meta name="Generator" content="Drupal 9 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="../../../../../themes/custom/creatio/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="revision" href="administrirovanie_portala_v_osnovnom_prilojenii.html" />
+
+    <title>Администрирование портала в основном приложении | Creatio Academy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&amp;family=Open+Sans:ital,wght@0,300;0,400;0,600;1,400&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" media="all" href="../../../../../sites/default/files/css/css_6lTP66__-yc6QXFp1zOwoeJ0HVigoYZP-SeoLLii000.css" />
+<link rel="stylesheet" media="all" href="../../../../../sites/default/files/css/css_XQJDNhkF3xH5SZCcY-PI89Zu4nYIzQ5oR3SnUKyfXJU.css" />
+<link rel="stylesheet" media="print" href="../../../../../sites/default/files/css/css_Zn4VHvcniOOtUwkIVwXzYr_0AI9gUVgZcPqaH4ViagU.css" />
+
+    
+  </head>
+  <body class="path-node page-node-type-user-documentation">
+          <!-- Google Tag Manager (noscript) -->
+      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KLLB8G"
+                        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+      <!-- End Google Tag Manager (noscript) -->
+    
+        
+      <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    <div class="creatio-page d-flex flex-column">
+        <div class="region region-informer">
+    <div id="block-terrasoftpidtrimueukrainu" class="block block-simple-block block-simple-blockterrasoft-pidtrimue-ukrainu">
+  
+    
+      <style type="text/css">
+<!--/*--><![CDATA[/* ><!--*/
+@import url(../../../../../../../www.terrasoft.ua/themes/custom/creatio/css/components/informer.css)
+
+/*--><!]]>*/
+</style><div class="ts-swu">
+<div class="creatio-container">
+<div class="ts-swu__cont">
+<div><a class="ts-swu__link" href="https://www.terrasoft.ua/terrasoft-stands-with-ukraine" target="_blank">Україна понад усе!</a> <span><a href="https://www.terrasoft.ua/terrasoft-stands-with-ukraine" target="_blank">Приєднуйтеся</a> до допомоги!</span></div>
+</div>
+</div></div>
+
+  </div>
+
+  </div>
+
+  
+  <header role="banner">
+          <div class="creatio-region creatio-region_top">
+        <div class="creatio-container">
+            <div class="region region-top">
+    <div id="block-menutoggle" class="block block-simple-block block-simple-blockmenu-toggle">
+  
+    
+      <div class="menu-toggle"><span> </span></div>
+
+  </div>
+<div id="block-logowhite-2" class="block block-simple-block block-simple-blocklogo-white">
+  
+    
+      <p><a class="site-logo" href="../../../../../../index.html" rel="home"><img src="../../../../../themes/custom/creatio/logo-white.svg" /></a></p>
+
+  </div>
+<div id="block-search" class="block block-simple-block block-simple-blocksearch">
+  
+    
+      <div class="search">
+<form action="https://academy.terrasoft.ua/search" class="search-form" method="get"><input class="search-form__input" name="search" placeholder="Поиск" type="search" /><input class="search-form__button" type="submit" value="Поиск" /> </form>
+
+<div class="search-toggle"> </div>
+</div>
+
+  </div>
+<nav role="navigation" aria-labelledby="block-sitesua-menu" id="block-sitesua" class="block block-menu navigation menu--sites-ua">
+            
+  <h2 class="visually-hidden" id="block-sitesua-menu">Sites UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="https://www.terrasoft.ua/" rel="nofollow" target="_blank">Terrasoft</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://community.terrasoft.ua/" rel="nofollow" target="_blank">Community</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://marketplace.terrasoft.ua/" rel="nofollow" target="_blank">Marketplace</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+<div id="block-usermenu" class="block block-ts-user block-ts-user-menu-block">
+  
+    
+      <ul class="user-menu">
+      <li class="user-menu__item">
+      <a class="user-menu__link" href="https://profile.terrasoft.ua/user/login?destination=academy/ua/docs/7-18/user/drugie_reshenija/portal/administrirovanie_v_osnovnom_prilozhenii/administrirovanie_portala_v_osnovnom_prilojenii">Войти</a>
+    </li>
+  </ul>
+
+  </div>
+<div id="block-usermenumobile" class="block block-ts-user block-ts-user-menu-mobile-block">
+  
+    
+      <ul class="user-menu-mobile">
+      <li class="user-menu-mobile__item">
+      <div class="user-menu-mobile__user user-menu-mobile__user_icon"></div>
+      <ul class="user-menu-mobile__submenu">
+        <li class="user-menu-mobile__subitem">
+          <a class="user-menu-mobile__sublink" href="https://profile.terrasoft.ua/user/login?destination=academy/ua/docs/7-18/user/drugie_reshenija/portal/administrirovanie_v_osnovnom_prilozhenii/administrirovanie_portala_v_osnovnom_prilojenii">Войти</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  </div>
+
+  </div>
+
+        </div>
+      </div>
+              <div class="creatio-region creatio-region_header">
+        <div class="creatio-container">
+            <div class="region region-header">
+    <div id="block-logo" class="block block-simple-block block-simple-blocklogo">
+  
+    
+      <p><a class="site-logo" href="../../../../../../index.html" rel="home"><img src="../../../../../themes/custom/creatio/logo.svg" /></a></p>
+
+  </div>
+<nav role="navigation" aria-labelledby="block-osnovnayanavigaciyaua-menu" id="block-osnovnayanavigaciyaua" class="block block-menu navigation menu--main-ua">
+            
+  <h2 class="visually-hidden" id="block-osnovnayanavigaciyaua-menu">Основная навигация UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="../../../../../index.html" data-drupal-link-system-path="&lt;front&gt;">Документация</a>
+              </li>
+                <li class="menu-item">
+        <a href="../../../../../../trainings.html">Тренинги</a>
+              </li>
+                <li class="menu-item">
+        <a href="../../../../../certification.html" data-drupal-link-system-path="node/3084">Сертификация и тестирование</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+<nav role="navigation" aria-labelledby="block-sitesua-2-menu" id="block-sitesua-2" class="block block-menu navigation menu--sites-ua">
+            
+  <h2 class="visually-hidden" id="block-sitesua-2-menu">Sites UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="https://www.terrasoft.ua/" rel="nofollow" target="_blank">Terrasoft</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://community.terrasoft.ua/" rel="nofollow" target="_blank">Community</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://marketplace.terrasoft.ua/" rel="nofollow" target="_blank">Marketplace</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+
+  </div>
+
+        </div>
+      </div>
+              <div class="creatio-region creatio-region_breadcrumb">
+        <div class="creatio-container">
+            <div class="region region-breadcrumb">
+    <div id="block-logowhite" class="block block-simple-block block-simple-blocklogo-white">
+  
+    
+      <p><a class="site-logo" href="../../../../../../index.html" rel="home"><img src="../../../../../themes/custom/creatio/logo-white.svg" /></a></p>
+
+  </div>
+<div id="block-breadcrumbnaviagtion" class="block block-ts-nav block-ts-nav-bread">
+  
+    
+      <nav class="breadcrumb"><ol class="ts-nav-breadcrumb__list"><li class="ts-nav-breadcrumb__item"><a href="../../../../../index.html" class="ts-nav-breadcrumb__link" title="Документация">Документация</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../../../indexd993.html?vid_1=1" class="ts-nav-breadcrumb__link" title="Для пользователя">Для пользователя</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../drugie_reshenija.html" class="ts-nav-breadcrumb__link" title="Другие решения" hreflang="zxx">Другие решения</a></li>
+<li class="ts-nav-breadcrumb__item ts-nav-breadcrumb__item_mobile"><a href="../../portal.html" class="ts-nav-breadcrumb__link" title="Портал" hreflang="zxx">Портал</a></li>
+<li class="ts-nav-breadcrumb__item"><span class="ts-nav-breadcrumb__link ts-nav-breadcrumb__link_current" title="Администрирование портала в основном приложении">Администрирование портала в основном приложении</span></li>
+</ol>
+</nav>
+
+  </div>
+<div id="block-search-2" class="block block-simple-block block-simple-blocksearch">
+  
+    
+      <div class="search">
+<form action="https://academy.terrasoft.ua/search" class="search-form" method="get"><input class="search-form__input" name="search" placeholder="Поиск" type="search" /><input class="search-form__button" type="submit" value="Поиск" /> </form>
+
+<div class="search-toggle"> </div>
+</div>
+
+  </div>
+
+  </div>
+
+        </div>
+      </div>
+      </header>
+
+  <div class="creatio-region creatio-region_main">
+    <div class="creatio-container">
+                <div class="region region-breadcrumb-mobile">
+    <div id="block-breadcrumbnaviagtion-2" class="block block-ts-nav block-ts-nav-bread">
+  
+    
+      <nav class="breadcrumb"><ol class="ts-nav-breadcrumb__list"><li class="ts-nav-breadcrumb__item"><a href="../../../../../index.html" class="ts-nav-breadcrumb__link" title="Документация">Документация</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../../../indexd993.html?vid_1=1" class="ts-nav-breadcrumb__link" title="Для пользователя">Для пользователя</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../drugie_reshenija.html" class="ts-nav-breadcrumb__link" title="Другие решения" hreflang="zxx">Другие решения</a></li>
+<li class="ts-nav-breadcrumb__item ts-nav-breadcrumb__item_mobile"><a href="../../portal.html" class="ts-nav-breadcrumb__link" title="Портал" hreflang="zxx">Портал</a></li>
+<li class="ts-nav-breadcrumb__item"><span class="ts-nav-breadcrumb__link ts-nav-breadcrumb__link_current" title="Администрирование портала в основном приложении">Администрирование портала в основном приложении</span></li>
+</ol>
+</nav>
+
+  </div>
+
+  </div>
+
+      
+      <main class="creatio-main" role="main">
+                                                    
+        <div class="creatio-content creatio-content_small">
+          <div class="creatio-content__inner creatio-content__inner_bg">
+                            <div class="region region-messages">
+    <div data-drupal-messages-fallback class="hidden"></div>
+
+  </div>
+
+            
+              <div class="region region-content">
+    <div id="block-creatio-page-title" class="block block-core block-page-title-block">
+  
+    
+      
+  <h1 class="page-title"><span class="field field--name-title field--type-string field--label-hidden">Администрирование портала в основном приложении</span>
+</h1>
+
+
+  </div>
+<div id="block-creatio-content" class="block block-system block-system-main-block">
+  
+    
+      
+<article data-history-node-id="3468" role="article" about="/docs/7-18/user/drugie_reshenija/portal/administrirovanie_v_osnovnom_prilozhenii/administrirovanie_portala_v_osnovnom_prilojenii" class="node node--type-user-documentation node--view-mode-full">
+
+  
+    
+
+  
+  <div class="node__content">
+      <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-ts-doc block-ts-doc-downloads">
+  
+    
+      <a href="../../../../../sites/default/files/pdf/node/3468/Administrirovanie_portala_v_osnovnom_prilozhenii_.pdf" target="_blank">PDF</a>
+  </div>
+<div class="block block-ts-doc block-ts-doc-versions">
+  
+    
+        <div class="ts-doc-versions">
+    <select class="ts-doc-versions__select">
+                              <option value="/docs/8-0/user/drugie_reshenija/portal/administrirovanie_v_osnovnom_prilozhenii/administrirovanie_portala_v_osnovnom_prilojenii">Версия 8.0</option>
+                                                <option value="/docs/7-18/user/drugie_reshenija/portal/administrirovanie_v_osnovnom_prilozhenii/administrirovanie_portala_v_osnovnom_prilojenii" selected>Версия 7.18</option>
+                              <option value="/docs/7-17/user/drugie_reshenija/portal/administrirovanie_v_osnovnom_prilozhenii/administrirovanie_portala_v_osnovnom_prilozhenii">Версия 7.17</option>
+          </select>
+  </div>
+
+  </div>
+
+    </div>
+  </div>
+  <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocknodeuser-documentationfield-product">
+  
+    
+      
+  <div class="field field--name-field-product field--type-entity-reference field--label-above">
+    <div class="field__label">Продукты</div>
+          <div class="field__items">
+              <div class="field__item">Все продукты</div>
+              </div>
+      </div>
+
+  </div>
+<div class="block block-layout-builder block-field-blocknodeuser-documentationbody">
+  
+    
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><p>В данной статье рассмотрено управление пользователями портала и настройка прав доступа на портале администратором основного приложения Creatio.</p>
+
+<p>Некоторые настройки также могут выполняться администратором портала. Подробнее: <a href="../administrirovanie_na_portale/administrirovanie_portala_v_profile_organizacii_na_portale/index.html">Администрирование в профиле организации на портале</a>.</p>
+
+<p>Вы можете создавать индивидуальных пользователей портала либо формировать организации — группы пользователей портала, которые привязываются к одному контрагенту. Организации позволяют управлять сотрудниками ваших клиентов, которые работают с порталом. Вы можете назначать администраторов портала среди пользователей организации. Администраторам будут доступны создание и деактивация пользователей, а также назначение прав.</p>
+
+<p>Для всех пользователей портала в системе можно гибко настраивать права доступа. Вы можете настраивать права на уровне отдельных ролей или пользователей:</p>
+
+<ul><li>
+	<p><strong>Для родительской роли “All portal users”</strong>. Все пользователи, которые входят в эту роль, получат одинаковые права.</p>
+	</li>
+	<li>
+	<p><strong>Для каждого пользователя отдельно</strong>. Для разных пользователей будут настроены индивидуальные права доступа.</p>
+	</li>
+	<li>
+	<p><strong>Для организации на портале</strong>. Пользователи будут наследовать права своей организации.</p>
+	</li>
+	<li>
+	<p><strong>Для групп пользователей</strong>. Например, для роли “All portal users” можно создать подчиненные организационные роли и настроить для них разные права. А для организации можно создать функциональные роли с разными правами, что позволит разграничить доступ пользователей одной организации.</p>
+	</li>
+</ul><p>Рассмотрим несколько бизнес-кейсов настройки прав для пользователей портала.</p>
+
+<ol><li><strong>Портал для пользователей без организаций.</strong> Это наиболее простая структура. В системе создаются индивидуальные пользователи портала. Права доступа могут настраиваться для каждого пользователя отдельно, для всех пользователей (путем настройки прав родительской роли), для групп пользователей, если созданы подчиненные организационные роли. Шаги настройки:
+
+	<ol><li><a href="../../../../../7-17/user/ustanovka_i_administrirovanie/upravlenie_polzovateljami_i_dostupom/upravleniye_polzovateliami/dobavlenie_polzovatelej/dobavit_polzovateley/index.html">Создать пользователей</a>:
+
+		<ul><li>Создание индивидуальных пользователей в системе.</li>
+			<li>Самостоятельная регистрация пользователей на портале.</li>
+		</ul></li>
+		<li><a href="#title-2837-5">Настроить приглашения на портал</a>.</li>
+		<li><a href="#title-2837-12">Настроить права доступа пользователей портала</a>.</li>
+	</ol></li>
+	<li><strong>Портал с организациями и одинаковым доступом всех пользователей</strong>. В такой структуре пользователи портала привязываются к контрагенту, т. е. группируются в организации. Для каждой организации можно настроить свои права. Пользователи наследуют права своей организации, а значит настраивать права отдельно для каждого пользователя не нужно. Шаги настройки:
+	<ol><li><a href="#title-2837-11">Настроить организационную структуру</a>:
+		<ul><li>Создание организации и пользователей в системе.</li>
+			<li>Назначение администратора портала.</li>
+			<li>Создание пользователей администратором на портале.</li>
+		</ul></li>
+		<li><a href="#title-2837-5">Настроить приглашения на портал</a>.</li>
+		<li><a href="#title-2837-12">Настроить права доступа пользователям портала</a>:
+		<ul><li>Настройка прав в системе.</li>
+			<li>Настройка прав пользователей администратором портала.</li>
+		</ul></li>
+	</ol></li>
+	<li><strong>Портал с организациями и разным доступом</strong> в одной организации. В этой структуре для организации можно создать функциональные роли и настроить им права. Например, можно создать функциональные роли менеджеров главного и регионального офисов и привязать пользователей организации к одной из этих функциональных ролей. Пользователи наследуют права своей функциональной роли, поэтому настраивать права отдельно для каждого пользователя не понадобится. Шаги настройки:
+	<ol><li><a href="#title-2837-11">Настроить организационную структуру</a>:
+		<ul><li>Создание организации и пользователей в системе.</li>
+			<li>Назначение администратора портала.</li>
+			<li>Создание пользователей администратором на портале.</li>
+		</ul></li>
+		<li><a href="#title-2837-5">Настроить приглашения на портал</a>.</li>
+		<li><a href="#title-2837-12">Настроить права доступа пользователям портала</a>:
+		<ul><li>Настройка прав в системе.</li>
+			<li>Настройка прав пользователей администратором портала.</li>
+		</ul></li>
+	</ol></li>
+</ol><h2>Управление пользователями портала<a class="title-anchor" href="#title-2837-2" id="title-2837-2"> </a></h2>
+
+<p>Все пользователи, которые имеют доступ на портал, должны входить в группу организационных ролей “All portal users” (Все пользователи портала). Чтобы войти на портал, в системе должен существовать пользователь портала с уникальным логином и паролем. Каждый пользователь портала привязывается к контакту в системе, и для одного контакта можно создать только одного пользователя портала.</p>
+
+<h3>Создать пользователей портала<a class="title-anchor" href="#title-2837-3" id="title-2837-3"> </a></h3>
+
+<p>В основном приложении пользователей портала могут создавать системные администраторы или сотрудники с правом на системную операцию “Возможность управлять пользователями портала” (код “CanAdministratePortalUsers” ). Второй вариант подходит для случаев, когда в компании созданием пользователей портала занимается сотрудник, который не должен иметь доступа к учетным данным своих коллег — настройка выполняется непосредственно со страницы контрагента.</p>
+
+<p>В системе можно создать:</p>
+
+<ul><li>
+	<p>Индивидуальных пользователей портала, без привязки к организации. В таком случае каждый пользователь создается отдельно.</p>
+	</li>
+	<li>
+	<p>Пользователей портала, которые входят в организацию. Данный способ позволяет массово добавлять пользователей.</p>
+
+	<div class="message">
+	<p><span class="message__bold">На заметку.</span> Пользователей можно также импортировать из LDAP или Excel. Подробнее: <a href="../../../ustanovka_i_administrirovanie/upravlenie_polzovateljami_i_dostupom/sinhronizaciya_polzovatelej_s_ldap/nastrojka_sinkhronizacii/nastroit_sinhronizaciyu_s_ldap/index.html">Настроить синхронизацию с LDAP</a> и <a href="../../../../../user/ustanovka_i_administrirovanie/upravlenie_polzovateljami_i_dostupom/upravleniye_polzovateliami/import_polzovatelej_iz_excel/importirovat_polzovateley_iz_excel.html?product=administration&amp;ver=7&amp;id=2001">Импортировать пользователей из Excel</a>.</p>
+	</div>
+	</li>
+</ul><p>Если нужно запретить вход на портал для определенных пользователей, то деактивируйте их.</p>
+
+<h4>Создать пользователя портала без привязки к организации<a class="title-anchor" href="#title-2837-13" id="title-2837-13"> </a></h4>
+
+<p>Индивидуальных пользователей портала в системе может создавать пользователь с ролью системного администратора.</p>
+
+<p>Чтобы добавить пользователя портала в системе:</p>
+
+<ol><li>
+	<p>Нажмите <span contenteditable="false" tabindex="-1"><span contenteditable="false" tabindex="-1"><img alt="" data-entity-type="" data-entity-uuid="" data-widget="image" src="../../../../../sites/default/files/inline-images/btn_system_designer_2.png" /></span></span> → “Организационные роли” → роль “All portal users”.</p>
+	</li>
+	<li>
+	<p>Вкладка <span class="key">Пользователи</span> → деталь <span class="key">Пользователи</span> → <span contenteditable="false" tabindex="-1"><span contenteditable="false" tabindex="-1"><img alt="" data-entity-type="" data-entity-uuid="" data-widget="image" src="../../../../../sites/default/files/inline-images/btn_com_add_tab_0.png" /></span></span> → <span class="key">Добавить нового</span>.</p>
+	</li>
+	<li>
+	<p>Заполните страницу нового пользователя (Рис. 1). Подробнее: <a href="../../../../../user/ustanovka_i_administrirovanie/upravlenie_polzovateljami_i_dostupom/upravleniye_polzovateliami/dobavlenie_polzovatelej/dobavit_polzovatelei.html?product=administration&amp;ver=7&amp;id=1441">Добавить пользователей</a>.</p>
+
+	<div class="media">
+	<div class="media__caption">Рис. 1<a name="XREF_38889_288" id="XREF_38889_288"></a> — Создание нового пользователя</div>
+
+	<div class="media__element"><span contenteditable="false" tabindex="-1"><span contenteditable="false" tabindex="-1"><img alt="" data-entity-type="" data-entity-uuid="" data-widget="image" src="../../../../../sites/default/files/inline-images/gif_chapter_portal_adding_new_user.gif" /></span></span></div>
+	</div>
+	</li>
+</ol><div class="message">
+<p><span class="message__bold">На заметку.</span> Если контакт еще не существует в системе, то его можно добавить непосредственно на данном шаге. Заполняя поле <span class="key">Контакт</span> на странице пользователя, нажмите <span contenteditable="false" tabindex="-1"><span contenteditable="false" tabindex="-1"><img alt="" data-entity-type="" data-entity-uuid="" data-widget="image" src="../../../../../sites/default/files/inline-images/btn_com_lookup_1.png" /></span></span>, в открывшемся окне нажмите кнопку <span class="key">Добавить</span> и заполните страницу контакта. После сохранения страницы вы вернетесь на страницу пользователя, где поле <span class="key">Контакт</span> будет заполнено созданным контактом.</p>
+</div>
+
+<h4>Создать пользователя портала с привязкой к организации<a class="title-anchor" href="#title-2837-14" id="title-2837-14"> </a></h4>
+
+<p>Чтобы привязать пользователей портала к организации, создайте в системе хотя бы одну организацию.</p>
+
+<p>Все пользователи, которые будут добавлены в организацию, унаследуют настроенные для нее права. Это дает возможность настроить единожды права доступа для всей организации и не раздавать их отдельно каждому пользователю.</p>
+
+<p>Создать организацию и добавить в нее пользователей можно разными способами, в зависимости от прав пользователя:</p>
+
+<ul><li>
+	<p>Пользователи с ролью системного администратора могут создать организацию со страницы организационных ролей.</p>
+	</li>
+	<li>
+	<p>Пользователи с правами на системную операцию “Возможность управлять пользователями портала” (код “CanAdministratePortalUsers”) могут создать организацию со страницы контрагента.</p>
+	</li>
+</ul><h5>Добавить пользователей в организацию со страницы организационных ролей<a class="title-anchor" href="#title-2837-25" id="title-2837-25"> </a></h5>
+
+<ol><li>
+	<p>Нажмите <span contenteditable="false" tabindex="-1"><span contenteditable="false" tabindex="-1"><img alt="" data-entity-type="" data-entity-uuid="" data-widget="image" src="../../../../../sites/default/files/inline-images/btn_system_designer_2.png" /></span></span> → “Организационные роли” → роль “All portal users”.</p>
+	</li>
+	<li>
+	<p>Деталь <span class="key">Организации</span> → <span contenteditable="false" tabindex="-1"><span contenteditable="false" tabindex="-1"><img alt="" data-entity-type="" data-entity-uuid="" data-widget="image" src="../../../../../sites/default/files/inline-images/btn_com_add_tab_0.png" /></span></span> → в поле <span class="key">Контрагент</span> выберите контрагента, организацию которого вы хотите создать (Рис. 2). Быстро найти контрагент можно с помощью поиска по его названию.</p>
+
+	<div class="message">
+	<p><span class="message__bold">На заметку.</span> Если контрагента еще не существует, то его можно добавить непосредственно на данном шаге при заполнении поля <span class="key">Контрагент</span> на странице организации.</p>
+	</div>
+
+	<p>После указания контрагента поле <span class="key">Название</span> заполняется автоматически, при желании его можно изменить.</p>
+
+	<div class="media">
+	<div class="media__caption">Рис. 2<a name="XREF_81441_289" id="XREF_81441_289"></a> — Создание организации со страницы организационных ролей</div>
+
+	<div class="media__element"><span contenteditable="false" tabindex="-1"><span contenteditable="false" tabindex="-1"><img alt="" data-entity-type="" data-entity-uuid="" data-widget="image" src="../../../../../sites/default/files/inline-images/gif_chapter_portal_adding_new_organization.gif" /></span></span></div>
+	</div>
+	</li>
+	<li>
+	<p>Сохраните страницу. На детали <span class="key">Организации</span> нажмите на название организации. Откроется ее страница.</p>
+	</li>
+	<li>
+	<p>Если контакт уже создан в системе, то на детали <span class="key">Пользователи портала</span> нажмите <span contenteditable="false" tabindex="-1"><span contenteditable="false" tabindex="-1"><img alt="" data-entity-type="" data-entity-uuid="" data-widget="image" src="../../../../../sites/default/files/inline-images/btn_com_add_tab_0.png" /></span></span> и выберите <span class="key">Добавить существующие контакты</span>. Во всплывающем окне выберите один или несколько контактов (Рис. 3).<br />
+	Если контакт еще не создан в системе, то нажмите <span contenteditable="false" tabindex="-1"><span contenteditable="false" tabindex="-1"><img alt="" data-entity-type="" data-entity-uuid="" data-widget="image" src="../../../../../sites/default/files/inline-images/btn_com_add_tab_0.png" /></span></span> и выберите <span class="key">Добавить новые контакты</span>. Введите один или несколько email-адресов новых пользователей портала через пробел или запятую. При вводе электронных адресов выполняется стандартная проверка на их корректность. Нажмите кнопку <span class="key">Зарегистрировать пользователей</span>.</p>
+	Система ищет контакты с указанными email-адресами и в случае, если не находит, то автоматически создает новые контакты. ФИО пользователя при этом заполняется текстом email-а до знака “@”.</li>
+	<li>
+	<p>Система предложит отправить приглашения на портал новым пользователям. Вы можете подтвердить отправку по кнопке <span class="key">Отправить приглашения </span> или закрыть окно и отправить приглашения пользователям позже.</p>
+
+	<div class="media">
+	<div class="media__caption">Рис. 3<a name="XREF_53673_290" id="XREF_53673_290"></a> — Добавление пользователей в организацию со страницы организационных ролей</div>
+
+	<div class="media__element"><span contenteditable="false" tabindex="-1"><span contenteditable="false" tabindex="-1"><img alt="" data-entity-type="" data-entity-uuid="" data-widget="image" src="../../../../../sites/default/files/inline-images/gif_chapter_portal_adding_new_user_0.gif" /></span></span></div>
+	</div>
+	</li>
+</ol><p>В результате пользователи портала будут добавлены в организацию и унаследуют настроенные для нее права.</p>
+
+<p>Вы можете перейти к управлению параметрами пользователя портала (логин, пароль, роли и лицензии), дважды кликнув по нужной строке на детали <span class="key">Пользователи портала</span>.</p>
+
+<p>Для перехода у вас должны быть настроены права доступа на выполнение системной операции “Возможность управлять пользователями портала” (код “CanAdministratePortalUsers“) или “Управление списком пользователей” (код “CanManageUsers“). Подробнее: <a href="../../../../../user/ustanovka_i_administrirovanie/upravlenie_polzovateljami_i_dostupom/upravleniye_dostupom/dostup_po_sistemnym_operacijam/nastroit_prava_dostupa_na_sistemnye_operacii.html?product=administration&amp;ver=7&amp;id=258">Настроить права доступа на системные операции</a>.</p>
+
+<p>В Creatio будет создана новая учетная запись с актуальными правами доступа, а предыдущая учетная запись пользователя деактивируется во избежание дублирования.</p>
+
+<h5><span style="font-family: Montserrat;">Добавить пользователей в организацию со страницы контрагента</span><a class="title-anchor" href="#title-2837-26" id="title-2837-26" style="font-family: Montserrat;"> </a></h5>
+
+<p>Используйте этот способ в следующих случаях:</p>
+
+<ul><li>Если отсутствует доступ к разделу <span class="key">Пользователи системы</span>.</li>
+	<li>Если пользователь портала сменил работодателя, вы можете добавить существующий контакт в новую организацию.</li>
+</ul><ol><li>
+	<p>Откройте страницу контрагента → вкладка <span class="key">Контакты и структура</span> → деталь <span class="key">Пользователи портала</span>.</p>
+	</li>
+	<li>
+	<p>Нажмите кнопку <span class="key">Создать организацию</span>. Кнопка отображается, только если для этого контрагента еще не существует организации.</p>
+
+	<div class="message">
+	<p><span class="message__bold">На заметку.</span> При попытке создать пользователей через кнопку <span contenteditable="false" tabindex="-1"><span contenteditable="false" tabindex="-1"><img alt="" data-entity-type="" data-entity-uuid="" data-widget="image" src="../../../../../sites/default/files/inline-images/btn_com_add_tab_0.png" /></span></span> до того, как будет создана организация, система оповестит о том, что организация еще не зарегистрирована, и предложит ее создать.</p>
+	</div>
+	</li>
+	<li>
+	<p>В поле <span class="key">Родительская роль</span> выберите роль “All portal users” (Рис. 4).</p>
+
+	<div class="media">
+	<div class="media__caption">Рис. 4<a name="XREF_58338_290" id="XREF_58338_290"></a> — Создание организации со страницы контрагента</div>
+
+	<div class="media__element"><span contenteditable="false" tabindex="-1"><span contenteditable="false" tabindex="-1"><img alt="" data-entity-type="" data-entity-uuid="" data-widget="image" src="../../../../../sites/default/files/inline-images/gif_chapter_portal_adding_new_organization_2.gif" /></span></span></div>
+	</div>
+	</li>
+	<li>Сохраните изменения. В результате организация будет зарегистрирована и доступна на странице организационной роли “All portal users”, а кнопка <span class="key">Создать организацию</span> пропадет со страницы контрагента.</li>
+	<li>Если контакт уже создан в системе, то на детали <span class="key">Пользователи портала</span> нажмите <span contenteditable="false" tabindex="-1"><span contenteditable="false" tabindex="-1"><img alt="" data-entity-type="" data-entity-uuid="" data-widget="image" src="../../../../../sites/default/files/inline-images/btn_com_add_tab_0.png" /></span></span> и выберите <span class="key">Добавить существующие контакты</span>. Во всплывающем окне выберите один или несколько контактов (Рис. 5).
+	<p>Если контакт еще не создан в системе, то на детали <span class="key">Пользователи портала</span> нажмите <span contenteditable="false" tabindex="-1"><span contenteditable="false" tabindex="-1"><img alt="" data-entity-type="" data-entity-uuid="" data-widget="image" src="../../../../../sites/default/files/inline-images/btn_com_add_tab_0.png" /></span></span> и выберите <span class="key">Добавить новые контакты</span>. Введите email-адреса новых пользователей портала и нажмите кнопку <span class="key">Зарегистрировать пользователей</span>.</p>
+	</li>
+	<li>
+	<p>Система предложит отправить приглашения на портал новым пользователям. Можно подтвердить отправку сразу (кнопка <span class="key">Отправить приглашения</span>), а можно закрыть окно и отправить приглашения пользователям позже.</p>
+
+	<div class="media">
+	<div class="media__caption">Рис. 5<a name="XREF_85944_293" id="XREF_85944_293"></a> — Добавление пользователей в организацию через деталь <span class="key">Пользователи портала</span></div>
+
+	<div class="media__element"><span contenteditable="false" tabindex="-1"><span contenteditable="false" tabindex="-1"><img alt="" data-entity-type="" data-entity-uuid="" data-widget="image" src="../../../../../sites/default/files/inline-images/gif_chapter_portal_adding_new_organization_user_from_account_page2.gif" /></span></span></div>
+	</div>
+
+	<div class="message">
+	<p><span class="message__bold">На заметку.</span> Также вы можете добавить пользователей в организацию через деталь <span class="key">Контакты контрагента</span>. Для этого выделите один или несколько контактов на детали, нажмите <span contenteditable="false" tabindex="-1"><span contenteditable="false" tabindex="-1"><img alt="" data-entity-type="" data-entity-uuid="" data-widget="image" src="../../../../../sites/default/files/inline-images/btn_marketing_plans_detail_menu.png" /></span></span> и выберите опцию <span class="key">Добавить пользователей портала</span>.</p>
+	</div>
+	</li>
+</ol><p>В результате пользователи портала будут добавлены в организацию и унаследуют настроенные для нее права. Если вы добавляли существующего пользователя в новую организацию, то предыдущая учетная запись пользователя деактивируется во избежание дублирования.</p>
+
+<p>Вы можете перейти к управлению параметрами пользователя портала (логин, пароль, роли и лицензии), дважды кликнув по нужной строке на детали <span class="key">Пользователи портала</span>.</p>
+
+<p>Администратор портала также может добавлять новых пользователей своей организации.</p>
+
+<h3>Деактивировать пользователей<a class="title-anchor" href="#title-2837-4" id="title-2837-4"> </a></h3>
+
+<p>Если пользователь больше не должен иметь доступ к порталу, то администратор системы может его деактивировать.</p>
+
+<h4>Деактивировать пользователя со страницы пользователя<a class="title-anchor" href="#title-2837-15" id="title-2837-15"> </a></h4>
+
+<ol><li>
+	<p>Нажмите <span contenteditable="false" tabindex="-1"><span contenteditable="false" tabindex="-1"><img alt="" data-entity-type="" data-entity-uuid="" data-widget="image" src="../../../../../sites/default/files/inline-images/btn_system_designer_3.png" /></span></span> → “Пользователи системы”. Откройте страницу пользователя, которого необходимо деактивировать.</p>
+	</li>
+	<li>
+	<p>Снимите признак <span class="key">Активен</span> и сохраните изменения (Рис. 6).</p>
+
+	<div class="media">
+	<div class="media__caption">Рис. 6 — Создать пользователя портала без привязки к организации</div>
+
+	<div class="media__element"><span contenteditable="false" tabindex="-1"><span contenteditable="false" tabindex="-1"><img alt="" data-entity-type="" data-entity-uuid="" data-widget="image" src="../../../../../sites/default/files/inline-images/scr_chapter_portal_deactivate_user.png" /></span></span></div>
+	</div>
+	</li>
+</ol><h4>Деактивировать пользователя со страницы организации<a class="title-anchor" href="#title-2837-16" id="title-2837-16"> </a></h4>
+
+<ol><li>
+	<p>Нажмите <span contenteditable="false" tabindex="-1"><span contenteditable="false" tabindex="-1"><img alt="" data-entity-type="" data-entity-uuid="" data-widget="image" src="../../../../../sites/default/files/inline-images/btn_system_designer_3.png" /></span></span> → “Организационные роли” → роль “All portal users”.</p>
+	</li>
+	<li>
+	<p>На детали <span class="key">Организации</span> нажмите на название организации. Найдите пользователя, которого необходимо деактивировать.</p>
+	</li>
+	<li>
+	<p>Снимите признак <span class="key">Активен</span> и сохраните изменения (Рис. 7).</p>
+
+	<div class="media">
+	<div class="media__caption">Рис. 7<a name="XREF_78448_294" id="XREF_78448_294"></a> — Деактивация пользователя портала в организации</div>
+
+	<div class="media__element"><span contenteditable="false" tabindex="-1"><span contenteditable="false" tabindex="-1"><img alt="" data-entity-type="" data-entity-uuid="" data-widget="image" height="443" src="../../../../../sites/default/files/images/2020-12/scr_chapter_portal_deactivate_user_in_organization.png" width="706" /></span></span></div>
+	</div>
+	</li>
+</ol><p>В результате пользователь будет деактивирован, но не будет удален. При необходимости его можно будет снова активировать.</p>
+
+<h3>Отправить приглашения на портал<a class="title-anchor" href="#title-2837-5" id="title-2837-5"> </a></h3>
+
+<p>Чтобы новый пользователь смог войти на портал, ему нужно отправить приглашение. Приглашение высылается на email, указанный на странице контакта. Текст письма можно настроить, указав адрес вашего портала и любую другую необходимую информацию.</p>
+
+<p>Для отправки приглашений на портал в системе должна быть настроена почта. Подробнее: <a href="../../../../../user/ustanovka_i_administrirovanie/nastrojka_bazovyh_intgracij.html">Настройка базовых интеграций</a>.</p>
+
+<div class="message">
+<p><span class="message__bold">На заметку.</span> Также отправлять приглашения может администратор организации на портале. Подробнее: <a href="../administrirovanie_na_portale/administrirovanie_portala_v_profile_organizacii_na_portale/index.html#title-3060-3">Отправить приглашения пользователям портала</a>.</p>
+</div>
+
+<p>Для отправки сообщений необходимо выполнить предварительные настройки:</p>
+
+<ol><li>
+	<p>Настройте почтовый адрес для отправки приглашений пользователям и восстановления пароля на портале. Адрес указывается в <a href="../../../../../7-17/user/ustanovka_i_administrirovanie/sistemnye_nastrojki_i_spravochniki/opisanie_sistemnyh_nastroek/index.html">системной настройке</a> “Почтовый ящик регистрации на портале” ( код “SSPRegistrationMailbox”).</p>
+	</li>
+	<li>
+	<p>Убедитесь, что для пользователей указаны языки. Если нет, то пользователь получит приглашение на языке по умолчанию (английский). Приглашения отправляются на языке, который указан на странице пользователя в поле <span class="key">Культура</span>.</p>
+	</li>
+	<li>
+	<p>Настройте текст письма. Для этого настройте шаблон приглашения на портал:<br />
+	Откройте <span contenteditable="false" tabindex="-1"><span contenteditable="false" tabindex="-1"><img alt="" data-entity-type="" data-entity-uuid="" data-widget="image" src="../../../../../sites/default/files/inline-images/btn_system_designer_3.png" /></span></span> → “Справочники” → справочник <span class="key">Шаблоны email сообщений</span> → мультиязычный шаблон “Шаблон регистрации пользователя портала” (Рис. 8). Вы можете отредактировать данный шаблон, настроив желаемый внешний вид и сформировав шаблоны на всех нужных языках.</p>
+
+	<div class="media">
+	<div class="media__caption">Рис. 8 — Шаблон регистрации пользователя портала</div>
+
+	<div class="media__element"><span contenteditable="false" tabindex="-1"><span contenteditable="false" tabindex="-1"><img alt="" data-entity-type="" data-entity-uuid="" data-widget="image" src="../../../../../sites/default/files/inline-images/scr_chapter_portal_template_portal_user_registration.png" /></span></span></div>
+	</div>
+	</li>
+</ol><p>Вы можете отправить приглашение сразу при создании пользователя, подтвердив отправку по кнопке <span class="key">Отправить приглашения</span>.<br />
+Чтобы отправить (или повторно отправить) приглашения выбранным пользователям в любой момент:</p>
+
+<ol><li>На детали <span class="key">Пользователи портала</span> выделите одного или нескольких пользователей, которым нужно отправить приглашения.</li>
+	<li>Нажмите <span contenteditable="false" tabindex="-1"><span contenteditable="false" tabindex="-1"><img alt="" data-entity-type="" data-entity-uuid="" data-widget="image" src="../../../../../sites/default/files/inline-images/btn_marketing_plans_detail_menu_0.png" /></span></span> и выберите опцию <span class="key">Отправить приглашения</span> (Рис. 9).</li>
+</ol><p><span class="message__bold">На заметку.</span> Если пользователь при переходе из приглашения на портал не ввел пароль, а сразу начал работу с порталом, то пароль будет создан автоматически. Повторный переход из приглашения на портал не сработает. В таком случае по запросу пользователя администратор может выслать ему приглашение повторно.</p>
+
+<div class="media">
+<div class="media__caption">Рис. 9 — Отправка приглашений на портал выбранным пользователям</div>
+
+<div class="media__element"><span contenteditable="false" tabindex="-1"><span contenteditable="false" tabindex="-1"><img alt="" data-entity-type="" data-entity-uuid="" data-widget="image" height="529" src="../../../../../sites/default/files/images/2020-12/scr_chapter_portal_sending_user_registration_email.png" width="997" /></span></span></div>
+</div>
+
+<p>При переходе из приглашения на портал пользователь попадет на страницу, где нужно будет создать и ввести пароль, который он будет использовать для входа (Рис. 10).</p>
+
+<div class="media">
+<div class="media__caption">Рис. 10 — Создание пароля пользователя при первом входе на портал</div>
+
+<div class="media__element"><span contenteditable="false" tabindex="-1"><span contenteditable="false" tabindex="-1"><img alt="" data-entity-type="" data-entity-uuid="" data-widget="image" src="../../../../../sites/default/files/inline-images/scr_chapter_portal_confirm_portal_user_password.png" /></span></span></div>
+</div>
+
+<h3>Настроить самостоятельную регистрацию пользователей портала<a class="title-anchor" href="#title-2837-6" id="title-2837-6"> </a></h3>
+
+<p>Самостоятельная регистрация пользователей портала поможет сэкономить время и облегчит работу администраторов приложения и портала. Для того чтобы пользователи могли самостоятельно регистрироваться со страницы входа на портал, нужно выполнить ряд настроек.</p>
+
+<p>Обязательные настройки:</p>
+
+<ul><li>
+	<p>Убедитесь, что в приложении существует <strong>системный пользователь портала</strong> с максимально ограниченными правами доступа.</p>
+	</li>
+	<li>
+	<p>Настройте <strong>лицензирование пользователей</strong> портала при самостоятельной регистрации.</p>
+	</li>
+	<li>
+	<p>Настройте <strong>отправку уведомлений</strong> о регистрации пользователя портала и восстановлении пароля.</p>
+	</li>
+</ul><p>Опциональные настройки:</p>
+
+<ul><li>Отредактируйте <strong>шаблоны email-сообщений</strong> о регистрации на портале и восстановлении пароля.</li>
+</ul><h4>Создать системного пользователя портала<a class="title-anchor" href="#title-2837-17" id="title-2837-17"> </a></h4>
+
+<p>Для корректной работы самостоятельной регистрации пользователей портала, восстановления пароля и сбора обратной связи по обращениям используется учетная запись пользователя, для которого максимально ограничены права доступа. По умолчанию таким пользователем является <strong>SysPortalConnection</strong>. Этого пользователя нельзя удалять и изменять для него права доступа и лицензии, иначе возможность регистрации пользователей на портале может быть недоступна.</p>
+
+<p>При возникновении каких-либо проблем в самостоятельной регистрации проверьте настройки системного пользователя:</p>
+
+<ol><li>
+	<p>Нажмите <span contenteditable="false" tabindex="-1"><span contenteditable="false" tabindex="-1"><img alt="" data-entity-type="" data-entity-uuid="" data-widget="image" src="../../../../../sites/default/files/inline-images/btn_system_designer_3.png" /></span></span> → “Пользователи системы”<strong>,</strong> найдите запись системного пользователя портала.</p>
+	</li>
+	<li>
+	<p>Откройте страницу системного пользователя SysPortalConnection → на вкладке <span class="key">Лицензии</span> должна быть указана лицензия портала.</p>
+	</li>
+	<li>
+	<p>Убедитесь, что системный пользователь портала связан с существующим контактом (поле <span class="key">Контакт</span>).</p>
+
+	<div class="message">
+	<p><span class="message__bold">На заметку.</span> Название лицензии портала состоит из типа портала и типа установки системы, например, Creatio self-service portal cloud или Creatio customer portal on-site.</p>
+	</div>
+	</li>
+</ol><p>Если вы хотите изменить учетную запись системного пользователя портала, то выполните следующие действия:</p>
+
+<ol><li>
+	<p>Создайте пользователя в разделе управления ролями и пользователями. Нажмите <span contenteditable="false" tabindex="-1"><span contenteditable="false" tabindex="-1"><img alt="" data-entity-type="" data-entity-uuid="" data-widget="image" src="../../../../../sites/default/files/inline-images/btn_system_designer_3.png" /></span></span> → <span class="key">Пользователи системы</span> → <span class="key">Добавить</span> → <span class="key">Пользователя портала</span>. Не используйте пользователя “Supervisor” или реального пользователя, который должен работать в системе.</p>
+	</li>
+	<li>
+	<p>Выдайте ему лицензию портала на вкладке <span class="key">Лицензии</span>.</p>
+	</li>
+	<li>
+	<p>Настройте для нового пользователя максимально <strong>ограниченные</strong> <strong>права доступа</strong> в разделе <span class="key">Права доступа на объекты</span>.</p>
+	</li>
+	<li>
+	<p>Укажите нового пользователя в настройках приложения:</p>
+
+	<ol><li>
+		<p>Для Creatio on-site: укажите нового системного пользователя в файле web.config. Подробнее: <a href="#title-2837-18">Настроить лицензирование пользователей портала при самостоятельной регистрации</a>.</p>
+		</li>
+		<li>
+		<p>Для Creatio cloud: обратитесь в службу технической поддержки и предоставьте данные нового системного пользователя.</p>
+		</li>
+	</ol></li>
+</ol><h4>Настроить лицензирование пользователей портала при самостоятельной регистрации<a class="title-anchor" href="#title-2837-18" id="title-2837-18"> </a></h4>
+
+<p>Чтобы пользователи портала при самостоятельной регистрации автоматически получали лицензию портала, необходимо выполнить настройку:</p>
+
+<ol><li>
+	<p>Нажмите <span contenteditable="false" tabindex="-1"><span contenteditable="false" tabindex="-1"><img alt="" data-entity-type="" data-entity-uuid="" data-widget="image" src="../../../../../sites/default/files/inline-images/btn_system_designer_3.png" /></span></span> → “Пользователи системы”.</p>
+	</li>
+	<li>
+	<p>Откройте страницу <strong>системного пользователя портала</strong>. В базовой конфигурации это SysPortalConnection.</p>
+	</li>
+	<li>
+	<p>На вкладке <span class="key">Лицензии</span> установите признак напротив лицензии портала (Рис. 11).</p>
+
+	<div class="media">
+	<div class="media__caption">Рис. 11<a name="XREF_44279_291" id="XREF_44279_291"></a> — Предоставление лицензии портала системному пользователю</div>
+
+	<div class="media__element"><span contenteditable="false" tabindex="-1"><span contenteditable="false" tabindex="-1"><img alt="" data-entity-type="" data-entity-uuid="" data-widget="image" height="493" src="../../../../../sites/default/files/images/2020-12/scr_chapter_portal_setup_portal_license.png" width="843" /></span></span></div>
+	</div>
+	</li>
+</ol><p>В менеджере лицензий <strong>проверьте наличие свободных лицензий</strong> для пользователей портала, которые будут регистрироваться самостоятельно. Лицензии будут присваиваться автоматически. Подробнее: <a href="../../../ustanovka_i_administrirovanie/licenzirovanie/obzor_litsenzirovanie/licenzirovat_creatio/index.html">Лицензировать Creatio</a>.</p>
+
+<div class="message">
+<p><span class="message__bold">На заметку.</span> Название лицензии портала состоит из типа портала и типа установки системы, например, Creatio self-service portal cloud или Creatio customer portal on-site.</p>
+</div>
+
+<p>Для приложений, <strong>развернутых on-site</strong>, кроме перечисленных выше действий, необходимо выполнить дополнительные настройки, <strong>отредактировав файл</strong> <strong>Web.config</strong>, размещенный в корневой директории приложения Creatio:</p>
+
+<ol><li>В параметре SspUserRegistrationLicPackage укажите имя продукта, лицензии которого будут раздаваться при создании пользователя портала. Например:
+	<div class="code">
+	<div class="code__widgets">
+	<div class="code__source">
+	<pre class="prettyprint">
+&lt;add key="SspUserRegistrationLicPackage" value ="Creatio Customer Portal On-Site" /&gt;</pre>
+	</div>
+	</div>
+	</div>
+	</li>
+	<li>Рекомендуем убедиться, что параметры <strong>UserManagementSauName</strong> и <strong>UserManagementSauPassword</strong> содержат логин и пароль системного пользователя для входа на страницу регистрации на портале. Новые пользователи портала получат права указанного в файле конфигурации пользователя.</li>
+</ol><h4>Настроить отправку уведомлений пользователям портала<a class="title-anchor" href="#title-2837-19" id="title-2837-19"> </a></h4>
+
+<p>Чтобы пользователи могли получить приглашение на портал или письмо с подтверждением регистрации, в системе должен быть настроен почтовый ящик для отправки уведомлений портала. Для выполнения данной настройки вам необходима учетная запись почты, синхронизированная с приложением. Подробнее: <a href="../../../../../user/ustanovka_i_administrirovanie/nastrojka_bazovyh_intgracij.html">Настройка базовых интеграций</a>.</p>
+
+<p><span style="background-color: rgb(255, 255, 255);">Чтобы настроить отправку уведомлений портала:</span></p>
+
+<p>Нажмите <span contenteditable="false" tabindex="-1"><span contenteditable="false" tabindex="-1"><img alt="" data-entity-type="" data-entity-uuid="" data-widget="image" src="../../../../../sites/default/files/inline-images/btn_system_designer_3.png" /></span></span> → “Системные настройки”.</p>
+
+<ol><li>
+	<p>Откройте системную настройку “Почтовый ящик регистрации на портале” (код “SSPRegistrationMailbox”).</p>
+	</li>
+	<li>
+	<p>В поле <span class="key">Значение по умолчанию</span> укажите почтовый адрес, с которого пользователям портала будут отправляться уведомления.</p>
+	</li>
+</ol><p>У вас может возникнуть необходимость <strong>отредактировать тексты писем</strong>, которые будут получать пользователи при регистрации и восстановлении пароля, или создать новые шаблоны. Это можно сделать в справочнике <span class="key">Шаблоны email-сообщений</span>. По умолчанию в системе используются следующие шаблоны для отправки пользователям портала:</p>
+
+<ul><li>
+	<p><strong>“SSP invite template (US)”</strong> — приглашение зарегистрироваться на портале;</p>
+	</li>
+	<li>
+	<p><strong>“Шаблон регистрации пользователя портала”</strong> — подтверждение регистрации на портале;</p>
+	</li>
+	<li>
+	<p><strong>“Link for password recovery”</strong> — ссылка для восстановления пароля пользователя на портале.<br />
+	Подробнее: <a href="../../../../../user/instrumenty_marketinga/email_marketing/shablon_pisma/sozdanie_shablona/sozdat_shablon_pisma.html?product=base&amp;ver=7&amp;id=1960">Создать шаблон письма</a>.</p>
+	</li>
+</ul><p>Система определяет, какой шаблон будет отправлен пользователю, по системным настройкам:</p>
+
+<ul><li>
+	<p>“Шаблон приглашения на портал самообслуживания” (код “PortalInvitationEmailTemplate”).</p>
+	</li>
+	<li>
+	<p>“Шаблон email-сообщения, подтверждающего регистрацию пользователя на портале” (код “PortalRegistrationEmailTemplate”).</p>
+	</li>
+	<li>
+	<p>“Шаблон email-сообщения для восстановления пароля пользователя на портале” (код “PortalRecoveryPasswordEmailTemplate”).</p>
+	</li>
+</ul><p>Чтобы перейти к редактированию этих настроек, нажмите <span contenteditable="false" tabindex="-1"><span contenteditable="false" tabindex="-1"><img alt="" data-entity-type="" data-entity-uuid="" data-widget="image" src="../../../../../sites/default/files/inline-images/btn_system_designer_3.png" /></span></span> → “Системные настройки”.</p>
+
+<h3>Настроить восстановление пароля<a class="title-anchor" href="#title-2837-8" id="title-2837-8"> </a></h3>
+
+<p>Если пользователь не может войти на портал, то ему необходимо обратиться к администратору системы для получения повторного приглашения или воспользоваться функцией восстановления пароля (Рис. 12).</p>
+
+<div class="media">
+<div class="media__caption">Рис. 12<a name="XREF_75006_300" id="XREF_75006_300"></a> — Восстановление пароля</div>
+
+<div class="media__element"><span contenteditable="false" tabindex="-1"><span contenteditable="false" tabindex="-1"><img alt="" data-entity-type="" data-entity-uuid="" data-widget="image" src="../../../../../sites/default/files/inline-images/scr_chapter_portal_forgot_password.png" /></span></span></div>
+</div>
+
+<p>Пользователь может нажать <span class="key">Забыли пароль</span>, после чего получит письмо со ссылкой для восстановления согласно настроенному в системе шаблону.</p>
+
+<p>Чтобы настроить шаблон письма для восстановления пароля на портале:</p>
+
+<ol><li>
+	<p>Нажмите <span contenteditable="false" tabindex="-1"><span contenteditable="false" tabindex="-1"><img alt="" data-entity-type="" data-entity-uuid="" data-widget="image" src="../../../../../sites/default/files/inline-images/btn_system_designer_3.png" /></span></span> → “Справочники” → справочник <span class="key">Шаблоны email сообщений</span> → шаблон “Link for password recovery”.</p>
+	</li>
+	<li>
+	<p>Внесите необходимые изменения в шаблон и сохраните их.</p>
+
+	<p>Шаблон обязательно должен содержать макрос #RecoveryLinkUrl#, который является ссылкой для восстановления пароля учетной записи пользователя портала.</p>
+
+	<div class="message">
+	<p><span class="message__bold">На заметку.</span> Шаблон для восстановления пароля указывается в <a href="../../../../../7-17/user/ustanovka_i_administrirovanie/sistemnye_nastrojki_i_spravochniki/opisanie_sistemnyh_nastroek/index.html">системной настройке</a> “Шаблон email-сообщения для восстановления пароля пользователя на портале” (код “PortalRecoveryPasswordEmailTemplate”). Если вы удалите существующий шаблон, то рекомендуем указать в этой настройке новый созданный шаблон для восстановления пароля.</p>
+	</div>
+	</li>
+</ol><h3>Назначить администратора портала<a class="title-anchor" href="#title-2837-10" id="title-2837-10"> </a></h3>
+
+<p>Для организации на портале вы можете не только создать пользователей, но и назначить одного или нескольких администраторов портала.</p>
+
+<p>Администраторы портала имеют ряд дополнительных возможностей в сравнении с обычными пользователями:</p>
+
+<ul><li>
+	<p>Управление основной информацией об организации. На странице профиля организации доступны название и телефон организации, а также список пользователей портала.</p>
+	</li>
+	<li>
+	<p>Создание пользователей.</p>
+	</li>
+	<li>
+	<p>Отправка пользователям приглашений.</p>
+	</li>
+	<li>
+	<p>Настройка доступа пользователей.</p>
+	</li>
+	<li>
+	<p>Просмотр и редактирование информации обслуживания.</p>
+	</li>
+</ul><p>Подробнее: <a href="../administrirovanie_na_portale/administrirovanie_portala_v_profile_organizacii_na_portale/index.html">Администрирование в профиле организации на портале</a>.</p>
+
+<p>Чтобы назначить пользователя администратором организации на портале:</p>
+
+<ol><li>
+	<p>В основном приложени нажмите <span contenteditable="false" tabindex="-1"><span contenteditable="false" tabindex="-1"><img alt="" data-entity-type="" data-entity-uuid="" data-widget="image" src="../../../../../sites/default/files/inline-images/btn_system_designer_3.png" /></span></span> → “Организационные роли” → роль “All portal users”.</p>
+	</li>
+	<li>
+	<p>На детали <span class="key">Организации</span> нажмите на название организации. Найдите пользователя или нескольких пользователей, которых нужно назначить администраторами.</p>
+	</li>
+	<li>
+	<p>Отметьте для них признак <span class="key">Администраторы портала</span> (Рис. 13).</p>
+
+	<div class="media">
+	<div class="media__caption">Рис. 13 — Назначение администраторов организации на портале</div>
+
+	<div class="media__element"><span contenteditable="false" tabindex="-1"><span contenteditable="false" tabindex="-1"><img alt="" data-entity-type="" data-entity-uuid="" data-widget="image" height="488" src="../../../../../sites/default/files/images/2020-12/scr_chapter_porta_portal_administrators.png" width="704" /></span></span></div>
+	</div>
+	</li>
+</ol><p>Назначенные вами администраторы смогут в дальнейшем самостоятельно назначить администраторами других пользователей.</p>
+
+<div class="message">
+<p><span class="message__bold">На заметку.</span> У организации может не быть администратора портала, в таком случае создавать, приглашать и деактивировать пользователей портала в системе может пользователь с ролью системного администратора. Подробнее: <a href="../../../../../user/ustanovka_i_administrirovanie/upravlenie_polzovateljami_i_dostupom/upravleniye_polzovateliami/dobavlenie_polzovatelej/dobavit_polzovatelei.html?product=administration&amp;ver=7&amp;id=1441">Добавить пользователей</a>.</p>
+</div>
+
+<h2>Управление правами доступа на портале<a class="title-anchor" href="#title-2837-7" id="title-2837-7"> </a></h2>
+
+<p>Поскольку на портале внешние пользователи работают с данными основного приложения Creatio, настройка прав доступа является задачей первостепенной важности. Вы можете управлять доступом внешних пользователей к вашим бизнес-данным на портале и контролировать сохранность и конфиденциальность важной информации.</p>
+
+<p>Права доступа в Creatio распределяются по <strong>принципу “наименьшего доступа”</strong>. Это значит, что пользователям портала запрещено все, на что не дано непосредственного разрешения.</p>
+
+<p>В целом управление правами доступа пользователей портала аналогично управлению правами доступа пользователей основного приложения и реализуется через те же инструменты. Подробнее: <a href="../../../../../user/ustanovka_i_administrirovanie/upravlenie_polzovateljami_i_dostupom/upravleniye_polzovateliami/naznachenie_roli/naznachit_polzovatelyu_roli.html?product=administration&amp;ver=7&amp;id=259">Назначить пользователю роли</a>.</p>
+
+<p>Управление доступом на портале имеет следующие особенности:</p>
+
+<ul><li>
+	<p>Пользователи портала — это отдельный тип пользователей системы, которые входят в организационную роль “All portal users” (Все пользователи портала).</p>
+	</li>
+	<li>
+	<p>Управление доступом пользователей портала к данным системы осуществляется не только через <a href="../../../../../7-17/user/ustanovka_i_administrirovanie/upravlenie_polzovateljami_i_dostupom/upravleniye_dostupom/dostup_po_operacijam/nastroit_dostup_po_operaciyam.html?product=administration&amp;ver=7&amp;id=250">права доступа</a>, но и через справочник <span class="key">Список объектов, доступных пользователям портала</span>. Только те объекты, которые перечислены в справочнике, будут доступны из интерфейса портала.</p>
+	</li>
+</ul><p>Обратите внимание, что список разделов, доступных пользователям портала, зависит также от конфигурации портала. Например, раздел <span class="key">Обращения портала</span> недоступен на клиентском портале. Подробнее: <a href="../obzor_portal/o_portale/index.html">О портале Creatio</a>.</p>
+
+<p>Когда пользователь портала пытается получить доступ к определенным данным, система выполняет проверку прав в следующем порядке:</p>
+
+<ol><li>
+	<p><strong>Доступность данных на портале</strong>, то есть, упомянут ли<strong> о</strong>бъект, содержащий запрошенные данные, в справочнике <span class="key">Список объектов, доступных пользователям портала</span>. Если нет, то пользователь данных не увидит, независимо от прочих настроек доступа.</p>
+	</li>
+	<li>
+	<p><strong>Доступ к объекту по операциям</strong>. У пользователя есть права на создание, чтение, изменение и удаление данных объекта? Если нет, то пользователь данных не увидит, независимо от прочих настроек доступа.</p>
+	</li>
+	<li>
+	<p><strong>Доступ к записям</strong>. У пользователя есть права доступа к записи объекта, которая содержит запрошенные данные? Если доступ к записи запрещен (например, ограничены права на чтение и редактирование некоторых обращений или статей базы знаний), то пользователь этих данных не увидит, независимо от прочих настроек доступа.</p>
+	</li>
+	<li>
+	<p><strong>Доступ к колонкам</strong>. У пользователя есть права доступа к колонке объекта, которая содержит запрошенные данные? Если доступ к колонке запрещен (например, ограничены права на чтение и редактирование ответственных по обращениям, авторов статей базы знаний и т. д.), то пользователь этих данных не увидит, независимо от прочих настроек доступа.</p>
+	</li>
+</ol><p>Каждый из перечисленных этапов проверки представляет отдельную настройку прав доступа, которую вы можете выполнить для пользователей портала.</p>
+
+<div class="message message_warning">
+<p><span class="message__bold message__bold_warning">Важно.</span> В базовой конфигурации системы для роли “All portal users” настроены права доступа на существующие разделы портала. В случае добавления новых разделов или пользовательской логики, вам необходимо отдельно настроить права доступа, иначе доработки не будут видны на портале.</p>
+</div>
+
+<div class="message">
+<p><span class="message__bold">На заметку.</span> Если раздел основного приложения не добавлен в рабочее место пользователя портала, то пользователь не сможет перейти в такой раздел или на страницу его записи по прямой ссылке.</p>
+</div>
+
+<p><strong>Права доступа к объекту по операциям</strong> позволяют предоставить доступ на создание, чтение, редактирование и удаление данных объекта. Например, вы можете предоставить пользователям портала возможность создавать новые статьи в разделе <span class="key">База знаний портала</span>, настроив соответствующие права доступа для этого объекта.</p>
+
+<p>Подробнее: <a href="../../../../../7-17/user/ustanovka_i_administrirovanie/upravlenie_polzovateljami_i_dostupom/upravleniye_dostupom/dostup_po_operacijam/nastroit_dostup_po_operaciyam.html?product=administration&amp;ver=7&amp;id=262">Настроить доступ по операциям</a>.</p>
+
+<p><strong>Права доступа к записям</strong> позволяют настраивать доступ пользователям портала к отдельным записям: обращениям, статьям базы знаний и т. п. Например, пользователи должны видеть на портале не только обращения, которые создали сами, но также инциденты, зарегистрированные их коллегами, которые входят в ту же организацию портала.</p>
+
+<p>Обратите внимание, что, если вы не выполните отдельную настройку, то пользователи портала увидят только те записи, которые создали сами. Есть несколько способов настройки прав доступа:</p>
+
+<ul><li>
+	<p>Настроить права доступа по умолчанию, которые будут применяться к каждой новой записи в разделе, в зависимости от ее автора.</p>
+	</li>
+	<li>
+	<p>Раздать права доступа на запись другим пользователям портала через меню действий на странице записи.</p>
+	</li>
+	<li>
+	<p><a href="../../../../../user/biznes_processy/primery_nastrojki_processov/izmenenie_prav_dostupa/izmenit_prava_dostupa_v_ramkakh_biznes-processa.html?id=2317">Использовать бизнес-процесс</a> для перераспределения прав доступа.<br />
+	Подробнее: <a href="../../../ustanovka_i_administrirovanie/upravlenie_polzovateljami_i_dostupom/upravleniye_dostupom/dostup_po_zapisjam/nastroit_dostup_po_zapisyam/index.html">Настроить доступ по записям</a>.</p>
+	</li>
+</ul><p><strong>Доступ по колонкам</strong> определяет права на определенные поля записи, например, поле “Уровень удовлетворенности” на странице обращения. Настройка доступа по колонкам определяет:</p>
+
+<ul><li>
+	<p>Будет ли соответствующее поле отображаться на странице записи.</p>
+	</li>
+	<li>
+	<p>Будет ли соответствующая колонка отображаться в реестре раздела.<br />
+	Подробнее: <a href="../../../../../7-17/user/ustanovka_i_administrirovanie/upravlenie_polzovateljami_i_dostupom/upravleniye_dostupom/dostup_na_kolonki/nastroit_prava_dostupa_na_kolonki.html?product=administration&amp;ver=7&amp;id=264">Настроить права доступа на колонки</a>.</p>
+	</li>
+</ul><p>Вы можете настраивать права доступа по колонкам отдельно для каждого пользователя портала или для определенной роли, например, “All portal users”.</p>
+
+<h3>Права доступа пользователей портала по умолчанию<a class="title-anchor" href="#title-2837-9" id="title-2837-9"> </a></h3>
+
+<p>По умолчанию все пользователи портала обладают следующими правами доступа:</p>
+
+<ul><li>
+	<p>Право на чтение всех статей раздела <span class="key">База знаний портала</span>. При создании новых статей базы знаний в основном приложении пользователям портала автоматически предоставляется право на их чтение.</p>
+	</li>
+	<li>
+	<p>Право на чтение главной страницы портала.</p>
+	</li>
+	<li>
+	<p>Право изменить пароль на странице профиля пользователя.</p>
+	</li>
+	<li>
+	<p>Право на чтение при использовании области групп в разделах портала.</p>
+	</li>
+	<li>
+	<p>Право оставлять комментарии в ленте, а также изменять и удалять их. Право отмечать понравившиеся комментарии других пользователей.</p>
+	</li>
+	<li>
+	<p>Право создавать записи в разделе <span class="key">Обращения портала</span> на <strong>портале самообслуживания</strong> в продуктах линейки <strong>Service Creatio</strong>. Для пользователя отображаются только те записи, автором которых он является.</p>
+	</li>
+</ul><p>Точно так же, как для пользователей основного приложения, для пользователей портала можно настраивать права доступа к объектам и к системным операциям.</p>
+
+<ul><li>
+	<p><a href="../../../../../7-17/user/ustanovka_i_administrirovanie/upravlenie_polzovateljami_i_dostupom/upravleniye_dostupom/dostup_po_operacijam/nastroit_dostup_po_operaciyam.html?product=administration&amp;ver=7&amp;id=250">Права доступа к объектам</a> позволяют настраивать доступ к разделам, деталям и справочникам, а также отдельным записям и колонкам.</p>
+	</li>
+	<li>
+	<p><a href="../../../../../user/ustanovka_i_administrirovanie/upravlenie_polzovateljami_i_dostupom/upravleniye_dostupom/dostup_po_sistemnym_operacijam/nastroit_prava_dostupa_na_sistemnye_operacii.html?product=administration&amp;ver=7&amp;id=258">Права доступа к операциям</a> позволяют управлять доступом пользователей портала к выполнению специфических действий, например, экспорта данных в Excel.</p>
+	</li>
+</ul><h3>Права доступа на сервисные объекты<a class="title-anchor" href="#title-2837-32" id="title-2837-32"> </a></h3>
+
+<p>На <strong>портале самообслуживания</strong> в продуктах линейки Service Creatio пользователям и организациям могут автоматически предоставляться права на чтение обращений, сервисных договоров и конфигурационных единиц.</p>
+
+<h4>Обращения<a class="title-anchor" href="#title-2837-33" id="title-2837-33"> </a></h4>
+
+<p>Если включена <a href="../../../../../7-17/user/ustanovka_i_administrirovanie/sistemnye_nastrojki_i_spravochniki/opisanie_sistemnyh_nastroek/index.html">системная настройка</a> “<strong>Раздавать права на обращение организации портального пользователя</strong>” (код “GrantCasePermissionsForPortalOrganization”), то права на просмотр обращения предоставляются не только автору, но и всем пользователям организации портала, в которую он входит. Это позволяет пользователям портала отслеживать статус по инцидентам, созданным коллегами.</p>
+
+<h4>Сервисные договоры и конфигурационные единицы<a class="title-anchor" href="#title-2837-34" id="title-2837-34"> </a></h4>
+
+<p>Если включена <a href="../../../../../7-17/user/ustanovka_i_administrirovanie/sistemnye_nastrojki_i_spravochniki/opisanie_sistemnyh_nastroek/index.html">системная настройка</a> “<strong>Включение прав на сервисные договоры и конфигурационные единицы для пользователей портала</strong>” (код “EnableRightsOnServiceObjects”), то права на просмотр необходимых сервисных договоров и конфигурационных единиц автоматически предоставляются пользователям и организациям портала.</p>
+
+<p>Обратите внимание, предварительно необходимо настроить доступ по записям для объекта “Сервисный договор” таким образом, чтобы пользователи портала получали доступ только к актуальным для них сервисным договорам. Подробнее: <a href="../../../ustanovka_i_administrirovanie/upravlenie_polzovateljami_i_dostupom/upravleniye_dostupom/dostup_po_zapisjam/nastroit_dostup_po_zapisyam/index.html">Настроить доступ по записям</a>.</p>
+
+<p>Право на просмотр <strong>сервисного договора</strong> предоставляется:</p>
+
+<ul><li>Пользователю, контакт которого указан на детали <span class="key">Объекты обслуживания</span> данной записи.</li>
+	<li>Всем пользователям, входящим в организацию портала, указанную на детали <span class="key">Объекты обслуживания</span> данной записи.</li>
+</ul><p>Право на просмотр <strong>конфигурационной единицы</strong> предоставляется:</p>
+
+<ul><li>Пользователю, контакт которого указан на детали <span class="key">Пользователи</span> данной записи.</li>
+	<li>Всем пользователям, входящим в организацию портала, указанную на детали <span class="key">Пользователи</span> данной записи.</li>
+</ul><h3>Настроить организационную структуру портала<a class="title-anchor" href="#title-2837-11" id="title-2837-11"> </a></h3>
+
+<p>Аналогично пользователям основного приложения Creatio, пользователей портала можно группировать, назначая им определенные <a href="../../../../../7-17/user/ustanovka_i_administrirovanie/upravlenie_polzovateljami_i_dostupom/upravleniye_polzovateliami/organizatsionnie_roli/organizacionnye_roli.html?product=administration&amp;ver=7&amp;id=1434">организационные</a> и <a href="../../../../../user/ustanovka_i_administrirovanie/upravlenie_polzovateljami_i_dostupom/upravleniye_polzovateliami/funkcionalnye_roli/funkcionalnye_roli.html?product=administration&amp;ver=7&amp;id=1438">функциональные</a> роли. Если вы настраиваете права доступа для роли, то они будут применены для всех пользователей, которые входят в эту роль.</p>
+
+<p>По умолчанию все пользователи портала входят в корневую роль “All portal users” (Все пользователи портала). Права доступа, которые вы настроите для этой роли, будут применены ко всем пользователям портала.</p>
+
+<p>Вы можете сегментировать пользователей портала, настроив для “All portal users” подчиненные роли. Эти роли автоматически унаследуют права доступа, настроенные для родительской. Вы также можете настроить дополнительные права и ограничения для каждой из подчиненных ролей. Например, права пользователей портала могут зависеть от их местонахождения.</p>
+
+<p><strong>Организации портала </strong>— это специальный тип роли для пользователей портала. Они используются для управления учетными записями сотрудников ваших клиентов. Вы можете связать организации портала с существующими в системе записями контрагентов.</p>
+
+<p>Настройте организационную структуру для портала, чтобы облегчить управление правами доступа пользователей в соответствии с вашими бизнес-задачами.</p>
+
+<h4>Добавить роль пользователю портала<a class="title-anchor" href="#title-2837-20" id="title-2837-20"> </a></h4>
+
+<p>Вы можете добавить роли для пользователей портала точно так же, как и для пользователей основного приложения. Подробнее: <a href="../../../../../7-17/user/ustanovka_i_administrirovanie/upravlenie_polzovateljami_i_dostupom/upravleniye_polzovateliami/organizatsionnie_roli/organizacionnye_roli.html?product=studio&amp;ver=7&amp;id=1434">Организационные роли</a>.</p>
+
+<div class="message">
+<p><span class="message__bold">На заметку.</span> Доступ к организационным и функциональным ролям в приложении есть только у системных администраторов. Чтобы пользователи, которые не входят в роль “System administrators”, могли создавать и настраивать организации, а также управлять пользователями портала, им необходимо дать право на выполнение <a href="../../../../../user/ustanovka_i_administrirovanie/upravlenie_polzovateljami_i_dostupom/upravleniye_dostupom/dostup_po_sistemnym_operacijam/nastroit_prava_dostupa_na_sistemnye_operacii.html?product=studio&amp;ver=7&amp;id=258">системной операции</a> “Возможность управлять пользователями портала” (код “CanAdministratePortalUsers”).</p>
+</div>
+
+<p>Например, вы можете создать организационную роль “Минск” для управления доступом к данным пользователей из Минска (Рис. 14), убедившись, что созданная вами организационная роль является подчиненной для корневой роли “All portal users”.</p>
+
+<div class="media">
+<div class="media__caption">Рис. 14 — Добавление роли для пользователей портала</div>
+
+<div class="media__element"><span contenteditable="false" tabindex="-1"><span contenteditable="false" tabindex="-1"><img alt="" data-entity-type="" data-entity-uuid="" data-widget="image" src="../../../../../sites/default/files/inline-images/chapter_portal_setup_adding_org_roles.gif" /></span></span></div>
+</div>
+
+<p>В результате все пользователи портала, которые входят в организационную роль “Минск”, унаследуют права доступа, настроенные для роли “All portal users”. Вы можете дополнительно настроить специфические права доступа только для пользователей, входящих в роль “Минск”.</p>
+
+<h4>Назначить роль пользователю портала<a class="title-anchor" href="#title-2837-21" id="title-2837-21"> </a></h4>
+
+<p>Назначение ролей для пользователей портала выполняется аналогично назначению ролей для пользователей основного приложения. Подробнее: <a href="../../../../../user/ustanovka_i_administrirovanie/upravlenie_polzovateljami_i_dostupom/upravleniye_polzovateliami/naznachenie_roli/naznachit_polzovatelyu_roli.html?product=studio&amp;ver=7&amp;id=2005">Назначить пользователю роли</a>.</p>
+
+<p>Например, вы можете назначить пользователю портала организационную роль “Минск” (Рис. 15). Обратите внимание, что для пользователей портала вы можете назначать только роли, для которых родительской является “All portal users”.</p>
+
+<div class="media">
+<div class="media__caption">Рис. 15 — Назначение роли пользователю портала</div>
+
+<div class="media__element"><span contenteditable="false" tabindex="-1"><span contenteditable="false" tabindex="-1"><img alt="" data-entity-type="" data-entity-uuid="" data-widget="image" src="../../../../../sites/default/files/inline-images/chapter_portal_setup_assigning_org_roles.gif" /></span></span></div>
+</div>
+
+<p>В результате все пользователи портала, которые входят в организационную роль “Минск”, унаследуют права доступа, настроенные для ролей “All portal users” и “Минск”.</p>
+
+<h3>Настроить права доступа для пользователей портала<a class="title-anchor" href="#title-2837-12" id="title-2837-12"> </a></h3>
+
+<p>Управление доступом к данным в системе — это управление правами доступа на объекты. Подробнее: <a href="../../../ustanovka_i_administrirovanie/upravlenie_polzovateljami_i_dostupom/upravleniye_dostupom/dostup_po_operacijam/nastroit_dostup_po_operaciyam/index.html">Настроить доступ по операциям</a>.</p>
+
+<p>Несмотря на то, что вы можете назначать права доступа конкретным пользователям портала, оптимальнее настраивать права доступа на уровне ролей:</p>
+
+<ul><li>
+	<p>Назначить общие права для роли “All portal users” (Все пользователи портала).</p>
+	</li>
+	<li>
+	<p>Создать подчиненные организационные роли для роли “All portal users”, чтобы разграничить права для разных групп пользователей портала.</p>
+	</li>
+	<li>
+	<p>Связать роли с учетными записями клиентов — для управления сотрудниками ваших клиентов.</p>
+	</li>
+</ul><p>Права доступа на объекты можно ограничить на трех уровнях:</p>
+
+<ul><li>
+	<p><strong>Права доступа по операциям</strong> — права на чтение, создание, редактирование и удаление данных объекта.</p>
+	</li>
+	<li>
+	<p><strong>Права доступа по записям</strong> — права на чтение, редактирование и удаление отдельных записей выбранного объекта.</p>
+	</li>
+	<li>
+	<p><strong>Права доступа по колонкам</strong> — права на чтение, редактирование и удаление данных в отдельных колонках.</p>
+
+	<div class="message message_warning">
+	<p><span class="message__bold message__bold_warning">Важно.</span> Прежде чем приступить к настройке прав доступа для пользователей портала, убедитесь, что соответствующие объекты есть в справочнике <span class="key">Список объектов, доступных пользователям портала</span>. Если нет, то никакие данные объекта не будут доступны пользователям портала.</p>
+	</div>
+	</li>
+</ul><h4>Настроить доступ по операциям на портале<a class="title-anchor" href="#title-2837-22" id="title-2837-22"> </a></h4>
+
+<p>Вы можете управлять доступом к разделу, детали или справочнику на портале, настраивая пользователям портала права доступа на объекты по операциям. Настройка прав для пользователей портала осуществляется так же, как и для обычных пользователей. Подробнее: <a href="../../../ustanovka_i_administrirovanie/upravlenie_polzovateljami_i_dostupom/upravleniye_dostupom/dostup_po_operacijam/nastroit_dostup_po_operaciyam/index.html">Настроить доступ по операциям</a>.</p>
+
+<p>Например, можно настроить разные права доступа к разделу <span class="key">База знаний портала</span> для пользователей портала из Минска и Астаны (Рис. 16).</p>
+
+<div class="media">
+<div class="media__caption">Рис. 16 — Настройка доступа по операциям на портале</div>
+
+<div class="media__element"><span contenteditable="false" tabindex="-1"><span contenteditable="false" tabindex="-1"><img alt="" data-entity-type="" data-entity-uuid="" data-widget="image" src="../../../../../sites/default/files/inline-images/chapter_portal_administration_access_setup_section.gif" /></span></span></div>
+</div>
+
+<p>В результате пользователи портала с ролью “Астана” смогут создавать новые статьи в разделе <span class="key">База знаний портала</span>, просматривать и редактировать существующие, но не смогут удалять их. Пользователи портала с ролью “Минск” смогут только видеть статьи базы знаний, но не смогут их создавать, редактировать или удалять.</p>
+
+<h4>Настроить доступ по записям на портале<a class="title-anchor" href="#title-2837-23" id="title-2837-23"> </a></h4>
+
+<p>Вы можете управлять доступом пользователей портала к определенным записям в разделах портала, деталях и справочниках. Если вы включите доступ по записям в объекте, то все записи объекта станут недоступными для пользователей портала, если только для каждой конкретной записи не настроен доступ отдельно.</p>
+
+<p>Распределение прав зависит от автора записи, на которую вы настраиваете доступ. Настройка прав для пользователей портала выполняется так же, как и для обычных пользователей. Подробнее: <a href="../../../../../user/ustanovka_i_administrirovanie/upravlenie_polzovateljami_i_dostupom/upravleniye_dostupom/dostup_po_zapisjam/nastroit_dostup_po_zapisyam.html?product=administration&amp;ver=7&amp;id=1966">Настроить доступ по записям</a>.</p>
+
+<p>Например, вы можете назначить права на статьи базы знаний, созданные пользователями портала в Минске (Рис. 17).</p>
+
+<div class="media">
+<div class="media__caption">Рис. 17 — Настройка доступа по записям на портале</div>
+
+<div class="media__element"><span contenteditable="false" tabindex="-1"><span contenteditable="false" tabindex="-1"><img alt="" data-entity-type="" data-entity-uuid="" data-widget="image" height="507" src="../../../../../sites/default/files/images/2020-12/chapter_portal_administration_access_setup_record.gif" width="1223" /></span></span></div>
+</div>
+
+<p>В результате пользователи портала, которые входят в организационную роль “Астана”, смогут читать статьи, созданные пользователями из организационной роли “Минск”.</p>
+
+<div class="message message_warning">
+<p><span class="message__bold message__bold_warning">Важно.</span> Перед настройкой прав на запись в объекте убедитесь, что пользователи портала имеют доступ к соответствующим операциям объекта.</p>
+</div>
+
+<h4>Настроить доступ по колонкам на портале<a class="title-anchor" href="#title-2837-24" id="title-2837-24"> </a></h4>
+
+<p>Вы можете управлять доступом пользователей портала к определенным колонкам в разделах, на деталях и в справочниках, настроив права для нужного пользователя или роли портала. Настройка прав для пользователей портала такая же, как и для обычных пользователей. Подробнее: <a href="../../../../../7-17/user/ustanovka_i_administrirovanie/upravlenie_polzovateljami_i_dostupom/upravleniye_dostupom/dostup_na_kolonki/nastroit_prava_dostupa_na_kolonki.html?product=administration&amp;ver=7&amp;id=264">Настроить права доступа по колонкам</a>.</p>
+
+<p>Например, можно скрыть поле <span class="key">Дата изменения</span> и ограничить пользователям портала доступ на чтение и редактирование даты изменения статей базы знаний (Рис. 18).</p>
+
+<div class="media">
+<div class="media__caption">Рис. 18 — Настройка доступа по колонкам на портале</div>
+
+<div class="media__element"><span contenteditable="false" tabindex="-1"><span contenteditable="false" tabindex="-1"><img alt="" data-entity-type="" data-entity-uuid="" data-widget="image" height="549" src="../../../../../sites/default/files/images/2020-12/chapter_portal_administration_access_setup_column.gif" width="1323" /></span></span></div>
+</div>
+
+<p>В результате пользователи в организационной группе “Астана” не смогут видеть поле <span class="key">Дата изменения</span> на страницах статей базы знаний.</p>
+
+<div class="message message_warning">
+<p><span class="message__bold message__bold_warning">Важно.</span> Перед настройкой прав на запись в объекте убедитесь, что пользователи портала имеют доступ к соответствующим операциям и записям.</p>
+</div>
+</div>
+      
+  </div>
+<div class="block block-layout-builder block-field-blocknodeuser-documentationfield-linked-link">
+  
+    
+      
+  <div class="field field--name-field-linked-link field--type-link field--label-above">
+    <div class="field__label">Смотрите также</div>
+          <div class="field__items">
+              <div class="field__item"><a href="../obzor_portal/o_portale.html">О портале Creatio</a></div>
+              </div>
+      </div>
+
+  </div>
+
+    </div>
+  </div>
+
+  </div>
+
+</article>
+
+  </div>
+
+  </div>
+
+          </div>
+        </div>
+
+                  <aside class="creatio-sidebar creatio-sidebar_first" role="complementary">
+              <div class="region region-sidebar-first">
+    <div id="block-documentationnaviagtion" class="block block-ts-nav block-ts-nav-doc-nav">
+  
+    
+      <div class="ts-nav-block"><a href="../../../../../index.html" class="ts-nav-block__link">Документация</a><div class="ts-nav-block__title">Для пользователя</div>
+</div>
+<div class="ts-nav-container"><ul class="ts-nav-menu"><li class="ts-nav-menu__item">
+  <a href="../../../nocode_platforma.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">No-сode платформа&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../bazis_platformy.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Базис платформы&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../instrumenty_crm.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Инструменты CRM&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../instrumenty_kastomizacii.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Инструменты кастомизации&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../biznes_processy.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Бизнес-процессы&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../instrumenty_marketinga.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Инструменты маркетинга&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../instrumenty_prodazh.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Инструменты продаж&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../instrumenty_servisa.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Инструменты сервиса&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../ustanovka_i_administrirovanie.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Администрирование&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../razvertyvanie_onsite.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Развертывание on-site&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../banki_i_finansy.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Банки и финансы&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../drugie_reshenija.html" class="ts-nav-menu__link ts-nav-menu__link_expanded ts-nav-menu__link_open" hreflang="zxx">Другие решения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+      <ul class="ts-nav-menu__children">
+      <li class="ts-nav-menu__item">
+  <a href="../../pharma.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Pharma&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../field_module.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Field Module&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../konnektory_telefonii.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Коннекторы к телефонии&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../portal.html" class="ts-nav-menu__link ts-nav-menu__link_expanded ts-nav-menu__link_open" hreflang="zxx">Портал&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+      <ul class="ts-nav-menu__children">
+      <li class="ts-nav-menu__item">
+  <a href="../obzor_portal/o_portale.html" class="ts-nav-menu__link" hreflang="ru">Обзор</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../nachalo_raboty/pervye_shagi_dlya_ispolzovaniya_portala.html" class="ts-nav-menu__link" hreflang="ru">Начало работы</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="administrirovanie_portala_v_osnovnom_prilojenii.html" class="ts-nav-menu__link ts-nav-menu__link_active ts-nav-menu__link_open" hreflang="ru">Администрирование в основном приложении</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../administrirovanie_na_portale/administrirovanie_portala_v_profile_organizacii_na_portale.html" class="ts-nav-menu__link" hreflang="ru">Администрирование на портале</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../personalizacija_portala/personalizirovat_portal.html" class="ts-nav-menu__link" hreflang="ru">Персонализация портала</a>
+  </li>
+
+    </ul>
+  </li>
+
+    </ul>
+  </li>
+</ul>
+</div>
+
+  </div>
+
+  </div>
+
+            <div class="creatio-sidebar__toggle"></div>
+          </aside>
+        
+                  <aside class="creatio-sidebar creatio-sidebar_second" role="complementary">
+              <div class="region region-sidebar-second">
+    <div id="block-example" class="block block-ts-nav block-ts-nav-page-nav">
+  
+    
+        <div class="ts-nav-title">Администрирование в основном приложении</div>
+<div class="ts-nav-page">
+      <ul class="ts-nav-page__list">
+                                                <li class="ts-nav-page__item ts-nav-page__item_expanded ts-nav-page__item_open"><a href="administrirovanie_portala_v_osnovnom_prilojenii.html" class="ts-nav-page__link ts-nav-page__link_expanded ts-nav-page__link_active">Администрирование портала в основном приложении&nbsp;<span class="ts-nav-page__link-arrow"></span></a></li>
+          </ul>
+  </div>
+
+  </div>
+<div id="block-adminfeedbackblock" class="block block-admin-feedback block-admin-feedback-block">
+  
+    
+      <div id="feedback-message"><div id="upper-feedback-content"><h2>Был ли данный материал полезен?</h2>
+<input class="feedback-btn feedback-btn__yes button js-form-submit form-submit" data-node-id="3468" data-feedback="yes" type="submit" name="op" value="Да" />
+<input class="feedback-btn feedback-btn__no button js-form-submit form-submit" data-node-id="3468" data-feedback="no" type="submit" name="op" value="Нет" />
+</div>
+<form class="admin-feedback-form" data-drupal-selector="admin-feedback-form" action="https://academy.terrasoft.ua/docs/7-18/user/drugie_reshenija/portal/administrirovanie_v_osnovnom_prilozhenii/administrirovanie_portala_v_osnovnom_prilojenii" method="post" id="admin-feedback-form" accept-charset="UTF-8">
+  <div id="feedback-msg-result"></div><div class="js-form-item form-item js-form-type-textarea form-type-textarea js-form-item-feedback-message form-item-feedback-message form-no-label">
+        <div class="form-textarea-wrapper">
+  <textarea id="edit-feedback-msg" data-drupal-selector="edit-feedback-message" name="feedback_message" rows="5" cols="60" class="form-textarea resize-vertical"></textarea>
+</div>
+
+        </div>
+<input id="feedback-id" data-drupal-selector="edit-feedback-id" type="hidden" name="feedback_id" value="" />
+<input class="feedback-btn feedback-btn__send-comment button js-form-submit form-submit" data-drupal-selector="edit-feedback-send" type="submit" id="edit-feedback-send" name="op" value="Отправить" />
+<input autocomplete="off" data-drupal-selector="form-skyt6gjdxfiu7ztevhvlqcojm1i5xqhuv8clvkftrey" type="hidden" name="form_build_id" value="form-skYt6gJdxFIu7ZtevHvlqcoJm1i5XqHuv8CLvkftREY" />
+<input data-drupal-selector="edit-admin-feedback-form" type="hidden" name="form_id" value="admin_feedback_form" />
+
+</form>
+</div>
+
+  </div>
+
+  </div>
+
+          </aside>
+              </main>
+    </div>
+  </div>
+
+  <footer role="contentinfo">
+    <div class="creatio-region creatio-region_footer">
+      <div class="creatio-container">
+          <div class="region region-footer">
+    <div id="block-footerua" class="block block-simple-block block-simple-blockfooter-ua">
+  
+    
+      <div class="footer">
+<div class="footer-left">
+<ul class="footer-socials"><li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_fb" href="https://www.facebook.com/terrasoft.ua" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_in" href="https://www.linkedin.com/company/terrasoft/" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_yt" href="https://www.youtube.com/c/TerrasoftUkraine" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_tg" href="https://t.me/Terrasoft_UA" target="_blank"> </a></li>
+</ul></div>
+
+<div class="footer-contact">
+<div class="footer-title">Будьте на связи!</div>
+
+<div class="footer-content">
+<div class="footer-items">
+<div class="footer-item"><a class="footer__link footer__link_phone" href="tel:+380443633133">+38 (044) 363-31-33</a></div>
+</div>
+
+<div class="footer-items">
+<div class="footer-item"><a class="footer__link footer__link_email" href="mailto:support@terrasoft.ua">support@terrasoft.ua</a></div>
+</div>
+</div>
+</div>
+</div>
+
+  </div>
+
+  </div>
+
+      </div>
+    </div>
+    <div class="creatio-region creatio-region_bottom">
+      <div class="creatio-container">
+          <div class="region region-bottom">
+    <div id="block-allrightsreservedua" class="block block-simple-block block-simple-blockfooter-bottom-ua">
+  
+    
+      <p>© 2002-2022 Terrasoft.  |  <a href="https://www.terrasoft.ua/privacy-policy" target="_blank">Конфиденциальность</a></p>
+
+  </div>
+
+  </div>
+
+      </div>
+    </div>
+  </footer>
+</div>
+<div class="creatio-bg"></div>
+
+
+  </div>
+
+    
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/docs\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/3468","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"ru"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"ajaxPageState":{"libraries":"admin_feedback\/admin_feedback_block,admin_feedback\/admin_feedback_css,classy\/base,classy\/messages,classy\/node,core\/drupal.ajax,core\/jquery.form,core\/normalize,creatio\/creatio.lists,creatio\/fancybox,creatio\/global,layout_discovery\/onecol,system\/base,ts_doc\/doc_version,ts_feedback\/ts_feedback,ts_nav\/breadcrumb,ts_nav\/doc_nav,ts_nav\/page_nav,ts_title_anchor\/ts_title_anchor","theme":"creatio","theme_token":null},"ajaxTrustedUrl":{"form_action_p_pvdeGsVG5zNF_XLGPTvYSKCf43t8qZYSwcfZl2uzM":true,"\/docs\/7-18\/user\/drugie_reshenija\/portal\/administrirovanie_v_osnovnom_prilozhenii\/administrirovanie_portala_v_osnovnom_prilojenii?ajax_form=1":true},"admin_feedback":{"yes_response":"\u0421\u043f\u0430\u0441\u0438\u0431\u043e \u0437\u0430 \u043e\u0431\u0440\u0430\u0442\u043d\u0443\u044e \u0441\u0432\u044f\u0437\u044c!","no_response":"\u0421\u043f\u0430\u0441\u0438\u0431\u043e \u0437\u0430 \u043e\u0431\u0440\u0430\u0442\u043d\u0443\u044e \u0441\u0432\u044f\u0437\u044c!","custom_text_response_on_no":{"value":"","format":"full_html"},"feedback_prompt_on_yes":true,"feedback_prompt_on_no":true,"feedback_enable_predefined_answers":false,"feedback_prompt":"\u041a\u0430\u043a \u043c\u043e\u0436\u043d\u043e \u0443\u043b\u0443\u0447\u0448\u0438\u0442\u044c \u044d\u0442\u0443 \u0441\u0442\u0430\u0442\u044c\u044e?"},"ajax":{"edit-feedback-send":{"callback":"::validateFeedbackMsg","event":"mousedown","keypress":true,"prevent":"click","url":"\/docs\/7-18\/user\/drugie_reshenija\/portal\/administrirovanie_v_osnovnom_prilozhenii\/administrirovanie_portala_v_osnovnom_prilojenii?ajax_form=1","dialogType":"ajax","submit":{"_triggering_element_name":"op","_triggering_element_value":"\u041e\u0442\u043f\u0440\u0430\u0432\u0438\u0442\u044c"}}},"user":{"uid":0,"permissionsHash":"9c2367dfcaba0fa15f0375f97aed64e146c908cee68508d13b79e3ee80e5162d"}}</script>
+<script src="../../../../../sites/default/files/js/js_F2-Y4EzgTnESr58XByoLYEnsbi7ysTfMIKN1RvsMSWY.js"></script>
+
+
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+      <g id="svg-copy" class="svg-icon svg-icon_copy">
+        <path d="M15.111,18H1.889A1.848,1.848,0,0,1,0,16.2V3.6A1.848,1.848,0,0,1,1.889,1.8H5.837a2.87,2.87,0,0,1,5.326,0h3.948A1.848,1.848,0,0,1,17,3.6V16.2A1.848,1.848,0,0,1,15.111,18ZM3.777,12.6v1.8h6.611V12.6Zm0-3.6v1.8h9.445V9Zm0-3.6V7.2h9.445V5.4ZM8.5,1.8a.924.924,0,0,0-.944.9.945.945,0,0,0,1.889,0A.924.924,0,0,0,8.5,1.8Z"/>
+      </g>
+
+      <g id="svg-prev" class="svg-icon svg-icon_arrow">
+        <path d="M5.488,12.779,0,6.39,5.488,0" transform="translate(1 0.652)"/>
+      </g>
+
+      <g id="svg-next" class="svg-icon svg-icon_arrow">
+        <path d="M0,12.779,5.488,6.39,0,0" transform="translate(0.759 0.652)"/>
+      </g>
+    </svg>
+  </body>
+
+<!-- Mirrored from academy.terrasoft.ua/docs/7-18/user/drugie_reshenija/portal/administrirovanie_v_osnovnom_prilozhenii/administrirovanie_portala_v_osnovnom_prilojenii by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Mar 2022 03:53:09 GMT -->
+</html>

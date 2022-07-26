@@ -1,0 +1,1053 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# ">
+  
+<!-- Mirrored from academy.terrasoft.ua/docs/user/razvertyvanie_onsite/nastrojka_konteinernikh_komponentov/exchange_listener/nastroit_servis_sinkhronizacii_exchange_listener by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 22 Mar 2022 20:27:57 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+          <!-- Google Tag Manager -->
+      <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          '../../../../../../www.googletagmanager.com/gtm5445.html?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-KLLB8G');</script>
+      <!-- End Google Tag Manager -->
+        <meta charset="utf-8" />
+<link rel="canonical" href="nastroit_servis_sinkhronizacii_exchange_listener.html" />
+<meta name="description" content="Сервис синхронизации Exchange Listener реализует синхронизацию Creatio с почтовыми сервисами MS Exchange и IMAP/SMTP, используя механизм подписки.
+
+В данной статье описаны системные требования, а также схемы и процесс развертывания сервиса синхронизации для Creatio on-site.
+
+Сервис состоит из следующих компонентов:" />
+<meta property="og:url" content="https://academy.terrasoft.ua/docs/user/razvertyvanie_onsite/nastrojka_konteinernikh_komponentov/exchange_listener/nastroit_servis_sinkhronizacii_exchange_listener" />
+<meta property="og:title" content="Настроить сервис синхронизации Exchange Listener" />
+<meta property="og:description" content="Сервис синхронизации Exchange Listener реализует синхронизацию Creatio с почтовыми сервисами MS Exchange и IMAP/SMTP, используя механизм подписки.
+
+В данной статье описаны системные требования, а также схемы и процесс развертывания сервиса синхронизации для Creatio on-site.
+
+Сервис состоит из следующих компонентов:" />
+<meta name="Generator" content="Drupal 9 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="../../../../themes/custom/creatio/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="revision" href="nastroit_servis_sinkhronizacii_exchange_listener.html" />
+
+    <title>Настроить сервис синхронизации Exchange Listener | Creatio Academy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&amp;family=Open+Sans:ital,wght@0,300;0,400;0,600;1,400&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" media="all" href="../../../../sites/default/files/css/css_6lTP66__-yc6QXFp1zOwoeJ0HVigoYZP-SeoLLii000.css" />
+<link rel="stylesheet" media="all" href="../../../../sites/default/files/css/css_XQJDNhkF3xH5SZCcY-PI89Zu4nYIzQ5oR3SnUKyfXJU.css" />
+<link rel="stylesheet" media="print" href="../../../../sites/default/files/css/css_Zn4VHvcniOOtUwkIVwXzYr_0AI9gUVgZcPqaH4ViagU.css" />
+
+    
+  </head>
+  <body class="path-node page-node-type-user-documentation">
+          <!-- Google Tag Manager (noscript) -->
+      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KLLB8G"
+                        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+      <!-- End Google Tag Manager (noscript) -->
+    
+        
+      <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    <div class="creatio-page d-flex flex-column">
+        <div class="region region-informer">
+    <div id="block-terrasoftpidtrimueukrainu" class="block block-simple-block block-simple-blockterrasoft-pidtrimue-ukrainu">
+  
+    
+      <style type="text/css">
+<!--/*--><![CDATA[/* ><!--*/
+@import url(../../../../../../www.terrasoft.ua/themes/custom/creatio/css/components/informer.css)
+
+/*--><!]]>*/
+</style><div class="ts-swu">
+<div class="creatio-container">
+<div class="ts-swu__cont">
+<div><a class="ts-swu__link" href="https://www.terrasoft.ua/terrasoft-stands-with-ukraine" target="_blank">Україна понад усе!</a> <span><a href="https://www.terrasoft.ua/terrasoft-stands-with-ukraine" target="_blank">Приєднуйтеся</a> до допомоги!</span></div>
+</div>
+</div></div>
+
+  </div>
+
+  </div>
+
+  
+  <header role="banner">
+          <div class="creatio-region creatio-region_top">
+        <div class="creatio-container">
+            <div class="region region-top">
+    <div id="block-menutoggle" class="block block-simple-block block-simple-blockmenu-toggle">
+  
+    
+      <div class="menu-toggle"><span> </span></div>
+
+  </div>
+<div id="block-logowhite-2" class="block block-simple-block block-simple-blocklogo-white">
+  
+    
+      <p><a class="site-logo" href="../../../../../index.html" rel="home"><img src="../../../../themes/custom/creatio/logo-white.svg" /></a></p>
+
+  </div>
+<div id="block-search" class="block block-simple-block block-simple-blocksearch">
+  
+    
+      <div class="search">
+<form action="https://academy.terrasoft.ua/search" class="search-form" method="get"><input class="search-form__input" name="search" placeholder="Поиск" type="search" /><input class="search-form__button" type="submit" value="Поиск" /> </form>
+
+<div class="search-toggle"> </div>
+</div>
+
+  </div>
+<nav role="navigation" aria-labelledby="block-sitesua-menu" id="block-sitesua" class="block block-menu navigation menu--sites-ua">
+            
+  <h2 class="visually-hidden" id="block-sitesua-menu">Sites UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="https://www.terrasoft.ua/" rel="nofollow" target="_blank">Terrasoft</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://community.terrasoft.ua/" rel="nofollow" target="_blank">Community</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://marketplace.terrasoft.ua/" rel="nofollow" target="_blank">Marketplace</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+<div id="block-usermenu" class="block block-ts-user block-ts-user-menu-block">
+  
+    
+      <ul class="user-menu">
+      <li class="user-menu__item">
+      <a class="user-menu__link" href="https://profile.terrasoft.ua/user/login?destination=academy/ua/docs/user/razvertyvanie_onsite/nastrojka_konteinernikh_komponentov/exchange_listener/nastroit_servis_sinkhronizacii_exchange_listener">Войти</a>
+    </li>
+  </ul>
+
+  </div>
+<div id="block-usermenumobile" class="block block-ts-user block-ts-user-menu-mobile-block">
+  
+    
+      <ul class="user-menu-mobile">
+      <li class="user-menu-mobile__item">
+      <div class="user-menu-mobile__user user-menu-mobile__user_icon"></div>
+      <ul class="user-menu-mobile__submenu">
+        <li class="user-menu-mobile__subitem">
+          <a class="user-menu-mobile__sublink" href="https://profile.terrasoft.ua/user/login?destination=academy/ua/docs/user/razvertyvanie_onsite/nastrojka_konteinernikh_komponentov/exchange_listener/nastroit_servis_sinkhronizacii_exchange_listener">Войти</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  </div>
+
+  </div>
+
+        </div>
+      </div>
+              <div class="creatio-region creatio-region_header">
+        <div class="creatio-container">
+            <div class="region region-header">
+    <div id="block-logo" class="block block-simple-block block-simple-blocklogo">
+  
+    
+      <p><a class="site-logo" href="../../../../../index.html" rel="home"><img src="../../../../themes/custom/creatio/logo.svg" /></a></p>
+
+  </div>
+<nav role="navigation" aria-labelledby="block-osnovnayanavigaciyaua-menu" id="block-osnovnayanavigaciyaua" class="block block-menu navigation menu--main-ua">
+            
+  <h2 class="visually-hidden" id="block-osnovnayanavigaciyaua-menu">Основная навигация UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="../../../../index.html" data-drupal-link-system-path="&lt;front&gt;">Документация</a>
+              </li>
+                <li class="menu-item">
+        <a href="../../../../../trainings.html">Тренинги</a>
+              </li>
+                <li class="menu-item">
+        <a href="../../../../certification.html" data-drupal-link-system-path="node/3084">Сертификация и тестирование</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+<nav role="navigation" aria-labelledby="block-sitesua-2-menu" id="block-sitesua-2" class="block block-menu navigation menu--sites-ua">
+            
+  <h2 class="visually-hidden" id="block-sitesua-2-menu">Sites UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="https://www.terrasoft.ua/" rel="nofollow" target="_blank">Terrasoft</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://community.terrasoft.ua/" rel="nofollow" target="_blank">Community</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://marketplace.terrasoft.ua/" rel="nofollow" target="_blank">Marketplace</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+
+  </div>
+
+        </div>
+      </div>
+              <div class="creatio-region creatio-region_breadcrumb">
+        <div class="creatio-container">
+            <div class="region region-breadcrumb">
+    <div id="block-logowhite" class="block block-simple-block block-simple-blocklogo-white">
+  
+    
+      <p><a class="site-logo" href="../../../../../index.html" rel="home"><img src="../../../../themes/custom/creatio/logo-white.svg" /></a></p>
+
+  </div>
+<div id="block-breadcrumbnaviagtion" class="block block-ts-nav block-ts-nav-bread">
+  
+    
+      <nav class="breadcrumb"><ol class="ts-nav-breadcrumb__list"><li class="ts-nav-breadcrumb__item"><a href="../../../../index.html" class="ts-nav-breadcrumb__link" title="Документация">Документация</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../../indexd993.html?vid_1=1" class="ts-nav-breadcrumb__link" title="Для пользователя">Для пользователя</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../razvertyvanie_onsite.html" class="ts-nav-breadcrumb__link" title="Развертывание on-site" hreflang="ru">Развертывание on-site</a></li>
+<li class="ts-nav-breadcrumb__item ts-nav-breadcrumb__item_mobile"><a href="../../nastrojka_konteinernikh_komponentov.html" class="ts-nav-breadcrumb__link" title="Настройка контейнерных компонентов" hreflang="ru">Настройка контейнерных компонентов</a></li>
+<li class="ts-nav-breadcrumb__item"><span class="ts-nav-breadcrumb__link ts-nav-breadcrumb__link_current" title="Настроить сервис синхронизации Exchange Listener">Настроить сервис синхронизации Exchange Listener</span></li>
+</ol>
+</nav>
+
+  </div>
+<div id="block-search-2" class="block block-simple-block block-simple-blocksearch">
+  
+    
+      <div class="search">
+<form action="https://academy.terrasoft.ua/search" class="search-form" method="get"><input class="search-form__input" name="search" placeholder="Поиск" type="search" /><input class="search-form__button" type="submit" value="Поиск" /> </form>
+
+<div class="search-toggle"> </div>
+</div>
+
+  </div>
+
+  </div>
+
+        </div>
+      </div>
+      </header>
+
+  <div class="creatio-region creatio-region_main">
+    <div class="creatio-container">
+                <div class="region region-breadcrumb-mobile">
+    <div id="block-breadcrumbnaviagtion-2" class="block block-ts-nav block-ts-nav-bread">
+  
+    
+      <nav class="breadcrumb"><ol class="ts-nav-breadcrumb__list"><li class="ts-nav-breadcrumb__item"><a href="../../../../index.html" class="ts-nav-breadcrumb__link" title="Документация">Документация</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../../indexd993.html?vid_1=1" class="ts-nav-breadcrumb__link" title="Для пользователя">Для пользователя</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../razvertyvanie_onsite.html" class="ts-nav-breadcrumb__link" title="Развертывание on-site" hreflang="ru">Развертывание on-site</a></li>
+<li class="ts-nav-breadcrumb__item ts-nav-breadcrumb__item_mobile"><a href="../../nastrojka_konteinernikh_komponentov.html" class="ts-nav-breadcrumb__link" title="Настройка контейнерных компонентов" hreflang="ru">Настройка контейнерных компонентов</a></li>
+<li class="ts-nav-breadcrumb__item"><span class="ts-nav-breadcrumb__link ts-nav-breadcrumb__link_current" title="Настроить сервис синхронизации Exchange Listener">Настроить сервис синхронизации Exchange Listener</span></li>
+</ol>
+</nav>
+
+  </div>
+
+  </div>
+
+      
+      <main class="creatio-main" role="main">
+                                                    
+        <div class="creatio-content creatio-content_small">
+          <div class="creatio-content__inner creatio-content__inner_bg">
+                            <div class="region region-messages">
+    <div data-drupal-messages-fallback class="hidden"></div>
+
+  </div>
+
+            
+              <div class="region region-content">
+    <div id="block-creatio-page-title" class="block block-core block-page-title-block">
+  
+    
+      
+  <h1 class="page-title"><span class="field field--name-title field--type-string field--label-hidden">Настроить сервис синхронизации Exchange Listener</span>
+</h1>
+
+
+  </div>
+<div id="block-creatio-content" class="block block-system block-system-main-block">
+  
+    
+      
+<article data-history-node-id="3553" role="article" about="/docs/user/razvertyvanie_onsite/nastrojka_konteinernikh_komponentov/exchange_listener/nastroit_servis_sinkhronizacii_exchange_listener" class="node node--type-user-documentation node--view-mode-full">
+
+  
+    
+
+  
+  <div class="node__content">
+      <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-ts-doc block-ts-doc-downloads">
+  
+    
+      <a href="../../../../sites/default/files/pdf/node/3553/Nastroit_servis_sinkhronizacii_Exchange_Listener_.pdf" target="_blank">PDF</a>
+  </div>
+<div class="block block-ts-doc block-ts-doc-versions">
+  
+    
+        <div class="ts-doc-versions">
+    <select class="ts-doc-versions__select">
+                                                <option value="/docs/8-0/user/razvertyvanie_onsite/nastrojka_konteinernikh_komponentov/exchange_listener/nastroit_servis_sinkhronizacii_exchange_listener" selected>Версия 8.0</option>
+                              <option value="/docs/7-18/user/razvertyvanie_onsite/nastrojka_konteinernikh_komponentov/exchange_listener/nastroit_servis_sinkhronizacii_exchange_listener">Версия 7.18</option>
+                              <option value="/docs/7-17/user/razvertyvanie_onsite/nastrojka_konteinernikh_komponentov/exchange_listener/nastroit_servis_sinkhronizacii_exchange_listener">Версия 7.17</option>
+          </select>
+  </div>
+
+  </div>
+
+    </div>
+  </div>
+  <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocknodeuser-documentationfield-product">
+  
+    
+      
+  <div class="field field--name-field-product field--type-entity-reference field--label-above">
+    <div class="field__label">Продукты</div>
+          <div class="field__items">
+              <div class="field__item">Все продукты</div>
+              </div>
+      </div>
+
+  </div>
+<div class="block block-layout-builder block-field-blocknodeuser-documentationbody">
+  
+    
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><p>Сервис синхронизации Exchange Listener реализует синхронизацию Creatio с почтовыми сервисами <a href="../../../ustanovka_i_administrirovanie/nastrojka_bazovyh_intgracij/pochta_kontakty_raspisanie_microsoft/nastroika_microsoft_exchange_office_365/nastroit_microsoft_exchange_i_microsoft_365.1465.del">MS Exchange</a> и <a href="../../../ustanovka_i_administrirovanie/nastrojka_bazovyh_intgracij/imap_smtp/dobavit_pochtovyy_provayder_imap/smtp.html">IMAP/SMTP</a>, используя механизм подписки.</p>
+
+<p>В данной статье описаны системные требования, а также схемы и процесс развертывания сервиса синхронизации для Creatio on-site.</p>
+
+<p>Сервис состоит из следующих компонентов:</p>
+
+<ul><li>
+	<p><strong>Основной модуль Exchange Listener (EL API)</strong> — используется для создания исходящего подключения к EWS API. При этом используются учетные данные почтового ящика и создается подписка (subscription) для получения событий при поступлении новых писем. Открытая подписка остается в памяти компонента для обеспечения максимально оперативной реакции на получение нового письма. При получении соответствующего события выполняется загрузка экземпляра письма. Для развертывания сервиса <strong>достаточным условием</strong> является использование in-memory хранилища. Обязательный компонент сервиса.</p>
+	</li>
+	<li>
+	<p><strong>NoSQL СУБД Redis</strong> — используется для создания масштабируемой и отказоустойчивой системы узлов-обработчиков. Хранилище Redis содержит информацию об обслуживаемых почтовых ящиках. Это позволяет любому контейнеру обработать запросы Creatio на создание новой подписки или проверить статус конкретной подписки, независимо от того, на каком узле она открыта. <strong>Необходимым требованием</strong> к Redis является выделение отдельной базы данных для работы сервиса Exchange Listener. Обязательный компонент сервиса.</p>
+	</li>
+	<li>
+	<p><strong>Дополнительный модуль Exchange Listener (EL Worker)</strong> — используется для поддержания масштабируемой и отказоустойчивой работы основного модуля Exchange Listener. Дополнительный модуль выполняет скачивание писем с почтового сервера и доставку их в приложение Creatio. Таким образом сглаживается обработка пиковых потоков писем для высоконагруженных сервисов. В этом случаеAPI компоненты менее загружены и не занимаются скачиванием писем, а доступны для управления подпиской и отправкой исходящих писем. Опциональный компонент сервиса. При его отсутствии эту роль выполняет основной модуль.</p>
+	</li>
+	<li>
+	<p><strong>RabbitMQ</strong> — используется для поддержания масштабируемой и отказоустойчивой работы сервиса. Брокер очередей выполняет распределение задач между компонентами в высоконагруженных средах. Опциональный компонент сервиса.</p>
+	</li>
+</ul><p>Существуют две возможные конфигурации сервиса:</p>
+
+<ul><li>
+	<p><strong>Однокомпонентная</strong> — для слабонагруженных сервисов. Данная конфигурация включает только обязательные компоненты сервиса.</p>
+	</li>
+	<li>
+	<p><strong>Многокомпонентная</strong> — для средненагруженных и высоконагруженных сервисов. Данная конфигурация включает все обязательные и опциональные компоненты.</p>
+	</li>
+</ul><h2>Определить конфигурацию сервиса Exchange Listener<a class="title-anchor" href="#title-3553-7" id="title-3553-7"> </a></h2>
+
+<p>Конфигурация сервиса Exchange Listener для вашего приложения определяется на основании среднего потока писем в секунду (исходящих и входящих), который проходит через почтовые ящики компании.</p>
+
+<p>Например, если в компании используется один почтовый ящик службы поддержки с потоком 4 письма в секунду, то рекомендуемая конфигурация будет включать 15 реплик EL Worker, 4 реплики EL API и сервис RabbitMQ.</p>
+
+<p><img alt="" data-entity-type="file" data-entity-uuid="" height="209" src="../../../../sites/default/files/images/Setup_and_Administration/exchange_listener/scr_exchange_listener_table_system_requirements.png" width="1063" /></p>
+
+<div class="message">
+<p><span class="message__bold">На заметку.</span> Количество активных реплик дополнительного компонента сервиса (EL Worker) напрямую влияет на скорость обработки писем. В продуктивном использовании письма приходят не равномерным потоком, а волнообразно, поэтому часть времени некоторые реплики EL Worker могут простаивать. В статье приведены рекомендуемые параметры конфигурации, но вы можете использовать меньше реплик, чем указано в таблице. В этом случае в период высокой нагрузки письма будут обрабатываться дольше. Оптимальный баланс между скоростью обработки писем и утилизацией ресурсов следует подбирать согласно требованиям бизнеса.</p>
+</div>
+
+<h3>Системные требования для реплик компонентов<a class="title-anchor" href="#title-3553-8" id="title-3553-8"> </a></h3>
+
+<div class="table">
+<table border="1" cellpadding="1" cellspacing="1"><thead><tr><th scope="col">Компонент</th>
+			<th scope="col">vCPU</th>
+			<th scope="col">Объем памяти</th>
+		</tr></thead><tbody><tr><td>EL Worker</td>
+			<td>0,1</td>
+			<td>1,1 Гб</td>
+		</tr><tr><td>EL API</td>
+			<td>0.150 (с RabbitMQ),<br />
+			0.7 (без RabbitMQ)</td>
+			<td>850 Мб (с RabbitMQ)<br />
+			1.1 Гб (без RabbitMQ)</td>
+		</tr><tr><td>Redis</td>
+			<td>0,5</td>
+			<td>3 Гб</td>
+		</tr><tr><td>Rabbit MQ</td>
+			<td>0,5</td>
+			<td>4 Гб</td>
+		</tr></tbody></table></div>
+
+<div class="message">
+<p><span class="message__bold">На заметку.</span> Значения в таблице являются рекомендуемыми, реальное потребление может отличаться в зависимости от сценариев использования сервиса. Рекомендуется выполнять мониторинг потребления CPU и памяти на развернутых сервисах для оптимизации доступных лимитов.</p>
+</div>
+
+<h2>Способы развертывания сервиса Exchange Listener<a class="title-anchor" href="#title-3553-1" id="title-3553-1"> </a></h2>
+
+<p>Для развертывания сервиса предпочтительным способом является <strong>использование оркестратора Kubernetes и пакетного менеджера Helm</strong>. <a href="nastroit_servis_sinkhronizacii_exchange_listener.html#title-3553-2">Подробнее &gt;&gt;&gt;</a></p>
+
+<p>Для более быстрого развертывания в среде разработки можно <strong>использовать Docker</strong>. <a href="nastroit_servis_sinkhronizacii_exchange_listener.html#title-3553-4">Подробнее &gt;&gt;&gt;</a></p>
+
+<h3>Развернуть сервис синхронизации с использованием Kubernetes<a class="title-anchor" href="#title-3553-2" id="title-3553-2"> </a></h3>
+
+<p>Для развертывания сервиса выполните следующие шаги:</p>
+
+<ol><li>
+	<p>Предварительно настройте целевое окружение:</p>
+
+	<ol><li>
+		<p>Кластер Kubernetes. Подробно о том, как настроить и администрировать кластер, читайте <a href="https://kubernetes.io/docs/home/">на сайте документации Kubernetes</a>.</p>
+		</li>
+		<li>
+		<p>Пакетный менеджер Helm. Установка пакетного менеджера подробно описана <a href="https://helm.sh/docs/intro/install/">на сайте документации Helm</a>.</p>
+		</li>
+	</ol></li>
+	<li>
+	<p>Установите Redis. Установка Redis с использованием Helm детально описана <a href="https://github.com/helm/charts/tree/master/stable/redis">на сайте GitHub</a>.</p>
+
+	<p>Пример команды для установки Redis:</p>
+
+	<div class="code">
+	<div class="code__widgets">
+	<div class="code__source">
+	<pre class="prettyprint">
+helm install --namespace default --set usePassword=true –set password=&lt;password&gt; --set=slave.persistence.enabled=false --set master.persistence.enabled=false --set cluster.enabled=false redis bitnami/redis</pre>
+	</div>
+	</div>
+	</div>
+
+	<p>В этом примере:</p>
+
+	<p><strong>default</strong> — наименование namespace, куда будет установлен Redis;</p>
+
+	<p><strong>redis</strong> — произвольное имя для экземпляра Redis.</p>
+	</li>
+	<li>
+	<p>Установите модуль Exchange Listener. Для установки модуля <a href="https://academy.creatio.com/sites/default/files/documents/downloads/ExchangeListener/exchangelistener-0.8.74.tgz">скачайте helm-пакет</a>. Доступные параметры helm-пакета описаны в таблице ниже.</p>
+
+	<div class="message message_warning">
+	<p><span class="message__bold message__bold_warning">Важно.</span> Для более новых версий Kubernetes укажите версию API, добавив параметр:</p>
+	</div>
+
+	<div class="code">
+	<div class="code__widgets">
+	<div class="code__source">
+	<pre class="prettyprint">
+--set apiVersion=apps/v1</pre>
+	</div>
+	</div>
+	</div>
+
+	<p>Пример команды для установки Exchange Listener с использованием адреса и относительного пути сервиса:</p>
+
+	<div class="code">
+	<div class="code__widgets">
+	<div class="code__source">
+	<pre class="prettyprint">
+helm install --set ApiUrl=&lt;kubernetes_url&gt; --set ingress.enabled=true --set ingress.path=&lt;listener_path&gt; --set apiVersion=apps/v1 --set-string Redis.Connection="&lt;redis_host&gt;\,password=&lt;password&gt;" --namespace &lt;namespace name&gt; exchangelistener &lt;/path/to/helm/exchangelistener.tgz&gt;</pre>
+	</div>
+	</div>
+	</div>
+
+	<p>В этом примере:</p>
+
+	<p><strong>&lt;redis_host&gt;</strong> — адрес Redis-сервера;</p>
+
+	<p><strong>&lt;kubernetes_url&gt;</strong> — URL или IP-адрес Kubernetes.</p>
+
+	<p>Адрес сервиса Exchange Listener: <strong>&lt;kubernetes_url&gt;/&lt;listener_path&gt;</strong>.</p>
+
+	<p>Для настройки подключения с использованием HTTPS необходимо установить сервис с <a href="https://kubernetes.io/docs/concepts/services-networking/ingress/">Ingress</a> и действительным SSL сертификатом, а в адресе сервиса Exchange Listener &lt;kubernetes_url&gt; указать HTTPS.</p>
+
+	<p>Чтобы проверить доступность, сделайте запрос по адресу: &lt;kubernetes_url&gt;/&lt;listener_path&gt;/api/listeners/status (Рис. 1).</p>
+
+	<p>Пример команды для установки Exchange Listener с использованием Node IP и адреса порта:</p>
+
+	<div class="code">
+	<div class="code__widgets">
+	<div class="code__source">
+	<pre class="prettyprint">
+helm install --set env.host=&lt;redis_host&gt; --set service.type=&lt;node_IP&gt; --set service.nodePort=&lt;node_port&gt; --set apiVersion=apps/v1 --namespace &lt;namespace name&gt; exchangelistener &lt;/path/to/helm/exchangelistener.tgz&gt;</pre>
+	</div>
+	</div>
+	</div>
+
+	<p>Адрес сервиса Exchange Listener — <strong>&lt;node_IP:node_port&gt;</strong>.</p>
+
+	<p>Чтобы проверить доступность, сделайте запрос по адресу: &lt;node_IP:node_port&gt;/api/listeners/status (Рис. 1).</p>
+
+	<div class="media">
+	<div class="media__caption"><span>Рис. 1</span> — Пример ответа сервиса Exchange Listener</div>
+
+	<div class="media__element"><img alt="chapter_exchange_listener_answer.png" data-entity-type="" data-entity-uuid="" data-widget="image" id="image0" src="../../../../sites/default/files/documentation/user/ru/on_site_deployment/BPMonlineHelp/exchange_listener/chapter_exchange_listener_answer.png" style="background-color: rgb(255, 255, 0);" /></div>
+	</div>
+	</li>
+</ol><div class="message">
+<p><span class="message__bold">На заметку.</span> Если вам нужно отключить маркировку загружаемых писем категорией “Сreatio”, то при установке приложения в команде helm install нужно указать параметр --set FeaturesMarkEmailsAsSynchronized=false.</p>
+</div>
+
+<p>Доступные параметры helm-пакета Exchange Listener</p>
+
+<div class="table">
+<table cellspacing="0"><tbody><tr><th>
+			<p>Параметр</p>
+			</th>
+			<th>
+			<p>Описание параметра</p>
+			</th>
+			<th>
+			<p>Значение по умолчанию</p>
+			</th>
+		</tr><tr><td>
+			<p>replicaCount</p>
+			</td>
+			<td>
+			<p>Количество StatefulSet-обработчиков.</p>
+			</td>
+			<td>
+			<p>2</p>
+			</td>
+		</tr><tr><td>
+			<p>service.type</p>
+			</td>
+			<td>
+			<p>Тип сервиса. Детально типы сервисов Kubernetes описаны в <a href="https://kubernetes.io/docs/concepts/services-networking/service/#publishing-services-service-types">документации Kubernetes</a>.</p>
+			</td>
+			<td>
+			<p>ClusterIP</p>
+			</td>
+		</tr><tr><td>
+			<p>service.nodePort</p>
+			</td>
+			<td>
+			<p>Если параметр service.type равен NodePort, то в этом параметре указывается внешний порт сервиса.</p>
+
+			<p>Детально тип NodePort описан в <a href="https://kubernetes.io/docs/concepts/services-networking/service/#nodeport">документации Kubernetes</a>.</p>
+			</td>
+			<td>
+			<p> </p>
+			</td>
+		</tr><tr><td>
+			<p>env.host</p>
+			</td>
+			<td>
+			<p>Адрес хоста Redis.</p>
+			</td>
+			<td>
+			<p> </p>
+			</td>
+		</tr><tr><td>
+			<p>env.port</p>
+			</td>
+			<td>
+			<p>Порт хоста Redis.</p>
+			</td>
+			<td>
+			<p>6379</p>
+			</td>
+		</tr><tr><td>
+			<p>env.base</p>
+			</td>
+			<td>
+			<p>Номер базы данных Redis.</p>
+			</td>
+			<td>
+			<p>0</p>
+			</td>
+		</tr><tr><td>
+			<p>ingress.enabled</p>
+			</td>
+			<td>
+			<p>Использование переопределения адресов при помощи ingress.</p>
+			</td>
+			<td>
+			<p>false</p>
+			</td>
+		</tr><tr><td>
+			<p>ApiUrl</p>
+			</td>
+			<td>
+			<p>Адрес сервиса при ingress.enabled=true.</p>
+			</td>
+			<td>
+			<p> </p>
+			</td>
+		</tr><tr><td>
+			<p>ingress.path</p>
+			</td>
+			<td>
+			<p>Относительный путь сервиса.</p>
+			</td>
+			<td>
+			<p> </p>
+			</td>
+		</tr><tr><td>
+			<p>log4Net.level</p>
+			</td>
+			<td>
+			<p>Уровень логирования по умолчанию.</p>
+			</td>
+			<td>
+			<p>Info</p>
+			</td>
+		</tr></tbody></table></div>
+
+<p>Для расчета требований к серверам воспользуйтесь <a href="../../../../requirements/calculator.html">калькулятором системных требований</a>.</p>
+
+<h3>Развернуть сервис синхронизации в Docker<a class="title-anchor" href="#title-3553-4" id="title-3553-4"> </a></h3>
+
+<p>Для настройки сервиса необходим сервер (физический или виртуальный компьютер) с установленной ОС Linux или Windows.</p>
+
+<div class="message message_warning">
+<p><span class="message__bold message__bold_warning">Важно.</span> Развертывание сервиса синхронизации в Docker рекомендуется к установке только для dev-среды. Данный способ отличает высокая скорость развертывания, но он не обеспечивает выполнение требований, актуальных для продуктивной среды: отказоустойчивости функции, масштабирования для обработки большого количества запросов и единого подхода к управлению компонентами с использованием систем оркестрации контейнеров. Для продуктивных сред настоятельно рекомендуется установка с использованием оркестратора Kubernetes и пакетного менеджера Helm.</p>
+</div>
+
+<p>Для развертывания сервиса выполните следующие шаги:</p>
+
+<ol><li>
+	<p>Предварительно настройте целевое окружение:</p>
+
+	<ol><li>
+		<p>Платформа контейнеризации Docker. Подробно о том, как установить и настроить платформу, описано <a href="https://docs.docker.com/get-started/">на сайте документации Docker</a>. Для установки Docker Desktop на Windows Server необходимо использовать <a href="https://docs.microsoft.com/en-us/virtualization/windowscontainers/quick-start/set-up-environment?tabs=Windows-Server">отдельную инструкцию</a> на сайте Microsoft.</p>
+		</li>
+		<li>
+		<p>СУБД Redis. Redis Server устанавливается при помощи <a href="https://github.com/MicrosoftArchive/redis/releases">установочного файла для ОС Windows</a> или при помощи <a href="https://redis.io/download">инструкции для ОС Linux</a>. Подробнее о развертывании СУБД Redis в Docker читайте на сайте сообщества <a href="https://hub.docker.com/_/redis/">Docker Hub</a>.</p>
+		</li>
+	</ol></li>
+	<li>
+	<p>Установите и запустите модуль Exchange Listener. Для этого необходимо скачать и развернуть образ Docker-контейнера.</p>
+
+	<p>Рассмотрим пример команды для скачивания и запуска образа с использованием командной строки и установленного Docker.</p>
+
+	<div class="code">
+	<div class="code__widgets">
+	<div class="code__source">
+	<pre class="prettyprint">
+docker run \
+-d \
+# Проброс портов
+-p &lt;localhost_port&gt;:80 \
+--restart unless-stopped \
+# Подключение к Redis
+--env ExchangeListenerRedisHost=&lt;redis_host&gt;:&lt;redis_port&gt; \
+--env ExchangeListenerRedisDatabase=&lt;redis_database_number&gt; \
+--env PodName=ExchangeListener \
+--name ExchangeListener \
+# Актуальный образ ExchangeListener в Docker Hub
+bpmonline/exchangelistener:&lt;listener_version&gt;</pre>
+	</div>
+	</div>
+	</div>
+
+	<p>В этом примере:</p>
+
+	<p><strong>&lt;localhost_port&gt;</strong> — порт локального сервера;</p>
+
+	<p><strong>&lt;redis_host&gt;</strong> — адрес redis-сервера;</p>
+
+	<p><strong>&lt;redis_database_number&gt;</strong> — номер БД redis-сервера;</p>
+
+	<p><strong>&lt;service_name&gt;</strong> — название сервиса (задается вручную).</p>
+
+	<p><strong>&lt;listener_version&gt;</strong> — версия микросервиса Listener.</p>
+
+	<div class="message">
+	<p><span class="message__bold">На заметку.</span> Актуальную версию Exchange Listener можно узнать в сообществе Docker Hub по <a href="https://hub.docker.com/r/bpmonline/exchangelistener/tags">ссылке</a>.</p>
+	</div>
+	</li>
+	<li>
+	<p>Чтобы проверить доступность развернутого Docker-контейнера, выполните команду:</p>
+
+	<div class="code">
+	<div class="code__widgets">
+	<div class="code__source">
+	<pre class="prettyprint">
+docker ps -a -–filter "name=&lt;service_name&gt;"</pre>
+	</div>
+	</div>
+	</div>
+
+	<p>Адрес сервиса Exchange Listener — <strong>localhost:&lt;localhost_port&gt;</strong>.</p>
+
+	<p>Чтобы проверить доступность, сделайте запрос по адресу: &lt;Localhost:&lt;localhost_port&gt;/api/listeners/status (Рис. 2).</p>
+	</li>
+</ol><h2>Настроить сервис Exchange Listener на стороне Creatio<a class="title-anchor" href="#title-3553-5" id="title-3553-5"> </a></h2>
+
+<ol><li>
+	<p>Убедитесь, что анонимный сервис ExchangeListenerService доступен по адресу <span class="key">Адрес приложения Creatio</span>/0/ServiceModel/ExchangeListenerService.svc (Рис. 2).</p>
+
+	<div class="media">
+	<div class="media__caption"><span>Рис. 2</span> — Пример ответа сервиса ExchangeListenerService</div>
+
+	<div class="media__element"><img alt="chapter_exchange_listener_creatio.png" data-entity-type="" data-entity-uuid="" data-widget="image" id="image1" src="../../../../sites/default/files/images/Setup_and_Administration/exchange_listener/chapter_exchange_listener_creatio.png" /></div>
+	</div>
+	</li>
+	<li>
+	<p>Установите нужные значения системных настроек. Для этого:</p>
+
+	<ol><li>
+		<p>Перейдите в дизайнер системы, например, по кнопке <img alt="btn_system_designer.png" data-entity-type="" data-entity-uuid="" data-widget="image" id="image2" src="../../../../sites/default/files/documentation/user/ru/on_site_deployment/BPMonlineHelp/exchange_listener/btn_system_designer.png" />.</p>
+		</li>
+		<li>
+		<p>В блоке “Настройка системы” перейдите по ссылке “Системные настройки”.</p>
+		</li>
+		<li>
+		<p>Укажите значения системных настроек:<br />
+		“<strong>ExchangeListenerServiceUri</strong>”(код “ExchangeListenerServiceUri”). Формат значения настройки: <span class="key">адрес сервиса, используемый при установке</span>/api/listeners.</p>
+
+		<p>“<strong>URL сервиса обработки событий Exchange в Creatio</strong>” (код “BpmonlineExchangeEventsEndpointUrl”). Формат значения настройки: <span class="key">адрес анонимного сервиса ExchangeListenerService</span>/NewEmail. Например, https://mycreatio.com/0/ServiceModel/ExchangeListenerService.svc/NewEmail.</p>
+		</li>
+	</ol></li>
+</ol><h2>Диагностика настроек Exchange Listener<a class="title-anchor" href="#title-3553-6" id="title-3553-6"> </a></h2>
+
+<p>На странице диагностики настроек сервиса Exchange Listener представлены инструменты контроля и проверки работы сервиса.</p>
+
+<p>Здесь вы можете:</p>
+
+<ul><li>проверить подключение необходимой функциональности;</li>
+	<li>убедиться в доступности сервиса;</li>
+	<li>получить информацию о подписках;</li>
+	<li>проверить правильность заполнения системной настройки “ExchangeListenerServiceUri”;</li>
+	<li>проверить работоспособность почтового ящика.</li>
+</ul><p>Чтобы перейти на страницу диагностики настроек Exchange Listener, в адресной строке браузера добавьте “/0/ClientApp/#/IntegrationDiagnostics/ExchangeListener” к URL-адресу вашего сайта Creatio и нажмите Enter. Например:</p>
+
+<div class="code">
+<div class="code__widgets">
+<div class="code__source">
+<pre class="prettyprint">
+http://mycreatio.com/0/ClientApp/#/IntegrationDiagnostics/ExchangeListener</pre>
+</div>
+</div>
+</div>
+
+<p>Страница диагностики состоит из нескольких блоков с параметрами синхронизации, по которым можно запустить диагностику (Рис. 3). Чтобы отобразилась информация о параметрах подключения, необходимо в блоке с интересующим вас параметром нажать <span class="key">Запустить диагностику</span>.</p>
+
+<div class="media">
+<div class="media__caption"><span>Рис. 3</span> — Диагностика настроек Exchange Listener</div>
+
+<div class="media__element"><img alt="chapter_exchange_listener_diagnostics_page_full" data-entity-type="" data-entity-uuid="" data-widget="image" src="../../../../sites/default/files/inline-images/chapter_exchange_listener_diagnostics_page_full.png" /></div>
+</div>
+
+<div class="table">
+<table cellspacing="0"><tbody><tr><td>
+			<p>Состояние доступности функциональности</p>
+			</td>
+			<td>
+			<p>Для данного блока диагностика запускается автоматически при открытии страницы.</p>
+
+			<p>Выполняется проверка подключения в Creatio функциональности, необходимой для работы Exchange Listener:</p>
+
+			<ul><li>ExchangeListenerEnabled;</li>
+				<li>EmailIntegrationV2;</li>
+				<li>SendEmailsV2.</li>
+			</ul><p>Подробнее о подключении функциональности читайте в статье <a href="../../../../developer/ehlementy_interfejsa/upravlenie_ehlementami_interfejsa/feature_toggle/obzor/index.html">Механизм отключения функциональности Feature Toggle</a> документации по разработке.</p>
+			</td>
+		</tr><tr><td>
+			<p>Проверка доступности сервиса</p>
+			</td>
+			<td>
+			<p>Выполняется проверка доступности сервиса Exchange Listener из вашего приложения Creatio.</p>
+			</td>
+		</tr><tr><td>
+			<p>Получение информации по подпискам</p>
+			</td>
+			<td>
+			<p>Выполняется проверка соединения с удаленным сервером.</p>
+			</td>
+		</tr><tr><td>
+			<p>Проверка правильности заполнения системной настройки ExchangeListenerServiceUri</p>
+			</td>
+			<td>
+			<p>Выполняется проверка валидности адреса, указанного в системной настройке.</p>
+			</td>
+		</tr><tr><td>
+			<p>Проверка работоспособности почтового ящика</p>
+			</td>
+			<td>
+			<p>Выполняется проверка работы почтовых ящиков MS Exchange. Установите признак <span class="key">Отправить тестовое письмо</span>, чтобы при запуске диагностики на указанный адрес было отправлено тестовое email-сообщение.</p>
+			</td>
+		</tr></tbody></table></div>
+</div>
+      
+  </div>
+<div class="block block-layout-builder block-field-blocknodeuser-documentationfield-linked-link">
+  
+    
+      
+  <div class="field field--name-field-linked-link field--type-link field--label-above">
+    <div class="field__label">Смотрите также</div>
+          <div class="field__items">
+              <div class="field__item"><a href="../../../ustanovka_i_administrirovanie/nastrojka_bazovyh_intgracij/imap_smtp/dobavit_pochtovyy_provayder_imap/smtp.html?product=administration&amp;ver=7&amp;id=1253">Добавить почтовый провайдер IMAP/SMTP</a></div>
+          <div class="field__item"><a href="../../../ustanovka_i_administrirovanie/nastrojka_bazovyh_intgracij/pochta_kontakty_raspisanie_microsoft/nastroika_microsoft_exchange_office_365/nastroit_microsoft_exchange_i_microsoft_365.1465.del?product=administration&amp;ver=7&amp;id=1254">Настроить MS Exchange и Microsoft 365</a></div>
+          <div class="field__item"><a href="../../../../requirements/calculator.html">Калькулятор системных требований</a></div>
+              </div>
+      </div>
+
+  </div>
+<div class="block block-layout-builder block-field-blocknodeuser-documentationfield-video">
+  
+    
+      
+  <div class="field field--name-field-video field--type-link field--label-above">
+    <div class="field__label">Онлайн-курсы</div>
+          <div class="field__items">
+              <div class="field__item"><a href="https://www.youtube.com/watch?v=Ue9Pk92leqM&amp;list=PLDp-M9ZGnvgG4UL5gaeQUZDvDamePOumb&amp;index=9">Tech Hour: Учимся работать с Docker и платформой Creatio</a></div>
+              </div>
+      </div>
+
+  </div>
+
+    </div>
+  </div>
+
+  </div>
+
+</article>
+
+  </div>
+
+  </div>
+
+          </div>
+        </div>
+
+                  <aside class="creatio-sidebar creatio-sidebar_first" role="complementary">
+              <div class="region region-sidebar-first">
+    <div id="block-documentationnaviagtion" class="block block-ts-nav block-ts-nav-doc-nav">
+  
+    
+      <div class="ts-nav-block"><a href="../../../../index.html" class="ts-nav-block__link">Документация</a><div class="ts-nav-block__title">Для пользователя</div>
+</div>
+<div class="ts-nav-container"><ul class="ts-nav-menu"><li class="ts-nav-menu__item">
+  <a href="../../../nocode_platforma.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">No-сode платформа&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../bazis_platformy.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Базис платформы&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../instrumenty_crm.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Инструменты CRM&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../instrumenty_kastomizacii.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Инструменты кастомизации&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../biznes_processy.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Бизнес-процессы&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../instrumenty_marketinga.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Инструменты маркетинга&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../instrumenty_prodazh.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Инструменты продаж&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../instrumenty_servisa.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Инструменты сервиса&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../ustanovka_i_administrirovanie.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Администрирование&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../razvertyvanie_onsite.html" class="ts-nav-menu__link ts-nav-menu__link_expanded ts-nav-menu__link_open" hreflang="ru">Развертывание on-site&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+      <ul class="ts-nav-menu__children">
+      <li class="ts-nav-menu__item">
+  <a href="../../sistemnie_trebovania.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Системные требования&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../obshhij_porjadok_ustanovki/obcchij_poriadok_ustanovki.html" class="ts-nav-menu__link" hreflang="ru">Общий порядок установки</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../subd_server.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Сервер СУБД&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../server_keshirovaniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Сервер кэширования&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../linux_net_core.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Сервер приложений .NET Core на Linux&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../windows_net_framework.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Сервер приложений .NET Framework на Windows&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../nastroika_dopolnitelnikh_parametrov_i_integraciy.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Настройка дополнительных параметров и интеграций&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../nastrojka_konteinernikh_komponentov.html" class="ts-nav-menu__link ts-nav-menu__link_expanded ts-nav-menu__link_open" hreflang="ru">Настройка контейнерных компонентов&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+      <ul class="ts-nav-menu__children">
+      <li class="ts-nav-menu__item">
+  <a href="../globalnyj_poisk/nastroit_globalnyy_poisk.html" class="ts-nav-menu__link" hreflang="ru">Глобальный поиск</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../massovyj_poisk_dublej/nastroit_massovyy_poisk_dubley.html" class="ts-nav-menu__link" hreflang="ru">Массовый поиск дублей</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../voprosi_i_otvety_po_poisku/chasto_zadavaemye_voprosy_po_globalnomu_poisku_i_deduplikacii.html" class="ts-nav-menu__link" hreflang="ru">Вопросы и ответы по поиску</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../servis_mashinnogo_obuchenija/servis_mashinnogo_obucheniya.html" class="ts-nav-menu__link" hreflang="ru">Сервис машинного обучения</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="nastroit_servis_sinkhronizacii_exchange_listener.html" class="ts-nav-menu__link ts-nav-menu__link_active ts-nav-menu__link_open" hreflang="ru">Exchange Listener</a>
+  </li>
+
+    </ul>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../voprosi_i_otvety_onsite/chasto_zadavaemye_voprosy_po_ustanovke_creatio.html" class="ts-nav-menu__link" hreflang="ru">Вопросы и ответы</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../produkti_na_net_core/produkti_creatio_na_platforme_net_core.html" class="ts-nav-menu__link" hreflang="ru">Продукты на .NET Core</a>
+  </li>
+
+    </ul>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../banki_i_finansy.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Банки и финансы&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../drugie_reshenija.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Другие решения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+</ul>
+</div>
+
+  </div>
+
+  </div>
+
+            <div class="creatio-sidebar__toggle"></div>
+          </aside>
+        
+                  <aside class="creatio-sidebar creatio-sidebar_second" role="complementary">
+              <div class="region region-sidebar-second">
+    <div id="block-example" class="block block-ts-nav block-ts-nav-page-nav">
+  
+    
+        <div class="ts-nav-title">Exchange Listener</div>
+<div class="ts-nav-page">
+      <ul class="ts-nav-page__list">
+                                                <li class="ts-nav-page__item ts-nav-page__item_expanded ts-nav-page__item_open"><a href="nastroit_servis_sinkhronizacii_exchange_listener.html" class="ts-nav-page__link ts-nav-page__link_expanded ts-nav-page__link_active">Настроить сервис синхронизации Exchange Listener&nbsp;<span class="ts-nav-page__link-arrow"></span></a></li>
+          </ul>
+  </div>
+
+  </div>
+<div id="block-adminfeedbackblock" class="block block-admin-feedback block-admin-feedback-block">
+  
+    
+      <div id="feedback-message"><div id="upper-feedback-content"><h2>Был ли данный материал полезен?</h2>
+<input class="feedback-btn feedback-btn__yes button js-form-submit form-submit" data-node-id="3553" data-feedback="yes" type="submit" name="op" value="Да" />
+<input class="feedback-btn feedback-btn__no button js-form-submit form-submit" data-node-id="3553" data-feedback="no" type="submit" name="op" value="Нет" />
+</div>
+<form class="admin-feedback-form" data-drupal-selector="admin-feedback-form" action="https://academy.terrasoft.ua/docs/user/razvertyvanie_onsite/nastrojka_konteinernikh_komponentov/exchange_listener/nastroit_servis_sinkhronizacii_exchange_listener" method="post" id="admin-feedback-form" accept-charset="UTF-8">
+  <div id="feedback-msg-result"></div><div class="js-form-item form-item js-form-type-textarea form-type-textarea js-form-item-feedback-message form-item-feedback-message form-no-label">
+        <div class="form-textarea-wrapper">
+  <textarea id="edit-feedback-msg" data-drupal-selector="edit-feedback-message" name="feedback_message" rows="5" cols="60" class="form-textarea resize-vertical"></textarea>
+</div>
+
+        </div>
+<input id="feedback-id" data-drupal-selector="edit-feedback-id" type="hidden" name="feedback_id" value="" />
+<input class="feedback-btn feedback-btn__send-comment button js-form-submit form-submit" data-drupal-selector="edit-feedback-send" type="submit" id="edit-feedback-send" name="op" value="Отправить" />
+<input autocomplete="off" data-drupal-selector="form-yw3im3dopihh6vdqhrvnoma1ut9j8tmgunhal2dqgis" type="hidden" name="form_build_id" value="form-Yw3IM3dopiHh6vDqhRVnOma1UT9J8tmGUnhAL2dqGis" />
+<input data-drupal-selector="edit-admin-feedback-form" type="hidden" name="form_id" value="admin_feedback_form" />
+
+</form>
+</div>
+
+  </div>
+
+  </div>
+
+          </aside>
+              </main>
+    </div>
+  </div>
+
+  <footer role="contentinfo">
+    <div class="creatio-region creatio-region_footer">
+      <div class="creatio-container">
+          <div class="region region-footer">
+    <div id="block-footerua" class="block block-simple-block block-simple-blockfooter-ua">
+  
+    
+      <div class="footer">
+<div class="footer-left">
+<ul class="footer-socials"><li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_fb" href="https://www.facebook.com/terrasoft.ua" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_in" href="https://www.linkedin.com/company/terrasoft/" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_yt" href="https://www.youtube.com/c/TerrasoftUkraine" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_tg" href="https://t.me/Terrasoft_UA" target="_blank"> </a></li>
+</ul></div>
+
+<div class="footer-contact">
+<div class="footer-title">Будьте на связи!</div>
+
+<div class="footer-content">
+<div class="footer-items">
+<div class="footer-item"><a class="footer__link footer__link_phone" href="tel:+380443633133">+38 (044) 363-31-33</a></div>
+</div>
+
+<div class="footer-items">
+<div class="footer-item"><a class="footer__link footer__link_email" href="mailto:support@terrasoft.ua">support@terrasoft.ua</a></div>
+</div>
+</div>
+</div>
+</div>
+
+  </div>
+
+  </div>
+
+      </div>
+    </div>
+    <div class="creatio-region creatio-region_bottom">
+      <div class="creatio-container">
+          <div class="region region-bottom">
+    <div id="block-allrightsreservedua" class="block block-simple-block block-simple-blockfooter-bottom-ua">
+  
+    
+      <p>© 2002-2022 Terrasoft.  |  <a href="https://www.terrasoft.ua/privacy-policy" target="_blank">Конфиденциальность</a></p>
+
+  </div>
+
+  </div>
+
+      </div>
+    </div>
+  </footer>
+</div>
+<div class="creatio-bg"></div>
+
+
+  </div>
+
+    
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/docs\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/3553","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"ru"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"ajaxPageState":{"libraries":"admin_feedback\/admin_feedback_block,admin_feedback\/admin_feedback_css,classy\/base,classy\/messages,classy\/node,core\/drupal.ajax,core\/jquery.form,core\/normalize,creatio\/creatio.lists,creatio\/fancybox,creatio\/global,layout_discovery\/onecol,system\/base,ts_doc\/doc_version,ts_feedback\/ts_feedback,ts_nav\/breadcrumb,ts_nav\/doc_nav,ts_nav\/page_nav,ts_title_anchor\/ts_title_anchor","theme":"creatio","theme_token":null},"ajaxTrustedUrl":{"form_action_p_pvdeGsVG5zNF_XLGPTvYSKCf43t8qZYSwcfZl2uzM":true,"\/docs\/user\/razvertyvanie_onsite\/nastrojka_konteinernikh_komponentov\/exchange_listener\/nastroit_servis_sinkhronizacii_exchange_listener?ajax_form=1":true},"admin_feedback":{"yes_response":"\u0421\u043f\u0430\u0441\u0438\u0431\u043e \u0437\u0430 \u043e\u0431\u0440\u0430\u0442\u043d\u0443\u044e \u0441\u0432\u044f\u0437\u044c!","no_response":"\u0421\u043f\u0430\u0441\u0438\u0431\u043e \u0437\u0430 \u043e\u0431\u0440\u0430\u0442\u043d\u0443\u044e \u0441\u0432\u044f\u0437\u044c!","custom_text_response_on_no":{"value":"","format":"full_html"},"feedback_prompt_on_yes":true,"feedback_prompt_on_no":true,"feedback_enable_predefined_answers":false,"feedback_prompt":"\u041a\u0430\u043a \u043c\u043e\u0436\u043d\u043e \u0443\u043b\u0443\u0447\u0448\u0438\u0442\u044c \u044d\u0442\u0443 \u0441\u0442\u0430\u0442\u044c\u044e?"},"ajax":{"edit-feedback-send":{"callback":"::validateFeedbackMsg","event":"mousedown","keypress":true,"prevent":"click","url":"\/docs\/user\/razvertyvanie_onsite\/nastrojka_konteinernikh_komponentov\/exchange_listener\/nastroit_servis_sinkhronizacii_exchange_listener?ajax_form=1","dialogType":"ajax","submit":{"_triggering_element_name":"op","_triggering_element_value":"\u041e\u0442\u043f\u0440\u0430\u0432\u0438\u0442\u044c"}}},"user":{"uid":0,"permissionsHash":"9c2367dfcaba0fa15f0375f97aed64e146c908cee68508d13b79e3ee80e5162d"}}</script>
+<script src="../../../../sites/default/files/js/js_F2-Y4EzgTnESr58XByoLYEnsbi7ysTfMIKN1RvsMSWY.js"></script>
+
+
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+      <g id="svg-copy" class="svg-icon svg-icon_copy">
+        <path d="M15.111,18H1.889A1.848,1.848,0,0,1,0,16.2V3.6A1.848,1.848,0,0,1,1.889,1.8H5.837a2.87,2.87,0,0,1,5.326,0h3.948A1.848,1.848,0,0,1,17,3.6V16.2A1.848,1.848,0,0,1,15.111,18ZM3.777,12.6v1.8h6.611V12.6Zm0-3.6v1.8h9.445V9Zm0-3.6V7.2h9.445V5.4ZM8.5,1.8a.924.924,0,0,0-.944.9.945.945,0,0,0,1.889,0A.924.924,0,0,0,8.5,1.8Z"/>
+      </g>
+
+      <g id="svg-prev" class="svg-icon svg-icon_arrow">
+        <path d="M5.488,12.779,0,6.39,5.488,0" transform="translate(1 0.652)"/>
+      </g>
+
+      <g id="svg-next" class="svg-icon svg-icon_arrow">
+        <path d="M0,12.779,5.488,6.39,0,0" transform="translate(0.759 0.652)"/>
+      </g>
+    </svg>
+  </body>
+
+<!-- Mirrored from academy.terrasoft.ua/docs/user/razvertyvanie_onsite/nastrojka_konteinernikh_komponentov/exchange_listener/nastroit_servis_sinkhronizacii_exchange_listener by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 22 Mar 2022 20:28:03 GMT -->
+</html>

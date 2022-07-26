@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# ">
+  
+<!-- Mirrored from academy.terrasoft.ua/docs/8-0/developer/ehlementy_interfejsa/razdel/dobavit_dejstvie_dlya_edinichnoj_zapisi by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Mar 2022 06:17:37 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+          <!-- Google Tag Manager -->
+      <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          '../../../../../../www.googletagmanager.com/gtm5445.html?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-KLLB8G');</script>
+      <!-- End Google Tag Manager -->
+        <meta charset="utf-8" />
+<link rel="canonical" href="dobavit_dejstvie_dlya_edinichnoj_zapisi.html" />
+<meta name="description" content="Пример реализован для продуктов линейки Sales Creatio.
+
+
+
+Пример. Для записи реестра раздела Заказы (Orders) добавить действие, которое в информационном окне отображает дату создания заказа. Действие активно для заказов, которые находятся на стадии Исполнение (In progress)." />
+<meta property="og:url" content="https://academy.terrasoft.ua/docs/8-0/developer/ehlementy_interfejsa/razdel/dobavit_dejstvie_dlya_edinichnoj_zapisi" />
+<meta property="og:title" content="Добавить в раздел действие для единичной записи" />
+<meta property="og:description" content="Пример реализован для продуктов линейки Sales Creatio.
+
+
+
+Пример. Для записи реестра раздела Заказы (Orders) добавить действие, которое в информационном окне отображает дату создания заказа. Действие активно для заказов, которые находятся на стадии Исполнение (In progress)." />
+<meta name="Generator" content="Drupal 9 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="../../../../themes/custom/creatio/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="revision" href="dobavit_dejstvie_dlya_edinichnoj_zapisi.html" />
+
+    <title>Добавить в раздел действие для единичной записи | Creatio Academy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&amp;family=Open+Sans:ital,wght@0,300;0,400;0,600;1,400&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" media="all" href="../../../../sites/default/files/css/css_6lTP66__-yc6QXFp1zOwoeJ0HVigoYZP-SeoLLii000.css" />
+<link rel="stylesheet" media="all" href="../../../../sites/default/files/css/css_XQJDNhkF3xH5SZCcY-PI89Zu4nYIzQ5oR3SnUKyfXJU.css" />
+<link rel="stylesheet" media="print" href="../../../../sites/default/files/css/css_Zn4VHvcniOOtUwkIVwXzYr_0AI9gUVgZcPqaH4ViagU.css" />
+
+    
+  </head>
+  <body class="path-node page-node-type-case">
+          <!-- Google Tag Manager (noscript) -->
+      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KLLB8G"
+                        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+      <!-- End Google Tag Manager (noscript) -->
+    
+        
+      <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    <div class="creatio-page d-flex flex-column">
+        <div class="region region-informer">
+    <div id="block-terrasoftpidtrimueukrainu" class="block block-simple-block block-simple-blockterrasoft-pidtrimue-ukrainu">
+  
+    
+      <style type="text/css">
+<!--/*--><![CDATA[/* ><!--*/
+@import url(../../../../../../www.terrasoft.ua/themes/custom/creatio/css/components/informer.css)
+
+/*--><!]]>*/
+</style><div class="ts-swu">
+<div class="creatio-container">
+<div class="ts-swu__cont">
+<div><a class="ts-swu__link" href="https://www.terrasoft.ua/terrasoft-stands-with-ukraine" target="_blank">Україна понад усе!</a> <span><a href="https://www.terrasoft.ua/terrasoft-stands-with-ukraine" target="_blank">Приєднуйтеся</a> до допомоги!</span></div>
+</div>
+</div></div>
+
+  </div>
+
+  </div>
+
+  
+  <header role="banner">
+          <div class="creatio-region creatio-region_top">
+        <div class="creatio-container">
+            <div class="region region-top">
+    <div id="block-menutoggle" class="block block-simple-block block-simple-blockmenu-toggle">
+  
+    
+      <div class="menu-toggle"><span> </span></div>
+
+  </div>
+<div id="block-logowhite-2" class="block block-simple-block block-simple-blocklogo-white">
+  
+    
+      <p><a class="site-logo" href="../../../../../index.html" rel="home"><img src="../../../../themes/custom/creatio/logo-white.svg" /></a></p>
+
+  </div>
+<div id="block-search" class="block block-simple-block block-simple-blocksearch">
+  
+    
+      <div class="search">
+<form action="https://academy.terrasoft.ua/search" class="search-form" method="get"><input class="search-form__input" name="search" placeholder="Поиск" type="search" /><input class="search-form__button" type="submit" value="Поиск" /> </form>
+
+<div class="search-toggle"> </div>
+</div>
+
+  </div>
+<nav role="navigation" aria-labelledby="block-sitesua-menu" id="block-sitesua" class="block block-menu navigation menu--sites-ua">
+            
+  <h2 class="visually-hidden" id="block-sitesua-menu">Sites UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="https://www.terrasoft.ua/" rel="nofollow" target="_blank">Terrasoft</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://community.terrasoft.ua/" rel="nofollow" target="_blank">Community</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://marketplace.terrasoft.ua/" rel="nofollow" target="_blank">Marketplace</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+<div id="block-usermenu" class="block block-ts-user block-ts-user-menu-block">
+  
+    
+      <ul class="user-menu">
+      <li class="user-menu__item">
+      <a class="user-menu__link" href="https://profile.terrasoft.ua/user/login?destination=academy/ua/docs/8-0/developer/ehlementy_interfejsa/razdel/dobavit_dejstvie_dlya_edinichnoj_zapisi">Войти</a>
+    </li>
+  </ul>
+
+  </div>
+<div id="block-usermenumobile" class="block block-ts-user block-ts-user-menu-mobile-block">
+  
+    
+      <ul class="user-menu-mobile">
+      <li class="user-menu-mobile__item">
+      <div class="user-menu-mobile__user user-menu-mobile__user_icon"></div>
+      <ul class="user-menu-mobile__submenu">
+        <li class="user-menu-mobile__subitem">
+          <a class="user-menu-mobile__sublink" href="https://profile.terrasoft.ua/user/login?destination=academy/ua/docs/8-0/developer/ehlementy_interfejsa/razdel/dobavit_dejstvie_dlya_edinichnoj_zapisi">Войти</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  </div>
+
+  </div>
+
+        </div>
+      </div>
+              <div class="creatio-region creatio-region_header">
+        <div class="creatio-container">
+            <div class="region region-header">
+    <div id="block-logo" class="block block-simple-block block-simple-blocklogo">
+  
+    
+      <p><a class="site-logo" href="../../../../../index.html" rel="home"><img src="../../../../themes/custom/creatio/logo.svg" /></a></p>
+
+  </div>
+<nav role="navigation" aria-labelledby="block-osnovnayanavigaciyaua-menu" id="block-osnovnayanavigaciyaua" class="block block-menu navigation menu--main-ua">
+            
+  <h2 class="visually-hidden" id="block-osnovnayanavigaciyaua-menu">Основная навигация UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="../../../../index.html" data-drupal-link-system-path="&lt;front&gt;">Документация</a>
+              </li>
+                <li class="menu-item">
+        <a href="../../../../../trainings.html">Тренинги</a>
+              </li>
+                <li class="menu-item">
+        <a href="../../../../certification.html" data-drupal-link-system-path="node/3084">Сертификация и тестирование</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+<nav role="navigation" aria-labelledby="block-sitesua-2-menu" id="block-sitesua-2" class="block block-menu navigation menu--sites-ua">
+            
+  <h2 class="visually-hidden" id="block-sitesua-2-menu">Sites UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="https://www.terrasoft.ua/" rel="nofollow" target="_blank">Terrasoft</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://community.terrasoft.ua/" rel="nofollow" target="_blank">Community</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://marketplace.terrasoft.ua/" rel="nofollow" target="_blank">Marketplace</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+
+  </div>
+
+        </div>
+      </div>
+              <div class="creatio-region creatio-region_breadcrumb">
+        <div class="creatio-container">
+            <div class="region region-breadcrumb">
+    <div id="block-logowhite" class="block block-simple-block block-simple-blocklogo-white">
+  
+    
+      <p><a class="site-logo" href="../../../../../index.html" rel="home"><img src="../../../../themes/custom/creatio/logo-white.svg" /></a></p>
+
+  </div>
+<div id="block-breadcrumbnaviagtion" class="block block-ts-nav block-ts-nav-bread">
+  
+    
+      <nav class="breadcrumb"><ol class="ts-nav-breadcrumb__list"><li class="ts-nav-breadcrumb__item"><a href="../../../../index.html" class="ts-nav-breadcrumb__link" title="Документация">Документация</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../../index2132.html?vid_1=2" class="ts-nav-breadcrumb__link" title="Для разработчика">Для разработчика</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../ehlementy_interfejsa.html" class="ts-nav-breadcrumb__link" title="Элементы интерфейса" hreflang="ru">Элементы интерфейса</a></li>
+<li class="ts-nav-breadcrumb__item ts-nav-breadcrumb__item_mobile"><a href="../razdel.html" class="ts-nav-breadcrumb__link" title="Раздел" hreflang="ru">Раздел</a></li>
+<li class="ts-nav-breadcrumb__item"><span class="ts-nav-breadcrumb__link ts-nav-breadcrumb__link_current" title="Добавить действие для единичной записи">Добавить действие для единичной записи</span></li>
+</ol>
+</nav>
+
+  </div>
+<div id="block-search-2" class="block block-simple-block block-simple-blocksearch">
+  
+    
+      <div class="search">
+<form action="https://academy.terrasoft.ua/search" class="search-form" method="get"><input class="search-form__input" name="search" placeholder="Поиск" type="search" /><input class="search-form__button" type="submit" value="Поиск" /> </form>
+
+<div class="search-toggle"> </div>
+</div>
+
+  </div>
+
+  </div>
+
+        </div>
+      </div>
+      </header>
+
+  <div class="creatio-region creatio-region_main">
+    <div class="creatio-container">
+                <div class="region region-breadcrumb-mobile">
+    <div id="block-breadcrumbnaviagtion-2" class="block block-ts-nav block-ts-nav-bread">
+  
+    
+      <nav class="breadcrumb"><ol class="ts-nav-breadcrumb__list"><li class="ts-nav-breadcrumb__item"><a href="../../../../index.html" class="ts-nav-breadcrumb__link" title="Документация">Документация</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../../index2132.html?vid_1=2" class="ts-nav-breadcrumb__link" title="Для разработчика">Для разработчика</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../ehlementy_interfejsa.html" class="ts-nav-breadcrumb__link" title="Элементы интерфейса" hreflang="ru">Элементы интерфейса</a></li>
+<li class="ts-nav-breadcrumb__item ts-nav-breadcrumb__item_mobile"><a href="../razdel.html" class="ts-nav-breadcrumb__link" title="Раздел" hreflang="ru">Раздел</a></li>
+<li class="ts-nav-breadcrumb__item"><span class="ts-nav-breadcrumb__link ts-nav-breadcrumb__link_current" title="Добавить действие для единичной записи">Добавить действие для единичной записи</span></li>
+</ol>
+</nav>
+
+  </div>
+
+  </div>
+
+      
+      <main class="creatio-main" role="main">
+                                                    
+        <div class="creatio-content creatio-content_small">
+          <div class="creatio-content__inner creatio-content__inner_bg">
+                            <div class="region region-messages">
+    <div data-drupal-messages-fallback class="hidden"></div>
+
+  </div>
+
+            
+              <div class="region region-content">
+    <div id="block-creatio-page-title" class="block block-core block-page-title-block">
+  
+    
+      
+  <h1 class="page-title"><span class="field field--name-title field--type-string field--label-hidden">Добавить в раздел действие для единичной записи</span>
+</h1>
+
+
+  </div>
+<div id="block-creatio-content" class="block block-system block-system-main-block">
+  
+    
+      
+<article data-history-node-id="3235" role="article" about="/docs/8-0/developer/ehlementy_interfejsa/razdel/dobavit_dejstvie_dlya_edinichnoj_zapisi" class="node node--type-case node--view-mode-full">
+
+  
+    
+
+  
+  <div class="node__content">
+      <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocknodecasefield-difficulty">
+  
+    
+      
+            <div class="field field--name-field-difficulty field--type-entity-reference field--label-hidden field__item"><div about="/docs/8-0/taxonomy/term/123" id="taxonomy-term-123" class="taxonomy-term vocabulary-difficulty">
+  
+  
+  <div class="content">
+      <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocktaxonomy-termdifficultyfield-icon">
+  
+    
+      
+            <div class="field field--name-field-icon field--type-image field--label-hidden field__item">  <img src="../../../../sites/default/files/difficulty/medium.svg" alt="" loading="lazy" typeof="foaf:Image" />
+
+</div>
+      
+  </div>
+<div class="block block-layout-builder block-field-blocktaxonomy-termdifficultyname">
+  
+    
+      
+            <div class="field field--name-name field--type-string field--label-hidden field__item"><span style="color: #F57E20;">Средний</span></div>
+      
+  </div>
+
+    </div>
+  </div>
+
+  </div>
+</div>
+</div>
+      
+  </div>
+<div class="block block-ts-doc block-ts-doc-downloads">
+  
+    
+      <a href="../../../../sites/default/files/pdf/node/3235/Dobavit_v_razdel_deystvie_dlya_edinichnoy_zapisi_.pdf" target="_blank">PDF</a>
+  </div>
+<div class="block block-ts-doc block-ts-doc-versions">
+  
+    
+        <div class="ts-doc-versions">
+    <select class="ts-doc-versions__select">
+                                                <option value="/docs/8-0/developer/ehlementy_interfejsa/razdel/dobavit_dejstvie_dlya_edinichnoj_zapisi" selected>Версия 8.0</option>
+                              <option value="/docs/7-18/developer/ehlementy_interfejsa/razdel/dobavit_dejstvie_dlya_edinichnoj_zapisi">Версия 7.18</option>
+                              <option value="/docs/7-17/developer/ehlementy_interfejsa/razdel/dobavit_dejstvie_dlya_edinichnoj_zapisi">Версия 7.17</option>
+                              <option value="/docs/7-16/developer/ehlementy_interfejsa/razdel/dobavit_dejstvie_dlya_edinichnoj_zapisi">Версия 7.16</option>
+          </select>
+  </div>
+
+  </div>
+
+    </div>
+  </div>
+  <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocknodecasebody">
+  
+    
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><div class="message message_warning">
+<p>Пример реализован для продуктов линейки Sales Creatio.</p>
+</div>
+
+<div class="message message_example">
+<p><span class="message__bold message__bold_example">Пример.</span> Для записи реестра раздела <span class="key">Заказы</span> (<span class="key">Orders</span>) добавить действие, которое в информационном окне отображает дату создания заказа. Действие активно для заказов, которые находятся на стадии <span class="key">Исполнение</span> (<span class="key">In progress</span>).</p>
+</div>
+
+<h2>Создать схему замещающей модели представления раздела<a class="title-anchor" href="#title-3235-1" id="title-3235-1"> </a></h2>
+
+<ol><li><a href="../../../../7-18/developer/instrumenty_razrabotki/creatio_ide/principy_razrabotki_v_creatio_ide/obzor.html#title-2093-1">Перейдите в раздел <span class="key">Конфигурация</span></a> (<span class="key">Configuration</span>) и выберите пользовательский <a href="../../instrumenty_razrabotki/pakety/obshchiye_printsipy_raboty_s_paketami/obzor.html">пакет</a>, в который будет добавлена схема.</li>
+	<li>
+	<p>На панели инструментов реестра раздела нажмите <span class="key">Добавить</span> —&gt; <span class="key">Замещающая модель представления</span> (<span class="key">Add</span> —&gt; <span class="key">Replacing view model</span>).</p>
+
+	<div class="media">
+	<div class="media__element"><img src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/CreateClientSchema(7.17)/scr_add_replacing_module.png" /></div>
+	</div>
+	</li>
+	<li>
+	<p>Заполните <strong>свойства схемы</strong>.</p>
+
+	<ul><li><span class="key">Код</span> (<span class="key">Code</span>) — "<span class="consolas">OrderSectionV2</span>".</li>
+		<li><span class="key">Заголовок</span> (<span class="key">Title</span>) — "<span class="consolas">Раздел заказа</span>" ("<span class="consolas">Order section</span>").</li>
+		<li><span class="key">Родительский объект</span> (<span class="key">Parent object</span>) — выберите "<span class="consolas">OrderSectionV2</span>".</li>
+	</ul><div class="media">
+	<div class="media__element"><img src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/AddSectionActionForSingleRow/7.18/scr_OrderSectionV2_props.png" /></div>
+	</div>
+	</li>
+	<li>
+	<p>Добавьте <strong>локализуемую строку</strong> с текстом пункта меню, который планируется добавить.</p>
+
+	<ol><li>В контекстном меню узла <span class="key">Локализуемые строки</span> (<span class="key">Localizable strings</span>) нажмите кнопку <img alt="" border="0" src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/CreateClientSchema(7.17)/scr_add_button.png" />.</li>
+		<li>
+		<p>Заполните <strong>свойства локализуемой строки</strong>.</p>
+
+		<ul><li><span class="key">Код</span> (<span class="key">Code</span>) — "<span class="consolas">CreationDateActionCaption</span>".</li>
+			<li><span class="key">Значение</span> (<span class="key">Value</span>) — "<span class="consolas">Показать дату создания</span>" ("<span class="consolas">Show creation date</span>").</li>
+		</ul><div class="media">
+		<div class="media__element"><img src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/AddSectionActionForSingleRow/7.18/scr_localizable_string.png" /></div>
+		</div>
+		</li>
+		<li>Для добавления локализуемой строки нажмите <span class="key">Добавить</span> (<span class="key">Add</span>).</li>
+	</ol></li>
+	<li>
+	<p>Реализуйте <strong>логику работы пункта меню</strong>. Для этого в свойстве <span class="filled">methods</span> реализуйте <strong>методы</strong>:</p>
+
+	<ul><li><span class="filled">isRunning()</span> — проверяет, находится ли выбранный в реестре заказ на стадии <span class="key">Исполнение</span> (<span class="key">In progress</span>).</li>
+		<li><span class="filled">isCustomActionEnabled()</span> — определяет доступность добавленного пункта меню.</li>
+		<li><span class="filled">showOrderInfo()</span> — метод-обработчик действия, который отображает в информационном окне дату создания выбранного заказа.</li>
+		<li><span class="filled">getSectionActions()</span> — переопределенный метод родительской схемы, который возвращает коллекцию действий раздела.</li>
+	</ul><p>Обращение к выделенной записи выполняется через атрибут <span class="filled">ActiveRow</span> модели представления раздела. Атрибут возвращает значение первичной колонки выделенной записи. В свою очередь, значение первичной колонки выделенной записи может использоваться для получения значений, загруженных в реестр полей выбранного объекта.</p>
+
+	<p>Исходный код схемы замещающей модели представления раздела представлен ниже.</p>
+
+	<div class="code">
+	<div class="code__widgets">
+	<div class="code__top">
+	<div class="code__title"><span class="filled">OrderSectionV2</span></div>
+	</div>
+
+	<div class="code__source">
+	<pre class="prettyprint">
+define("OrderSectionV2", ["OrderConfigurationConstants"], function(OrderConfigurationConstants) {
+    return {
+        /* Название схемы объекта раздела. */
+        entitySchemaName: "Order",
+        /* Методы модели представления раздела. */
+        methods: {
+            /* Проверяет стадию заказа. activeRowId — значение первичной колонки выделенной записи реестра.*/
+            isRunning: function(activeRowId) {
+                /* Получает коллекцию данных списочного представления реестра раздела. */
+                var gridData = this.get("GridData");
+                /* Получает модель выбранного заказа по заданному значению первичной колонки. */
+                var selectedOrder = gridData.get(activeRowId);
+                /* Получает свойства модели — статуса выбранного заказа. */
+                var selectedOrderStatus = selectedOrder.get("Status");
+                /* Метод возвращает true, если статус заказа [Исполнение], иначе возвращает false. */
+                return selectedOrderStatus.value === OrderConfigurationConstants.Order.OrderStatus.Running;
+            },
+            /* Определяет доступность пункта меню. */
+            isCustomActionEnabled: function() {
+                /* Попытка получения идентификатора активной записи. */
+                var activeRowId = this.get("ActiveRow");
+                /* Если идентификатор определен и статус выбранного заказа [Исполнение], то возвращается true, иначе — false. */
+                return activeRowId ? this.isRunning(activeRowId) : false;
+            },
+            /* Метод-обработчик действия. Отображает в информационном окне дату создания заказа. */
+            showOrderInfo: function() {
+                var activeRowId = this.get("ActiveRow");
+                var gridData = this.get("GridData");
+                /* Получает дату создания заказа. Колонка должна быть добавлена в реестр. */
+                var dueDate = gridData.get(activeRowId).get("Date");
+                /* Отображает информационное окно. */
+                this.showInformationDialog(dueDate);
+            },
+            /* Переопределение базового виртуального метода, который возвращает коллекцию действий раздела. */
+            getSectionActions: function() {
+                /* Вызывается родительская реализация метода для получения коллекции проинициализированных действий раздела. */
+                var actionMenuItems = this.callParent(arguments);
+                /* Добавляет линию-разделитель. */
+                actionMenuItems.addItem(this.getButtonMenuItem({
+                    Type: "Terrasoft.MenuSeparator",
+                    Caption: ""
+                }));
+                /* Добавляет пункт меню в список действий раздела. */
+                actionMenuItems.addItem(this.getButtonMenuItem({
+                    /* Привязка заголовка пункта меню к локализуемой строке схемы. */
+                    "Caption": {bindTo: "Resources.Strings.CreationDateActionCaption"},
+                    /* Привязка метода-обработчика действия. */
+                    "Click": {bindTo: "showOrderInfo"},
+                    /* Привязка свойства доступности пункта меню к значению, которое возвращает метод isCustomActionEnabled. */
+                    "Enabled": {bindTo: "isCustomActionEnabled"}
+                }));
+                /* Возврат дополненной коллекции действий раздела. */
+                return actionMenuItems;
+            }
+        }
+    };
+});
+</pre>
+	</div>
+	</div>
+	</div>
+	</li>
+	<li>На панели инструментов дизайнера нажмите <span class="key">Сохранить</span> (<span class="key">Save</span>).</li>
+</ol><h2>Результат выполнения примера<a class="title-anchor" href="#title-3235-2" id="title-3235-2"> </a></h2>
+
+<p>Чтобы <strong>посмотреть результат выполнения примера</strong>:</p>
+
+<ol><li>Очистите кэш браузера.</li>
+	<li>Обновите страницу раздела <span class="key">Заказы</span> (<span class="key">Orders</span>).</li>
+</ol><p>В результате выполнения примера на страницу заказа добавлено действие <span class="key">Показать дату создания</span> (<span class="key">Show creation date</span>).</p>
+
+<p>Если заказ находится на стадии <span class="key">Исполнение</span> (<span class="key">In progress</span>), то действие <span class="key">Показать дату создания</span> (<span class="key">Show creation date</span>) активно.</p>
+
+<div class="media">
+<div class="media__element"><img src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/AddSectionActionForSingleRow/7.18/scr_result.png" /></div>
+</div>
+
+<p>В результате выбора действия <span class="key">Показать дату создания</span> (<span class="key">Show creation date</span>), в информационном окне отображается дата создания заказа.</p>
+
+<div class="media">
+<div class="media__element"><img src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/AddSectionActionForSingleRow/7.18/scr_modal_window.png" /></div>
+</div>
+
+<p>Если заказ не находится на стадии <span class="key">Исполнение</span> (<span class="key">In progress</span>), то действие <span class="key">Показать дату создания</span> (<span class="key">Show creation date</span>) неактивно.</p>
+
+<div class="media">
+<div class="media__element"><img src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/AddSectionActionForSingleRow/7.18/scr_result_another.png" /></div>
+</div>
+</div>
+      
+  </div>
+<div class="block block-layout-builder block-field-blocknodecasefield-resources">
+  
+    
+      
+  <div class="field field--name-field-resources field--type-link field--label-above">
+    <div class="field__label">Ресурсы</div>
+          <div class="field__items">
+              <div class="field__item"><a href="../../../../../sites/default/files/documents/downloads/SDK/Packages/sdkAddSectionActionForSingleRowPackage_2021-12-20_14.46.07.zip" target="_blank">Пакет с реализацией примера</a></div>
+          <div class="field__item"><a href="https://www.youtube.com/watch?v=KS52VoNQuk8" target="_blank">Tech Hour: Нажимать аккуратно. Работа с кнопками и действиями в Creatio</a></div>
+              </div>
+      </div>
+
+  </div>
+
+    </div>
+  </div>
+
+  </div>
+
+</article>
+
+  </div>
+
+  </div>
+
+          </div>
+        </div>
+
+                  <aside class="creatio-sidebar creatio-sidebar_first" role="complementary">
+              <div class="region region-sidebar-first">
+    <div id="block-documentationnaviagtion" class="block block-ts-nav block-ts-nav-doc-nav">
+  
+    
+      <div class="ts-nav-block"><a href="../../../../index.html" class="ts-nav-block__link">Документация</a><div class="ts-nav-block__title">Для разработчика</div>
+</div>
+<div class="ts-nav-container"><ul class="ts-nav-menu"><li class="ts-nav-menu__item">
+  <a href="../../s_chego_nachat.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">С чего начать&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../architecture.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Архитектура&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../instrumenty_razrabotki.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Инструменты разработки&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../back_end_razrabotka.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Back-end разработка&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../front_end_razrabotka_freedom_ui.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Front-end разработка Freedom UI&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../front_end_razrabotka.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Front-end разработка&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../integratsiya_i_vneshnij_api.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Интеграция и внешний API&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../ehlementy_interfejsa.html" class="ts-nav-menu__link ts-nav-menu__link_expanded ts-nav-menu__link_open" hreflang="ru">Элементы интерфейса&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+      <ul class="ts-nav-menu__children">
+      <li class="ts-nav-menu__item">
+  <a href="../glavnoe_menyu/obzor.html" class="ts-nav-menu__link" hreflang="ru">Главное меню</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../razdel.html" class="ts-nav-menu__link ts-nav-menu__link_expanded ts-nav-menu__link_open" hreflang="ru">Раздел&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+      <ul class="ts-nav-menu__children">
+      <li class="ts-nav-menu__item">
+  <a href="obzor.html" class="ts-nav-menu__link ts-nav-menu__link_guide" hreflang="ru">Обзор</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="dobavit_dejstvie_dlya_edinichnoj_zapisi.html" class="ts-nav-menu__link ts-nav-menu__link_case ts-nav-menu__link_active" hreflang="ru">Добавить действие для единичной записи</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="dobavit_dejstvie_dlya_neskolkikh_zapisej.html" class="ts-nav-menu__link ts-nav-menu__link_case" hreflang="ru">Добавить действие для нескольких записей</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="nastroit_obrabotku_dejstviya_dlya_neskolkikh_zapisej.html" class="ts-nav-menu__link ts-nav-menu__link_case" hreflang="ru">Настроить обработку действия для нескольких записей</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="nastroit_obrabotku_dejstviya_spravochnik_dlya_neskol%27kikh_zapisej.html" class="ts-nav-menu__link ts-nav-menu__link_case" hreflang="ru">Настроить обработку действия (справочник) для нескольких записей</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="nastroit_usloviya_otobrazheniya_reestra.html" class="ts-nav-menu__link ts-nav-menu__link_case" hreflang="ru">Настроить условия отображения реестра</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="nastroit_blok_bystrykh_filtrov.html" class="ts-nav-menu__link ts-nav-menu__link_case" hreflang="ru">Настроить блок быстрых фильтров</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="basesectionv2.html" class="ts-nav-menu__link ts-nav-menu__link_reference" data-type="JS" hreflang="ru">BaseSectionV2</a>
+  </li>
+
+    </ul>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../stranica_zapisi.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Страница записи&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../1215/detail.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Деталь&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../mini_kartochka.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Мини-карточка&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../modalnoe_okno.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Модальное окно&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../kommunikacionnaya_panel.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Коммуникационная панель&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../komandnaya_stroka/obzor.html" class="ts-nav-menu__link" hreflang="ru">Командная строка</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../dashbordy.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Дашборды&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../chaty.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Чаты&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../upravlenie_ehlementami_interfejsa.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Управление элементами интерфейса&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+
+    </ul>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../komponenty_prilozheniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Компоненты приложения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../razrabotka_mobilnogo_prilozheniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Разработка мобильного приложения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../razrabotka_marketplace_prilozheniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Разработка Marketplace-приложения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+</ul>
+</div>
+
+  </div>
+
+  </div>
+
+            <div class="creatio-sidebar__toggle"></div>
+          </aside>
+        
+                  <aside class="creatio-sidebar creatio-sidebar_second" role="complementary">
+              <div class="region region-sidebar-second">
+    <div id="block-example" class="block block-ts-nav block-ts-nav-page-nav">
+  
+    
+      <div class="ts-nav-page">
+  </div>
+
+  </div>
+<div id="block-adminfeedbackblock" class="block block-admin-feedback block-admin-feedback-block">
+  
+    
+      <div id="feedback-message"><div id="upper-feedback-content"><h2>Был ли данный материал полезен?</h2>
+<input class="feedback-btn feedback-btn__yes button js-form-submit form-submit" data-node-id="3235" data-feedback="yes" type="submit" name="op" value="Да" />
+<input class="feedback-btn feedback-btn__no button js-form-submit form-submit" data-node-id="3235" data-feedback="no" type="submit" name="op" value="Нет" />
+</div>
+<form class="admin-feedback-form" data-drupal-selector="admin-feedback-form" action="https://academy.terrasoft.ua/docs/8-0/developer/ehlementy_interfejsa/razdel/dobavit_dejstvie_dlya_edinichnoj_zapisi" method="post" id="admin-feedback-form" accept-charset="UTF-8">
+  <div id="feedback-msg-result"></div><div class="js-form-item form-item js-form-type-textarea form-type-textarea js-form-item-feedback-message form-item-feedback-message form-no-label">
+        <div class="form-textarea-wrapper">
+  <textarea id="edit-feedback-msg" data-drupal-selector="edit-feedback-message" name="feedback_message" rows="5" cols="60" class="form-textarea resize-vertical"></textarea>
+</div>
+
+        </div>
+<input id="feedback-id" data-drupal-selector="edit-feedback-id" type="hidden" name="feedback_id" value="" />
+<input class="feedback-btn feedback-btn__send-comment button js-form-submit form-submit" data-drupal-selector="edit-feedback-send" type="submit" id="edit-feedback-send" name="op" value="Отправить" />
+<input autocomplete="off" data-drupal-selector="form-t2oa80hshjdkpj-p9fh5ontui25twtxanvq4waessd4" type="hidden" name="form_build_id" value="form-T2OA80HShJDKPJ-P9fH5ontUi25TwTxAnvq4WaeSSd4" />
+<input data-drupal-selector="edit-admin-feedback-form" type="hidden" name="form_id" value="admin_feedback_form" />
+
+</form>
+</div>
+
+  </div>
+
+  </div>
+
+          </aside>
+              </main>
+    </div>
+  </div>
+
+  <footer role="contentinfo">
+    <div class="creatio-region creatio-region_footer">
+      <div class="creatio-container">
+          <div class="region region-footer">
+    <div id="block-footerua" class="block block-simple-block block-simple-blockfooter-ua">
+  
+    
+      <div class="footer">
+<div class="footer-left">
+<ul class="footer-socials"><li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_fb" href="https://www.facebook.com/terrasoft.ua" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_in" href="https://www.linkedin.com/company/terrasoft/" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_yt" href="https://www.youtube.com/c/TerrasoftUkraine" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_tg" href="https://t.me/Terrasoft_UA" target="_blank"> </a></li>
+</ul></div>
+
+<div class="footer-contact">
+<div class="footer-title">Будьте на связи!</div>
+
+<div class="footer-content">
+<div class="footer-items">
+<div class="footer-item"><a class="footer__link footer__link_phone" href="tel:+380443633133">+38 (044) 363-31-33</a></div>
+</div>
+
+<div class="footer-items">
+<div class="footer-item"><a class="footer__link footer__link_email" href="mailto:support@terrasoft.ua">support@terrasoft.ua</a></div>
+</div>
+</div>
+</div>
+</div>
+
+  </div>
+
+  </div>
+
+      </div>
+    </div>
+    <div class="creatio-region creatio-region_bottom">
+      <div class="creatio-container">
+          <div class="region region-bottom">
+    <div id="block-allrightsreservedua" class="block block-simple-block block-simple-blockfooter-bottom-ua">
+  
+    
+      <p>© 2002-2022 Terrasoft.  |  <a href="https://www.terrasoft.ua/privacy-policy" target="_blank">Конфиденциальность</a></p>
+
+  </div>
+
+  </div>
+
+      </div>
+    </div>
+  </footer>
+</div>
+<div class="creatio-bg"></div>
+
+
+  </div>
+
+    
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/docs\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/3235","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"ru"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"ajaxPageState":{"libraries":"admin_feedback\/admin_feedback_block,admin_feedback\/admin_feedback_css,classy\/base,classy\/messages,classy\/node,core\/drupal.ajax,core\/jquery.form,core\/normalize,creatio\/fancybox,creatio\/global,layout_discovery\/onecol,system\/base,ts_doc\/doc_version,ts_feedback\/ts_feedback,ts_nav\/breadcrumb,ts_nav\/doc_nav,ts_nav\/page_nav,ts_title_anchor\/ts_title_anchor","theme":"creatio","theme_token":null},"ajaxTrustedUrl":{"form_action_p_pvdeGsVG5zNF_XLGPTvYSKCf43t8qZYSwcfZl2uzM":true,"\/docs\/8-0\/developer\/ehlementy_interfejsa\/razdel\/dobavit_dejstvie_dlya_edinichnoj_zapisi?ajax_form=1":true},"admin_feedback":{"yes_response":"\u0421\u043f\u0430\u0441\u0438\u0431\u043e \u0437\u0430 \u043e\u0431\u0440\u0430\u0442\u043d\u0443\u044e \u0441\u0432\u044f\u0437\u044c!","no_response":"\u0421\u043f\u0430\u0441\u0438\u0431\u043e \u0437\u0430 \u043e\u0431\u0440\u0430\u0442\u043d\u0443\u044e \u0441\u0432\u044f\u0437\u044c!","custom_text_response_on_no":{"value":"","format":"full_html"},"feedback_prompt_on_yes":true,"feedback_prompt_on_no":true,"feedback_enable_predefined_answers":false,"feedback_prompt":"\u041a\u0430\u043a \u043c\u043e\u0436\u043d\u043e \u0443\u043b\u0443\u0447\u0448\u0438\u0442\u044c \u044d\u0442\u0443 \u0441\u0442\u0430\u0442\u044c\u044e?"},"ajax":{"edit-feedback-send":{"callback":"::validateFeedbackMsg","event":"mousedown","keypress":true,"prevent":"click","url":"\/docs\/8-0\/developer\/ehlementy_interfejsa\/razdel\/dobavit_dejstvie_dlya_edinichnoj_zapisi?ajax_form=1","dialogType":"ajax","submit":{"_triggering_element_name":"op","_triggering_element_value":"\u041e\u0442\u043f\u0440\u0430\u0432\u0438\u0442\u044c"}}},"user":{"uid":0,"permissionsHash":"9c2367dfcaba0fa15f0375f97aed64e146c908cee68508d13b79e3ee80e5162d"}}</script>
+<script src="../../../../sites/default/files/js/js_Rr-7TvYD7NposuRFJwUqThxM7yJmw8vs03PQwu5gWd8.js"></script>
+
+
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+      <g id="svg-copy" class="svg-icon svg-icon_copy">
+        <path d="M15.111,18H1.889A1.848,1.848,0,0,1,0,16.2V3.6A1.848,1.848,0,0,1,1.889,1.8H5.837a2.87,2.87,0,0,1,5.326,0h3.948A1.848,1.848,0,0,1,17,3.6V16.2A1.848,1.848,0,0,1,15.111,18ZM3.777,12.6v1.8h6.611V12.6Zm0-3.6v1.8h9.445V9Zm0-3.6V7.2h9.445V5.4ZM8.5,1.8a.924.924,0,0,0-.944.9.945.945,0,0,0,1.889,0A.924.924,0,0,0,8.5,1.8Z"/>
+      </g>
+
+      <g id="svg-prev" class="svg-icon svg-icon_arrow">
+        <path d="M5.488,12.779,0,6.39,5.488,0" transform="translate(1 0.652)"/>
+      </g>
+
+      <g id="svg-next" class="svg-icon svg-icon_arrow">
+        <path d="M0,12.779,5.488,6.39,0,0" transform="translate(0.759 0.652)"/>
+      </g>
+    </svg>
+  </body>
+
+<!-- Mirrored from academy.terrasoft.ua/docs/8-0/developer/ehlementy_interfejsa/razdel/dobavit_dejstvie_dlya_edinichnoj_zapisi by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Mar 2022 06:17:38 GMT -->
+</html>

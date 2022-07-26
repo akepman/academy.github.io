@@ -1,0 +1,1207 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# ">
+  
+<!-- Mirrored from academy.terrasoft.ua/docs/user/bazis_platformy/dannye/filtry/filtry#title-2646-4 by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Mar 2022 01:27:33 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+          <!-- Google Tag Manager -->
+      <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          '../../../../../../www.googletagmanager.com/gtm5445.html?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-KLLB8G');</script>
+      <!-- End Google Tag Manager -->
+        <meta charset="utf-8" />
+<link rel="canonical" href="filtry.html" />
+<meta name="description" content="В Creatio реализована возможность фильтровать записи в реестре разделов и деталей. Для поиска и фильтрации записей в разделах предусмотрены следующие инструменты:
+
+
+	Быстрый фильтр;
+	
+	
+	Стандартный фильтр;
+	
+	
+	Расширенный фильтр.
+	
+Для фильтрации записей на деталях используется только стандартный фильтр.
+
+Элементы управления фильтрами отображаются в верхней части разделов системы (Рис. 1) или непосредственно на деталях." />
+<meta property="og:url" content="https://academy.terrasoft.ua/docs/user/bazis_platformy/dannye/filtry/filtry" />
+<meta property="og:title" content="Фильтры" />
+<meta property="og:description" content="В Creatio реализована возможность фильтровать записи в реестре разделов и деталей. Для поиска и фильтрации записей в разделах предусмотрены следующие инструменты:
+
+
+	Быстрый фильтр;
+	
+	
+	Стандартный фильтр;
+	
+	
+	Расширенный фильтр.
+	
+Для фильтрации записей на деталях используется только стандартный фильтр.
+
+Элементы управления фильтрами отображаются в верхней части разделов системы (Рис. 1) или непосредственно на деталях." />
+<meta name="Generator" content="Drupal 9 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="../../../../themes/custom/creatio/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="revision" href="filtry.html" />
+
+    <title>Фильтры | Creatio Academy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&amp;family=Open+Sans:ital,wght@0,300;0,400;0,600;1,400&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" media="all" href="../../../../sites/default/files/css/css_6lTP66__-yc6QXFp1zOwoeJ0HVigoYZP-SeoLLii000.css" />
+<link rel="stylesheet" media="all" href="../../../../sites/default/files/css/css_XQJDNhkF3xH5SZCcY-PI89Zu4nYIzQ5oR3SnUKyfXJU.css" />
+<link rel="stylesheet" media="print" href="../../../../sites/default/files/css/css_Zn4VHvcniOOtUwkIVwXzYr_0AI9gUVgZcPqaH4ViagU.css" />
+
+    
+  </head>
+  <body class="path-node page-node-type-user-documentation">
+          <!-- Google Tag Manager (noscript) -->
+      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KLLB8G"
+                        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+      <!-- End Google Tag Manager (noscript) -->
+    
+        
+      <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    <div class="creatio-page d-flex flex-column">
+        <div class="region region-informer">
+    <div id="block-terrasoftpidtrimueukrainu" class="block block-simple-block block-simple-blockterrasoft-pidtrimue-ukrainu">
+  
+    
+      <style type="text/css">
+<!--/*--><![CDATA[/* ><!--*/
+@import url(../../../../../../www.terrasoft.ua/themes/custom/creatio/css/components/informer.css)
+
+/*--><!]]>*/
+</style><div class="ts-swu">
+<div class="creatio-container">
+<div class="ts-swu__cont">
+<div><a class="ts-swu__link" href="https://www.terrasoft.ua/terrasoft-stands-with-ukraine" target="_blank">Україна понад усе!</a> <span><a href="https://www.terrasoft.ua/terrasoft-stands-with-ukraine" target="_blank">Приєднуйтеся</a> до допомоги!</span></div>
+</div>
+</div></div>
+
+  </div>
+
+  </div>
+
+  
+  <header role="banner">
+          <div class="creatio-region creatio-region_top">
+        <div class="creatio-container">
+            <div class="region region-top">
+    <div id="block-menutoggle" class="block block-simple-block block-simple-blockmenu-toggle">
+  
+    
+      <div class="menu-toggle"><span> </span></div>
+
+  </div>
+<div id="block-logowhite-2" class="block block-simple-block block-simple-blocklogo-white">
+  
+    
+      <p><a class="site-logo" href="../../../../../index.html" rel="home"><img src="../../../../themes/custom/creatio/logo-white.svg" /></a></p>
+
+  </div>
+<div id="block-search" class="block block-simple-block block-simple-blocksearch">
+  
+    
+      <div class="search">
+<form action="https://academy.terrasoft.ua/search" class="search-form" method="get"><input class="search-form__input" name="search" placeholder="Поиск" type="search" /><input class="search-form__button" type="submit" value="Поиск" /> </form>
+
+<div class="search-toggle"> </div>
+</div>
+
+  </div>
+<nav role="navigation" aria-labelledby="block-sitesua-menu" id="block-sitesua" class="block block-menu navigation menu--sites-ua">
+            
+  <h2 class="visually-hidden" id="block-sitesua-menu">Sites UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="https://www.terrasoft.ua/" rel="nofollow" target="_blank">Terrasoft</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://community.terrasoft.ua/" rel="nofollow" target="_blank">Community</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://marketplace.terrasoft.ua/" rel="nofollow" target="_blank">Marketplace</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+<div id="block-usermenu" class="block block-ts-user block-ts-user-menu-block">
+  
+    
+      <ul class="user-menu">
+      <li class="user-menu__item">
+      <a class="user-menu__link" href="https://profile.terrasoft.ua/user/login?destination=academy/ua/docs/user/bazis_platformy/dannye/filtry/filtry">Войти</a>
+    </li>
+  </ul>
+
+  </div>
+<div id="block-usermenumobile" class="block block-ts-user block-ts-user-menu-mobile-block">
+  
+    
+      <ul class="user-menu-mobile">
+      <li class="user-menu-mobile__item">
+      <div class="user-menu-mobile__user user-menu-mobile__user_icon"></div>
+      <ul class="user-menu-mobile__submenu">
+        <li class="user-menu-mobile__subitem">
+          <a class="user-menu-mobile__sublink" href="https://profile.terrasoft.ua/user/login?destination=academy/ua/docs/user/bazis_platformy/dannye/filtry/filtry">Войти</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  </div>
+
+  </div>
+
+        </div>
+      </div>
+              <div class="creatio-region creatio-region_header">
+        <div class="creatio-container">
+            <div class="region region-header">
+    <div id="block-logo" class="block block-simple-block block-simple-blocklogo">
+  
+    
+      <p><a class="site-logo" href="../../../../../index.html" rel="home"><img src="../../../../themes/custom/creatio/logo.svg" /></a></p>
+
+  </div>
+<nav role="navigation" aria-labelledby="block-osnovnayanavigaciyaua-menu" id="block-osnovnayanavigaciyaua" class="block block-menu navigation menu--main-ua">
+            
+  <h2 class="visually-hidden" id="block-osnovnayanavigaciyaua-menu">Основная навигация UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="../../../../index.html" data-drupal-link-system-path="&lt;front&gt;">Документация</a>
+              </li>
+                <li class="menu-item">
+        <a href="../../../../../trainings.html">Тренинги</a>
+              </li>
+                <li class="menu-item">
+        <a href="../../../../certification.html" data-drupal-link-system-path="node/3084">Сертификация и тестирование</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+<nav role="navigation" aria-labelledby="block-sitesua-2-menu" id="block-sitesua-2" class="block block-menu navigation menu--sites-ua">
+            
+  <h2 class="visually-hidden" id="block-sitesua-2-menu">Sites UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="https://www.terrasoft.ua/" rel="nofollow" target="_blank">Terrasoft</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://community.terrasoft.ua/" rel="nofollow" target="_blank">Community</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://marketplace.terrasoft.ua/" rel="nofollow" target="_blank">Marketplace</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+
+  </div>
+
+        </div>
+      </div>
+              <div class="creatio-region creatio-region_breadcrumb">
+        <div class="creatio-container">
+            <div class="region region-breadcrumb">
+    <div id="block-logowhite" class="block block-simple-block block-simple-blocklogo-white">
+  
+    
+      <p><a class="site-logo" href="../../../../../index.html" rel="home"><img src="../../../../themes/custom/creatio/logo-white.svg" /></a></p>
+
+  </div>
+<div id="block-breadcrumbnaviagtion" class="block block-ts-nav block-ts-nav-bread">
+  
+    
+      <nav class="breadcrumb"><ol class="ts-nav-breadcrumb__list"><li class="ts-nav-breadcrumb__item"><a href="../../../../index.html" class="ts-nav-breadcrumb__link" title="Документация">Документация</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../../indexd993.html?vid_1=1" class="ts-nav-breadcrumb__link" title="Для пользователя">Для пользователя</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../bazis_platformy.html" class="ts-nav-breadcrumb__link" title="Базис платформы" hreflang="zxx">Базис платформы</a></li>
+<li class="ts-nav-breadcrumb__item ts-nav-breadcrumb__item_mobile"><a href="../../dannye.html" class="ts-nav-breadcrumb__link" title="Данные" hreflang="zxx">Данные</a></li>
+<li class="ts-nav-breadcrumb__item"><span class="ts-nav-breadcrumb__link ts-nav-breadcrumb__link_current" title="Фильтры">Фильтры</span></li>
+</ol>
+</nav>
+
+  </div>
+<div id="block-search-2" class="block block-simple-block block-simple-blocksearch">
+  
+    
+      <div class="search">
+<form action="https://academy.terrasoft.ua/search" class="search-form" method="get"><input class="search-form__input" name="search" placeholder="Поиск" type="search" /><input class="search-form__button" type="submit" value="Поиск" /> </form>
+
+<div class="search-toggle"> </div>
+</div>
+
+  </div>
+
+  </div>
+
+        </div>
+      </div>
+      </header>
+
+  <div class="creatio-region creatio-region_main">
+    <div class="creatio-container">
+                <div class="region region-breadcrumb-mobile">
+    <div id="block-breadcrumbnaviagtion-2" class="block block-ts-nav block-ts-nav-bread">
+  
+    
+      <nav class="breadcrumb"><ol class="ts-nav-breadcrumb__list"><li class="ts-nav-breadcrumb__item"><a href="../../../../index.html" class="ts-nav-breadcrumb__link" title="Документация">Документация</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../../indexd993.html?vid_1=1" class="ts-nav-breadcrumb__link" title="Для пользователя">Для пользователя</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../bazis_platformy.html" class="ts-nav-breadcrumb__link" title="Базис платформы" hreflang="zxx">Базис платформы</a></li>
+<li class="ts-nav-breadcrumb__item ts-nav-breadcrumb__item_mobile"><a href="../../dannye.html" class="ts-nav-breadcrumb__link" title="Данные" hreflang="zxx">Данные</a></li>
+<li class="ts-nav-breadcrumb__item"><span class="ts-nav-breadcrumb__link ts-nav-breadcrumb__link_current" title="Фильтры">Фильтры</span></li>
+</ol>
+</nav>
+
+  </div>
+
+  </div>
+
+      
+      <main class="creatio-main" role="main">
+                                                    
+        <div class="creatio-content creatio-content_small">
+          <div class="creatio-content__inner creatio-content__inner_bg">
+                            <div class="region region-messages">
+    <div data-drupal-messages-fallback class="hidden"></div>
+
+  </div>
+
+            
+              <div class="region region-content">
+    <div id="block-creatio-page-title" class="block block-core block-page-title-block">
+  
+    
+      
+  <h1 class="page-title"><span class="field field--name-title field--type-string field--label-hidden">Фильтры</span>
+</h1>
+
+
+  </div>
+<div id="block-creatio-content" class="block block-system block-system-main-block">
+  
+    
+      
+<article data-history-node-id="2646" role="article" about="/docs/user/bazis_platformy/dannye/filtry/filtry" class="node node--type-user-documentation node--view-mode-full">
+
+  
+    
+
+  
+  <div class="node__content">
+      <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-ts-doc block-ts-doc-downloads">
+  
+    
+      <a href="../../../../sites/default/files/pdf/node/2646/Filtry_.pdf" target="_blank">PDF</a>
+  </div>
+<div class="block block-ts-doc block-ts-doc-versions">
+  
+    
+        <div class="ts-doc-versions">
+    <select class="ts-doc-versions__select">
+                                                <option value="/docs/8-0/user/bazis_platformy/dannye/filtry/filtry" selected>Версия 8.0</option>
+                              <option value="/docs/7-18/user/bazis_platformy/dannye/filtry/filtry">Версия 7.18</option>
+                              <option value="/docs/7-17/user/bazis_platformy/dannye/filtry/filtry">Версия 7.17</option>
+          </select>
+  </div>
+
+  </div>
+
+    </div>
+  </div>
+  <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocknodeuser-documentationfield-product">
+  
+    
+      
+  <div class="field field--name-field-product field--type-entity-reference field--label-above">
+    <div class="field__label">Продукты</div>
+          <div class="field__items">
+              <div class="field__item">Все продукты</div>
+              </div>
+      </div>
+
+  </div>
+<div class="block block-layout-builder block-field-blocknodeuser-documentationbody">
+  
+    
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><p>В Creatio реализована возможность фильтровать записи в реестре разделов и деталей. Для поиска и фильтрации записей в разделах предусмотрены следующие инструменты:</p>
+
+<ul><li>
+	<p>Быстрый фильтр;</p>
+	</li>
+	<li>
+	<p>Стандартный фильтр;</p>
+	</li>
+	<li>
+	<p>Расширенный фильтр.</p>
+	</li>
+</ul><p>Для фильтрации записей на деталях используется только стандартный фильтр.</p>
+
+<p>Элементы управления фильтрами отображаются в верхней части разделов системы (<a href="#XREF_64905_71"><span>Рис. 1</span></a>) или непосредственно на деталях.</p>
+
+<div class="media">
+<div class="media__caption"><span class="FM_Picturecaptionnumber">Рис. 1</span><a name="XREF_64905_71" id="XREF_64905_71"></a> — Область фильтрации</div>
+
+<div class="media__element"><img alt="scr_filters_menu.png" id="image0" src="../../../../sites/default/files/documentation/user/ru/base/BPMonlineHelp/chapter_filters/scr_filters_menu.png" /> </div>
+</div>
+
+<p>Управление стандартным и расширенным фильтрами в разделах осуществляется в меню <span class="key">Фильтр</span>. Изменить параметры установленного фильтра в разделе или на детали можно, кликнув по нему и изменив нужные поля в области настройки фильтров.</p>
+
+<p>Настроенные вами фильтры сохраняются при обновлении страницы, переходе между разделами и при повторном входе в систему. Чтобы отменить один из установленных фильтров, нажмите кнопку <img alt="btn_com_quick_filter_cancel.png" id="image1" src="../../../../sites/default/files/documentation/user/ru/base/BPMonlineHelp/chapter_filters/btn_com_quick_filter_cancel.png" /> в его правой части (<a href="#XREF_79003_1_45"><span>Рис. 2</span></a>).</p>
+
+<div class="media">
+<div class="media__caption"><span class="FM_Picturecaptionnumber">Рис. 2</span><a name="XREF_79003_1_45" id="XREF_79003_1_45"></a> — Отмена одного фильтра</div>
+
+<div class="media__element"><img alt="scr_filters_filter_delete.png" id="image2" src="../../../../sites/default/files/documentation/user/ru/base/BPMonlineHelp/chapter_filters/scr_filters_filter_delete.png" /> </div>
+</div>
+
+<div class="message">
+<p><span class="message__bold">На заметку.</span> В меню <span class="key">Фильтр</span> также осуществляется управление группами. Если какие-либо группы были отмечены как избранные, их список будет отображен в меню <span class="key">Фильтр</span>. Подробнее читайте в статье “<a href="../gryppy/gruppy/index.html">Группы</a>”.</p>
+</div>
+
+<h2><a name="TOC_Быстрый_фильтрbc-1" id="TOC_Быстрый_фильтрbc-1"></a><a name="TOC_Быстрый_фильтр" id="TOC_Быстрый_фильтр"></a><a name="CSH_2" id="CSH_2"></a><a name="HT_chapter_filters_quick_filter" id="HT_chapter_filters_quick_filter"></a><a name="XREF_84514" id="XREF_84514"></a>Быстрый фильтр<a class="title-anchor" href="#title-2646-1" id="title-2646-1"> </a></h2>
+
+<p><span class="FM_BlockName">Быстрый фильтр</span> отображается в некоторых разделах Creatio и используется для фильтрации данных по наиболее часто используемым параметрам (<a href="#XREF_84486_1_3"><span>Рис.  3</span></a>).</p>
+
+<div class="media">
+<div class="media__caption"><span class="FM_Picturecaptionnumber">Рис. 3</span> — Пример быстрого фильтра</div>
+
+<div class="media__element"><img alt="scr_filters_quick_filter_example.png" id="image3" src="../../../../sites/default/files/documentation/user/ru/base/BPMonlineHelp/chapter_filters/scr_filters_quick_filter_example.png" /> </div>
+</div>
+
+<p>Например, быстрый фильтр присутствует в разделе <span class="key">Активности</span>, т.к. чаще всего нужно просматривать активности одного сотрудника за указанный период времени. Быстрые фильтры в разделах по умолчанию активны. При этом набор полей для фильтрации в различных разделах может отличаться.</p>
+
+<h3><a name="TOC_Быстрый_фильтр_по_периодуbc-2" id="TOC_Быстрый_фильтр_по_периодуbc-2"></a><a name="TOC_Быстрый_фильтр_по_периоду" id="TOC_Быстрый_фильтр_по_периоду"></a><a name="XREF_59706" id="XREF_59706"></a>Быстрый фильтр по периоду<a class="title-anchor" href="#title-2646-2" id="title-2646-2"> </a></h3>
+
+<p>Вы можете использовать фильтры по периоду, например, чтобы отобразить активности за текущую или прошлую неделю.</p>
+
+<p>В системе есть три вида быстрых фильтров по периоду:</p>
+
+<ul><li>
+	<p><img alt="btn_com_filter_day.png" id="image4" src="../../../../sites/default/files/documentation/user/ru/base/BPMonlineHelp/chapter_filters/btn_com_filter_day.png" /> — отображает записи текущего дня.</p>
+	</li>
+	<li>
+	<p><img alt="btn_com_filter_week.png" id="image5" src="../../../../sites/default/files/documentation/user/ru/base/BPMonlineHelp/chapter_filters/btn_com_filter_week.png" /> — отображает записи текущей недели.</p>
+	</li>
+	<li>
+	<p><img alt="btn_com_menu_period.png" id="image6" src="../../../../sites/default/files/documentation/user/ru/base/BPMonlineHelp/chapter_filters/btn_com_menu_period.png" /> — отображает записи стандартного периода, например, “Вчера”, “Текущая неделя”, “Следующая неделя”, “Прошлый месяц” и т. п. Вы также можете установить произвольный период, указав даты его начала и завершения при помощи встроенного календаря.</p>
+	</li>
+</ul><div class="message">
+<p><span class="message__bold">На заметку.</span> Прошлой, текущей и следующей неделей или месяцем считается календарный период. Например, если прошлый месяц — декабрь, то в разделе Активности при выборе периода “Прошлый месяц” будут отображены активности за период с 1 по 31 декабря.</p>
+
+<p>Чтобы отобразить в реестре записи за квартал, полугодие или другие стандартные периоды, используйте <span><a href="#title-2646-15">фильтрацию по периоду</a></span> расширенного фильтра.</p>
+</div>
+
+<p>Для установки произвольного периода фильтрации выберите дату начала и дату завершения периода во встроенном календаре фильтра. Календарь открывается при нажатии на дату начала или завершения периода (<a href="#XREF_49932_22"><span>Рис. 4</span></a>).</p>
+
+<div class="media">
+<div class="media__caption"><span class="FM_Picturecaptionnumber">Рис. 4 </span>— Открытие календаря фильтра</div>
+
+<div class="media__element"><img alt="scr_filters_quick_filter_calendar.png" id="image7" src="../../../../sites/default/files/documentation/user/ru/base/BPMonlineHelp/chapter_filters/scr_filters_quick_filter_calendar.png" /> </div>
+</div>
+
+<h3><a name="TOC_Быстрый_фильтр_поbc-3" id="TOC_Быстрый_фильтр_поbc-3"></a><a name="TOC_Быстрый_фильтр_по" id="TOC_Быстрый_фильтр_по"></a><a name="XREF_72733" id="XREF_72733"></a>Быстрый фильтр по ответственному<a class="title-anchor" href="#title-2646-3" id="title-2646-3"> </a></h3>
+
+<p>Фильтр по ответственному используется, чтобы отобразить записи по одному или нескольким ответственным по записям, а в разделе  <span class="key">Активности </span>  — по участникам. В разделе <span class="key">Активности </span>  фильтр называется <span class="key">По сотруднику</span>.</p>
+
+<p>Для просмотра данных по конкретному пользователю выберите его имя в меню фильтра <img alt="btn_com_menu_filter_owner_73.png" id="image8" src="../../../../sites/default/files/documentation/user/ru/base/BPMonlineHelp/chapter_filters/btn_com_menu_filter_owner_73.png" />. Для просмотра данных по нескольким ответственным выберите в меню команду <span class="key">Добавить ответственного</span> или <span class="key">Добавить сотрудника</span> и в открывшемся окне укажите необходимого пользователя.</p>
+
+<p>Для отмены фильтрации по ответственным в меню фильтра выберите команду <span class="key">Очистить</span>.</p>
+
+<h2><a name="TOC_Стандартный_фильтрbc-4" id="TOC_Стандартный_фильтрbc-4"></a><a name="TOC_Стандартный_фильтр" id="TOC_Стандартный_фильтр"></a><a name="CSH_3" id="CSH_3"></a><a name="HT_chapter_filters_standard_expanded_filter" id="HT_chapter_filters_standard_expanded_filter"></a><a name="XREF_55366" id="XREF_55366"></a>Стандартный фильтр<a class="title-anchor" href="#title-2646-4" id="title-2646-4"> </a></h2>
+
+<p><span class="FM_BlockName">Стандартный фильтр</span> используется для поиска записей в разделах системы или на деталях по указанным значениям одной или нескольких колонок. Например, если необходимо найти всех контрагентов заданного типа или отобрать активности в заданном состоянии и определенного приоритета.</p>
+
+<div class="media">
+<div class="media__caption"><span class="FM_Picturecaptionnumber">Рис. 5</span> — Пример стандартного фильтра, установленного в разделе <span class="key">Активности</span></div>
+
+<div class="media__element"><img alt="scr_filters_standard_filter_example.png" id="image9" src="../../../../sites/default/files/documentation/user/ru/base/BPMonlineHelp/chapter_filters/scr_filters_standard_filter_example.png" /> </div>
+</div>
+
+<h3><a name="TOC_Установка_стандартногоbc-5" id="TOC_Установка_стандартногоbc-5"></a><a name="TOC_Установка_стандартного" id="TOC_Установка_стандартного"></a><a name="XREF_15090" id="XREF_15090"></a>Установить стандартный фильтр в разделе<a class="title-anchor" href="#title-2646-5" id="title-2646-5"> </a></h3>
+
+<ol class="start"><li>
+	<p>В меню <span class="key">Фильтр</span> выберите команду <span class="key">Добавить условие</span> (<a href="#XREF_43218_72"><span>Рис. 6</span></a>).</p>
+
+	<div class="media">
+	<div class="media__caption"><span class="FM_Picturecaptionnumber">Рис. 6</span><a name="XREF_43218_72" id="XREF_43218_72"></a> — Добавление условия стандартной фильтрации в разделе</div>
+
+	<div class="media__element"><img alt="scr_filters_standard_filter_select.png" id="image10" src="../../../../sites/default/files/documentation/user/ru/base/BPMonlineHelp/chapter_filters/scr_filters_standard_filter_select.png" /> </div>
+	</div>
+	</li>
+	<li>В появившихся полях укажите условие фильтрации. Выберите из списка колонку, по которой необходимо осуществить поиск, и укажите значение колонки (целиком или его фрагмент). Для применения условия фильтрации нажмите кнопку <img alt="btn_com_apply.png" id="image11" src="../../../../sites/default/files/documentation/user/ru/base/BPMonlineHelp/chapter_filters/btn_com_apply.png" /> (<a href="#XREF_24885_73"><span>Рис. 7</span></a>).
+	<div class="media">
+	<div class="media__caption"><span class="FM_Picturecaptionnumber">Рис. 7</span> — Применение условия стандартной фильтрации в разделе</div>
+
+	<div class="media__element"><img alt="scr_filters_standard_filter_apply.png" id="image12" src="../../../../sites/default/files/documentation/user/ru/base/BPMonlineHelp/chapter_filters/scr_filters_standard_filter_apply.png" /> </div>
+	</div>
+
+	<p>В результате в разделе будут отображены только те записи, которые соответствуют примененному фильтру.</p>
+	</li>
+</ol><h3><a name="TOC_Установка_несколькихbc-6" id="TOC_Установка_несколькихbc-6"></a><a name="TOC_Установка_нескольких" id="TOC_Установка_нескольких"></a><a name="XREF_75038" id="XREF_75038"></a>Установить несколько стандартных фильтров в разделе<a class="title-anchor" href="#title-2646-6" id="title-2646-6"> </a></h3>
+
+<p>В одном разделе могут быть применены сразу несколько стандартных фильтров. Для этого после установки первого фильтра еще раз выберите команду <span class="key">Добавить условие</span> в меню <span class="key">Фильтр</span> и укажите новое условие фильтрации. После установки нескольких стандартных фильтров в разделе будут отображены только те записи, которые соответствуют всем указанным условиям.</p>
+
+<h3><a name="TOC_Установка_стандартного1bc-7" id="TOC_Установка_стандартного1bc-7"></a><a name="TOC_Установка_стандартного1" id="TOC_Установка_стандартного1"></a><a name="XREF_19288" id="XREF_19288"></a>Установить стандартный фильтр на детали<a class="title-anchor" href="#title-2646-7" id="title-2646-7"> </a></h3>
+
+<ol class="start"><li>
+	<p>В меню кнопки <img alt="btn_detail_menu.png" id="image13" src="../../../../sites/default/files/documentation/user/ru/base/BPMonlineHelp/chapter_filters/btn_detail_menu.png" /> выберите команду <span class="key">Установить фильтр</span> (<a href="#XREF_13268_31"><span>Рис. 8</span></a>).</p>
+
+	<div class="media">
+	<div class="media__caption"><span class="FM_Picturecaptionnumber">Рис. 8</span> — Добавление условия стандартной фильтрации на детали</div>
+
+	<div class="media__element"><img alt="scr_filters_set_detail_filter.png" id="image14" src="../../../../sites/default/files/documentation/user/ru/base/BPMonlineHelp/chapter_filters/scr_filters_set_detail_filter.png" /> </div>
+	</div>
+	</li>
+	<li>
+	<p>В появившихся полях укажите условие фильтрации. Выберите из списка колонку, по которой необходимо осуществить поиск, и укажите значение колонки (целиком или его фрагмент). Для применения условия фильтрации нажмите кнопку <img alt="btn_com_apply00001.png" id="image15" src="../../../../sites/default/files/documentation/user/ru/base/BPMonlineHelp/chapter_filters/btn_com_apply00001.png" /> (<a href="#XREF_39865_32"><span>Рис. 9</span></a>).</p>
+
+	<div class="media">
+	<div class="media__caption"><span class="FM_Picturecaptionnumber">Рис. 9</span> — Применение условия стандартной фильтрации на детали</div>
+
+	<div class="media__element"><img alt="scr_filters_set_detail_filter2.png" id="image16" src="../../../../sites/default/files/documentation/user/ru/base/BPMonlineHelp/chapter_filters/scr_filters_set_detail_filter2.png" /> </div>
+	</div>
+	</li>
+</ol><p class="indent">В результате на детали будут отображены только те записи, которые соответствуют указанному фильтру.</p>
+
+<div class="message">
+<p><span class="message__bold">На заметку.</span> Установка фильтрации возможна только на деталях с <span><a href="../../interfejs/reestr/reestr_razdela.html#HT_chapter_list_setting">реестром</a></span>.</p>
+</div>
+
+<h3><a name="TOC_Установка_нескольких1bc-8" id="TOC_Установка_нескольких1bc-8"></a><a name="TOC_Установка_нескольких1" id="TOC_Установка_нескольких1"></a><a name="XREF_62977" id="XREF_62977"></a>Установить несколько стандартных фильтров на детали<a class="title-anchor" href="#title-2646-8" id="title-2646-8"> </a></h3>
+
+<p>На одной детали могут быть применены сразу несколько стандартных фильтров. Для этого после установки первого фильтра нажмите кнопку <img alt="btn_detail_filter.png" id="image17" src="../../../../sites/default/files/documentation/user/ru/base/BPMonlineHelp/chapter_filters/btn_detail_filter.png" /> и укажите новое условие фильтрации. После установки нескольких стандартных фильтров на детали будут отображены только те записи, которые соответствуют всем указанным условиям.</p>
+
+<h3><a name="TOC_Отмена_отображенияbc-9" id="TOC_Отмена_отображенияbc-9"></a><a name="TOC_Отмена_отображения" id="TOC_Отмена_отображения"></a><a name="XREF_34794" id="XREF_34794"></a>Скрыть панель фильтрации на детали<a class="title-anchor" href="#title-2646-9" id="title-2646-9"> </a></h3>
+
+<p>Панель фильтрации на детали скрывается автоматически после обновления страницы. Чтобы скрыть панель вручную, в меню кнопки <img alt="btn_detail_menu00002.png" id="image18" src="../../../../sites/default/files/documentation/user/ru/base/BPMonlineHelp/chapter_filters/btn_detail_menu00002.png" /> выберите действие <span class="key">Скрыть фильтр</span> (<a href="#XREF_89243_33"><span>Рис. 10</span></a>).</p>
+
+<div class="media">
+<div class="media__caption"><span class="FM_Picturecaptionnumber">Рис. 10</span><a name="XREF_89243_33" id="XREF_89243_33"></a> — Скрытие области фильтрации на детали</div>
+
+<div class="media__element"><img alt="scr_filters_hide_detail_filter.png" id="image19" src="../../../../sites/default/files/documentation/user/ru/base/BPMonlineHelp/chapter_filters/scr_filters_hide_detail_filter.png" /> </div>
+</div>
+
+<div class="message message_warning">
+<p><span class="message__bold message__bold_warning">Важно.</span> Действие доступно, когда на детали не установлены условия фильтрации.</p>
+</div>
+
+<div class="message">
+<p><span class="message__bold">На заметку.</span> Вы можете сворачивать и разворачивать деталь по кнопке <img alt="btn_detail_show_and_hide.png" id="image20" src="../../../../sites/default/files/documentation/user/ru/base/BPMonlineHelp/chapter_filters/btn_detail_show_and_hide.png" /> без потери настроенных условий фильтрации.</p>
+</div>
+
+<h2><a name="TOC_Расширенный_фильтрbc-10" id="TOC_Расширенный_фильтрbc-10"></a><a name="TOC_Расширенный_фильтр" id="TOC_Расширенный_фильтр"></a><a name="CSH_4" id="CSH_4"></a><a name="HT_chapter_filters_expanded_filter" id="HT_chapter_filters_expanded_filter"></a><a name="XREF_20034" id="XREF_20034"></a>Расширенный фильтр<a class="title-anchor" href="#title-2646-10" id="title-2646-10"> </a></h2>
+
+<p>Если к записям необходимо применить более сложный фильтр, состоящий из нескольких параметров и условий поиска, то используйте <span class="FM_BlockName">расширенный фильтр</span>. Например, при помощи расширенной фильтрации вы можете отобразить в разделе <span class="key">Активности</span> все встречи по новым клиентам.</p>
+
+<p>Для установки расширенного фильтра используется команда <span class="key">Перейти в расширенный режим</span> меню <span class="key">Фильтр</span> (<a href="#XREF_23961_8_4"><span>Рис. 11</span></a>).</p>
+
+<div class="media">
+<div class="media__caption"><span class="FM_Picturecaptionnumber">Рис. 11</span><a name="XREF_23961_8_4" id="XREF_23961_8_4"></a> — Переход в расширенный режим фильтрации</div>
+
+<div class="media__element"><img alt="scr_filters_advanced_filter_select_2.png" id="image21" src="../../../../sites/default/files/documentation/user/ru/base/BPMonlineHelp/chapter_filters/scr_filters_advanced_filter_select_2.png" /> </div>
+
+<p>Если данные, полученные в результате фильтрации, вы используете регулярно, то создайте по настроенному фильтру динамическую группу, нажав кнопку <span class="key">Сохранить как</span>. </p>
+</div>
+
+<h3><a name="TOC_Установка_расширенногоbc-11" id="TOC_Установка_расширенногоbc-11"></a><a name="TOC_Установка_расширенного" id="TOC_Установка_расширенного"></a><a name="CSH_5" id="CSH_5"></a><a name="HT_chapter_filters_filter_by_object" id="HT_chapter_filters_filter_by_object"></a><a name="XREF_73206" id="XREF_73206"></a>Установить фильтр по колонкам объекта<a class="title-anchor" href="#title-2646-11" id="title-2646-11"> </a></h3>
+
+<p>Вы можете настроить фильтр по колонкам текущего объекта (например, колонка <span class="key">Дата завершения</span> объекта “Активность” или колонка <span class="key">Должность</span> объекта “Контакт”).</p>
+
+<p>Например, чтобы в разделе <span class="key">Активности</span> отобрать незавершенные активности, которые были изменены за последние две недели:</p>
+
+<ol class="start"><li>
+	<p>Откройте раздел <span class="key">Активности</span>. В меню <span class="key">Фильтр</span> выберите команду <span class="key">Перейти в расширенный режим</span>.</p>
+	</li>
+	<li>
+	<p>В области настройки фильтров нажмите на ссылку &lt;Добавить условие&gt;.</p>
+	</li>
+	<li>
+	<p>В открывшемся окне в поле <span class="key">Колонка</span> выберите интересующую колонку, например, <span class="key">Состояние</span>, и нажмите кнопку <span class="key">Выбрать</span> (<a href="#XREF_61354_74"><span>Рис. 12</span></a>).</p>
+
+	<div class="media">
+	<div class="media__caption"><span class="FM_Picturecaptionnumber">Рис. 12</span><a name="XREF_61354_74" id="XREF_61354_74"></a> — Выбор колонки для расширенного фильтра</div>
+
+	<div class="media__element"><img alt="scr_filters_advanced_filter_select_column.png" id="image22" src="../../../../sites/default/files/documentation/user/ru/base/BPMonlineHelp/chapter_filters/scr_filters_advanced_filter_select_column.png" /> </div>
+	</div>
+	</li>
+	<li>
+	<p>На странице настройки фильтров установите необходимые параметры условия:</p>
+
+	<ol class="inner"><li>
+		<p>Выберите тип условия, кликнув по его символу, например, “=”.</p>
+		</li>
+		<li>
+		<p>Нажмите на ссылку &lt;?&gt;. В открывшемся окне отметьте необходимые значения для выбранной колонки, например, “Не начата” и “В работе”. Нажмите кнопку <span class="key">Выбрать</span> (<a href="#XREF_34205_75"><span>Рис. 13</span></a>).</p>
+
+		<div class="media">
+		<div class="media__caption"><span class="FM_Picturecaptionnumber">Рис. 13</span> — Выбор значения для колонки</div>
+
+		<div class="media__element"><img alt="scr_filters_advanced_filter_select_column_value.png" id="image23" src="../../../../sites/default/files/documentation/user/ru/base/BPMonlineHelp/chapter_filters/scr_filters_advanced_filter_select_column_value.png" /> </div>
+		</div>
+		</li>
+	</ol></li>
+	<li>
+	<p>Повторите предыдущие пункты, чтобы добавить другие необходимые условия. Например, установите пороговые значения для даты изменения записей.</p>
+	</li>
+	<li>
+	<p>Установите логический оператор для заданных условий, например, “И”, кликнув по нему (<a href="#XREF_34205_75"><span>Рис. 14</span></a>).</p>
+
+	<div class="media">
+	<div class="media__caption"><span class="FM_Picturecaptionnumber">Рис. 14</span><a name="XREF_64050_8_5" id="XREF_64050_8_5"></a> — Выбор логического оператора</div>
+
+	<div class="media__element"><img alt="scr_filters_advanced_filter_select_operator.png" id="image24" src="../../../../sites/default/files/documentation/user/ru/base/BPMonlineHelp/chapter_filters/scr_filters_advanced_filter_select_operator.png" /> </div>
+	</div>
+
+	<div class="message">
+	<p><span class="message__bold">На заметку.</span> По умолчанию область условий фильтра содержит одну пустую корневую группу с логическим оператором “И”. Логический оператор “И” используется, если необходимо, чтобы искомая запись соответствовала всем условиям группы. Если запись должна соответствовать хотя бы одному из условий группы, выберите логический оператор “ИЛИ”.<br />
+	При использовании условия “≠” учитываются записи, у которых выбранное поле не заполнено.</p>
+	</div>
+	</li>
+	<li>
+	<p>Нажмите кнопку <span class="key">Применить</span>.</p>
+
+	<p>В результате в разделе <span class="key">Активности</span> будут отображены только незавершенные активности, которые были изменены в течение указанного периода.</p>
+	</li>
+</ol><h3><a name="TOC_Установка_расширенного1bc-12" id="TOC_Установка_расширенного1bc-12"></a><a name="TOC_Установка_расширенного1" id="TOC_Установка_расширенного1"></a><a name="CSH_6" id="CSH_6"></a><a name="HT_chapter_filters_filter_by_linked_object" id="HT_chapter_filters_filter_by_linked_object"></a><a name="XREF_29886" id="XREF_29886"></a>Установить фильтр по колонкам связанных объектов<a class="title-anchor" href="#title-2646-12" id="title-2646-12"> </a></h3>
+
+<p>Вы можете отфильтровать записи не только по колонкам текущего объекта, но и по колонкам связанных с ним объектов. Например, для объекта “Активность” можно отфильтровать записи по колонке <span class="key">Тип</span> связанного объекта “Контрагент”. Например, чтобы в разделе <span class="key">Активности</span> отобрать активности только по компаниям определенного типа:</p>
+
+<ol class="inner"><li>Откройте раздел <span class="key">Активности</span>. В меню <span class="key">Фильтр</span> выберите команду <span class="key">Перейти в расширенный режим</span>.</li>
+	<li>Нажмите на ссылку &lt;Добавить условие&gt;.</li>
+	<li>На открывшейся странице выбора колонки:
+	<ol><li>
+		<p>Нажмите кнопку <img alt="btn_com_expand.png" id="image25" src="../../../../sites/default/files/documentation/user/ru/base/BPMonlineHelp/chapter_filters/btn_com_expand.png" /> возле наименования объекта.</p>
+		</li>
+		<li>
+		<p>В добавившемся поле выберите связанный объект, например, “Контрагент”.</p>
+		</li>
+		<li>
+		<p>В поле <span class="key">Колонка</span> укажите колонку связанного объекта, например, “Тип”.</p>
+		</li>
+		<li>
+		<p>Нажмите кнопку <span class="key">Выбрать</span> (<a href="#XREF_50189_92"><span>Рис. 15</span></a>).</p>
+
+		<div class="media">
+		<div class="media__caption"><span class="FM_Picturecaptionnumber">Рис. 15</span><a name="XREF_50189_92" id="XREF_50189_92"></a> — Выбор колонки связанного объекта</div>
+
+		<div class="media__element"><img alt="scr_filters_advanced_filter_select_related_column.png" id="image26" src="../../../../sites/default/files/documentation/user/ru/base/BPMonlineHelp/chapter_filters/scr_filters_advanced_filter_select_related_column.png" /> </div>
+		</div>
+		</li>
+	</ol></li>
+</ol><ol><li>
+	<p>В области настройки фильтров установите необходимые параметры условия:</p>
+
+	<ol class="inner"><li>
+		<p>Выберите тип условия, кликнув по его символу. По умолчанию указано условие “=”.</p>
+		</li>
+		<li>
+		<p>Нажмите на ссылку &lt;?&gt;. В открывшемся окне отметьте необходимое значение для выбранной колонки, например, “Клиент”. Нажмите кнопку <span class="key">Выбрать</span>.</p>
+		</li>
+	</ol></li>
+	<li>
+	<p>Нажмите кнопку <span class="key">Применить</span> (<a href="#XREF_33472_93"><span>Рис. 16</span></a>).</p>
+
+	<div class="media">
+	<div class="media__caption"><span class="FM_Picturecaptionnumber">Рис. 16</span> — Применение условий фильтрации</div>
+
+	<div class="media__element"><img alt="scr_filters_advanced_filter_save_related.png" id="image27" src="../../../../sites/default/files/documentation/user/ru/base/BPMonlineHelp/chapter_filters/scr_filters_advanced_filter_save_related.png" /> </div>
+	</div>
+
+	<p>В результате в разделе будут отображены только активности по контрагентам, которые относятся к типу “Клиент”.</p>
+
+	<div class="message">
+	<p><span class="message__bold">На заметку.</span> В данном примере при установке фильтра &lt;Контрагент.Тип ≠ Клиент&gt; в разделе будут отображены как активности по тем контрагентам, которые не являются клиентами, так и по тем, у которых тип не указан.</p>
+	</div>
+	</li>
+</ol><p>Если данные, полученные в результате фильтрации, вы используете регулярно, то создайте по настроенному фильтру динамическую группу, нажав кнопку <span class="key">Сохранить как</span>.</p>
+
+<h3><a name="TOC_Установка_расширенного2bc-13" id="TOC_Установка_расширенного2bc-13"></a><a name="TOC_Установка_расширенного2" id="TOC_Установка_расширенного2"></a><a name="CSH_7" id="CSH_7"></a><a name="HT_chapter_filters_filter_with_group_of_constraints" id="HT_chapter_filters_filter_with_group_of_constraints"></a><a name="XREF_54840" id="XREF_54840"></a>Установить фильтр с группировкой условий фильтрации<a class="title-anchor" href="#title-2646-13" id="title-2646-13"> </a></h3>
+
+<p>Рассмотрим последовательность построения расширенного фильтра, для которого необходимо использовать несколько логических операторов. Например, чтобы в разделе <span class="FM_BlockName"><span class="key">Контрагенты</span> </span>отобразить всех клиентов, для которых или указан город “Москва”, или город не указан:</p>
+
+<ol class="start"><li>
+	<p>Откройте раздел <span class="key"><span class="FM_BlockName">Контрагенты</span></span>. В меню <span class="key">Фильтр</span> выберите команду <span class="key">Перейти в расширенный режим</span>.</p>
+	</li>
+	<li>
+	<p>Для установки условия “Тип = Клиент”:</p>
+
+	<ol class="inner"><li>
+		<p>Нажмите на ссылку &lt;Добавить условие&gt;.</p>
+		</li>
+		<li>
+		<p>В открывшемся окне выберите колонку контрагента, например, “Тип”. Нажмите кнопку <span class="key">Выбрать</span>.</p>
+		</li>
+		<li>
+		<p>В области настройки фильтров нажмите на ссылку &lt;?&gt;. В открывшемся окне отметьте необходимое значение для выбранной колонки, например, “Клиент”. Нажмите кнопку <span class="key">Выбрать</span>.</p>
+		</li>
+	</ol></li>
+	<li>
+	<p>Аналогичным образом добавьте условие “Город = Москва”.</p>
+	</li>
+	<li>
+	<p>Для установки условия “Город не заполнено”:</p>
+
+	<ol class="inner"><li>
+		<p>Нажмите на ссылку &lt;Добавить условие&gt;.</p>
+		</li>
+		<li>
+		<p>В открывшемся окне выберите колонку “Город”. Нажмите кнопку <span class="key">Выбрать</span>.</p>
+		</li>
+		<li>
+		<p>В области настройки фильтров кликните по типу условия и в открывшемся списке выберите “Не заполнено”.</p>
+		</li>
+	</ol></li>
+	<li>
+	<p>Сгруппируйте необходимые условия и установите для них логический оператор:</p>
+
+	<ol class="inner"><li>
+		<p>Удерживая клавишу <span class="key">Ctrl</span>, выделите мышью те условия, которые необходимо сгруппировать для установки другого логического оператора (<a href="#XREF_42436_26"><span>Рис. 17</span></a>).</p>
+
+		<div class="media">
+		<div class="media__caption"><span class="FM_Picturecaptionnumber">Рис. 17</span><a name="XREF_42436_26" id="XREF_42436_26"></a> — Выделение условий фильтрации для группировки</div>
+
+		<div class="media__element"><img alt="scr_filters_advanced_filter_select_conditions.png" id="image28" src="../../../../sites/default/files/documentation/user/ru/base/BPMonlineHelp/chapter_filters/scr_filters_advanced_filter_select_conditions.png" /> </div>
+		</div>
+		</li>
+		<li>
+		<p>В меню кнопки <span class="key">Действия</span> выберите команду <span class="key">Группировать</span> (<a href="#XREF_49746_78"><span>Рис. 18</span></a>).</p>
+
+		<div class="media">
+		<div class="media__caption"><span class="FM_Picturecaptionnumber">Рис. 18</span><a name="XREF_49746_78" id="XREF_49746_78"></a> — Группировка условий фильтрации</div>
+
+		<div class="media__element"><img alt="scr_filters_advanced_filter_group.png" id="image29" src="../../../../sites/default/files/documentation/user/ru/base/BPMonlineHelp/chapter_filters/scr_filters_advanced_filter_group.png" /> </div>
+		</div>
+		</li>
+		<li>
+		<p>Кликнув по заголовку логического оператора, установите основной оператор “И” и оператор для созданной группы — “ИЛИ” (<a href="#XREF_13891_79"><span>Рис. 19</span></a>).</p>
+
+		<div class="media">
+		<div class="media__caption"><span class="FM_Picturecaptionnumber">Рис. 19</span><a name="XREF_13891_79" id="XREF_13891_79"></a> — Установка логического оператора для группы условий фильтров</div>
+
+		<div class="media__element"><img alt="scr_filters_advanced_filter_group_operator.png" id="image30" src="../../../../sites/default/files/documentation/user/ru/base/BPMonlineHelp/chapter_filters/scr_filters_advanced_filter_group_operator.png" /> </div>
+		</div>
+		</li>
+	</ol></li>
+	<li>
+	<p>Нажмите кнопку <span class="key">Применить</span>.<br />
+	В результате в разделе будут отображены контрагенты с типом “Клиент”, для которых в поле <span class="key">Город</span> либо указано “Москва”, либо нет значения.</p>
+	</li>
+</ol><h3><a name="TOC_Установка_агрегирующегоbc-14" id="TOC_Установка_агрегирующегоbc-14"></a><a name="TOC_Установка_агрегирующего" id="TOC_Установка_агрегирующего"></a><a name="CSH_8" id="CSH_8"></a><a name="HT_chapter_filters_filter_by_count" id="HT_chapter_filters_filter_by_count"></a><a name="XREF_20454" id="XREF_20454"></a>Установить агрегирующий фильтр<a class="title-anchor" href="#title-2646-14" id="title-2646-14"> </a></h3>
+
+<p>Агрегирующий фильтр позволяет отфильтровать записи одного объекта по связанным с ними записям в объекте с обратной связью. Существует несколько доступных условий фильтрации с использованием агрегирующего фильтра.</p>
+
+<ul><li>
+	<p><span class="FM_BlockName">Количество</span> — для фильтруемых записей существует определенное количество связанных записей в объекте с обратной связью. Например, можно отфильтровать сотрудников, являющихся ответственными по пяти и более контрагентам.</p>
+	</li>
+	<li>
+	<p><span class="FM_BlockName">Максимум / Минимум</span> — для фильтруемых записей в объекте с обратной связью есть связанные записи с определенным максимальным (минимальным) значением в числовой колонке или в колонке даты. Например, вы можете выбрать сотрудников, последняя задача которых была выполнена на прошлой неделе.</p>
+	</li>
+	<li>
+	<p><span class="FM_BlockName">Сумма, Среднее</span> — для фильтруемых записей в объекте с обратной связью есть связанные записи с определенной суммой значений или средним значением в числовой колонке. Например, можно отфильтровать сотрудников, у которых средняя продолжительность задач превышает 2 часа.</p>
+	</li>
+</ul><p>Процесс построения агрегирующего фильтра аналогичен процессу построения фильтра по колонкам связанных объектов. Например, необходимо получить список пользователей, которые являются ответственными по контрагентам с типом “Клиент”. Такой список можно получить при помощи агрегирующего фильтра:</p>
+
+<ol><li>Откройте раздел, записи которого необходимо отфильтровать, например, <span class="key"><span class="FM_BlockName">Контакты</span></span>. В меню <span class="key">Фильтр</span> выберите команду <span class="key">Перейти в расширенный режим</span>.</li>
+	<li>Нажмите на ссылку &lt;Добавить условие&gt;.</li>
+	<li>В открывшемся окне выбора колонки (<a href="#XREF_72339_97"><span>Рис. 20</span></a>):
+	<div class="media">
+	<div class="media__caption"><span class="FM_Picturecaptionnumber">Рис. 20</span><a name="XREF_72339_97" id="XREF_72339_97"></a> — Настройка колонки объекта с обратной связью в агрегирующем фильтре</div>
+
+	<div class="media__element"><img alt="scr_filters_aggregate_filter_select_related_column.png" id="image31" src="../../../../sites/default/files/documentation/user/ru/base/BPMonlineHelp/chapter_filters/scr_filters_aggregate_filter_select_related_column.png" /> </div>
+	</div>
+
+	<ol class="inner"><li>Нажмите кнопку <img alt="btn_com_expand00003.png" id="image32" src="../../../../sites/default/files/documentation/user/ru/base/BPMonlineHelp/chapter_filters/btn_com_expand00003.png" /> возле наименования объекта.</li>
+		<li>В добавившемся поле выберите объект с обратной связью. Например, чтобы построить агрегирующий фильтр по колонке <span class="key">Ответственный</span> раздела <span class="key">Контрагенты</span>, выберите “Контрагент (по колонке Ответственный)”.</li>
+		<li>
+		<p>В поле <span class="key">Колонка</span> укажите колонку объекта с обратной связью, например, “Количество”.</p>
+		</li>
+		<li>
+		<p>Нажмите кнопку <span class="key">Выбрать</span>.</p>
+		</li>
+	</ol></li>
+	<li>
+	<p>В области настройки фильтров (<a href="#XREF_54503_98"><span>Рис. 21</span></a>):</p>
+
+	<ol class="inner"><li>
+		<p>Укажите условие фильтра, в данном случае, “Количество &gt; 0”.</p>
+		</li>
+		<li>
+		<p>Установите дополнительные параметры фильтра. Например, если необходимо, чтобы отображались только ответственные по контрагентам с типом “Клиент”, добавьте это условие в фильтр.</p>
+
+		<div class="media">
+		<div class="media__caption"><span class="FM_Picturecaptionnumber">Рис. 21</span><a name="XREF_54503_98" id="XREF_54503_98"></a> — Применение условий фильтрации агрегирующего фильтра</div>
+
+		<div class="media__element"><img alt="scr_filters_aggregate_filter_applied.png" id="image33" src="../../../../sites/default/files/documentation/user/ru/base/BPMonlineHelp/chapter_filters/scr_filters_aggregate_filter_applied.png" /> </div>
+		</div>
+		</li>
+	</ol></li>
+	<li>
+	<p>Нажмите кнопку <span class="key">Применить</span>.</p>
+
+	<p>В результате запись будет отображена в разделе <span class="key"><span class="FM_BlockName">Контакты</span></span> только в том случае, если существует контрагент, у которого данный пользователь указан в поле <span class="key">Ответственный</span>.</p>
+	</li>
+</ol><h3><a name="TOC_Установка_фильтра_поbc-15" id="TOC_Установка_фильтра_поbc-15"></a><a name="TOC_Установка_фильтра_по" id="TOC_Установка_фильтра_по"></a><a name="CSH_9" id="CSH_9"></a><a name="HT_chapter_filters_filter_by_period" id="HT_chapter_filters_filter_by_period"></a><a name="XREF_38344" id="XREF_38344"></a>Установить фильтр по периоду<a class="title-anchor" href="#title-2646-15" id="title-2646-15"> </a></h3>
+
+<p>Вы можете настроить фильтрацию записей по определенному периоду или точной дате. Например, отобразить все данные, добавленные в раздел за прошедшую неделю.</p>
+
+<p>В Creatio доступны следующие виды фильтров по периоду:</p>
+
+<ul><li>
+	<p><span><a href="#HT_chapter_filters_filter_by_exact_date">фильтр по точной дате</a></span>;</p>
+	</li>
+	<li>
+	<p><span><a href="#HT_chapter_filters_filter_by_standard_period">фильтр по стандартному периоду</a></span>;</p>
+	</li>
+	<li>
+	<p><span><a href="#HT_chapter_filters_filter_annual_events">фильтр по ежегодным событиям</a></span>.</p>
+	</li>
+</ul><h4><a name="TOC_Фильтр_по_точной_датеbc-16" id="TOC_Фильтр_по_точной_датеbc-16"></a>Настроить фильтр по точной дате<a class="title-anchor" href="#title-2646-16" id="title-2646-16"> </a></h4>
+
+<p>Для отображения данных, относящихся в определенному периоду, укажите интересующий период в условиях фильтра. Например, если необходимо просмотреть активности за период командировки, в которой вы были три недели назад.</p>
+
+<ol><li>Перейдите в раздел <span class="key">Активности</span>.</li>
+	<li>В меню <span class="key">Фильтр</span> выберите команду <span class="key">Перейти в расширенный режим</span> (<a href="#XREF_63932_43"><span>Рис. 22</span></a>).
+	<div class="media">
+	<div class="media__caption"><span class="FM_Picturecaptionnumber">Рис. 22</span> — Переход в расширенный режим фильтрации</div>
+
+	<div class="media__element"><img alt="scr_filters_advanced_filter_select.png" id="image34" src="../../../../sites/default/files/documentation/user/ru/base/BPMonlineHelp/chapter_filters/scr_filters_advanced_filter_select.png" /> </div>
+	</div>
+
+	<p>В появившейся области фильтрации укажите начало периода, за который вы хотите отобразить записи в разделе. Для этого:</p>
+
+	<ol><li>
+		<p>Нажмите на ссылку &lt;Добавить условие&gt; (<a href="#XREF_61539_44"><span>Рис. 23</span></a>) и в открывшемся окне выберите необходимую колонку даты, например, “Начало”, чтобы отфильтровать активности по дате их начала.</p>
+
+		<div class="media">
+		<div class="media__caption"><span class="FM_Picturecaptionnumber">Рис. 23</span><a name="XREF_61539_44" id="XREF_61539_44"></a> — Добавление колонки в условие фильтра</div>
+
+		<div class="media__element"><img alt="scr_filters_advanced_filter_add_column.png" id="image35" src="../../../../sites/default/files/documentation/user/ru/base/BPMonlineHelp/chapter_filters/scr_filters_advanced_filter_add_column.png" /> </div>
+		</div>
+		</li>
+		<li>
+		<p>Выберите тип условия напротив добавленной колонки (<a href="#XREF_39487_45"><span>Рис. 24</span></a>), например, “≥” (больше или равно), чтобы дата начала периода фильтрации включала этот период.</p>
+
+		<div class="media">
+		<div class="media__caption"><span class="FM_Picturecaptionnumber">Рис. 24</span><a name="XREF_39487_45" id="XREF_39487_45"></a> — Выбор типа условия фильтра</div>
+
+		<div class="media__element"><img alt="scr_filters_advanced_filter_add_condition_type.png" id="image36" src="../../../../sites/default/files/documentation/user/ru/base/BPMonlineHelp/chapter_filters/scr_filters_advanced_filter_add_condition_type.png" /> </div>
+		</div>
+		</li>
+	</ol></li>
+	<li>В меню ссылки &lt;?&gt; выберите команду <span class="key">Указать точную дату</span> (<a href="#XREF_47463_46"><span>Рис. 25</span></a>).
+	<div class="media">
+	<div class="media__caption"><span class="FM_Picturecaptionnumber">Рис. 25</span><a name="XREF_47463_46" id="XREF_47463_46"></a> — Переход к выбору точной даты периода фильтрации</div>
+
+	<div class="media__element"><img alt="scr_filters_advanced_filter_specify_exact_date.png" id="image37" src="../../../../sites/default/files/documentation/user/ru/base/BPMonlineHelp/chapter_filters/scr_filters_advanced_filter_specify_exact_date.png" /> </div>
+	</div>
+	</li>
+	<li>В появившемся поле отобразите при помощи кнопки <img alt="btn_com_filter_calendar.png" id="image38" src="../../../../sites/default/files/documentation/user/ru/base/BPMonlineHelp/chapter_filters/btn_com_filter_calendar.png" /> встроенный календарь фильтра и выберите в нем необходимую дату (<a href="#XREF_51600_47"><span>Рис. 26</span></a>).
+	<div class="media">
+	<div class="media__caption"><span class="FM_Picturecaptionnumber">Рис. 26</span> — Встроенный календарь фильтра</div>
+
+	<div class="media__element"><img alt="scr_filters_advanced_filter_calendar.png" id="image39" src="../../../../sites/default/files/documentation/user/ru/base/BPMonlineHelp/chapter_filters/scr_filters_advanced_filter_calendar.png" /> </div>
+	</div>
+	</li>
+	<li>
+	<p>Аналогично укажите конечную дату периода фильтрации:</p>
+
+	<ol class="inner"><li>
+		<p>Добавьте в условие фильтрации колонку “Начало”, чтобы отфильтровать активности по дате их начала.</p>
+		</li>
+		<li>
+		<p>Выберите для нее тип условия “≤” (меньше или равно).</p>
+		</li>
+		<li>
+		<p>Выберите дату во встроенном календаре.</p>
+		</li>
+	</ol></li>
+	<li>Убедитесь, что для добавленных условий фильтрации установлен логический оператор “И”.</li>
+	<li>Примените установленный фильтр, используя кнопку <span class="key">Применить</span> фильтра.
+	<div class="media">
+	<div class="media__caption"><span class="FM_Picturecaptionnumber">Рис. 27</span> — Применение установленного фильтра</div>
+
+	<div class="media__element"><img alt="scr_filters_advanced_filter_apply_filter.png" id="image40" src="../../../../sites/default/files/documentation/user/ru/base/BPMonlineHelp/chapter_filters/scr_filters_advanced_filter_apply_filter.png" /> </div>
+	</div>
+
+	<p>В результате в разделе <span class="key">Активности</span> будут отображены активности, начало которых входит в установленный в фильтре период.</p>
+	</li>
+</ol><h4><a name="TOC_Стандартные_периодыbc-17" id="TOC_Стандартные_периодыbc-17"></a><a name="TOC_Стандартные_периоды" id="TOC_Стандартные_периоды"></a><a name="HT_chapter_filters_filter_by_standard_period" id="HT_chapter_filters_filter_by_standard_period"></a>Настроить стандартные периоды фильтрации<a class="title-anchor" href="#title-2646-17" id="title-2646-17"> </a></h4>
+
+<p>Для удобства работы с фильтром используйте стандартные периоды фильтрации. Например, вы можете быстро отобразить записи за предыдущую, текущую или следующую неделю.</p>
+
+<p>Стандартные периоды доступны в меню ссылки &lt;?&gt; условия фильтра (<a href="#XREF_93902_49"><span>Рис.  28</span></a>).</p>
+
+<div class="media">
+<div class="media__caption"><span class="FM_Picturecaptionnumber">Рис. 28</span> — Выбор стандартного периода фильтрации</div>
+
+<div class="media__element"><img alt="scr_filters_advanced_filter_specify_custom_period.png" id="image41" src="../../../../sites/default/files/documentation/user/ru/base/BPMonlineHelp/chapter_filters/scr_filters_advanced_filter_specify_custom_period.png" /> </div>
+</div>
+
+<h5>Час</h5>
+
+<p>Меню содержит команды, позволяющие отображать записи раздела за предыдущий, текущий или следующий час, а также за определенное количество предыдущих или следующих часов. Вы также можете указать в качестве значения фильтра точное время до минуты.</p>
+
+<p>Чтобы указать точное время, выберите команду <span class="key">Точное время</span><strong> <!--?--></strong> и в появившемся поле введите необходимое значение времени в формате Ч:ММ, например, “14:43”. Используйте стандартные значения времени, доступные для выбора в поле.</p>
+
+<p>Чтобы указать количество предыдущих или следующих часов, выберите команду <span class="key">Предыдущих часов</span><strong> </strong>или <span class="key">Следующих часов </span><!--?--> соответственно и в появившемся поле введите необходимое значение. Вы можете ввести только целое число.</p>
+
+<p>Обратите внимание, что предыдущим, текущим или следующим часом считается полный час с первой по 60-ю минуту, например, с 13:00 по 13:59 включительно, а не час относительно текущего момента времени. Например, если текущее время 14:34, то следующим часом будет считаться период с 15:00 по 15:59 включительно, а не с 14:34 по 15:33.</p>
+
+<h5>День</h5>
+
+<p>Меню содержит команды, позволяющие отображать записи раздела за вчерашний, сегодняшний или завтрашний день, а также за определенное количество предыдущих или следующих дней. Вы также можете указать в качестве значения фильтра определенный день месяца или день недели.</p>
+
+<p>Чтобы указать в качестве значения фильтра определенный день месяца, выберите команду <span class="key">День месяца</span><strong> <!--?--></strong> и в появившейся строке введите число месяца.</p>
+
+<p>Чтобы указать определенный день недели, выберите в меню <span class="key">День</span> —&gt; <span class="key">День недели</span> —&gt; необходимый день недели, например, “Пн”, “Вт”.</p>
+
+<h5>Неделя</h5>
+
+<p>Меню содержит команды, позволяющие отображать записи раздела за предыдущую, текущую и следующую неделю.</p>
+
+<p>Предыдущей, текущей или следующей неделей считается календарный период с понедельника по воскресенье, а не семидневный период относительно текущего момента времени. Например, если сегодня среда, то следующей неделей будет считаться период с ближайшего понедельника по воскресенье, а не следующие семь дней начиная с текущей даты.</p>
+
+<h5>Месяц</h5>
+
+<p>Меню содержит команды, позволяющие отображать записи раздела за предыдущий, текущий и следующий месяц. Вы также можете указать в качестве значения фильтра определенный месяц.</p>
+
+<p>Чтобы указать определенный месяц, выберите его в меню <span class="key">Месяц</span> —&gt; <span class="key">Месяц</span>, например, “Декабрь”.</p>
+
+<p>Обратите внимание, что предыдущим, текущим или следующим месяцем считается календарный период. Например, если прошлый месяц — декабрь, то в разделе при применении периода фильтрации “Прошлый месяц” будут отображены записи за период с 1 по 31 декабря.</p>
+
+<h5>Квартал</h5>
+
+<p>Меню содержит команды, позволяющие отображать записи раздела за предыдущий, текущий и следующий квартал.</p>
+
+<p>Предыдущим, текущим или следующим кварталом считается период в три месяца: I квартал включает в себя первый, второй и третий месяцы года (январь, февраль, март), II квартал — следующие три месяца (апрель, май, июнь) и т. д. Например, если сейчас август, то следующим кварталом будет считаться период, включающий в себя октябрь, ноябрь и декабрь (IV квартал).</p>
+
+<h5>Полугодие</h5>
+
+<p>Меню содержит команды, позволяющие отображать записи раздела за предыдущее, текущее и следующее полугодие.</p>
+
+<p>Предыдущим, текущим или следующим полугодием считается период в шесть месяцев: I полугодие включает в себя месяцы с января по июнь, II полугодие — с июля по декабрь. Например, если сейчас август (входит во II полугодие), то следующим полугодием будет считаться период с января по июнь следующего года.</p>
+
+<h5>Год</h5>
+
+<p>Меню содержит команды, позволяющие отображать записи раздела за предыдущий, текущий и следующий год. Вы также можете указать в качестве значения фильтра определенный год.</p>
+
+<p>Предыдущим, текущим или следующим годом считается календарный период. Например, если сейчас август 2020 года, то следующим годом будет считаться период с января по декабрь 2021 года включительно, а не следующие двенадцать месяцев начиная с августа 2020 года.</p>
+
+<h4><a name="TOC_Фильтр_по_ежегоднымbc-18" id="TOC_Фильтр_по_ежегоднымbc-18"></a><a name="TOC_Фильтр_по_ежегодным" id="TOC_Фильтр_по_ежегодным"></a><a name="HT_chapter_filters_filter_annual_events" id="HT_chapter_filters_filter_annual_events"></a>Настроить фильтр по ежегодным событиям<a class="title-anchor" href="#title-2646-18" id="title-2646-18"> </a></h4>
+
+<p>В отличие от стандартных периодов фильтрации, фильтр по ежегодным событиям учитывает только день и месяц дат, по которым производится отбор. Такой фильтр удобно использовать, например, для отслеживания знаменательных событий контактов.</p>
+
+<p>Фильтр по ежегодным событиям доступен в меню ссылки &lt;?&gt; условия фильтра (<a href="#XREF_49097_106"><span>Рис. 29</span></a>).</p>
+
+<div class="media">
+<div class="media__caption"><span class="FM_Picturecaptionnumber">Рис. 29</span> — Выбор фильтра по ежегодным событиям</div>
+
+<div class="media__element"><img alt="scr_filters_advanced_filter_annual.png" id="image42" src="../../../../sites/default/files/documentation/user/ru/base/BPMonlineHelp/chapter_filters/scr_filters_advanced_filter_annual.png" /> </div>
+</div>
+
+<p>Меню содержит команды, позволяющие отображать записи раздела за день, а также за определенное количество предыдущих или следующих дней.</p>
+
+<ul><li>
+	<p>Ежегодно, сегодня. Условие позволяет отобразить список записей, дата которых совпадает с текущей, без учета года.</p>
+	</li>
+	<li>
+	<p>Ежегодно, через дней &lt;?&gt;<!--?-->. Условие позволяет отобразить список записей, дата которых, без учета года, наступит через указанное количество дней.</p>
+	</li>
+	<li>
+	<p>Ежегодно, следующих дней &lt;?&gt;<!--?-->. Условие позволяет отобразить список записей, дата которых, без учета года, попадает в один из нескольких следующих дней.</p>
+	</li>
+	<li>
+	<p>Ежегодно, предыдущих дней &lt;?&gt;<!--?-->. Условие позволяет отобразить список записей, дата которых, без учета года, попадает в один из нескольких предыдущих дней.</p>
+	</li>
+</ul></div>
+      
+  </div>
+<div class="block block-layout-builder block-field-blocknodeuser-documentationfield-linked-link">
+  
+    
+      
+  <div class="field field--name-field-linked-link field--type-link field--label-above">
+    <div class="field__label">Смотрите также</div>
+          <div class="field__items">
+              <div class="field__item"><a href="../tegi/tegi.html">Теги</a></div>
+          <div class="field__item"><a href="../gryppy/gruppy.html">Группы</a></div>
+          <div class="field__item"><a href="../excel_import/import_iz_excel.html">Импорт из Excel</a></div>
+          <div class="field__item"><a href="../../../../7-17/user/bazis_platformy/dannye/excel_export/eksport_v_excel.html">Экспорт в Excel</a></div>
+              </div>
+      </div>
+
+  </div>
+<div class="block block-layout-builder block-field-blocknodeuser-documentationfield-video">
+  
+    
+      
+  <div class="field field--name-field-video field--type-link field--label-above">
+    <div class="field__label">Онлайн-курсы</div>
+          <div class="field__items">
+              <div class="field__item"><a href="https://profile.terrasoft.ua/user/login?destination=academy/ua/course-redirect/677474">Данные в системе. Настройка фильтров и групп</a></div>
+              </div>
+      </div>
+
+  </div>
+
+    </div>
+  </div>
+
+  </div>
+
+</article>
+
+  </div>
+
+  </div>
+
+          </div>
+        </div>
+
+                  <aside class="creatio-sidebar creatio-sidebar_first" role="complementary">
+              <div class="region region-sidebar-first">
+    <div id="block-documentationnaviagtion" class="block block-ts-nav block-ts-nav-doc-nav">
+  
+    
+      <div class="ts-nav-block"><a href="../../../../index.html" class="ts-nav-block__link">Документация</a><div class="ts-nav-block__title">Для пользователя</div>
+</div>
+<div class="ts-nav-container"><ul class="ts-nav-menu"><li class="ts-nav-menu__item">
+  <a href="../../../nocode_platforma.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">No-сode платформа&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../bazis_platformy.html" class="ts-nav-menu__link ts-nav-menu__link_expanded ts-nav-menu__link_open" hreflang="zxx">Базис платформы&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+      <ul class="ts-nav-menu__children">
+      <li class="ts-nav-menu__item">
+  <a href="../../interfejs.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Интерфейс&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../dannye.html" class="ts-nav-menu__link ts-nav-menu__link_expanded ts-nav-menu__link_open" hreflang="zxx">Данные&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+      <ul class="ts-nav-menu__children">
+      <li class="ts-nav-menu__item">
+  <a href="filtry.html" class="ts-nav-menu__link ts-nav-menu__link_active ts-nav-menu__link_open" hreflang="ru">Фильтры</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../gryppy/gruppy.html" class="ts-nav-menu__link" hreflang="ru">Группы</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../tegi/tegi.html" class="ts-nav-menu__link" hreflang="ru">Теги</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../excel_import/import_iz_excel.html" class="ts-nav-menu__link" hreflang="ru">Excel импорт</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../excel_export/export_v_excel.html" class="ts-nav-menu__link" hreflang="ru">Excel экспорт</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../dubli/poisk_i_obedinenie_dubly.html" class="ts-nav-menu__link" hreflang="ru">Дубли</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../dostup_na_zapis/nastroit_prava_dostupa_na_zapis.html" class="ts-nav-menu__link" hreflang="ru">Доступ на запись</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../udalenie_zapisey/udalit_zapisi.html" class="ts-nav-menu__link" hreflang="ru">Удаление записей</a>
+  </li>
+
+    </ul>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../kommunikacii.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Коммуникации&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../mobilnoe_prilozhenie.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Мобильное приложение&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../vypolnenie_biznes-processov.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Выполнение бизнес-процессов&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+
+    </ul>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../instrumenty_crm.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Инструменты CRM&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../instrumenty_kastomizacii.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Инструменты кастомизации&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../biznes_processy.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Бизнес-процессы&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../instrumenty_marketinga.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Инструменты маркетинга&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../instrumenty_prodazh.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Инструменты продаж&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../instrumenty_servisa.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Инструменты сервиса&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../ustanovka_i_administrirovanie.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Администрирование&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../razvertyvanie_onsite.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Развертывание on-site&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../banki_i_finansy.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Банки и финансы&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../drugie_reshenija.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Другие решения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+</ul>
+</div>
+
+  </div>
+
+  </div>
+
+            <div class="creatio-sidebar__toggle"></div>
+          </aside>
+        
+                  <aside class="creatio-sidebar creatio-sidebar_second" role="complementary">
+              <div class="region region-sidebar-second">
+    <div id="block-example" class="block block-ts-nav block-ts-nav-page-nav">
+  
+    
+        <div class="ts-nav-title">Фильтры</div>
+<div class="ts-nav-page">
+      <ul class="ts-nav-page__list">
+                                                <li class="ts-nav-page__item ts-nav-page__item_expanded ts-nav-page__item_open"><a href="filtry.html" class="ts-nav-page__link ts-nav-page__link_expanded ts-nav-page__link_active">Фильтры&nbsp;<span class="ts-nav-page__link-arrow"></span></a></li>
+          </ul>
+  </div>
+
+  </div>
+<div id="block-adminfeedbackblock" class="block block-admin-feedback block-admin-feedback-block">
+  
+    
+      <div id="feedback-message"><div id="upper-feedback-content"><h2>Был ли данный материал полезен?</h2>
+<input class="feedback-btn feedback-btn__yes button js-form-submit form-submit" data-node-id="2646" data-feedback="yes" type="submit" name="op" value="Да" />
+<input class="feedback-btn feedback-btn__no button js-form-submit form-submit" data-node-id="2646" data-feedback="no" type="submit" name="op" value="Нет" />
+</div>
+<form class="admin-feedback-form" data-drupal-selector="admin-feedback-form" action="https://academy.terrasoft.ua/docs/user/bazis_platformy/dannye/filtry/filtry" method="post" id="admin-feedback-form" accept-charset="UTF-8">
+  <div id="feedback-msg-result"></div><div class="js-form-item form-item js-form-type-textarea form-type-textarea js-form-item-feedback-message form-item-feedback-message form-no-label">
+        <div class="form-textarea-wrapper">
+  <textarea id="edit-feedback-msg" data-drupal-selector="edit-feedback-message" name="feedback_message" rows="5" cols="60" class="form-textarea resize-vertical"></textarea>
+</div>
+
+        </div>
+<input id="feedback-id" data-drupal-selector="edit-feedback-id" type="hidden" name="feedback_id" value="" />
+<input class="feedback-btn feedback-btn__send-comment button js-form-submit form-submit" data-drupal-selector="edit-feedback-send" type="submit" id="edit-feedback-send" name="op" value="Отправить" />
+<input autocomplete="off" data-drupal-selector="form-gzcaqtvoxhzjhxhlnq2-uqzh5xz3-aswcyobvgqji8g" type="hidden" name="form_build_id" value="form-gzCAqTvoXHzJhxHlnQ2-UQzH5XZ3-aswcYOBvgqJi8g" />
+<input data-drupal-selector="edit-admin-feedback-form" type="hidden" name="form_id" value="admin_feedback_form" />
+
+</form>
+</div>
+
+  </div>
+
+  </div>
+
+          </aside>
+              </main>
+    </div>
+  </div>
+
+  <footer role="contentinfo">
+    <div class="creatio-region creatio-region_footer">
+      <div class="creatio-container">
+          <div class="region region-footer">
+    <div id="block-footerua" class="block block-simple-block block-simple-blockfooter-ua">
+  
+    
+      <div class="footer">
+<div class="footer-left">
+<ul class="footer-socials"><li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_fb" href="https://www.facebook.com/terrasoft.ua" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_in" href="https://www.linkedin.com/company/terrasoft/" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_yt" href="https://www.youtube.com/c/TerrasoftUkraine" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_tg" href="https://t.me/Terrasoft_UA" target="_blank"> </a></li>
+</ul></div>
+
+<div class="footer-contact">
+<div class="footer-title">Будьте на связи!</div>
+
+<div class="footer-content">
+<div class="footer-items">
+<div class="footer-item"><a class="footer__link footer__link_phone" href="tel:+380443633133">+38 (044) 363-31-33</a></div>
+</div>
+
+<div class="footer-items">
+<div class="footer-item"><a class="footer__link footer__link_email" href="mailto:support@terrasoft.ua">support@terrasoft.ua</a></div>
+</div>
+</div>
+</div>
+</div>
+
+  </div>
+
+  </div>
+
+      </div>
+    </div>
+    <div class="creatio-region creatio-region_bottom">
+      <div class="creatio-container">
+          <div class="region region-bottom">
+    <div id="block-allrightsreservedua" class="block block-simple-block block-simple-blockfooter-bottom-ua">
+  
+    
+      <p>© 2002-2022 Terrasoft.  |  <a href="https://www.terrasoft.ua/privacy-policy" target="_blank">Конфиденциальность</a></p>
+
+  </div>
+
+  </div>
+
+      </div>
+    </div>
+  </footer>
+</div>
+<div class="creatio-bg"></div>
+
+
+  </div>
+
+    
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/docs\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/2646","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"ru"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"ajaxPageState":{"libraries":"admin_feedback\/admin_feedback_block,admin_feedback\/admin_feedback_css,classy\/base,classy\/messages,classy\/node,core\/drupal.ajax,core\/jquery.form,core\/normalize,creatio\/creatio.lists,creatio\/fancybox,creatio\/global,layout_discovery\/onecol,system\/base,ts_doc\/doc_version,ts_feedback\/ts_feedback,ts_nav\/breadcrumb,ts_nav\/doc_nav,ts_nav\/page_nav,ts_title_anchor\/ts_title_anchor","theme":"creatio","theme_token":null},"ajaxTrustedUrl":{"form_action_p_pvdeGsVG5zNF_XLGPTvYSKCf43t8qZYSwcfZl2uzM":true,"\/docs\/user\/bazis_platformy\/dannye\/filtry\/filtry?ajax_form=1":true},"admin_feedback":{"yes_response":"\u0421\u043f\u0430\u0441\u0438\u0431\u043e \u0437\u0430 \u043e\u0431\u0440\u0430\u0442\u043d\u0443\u044e \u0441\u0432\u044f\u0437\u044c!","no_response":"\u0421\u043f\u0430\u0441\u0438\u0431\u043e \u0437\u0430 \u043e\u0431\u0440\u0430\u0442\u043d\u0443\u044e \u0441\u0432\u044f\u0437\u044c!","custom_text_response_on_no":{"value":"","format":"full_html"},"feedback_prompt_on_yes":true,"feedback_prompt_on_no":true,"feedback_enable_predefined_answers":false,"feedback_prompt":"\u041a\u0430\u043a \u043c\u043e\u0436\u043d\u043e \u0443\u043b\u0443\u0447\u0448\u0438\u0442\u044c \u044d\u0442\u0443 \u0441\u0442\u0430\u0442\u044c\u044e?"},"ajax":{"edit-feedback-send":{"callback":"::validateFeedbackMsg","event":"mousedown","keypress":true,"prevent":"click","url":"\/docs\/user\/bazis_platformy\/dannye\/filtry\/filtry?ajax_form=1","dialogType":"ajax","submit":{"_triggering_element_name":"op","_triggering_element_value":"\u041e\u0442\u043f\u0440\u0430\u0432\u0438\u0442\u044c"}}},"user":{"uid":0,"permissionsHash":"9c2367dfcaba0fa15f0375f97aed64e146c908cee68508d13b79e3ee80e5162d"}}</script>
+<script src="../../../../sites/default/files/js/js_F2-Y4EzgTnESr58XByoLYEnsbi7ysTfMIKN1RvsMSWY.js"></script>
+
+
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+      <g id="svg-copy" class="svg-icon svg-icon_copy">
+        <path d="M15.111,18H1.889A1.848,1.848,0,0,1,0,16.2V3.6A1.848,1.848,0,0,1,1.889,1.8H5.837a2.87,2.87,0,0,1,5.326,0h3.948A1.848,1.848,0,0,1,17,3.6V16.2A1.848,1.848,0,0,1,15.111,18ZM3.777,12.6v1.8h6.611V12.6Zm0-3.6v1.8h9.445V9Zm0-3.6V7.2h9.445V5.4ZM8.5,1.8a.924.924,0,0,0-.944.9.945.945,0,0,0,1.889,0A.924.924,0,0,0,8.5,1.8Z"/>
+      </g>
+
+      <g id="svg-prev" class="svg-icon svg-icon_arrow">
+        <path d="M5.488,12.779,0,6.39,5.488,0" transform="translate(1 0.652)"/>
+      </g>
+
+      <g id="svg-next" class="svg-icon svg-icon_arrow">
+        <path d="M0,12.779,5.488,6.39,0,0" transform="translate(0.759 0.652)"/>
+      </g>
+    </svg>
+  </body>
+
+<!-- Mirrored from academy.terrasoft.ua/docs/user/bazis_platformy/dannye/filtry/filtry#title-2646-4 by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Mar 2022 01:27:34 GMT -->
+</html>

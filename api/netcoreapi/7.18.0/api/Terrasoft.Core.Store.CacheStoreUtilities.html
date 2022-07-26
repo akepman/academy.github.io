@@ -1,0 +1,853 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  
+<!-- Mirrored from academy.terrasoft.ua/api/netcoreapi/7.18.0/api/Terrasoft.Core.Store.CacheStoreUtilities.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Mar 2022 03:31:16 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class CacheStoreUtilities
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class CacheStoreUtilities
+   ">
+    <meta name="generator" content="docfx 2.58.0.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-default ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="https://academy.terrasoft.ru/docs/developer/back-end_development">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Terrasoft.Core.Store.CacheStoreUtilities">
+  
+  
+  <h1 id="Terrasoft_Core_Store_CacheStoreUtilities" data-uid="Terrasoft.Core.Store.CacheStoreUtilities" class="text-break">Class CacheStoreUtilities
+  </h1>
+  <div class="markdown level0 summary"><p>Provides utility methods for working with the data store and cache.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">CacheStoreUtilities</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Terrasoft.Core.Store.html">Terrasoft.Core.Store</a></h6>
+  <h6><strong>Assembly</strong>: Terrasoft.Core.dll</h6>
+  <h5 id="Terrasoft_Core_Store_CacheStoreUtilities_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static class CacheStoreUtilities</code></pre>
+  </div>
+  <h3 id="methods">Methods
+  </h3>
+  
+  
+  <a id="Terrasoft_Core_Store_CacheStoreUtilities_AdjustRawGetValuesResult_" data-uid="Terrasoft.Core.Store.CacheStoreUtilities.AdjustRawGetValuesResult*"></a>
+  <h4 id="Terrasoft_Core_Store_CacheStoreUtilities_AdjustRawGetValuesResult_System_Collections_Generic_IEnumerable_System_String__System_Collections_Generic_IDictionary_System_String_System_Object__" data-uid="Terrasoft.Core.Store.CacheStoreUtilities.AdjustRawGetValuesResult(System.Collections.Generic.IEnumerable{System.String},System.Collections.Generic.IDictionary{System.String,System.Object})">AdjustRawGetValuesResult(IEnumerable&lt;String&gt;, IDictionary&lt;String, Object&gt;)</h4>
+  <div class="markdown level1 summary"><p>Проверяет переданный словарь со значениями на присутствие в нем значений с заданными ключами.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IDictionary&lt;string, object&gt; AdjustRawGetValuesResult(IEnumerable&lt;string&gt; keys, IDictionary&lt;string, object&gt; rawGetValuesResult)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<span class="xref">System.String</span>&gt;</td>
+        <td><span class="parametername">keys</span></td>
+        <td><p>Список ключей, наличие которых проверяется в словаре
+<code data-dev-comment-type="paramref" class="paramref">rawGetValuesResult</code>.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IDictionary</span>&lt;<span class="xref">System.String</span>, <span class="xref">System.Object</span>&gt;</td>
+        <td><span class="parametername">rawGetValuesResult</span></td>
+        <td><p>Словарь, в котором проверяется наличие значений с ключами
+<code data-dev-comment-type="paramref" class="paramref">keys</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IDictionary</span>&lt;<span class="xref">System.String</span>, <span class="xref">System.Object</span>&gt;</td>
+        <td><p>Словарь со значениями для ключей <code data-dev-comment-type="paramref" class="paramref">keys</code>. Если в переданном словаре
+<code data-dev-comment-type="paramref" class="paramref">rawGetValuesResult</code> изначально отсутствовало значение с каким-либо ключом из
+<code data-dev-comment-type="paramref" class="paramref">keys</code>, то в возвращаемый словарь добавляется запись с этим ключом и значением
+<code>null</code>. Если в качестве словаря <code data-dev-comment-type="paramref" class="paramref">rawGetValuesResult</code> передано значение <code>null</code>,
+то будет возвращен словарь, в котором для каждого ключа из <code data-dev-comment-type="paramref" class="paramref">keys</code> добавлено значение
+<code>null</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_Store_CacheStoreUtilities_ExpireGroup_" data-uid="Terrasoft.Core.Store.CacheStoreUtilities.ExpireGroup*"></a>
+  <h4 id="Terrasoft_Core_Store_CacheStoreUtilities_ExpireGroup_Terrasoft_Core_Store_ICacheStore_System_String_" data-uid="Terrasoft.Core.Store.CacheStoreUtilities.ExpireGroup(Terrasoft.Core.Store.ICacheStore,System.String)">ExpireGroup(ICacheStore, String)</h4>
+  <div class="markdown level1 summary"><p>Устанавливает признак устаревания для заданной группы элементов кэша.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void ExpireGroup(this ICacheStore source, string groupName)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.Store.ICacheStore.html">ICacheStore</a></td>
+        <td><span class="parametername">source</span></td>
+        <td><p>Кэш.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">groupName</span></td>
+        <td><p>Имя группы элементов.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_Store_CacheStoreUtilities_GetRootStore_" data-uid="Terrasoft.Core.Store.CacheStoreUtilities.GetRootStore*"></a>
+  <h4 id="Terrasoft_Core_Store_CacheStoreUtilities_GetRootStore_Terrasoft_Core_Store_ICacheStore_" data-uid="Terrasoft.Core.Store.CacheStoreUtilities.GetRootStore(Terrasoft.Core.Store.ICacheStore)">GetRootStore(ICacheStore)</h4>
+  <div class="markdown level1 summary"><p>Возвращает корневой кэш.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static ICacheStore GetRootStore(this ICacheStore source)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.Store.ICacheStore.html">ICacheStore</a></td>
+        <td><span class="parametername">source</span></td>
+        <td><p>Кэш.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.Store.ICacheStore.html">ICacheStore</a></td>
+        <td><p>Корневой кэш.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Terrasoft_Core_Store_CacheStoreUtilities_GetRootStore_Terrasoft_Core_Store_ICacheStore__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Метод продвигается по цепочке прокси-объектов, начиная от <code data-dev-comment-type="paramref" class="paramref">source</code>, пока не
+достигнет самого первого (корневого) кэша.</p>
+</div>
+  
+  
+  <a id="Terrasoft_Core_Store_CacheStoreUtilities_GetRootStore_" data-uid="Terrasoft.Core.Store.CacheStoreUtilities.GetRootStore*"></a>
+  <h4 id="Terrasoft_Core_Store_CacheStoreUtilities_GetRootStore_Terrasoft_Core_Store_IDataStore_" data-uid="Terrasoft.Core.Store.CacheStoreUtilities.GetRootStore(Terrasoft.Core.Store.IDataStore)">GetRootStore(IDataStore)</h4>
+  <div class="markdown level1 summary"><p>Возвращает корневое хранилище данных.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IDataStore GetRootStore(this IDataStore source)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.Store.IDataStore.html">IDataStore</a></td>
+        <td><span class="parametername">source</span></td>
+        <td><p>Хранилище данных.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.Store.IDataStore.html">IDataStore</a></td>
+        <td><p>Корневое хранилище данных.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Terrasoft_Core_Store_CacheStoreUtilities_GetRootStore_Terrasoft_Core_Store_IDataStore__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Метод продвигается по цепочке прокси-объектов, начиная от <code data-dev-comment-type="paramref" class="paramref">source</code>, пока не
+достигнет самого первого (корневого) хранилища данных.</p>
+</div>
+  
+  
+  <a id="Terrasoft_Core_Store_CacheStoreUtilities_GetValue_" data-uid="Terrasoft.Core.Store.CacheStoreUtilities.GetValue*"></a>
+  <h4 id="Terrasoft_Core_Store_CacheStoreUtilities_GetValue__1_Terrasoft_Core_Store_IBaseStore_System_String_" data-uid="Terrasoft.Core.Store.CacheStoreUtilities.GetValue``1(Terrasoft.Core.Store.IBaseStore,System.String)">GetValue&lt;T&gt;(IBaseStore, String)</h4>
+  <div class="markdown level1 summary"><p>Получает из хранилища данных или кэша значение по ключу <code data-dev-comment-type="paramref" class="paramref">key</code> и приводит
+полученное значение к заданному типу. Если значение по ключу не найдено, метод возвращает <code>null</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static T GetValue&lt;T&gt;(this IBaseStore source, string key)
+
+    where T : class</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.Store.IBaseStore.html">IBaseStore</a></td>
+        <td><span class="parametername">source</span></td>
+        <td><p>Хранилище данных или кэш.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">key</span></td>
+        <td><p>Ключ значения.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td><p>Значение по ключу <code data-dev-comment-type="paramref" class="paramref">key</code>, приведеное к типу <code data-dev-comment-type="typeparamref" class="typeparamref">T</code> либо
+<code>null</code>, если значение не найдено.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td><p>Тип, к которому приводится значение, получаемое из хранилища/кэша.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_Store_CacheStoreUtilities_GetValue_" data-uid="Terrasoft.Core.Store.CacheStoreUtilities.GetValue*"></a>
+  <h4 id="Terrasoft_Core_Store_CacheStoreUtilities_GetValue__1_Terrasoft_Core_Store_IBaseStore_System_String___0_" data-uid="Terrasoft.Core.Store.CacheStoreUtilities.GetValue``1(Terrasoft.Core.Store.IBaseStore,System.String,``0)">GetValue&lt;T&gt;(IBaseStore, String, T)</h4>
+  <div class="markdown level1 summary"><p>Получает из хранилища данных или кэша значение по ключу <code data-dev-comment-type="paramref" class="paramref">key</code> и приводит
+полученное значение к заданному типу. Если значение по ключу не найдено, метод возвращает
+заданное значение по умолчанию.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static T GetValue&lt;T&gt;(this IBaseStore source, string key, T defaultValue)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.Store.IBaseStore.html">IBaseStore</a></td>
+        <td><span class="parametername">source</span></td>
+        <td><p>Хранилище данных или кэш.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">key</span></td>
+        <td><p>Ключ значения.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td><span class="parametername">defaultValue</span></td>
+        <td><p>Значение по умолчанию, которое будет возвращено методом, если по данному ключу
+значение в хранилище/кэше не найдено.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td><p>Значение по ключу <code data-dev-comment-type="paramref" class="paramref">key</code>, приведенное к типу <code data-dev-comment-type="typeparamref" class="typeparamref">T</code> или
+<code data-dev-comment-type="paramref" class="paramref">defaultValue</code>, если значение не найдено.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td><p>Тип, к которому приводится значение, получаемое из хранилища/кэша.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_Store_CacheStoreUtilities_GetValues_" data-uid="Terrasoft.Core.Store.CacheStoreUtilities.GetValues*"></a>
+  <h4 id="Terrasoft_Core_Store_CacheStoreUtilities_GetValues_Terrasoft_Core_Store_ICacheStore_System_String___" data-uid="Terrasoft.Core.Store.CacheStoreUtilities.GetValues(Terrasoft.Core.Store.ICacheStore,System.String[])">GetValues(ICacheStore, String[])</h4>
+  <div class="markdown level1 summary"><p>Возвращает значения из кэша по заданному списку ключей.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IDictionary&lt;string, object&gt; GetValues(this ICacheStore source, params string[] keys)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.Store.ICacheStore.html">ICacheStore</a></td>
+        <td><span class="parametername">source</span></td>
+        <td><p>Кэш.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span>[]</td>
+        <td><span class="parametername">keys</span></td>
+        <td><p>Перечень ключей, для которых требуется получить значения.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IDictionary</span>&lt;<span class="xref">System.String</span>, <span class="xref">System.Object</span>&gt;</td>
+        <td><p>Словарь, содержащий весь список ключей и соответствующие этим ключам значения. Если значение по
+определенному ключу не было найдено, то запись в словаре будет присутствовать, но ее значение будет
+равно <code>null</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_Store_CacheStoreUtilities_Pop_" data-uid="Terrasoft.Core.Store.CacheStoreUtilities.Pop*"></a>
+  <h4 id="Terrasoft_Core_Store_CacheStoreUtilities_Pop__1_Terrasoft_Core_Store_IDataStore_System_String_" data-uid="Terrasoft.Core.Store.CacheStoreUtilities.Pop``1(Terrasoft.Core.Store.IDataStore,System.String)">Pop&lt;T&gt;(IDataStore, String)</h4>
+  <div class="markdown level1 summary"><p>Получает из хранилища данных значение по ключу <code data-dev-comment-type="paramref" class="paramref">key</code>, приводит
+полученное значение к заданному типу и удаляет данный ключ из хранилища.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static T Pop&lt;T&gt;(this IDataStore source, string key)
+
+    where T : class</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.Store.IDataStore.html">IDataStore</a></td>
+        <td><span class="parametername">source</span></td>
+        <td><p>Хранилище данных.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">key</span></td>
+        <td><p>Ключ значения.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td><p>Значение по ключу <code data-dev-comment-type="paramref" class="paramref">key</code>, приведенное к типу <code data-dev-comment-type="typeparamref" class="typeparamref">T</code> или
+<code>null</code>, если значение не найдено.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td><p>Тип, к которому приводится значение, получаемое из хранилища данных.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_Store_CacheStoreUtilities_SetOrRemoveValue_" data-uid="Terrasoft.Core.Store.CacheStoreUtilities.SetOrRemoveValue*"></a>
+  <h4 id="Terrasoft_Core_Store_CacheStoreUtilities_SetOrRemoveValue_Terrasoft_Core_Store_ICacheStore_System_String_System_Object_" data-uid="Terrasoft.Core.Store.CacheStoreUtilities.SetOrRemoveValue(Terrasoft.Core.Store.ICacheStore,System.String,System.Object)">SetOrRemoveValue(ICacheStore, String, Object)</h4>
+  <div class="markdown level1 summary"><p>Производит попытку записи значения <code data-dev-comment-type="paramref" class="paramref">value</code> в кэш по ключу <code data-dev-comment-type="paramref" class="paramref">key</code>.
+В случае, если <code data-dev-comment-type="paramref" class="paramref">value</code> == <code>null</code>, удаляет ключ из кэша.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void SetOrRemoveValue(this ICacheStore source, string key, object value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.Store.ICacheStore.html">ICacheStore</a></td>
+        <td><span class="parametername">source</span></td>
+        <td><p>Кэш.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">key</span></td>
+        <td><p>Ключ, по которому значение <code data-dev-comment-type="paramref" class="paramref">value</code> записывается в кэш.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>Значение, которое записывается в кэш по ключу <code data-dev-comment-type="paramref" class="paramref">key</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_Store_CacheStoreUtilities_WithLocalCaching_" data-uid="Terrasoft.Core.Store.CacheStoreUtilities.WithLocalCaching*"></a>
+  <h4 id="Terrasoft_Core_Store_CacheStoreUtilities_WithLocalCaching_Terrasoft_Core_Store_ICacheStore_" data-uid="Terrasoft.Core.Store.CacheStoreUtilities.WithLocalCaching(Terrasoft.Core.Store.ICacheStore)">WithLocalCaching(ICacheStore)</h4>
+  <div class="markdown level1 summary"><p>Применяет локальное хранение данных при работе с кэшем. Каждый помещаемый в кеш элемент будет
+иметь свой собственный признак актуальности.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static ICacheStore WithLocalCaching(this ICacheStore source)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.Store.ICacheStore.html">ICacheStore</a></td>
+        <td><span class="parametername">source</span></td>
+        <td><p>Кэш.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.Store.ICacheStore.html">ICacheStore</a></td>
+        <td><p>Кеш-обертка, осуществляющая локальное хранение данных и проверку признака актуальности данных в
+первоначальном кеше. Признак актуальности проверяется при каждом обращении к объекту.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Terrasoft_Core_Store_CacheStoreUtilities_WithLocalCaching_Terrasoft_Core_Store_ICacheStore__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Рекомендуется использовать только в случае работы с кэшем с относительно &quot;дорогим&quot; доступом
+(например, кэш с доступом по сети) и при значительных объемах кэшируемых элементов.</p>
+</div>
+  
+  
+  <a id="Terrasoft_Core_Store_CacheStoreUtilities_WithLocalCaching_" data-uid="Terrasoft.Core.Store.CacheStoreUtilities.WithLocalCaching*"></a>
+  <h4 id="Terrasoft_Core_Store_CacheStoreUtilities_WithLocalCaching_Terrasoft_Core_Store_ICacheStore_System_String_" data-uid="Terrasoft.Core.Store.CacheStoreUtilities.WithLocalCaching(Terrasoft.Core.Store.ICacheStore,System.String)">WithLocalCaching(ICacheStore, String)</h4>
+  <div class="markdown level1 summary"><p>Применяет локальное хранение данных при работе с кэшем.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static ICacheStore WithLocalCaching(this ICacheStore source, string groupName)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.Store.ICacheStore.html">ICacheStore</a></td>
+        <td><span class="parametername">source</span></td>
+        <td><p>Кэш.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">groupName</span></td>
+        <td><p>Имя группы элементов для контроля актуальности. Все элементы, которые
+помещаются в данную группу будут терять актуальность при вызове метода <a class="xref" href="Terrasoft.Core.Store.CacheStoreUtilities.html#Terrasoft_Core_Store_CacheStoreUtilities_ExpireGroup_Terrasoft_Core_Store_ICacheStore_System_String_">ExpireGroup(ICacheStore, String)</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.Store.ICacheStore.html">ICacheStore</a></td>
+        <td><p>Кэш-обертка, осуществляющая локальное хранение данных и проверку признака актуальности данных в
+первоначальном кэше. Признак актуальности проверяется при каждом обращении к объекту.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Terrasoft_Core_Store_CacheStoreUtilities_WithLocalCaching_Terrasoft_Core_Store_ICacheStore_System_String__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Рекомендуется использовать только в случае работы с кэшем с относительно &quot;дорогим&quot; доступом
+(например, кэш с доступом по сети) и при значительных объемах кэшируемых элементов.</p>
+</div>
+  
+  
+  <a id="Terrasoft_Core_Store_CacheStoreUtilities_WithLocalCachingOnly_" data-uid="Terrasoft.Core.Store.CacheStoreUtilities.WithLocalCachingOnly*"></a>
+  <h4 id="Terrasoft_Core_Store_CacheStoreUtilities_WithLocalCachingOnly_Terrasoft_Core_Store_ICacheStore_System_String_System_Boolean_" data-uid="Terrasoft.Core.Store.CacheStoreUtilities.WithLocalCachingOnly(Terrasoft.Core.Store.ICacheStore,System.String,System.Boolean)">WithLocalCachingOnly(ICacheStore, String, Boolean)</h4>
+  <div class="markdown level1 summary"><p>Осуществляет локальное хранение данных с мониторингом актуальности данных с использованием
+указанного (глобального) кэша.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static ICacheStore WithLocalCachingOnly(this ICacheStore source, string groupName, bool ignoreUserIdentity = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.Store.ICacheStore.html">ICacheStore</a></td>
+        <td><span class="parametername">source</span></td>
+        <td><p>Кэш.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">groupName</span></td>
+        <td><p>Имя группы элементов для контроля актуальности. Все элементы, которые
+помещаются в данную группу, будут терять актуальность при вызове метода <a class="xref" href="Terrasoft.Core.Store.CacheStoreUtilities.html#Terrasoft_Core_Store_CacheStoreUtilities_ExpireGroup_Terrasoft_Core_Store_ICacheStore_System_String_">ExpireGroup(ICacheStore, String)</a>.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">ignoreUserIdentity</span></td>
+        <td><p>Признак участия имени текущего пользователя в формировании ключа
+доступа к кэшу.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.Store.ICacheStore.html">ICacheStore</a></td>
+        <td><p>Кэш-обертка, осуществляющая локальное хранение данных и проверку признака актуальности данных в
+первоначальном кэше. Признак актуальности проверяется при каждом обращении к объекту.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Terrasoft_Core_Store_CacheStoreUtilities_WithLocalCachingOnly_Terrasoft_Core_Store_ICacheStore_System_String_System_Boolean__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Сами данные в кэш не передаются - в кэше проверяется только признак актуальности данных.
+Элементы в локальном кэше теряют актуальность только при вызове метода <a class="xref" href="Terrasoft.Core.Store.CacheStoreUtilities.html#Terrasoft_Core_Store_CacheStoreUtilities_ExpireGroup_Terrasoft_Core_Store_ICacheStore_System_String_">ExpireGroup(ICacheStore, String)</a>, но не
+при записи нового объекта в кэш.</p>
+</div>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.ArgumentException</span></td>
+        <td><p>Если в качестве параметра <code data-dev-comment-type="paramref" class="paramref">groupName</code> передана пустая
+строка или <code>null</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>© 2021 Creatio. All rights reserved.</span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+
+<!-- Mirrored from academy.terrasoft.ua/api/netcoreapi/7.18.0/api/Terrasoft.Core.Store.CacheStoreUtilities.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Mar 2022 03:31:17 GMT -->
+</html>

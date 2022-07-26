@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# ">
+  
+<!-- Mirrored from academy.terrasoft.ua/docs/8-0/developer/front_end_razrabotka/sandbox/obzor by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Mar 2022 07:01:10 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+          <!-- Google Tag Manager -->
+      <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          '../../../../../../www.googletagmanager.com/gtm5445.html?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-KLLB8G');</script>
+      <!-- End Google Tag Manager -->
+        <meta charset="utf-8" />
+<link rel="canonical" href="obzor.html" />
+<meta name="description" content="Модуль в Creatio является изолированной программной единицей. Ему ничего не известно об остальных модулях системы, кроме имен модулей, от которых он зависит. Для организации взаимодействия модулей предназначен специальный объект — sandbox.
+
+Sandbox предоставляет два ключевых механизма взаимодействия модулей в системе:" />
+<meta property="og:url" content="https://academy.terrasoft.ua/docs/8-0/developer/front_end_razrabotka/sandbox/obzor" />
+<meta property="og:title" content="Sandbox" />
+<meta property="og:description" content="Модуль в Creatio является изолированной программной единицей. Ему ничего не известно об остальных модулях системы, кроме имен модулей, от которых он зависит. Для организации взаимодействия модулей предназначен специальный объект — sandbox.
+
+Sandbox предоставляет два ключевых механизма взаимодействия модулей в системе:" />
+<meta name="Generator" content="Drupal 9 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="../../../../themes/custom/creatio/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="revision" href="obzor.html" />
+
+    <title>Sandbox | Creatio Academy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&amp;family=Open+Sans:ital,wght@0,300;0,400;0,600;1,400&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" media="all" href="../../../../sites/default/files/css/css_6lTP66__-yc6QXFp1zOwoeJ0HVigoYZP-SeoLLii000.css" />
+<link rel="stylesheet" media="all" href="../../../../sites/default/files/css/css_XQJDNhkF3xH5SZCcY-PI89Zu4nYIzQ5oR3SnUKyfXJU.css" />
+<link rel="stylesheet" media="print" href="../../../../sites/default/files/css/css_Zn4VHvcniOOtUwkIVwXzYr_0AI9gUVgZcPqaH4ViagU.css" />
+
+    
+  </head>
+  <body class="path-node page-node-type-developer-documentation">
+          <!-- Google Tag Manager (noscript) -->
+      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KLLB8G"
+                        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+      <!-- End Google Tag Manager (noscript) -->
+    
+        
+      <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    <div class="creatio-page d-flex flex-column">
+        <div class="region region-informer">
+    <div id="block-terrasoftpidtrimueukrainu" class="block block-simple-block block-simple-blockterrasoft-pidtrimue-ukrainu">
+  
+    
+      <style type="text/css">
+<!--/*--><![CDATA[/* ><!--*/
+@import url(../../../../../../www.terrasoft.ua/themes/custom/creatio/css/components/informer.css)
+
+/*--><!]]>*/
+</style><div class="ts-swu">
+<div class="creatio-container">
+<div class="ts-swu__cont">
+<div><a class="ts-swu__link" href="https://www.terrasoft.ua/terrasoft-stands-with-ukraine" target="_blank">Україна понад усе!</a> <span><a href="https://www.terrasoft.ua/terrasoft-stands-with-ukraine" target="_blank">Приєднуйтеся</a> до допомоги!</span></div>
+</div>
+</div></div>
+
+  </div>
+
+  </div>
+
+  
+  <header role="banner">
+          <div class="creatio-region creatio-region_top">
+        <div class="creatio-container">
+            <div class="region region-top">
+    <div id="block-menutoggle" class="block block-simple-block block-simple-blockmenu-toggle">
+  
+    
+      <div class="menu-toggle"><span> </span></div>
+
+  </div>
+<div id="block-logowhite-2" class="block block-simple-block block-simple-blocklogo-white">
+  
+    
+      <p><a class="site-logo" href="../../../../../index.html" rel="home"><img src="../../../../themes/custom/creatio/logo-white.svg" /></a></p>
+
+  </div>
+<div id="block-search" class="block block-simple-block block-simple-blocksearch">
+  
+    
+      <div class="search">
+<form action="https://academy.terrasoft.ua/search" class="search-form" method="get"><input class="search-form__input" name="search" placeholder="Поиск" type="search" /><input class="search-form__button" type="submit" value="Поиск" /> </form>
+
+<div class="search-toggle"> </div>
+</div>
+
+  </div>
+<nav role="navigation" aria-labelledby="block-sitesua-menu" id="block-sitesua" class="block block-menu navigation menu--sites-ua">
+            
+  <h2 class="visually-hidden" id="block-sitesua-menu">Sites UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="https://www.terrasoft.ua/" rel="nofollow" target="_blank">Terrasoft</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://community.terrasoft.ua/" rel="nofollow" target="_blank">Community</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://marketplace.terrasoft.ua/" rel="nofollow" target="_blank">Marketplace</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+<div id="block-usermenu" class="block block-ts-user block-ts-user-menu-block">
+  
+    
+      <ul class="user-menu">
+      <li class="user-menu__item">
+      <a class="user-menu__link" href="https://profile.terrasoft.ua/user/login?destination=academy/ua/docs/8-0/developer/front_end_razrabotka/sandbox/obzor">Войти</a>
+    </li>
+  </ul>
+
+  </div>
+<div id="block-usermenumobile" class="block block-ts-user block-ts-user-menu-mobile-block">
+  
+    
+      <ul class="user-menu-mobile">
+      <li class="user-menu-mobile__item">
+      <div class="user-menu-mobile__user user-menu-mobile__user_icon"></div>
+      <ul class="user-menu-mobile__submenu">
+        <li class="user-menu-mobile__subitem">
+          <a class="user-menu-mobile__sublink" href="https://profile.terrasoft.ua/user/login?destination=academy/ua/docs/8-0/developer/front_end_razrabotka/sandbox/obzor">Войти</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  </div>
+
+  </div>
+
+        </div>
+      </div>
+              <div class="creatio-region creatio-region_header">
+        <div class="creatio-container">
+            <div class="region region-header">
+    <div id="block-logo" class="block block-simple-block block-simple-blocklogo">
+  
+    
+      <p><a class="site-logo" href="../../../../../index.html" rel="home"><img src="../../../../themes/custom/creatio/logo.svg" /></a></p>
+
+  </div>
+<nav role="navigation" aria-labelledby="block-osnovnayanavigaciyaua-menu" id="block-osnovnayanavigaciyaua" class="block block-menu navigation menu--main-ua">
+            
+  <h2 class="visually-hidden" id="block-osnovnayanavigaciyaua-menu">Основная навигация UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="../../../../index.html" data-drupal-link-system-path="&lt;front&gt;">Документация</a>
+              </li>
+                <li class="menu-item">
+        <a href="../../../../../trainings.html">Тренинги</a>
+              </li>
+                <li class="menu-item">
+        <a href="../../../../certification.html" data-drupal-link-system-path="node/3084">Сертификация и тестирование</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+<nav role="navigation" aria-labelledby="block-sitesua-2-menu" id="block-sitesua-2" class="block block-menu navigation menu--sites-ua">
+            
+  <h2 class="visually-hidden" id="block-sitesua-2-menu">Sites UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="https://www.terrasoft.ua/" rel="nofollow" target="_blank">Terrasoft</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://community.terrasoft.ua/" rel="nofollow" target="_blank">Community</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://marketplace.terrasoft.ua/" rel="nofollow" target="_blank">Marketplace</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+
+  </div>
+
+        </div>
+      </div>
+              <div class="creatio-region creatio-region_breadcrumb">
+        <div class="creatio-container">
+            <div class="region region-breadcrumb">
+    <div id="block-logowhite" class="block block-simple-block block-simple-blocklogo-white">
+  
+    
+      <p><a class="site-logo" href="../../../../../index.html" rel="home"><img src="../../../../themes/custom/creatio/logo-white.svg" /></a></p>
+
+  </div>
+<div id="block-breadcrumbnaviagtion" class="block block-ts-nav block-ts-nav-bread">
+  
+    
+      <nav class="breadcrumb"><ol class="ts-nav-breadcrumb__list"><li class="ts-nav-breadcrumb__item"><a href="../../../../index.html" class="ts-nav-breadcrumb__link" title="Документация">Документация</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../../index2132.html?vid_1=2" class="ts-nav-breadcrumb__link" title="Для разработчика">Для разработчика</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../front_end_razrabotka.html" class="ts-nav-breadcrumb__link" title="Front-end разработка" hreflang="zxx">Front-end разработка</a></li>
+<li class="ts-nav-breadcrumb__item ts-nav-breadcrumb__item_mobile"><a href="../sandbox.html" class="ts-nav-breadcrumb__link" title="Sandbox" hreflang="ru">Sandbox</a></li>
+<li class="ts-nav-breadcrumb__item"><span class="ts-nav-breadcrumb__link ts-nav-breadcrumb__link_current" title="Обзор">Обзор</span></li>
+</ol>
+</nav>
+
+  </div>
+<div id="block-search-2" class="block block-simple-block block-simple-blocksearch">
+  
+    
+      <div class="search">
+<form action="https://academy.terrasoft.ua/search" class="search-form" method="get"><input class="search-form__input" name="search" placeholder="Поиск" type="search" /><input class="search-form__button" type="submit" value="Поиск" /> </form>
+
+<div class="search-toggle"> </div>
+</div>
+
+  </div>
+
+  </div>
+
+        </div>
+      </div>
+      </header>
+
+  <div class="creatio-region creatio-region_main">
+    <div class="creatio-container">
+                <div class="region region-breadcrumb-mobile">
+    <div id="block-breadcrumbnaviagtion-2" class="block block-ts-nav block-ts-nav-bread">
+  
+    
+      <nav class="breadcrumb"><ol class="ts-nav-breadcrumb__list"><li class="ts-nav-breadcrumb__item"><a href="../../../../index.html" class="ts-nav-breadcrumb__link" title="Документация">Документация</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../../index2132.html?vid_1=2" class="ts-nav-breadcrumb__link" title="Для разработчика">Для разработчика</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../front_end_razrabotka.html" class="ts-nav-breadcrumb__link" title="Front-end разработка" hreflang="zxx">Front-end разработка</a></li>
+<li class="ts-nav-breadcrumb__item ts-nav-breadcrumb__item_mobile"><a href="../sandbox.html" class="ts-nav-breadcrumb__link" title="Sandbox" hreflang="ru">Sandbox</a></li>
+<li class="ts-nav-breadcrumb__item"><span class="ts-nav-breadcrumb__link ts-nav-breadcrumb__link_current" title="Обзор">Обзор</span></li>
+</ol>
+</nav>
+
+  </div>
+
+  </div>
+
+      
+      <main class="creatio-main" role="main">
+                                                    
+        <div class="creatio-content creatio-content_small">
+          <div class="creatio-content__inner creatio-content__inner_bg">
+                            <div class="region region-messages">
+    <div data-drupal-messages-fallback class="hidden"></div>
+
+  </div>
+
+            
+              <div class="region region-content">
+    <div id="block-creatio-page-title" class="block block-core block-page-title-block">
+  
+    
+      
+  <h1 class="page-title"><span class="field field--name-title field--type-string field--label-hidden">Sandbox</span>
+</h1>
+
+
+  </div>
+<div id="block-creatio-content" class="block block-system block-system-main-block">
+  
+    
+      
+<article data-history-node-id="3421" role="article" about="/docs/8-0/developer/front_end_razrabotka/sandbox/obzor" class="node node--type-developer-documentation node--view-mode-full">
+
+  
+    
+
+  
+  <div class="node__content">
+      <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocknodedeveloper-documentationfield-difficulty">
+  
+    
+      
+            <div class="field field--name-field-difficulty field--type-entity-reference field--label-hidden field__item"><div about="/docs/8-0/taxonomy/term/123" id="taxonomy-term-123" class="taxonomy-term vocabulary-difficulty">
+  
+  
+  <div class="content">
+      <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocktaxonomy-termdifficultyfield-icon">
+  
+    
+      
+            <div class="field field--name-field-icon field--type-image field--label-hidden field__item">  <img src="../../../../sites/default/files/difficulty/medium.svg" alt="" loading="lazy" typeof="foaf:Image" />
+
+</div>
+      
+  </div>
+<div class="block block-layout-builder block-field-blocktaxonomy-termdifficultyname">
+  
+    
+      
+            <div class="field field--name-name field--type-string field--label-hidden field__item"><span style="color: #F57E20;">Средний</span></div>
+      
+  </div>
+
+    </div>
+  </div>
+
+  </div>
+</div>
+</div>
+      
+  </div>
+<div class="block block-ts-doc block-ts-doc-downloads">
+  
+    
+      <a href="../../../../sites/default/files/pdf/node/3421/Sandbox_.pdf" target="_blank">PDF</a>
+  </div>
+<div class="block block-ts-doc block-ts-doc-versions">
+  
+    
+        <div class="ts-doc-versions">
+    <select class="ts-doc-versions__select">
+                                                <option value="/docs/8-0/developer/front_end_razrabotka/sandbox/obzor" selected>Версия 8.0</option>
+                              <option value="/docs/7-18/developer/front_end_razrabotka/sandbox/obzor">Версия 7.18</option>
+                              <option value="/docs/7-17/developer/front_end_razrabotka/sandbox/obzor">Версия 7.17</option>
+                              <option value="/docs/7-16/developer/front-end_development/sandbox_component/sandbox">Версия 7.16</option>
+          </select>
+  </div>
+
+  </div>
+
+    </div>
+  </div>
+  <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocknodedeveloper-documentationbody">
+  
+    
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><p>Модуль в Creatio является изолированной программной единицей. Ему ничего не известно об остальных <a href="../moduli/vidy_modulej/obzor.html">модулях системы</a>, кроме имен модулей, от которых он зависит. Для организации взаимодействия модулей предназначен специальный объект — <span class="filled">sandbox</span>.</p>
+
+<p>Sandbox предоставляет два ключевых <strong>механизма взаимодействия модулей</strong> в системе:</p>
+
+<ul><li>Механизм обмена сообщениями между модулями. </li>
+	<li>Загрузка и выгрузка модулей по требованию (для визуальных модулей).  </li>
+</ul><div class="message message_warning">
+<p><span class="message__bold message__bold_warning">Важно.</span> Для того чтобы модуль мог взаимодействовать с другими модулями системы, он должен импортировать в качестве зависимости модуль <span class="filled">sandbox</span>.</p>
+</div>
+
+<h2>Обмен сообщениями между модулями<a class="title-anchor" href="#title-3042-1" id="title-3042-1"> </a></h2>
+
+<p>Модули могут общаться друг с другом только посредством сообщений. Модуль, которому требуется сообщить об изменении своего состояния другим модулям в системе, публикует сообщение. Если модулю необходимо получать сообщения об изменении состояний других модулей, он должен быть подписанным на эти сообщения.</p>
+
+<div class="message">
+<p><span class="message__bold">На заметку.</span> Указывать базовые модули в зависимостях <span class="key">"ext-base", "terrasoft", "sandbox"</span> не обязательно, если модуль экспортирует конструктор класса. Объекты <span class="filled">Ext</span>, <span class="filled">Terrasoft</span> и <span class="filled">sandbox</span> после создания объекта класса модуля будут доступны как свойства объекта: <span class="filled">this.Ext</span>, <span class="filled">this.Terrasoft</span>, <span class="filled">this.sandbox</span>.</p>
+</div>
+
+<h3>Зарегистрировать сообщение<a class="title-anchor" href="#title-3042-2" id="title-3042-2"> </a></h3>
+
+<p>Чтобы модули могли обмениваться сообщениями, сообщения необходимо зарегистрировать.</p>
+
+<p>Для регистрации сообщений модуля предназначен метод <span class="filled">sandbox.registerMessages(messageConfig)</span>, где <span class="filled">messageConfig</span> — конфигурационный объект сообщений модуля.</p>
+
+<p>Конфигурационный объект является коллекцией "ключ-значение", в которой каждый элемент имеет вид, представленный ниже.</p>
+
+<div class="code">
+<div class="code__widgets">
+<div class="code__top">
+<div class="code__title">Конфигурационный объект сообщения</div>
+</div>
+
+<div class="code__source">
+<pre class="prettyprint">
+<span>"MessageName"</span>: {
+    mode: [Режим работы сообщения],
+    direction: [Направление сообщения]
+}
+</pre>
+</div>
+</div>
+</div>
+
+<p>Здесь <span class="filled">MessageName</span> — ключ элемента коллекции, содержащий имя сообщения. Значением является конфигурационный объект, содержащий два свойства:</p>
+
+<ul><li><span class="filled">mode</span> — режим работы сообщения. Должно содержать значение перечисления <span class="filled">Terrasoft.MessageMode (Terrasoft.core.enums.MessageMode)</span>.</li>
+	<li><span class="filled">direction</span> — направление сообщения. Должно содержать значение перечисления <span class="filled">Terrasoft.MessageDirectionType (Terrasoft.core.enums.MessageDirectionType)</span>.</li>
+</ul><p><strong>Режимы обмена сообщениями</strong> (свойство <span class="filled">mode</span>):</p>
+
+<ul><li><b>Широковещательный</b> — режим работы сообщения, при котором количество подписчиков заранее неизвестно. Соответствует значению перечисления <span class="filled">Terrasoft.MessageMode.BROADCAST</span>.</li>
+	<li><b>Адресный</b> — режим работы сообщения, при котором сообщение может быть обработано только одним подписчиком. Соответствует значению перечисления <span class="filled">Terrasoft.MessageMode.PTP.</span></li>
+</ul><div class="message message_warning">
+<p><span class="message__bold message__bold_warning">Важно.</span> В адресном режиме подписчиков может быть несколько, но сообщение обработает только один, как правило, последний зарегистрированный подписчик.</p>
+</div>
+
+<p><strong>Направления сообщения</strong> (свойство <span class="filled">direction</span>):</p>
+
+<ul><li><b>Публикация</b> — модуль может только опубликовать сообщение в <span class="filled">sandbox</span>. Соответствует значению перечисления <span class="filled">Terrasoft.MessageDirectionType.PUBLISH</span>.</li>
+	<li><b>Подписка</b> — модуль может только подписаться на сообщение, опубликованное из другого модуля. Соответствует значению перечисления <span class="filled">Terrasoft.MessageDirectionType.SUBSCRIBE</span>.</li>
+	<li><b>Двунаправленное</b> — позволяет публиковать и подписываться на одно и то же сообщение в разных экземплярах одного и того же класса или в рамках одной и той же иерархии наследования схем. Соответствует значению перечисления <span class="filled">Terrasoft.MessageDirectionType.BIDIRECTIONAL</span>.</li>
+</ul><p>В схемах модели представления регистрировать сообщения с помощью метода <span class="filled">sandbox.registerMessages()</span> не нужно. Достаточно объявить конфигурационный объект сообщений в свойстве <span class="filled">messages</span>.</p>
+
+<p>Для отказа от регистрации сообщений в модуле можно воспользоваться методом <span class="filled">sandbox.unRegisterMessages(messages)</span>, где <span class="filled">messages</span> — имя или массив имен сообщений.</p>
+
+<h3>Добавить сообщение в схему модуля<a class="title-anchor" href="#title-3042-3" id="title-3042-3"> </a></h3>
+
+<p>Зарегистрировать сообщения можно также, добавив их в схему модуля с помощью дизайнера.</p>
+
+<p>Для добавления сообщения в схему модуля:</p>
+
+<ol><li>
+	<p>В области свойств модуля дизайнера схемы модуля добавьте сообщение в узел <span class="key">Сообщения</span>(<span class="key">Messages</span>).</p>
+
+	<div class="media__element"><img alt="" border="0" src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/SandboxMessages/scr_add.png" /></div>
+	</li>
+	<li>
+	<p>Для добавленного сообщения установите необходимые свойства:</p>
+
+	<ul><li><span class="key">Название</span> (<span class="key">Name</span>) — имя сообщения, совпадающее с ключом в конфигурационном объекте модуля.</li>
+		<li><span class="key">Направление</span> (<span class="key">Direction</span>) — направление сообщения. Возможные значения "<span class="consolas">Подписка</span>" ("<span class="consolas">Follow</span>") и "<span class="consolas">Публикация</span>" ("<span class="consolas">Publish</span>").</li>
+		<li><span class="key">Режим</span> (<span class="key">Mode</span>) — режим работы сообщения. Возможные значения "<span class="consolas">Широковещательное</span>" ("<span class="consolas">Broadcast</span>") и "<span class="consolas">Адрес</span>" ("<span class="consolas">Address</span>").</li>
+	</ul><div class="media__element"><img alt="" border="0" src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/SandboxMessages/scr_props.png" /></div>
+
+	<div class="message message_warning">
+	<p><span class="message__bold message__bold_warning">Важно.</span> В <a href="../../../../7-17/developer/instrumenty_razrabotki/creatio_ide/razrabotka_konfiguratsionnykh_elementov.html#title-3028-3">схемах модели представления</a> добавлять сообщения в структуру схемы не нужно.</p>
+	</div>
+	</li>
+</ol><h3>Опубликовать сообщение<a class="title-anchor" href="#title-3042-4" id="title-3042-4"> </a></h3>
+
+<p>Для публикации сообщения предназначен метод <span class="filled">sandbox.publish(messageName , messageArgs, tags)</span>.</p>
+
+<p>Для сообщения, опубликованного с массивом тегов, будут вызваны только те обработчики, для которых совпадает хотя бы один тег. Сообщения, опубликованные без тегов, смогут обработать только подписчики без тегов.</p>
+
+<h3>Подписаться на сообщение<a class="title-anchor" href="#title-3042-5" id="title-3042-5"> </a></h3>
+
+<p>Подписаться на сообщение можно, используя метод <span class="filled">sandbox.subscribe(messageName, messageHandler, scope, tags)</span>.</p>
+
+<h2>Загрузка и выгрузка модулей<a class="title-anchor" href="#title-3042-7" id="title-3042-7"> </a></h2>
+
+<p>При работе с пользовательским интерфейсом Creatio может возникнуть необходимость загрузки не объявленных как зависимости модулей во время выполнения приложения. </p>
+
+<h3>Загрузить модуль<a class="title-anchor" href="#title-2186-2" id="title-2186-2"> </a></h3>
+
+<p>Для загрузки не объявленных в качестве зависимостей модулей предназначен метод <span class="filled">sandbox.loadModule(moduleName, config)</span>. Параметры метода:</p>
+
+<ul><li><span class="filled">moduleName</span> — название модуля.</li>
+	<li><span class="filled">config</span> — конфигурационный объект, содержащий параметры модуля. Обязательный параметр для визуальных модулей.</li>
+</ul><div class="code">
+<div class="code__widgets">
+<div class="code__top">
+<div class="code__title">Примеры вызова метода <span class="filled">sandbox.loadModule()</span></div>
+</div>
+
+<div class="code__source">
+<pre class="prettyprint">
+<span>// Загрузка модуля без дополнительных параметров.
+</span><span>this</span>.sandbox.loadModule(<span>"ProcessListenerV2"</span>);
+<span>// Загрузка модуля с дополнительными параметрами.
+</span><span>this</span>.sandbox.loadModule(<span>"CardModuleV2"</span>, {
+    renderTo: <span>"centerPanel"</span>,
+    keepAlive: <span>true</span>,
+    id: moduleId
+});
+</pre>
+</div>
+</div>
+</div>
+
+<h3>Выгрузить модуль<a class="title-anchor" href="#title-2186-6" id="title-2186-6"> </a></h3>
+
+<p>Для выгрузки модуля необходимо использовать метод <span class="filled">sandbox.unloadModule(id, renderTo, keepAlive)</span>. Параметры метода:</p>
+
+<ul><li><span class="filled">id</span> — идентификатор модуля.</li>
+	<li><span class="filled">renderTo</span> — название контейнера, из которого необходимо удалить представление визуального модуля. Обязателен для визуальных модулей.</li>
+	<li><span class="filled">keepAlive</span> — признак сохранения модели модуля. При выгрузке модуля ядро может сохранить его модель для возможности использовать ее свойства, методы, сообщения. Не рекомендуется к использованию.</li>
+</ul><div class="code">
+<div class="code__widgets">
+<div class="code__top">
+<div class="code__title">Примеры вызова метода <span class="filled">sandbox.unloadModule()</span></div>
+</div>
+
+<div class="code__source">
+<pre class="prettyprint">
+...
+<span>// Метод получения идентификатора выгружаемого модуля.
+</span>getModuleId: <span>function</span>() {
+    <span>return</span> <span>this</span>.sandbox.id + <span>"_ModuleName"</span>;
+},
+...
+<span>// Выгрузка невизуального модуля.
+</span><span>this</span>.sandbox.unloadModule(<span>this</span>.getModuleId());
+...
+<span>// Выгрузка визуального модуля, ранее загруженного в контейнер "ModuleContainer".
+</span><span>this</span>.sandbox.unloadModule(<span>this</span>.getModuleId(), <span>"ModuleContainer"</span>);
+</pre>
+</div>
+</div>
+</div>
+
+<h3>Создать цепочку модулей<a class="title-anchor" href="#title-2186-7" id="title-2186-7"> </a></h3>
+
+<p>Иногда возникает необходимость показать представление некой модели на месте представления другой модели. Например, для установки значения определенного поля на текущей странице нужно отобразить страницу выбора значения из справочника <span class="filled">SelectData</span>. В таких случаях нужно, чтобы модуль текущей страницы не выгружался, а на месте его контейнера отображалось представление модуля страницы выбора из справочника. Для этого можно использовать цепочки модулей.</p>
+
+<p>Чтобы начать построение цепочки, достаточно добавить свойство <span class="filled">keepAlive</span> в конфигурационный объект загружаемого модуля.</p>
+</div>
+      
+  </div>
+<div class="block block-layout-builder block-field-blocknodedeveloper-documentationfield-linked">
+  
+    
+      
+  <div class="field field--name-field-linked field--type-entity-reference field--label-above">
+    <div class="field__label">Смотрите также</div>
+          <div class="field__items">
+              <div class="field__item"><a href="../klientskaya_skhema/obzor.html" hreflang="ru">Клиентская схема</a></div>
+          <div class="field__item"><a href="../moduli/ponyatie_modulya/obzor.html" hreflang="ru">Понятие модуля</a></div>
+              </div>
+      </div>
+
+  </div>
+
+    </div>
+  </div>
+
+  </div>
+
+</article>
+
+  </div>
+
+  </div>
+
+          </div>
+        </div>
+
+                  <aside class="creatio-sidebar creatio-sidebar_first" role="complementary">
+              <div class="region region-sidebar-first">
+    <div id="block-documentationnaviagtion" class="block block-ts-nav block-ts-nav-doc-nav">
+  
+    
+      <div class="ts-nav-block"><a href="../../../../index.html" class="ts-nav-block__link">Документация</a><div class="ts-nav-block__title">Для разработчика</div>
+</div>
+<div class="ts-nav-container"><ul class="ts-nav-menu"><li class="ts-nav-menu__item">
+  <a href="../../s_chego_nachat.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">С чего начать&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../architecture.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Архитектура&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../instrumenty_razrabotki.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Инструменты разработки&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../back_end_razrabotka.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Back-end разработка&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../front_end_razrabotka_freedom_ui.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Front-end разработка Freedom UI&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../front_end_razrabotka.html" class="ts-nav-menu__link ts-nav-menu__link_expanded ts-nav-menu__link_open" hreflang="zxx">Front-end разработка&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+      <ul class="ts-nav-menu__children">
+      <li class="ts-nav-menu__item">
+  <a href="../moduli.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Модули&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../klientskaya_skhema.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Клиентская схема&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../komponenty/obzor.html" class="ts-nav-menu__link" hreflang="ru">Компоненты</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../sandbox.html" class="ts-nav-menu__link ts-nav-menu__link_expanded ts-nav-menu__link_open" hreflang="ru">Sandbox&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+      <ul class="ts-nav-menu__children">
+      <li class="ts-nav-menu__item">
+  <a href="obzor.html" class="ts-nav-menu__link ts-nav-menu__link_guide ts-nav-menu__link_active" hreflang="ru">Обзор</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="realizovat_obmen_soobshcheniyami.html" class="ts-nav-menu__link ts-nav-menu__link_case" hreflang="ru">Реализовать обмен сообщениями</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="primer_asinkhronnogo_obmena_soobshcheniyami.html" class="ts-nav-menu__link ts-nav-menu__link_case" hreflang="ru">Пример асинхронного обмена сообщениями</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="primer_ispolzovaniya_dvunapravlennykh_soobshchenij.html" class="ts-nav-menu__link ts-nav-menu__link_case" hreflang="ru">Пример использования двунаправленных сообщений</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="nastroit_zagruzku_i_vygruzku_modulej.html" class="ts-nav-menu__link ts-nav-menu__link_case" hreflang="ru">Настроить загрузку и выгрузку модулей</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="sandbox.html" class="ts-nav-menu__link ts-nav-menu__link_reference" data-type="JS" hreflang="ru">Sandbox</a>
+  </li>
+
+    </ul>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../websocket.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">WebSocket&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../front-end_development/operatsii_s_dannymi_front_end.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Операции с данными&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../front-end_development/biznes_logika_elementov_upravleniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Бизнес-логика элементов управления&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../../../api/jscoreapi/7.15.0/index.html" class="ts-nav-menu__link" hreflang="ru">Библиотека JS классов</a>
+  </li>
+
+    </ul>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../integratsiya_i_vneshnij_api.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Интеграция и внешний API&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../ehlementy_interfejsa.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Элементы интерфейса&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../komponenty_prilozheniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Компоненты приложения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../razrabotka_mobilnogo_prilozheniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Разработка мобильного приложения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../razrabotka_marketplace_prilozheniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Разработка Marketplace-приложения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+</ul>
+</div>
+
+  </div>
+
+  </div>
+
+            <div class="creatio-sidebar__toggle"></div>
+          </aside>
+        
+                  <aside class="creatio-sidebar creatio-sidebar_second" role="complementary">
+              <div class="region region-sidebar-second">
+    <div id="block-example" class="block block-ts-nav block-ts-nav-page-nav">
+  
+    
+      <div class="ts-nav-page">
+  </div>
+
+  </div>
+<div id="block-adminfeedbackblock" class="block block-admin-feedback block-admin-feedback-block">
+  
+    
+      <div id="feedback-message"><div id="upper-feedback-content"><h2>Был ли данный материал полезен?</h2>
+<input class="feedback-btn feedback-btn__yes button js-form-submit form-submit" data-node-id="3421" data-feedback="yes" type="submit" name="op" value="Да" />
+<input class="feedback-btn feedback-btn__no button js-form-submit form-submit" data-node-id="3421" data-feedback="no" type="submit" name="op" value="Нет" />
+</div>
+<form class="admin-feedback-form" data-drupal-selector="admin-feedback-form" action="https://academy.terrasoft.ua/docs/8-0/developer/front_end_razrabotka/sandbox/obzor" method="post" id="admin-feedback-form" accept-charset="UTF-8">
+  <div id="feedback-msg-result"></div><div class="js-form-item form-item js-form-type-textarea form-type-textarea js-form-item-feedback-message form-item-feedback-message form-no-label">
+        <div class="form-textarea-wrapper">
+  <textarea id="edit-feedback-msg" data-drupal-selector="edit-feedback-message" name="feedback_message" rows="5" cols="60" class="form-textarea resize-vertical"></textarea>
+</div>
+
+        </div>
+<input id="feedback-id" data-drupal-selector="edit-feedback-id" type="hidden" name="feedback_id" value="" />
+<input class="feedback-btn feedback-btn__send-comment button js-form-submit form-submit" data-drupal-selector="edit-feedback-send" type="submit" id="edit-feedback-send" name="op" value="Отправить" />
+<input autocomplete="off" data-drupal-selector="form-ds34inskhqluumrsudytrit8v0oiehn-gt4apucogha" type="hidden" name="form_build_id" value="form-Ds34InsKHQlUUMRsUdYTRit8v0OIEHn_gT4aPUCoGhA" />
+<input data-drupal-selector="edit-admin-feedback-form" type="hidden" name="form_id" value="admin_feedback_form" />
+
+</form>
+</div>
+
+  </div>
+
+  </div>
+
+          </aside>
+              </main>
+    </div>
+  </div>
+
+  <footer role="contentinfo">
+    <div class="creatio-region creatio-region_footer">
+      <div class="creatio-container">
+          <div class="region region-footer">
+    <div id="block-footerua" class="block block-simple-block block-simple-blockfooter-ua">
+  
+    
+      <div class="footer">
+<div class="footer-left">
+<ul class="footer-socials"><li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_fb" href="https://www.facebook.com/terrasoft.ua" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_in" href="https://www.linkedin.com/company/terrasoft/" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_yt" href="https://www.youtube.com/c/TerrasoftUkraine" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_tg" href="https://t.me/Terrasoft_UA" target="_blank"> </a></li>
+</ul></div>
+
+<div class="footer-contact">
+<div class="footer-title">Будьте на связи!</div>
+
+<div class="footer-content">
+<div class="footer-items">
+<div class="footer-item"><a class="footer__link footer__link_phone" href="tel:+380443633133">+38 (044) 363-31-33</a></div>
+</div>
+
+<div class="footer-items">
+<div class="footer-item"><a class="footer__link footer__link_email" href="mailto:support@terrasoft.ua">support@terrasoft.ua</a></div>
+</div>
+</div>
+</div>
+</div>
+
+  </div>
+
+  </div>
+
+      </div>
+    </div>
+    <div class="creatio-region creatio-region_bottom">
+      <div class="creatio-container">
+          <div class="region region-bottom">
+    <div id="block-allrightsreservedua" class="block block-simple-block block-simple-blockfooter-bottom-ua">
+  
+    
+      <p>© 2002-2022 Terrasoft.  |  <a href="https://www.terrasoft.ua/privacy-policy" target="_blank">Конфиденциальность</a></p>
+
+  </div>
+
+  </div>
+
+      </div>
+    </div>
+  </footer>
+</div>
+<div class="creatio-bg"></div>
+
+
+  </div>
+
+    
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/docs\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/3421","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"ru"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"ajaxPageState":{"libraries":"admin_feedback\/admin_feedback_block,admin_feedback\/admin_feedback_css,classy\/base,classy\/messages,classy\/node,core\/drupal.ajax,core\/jquery.form,core\/normalize,creatio\/fancybox,creatio\/global,layout_discovery\/onecol,system\/base,ts_doc\/doc_version,ts_feedback\/ts_feedback,ts_nav\/breadcrumb,ts_nav\/doc_nav,ts_nav\/page_nav,ts_title_anchor\/ts_title_anchor","theme":"creatio","theme_token":null},"ajaxTrustedUrl":{"form_action_p_pvdeGsVG5zNF_XLGPTvYSKCf43t8qZYSwcfZl2uzM":true,"\/docs\/8-0\/developer\/front_end_razrabotka\/sandbox\/obzor?ajax_form=1":true},"admin_feedback":{"yes_response":"\u0421\u043f\u0430\u0441\u0438\u0431\u043e \u0437\u0430 \u043e\u0431\u0440\u0430\u0442\u043d\u0443\u044e \u0441\u0432\u044f\u0437\u044c!","no_response":"\u0421\u043f\u0430\u0441\u0438\u0431\u043e \u0437\u0430 \u043e\u0431\u0440\u0430\u0442\u043d\u0443\u044e \u0441\u0432\u044f\u0437\u044c!","custom_text_response_on_no":{"value":"","format":"full_html"},"feedback_prompt_on_yes":true,"feedback_prompt_on_no":true,"feedback_enable_predefined_answers":false,"feedback_prompt":"\u041a\u0430\u043a \u043c\u043e\u0436\u043d\u043e \u0443\u043b\u0443\u0447\u0448\u0438\u0442\u044c \u044d\u0442\u0443 \u0441\u0442\u0430\u0442\u044c\u044e?"},"ajax":{"edit-feedback-send":{"callback":"::validateFeedbackMsg","event":"mousedown","keypress":true,"prevent":"click","url":"\/docs\/8-0\/developer\/front_end_razrabotka\/sandbox\/obzor?ajax_form=1","dialogType":"ajax","submit":{"_triggering_element_name":"op","_triggering_element_value":"\u041e\u0442\u043f\u0440\u0430\u0432\u0438\u0442\u044c"}}},"user":{"uid":0,"permissionsHash":"9c2367dfcaba0fa15f0375f97aed64e146c908cee68508d13b79e3ee80e5162d"}}</script>
+<script src="../../../../sites/default/files/js/js_Rr-7TvYD7NposuRFJwUqThxM7yJmw8vs03PQwu5gWd8.js"></script>
+
+
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+      <g id="svg-copy" class="svg-icon svg-icon_copy">
+        <path d="M15.111,18H1.889A1.848,1.848,0,0,1,0,16.2V3.6A1.848,1.848,0,0,1,1.889,1.8H5.837a2.87,2.87,0,0,1,5.326,0h3.948A1.848,1.848,0,0,1,17,3.6V16.2A1.848,1.848,0,0,1,15.111,18ZM3.777,12.6v1.8h6.611V12.6Zm0-3.6v1.8h9.445V9Zm0-3.6V7.2h9.445V5.4ZM8.5,1.8a.924.924,0,0,0-.944.9.945.945,0,0,0,1.889,0A.924.924,0,0,0,8.5,1.8Z"/>
+      </g>
+
+      <g id="svg-prev" class="svg-icon svg-icon_arrow">
+        <path d="M5.488,12.779,0,6.39,5.488,0" transform="translate(1 0.652)"/>
+      </g>
+
+      <g id="svg-next" class="svg-icon svg-icon_arrow">
+        <path d="M0,12.779,5.488,6.39,0,0" transform="translate(0.759 0.652)"/>
+      </g>
+    </svg>
+  </body>
+
+<!-- Mirrored from academy.terrasoft.ua/docs/8-0/developer/front_end_razrabotka/sandbox/obzor by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Mar 2022 07:01:11 GMT -->
+</html>

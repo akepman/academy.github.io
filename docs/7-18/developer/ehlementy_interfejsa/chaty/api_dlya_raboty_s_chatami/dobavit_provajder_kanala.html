@@ -1,0 +1,1277 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# ">
+  
+<!-- Mirrored from academy.terrasoft.ua/docs/7-18/developer/ehlementy_interfejsa/chaty/api_dlya_raboty_s_chatami/dobavit_provajder_kanala by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Mar 2022 05:12:37 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+          <!-- Google Tag Manager -->
+      <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          '../../../../../../../www.googletagmanager.com/gtm5445.html?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-KLLB8G');</script>
+      <!-- End Google Tag Manager -->
+        <meta charset="utf-8" />
+<link rel="canonical" href="dobavit_provajder_kanala.html" />
+<meta name="description" content="Пример. В on-site приложении Creatio создать новый провайдер чата Test. В качестве зависимости пользовательского пакета указать пакет OmnichannelMessaging." />
+<meta property="og:url" content="https://academy.terrasoft.ua/docs/7-18/developer/ehlementy_interfejsa/chaty/api_dlya_raboty_s_chatami/dobavit_provajder_kanala" />
+<meta property="og:title" content="Добавить новый провайдер канала" />
+<meta property="og:description" content="Пример. В on-site приложении Creatio создать новый провайдер чата Test. В качестве зависимости пользовательского пакета указать пакет OmnichannelMessaging." />
+<meta name="Generator" content="Drupal 9 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="../../../../../themes/custom/creatio/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="revision" href="dobavit_provajder_kanala.html" />
+
+    <title>Добавить новый провайдер канала | Creatio Academy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&amp;family=Open+Sans:ital,wght@0,300;0,400;0,600;1,400&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" media="all" href="../../../../../sites/default/files/css/css_6lTP66__-yc6QXFp1zOwoeJ0HVigoYZP-SeoLLii000.css" />
+<link rel="stylesheet" media="all" href="../../../../../sites/default/files/css/css_XQJDNhkF3xH5SZCcY-PI89Zu4nYIzQ5oR3SnUKyfXJU.css" />
+<link rel="stylesheet" media="print" href="../../../../../sites/default/files/css/css_Zn4VHvcniOOtUwkIVwXzYr_0AI9gUVgZcPqaH4ViagU.css" />
+
+    
+  </head>
+  <body class="path-node page-node-type-case">
+          <!-- Google Tag Manager (noscript) -->
+      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KLLB8G"
+                        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+      <!-- End Google Tag Manager (noscript) -->
+    
+        
+      <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    <div class="creatio-page d-flex flex-column">
+        <div class="region region-informer">
+    <div id="block-terrasoftpidtrimueukrainu" class="block block-simple-block block-simple-blockterrasoft-pidtrimue-ukrainu">
+  
+    
+      <style type="text/css">
+<!--/*--><![CDATA[/* ><!--*/
+@import url(../../../../../../../www.terrasoft.ua/themes/custom/creatio/css/components/informer.css)
+
+/*--><!]]>*/
+</style><div class="ts-swu">
+<div class="creatio-container">
+<div class="ts-swu__cont">
+<div><a class="ts-swu__link" href="https://www.terrasoft.ua/terrasoft-stands-with-ukraine" target="_blank">Україна понад усе!</a> <span><a href="https://www.terrasoft.ua/terrasoft-stands-with-ukraine" target="_blank">Приєднуйтеся</a> до допомоги!</span></div>
+</div>
+</div></div>
+
+  </div>
+
+  </div>
+
+  
+  <header role="banner">
+          <div class="creatio-region creatio-region_top">
+        <div class="creatio-container">
+            <div class="region region-top">
+    <div id="block-menutoggle" class="block block-simple-block block-simple-blockmenu-toggle">
+  
+    
+      <div class="menu-toggle"><span> </span></div>
+
+  </div>
+<div id="block-logowhite-2" class="block block-simple-block block-simple-blocklogo-white">
+  
+    
+      <p><a class="site-logo" href="../../../../../../index.html" rel="home"><img src="../../../../../themes/custom/creatio/logo-white.svg" /></a></p>
+
+  </div>
+<div id="block-search" class="block block-simple-block block-simple-blocksearch">
+  
+    
+      <div class="search">
+<form action="https://academy.terrasoft.ua/search" class="search-form" method="get"><input class="search-form__input" name="search" placeholder="Поиск" type="search" /><input class="search-form__button" type="submit" value="Поиск" /> </form>
+
+<div class="search-toggle"> </div>
+</div>
+
+  </div>
+<nav role="navigation" aria-labelledby="block-sitesua-menu" id="block-sitesua" class="block block-menu navigation menu--sites-ua">
+            
+  <h2 class="visually-hidden" id="block-sitesua-menu">Sites UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="https://www.terrasoft.ua/" rel="nofollow" target="_blank">Terrasoft</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://community.terrasoft.ua/" rel="nofollow" target="_blank">Community</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://marketplace.terrasoft.ua/" rel="nofollow" target="_blank">Marketplace</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+<div id="block-usermenu" class="block block-ts-user block-ts-user-menu-block">
+  
+    
+      <ul class="user-menu">
+      <li class="user-menu__item">
+      <a class="user-menu__link" href="https://profile.terrasoft.ua/user/login?destination=academy/ua/docs/7-18/developer/ehlementy_interfejsa/chaty/api_dlya_raboty_s_chatami/dobavit_provajder_kanala">Войти</a>
+    </li>
+  </ul>
+
+  </div>
+<div id="block-usermenumobile" class="block block-ts-user block-ts-user-menu-mobile-block">
+  
+    
+      <ul class="user-menu-mobile">
+      <li class="user-menu-mobile__item">
+      <div class="user-menu-mobile__user user-menu-mobile__user_icon"></div>
+      <ul class="user-menu-mobile__submenu">
+        <li class="user-menu-mobile__subitem">
+          <a class="user-menu-mobile__sublink" href="https://profile.terrasoft.ua/user/login?destination=academy/ua/docs/7-18/developer/ehlementy_interfejsa/chaty/api_dlya_raboty_s_chatami/dobavit_provajder_kanala">Войти</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  </div>
+
+  </div>
+
+        </div>
+      </div>
+              <div class="creatio-region creatio-region_header">
+        <div class="creatio-container">
+            <div class="region region-header">
+    <div id="block-logo" class="block block-simple-block block-simple-blocklogo">
+  
+    
+      <p><a class="site-logo" href="../../../../../../index.html" rel="home"><img src="../../../../../themes/custom/creatio/logo.svg" /></a></p>
+
+  </div>
+<nav role="navigation" aria-labelledby="block-osnovnayanavigaciyaua-menu" id="block-osnovnayanavigaciyaua" class="block block-menu navigation menu--main-ua">
+            
+  <h2 class="visually-hidden" id="block-osnovnayanavigaciyaua-menu">Основная навигация UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="../../../../../index.html" data-drupal-link-system-path="&lt;front&gt;">Документация</a>
+              </li>
+                <li class="menu-item">
+        <a href="../../../../../../trainings.html">Тренинги</a>
+              </li>
+                <li class="menu-item">
+        <a href="../../../../../certification.html" data-drupal-link-system-path="node/3084">Сертификация и тестирование</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+<nav role="navigation" aria-labelledby="block-sitesua-2-menu" id="block-sitesua-2" class="block block-menu navigation menu--sites-ua">
+            
+  <h2 class="visually-hidden" id="block-sitesua-2-menu">Sites UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="https://www.terrasoft.ua/" rel="nofollow" target="_blank">Terrasoft</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://community.terrasoft.ua/" rel="nofollow" target="_blank">Community</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://marketplace.terrasoft.ua/" rel="nofollow" target="_blank">Marketplace</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+
+  </div>
+
+        </div>
+      </div>
+              <div class="creatio-region creatio-region_breadcrumb">
+        <div class="creatio-container">
+            <div class="region region-breadcrumb">
+    <div id="block-logowhite" class="block block-simple-block block-simple-blocklogo-white">
+  
+    
+      <p><a class="site-logo" href="../../../../../../index.html" rel="home"><img src="../../../../../themes/custom/creatio/logo-white.svg" /></a></p>
+
+  </div>
+<div id="block-breadcrumbnaviagtion" class="block block-ts-nav block-ts-nav-bread">
+  
+    
+      <nav class="breadcrumb"><ol class="ts-nav-breadcrumb__list"><li class="ts-nav-breadcrumb__item"><a href="../../../../../index.html" class="ts-nav-breadcrumb__link" title="Документация">Документация</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../../../index2132.html?vid_1=2" class="ts-nav-breadcrumb__link" title="Для разработчика">Для разработчика</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../ehlementy_interfejsa.html" class="ts-nav-breadcrumb__link" title="Элементы интерфейса" hreflang="ru">Элементы интерфейса</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../chaty.html" class="ts-nav-breadcrumb__link" title="Чаты" hreflang="ru">Чаты</a></li>
+<li class="ts-nav-breadcrumb__item ts-nav-breadcrumb__item_mobile"><a href="../../../interface_elements/chat/api_dlya_raboty_s_chatami.html" class="ts-nav-breadcrumb__link" title="API для работы с чатами" hreflang="ru">API для работы с чатами</a></li>
+<li class="ts-nav-breadcrumb__item"><span class="ts-nav-breadcrumb__link ts-nav-breadcrumb__link_current" title="Добавить провайдер канала">Добавить провайдер канала</span></li>
+</ol>
+</nav>
+
+  </div>
+<div id="block-search-2" class="block block-simple-block block-simple-blocksearch">
+  
+    
+      <div class="search">
+<form action="https://academy.terrasoft.ua/search" class="search-form" method="get"><input class="search-form__input" name="search" placeholder="Поиск" type="search" /><input class="search-form__button" type="submit" value="Поиск" /> </form>
+
+<div class="search-toggle"> </div>
+</div>
+
+  </div>
+
+  </div>
+
+        </div>
+      </div>
+      </header>
+
+  <div class="creatio-region creatio-region_main">
+    <div class="creatio-container">
+                <div class="region region-breadcrumb-mobile">
+    <div id="block-breadcrumbnaviagtion-2" class="block block-ts-nav block-ts-nav-bread">
+  
+    
+      <nav class="breadcrumb"><ol class="ts-nav-breadcrumb__list"><li class="ts-nav-breadcrumb__item"><a href="../../../../../index.html" class="ts-nav-breadcrumb__link" title="Документация">Документация</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../../../index2132.html?vid_1=2" class="ts-nav-breadcrumb__link" title="Для разработчика">Для разработчика</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../ehlementy_interfejsa.html" class="ts-nav-breadcrumb__link" title="Элементы интерфейса" hreflang="ru">Элементы интерфейса</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../chaty.html" class="ts-nav-breadcrumb__link" title="Чаты" hreflang="ru">Чаты</a></li>
+<li class="ts-nav-breadcrumb__item ts-nav-breadcrumb__item_mobile"><a href="../../../interface_elements/chat/api_dlya_raboty_s_chatami.html" class="ts-nav-breadcrumb__link" title="API для работы с чатами" hreflang="ru">API для работы с чатами</a></li>
+<li class="ts-nav-breadcrumb__item"><span class="ts-nav-breadcrumb__link ts-nav-breadcrumb__link_current" title="Добавить провайдер канала">Добавить провайдер канала</span></li>
+</ol>
+</nav>
+
+  </div>
+
+  </div>
+
+      
+      <main class="creatio-main" role="main">
+                                                    
+        <div class="creatio-content creatio-content_small">
+          <div class="creatio-content__inner creatio-content__inner_bg">
+                            <div class="region region-messages">
+    <div data-drupal-messages-fallback class="hidden"></div>
+
+  </div>
+
+            
+              <div class="region region-content">
+    <div id="block-creatio-page-title" class="block block-core block-page-title-block">
+  
+    
+      
+  <h1 class="page-title"><span class="field field--name-title field--type-string field--label-hidden">Добавить новый провайдер канала</span>
+</h1>
+
+
+  </div>
+<div id="block-creatio-content" class="block block-system block-system-main-block">
+  
+    
+      
+<article data-history-node-id="3485" role="article" about="/docs/7-18/developer/ehlementy_interfejsa/chaty/api_dlya_raboty_s_chatami/dobavit_provajder_kanala" class="node node--type-case node--view-mode-full">
+
+  
+    
+
+  
+  <div class="node__content">
+      <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocknodecasefield-difficulty">
+  
+    
+      
+            <div class="field field--name-field-difficulty field--type-entity-reference field--label-hidden field__item"><div about="/docs/7-18/taxonomy/term/169" id="taxonomy-term-169" class="taxonomy-term vocabulary-difficulty">
+  
+  
+  <div class="content">
+      <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocktaxonomy-termdifficultyfield-icon">
+  
+    
+      
+            <div class="field field--name-field-icon field--type-image field--label-hidden field__item">  <img src="../../../../../sites/default/files/difficulty/advanced.svg" alt="" loading="lazy" typeof="foaf:Image" />
+
+</div>
+      
+  </div>
+<div class="block block-layout-builder block-field-blocktaxonomy-termdifficultyname">
+  
+    
+      
+            <div class="field field--name-name field--type-string field--label-hidden field__item"><span style="color: #EF4524;">Сложный</span></div>
+      
+  </div>
+
+    </div>
+  </div>
+
+  </div>
+</div>
+</div>
+      
+  </div>
+<div class="block block-ts-doc block-ts-doc-downloads">
+  
+    
+      <a href="../../../../../sites/default/files/pdf/node/3485/Dobavit_novyy_provayder_kanala_.pdf" target="_blank">PDF</a>
+  </div>
+<div class="block block-ts-doc block-ts-doc-versions">
+  
+    
+        <div class="ts-doc-versions">
+    <select class="ts-doc-versions__select">
+                              <option value="/docs/8-0/developer/ehlementy_interfejsa/chaty/api_dlya_raboty_s_chatami/dobavit_provajder_kanala">Версия 8.0</option>
+                                                <option value="/docs/7-18/developer/ehlementy_interfejsa/chaty/api_dlya_raboty_s_chatami/dobavit_provajder_kanala" selected>Версия 7.18</option>
+          </select>
+  </div>
+
+  </div>
+
+    </div>
+  </div>
+  <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocknodecasebody">
+  
+    
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><div class="message message_example">
+<p><span class="message__bold message__bold_example">Пример.</span> В on-site приложении Creatio создать новый провайдер чата <span class="filled">Test</span>. В качестве зависимости пользовательского <a href="../../../../../developer/instrumenty_razrabotki/pakety/obshchiye_printsipy_raboty_s_paketami/obzor.html?id=15121">пакета</a> указать пакет <span class="filled">OmnichannelMessaging</span>.</p>
+</div>
+
+<h2>1. Добавить новый провайдер в Creatio<a class="title-anchor" href="#title-3485-1" id="title-3485-1"> </a></h2>
+
+<ol><li>Перейдите в дизайнер системы по кнопке <img alt="" border="0" src="../../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/TryIt/scr_system_designer.png" />.</li>
+    <li>В блоке <span class="key">Настройка системы</span> (<span class="key">System setup</span>) перейдите по ссылке <span class="key">Справочники</span> (<span class="key">Lookups</span>).</li>
+    <li>Используя фильтр в верхней части страницы, найдите справочник <span class="key">Провайдер канала</span> (<span class="key">Channel provider</span>).</li>
+    <li>Откройте наполнение справочника и добавьте значение <span class="filled">Test</span>.</li>
+</ol><h2>2. Реализовать хранение данных нового канала<a class="title-anchor" href="#title-3485-2" id="title-3485-2"> </a></h2>
+
+<p>В базе данных приложения создайте таблицу <span class="filled">[TestMsgSettings]</span> (имя таблицы следует формировать по правилу <span class="filled">[&lt;ИмяПровайдера&gt;MsgSettings]</span>).</p>
+
+<p>Структура таблицы зависит от конкретного мессенджера и должна содержать данные, необходимые системе для выполнения отправки и приема сообщений. Как правило мессенджеры для отправки используют авторизационный токен.</p>
+
+<div class="code">
+<div class="code__top">
+<div class="code__title">Пример скрипта, который создает таблицу <span class="filled">[TestMsgSettings]</span></div>
+
+<div class="code__langs">
+<div class="code__lang code__lang_active">MSSQL</div>
+
+<div class="code__lang">Postgres</div>
+</div>
+</div>
+
+<div class="code__widgets">
+<div class="code__source code__source_active" data-insert="false" data-type="MSSQL">
+<pre class="prettyprint">
+IF OBJECT_ID('TestMsgSettings') IS NULL 
+    BEGIN
+    CREATE TABLE TestMsgSettings(
+        Id uniqueidentifier NOT NULL DEFAULT (newid()),
+        Token nvarchar(250) NOT NULL DEFAULT (''),
+        UserName nvarchar(250) NOT NULL DEFAULT (''),
+        CONSTRAINT PK_TestMsgSettings_Id PRIMARY KEY CLUSTERED (Id)
+    )
+END</pre>
+</div>
+
+<div class="code__source" data-insert="false" data-type="Postgres">
+<pre class="prettyprint">
+CREATE TABLE IF NOT EXISTS public."TestMsgSettings" ( 
+    "Id" uuid NOT NULL DEFAULT uuid_generate_v4(),
+    "Token" character varying(250) COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying,
+    "UserName" character varying(250) COLLATE pg_catalog."default" NOT NULL DEFAULT ''::character varying
+    CONSTRAINT "PK_TestMsgSettings_Id" PRIMARY KEY ("Id")
+);
+</pre>
+</div>
+</div>
+</div>
+
+<h2>3. Зарегистрировать новый канал в базе данных<a class="title-anchor" href="#title-3485-3" id="title-3485-3"> </a></h2>
+
+<p>Для регистрации нового канала добавьте запись в таблицу <span class="filled">[Channel]</span>.</p>
+
+<div class="table">
+<div class="table__caption">Описание полей таблицы <span class="filled">[Channel]</span></div>
+
+<table><thead><tr><th><center>Поле</center></th>
+            <th><center>Описание</center></th>
+        </tr></thead><tbody><tr><th><span class="filled">[Name]</span></th>
+            <td>Название канала.</td>
+        </tr><tr><th><span class="filled">[ProviderId]</span></th>
+            <td>Идентификатор добавленного провайдера.</td>
+        </tr><tr><th><span class="filled">[MsgSettingsId]</span></th>
+            <td>Идентификатор записи в таблице <span class="filled">[TestMsgSettings]</span>.</td>
+        </tr><tr><th><span class="filled">[Source]</span></th>
+            <td>Идентификатор канала внутри мессенджера, например идентификатор страницы на Facebook или идентификатор клиента в Telegram. Позволяет по сообщению от мессенджера определить получателя.</td>
+        </tr></tbody></table></div>
+
+<h2>4. Создать веб-сервис для приема сообщений<a class="title-anchor" href="#title-3485-4" id="title-3485-4"> </a></h2>
+
+<p>В примере реализуем вариант, при котором мессенджер присылает входящие сообщения на указанный endpoint. Созданный веб-сервис должен быть анонимным и доступным извне. Наследовать веб-сервис следует от базового веб-сервиса <span class="filled">OmnichannelMessagingService</span>, поскольку он содержит набор методов, позволяющих сохранить сообщение, создать чат, контакт и т. д.</p>
+
+<p>Чтобы <strong>создать веб-сервис</strong>:</p>
+
+<ol><li><a href="../../../../../developer/instrumenty_razrabotki/creatio_ide/principy_razrabotki_v_creatio_ide/obzor_creatio_ide%23title-2093-2.html?id=15101&amp;anchor=title-2093-2">Перейдите в раздел <span class="key">Конфигурация</span></a> (<span class="key">Configuration</span>) и выберите пользовательский <a href="../../../../../developer/instrumenty_razrabotki/pakety/obshchiye_printsipy_raboty_s_paketami/obzor.html?id=15121">пакет</a>, в который будет добавлена схема.</li>
+    <li>
+    <p>На панели инструментов реестра раздела нажмите <span class="key">Добавить</span> —&gt; <span class="key">Исходный код</span> (<span class="key">Add</span> —&gt; <span class="key">Source code</span>).</p>
+    
+    <div class="media">
+    <div class="media__element"><img src="../../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/CreateSourceCodeSchema(7.17)/scr_add_schema.png" /></div>
+    </div>
+    </li>
+    <li>
+    <p>В дизайнере схем заполните <strong>свойства схемы</strong>:</p>
+
+    <ul><li><span class="key">Код</span> (<span class="key">Code</span>) — "<span class="consolas">UsrTestOmnichannelMessagingService</span>".</li>
+        <li><span class="key">Заголовок</span> (<span class="key">Title</span>) — "<span class="consolas">TestOmnichannelMessagingService</span>".
+        <div class="media">
+        <div class="media__element"><img src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/Omnichannel/scr_omnichannel_messService.png" /></div>
+        </div>
+        </li>
+    </ul><p>Для применения заданных свойств нажмите <span class="key">Применить</span> (<span class="key">Apply</span>).</p>
+    </li>
+    <li>
+    <p>В дизайнере схем добавьте исходный код.</p>
+
+    <div class="code">
+    <div class="code__top">
+    <div class="code__title"><span class="filled">TestOmnichannelMessagingService</span></div>
+    </div>
+
+    <div class="code__widgets">
+    <div class="code__source">
+    <pre class="prettyprint">
+namespace Terrasoft.Configuration.Omnichannel.Messaging
+{
+    using System;
+    using System.ServiceModel;
+    using System.ServiceModel.Activation;
+    using System.ServiceModel.Web;
+    using Terrasoft.Common;
+    using Terrasoft.Core;
+    using Terrasoft.Core.DB;
+    using Terrasoft.Web.Common.ServiceRouting;
+
+    #region Class: TestOmnichannelMessagingService
+
+    /// &lt;summary&gt;
+    /// The service that sends and receives messages from the messaging integration API.
+    /// &lt;/summary&gt;
+    [ServiceContract]
+    [AspNetCompatibilityRequirements(RequirementsMode = AspNetCompatibilityRequirementsMode.Required)]
+    [DefaultServiceRoute]
+    public class TestOmnichannelMessagingService : OmnichannelMessagingService
+    {
+
+        #region Constructors: Public
+
+        public TestOmnichannelMessagingService() : base() {
+        }
+
+        /// &lt;summary&gt;
+        /// Initialize a new instance of &lt;see cref="TestOmnichannelMessagingService"/&gt;.
+        /// &lt;/summary&gt;
+        public TestOmnichannelMessagingService(UserConnection userConnection) : base(userConnection) {
+        }
+
+        #endregion
+
+        #region Methods: Private
+
+        private void GetChannelAndQueueBySource(MessagingMessage message) {
+            Select channelSelect = new Select(UserConnection)
+                .Top(1).Column("Id")
+                .Column("ChatQueueId")
+                .From("Channel")
+                .Where("Source").IsEqual(Column.Parameter(message.Recipient))
+                .And("IsActive").IsEqual(Column.Parameter(true)) as Select;               
+            channelSelect.ExecuteReader(reader =&gt; {
+                message.ChannelId = reader.GetColumnValue&lt;Guid&gt;("Id").ToString();
+                message.ChannelQueueId = reader.GetColumnValue&lt;Guid&gt;("ChatQueueId");
+            });
+        }
+
+        #endregion
+
+        #region Methods: Public
+
+        /// &lt;summary&gt;
+        /// Receive messages from the integration API.
+        /// &lt;/summary&gt;
+        /// &lt;param name="message"&gt;Test provider message.&lt;/param&gt;
+        [OperationContract]
+        [WebInvoke(UriTemplate = "receive", Method = "POST", RequestFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare,
+          ResponseFormat = WebMessageFormat.Json)]
+        public void ReceiveMessage(TestIncomingMessage message) {
+            MessagingMessage messagingMessage = new MessagingMessage(TestIncomingMessageConverter.Convert(message));
+            GetChannelAndQueueBySource(messagingMessage);
+            InternalReceive(messagingMessage);
+        }
+
+        #endregion
+
+    }
+
+    #endregion
+
+}
+</pre>
+    </div>
+    </div>
+    </div>
+
+    <p>В примере мессенджер присылает входящее сообщение на endpoint <span class="filled">receive</span>.</p>
+
+    <p>В методе <span class="filled">ReceiveMessage</span> выполняется:</p>
+
+    <ul><li>Конвертация сообщения (метод <span class="filled">Convert</span> класса <span class="filled">TestIncomingMessageConverter</span>, который будет создан на следующем шаге).</li>
+        <li>Идентификация канала по полю <span class="filled">Source</span> (метод <span class="filled">GetChannelAndQueueBySource</span>).</li>
+        <li>
+        <p>Вызов метода <span class="filled">InternalReceive</span>, который выполнит следующие действия:</p>
+
+        <ul><li>Создаст новый чат, если открытый чат с этим клиентом не будет найден, или добавит сообщение к существующему.</li>
+            <li>Создаст контакт, если это первое общение с клиентом, и выполнит заполнение его контактных данных, или привяжет чат к существующему контакту.</li>
+        </ul></li>
+    </ul></li>
+    <li>
+    <p>Сохраните и опубликуйте схему.</p>
+    </li>
+</ol><h2>5. Реализовать конвертацию входящего сообщения в универсальный формат Creatio<a class="title-anchor" href="#title-3485-5" id="title-3485-5"> </a></h2>
+
+<p>После приема сообщения от мессенджера необходимо выполнить конвертацию входящего сообщения в универсальный формат Creatio (класс <span class="filled">MessagingMessage</span>). В примере эта задача выполняется классом <span class="filled">TestIncomingMessageConverter</span>, который конвертирует входящее сообщение с типом <span class="filled">TestIncomingMessage</span> (сообщение в формате мессенджера) в формат Creatio.</p>
+
+<p>Чтобы <strong>создать класс-конвертер</strong>:</p>
+
+<ol><li><a href="../../../../../developer/instrumenty_razrabotki/creatio_ide/principy_razrabotki_v_creatio_ide/obzor_creatio_ide%23title-2093-2.html?id=15101&amp;anchor=title-2093-2">Перейдите в раздел <span class="key">Конфигурация</span></a> (<span class="key">Configuration</span>) и выберите пользовательский <a href="../../../../../developer/instrumenty_razrabotki/pakety/obshchiye_printsipy_raboty_s_paketami/obzor.html?id=15121">пакет</a>, в который будет добавлена схема.</li>
+    <li>На панели инструментов реестра раздела нажмите <span class="key">Добавить</span> —&gt; <span class="key">Исходный код</span> (<span class="key">Add</span> —&gt; <span class="key">Source code</span>).</li>
+    <li>
+    <p>В дизайнере схем заполните <strong>свойства схемы</strong>:</p>
+
+    <ul><li><span class="key">Код</span> (<span class="key">Code</span>) — "<span class="consolas">UsrTestIncomingMessageConverter</span>".</li>
+        <li><span class="key">Заголовок</span> (<span class="key">Title</span>) — "<span class="consolas">TestIncomingMessageConverter</span>".
+        <div class="media">
+        <div class="media__element"><img src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/Omnichannel/scr_omnichannel_messConverter.png" /></div>
+        </div>
+        </li>
+    </ul><p>Для применения заданных свойств нажмите <span class="key">Применить</span> (<span class="key">Apply</span>).</p>
+    </li>
+    <li>
+    <p>В дизайнере схем добавьте исходный код.</p>
+
+    <div class="code">
+    <div class="code__top">
+    <div class="code__title"><span class="filled">TestIncomingMessageConverter</span></div>
+    </div>
+
+    <div class="code__widgets">
+    <div class="code__source">
+    <pre class="prettyprint">
+namespace Terrasoft.Configuration.Omnichannel.Messaging
+{
+    using OmnichannelProviders.Domain.Entities;
+    using System;
+    using System.Collections.Generic;
+
+    public class TestIncomingMessage : UnifiedMessage
+    { }
+
+    public static class TestIncomingMessageConverter
+    {
+        #region Methods: Public 
+
+        public static MessagingMessage Convert(TestIncomingMessage message) {
+            var messageType = MessageType.Text;
+            var messageId = Guid.NewGuid();
+            var result = new MessagingMessage {
+                Id = messageId,
+                Message = message.Message,
+                /* Получатель сообщения — идентификатор страницы, либо клиента, добавленный в систему в таблице Channel (поле Source). */
+                Recipient = message.Recipient,
+                /* Идентификатор отправителя сообщения внутри мессенджера. Будет связан с контактом через таблицу развязки ContactIdentity. */
+                Sender = message.Sender, 
+                Timestamp = message.Timestamp,
+                /* Идентификатор канала внутри системы, поле MsgSettingsid из объекта. */
+                ChannelId = message.ChannelId, 
+                MessageDirection = MessageDirection.Incoming,
+                MessageType = messageType,
+                /* Указывает на источник канала (сторонние разработчики). */
+                Source = ChannelType.ThirdParty, 
+                /* Имя провайдера. В дальнейшем будет использоваться как идентификатор провайдера. */
+                ChannelName = "Test" 
+            };
+            if (messageType != MessageType.Text) {
+                result.Attachments = new List&lt;MessageAttachment&gt;();
+                foreach (var attachment in message.Attachments){
+                    result.Attachments.Add(new MessageAttachment {
+                        MessageId = messageId,
+                        UploadUrl = attachment.UploadUrl,
+                        FileType = attachment.FileType
+                    });
+                }
+            }
+            return result;
+        }
+
+        #endregion
+
+    }
+}
+</pre>
+    </div>
+    </div>
+    </div>
+
+    <p>Блок <span class="filled">Attachments</span> заполняется в зависимости от формата доступа к файлам, который предоставляет мессенджер. В примере это ссылка для загрузки. Возможен вариант с передачей в сообщении <span class="filled">FileId</span> для последующего скачивания файла.</p>
+    </li>
+    <li>
+    <p>Сохраните и опубликуйте схему.</p>
+    </li>
+</ol><h2>6. Реализовать получение данных профиля пользователя<a class="title-anchor" href="#title-3485-6" id="title-3485-6"> </a></h2>
+
+<p>Мессенджеры предоставляют API для получения данных клиентов, которые отправляют сообщения. Чтобы получить эти данные необходимо создать класс, реализующий интерфейс <span class="filled">IProfileDataProvider</span>.</p>
+
+<p>Чтобы <strong>создать класс</strong> для получения данных профиля пользователя:</p>
+
+<ol><li><a href="../../../../../developer/instrumenty_razrabotki/creatio_ide/principy_razrabotki_v_creatio_ide/obzor_creatio_ide%23title-2093-2.html?id=15101&amp;anchor=title-2093-2">Перейдите в раздел <span class="key">Конфигурация</span></a> (<span class="key">Configuration</span>) и выберите пользовательский <a href="../../../../../developer/instrumenty_razrabotki/pakety/obshchiye_printsipy_raboty_s_paketami/obzor.html?id=15121">пакет</a>, в который будет добавлена схема.</li>
+    <li>На панели инструментов реестра раздела нажмите <span class="key">Добавить</span> —&gt; <span class="key">Исходный код</span> (<span class="key">Add</span> —&gt; <span class="key">Source code</span>).</li>
+    <li>
+    <p>В дизайнере схем заполните <strong>свойства схемы</strong>:</p>
+
+    <ul><li><span class="key">Код</span> (<span class="key">Code</span>) — "<span class="consolas">UsrTestProfileDataProvider</span>".</li>
+        <li><span class="key">Заголовок</span> (<span class="key">Title</span>) — "<span class="consolas">TestProfileDataProvider</span>".
+        <div class="media">
+        <div class="media__element"><img src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/Omnichannel/scr_omnichannel_profileDataProvider.png" /></div>
+        </div>
+        </li>
+    </ul><p>Для применения заданных свойств нажмите <span class="key">Применить</span> (<span class="key">Apply</span>).</p>
+    </li>
+    <li>
+    <p>В дизайнере схем добавьте исходный код.</p>
+
+    <div class="code">
+    <div class="code__top">
+    <div class="code__title"><span class="filled">TestProfileDataProvider</span></div>
+    </div>
+
+    <div class="code__widgets">
+    <div class="code__source">
+    <pre class="prettyprint">
+namespace Terrasoft.Configuration.Omnichannel.Messaging
+{
+    using Newtonsoft.Json;
+    using OmnichannelProviders.Domain.Entities;
+    using OmnichannelProviders.Interfaces;
+    using System.IO;
+    using System.Net;
+    using Terrasoft.Core;
+
+    public class TestProfileData {
+        public string first_name { get; set; }
+        public string last_name { get; set; }
+    }
+
+    #region Class: TestProfileDataProvider
+
+    /// &lt;summary&gt;
+    /// Retrieve the profile data from the Test provider.
+    /// &lt;/summary&gt;
+    public class TestProfileDataProvider : IProfileDataProvider
+    {
+        #region Properties: Private 
+
+        private readonly string _testProviderApiUrl = "https://graph.test.com/";
+
+        #endregion
+
+        #region Constructors: Public 
+
+        /// &lt;summary&gt;
+        /// Initialize a new instance of &lt;see cref="FacebookProfileDataProvider"/&gt;
+        /// &lt;/summary&gt;
+        /// &lt;param name="userConnection"&gt;User connection.&lt;/param&gt;
+        public TestProfileDataProvider(UserConnection userConnection) {
+        }
+
+        #endregion
+
+        #region Methods: Public
+
+        /// &lt;summary&gt;
+        /// Retrieve the profile data from Facebook.
+        /// &lt;param name="profileId"&gt;The Facebook profile ID.&lt;/param&gt;
+        /// &lt;param name="channelId"&gt;The channel from which to send the request.&lt;/param&gt;
+        /// &lt;returns&gt;The contact ID.&lt;/returns&gt;
+        /// &lt;/summary&gt;
+        public ProfileData GetProfileDataByProfileId(string profileId, string channelId)    {
+            var requestUrl = string.Concat(_testProviderApiUrl, profileId);
+            WebRequest request = WebRequest.Create(requestUrl);
+            try {
+                using (var response = request.GetResponse()) {
+                    using (Stream stream = response.GetResponseStream()) {
+                        using (StreamReader sr = new StreamReader(stream)) {
+                            var testProfile = JsonConvert.DeserializeObject&lt;TestProfileData&gt;(sr.ReadToEnd());
+                            return new ProfileData {
+                                FirstName = testProfile.first_name,
+                                LastName = testProfile.last_name,
+                            };
+                        }
+                    }
+                }
+            }
+            catch {
+                return new ProfileData();
+            }
+        }
+
+        #endregion
+
+    }
+
+    #endregion
+}
+</pre>
+    </div>
+    </div>
+    </div>
+
+    <p>В примере класс отправляет запрос на URL <span class="filled">https://graph.test.com/</span> для получения данных в формате <span class="filled">TestProfileData</span> (предполагаемый формат мессенджера) и конвертирует полученный ответ во внутренний формат <span class="filled">ProfileData</span>. При создании контакта к нему будут добавлены полученные данные (например, имя, фамилия, фото). Если запрос не будет успешным или данные будут некорректными, то контакт будет создан с именем <span class="key">&lt;Новый контакт&gt;&lt;Имя канала&gt;-&lt;идентификатор клиента в мессенджере&gt;</span>.</p>
+    </li>
+    <li>Сохраните и опубликуйте схему.</li>
+</ol><h2>7. Реализовать загрузку вложений<a class="title-anchor" href="#title-3485-13" id="title-3485-13"> </a></h2>
+
+<p>Для загрузки вложений создайте класс, реализующий интерфейс <span class="filled">IAttachmentsLoadWorker</span>:</p>
+
+<ol><li><a href="../../../../../developer/instrumenty_razrabotki/creatio_ide/principy_razrabotki_v_creatio_ide/obzor_creatio_ide%23title-2093-2.html?id=15101&amp;anchor=title-2093-2">Перейдите в раздел <span class="key">Конфигурация</span></a> (<span class="key">Configuration</span>) и выберите пользовательский <a href="../../../../../developer/instrumenty_razrabotki/pakety/obshchiye_printsipy_raboty_s_paketami/obzor.html?id=15121">пакет</a>, в который будет добавлена схема.</li>
+    <li>На панели инструментов реестра раздела нажмите <span class="key">Добавить</span> —&gt; <span class="key">Исходный код</span> (<span class="key">Add</span> —&gt; <span class="key">Source code</span>).</li>
+    <li>
+    <p>В дизайнере схем заполните <strong>свойства схемы</strong>:</p>
+
+    <ul><li><span class="key">Код</span> (<span class="key">Code</span>) — "<span class="consolas">UsrTestAttachmentLoadWorker</span>".</li>
+        <li><span class="key">Заголовок</span> (<span class="key">Title</span>) — "<span class="consolas">TestAttachmentLoadWorker</span>".
+        <div class="media">
+        <div class="media__element"><img src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/Omnichannel/scr_omnichannel_attachmentLoad.png" /></div>
+        </div>
+        </li>
+    </ul><p>Для применения заданных свойств нажмите <span class="key">Применить</span> (<span class="key">Apply</span>).</p>
+    </li>
+    <li>
+    <p>В дизайнере схем добавьте исходный код.</p>
+
+    <div class="code">
+    <div class="code__top">
+    <div class="code__title">TestAttachmentLoadWorker</div>
+    </div>
+
+    <div class="code__widgets">
+    <div class="code__source">
+    <pre class="prettyprint">
+namespace Terrasoft.Configuration.Omnichannel.Messaging
+{
+    using OmnichannelProviders;
+    using OmnichannelProviders.Domain.Entities;
+    using OmnichannelProviders.MessageConverters;
+    using Terrasoft.Core;
+
+    #region Class: TestAttachmentLoadWorker
+
+    /// &lt;summary&gt;
+    ///The class that loads attachments from the Test provider.
+    /// &lt;/summary&gt;
+    public class TestAttachmentLoadWorker : IAttachmentsLoadWorker
+    {
+
+        #region Properties: Protected 
+
+        protected UserConnection UserConnection;
+        protected AttachmentsDownloader AttachmentsDownloader;
+
+        #endregion
+
+        #region Constructors: Public
+
+        /// &lt;summary&gt;
+        /// Initialize a new instance of the &lt;see cref="TestAttachmentLoadWorker "/&gt; class.
+        /// &lt;param name="userConnection"&gt;Instance of the &lt;see cref="UserConnection"/&gt; class.&lt;/param&gt;
+        /// &lt;/summary&gt;
+        public TestAttachmentLoadWorker(UserConnection userConnection) {
+            UserConnection = userConnection;
+            AttachmentsDownloader = new AttachmentsDownloader(userConnection);
+        }
+
+        #endregion
+
+        #region Methods: Public 
+
+        /// &lt;summary&gt;
+        /// Load the attachments.
+        /// &lt;/summary&gt;
+        /// &lt;param name="incomeAttachment"&gt;The attachment from the messenger.&lt;/param&gt;
+        /// &lt;param name="message"&gt;The source message.&lt;/param&gt;
+        public void Load(MessageAttachment incomeAttachment, UnifiedMessage message) {
+            incomeAttachment.FileName = FileUtilities.GetFileNameFromUrl(incomeAttachment.UploadUrl);
+            incomeAttachment.FileId = AttachmentsDownloader.Load(incomeAttachment);
+        }
+
+        #endregion
+    }
+
+    #endregion
+}
+</pre>
+    </div>
+    </div>
+    </div>
+
+    <p>Для загрузки вложений используется внутренний класс <span class="filled">AttachmentsDownloader</span>, который выполняет загрузку и сохранение файла по ссылке. Сохранение файла происходит в таблицу <span class="filled">[OmnichannelMessageFile]</span>.</p>
+    </li>
+    <li>Сохраните и опубликуйте схему.</li>
+</ol><h2>8. Реализовать отправку сообщений<a class="title-anchor" href="#title-3485-14" id="title-3485-14"> </a></h2>
+
+<p>Для отправки сообщений <strong>создайте класс</strong>, реализующий интерфейс <span class="filled">IOutcomeMessageWorker</span>:</p>
+
+<ol><li><a href="../../../../../developer/instrumenty_razrabotki/creatio_ide/principy_razrabotki_v_creatio_ide/obzor_creatio_ide%23title-2093-2.html?id=15101&amp;anchor=title-2093-2">Перейдите в раздел <span class="key">Конфигурация</span></a> (<span class="key">Configuration</span>) и выберите пользовательский <a href="../../../../../developer/instrumenty_razrabotki/pakety/obshchiye_printsipy_raboty_s_paketami/obzor.html?id=15121">пакет</a>, в который будет добавлена схема.</li>
+    <li>На панели инструментов реестра раздела нажмите <span class="key">Добавить</span> —&gt; <span class="key">Исходный код</span> (<span class="key">Add</span> —&gt; <span class="key">Source code</span>).</li>
+    <li>
+    <p>В дизайнере схем заполните <strong>свойства схемы</strong>:</p>
+
+    <ul><li><span class="key">Код</span> (<span class="key">Code</span>) — "<span class="consolas">UsrTestOutcomeMessageWorker</span>".</li>
+        <li><span class="key">Заголовок</span> (<span class="key">Title</span>) — "<span class="consolas">TestOutcomeMessageWorker</span>".
+        <div class="media">
+        <div class="media__element"><img src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/Omnichannel/scr_omnichannel_outcomeMess.png" /></div>
+        </div>
+        </li>
+    </ul><p>Для применения заданных свойств нажмите <span class="key">Применить</span> (<span class="key">Apply</span>).</p>
+    </li>
+    <li>
+    <p>В дизайнере схем добавьте исходный код.</p>
+
+    <div class="code">
+    <div class="code__top">
+    <div class="code__title"><span class="filled">TestOutcomeMessageWorker</span></div>
+    </div>
+
+    <div class="code__widgets">
+    <div class="code__source">
+    <pre class="prettyprint">
+namespace Terrasoft.Configuration.Omnichannel.Messaging
+{
+    using Newtonsoft.Json;
+    using Newtonsoft.Json.Serialization;
+    using OmnichannelProviders.Application.Http;
+    using OmnichannelProviders.Domain.Entities;
+    using OmnichannelProviders.MessageWorkers;
+    using Terrasoft.Core;
+
+    #region Class: TestOutcomeMessageWorker
+
+    /// &lt;summary&gt;
+    /// The class that sends messages to the Test provider.
+    /// &lt;/summary&gt;
+    public class TestOutcomeMessageWorker : IOutcomeMessageWorker
+    {
+
+        #region Properties: Protected 
+
+        protected UserConnection UserConnection;
+        private readonly string _testProviderApiUrl = "https://graph.test.com/";
+        #endregion
+
+        #region Constructors: Public
+
+        /// &lt;summary&gt;
+        /// Initialize a new instance of the &lt;see cref="TestOutcomeMessageWorker "/&gt; class.
+        /// &lt;param name="userConnection"&gt;Instance of the &lt;see cref="UserConnection"/&gt; class.&lt;/param&gt;
+        /// &lt;/summary&gt;
+        public TestOutcomeMessageWorker(UserConnection userConnection) {
+            UserConnection = userConnection;
+        }
+
+        #endregion
+
+        #region Methods: Public 
+
+        /// &lt;summary&gt;
+        /// Send the message to Test provider.
+        /// &lt;/summary&gt;
+        /// &lt;param name="message"&gt;The UnifiedMessage message.&lt;/param&gt;
+        public string SendMessage(UnifiedMessage unifiedMessage) {
+            var serializerSettings = new JsonSerializerSettings();
+            serializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
+            var json = JsonConvert.SerializeObject(unifiedMessage, serializerSettings);
+            var requestUrl = string.Concat(_testProviderApiUrl, json);
+            var result = new HttpRequestSender().PostAsync(requestUrl, json).Result;
+            return result;
+        }
+
+        #endregion
+    }
+
+    #endregion
+}</pre>
+    </div>
+    </div>
+    </div>
+
+    <p>Класс <span class="filled">TestOutcomeMessageWorker</span> переводит сообщение в формат мессенджера и выполняет его отправку, используя API мессенджера. Для выполнения отправки может понадобится токен, который следует хранить в таблице <span class="filled">[TestMsgSettings]</span>. Доступ к таблице можно получить через переданный в конструкторе <span class="filled">UserConnection</span>. В примере выполняется отправка сообщения на URL <span class="filled">https://graph.test.com/</span>, используя внутренний класс <span class="filled">HttpRequestSender</span>.</p>
+    </li>
+    <li>Сохраните и опубликуйте схему.</li>
+</ol><h2>9. Выполнить связывание интерфейсов<a class="title-anchor" href="#title-3485-15" id="title-3485-15"> </a></h2>
+
+<p>Чтобы выполнить связывание интерфейсов <strong>создайте класс</strong> наследник <span class="filled">AppEventListenerBase</span>:</p>
+
+<ol><li><a href="../../../../../developer/instrumenty_razrabotki/creatio_ide/principy_razrabotki_v_creatio_ide/obzor_creatio_ide%23title-2093-2.html?id=15101&amp;anchor=title-2093-2">Перейдите в раздел <span class="key">Конфигурация</span></a> (<span class="key">Configuration</span>) и выберите пользовательский <a href="../../../../../developer/instrumenty_razrabotki/pakety/obshchiye_printsipy_raboty_s_paketami/obzor.html?id=15121">пакет</a>, в который будет добавлена схема.</li>
+    <li>На панели инструментов реестра раздела нажмите <span class="key">Добавить</span> —&gt; <span class="key">Исходный код</span> (<span class="key">Add</span> —&gt; <span class="key">Source code</span>).</li>
+    <li>
+    <p>В дизайнере схем заполните <strong>свойства схемы</strong>:</p>
+
+    <ul><li><span class="key">Код</span> (<span class="key">Code</span>) — "<span class="consolas">UsrTestAppEventListener</span>".</li>
+        <li><span class="key">Заголовок</span> (<span class="key">Title</span>) — "<span class="consolas">TestAppEventListener</span>".
+        <div class="media">
+        <div class="media__element"><img src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/Omnichannel/scr_omnichannel_appEventListener.png" /></div>
+        </div>
+        </li>
+    </ul><p>Для применения заданных свойств нажмите <span class="key">Применить</span> (<span class="key">Apply</span>).</p>
+    </li>
+    <li>
+    <p>В дизайнере схем добавьте исходный код.</p>
+
+    <div class="code">
+    <div class="code__top">
+    <div class="code__title">TestAppEventListener</div>
+    </div>
+
+    <div class="code__widgets">
+    <div class="code__source">
+    <pre class="prettyprint">
+namespace Terrasoft.Configuration.Omnichannel.Messaging
+{
+    using Common;
+    using Core;
+    using OmnichannelProviders;
+    using OmnichannelProviders.Interfaces;
+    using OmnichannelProviders.MessageWorkers;
+    using Terrasoft.Core.Factories;
+    using Web.Common;
+
+    #region Class : TestAppEventListener
+
+    /// &lt;summary&gt;
+    /// The class that runs prerequisites for OmnichannelMessaging on application start.
+    /// &lt;/summary&gt;
+    public class TestAppEventListener : AppEventListenerBase
+    {
+
+        #region Fields : Protected
+
+        protected UserConnection UserConnection {
+            get;
+            private set;
+        }
+
+        #endregion
+
+        #region Methods : Protected
+
+        /// &lt;summary&gt;
+        /// Retrieve the user connection from the application event scope.
+        /// &lt;/summary&gt;
+        /// &lt;param name="context"&gt;The application event scope.&lt;/param&gt;
+        /// &lt;returns&gt;User connection.&lt;/returns&gt;
+        protected UserConnection GetUserConnection(AppEventContext context) {
+            var appConnection = context.Application["AppConnection"] as AppConnection;
+            if (appConnection == null) {
+                throw new ArgumentNullOrEmptyException("AppConnection");
+            }
+            return appConnection.SystemUserConnection;
+        }
+
+        protected void BindInterfaces() {
+            ClassFactory.Bind&lt;IAttachmentsLoadWorker, TestAttachmentLoadWorker&gt;("Test");
+            ClassFactory.Bind&lt;IProfileDataProvider, TestProfileDataProvider&gt;("Test");
+            ClassFactory.Bind&lt;IOutcomeMessageWorker, TestOutcomeMessageWorker&gt;("Test");
+        }
+
+        #endregion
+
+        #region Methods : Public
+
+        /// &lt;summary&gt;
+        /// Handle the application start.
+        /// &lt;/summary&gt;
+        /// &lt;param name="context"&gt;The application event scope.&lt;/param&gt;
+        public override void OnAppStart(AppEventContext context) {
+            base.OnAppStart(context);
+            UserConnection = GetUserConnection(context);
+            BindInterfaces();
+        }
+
+        #endregion
+
+    }
+
+    #endregion
+
+}</pre>
+    </div>
+    </div>
+    </div>
+
+    <p>Созданные классы связываются по тегу "Test". Этот же тег должен быть указан при конвертации сообщения (шаг 4) в поле <span class="filled">ChannelName</span>. Таким образом система определяет какие файлы необходимо использовать для получения данных профиля, загрузки вложений и отправки сообщений.</p>
+    </li>
+    <li>Сохраните и опубликуйте схему.</li>
+</ol></div>
+      
+  </div>
+
+    </div>
+  </div>
+
+  </div>
+
+</article>
+
+  </div>
+
+  </div>
+
+          </div>
+        </div>
+
+                  <aside class="creatio-sidebar creatio-sidebar_first" role="complementary">
+              <div class="region region-sidebar-first">
+    <div id="block-documentationnaviagtion" class="block block-ts-nav block-ts-nav-doc-nav">
+  
+    
+      <div class="ts-nav-block"><a href="../../../../../index.html" class="ts-nav-block__link">Документация</a><div class="ts-nav-block__title">Для разработчика</div>
+</div>
+<div class="ts-nav-container"><ul class="ts-nav-menu"><li class="ts-nav-menu__item">
+  <a href="../../../s_chego_nachat.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">С чего начать&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../architecture.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Архитектура&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../instrumenty_razrabotki.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Инструменты разработки&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../back_end_razrabotka.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Back-end разработка&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../front_end_razrabotka.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Front-end разработка&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../integratsiya_i_vneshnij_api.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Интеграция и внешний API&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../ehlementy_interfejsa.html" class="ts-nav-menu__link ts-nav-menu__link_expanded ts-nav-menu__link_open" hreflang="ru">Элементы интерфейса&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+      <ul class="ts-nav-menu__children">
+      <li class="ts-nav-menu__item">
+  <a href="../../glavnoe_menyu/obzor.html" class="ts-nav-menu__link" hreflang="ru">Главное меню</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../razdel.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Раздел&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../stranica_zapisi.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Страница записи&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../1215/detail.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Деталь&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../mini_kartochka.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Мини-карточка&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../modalnoe_okno.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Модальное окно&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../kommunikacionnaya_panel.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Коммуникационная панель&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../komandnaya_stroka/obzor.html" class="ts-nav-menu__link" hreflang="ru">Командная строка</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../dashbordy.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Дашборды&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../chaty.html" class="ts-nav-menu__link ts-nav-menu__link_expanded ts-nav-menu__link_open" hreflang="ru">Чаты&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+      <ul class="ts-nav-menu__children">
+      <li class="ts-nav-menu__item">
+  <a href="../../../interface_elements/chat/api_dlya_raboty_s_chatami.html" class="ts-nav-menu__link ts-nav-menu__link_expanded ts-nav-menu__link_open" hreflang="ru">API для работы с чатами&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+      <ul class="ts-nav-menu__children">
+      <li class="ts-nav-menu__item">
+  <a href="obzor.html" class="ts-nav-menu__link ts-nav-menu__link_guide" hreflang="ru">Обзор</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="dobavit_provajder_kanala.html" class="ts-nav-menu__link ts-nav-menu__link_case ts-nav-menu__link_active" hreflang="ru">Добавить провайдер канала</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="dobavit_marshrutizaciyu_chatov.html" class="ts-nav-menu__link ts-nav-menu__link_case" hreflang="ru">Добавить маршрутизацию чатов</a>
+  </li>
+
+    </ul>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../integraciya_s_kanalami_chatov/obzor.html" class="ts-nav-menu__link" hreflang="ru">Интеграция с каналами чатов</a>
+  </li>
+
+    </ul>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../upravlenie_ehlementami_interfejsa.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Управление элементами интерфейса&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+
+    </ul>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../komponenty_prilozheniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Компоненты приложения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../razrabotka_mobilnogo_prilozheniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Разработка мобильного приложения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../razrabotka_marketplace_prilozheniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Разработка Marketplace-приложения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+</ul>
+</div>
+
+  </div>
+
+  </div>
+
+            <div class="creatio-sidebar__toggle"></div>
+          </aside>
+        
+                  <aside class="creatio-sidebar creatio-sidebar_second" role="complementary">
+              <div class="region region-sidebar-second">
+    <div id="block-example" class="block block-ts-nav block-ts-nav-page-nav">
+  
+    
+      <div class="ts-nav-page">
+  </div>
+
+  </div>
+<div id="block-adminfeedbackblock" class="block block-admin-feedback block-admin-feedback-block">
+  
+    
+      <div id="feedback-message"><div id="upper-feedback-content"><h2>Был ли данный материал полезен?</h2>
+<input class="feedback-btn feedback-btn__yes button js-form-submit form-submit" data-node-id="3485" data-feedback="yes" type="submit" name="op" value="Да" />
+<input class="feedback-btn feedback-btn__no button js-form-submit form-submit" data-node-id="3485" data-feedback="no" type="submit" name="op" value="Нет" />
+</div>
+<form class="admin-feedback-form" data-drupal-selector="admin-feedback-form" action="https://academy.terrasoft.ua/docs/7-18/developer/ehlementy_interfejsa/chaty/api_dlya_raboty_s_chatami/dobavit_provajder_kanala" method="post" id="admin-feedback-form" accept-charset="UTF-8">
+  <div id="feedback-msg-result"></div><div class="js-form-item form-item js-form-type-textarea form-type-textarea js-form-item-feedback-message form-item-feedback-message form-no-label">
+        <div class="form-textarea-wrapper">
+  <textarea id="edit-feedback-msg" data-drupal-selector="edit-feedback-message" name="feedback_message" rows="5" cols="60" class="form-textarea resize-vertical"></textarea>
+</div>
+
+        </div>
+<input id="feedback-id" data-drupal-selector="edit-feedback-id" type="hidden" name="feedback_id" value="" />
+<input class="feedback-btn feedback-btn__send-comment button js-form-submit form-submit" data-drupal-selector="edit-feedback-send" type="submit" id="edit-feedback-send" name="op" value="Отправить" />
+<input autocomplete="off" data-drupal-selector="form-zz-bsvnar-ta1p6jp8flo0phkkin6x2-ph6dpqtfesg" type="hidden" name="form_build_id" value="form-Zz_bsvnAR_tA1P6Jp8flo0PHKKiN6X2_Ph6DPqTfESg" />
+<input data-drupal-selector="edit-admin-feedback-form" type="hidden" name="form_id" value="admin_feedback_form" />
+
+</form>
+</div>
+
+  </div>
+
+  </div>
+
+          </aside>
+              </main>
+    </div>
+  </div>
+
+  <footer role="contentinfo">
+    <div class="creatio-region creatio-region_footer">
+      <div class="creatio-container">
+          <div class="region region-footer">
+    <div id="block-footerua" class="block block-simple-block block-simple-blockfooter-ua">
+  
+    
+      <div class="footer">
+<div class="footer-left">
+<ul class="footer-socials"><li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_fb" href="https://www.facebook.com/terrasoft.ua" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_in" href="https://www.linkedin.com/company/terrasoft/" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_yt" href="https://www.youtube.com/c/TerrasoftUkraine" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_tg" href="https://t.me/Terrasoft_UA" target="_blank"> </a></li>
+</ul></div>
+
+<div class="footer-contact">
+<div class="footer-title">Будьте на связи!</div>
+
+<div class="footer-content">
+<div class="footer-items">
+<div class="footer-item"><a class="footer__link footer__link_phone" href="tel:+380443633133">+38 (044) 363-31-33</a></div>
+</div>
+
+<div class="footer-items">
+<div class="footer-item"><a class="footer__link footer__link_email" href="mailto:support@terrasoft.ua">support@terrasoft.ua</a></div>
+</div>
+</div>
+</div>
+</div>
+
+  </div>
+
+  </div>
+
+      </div>
+    </div>
+    <div class="creatio-region creatio-region_bottom">
+      <div class="creatio-container">
+          <div class="region region-bottom">
+    <div id="block-allrightsreservedua" class="block block-simple-block block-simple-blockfooter-bottom-ua">
+  
+    
+      <p>© 2002-2022 Terrasoft.  |  <a href="https://www.terrasoft.ua/privacy-policy" target="_blank">Конфиденциальность</a></p>
+
+  </div>
+
+  </div>
+
+      </div>
+    </div>
+  </footer>
+</div>
+<div class="creatio-bg"></div>
+
+
+  </div>
+
+    
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/docs\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/3485","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"ru"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"ajaxPageState":{"libraries":"admin_feedback\/admin_feedback_block,admin_feedback\/admin_feedback_css,classy\/base,classy\/messages,classy\/node,core\/drupal.ajax,core\/jquery.form,core\/normalize,creatio\/fancybox,creatio\/global,layout_discovery\/onecol,system\/base,ts_doc\/doc_version,ts_feedback\/ts_feedback,ts_nav\/breadcrumb,ts_nav\/doc_nav,ts_nav\/page_nav,ts_title_anchor\/ts_title_anchor","theme":"creatio","theme_token":null},"ajaxTrustedUrl":{"form_action_p_pvdeGsVG5zNF_XLGPTvYSKCf43t8qZYSwcfZl2uzM":true,"\/docs\/7-18\/developer\/ehlementy_interfejsa\/chaty\/api_dlya_raboty_s_chatami\/dobavit_provajder_kanala?ajax_form=1":true},"admin_feedback":{"yes_response":"\u0421\u043f\u0430\u0441\u0438\u0431\u043e \u0437\u0430 \u043e\u0431\u0440\u0430\u0442\u043d\u0443\u044e \u0441\u0432\u044f\u0437\u044c!","no_response":"\u0421\u043f\u0430\u0441\u0438\u0431\u043e \u0437\u0430 \u043e\u0431\u0440\u0430\u0442\u043d\u0443\u044e \u0441\u0432\u044f\u0437\u044c!","custom_text_response_on_no":{"value":"","format":"full_html"},"feedback_prompt_on_yes":true,"feedback_prompt_on_no":true,"feedback_enable_predefined_answers":false,"feedback_prompt":"\u041a\u0430\u043a \u043c\u043e\u0436\u043d\u043e \u0443\u043b\u0443\u0447\u0448\u0438\u0442\u044c \u044d\u0442\u0443 \u0441\u0442\u0430\u0442\u044c\u044e?"},"ajax":{"edit-feedback-send":{"callback":"::validateFeedbackMsg","event":"mousedown","keypress":true,"prevent":"click","url":"\/docs\/7-18\/developer\/ehlementy_interfejsa\/chaty\/api_dlya_raboty_s_chatami\/dobavit_provajder_kanala?ajax_form=1","dialogType":"ajax","submit":{"_triggering_element_name":"op","_triggering_element_value":"\u041e\u0442\u043f\u0440\u0430\u0432\u0438\u0442\u044c"}}},"user":{"uid":0,"permissionsHash":"9c2367dfcaba0fa15f0375f97aed64e146c908cee68508d13b79e3ee80e5162d"}}</script>
+<script src="../../../../../sites/default/files/js/js_Rr-7TvYD7NposuRFJwUqThxM7yJmw8vs03PQwu5gWd8.js"></script>
+
+
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+      <g id="svg-copy" class="svg-icon svg-icon_copy">
+        <path d="M15.111,18H1.889A1.848,1.848,0,0,1,0,16.2V3.6A1.848,1.848,0,0,1,1.889,1.8H5.837a2.87,2.87,0,0,1,5.326,0h3.948A1.848,1.848,0,0,1,17,3.6V16.2A1.848,1.848,0,0,1,15.111,18ZM3.777,12.6v1.8h6.611V12.6Zm0-3.6v1.8h9.445V9Zm0-3.6V7.2h9.445V5.4ZM8.5,1.8a.924.924,0,0,0-.944.9.945.945,0,0,0,1.889,0A.924.924,0,0,0,8.5,1.8Z"/>
+      </g>
+
+      <g id="svg-prev" class="svg-icon svg-icon_arrow">
+        <path d="M5.488,12.779,0,6.39,5.488,0" transform="translate(1 0.652)"/>
+      </g>
+
+      <g id="svg-next" class="svg-icon svg-icon_arrow">
+        <path d="M0,12.779,5.488,6.39,0,0" transform="translate(0.759 0.652)"/>
+      </g>
+    </svg>
+  </body>
+
+<!-- Mirrored from academy.terrasoft.ua/docs/7-18/developer/ehlementy_interfejsa/chaty/api_dlya_raboty_s_chatami/dobavit_provajder_kanala by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Mar 2022 05:12:38 GMT -->
+</html>

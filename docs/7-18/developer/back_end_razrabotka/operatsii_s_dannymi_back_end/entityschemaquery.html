@@ -1,0 +1,1957 @@
+  <!DOCTYPE html>
+<html lang="ru" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# ">
+  
+<!-- Mirrored from academy.terrasoft.ua/docs/7-18/developer/back_end_razrabotka/operatsii_s_dannymi_back_end/entityschemaquery by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Mar 2022 03:25:25 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+          <!-- Google Tag Manager -->
+      <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          '../../../../../../www.googletagmanager.com/gtm5445.html?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-KLLB8G');</script>
+      <!-- End Google Tag Manager -->
+        <meta charset="utf-8" />
+<link rel="canonical" href="entityschemaquery.html" />
+<meta name="description" content="Пространство имен Terrasoft.Core.Entities.
+
+Класс Terrasoft.Core.Entities.EntitySchemaQuery предназначен для построения запросов выборки записей из таблиц базы данных с учетом прав доступа текущего пользователя. В результате создания и конфигурирования экземпляра этого класса будет построен запрос в базу данных приложения в виде SQL-выражения SELECT. В запрос можно добавить требуемые колонки, фильтры и условия ограничений." />
+<meta property="og:url" content="https://academy.terrasoft.ua/docs/7-18/developer/back_end_razrabotka/operatsii_s_dannymi_back_end/entityschemaquery" />
+<meta property="og:title" content="Класс EntitySchemaQuery" />
+<meta property="og:description" content="Пространство имен Terrasoft.Core.Entities.
+
+Класс Terrasoft.Core.Entities.EntitySchemaQuery предназначен для построения запросов выборки записей из таблиц базы данных с учетом прав доступа текущего пользователя. В результате создания и конфигурирования экземпляра этого класса будет построен запрос в базу данных приложения в виде SQL-выражения SELECT. В запрос можно добавить требуемые колонки, фильтры и условия ограничений." />
+<meta name="Generator" content="Drupal 9 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="../../../../themes/custom/creatio/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="revision" href="entityschemaquery.html" />
+
+    <title>Класс EntitySchemaQuery | Creatio Academy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&amp;family=Open+Sans:ital,wght@0,300;0,400;0,600;1,400&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" media="all" href="../../../../sites/default/files/css/css_6lTP66__-yc6QXFp1zOwoeJ0HVigoYZP-SeoLLii000.css" />
+<link rel="stylesheet" media="all" href="../../../../sites/default/files/css/css_XQJDNhkF3xH5SZCcY-PI89Zu4nYIzQ5oR3SnUKyfXJU.css" />
+<link rel="stylesheet" media="print" href="../../../../sites/default/files/css/css_Zn4VHvcniOOtUwkIVwXzYr_0AI9gUVgZcPqaH4ViagU.css" />
+
+    
+  </head>
+  <body class="path-node page-node-type-reference"data-type="C#">
+          <!-- Google Tag Manager (noscript) -->
+      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KLLB8G"
+                        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+      <!-- End Google Tag Manager (noscript) -->
+    
+        
+      <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    <div class="creatio-page d-flex flex-column">
+        <div class="region region-informer">
+    <div id="block-terrasoftpidtrimueukrainu" class="block block-simple-block block-simple-blockterrasoft-pidtrimue-ukrainu">
+  
+    
+      <style type="text/css">
+<!--/*--><![CDATA[/* ><!--*/
+@import url(../../../../../../www.terrasoft.ua/themes/custom/creatio/css/components/informer.css)
+
+/*--><!]]>*/
+</style><div class="ts-swu">
+<div class="creatio-container">
+<div class="ts-swu__cont">
+<div><a class="ts-swu__link" href="https://www.terrasoft.ua/terrasoft-stands-with-ukraine" target="_blank">Україна понад усе!</a> <span><a href="https://www.terrasoft.ua/terrasoft-stands-with-ukraine" target="_blank">Приєднуйтеся</a> до допомоги!</span></div>
+</div>
+</div></div>
+
+  </div>
+
+  </div>
+
+  
+  <header role="banner">
+          <div class="creatio-region creatio-region_top">
+        <div class="creatio-container">
+            <div class="region region-top">
+    <div id="block-menutoggle" class="block block-simple-block block-simple-blockmenu-toggle">
+  
+    
+      <div class="menu-toggle"><span> </span></div>
+
+  </div>
+<div id="block-logowhite-2" class="block block-simple-block block-simple-blocklogo-white">
+  
+    
+      <p><a class="site-logo" href="../../../../../index.html" rel="home"><img src="../../../../themes/custom/creatio/logo-white.svg" /></a></p>
+
+  </div>
+<div id="block-search" class="block block-simple-block block-simple-blocksearch">
+  
+    
+      <div class="search">
+<form action="https://academy.terrasoft.ua/search" class="search-form" method="get"><input class="search-form__input" name="search" placeholder="Поиск" type="search" /><input class="search-form__button" type="submit" value="Поиск" /> </form>
+
+<div class="search-toggle"> </div>
+</div>
+
+  </div>
+<nav role="navigation" aria-labelledby="block-sitesua-menu" id="block-sitesua" class="block block-menu navigation menu--sites-ua">
+            
+  <h2 class="visually-hidden" id="block-sitesua-menu">Sites UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="https://www.terrasoft.ua/" rel="nofollow" target="_blank">Terrasoft</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://community.terrasoft.ua/" rel="nofollow" target="_blank">Community</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://marketplace.terrasoft.ua/" rel="nofollow" target="_blank">Marketplace</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+<div id="block-usermenu" class="block block-ts-user block-ts-user-menu-block">
+  
+    
+      <ul class="user-menu">
+      <li class="user-menu__item">
+      <a class="user-menu__link" href="https://profile.terrasoft.ua/user/login?destination=academy/ua/docs/7-18/developer/back_end_razrabotka/operatsii_s_dannymi_back_end/entityschemaquery">Войти</a>
+    </li>
+  </ul>
+
+  </div>
+<div id="block-usermenumobile" class="block block-ts-user block-ts-user-menu-mobile-block">
+  
+    
+      <ul class="user-menu-mobile">
+      <li class="user-menu-mobile__item">
+      <div class="user-menu-mobile__user user-menu-mobile__user_icon"></div>
+      <ul class="user-menu-mobile__submenu">
+        <li class="user-menu-mobile__subitem">
+          <a class="user-menu-mobile__sublink" href="https://profile.terrasoft.ua/user/login?destination=academy/ua/docs/7-18/developer/back_end_razrabotka/operatsii_s_dannymi_back_end/entityschemaquery">Войти</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  </div>
+
+  </div>
+
+        </div>
+      </div>
+              <div class="creatio-region creatio-region_header">
+        <div class="creatio-container">
+            <div class="region region-header">
+    <div id="block-logo" class="block block-simple-block block-simple-blocklogo">
+  
+    
+      <p><a class="site-logo" href="../../../../../index.html" rel="home"><img src="../../../../themes/custom/creatio/logo.svg" /></a></p>
+
+  </div>
+<nav role="navigation" aria-labelledby="block-osnovnayanavigaciyaua-menu" id="block-osnovnayanavigaciyaua" class="block block-menu navigation menu--main-ua">
+            
+  <h2 class="visually-hidden" id="block-osnovnayanavigaciyaua-menu">Основная навигация UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="../../../../index.html" data-drupal-link-system-path="&lt;front&gt;">Документация</a>
+              </li>
+                <li class="menu-item">
+        <a href="../../../../../trainings.html">Тренинги</a>
+              </li>
+                <li class="menu-item">
+        <a href="../../../../certification.html" data-drupal-link-system-path="node/3084">Сертификация и тестирование</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+<nav role="navigation" aria-labelledby="block-sitesua-2-menu" id="block-sitesua-2" class="block block-menu navigation menu--sites-ua">
+            
+  <h2 class="visually-hidden" id="block-sitesua-2-menu">Sites UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="https://www.terrasoft.ua/" rel="nofollow" target="_blank">Terrasoft</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://community.terrasoft.ua/" rel="nofollow" target="_blank">Community</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://marketplace.terrasoft.ua/" rel="nofollow" target="_blank">Marketplace</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+
+  </div>
+
+        </div>
+      </div>
+              <div class="creatio-region creatio-region_breadcrumb">
+        <div class="creatio-container">
+            <div class="region region-breadcrumb">
+    <div id="block-logowhite" class="block block-simple-block block-simple-blocklogo-white">
+  
+    
+      <p><a class="site-logo" href="../../../../../index.html" rel="home"><img src="../../../../themes/custom/creatio/logo-white.svg" /></a></p>
+
+  </div>
+<div id="block-breadcrumbnaviagtion" class="block block-ts-nav block-ts-nav-bread">
+  
+    
+      <nav class="breadcrumb"><ol class="ts-nav-breadcrumb__list"><li class="ts-nav-breadcrumb__item"><a href="../../../../index.html" class="ts-nav-breadcrumb__link" title="Документация">Документация</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../../index2132.html?vid_1=2" class="ts-nav-breadcrumb__link" title="Для разработчика">Для разработчика</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../back_end_razrabotka.html" class="ts-nav-breadcrumb__link" title="Back-end разработка" hreflang="zxx">Back-end разработка</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../back-end_development/operatsii_s_dannymi_back_end.html" class="ts-nav-breadcrumb__link" title="Операции с данными" hreflang="ru">Операции с данными</a></li>
+<li class="ts-nav-breadcrumb__item ts-nav-breadcrumb__item_mobile"><a href="../../back-end_development/operatsii_s_dannymi_back_end/orm.html" class="ts-nav-breadcrumb__link" title="ORM" hreflang="ru">ORM</a></li>
+<li class="ts-nav-breadcrumb__item"><span class="ts-nav-breadcrumb__link ts-nav-breadcrumb__link_current" title="EntitySchemaQuery">EntitySchemaQuery</span></li>
+</ol>
+</nav>
+
+  </div>
+<div id="block-search-2" class="block block-simple-block block-simple-blocksearch">
+  
+    
+      <div class="search">
+<form action="https://academy.terrasoft.ua/search" class="search-form" method="get"><input class="search-form__input" name="search" placeholder="Поиск" type="search" /><input class="search-form__button" type="submit" value="Поиск" /> </form>
+
+<div class="search-toggle"> </div>
+</div>
+
+  </div>
+
+  </div>
+
+        </div>
+      </div>
+      </header>
+
+  <div class="creatio-region creatio-region_main">
+    <div class="creatio-container">
+                <div class="region region-breadcrumb-mobile">
+    <div id="block-breadcrumbnaviagtion-2" class="block block-ts-nav block-ts-nav-bread">
+  
+    
+      <nav class="breadcrumb"><ol class="ts-nav-breadcrumb__list"><li class="ts-nav-breadcrumb__item"><a href="../../../../index.html" class="ts-nav-breadcrumb__link" title="Документация">Документация</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../../index2132.html?vid_1=2" class="ts-nav-breadcrumb__link" title="Для разработчика">Для разработчика</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../back_end_razrabotka.html" class="ts-nav-breadcrumb__link" title="Back-end разработка" hreflang="zxx">Back-end разработка</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../back-end_development/operatsii_s_dannymi_back_end.html" class="ts-nav-breadcrumb__link" title="Операции с данными" hreflang="ru">Операции с данными</a></li>
+<li class="ts-nav-breadcrumb__item ts-nav-breadcrumb__item_mobile"><a href="../../back-end_development/operatsii_s_dannymi_back_end/orm.html" class="ts-nav-breadcrumb__link" title="ORM" hreflang="ru">ORM</a></li>
+<li class="ts-nav-breadcrumb__item"><span class="ts-nav-breadcrumb__link ts-nav-breadcrumb__link_current" title="EntitySchemaQuery">EntitySchemaQuery</span></li>
+</ol>
+</nav>
+
+  </div>
+
+  </div>
+
+      
+      <main class="creatio-main" role="main">
+                                                    
+        <div class="creatio-content creatio-content_small">
+          <div class="creatio-content__inner creatio-content__inner_bg">
+                            <div class="region region-messages">
+    <div data-drupal-messages-fallback class="hidden"></div>
+
+  </div>
+
+            
+              <div class="region region-content">
+    <div id="block-creatio-page-title" class="block block-core block-page-title-block">
+  
+    
+      
+  <h1 class="page-title"><span class="field field--name-title field--type-string field--label-hidden">Класс EntitySchemaQuery</span>
+</h1>
+
+
+  </div>
+<div id="block-creatio-content" class="block block-system block-system-main-block">
+  
+    
+      
+<article data-history-node-id="2997" role="article" about="/docs/7-18/developer/back_end_razrabotka/operatsii_s_dannymi_back_end/entityschemaquery" class="node node--type-reference node--view-mode-full">
+
+  
+    
+
+  
+  <div class="node__content">
+      <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocknodereferencefield-difficulty">
+  
+    
+      
+            <div class="field field--name-field-difficulty field--type-entity-reference field--label-hidden field__item"><div about="/docs/7-18/taxonomy/term/169" id="taxonomy-term-169" class="taxonomy-term vocabulary-difficulty">
+  
+  
+  <div class="content">
+      <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocktaxonomy-termdifficultyfield-icon">
+  
+    
+      
+            <div class="field field--name-field-icon field--type-image field--label-hidden field__item">  <img src="../../../../sites/default/files/difficulty/advanced.svg" alt="" loading="lazy" typeof="foaf:Image" />
+
+</div>
+      
+  </div>
+<div class="block block-layout-builder block-field-blocktaxonomy-termdifficultyname">
+  
+    
+      
+            <div class="field field--name-name field--type-string field--label-hidden field__item"><span style="color: #EF4524;">Сложный</span></div>
+      
+  </div>
+
+    </div>
+  </div>
+
+  </div>
+</div>
+</div>
+      
+  </div>
+<div class="block block-ts-doc block-ts-doc-downloads">
+  
+    
+      <a href="../../../../sites/default/files/pdf/node/2997/Klass_EntitySchemaQuery_.pdf" target="_blank">PDF</a>
+  </div>
+<div class="block block-ts-doc block-ts-doc-versions">
+  
+    
+        <div class="ts-doc-versions">
+    <select class="ts-doc-versions__select">
+                              <option value="/docs/8-0/developer/back_end_razrabotka/operatsii_s_dannymi_back_end/entityschemaquery">Версия 8.0</option>
+                                                <option value="/docs/7-18/developer/back_end_razrabotka/operatsii_s_dannymi_back_end/entityschemaquery" selected>Версия 7.18</option>
+                              <option value="/docs/7-17/developer/back_end_razrabotka/operatsii_s_dannymi_back_end/entityschemaquery">Версия 7.17</option>
+                              <option value="/docs/node/2158">Версия 7.16</option>
+          </select>
+  </div>
+
+  </div>
+
+    </div>
+  </div>
+  <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocknodereferencebody">
+  
+    
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><p>Пространство имен <span class="filled">Terrasoft.Core.Entities</span>.</p>
+
+<p>Класс <span class="filled">Terrasoft.Core.Entities.EntitySchemaQuery</span> предназначен для построения запросов выборки записей из таблиц базы данных с учетом прав доступа текущего пользователя. В результате создания и конфигурирования экземпляра этого класса будет построен запрос в базу данных приложения в виде SQL-выражения <span class="filled">SELECT</span>. В запрос можно добавить требуемые колонки, фильтры и условия ограничений.</p>
+
+<div class="message">
+<p><span class="message__bold">На заметку.</span> Полный перечень методов и свойств класса <span class="filled">EntitySchemaQuery</span>, его родительских классов, а также реализуемых им интерфейсов, можно найти в документации "<a href="../../../../../api/netcoreapi/7.15.0/index.html" target="_blank">.NET библиотеки классов ядра платформы</a>".</p>
+</div>
+
+<div class="block-collapse">
+<h2 class="block-collapse__title">Конструкторы<a class="title-anchor" href="#title-2997-2" id="title-2997-2"> </a></h2>
+
+<div class="block-collapse__content">
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+EntitySchemaQuery(EntitySchema rootSchema)
+</pre>
+</div>
+</div>
+</div>
+
+<p>Создает экземпляр класса, в котором в качестве корневой схемы устанавливается переданный экземпляр <span class="filled">EntitySchema</span>. В качестве менеджера схем устанавливается менеджер переданного экземпляра корневой схемы.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+EntitySchemaQuery(EntitySchemaManager entitySchemaManager, string sourceSchemaName)
+</pre>
+</div>
+</div>
+</div>
+
+<p>Создает экземпляр класса с указанным <span class="filled">EntitySchemaManager</span> и корневой схемы с именем, переданным в качестве аргумента.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+EntitySchemaQuery(EntitySchemaQuery source)
+</pre>
+</div>
+</div>
+</div>
+
+<p>Создает экземпляр класса, являющийся клоном экземпляра, переданного в качестве аргумента.</p>
+</div>
+</div>
+
+<div class="block-collapse">
+<h2 class="block-collapse__title">Свойства<a class="title-anchor" href="#title-2997-3" id="title-2997-3"> </a></h2>
+
+<div class="block-collapse__content">
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+Cache <span class="gray">Terrasoft.Core.Store.ICacheStore</span>
+</pre>
+</div>
+</div>
+</div>
+
+<p>Кэш запроса.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+CacheItemName <span class="gray">string</span>
+</pre>
+</div>
+</div>
+</div>
+
+<p>Имя элемента кэша.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+CanReadUncommitedData <span class="gray">bool</span>
+</pre>
+</div>
+</div>
+</div>
+
+<p>Определяет, попадут ли в результаты запроса данные, для которых не завершена транзакция.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+Caption <span class="gray">Terrasoft.Common.LocalizableString</span>
+</pre>
+</div>
+</div>
+</div>
+
+<p>Заголовок.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+ChunkSize <span class="gray">int</span>
+</pre>
+</div>
+</div>
+</div>
+
+<p>Количество строк запроса в одном чанке.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+Columns <span class="gray">Terrasoft.Core.Entities.EntitySchemaQueryColumnCollection</span>
+</pre>
+</div>
+</div>
+</div>
+
+<p>Коллекция колонок текущего запроса к схеме объекта.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+DataValueTypeManager <span class="gray">DataValueTypeManager</span>
+</pre>
+</div>
+</div>
+</div>
+
+<p>Менеджер значений типов данных.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+EntitySchemaManager <span class="gray">Terrasoft.Core.Entities.EntitySchemaManager</span>
+</pre>
+</div>
+</div>
+</div>
+
+<p>Менеджер схем объектов.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+Filters <span class="gray">Terrasoft.Core.Entities.EntitySchemaQueryFilterCollection</span>
+</pre>
+</div>
+</div>
+</div>
+
+<p>Коллекция фильтров текущего запроса к схеме объекта.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+HideSecurityValue <span class="gray">bool</span>
+</pre>
+</div>
+</div>
+</div>
+
+<p>Определяет, будут ли скрыты значения зашифрованных колонок.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+IgnoreDisplayValues <span class="gray">bool</span>
+</pre>
+</div>
+</div>
+</div>
+
+<p>Определяет, будут ли в запросе использоваться отображаемые значения колонок.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+IsDistinct <span class="gray">bool</span>
+</pre>
+</div>
+</div>
+</div>
+
+<p>Определяет, убирать ли дубли в результирующем наборе данных.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+IsInherited <span class="gray">bool</span>
+</pre>
+</div>
+</div>
+</div>
+
+<p>Определяет, является ли запрос унаследованным.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+JoinRightState <span class="gray">QueryJoinRightLevel</span>
+</pre>
+</div>
+</div>
+</div>
+
+<p>Определяет условие наложения прав при использовании связанных таблиц, если схема администрируется по записям.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+Manager <span class="gray">Terrasoft.Core.IManager</span>
+</pre>
+</div>
+</div>
+</div>
+
+<p>Менеджер схем.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+ManagerItem <span class="gray">Terrasoft.Core.IManagerItem</span>
+</pre>
+</div>
+</div>
+</div>
+
+<p>Элемент менеджера.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+Name <span class="gray">string</span>
+</pre>
+</div>
+</div>
+</div>
+
+<p>Имя.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+ParentCollection <span class="gray">Terrasoft.Core.Entities.EntitySchemaQueryCollection</span>
+</pre>
+</div>
+</div>
+</div>
+
+<p>Коллекция запросов, которой принадлежит текущий запрос к схеме объекта.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+ParentEntitySchema <span class="gray">Terrasoft.Core.Entities.EntitySchema</span>
+</pre>
+</div>
+</div>
+</div>
+
+<p>Родительская схема запроса.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+PrimaryQueryColumn <span class="gray">Terrasoft.Core.Entities.EntitySchemaQueryColumn</span>
+</pre>
+</div>
+</div>
+</div>
+
+<p>Колонка, созданная по первичной колонке корневой схемы. Заполняется при первом обращении.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+QueryOptimize <span class="gray">bool</span>
+</pre>
+</div>
+</div>
+</div>
+
+<p>Разрешает использование оптимизации запроса.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+RootSchema <span class="gray">Terrasoft.Core.Entities.EntitySchema</span>
+</pre>
+</div>
+</div>
+</div>
+
+<p>Корневая схема.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+RowCount <span class="gray">int</span>
+</pre>
+</div>
+</div>
+</div>
+
+<p>Количество строк, возвращаемых запросом.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+SchemaAliasPrefix <span class="gray">string</span>
+</pre>
+</div>
+</div>
+</div>
+
+<p>Префикс, используемый для создания псевдонимов схем.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+SkipRowCount <span class="gray">int</span>
+</pre>
+</div>
+</div>
+</div>
+
+<p>Количество строк, которые необходимо пропустить при возврате результата запроса.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+UseAdminRights <span class="gray">bool</span>
+</pre>
+</div>
+</div>
+</div>
+
+<p>Определяет будут ли учитываться права при построении запроса получения данных.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+UseLocalization <span class="gray">bool</span>
+</pre>
+</div>
+</div>
+</div>
+
+<p>Определяет, будут ли использоваться локализованные данные.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+UseOffsetFetchPaging <span class="gray">bool</span>
+</pre>
+</div>
+</div>
+</div>
+
+<p>Определяет возможность постраничного возврата результата запроса.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+UseRecordDeactivation <span class="gray">bool</span>
+</pre>
+</div>
+</div>
+</div>
+
+<p>Определяет, будут ли данные исключены из фильтрации.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+AdminUnitRoleSources <span class="gray">int</span>
+</pre>
+</div>
+</div>
+</div>
+
+<p>Целочисленное свойство, которое соответствует критериям фильтрации записей по источнику вхождения пользователя в роли. Значение по умолчанию: <span class="filled">0</span>.</p>
+
+<p>Чтобы сформировать <span class="filled">AdminUnitRoleSources</span>, необходимо с помощью побитового <span class="filled">ИЛИ</span> "<span class="filled">|</span>" перечислить следующие константы из серверного класса <span class="filled">AdminUnitRoleSources</span>:</p>
+
+<ul><li><span class="filled">ExplicitEntry</span>.</li>
+	<li><span class="filled">Delegated</span>.</li>
+	<li><span class="filled">FuncRoleFromOrgRole</span>.</li>
+	<li><span class="filled">UpHierarchy</span>.</li>
+	<li><span class="filled">AsManager</span>.</li>
+	<li><span class="filled">All</span>.</li>
+	<li><span class="filled">None</span>.</li>
+</ul><p>В результате, отработает следующее правило: возвращать запись только, если у пользователя есть хоть одна роль, которой доступна запись, и пользователь входит в эту роль в соответствии с источниками, указанными в условиях фильтрации.</p>
+</div>
+</div>
+
+<div class="block-collapse">
+<h2 class="block-collapse__title">Методы<a class="title-anchor" href="#title-2997-4" id="title-2997-4"> </a></h2>
+
+<div class="block-collapse__content">
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+void AddAllSchemaColumns(bool skipSystemColumns)
+</pre>
+</div>
+</div>
+</div>
+
+<p>В коллекцию колонок текущего запроса к схеме объекта добавляет все колонки корневой схемы.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+EntitySchemaQueryColumn AddColumn(string columnPath, AggregationTypeStrict aggregationType, out EntitySchemaQuery subQuery)
+void AddColumn(EntitySchemaQueryColumn queryColumn)
+EntitySchemaQueryColumn AddColumn(string columnPath)
+EntitySchemaQueryColumn AddColumn(EntitySchemaQueryFunction function)
+EntitySchemaQueryColumn AddColumn(object parameterValue, DataValueType parameterDataValueType)
+EntitySchemaQueryColumn AddColumn(EntitySchemaQuery subQuery)
+</pre>
+</div>
+</div>
+</div>
+
+<p>Создает и добавляет колонку в текущий запрос к схеме объекта.</p>
+
+<div class="block-collapse">
+<div class="block-collapse__title block-collapse__title_mb-16">Параметры</div>
+
+<div class="block-collapse__content">
+<div class="table">
+<table><tbody><tr><td><span class="consolas">columnPath</span></td>
+			<td>Путь к колонке схемы относительно корневой схемы.</td>
+		</tr><tr><td><span class="consolas">aggregationType</span></td>
+			<td>Тип агрегирующей функции. В качестве параметра передаются значения перечисления типов агрегирующей функции <span class="filled">Terrasoft.Common.AggregationTypeStrict</span>.</td>
+		</tr><tr><td><span class="consolas">subQuery</span></td>
+			<td>Ссылка на созданный подзапрос, помещенный в колонку.</td>
+		</tr><tr><td><span class="consolas">queryColumn</span></td>
+			<td>Экземпляр <span class="filled">EntitySchemaQueryColumn</span>, добавляемый в коллекцию колонок текущего запроса.</td>
+		</tr><tr><td><span class="consolas">function</span></td>
+			<td>Экземпляр функции <span class="filled">EntitySchemaQueryFunction</span>.</td>
+		</tr><tr><td><span class="consolas">parameterValue</span></td>
+			<td>Значение параметра, добавляемого в запрос в качестве колонки.</td>
+		</tr><tr><td><span class="consolas">parameterDataValueType</span></td>
+			<td>Тип значения параметра, добавляемого в запрос в качестве колонки.</td>
+		</tr></tbody></table></div>
+</div>
+</div>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+void ClearCache()
+</pre>
+</div>
+</div>
+</div>
+
+<p>Очищает кэш текущего запроса.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+static void ClearDefCache(string cacheItemName)
+</pre>
+</div>
+</div>
+</div>
+
+<p>Удаляет из кэша запроса элемент с заданным именем <span class="filled">cacheItemName</span>.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+object Clone()
+</pre>
+</div>
+</div>
+</div>
+
+<p>Создает клон текущего экземпляра <span class="filled">EntitySchemaQuery</span>.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+EntitySchemaQueryExpression CreateAggregationEntitySchemaExpression(string leftExprColumnPath, AggregationTypeStrict leftExprAggregationType)
+</pre>
+</div>
+</div>
+</div>
+
+<p>Возвращает выражение агрегирующей функции с заданным типом агрегации из перечисления <span class="filled">Terrasoft.Common.AggregationTypeStrict</span> для колонки, расположенной по заданному пути <span class="filled">leftExprColumnPath</span>.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+static EntitySchemaQueryExpression CreateParameterExpression(object parameterValue)
+static EntitySchemaQueryExpression CreateParameterExpression(object parameterValue, DataValueType valueType)
+static EntitySchemaQueryExpression CreateParameterExpression(object parameterValue, string displayValue, DataValueType valueType)
+</pre>
+</div>
+</div>
+</div>
+
+<p>Создает выражение для параметра запроса.</p>
+
+<div class="block-collapse">
+<div class="block-collapse__title block-collapse__title_mb-16">Параметры</div>
+
+<div class="block-collapse__content">
+<div class="table">
+<table><tbody><tr><td><span class="consolas">parameterValue</span></td>
+			<td>Значение параметра.</td>
+		</tr><tr><td><span class="consolas">valueType</span></td>
+			<td>Тип значения параметра.</td>
+		</tr><tr><td><span class="consolas">displayValue</span></td>
+			<td>Значение для отображения параметра.</td>
+		</tr></tbody></table></div>
+</div>
+</div>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+static IEnumerable CreateParameterExpressions(DataValueType valueType, params object[] parameterValues)
+static IEnumerable CreateParameterExpressions(DataValueType valueType, IEnumerable&lt;object&gt; parameterValues)
+</pre>
+</div>
+</div>
+</div>
+
+<p>Создает коллекцию выражений для параметров запроса с определенным типом данных <span class="filled">DataValueType</span>.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+static EntitySchemaQueryExpression CreateSchemaColumnExpression(EntitySchemaQuery parentQuery, EntitySchema rootSchema, string columnPath, bool useCoalesceFunctionForMultiLookup, bool useDisplayValue)
+static EntitySchemaQueryExpression CreateSchemaColumnExpression(EntitySchema rootSchema, string columnPath, bool useCoalesceFunctionForMultiLookup)
+EntitySchemaQueryExpression CreateSchemaColumnExpression(string columnPath, bool useCoalesceFunctionForMultiLookup)
+</pre>
+</div>
+</div>
+</div>
+
+<p>Возвращает выражение колонки схемы объекта.</p>
+
+<div class="block-collapse">
+<div class="block-collapse__title block-collapse__title_mb-16">Параметры</div>
+
+<div class="block-collapse__content">
+<div class="table">
+<table><tbody><tr><td><span class="consolas">parentQuery</span></td>
+			<td>Запрос к схеме объекта, для которого создается выражение колонки.</td>
+		</tr><tr><td><span class="consolas">rootSchema</span></td>
+			<td>Корневая схема.</td>
+		</tr><tr><td><span class="consolas">columnPath</span></td>
+			<td>Путь к колонке относительно корневой схемы.</td>
+		</tr><tr><td><span class="consolas">useCoalesceFunctionForMultiLookup</span></td>
+			<td>Признак, использовать ли для колонки типа справочник функцию <span class="filled">COALESCE</span>. Необязательный параметр, по умолчанию равен <span class="filled">true</span>.</td>
+		</tr><tr><td><span class="consolas">useDisplayValue</span></td>
+			<td>Признак, использовать ли для колонки значение для отображения. Необязательный параметр, по умолчанию равен <span class="filled">false</span>.</td>
+		</tr></tbody></table></div>
+</div>
+</div>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+Enumerable CreateSchemaColumnExpressions(params string[] columnPaths)
+IEnumerable CreateSchemaColumnExpressions(IEnumerable columnPaths, bool useCoalesceFunctionForMultiLookup)
+</pre>
+</div>
+</div>
+</div>
+
+<p>Возвращает коллекцию выражений колонок запроса к схеме объекта по заданной коллекции путей к колонкам <span class="filled">columnPaths</span>.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+IEnumerable CreateSchemaColumnExpressionsWithoutCoalesce(params string[] columnPaths)
+</pre>
+</div>
+</div>
+</div>
+
+<p>Возвращает коллекцию выражений колонок запроса к схеме объекта по заданному массиву путей к колонкам. При этом, если колонка имеет тип множественный справочник, к ее значениям не применяется функция <span class="filled">COALESCE</span>.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+static EntitySchemaQueryExpression CreateSchemaColumnQueryExpression(string columnPath, EntitySchema rootSchema, EntitySchemaColumn schemaColumn, bool useDisplayValue)
+static EntitySchemaQueryExpression CreateSchemaColumnQueryExpression(string columnPath, EntitySchema rootSchema, bool useDisplayValue)
+</pre>
+</div>
+</div>
+</div>
+
+<p>Возвращает выражение запроса к схеме объекта по заданным пути к колонке, корневой схеме и экземпляру колонки схемы. При этом для колонки можно определить, какой тип ее значения использовать в выражении — хранимое значение или значение для отображения.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+EntitySchemaQueryExpression CreateSubEntitySchemaExpression(string leftExprColumnPath)
+</pre>
+</div>
+</div>
+</div>
+
+<p>Возвращает выражение подзапроса к схеме объекта для колонки, расположенной по заданному пути <span class="filled">leftExprColumnPath</span>.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+EntitySchemaAggregationQueryFunction CreateAggregationFunction(AggregationTypeStrict aggregationType, string columnPath)
+</pre>
+</div>
+</div>
+</div>
+
+<p>Возвращает экземпляр агрегирующей функции <span class="filled">EntitySchemaAggregationQueryFunction</span> с заданным типом агрегации из перечисления <span class="filled">Terrasoft.Common.AggregationTypeStrict</span> для колонки по указанному пути относительно корневой схемы <span class="filled">columnPath</span>.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+EntitySchemaCaseNotNullQueryFunction CreateCaseNotNullFunction(params EntitySchemaCaseNotNullQueryFunctionWhenItem[] whenItems)
+</pre>
+</div>
+</div>
+</div>
+
+<p>Возвращает экземпляр <span class="filled">CASE</span>-функции <span class="filled">EntitySchemaCaseNotNullQueryFunction</span> для заданного массива выражений условий <span class="filled">EntitySchemaCaseNotNullQueryFunctionWhenItem</span>.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+EntitySchemaCaseNotNullQueryFunctionWhenItem CreateCaseNotNullQueryFunctionWhenItem(string whenColumnPath, object thenParameterValue)
+</pre>
+</div>
+</div>
+</div>
+
+<p>Возвращает экземпляр выражения для sql-конструкции вида <span class="filled">WHEN &lt;Выражение_1&gt; IS NOT NULL THEN &lt;Выражение_2&gt;</span>.</p>
+
+<div class="block-collapse">
+<div class="block-collapse__title block-collapse__title_mb-16">Параметры</div>
+
+<div class="block-collapse__content">
+<div class="table">
+<table><tbody><tr><td><span class="consolas">whenColumnPath</span></td>
+			<td>Путь к колонке, содержащей выражение предложения <span class="filled">WHEN</span>.</td>
+		</tr><tr><td><span class="consolas">thenParameterValue</span></td>
+			<td>Путь к колонке, содержащей выражение предложения <span class="filled">THEN</span>.</td>
+		</tr></tbody></table></div>
+</div>
+</div>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+EntitySchemaCastQueryFunction CreateCastFunction(string columnPath, DBDataValueType castType)
+</pre>
+</div>
+</div>
+</div>
+
+<p>Возвращает экземпляр <span class="filled">CAST</span>-функции <span class="filled">EntitySchemaCastQueryFunction</span> для выражения колонки, расположенной по заданному пути относительно корневой схемы <span class="filled">columnPath</span>, и указанным целевым типом данных <span class="filled">DBDataValueType</span>.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+EntitySchemaCoalesceQueryFunction CreateCoalesceFunction(params string[] columnPaths)
+static EntitySchemaCoalesceQueryFunction CreateCoalesceFunction(EntitySchemaQuery parentQuery, EntitySchema rootSchema, params string[] columnPaths)
+static EntitySchemaCoalesceQueryFunction CreateCoalesceFunction(EntitySchema rootSchema, params string[] columnPaths)
+</pre>
+</div>
+</div>
+</div>
+
+<p>Возвращает экземпляр функции, возвращающей первое не равное <span class="filled">null</span> выражение из списка аргументов, для заданных колонок.</p>
+
+<div class="block-collapse">
+<div class="block-collapse__title block-collapse__title_mb-16">Параметры</div>
+
+<div class="block-collapse__content">
+<div class="table">
+<table><tbody><tr><td><span class="consolas">columnPaths</span></td>
+			<td>Массив путей к колонкам относительно корневой схемы.</td>
+		</tr><tr><td><span class="consolas">parentQuery</span></td>
+			<td>Запрос к схеме объекта, для которого создается экземпляр функции.</td>
+		</tr><tr><td><span class="consolas">rootSchema</span></td>
+			<td>Корневая схема.</td>
+		</tr></tbody></table></div>
+</div>
+</div>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+EntitySchemaConcatQueryFunction CreateConcatFunction(params EntitySchemaQueryExpression[] expressions)
+</pre>
+</div>
+</div>
+</div>
+
+<p>Возвращает экземпляр функции для формирования строки, являющейся результатом объединения строковых значений аргументов функции для заданного массива выражений <span class="filled">EntitySchemaQueryExpression</span>.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+EntitySchemaDatePartQueryFunction CreateDatePartFunction(EntitySchemaDatePartQueryFunctionInterval interval, string columnPath)
+</pre>
+</div>
+</div>
+</div>
+
+<p>Возвращает экземпляр <span class="filled">DATEPART</span>-функции <span class="filled">EntitySchemaDatePartQueryFunction</span>, определяющей интервал даты, заданный перечислением <span class="filled">EntitySchemaDatePartQueryFunctionInterval</span> (месяц, день, час, год, день недели...), для значения колонки, расположенной по указанному пути относительно корневой схемы.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+EntitySchemaDatePartQueryFunction CreateDayFunction(string columnPath)
+</pre>
+</div>
+</div>
+</div>
+
+<p>Возвращает экземпляр функции <span class="filled">EntitySchemaDatePartQueryFunction</span>, определяющей интервал даты <span class="key">День</span> для значения колонки, расположенной по указанному пути относительно корневой схемы.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+EntitySchemaDatePartQueryFunction CreateHourFunction(string columnPath)
+</pre>
+</div>
+</div>
+</div>
+
+<p>Возвращает экземпляр функции <span class="filled">EntitySchemaDatePartQueryFunction</span>, возвращающей часть даты <span class="key">Час</span> для значения колонки, расположенной по указанному пути относительно корневой схемы.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+EntitySchemaDatePartQueryFunction CreateHourMinuteFunction(string columnPath)
+</pre>
+</div>
+</div>
+</div>
+
+<p>Возвращает экземпляр функции <span class="filled">EntitySchemaDatePartQueryFunction</span>, возвращающей часть даты <span class="key">Минута</span> для значения колонки, расположенной по указанному пути относительно корневой схемы.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+EntitySchemaDatePartQueryFunction CreateMonthFunction(string columnPath)
+</pre>
+</div>
+</div>
+</div>
+
+<p>Возвращает экземпляр функции <span class="filled">EntitySchemaDatePartQueryFunction</span>, возвращающей часть даты <span class="key">Месяц</span> для значения колонки, расположенной по указанному пути относительно корневой схемы.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+EntitySchemaDatePartQueryFunction CreateWeekdayFunction(string columnPath)
+</pre>
+</div>
+</div>
+</div>
+
+<p>Возвращает экземпляр функции <span class="filled">EntitySchemaDatePartQueryFunction</span>, возвращающей часть даты <span class="key">День недели</span> для значения колонки, расположенной по указанному пути относительно корневой схемы.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+EntitySchemaDatePartQueryFunction CreateWeekFunction(string columnPath)
+</pre>
+</div>
+</div>
+</div>
+
+<p>Возвращает экземпляр функции <span class="filled">EntitySchemaDatePartQueryFunction</span>, возвращающей часть даты <span class="key">Неделя</span> для значения колонки, расположенной по указанному пути относительно корневой схемы.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+EntitySchemaDatePartQueryFunction CreateYearFunction(string columnPath)
+</pre>
+</div>
+</div>
+</div>
+
+<p>Возвращает экземпляр функции <span class="filled">EntitySchemaDatePartQueryFunction</span>, возвращающей часть даты <span class="key">Год</span> для значения колонки, расположенной по указанному пути относительно корневой схемы.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+EntitySchemaIsNullQueryFunction CreateIsNullFunction(string checkColumnPath, string replacementColumnPath)
+</pre>
+</div>
+</div>
+</div>
+
+<p>Возвращает экземпляр функции <span class="filled">EntitySchemaIsNullQueryFunction</span> для колонок с проверяемым и замещающим значениями, которые расположены по заданным путям относительно корневой схемы.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+EntitySchemaLengthQueryFunction CreateLengthFunction(string columnPath)
+EntitySchemaLengthQueryFunction CreateLengthFunction(params EntitySchemaQueryExpression[] expressions)
+</pre>
+</div>
+</div>
+</div>
+
+<p>Создание экземпляра функции <span class="filled">LEN</span> (функция для возврата длины выражения) для выражения колонки по заданному пути относительно корневой схемы или для заданного массива выражений.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+EntitySchemaTrimQueryFunction CreateTrimFunction(string columnPath)
+EntitySchemaTrimQueryFunction CreateTrimFunction(params EntitySchemaQueryExpression[] expressions)
+</pre>
+</div>
+</div>
+</div>
+
+<p>Возвращает экземпляр функции <span class="filled">TRIM</span> (функция для удаления начальных и конечных пробелов из выражения) для выражения колонки по заданному пути относительно корневой схемы или для заданного массива выражений.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+EntitySchemaUpperQueryFunction CreateUpperFunction(string columnPath)
+</pre>
+</div>
+</div>
+</div>
+
+<p>Возвращает экземпляр функции <span class="filled">EntitySchemaUpperQueryFunction</span>, для преобразования символов выражения аргумента к верхнему регистру, для выражения колонки по заданному пути относительно корневой схемы.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+EntitySchemaCurrenddateQueryFunction CreateCurrenddateFunction()
+</pre>
+</div>
+</div>
+</div>
+
+<p>Возвращает экземпляр функции <span class="filled">EntitySchemaCurrenddateQueryFunction</span>, определяющей текущую дату.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+EntitySchemaCurrenddateTimeQueryFunction CreateCurrenddateTimeFunction()
+</pre>
+</div>
+</div>
+</div>
+
+<p>Возвращает экземпляр функции <span class="filled">EntitySchemaCurrenddateTimeQueryFunction</span>, определяющей текущие дату и время.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+EntitySchemaCurrentTimeQueryFunction CreateCurrentTimeFunction()
+</pre>
+</div>
+</div>
+</div>
+
+<p>Возвращает экземпляр функции <span class="filled">EntitySchemaCurrentTimeQueryFunction</span>, определяющей текущее время.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+EntitySchemaCurrentUserAccountQueryFunction CreateCurrentUserAccountFunction()
+</pre>
+</div>
+</div>
+</div>
+
+<p>Возвращает экземпляр функции <span class="filled">EntitySchemaCurrentUserAccountQueryFunction</span>, определяющей идентификатор контрагента текущего пользователя.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+EntitySchemaCurrentUserContactQueryFunction CreateCurrentUserContactFunction()
+</pre>
+</div>
+</div>
+</div>
+
+<p>Возвращает экземпляр функции <span class="filled">EntitySchemaCurrentUserContactQueryFunction</span>, определяющей идентификатор контакта текущего пользователя.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+EntitySchemaCurrentUserQueryFunction CreateCurrentUserFunction()
+</pre>
+</div>
+</div>
+</div>
+
+<p>Возвращает экземпляр функции <span class="filled">EntitySchemaCurrentUserQueryFunction</span>, определяющей текущего пользователя.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+EntitySchemaQueryFilter CreateExistsFilter(string rightExpressionColumnPath)
+</pre>
+</div>
+</div>
+</div>
+
+<p>Создает фильтр сравнения типа <span class="key">Существует по заданному условию</span> и устанавливает в качестве проверяемого значения выражение колонки, расположенной по пути <span class="filled">rightExpressionColumnPath</span>.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+IEntitySchemaQueryFilterItem CreateFilter(FilterComparisonType comparisonType, string leftExpressionColumnPath, params string[] rightExpressionColumnPaths)
+IEntitySchemaQueryFilterItem CreateFilter(FilterComparisonType comparisonType, string leftExpressionColumnPath, EntitySchemaQueryExpression rightExpression)
+IEntitySchemaQueryFilterItem CreateFilter(FilterComparisonType comparisonType, string leftExpressionColumnPath, EntitySchemaQueryFunction rightExpressionValue)
+IEntitySchemaQueryFilterItem CreateFilter(FilterComparisonType comparisonType, EntitySchemaQueryExpression leftExpression, EntitySchemaQueryMacrosType macrosType, int rightValue)
+IEntitySchemaQueryFilterItem CreateFilter(FilterComparisonType comparisonType, EntitySchemaQueryExpression leftExpression, EntitySchemaQueryMacrosType macrosType, DateTime rightValue)
+IEntitySchemaQueryFilterItem CreateFilter(FilterComparisonType comparisonType, EntitySchemaQueryExpression leftExpression, EntitySchemaQueryMacrosType macrosType, DayOfWeek rightValue)
+IEntitySchemaQueryFilterItem CreateFilter(FilterComparisonType comparisonType, string leftExpressionColumnPath, EntitySchemaQueryMacrosType macrosType, int rightValue)
+IEntitySchemaQueryFilterItem CreateFilter(FilterComparisonType comparisonType, string leftExpressionColumnPath, EntitySchemaQueryMacrosType macrosType, DateTime rightValue)
+IEntitySchemaQueryFilterItem CreateFilter(FilterComparisonType comparisonType, string leftExpressionColumnPath, EntitySchemaQueryMacrosType macrosType, DayOfWeek rightValue)
+IEntitySchemaQueryFilterItem CreateFilter(FilterComparisonType comparisonType, string leftExpressionColumnPath, EntitySchemaQuery rightExpressionValue)
+EntitySchemaQueryFilter CreateFilter(FilterComparisonType comparisonType, string leftExprColumnPath, AggregationTypeStrict leftExprAggregationType, int rightExprParameterValue)
+EntitySchemaQueryFilter CreateFilter(FilterComparisonType comparisonType, string leftExprColumnPath, AggregationTypeStrict leftExprAggregationType, double rightExprParameterValue)
+EntitySchemaQueryFilter CreateFilter(FilterComparisonType comparisonType, string leftExprColumnPath, AggregationTypeStrlict leftExprAggregationType, DateTime rightExprParameterValue)
+EntitySchemaQueryFilter CreateFilter(FilterComparisonType comparisonType, string leftExprColumnPath, AggregationTypeStrict leftExprAggregationType, string rightExprParameterValue)
+EntitySchemaQueryFilter CreateFilter(FilterComparisonType comparisonType, string leftExprColumnPath, AggregationTypeStrict leftExprAggregationType, object rightExprParameterValue, out EntitySchemaQuery leftExprSubQuery)
+IEntitySchemaQueryFilterItem CreateFilter(FilterComparisonType comparisonType, string leftExprColumnPath, AggregationTypeStrict leftExprAggregationType, EntitySchemaQueryMacrosType macrosType, int daysCount)
+IEntitySchemaQueryFilterItem CreateFilter(FilterComparisonType comparisonType, string leftExprColumnPath, AggregationTypeStrict leftExprAggregationType, EntitySchemaQueryMacrosType macrosType, out EntitySchemaQuery leftExprSubQuery, int daysCount)
+</pre>
+</div>
+</div>
+</div>
+
+<p>Создает фильтр запроса для выборки записей по определенным условиям.</p>
+
+<div class="block-collapse">
+<div class="block-collapse__title block-collapse__title_mb-16">Параметры</div>
+
+<div class="block-collapse__content">
+<div class="table">
+<table><tbody><tr><td><span class="consolas">comparisonType</span></td>
+			<td>Тип сравнения из перечисления <span class="filled">Terrasoft.Core.Entities.FilterComparisonType</span>.</td>
+		</tr><tr><td><span class="consolas">leftExpressionColumnPath</span></td>
+			<td>Путь к колонке, содержащей выражение левой части фильтра.</td>
+		</tr><tr><td><span class="consolas">leftExpression</span></td>
+			<td>Выражение в левой части фильтра.</td>
+		</tr><tr><td><span class="consolas">leftExprAggregationType</span></td>
+			<td>Тип агрегирующей функции.</td>
+		</tr><tr><td><span class="consolas">leftExprSubQuery</span></td>
+			<td>Параметр, в котором возвращается подзапрос для выражения в левой части фильтра (если он не равен <span class="filled">null</span>) либо подзапрос для первого выражения в правой части фильтра (если выражение левой части фильтра равно <span class="filled">null</span>).</td>
+		</tr><tr><td><span class="consolas">rightExpressionColumnPaths</span></td>
+			<td>Массив путей к колонкам, содержащим выражения правой части фильтра.</td>
+		</tr><tr><td><span class="consolas">rightExpression</span></td>
+			<td>Выражение в правой части фильтра.</td>
+		</tr><tr><td><span class="consolas">rightExpressionValue</span></td>
+			<td>Экземпляр функции выражения в правой части фильтра (тип параметра <span class="filled">EntitySchemaQueryFunction</span> ) или выражение подзапроса в правой части фильтра (тип параметра <span class="filled">EntitySchemaQuery</span>).</td>
+		</tr><tr><td><span class="consolas">rightValue</span></td>
+			<td>Значение, которое обрабатывается макросом в правой части фильтра.</td>
+		</tr><tr><td><span class="consolas">rightExprParameterValue</span></td>
+			<td>Значение параметра, к которому применяется агрегирующая функция в правой части фильтра.</td>
+		</tr><tr><td><span class="consolas">macrosType</span></td>
+			<td>Тип макроса из перечисления <span class="filled">Terrasoft.Core.Entities.EntitySchemaQueryMacrosType</span>.</td>
+		</tr><tr><td><span class="consolas">daysCount</span></td>
+			<td>Значение, к которому применяется макрос в правой части фильтра. Необязательный параметр, по умолчанию равен 0.</td>
+		</tr></tbody></table></div>
+</div>
+</div>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+IEntitySchemaQueryFilterItem CreateFilterWithParameters(FilterComparisonType comparisonType, bool useDisplayValue, string leftExpressionColumnPath, params object[] rightExpressionParameterValues)
+IEntitySchemaQueryFilterItem CreateFilterWithParameters(FilterComparisonType comparisonType, string leftExpressionColumnPath, params object[] rightExpressionParameterValues)
+IEntitySchemaQueryFilterItem CreateFilterWithParameters(FilterComparisonType comparisonType, string leftExpressionColumnPath, IEnumerable&lt;object&gt; rightExpressionParameterValues, bool useDisplayValue)
+static IEntitySchemaQueryFilterItem CreateFilterWithParameters(EntitySchemaQuery parentQuery, EntitySchema rootSchema, FilterComparisonType comparisonType, bool useDisplayValue, string leftExpressionColumnPath, params object[] rightExpressionParameterValues)
+static IEntitySchemaQueryFilterItem CreateFilterWithParameters(EntitySchema rootSchema, FilterComparisonType comparisonType, bool useDisplayValue, string leftExpressionColumnPath, params object[] rightExpressionParameterValues)
+</pre>
+</div>
+</div>
+</div>
+
+<p>Создает параметризированный фильтр для выборки записей по определенным условиям.</p>
+
+<div class="block-collapse">
+<div class="block-collapse__title block-collapse__title_mb-16">Параметры</div>
+
+<div class="block-collapse__content">
+<div class="table">
+<table><tbody><tr><td><span class="consolas">parentQuery</span></td>
+			<td>Родительский запрос, для которого создается фильтр.</td>
+		</tr><tr><td><span class="consolas">rootSchema</span></td>
+			<td>Корневая схема.</td>
+		</tr><tr><td><span class="consolas">comparisonType</span></td>
+			<td>Тип сравнения из перечисления <span class="filled">Terrasoft.Core.Entities.FilterComparisonType</span>.</td>
+		</tr><tr><td><span class="consolas">useDisplayValue</span></td>
+			<td>Признак типа значения колонки, которое используется в фильтре: <span class="filled">true</span> - значение для отображения; <span class="filled">false</span> - хранимое значение.</td>
+		</tr><tr><td><span class="consolas">leftExpressionColumnPath</span></td>
+			<td>Путь к колонке, содержащей выражение левой части фильтра.</td>
+		</tr><tr><td><span class="consolas">rightExpressionParameterValues</span></td>
+			<td>Коллекция выражений параметров в правой части фильтра.</td>
+		</tr></tbody></table></div>
+</div>
+</div>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+IEntitySchemaQueryFilterItem CreateIsNotNullFilter(string leftExpressionColumnPath)
+</pre>
+</div>
+</div>
+</div>
+
+<p>Создает фильтр сравнения типа <span class="key">Не является null в базе данных</span>, устанавливая в качестве проверяемого значения выражение колонки, расположенной по указанному в параметре <span class="filled">leftExpressionColumnPath</span> пути.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+IEntitySchemaQueryFilterItem CreateIsNullFilter(string leftExpressionColumnPath)
+</pre>
+</div>
+</div>
+</div>
+
+<p>Создает фильтр сравнения типа <span class="key">Является null в базе данных</span>, устанавливая в качестве условия проверки выражение колонки, расположенной по указанному в параметре <span class="filled">leftExpressionColumnPath</span> пути.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+EntitySchemaQueryFilter CreateNotExistsFilter(string rightExpressionColumnPath)
+</pre>
+</div>
+</div>
+</div>
+
+<p>Создает фильтр сравнения типа <span class="key">Не существует по заданному условию</span> и устанавливает в качестве проверяемого значения выражение колонки, расположенной по пути <span class="filled">rightExpressionColumnPath</span>.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+DataTable GetDataTable(UserConnection userConnection)
+</pre>
+</div>
+</div>
+</div>
+
+<p>Возвращает результат выполнения текущего запроса к схеме объекта в виде таблицы данных в памяти, используя пользовательское подключение <span class="filled">UserConnection</span>.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+static int GetDayOfWeekNumber(UserConnection userConnection, DayOfWeek dayOfWeek)
+</pre>
+</div>
+</div>
+</div>
+
+<p>Возвращает порядковый номер дня недели для объекта <span class="filled">System.DayOfWeek</span> с учетом региональных настроек.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+Entity GetEntity(UserConnection userConnection, object primaryColumnValue)
+</pre>
+</div>
+</div>
+</div>
+
+<p>Возвращает экземпляр Entity по первичному ключу <span class="filled">primaryColumnValue</span>, используя пользовательское подключение <span class="filled">UserConnection</span>.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+EntityCollection GetEntityCollection(UserConnection userConnection, EntitySchemaQueryOptions options)
+EntityCollection GetEntityCollection(UserConnection userConnection)
+</pre>
+</div>
+</div>
+</div>
+
+<p>Возвращает коллекцию экземпляров <span class="filled">Entity</span>, представляющих результаты выполнения текущего запроса, используя пользовательское подключение <span class="filled">UserConnection</span> и заданные дополнительные настройки запроса <span class="filled">EntitySchemaQueryOptions</span>.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+EntitySchema GetSchema()
+</pre>
+</div>
+</div>
+</div>
+
+<p>Возвращает экземпляр схемы объекта <span class="filled">EntitySchema</span> текущего экземпляра <span class="filled">EntitySchemaQuery</span>.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+Select GetSelectQuery(UserConnection userConnection)
+Select GetSelectQuery(UserConnection userConnection, EntitySchemaQueryOptions options)
+</pre>
+</div>
+</div>
+</div>
+
+<p>Возвращает экземпляр запроса на выборку данных, используя пользовательское подключение <span class="filled">UserConnection</span> и заданные дополнительные настройки запроса <span class="filled">EntitySchemaQueryOptions</span>.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+EntitySchemaQueryColumnCollection GetSummaryColumns()
+EntitySchemaQueryColumnCollection GetSummaryColumns(IEnumerable&lt;string&gt; columnNames)
+</pre>
+</div>
+</div>
+</div>
+
+<p>Возвращает коллекцию выражений колонок запроса, для которых вычисляются итоговые значения.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+Entity GetSummaryEntity(UserConnection userConnection, EntitySchemaQueryColumnCollection summaryColumns)
+Entity GetSummaryEntity(UserConnection userConnection)
+Entity GetSummaryEntity(UserConnection userConnection, IEnumerable&lt;string&gt; columnNames)
+Entity GetSummaryEntity(UserConnection userConnection, params string[] columnNames)
+</pre>
+</div>
+</div>
+</div>
+
+<p>Возвращает экземпляр <span class="filled">Entity</span> для результата, возвращаемого запросом на выборку итоговых значений.</p>
+
+<div class="block-collapse">
+<div class="block-collapse__title block-collapse__title_mb-16">Параметры</div>
+
+<div class="block-collapse__content">
+<div class="table">
+<table><tbody><tr><td><span class="consolas">userConnection</span></td>
+			<td>Пользовательское подключение.</td>
+		</tr><tr><td><span class="consolas">summaryColumns</span></td>
+			<td>Коллекция колонок запроса, для которых выбираются итоговые значения.</td>
+		</tr><tr><td><span class="consolas">columnNames</span></td>
+			<td>Коллекция имен колонок.</td>
+		</tr></tbody></table></div>
+</div>
+</div>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+Select GetSummarySelectQuery(UserConnection userConnection, EntitySchemaQueryColumnCollection summaryColumns)
+Select GetSummarySelectQuery(UserConnection userConnection)
+Select GetSummarySelectQuery(UserConnection userConnection, IEnumerable&lt;string&gt; columnNames)
+Select GetSummarySelectQuery(UserConnection userConnection, params string[] columnNames)
+</pre>
+</div>
+</div>
+</div>
+
+<p>Строит запрос на выборку итоговых значений для заданной коллекции колонок текущего экземпляра <span class="filled">EntitySchemaQuery</span>.</p>
+
+<div class="block-collapse">
+<div class="block-collapse__title block-collapse__title_mb-16">Параметры</div>
+
+<div class="block-collapse__content">
+<div class="table">
+<table><tbody><tr><td><span class="consolas">userConnection</span></td>
+			<td>Пользовательское подключение.</td>
+		</tr><tr><td><span class="consolas">summaryColumns</span></td>
+			<td>Коллекция колонок запроса, для которых выбираются итоговые значения.</td>
+		</tr><tr><td><span class="consolas">columnNames</span></td>
+			<td>Коллекция имен колонок.</td>
+		</tr></tbody></table></div>
+</div>
+</div>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+T GetTypedColumnValue(Entity entity, string columnName)
+</pre>
+</div>
+</div>
+</div>
+
+<p>Возвращает типизированное значение колонки с именем <span class="filled">columnName</span> из переданного экземпляра <span class="filled">Entity</span>.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+void LoadDataTableData(UserConnection userConnection, DataTable dataTable)
+void LoadDataTableData(UserConnection userConnection, DataTable dataTable, EntitySchemaQueryOptions options)
+</pre>
+</div>
+</div>
+</div>
+
+<p>Загружает результат выполнения текущего запроса к схеме объекта в объект <span class="filled">System.Data.DataTable</span>, используя пользовательское подключение <span class="filled">UserConnection</span> и заданные дополнительные настройки запроса <span class="filled">EntitySchemaQueryOptions</span>.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+void RemoveColumn(string columnName)
+</pre>
+</div>
+</div>
+</div>
+
+<p>Удаляет колонку с именем <span class="filled">columnName</span> из коллекции колонок текущего запроса.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+void ResetSchema()
+</pre>
+</div>
+</div>
+</div>
+
+<p>Очищает схему текущего экземпляра <span class="filled">EntitySchemaQuery</span>.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+void ResetSelectQuery()
+</pre>
+</div>
+</div>
+</div>
+
+<p>Очищает запрос на выборку для текущего запроса к схеме объекта.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+void SetLocalizationCultureId(System.Guid cultureId)
+</pre>
+</div>
+</div>
+</div>
+
+<p>Устанавливает идентификатор локальной культуры.</p>
+</div>
+</div>
+</div>
+      
+  </div>
+
+    </div>
+  </div>
+
+  </div>
+
+</article>
+
+  </div>
+
+  </div>
+
+          </div>
+        </div>
+
+                  <aside class="creatio-sidebar creatio-sidebar_first" role="complementary">
+              <div class="region region-sidebar-first">
+    <div id="block-documentationnaviagtion" class="block block-ts-nav block-ts-nav-doc-nav">
+  
+    
+      <div class="ts-nav-block"><a href="../../../../index.html" class="ts-nav-block__link">Документация</a><div class="ts-nav-block__title">Для разработчика</div>
+</div>
+<div class="ts-nav-container"><ul class="ts-nav-menu"><li class="ts-nav-menu__item">
+  <a href="../../s_chego_nachat.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">С чего начать&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../architecture.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Архитектура&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../instrumenty_razrabotki.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Инструменты разработки&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../back_end_razrabotka.html" class="ts-nav-menu__link ts-nav-menu__link_expanded ts-nav-menu__link_open" hreflang="zxx">Back-end разработка&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+      <ul class="ts-nav-menu__children">
+      <li class="ts-nav-menu__item">
+  <a href="../fabrika_zameshchayushchikh_klassov.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Фабрика замещающих классов&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../back-end_development/operatsii_s_dannymi_back_end.html" class="ts-nav-menu__link ts-nav-menu__link_expanded ts-nav-menu__link_open" hreflang="ru">Операции с данными&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+      <ul class="ts-nav-menu__children">
+      <li class="ts-nav-menu__item">
+  <a href="../../back-end_development/operatsii_s_dannymi_back_end/fonovoe_vypolnenie_operacij.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Фоновое выполнение операций&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../back-end_development/operatsii_s_dannymi_back_end/pryamoj_dostup.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Прямой доступ&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../back-end_development/operatsii_s_dannymi_back_end/orm.html" class="ts-nav-menu__link ts-nav-menu__link_expanded ts-nav-menu__link_open" hreflang="ru">ORM&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+      <ul class="ts-nav-menu__children">
+      <li class="ts-nav-menu__item">
+  <a href="orm/obzor.html" class="ts-nav-menu__link ts-nav-menu__link_guide" hreflang="ru">Обзор</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="upravlyat_sushchnostyami_bazy_dannykh.html" class="ts-nav-menu__link ts-nav-menu__link_case" hreflang="ru">Управлять сущностями базы данных </a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="poluchit_dannye_s_uchetom_prav_polzovatelya.html" class="ts-nav-menu__link ts-nav-menu__link_case" hreflang="ru">Получить данные с учетом прав пользователя</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="entityschemaquery.html" class="ts-nav-menu__link ts-nav-menu__link_reference ts-nav-menu__link_active" data-type="C#" hreflang="ru">EntitySchemaQuery</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="entity.html" class="ts-nav-menu__link ts-nav-menu__link_reference" data-type="C#" hreflang="ru">Entity</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="entitymapper.html" class="ts-nav-menu__link ts-nav-menu__link_reference" data-type="C#" hreflang="ru">EntityMapper</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="entityschemaqueryfunction.html" class="ts-nav-menu__link ts-nav-menu__link_reference" data-type="C#" hreflang="ru">EntitySchemaQueryFunction</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="orm/entityschemaqueryoptions.html" class="ts-nav-menu__link ts-nav-menu__link_reference" data-type="C#" hreflang="ru">EntitySchemaQueryOptions</a>
+  </li>
+
+    </ul>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="slozhnye_select_zaprosy/obzor.html" class="ts-nav-menu__link" hreflang="ru">Сложные Select-запросы</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="kopirovanie_ierarkhicheskikh_dannykh/obzor.html" class="ts-nav-menu__link" hreflang="ru">Копирование иерархических данных</a>
+  </li>
+
+    </ul>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../veb_servisy.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Веб-сервисы&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../biznes_logika_obektov/obzor.html" class="ts-nav-menu__link" hreflang="ru">Бизнес-логика объектов</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../hranilishche_kehsha/obzor.html" class="ts-nav-menu__link" hreflang="ru">Хранилище кэша</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../lokalizuemye_resursy.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Локализуемые ресурсы&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../avtomaticheskaya_privyazka_dannykh/obzor.html" class="ts-nav-menu__link" hreflang="ru">Автоматическая привязка данных</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../api_dlya_raboty_s_fajlami.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">API для работы с файлами&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../../../api/netcoreapi/7.18.0/api/index.html" class="ts-nav-menu__link" hreflang="ru">Библиотека .NET классов</a>
+  </li>
+
+    </ul>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../front_end_razrabotka.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Front-end разработка&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../integratsiya_i_vneshnij_api.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Интеграция и внешний API&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../ehlementy_interfejsa.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Элементы интерфейса&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../komponenty_prilozheniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Компоненты приложения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../razrabotka_mobilnogo_prilozheniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Разработка мобильного приложения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../razrabotka_marketplace_prilozheniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Разработка Marketplace-приложения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+</ul>
+</div>
+
+  </div>
+
+  </div>
+
+            <div class="creatio-sidebar__toggle"></div>
+          </aside>
+        
+                  <aside class="creatio-sidebar creatio-sidebar_second" role="complementary">
+              <div class="region region-sidebar-second">
+    <div id="block-example" class="block block-ts-nav block-ts-nav-page-nav">
+  
+    
+      <div class="ts-nav-page">
+  </div>
+
+  </div>
+<div id="block-adminfeedbackblock" class="block block-admin-feedback block-admin-feedback-block">
+  
+    
+      <div id="feedback-message"><div id="upper-feedback-content"><h2>Был ли данный материал полезен?</h2>
+<input class="feedback-btn feedback-btn__yes button js-form-submit form-submit" data-node-id="2997" data-feedback="yes" type="submit" name="op" value="Да" />
+<input class="feedback-btn feedback-btn__no button js-form-submit form-submit" data-node-id="2997" data-feedback="no" type="submit" name="op" value="Нет" />
+</div>
+<form class="admin-feedback-form" data-drupal-selector="admin-feedback-form" action="https://academy.terrasoft.ua/docs/7-18/developer/back_end_razrabotka/operatsii_s_dannymi_back_end/entityschemaquery" method="post" id="admin-feedback-form" accept-charset="UTF-8">
+  <div id="feedback-msg-result"></div><div class="js-form-item form-item js-form-type-textarea form-type-textarea js-form-item-feedback-message form-item-feedback-message form-no-label">
+        <div class="form-textarea-wrapper">
+  <textarea id="edit-feedback-msg" data-drupal-selector="edit-feedback-message" name="feedback_message" rows="5" cols="60" class="form-textarea resize-vertical"></textarea>
+</div>
+
+        </div>
+<input id="feedback-id" data-drupal-selector="edit-feedback-id" type="hidden" name="feedback_id" value="" />
+<input class="feedback-btn feedback-btn__send-comment button js-form-submit form-submit" data-drupal-selector="edit-feedback-send" type="submit" id="edit-feedback-send" name="op" value="Отправить" />
+<input autocomplete="off" data-drupal-selector="form-wxdvh-hutjbqcmxiagfwrgmhqkjuha0nkfqyqcqp8iy" type="hidden" name="form_build_id" value="form-wxdVh-HuTJBqCmXIaGfWRGMhqkjUHa0nkFqyqcqP8iY" />
+<input data-drupal-selector="edit-admin-feedback-form" type="hidden" name="form_id" value="admin_feedback_form" />
+
+</form>
+</div>
+
+  </div>
+
+  </div>
+
+          </aside>
+              </main>
+    </div>
+  </div>
+
+  <footer role="contentinfo">
+    <div class="creatio-region creatio-region_footer">
+      <div class="creatio-container">
+          <div class="region region-footer">
+    <div id="block-footerua" class="block block-simple-block block-simple-blockfooter-ua">
+  
+    
+      <div class="footer">
+<div class="footer-left">
+<ul class="footer-socials"><li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_fb" href="https://www.facebook.com/terrasoft.ua" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_in" href="https://www.linkedin.com/company/terrasoft/" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_yt" href="https://www.youtube.com/c/TerrasoftUkraine" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_tg" href="https://t.me/Terrasoft_UA" target="_blank"> </a></li>
+</ul></div>
+
+<div class="footer-contact">
+<div class="footer-title">Будьте на связи!</div>
+
+<div class="footer-content">
+<div class="footer-items">
+<div class="footer-item"><a class="footer__link footer__link_phone" href="tel:+380443633133">+38 (044) 363-31-33</a></div>
+</div>
+
+<div class="footer-items">
+<div class="footer-item"><a class="footer__link footer__link_email" href="mailto:support@terrasoft.ua">support@terrasoft.ua</a></div>
+</div>
+</div>
+</div>
+</div>
+
+  </div>
+
+  </div>
+
+      </div>
+    </div>
+    <div class="creatio-region creatio-region_bottom">
+      <div class="creatio-container">
+          <div class="region region-bottom">
+    <div id="block-allrightsreservedua" class="block block-simple-block block-simple-blockfooter-bottom-ua">
+  
+    
+      <p>© 2002-2022 Terrasoft.  |  <a href="https://www.terrasoft.ua/privacy-policy" target="_blank">Конфиденциальность</a></p>
+
+  </div>
+
+  </div>
+
+      </div>
+    </div>
+  </footer>
+</div>
+<div class="creatio-bg"></div>
+
+
+  </div>
+
+    
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/docs\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/2997","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"ru"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"ajaxPageState":{"libraries":"admin_feedback\/admin_feedback_block,admin_feedback\/admin_feedback_css,classy\/base,classy\/messages,classy\/node,core\/drupal.ajax,core\/jquery.form,core\/normalize,creatio\/fancybox,creatio\/global,layout_discovery\/onecol,system\/base,ts_doc\/doc_version,ts_feedback\/ts_feedback,ts_nav\/breadcrumb,ts_nav\/doc_nav,ts_nav\/page_nav,ts_title_anchor\/ts_title_anchor","theme":"creatio","theme_token":null},"ajaxTrustedUrl":{"form_action_p_pvdeGsVG5zNF_XLGPTvYSKCf43t8qZYSwcfZl2uzM":true,"\/docs\/7-18\/developer\/back_end_razrabotka\/operatsii_s_dannymi_back_end\/entityschemaquery?ajax_form=1":true},"admin_feedback":{"yes_response":"\u0421\u043f\u0430\u0441\u0438\u0431\u043e \u0437\u0430 \u043e\u0431\u0440\u0430\u0442\u043d\u0443\u044e \u0441\u0432\u044f\u0437\u044c!","no_response":"\u0421\u043f\u0430\u0441\u0438\u0431\u043e \u0437\u0430 \u043e\u0431\u0440\u0430\u0442\u043d\u0443\u044e \u0441\u0432\u044f\u0437\u044c!","custom_text_response_on_no":{"value":"","format":"full_html"},"feedback_prompt_on_yes":true,"feedback_prompt_on_no":true,"feedback_enable_predefined_answers":false,"feedback_prompt":"\u041a\u0430\u043a \u043c\u043e\u0436\u043d\u043e \u0443\u043b\u0443\u0447\u0448\u0438\u0442\u044c \u044d\u0442\u0443 \u0441\u0442\u0430\u0442\u044c\u044e?"},"ajax":{"edit-feedback-send":{"callback":"::validateFeedbackMsg","event":"mousedown","keypress":true,"prevent":"click","url":"\/docs\/7-18\/developer\/back_end_razrabotka\/operatsii_s_dannymi_back_end\/entityschemaquery?ajax_form=1","dialogType":"ajax","submit":{"_triggering_element_name":"op","_triggering_element_value":"\u041e\u0442\u043f\u0440\u0430\u0432\u0438\u0442\u044c"}}},"user":{"uid":0,"permissionsHash":"9c2367dfcaba0fa15f0375f97aed64e146c908cee68508d13b79e3ee80e5162d"}}</script>
+<script src="../../../../sites/default/files/js/js_Rr-7TvYD7NposuRFJwUqThxM7yJmw8vs03PQwu5gWd8.js"></script>
+
+
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+      <g id="svg-copy" class="svg-icon svg-icon_copy">
+        <path d="M15.111,18H1.889A1.848,1.848,0,0,1,0,16.2V3.6A1.848,1.848,0,0,1,1.889,1.8H5.837a2.87,2.87,0,0,1,5.326,0h3.948A1.848,1.848,0,0,1,17,3.6V16.2A1.848,1.848,0,0,1,15.111,18ZM3.777,12.6v1.8h6.611V12.6Zm0-3.6v1.8h9.445V9Zm0-3.6V7.2h9.445V5.4ZM8.5,1.8a.924.924,0,0,0-.944.9.945.945,0,0,0,1.889,0A.924.924,0,0,0,8.5,1.8Z"/>
+      </g>
+
+      <g id="svg-prev" class="svg-icon svg-icon_arrow">
+        <path d="M5.488,12.779,0,6.39,5.488,0" transform="translate(1 0.652)"/>
+      </g>
+
+      <g id="svg-next" class="svg-icon svg-icon_arrow">
+        <path d="M0,12.779,5.488,6.39,0,0" transform="translate(0.759 0.652)"/>
+      </g>
+    </svg>
+  </body>
+
+<!-- Mirrored from academy.terrasoft.ua/docs/7-18/developer/back_end_razrabotka/operatsii_s_dannymi_back_end/entityschemaquery by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Mar 2022 03:25:25 GMT -->
+</html>

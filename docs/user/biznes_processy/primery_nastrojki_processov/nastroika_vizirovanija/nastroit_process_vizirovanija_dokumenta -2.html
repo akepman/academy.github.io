@@ -1,0 +1,950 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# ">
+  
+<!-- Mirrored from academy.terrasoft.ua/docs/user/biznes_processy/primery_nastrojki_processov/nastroika_vizirovanija/nastroit_process_vizirovanija_dokumenta  by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 22 Mar 2022 22:13:15 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+          <!-- Google Tag Manager -->
+      <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          '../../../../../../www.googletagmanager.com/gtm5445.html?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-KLLB8G');</script>
+      <!-- End Google Tag Manager -->
+        <meta charset="utf-8" />
+<link rel="canonical" href="nastroit_process_vizirovanija_dokumenta%c2%a0-2.html" />
+<meta name="description" content="Пример. Необходимо, чтобы в разделе Документы появилась возможность визирования. Каждая запись будет отправляться на визирование вручную, по кнопке запуска бизнес-процесса. Любой сотрудник, входящий в роль “Финансовый отдел”, сможет установить визу. По факту создания визы всем сотрудникам, которые могут завизировать документ, будет отправляться email-уведомление. Сотрудник, отправивший документ на визирование, по факту установки визы получит email-уведомление." />
+<meta property="og:url" content="https://academy.terrasoft.ua/docs/user/biznes_processy/primery_nastrojki_processov/nastroika_vizirovanija/nastroit_process_vizirovanija_dokumenta%C2%A0" />
+<meta property="og:title" content="Настроить процесс визирования документа " />
+<meta property="og:description" content="Пример. Необходимо, чтобы в разделе Документы появилась возможность визирования. Каждая запись будет отправляться на визирование вручную, по кнопке запуска бизнес-процесса. Любой сотрудник, входящий в роль “Финансовый отдел”, сможет установить визу. По факту создания визы всем сотрудникам, которые могут завизировать документ, будет отправляться email-уведомление. Сотрудник, отправивший документ на визирование, по факту установки визы получит email-уведомление." />
+<meta name="Generator" content="Drupal 9 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="../../../../themes/custom/creatio/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="revision" href="nastroit_process_vizirovanija_dokumenta%c2%a0-2.html" />
+
+    <title>Настроить процесс визирования документа  | Creatio Academy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&amp;family=Open+Sans:ital,wght@0,300;0,400;0,600;1,400&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" media="all" href="../../../../sites/default/files/css/css_6lTP66__-yc6QXFp1zOwoeJ0HVigoYZP-SeoLLii000.css" />
+<link rel="stylesheet" media="all" href="../../../../sites/default/files/css/css_XQJDNhkF3xH5SZCcY-PI89Zu4nYIzQ5oR3SnUKyfXJU.css" />
+<link rel="stylesheet" media="print" href="../../../../sites/default/files/css/css_Zn4VHvcniOOtUwkIVwXzYr_0AI9gUVgZcPqaH4ViagU.css" />
+
+    
+  </head>
+  <body class="path-node page-node-type-user-documentation">
+          <!-- Google Tag Manager (noscript) -->
+      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KLLB8G"
+                        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+      <!-- End Google Tag Manager (noscript) -->
+    
+        
+      <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    <div class="creatio-page d-flex flex-column">
+        <div class="region region-informer">
+    <div id="block-terrasoftpidtrimueukrainu" class="block block-simple-block block-simple-blockterrasoft-pidtrimue-ukrainu">
+  
+    
+      <style type="text/css">
+<!--/*--><![CDATA[/* ><!--*/
+@import url(../../../../../../www.terrasoft.ua/themes/custom/creatio/css/components/informer.css)
+
+/*--><!]]>*/
+</style><div class="ts-swu">
+<div class="creatio-container">
+<div class="ts-swu__cont">
+<div><a class="ts-swu__link" href="https://www.terrasoft.ua/terrasoft-stands-with-ukraine" target="_blank">Україна понад усе!</a> <span><a href="https://www.terrasoft.ua/terrasoft-stands-with-ukraine" target="_blank">Приєднуйтеся</a> до допомоги!</span></div>
+</div>
+</div></div>
+
+  </div>
+
+  </div>
+
+  
+  <header role="banner">
+          <div class="creatio-region creatio-region_top">
+        <div class="creatio-container">
+            <div class="region region-top">
+    <div id="block-menutoggle" class="block block-simple-block block-simple-blockmenu-toggle">
+  
+    
+      <div class="menu-toggle"><span> </span></div>
+
+  </div>
+<div id="block-logowhite-2" class="block block-simple-block block-simple-blocklogo-white">
+  
+    
+      <p><a class="site-logo" href="../../../../../index.html" rel="home"><img src="../../../../themes/custom/creatio/logo-white.svg" /></a></p>
+
+  </div>
+<div id="block-search" class="block block-simple-block block-simple-blocksearch">
+  
+    
+      <div class="search">
+<form action="https://academy.terrasoft.ua/search" class="search-form" method="get"><input class="search-form__input" name="search" placeholder="Поиск" type="search" /><input class="search-form__button" type="submit" value="Поиск" /> </form>
+
+<div class="search-toggle"> </div>
+</div>
+
+  </div>
+<nav role="navigation" aria-labelledby="block-sitesua-menu" id="block-sitesua" class="block block-menu navigation menu--sites-ua">
+            
+  <h2 class="visually-hidden" id="block-sitesua-menu">Sites UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="https://www.terrasoft.ua/" rel="nofollow" target="_blank">Terrasoft</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://community.terrasoft.ua/" rel="nofollow" target="_blank">Community</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://marketplace.terrasoft.ua/" rel="nofollow" target="_blank">Marketplace</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+<div id="block-usermenu" class="block block-ts-user block-ts-user-menu-block">
+  
+    
+      <ul class="user-menu">
+      <li class="user-menu__item">
+      <a class="user-menu__link" href="https://profile.terrasoft.ua/user/login?destination=academy/ua/docs/user/biznes_processy/primery_nastrojki_processov/nastroika_vizirovanija/nastroit_process_vizirovanija_dokumenta ">Войти</a>
+    </li>
+  </ul>
+
+  </div>
+<div id="block-usermenumobile" class="block block-ts-user block-ts-user-menu-mobile-block">
+  
+    
+      <ul class="user-menu-mobile">
+      <li class="user-menu-mobile__item">
+      <div class="user-menu-mobile__user user-menu-mobile__user_icon"></div>
+      <ul class="user-menu-mobile__submenu">
+        <li class="user-menu-mobile__subitem">
+          <a class="user-menu-mobile__sublink" href="https://profile.terrasoft.ua/user/login?destination=academy/ua/docs/user/biznes_processy/primery_nastrojki_processov/nastroika_vizirovanija/nastroit_process_vizirovanija_dokumenta ">Войти</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  </div>
+
+  </div>
+
+        </div>
+      </div>
+              <div class="creatio-region creatio-region_header">
+        <div class="creatio-container">
+            <div class="region region-header">
+    <div id="block-logo" class="block block-simple-block block-simple-blocklogo">
+  
+    
+      <p><a class="site-logo" href="../../../../../index.html" rel="home"><img src="../../../../themes/custom/creatio/logo.svg" /></a></p>
+
+  </div>
+<nav role="navigation" aria-labelledby="block-osnovnayanavigaciyaua-menu" id="block-osnovnayanavigaciyaua" class="block block-menu navigation menu--main-ua">
+            
+  <h2 class="visually-hidden" id="block-osnovnayanavigaciyaua-menu">Основная навигация UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="../../../../index.html" data-drupal-link-system-path="&lt;front&gt;">Документация</a>
+              </li>
+                <li class="menu-item">
+        <a href="../../../../../trainings.html">Тренинги</a>
+              </li>
+                <li class="menu-item">
+        <a href="../../../../certification.html" data-drupal-link-system-path="node/3084">Сертификация и тестирование</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+<nav role="navigation" aria-labelledby="block-sitesua-2-menu" id="block-sitesua-2" class="block block-menu navigation menu--sites-ua">
+            
+  <h2 class="visually-hidden" id="block-sitesua-2-menu">Sites UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="https://www.terrasoft.ua/" rel="nofollow" target="_blank">Terrasoft</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://community.terrasoft.ua/" rel="nofollow" target="_blank">Community</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://marketplace.terrasoft.ua/" rel="nofollow" target="_blank">Marketplace</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+
+  </div>
+
+        </div>
+      </div>
+              <div class="creatio-region creatio-region_breadcrumb">
+        <div class="creatio-container">
+            <div class="region region-breadcrumb">
+    <div id="block-logowhite" class="block block-simple-block block-simple-blocklogo-white">
+  
+    
+      <p><a class="site-logo" href="../../../../../index.html" rel="home"><img src="../../../../themes/custom/creatio/logo-white.svg" /></a></p>
+
+  </div>
+<div id="block-breadcrumbnaviagtion" class="block block-ts-nav block-ts-nav-bread">
+  
+    
+      <nav class="breadcrumb"><ol class="ts-nav-breadcrumb__list"><li class="ts-nav-breadcrumb__item"><a href="../../../../index.html" class="ts-nav-breadcrumb__link" title="Документация">Документация</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../../indexd993.html?vid_1=1" class="ts-nav-breadcrumb__link" title="Для пользователя">Для пользователя</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../biznes_processy.html" class="ts-nav-breadcrumb__link" title="Бизнес-процессы" hreflang="zxx">Бизнес-процессы</a></li>
+<li class="ts-nav-breadcrumb__item ts-nav-breadcrumb__item_mobile"><a href="../../primery_nastrojki_processov.html" class="ts-nav-breadcrumb__link" title="Примеры настройки процессов" hreflang="ru">Примеры настройки процессов</a></li>
+<li class="ts-nav-breadcrumb__item"><span class="ts-nav-breadcrumb__link ts-nav-breadcrumb__link_current" title="Настроить процесс визирования документа ">Настроить процесс визирования документа </span></li>
+</ol>
+</nav>
+
+  </div>
+<div id="block-search-2" class="block block-simple-block block-simple-blocksearch">
+  
+    
+      <div class="search">
+<form action="https://academy.terrasoft.ua/search" class="search-form" method="get"><input class="search-form__input" name="search" placeholder="Поиск" type="search" /><input class="search-form__button" type="submit" value="Поиск" /> </form>
+
+<div class="search-toggle"> </div>
+</div>
+
+  </div>
+
+  </div>
+
+        </div>
+      </div>
+      </header>
+
+  <div class="creatio-region creatio-region_main">
+    <div class="creatio-container">
+                <div class="region region-breadcrumb-mobile">
+    <div id="block-breadcrumbnaviagtion-2" class="block block-ts-nav block-ts-nav-bread">
+  
+    
+      <nav class="breadcrumb"><ol class="ts-nav-breadcrumb__list"><li class="ts-nav-breadcrumb__item"><a href="../../../../index.html" class="ts-nav-breadcrumb__link" title="Документация">Документация</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../../indexd993.html?vid_1=1" class="ts-nav-breadcrumb__link" title="Для пользователя">Для пользователя</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../biznes_processy.html" class="ts-nav-breadcrumb__link" title="Бизнес-процессы" hreflang="zxx">Бизнес-процессы</a></li>
+<li class="ts-nav-breadcrumb__item ts-nav-breadcrumb__item_mobile"><a href="../../primery_nastrojki_processov.html" class="ts-nav-breadcrumb__link" title="Примеры настройки процессов" hreflang="ru">Примеры настройки процессов</a></li>
+<li class="ts-nav-breadcrumb__item"><span class="ts-nav-breadcrumb__link ts-nav-breadcrumb__link_current" title="Настроить процесс визирования документа ">Настроить процесс визирования документа </span></li>
+</ol>
+</nav>
+
+  </div>
+
+  </div>
+
+      
+      <main class="creatio-main" role="main">
+                                                    
+        <div class="creatio-content creatio-content_small">
+          <div class="creatio-content__inner creatio-content__inner_bg">
+                            <div class="region region-messages">
+    <div data-drupal-messages-fallback class="hidden"></div>
+
+  </div>
+
+            
+              <div class="region region-content">
+    <div id="block-creatio-page-title" class="block block-core block-page-title-block">
+  
+    
+      
+  <h1 class="page-title"><span class="field field--name-title field--type-string field--label-hidden">Настроить процесс визирования документа </span>
+</h1>
+
+
+  </div>
+<div id="block-creatio-content" class="block block-system block-system-main-block">
+  
+    
+      
+<article data-history-node-id="3532" role="article" about="/docs/user/biznes_processy/primery_nastrojki_processov/nastroika_vizirovanija/nastroit_process_vizirovanija_dokumenta%C2%A0" class="node node--type-user-documentation node--view-mode-full">
+
+  
+    
+
+  
+  <div class="node__content">
+      <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-ts-doc block-ts-doc-downloads">
+  
+    
+      <a href="../../../../sites/default/files/pdf/node/3532/Nastroit_process_vizirovaniya_dokumenta__.pdf" target="_blank">PDF</a>
+  </div>
+<div class="block block-ts-doc block-ts-doc-versions">
+  
+    
+        <div class="ts-doc-versions">
+    <select class="ts-doc-versions__select">
+                                                <option value="/docs/8-0/user/biznes_processy/primery_nastrojki_processov/nastroika_vizirovanija/nastroit_process_vizirovanija_dokumenta " selected>Версия 8.0</option>
+                              <option value="/docs/7-18/user/biznes_processy/primery_nastrojki_processov/nastroika_vizirovanija/nastroit_process_vizirovanija_dokumenta ">Версия 7.18</option>
+                              <option value="/docs/7-17/user/biznes_processy/primery_nastrojki_processov/nastroika_vizirovanija/nastroit_process_vizirovanija_dokumenta ">Версия 7.17</option>
+          </select>
+  </div>
+
+  </div>
+
+    </div>
+  </div>
+  <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocknodeuser-documentationfield-product">
+  
+    
+      
+  <div class="field field--name-field-product field--type-entity-reference field--label-above">
+    <div class="field__label">Продукты</div>
+          <div class="field__items">
+              <div class="field__item">Все продукты</div>
+              </div>
+      </div>
+
+  </div>
+<div class="block block-layout-builder block-field-blocknodeuser-documentationbody">
+  
+    
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><div class="message message_example">
+<p><span class="message__bold">Пример.</span> Необходимо, чтобы в разделе <span class="key">Документы</span> появилась возможность визирования. Каждая запись будет отправляться на визирование вручную, по кнопке запуска бизнес-процесса. Любой сотрудник, входящий в роль “Финансовый отдел”, сможет установить визу. По факту создания визы всем сотрудникам, которые могут завизировать документ, будет отправляться email-уведомление. Сотрудник, отправивший документ на визирование, по факту установки визы получит email-уведомление. В случае утверждения визы состояние завизированного документа изменится на “Актуальный”. Если виза была отклонена, то состояние визируемого документа меняется на “Подготовка”, а для сотрудника, запустившего процесс визирования, создается задача по доработке документа.</p>
+</div>
+
+<p>Настройка осуществляется в несколько этапов:</p>
+
+<ol><li>
+	<p>Настройка бизнес-процесса, приведенного на схеме (Рис. 1).</p>
+	</li>
+	<li>
+	<p>Настройка возможности запуска бизнес-процесса по записи раздела.</p>
+
+	<div class="message message_warning">
+	<p><span class="message__bold message__bold_warning">Важно.</span> Приступать к настройке процесса необходимо только после того, как в мастере раздела будет включена функциональность визирования. <a href="../../../bazis_platformy/kommunikacii/vizy/rabota_s_vizami/index.html">Подробнее&gt;&gt;&gt;</a></p>
+	</div>
+
+	<div class="media">
+	<div class="media__caption">Рис. 1 <a name="XREF_41032_176" id="XREF_41032_176"></a>— Бизнес-процесс “Визирование документа”</div>
+
+	<div class="media__element"><img alt="" data-entity-type="" data-entity-uuid="" data-widget="image" height="570" src="../../../../sites/default/files/images/2020-11/scr_process_creation_designer_case_accessrights_read_account.png" width="336" /></div>
+	</div>
+	</li>
+</ol><h3>Настроить бизнес-процесс<a class="title-anchor" href="#title-2782-28" id="title-2782-28"> </a></h3>
+
+<ol><li>
+	<p>Перейдите в библиотеку процессов и добавьте новый процесс.</p>
+	</li>
+	<li>
+	<p>В области настройки свойств процесса в поле <span class="key">Процесс</span> введите название — “Визирование документа”.</p>
+	</li>
+	<li>
+	<p>Откройте вкладку <span class="key">Параметры</span> и добавьте новый параметр. Данный параметр свяжет экземпляры процесса с документами, которые требуют визирования (Рис. 2). Значение параметра будет получено при запуске процесса из раздела, и этот же параметр будет использоваться при настройке процесса. Для добавления параметра:</p>
+
+	<ol><li>
+		<p>В области настройки свойств процесса нажмите кнопку <span class="key">Добавить параметр</span> и выберите “Справочник”.</p>
+		</li>
+		<li>
+		<p>В поле <span class="key">Название</span> укажите “Документ”.</p>
+		</li>
+		<li>
+		<p>В поле <span class="key">Справочник</span> укажите “Документ”.</p>
+		</li>
+		<li>
+		<p>Сохраните изменения.</p>
+
+		<div class="media">
+		<div class="media__caption">Рис. 2 <a name="XREF_60638_177" id="XREF_60638_177"></a>— Свойства процесса визирования документа</div>
+
+		<div class="media__element"><img alt="chapter_process_creation_designer_set_process_parameter.png" id="image94" src="../../../../sites/default/files/documentation/user/ru/bpms/BPMonlineHelp/chapter_process_creation_end/chapter_process_creation_designer_set_process_parameter.png" /></div>
+		</div>
+		</li>
+	</ol></li>
+	<li>Добавьте на схему элемент <span class="key">Читать данные</span> из группы <span class="key">Действия пользователя</span>. Введите название элемента в поле <span class="key">Читать данные</span> (например, “Читать данные документа”). Этот элемент будет передавать в процесс параметры, необходимые для выполнения последующих шагов.</li>
+	<li>Настройте свойства элементов (Рис. 3).</li>
+	<li>
+	<p>В поле <span class="key">Какой режим чтения данных использовать?</span> укажите “Читать первую запись из выборки”.</p>
+	</li>
+	<li>
+	<p>В поле <span class="key">Из какого объекта читать данные?</span> укажите “Документ”. Из этого объекта будет вычитываться значение поля <span class="key">Ответственный</span> для отправки уведомления о ходе визирования.</p>
+	</li>
+	<li>
+	<p>В области <span class="key">Как отфильтровать записи?</span> настройте фильтр “Id = Документ”. Для этого нажмите на &lt;Добавить условие&gt;, выберите колонку “Id”, в появившемся меню выберите <span class="key">Сравнить с параметром</span>, а затем в окне определения значения параметра выберите параметр процесса <span class="key">Документ</span>.</p>
+	</li>
+	<li>
+	<p>В области <span class="key">Как отсортировать записи?</span> по умолчанию настроена сортировка по возрастанию номеров.</p>
+
+	<div class="media">
+	<div class="media__caption">Рис. 3 — Свойства элемента “Читать данные документа”</div>
+
+	<div class="media__element"><img alt="chapter_process_creation_designer_read_the_document.png" id="image95" src="../../../../sites/default/files/documentation/user/ru/bpms/BPMonlineHelp/chapter_process_creation_end/chapter_process_creation_designer_read_the_document.png" /></div>
+	</div>
+	</li>
+	<li>Поместите на схему элемент <span class="key">Визирование</span> группы <span class="key">Действия пользователя</span> — “Утвердить документ”. Элемент будет активироваться после запуска процесса визирования по записи раздела <span class="key">Документы</span>.</li>
+	<li>Настройте свойства элементов (Рис. 4).
+	<ol><li>
+		<p>В поле <span class="key">Цель визирования</span> укажите “Требуется утверждение”.</p>
+		</li>
+		<li>
+		<p>В поле <span class="key">Объект визирования</span> выберите “Документ”.</p>
+
+		<div class="message">
+		<p><span class="message__bold">На заметку.</span> Если объекта “Документ” нет в списке, то по нему не включено визирование в мастере разделов. Подробнее о последовательности настройки визирования читайте в статье <a href="../../../bazis_platformy/kommunikacii/vizy/rabota_s_vizami/index.html">Визирование</a>.</p>
+		</div>
+		</li>
+		<li>
+		<p>В поле <span class="key">Идентификатор записи</span> по кнопке <img alt="btn_process_element_settings_lookup00025.png" id="image96" src="../../../../sites/default/files/documentation/user/ru/bpms/BPMonlineHelp/chapter_process_creation_end/btn_process_element_settings_lookup00025.png" /> выберите пункт “Параметр процесса” и укажите параметр процесса “Документ”.</p>
+		</li>
+		<li>
+		<p>В поле <span class="key">Кому отправить на визирование?</span> укажите “Роли”.</p>
+		</li>
+		<li>
+		<p>В поле <span class="key">Роль</span> из справочника <span class="key">Роли (представление)</span> выберите “Финансовый отдел”. Так любой из сотрудников, входящих в эту роль, сможет завизировать документ.</p>
+		</li>
+		<li>
+		<p>Настройте возможность переадресовать визирование другому пользователю, установив признак <span class="key">Можно делегировать визирование</span>.</p>
+		</li>
+		<li>
+		<p>В области <span class="key">Отправить e-mail уведомление</span> настройте информирование визирующих о необходимости установки визы, а ответственного за документ — о факте визирования.</p>
+
+		<ul><li>
+			<p>Отметьте вариант информирования “О необходимости выполнить визирование”.</p>
+			</li>
+			<li>
+			<p>В появившемся поле <span class="key">Шаблон сообщения</span> по кнопке <img alt="btn_process_element_settings_lookup00026.png" id="image97" src="../../../../sites/default/files/documentation/user/ru/bpms/BPMonlineHelp/chapter_process_creation_end/btn_process_element_settings_lookup00026.png" /> выберите шаблон уведомления о необходимости визирования документа из справочника <span class="key">Шаблон email-сообщения</span>.</p>
+			</li>
+			<li>
+			<p>Отметьте вариант информирования “О результате выполнения визирования”.</p>
+			</li>
+			<li>
+			<p>В поле <span class="key">Получатель уведомления</span> нажмите кнопку <img alt="btn_parametres_window00027.png" id="image98" src="../../../../sites/default/files/documentation/user/ru/bpms/BPMonlineHelp/chapter_process_creation_end/btn_parametres_window00027.png" /> и выберите в меню “Контакт”, затем нажмите на опцию “Параметр процесса”. Затем укажите параметр элемента процесса “Читать данные документа” —&gt; “Ответственный”. Уведомление о результате визирования будет отправляться ответственному за документ.</p>
+			</li>
+			<li>
+			<p>В поле <span class="key">Шаблон сообщения</span> по кнопке <img alt="btn_process_element_settings_lookup00028.png" id="image99" src="../../../../sites/default/files/documentation/user/ru/bpms/BPMonlineHelp/chapter_process_creation_end/btn_process_element_settings_lookup00028.png" /> выберите шаблон уведомления о результате визирования из справочника <span class="key">Шаблон email-сообщения</span>.</p>
+
+			<div class="message message_warning">
+			<p><span class="message__bold message__bold_warning">Важно.</span> Для отправки писем должна быть заполнена системная настройка <span class="key">Почтовый ящик для отправки письма информации о визе</span>. Перейти к настройке можно из информационного сообщения в области <span class="key">Отправить e-mail уведомление</span> по кнопке <img alt="btn_com_information00029.png" id="image100" src="../../../../sites/default/files/documentation/user/ru/bpms/BPMonlineHelp/chapter_process_creation_end/btn_com_information00029.png" />.</p>
+			</div>
+
+			<div class="message">
+			<p><span class="message__bold">На заметку.</span> Шаблоны уведомлений необходимо предварительно создать в дизайнере контента по объекту “Визы в разделе Документы”. Объекты визирования создаются автоматически, когда вы активируете опцию <span class="key">Доступно визирование в разделе</span>. Например, если вы активируете <span class="key">Доступно визирование в разделе</span> в разделе <span class="key">Документы</span>, будет создан новый объект “Визы в разделе Документы”. Перейти к его созданию можно по кнопке <img alt="btn_com_add_tab00030.png" id="image101" src="../../../../sites/default/files/documentation/user/ru/bpms/BPMonlineHelp/chapter_process_creation_end/btn_com_add_tab00030.png" /> в правой части поля <span class="key">Шаблон сообщения</span>. Подробно создание шаблона email-сообщения описано в <a>статье </a><a href="../../../instrumenty_marketinga/email_marketing/shablon_pisma/sozdanie_shablona/sozdat_shablon_pisma/index.html">Создать шаблон письма</a>.</p>
+			</div>
+
+			<div class="media">
+			<div class="media__caption">Рис. 4 <a name="XREF_46140_178" id="XREF_46140_178"></a> — Свойства элемента <span class="key">Визирование</span></div>
+
+			<div class="media__element"><img alt="chapter_process_creation_designer_visa_settings.png" id="image102" src="../../../../sites/default/files/documentation/user/ru/bpms/BPMonlineHelp/chapter_process_creation_end/chapter_process_creation_designer_visa_settings.png" /></div>
+			</div>
+			</li>
+		</ul></li>
+	</ol></li>
+	<li>Добавьте на схему два элемента <span class="key">Изменить данные</span> группы <span class="key">Действия системы</span>. Элементы “Изменить состояние документа на Подготовка” и “Изменить состояние документа на Актуальный” будут изменять данные визируемого документа в зависимости от результата визирования. Настройте свойства элементов (Рис. 5). Свойства элементов различаются только состоянием документа.
+	<ol><li>
+		<p>В поле <span class="key">Данные какого объекта изменить?</span> укажите объект системы, работа с которым выполняется. В нашем примере это “Документ”. В нашем примере это “График”.</p>
+		</li>
+		<li>
+		<p>В области <span class="key">Как отфильтровать записи?</span> настройте фильтр “Id = Документ”. Для этого нажмите на &lt;Добавить условие&gt;, выберите колонку “Id”, в появившемся меню выберите <span class="key">Сравнить с параметром</span>, а затем в окне определения значения параметра выберите параметр процесса <span class="key">Документ</span>.</p>
+		</li>
+		<li>
+		<p>В области <span class="key">Какие значения полей установить для измененных записей?</span> укажите состояние, в которое будет переходить документ. В случае утверждения визы состояние завизированного документа изменится на “Актуальный”. В случае отклонения визы состояние визируемого документа изменится на “Подготовка”. Для этого нажмите на &lt;Добавить поле&gt;, выберите колонку “Состояние”. В появившемся поле <span class="key">Состояние</span> по кнопке <img alt="btn_process_element_settings_lookup00031.png" id="image103" src="../../../../sites/default/files/documentation/user/ru/bpms/BPMonlineHelp/chapter_process_creation_end/btn_process_element_settings_lookup00031.png" /> выберите пункт “Значение справочника”, а затем укажите следующие значения: “Актуальный” — для элемента “Изменить состояние документа на “Актуальный” и “Подготовка” — для элемента “Изменить состояние документа на Подготовка”.</p>
+
+		<div class="media">
+		<div class="media__caption">Рис. 5 <a name="XREF_14627_183" id="XREF_14627_183"></a> — Свойства элемента “Изменить состояние документа на Актуальный”</div>
+
+		<div class="media__element"><img alt="chapter_process_creation_designer_document_status_actual.png" id="image104" src="../../../../sites/default/files/documentation/user/ru/bpms/BPMonlineHelp/chapter_process_creation_end/chapter_process_creation_designer_document_status_actual.png" /></div>
+		</div>
+		</li>
+	</ol></li>
+	<li>Скопируйте ранее добавленный элемент <span class="key">Читать данные</span> группы <span class="key">Действия системы</span> — “Читать данные документа” и разместите его на схеме процесса после элемента <span class="key">Изменить состояние элемента на Подготовка</span>. Элемент будет определять, кто будет назначен ответственным по доработке документа.</li>
+	<li>Добавьте элемент <span class="key">Выполнить задачу</span> группы <span class="key">Действия пользователя</span> — “Доработать документ”. Элемент будет создавать задачу по доработке документа для ответственного в случае, если виза была отклонена.</li>
+	<li>Настройте свойства элементов (Рис. 6).
+	<ol><li>
+		<p>В поле <span class="key">Что нужно сделать?</span> введите название задачи.</p>
+		</li>
+		<li>
+		<p>Установите временные условия выполнения задачи в полях <span class="key">Стартовать через</span> и <span class="key">Плановая длительность</span>. Поле <span class="key">Стартовать через</span> — это период, по истечении которого запланировано начало выполнения задачи. Поле <span class="key">Плановая длительность</span> — ориентировочная длительность выполнения задачи.</p>
+		</li>
+		<li>
+		<p>Установите признак <span class="key">Отображать в расписании</span>, чтобы задача отобразилась в расписании ответственного за документ сотрудника.</p>
+		</li>
+		<li>
+		<p>В поле <span class="key">Кто выполняет задачу?</span> по кнопке <img alt="btn_process_element_settings_lookup00032.png" id="image105" src="../../../../sites/default/files/documentation/user/ru/bpms/BPMonlineHelp/chapter_process_creation_end/btn_process_element_settings_lookup00032.png" /> выберите пункт “Параметр процесса”. Затем укажите параметр элемента процесса “Читать данные документа” —&gt; “Ответственный”.</p>
+		</li>
+		<li>
+		<p>В области <span class="key">Связи активности</span> настройте связь задачи с документом. Для этого:</p>
+
+		<ul><li>
+			<p>По кнопке <img alt="btn_button_connections00033.png" id="image106" src="../../../../sites/default/files/documentation/user/ru/bpms/BPMonlineHelp/chapter_process_creation_end/btn_button_connections00033.png" /> добавьте поле для связи с документом.</p>
+			</li>
+			<li>
+			<p>По кнопке <img alt="btn_process_element_settings_lookup00034.png" id="image107" src="../../../../sites/default/files/documentation/user/ru/bpms/BPMonlineHelp/chapter_process_creation_end/btn_process_element_settings_lookup00034.png" /> выберите пункт “Параметр процесса”, а затем укажите ранее добавленный параметр процесса “Документ”.</p>
+
+			<div class="media">
+			<div class="media__caption">Рис. 6 — Свойства элемента “Доработать документ”</div>
+
+			<div class="media__element"><img alt="chapter_process_creation_designer_document_finalization_task.png" id="image108" src="../../../../sites/default/files/documentation/user/ru/bpms/BPMonlineHelp/chapter_process_creation_end/chapter_process_creation_designer_document_finalization_task.png" /></div>
+			</div>
+			</li>
+		</ul></li>
+	</ol></li>
+	<li>После создания элементов процесса соедините их с помощью стрелок в правой части выделенного элемента:
+	<ol><li>
+		<p>С помощью стрелок условного потока <img alt="btn_com_mnu_add_flow_default.png" id="image109" src="../../../../sites/default/files/documentation/user/ru/bpms/BPMonlineHelp/chapter_process_creation_end/btn_com_mnu_add_flow_default.png" /> соедините элемент “Утвердить документ” с элементами “Изменить состояние документа на Подготовка” и “Изменить состояние документа на Актуальный”.</p>
+		</li>
+		<li>
+		<p>Кликните по стрелке перехода к элементу “Изменить состояние документа на Подготовка” и выберите результат визирования — “Отрицательная”.</p>
+		</li>
+		<li>
+		<p>В свойствах перехода к элементу “Изменить состояние документа на Актуальный” укажите “Положительная”.</p>
+		</li>
+		<li>
+		<p>Оставшиеся элементы соедините потоками управления <img alt="btn_com_mnu_add_flow.png" id="image110" src="../../../../sites/default/files/documentation/user/ru/bpms/BPMonlineHelp/chapter_process_creation_end/btn_com_mnu_add_flow.png" />.</p>
+		</li>
+	</ol></li>
+	<li>
+	<p>Сохраните бизнес-процесс. Далее настройте запуск этого бизнес-процесса.</p>
+	</li>
+</ol><h2><a name="HT_chapter_process_creation_designer_case_document_approval_process_run" id="HT_chapter_process_creation_designer_case_document_approval_process_run"></a>Настроить запуск бизнес-процесса<a class="title-anchor" href="#title-2782-29" id="title-2782-29"> </a></h2>
+
+<p>Процесс визирования документа будет запускаться по кнопке <span class="key">Запустить процесс</span> на странице записи или в реестре раздела. Отображение кнопки нужно предварительно настроить (Рис. 7).</p>
+
+<p>Для настройки потребуется связать процесс визирования документа с записями, по которым он будет выполняться. Для этого:</p>
+
+<ol><li>
+	<p>В разделе <span class="key">Документы</span> нажмите кнопку <span class="key">Вид</span> и выберите команду <span class="key">Открыть мастер раздела</span>.</p>
+	</li>
+	<li>
+	<p>Перейдите на вкладку <span class="key">Бизнес-процессы</span>. На детали <span class="key">Запуск бизнес-процесса из раздела</span> нажмите кнопку <img alt="btn_com_add_tab00035.png" id="image111" src="../../../../sites/default/files/documentation/user/ru/bpms/BPMonlineHelp/chapter_process_creation_end/btn_com_add_tab00035.png" />. Откроется окно настройки запуска бизнес-процесса.</p>
+	</li>
+	<li>
+	<p>В поле <span class="key">Какой процесс запускать?</span> укажите процесс “Визирование документа”.</p>
+	</li>
+	<li>
+	<p>Чтобы бизнес-процесс можно было запускать по отдельным записям раздела, выберите условие запуска “Для выбранной записи”.</p>
+
+	<p>Поле <span class="key">Параметр процесса, в который передается выбранная запись</span> заполняется автоматически параметром “Документ” бизнес-процесса “Визирование документа”.</p>
+	</li>
+	<li>
+	<p>Сохраните изменения в окне и в мастере раздела.</p>
+
+	<div class="media">
+	<div class="media__caption">Рис. 7 <a name="XREF_88570_183" id="XREF_88570_183"></a>— Настройка запуска бизнес-процесса</div>
+
+	<div class="media__element"><img alt="chapter_process_creation_designer_run_process_for_selected_record_setup.png" id="image112" src="../../../../sites/default/files/documentation/user/ru/bpms/BPMonlineHelp/chapter_process_creation_end/chapter_process_creation_designer_run_process_for_selected_record_setup.png" /></div>
+	</div>
+
+	<p>В результате вы сможете запускать процесс визирования по любой записи раздела <span class="key">Документы</span> (Рис. 8).</p>
+
+	<div class="media">
+	<div class="media__caption">Рис. 8 — Запуск процесса из реестра раздела <span class="key">Документы</span></div>
+
+	<div class="media__element"><img alt="chapter_process_creation_designer_document_approvement_run_process_from_the_list.png" id="image113" src="../../../../sites/default/files/documentation/user/ru/bpms/BPMonlineHelp/chapter_process_creation_end/chapter_process_creation_designer_document_approvement_run_process_from_the_list.png" /></div>
+	</div>
+	</li>
+</ol><h2><a name="TOC_Как_настроить_шаблонbc-10" id="TOC_Как_настроить_шаблонbc-10"></a><a name="TOC_Как_настроить_шаблон" id="TOC_Как_настроить_шаблон"></a><a name="CSH_12" id="CSH_12"></a><a name="HT_chapter_process_creation_designer_example_approval_notification" id="HT_chapter_process_creation_designer_example_approval_notification"></a><a name="XREF_16849_How_to_set_up" id="XREF_16849_How_to_set_up"></a>Настроить шаблон уведомления о визировании<a class="title-anchor" href="#title-2782-18" id="title-2782-18"> </a></h2>
+
+<p>Используйте элемент <a href="../../../../7-17/user/biznes_processy/spravka_po_elementam_processov/dejstviya_polzovatelya/vizirovanie/element_processa_vizirovanije/index.html"><span class="key">Визирование</span></a>, чтобы настроить логику визирования пользователями различных записей Creatio (документов, счетов, заказов и т.д.). И визирующий, и пользователь, который отправляет документ на визирование, получат email-уведомления.</p>
+
+<p>Вы можете настроить шаблон для этих уведомлений. Обратите внимание, что email-уведомления о визировании не требуют использования дополнительного элемента <span class="key">Отправить email</span>, а настраиваются в самом элементе <span class="key">Визирование</span>.</p>
+
+<div class="message message_example">
+<p><span class="message__bold">Пример.</span> Необходимо, чтобы в процессе визирования документа визирующий получал email-уведомление, содержащее тип документа, номер и имя пользователя, который отправил документ на утверждение. Также пользователь, отправивший документ на визирование, должен получить уведомление о результате визирования.</p>
+</div>
+
+<p>В приведенных ниже инструкциях предполагается, что у вас включена функциональность визирования в разделе <span class="key">Документы</span>, на схему бизнес-процесса добавлен элемент <span class="key">Визирование</span> (Рис. 9) и настроены его свойства (Рис. 6). Подробно о включении функциональность визирования в разделе читайте в статье <a href="../../../../7-17/user/biznes_processy/spravka_po_elementam_processov/dejstviya_polzovatelya/vizirovanie/element_processa_vizirovanije/index.html">“Элемент процесса [Визирование]”</a>.</p>
+
+<div class="media">
+<div class="media__caption">Рис. 9 <a name="XREF_43646_Fig_217_A_business" id="XREF_43646_Fig_217_A_business"></a>— Бизнес-процесс “Визирование документа”</div>
+
+<div class="media__element"><img alt="chapter_process_creation_designer_document_approvement00036.png" id="image114" src="../../../../sites/default/files/documentation/user/ru/bpms/BPMonlineHelp/chapter_process_creation_end/chapter_process_creation_designer_document_approvement00036.png" /></div>
+</div>
+
+<p>Для настройки шаблонов:</p>
+
+<ol><li>
+	<p>Заполните поля в области настройки элемента <span class="key">Визирование</span>. Если поле <span class="key">Раздел визирования</span> заполнено, то доступные шаблоны email-уведомлений о визировании будут отфильтрованы в соответствии с выбранным разделом.</p>
+
+	<div class="message">
+	<p><span class="message__bold">На заметку.</span> Детальнее о настройке элемента <span class="key">Визирование</span> в бизнес-процессе читайте в блоке <a href="#title-2782-14">“Настроить процесс визирования документа”</a>.</p>
+	</div>
+	</li>
+	<li>
+	<p>Установите признак <span class="key">О необходимости выполнить визирование</span>. Email-уведомление о необходимости визирования будет отправлено ответственному за выполнение визирования. Если в поле <span class="key">Кому отправить на визирование?</span> выбрано значение "Роли", то уведомление получат все сотрудники, которые входят в эту роль.</p>
+	</li>
+	<li>
+	<p>В поле <span class="key">Шаблон сообщения</span> нажмите <img alt="btn_com_add_tab00038.png" id="image116" src="../../../../sites/default/files/documentation/user/ru/bpms/BPMonlineHelp/chapter_process_creation_end/btn_com_add_tab00038.png" /> (Рис. 10). Откроется окно для создания нового шаблона.</p>
+
+	<div class="media">
+	<div class="media__caption">Рис. 10 <a name="XREF_10653_Fig_219_Opening" id="XREF_10653_Fig_219_Opening"></a>— Открытие шаблона сообщения уведомления о визировании.</div>
+
+	<div class="media__element"><img alt="chapter_bpmn_approval_email_add_template.png" id="image117" src="../../../../sites/default/files/documentation/user/ru/bpms/BPMonlineHelp/chapter_process_creation_end/chapter_bpmn_approval_email_add_template.png" /></div>
+	</div>
+	</li>
+	<li>
+	<p>В новом окне заполните поле <span class="key">Название шаблона</span>. Обратите внимание, если вы заполняли ранее поле <span class="key">Раздел визирования</span>, то поле <span class="key">Источник макросов</span> будет сразу заполнено (в текущем примере — объект “Визы в разделе Документ” (Рис. 11).</p>
+
+	<div class="media">
+	<div class="media__caption">Рис. 11 <a name="XREF_55311_Fig_220_Approval" id="XREF_55311_Fig_220_Approval"></a>— Шаблон настройки уведомления о визировании</div>
+
+	<div class="media__element"><img alt="chapter_bpmn_approval_email_template_setup.png" id="image118" src="../../../../sites/default/files/documentation/user/ru/bpms/BPMonlineHelp/chapter_process_creation_end/chapter_bpmn_approval_email_template_setup.png" /></div>
+	</div>
+	</li>
+	<li>
+	<p>Нажмите кнопку <span class="key">Редактировать</span>. Шаблон откроется в дизайнере контента.</p>
+
+	<div class="message">
+	<p><span class="message__bold">На заметку.</span> Инструкция по работе с дизайнером контента приведена в статье <a href="../../../instrumenty_marketinga/email_marketing/shablon_pisma/sozdanie_shablona/sozdat_shablon_pisma.html?product=studio&amp;ver=7&amp;id=1404">“Создать шаблон письма”</a>.</p>
+	</div>
+	</li>
+	<li>
+	<p>Введите тему письма.</p>
+	</li>
+	<li>
+	<p>Перетащите блок контента (например <span class="key">Текст</span>) в шаблон. Замените стандартный текст в блоке на необходимый.</p>
+	</li>
+	<li>
+	<p>Добавьте макросы в текст шаблона:</p>
+
+	<ol><li>
+		<p>Кликните по тексту в той области, в которую нужно добавить макрос, нажмите кнопку <img alt="btn_email_temlate_macro.png" id="image119" src="../../../../sites/default/files/documentation/user/ru/bpms/BPMonlineHelp/chapter_process_creation_end/btn_email_temlate_macro.png" /> и выберите <span class="key">Выбрать макрос</span> (Рис. 12). Откроется окно выбора макроса.</p>
+
+		<div class="media">
+		<div class="media__caption">Рис. 12 — Добавление макроса в дизайнере контента</div>
+
+		<div class="media__element"><img alt="chapter_bpmn_approval_email_add_macro.png" id="image120" src="../../../../sites/default/files/documentation/user/ru/bpms/BPMonlineHelp/chapter_process_creation_end/chapter_bpmn_approval_email_add_macro.png" /></div>
+		</div>
+		</li>
+		<li>
+		<p>Выделите в окне необходимый макрос и нажмите кнопку <span class="key">Выбрать</span>. Доступные макросы разделены на несколько групп полей.</p>
+
+		<p>Вы можете указать данные получателя email-уведомления (группа “Адресат”), пользователя, который запускает процесс визирования (группа “ Текущий пользователь”) или данные визирующего (группа “Ответственный”). Например, для добавления имени пользователя, отправившего документ на визирование, выберите <span class="key">Текущий пользователь</span> —&gt; макрос <span class="key">ФИО</span> (Рис. 13).</p>
+
+		<div class="media">
+		<div class="media__caption">Рис. 13 — Добавление макроса в текст email-уведомления</div>
+
+		<div class="media__element"><img alt="chapter_bpmn_approval_email_select_macro.png" id="image121" src="../../../../sites/default/files/documentation/user/ru/bpms/BPMonlineHelp/chapter_process_creation_end/chapter_bpmn_approval_email_select_macro.png" /></div>
+		</div>
+
+		<p>Выбранный макрос будет добавлен в указанное место в тексте.</p>
+		</li>
+	</ol></li>
+	<li>
+	<p>Добавьте в шаблон email-уведомлений макросы по связанным объектам.</p>
+
+	<ol><li>
+		<p>Кликните по тексту в той области, в которую нужно добавить макрос, нажмитекнопку <img alt="btn_email_temlate_macro00039.png" id="image122" src="../../../../sites/default/files/documentation/user/ru/bpms/BPMonlineHelp/chapter_process_creation_end/btn_email_temlate_macro00039.png" /> и выберите <span class="key">Выбрать колонку</span>. Откроется окно <span class="key">Выбор колонки.</span></p>
+		</li>
+		<li>
+		<p>В окне <span class="key">Выбор колонки</span> укажите колонку связанного объекта, значение которой нужно вывести в текст уведомления. Объект создается автоматически после установки в мастере раздела признака <span class="key">Доступно визирование в разделе</span> и содержит данные визирования: цель, имя визирующего и т.д.</p>
+		</li>
+		<li>
+		<p>Можно добавить макросы для колонок любого объекта, связанного с визируемым объектом, например столбцы документа. Чтобы выбрать колонку связанного объекта, нажмите <span class="key">+</span> рядом с названием визируемого объекта в окне <span class="key">Выбор колонки</span> (Рис. 14). Например, для добавления типа и номера визируемого документа, выберите колонки <span class="key">Тип</span> и <span class="key">Номер</span> из связанного объекта <span class="key">Документ</span>.</p>
+
+		<div class="media">
+		<div class="media__caption">Рис. 14 <a name="XREF_18224_Fig_223_Selecting" id="XREF_18224_Fig_223_Selecting"></a>— Выбор макроса для колонки связанного объекта</div>
+
+		<div class="media__element"><img alt="chapter_bpmn_howto_approval_email_object.gif" id="image123" src="../../../../sites/default/files/documentation/user/ru/bpms/BPMonlineHelp/chapter_process_creation_end/chapter_bpmn_howto_approval_email_object.gif" /></div>
+		</div>
+
+		<p>В результате шаблон будет выглядеть следующим образом (Рис. 15):</p>
+
+		<div class="media">
+		<div class="media__caption">Рис. 15 <a name="XREF_53119_Fig_223_Example_of" id="XREF_53119_Fig_223_Example_of"></a>— Пример шаблона уведомления о визировании</div>
+
+		<div class="media__element"><img alt="chapter_bpmn_approval_email_template_result.png" id="image124" src="../../../../sites/default/files/documentation/user/ru/bpms/BPMonlineHelp/chapter_process_creation_end/chapter_bpmn_approval_email_template_result.png" /></div>
+		</div>
+		</li>
+	</ol></li>
+	<li>
+	<p>Сохраните изменения в дизайнере контента и в шаблоне email-уведомления.</p>
+	</li>
+	<li>
+	<p>В свойствах элемента <span class="key">Визирование</span> установите признак <span class="key">О результате визирования</span> и заполните поле <span class="key">Получатель уведомления</span>. В поле можно указать любой контакт Creatio, контрагент или адрес электронной почты. Например, можно отправить уведомление о результате визирования пользователю, который отправил запрос на визирование или который создал запись и т.д.</p>
+	</li>
+	<li>
+	<p>Повторите шаги 3–10, чтобы создать шаблон уведомления о результатах визирования.</p>
+	</li>
+	<li>
+	<p>Сохраните процесс.</p>
+
+	<p>В результате при отправке пользователем запроса на визирование документа, процесс отправит email-уведомления согласно настроенным шаблонам.</p>
+	</li>
+</ol></div>
+      
+  </div>
+<div class="block block-layout-builder block-field-blocknodeuser-documentationfield-linked-link">
+  
+    
+      
+  <div class="field field--name-field-linked-link field--type-link field--label-above">
+    <div class="field__label">Смотрите также</div>
+          <div class="field__items">
+              <div class="field__item"><a href="../../../bazis_platformy/kommunikacii/vizy/rabota_s_vizami.html">Работа с визами </a></div>
+          <div class="field__item"><a href="../uvedomlenie_o_dobavlenii_v_aktivnost/uvedomit_sotrudnika_po_pochte_pri_dobavlenii_ego_v_uchastniki_aktivnosti%c2%a0-2.html">Уведомить сотрудника по почте при добавлении его в участники активности</a></div>
+              </div>
+      </div>
+
+  </div>
+
+    </div>
+  </div>
+
+  </div>
+
+</article>
+
+  </div>
+
+  </div>
+
+          </div>
+        </div>
+
+                  <aside class="creatio-sidebar creatio-sidebar_first" role="complementary">
+              <div class="region region-sidebar-first">
+    <div id="block-documentationnaviagtion" class="block block-ts-nav block-ts-nav-doc-nav">
+  
+    
+      <div class="ts-nav-block"><a href="../../../../index.html" class="ts-nav-block__link">Документация</a><div class="ts-nav-block__title">Для пользователя</div>
+</div>
+<div class="ts-nav-container"><ul class="ts-nav-menu"><li class="ts-nav-menu__item">
+  <a href="../../../nocode_platforma.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">No-сode платформа&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../bazis_platformy.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Базис платформы&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../instrumenty_crm.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Инструменты CRM&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../instrumenty_kastomizacii.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Инструменты кастомизации&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../biznes_processy.html" class="ts-nav-menu__link ts-nav-menu__link_expanded ts-nav-menu__link_open" hreflang="zxx">Бизнес-процессы&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+      <ul class="ts-nav-menu__children">
+      <li class="ts-nav-menu__item">
+  <a href="../../nastrojka_processov.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Настройка процессов&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../spravka_po_elementam_processov.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Справка по элементам процессов&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../ispolzovanie_elementov_processa.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Использование элементов процесса&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../primery_nastrojki_processov.html" class="ts-nav-menu__link ts-nav-menu__link_expanded ts-nav-menu__link_open" hreflang="ru">Примеры настройки процессов&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+      <ul class="ts-nav-menu__children">
+      <li class="ts-nav-menu__item">
+  <a href="../otpravka_email/otpravit_email_pri_pomoschi_processa.html" class="ts-nav-menu__link" hreflang="ru">Отправка email</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../dobavlenie_ili_izmenenie_zapisi/dobavit_ili_izmenit_zapis_po_processu.html" class="ts-nav-menu__link" hreflang="ru">Добавление или изменение записи</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../izmenenie_prav_dostupa/izmenit_prava_dostupa_v_ramkakh_biznes-processa.html" class="ts-nav-menu__link" hreflang="ru">Изменение прав доступа</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../integracija_s_veb_servisami/ispolzovat_integraciju_s_veb_servisami_dlja_avtomaticheskogo_obnovlenija_kursov_valjut.html" class="ts-nav-menu__link" hreflang="ru">Интеграция с веб-сервисами</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../uvedomlenie_o_poluchenii_lida/uvedomit_sotrudnikov_po_email_pri_poluchenii_lida_cherez_lending.html" class="ts-nav-menu__link" hreflang="ru">Уведомление о получении лида</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../uvedomlenie_o_dobavlenii_v_aktivnost/uvedomit_sotrudnika_po_pochte_pri_dobavlenii_ego_v_uchastniki_aktivnosti%c2%a0.html" class="ts-nav-menu__link" hreflang="ru">Уведомление о добавлении в активность</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../push_uvedomlenie/nastroit_otpravku_push_uvedomlenij_polzovateljam_mobilnogo_prilozhenija.html" class="ts-nav-menu__link" hreflang="ru">Push-уведомление</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../uvedomlenie_o_kommentarii_v_lente/uvedomit_polzovatelja_o_pojavlenii_kommentarija_k_ego_soobshheniju_v_lente.html" class="ts-nav-menu__link" hreflang="ru">Уведомление о комментарии в ленте</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../udalenie_prav_dostupa/udalit_prava_dostupa_pri_izmenenii_kontakta.html" class="ts-nav-menu__link" hreflang="ru">Удаление прав доступа</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="nastroit_process_vizirovanija_dokumenta%c2%a0.html" class="ts-nav-menu__link ts-nav-menu__link_active ts-nav-menu__link_open" hreflang="ru">Настройка визирования</a>
+  </li>
+
+    </ul>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../administrirovanie_biznes_processov.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Администрирование процессов&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../modelirovanie_processov_v_studio_free.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Моделирование процессов в Studio free&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../nastrojka_dinamicheskih_kejsov.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Настройка динамических кейсов (DCM)&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+
+    </ul>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../instrumenty_marketinga.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Инструменты маркетинга&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../instrumenty_prodazh.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Инструменты продаж&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../instrumenty_servisa.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Инструменты сервиса&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../ustanovka_i_administrirovanie.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Администрирование&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../razvertyvanie_onsite.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Развертывание on-site&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../banki_i_finansy.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Банки и финансы&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../drugie_reshenija.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Другие решения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+</ul>
+</div>
+
+  </div>
+
+  </div>
+
+            <div class="creatio-sidebar__toggle"></div>
+          </aside>
+        
+                  <aside class="creatio-sidebar creatio-sidebar_second" role="complementary">
+              <div class="region region-sidebar-second">
+    <div id="block-example" class="block block-ts-nav block-ts-nav-page-nav">
+  
+    
+        <div class="ts-nav-title">Настройка визирования</div>
+<div class="ts-nav-page">
+      <ul class="ts-nav-page__list">
+                                                <li class="ts-nav-page__item ts-nav-page__item_expanded ts-nav-page__item_open"><a href="nastroit_process_vizirovanija_dokumenta%c2%a0-2.html" class="ts-nav-page__link ts-nav-page__link_expanded ts-nav-page__link_active">Настроить процесс визирования документа &nbsp;<span class="ts-nav-page__link-arrow"></span></a></li>
+          </ul>
+  </div>
+
+  </div>
+<div id="block-adminfeedbackblock" class="block block-admin-feedback block-admin-feedback-block">
+  
+    
+      <div id="feedback-message"><div id="upper-feedback-content"><h2>Был ли данный материал полезен?</h2>
+<input class="feedback-btn feedback-btn__yes button js-form-submit form-submit" data-node-id="3532" data-feedback="yes" type="submit" name="op" value="Да" />
+<input class="feedback-btn feedback-btn__no button js-form-submit form-submit" data-node-id="3532" data-feedback="no" type="submit" name="op" value="Нет" />
+</div>
+<form class="admin-feedback-form" data-drupal-selector="admin-feedback-form" action="https://academy.terrasoft.ua/docs/user/biznes_processy/primery_nastrojki_processov/nastroika_vizirovanija/nastroit_process_vizirovanija_dokumenta " method="post" id="admin-feedback-form" accept-charset="UTF-8">
+  <div id="feedback-msg-result"></div><div class="js-form-item form-item js-form-type-textarea form-type-textarea js-form-item-feedback-message form-item-feedback-message form-no-label">
+        <div class="form-textarea-wrapper">
+  <textarea id="edit-feedback-msg" data-drupal-selector="edit-feedback-message" name="feedback_message" rows="5" cols="60" class="form-textarea resize-vertical"></textarea>
+</div>
+
+        </div>
+<input id="feedback-id" data-drupal-selector="edit-feedback-id" type="hidden" name="feedback_id" value="" />
+<input class="feedback-btn feedback-btn__send-comment button js-form-submit form-submit" data-drupal-selector="edit-feedback-send" type="submit" id="edit-feedback-send" name="op" value="Отправить" />
+<input autocomplete="off" data-drupal-selector="form-dft6wub6liilev-okrs3ax-fl0dds-cjee5dicjchtc" type="hidden" name="form_build_id" value="form-dFt6wUB6liilEV_oKRS3Ax-fl0DDS_Cjee5dIcjcHtc" />
+<input data-drupal-selector="edit-admin-feedback-form" type="hidden" name="form_id" value="admin_feedback_form" />
+
+</form>
+</div>
+
+  </div>
+
+  </div>
+
+          </aside>
+              </main>
+    </div>
+  </div>
+
+  <footer role="contentinfo">
+    <div class="creatio-region creatio-region_footer">
+      <div class="creatio-container">
+          <div class="region region-footer">
+    <div id="block-footerua" class="block block-simple-block block-simple-blockfooter-ua">
+  
+    
+      <div class="footer">
+<div class="footer-left">
+<ul class="footer-socials"><li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_fb" href="https://www.facebook.com/terrasoft.ua" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_in" href="https://www.linkedin.com/company/terrasoft/" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_yt" href="https://www.youtube.com/c/TerrasoftUkraine" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_tg" href="https://t.me/Terrasoft_UA" target="_blank"> </a></li>
+</ul></div>
+
+<div class="footer-contact">
+<div class="footer-title">Будьте на связи!</div>
+
+<div class="footer-content">
+<div class="footer-items">
+<div class="footer-item"><a class="footer__link footer__link_phone" href="tel:+380443633133">+38 (044) 363-31-33</a></div>
+</div>
+
+<div class="footer-items">
+<div class="footer-item"><a class="footer__link footer__link_email" href="mailto:support@terrasoft.ua">support@terrasoft.ua</a></div>
+</div>
+</div>
+</div>
+</div>
+
+  </div>
+
+  </div>
+
+      </div>
+    </div>
+    <div class="creatio-region creatio-region_bottom">
+      <div class="creatio-container">
+          <div class="region region-bottom">
+    <div id="block-allrightsreservedua" class="block block-simple-block block-simple-blockfooter-bottom-ua">
+  
+    
+      <p>© 2002-2022 Terrasoft.  |  <a href="https://www.terrasoft.ua/privacy-policy" target="_blank">Конфиденциальность</a></p>
+
+  </div>
+
+  </div>
+
+      </div>
+    </div>
+  </footer>
+</div>
+<div class="creatio-bg"></div>
+
+
+  </div>
+
+    
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/docs\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/3532","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"ru"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"ajaxPageState":{"libraries":"admin_feedback\/admin_feedback_block,admin_feedback\/admin_feedback_css,classy\/base,classy\/messages,classy\/node,core\/drupal.ajax,core\/jquery.form,core\/normalize,creatio\/creatio.lists,creatio\/fancybox,creatio\/global,layout_discovery\/onecol,system\/base,ts_doc\/doc_version,ts_feedback\/ts_feedback,ts_nav\/breadcrumb,ts_nav\/doc_nav,ts_nav\/page_nav,ts_title_anchor\/ts_title_anchor","theme":"creatio","theme_token":null},"ajaxTrustedUrl":{"form_action_p_pvdeGsVG5zNF_XLGPTvYSKCf43t8qZYSwcfZl2uzM":true,"\/docs\/user\/biznes_processy\/primery_nastrojki_processov\/nastroika_vizirovanija\/nastroit_process_vizirovanija_dokumenta%C2%A0?ajax_form=1":true},"admin_feedback":{"yes_response":"\u0421\u043f\u0430\u0441\u0438\u0431\u043e \u0437\u0430 \u043e\u0431\u0440\u0430\u0442\u043d\u0443\u044e \u0441\u0432\u044f\u0437\u044c!","no_response":"\u0421\u043f\u0430\u0441\u0438\u0431\u043e \u0437\u0430 \u043e\u0431\u0440\u0430\u0442\u043d\u0443\u044e \u0441\u0432\u044f\u0437\u044c!","custom_text_response_on_no":{"value":"","format":"full_html"},"feedback_prompt_on_yes":true,"feedback_prompt_on_no":true,"feedback_enable_predefined_answers":false,"feedback_prompt":"\u041a\u0430\u043a \u043c\u043e\u0436\u043d\u043e \u0443\u043b\u0443\u0447\u0448\u0438\u0442\u044c \u044d\u0442\u0443 \u0441\u0442\u0430\u0442\u044c\u044e?"},"ajax":{"edit-feedback-send":{"callback":"::validateFeedbackMsg","event":"mousedown","keypress":true,"prevent":"click","url":"\/docs\/user\/biznes_processy\/primery_nastrojki_processov\/nastroika_vizirovanija\/nastroit_process_vizirovanija_dokumenta%C2%A0?ajax_form=1","dialogType":"ajax","submit":{"_triggering_element_name":"op","_triggering_element_value":"\u041e\u0442\u043f\u0440\u0430\u0432\u0438\u0442\u044c"}}},"user":{"uid":0,"permissionsHash":"9c2367dfcaba0fa15f0375f97aed64e146c908cee68508d13b79e3ee80e5162d"}}</script>
+<script src="../../../../sites/default/files/js/js_F2-Y4EzgTnESr58XByoLYEnsbi7ysTfMIKN1RvsMSWY.js"></script>
+
+
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+      <g id="svg-copy" class="svg-icon svg-icon_copy">
+        <path d="M15.111,18H1.889A1.848,1.848,0,0,1,0,16.2V3.6A1.848,1.848,0,0,1,1.889,1.8H5.837a2.87,2.87,0,0,1,5.326,0h3.948A1.848,1.848,0,0,1,17,3.6V16.2A1.848,1.848,0,0,1,15.111,18ZM3.777,12.6v1.8h6.611V12.6Zm0-3.6v1.8h9.445V9Zm0-3.6V7.2h9.445V5.4ZM8.5,1.8a.924.924,0,0,0-.944.9.945.945,0,0,0,1.889,0A.924.924,0,0,0,8.5,1.8Z"/>
+      </g>
+
+      <g id="svg-prev" class="svg-icon svg-icon_arrow">
+        <path d="M5.488,12.779,0,6.39,5.488,0" transform="translate(1 0.652)"/>
+      </g>
+
+      <g id="svg-next" class="svg-icon svg-icon_arrow">
+        <path d="M0,12.779,5.488,6.39,0,0" transform="translate(0.759 0.652)"/>
+      </g>
+    </svg>
+  </body>
+
+<!-- Mirrored from academy.terrasoft.ua/docs/user/biznes_processy/primery_nastrojki_processov/nastroika_vizirovanija/nastroit_process_vizirovanija_dokumenta  by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 22 Mar 2022 22:13:16 GMT -->
+</html>

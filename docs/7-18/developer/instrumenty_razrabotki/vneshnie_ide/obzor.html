@@ -1,0 +1,1065 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# ">
+  
+<!-- Mirrored from academy.terrasoft.ua/docs/7-18/developer/instrumenty_razrabotki/vneshnie_ide/obzor by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 22 Mar 2022 21:36:53 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+          <!-- Google Tag Manager -->
+      <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          '../../../../../../www.googletagmanager.com/gtm5445.html?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-KLLB8G');</script>
+      <!-- End Google Tag Manager -->
+        <meta charset="utf-8" />
+<link rel="canonical" href="obzor.html" />
+<meta name="description" content="Для увеличения производительности разработки решений Creatio можно использовать внешние интегрированные среды разработки (IDE, Integrated Development Environment), например, Visual Studio, WebStorm и т. д.
+
+Внешние IDE позволяют не только создавать, редактировать и компилировать программный код решения Creatio, но и выполнять его отладку, вести командную разработку, использовать системы управления версиями и многое другое." />
+<meta property="og:url" content="https://academy.terrasoft.ua/docs/7-18/developer/instrumenty_razrabotki/vneshnie_ide/obzor" />
+<meta property="og:title" content="Внешние IDE" />
+<meta property="og:description" content="Для увеличения производительности разработки решений Creatio можно использовать внешние интегрированные среды разработки (IDE, Integrated Development Environment), например, Visual Studio, WebStorm и т. д.
+
+Внешние IDE позволяют не только создавать, редактировать и компилировать программный код решения Creatio, но и выполнять его отладку, вести командную разработку, использовать системы управления версиями и многое другое." />
+<meta name="Generator" content="Drupal 9 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="../../../../themes/custom/creatio/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="revision" href="obzor.html" />
+
+    <title>Внешние IDE | Creatio Academy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&amp;family=Open+Sans:ital,wght@0,300;0,400;0,600;1,400&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" media="all" href="../../../../sites/default/files/css/css_6lTP66__-yc6QXFp1zOwoeJ0HVigoYZP-SeoLLii000.css" />
+<link rel="stylesheet" media="all" href="../../../../sites/default/files/css/css_XQJDNhkF3xH5SZCcY-PI89Zu4nYIzQ5oR3SnUKyfXJU.css" />
+<link rel="stylesheet" media="print" href="../../../../sites/default/files/css/css_Zn4VHvcniOOtUwkIVwXzYr_0AI9gUVgZcPqaH4ViagU.css" />
+
+    
+  </head>
+  <body class="path-node page-node-type-developer-documentation">
+          <!-- Google Tag Manager (noscript) -->
+      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KLLB8G"
+                        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+      <!-- End Google Tag Manager (noscript) -->
+    
+        
+      <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    <div class="creatio-page d-flex flex-column">
+        <div class="region region-informer">
+    <div id="block-terrasoftpidtrimueukrainu" class="block block-simple-block block-simple-blockterrasoft-pidtrimue-ukrainu">
+  
+    
+      <style type="text/css">
+<!--/*--><![CDATA[/* ><!--*/
+@import url(../../../../../../www.terrasoft.ua/themes/custom/creatio/css/components/informer.css)
+
+/*--><!]]>*/
+</style><div class="ts-swu">
+<div class="creatio-container">
+<div class="ts-swu__cont">
+<div><a class="ts-swu__link" href="https://www.terrasoft.ua/terrasoft-stands-with-ukraine" target="_blank">Україна понад усе!</a> <span><a href="https://www.terrasoft.ua/terrasoft-stands-with-ukraine" target="_blank">Приєднуйтеся</a> до допомоги!</span></div>
+</div>
+</div></div>
+
+  </div>
+
+  </div>
+
+  
+  <header role="banner">
+          <div class="creatio-region creatio-region_top">
+        <div class="creatio-container">
+            <div class="region region-top">
+    <div id="block-menutoggle" class="block block-simple-block block-simple-blockmenu-toggle">
+  
+    
+      <div class="menu-toggle"><span> </span></div>
+
+  </div>
+<div id="block-logowhite-2" class="block block-simple-block block-simple-blocklogo-white">
+  
+    
+      <p><a class="site-logo" href="../../../../../index.html" rel="home"><img src="../../../../themes/custom/creatio/logo-white.svg" /></a></p>
+
+  </div>
+<div id="block-search" class="block block-simple-block block-simple-blocksearch">
+  
+    
+      <div class="search">
+<form action="https://academy.terrasoft.ua/search" class="search-form" method="get"><input class="search-form__input" name="search" placeholder="Поиск" type="search" /><input class="search-form__button" type="submit" value="Поиск" /> </form>
+
+<div class="search-toggle"> </div>
+</div>
+
+  </div>
+<nav role="navigation" aria-labelledby="block-sitesua-menu" id="block-sitesua" class="block block-menu navigation menu--sites-ua">
+            
+  <h2 class="visually-hidden" id="block-sitesua-menu">Sites UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="https://www.terrasoft.ua/" rel="nofollow" target="_blank">Terrasoft</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://community.terrasoft.ua/" rel="nofollow" target="_blank">Community</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://marketplace.terrasoft.ua/" rel="nofollow" target="_blank">Marketplace</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+<div id="block-usermenu" class="block block-ts-user block-ts-user-menu-block">
+  
+    
+      <ul class="user-menu">
+      <li class="user-menu__item">
+      <a class="user-menu__link" href="https://profile.terrasoft.ua/user/login?destination=academy/ua/docs/7-18/developer/instrumenty_razrabotki/vneshnie_ide/obzor">Войти</a>
+    </li>
+  </ul>
+
+  </div>
+<div id="block-usermenumobile" class="block block-ts-user block-ts-user-menu-mobile-block">
+  
+    
+      <ul class="user-menu-mobile">
+      <li class="user-menu-mobile__item">
+      <div class="user-menu-mobile__user user-menu-mobile__user_icon"></div>
+      <ul class="user-menu-mobile__submenu">
+        <li class="user-menu-mobile__subitem">
+          <a class="user-menu-mobile__sublink" href="https://profile.terrasoft.ua/user/login?destination=academy/ua/docs/7-18/developer/instrumenty_razrabotki/vneshnie_ide/obzor">Войти</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  </div>
+
+  </div>
+
+        </div>
+      </div>
+              <div class="creatio-region creatio-region_header">
+        <div class="creatio-container">
+            <div class="region region-header">
+    <div id="block-logo" class="block block-simple-block block-simple-blocklogo">
+  
+    
+      <p><a class="site-logo" href="../../../../../index.html" rel="home"><img src="../../../../themes/custom/creatio/logo.svg" /></a></p>
+
+  </div>
+<nav role="navigation" aria-labelledby="block-osnovnayanavigaciyaua-menu" id="block-osnovnayanavigaciyaua" class="block block-menu navigation menu--main-ua">
+            
+  <h2 class="visually-hidden" id="block-osnovnayanavigaciyaua-menu">Основная навигация UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="../../../../index.html" data-drupal-link-system-path="&lt;front&gt;">Документация</a>
+              </li>
+                <li class="menu-item">
+        <a href="../../../../../trainings.html">Тренинги</a>
+              </li>
+                <li class="menu-item">
+        <a href="../../../../certification.html" data-drupal-link-system-path="node/3084">Сертификация и тестирование</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+<nav role="navigation" aria-labelledby="block-sitesua-2-menu" id="block-sitesua-2" class="block block-menu navigation menu--sites-ua">
+            
+  <h2 class="visually-hidden" id="block-sitesua-2-menu">Sites UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="https://www.terrasoft.ua/" rel="nofollow" target="_blank">Terrasoft</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://community.terrasoft.ua/" rel="nofollow" target="_blank">Community</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://marketplace.terrasoft.ua/" rel="nofollow" target="_blank">Marketplace</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+
+  </div>
+
+        </div>
+      </div>
+              <div class="creatio-region creatio-region_breadcrumb">
+        <div class="creatio-container">
+            <div class="region region-breadcrumb">
+    <div id="block-logowhite" class="block block-simple-block block-simple-blocklogo-white">
+  
+    
+      <p><a class="site-logo" href="../../../../../index.html" rel="home"><img src="../../../../themes/custom/creatio/logo-white.svg" /></a></p>
+
+  </div>
+<div id="block-breadcrumbnaviagtion" class="block block-ts-nav block-ts-nav-bread">
+  
+    
+      <nav class="breadcrumb"><ol class="ts-nav-breadcrumb__list"><li class="ts-nav-breadcrumb__item"><a href="../../../../index.html" class="ts-nav-breadcrumb__link" title="Документация">Документация</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../../index2132.html?vid_1=2" class="ts-nav-breadcrumb__link" title="Для разработчика">Для разработчика</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../instrumenty_razrabotki.html" class="ts-nav-breadcrumb__link" title="Инструменты разработки" hreflang="zxx">Инструменты разработки</a></li>
+<li class="ts-nav-breadcrumb__item ts-nav-breadcrumb__item_mobile"><a href="../vneshnie_ide.html" class="ts-nav-breadcrumb__link" title="Внешние IDE" hreflang="ru">Внешние IDE</a></li>
+<li class="ts-nav-breadcrumb__item"><span class="ts-nav-breadcrumb__link ts-nav-breadcrumb__link_current" title="Обзор">Обзор</span></li>
+</ol>
+</nav>
+
+  </div>
+<div id="block-search-2" class="block block-simple-block block-simple-blocksearch">
+  
+    
+      <div class="search">
+<form action="https://academy.terrasoft.ua/search" class="search-form" method="get"><input class="search-form__input" name="search" placeholder="Поиск" type="search" /><input class="search-form__button" type="submit" value="Поиск" /> </form>
+
+<div class="search-toggle"> </div>
+</div>
+
+  </div>
+
+  </div>
+
+        </div>
+      </div>
+      </header>
+
+  <div class="creatio-region creatio-region_main">
+    <div class="creatio-container">
+                <div class="region region-breadcrumb-mobile">
+    <div id="block-breadcrumbnaviagtion-2" class="block block-ts-nav block-ts-nav-bread">
+  
+    
+      <nav class="breadcrumb"><ol class="ts-nav-breadcrumb__list"><li class="ts-nav-breadcrumb__item"><a href="../../../../index.html" class="ts-nav-breadcrumb__link" title="Документация">Документация</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../../index2132.html?vid_1=2" class="ts-nav-breadcrumb__link" title="Для разработчика">Для разработчика</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../instrumenty_razrabotki.html" class="ts-nav-breadcrumb__link" title="Инструменты разработки" hreflang="zxx">Инструменты разработки</a></li>
+<li class="ts-nav-breadcrumb__item ts-nav-breadcrumb__item_mobile"><a href="../vneshnie_ide.html" class="ts-nav-breadcrumb__link" title="Внешние IDE" hreflang="ru">Внешние IDE</a></li>
+<li class="ts-nav-breadcrumb__item"><span class="ts-nav-breadcrumb__link ts-nav-breadcrumb__link_current" title="Обзор">Обзор</span></li>
+</ol>
+</nav>
+
+  </div>
+
+  </div>
+
+      
+      <main class="creatio-main" role="main">
+                                                    
+        <div class="creatio-content creatio-content_small">
+          <div class="creatio-content__inner creatio-content__inner_bg">
+                            <div class="region region-messages">
+    <div data-drupal-messages-fallback class="hidden"></div>
+
+  </div>
+
+            
+              <div class="region region-content">
+    <div id="block-creatio-page-title" class="block block-core block-page-title-block">
+  
+    
+      
+  <h1 class="page-title"><span class="field field--name-title field--type-string field--label-hidden">Внешние IDE</span>
+</h1>
+
+
+  </div>
+<div id="block-creatio-content" class="block block-system block-system-main-block">
+  
+    
+      
+<article data-history-node-id="2098" role="article" about="/docs/7-18/developer/instrumenty_razrabotki/vneshnie_ide/obzor" class="node node--type-developer-documentation node--view-mode-full">
+
+  
+    
+
+  
+  <div class="node__content">
+      <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocknodedeveloper-documentationfield-difficulty">
+  
+    
+      
+            <div class="field field--name-field-difficulty field--type-entity-reference field--label-hidden field__item"><div about="/docs/7-18/taxonomy/term/123" id="taxonomy-term-123" class="taxonomy-term vocabulary-difficulty">
+  
+  
+  <div class="content">
+      <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocktaxonomy-termdifficultyfield-icon">
+  
+    
+      
+            <div class="field field--name-field-icon field--type-image field--label-hidden field__item">  <img src="../../../../sites/default/files/difficulty/medium.svg" alt="" loading="lazy" typeof="foaf:Image" />
+
+</div>
+      
+  </div>
+<div class="block block-layout-builder block-field-blocktaxonomy-termdifficultyname">
+  
+    
+      
+            <div class="field field--name-name field--type-string field--label-hidden field__item"><span style="color: #F57E20;">Средний</span></div>
+      
+  </div>
+
+    </div>
+  </div>
+
+  </div>
+</div>
+</div>
+      
+  </div>
+<div class="block block-ts-doc block-ts-doc-downloads">
+  
+    
+      <a href="../../../../sites/default/files/pdf/node/2098/Vneshnie_IDE_.pdf" target="_blank">PDF</a>
+  </div>
+<div class="block block-ts-doc block-ts-doc-versions">
+  
+    
+        <div class="ts-doc-versions">
+    <select class="ts-doc-versions__select">
+                              <option value="/docs/8-0/developer/instrumenty_razrabotki/vneshnie_ide/obzor">Версия 8.0</option>
+                                                <option value="/docs/7-18/developer/instrumenty_razrabotki/vneshnie_ide/obzor" selected>Версия 7.18</option>
+                              <option value="/docs/7-17/developer/instrumenty_razrabotki/vneshnie_ide/obzor">Версия 7.17</option>
+                              <option value="/docs/7-16/developer/development_tools/development_in_external_ide/vneshnie_ide">Версия 7.16</option>
+          </select>
+  </div>
+
+  </div>
+
+    </div>
+  </div>
+  <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocknodedeveloper-documentationbody">
+  
+    
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><p>Для увеличения производительности разработки решений Creatio можно использовать внешние интегрированные среды разработки (IDE, Integrated Development Environment), например, Visual Studio, WebStorm и т. д.</p>
+
+<p>Внешние IDE позволяют не только создавать, редактировать и компилировать программный код решения Creatio, но и выполнять его отладку, вести командную разработку, использовать системы управления версиями и многое другое.</p>
+
+<div class="message">
+<p><span class="message__bold">На заметку.</span> Для разработки в файловой системе можно использовать Microsoft Visual Studio редакций Community, Professional и Enterprise версии 2017 (c последними обновлениями) и выше.</p>
+</div>
+
+<h2>Разработка в файловой системе<a class="title-anchor" href="#title-2098-3" id="title-2098-3"> </a></h2>
+
+<p>Для использования внешних IDE Creatio предоставляет механизм разработки пакетов конфигурации в файловой системе.</p>
+
+<p>Режим разработки в файловой системе (РФС) позволяет:</p>
+
+<ul><li>выгружать содержимое пакетов из базы данных в файлы;</li>
+	<li>изменять исходный код схем с помощью IDE;</li>
+	<li>загружать измененные пакеты обратно в базу данных.</li>
+</ul><p><strong>Особенности</strong> разработки в файловой системе:</p>
+
+<ol><li>При включенном режиме РФС полноценная разработка поддерживается только для схем типа <span class="key">Исходный код</span> (<span class="key">Source code</span>) и <span class="key">Клиентский модуль</span> (<span class="key">ClientUnitSchema</span>). 
+
+	<div class="message message_warning">
+	<p><span class="message__bold message__bold_warning">Важно.</span> При включенном режиме РФС после сохранения клиентских схем типа  <span class="key">Исходный код</span> (<span class="key">Source code</span>) и <span class="key">Клиентский модуль</span> (<span class="key">ClientUnitSchema</span>) в <a href="../../../../7-17/developer/instrumenty_razrabotki/creatio_ide/razrabotka_v_creatio_ide.html">соответствующем дизайнере</a> Creatio IDE в файловую систему также сохраняются и ресурсы этих схем.</p>
+	</div>
+
+	<p>Для других элементов пакетов, например, ресурсов или SQL-скриптов, действуют следующие <strong>правила</strong>:</p>
+
+	<ul><li>При выгрузке из базы данных в файловую систему элементы пакетов, хранящиеся в базе данных, заменят элементы в файловой системе. Схемы типа <span class="key">Исходный код</span> (<span class="key">Source code</span>) и <span class="key">Клиентский модуль</span> (<span class="key">ClientUnitSchema</span>) заменены не будут.</li>
+		<li>При загрузке в базу данных элементов пакетов из файловой системы они заменят элементы в базе данных. Но приложение все равно будет работать со схемами типа <span class="key">Исходный код</span> (<span class="key">Source code</span>) и <span class="key">Клиентский модуль</span> (<span class="key">ClientUnitSchema</span>) из файловой системы.</li>
+	</ul></li>
+	<li>Интеграция с<strong> системой контроля версий</strong> (SVN) при включенном режиме РФС выполняется не встроенным в Creatio механизмом работы с SVN, а сторонними средствами.
+	<p>Чтобы облегчить работу со связанными пакетами, в разделе <span class="key">Конфигурация</span> (<span class="key">Configuration</span>) оставлена возможность установки пакетов из хранилища SVN. Для установки единичных пакетов рекомендуется использовать<strong> сторонние утилиты</strong>, например, <a href="https://tortoisesvn.net/" target="_blank">TortoiseSVN</a>.</p>
+
+	<p>Чтобы использовать встроенные возможности работы с хранилищем SVN, необходимо <strong>отключить </strong>режим разработки в файловой системе.</p>
+	</li>
+</ol><h2>Настроить Creatio для работы в файловой системе<a class="title-anchor" href="#title-2098-4" id="title-2098-4"> </a></h2>
+
+<ol><li><strong>Включить режим разработки в файловой системе.</strong>
+
+	<p>В файле <span class="filled">Web.config</span>, который находится в корневом каталоге приложения, установите значение <span class="filled">true</span> для атрибута <span class="filled">enabled</span> элемента <span class="filled">fileDesignMode</span>.</p>
+	</li>
+	<li><strong>Отключить получение статического клиентского контента из файловой системы.</strong>
+	<p>На текущий момент режим РФС не совместим с получением клиентского контента из предварительно сгенерированных файлов. Для корректной работы с РФС необходимо отключить получение статического клиентского контента из файловой системы. В файле <span class="filled">Web.config</span>, который находится в корневом каталоге установленого приложения, установите значение <span class="filled">false</span> для флага <span class="filled">UseStaticFileContent</span>.</p>
+
+	<div class="code">
+	<div class="code__top">
+	<div class="code__title">Web.config</div>
+	</div>
+
+	<div class="code__widgets">
+	<div class="code__source">
+	<pre class="prettyprint">
+&lt;fileDesignMode enabled="true"/&gt;
+...
+&lt;add key="UseStaticFileContent" value="false"/&gt;</pre>
+	</div>
+	</div>
+	</div>
+	</li>
+	<li><strong>Скомпилировать приложение.</strong>
+	<p>Выполните действие <span class="key">Перекомпилировать все</span> (<span class="key">Compile all</span>) панели инструментов раздела <span class="key">Конфигурация</span> (<span class="key">Configuration</span>).</p>
+
+	<p>После включения режима разработки в файловой системе, в разделе <span class="key">Конфигурация</span> (<span class="key">Configuration</span>) станут активными действия группы <span class="key">Разработка в файловой системе</span> (<span class="key">File system development mode</span>):</p>
+
+	<ul><li><span class="key">Выгрузить пакеты в файловую систему</span> (<span class="key">Download packages to file system</span>) — выгружает пакеты из базы данных приложения в каталог <span class="filled">[Путь к приложению]\Terrasoft.WebApp\Terrasoft.Configuration\Pkg</span>.</li>
+		<li><span class="key">Обновить пакеты из файловой системы</span> (<span class="key">Update packages from file system</span>) — загружает пакеты из каталога <span class="filled">[Путь к приложению]\Terrasoft.WebApp\Terrasoft.Configuration\Pkg</span> в базу данных.</li>
+	</ul><div class="media">
+	<div class="media__element"><img alt="" border="0" src="../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/WorkingWithIDE(7.17)/configuration_buttons.png" /></div>
+	</div>
+	</li>
+	<li><strong>Предоставить доступ IIS к каталогу конфигурации.</strong>
+	<p>Чтобы приложение могло корректно работать с конфигурационным проектом, необходимо предоставить полный доступ пользователю операционной системы, от имени которого запущен пул приложений IIS, к каталогу <span class="filled">[Путь к приложению]\Terrasoft.WebApp\Terrasoft.Configuration</span>. Как правило, это встроенный пользователь <span class="filled">IIS_IUSRS</span>.</p>
+
+	<div class="media">
+	<div class="media__element"><img alt="" border="0" src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/WorkingWithIDE/permissions.png" /></div>
+	</div>
+	</li>
+</ol><h2>Работа с пакетами<a class="title-anchor" href="#title-2098-22" id="title-2098-22"> </a></h2>
+
+<h3>Создание пакета<a class="title-anchor" href="#title-2098-12" id="title-2098-12"> </a></h3>
+
+<p>Если не предполагается разработка с использованием SVN, то при включенном режиме разработки в файловой системе последовательность <a data-auto-update-caption="dlue" href="../../../../7-17/developer/development_tools/packages/pakety.html#case-2920">создания пакета</a> ничем не отличается от обычного режима.</p>
+
+<div class="message message_warning">
+<p><span class="message__bold message__bold_warning">Важно.</span> Если при создании пакета не заполнять поле <span class="key">Хранилище системы контроля версий</span> (<span class="key">Version control system repository</span>), то пакет не будет привязан к хранилищу. Вести версионную разработку этого пакета можно будет только <a data-auto-update-caption="true" href="../../../../7-16/developer/development_tools/version_control_system/kontrol_versiy_v_subversion.html#case-2950">подключив</a> его вручную из файловой системы.</p>
+</div>
+
+<h3>Добавить элемент пакета<a class="title-anchor" href="#title-2098-13" id="title-2098-13"> </a></h3>
+
+<p>Рекомендуется добавлять новые элементы (например, схему или ресурс) в пакет только из раздела <span class="key">Конфигурация</span> (<span class="key">Configuration</span>). Чтобы создать и отредактировать новый элемент в пользовательском пакете, необходимо выполнить следующие действия:</p>
+
+<ol><li>В разделе <span class="key">Конфигурация</span> (<span class="key">Configuration</span>) выбрать пользовательский пакет и добавить в него новый элемент (<a data-auto-update-caption="dlue" href="../../../../7-17/developer/instrumenty_razrabotki/creatio_ide/razrabotka_v_creatio_ide.html#case-2909">клиентскую схему</a>, <a data-auto-update-caption="dlue" href="../../../../7-17/developer/instrumenty_razrabotki/creatio_ide/razrabotka_v_creatio_ide.html#case-2911">исходный код</a> и т. д.).</li>
+	<li>При необходимости добавить в созданную схему ресурсы, например, локализуемую строку.</li>
+	<li>В разделе <span class="key">Конфигурация</span> (<span class="key">Configuration</span>) в выпадающем списке <span class="key">Действия</span> (<span class="key">Actions</span>) панели инструментов выполнить действие <span class="key">Выгрузить пакеты в файловую систему</span> (<span class="key">Download packages to file system</span>).</li>
+	<li>С помощью IDE (например, Visual Studio) изменить исходный код схемы или локализуемого ресурса в файлах, расположенных в каталоге <span class="filled">[Путь к приложению]\Terrasoft.WebApp\Terrasoft.Configuration\Pkg\[Имя пакета]</span>.</li>
+	<li>Для внесения изменений в базу данных приложения необходимо выполнить действие <span class="key">Обновить пакеты из файловой системы</span> (<span class="key">Update packages from file system</span>).
+	<div class="message message_warning">
+	<p><span class="message__bold message__bold_warning">Важно.</span> Изменения, сделанные в клиентских схемах, доступны в приложении сразу же, без загрузки в базу данных. Достаточно лишь обновить страницу в браузере.</p>
+	</div>
+
+	<p> </p>
+	</li>
+	<li>Если были изменены схемы типа <span class="key">Исходный код</span>, то необходимо выполнить компиляцию приложения.
+	<div class="message">
+	<p><span class="message__bold">На заметку.</span> При разработке схем типа <span class="key">Исходный код</span> на языке C# удобно <a data-auto-update-caption="dlue" href="obzor.html#case-2913">выполнять компиляцию</a> непосредственно в Visual Studio, а не в приложении (раздел <span class="key">Конфигурация</span> (<span class="key">Configuration</span>)).</p>
+	</div>
+	</li>
+</ol><h2>Разработка C# кода<a class="title-anchor" href="#title-2098-11" id="title-2098-11"> </a></h2>
+
+<h3>Способы компиляции в Visual Studio<a class="title-anchor" href="#title-2098-5" id="title-2098-5"> </a></h3>
+
+<ol><li>С помощью <strong>встроенного компилятора Visual Studio</strong>. Однако он может не учесть зависимости и позиции пакетов.</li>
+	<li>С использованием <strong>утилиты WorkspaceConsole,</strong> интегрируемой в Visual Studio. <strong>Преимущества </strong>данного способа:
+	<ul><li>Ускорение компиляции за счет того, что конфигурационная сборка разбивается на независимые компилируемые модули. Перекомпилируются только те модули, пакеты которых были изменены.</li>
+		<li>Для перекомпиляции конфигурационной сборки не нужно выходить из режима отладки или открепляться от процесса IIS.</li>
+	</ul></li>
+</ol><h3>Настроить WorkspaceConsole для компиляции<a class="title-anchor" href="#title-2098-6" id="title-2098-6"> </a></h3>
+
+<ol><li><strong>Включить режим РФС для WorkspaceConsole</strong>.
+
+	<p>Утилита WorkspaceConsole поставляется вместе с приложением. Перед использованием утилиту необходимо правильно настроить. Кроме обычных настроек, в конфигурационном файле <span class="filled">Terrasoft.Tools.WorkspaceConsole.exe.config</span> также необходимо включить режим разработки в файловой системе.</p>
+
+	<div class="code">
+	<div class="code__top">
+	<div class="code__title">Включение режима разработки в файловой системе</div>
+	</div>
+
+	<div class="code__widgets">
+	<div class="code__source">
+	<pre class="prettyprint">
+&lt;fileDesignMode enabled="true" /&gt;</pre>
+	</div>
+	</div>
+	</div>
+
+	<p>Для ускорения компиляции конфигурационную сборку необходимо разбивать на независимые компилируемые модули. В таком случае необходимо установить значение <span class="filled">true</span> для настройки <span class="filled">CompileByManagerDependencies</span> во "внутреннем" Web.config, находящемся в каталоге <span class="filled">Terrasoft.WebApp</span>, и в файле настроек <span class="filled">Terrasoft.Tools.WorkspaceConsole.exe.config</span> утилиты WorkspaceConsole.</p>
+
+	<div class="code">
+	<div class="code__top">
+	<div class="code__title">Настройка "внутреннего" Web.Config</div>
+	</div>
+
+	<div class="code__widgets">
+	<div class="code__source">
+	<pre class="prettyprint">
+&lt;appSettings&gt;
+    ...
+    &lt;add key="CompileByManagerDependencies" value="true" /&gt;
+    ...
+&lt;/appSettings&gt;</pre>
+	</div>
+	</div>
+	</div>
+
+	<p> </p>
+	</li>
+	<li><strong>Настроить интеграцию WorkspaceConsole в Microsoft Visual Studio</strong>.
+	<div class="indent">
+	<ol><li>В среде Visual Studio выполните команду меню <span class="key">Tools</span> —&gt; <span class="key">External Tools...</span>.
+		<div class="media">
+		<div class="media__element"><img alt="" border="0" src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/VisualStudioSettings/scr_add_ext_tools.png" /></div>
+		</div>
+		</li>
+		<li>
+		<p>В появившемся диалоговом окне добавьте и настройте три <strong>команды вызова утилиты</strong> WorkspaceConsole:</p>
+
+		<ul><li><strong>Build Workspace</strong> — компиляция изменений конфигурационного проекта.
+
+			<div class="table">
+			<div class="table__caption">Свойства команды <span class="consolas">Build Workspace</span></div>
+
+			<table><tbody><tr><th>Command</th>
+						<td>
+						<div class="SimpleTabContainer" data-itemid="JSON" data-title="JSON" id="Syntax_JSON">
+						<div class="code">
+						<div class="code__widgets">
+						<div class="code__source" data-tab="Структура">
+						<pre class="prettyprint">
+[Путь к каталогу с установленным приложением]\<wbr></wbr>Terrasoft.WebApp\<wbr></wbr>DesktopBin\<wbr></wbr>WorkspaceConsole\<wbr></wbr>Terrasoft.Tools.WorkspaceConsole.exe
+</pre>
+						</div>
+
+						<div class="code__source" data-tab="Пример">
+						<pre class="prettyprint">
+C:\<wbr></wbr>сreatio713\<wbr></wbr>Terrasoft.WebApp\<wbr></wbr>DesktopBin\<wbr></wbr>WorkspaceConsole\<wbr></wbr>Terrasoft.Tools.WorkspaceConsole.exe
+</pre>
+						</div>
+						</div>
+						</div>
+						</div>
+						</td>
+					</tr><tr><th>Arguments</th>
+						<td>
+						<div class="SimpleTabContainer" data-itemid="JSON" data-title="JSON" id="Syntax_JSON">
+						<div class="code">
+						<div class="code__widgets">
+						<div class="code__source" data-tab="Структура">
+						<pre class="prettyprint">
+<nobr>--operation</nobr>=BuildWorkspace <nobr>--workspaceName</nobr>=Default <nobr>--webApplicationPath</nobr>="[Путь к каталогу с установленным приложением]\<wbr></wbr>Terrasoft.WebApp" <nobr>--confRuntimeParentDirectory</nobr>="[Путь к каталогу с установленным приложением]\<wbr></wbr>Terrasoft.WebApp"
+</pre>
+						</div>
+
+						<div class="code__source" data-tab="Пример">
+						<pre class="prettyprint">
+<nobr>--operation</nobr>=BuildWorkspace <nobr>--workspaceName</nobr>=Default <nobr>--webApplicationPath</nobr>="C:\<wbr></wbr>сreatio713\<wbr></wbr>Terrasoft.WebApp" <nobr>--confRuntimeParentDirectory</nobr>="C:\<wbr></wbr>сreatio713\<wbr></wbr>Terrasoft.WebApp"
+</pre>
+						</div>
+						</div>
+						</div>
+						</div>
+						</td>
+					</tr></tbody></table></div>
+			</li>
+			<li><strong>Rebuild Workspace</strong> — полная компиляция конфигурационного проекта.
+			<div class="table">
+			<div class="table__caption">Свойства команды <span class="consolas">Rebuild Workspace</span></div>
+
+			<table><tbody><tr><th>Command</th>
+						<td>
+						<div class="SimpleTabContainer" data-itemid="JSON" data-title="JSON" id="Syntax_JSON">
+						<div class="code">
+						<div class="code__widgets">
+						<div class="code__source" data-tab="Структура">
+						<pre class="prettyprint">
+[Путь к каталогу с установленным приложением]\<wbr></wbr>Terrasoft.WebApp\<wbr></wbr>DesktopBin\<wbr></wbr>WorkspaceConsole\<wbr></wbr>Terrasoft.Tools.WorkspaceConsole.exe
+</pre>
+						</div>
+
+						<div class="code__source" data-tab="Пример">
+						<pre class="prettyprint">
+C:\<wbr></wbr>сreatio713\<wbr></wbr>Terrasoft.WebApp\<wbr></wbr>DesktopBin\<wbr></wbr>WorkspaceConsole\<wbr></wbr>Terrasoft.Tools.WorkspaceConsole.exe
+</pre>
+						</div>
+						</div>
+						</div>
+						</div>
+						</td>
+					</tr><tr><th>Arguments</th>
+						<td>
+						<div class="SimpleTabContainer" data-itemid="JSON" data-title="JSON" id="Syntax_JSON">
+						<div class="code">
+						<div class="code__widgets">
+						<div class="code__source" data-tab="Структура">
+						<pre class="prettyprint">
+<nobr>--operation</nobr>=RebuildWorkspace <nobr>--workspaceName</nobr>=Default <nobr>--webApplicationPath</nobr>="[Путь к каталогу с установленным приложением]\<wbr></wbr>Terrasoft.WebApp" <nobr>--confRuntimeParentDirectory</nobr>="[Путь к каталогу с установленным приложением]\<wbr></wbr>Terrasoft.WebApp"
+</pre>
+						</div>
+
+						<div class="code__source" data-tab="Пример">
+						<pre class="prettyprint">
+<nobr>--operation</nobr>=RebuildWorkspace <nobr>--workspaceName</nobr>=Default <nobr>--webApplicationPath</nobr>="C:\<wbr></wbr>сreatio713\<wbr></wbr>Terrasoft.WebApp" <nobr>--confRuntimeParentDirectory</nobr>="C:\<wbr></wbr>сreatio713\<wbr></wbr>Terrasoft.WebApp"
+</pre>
+						</div>
+						</div>
+						</div>
+						</div>
+						</td>
+					</tr></tbody></table></div>
+			</li>
+			<li><strong>Update Workspace Solution</strong> — обновление решения Visual Studio конфигурационного проекта из базы данных приложения. Команда применяет все изменения, внесенные пользователем через приложение.
+			<div class="table">
+			<div class="table__caption">Свойства команды <span class="consolas">Update Workspace Solution</span></div>
+
+			<table><tbody><tr><th>Command</th>
+						<td>
+						<div class="SimpleTabContainer" data-itemid="JSON" data-title="JSON" id="Syntax_JSON">
+						<div class="code">
+						<div class="code__widgets">
+						<div class="code__source" data-tab="Структура">
+						<pre class="prettyprint">
+[Путь к каталогу с установленным приложением]\<wbr></wbr>Terrasoft.WebApp\<wbr></wbr>DesktopBin\<wbr></wbr>WorkspaceConsole\<wbr></wbr>Terrasoft.Tools.WorkspaceConsole.exe
+</pre>
+						</div>
+
+						<div class="code__source" data-tab="Пример">
+						<pre class="prettyprint">
+C:\<wbr></wbr>сreatio713\<wbr></wbr>Terrasoft.WebApp\<wbr></wbr>DesktopBin\<wbr></wbr>WorkspaceConsole\<wbr></wbr>Terrasoft.Tools.WorkspaceConsole.exe
+</pre>
+						</div>
+						</div>
+						</div>
+						</div>
+						</td>
+					</tr><tr><th>Arguments</th>
+						<td>
+						<div class="SimpleTabContainer" data-itemid="JSON" data-title="JSON" id="Syntax_JSON">
+						<div class="code">
+						<div class="code__widgets">
+						<div class="code__source" data-tab="Структура">
+						<pre class="prettyprint">
+<nobr>--operation</nobr>=UpdateWorkspaceSolution <nobr>--workspaceName</nobr>=Default <nobr>--webApplicationPath</nobr>="[Путь к каталогу с установленным приложением]\<wbr></wbr>Terrasoft.WebApp" <nobr>--confRuntimeParentDirectory</nobr>="[Путь к каталогу с установленным приложением]\<wbr></wbr>Terrasoft.WebApp"
+</pre>
+						</div>
+
+						<div class="code__source" data-tab="Пример">
+						<pre class="prettyprint">
+<nobr>--operation</nobr>=UpdateWorkspaceSolution <nobr>--workspaceName</nobr>=Default <nobr>--webApplicationPath</nobr>="C:\<wbr></wbr>сreatio713\<wbr></wbr>Terrasoft.WebApp" <nobr>--confRuntimeParentDirectory</nobr>="C:\<wbr></wbr>сreatio713\<wbr></wbr>Terrasoft.WebApp"
+</pre>
+						</div>
+						</div>
+						</div>
+						</div>
+						</td>
+					</tr></tbody></table></div>
+			</li>
+		</ul></li>
+		<li>
+		<p>Для всех команд установите признак <span class="key">Use Output window</span>.</p>
+
+		<div class="media">
+		<div class="media__element"><img alt="" border="0" src="../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/VisualStudioSettings/scr_build_settings.png" /></div>
+		</div>
+		</li>
+	</ol></div>
+	</li>
+</ol><h3>Настроить отладку в Visual Studio<a class="title-anchor" href="#title-2098-7" id="title-2098-7"> </a></h3>
+
+<p>Выполните команду меню <span class="key">Debug</span> —&gt; <span class="key">Options...</span> и в появившемся диалоговом окне измените следующие <strong>опции</strong>:</p>
+
+<ul><li>Чтобы отладчик не пытался зайти в исходный код, которого нет в проекте, включите опцию <span class="key">Enable Just My Code</span>.</li>
+	<li>Поскольку после компиляции конфигурации выполняется автоматический перезапуск приложения, то опция <span class="key">Enable Edit and Continue</span> не поддерживается и ее следует отключить.</li>
+	<li>Чтобы отладчик корректно останавливался на точках останова (BreakPoint), необходимо удостовериться, что включена опция <span class="key">Suppress JIT optimization on module load</span>.</li>
+</ul><div class="media">
+<div class="media__element"><img alt="" border="0" src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/VisualStudioSettings/scr_options.png" /></div>
+</div>
+
+<h3>Разработка C# кода в конфигурационном проекте<a class="title-anchor" href="#title-2094-5" id="title-2094-5"> </a></h3>
+
+<p><strong>Конфигурационный проект </strong><span class="filled">Terrasoft.Configuration.sln</span> — это предварительно настроенное решение Visual Studio, которое поставляется с приложением Creatio и находится в каталоге <span class="filled">[Путь к приложению]\Terrasoft.WebApp\Terrasoft.Configuration</span>.</p>
+
+<p><strong>Преимущества</strong> разработки в конфигурационном проекте:</p>
+
+<ul><li>Полностью настроенное решение для разработки сложной back-end функциональности.</li>
+	<li>Предоставляет возможность использовать всю функциональность IDE — отладку, рефакторинг, автозавершение и т. д.</li>
+</ul><p><strong>Ограничения</strong> разработки в конфигурационном проекте:</p>
+
+<ul><li>Довольно низкая производительность, связанная с перекомпиляцией всей конфигурационной части Creatio (<span class="filled">Terrasoft.Configuration.dll</span>).</li>
+	<li>Разработку C# кода в файловой системе можно выполнять только взаимодействуя с базой данных приложения, развернутого <strong>on-site</strong>.</li>
+</ul><p>Для начала разработки в файловой системе с использованием конфигурационного проекта запустите файл <span class="filled">[Путь к приложению]\Terrasoft.WebApp\Terrasoft.Configuration\Terrasoft.Configuration.sln</span> в Visual Studio.</p>
+
+<div class="table">
+<div class="table__caption">Структура конфигурационного проекта</div>
+
+<table><thead><tr><th>Каталог</th>
+			<th>Назначение</th>
+		</tr></thead><tbody><tr><th><span class="consolas">Lib</span></th>
+			<td>Каталог, в который выгружаются сторонние библиотеки классов, привязанные к пакетам</td>
+		</tr><tr><th><span class="consolas">Autogenerated\Src</span></th>
+			<td>Каталог, содержащий файлы с автоматически сгенерированным исходным кодом схем предустановленных пакетов. Эти файлы нельзя редактировать</td>
+		</tr><tr><th><span class="consolas">Pkg</span></th>
+			<td>Каталог, в который из базы данных выгружаются пакеты для разработки в файловой системе</td>
+		</tr><tr><th><span class="consolas">bin</span></th>
+			<td>Каталог выгрузки скомпилированной конфигурации и сторонних библиотек</td>
+		</tr></tbody></table></div>
+
+<h3>Разработка C# кода в пользовательском проекте<a class="title-anchor" href="#title-2098-18" id="title-2098-18"> </a></h3>
+
+<p><strong>Пользовательский проект</strong> — отдельный проект библиотеки классов, предварительно настроенный для работы с Creatio. </p>
+
+<p>Для отладки и проверки результата разработки в пользовательском проекте можно использовать как локальную базу данных, подключившись к ней с помощью утилиты WorkspaceConsole, так и размещенное в облаке приложение, подключившись к нему с помощью специально разработанной утилиты — Executor.</p>
+
+<p><strong>Преимущества</strong> разработки в пользовательском проекте:</p>
+
+<ul><li>Высокая скорость проверки изменений, компиляции и запуска на выполнение.</li>
+	<li>Полноценное использование функциональности Visual Studio.</li>
+	<li>Возможность использования любых инструментов для непрерывного цикла разработки (<a href="https://en.wikipedia.org/w/index.php?title=Continuous_integration&amp;oldid=980879925" target="_blank">Continuous Integration</a>), например, Unit-тестирования.</li>
+	<li>Простота настройки проекта — не нужны исходные коды конфигурации.</li>
+	<li>Можно использовать базу данных приложения, развернутого как локально, так и в облаке.</li>
+</ul><p><strong>Ограничения</strong> разработки в пользовательском проекте:</p>
+
+<ul><li>Можно использовать только для разработки и отладки отдельных классов или небольших блоков back-end функциональности.</li>
+	<li>Необходимо отдельно подключать в зависимости проекта нужные библиотеки классов Creatio.</li>
+</ul><h2>Разработка JavaScript кода<a class="title-anchor" href="#title-2098-19" id="title-2098-19"> </a></h2>
+
+<p>Для разработки front-end функциональности с использованием внешних IDE необходимо:</p>
+
+<ol><li>Выполнить предварительные настройки приложения Creatio для разработки в файловой системе.</li>
+	<li>Создать, получить или обновить пакет из репозитория SVN.</li>
+	<li>В разделе <span class="key">Конфигурация</span> (<span class="key">Configuration</span>) cоздать клиентскую схему, в которой будет выполняться разработка. </li>
+	<li>Выгрузить схему из базы данных в файловую систему.</li>
+	<li>Выполнить разработку исходного кода схемы во внешней IDE.
+	<p>Для выполнения разработки необходимо открыть файл с исходным кодом схемы в предпочитаемой IDE (или любом текстовом редакторе) и добавить нужный исходный код.</p>
+	</li>
+	<li>Сохранить схему и выполнить отладку созданного исходного кода.</li>
+</ol><p>При разработке JavaScript кода в файловой системе после внесения изменений в исходный код схемы необходимо каждый раз <strong>обновлять страницу браузера</strong>, на которой открыто приложение. Это существенно снижает производительность разработки.</p>
+
+<p>Для устранения этого была разработана функциональность автоматической перезагрузки страницы браузера после внесения изменений в исходный код.</p>
+
+<h3>Настроить автоматическое отображение изменений JavaScript кода<a class="title-anchor" href="#title-2097-8" id="title-2097-8"> </a></h3>
+
+<p>При старте приложения создается объект, отслеживающий изменения *.js-файла с исходным кодом разрабатываемого модуля в файловой системе. Если изменения произошли, то отправляется сообщение в клиентское приложение (Creatio). В клиентском приложении специальный объект, подписанный на это сообщение, определяет зависимые объекты измененного модуля, разрушает связи, регистрирует новые пути к модулям и пытается заново загрузить измененный модуль. Это приводит к тому, что все проинициализированные модули запрашиваются браузером по новым путям и загружают изменения из файловой системы.</p>
+
+<p><strong>Преимущества </strong>использования автоматического отображения изменений JavaScript кода:</p>
+
+<ul><li>Экономия времени на интерпретацию и загрузку других модулей. Отдельная страница разработки позволяет не загружать ряд вспомогательных модулей, например, левую и правую панели, панель уведомлений и т. д.</li>
+	<li>Уменьшение количества запросов на сервер.</li>
+	<li>Выявление избыточной связанности модулей. Этот подход к разработке отдельных модулей позволяет вовремя обнаружить ненужные зависимости и избавиться от них.</li>
+</ul><p><strong>Ограничения </strong>использования автоматического отображения изменений JavaScript кода</p>
+
+<ul><li>Наличие синтаксических ошибок в коде. Если в исходном коде модуля допущена синтаксическая ошибка, то автоматическое обновление страницы не произойдет. Потребуется ее принудительное обновление (например, клавишей F5). При исправлении ошибки страница вернется к работоспособному состоянию.</li>
+	<li>Эффект сильной связанности модулей. Не все модули Creatio могут загружаться отдельно.</li>
+</ul><p>Для использования автоматического отображения изменений при разработке JavaScript кода необходимо выполнить следующие действия:</p>
+
+<ol><li>
+	<p><strong>Установить пакет JavaScriptOnlineLoader.</strong></p>
+
+	<p>При включенном режиме разработки в файловой системе необходимо добавить каталог <span class="filled">JavaScriptOnlineLoader</span>, содержащий нужный пакет, в каталог <span class="filled">[Путь к приложению]\Terrasoft.WebApp\Terrasoft.Configuration\Pkg</span>.</p>
+
+	<div class="media">
+	<div class="media__element"><img alt="" border="0" src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/AutoUpdateClientLogicDev/scr_pkg.png" /></div>
+	</div>
+
+	<div class="message message_warning">
+	<p><span class="message__bold message__bold_warning">Важно.</span> Пакет доступен на <a href="https://github.com/vladimir-nikonov/pngstore/tree/master/JavaScriptOnlineLoader">GitHub</a>. Также архив с пакетом можно скачать по <a href="../../../../../sites/default/files/documents/downloads/SDK/JavaScriptOnlineLoader.zip" target="_blank">ссылке</a>.</p>
+	</div>
+
+	<p>Затем нужно загрузить пакет в конфигурацию, выполнив действие <span class="key">Обновить пакеты из файловой системы</span> (<span class="key">Update packages from file system</span>).</p>
+
+	<p>В результате пакет отобразится в области работы с пакетами.</p>
+	</li>
+	<li>
+	<p><strong>Открыть в браузере страницу разрабатываемого модуля.</strong></p>
+
+	<p>Для этого необходимо открыть страницу <span class="filled">ViewModule.aspx</span>, добавив к ней параметр <span class="filled">?vm=DevViewModule#CardModuleV2/&lt;Название модуля&gt;</span></p>
+
+	<p>Например, в пользовательский пакет добавлена замещенная схема <span class="filled">KnowledgeBasePageV2</span> — схема страницы редактирования записи раздела <span class="key">База знаний</span>.</p>
+
+	<div class="code">
+	<div class="code__widgets">
+	<div class="code__top">
+	<div class="code__title">URL страницы <span class="filled">KnowledgeBasePageV2</span> с функциональностью автоматического отображения изменений</div>
+	</div>
+
+	<div class="code__source">
+	<pre class="prettyprint">
+http://localhost/сreatio/0/Nui/ViewModule.aspx?vm=DevViewModule#CardModuleV2/KnowledgeBasePageV2
+</pre>
+	</div>
+	</div>
+	</div>
+
+	<p>Здесь <span class="filled">http://localhost/сreatio</span> — URL приложения Creatio, развернутого локально.</p>
+
+	<p>После перехода по этому URL, отобразится страница <span class="filled">ViewModule.aspx</span> с загруженным модулем.</p>
+
+	<div class="media">
+	<div class="media__element"><img alt="" border="0" src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/AutoUpdateClientLogicDev/scr_page_before.png" /></div>
+	</div>
+	</li>
+	<li>
+	<p><strong>Изменить исходный код разрабатываемой схемы.</strong></p>
+
+	<p>Изменить исходный код разрабатываемой схемы можно в любом текстовом редакторе, например, в Блокноте. После сохранения изменений открытая в браузере страница будет автоматически обновлена.</p>
+	</li>
+</ol></div>
+      
+  </div>
+<div class="block block-layout-builder block-field-blocknodedeveloper-documentationfield-linked">
+  
+    
+      
+  <div class="field field--name-field-linked field--type-entity-reference field--label-above">
+    <div class="field__label">Смотрите также</div>
+          <div class="field__items">
+              <div class="field__item"><a href="../../../../7-17/developer/instrumenty_razrabotki/creatio_ide/razrabotka_v_creatio_ide.html" hreflang="ru">Принципы разработки в Creatio IDE</a></div>
+          <div class="field__item"><a href="../../../../7-16/developer/development_tools/version_control_system/kontrol_versiy_v_subversion.html" hreflang="ru">Контроль версий в Subversion</a></div>
+          <div class="field__item"><a href="../../../../7-17/developer/development_tools/packages/pakety.html" hreflang="ru">Общие принципы работы с пакетами</a></div>
+          <div class="field__item"><a href="../upravlenie_postavkami/workspaceconsole/obzor.html" hreflang="ru">Управление поставками в WorkspaceConsole</a></div>
+              </div>
+      </div>
+
+  </div>
+<div class="block block-layout-builder block-field-blocknodedeveloper-documentationfield-resources">
+  
+    
+      
+  <div class="field field--name-field-resources field--type-link field--label-above">
+    <div class="field__label">Ресурсы</div>
+          <div class="field__items">
+              <div class="field__item"><a href="../../../../developer/front-end_development.html" target="_blank">Документация Creatio по front-end разработке</a></div>
+          <div class="field__item"><a href="../../../../developer/back-end_development.html" target="_blank">Документация Creatio по back-end разработке</a></div>
+          <div class="field__item"><a href="../../../../../sites/default/files/documents/downloads/SDK/JavaScriptOnlineLoader.zip" target="_blank">Пакет JavaScriptOnlineLoader</a></div>
+              </div>
+      </div>
+
+  </div>
+
+    </div>
+  </div>
+
+  </div>
+
+</article>
+
+  </div>
+
+  </div>
+
+          </div>
+        </div>
+
+                  <aside class="creatio-sidebar creatio-sidebar_first" role="complementary">
+              <div class="region region-sidebar-first">
+    <div id="block-documentationnaviagtion" class="block block-ts-nav block-ts-nav-doc-nav">
+  
+    
+      <div class="ts-nav-block"><a href="../../../../index.html" class="ts-nav-block__link">Документация</a><div class="ts-nav-block__title">Для разработчика</div>
+</div>
+<div class="ts-nav-container"><ul class="ts-nav-menu"><li class="ts-nav-menu__item">
+  <a href="../../s_chego_nachat.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">С чего начать&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../architecture.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Архитектура&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../instrumenty_razrabotki.html" class="ts-nav-menu__link ts-nav-menu__link_expanded ts-nav-menu__link_open" hreflang="zxx">Инструменты разработки&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+      <ul class="ts-nav-menu__children">
+      <li class="ts-nav-menu__item">
+  <a href="../creatio_ide.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Creatio IDE&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../vneshnie_ide.html" class="ts-nav-menu__link ts-nav-menu__link_expanded ts-nav-menu__link_open" hreflang="ru">Внешние IDE&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+      <ul class="ts-nav-menu__children">
+      <li class="ts-nav-menu__item">
+  <a href="obzor.html" class="ts-nav-menu__link ts-nav-menu__link_guide ts-nav-menu__link_active" hreflang="ru">Обзор</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="razrabotat_c_sharp_kod_v_konfiguracionnom_proekte.html" class="ts-nav-menu__link ts-nav-menu__link_case" hreflang="ru">Разработать C# код в конфигурационном проекте</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="razrabotat_c_sharp_kod_v_polzovatelskom_proekte.html" class="ts-nav-menu__link ts-nav-menu__link_case" hreflang="ru">Разработать C# код в пользовательском проекте</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="razrabotat_klientskij_kod.html" class="ts-nav-menu__link ts-nav-menu__link_case" hreflang="ru">Разработать клиентский код</a>
+  </li>
+
+    </ul>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../pakety.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Пакеты&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../sistemy_kontrolya_versij.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Системы контроля версий&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../development_tools/testirovanie.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Тестирование&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../development_tools/instrumenty_dlya_bazy_dannykh.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Инструменты для базы данных&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../logirovanie.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Логирование&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../otladka.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Отладка&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../upravlenie_postavkami.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Управление поставками&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+
+    </ul>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../back_end_razrabotka.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Back-end разработка&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../front_end_razrabotka.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Front-end разработка&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../integratsiya_i_vneshnij_api.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Интеграция и внешний API&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../ehlementy_interfejsa.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Элементы интерфейса&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../komponenty_prilozheniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Компоненты приложения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../razrabotka_mobilnogo_prilozheniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Разработка мобильного приложения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../razrabotka_marketplace_prilozheniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Разработка Marketplace-приложения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+</ul>
+</div>
+
+  </div>
+
+  </div>
+
+            <div class="creatio-sidebar__toggle"></div>
+          </aside>
+        
+                  <aside class="creatio-sidebar creatio-sidebar_second" role="complementary">
+              <div class="region region-sidebar-second">
+    <div id="block-example" class="block block-ts-nav block-ts-nav-page-nav">
+  
+    
+      <div class="ts-nav-page">
+  </div>
+
+  </div>
+<div id="block-adminfeedbackblock" class="block block-admin-feedback block-admin-feedback-block">
+  
+    
+      <div id="feedback-message"><div id="upper-feedback-content"><h2>Был ли данный материал полезен?</h2>
+<input class="feedback-btn feedback-btn__yes button js-form-submit form-submit" data-node-id="2098" data-feedback="yes" type="submit" name="op" value="Да" />
+<input class="feedback-btn feedback-btn__no button js-form-submit form-submit" data-node-id="2098" data-feedback="no" type="submit" name="op" value="Нет" />
+</div>
+<form class="admin-feedback-form" data-drupal-selector="admin-feedback-form" action="https://academy.terrasoft.ua/docs/7-18/developer/instrumenty_razrabotki/vneshnie_ide/obzor" method="post" id="admin-feedback-form" accept-charset="UTF-8">
+  <div id="feedback-msg-result"></div><div class="js-form-item form-item js-form-type-textarea form-type-textarea js-form-item-feedback-message form-item-feedback-message form-no-label">
+        <div class="form-textarea-wrapper">
+  <textarea id="edit-feedback-msg" data-drupal-selector="edit-feedback-message" name="feedback_message" rows="5" cols="60" class="form-textarea resize-vertical"></textarea>
+</div>
+
+        </div>
+<input id="feedback-id" data-drupal-selector="edit-feedback-id" type="hidden" name="feedback_id" value="" />
+<input class="feedback-btn feedback-btn__send-comment button js-form-submit form-submit" data-drupal-selector="edit-feedback-send" type="submit" id="edit-feedback-send" name="op" value="Отправить" />
+<input autocomplete="off" data-drupal-selector="form-zyfyefthwiex1tvd0ytl9xgyimavnepjotqahoy9s-o" type="hidden" name="form_build_id" value="form-zyFyeFtHwIex1Tvd0yTl9xGYIMaVNEPjOTQaHoY9s_o" />
+<input data-drupal-selector="edit-admin-feedback-form" type="hidden" name="form_id" value="admin_feedback_form" />
+
+</form>
+</div>
+
+  </div>
+
+  </div>
+
+          </aside>
+              </main>
+    </div>
+  </div>
+
+  <footer role="contentinfo">
+    <div class="creatio-region creatio-region_footer">
+      <div class="creatio-container">
+          <div class="region region-footer">
+    <div id="block-footerua" class="block block-simple-block block-simple-blockfooter-ua">
+  
+    
+      <div class="footer">
+<div class="footer-left">
+<ul class="footer-socials"><li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_fb" href="https://www.facebook.com/terrasoft.ua" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_in" href="https://www.linkedin.com/company/terrasoft/" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_yt" href="https://www.youtube.com/c/TerrasoftUkraine" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_tg" href="https://t.me/Terrasoft_UA" target="_blank"> </a></li>
+</ul></div>
+
+<div class="footer-contact">
+<div class="footer-title">Будьте на связи!</div>
+
+<div class="footer-content">
+<div class="footer-items">
+<div class="footer-item"><a class="footer__link footer__link_phone" href="tel:+380443633133">+38 (044) 363-31-33</a></div>
+</div>
+
+<div class="footer-items">
+<div class="footer-item"><a class="footer__link footer__link_email" href="mailto:support@terrasoft.ua">support@terrasoft.ua</a></div>
+</div>
+</div>
+</div>
+</div>
+
+  </div>
+
+  </div>
+
+      </div>
+    </div>
+    <div class="creatio-region creatio-region_bottom">
+      <div class="creatio-container">
+          <div class="region region-bottom">
+    <div id="block-allrightsreservedua" class="block block-simple-block block-simple-blockfooter-bottom-ua">
+  
+    
+      <p>© 2002-2022 Terrasoft.  |  <a href="https://www.terrasoft.ua/privacy-policy" target="_blank">Конфиденциальность</a></p>
+
+  </div>
+
+  </div>
+
+      </div>
+    </div>
+  </footer>
+</div>
+<div class="creatio-bg"></div>
+
+
+  </div>
+
+    
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/docs\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/2098","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"ru"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"ajaxPageState":{"libraries":"admin_feedback\/admin_feedback_block,admin_feedback\/admin_feedback_css,classy\/base,classy\/messages,classy\/node,core\/drupal.ajax,core\/jquery.form,core\/normalize,creatio\/fancybox,creatio\/global,layout_discovery\/onecol,system\/base,ts_doc\/doc_version,ts_feedback\/ts_feedback,ts_nav\/breadcrumb,ts_nav\/doc_nav,ts_nav\/page_nav,ts_title_anchor\/ts_title_anchor","theme":"creatio","theme_token":null},"ajaxTrustedUrl":{"form_action_p_pvdeGsVG5zNF_XLGPTvYSKCf43t8qZYSwcfZl2uzM":true,"\/docs\/7-18\/developer\/instrumenty_razrabotki\/vneshnie_ide\/obzor?ajax_form=1":true},"admin_feedback":{"yes_response":"\u0421\u043f\u0430\u0441\u0438\u0431\u043e \u0437\u0430 \u043e\u0431\u0440\u0430\u0442\u043d\u0443\u044e \u0441\u0432\u044f\u0437\u044c!","no_response":"\u0421\u043f\u0430\u0441\u0438\u0431\u043e \u0437\u0430 \u043e\u0431\u0440\u0430\u0442\u043d\u0443\u044e \u0441\u0432\u044f\u0437\u044c!","custom_text_response_on_no":{"value":"","format":"full_html"},"feedback_prompt_on_yes":true,"feedback_prompt_on_no":true,"feedback_enable_predefined_answers":false,"feedback_prompt":"\u041a\u0430\u043a \u043c\u043e\u0436\u043d\u043e \u0443\u043b\u0443\u0447\u0448\u0438\u0442\u044c \u044d\u0442\u0443 \u0441\u0442\u0430\u0442\u044c\u044e?"},"ajax":{"edit-feedback-send":{"callback":"::validateFeedbackMsg","event":"mousedown","keypress":true,"prevent":"click","url":"\/docs\/7-18\/developer\/instrumenty_razrabotki\/vneshnie_ide\/obzor?ajax_form=1","dialogType":"ajax","submit":{"_triggering_element_name":"op","_triggering_element_value":"\u041e\u0442\u043f\u0440\u0430\u0432\u0438\u0442\u044c"}}},"user":{"uid":0,"permissionsHash":"9c2367dfcaba0fa15f0375f97aed64e146c908cee68508d13b79e3ee80e5162d"}}</script>
+<script src="../../../../sites/default/files/js/js_Rr-7TvYD7NposuRFJwUqThxM7yJmw8vs03PQwu5gWd8.js"></script>
+
+
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+      <g id="svg-copy" class="svg-icon svg-icon_copy">
+        <path d="M15.111,18H1.889A1.848,1.848,0,0,1,0,16.2V3.6A1.848,1.848,0,0,1,1.889,1.8H5.837a2.87,2.87,0,0,1,5.326,0h3.948A1.848,1.848,0,0,1,17,3.6V16.2A1.848,1.848,0,0,1,15.111,18ZM3.777,12.6v1.8h6.611V12.6Zm0-3.6v1.8h9.445V9Zm0-3.6V7.2h9.445V5.4ZM8.5,1.8a.924.924,0,0,0-.944.9.945.945,0,0,0,1.889,0A.924.924,0,0,0,8.5,1.8Z"/>
+      </g>
+
+      <g id="svg-prev" class="svg-icon svg-icon_arrow">
+        <path d="M5.488,12.779,0,6.39,5.488,0" transform="translate(1 0.652)"/>
+      </g>
+
+      <g id="svg-next" class="svg-icon svg-icon_arrow">
+        <path d="M0,12.779,5.488,6.39,0,0" transform="translate(0.759 0.652)"/>
+      </g>
+    </svg>
+  </body>
+
+<!-- Mirrored from academy.terrasoft.ua/docs/7-18/developer/instrumenty_razrabotki/vneshnie_ide/obzor by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 22 Mar 2022 21:36:56 GMT -->
+</html>

@@ -1,0 +1,1132 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  
+<!-- Mirrored from academy.terrasoft.ua/api/netcoreapi/7.18.0/api/Terrasoft.Common.JsonDataWriter.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Mar 2022 03:31:28 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class JsonDataWriter
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class JsonDataWriter
+   ">
+    <meta name="generator" content="docfx 2.58.0.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-default ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="https://academy.terrasoft.ru/docs/developer/back-end_development">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Terrasoft.Common.JsonDataWriter">
+  
+  
+  <h1 id="Terrasoft_Common_JsonDataWriter" data-uid="Terrasoft.Common.JsonDataWriter" class="text-break">Class JsonDataWriter
+  </h1>
+  <div class="markdown level0 summary"><p>Представляет методы для последовательной записи данных в формате Json.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><a class="xref" href="Terrasoft.Common.DataWriter.html">DataWriter</a></div>
+    <div class="level2"><span class="xref">JsonDataWriter</span></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="Terrasoft.Common.Data.IDataWriter.html">IDataWriter</a></div>
+    <div><span class="xref">System.IDisposable</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="Terrasoft.Common.DataWriter.html#Terrasoft_Common_DataWriter_SerializableObjectTypeFullNamePropertyName">DataWriter.SerializableObjectTypeFullNamePropertyName</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Common.DataWriter.html#Terrasoft_Common_DataWriter_SerializableObjectValuePropertyName">DataWriter.SerializableObjectValuePropertyName</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Common.DataWriter.html#Terrasoft_Common_DataWriter_Dispose">DataWriter.Dispose()</a>
+    </div>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Terrasoft.Common.html">Terrasoft.Common</a></h6>
+  <h6><strong>Assembly</strong>: Terrasoft.Common.dll</h6>
+  <h5 id="Terrasoft_Common_JsonDataWriter_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class JsonDataWriter : DataWriter, IDataWriter, IDisposable</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+  </h3>
+  
+  
+  <a id="Terrasoft_Common_JsonDataWriter__ctor_" data-uid="Terrasoft.Common.JsonDataWriter.#ctor*"></a>
+  <h4 id="Terrasoft_Common_JsonDataWriter__ctor_Terrasoft_Common_JsonDataWriterSettings_System_IO_Stream_" data-uid="Terrasoft.Common.JsonDataWriter.#ctor(Terrasoft.Common.JsonDataWriterSettings,System.IO.Stream)">JsonDataWriter(JsonDataWriterSettings, Stream)</h4>
+  <div class="markdown level1 summary"><p>Инициализирует экземпляр класса <a class="xref" href="Terrasoft.Common.JsonDataWriter.html">JsonDataWriter</a>, используя заданные настройки экземпляра и
+поток вывода.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public JsonDataWriter(JsonDataWriterSettings settings, Stream output)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Common.JsonDataWriterSettings.html">JsonDataWriterSettings</a></td>
+        <td><span class="parametername">settings</span></td>
+        <td><p>Настройки для нового экземпляра <a class="xref" href="Terrasoft.Common.XmlDataWriter.html">XmlDataWriter</a>.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.IO.Stream</span></td>
+        <td><span class="parametername">output</span></td>
+        <td><p>Поток, в который осуществляется запись.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Common_JsonDataWriter__ctor_" data-uid="Terrasoft.Common.JsonDataWriter.#ctor*"></a>
+  <h4 id="Terrasoft_Common_JsonDataWriter__ctor_Terrasoft_Common_JsonDataWriterSettings_System_IO_TextWriter_" data-uid="Terrasoft.Common.JsonDataWriter.#ctor(Terrasoft.Common.JsonDataWriterSettings,System.IO.TextWriter)">JsonDataWriter(JsonDataWriterSettings, TextWriter)</h4>
+  <div class="markdown level1 summary"><p>Инициализирует экземпляр класса <a class="xref" href="Terrasoft.Common.JsonDataWriter.html">JsonDataWriter</a>, используя заданные настройки экземпляра и
+<span class="xref">System.IO.TextWriter</span>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public JsonDataWriter(JsonDataWriterSettings settings, TextWriter output)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Common.JsonDataWriterSettings.html">JsonDataWriterSettings</a></td>
+        <td><span class="parametername">settings</span></td>
+        <td><p>Настройки для нового экземпляра <a class="xref" href="Terrasoft.Common.JsonDataWriter.html">JsonDataWriter</a>.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.IO.TextWriter</span></td>
+        <td><span class="parametername">output</span></td>
+        <td><p>Экземпляр <span class="xref">System.IO.TextWriter</span>, с помощью которого осуществляется
+запись.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  
+  
+  <a id="Terrasoft_Common_JsonDataWriter_JsonWriter_" data-uid="Terrasoft.Common.JsonDataWriter.JsonWriter*"></a>
+  <h4 id="Terrasoft_Common_JsonDataWriter_JsonWriter" data-uid="Terrasoft.Common.JsonDataWriter.JsonWriter">JsonWriter</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected JsonWriter JsonWriter { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">JsonWriter</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Common_JsonDataWriter_Settings_" data-uid="Terrasoft.Common.JsonDataWriter.Settings*"></a>
+  <h4 id="Terrasoft_Common_JsonDataWriter_Settings" data-uid="Terrasoft.Common.JsonDataWriter.Settings">Settings</h4>
+  <div class="markdown level1 summary"><p>Возвращает настройки данного экземпляра <a class="xref" href="Terrasoft.Common.JsonDataWriter.html">JsonDataWriter</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public JsonDataWriterSettings Settings { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Common.JsonDataWriterSettings.html">JsonDataWriterSettings</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  
+  
+  <a id="Terrasoft_Common_JsonDataWriter_Close_" data-uid="Terrasoft.Common.JsonDataWriter.Close*"></a>
+  <h4 id="Terrasoft_Common_JsonDataWriter_Close" data-uid="Terrasoft.Common.JsonDataWriter.Close">Close()</h4>
+  <div class="markdown level1 summary"><p>Закрывает текущий экземпляр <a class="xref" href="Terrasoft.Common.JsonDataWriter.html">JsonDataWriter</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void Close()</code></pre>
+  </div>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Terrasoft.Common.DataWriter.html#Terrasoft_Common_DataWriter_Close">DataWriter.Close()</a></div>
+  
+  
+  <a id="Terrasoft_Common_JsonDataWriter_Dispose_" data-uid="Terrasoft.Common.JsonDataWriter.Dispose*"></a>
+  <h4 id="Terrasoft_Common_JsonDataWriter_Dispose_System_Boolean_" data-uid="Terrasoft.Common.JsonDataWriter.Dispose(System.Boolean)">Dispose(Boolean)</h4>
+  <div class="markdown level1 summary"><p>Выполняет удаление, высвобождение и сброс ресурсов. Отменяет вызов Finalize() для данного экземпляра.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void Dispose(bool disposing)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">disposing</span></td>
+        <td><p><code>true</code>, если необходимо высвободить и управляемые, и неуправляемые ресурсы; <code>false</code>, если
+необходимо высвободить только неуправляемые ресурсы.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Terrasoft.Common.DataWriter.html#Terrasoft_Common_DataWriter_Dispose_System_Boolean_">DataWriter.Dispose(Boolean)</a></div>
+  
+  
+  <a id="Terrasoft_Common_JsonDataWriter_WriteFinishCollection_" data-uid="Terrasoft.Common.JsonDataWriter.WriteFinishCollection*"></a>
+  <h4 id="Terrasoft_Common_JsonDataWriter_WriteFinishCollection" data-uid="Terrasoft.Common.JsonDataWriter.WriteFinishCollection">WriteFinishCollection()</h4>
+  <div class="markdown level1 summary"><p>Завершает запись текущей коллекции.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void WriteFinishCollection()</code></pre>
+  </div>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Terrasoft.Common.DataWriter.html#Terrasoft_Common_DataWriter_WriteFinishCollection">DataWriter.WriteFinishCollection()</a></div>
+  
+  
+  <a id="Terrasoft_Common_JsonDataWriter_WriteFinishObject_" data-uid="Terrasoft.Common.JsonDataWriter.WriteFinishObject*"></a>
+  <h4 id="Terrasoft_Common_JsonDataWriter_WriteFinishObject" data-uid="Terrasoft.Common.JsonDataWriter.WriteFinishObject">WriteFinishObject()</h4>
+  <div class="markdown level1 summary"><p>Завершает запись текущего объекта.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void WriteFinishObject()</code></pre>
+  </div>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Terrasoft.Common.DataWriter.html#Terrasoft_Common_DataWriter_WriteFinishObject">DataWriter.WriteFinishObject()</a></div>
+  <h5 id="Terrasoft_Common_JsonDataWriter_WriteFinishObject_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Метод запиcывает в поток вывода закрывающую фигурную скобку.</p>
+</div>
+  
+  
+  <a id="Terrasoft_Common_JsonDataWriter_WriteSerializableObjectValue_" data-uid="Terrasoft.Common.JsonDataWriter.WriteSerializableObjectValue*"></a>
+  <h4 id="Terrasoft_Common_JsonDataWriter_WriteSerializableObjectValue_System_String_System_Object_System_Object_" data-uid="Terrasoft.Common.JsonDataWriter.WriteSerializableObjectValue(System.String,System.Object,System.Object)">WriteSerializableObjectValue(String, Object, Object)</h4>
+  <div class="markdown level1 summary"><p>Осуществляет запись заданного сериализуемого значения свойства с заданным именем и заданным значением
+по умолчанию.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void WriteSerializableObjectValue(string name, object value, object defValue)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">name</span></td>
+        <td><p>Имя свойства.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>Сериализуемое значение свойства.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">defValue</span></td>
+        <td><p>Значение по умолчанию.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Terrasoft.Common.DataWriter.html#Terrasoft_Common_DataWriter_WriteSerializableObjectValue_System_String_System_Object_System_Object_">DataWriter.WriteSerializableObjectValue(String, Object, Object)</a></div>
+  
+  
+  <a id="Terrasoft_Common_JsonDataWriter_WriteStartCollection_" data-uid="Terrasoft.Common.JsonDataWriter.WriteStartCollection*"></a>
+  <h4 id="Terrasoft_Common_JsonDataWriter_WriteStartCollection_System_String_" data-uid="Terrasoft.Common.JsonDataWriter.WriteStartCollection(System.String)">WriteStartCollection(String)</h4>
+  <div class="markdown level1 summary"><p>Начинает запись коллекции с заданным именем.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void WriteStartCollection(string name)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">name</span></td>
+        <td><p>Имя коллекции.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Terrasoft.Common.DataWriter.html#Terrasoft_Common_DataWriter_WriteStartCollection_System_String_">DataWriter.WriteStartCollection(String)</a></div>
+  
+  
+  <a id="Terrasoft_Common_JsonDataWriter_WriteStartObject_" data-uid="Terrasoft.Common.JsonDataWriter.WriteStartObject*"></a>
+  <h4 id="Terrasoft_Common_JsonDataWriter_WriteStartObject" data-uid="Terrasoft.Common.JsonDataWriter.WriteStartObject">WriteStartObject()</h4>
+  <div class="markdown level1 summary"><p>Осуществляет запись открывающей фигурной скобки в поток вывода.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void WriteStartObject()</code></pre>
+  </div>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Terrasoft.Common.DataWriter.html#Terrasoft_Common_DataWriter_WriteStartObject">DataWriter.WriteStartObject()</a></div>
+  
+  
+  <a id="Terrasoft_Common_JsonDataWriter_WriteStartObject_" data-uid="Terrasoft.Common.JsonDataWriter.WriteStartObject*"></a>
+  <h4 id="Terrasoft_Common_JsonDataWriter_WriteStartObject_System_String_" data-uid="Terrasoft.Common.JsonDataWriter.WriteStartObject(System.String)">WriteStartObject(String)</h4>
+  <div class="markdown level1 summary"><p>Начинает запись объекта с заданным именем в поток вывода.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void WriteStartObject(string name)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">name</span></td>
+        <td><p>Имя объекта.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Terrasoft.Common.DataWriter.html#Terrasoft_Common_DataWriter_WriteStartObject_System_String_">DataWriter.WriteStartObject(String)</a></div>
+  <h5 id="Terrasoft_Common_JsonDataWriter_WriteStartObject_System_String__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Метод записывает в поток вывода имя объекта и открывающую фигурную скобку.</p>
+</div>
+  
+  
+  <a id="Terrasoft_Common_JsonDataWriter_WriteValue_" data-uid="Terrasoft.Common.JsonDataWriter.WriteValue*"></a>
+  <h4 id="Terrasoft_Common_JsonDataWriter_WriteValue_System_Object___" data-uid="Terrasoft.Common.JsonDataWriter.WriteValue(System.Object[])">WriteValue(Object[])</h4>
+  <div class="markdown level1 summary"><p>Осуществляет запись заданного массива значений.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void WriteValue(params object[] values)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span>[]</td>
+        <td><span class="parametername">values</span></td>
+        <td><p>Массив значений.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Terrasoft.Common.DataWriter.html#Terrasoft_Common_DataWriter_WriteValue_System_Object___">DataWriter.WriteValue(Object[])</a></div>
+  
+  
+  <a id="Terrasoft_Common_JsonDataWriter_WriteValue_" data-uid="Terrasoft.Common.JsonDataWriter.WriteValue*"></a>
+  <h4 id="Terrasoft_Common_JsonDataWriter_WriteValue_System_String_System_Boolean_System_Boolean_" data-uid="Terrasoft.Common.JsonDataWriter.WriteValue(System.String,System.Boolean,System.Boolean)">WriteValue(String, Boolean, Boolean)</h4>
+  <div class="markdown level1 summary"><p>Осуществляет запись значения типа <span class="xref">System.Boolean</span> для свойства с заданными именем и
+значением по умолчанию.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void WriteValue(string name, bool value, bool defValue)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">name</span></td>
+        <td><p>Имя свойства.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>Значение свойства типа <span class="xref">System.Boolean</span>.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">defValue</span></td>
+        <td><p>Значение по умолчанию.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Terrasoft.Common.DataWriter.html#Terrasoft_Common_DataWriter_WriteValue_System_String_System_Boolean_System_Boolean_">DataWriter.WriteValue(String, Boolean, Boolean)</a></div>
+  
+  
+  <a id="Terrasoft_Common_JsonDataWriter_WriteValue_" data-uid="Terrasoft.Common.JsonDataWriter.WriteValue*"></a>
+  <h4 id="Terrasoft_Common_JsonDataWriter_WriteValue_System_String_System_DateTime_System_DateTime_" data-uid="Terrasoft.Common.JsonDataWriter.WriteValue(System.String,System.DateTime,System.DateTime)">WriteValue(String, DateTime, DateTime)</h4>
+  <div class="markdown level1 summary"><p>Осуществляет запись значения типа <span class="xref">System.DateTime</span> для свойства с заданными именем и
+значением по умолчанию.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void WriteValue(string name, DateTime value, DateTime defValue)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">name</span></td>
+        <td><p>Имя свойства.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.DateTime</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>Значение свойства типа <span class="xref">System.DateTime</span>.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.DateTime</span></td>
+        <td><span class="parametername">defValue</span></td>
+        <td><p>Значение по умолчанию.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Terrasoft.Common.DataWriter.html#Terrasoft_Common_DataWriter_WriteValue_System_String_System_DateTime_System_DateTime_">DataWriter.WriteValue(String, DateTime, DateTime)</a></div>
+  
+  
+  <a id="Terrasoft_Common_JsonDataWriter_WriteValue_" data-uid="Terrasoft.Common.JsonDataWriter.WriteValue*"></a>
+  <h4 id="Terrasoft_Common_JsonDataWriter_WriteValue_System_String_System_Decimal_System_Decimal_" data-uid="Terrasoft.Common.JsonDataWriter.WriteValue(System.String,System.Decimal,System.Decimal)">WriteValue(String, Decimal, Decimal)</h4>
+  <div class="markdown level1 summary"><p>Осуществляет запись значения типа <span class="xref">System.Decimal</span> для свойства с заданными именем и
+значением по умолчанию.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void WriteValue(string name, decimal value, decimal defValue)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">name</span></td>
+        <td><p>Имя свойства.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Decimal</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>Значение свойства типа <span class="xref">System.Decimal</span>.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Decimal</span></td>
+        <td><span class="parametername">defValue</span></td>
+        <td><p>Значение по умолчанию.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Terrasoft.Common.DataWriter.html#Terrasoft_Common_DataWriter_WriteValue_System_String_System_Decimal_System_Decimal_">DataWriter.WriteValue(String, Decimal, Decimal)</a></div>
+  
+  
+  <a id="Terrasoft_Common_JsonDataWriter_WriteValue_" data-uid="Terrasoft.Common.JsonDataWriter.WriteValue*"></a>
+  <h4 id="Terrasoft_Common_JsonDataWriter_WriteValue_System_String_System_Double_System_Double_" data-uid="Terrasoft.Common.JsonDataWriter.WriteValue(System.String,System.Double,System.Double)">WriteValue(String, Double, Double)</h4>
+  <div class="markdown level1 summary"><p>Осуществляет запись значения типа <span class="xref">System.Double</span> для свойства с заданными именем и
+значением по умолчанию.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void WriteValue(string name, double value, double defValue)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">name</span></td>
+        <td><p>Имя свойства.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>Значение свойства типа <span class="xref">System.Double</span>.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td><span class="parametername">defValue</span></td>
+        <td><p>Значение по умолчанию.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Terrasoft.Common.DataWriter.html#Terrasoft_Common_DataWriter_WriteValue_System_String_System_Double_System_Double_">DataWriter.WriteValue(String, Double, Double)</a></div>
+  
+  
+  <a id="Terrasoft_Common_JsonDataWriter_WriteValue_" data-uid="Terrasoft.Common.JsonDataWriter.WriteValue*"></a>
+  <h4 id="Terrasoft_Common_JsonDataWriter_WriteValue_System_String_System_Enum_System_Enum_" data-uid="Terrasoft.Common.JsonDataWriter.WriteValue(System.String,System.Enum,System.Enum)">WriteValue(String, Enum, Enum)</h4>
+  <div class="markdown level1 summary"><p>Осуществляет запись значения типа <span class="xref">System.Enum</span> для свойства с заданными именем и
+значением по умолчанию.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void WriteValue(string name, Enum value, Enum defValue)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">name</span></td>
+        <td><p>Имя свойства.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Enum</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>Значение свойства типа <span class="xref">System.Enum</span>.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Enum</span></td>
+        <td><span class="parametername">defValue</span></td>
+        <td><p>Значение по умолчанию.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Terrasoft.Common.DataWriter.html#Terrasoft_Common_DataWriter_WriteValue_System_String_System_Enum_System_Enum_">DataWriter.WriteValue(String, Enum, Enum)</a></div>
+  
+  
+  <a id="Terrasoft_Common_JsonDataWriter_WriteValue_" data-uid="Terrasoft.Common.JsonDataWriter.WriteValue*"></a>
+  <h4 id="Terrasoft_Common_JsonDataWriter_WriteValue_System_String_System_Guid_System_Guid_" data-uid="Terrasoft.Common.JsonDataWriter.WriteValue(System.String,System.Guid,System.Guid)">WriteValue(String, Guid, Guid)</h4>
+  <div class="markdown level1 summary"><p>Осуществляет запись значения типа <span class="xref">System.Guid</span> для свойства с заданными именем и
+значением по умолчанию.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void WriteValue(string name, Guid value, Guid defValue)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">name</span></td>
+        <td><p>Имя свойства.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Guid</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>Значение свойства типа <span class="xref">System.Guid</span>.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Guid</span></td>
+        <td><span class="parametername">defValue</span></td>
+        <td><p>Значение по умолчанию.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Terrasoft.Common.DataWriter.html#Terrasoft_Common_DataWriter_WriteValue_System_String_System_Guid_System_Guid_">DataWriter.WriteValue(String, Guid, Guid)</a></div>
+  
+  
+  <a id="Terrasoft_Common_JsonDataWriter_WriteValue_" data-uid="Terrasoft.Common.JsonDataWriter.WriteValue*"></a>
+  <h4 id="Terrasoft_Common_JsonDataWriter_WriteValue_System_String_System_Int32_System_Int32_" data-uid="Terrasoft.Common.JsonDataWriter.WriteValue(System.String,System.Int32,System.Int32)">WriteValue(String, Int32, Int32)</h4>
+  <div class="markdown level1 summary"><p>Осуществляет запись значения типа <span class="xref">System.Int32</span> для свойства с заданными именем и значением
+по умолчанию.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void WriteValue(string name, int value, int defValue)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">name</span></td>
+        <td><p>Имя свойства.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>Значение свойства типа <span class="xref">System.Int32</span>.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">defValue</span></td>
+        <td><p>Значение по умолчанию.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Terrasoft.Common.DataWriter.html#Terrasoft_Common_DataWriter_WriteValue_System_String_System_Int32_System_Int32_">DataWriter.WriteValue(String, Int32, Int32)</a></div>
+  
+  
+  <a id="Terrasoft_Common_JsonDataWriter_WriteValue_" data-uid="Terrasoft.Common.JsonDataWriter.WriteValue*"></a>
+  <h4 id="Terrasoft_Common_JsonDataWriter_WriteValue_System_String_System_IO_Stream_" data-uid="Terrasoft.Common.JsonDataWriter.WriteValue(System.String,System.IO.Stream)">WriteValue(String, Stream)</h4>
+  <div class="markdown level1 summary"><p>Осуществляет запись значения из заданного потока для свойства с заданным именем.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void WriteValue(string name, Stream value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">name</span></td>
+        <td><p>Имя свойства.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.IO.Stream</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>Поток, из которого осуществляется запись.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Terrasoft.Common.DataWriter.html#Terrasoft_Common_DataWriter_WriteValue_System_String_System_IO_Stream_">DataWriter.WriteValue(String, Stream)</a></div>
+  
+  
+  <a id="Terrasoft_Common_JsonDataWriter_WriteValue_" data-uid="Terrasoft.Common.JsonDataWriter.WriteValue*"></a>
+  <h4 id="Terrasoft_Common_JsonDataWriter_WriteValue_System_String_System_String_System_String_" data-uid="Terrasoft.Common.JsonDataWriter.WriteValue(System.String,System.String,System.String)">WriteValue(String, String, String)</h4>
+  <div class="markdown level1 summary"><p>Осуществляет запись значения типа <span class="xref">System.String</span> для свойства с заданными именем и
+значением по умолчанию.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void WriteValue(string name, string value, string defValue)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">name</span></td>
+        <td><p>Имя свойства.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>Значение свойства типа <span class="xref">System.String</span>.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">defValue</span></td>
+        <td><p>Значение по умолчанию для свойства.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Terrasoft.Common.DataWriter.html#Terrasoft_Common_DataWriter_WriteValue_System_String_System_String_System_String_">DataWriter.WriteValue(String, String, String)</a></div>
+  
+  
+  <a id="Terrasoft_Common_JsonDataWriter_WriteValue_" data-uid="Terrasoft.Common.JsonDataWriter.WriteValue*"></a>
+  <h4 id="Terrasoft_Common_JsonDataWriter_WriteValue_System_String_System_Type_System_Object_System_Object_" data-uid="Terrasoft.Common.JsonDataWriter.WriteValue(System.String,System.Type,System.Object,System.Object)">WriteValue(String, Type, Object, Object)</h4>
+  <div class="markdown level1 summary"><p>Осуществляет запись значения заданного типа для свойства с заданными именем и значением по умолчанию.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void WriteValue(string name, Type valueType, object value, object defValue)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">name</span></td>
+        <td><p>Имя свойства.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Type</span></td>
+        <td><span class="parametername">valueType</span></td>
+        <td><p>Тип значения.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>Значение.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">defValue</span></td>
+        <td><p>Значение по умолчанию.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Terrasoft.Common.DataWriter.html#Terrasoft_Common_DataWriter_WriteValue_System_String_System_Type_System_Object_System_Object_">DataWriter.WriteValue(String, Type, Object, Object)</a></div>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Common.UnsupportedTypeException.html">UnsupportedTypeException</a></td>
+        <td><p>При передаче в качестве параметра <code data-dev-comment-type="paramref" class="paramref">valueType</code>
+не поддерживаемого типа.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.ArgumentNullException</span></td>
+        <td><p>При передаче в качестве параметров <code data-dev-comment-type="paramref" class="paramref">name</code> и
+<code data-dev-comment-type="paramref" class="paramref">value</code> пустого значения либо <code>null</code>.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Common.InvalidTypeCastException.html">InvalidTypeCastException</a></td>
+        <td><p>При попытке преобразовать значение
+свойства <code data-dev-comment-type="paramref" class="paramref">name</code> в недопустимый тип данных <code data-dev-comment-type="paramref" class="paramref">valueType</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Common_JsonDataWriter_WriteValue_" data-uid="Terrasoft.Common.JsonDataWriter.WriteValue*"></a>
+  <h4 id="Terrasoft_Common_JsonDataWriter_WriteValue_System_String_Terrasoft_Common_DataConverter_System_Object_System_Object_" data-uid="Terrasoft.Common.JsonDataWriter.WriteValue(System.String,Terrasoft.Common.DataConverter,System.Object,System.Object)">WriteValue(String, DataConverter, Object, Object)</h4>
+  <div class="markdown level1 summary"><p>Осуществляет запись значения свойства с заданными именем и значением <code data-dev-comment-type="paramref" class="paramref">value</code>,
+преобразованным заданным <code data-dev-comment-type="paramref" class="paramref">converter</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void WriteValue(string name, DataConverter converter, object value, object defValue)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">name</span></td>
+        <td><p>Имя свойства.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Common.DataConverter.html">DataConverter</a></td>
+        <td><span class="parametername">converter</span></td>
+        <td><p>Преобразователь типов данных.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>Значение.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">defValue</span></td>
+        <td><p>Значение по умолчанию.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Terrasoft.Common.DataWriter.html#Terrasoft_Common_DataWriter_WriteValue_System_String_Terrasoft_Common_DataConverter_System_Object_System_Object_">DataWriter.WriteValue(String, DataConverter, Object, Object)</a></div>
+  
+  
+  <a id="Terrasoft_Common_JsonDataWriter_WriteValue_" data-uid="Terrasoft.Common.JsonDataWriter.WriteValue*"></a>
+  <h4 id="Terrasoft_Common_JsonDataWriter_WriteValue_System_String_Terrasoft_Common_LocalizableString_Terrasoft_Common_LocalizableString_" data-uid="Terrasoft.Common.JsonDataWriter.WriteValue(System.String,Terrasoft.Common.LocalizableString,Terrasoft.Common.LocalizableString)">WriteValue(String, LocalizableString, LocalizableString)</h4>
+  <div class="markdown level1 summary"><p>Осуществляет запись значения типа <a class="xref" href="Terrasoft.Common.LocalizableString.html">LocalizableString</a> для свойства с
+заданными именем и значением по умолчанию.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void WriteValue(string name, LocalizableString value, LocalizableString defValue)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">name</span></td>
+        <td><p>Имя свойства.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Common.LocalizableString.html">LocalizableString</a></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>Значение свойства типа <a class="xref" href="Terrasoft.Common.LocalizableString.html">LocalizableString</a>.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Common.LocalizableString.html">LocalizableString</a></td>
+        <td><span class="parametername">defValue</span></td>
+        <td><p>Значение по умолчанию.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Terrasoft.Common.DataWriter.html#Terrasoft_Common_DataWriter_WriteValue_System_String_Terrasoft_Common_LocalizableString_Terrasoft_Common_LocalizableString_">DataWriter.WriteValue(String, LocalizableString, LocalizableString)</a></div>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="Terrasoft.Common.Data.IDataWriter.html">IDataWriter</a>
+  </div>
+  <div>
+      <span class="xref">System.IDisposable</span>
+  </div>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="Terrasoft.Common.BaseSerializableObjectUtilities.html#Terrasoft_Common_BaseSerializableObjectUtilities_WriteSerializableObjectValue_Terrasoft_Common_DataWriter_System_String_Terrasoft_Common_ISerializableObject_">BaseSerializableObjectUtilities.WriteSerializableObjectValue(DataWriter, String, ISerializableObject)</a>
+  </div>
+  <div>
+      <a class="xref" href="Terrasoft.Common.ReflectionUtilities.html#Terrasoft_Common_ReflectionUtilities_GetPropertyValue_System_Object_System_String_">ReflectionUtilities.GetPropertyValue(Object, String)</a>
+  </div>
+  <div>
+      <a class="xref" href="Terrasoft.Common.ReflectionUtilities.html#Terrasoft_Common_ReflectionUtilities_GetPropertyDefValue_System_Object_System_String_System_Object_">ReflectionUtilities.GetPropertyDefValue(Object, String, Object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Terrasoft.Common.ReflectionUtilities.html#Terrasoft_Common_ReflectionUtilities_TryGetPropertyValue_System_Object_System_String_System_Object__">ReflectionUtilities.TryGetPropertyValue(Object, String, out Object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Terrasoft.Common.ReflectionUtilities.html#Terrasoft_Common_ReflectionUtilities_HasProperty_System_Object_System_String_">ReflectionUtilities.HasProperty(Object, String)</a>
+  </div>
+  <div>
+      <a class="xref" href="Terrasoft.Common.ReflectionUtilities.html#Terrasoft_Common_ReflectionUtilities_GetPropertyValue_System_Object_System_String_System_Reflection_BindingFlags_">ReflectionUtilities.GetPropertyValue(Object, String, BindingFlags)</a>
+  </div>
+  <div>
+      <a class="xref" href="Terrasoft.Common.ReflectionUtilities.html#Terrasoft_Common_ReflectionUtilities_GetPropertyValueByPath_System_Object_System_String_">ReflectionUtilities.GetPropertyValueByPath(Object, String)</a>
+  </div>
+  <div>
+      <a class="xref" href="Terrasoft.Common.ReflectionUtilities.html#Terrasoft_Common_ReflectionUtilities_SetPropertyValue_System_Object_System_String_System_Object_">ReflectionUtilities.SetPropertyValue(Object, String, Object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Terrasoft.Common.ReflectionUtilities.html#Terrasoft_Common_ReflectionUtilities_TrySetPropertyValue_System_Object_System_String_System_Object_">ReflectionUtilities.TrySetPropertyValue(Object, String, Object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Terrasoft.Common.ValidateUtilities.html#Terrasoft_Common_ValidateUtilities_CheckArgumentNull_System_Object_System_String_">ValidateUtilities.CheckArgumentNull(Object, String)</a>
+  </div>
+  <div>
+      <a class="xref" href="Terrasoft.Common.ValidateUtilities.html#Terrasoft_Common_ValidateUtilities_CheckDependencyNull_System_Object_System_String_">ValidateUtilities.CheckDependencyNull(Object, String)</a>
+  </div>
+  <div>
+      <a class="xref" href="Terrasoft.Common.ValidateUtilities.html#Terrasoft_Common_ValidateUtilities_EnsureDependencyNotNull__1___0_System_String_">ValidateUtilities.EnsureDependencyNotNull&lt;T&gt;(T, String)</a>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>© 2021 Creatio. All rights reserved.</span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+
+<!-- Mirrored from academy.terrasoft.ua/api/netcoreapi/7.18.0/api/Terrasoft.Common.JsonDataWriter.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Mar 2022 03:31:28 GMT -->
+</html>

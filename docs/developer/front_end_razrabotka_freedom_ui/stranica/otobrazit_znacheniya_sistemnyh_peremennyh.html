@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# ">
+  
+<!-- Mirrored from academy.terrasoft.ua/docs/developer/front_end_razrabotka_freedom_ui/stranica/otobrazit_znacheniya_sistemnyh_peremennyh by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 22 Mar 2022 21:51:13 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+          <!-- Google Tag Manager -->
+      <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          '../../../../../www.googletagmanager.com/gtm5445.html?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-KLLB8G');</script>
+      <!-- End Google Tag Manager -->
+        <meta charset="utf-8" />
+<link rel="canonical" href="otobrazit_znacheniya_sistemnyh_peremennyh.html" />
+<meta name="description" content="Пример. На странице записи пользовательского раздела System variables отобразить:
+
+Имя текущего пользователя.
+	Значение разницы во времени (в часах) между временем в часовом поясе текущего контакта и универсальным временем (UTC).
+В качестве значений используются значения соответствующих системных переменных." />
+<meta property="og:url" content="https://academy.terrasoft.ua/docs/developer/front_end_razrabotka_freedom_ui/stranica/otobrazit_znacheniya_sistemnyh_peremennyh" />
+<meta property="og:title" content="Отобразить значения системных переменных на странице" />
+<meta property="og:description" content="Пример. На странице записи пользовательского раздела System variables отобразить:
+
+Имя текущего пользователя.
+	Значение разницы во времени (в часах) между временем в часовом поясе текущего контакта и универсальным временем (UTC).
+В качестве значений используются значения соответствующих системных переменных." />
+<meta name="Generator" content="Drupal 9 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="../../../themes/custom/creatio/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="revision" href="otobrazit_znacheniya_sistemnyh_peremennyh.html" />
+
+    <title>Отобразить значения системных переменных на странице | Creatio Academy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&amp;family=Open+Sans:ital,wght@0,300;0,400;0,600;1,400&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" media="all" href="../../../sites/default/files/css/css_6lTP66__-yc6QXFp1zOwoeJ0HVigoYZP-SeoLLii000.css" />
+<link rel="stylesheet" media="all" href="../../../sites/default/files/css/css_XQJDNhkF3xH5SZCcY-PI89Zu4nYIzQ5oR3SnUKyfXJU.css" />
+<link rel="stylesheet" media="print" href="../../../sites/default/files/css/css_Zn4VHvcniOOtUwkIVwXzYr_0AI9gUVgZcPqaH4ViagU.css" />
+
+    
+  </head>
+  <body class="path-node page-node-type-case">
+          <!-- Google Tag Manager (noscript) -->
+      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KLLB8G"
+                        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+      <!-- End Google Tag Manager (noscript) -->
+    
+        
+      <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    <div class="creatio-page d-flex flex-column">
+        <div class="region region-informer">
+    <div id="block-terrasoftpidtrimueukrainu" class="block block-simple-block block-simple-blockterrasoft-pidtrimue-ukrainu">
+  
+    
+      <style type="text/css">
+<!--/*--><![CDATA[/* ><!--*/
+@import url(../../../../../www.terrasoft.ua/themes/custom/creatio/css/components/informer.css)
+
+/*--><!]]>*/
+</style><div class="ts-swu">
+<div class="creatio-container">
+<div class="ts-swu__cont">
+<div><a class="ts-swu__link" href="https://www.terrasoft.ua/terrasoft-stands-with-ukraine" target="_blank">Україна понад усе!</a> <span><a href="https://www.terrasoft.ua/terrasoft-stands-with-ukraine" target="_blank">Приєднуйтеся</a> до допомоги!</span></div>
+</div>
+</div></div>
+
+  </div>
+
+  </div>
+
+  
+  <header role="banner">
+          <div class="creatio-region creatio-region_top">
+        <div class="creatio-container">
+            <div class="region region-top">
+    <div id="block-menutoggle" class="block block-simple-block block-simple-blockmenu-toggle">
+  
+    
+      <div class="menu-toggle"><span> </span></div>
+
+  </div>
+<div id="block-logowhite-2" class="block block-simple-block block-simple-blocklogo-white">
+  
+    
+      <p><a class="site-logo" href="../../../../index.html" rel="home"><img src="../../../themes/custom/creatio/logo-white.svg" /></a></p>
+
+  </div>
+<div id="block-search" class="block block-simple-block block-simple-blocksearch">
+  
+    
+      <div class="search">
+<form action="https://academy.terrasoft.ua/search" class="search-form" method="get"><input class="search-form__input" name="search" placeholder="Поиск" type="search" /><input class="search-form__button" type="submit" value="Поиск" /> </form>
+
+<div class="search-toggle"> </div>
+</div>
+
+  </div>
+<nav role="navigation" aria-labelledby="block-sitesua-menu" id="block-sitesua" class="block block-menu navigation menu--sites-ua">
+            
+  <h2 class="visually-hidden" id="block-sitesua-menu">Sites UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="https://www.terrasoft.ua/" rel="nofollow" target="_blank">Terrasoft</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://community.terrasoft.ua/" rel="nofollow" target="_blank">Community</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://marketplace.terrasoft.ua/" rel="nofollow" target="_blank">Marketplace</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+<div id="block-usermenu" class="block block-ts-user block-ts-user-menu-block">
+  
+    
+      <ul class="user-menu">
+      <li class="user-menu__item">
+      <a class="user-menu__link" href="https://profile.terrasoft.ua/user/login?destination=academy/ua/docs/developer/front_end_razrabotka_freedom_ui/stranica/otobrazit_znacheniya_sistemnyh_peremennyh">Войти</a>
+    </li>
+  </ul>
+
+  </div>
+<div id="block-usermenumobile" class="block block-ts-user block-ts-user-menu-mobile-block">
+  
+    
+      <ul class="user-menu-mobile">
+      <li class="user-menu-mobile__item">
+      <div class="user-menu-mobile__user user-menu-mobile__user_icon"></div>
+      <ul class="user-menu-mobile__submenu">
+        <li class="user-menu-mobile__subitem">
+          <a class="user-menu-mobile__sublink" href="https://profile.terrasoft.ua/user/login?destination=academy/ua/docs/developer/front_end_razrabotka_freedom_ui/stranica/otobrazit_znacheniya_sistemnyh_peremennyh">Войти</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  </div>
+
+  </div>
+
+        </div>
+      </div>
+              <div class="creatio-region creatio-region_header">
+        <div class="creatio-container">
+            <div class="region region-header">
+    <div id="block-logo" class="block block-simple-block block-simple-blocklogo">
+  
+    
+      <p><a class="site-logo" href="../../../../index.html" rel="home"><img src="../../../themes/custom/creatio/logo.svg" /></a></p>
+
+  </div>
+<nav role="navigation" aria-labelledby="block-osnovnayanavigaciyaua-menu" id="block-osnovnayanavigaciyaua" class="block block-menu navigation menu--main-ua">
+            
+  <h2 class="visually-hidden" id="block-osnovnayanavigaciyaua-menu">Основная навигация UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="../../../index.html" data-drupal-link-system-path="&lt;front&gt;">Документация</a>
+              </li>
+                <li class="menu-item">
+        <a href="../../../../trainings.html">Тренинги</a>
+              </li>
+                <li class="menu-item">
+        <a href="../../../certification.html" data-drupal-link-system-path="node/3084">Сертификация и тестирование</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+<nav role="navigation" aria-labelledby="block-sitesua-2-menu" id="block-sitesua-2" class="block block-menu navigation menu--sites-ua">
+            
+  <h2 class="visually-hidden" id="block-sitesua-2-menu">Sites UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="https://www.terrasoft.ua/" rel="nofollow" target="_blank">Terrasoft</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://community.terrasoft.ua/" rel="nofollow" target="_blank">Community</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://marketplace.terrasoft.ua/" rel="nofollow" target="_blank">Marketplace</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+
+  </div>
+
+        </div>
+      </div>
+              <div class="creatio-region creatio-region_breadcrumb">
+        <div class="creatio-container">
+            <div class="region region-breadcrumb">
+    <div id="block-logowhite" class="block block-simple-block block-simple-blocklogo-white">
+  
+    
+      <p><a class="site-logo" href="../../../../index.html" rel="home"><img src="../../../themes/custom/creatio/logo-white.svg" /></a></p>
+
+  </div>
+<div id="block-breadcrumbnaviagtion" class="block block-ts-nav block-ts-nav-bread">
+  
+    
+      <nav class="breadcrumb"><ol class="ts-nav-breadcrumb__list"><li class="ts-nav-breadcrumb__item"><a href="../../../index.html" class="ts-nav-breadcrumb__link" title="Документация">Документация</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../index2132.html?vid_1=2" class="ts-nav-breadcrumb__link" title="Для разработчика">Для разработчика</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../front_end_razrabotka_freedom_ui.html" class="ts-nav-breadcrumb__link" title="Front-end разработка Freedom UI" hreflang="ru">Front-end разработка Freedom UI</a></li>
+<li class="ts-nav-breadcrumb__item ts-nav-breadcrumb__item_mobile"><a href="../stranica.html" class="ts-nav-breadcrumb__link" title="Страница" hreflang="ru">Страница</a></li>
+<li class="ts-nav-breadcrumb__item"><span class="ts-nav-breadcrumb__link ts-nav-breadcrumb__link_current" title="Отобразить значения системных переменных">Отобразить значения системных переменных</span></li>
+</ol>
+</nav>
+
+  </div>
+<div id="block-search-2" class="block block-simple-block block-simple-blocksearch">
+  
+    
+      <div class="search">
+<form action="https://academy.terrasoft.ua/search" class="search-form" method="get"><input class="search-form__input" name="search" placeholder="Поиск" type="search" /><input class="search-form__button" type="submit" value="Поиск" /> </form>
+
+<div class="search-toggle"> </div>
+</div>
+
+  </div>
+
+  </div>
+
+        </div>
+      </div>
+      </header>
+
+  <div class="creatio-region creatio-region_main">
+    <div class="creatio-container">
+                <div class="region region-breadcrumb-mobile">
+    <div id="block-breadcrumbnaviagtion-2" class="block block-ts-nav block-ts-nav-bread">
+  
+    
+      <nav class="breadcrumb"><ol class="ts-nav-breadcrumb__list"><li class="ts-nav-breadcrumb__item"><a href="../../../index.html" class="ts-nav-breadcrumb__link" title="Документация">Документация</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../index2132.html?vid_1=2" class="ts-nav-breadcrumb__link" title="Для разработчика">Для разработчика</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../front_end_razrabotka_freedom_ui.html" class="ts-nav-breadcrumb__link" title="Front-end разработка Freedom UI" hreflang="ru">Front-end разработка Freedom UI</a></li>
+<li class="ts-nav-breadcrumb__item ts-nav-breadcrumb__item_mobile"><a href="../stranica.html" class="ts-nav-breadcrumb__link" title="Страница" hreflang="ru">Страница</a></li>
+<li class="ts-nav-breadcrumb__item"><span class="ts-nav-breadcrumb__link ts-nav-breadcrumb__link_current" title="Отобразить значения системных переменных">Отобразить значения системных переменных</span></li>
+</ol>
+</nav>
+
+  </div>
+
+  </div>
+
+      
+      <main class="creatio-main" role="main">
+                                                    
+        <div class="creatio-content creatio-content_small">
+          <div class="creatio-content__inner creatio-content__inner_bg">
+                            <div class="region region-messages">
+    <div data-drupal-messages-fallback class="hidden"></div>
+
+  </div>
+
+            
+              <div class="region region-content">
+    <div id="block-creatio-page-title" class="block block-core block-page-title-block">
+  
+    
+      
+  <h1 class="page-title"><span class="field field--name-title field--type-string field--label-hidden">Отобразить значения системных переменных на странице</span>
+</h1>
+
+
+  </div>
+<div id="block-creatio-content" class="block block-system block-system-main-block">
+  
+    
+      
+<article data-history-node-id="3822" role="article" about="/docs/developer/front_end_razrabotka_freedom_ui/stranica/otobrazit_znacheniya_sistemnyh_peremennyh" class="node node--type-case node--view-mode-full">
+
+  
+    
+
+  
+  <div class="node__content">
+      <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocknodecasefield-difficulty">
+  
+    
+      
+            <div class="field field--name-field-difficulty field--type-entity-reference field--label-hidden field__item"><div about="/docs/taxonomy/term/123" id="taxonomy-term-123" class="taxonomy-term vocabulary-difficulty">
+  
+  
+  <div class="content">
+      <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocktaxonomy-termdifficultyfield-icon">
+  
+    
+      
+            <div class="field field--name-field-icon field--type-image field--label-hidden field__item">  <img src="../../../sites/default/files/difficulty/medium.svg" alt="" loading="lazy" typeof="foaf:Image" />
+
+</div>
+      
+  </div>
+<div class="block block-layout-builder block-field-blocktaxonomy-termdifficultyname">
+  
+    
+      
+            <div class="field field--name-name field--type-string field--label-hidden field__item"><span style="color: #F57E20;">Средний</span></div>
+      
+  </div>
+
+    </div>
+  </div>
+
+  </div>
+</div>
+</div>
+      
+  </div>
+<div class="block block-ts-doc block-ts-doc-downloads">
+  
+    
+      <a href="../../../sites/default/files/pdf/node/3822/Otobrazit_znacheniya_sistemnykh_peremennykh_na_stranice_.pdf" target="_blank">PDF</a>
+  </div>
+<div class="block block-ts-doc block-ts-doc-versions">
+  
+    
+        <div class="ts-doc-versions">
+    <select class="ts-doc-versions__select">
+                                                <option value="/docs/8-0/developer/front_end_razrabotka_freedom_ui/stranica/otobrazit_znacheniya_sistemnyh_peremennyh" selected>Версия 8.0</option>
+          </select>
+  </div>
+
+  </div>
+
+    </div>
+  </div>
+  <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocknodecasebody">
+  
+    
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><div class="message message_example">
+<p><span class="message__bold message__bold_example">Пример.</span> На странице записи пользовательского раздела <span class="key">System variables</span> отобразить:</p>
+
+<ul><li>Имя текущего пользователя.</li>
+	<li>Значение разницы во времени (в часах) между временем в часовом поясе текущего контакта и универсальным временем (UTC).</li>
+</ul><p>В качестве значений используются значения соответствующих системных переменных.</p>
+</div>
+
+<h2>1. Настроить интерфейс страницы<a class="title-anchor" href="#title-3822-1" id="title-3822-1"> </a></h2>
+
+<ol><li>Используя шаблон <span class="key">Данные и бизнес-процессы</span> (<span class="key">Records &amp; business processes</span>), создайте пользовательское приложение <span class="filled">System variables</span>. Для этого воспользуйтесь инструкцией, которая приведена в статье <a href="../../../user/nocode_platforma/sozdanie_prilojeniya/sozdat_polzovatelskoe_prilojzhenie.html?id=2377">Создать пользовательское приложение</a>.</li>
+	<li>В рабочей области страницы приложения <span class="filled">System variables</span> откройте страницу <span class="key">Страница записи System variables</span> (<span class="key">System variables form page</span>).</li>
+	<li>Удалите поле <span class="key">Название</span> (<span class="key">Name</span>), которое по умолчанию добавлено на страницу <span class="key">Страница записи System variables</span> (<span class="key">System variables form page</span>).</li>
+	<li>
+	<p>Добавьте <strong>надпись текущего контакта</strong>.</p>
+
+	<ol><li>В рабочую область Freedom UI дизайнера добавьте компонент типа <span class="key">Надпись</span> (<span class="key">Label</span>).</li>
+		<li>
+		<p>На панели действий Freedom UI дизайнера нажмите на кнопку <img src="../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/ClientModule/8.0/scr_Settings_button.png" /> и на панели настройки заполните <strong>свойства надписи</strong>:</p>
+
+		<ul><li><span class="key">Заголовок</span> (<span class="key">Title</span>) — "<span class="consolas">Текущий пользователь</span>" ("<span class="consolas">Current user</span>").</li>
+			<li><span class="key">Стиль</span> (<span class="key">Style</span>) — выберите "<span class="consolas">Описание</span>" ("<span class="consolas">Caption</span>").</li>
+			<li><span class="key">Цвет текста</span> (<span class="key">Text color</span>) — выберите серый цвет.</li>
+		</ul><div class="media">
+		<div class="media__element"><img src="../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/SystemVariables/8.0/scr_UsrCurrentUser_props.png" /></div>
+		</div>
+		</li>
+	</ol></li>
+	<li>
+	<p>Аналогично добавьте <strong>надписи</strong>:</p>
+
+	<ul><li>Значения имени текущего контакта из системной переменной.</li>
+		<li>Разницы во времени с UTC.</li>
+		<li>Значения разницы во времени с UTC из системной переменной.</li>
+	</ul><p>Свойства надписей, которые необходимо добавить, приведены в таблице ниже.</p>
+
+	<div class="table">
+	<div class="table__caption">Значения свойств надписей</div>
+
+	<table><thead><tr><th>
+				<center>Элемент</center>
+				</th>
+				<th>
+				<center>Свойство</center>
+				</th>
+				<th>
+				<center>Значение свойства</center>
+				</th>
+			</tr></thead><tbody><tr><th rowspan="2">Надпись, которая содержит значение имени текущего контакта из системной переменной</th>
+				<td>
+				<center><span class="key">Заголовок</span> (<span class="key">Title</span>)</center>
+				</td>
+				<td>
+				<center>"<span class="consolas">Текущий пользователь (значение)</span>" ("<span class="consolas">Current user (value)</span>")</center>
+				</td>
+			</tr><tr><td>
+				<center><span class="key">Стиль</span> (<span class="key">Style</span>)</center>
+				</td>
+				<td>
+				<center>Выберите "<span class="consolas">Обычный текст</span>" ("<span class="consolas">Body text</span>")</center>
+				</td>
+			</tr><tr><th rowspan="3">Надпись разницы во времени с UTC</th>
+				<td>
+				<center><span class="key">Заголовок</span> (<span class="key">Title</span>)</center>
+				</td>
+				<td>
+				<center>"<span class="consolas">Разница во времени с UTC</span>" ("<span class="consolas">Contact time offset</span>")</center>
+				</td>
+			</tr><tr><td>
+				<center><span class="key">Стиль</span> (<span class="key">Style</span>)</center>
+				</td>
+				<td>
+				<center>Выберите "<span class="consolas">Описание</span>" ("<span class="consolas">Caption</span>")</center>
+				</td>
+			</tr><tr><td>
+				<center><span class="key">Цвет текста</span> (<span class="key">Text color</span>)</center>
+				</td>
+				<td>
+				<center>Выберите серый цвет</center>
+				</td>
+			</tr><tr><th rowspan="2">Надпись, которая содержит значение разницы во времени с UTC из системной переменной</th>
+				<td>
+				<center><span class="key">Заголовок</span> (<span class="key">Title</span>)</center>
+				</td>
+				<td>
+				<center>"<span class="consolas">Разница во времени с UTC (значение)</span>" ("<span class="consolas">Contact time offset (value)</span>")</center>
+				</td>
+			</tr><tr><td>
+				<center><span class="key">Стиль</span> (<span class="key">Style</span>)</center>
+				</td>
+				<td>
+				<center>Выберите "<span class="consolas">Обычный текст</span>" ("<span class="consolas">Body text</span>")</center>
+				</td>
+			</tr></tbody></table></div>
+	</li>
+	<li>На панели действий Freedom UI дизайнера нажмите на кнопку <img src="../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/ClientModule/8.0/scr_SourceCode_button.png" />. После сохранения настроек страницы открывается исходный код страницы Freedom UI.</li>
+</ol><h2>2. Настроить получение значений системных переменных<a class="title-anchor" href="#title-3822-2" id="title-3822-2"> </a></h2>
+
+<p>Бизнес-логика настраивается в дизайнере клиентского модуля. В этом примере настроим получение значений системных переменных.</p>
+
+<ol><li>
+	<p>Подключите сервис системных переменных <span class="filled">sdk.SysValuesService</span>. Для этого добавьте в AMD-модуль зависимость <span class="filled">@creatio/sdk</span>.</p>
+
+	<div class="code">
+	<div class="code__widgets">
+	<div class="code__top">
+	<div class="code__title">Зависимости AMD-модуля</div>
+	</div>
+
+	<div class="code__source">
+	<pre class="prettyprint">
+/* Объявление AMD-модуля. */
+define("UsrAppSystemvariable_FormPage", /**SCHEMA_DEPS*/["@creatio/sdk"] /**SCHEMA_DEPS*/, function/**SCHEMA_ARGS*/(sdk)/**SCHEMA_ARGS*/ {
+    return {
+        ...
+    };
+});
+</pre>
+	</div>
+	</div>
+	</div>
+	</li>
+	<li>
+	<p>В секцию <span class="filled">viewModelConfig</span> добавьте <strong>атрибуты</strong>:</p>
+
+	<ul><li><span class="filled">CurrentUser</span> — атрибут, который хранит имя текущего контакта.</li>
+		<li><span class="filled">ContactTimezone</span> — атрибут, который хранит разницу во времени (в часах) между временем в часовом поясе текущего контакта и UTC.</li>
+	</ul><div class="code">
+	<div class="code__widgets">
+	<div class="code__top">
+	<div class="code__title">Секция <span class="filled">viewModelConfig</span></div>
+	</div>
+
+	<div class="code__source">
+	<pre class="prettyprint">
+viewModelConfig: /**SCHEMA_VIEW_MODEL_CONFIG*/{
+    "attributes": {
+        ...,
+        /* Атрибут, который хранит имя текущего контакта. */
+        "CurrentUser": {},
+        /* Атрибут, который хранит разницу во времени (в часах) между временем в часовом поясе текущего контакта и универсальным временем (UTC). */
+        "ContactTimezone": {}
+    }
+}/**SCHEMA_VIEW_MODEL_CONFIG*/,
+</pre>
+	</div>
+	</div>
+	</div>
+	</li>
+	<li>
+	<p>В секции <span class="filled">viewConfigDiff</span> измените <strong>значение свойства</strong> <span class="filled">caption</span>:</p>
+
+	<ul><li><span class="filled">$CurrentUser</span> — для элемента <span class="filled">CurrentUserValue</span>.</li>
+		<li><span class="filled">$ContactTimezone</span> — для элемента <span class="filled">ContactTimeOffsetValue</span>.</li>
+	</ul><p>Свойство <span class="filled">caption</span> отвечает за текст, который содержит элемент.</p>
+
+	<div class="code">
+	<div class="code__widgets">
+	<div class="code__top">
+	<div class="code__title">Секция <span class="filled">viewConfigDiff</span></div>
+	</div>
+
+	<div class="code__source">
+	<pre class="prettyprint">
+viewConfigDiff: /**SCHEMA_VIEW_CONFIG_DIFF*/[
+    ...,
+    {
+        "operation": "insert",
+        "name": "CurrentUserValue",
+        "values": {
+            ...,
+            /* Привязка атрибута CurrentUser к свойству caption. */
+            "caption": "$CurrentUser",
+            ...
+        },
+        ...
+    },
+    ...,
+    {
+        "operation": "insert",
+        "name": "ContactTimeOffsetValue",
+        "values": {
+            ...,
+            /* Привязка атрибута ContactTimezone к свойству caption. */
+            "caption": "$ContactTimezone",
+            ...
+        },
+        ...
+    }
+]/**SCHEMA_VIEW_CONFIG_DIFF*/,
+</pre>
+	</div>
+	</div>
+	</div>
+	</li>
+	<li>
+	<p>В секции <span class="filled">handlers</span> добавьте пользовательскую реализацию обработчика системного запроса <span class="filled">crt.HandlerViewModelInitRequest</span>. Обработчик выполняется при инициализации <span class="filled">View</span> модели.</p>
+
+	<ol><li>Создайте экземпляр сервиса системных значений из <span class="filled">@creatio/sdk</span>.</li>
+		<li>Загрузите системные значения.</li>
+		<li>Установите имя контакта текущего пользователя в атрибут <span class="filled">CurrentUser</span>.</li>
+		<li>Переведите значение разницы в часовых поясах с минут в часы и запишите ее в атрибут <span class="filled">ContactTimezone</span>.</li>
+	</ol><div class="code">
+	<div class="code__widgets">
+	<div class="code__top">
+	<div class="code__title">Секция <span class="filled">handlers</span></div>
+	</div>
+
+	<div class="code__source">
+	<pre class="prettyprint">
+handlers: /**SCHEMA_HANDLERS*/[
+    {
+        request: "crt.HandleViewModelInitRequest",
+        /* Пользовательская реализация обработчика системного запроса. */
+        handler: async (request, next) =&gt; {
+            /* Создает экземпляр сервиса системных значений из @creatio/sdk. */
+            const sysValuesService = new sdk.SysValuesService();
+            /* Загружает системные значения. */
+            const sysValues = await sysValuesService.loadSysValues();
+            /* Устанавливает имя контакта текущего пользователя в атрибут CurrentUser. */
+            request.$context.CurrentUser = sysValues.userContact.displayValue;
+            /* Переводит разницу в часовых поясах с минут в часы и записываем ее в атрибут ContactTimezone. */
+            const offset = sysValues.userTimezoneOffset;
+            const offsetDisplayValue = (offset &gt; 0 ? '+' : '') + (offset / 60) + 'h';
+            request.$context.ContactTimezone = offsetDisplayValue;
+            /* Вызывает следующий обработчик, если он присутствует, и возвращаем его результат. */
+            return next?.handle(request);
+        }
+    }
+] /**SCHEMA_HANDLERS*/,
+</pre>
+	</div>
+	</div>
+	</div>
+
+	<div class="block-collapse">
+	<div class="block-collapse__title block-collapse__title_mb-16 block-collapse__title_open">Полный исходный код схемы страницы</div>
+
+	<div class="block-collapse__content" style="display: none;">
+	<div class="code">
+	<div class="code__widgets">
+	<div class="code__top">
+	<div class="code__title"><span class="filled">UsrAppSystemvariable_FormPage</span></div>
+	</div>
+
+	<div class="code__source">
+	<pre class="prettyprint">
+/* Объявление AMD-модуля. */
+define("UsrAppSystemvariable_FormPage", /**SCHEMA_DEPS*/["@creatio/sdk"] /**SCHEMA_DEPS*/, function/**SCHEMA_ARGS*/(sdk)/**SCHEMA_ARGS*/ {
+    return {
+        viewConfigDiff: /**SCHEMA_VIEW_CONFIG_DIFF*/[
+            {
+                "operation": "insert",
+                "name": "CurrentUser",
+                "values": {
+                    "layoutConfig": {
+                        "column": 1,
+                        "row": 2,
+                        "colSpan": 1,
+                        "rowSpan": 1
+                    },
+                    "type": "crt.Label",
+                    "caption": "#ResourceString(CurrentUser_caption)#",
+                    "labelType": "caption",
+                    "labelThickness": "normal",
+                    "labelEllipsis": false,
+                    "labelColor": "#757575",
+                    "labelBackgroundColor": "transparent",
+                    "labelTextAlign": "start"
+                },
+                "parentName": "LeftAreaProfileContainer",
+                "propertyName": "items",
+                "index": 1
+            },
+            {
+                "operation": "insert",
+                "name": "CurrentUserValue",
+                "values": {
+                    "layoutConfig": {
+                        "column": 1,
+                        "row": 3,
+                        "colSpan": 1,
+                        "rowSpan": 1
+                    },
+                    "type": "crt.Label",
+                    "caption": "#ResourceString(CurrentUserValue_caption)#",
+                    "labelType": "body-1",
+                    "labelThickness": "normal",
+                    "labelEllipsis": false,
+                    "labelColor": "#181818",
+                    "labelBackgroundColor": "transparent",
+                    "labelTextAlign": "start"
+                },
+                "parentName": "LeftAreaProfileContainer",
+                "propertyName": "items",
+                "index": 2
+            },
+            {
+                "operation": "insert",
+                "name": "ContactTimeOffset",
+                "values": {
+                    "layoutConfig": {
+                        "column": 1,
+                        "row": 4,
+                        "colSpan": 1,
+                        "rowSpan": 1
+                    },
+                    "type": "crt.Label",
+                    "caption": "#ResourceString(ContactTimeOffset_caption)#",
+                    "labelType": "caption",
+                    "labelThickness": "normal",
+                    "labelEllipsis": false,
+                    "labelColor": "#757575",
+                    "labelBackgroundColor": "transparent",
+                    "labelTextAlign": "start"
+                },
+                "parentName": "LeftAreaProfileContainer",
+                "propertyName": "items",
+                "index": 3
+            },
+            {
+                "operation": "insert",
+                "name": "ContactTimeOffsetValue",
+                "values": {
+                    "layoutConfig": {
+                        "column": 1,
+                        "row": 5,
+                        "colSpan": 1,
+                        "rowSpan": 1
+                    },
+                    "type": "crt.Label",
+                    /* Привязка атрибута ContactTimezone к свойству caption. */
+                    "caption": "$ContactTimezone",
+                    "labelType": "body-1",
+                    "labelThickness": "normal",
+                    "labelEllipsis": false,
+                    "labelColor": "#181818",
+                    "labelBackgroundColor": "transparent",
+                    "labelTextAlign": "start"
+                },
+                "parentName": "LeftAreaProfileContainer",
+                "propertyName": "items",
+                "index": 4
+            }
+        ]/**SCHEMA_VIEW_CONFIG_DIFF*/,
+        viewModelConfig: /**SCHEMA_VIEW_MODEL_CONFIG*/{
+            "attributes": {
+                "Id": {
+                    "modelConfig": {
+                        "path": "PDS.Id"
+                    }
+                },
+                /* Атрибут, который хранит имя текущего контакта. */
+                "CurrentUser": {},
+                /* Атрибут, который хранит разницу во времени (в часах) между временем в часовом поясе текущего контакта и универсальным временем (UTC). */
+                "ContactTimezone": {}
+            }
+        }/**SCHEMA_VIEW_MODEL_CONFIG*/,
+        modelConfig: /**SCHEMA_MODEL_CONFIG*/{
+            "dataSources": {
+                "PDS": {
+                    "type": "crt.EntityDataSource",
+                    "config": {
+                        "entitySchemaName": "UsrAppSystemvariable"
+                    }
+                }
+            }
+        }/**SCHEMA_MODEL_CONFIG*/,
+        handlers: /**SCHEMA_HANDLERS*/[
+            {
+                request: "crt.HandleViewModelInitRequest",
+                /* Пользовательская реализация обработчика системного запроса. */
+                handler: async (request, next) =&gt; {
+                    /* Создает экземпляр сервиса системных значений из @creatio/sdk. */
+                    const sysValuesService = new sdk.SysValuesService();
+                    /* Загружает системные значения. */
+                    const sysValues = await sysValuesService.loadSysValues();
+                    /* Устанавливает имя контакта текущего пользователя в атрибут CurrentUser. */
+                    request.$context.CurrentUser = sysValues.userContact.displayValue;
+                    /* Переводит разницу в часовых поясах с минут в часы и записываем ее в атрибут ContactTimezone. */
+                    const offset = sysValues.userTimezoneOffset;
+                    const offsetDisplayValue = (offset &gt; 0 ? '+' : '') + (offset / 60) + 'h';
+                    request.$context.ContactTimezone = offsetDisplayValue;
+                    /* Вызывает следующий обработчик, если он присутствует, и возвращаем его результат. */
+                    return next?.handle(request);
+                }
+            }
+        ] /**SCHEMA_HANDLERS*/,
+        converters: /**SCHEMA_CONVERTERS*/{}/**SCHEMA_CONVERTERS*/,
+        validators: /**SCHEMA_VALIDATORS*/{}/**SCHEMA_VALIDATORS*/
+    };
+});
+</pre>
+	</div>
+	</div>
+	</div>
+	</div>
+	</div>
+	</li>
+	<li>На панели инструментов дизайнера клиентского модуля нажмите <span class="key">Сохранить</span> (<span class="key">Save</span>).</li>
+</ol><h2>Результат выполнения примера<a class="title-anchor" href="#title-3822-3" id="title-3822-3"> </a></h2>
+
+<p>Чтобы <strong>посмотреть результат выполнения примера</strong>:</p>
+
+<ol><li>Перейдите на страницу приложения <span class="filled">System variables</span> и нажмите <span class="key">Запустить приложение</span> (<span class="key">Run app</span>).</li>
+	<li>На панели инструментов приложения <span class="filled">System variables</span> нажмите <span class="key">Добавить</span> (<span class="key">New</span>).</li>
+</ol><p>В результате выполнения примера на странице записи пользовательского раздела <span class="key">System variables</span> отображаются имя текущего пользователя и значение разницы во времени (в часах) между временем в часовом поясе текущего контакта и UTC. При этом используются значения соответствующих системных переменных.</p>
+
+<div class="media">
+<div class="media__element"><img src="../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/SystemVariables/8.0/scr_result.png" /></div>
+</div>
+</div>
+      
+  </div>
+<div class="block block-layout-builder block-field-blocknodecasefield-resources">
+  
+    
+      
+  <div class="field field--name-field-resources field--type-link field--label-above">
+    <div class="field__label">Ресурсы</div>
+          <div class="field__items">
+              <div class="field__item"><a href="https://academy.creatio.com/sites/default/files/documents/downloads/SDK/Packages/AppSystemvariable_2022-03-16_14.03.35.zip" target="_blank">Пакет с реализацией примера</a></div>
+              </div>
+      </div>
+
+  </div>
+
+    </div>
+  </div>
+
+  </div>
+
+</article>
+
+  </div>
+
+  </div>
+
+          </div>
+        </div>
+
+                  <aside class="creatio-sidebar creatio-sidebar_first" role="complementary">
+              <div class="region region-sidebar-first">
+    <div id="block-documentationnaviagtion" class="block block-ts-nav block-ts-nav-doc-nav">
+  
+    
+      <div class="ts-nav-block"><a href="../../../index.html" class="ts-nav-block__link">Документация</a><div class="ts-nav-block__title">Для разработчика</div>
+</div>
+<div class="ts-nav-container"><ul class="ts-nav-menu"><li class="ts-nav-menu__item">
+  <a href="../../s_chego_nachat.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">С чего начать&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../architecture.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Архитектура&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../instrumenty_razrabotki.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Инструменты разработки&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../back_end_razrabotka.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Back-end разработка&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../front_end_razrabotka_freedom_ui.html" class="ts-nav-menu__link ts-nav-menu__link_expanded ts-nav-menu__link_open" hreflang="ru">Front-end разработка Freedom UI&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+      <ul class="ts-nav-menu__children">
+      <li class="ts-nav-menu__item">
+  <a href="../front_end_arhitektura_creatio/obzor.html" class="ts-nav-menu__link" hreflang="ru">Front-end архитектура Creatio</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../klientskaya_skhema.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Клиентская схема&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../stranica.html" class="ts-nav-menu__link ts-nav-menu__link_expanded ts-nav-menu__link_open" hreflang="ru">Страница&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+      <ul class="ts-nav-menu__children">
+      <li class="ts-nav-menu__item">
+  <a href="obzor.html" class="ts-nav-menu__link ts-nav-menu__link_guide" hreflang="ru">Страница</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="realizovat_validaciyu_znacheniya_polya.html" class="ts-nav-menu__link ts-nav-menu__link_case" hreflang="ru">Реализовать валидацию значения поля</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="realizovat_konvertaciyu_znacheniya_polya.html" class="ts-nav-menu__link ts-nav-menu__link_case" hreflang="ru">Реализовать конвертацию значения поля</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="nastroit_uslovie_otobrazheniya_polya.html" class="ts-nav-menu__link ts-nav-menu__link_case" hreflang="ru">Настроить условие отображения поля</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="nastroit_uslovie_blokirovki_polya.html" class="ts-nav-menu__link ts-nav-menu__link_case" hreflang="ru">Настроить условие блокировки поля</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="nastroit_uslovie_zapolneniya_polya.html" class="ts-nav-menu__link ts-nav-menu__link_case" hreflang="ru">Настроить условие заполнения поля</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="nastroit_uslovie_obyazatelnosti_polya.html" class="ts-nav-menu__link ts-nav-menu__link_case" hreflang="ru">Настроить условие обязательности поля</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="otobrazit_znacheniya_sistemnyh_peremennyh.html" class="ts-nav-menu__link ts-nav-menu__link_case ts-nav-menu__link_active" hreflang="ru">Отобразить значения системных переменных</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="flexcontainer.html" class="ts-nav-menu__link ts-nav-menu__link_reference" data-type="JS" hreflang="ru">FlexContainer</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="gridcontainer.html" class="ts-nav-menu__link ts-nav-menu__link_reference" data-type="JS" hreflang="ru">GridContainer</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="datetimepicker.html" class="ts-nav-menu__link ts-nav-menu__link_reference" data-type="JS" hreflang="ru">DateTimePicker</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../node/3753.html" class="ts-nav-menu__link ts-nav-menu__link_reference" data-type="JS" hreflang="ru">Checkbox</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../node/3760.html" class="ts-nav-menu__link ts-nav-menu__link_reference" data-type="JS" hreflang="ru">Input</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../node/3761.html" class="ts-nav-menu__link ts-nav-menu__link_reference" data-type="JS" hreflang="ru">NumberInput </a>
+  </li>
+
+    </ul>
+  </li>
+
+    </ul>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../front_end_razrabotka.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Front-end разработка&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../integratsiya_i_vneshnij_api.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Интеграция и внешний API&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../ehlementy_interfejsa.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Элементы интерфейса&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../komponenty_prilozheniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Компоненты приложения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../razrabotka_mobilnogo_prilozheniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Разработка мобильного приложения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../razrabotka_marketplace_prilozheniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Разработка Marketplace-приложения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+</ul>
+</div>
+
+  </div>
+
+  </div>
+
+            <div class="creatio-sidebar__toggle"></div>
+          </aside>
+        
+                  <aside class="creatio-sidebar creatio-sidebar_second" role="complementary">
+              <div class="region region-sidebar-second">
+    <div id="block-example" class="block block-ts-nav block-ts-nav-page-nav">
+  
+    
+      <div class="ts-nav-page">
+  </div>
+
+  </div>
+<div id="block-adminfeedbackblock" class="block block-admin-feedback block-admin-feedback-block">
+  
+    
+      <div id="feedback-message"><div id="upper-feedback-content"><h2>Был ли данный материал полезен?</h2>
+<input class="feedback-btn feedback-btn__yes button js-form-submit form-submit" data-node-id="3822" data-feedback="yes" type="submit" name="op" value="Да" />
+<input class="feedback-btn feedback-btn__no button js-form-submit form-submit" data-node-id="3822" data-feedback="no" type="submit" name="op" value="Нет" />
+</div>
+<form class="admin-feedback-form" data-drupal-selector="admin-feedback-form" action="https://academy.terrasoft.ua/docs/developer/front_end_razrabotka_freedom_ui/stranica/otobrazit_znacheniya_sistemnyh_peremennyh" method="post" id="admin-feedback-form" accept-charset="UTF-8">
+  <div id="feedback-msg-result"></div><div class="js-form-item form-item js-form-type-textarea form-type-textarea js-form-item-feedback-message form-item-feedback-message form-no-label">
+        <div class="form-textarea-wrapper">
+  <textarea id="edit-feedback-msg" data-drupal-selector="edit-feedback-message" name="feedback_message" rows="5" cols="60" class="form-textarea resize-vertical"></textarea>
+</div>
+
+        </div>
+<input id="feedback-id" data-drupal-selector="edit-feedback-id" type="hidden" name="feedback_id" value="" />
+<input class="feedback-btn feedback-btn__send-comment button js-form-submit form-submit" data-drupal-selector="edit-feedback-send" type="submit" id="edit-feedback-send" name="op" value="Отправить" />
+<input autocomplete="off" data-drupal-selector="form-x6lgoujfdaasatlkabv7xjmhxlirwcun9x6bd8hs10c" type="hidden" name="form_build_id" value="form-x6lGoUJFdAASAtlKAbv7xJMHXLiRWcuN9x6bd8HS10c" />
+<input data-drupal-selector="edit-admin-feedback-form" type="hidden" name="form_id" value="admin_feedback_form" />
+
+</form>
+</div>
+
+  </div>
+
+  </div>
+
+          </aside>
+              </main>
+    </div>
+  </div>
+
+  <footer role="contentinfo">
+    <div class="creatio-region creatio-region_footer">
+      <div class="creatio-container">
+          <div class="region region-footer">
+    <div id="block-footerua" class="block block-simple-block block-simple-blockfooter-ua">
+  
+    
+      <div class="footer">
+<div class="footer-left">
+<ul class="footer-socials"><li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_fb" href="https://www.facebook.com/terrasoft.ua" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_in" href="https://www.linkedin.com/company/terrasoft/" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_yt" href="https://www.youtube.com/c/TerrasoftUkraine" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_tg" href="https://t.me/Terrasoft_UA" target="_blank"> </a></li>
+</ul></div>
+
+<div class="footer-contact">
+<div class="footer-title">Будьте на связи!</div>
+
+<div class="footer-content">
+<div class="footer-items">
+<div class="footer-item"><a class="footer__link footer__link_phone" href="tel:+380443633133">+38 (044) 363-31-33</a></div>
+</div>
+
+<div class="footer-items">
+<div class="footer-item"><a class="footer__link footer__link_email" href="mailto:support@terrasoft.ua">support@terrasoft.ua</a></div>
+</div>
+</div>
+</div>
+</div>
+
+  </div>
+
+  </div>
+
+      </div>
+    </div>
+    <div class="creatio-region creatio-region_bottom">
+      <div class="creatio-container">
+          <div class="region region-bottom">
+    <div id="block-allrightsreservedua" class="block block-simple-block block-simple-blockfooter-bottom-ua">
+  
+    
+      <p>© 2002-2022 Terrasoft.  |  <a href="https://www.terrasoft.ua/privacy-policy" target="_blank">Конфиденциальность</a></p>
+
+  </div>
+
+  </div>
+
+      </div>
+    </div>
+  </footer>
+</div>
+<div class="creatio-bg"></div>
+
+
+  </div>
+
+    
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/docs\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/3822","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"ru"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"ajaxPageState":{"libraries":"admin_feedback\/admin_feedback_block,admin_feedback\/admin_feedback_css,classy\/base,classy\/messages,classy\/node,core\/drupal.ajax,core\/jquery.form,core\/normalize,creatio\/fancybox,creatio\/global,layout_discovery\/onecol,system\/base,ts_doc\/doc_version,ts_feedback\/ts_feedback,ts_nav\/breadcrumb,ts_nav\/doc_nav,ts_nav\/page_nav,ts_title_anchor\/ts_title_anchor","theme":"creatio","theme_token":null},"ajaxTrustedUrl":{"form_action_p_pvdeGsVG5zNF_XLGPTvYSKCf43t8qZYSwcfZl2uzM":true,"\/docs\/developer\/front_end_razrabotka_freedom_ui\/stranica\/otobrazit_znacheniya_sistemnyh_peremennyh?ajax_form=1":true},"admin_feedback":{"yes_response":"\u0421\u043f\u0430\u0441\u0438\u0431\u043e \u0437\u0430 \u043e\u0431\u0440\u0430\u0442\u043d\u0443\u044e \u0441\u0432\u044f\u0437\u044c!","no_response":"\u0421\u043f\u0430\u0441\u0438\u0431\u043e \u0437\u0430 \u043e\u0431\u0440\u0430\u0442\u043d\u0443\u044e \u0441\u0432\u044f\u0437\u044c!","custom_text_response_on_no":{"value":"","format":"full_html"},"feedback_prompt_on_yes":true,"feedback_prompt_on_no":true,"feedback_enable_predefined_answers":false,"feedback_prompt":"\u041a\u0430\u043a \u043c\u043e\u0436\u043d\u043e \u0443\u043b\u0443\u0447\u0448\u0438\u0442\u044c \u044d\u0442\u0443 \u0441\u0442\u0430\u0442\u044c\u044e?"},"ajax":{"edit-feedback-send":{"callback":"::validateFeedbackMsg","event":"mousedown","keypress":true,"prevent":"click","url":"\/docs\/developer\/front_end_razrabotka_freedom_ui\/stranica\/otobrazit_znacheniya_sistemnyh_peremennyh?ajax_form=1","dialogType":"ajax","submit":{"_triggering_element_name":"op","_triggering_element_value":"\u041e\u0442\u043f\u0440\u0430\u0432\u0438\u0442\u044c"}}},"user":{"uid":0,"permissionsHash":"9c2367dfcaba0fa15f0375f97aed64e146c908cee68508d13b79e3ee80e5162d"}}</script>
+<script src="../../../sites/default/files/js/js_Rr-7TvYD7NposuRFJwUqThxM7yJmw8vs03PQwu5gWd8.js"></script>
+
+
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+      <g id="svg-copy" class="svg-icon svg-icon_copy">
+        <path d="M15.111,18H1.889A1.848,1.848,0,0,1,0,16.2V3.6A1.848,1.848,0,0,1,1.889,1.8H5.837a2.87,2.87,0,0,1,5.326,0h3.948A1.848,1.848,0,0,1,17,3.6V16.2A1.848,1.848,0,0,1,15.111,18ZM3.777,12.6v1.8h6.611V12.6Zm0-3.6v1.8h9.445V9Zm0-3.6V7.2h9.445V5.4ZM8.5,1.8a.924.924,0,0,0-.944.9.945.945,0,0,0,1.889,0A.924.924,0,0,0,8.5,1.8Z"/>
+      </g>
+
+      <g id="svg-prev" class="svg-icon svg-icon_arrow">
+        <path d="M5.488,12.779,0,6.39,5.488,0" transform="translate(1 0.652)"/>
+      </g>
+
+      <g id="svg-next" class="svg-icon svg-icon_arrow">
+        <path d="M0,12.779,5.488,6.39,0,0" transform="translate(0.759 0.652)"/>
+      </g>
+    </svg>
+  </body>
+
+<!-- Mirrored from academy.terrasoft.ua/docs/developer/front_end_razrabotka_freedom_ui/stranica/otobrazit_znacheniya_sistemnyh_peremennyh by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 22 Mar 2022 21:51:15 GMT -->
+</html>

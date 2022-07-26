@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# ">
+  
+<!-- Mirrored from academy.terrasoft.ua/docs/developer/komponenty_prilozheniya/sinkhronizaciya_sync_engine/sinkhronizaciya_s_ms_exchange/obzor by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Mar 2022 00:46:32 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+          <!-- Google Tag Manager -->
+      <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          '../../../../../../www.googletagmanager.com/gtm5445.html?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-KLLB8G');</script>
+      <!-- End Google Tag Manager -->
+        <meta charset="utf-8" />
+<link rel="canonical" href="obzor.html" />
+<meta name="description" content="На базе механизма синхронизации Sync Engine в конфигурации реализована интеграция с различными сущностями MS Exchange по протоколу EWS (Exchange Web Services).
+
+Синхронизация задач с MS Exchange 
+
+Алгоритм синхронизации задач происходит в три этапа:" />
+<meta property="og:url" content="https://academy.terrasoft.ua/docs/developer/komponenty_prilozheniya/sinkhronizaciya_sync_engine/sinkhronizaciya_s_ms_exchange/obzor" />
+<meta property="og:title" content="Синхронизация с MS Exchange" />
+<meta property="og:description" content="На базе механизма синхронизации Sync Engine в конфигурации реализована интеграция с различными сущностями MS Exchange по протоколу EWS (Exchange Web Services).
+
+Синхронизация задач с MS Exchange 
+
+Алгоритм синхронизации задач происходит в три этапа:" />
+<meta name="Generator" content="Drupal 9 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="../../../../themes/custom/creatio/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="revision" href="obzor.html" />
+
+    <title>Синхронизация с MS Exchange | Creatio Academy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&amp;family=Open+Sans:ital,wght@0,300;0,400;0,600;1,400&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" media="all" href="../../../../sites/default/files/css/css_6lTP66__-yc6QXFp1zOwoeJ0HVigoYZP-SeoLLii000.css" />
+<link rel="stylesheet" media="all" href="../../../../sites/default/files/css/css_XQJDNhkF3xH5SZCcY-PI89Zu4nYIzQ5oR3SnUKyfXJU.css" />
+<link rel="stylesheet" media="print" href="../../../../sites/default/files/css/css_Zn4VHvcniOOtUwkIVwXzYr_0AI9gUVgZcPqaH4ViagU.css" />
+
+    
+  </head>
+  <body class="path-node page-node-type-developer-documentation">
+          <!-- Google Tag Manager (noscript) -->
+      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KLLB8G"
+                        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+      <!-- End Google Tag Manager (noscript) -->
+    
+        
+      <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    <div class="creatio-page d-flex flex-column">
+        <div class="region region-informer">
+    <div id="block-terrasoftpidtrimueukrainu" class="block block-simple-block block-simple-blockterrasoft-pidtrimue-ukrainu">
+  
+    
+      <style type="text/css">
+<!--/*--><![CDATA[/* ><!--*/
+@import url(../../../../../../www.terrasoft.ua/themes/custom/creatio/css/components/informer.css)
+
+/*--><!]]>*/
+</style><div class="ts-swu">
+<div class="creatio-container">
+<div class="ts-swu__cont">
+<div><a class="ts-swu__link" href="https://www.terrasoft.ua/terrasoft-stands-with-ukraine" target="_blank">Україна понад усе!</a> <span><a href="https://www.terrasoft.ua/terrasoft-stands-with-ukraine" target="_blank">Приєднуйтеся</a> до допомоги!</span></div>
+</div>
+</div></div>
+
+  </div>
+
+  </div>
+
+  
+  <header role="banner">
+          <div class="creatio-region creatio-region_top">
+        <div class="creatio-container">
+            <div class="region region-top">
+    <div id="block-menutoggle" class="block block-simple-block block-simple-blockmenu-toggle">
+  
+    
+      <div class="menu-toggle"><span> </span></div>
+
+  </div>
+<div id="block-logowhite-2" class="block block-simple-block block-simple-blocklogo-white">
+  
+    
+      <p><a class="site-logo" href="../../../../../index.html" rel="home"><img src="../../../../themes/custom/creatio/logo-white.svg" /></a></p>
+
+  </div>
+<div id="block-search" class="block block-simple-block block-simple-blocksearch">
+  
+    
+      <div class="search">
+<form action="https://academy.terrasoft.ua/search" class="search-form" method="get"><input class="search-form__input" name="search" placeholder="Поиск" type="search" /><input class="search-form__button" type="submit" value="Поиск" /> </form>
+
+<div class="search-toggle"> </div>
+</div>
+
+  </div>
+<nav role="navigation" aria-labelledby="block-sitesua-menu" id="block-sitesua" class="block block-menu navigation menu--sites-ua">
+            
+  <h2 class="visually-hidden" id="block-sitesua-menu">Sites UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="https://www.terrasoft.ua/" rel="nofollow" target="_blank">Terrasoft</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://community.terrasoft.ua/" rel="nofollow" target="_blank">Community</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://marketplace.terrasoft.ua/" rel="nofollow" target="_blank">Marketplace</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+<div id="block-usermenu" class="block block-ts-user block-ts-user-menu-block">
+  
+    
+      <ul class="user-menu">
+      <li class="user-menu__item">
+      <a class="user-menu__link" href="https://profile.terrasoft.ua/user/login?destination=academy/ua/docs/developer/komponenty_prilozheniya/sinkhronizaciya_sync_engine/sinkhronizaciya_s_ms_exchange/obzor">Войти</a>
+    </li>
+  </ul>
+
+  </div>
+<div id="block-usermenumobile" class="block block-ts-user block-ts-user-menu-mobile-block">
+  
+    
+      <ul class="user-menu-mobile">
+      <li class="user-menu-mobile__item">
+      <div class="user-menu-mobile__user user-menu-mobile__user_icon"></div>
+      <ul class="user-menu-mobile__submenu">
+        <li class="user-menu-mobile__subitem">
+          <a class="user-menu-mobile__sublink" href="https://profile.terrasoft.ua/user/login?destination=academy/ua/docs/developer/komponenty_prilozheniya/sinkhronizaciya_sync_engine/sinkhronizaciya_s_ms_exchange/obzor">Войти</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  </div>
+
+  </div>
+
+        </div>
+      </div>
+              <div class="creatio-region creatio-region_header">
+        <div class="creatio-container">
+            <div class="region region-header">
+    <div id="block-logo" class="block block-simple-block block-simple-blocklogo">
+  
+    
+      <p><a class="site-logo" href="../../../../../index.html" rel="home"><img src="../../../../themes/custom/creatio/logo.svg" /></a></p>
+
+  </div>
+<nav role="navigation" aria-labelledby="block-osnovnayanavigaciyaua-menu" id="block-osnovnayanavigaciyaua" class="block block-menu navigation menu--main-ua">
+            
+  <h2 class="visually-hidden" id="block-osnovnayanavigaciyaua-menu">Основная навигация UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="../../../../index.html" data-drupal-link-system-path="&lt;front&gt;">Документация</a>
+              </li>
+                <li class="menu-item">
+        <a href="../../../../../trainings.html">Тренинги</a>
+              </li>
+                <li class="menu-item">
+        <a href="../../../../certification.html" data-drupal-link-system-path="node/3084">Сертификация и тестирование</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+<nav role="navigation" aria-labelledby="block-sitesua-2-menu" id="block-sitesua-2" class="block block-menu navigation menu--sites-ua">
+            
+  <h2 class="visually-hidden" id="block-sitesua-2-menu">Sites UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="https://www.terrasoft.ua/" rel="nofollow" target="_blank">Terrasoft</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://community.terrasoft.ua/" rel="nofollow" target="_blank">Community</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://marketplace.terrasoft.ua/" rel="nofollow" target="_blank">Marketplace</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+
+  </div>
+
+        </div>
+      </div>
+              <div class="creatio-region creatio-region_breadcrumb">
+        <div class="creatio-container">
+            <div class="region region-breadcrumb">
+    <div id="block-logowhite" class="block block-simple-block block-simple-blocklogo-white">
+  
+    
+      <p><a class="site-logo" href="../../../../../index.html" rel="home"><img src="../../../../themes/custom/creatio/logo-white.svg" /></a></p>
+
+  </div>
+<div id="block-breadcrumbnaviagtion" class="block block-ts-nav block-ts-nav-bread">
+  
+    
+      <nav class="breadcrumb"><ol class="ts-nav-breadcrumb__list"><li class="ts-nav-breadcrumb__item"><a href="../../../../index.html" class="ts-nav-breadcrumb__link" title="Документация">Документация</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../../index2132.html?vid_1=2" class="ts-nav-breadcrumb__link" title="Для разработчика">Для разработчика</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../komponenty_prilozheniya.html" class="ts-nav-breadcrumb__link" title="Компоненты приложения" hreflang="zxx">Компоненты приложения</a></li>
+<li class="ts-nav-breadcrumb__item ts-nav-breadcrumb__item_mobile"><a href="../../sinkhronizaciya_sync_engine.html" class="ts-nav-breadcrumb__link" title="Синхронизация Sync Engine" hreflang="ru">Синхронизация Sync Engine</a></li>
+<li class="ts-nav-breadcrumb__item"><span class="ts-nav-breadcrumb__link ts-nav-breadcrumb__link_current" title="Обзор">Обзор</span></li>
+</ol>
+</nav>
+
+  </div>
+<div id="block-search-2" class="block block-simple-block block-simple-blocksearch">
+  
+    
+      <div class="search">
+<form action="https://academy.terrasoft.ua/search" class="search-form" method="get"><input class="search-form__input" name="search" placeholder="Поиск" type="search" /><input class="search-form__button" type="submit" value="Поиск" /> </form>
+
+<div class="search-toggle"> </div>
+</div>
+
+  </div>
+
+  </div>
+
+        </div>
+      </div>
+      </header>
+
+  <div class="creatio-region creatio-region_main">
+    <div class="creatio-container">
+                <div class="region region-breadcrumb-mobile">
+    <div id="block-breadcrumbnaviagtion-2" class="block block-ts-nav block-ts-nav-bread">
+  
+    
+      <nav class="breadcrumb"><ol class="ts-nav-breadcrumb__list"><li class="ts-nav-breadcrumb__item"><a href="../../../../index.html" class="ts-nav-breadcrumb__link" title="Документация">Документация</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../../index2132.html?vid_1=2" class="ts-nav-breadcrumb__link" title="Для разработчика">Для разработчика</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../komponenty_prilozheniya.html" class="ts-nav-breadcrumb__link" title="Компоненты приложения" hreflang="zxx">Компоненты приложения</a></li>
+<li class="ts-nav-breadcrumb__item ts-nav-breadcrumb__item_mobile"><a href="../../sinkhronizaciya_sync_engine.html" class="ts-nav-breadcrumb__link" title="Синхронизация Sync Engine" hreflang="ru">Синхронизация Sync Engine</a></li>
+<li class="ts-nav-breadcrumb__item"><span class="ts-nav-breadcrumb__link ts-nav-breadcrumb__link_current" title="Обзор">Обзор</span></li>
+</ol>
+</nav>
+
+  </div>
+
+  </div>
+
+      
+      <main class="creatio-main" role="main">
+                                                    
+        <div class="creatio-content creatio-content_small">
+          <div class="creatio-content__inner creatio-content__inner_bg">
+                            <div class="region region-messages">
+    <div data-drupal-messages-fallback class="hidden"></div>
+
+  </div>
+
+            
+              <div class="region region-content">
+    <div id="block-creatio-page-title" class="block block-core block-page-title-block">
+  
+    
+      
+  <h1 class="page-title"><span class="field field--name-title field--type-string field--label-hidden">Синхронизация с MS Exchange</span>
+</h1>
+
+
+  </div>
+<div id="block-creatio-content" class="block block-system block-system-main-block">
+  
+    
+      
+<article data-history-node-id="2390" role="article" about="/docs/developer/komponenty_prilozheniya/sinkhronizaciya_sync_engine/sinkhronizaciya_s_ms_exchange/obzor" class="node node--type-developer-documentation node--view-mode-full">
+
+  
+    
+
+  
+  <div class="node__content">
+      <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocknodedeveloper-documentationfield-difficulty">
+  
+    
+      
+            <div class="field field--name-field-difficulty field--type-entity-reference field--label-hidden field__item"><div about="/docs/taxonomy/term/169" id="taxonomy-term-169" class="taxonomy-term vocabulary-difficulty">
+  
+  
+  <div class="content">
+      <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocktaxonomy-termdifficultyfield-icon">
+  
+    
+      
+            <div class="field field--name-field-icon field--type-image field--label-hidden field__item">  <img src="../../../../sites/default/files/difficulty/advanced.svg" alt="" loading="lazy" typeof="foaf:Image" />
+
+</div>
+      
+  </div>
+<div class="block block-layout-builder block-field-blocktaxonomy-termdifficultyname">
+  
+    
+      
+            <div class="field field--name-name field--type-string field--label-hidden field__item"><span style="color: #EF4524;">Сложный</span></div>
+      
+  </div>
+
+    </div>
+  </div>
+
+  </div>
+</div>
+</div>
+      
+  </div>
+<div class="block block-ts-doc block-ts-doc-downloads">
+  
+    
+      <a href="../../../../sites/default/files/pdf/node/2390/Sinkhronizaciya_s_MS_Exchange_.pdf" target="_blank">PDF</a>
+  </div>
+<div class="block block-ts-doc block-ts-doc-versions">
+  
+    
+        <div class="ts-doc-versions">
+    <select class="ts-doc-versions__select">
+                                                <option value="/docs/8-0/developer/komponenty_prilozheniya/sinkhronizaciya_sync_engine/sinkhronizaciya_s_ms_exchange/obzor" selected>Версия 8.0</option>
+                              <option value="/docs/7-18/developer/komponenty_prilozheniya/sinkhronizaciya_sync_engine/sinkhronizaciya_s_ms_exchange/obzor">Версия 7.18</option>
+                              <option value="/docs/7-17/developer/komponenty_prilozheniya/sinkhronizaciya_sync_engine/sinkhronizaciya_s_ms_exchange/obzor">Версия 7.17</option>
+                              <option value="/docs/7-16/developer/komponenty_prilozheniya/sinkhronizaciya_sync_engine/sinkhronizaciya_s_ms_exchange/obzor">Версия 7.16</option>
+          </select>
+  </div>
+
+  </div>
+
+    </div>
+  </div>
+  <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocknodedeveloper-documentationbody">
+  
+    
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><p>На базе механизма синхронизации Sync Engine в конфигурации реализована интеграция с различными сущностями MS Exchange по протоколу EWS (Exchange Web Services).</p>
+
+<h2>Синхронизация задач с MS Exchange<a class="title-anchor" href="#title-2390-1" id="title-2390-1"> </a></h2>
+
+<p>Алгоритм синхронизации задач происходит в три этапа:</p>
+
+<ol><li>Получение изменений из MS Exchange, их применение;</li>
+	<li>Получение изменений из Creatio, их применение;</li>
+	<li>Создание новых задач из Creatio в MS Exchange.</li>
+</ol><h3>Реализация интеграции<a class="title-anchor" href="#title-2390-2" id="title-2390-2"> </a></h3>
+
+<p>Как описано в <a href="../obshchie_principy_raboty_mekhanizma_sinkhronizacii_sync_engine/obzor.html">статье</a>, для того, чтобы реализовать интеграцию с использованием данного механизма, необходим класс, реализующий логику работы с внешним хранилищем (наследник <span class="filled">RemoteProvider</span>. Вся иерархия классов провайдера изображена на рисунке. Также необходим класс, реализующий интерфейс <span class="filled">IRemoteItem</span>, который представляет один экземпляр элемента синхронизации (в данном случае — задачу MS Exchange). Вся иерархия <span class="filled">RemoteItem</span> изображена на рисунке.</p>
+
+<div class="media">
+<div class="media__element"><img alt="" border="0" src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/SyncEngine/scr_syncengine_msexchangetask_hierarchy_sheme_remoteprovider_1.png" /></div>
+</div>
+
+<p>Класс <span class="filled">ExchangeTaskSyncProvider</span> является провайдером для работы с внешним хранилищем MS Exchange, в нем реализована логика по выбору данных и сохранению изменений в Creatio и MS Exchange. Класс <span class="filled">ExchangeTask</span> реализует интерфейс <span class="filled">IRemoteItem</span>. В нем реализована логика заполнения данных в соответствующих системах.</p>
+
+<div class="media">
+<div class="media__element"><img alt="" border="0" src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/SyncEngine/scr_syncengine_msexchangetask_hierarchy_sheme_remoteitem_1.png" /></div>
+</div>
+
+<h3 id="syncdata">Синхронизируемые данные<a class="title-anchor" href="#title-2390-3" id="title-2390-3"> </a></h3>
+
+<p>Соответствие объектов Creatio и полей класса <span class="filled">ExchangeTask</span> отображено в таблице.</p>
+
+<div class="table">
+<div class="table__caption">Соответствие объектов Creatio и полей класса <span class="filled">ExchangeTask</span></div>
+
+<table><tbody><tr><th>Объект Creatio</th>
+			<th>Поле объекта</th>
+			<th>Поле <span class="filled">ExchangeTask</span></th>
+		</tr><tr><td rowspan="8&quot;"><span class="consolas">Activity</span></td>
+			<td><span class="consolas">Title</span></td>
+			<td><span class="consolas">Subject</span></td>
+		</tr><tr><td><span class="consolas">StartDate</span></td>
+			<td><span class="consolas">StartDate</span></td>
+		</tr><tr><td><span class="consolas">DueDate</span></td>
+			<td><span class="consolas">CompleteDate</span> или <span class="consolas">DueDate</span> в зависимости от того, завершена задача или нет.</td>
+		</tr><tr><td><span class="consolas">Priority</span></td>
+			<td><span class="consolas">Importance</span></td>
+		</tr><tr><td><span class="consolas">Status</span></td>
+			<td><span class="consolas">Status</span></td>
+		</tr><tr><td><span class="consolas">RemindToOwner</span></td>
+			<td><span class="consolas">IsRemindSet</span></td>
+		</tr><tr><td><span class="consolas">RemindToOwnerDate</span></td>
+			<td><span class="consolas">ReminderDueBy</span></td>
+		</tr><tr><td><span class="consolas">Notes</span></td>
+			<td><span class="consolas">Body.Text</span></td>
+		</tr></tbody></table></div>
+
+<h3>Логика выбора данных для синхронизации<a class="title-anchor" href="#title-2390-4" id="title-2390-4"> </a></h3>
+
+<p>Для выбора изменений списка задач из отобранных для синхронизации папок MS Exchange используются следующие условия: выбрать задачи MS Exchange, которые были изменены после даты последней синхронизации задач, или задачу MS Exchange, которая не была отмечена, как ранее синхронизированная. Для задач MS Exchange, которые были изменены, находятся соответствующие активности в Creatio. Актуальные изменения применяются в соответствующей системе.</p>
+
+<p>При выборе измененных активностей Creatio выбираются активности:</p>
+
+<ul><li>имеющие запись в метаданных синхронизации как задача MS Exchange;</li>
+	<li>автором которых является текущий пользователь;</li>
+	<li>дата последнего изменения которых больше чем дата последней синхронизации.</li>
+</ul><p>При выборе новых активностей Creatio, устанавливается набор общих фильтров и фильтры, настраиваемые пользователем. Основными фильтрами являются:</p>
+
+<ol><li>Тип активности не равен "<span class="consolas">email</span>".</li>
+	<li>У активности не установлен признак <span class="key">Отображать в расписании</span>.</li>
+</ol><p>Пользователь может указать группы активностей, которые будут экспортироваться из Creatio.</p>
+
+<h3>Заполнение полей <span class="key">Дата начала</span>, <span class="key">Дата завершения</span> (опиционально)<a class="title-anchor" href="#title-2390-5" id="title-2390-5"> </a></h3>
+
+<p>В объекте <span class="filled">ExchangeTask</span> есть несколько особенностей при работе с датами начала и завершения:</p>
+
+<ul><li>В этих полях хранятся значения без времени. При изменении задачи в MS Exchange после синхронизации в Creatio применится дата из задачи MS Exchange, а время — из активности Creatio.</li>
+	<li>Для даты завершения в <span class="filled">ExchangeTask</span> есть два поля — дата завершения (due date) и дата выполнения (complete date). В зависимости от статуса задачи, актуальной является одна из них — для не завершенных используется дата завершения, для завершенных дата выполнения. Дата выполнения устанавливается текущей датой, пока задача не будет завершена.</li>
+	<li>Дата начала и дата завершения — поля, необязательные для заполнения в MS Exchange. Если какое-то из них не установлено, используется текущая дата. Из-за этого могут возникать конфликты, так как в Creatio и дата начала, и дата завершения обязательны для заполнения, и дата начала должна быть меньше даты завершения.</li>
+</ul><h2>Синхронизация контактов с MS Exchange<a class="title-anchor" href="#title-2390-6" id="title-2390-6"> </a></h2>
+
+<p>Алгоритм синхронизации контактов происходит в три этапа:</p>
+
+<ol><li>Получение изменений из MS Exchange, их применение;</li>
+	<li>Получение изменений из Creatio, их применение;</li>
+	<li>Создание новых контактов из Creatio в MS Exchange.</li>
+</ol><h3>Реализация интеграции<a class="title-anchor" href="#title-2390-2" id="title-2390-2"> </a></h3>
+
+<p>Как описано в <a href="../obshchie_principy_raboty_mekhanizma_sinkhronizacii_sync_engine/obzor.html">статье</a>, для того, чтобы реализовать интеграцию с использованием данного механизма, необходим класс, реализующий логику работы с внешним хранилищем, — наследник <span class="filled">RemoteProvider</span> и класс, реализующий интерфейс <span class="filled">IRemoteItem</span>, который представляет один экземпляр элемента синхронизации (в данном случае — контакт MS Exchange).</p>
+
+<div class="media">
+<div class="media__caption">Схема иерархии RemoteProvider</div>
+
+<div class="media__element"><img alt="" border="0" src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/SyncEngine/scr_syncengine_msexchangecontact_hierarchy_sheme_remoteprovider.png" /></div>
+</div>
+
+<div class="media">
+<div class="media__caption">Схема иерархии RemoteItem</div>
+
+<div class="media__element"><img alt="" border="0" src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/SyncEngine/scr_syncengine_msexchangecontact_hierarchy_sheme_remoteitem.png" /></div>
+</div>
+
+<p>Для синхронизации контактов также используются следующие классы:</p>
+
+<ul><li>Класс <span class="filled">ExchangeContactSyncProvider</span> является провайдером для работы с внешним хранилищем MS Exchange, в нем реализована логика по выбору данных и сохранению изменений в Creatio и MS Exchange.</li>
+	<li>Класс <span class="filled">ExchangeContact</span> реализует интерфейс <span class="filled">IRemoteItem</span>. В нем реализована логика заполнения данных в соответствующих системах.</li>
+	<li>Класс <span class="filled">ExchangeAddressDetailsSynchronizer</span> содержит утилитные методы для преобразования данных об адресах контактов.</li>
+	<li>Класс <span class="filled">ExchangeEmailAddressDetailsSynchronizer</span> содержит утилитные методы для преобразования данных об email-адресах контактов.</li>
+	<li>Класс <span class="filled">ExchangePhoneNumbersDetailsSynchronizer</span> содержит утилитные методы для преобразования данных о телефонах контактов.</li>
+</ul><p>Логика заполнения деталей вынесена в отдельные классы, так как существуют значительные отличия в форматах хранения данных в Creatio и MS Exchange, и требуется дополнительное преобразование.</p>
+
+<h3 id="syncdata">Синхронизируемые данные<a class="title-anchor" href="#title-2390-3" id="title-2390-3"> </a></h3>
+
+<p>Соответствие объектов Creatio и полей класса Contact MS Exchange отображено в таблице.</p>
+
+<div class="table">
+<div class="table__caption">Соответствие объектов Creatio и полей класса Contact MS Exchange</div>
+
+<table><tbody><tr><th>Объект Creatio</th>
+			<th>Поле объекта</th>
+			<th>Поле класса Contact MS Exchange</th>
+		</tr><tr><td rowspan="10"><span class="consolas">Contact</span></td>
+			<td><span class="consolas">Name</span></td>
+			<td><span class="consolas">DisplayName</span></td>
+		</tr><tr><td><span class="consolas">Surname</span></td>
+			<td><span class="consolas">Surname</span></td>
+		</tr><tr><td><span class="consolas">GivenName</span></td>
+			<td><span class="consolas">GivenName</span></td>
+		</tr><tr><td><span class="consolas">MiddleName</span></td>
+			<td><span class="consolas">MiddleName</span></td>
+		</tr><tr><td><span class="consolas">Account</span></td>
+			<td><span class="consolas">CompanyName</span></td>
+		</tr><tr><td><span class="consolas">JobTitle</span></td>
+			<td><span class="consolas">JobTitle</span></td>
+		</tr><tr><td><span class="consolas">Department</span></td>
+			<td><span class="consolas">Department</span></td>
+		</tr><tr><td><span class="consolas">BirthDate</span></td>
+			<td><span class="consolas">Birthday</span></td>
+		</tr><tr><td><span class="consolas">SalutationType</span></td>
+			<td><span class="consolas">TitleTag</span></td>
+		</tr><tr><td><span class="consolas">Gender</span></td>
+			<td><span class="consolas">GenderTag</span></td>
+		</tr><tr><td rowspan="2"><span class="consolas">ContactCommunication</span></td>
+			<td><span class="consolas">Number</span></td>
+			<td>Значение в коллекции <span class="consolas">PhoneNumbers</span></td>
+		</tr><tr><td><span class="consolas">CommunitactionType</span></td>
+			<td>Ключ для значения в коллекции <span class="consolas">PhoneNumbers</span></td>
+		</tr><tr><td rowspan="6"><span class="consolas">ContactAddresses</span></td>
+			<td><span class="consolas">City</span></td>
+			<td>Поле <span class="consolas">City</span> элемента коллекции <span class="consolas">PhysicalAddresses</span></td>
+		</tr><tr><td><span class="consolas">Country</span></td>
+			<td>Поле <span class="consolas">CountryOrRegion</span> элемента коллекции <span class="consolas">PhysicalAddresses</span></td>
+		</tr><tr><td><span class="consolas">Region</span></td>
+			<td>Поле <span class="consolas">State</span> элемента коллекции <span class="consolas">PhysicalAddresses</span></td>
+		</tr><tr><td><span class="consolas">Address</span></td>
+			<td>Поле <span class="consolas">Street</span> элемента коллекции <span class="consolas">PhysicalAddresses</span></td>
+		</tr><tr><td><span class="consolas">Zip</span></td>
+			<td>Поле <span class="consolas">PostalCode</span> элемента коллекции PhysicalAddresses</td>
+		</tr><tr><td><span class="consolas">AddressType</span></td>
+			<td>Ключ для значения в коллекции <span class="consolas">PhysicalAddresses</span></td>
+		</tr></tbody></table></div>
+
+<p>Соответствие типов средств связи представлено в таблице.</p>
+
+<div class="table">
+<div class="table__caption">Соответствие типов средств связи Creatio и MS Exchange</div>
+
+<table><tbody><tr><th>Тип средства связи Creatio</th>
+			<th>Тип средства связи MS Exchange</th>
+		</tr><tr><td><span class="consolas">Email</span></td>
+			<td><span class="consolas">EmailAddress1, EmailAddress2, EmailAddress3</span></td>
+		</tr><tr><td><span class="consolas">WorkPhone</span></td>
+			<td><span class="consolas">BusinessPhone, BusinessPhone2</span></td>
+		</tr><tr><td><span class="consolas">HomePhone</span></td>
+			<td><span class="consolas">HomePhone</span></td>
+		</tr><tr><td><span class="consolas">MobilePhone</span></td>
+			<td><span class="consolas">MobilePhone</span></td>
+		</tr></tbody></table></div>
+
+<p>Соответствие типов адресов представлено в таблице.</p>
+
+<div class="table">
+<div class="table__caption">Соответствие типов адресов Creatio и MS Exchange</div>
+
+<table><tbody><tr><th>Тип адреса Creatio</th>
+			<th>Тип адреса MS Exchange</th>
+		</tr><tr><td><span class="consolas">HomeAddress</span></td>
+			<td><span class="consolas">Home</span></td>
+		</tr><tr><td><span class="consolas">BusinessAddress</span></td>
+			<td><span class="consolas">Business</span></td>
+		</tr></tbody></table></div>
+
+<h3>Логика выбора данных для синхронизации<a class="title-anchor" href="#title-2390-4" id="title-2390-4"> </a></h3>
+
+<p>Для выбора изменений в списке контактов из отобранных для синхронизации папок MS Exchange используется следующий набор фильтров: выбирается контакт MS Exchange, который был изменен после даты последней синхронизации контактов, или контакт MS Exchange, который не был отмечен, как ранее синхронизированный. Для контактов, которые были изменены, находится соответствующий контакт в Creatio. Самые актуальные изменения применяются в соответствующей системе.</p>
+
+<p>При выборе измененных контактов Creatio выбираются контакты:</p>
+
+<ul><li>автором которых является текущий пользователь;</li>
+	<li>дата последнего изменения которых больше чем дата последней синхронизации;</li>
+	<li>контакт не использовался в первом этапе синхронизации.</li>
+</ul><p>На правила выбора новых контактов Creatio, помимо стандартного фильтра по автору и фильтра отсутствия метаданных синхронизации, влияют пользовательские настройки. Доступно три варианта настройки:</p>
+
+<ol><li>Синхронизировать контакты сотрудников. При выборе этой настройки к запросу будет добавлен фильтр по колонке <span class="filled">[Тип контакта]</span>, и синхронизированы будут те контакты, у которых указан тип "<span class="consolas">Сотрудник</span>".</li>
+	<li>Синхронизировать контакты клиентов. При выборе этой настройки к запросу будет добавлен фильтр по колонке <span class="filled">[Тип контакта]</span>, и синхронизированы будут те контакты, у которых указан тип "<span class="consolas">Клиент</span>".</li>
+	<li>Синхронизировать контакты из определенных групп. При выборе этой настройки к запросу будут добавлены фильтры выбранных групп контактов.</li>
+</ol><h3>Дополнительные возможности<a class="title-anchor" href="#title-2390-10" id="title-2390-10"> </a></h3>
+
+<h4>Возможность использовать расширенные ключи для контактов во внешнем хранилище<a class="title-anchor" href="#title-2390-11" id="title-2390-11"> </a></h4>
+
+<p>Ввиду особенностей работы MS Exchange возможна ситуация, когда при большом количестве контактов MS Exchange часть из них получит одинаковые идентификаторы, и, как следствие, синхронизация может некорректно определить соответствующий контакт в Creatio. Для обхода подобной ситуации реализована функциональность расширенных внешних ключей, которую можно включить при помощи настройки <span class="key">Использовать комбинированные идентификаторы для синхронизируемых контактов MS Exchange</span>. Код настройки — <span class="filled">UseComplexExchangeContactId</span>. После ее включения может понадобиться повторная синхронизация.</p>
+
+<h2>Синхронизация встреч с MS Exchange<a class="title-anchor" href="#title-2390-12" id="title-2390-12"> </a></h2>
+
+<p>Синхронизация встреч Creatio происходит только для новых активностей или при изменении полей <span class="filled">Title</span>, <span class="filled">Location</span>, <span class="filled">StartDate</span>, <span class="filled">DueDate</span>, <span class="filled">Priority</span>, <span class="filled">Notes</span>. По этим полям формируется хэш, который хранится в дополнительных параметрах метаданных (в поле <span class="filled">ExtraParameters</span>). Если встреча была изменена в Creatio, и хэш из <span class="filled">ExtraParameters</span> не совпадает с новым хэшем, то эта встреча должна быть синхронизирована.</p>
+
+<p>Алгоритм синхронизации встреч происходит в три этапа:</p>
+
+<ol><li>Получение изменений из MS Exchange, их применение;</li>
+	<li>Получение изменений из Creatio, их применение;</li>
+	<li>Создание новых встреч из Creatio в MS Exchange.</li>
+</ol><h3>Реализация интеграции<a class="title-anchor" href="#title-2390-2" id="title-2390-2"> </a></h3>
+
+<p>Как описано в <a href="../obshchie_principy_raboty_mekhanizma_sinkhronizacii_sync_engine/obzor.html">статье</a>, для того чтобы реализовать интеграцию с использованием данного механизма, необходим класс, реализующий логику работы с внешним хранилищем, — наследник <span class="filled">RemoteProvider</span>, и класс, реализующий интерфейс <span class="filled">IRemoteItem</span>, который представляет один экземпляр элемента синхронизации (в даном случае — встречу MS Exchange).</p>
+
+<p class="PictureCaption"><img alt="" border="0" src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/SyncEngine/scr_syncengine_msexchangeappointment_hierarchy_sheme_remoteprovider.png" /></p>
+
+<p>Класс <span class="filled">ExchangeAppointmentSyncProvider</span> является провайдером для работы с внешним хранилищем Exchange. В нем реализована логика по выбору данных и сохранению изменений в Creatio и Exchange.</p>
+
+<p>Класс <span class="filled">ExchangeAppointment</span> реализует интерфейс IRemoteItem, и в нем реализована логика заполнения данных в соответствующих системах.</p>
+
+<div class="media">
+<div class="media__element"><img alt="" border="0" src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/SyncEngine/scr_syncengine_msexchangeappointment_hierarchy_sheme_remoteitem.png" /></div>
+</div>
+
+<h3 id="syncdata">Синхронизируемые данные<a class="title-anchor" href="#title-2390-3" id="title-2390-3"> </a></h3>
+
+<p>Соответствие объектов Creatio и полей класса <span class="filled">ExchangeAppointment</span> отображено в таблице.</p>
+
+<div class="table">
+<div class="table__caption">Соответствие объектов Creatio и полей класса <span class="filled">ExchangeAppointment</span></div>
+
+<table><tbody><tr><th>Объект Creatio</th>
+			<th>Поле объекта</th>
+			<th>Соответствующее поле MS Exchange Appointment</th>
+		</tr><tr><td rowspan="9"><span class="consolas">Activity</span></td>
+			<td><span class="consolas">Title</span></td>
+			<td><span class="consolas">Subject</span></td>
+		</tr><tr><td><span class="consolas">Location</span></td>
+			<td><span class="consolas">Location</span></td>
+		</tr><tr><td><span class="consolas">StartDate</span></td>
+			<td><span class="consolas">StartDate</span></td>
+		</tr><tr><td><span class="consolas">DueDate</span></td>
+			<td><span class="consolas">CompleteDate</span> или <span class="consolas">DueDate</span> в зависимости от того, завершена встреча или нет.</td>
+		</tr><tr><td><span class="consolas">Priority</span></td>
+			<td><span class="consolas">Importance</span></td>
+		</tr><tr><td><span class="consolas">Status</span></td>
+			<td>
+			<p>Заполняется по алгоритму:</p>
+
+			<p>Если статус не указан и дата окончания больше, чем текущая, — статус в Creatio устанавливается как "<span class="consolas">Новая встреча</span>".</p>
+
+			<p>Если дата окончания меньше, чем текущая дата, — статус устанавливается как закрытая встреча со статусом "<span class="consolas">Информация получена</span>".</p>
+			</td>
+		</tr><tr><td><span class="consolas">RemindToOwner</span></td>
+			<td><span class="consolas">IsReminderSet</span></td>
+		</tr><tr><td><span class="consolas">RemindToOwnerDate</span></td>
+			<td><span class="consolas">ReminderDueBy</span></td>
+		</tr><tr><td><span class="consolas">Notes</span></td>
+			<td><span class="consolas">Body.Text</span></td>
+		</tr><tr><td><span class="consolas">ActivityParticipant</span></td>
+			<td><span class="consolas">InviteResponse</span></td>
+			<td>Если в MS Exchange установлен признак, что встреча принята или пользователь является организатором встречи, то в Creatio устанавливается признак "<span class="consolas">Встреча подтверждена</span>". В противном случае устанавливается признак того, что встреча отменена.</td>
+		</tr></tbody></table></div>
+
+<h3>Логика выбора данных для синхронизации<a class="title-anchor" href="#title-2390-4" id="title-2390-4"> </a></h3>
+
+<p>Для выбора изменений в списке встреч из отобранных для синхронизации папок MS Exchange используется следующий набор фильтров: выбираются встречи MS Exchange, которые были изменены после даты последней синхронизации встреч, или встречи MS Exchange, которые не были отмечены, как ранее синхронизированные. Для встреч, которые были изменены, находятся соответствующие активности в Creatio. Самые актуальные изменения применяются в соответствующей системе.</p>
+
+<p>При выборе измененных активностей Creatio выбираются активности:</p>
+
+<ul><li>которые имеют запись в метаданных синхронизации как встречи MS Exchange по <span class="filled">RemoteId</span> (определяется уникальным идентификатором встречи в календаре <span class="filled">ICalId</span>);</li>
+	<li>дата последнего изменения которых больше, чем дата последней синхронизации;</li>
+	<li>одна встреча в Creatio соответствует нескольким встречам в MS Exchange для каждого участника.</li>
+</ul><p>При выборе новых активностей Creatio устанавливается набор общих фильтров и фильтры, настраиваемые пользователем. Основными фильтрами являются:</p>
+
+<ol><li>Тип активности не равен "<span class="consolas">Email</span>".</li>
+	<li>У активности установлен признак <span class="key">Отображать в расписании</span>.</li>
+</ol><p>Пользователь может указать группы активностей, которые будут экспортироваться из Creatio.</p>
+
+<h3>Логика выбора участников встречи<a class="title-anchor" href="#title-2390-16" id="title-2390-16"> </a></h3>
+
+<p>При синхронизации активности из MS Exchange в Creatio на деталь <span class="key">Участники</span> добавляются те контакты, у которых на детали <span class="key">Средства связи</span> есть email из списка учасников встречи в MS Exchange.</p>
+
+<p>При синхронизации активностей из Creatio в MS Exchange участники встречи для MS Exchange заполняются основными email-адресами контактов.</p>
+</div>
+      
+  </div>
+
+    </div>
+  </div>
+
+  </div>
+
+</article>
+
+  </div>
+
+  </div>
+
+          </div>
+        </div>
+
+                  <aside class="creatio-sidebar creatio-sidebar_first" role="complementary">
+              <div class="region region-sidebar-first">
+    <div id="block-documentationnaviagtion" class="block block-ts-nav block-ts-nav-doc-nav">
+  
+    
+      <div class="ts-nav-block"><a href="../../../../index.html" class="ts-nav-block__link">Документация</a><div class="ts-nav-block__title">Для разработчика</div>
+</div>
+<div class="ts-nav-container"><ul class="ts-nav-menu"><li class="ts-nav-menu__item">
+  <a href="../../../s_chego_nachat.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">С чего начать&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../architecture.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Архитектура&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../instrumenty_razrabotki.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Инструменты разработки&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../back_end_razrabotka.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Back-end разработка&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../front_end_razrabotka_freedom_ui.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Front-end разработка Freedom UI&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../front_end_razrabotka.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Front-end разработка&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../integratsiya_i_vneshnij_api.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Интеграция и внешний API&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../ehlementy_interfejsa.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Элементы интерфейса&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../komponenty_prilozheniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded ts-nav-menu__link_open" hreflang="zxx">Компоненты приложения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+      <ul class="ts-nav-menu__children">
+      <li class="ts-nav-menu__item">
+  <a href="../../otchety.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Отчеты&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../komponenty_marketing.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Компоненты Marketing&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../komponenty_sales.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Компоненты Sales&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../komponenty_service.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Компоненты Service&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../portal.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Портал&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../lendingi.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Лендинги&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../telefoniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Телефония&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../mashinnoe_obuchenie.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Машинное обучение&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../elements_and_components/email_soobshcheniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Email-сообщения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../obogashchenie_kontaktov_iz_email/obzor.html" class="ts-nav-menu__link" hreflang="ru">Обогащение контактов из email</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../sinkhronizaciya_sync_engine.html" class="ts-nav-menu__link ts-nav-menu__link_expanded ts-nav-menu__link_open" hreflang="ru">Синхронизация Sync Engine&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+      <ul class="ts-nav-menu__children">
+      <li class="ts-nav-menu__item">
+  <a href="../obshchie_principy_raboty_mekhanizma_sinkhronizacii_sync_engine.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Общие принципы работы механизма синхронизации Sync Engine&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../sinkhronizaciya_pochty_s_ms_exchange/obzor.html" class="ts-nav-menu__link" hreflang="ru">Синхронизация почты с MS Exchange</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="obzor.html" class="ts-nav-menu__link ts-nav-menu__link_open" hreflang="ru">Синхронизация с MS Exchange</a>
+  </li>
+
+    </ul>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../planirovshchik_zadanij/obzor.html" class="ts-nav-menu__link" hreflang="ru">Планировщик заданий</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../bandlirovanie_staticheskogo_kontenta.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Бандлирование статического контента&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+
+    </ul>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../razrabotka_mobilnogo_prilozheniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Разработка мобильного приложения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../razrabotka_marketplace_prilozheniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Разработка Marketplace-приложения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+</ul>
+</div>
+
+  </div>
+
+  </div>
+
+            <div class="creatio-sidebar__toggle"></div>
+          </aside>
+        
+                  <aside class="creatio-sidebar creatio-sidebar_second" role="complementary">
+              <div class="region region-sidebar-second">
+    <div id="block-example" class="block block-ts-nav block-ts-nav-page-nav">
+  
+    
+      <div class="ts-nav-page">
+  </div>
+
+  </div>
+<div id="block-adminfeedbackblock" class="block block-admin-feedback block-admin-feedback-block">
+  
+    
+      <div id="feedback-message"><div id="upper-feedback-content"><h2>Был ли данный материал полезен?</h2>
+<input class="feedback-btn feedback-btn__yes button js-form-submit form-submit" data-node-id="2390" data-feedback="yes" type="submit" name="op" value="Да" />
+<input class="feedback-btn feedback-btn__no button js-form-submit form-submit" data-node-id="2390" data-feedback="no" type="submit" name="op" value="Нет" />
+</div>
+<form class="admin-feedback-form" data-drupal-selector="admin-feedback-form" action="https://academy.terrasoft.ua/docs/developer/komponenty_prilozheniya/sinkhronizaciya_sync_engine/sinkhronizaciya_s_ms_exchange/obzor" method="post" id="admin-feedback-form" accept-charset="UTF-8">
+  <div id="feedback-msg-result"></div><div class="js-form-item form-item js-form-type-textarea form-type-textarea js-form-item-feedback-message form-item-feedback-message form-no-label">
+        <div class="form-textarea-wrapper">
+  <textarea id="edit-feedback-msg" data-drupal-selector="edit-feedback-message" name="feedback_message" rows="5" cols="60" class="form-textarea resize-vertical"></textarea>
+</div>
+
+        </div>
+<input id="feedback-id" data-drupal-selector="edit-feedback-id" type="hidden" name="feedback_id" value="" />
+<input class="feedback-btn feedback-btn__send-comment button js-form-submit form-submit" data-drupal-selector="edit-feedback-send" type="submit" id="edit-feedback-send" name="op" value="Отправить" />
+<input autocomplete="off" data-drupal-selector="form-1ljq-miah2afnxasiowp29rjmstocxzwoy7vvjpntm" type="hidden" name="form_build_id" value="form-_1LjQ-mIAH2AFNxAsioWP29RJMsTOCXZWoY7vVjPntM" />
+<input data-drupal-selector="edit-admin-feedback-form" type="hidden" name="form_id" value="admin_feedback_form" />
+
+</form>
+</div>
+
+  </div>
+
+  </div>
+
+          </aside>
+              </main>
+    </div>
+  </div>
+
+  <footer role="contentinfo">
+    <div class="creatio-region creatio-region_footer">
+      <div class="creatio-container">
+          <div class="region region-footer">
+    <div id="block-footerua" class="block block-simple-block block-simple-blockfooter-ua">
+  
+    
+      <div class="footer">
+<div class="footer-left">
+<ul class="footer-socials"><li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_fb" href="https://www.facebook.com/terrasoft.ua" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_in" href="https://www.linkedin.com/company/terrasoft/" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_yt" href="https://www.youtube.com/c/TerrasoftUkraine" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_tg" href="https://t.me/Terrasoft_UA" target="_blank"> </a></li>
+</ul></div>
+
+<div class="footer-contact">
+<div class="footer-title">Будьте на связи!</div>
+
+<div class="footer-content">
+<div class="footer-items">
+<div class="footer-item"><a class="footer__link footer__link_phone" href="tel:+380443633133">+38 (044) 363-31-33</a></div>
+</div>
+
+<div class="footer-items">
+<div class="footer-item"><a class="footer__link footer__link_email" href="mailto:support@terrasoft.ua">support@terrasoft.ua</a></div>
+</div>
+</div>
+</div>
+</div>
+
+  </div>
+
+  </div>
+
+      </div>
+    </div>
+    <div class="creatio-region creatio-region_bottom">
+      <div class="creatio-container">
+          <div class="region region-bottom">
+    <div id="block-allrightsreservedua" class="block block-simple-block block-simple-blockfooter-bottom-ua">
+  
+    
+      <p>© 2002-2022 Terrasoft.  |  <a href="https://www.terrasoft.ua/privacy-policy" target="_blank">Конфиденциальность</a></p>
+
+  </div>
+
+  </div>
+
+      </div>
+    </div>
+  </footer>
+</div>
+<div class="creatio-bg"></div>
+
+
+  </div>
+
+    
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/docs\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/2390","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"ru"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"ajaxPageState":{"libraries":"admin_feedback\/admin_feedback_block,admin_feedback\/admin_feedback_css,classy\/base,classy\/messages,classy\/node,core\/drupal.ajax,core\/jquery.form,core\/normalize,creatio\/fancybox,creatio\/global,layout_discovery\/onecol,system\/base,ts_doc\/doc_version,ts_feedback\/ts_feedback,ts_nav\/breadcrumb,ts_nav\/doc_nav,ts_nav\/page_nav,ts_title_anchor\/ts_title_anchor","theme":"creatio","theme_token":null},"ajaxTrustedUrl":{"form_action_p_pvdeGsVG5zNF_XLGPTvYSKCf43t8qZYSwcfZl2uzM":true,"\/docs\/developer\/komponenty_prilozheniya\/sinkhronizaciya_sync_engine\/sinkhronizaciya_s_ms_exchange\/obzor?ajax_form=1":true},"admin_feedback":{"yes_response":"\u0421\u043f\u0430\u0441\u0438\u0431\u043e \u0437\u0430 \u043e\u0431\u0440\u0430\u0442\u043d\u0443\u044e \u0441\u0432\u044f\u0437\u044c!","no_response":"\u0421\u043f\u0430\u0441\u0438\u0431\u043e \u0437\u0430 \u043e\u0431\u0440\u0430\u0442\u043d\u0443\u044e \u0441\u0432\u044f\u0437\u044c!","custom_text_response_on_no":{"value":"","format":"full_html"},"feedback_prompt_on_yes":true,"feedback_prompt_on_no":true,"feedback_enable_predefined_answers":false,"feedback_prompt":"\u041a\u0430\u043a \u043c\u043e\u0436\u043d\u043e \u0443\u043b\u0443\u0447\u0448\u0438\u0442\u044c \u044d\u0442\u0443 \u0441\u0442\u0430\u0442\u044c\u044e?"},"ajax":{"edit-feedback-send":{"callback":"::validateFeedbackMsg","event":"mousedown","keypress":true,"prevent":"click","url":"\/docs\/developer\/komponenty_prilozheniya\/sinkhronizaciya_sync_engine\/sinkhronizaciya_s_ms_exchange\/obzor?ajax_form=1","dialogType":"ajax","submit":{"_triggering_element_name":"op","_triggering_element_value":"\u041e\u0442\u043f\u0440\u0430\u0432\u0438\u0442\u044c"}}},"user":{"uid":0,"permissionsHash":"9c2367dfcaba0fa15f0375f97aed64e146c908cee68508d13b79e3ee80e5162d"}}</script>
+<script src="../../../../sites/default/files/js/js_Rr-7TvYD7NposuRFJwUqThxM7yJmw8vs03PQwu5gWd8.js"></script>
+
+
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+      <g id="svg-copy" class="svg-icon svg-icon_copy">
+        <path d="M15.111,18H1.889A1.848,1.848,0,0,1,0,16.2V3.6A1.848,1.848,0,0,1,1.889,1.8H5.837a2.87,2.87,0,0,1,5.326,0h3.948A1.848,1.848,0,0,1,17,3.6V16.2A1.848,1.848,0,0,1,15.111,18ZM3.777,12.6v1.8h6.611V12.6Zm0-3.6v1.8h9.445V9Zm0-3.6V7.2h9.445V5.4ZM8.5,1.8a.924.924,0,0,0-.944.9.945.945,0,0,0,1.889,0A.924.924,0,0,0,8.5,1.8Z"/>
+      </g>
+
+      <g id="svg-prev" class="svg-icon svg-icon_arrow">
+        <path d="M5.488,12.779,0,6.39,5.488,0" transform="translate(1 0.652)"/>
+      </g>
+
+      <g id="svg-next" class="svg-icon svg-icon_arrow">
+        <path d="M0,12.779,5.488,6.39,0,0" transform="translate(0.759 0.652)"/>
+      </g>
+    </svg>
+  </body>
+
+<!-- Mirrored from academy.terrasoft.ua/docs/developer/komponenty_prilozheniya/sinkhronizaciya_sync_engine/sinkhronizaciya_s_ms_exchange/obzor by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Mar 2022 00:46:36 GMT -->
+</html>

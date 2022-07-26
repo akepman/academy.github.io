@@ -1,0 +1,1681 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# ">
+  
+<!-- Mirrored from academy.terrasoft.ua/docs/developer/ehlementy_interfejsa/detail/obzor by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Mar 2022 00:43:06 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+          <!-- Google Tag Manager -->
+      <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          '../../../../../www.googletagmanager.com/gtm5445.html?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-KLLB8G');</script>
+      <!-- End Google Tag Manager -->
+        <meta charset="utf-8" />
+<link rel="canonical" href="obzor.html" />
+<meta name="description" content="Деталь — элемент интерфейса на странице записи, который отображает записи определенного объекта, связанного с текущей записью. Например, на странице контакта детали используются для хранения информации о связанных с ним активностях, адресах, документах, и т. д. Большинство деталей имеют собственный реестр. Отдельные детали, например, Средства связи (Communication options), отображаются не в виде реестра." />
+<meta property="og:url" content="https://academy.terrasoft.ua/docs/developer/ehlementy_interfejsa/detail/obzor" />
+<meta property="og:title" content="Деталь" />
+<meta property="og:description" content="Деталь — элемент интерфейса на странице записи, который отображает записи определенного объекта, связанного с текущей записью. Например, на странице контакта детали используются для хранения информации о связанных с ним активностях, адресах, документах, и т. д. Большинство деталей имеют собственный реестр. Отдельные детали, например, Средства связи (Communication options), отображаются не в виде реестра." />
+<meta name="Generator" content="Drupal 9 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="../../../themes/custom/creatio/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="revision" href="obzor.html" />
+
+    <title>Деталь | Creatio Academy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&amp;family=Open+Sans:ital,wght@0,300;0,400;0,600;1,400&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" media="all" href="../../../sites/default/files/css/css_6lTP66__-yc6QXFp1zOwoeJ0HVigoYZP-SeoLLii000.css" />
+<link rel="stylesheet" media="all" href="../../../sites/default/files/css/css_XQJDNhkF3xH5SZCcY-PI89Zu4nYIzQ5oR3SnUKyfXJU.css" />
+<link rel="stylesheet" media="print" href="../../../sites/default/files/css/css_Zn4VHvcniOOtUwkIVwXzYr_0AI9gUVgZcPqaH4ViagU.css" />
+
+    
+  </head>
+  <body class="path-node page-node-type-developer-documentation">
+          <!-- Google Tag Manager (noscript) -->
+      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KLLB8G"
+                        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+      <!-- End Google Tag Manager (noscript) -->
+    
+        
+      <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    <div class="creatio-page d-flex flex-column">
+        <div class="region region-informer">
+    <div id="block-terrasoftpidtrimueukrainu" class="block block-simple-block block-simple-blockterrasoft-pidtrimue-ukrainu">
+  
+    
+      <style type="text/css">
+<!--/*--><![CDATA[/* ><!--*/
+@import url(../../../../../www.terrasoft.ua/themes/custom/creatio/css/components/informer.css)
+
+/*--><!]]>*/
+</style><div class="ts-swu">
+<div class="creatio-container">
+<div class="ts-swu__cont">
+<div><a class="ts-swu__link" href="https://www.terrasoft.ua/terrasoft-stands-with-ukraine" target="_blank">Україна понад усе!</a> <span><a href="https://www.terrasoft.ua/terrasoft-stands-with-ukraine" target="_blank">Приєднуйтеся</a> до допомоги!</span></div>
+</div>
+</div></div>
+
+  </div>
+
+  </div>
+
+  
+  <header role="banner">
+          <div class="creatio-region creatio-region_top">
+        <div class="creatio-container">
+            <div class="region region-top">
+    <div id="block-menutoggle" class="block block-simple-block block-simple-blockmenu-toggle">
+  
+    
+      <div class="menu-toggle"><span> </span></div>
+
+  </div>
+<div id="block-logowhite-2" class="block block-simple-block block-simple-blocklogo-white">
+  
+    
+      <p><a class="site-logo" href="../../../../index.html" rel="home"><img src="../../../themes/custom/creatio/logo-white.svg" /></a></p>
+
+  </div>
+<div id="block-search" class="block block-simple-block block-simple-blocksearch">
+  
+    
+      <div class="search">
+<form action="https://academy.terrasoft.ua/search" class="search-form" method="get"><input class="search-form__input" name="search" placeholder="Поиск" type="search" /><input class="search-form__button" type="submit" value="Поиск" /> </form>
+
+<div class="search-toggle"> </div>
+</div>
+
+  </div>
+<nav role="navigation" aria-labelledby="block-sitesua-menu" id="block-sitesua" class="block block-menu navigation menu--sites-ua">
+            
+  <h2 class="visually-hidden" id="block-sitesua-menu">Sites UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="https://www.terrasoft.ua/" rel="nofollow" target="_blank">Terrasoft</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://community.terrasoft.ua/" rel="nofollow" target="_blank">Community</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://marketplace.terrasoft.ua/" rel="nofollow" target="_blank">Marketplace</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+<div id="block-usermenu" class="block block-ts-user block-ts-user-menu-block">
+  
+    
+      <ul class="user-menu">
+      <li class="user-menu__item">
+      <a class="user-menu__link" href="https://profile.terrasoft.ua/user/login?destination=academy/ua/docs/developer/ehlementy_interfejsa/detail/obzor">Войти</a>
+    </li>
+  </ul>
+
+  </div>
+<div id="block-usermenumobile" class="block block-ts-user block-ts-user-menu-mobile-block">
+  
+    
+      <ul class="user-menu-mobile">
+      <li class="user-menu-mobile__item">
+      <div class="user-menu-mobile__user user-menu-mobile__user_icon"></div>
+      <ul class="user-menu-mobile__submenu">
+        <li class="user-menu-mobile__subitem">
+          <a class="user-menu-mobile__sublink" href="https://profile.terrasoft.ua/user/login?destination=academy/ua/docs/developer/ehlementy_interfejsa/detail/obzor">Войти</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  </div>
+
+  </div>
+
+        </div>
+      </div>
+              <div class="creatio-region creatio-region_header">
+        <div class="creatio-container">
+            <div class="region region-header">
+    <div id="block-logo" class="block block-simple-block block-simple-blocklogo">
+  
+    
+      <p><a class="site-logo" href="../../../../index.html" rel="home"><img src="../../../themes/custom/creatio/logo.svg" /></a></p>
+
+  </div>
+<nav role="navigation" aria-labelledby="block-osnovnayanavigaciyaua-menu" id="block-osnovnayanavigaciyaua" class="block block-menu navigation menu--main-ua">
+            
+  <h2 class="visually-hidden" id="block-osnovnayanavigaciyaua-menu">Основная навигация UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="../../../index.html" data-drupal-link-system-path="&lt;front&gt;">Документация</a>
+              </li>
+                <li class="menu-item">
+        <a href="../../../../trainings.html">Тренинги</a>
+              </li>
+                <li class="menu-item">
+        <a href="../../../certification.html" data-drupal-link-system-path="node/3084">Сертификация и тестирование</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+<nav role="navigation" aria-labelledby="block-sitesua-2-menu" id="block-sitesua-2" class="block block-menu navigation menu--sites-ua">
+            
+  <h2 class="visually-hidden" id="block-sitesua-2-menu">Sites UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="https://www.terrasoft.ua/" rel="nofollow" target="_blank">Terrasoft</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://community.terrasoft.ua/" rel="nofollow" target="_blank">Community</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://marketplace.terrasoft.ua/" rel="nofollow" target="_blank">Marketplace</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+
+  </div>
+
+        </div>
+      </div>
+              <div class="creatio-region creatio-region_breadcrumb">
+        <div class="creatio-container">
+            <div class="region region-breadcrumb">
+    <div id="block-logowhite" class="block block-simple-block block-simple-blocklogo-white">
+  
+    
+      <p><a class="site-logo" href="../../../../index.html" rel="home"><img src="../../../themes/custom/creatio/logo-white.svg" /></a></p>
+
+  </div>
+<div id="block-breadcrumbnaviagtion" class="block block-ts-nav block-ts-nav-bread">
+  
+    
+      <nav class="breadcrumb"><ol class="ts-nav-breadcrumb__list"><li class="ts-nav-breadcrumb__item"><a href="../../../index.html" class="ts-nav-breadcrumb__link" title="Документация">Документация</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../index2132.html?vid_1=2" class="ts-nav-breadcrumb__link" title="Для разработчика">Для разработчика</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../ehlementy_interfejsa.html" class="ts-nav-breadcrumb__link" title="Элементы интерфейса" hreflang="ru">Элементы интерфейса</a></li>
+<li class="ts-nav-breadcrumb__item ts-nav-breadcrumb__item_mobile"><a href="../../1215/detail.html" class="ts-nav-breadcrumb__link" title="Деталь" hreflang="ru">Деталь</a></li>
+<li class="ts-nav-breadcrumb__item"><span class="ts-nav-breadcrumb__link ts-nav-breadcrumb__link_current" title="Обзор">Обзор</span></li>
+</ol>
+</nav>
+
+  </div>
+<div id="block-search-2" class="block block-simple-block block-simple-blocksearch">
+  
+    
+      <div class="search">
+<form action="https://academy.terrasoft.ua/search" class="search-form" method="get"><input class="search-form__input" name="search" placeholder="Поиск" type="search" /><input class="search-form__button" type="submit" value="Поиск" /> </form>
+
+<div class="search-toggle"> </div>
+</div>
+
+  </div>
+
+  </div>
+
+        </div>
+      </div>
+      </header>
+
+  <div class="creatio-region creatio-region_main">
+    <div class="creatio-container">
+                <div class="region region-breadcrumb-mobile">
+    <div id="block-breadcrumbnaviagtion-2" class="block block-ts-nav block-ts-nav-bread">
+  
+    
+      <nav class="breadcrumb"><ol class="ts-nav-breadcrumb__list"><li class="ts-nav-breadcrumb__item"><a href="../../../index.html" class="ts-nav-breadcrumb__link" title="Документация">Документация</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../index2132.html?vid_1=2" class="ts-nav-breadcrumb__link" title="Для разработчика">Для разработчика</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../ehlementy_interfejsa.html" class="ts-nav-breadcrumb__link" title="Элементы интерфейса" hreflang="ru">Элементы интерфейса</a></li>
+<li class="ts-nav-breadcrumb__item ts-nav-breadcrumb__item_mobile"><a href="../../1215/detail.html" class="ts-nav-breadcrumb__link" title="Деталь" hreflang="ru">Деталь</a></li>
+<li class="ts-nav-breadcrumb__item"><span class="ts-nav-breadcrumb__link ts-nav-breadcrumb__link_current" title="Обзор">Обзор</span></li>
+</ol>
+</nav>
+
+  </div>
+
+  </div>
+
+      
+      <main class="creatio-main" role="main">
+                                                    
+        <div class="creatio-content creatio-content_small">
+          <div class="creatio-content__inner creatio-content__inner_bg">
+                            <div class="region region-messages">
+    <div data-drupal-messages-fallback class="hidden"></div>
+
+  </div>
+
+            
+              <div class="region region-content">
+    <div id="block-creatio-page-title" class="block block-core block-page-title-block">
+  
+    
+      
+  <h1 class="page-title"><span class="field field--name-title field--type-string field--label-hidden">Деталь</span>
+</h1>
+
+
+  </div>
+<div id="block-creatio-content" class="block block-system block-system-main-block">
+  
+    
+      
+<article data-history-node-id="2338" role="article" about="/docs/developer/ehlementy_interfejsa/detail/obzor" class="node node--type-developer-documentation node--view-mode-full">
+
+  
+    
+
+  
+  <div class="node__content">
+      <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocknodedeveloper-documentationfield-difficulty">
+  
+    
+      
+            <div class="field field--name-field-difficulty field--type-entity-reference field--label-hidden field__item"><div about="/docs/taxonomy/term/121" id="taxonomy-term-121" class="taxonomy-term vocabulary-difficulty">
+  
+  
+  <div class="content">
+      <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocktaxonomy-termdifficultyfield-icon">
+  
+    
+      
+            <div class="field field--name-field-icon field--type-image field--label-hidden field__item">  <img src="../../../sites/default/files/difficulty/beginner.svg" alt="" loading="lazy" typeof="foaf:Image" />
+
+</div>
+      
+  </div>
+<div class="block block-layout-builder block-field-blocktaxonomy-termdifficultyname">
+  
+    
+      
+            <div class="field field--name-name field--type-string field--label-hidden field__item"><span style="color: #7FB441;">Основы</span></div>
+      
+  </div>
+
+    </div>
+  </div>
+
+  </div>
+</div>
+</div>
+      
+  </div>
+<div class="block block-ts-doc block-ts-doc-downloads">
+  
+    
+      <a href="../../../sites/default/files/pdf/node/2338/Detal_.pdf" target="_blank">PDF</a>
+  </div>
+<div class="block block-ts-doc block-ts-doc-versions">
+  
+    
+        <div class="ts-doc-versions">
+    <select class="ts-doc-versions__select">
+                                                <option value="/docs/8-0/developer/ehlementy_interfejsa/detail/obzor" selected>Версия 8.0</option>
+                              <option value="/docs/7-18/developer/ehlementy_interfejsa/detail/obzor">Версия 7.18</option>
+                              <option value="/docs/7-17/developer/ehlementy_interfejsa/detail/obzor">Версия 7.17</option>
+                              <option value="/docs/7-16/developer/ehlementy_interfejsa/detail/obzor">Версия 7.16</option>
+          </select>
+  </div>
+
+  </div>
+
+    </div>
+  </div>
+  <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocknodedeveloper-documentationbody">
+  
+    
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><p><strong>Деталь</strong> — элемент интерфейса на странице записи, который отображает записи определенного объекта, связанного с текущей записью. Например, на странице контакта детали используются для хранения информации о связанных с ним активностях, адресах, документах, и т. д. Большинство деталей имеют собственный реестр. Отдельные детали, например, <span class="key">Средства связи</span> (<span class="key">Communication options</span>), отображаются не в виде реестра. Визуально деталь отличается от <a href="../../../user/bazis_platformy/interfejs/stranitsy_zapisey/stranicy_zapisej.html?id=1765">группы полей</a> наличием панели инструментов для управления данными (добавления и изменения записей, сортировки, фильтрации, настройки детали и других действий).</p>
+
+<p><strong>Назначение</strong> детали — отображение дополнительных данных для основного объекта раздела. Детали раздела отображаются во вкладках страницы записи раздела в контейнере вкладок.</p>
+
+<h2>Структура и типы деталей<a class="title-anchor" href="#title-2338-1" id="title-2338-1"> </a></h2>
+
+<p><strong>Составляющие</strong> детали:</p>
+
+<ul><li><strong>Схема объекта детали</strong> связана с объектом раздела. Например, детали <span class="key">Адреса</span> (<span class="key">Addresses</span>) страницы контакта соответствует схема объекта <span class="filled">ContactAddress</span> пакета <span class="filled">Base</span>. Связь с объектом раздела выполняется по обязательной колонке <span class="key">Contact</span> объекта детали.</li>
+	<li><strong>Схема модели представления детали</strong> позволяет настроить структуру, расположение и поведение элементов пользовательского интерфейса детали. Например, деталь <span class="key">Адреса</span> (<span class="key">Addresses</span>) страницы контакта настраивается в схеме <span class="filled">ContactAddressDetailV2</span> модели представления детали, которая наследует схему <span class="filled">BaseAddressDetailV2</span>) пакета <span class="filled">UIv2</span>.</li>
+	<li><strong>Схема модели представления страницы записи детали</strong> позволяет настроить страницу детали. Например, свойства страницы детали <span class="key">Адреса</span> (<span class="key">Addresses</span>) страницы контакта настраивается в схеме <span class="filled">ContactAddressPageV2</span> модели представления страницы записи детали, которая наследует схему <span class="filled">BaseAddressPageV2</span> пакета <span class="filled">UIv2</span>.</li>
+</ul><p><strong>Типы</strong> деталей, которые предоставляет Creatio:</p>
+
+<ul><li>Деталь с редактируемым реестром.</li>
+	<li>Деталь со страницей добавления.</li>
+	<li>Деталь с выбором из справочника.</li>
+	<li>Деталь с полями.</li>
+	<li>Деталь типа <span class="key">Файлы и ссылки</span> (<span class="key">Attachments</span>).</li>
+</ul><p>Тип детали зависит от метода ввода и отображения данных.</p>
+
+<h2>Реализовать деталь<a class="title-anchor" href="#title-2338-2" id="title-2338-2"> </a></h2>
+
+<p>Функциональность базовой детали реализована в схеме <span class="filled">BaseDetailV2</span> пакета <span class="filled">NUI</span>.</p>
+
+<p><strong>Инструменты</strong>, которые позволяют реализовать деталь:</p>
+
+<ul><li>Мастер деталей.</li>
+	<li>Creatio IDE.</li>
+</ul><p>Реализовать некоторые типы деталей невозможно исключительно в мастере деталей. В этом случае необходимо использовать комбинацию мастера деталей и Creatio IDE. Особенности использования инструментов при реализации разных типов деталей будут рассмотрены далее.</p>
+
+<p><a name="section_wizard" id="section_wizard"></a>Общий алгоритм реализации детали с использованием <strong>мастера деталей</strong>:</p>
+
+<ol><li><strong>Создайте пользовательскую деталь</strong>. Для этого воспользуйтесь инструкцией, которая приведена в статье <a href="../../../user/kastomizacija_no_code/nastrojka_biznes_logiki/stranitsa/sozdanie_detali/sozdat_novuyu_detal.html?id=2032">Создать новую деталь</a>.</li>
+	<li><strong>Добавьте пользовательскую деталь на страницу записи</strong>. Для этого воспользуйтесь инструкцией, которая приведена в статье <a href="../../../user/kastomizacija_no_code/nastrojka_biznes_logiki/stranitsa/nastroika_detali/nastroit_suschestvuyuschuyu_detal_na_stranice_zapisi%23title-146-1.html?id=2030&amp;anchor=title-146-1">Настроить существующую деталь на странице записи</a>.</li>
+	<li><strong>Настройте внешний вид пользовательской детали</strong> (опционально). Для этого воспользуйтесь инструкцией, которая приведена в статье <a href="../../../user/kastomizacija_no_code/nastrojka_biznes_logiki/stranitsa/nastroika_detali/nastroit_suschestvuyuschuyu_detal_na_stranice_zapisi%23title-146-6.html?id=2030&amp;anchor=title-146-6">Настроить существующую деталь на странице записи</a>.</li>
+</ol><p><a name="creatio_ide" id="creatio_ide"></a>Общий алгоритм реализации детали с использованием <strong>Creatio IDE</strong>:</p>
+
+<ol><li>
+	<p><strong>Создайте пользовательскую деталь</strong>.</p>
+
+	<ol><li>Создайте схему объекта детали. Для этого воспользуйтесь инструкцией, которая приведена в статье <a href="../../../7-17/developer/instrumenty_razrabotki/creatio_ide/razrabotka_konfiguratsionnykh_elementov.html#title-3028-6">Разработка конфигурационных элементов</a>.</li>
+		<li>Создайте схему модели представления детали. Для этого воспользуйтесь инструкцией, которая приведена в статье <a href="../../../7-17/developer/instrumenty_razrabotki/creatio_ide/razrabotka_konfiguratsionnykh_elementov.html#title-3028-3">Разработка конфигурационных элементов</a>.</li>
+		<li>Добавьте пользовательские стили детали (опционально).</li>
+		<li>Зарегистрируйте деталь в базе данных (опционально).</li>
+	</ol></li>
+	<li>
+	<p><strong>Добавьте пользовательскую деталь на страницу записи</strong>.</p>
+
+	<p>Создайте схему замещающей модели представления страницы записи, на которой будет размещена деталь. Для этого воспользуйтесь инструкцией, которая приведена в статье <a href="../../../7-17/developer/instrumenty_razrabotki/creatio_ide/razrabotka_konfiguratsionnykh_elementov.html#title-3028-4">Разработка конфигурационных элементов</a>.</p>
+	</li>
+	<li><strong>Настройте внешний вид пользовательской детали</strong> (опционально). Для этого воспользуйтесь инструкцией, которая приведена в статье <a href="../../../user/kastomizacija_no_code/nastrojka_biznes_logiki/stranitsa/nastroika_detali/nastroit_suschestvuyuschuyu_detal_na_stranice_zapisi%23title-146-2.html?id=2030&amp;anchor=title-146-2">Настроить существующую деталь на странице записи</a>.</li>
+</ol><h3>Реализовать деталь с редактируемым реестром<a class="title-anchor" href="#title-2338-3" id="title-2338-3"> </a></h3>
+
+<p><strong>Деталь с редактируемым реестром</strong> позволяет вводить и редактировать данные в реестре детали. Данные отображаются в списочном представлении. Деталь с редактируемым реестром является подвидом детали с реестром. Функциональность базовой детали с реестром реализована в схеме <span class="filled">BaseGridDetailV2</span> пакета <span class="filled">NUI</span>. Примером детали с редактируемым реестром является деталь <span class="key">Продукты</span> (<span class="key">Products</span>) страницы заказа. Данные каждого продукта редактируются на странице заказа.</p>
+
+<div class="media">
+<div class="media__element"><img src="../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/BasicUIElements/Detail/7.18/scr_DetailWithEditableList.png" /></div>
+</div>
+
+<h4>Использовать мастер деталей для реализации детали с редактируемым реестром<a class="title-anchor" href="#title-2338-4" id="title-2338-4"> </a></h4>
+
+<ol><li>
+	<p><strong>Создайте пользовательскую деталь</strong>.</p>
+
+	<ul><li>Настройте редактируемый реестр. Для этого установите признак <span class="key">Сделать реестр редактируемым</span> (<span class="key">Make the list editable</span>). В другом случае будет создана деталь со страницей добавления.</li>
+		<li>Настройте многострочный текст (опционально). Для отображения данных в несколько строк установите признак <span class="key">Многострочный текст</span> (<span class="key">Multi-line text</span>). Многострочный текст доступен к использованию только для колонок типа <span class="key">Строка</span> (<span class="key">String</span>).</li>
+	</ul></li>
+	<li>Выполните шаг 2 общего <a href="#section_wizard">алгоритма реализации детали с использованием мастера деталей</a>.</li>
+</ol><h4>Использовать Creatio IDE для реализации детали с редактируемым реестром<a class="title-anchor" href="#title-2338-5" id="title-2338-5"> </a></h4>
+
+<ol><li>
+	<p><strong>Создайте пользовательскую деталь</strong>.</p>
+
+	<ol><li>
+		<p>Создайте схему объекта детали.</p>
+
+		<ul><li>В качестве родительского объекта выберите <span class="filled">BaseEntity</span>.</li>
+			<li>В схему объекта добавьте колонку типа <span class="key">Строка</span> (<span class="key">String</span>) и другие необходимые колонки.</li>
+		</ul></li>
+		<li>
+		<p>Создайте схему модели представления детали с редактируемым реестром.</p>
+
+		<ul><li>В качестве родительского объекта выберите <span class="filled">BaseGridDetailV2</span>.</li>
+			<li>На панели инструментов в контекстном меню узла <span class="key">Локализуемые строки</span> (<span class="key">Localizable strings</span>) выберите локализуемую строку <span class="key">Caption</span> и в свойстве <span class="key">Значение</span> (<span class="key">Value</span>) задайте название детали.</li>
+			<li>
+			<p>Реализуйте редактируемый реестр.</p>
+
+			<ol><li>В зависимости добавьте схемы модулей <span class="filled">ConfigurationGrid</span>, <span class="filled">ConfigurationGridGenerator</span>, <span class="filled">ConfigurationGridUtilities</span>.</li>
+				<li>В свойство <span class="filled">mixins</span> добавьте миксин <span class="filled">ConfigurationGridUtilities</span>.</li>
+				<li>В свойство <span class="filled">attributes</span> добавьте атрибут <span class="filled">IsEditable</span> со значением <span class="filled">true</span> свойства <span class="filled">value</span>.</li>
+			</ol></li>
+			<li>Реализуйте многострочный текст (опционально). Для этого в свойство <span class="filled">attributes</span> добавьте колонку типа <span class="key">Строка</span> (<span class="key">String</span>) со значением <span class="filled">Terrasoft.ContentType.LONG_TEXT</span> свойства <span class="filled">contentType</span>.</li>
+		</ul><p>Пример схемы <span class="filled">ContactPageV2</span> модели представления детали с редактируемым реестром <span class="filled">UsrCourierServiceDetail</span>, у которой для колонки <span class="key">UsrDescription</span> используется многострочный текст, приведен ниже.</p>
+
+		<div class="code">
+		<div class="code__widgets">
+		<div class="code__top">
+		<div class="code__title">Пример схемы замещающей модели представления</div>
+		</div>
+
+		<div class="code__source">
+		<pre class="prettyprint">
+/* Определение схемы и установка ее зависимостей от других модулей. */
+define("UsrCourierServiceDetail", ["ConfigurationGrid", "ConfigurationGridGenerator",
+    "ConfigurationGridUtilities"], function() {
+    return {
+        /* Название схемы объекта детали. */
+        entitySchemaName: "UsrCourierService",
+        /* Перечень атрибутов схемы. */
+        attributes: {
+            /* Признак возможности редактирования. */
+            "IsEditable": {
+                /* Тип данных — логический. */
+                dataValueType: Terrasoft.DataValueType.BOOLEAN,
+                /* Тип атрибута — виртуальная колонка модели представления. */
+                type: Terrasoft.ViewModelColumnType.VIRTUAL_COLUMN,
+                /* Устанавливаемое значение. */
+                value: true
+            }
+        },
+        /* Используемые миксины. */
+        mixins: {
+            ConfigurationGridUtilities: "Terrasoft.ConfigurationGridUtilities"
+        },
+        /* Массив модификаций модели представления. */
+        diff: /**SCHEMA_DIFF*/[
+            {
+                /* Тип операции — слияние. */
+                "operation": "merge",
+                /* Название элемента схемы, над которым производится действие. */
+                "name": "DataGrid",
+                /* Объект, свойства которого будут объединены со свойствами элемента схемы. */
+                "values": {
+                    /* Имя класса. */
+                    "className": "Terrasoft.ConfigurationGrid",
+                    /* Генератор представления должен генерировать только часть представления. */
+                    "generator": "ConfigurationGridGenerator.generatePartial",
+                    /* Привязка события получения конфигурации элементов редактирования активной строки к методу-обработчику. */
+                    "generateControlsConfig": {"bindTo": "generateActiveRowControlsConfig"},
+                    /* Привязка события смены активной записи к методу-обработчику. */
+                    "changeRow": {"bindTo": "changeRow"},
+                    /* Привязка события отмены выбора записи к методу-обработчику. */
+                    "unSelectRow": {"bindTo": "unSelectRow"},
+                    /* Привязка  события клика на реестре к методу-обработчику. */
+                    "onGridClick": {"bindTo": "onGridClick"},
+                    /* Действия, производимые с активной записью. */
+                    "activeRowActions": [
+                        /* Настройка действия Сохранить. */
+                        {
+                            /* Имя класса элемента управления, с которым связано действие. */
+                            "className": "Terrasoft.Button",
+                            /* Стиль отображения — прозрачная кнопка. */
+                            "style": this.Terrasoft.controls.ButtonEnums.style.TRANSPARENT,
+                            /* Тег. */
+                            "tag": "save",
+                            /* Значение маркера. */
+                            "markerValue": "save",
+                            /* Привязка к изображению кнопки. */
+                            "imageConfig": {"bindTo": "Resources.Images.SaveIcon"}
+                        },
+                        /* Настройка действия Отменить. */
+                        {
+                            "className": "Terrasoft.Button",
+                            "style": this.Terrasoft.controls.ButtonEnums.style.TRANSPARENT,
+                            "tag": "cancel",
+                            "markerValue": "cancel",
+                            "imageConfig": {"bindTo": "Resources.Images.CancelIcon"}
+                        },
+                        /* Настройка действия Удалить. */
+                        {
+                            "className": "Terrasoft.Button",
+                            "style": this.Terrasoft.controls.ButtonEnums.style.TRANSPARENT,
+                            "tag": "remove",
+                            "markerValue": "remove",
+                            "imageConfig": {"bindTo": "Resources.Images.RemoveIcon"}
+                        }
+                    ],
+                    /* Привязка к методу, который инициализирует подписку на события нажатия кнопок в активной строке. */
+                    "initActiveRowKeyMap": {"bindTo": "initActiveRowKeyMap"},
+                    /* Привязка события выполнения действия активной записи к методу-обработчику. */
+                    "activeRowAction": {"bindTo": "onActiveRowAction"},
+                    /* Признак возможности выбора нескольких записей. */
+                    "multiSelect": {"bindTo": "MultiSelect"},
+                    /* Колонка описания. */
+                    "UsrDescription": {
+                        /* Тип отображения - длинный текст. */
+                        "contentType": Terrasoft.ContentType.LONG_TEXT
+                    }
+                }
+            }
+        ]/**SCHEMA_DIFF*/
+    };
+});
+</pre>
+		</div>
+		</div>
+		</div>
+		</li>
+		<li>
+		<p>Зарегистрируйте деталь в базе данных. Для этого выполните SQL-запрос к таблице <span class="filled">[SysDetails]</span> базы данных.</p>
+
+		<div class="code">
+		<div class="code__widgets">
+		<div class="code__top">
+		<div class="code__title">SQL-запрос</div>
+		</div>
+
+		<div class="code__source">
+		<pre class="prettyprint">
+DECLARE 
+-- Название схемы детали.
+@ClientUnitSchemaName NVARCHAR(100) = 'UsrИмяСхемыДетали',
+-- Название схемы объекта детали.
+@EntitySchemaName NVARCHAR(100) = 'UsrИмяСхемыОбъектаДетали',
+-- Название детали.
+@DetailCaption NVARCHAR(100) = 'ИмяДетали'
+
+INSERT INTO SysDetail(
+    Caption,
+    DetailSchemaUId,
+    EntitySchemaUId
+)
+VALUES(
+    @DetailCaption,
+    (SELECT TOP 1 UId
+    from SysSchema
+    WHERE Name = @ClientUnitSchemaName),
+    (SELECT TOP 1 UId
+    from SysSchema
+    WHERE Name = @EntitySchemaName)
+)
+</pre>
+		</div>
+		</div>
+		</div>
+
+		<p>Регистрация детали выполняется, чтобы деталь стала видимой для мастера разделов и мастера деталей.</p>
+		</li>
+	</ol></li>
+	<li>
+	<p><strong>Добавьте пользовательскую деталь на страницу записи</strong>.</p>
+
+	<p>Создайте схему замещающей модели представления страницы записи, на которой будет размещена деталь с редактируемым реестром.</p>
+
+	<ul><li>В качестве родительского объекта выберите схему модели представления, которую необходимо заместить.</li>
+		<li>В свойство <span class="filled">details</span> добавьте деталь.</li>
+		<li>В массив модификаций <span class="filled">diff</span> добавьте конфигурационный объект модели представления детали.</li>
+	</ul><p>Пример схемы <span class="filled">ContactPageV2</span> замещающей модели представления страницы записи, на которой размещена деталь с редактируемым реестром <span class="filled">UsrRegDocumentFieldsDetail</span> приведен ниже.</p>
+
+	<div class="code">
+	<div class="code__widgets">
+	<div class="code__top">
+	<div class="code__title">Пример схемы замещающей модели представления</div>
+	</div>
+
+	<div class="code__source">
+	<pre class="prettyprint">
+define("ContactPageV2", [], function() {
+    return {
+        entitySchemaName: "Contact",
+        details: /**SCHEMA_DETAILS*/ {
+            /* Добавление детали с полями. */
+            "UsrRegDocumentFieldsDetail": {
+                /* Название клиентской схемы детали. */
+                "schemaName": "UsrRegDocumentFieldsDetail",
+                /* Фильтрация записей детали текущего контакта (физ. лица). */
+                "filter": {
+                    /* Колонка объекта детали. */
+                    "detailColumn": "UsrContact",
+                    /* Колонка идентификатора контакта. */
+                    "masterColumn": "Id"
+                }
+            }
+        } /**SCHEMA_DETAILS*/ ,
+        diff: /**SCHEMA_DIFF*/ [{
+            /* Добавление нового элемента. */
+            "operation": "insert",
+            /* Название элемента. */
+            "name": "UsrRegDocumentFieldsDetail",
+            /* Конфигурационный объект значений. */
+            "values": {
+                /* Тип элемента. */
+                "itemType": Terrasoft.ViewItemType.DETAIL
+            },
+            /* Имя элемента-контейнера. */
+            "parentName": "HistoryTab",
+            /* Имя свойства элемента-контейнера, который содержит коллекцию вложенных элементов. */
+            "propertyName": "items",
+            /* Индекс добавляемого в коллекцию элемента. */
+            "index": 0
+        }] /**SCHEMA_DIFF*/
+    };
+});
+</pre>
+	</div>
+	</div>
+	</div>
+	</li>
+</ol><h3>Реализовать деталь со страницей добавления<a class="title-anchor" href="#title-2338-6" id="title-2338-6"> </a></h3>
+
+<p><strong>Деталь со страницей добавления</strong> позволяет вводить и редактировать данные на странице детали. Деталь со страницей добавления является подвидом детали с реестром. Функциональность базовой детали с реестром реализована в схеме <span class="filled">BaseGridDetailV2</span> пакета <span class="filled">NUI</span>. Примером детали со страницей добавления является деталь <span class="key">Адреса</span> (<span class="key">Addresses</span>) страницы контакта. Данные каждого адреса вводятся и редактируются на странице <span class="key">Адрес контакта</span> (<span class="key">Contact address</span>).</p>
+
+<div class="media">
+<div class="media__element"><img src="../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/BasicUIElements/Detail/7.18/scr_DetailWithAddingPage.png" /></div>
+</div>
+
+<p>Чтобы реализовать деталь со страницей добавления с использованием <strong>мастера деталей</strong>, используйте общий алгоритм реализации детали с использованием мастера деталей.</p>
+
+<p>Чтобы реализовать деталь со страницей добавления с использованием <strong>Creatio IDE</strong>:</p>
+
+<ol><li>
+	<p><strong>Создайте пользовательскую деталь</strong>.</p>
+
+	<ol><li>
+		<p>Создайте схему объекта детали.</p>
+
+		<ul><li>В качестве родительского объекта выберите <span class="filled">BaseEntity</span>.</li>
+			<li>В схему объекта добавьте необходимые колонки.</li>
+		</ul></li>
+		<li>
+		<p>Создайте схему модели представления детали со страницей добавления.</p>
+
+		<ul><li>В качестве родительского объекта выберите <span class="filled">BaseGridDetailV2</span>.</li>
+			<li>На панели инструментов в контекстном меню узла <span class="key">Локализуемые строки</span> (<span class="key">Localizable strings</span>) выберите локализуемую строку <span class="key">Caption</span> и в свойстве <span class="key">Значение</span> (<span class="key">Value</span>) задайте название детали.</li>
+		</ul></li>
+		<li>
+		<p>Создайте схему модели представления страницы записи детали. Для этого воспользуйтесь инструкцией, которая приведена в статье <a href="../../../7-17/developer/instrumenty_razrabotki/creatio_ide/razrabotka_konfiguratsionnykh_elementov.html#title-3028-3">Разработка конфигурационных элементов</a>.</p>
+
+		<ul><li>В качестве родительского объекта выберите <span class="filled">BasePageV2</span>.</li>
+			<li>В массив модификаций <span class="filled">diff</span> добавьте конфигурационный объект модели представления детали.</li>
+		</ul><p>Пример схемы <span class="filled">UsrCourierDetailPage</span> модели представления страницы записи детали <span class="filled">UsrCourierInOrder</span> приведен ниже.</p>
+
+		<div class="code">
+		<div class="code__widgets">
+		<div class="code__top">
+		<div class="code__title">Пример схемы модели представления страницы записи детали</div>
+		</div>
+
+		<div class="code__source">
+		<pre class="prettyprint">
+define("UsrCourierDetailPage", [], function() {
+    return {
+        /* Название схемы объекта детали. */
+        entitySchemaName: "UsrCourierInOrder",
+        details: /**SCHEMA_DETAILS*/{}/**SCHEMA_DETAILS*/,
+        /* Массив модификаций. */
+        diff: /**SCHEMA_DIFF*/[
+            /* Метаданные для добавления поля [Заказ]. */
+            {
+                "operation": "insert",
+                /* Название поля. */
+                "name": "Order",
+                "values": {
+                    /* Настройка расположения поля на странице записи. */
+                    "layout": {
+                        "colSpan": 12,
+                        "rowSpan": 1,
+                        "column": 0,
+                        "row": 0,
+                        "layoutName": "Header"
+                    },
+                    /* Привязка к колонке [Order] схемы объекта. */
+                    "bindTo": "UsrOrder"
+                },
+                "parentName": "Header",
+                "propertyName": "items",
+                "index": 0
+            },
+            /* Метаданные для добавления поля [Контакт]. */
+            {
+                "operation": "insert",
+                /* Название поля. */
+                "name": "Contact",
+                "values": {
+                    /* Настройка расположения поля на странице записи. */
+                    "layout": {
+                        "colSpan": 12,
+                        "rowSpan": 1,
+                        "column": 12,
+                        "row": 0,
+                        "layoutName": "Header"
+                    },
+                    /* Привязка к колонке [Contact] схемы объекта. */
+                    "bindTo": "UsrContact"
+                },
+                "parentName": "Header",
+                "propertyName": "items",
+                "index": 1
+            }
+        ]/**SCHEMA_DIFF*/,
+        methods: {},
+        rules: {}
+    };
+});
+</pre>
+		</div>
+		</div>
+		</div>
+		</li>
+		<li>
+		<p>Зарегистрируйте деталь в базе данных.</p>
+
+		<ol><li>
+			<p>Зарегистрируйте связь между схемой объекта детали и схемой реестра детали. Для этого выполните SQL-запрос к таблице <span class="filled">[SysDetails]</span> базы данных.</p>
+
+			<div class="code">
+			<div class="code__widgets">
+			<div class="code__top">
+			<div class="code__title">SQL-запрос</div>
+			</div>
+
+			<div class="code__source">
+			<pre class="prettyprint">
+DECLARE 
+-- Название схемы детали.
+@DetailSchemaName NCHAR(100) = 'UsrИмяСхемыДетали',
+-- Название схемы объекта детали.
+@EntitySchemaName NVARCHAR(100) = 'UsrИмяСхемыОбъектаДетали',
+-- Название детали.
+@DetailCaption NVARCHAR(100) = 'ИмяДетали'
+
+INSERT INTO SysDetail(
+    ProcessListeners,
+    Caption,
+    DetailSchemaUId,
+    EntitySchemaUId
+)
+VALUES (
+    0,
+    @DetailCaption,
+    (SELECT TOP 1 UId
+    FROM SysSchema
+    WHERE name = @DetailSchemaName),
+    (SELECT TOP 1 UId
+    FROM SysSchema
+    WHERE name = @EntitySchemaName)
+)
+</pre>
+			</div>
+			</div>
+			</div>
+			</li>
+			<li>
+			<p>Зарегистрируйте связь между схемой объекта детали и схемой страницы записи детали. Для этого выполните SQL-запрос к таблицам <span class="filled">[SysModuleEntity]</span> и <span class="filled">[SysModuleEdit]</span> базы данных.</p>
+
+			<div class="code">
+			<div class="code__widgets">
+			<div class="code__top">
+			<div class="code__title">SQL-запрос</div>
+			</div>
+
+			<div class="code__source">
+			<pre class="prettyprint">
+DECLARE 
+-- Название схемы страницы детали.
+@CardSchemaName NCHAR(100) = 'UsrИмяСхемыСтраницыДетали',
+-- Название схемы объекта детали.
+@EntitySchemaName NVARCHAR(100) = 'UsrИмяСхемыОбъектаДетали',
+-- Название страницы детали.
+@PageCaption NVARCHAR(100) = 'ИмяСтраницыДетали',
+-- Пустая строка.
+@Blank NCHAR(100) = ''
+
+INSERT INTO SysModuleEntity(
+    ProcessListeners,
+    SysEntitySchemaUId
+)
+VALUES (
+    0,
+    (SELECT TOP 1 UId
+    FROM SysSchema
+    WHERE Name = @EntitySchemaName
+    )
+)
+
+INSERT INTO SysModuleEdit(
+    SysModuleEntityId,
+    UseModuleDetails,
+    Position,
+    HelpContextId,
+    ProcessListeners,
+    CardSchemaUId,
+    ActionKindCaption,
+    ActionKindName,
+    PageCaption
+)
+VALUES (
+    (SELECT TOP 1 Id
+    FROM SysModuleEntity
+    WHERE SysEntitySchemaUId = (
+        SELECT TOP 1 UId
+        FROM SysSchema
+        WHERE Name = @EntitySchemaName
+        )
+    ),
+    1,
+    0,
+    @Blank,
+    0,
+    (SELECT TOP 1 UId
+     FROM SysSchema
+     WHERE name = @CardSchemaName
+    ),
+    @Blank,
+    @Blank,
+    @PageCaption
+)
+</pre>
+			</div>
+			</div>
+			</div>
+			</li>
+		</ol><p>Регистрация детали выполняется, чтобы деталь стала видимой для мастера разделов и мастера деталей.</p>
+		</li>
+		<li>Для применения изменений перезапустите приложение в IIS.</li>
+	</ol></li>
+	<li>
+	<p><strong>Добавьте пользовательскую деталь на страницу записи</strong>.</p>
+
+	<p>Создайте схему замещающей модели представления страницы записи, на которой будет размещена деталь со страницей добавления.</p>
+
+	<ul><li>В качестве родительского объекта выберите схему модели представления, которую необходимо заместить.</li>
+		<li>В свойство <span class="filled">details</span> добавьте деталь.</li>
+		<li>В массив модификаций <span class="filled">diff</span> добавьте конфигурационный объект модели представления детали.</li>
+	</ul></li>
+	<li>Выполните шаг 4 общего <a href="#creatio_ide">алгоритма реализации детали с использованием Creatio IDE</a>. Без выполнения этого шага деталь отображается на странице записи, но не содержит записей, поскольку не указаны колонки для отображения.</li>
+</ol><h3>Реализовать деталь с выбором из справочника<a class="title-anchor" href="#title-2338-7" id="title-2338-7"> </a></h3>
+
+<p><strong>Деталь с выбором из справочника</strong> позволяет выбирать данные из справочника, который отображается в модальном окне. Деталь с выбором из справочника является подвидом детали с реестром. Функциональность базовой детали с реестром реализована в схеме <span class="filled">BaseGridDetailV2</span> пакета <span class="filled">NUI</span>. Примером детали с выбором из справочника является деталь <span class="key">Продукты</span> (<span class="key">Products</span>) страницы лида. Выбор продукта выполняется в модальном окне <span class="key">Выбор: Продукты</span> (<span class="key">Select: Products</span>).</p>
+
+<div class="media">
+<div class="media__element"><img src="../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/BasicUIElements/Detail/7.18/scr_DetailWithSelectionFromLookup.gif" /></div>
+</div>
+
+<h4>Использовать мастер деталей для реализации детали с выбором из справочника<a class="title-anchor" href="#title-2338-8" id="title-2338-8"> </a></h4>
+
+<ol><li>
+	<p><strong>Создайте пользовательскую деталь</strong>.</p>
+
+	<ul><li>Добавьте на деталь колонку типа <span class="key">Справочник</span> (<span class="key">Lookup</span>).</li>
+		<li>Настройте вид справочника. Для этого в свойстве <span class="key">Вид справочника</span> (<span class="key">Lookup view</span>) выберите значение "<span class="consolas">Всплывающее окно</span>" ("<span class="consolas">Selection window</span>").</li>
+	</ul></li>
+	<li>Выполните шаг 2 общего <a href="#section_wizard">алгоритма реализации детали с использованием мастера деталей</a>.</li>
+</ol><h4>Использовать Creatio IDE для реализации детали с выбором из справочника<a class="title-anchor" href="#title-2338-9" id="title-2338-9"> </a></h4>
+
+<ol><li>
+	<p><strong>Создайте пользовательскую деталь</strong>.</p>
+
+	<ol><li>
+		<p>Создайте схему объекта детали.</p>
+
+		<ul><li>В качестве родительского объекта выберите <span class="filled">BaseEntity</span>.</li>
+			<li>В схему объекта добавьте колонку типа <span class="key">Справочник</span> (<span class="key">Lookup</span>) и другие необходимые колонки.</li>
+		</ul></li>
+		<li>
+		<p>Создайте схему модели представления детали с выбором из справочника.</p>
+
+		<ul><li>В качестве родительского объекта выберите <span class="filled">BaseGridDetailV2</span>.</li>
+			<li>На панели инструментов в контекстном меню узла <span class="key">Локализуемые строки</span> (<span class="key">Localizable strings</span>) выберите локализуемую строку <span class="key">Caption</span> и в свойстве <span class="key">Значение</span> (<span class="key">Value</span>) задайте название детали.</li>
+		</ul></li>
+	</ol></li>
+	<li>
+	<p><strong>Добавьте пользовательскую деталь на страницу записи</strong>.</p>
+
+	<p>Создайте схему замещающей модели представления страницы записи, на которой будет размещена деталь с выбором из справочника.</p>
+
+	<ul><li>В качестве родительского объекта выберите схему модели представления, которую необходимо заместить.</li>
+		<li>В зависимости схемы модели представления страницы записи добавьте схему модуля <span class="filled">ConfigurationEnums</span>.</li>
+		<li>
+		<p>В свойство <span class="filled">methods</span> добавьте методы:</p>
+
+		<ul><li><span class="filled">onDocumentInsert()</span> — обрабатывает событие добавления записей в реестр детали.</li>
+			<li><span class="filled">onCardSaved()</span> — обрабатывает событие сохранения страницы записи с деталью.</li>
+			<li><span class="filled">openDocumentLookup()</span> — вызывает модальное окно справочника.</li>
+			<li>Вспомогательные методы управления данными.</li>
+		</ul></li>
+		<li>В массив модификаций <span class="filled">diff</span> добавьте конфигурационный объект модели представления детали.</li>
+	</ul><p>Пример схемы <span class="filled">UsrCourierCertDetail</span> модели представления страницы записи, на которой размещена деталь с выбором из справочника <span class="filled">UsrCourierCertInOrder</span> приведен ниже.</p>
+
+	<div class="code">
+	<div class="code__widgets">
+	<div class="code__top">
+	<div class="code__title">Пример схемы замещающей модели представления</div>
+	</div>
+
+	<div class="code__source">
+	<pre class="prettyprint">
+/* Определение схемы и установка ее зависимостей от других модулей. */
+define("UsrCourierCertDetail", ["ConfigurationEnums"],
+    function(configurationEnums) {
+        return {
+            /* Название схемы объекта детали. */
+            entitySchemaName: "UsrCourierCertInOrder",
+            /* Методы схемы детали. */
+            methods: {
+                /* Возвращает колонки, которые выбираются запросом. */
+                getGridDataColumns: function() {
+                    return {
+                        "Id": {path: "Id"},
+                        "Document": {path: "UsrDocument"},
+                        "Document.Number": {path: "UsrDocument.Number"}
+                    };
+                },
+
+                /* Конфигурирует и отображает модальное окно справочника. */
+                openDocumentLookup: function() {
+                    /* Конфигурационный объект. */
+                    var config = {
+                        /* Название схемы объекта, записи которого будут отображены в справочнике. */
+                        entitySchemaName: "Document",
+                        /* Возможность множественного выбора. */
+                        multiSelect: true,
+                        /* Колонки, которые будут использованы в справочнике, например, для сортировки. */
+                        columns: ["Number", "Date", "Type"]
+                    };
+                    var OrderId = this.get("MasterRecordId");
+                    if (this.Ext.isEmpty(OrderId)) {
+                        return;
+                    }
+                    /* Экземпляр класса EntitySchemaQuery. */
+                    var esq = this.Ext.create("Terrasoft.EntitySchemaQuery", {
+                        /* Установка корневой схемы. */
+                        rootSchemaName: this.entitySchemaName
+                    });
+                    /* Добавление колонки Id. */
+                    esq.addColumn("Id");
+                    /* Добавление колонки Id из схемы Document. */
+                    esq.addColumn("Document.Id", "DocumentId");
+                    /* Создание и добавление фильтров в коллекцию запроса. */
+                    esq.filters.add("filterOrder", this.Terrasoft.createColumnFilterWithParameter(
+                        this.Terrasoft.ComparisonType.EQUAL, "UsrOrder", OrderId));
+                    /* Получение всей коллекции записей и отображение ее в модальном окне справочника. */
+                    esq.getEntityCollection(function(result) {
+                        var existsDocumentsCollection = [];
+                        if (result.success) {
+                            result.collection.each(function(item) {
+                                existsDocumentsCollection.push(item.get("DocumentId"));
+                            });
+                        }
+                        /* Добавление фильтра в конфигурационный объект. */
+                        if (existsDocumentsCollection.length &gt; 0) {
+                            var existsFilter = this.Terrasoft.createColumnInFilterWithParameters("Id",
+                                existsDocumentsCollection);
+                            existsFilter.comparisonType = this.Terrasoft.ComparisonType.NOT_EQUAL;
+                            existsFilter.Name = "existsFilter";
+                            config.filters = existsFilter;
+                        }
+                        /* Вызов модального окна справочника. */
+                        this.openLookup(config, this.addCallBack, this);
+                    }, this);
+                },
+
+                /* Обработчик события сохранения страницы записи. */
+                onCardSaved: function() {
+                    this.openDocumentLookup();
+                },
+
+                /* Открывает справочник документов в случае если страница заказа была ранее сохранена. */
+                addRecord: function() {
+                    var masterCardState = this.sandbox.publish("GetCardState", null, [this.sandbox.id]);
+                    var isNewRecord = (masterCardState.state === configurationEnums.CardStateV2.ADD ||
+                    masterCardState.state === configurationEnums.CardStateV2.COPY);
+                    if (isNewRecord === true) {
+                        var args = {
+                            isSilent: true,
+                            messageTags: [this.sandbox.id]
+                        };
+                        this.sandbox.publish("SaveRecord", args, [this.sandbox.id]);
+                        return;
+                    }
+                    this.openDocumentLookup();
+                },
+
+                /* Добавление выбранных продуктов. */
+                addCallBack: function(args) {
+                    /* Экземпляр класса пакетного запроса BatchQuery. */
+                    var bq = this.Ext.create("Terrasoft.BatchQuery");
+                    var OrderId = this.get("MasterRecordId");
+                    /* Коллекция выбранных в справочнике документов. */
+                    this.selectedRows = args.selectedRows.getItems();
+                    /* Коллекция, передаваемая в запрос. */
+                    this.selectedItems = [];
+                    /* Копирование необходимых данных. */
+                    this.selectedRows.forEach(function(item) {
+                        item.OrderId = OrderId;
+                        item.DocumentId = item.value;
+                        bq.add(this.getDocumentInsertQuery(item));
+                        this.selectedItems.push(item.value);
+                    }, this);
+                    /* Выполнение пакетного запроса, если он не пустой. */
+                    if (bq.queries.length) {
+                        this.showBodyMask.call(this);
+                        bq.execute(this.onDocumentInsert, this);
+                    }
+                },
+
+                /* Возвращает запрос на добавление текущего объекта. */
+                getDocumentInsertQuery: function(item) {
+                    var insert = Ext.create("Terrasoft.InsertQuery", {
+                        rootSchemaName: this.entitySchemaName
+                    });
+                    insert.setParameterValue("UsrOrder", item.OrderId, this.Terrasoft.DataValueType.GUID);
+                    insert.setParameterValue("UsrDocument", item.DocumentId, this.Terrasoft.DataValueType.GUID);
+                    return insert;
+                },
+
+                /* Метод, вызываемый при добавлении записей в реестр детали. */
+                onDocumentInsert: function(response) {
+                    this.hideBodyMask.call(this);
+                    this.beforeLoadGridData();
+                    var filterCollection = [];
+                    response.queryResults.forEach(function(item) {
+                        filterCollection.push(item.id);
+                    });
+                    var esq = Ext.create("Terrasoft.EntitySchemaQuery", {
+                        rootSchemaName: this.entitySchemaName
+                    });
+                    this.initQueryColumns(esq);
+                    esq.filters.add("recordId", Terrasoft.createColumnInFilterWithParameters("Id", filterCollection));
+                    /* Создание модели представления. */
+                    esq.on("createviewmodel", this.createViewModel, this);
+                    esq.getEntityCollection(function(response) {
+                        this.afterLoadGridData();
+                        if (response.success) {
+                            var responseCollection = response.collection;
+                            this.prepareResponseCollection(responseCollection);
+                            this.getGridData().loadAll(responseCollection);
+                        }
+                    }, this);
+                },
+
+                /* Метод, вызываемый при удалении выбранных записей детали. */
+                deleteRecords: function() {
+                    var selectedRows = this.getSelectedItems();
+                    if (selectedRows.length &gt; 0) {
+                        this.set("SelectedRows", selectedRows);
+                        this.callParent(arguments);
+                    }
+                },
+
+                /* Скрыть пункт меню Копировать. */
+                getCopyRecordMenuItem: Terrasoft.emptyFn,
+                /* Скрыть пункт меню Изменить. */
+                getEditRecordMenuItem: Terrasoft.emptyFn,
+                /* Возвращает имя колонки по умолчанию для фильтра. */
+                getFilterDefaultColumnName: function() {
+                    return "UsrDocument";
+                }
+            },
+            /* Массив модификаций. */
+            diff: /**SCHEMA_DIFF*/[
+                {
+                    /* Тип операции — слияние. */
+                    "operation": "merge",
+                    /* Название элемента схемы, над которым производится действие. */
+                    "name": "DataGrid",
+                    /* Объект, свойства которого будут объединены со свойствами элемента схемы. */
+                    "values": {
+                        "rowDataItemMarkerColumnName": "UsrDocument"
+                    }
+                },
+                {
+                    /* Тип операции — слияние. */
+                    "operation": "merge",
+                    /* Название элемента схемы, над которым производится действие. */
+                    "name": "AddRecordButton",
+                    /* Объект, свойства которого будут объединены со свойствами элемента схемы. */
+                    "values": {
+                        "visible": {"bindTo": "getToolsVisible"}
+                    }
+                }
+            ]/**SCHEMA_DIFF*/
+        };
+    }
+);
+        </pre>
+	</div>
+	</div>
+	</div>
+	</li>
+	<li>Выполните шаг 4 общего <a href="#creatio_ide">алгоритма реализации детали с использованием Creatio IDE</a>. Без выполнения этого шага деталь отображается на странице записи, но не содержит записей, поскольку не указаны колонки для отображения.</li>
+</ol><h3>Реализовать деталь с полями<a class="title-anchor" href="#title-2338-10" id="title-2338-10"> </a></h3>
+
+<p><strong>Деталь с полями</strong> позволяет вводить и редактировать данные непосредственно в полях детали. Может содержать несколько групп полей. Примером детали с полями является деталь <span class="key">Средства связи</span> (<span class="key">Communication options</span>) страницы контакта.</p>
+
+<div class="media">
+<div class="media__element"><img src="../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/BasicUIElements/Detail/7.18/scr_DetailWithFields.png" /></div>
+</div>
+
+<p><strong>Действия</strong>, которые позволяет выполнять деталь с полями:</p>
+
+<ul><li>Добавить записи на деталь без сохранения страницы, которая содержит текущую деталь.</li>
+	<li>Работать с деталью, как со страницей записи.</li>
+	<li>Использовать базовую валидацию полей.</li>
+	<li>Реализовать пользовательскую валидацию полей.</li>
+	<li>Добавить виртуальную запись.</li>
+	<li>Расширить логику поведения записей.</li>
+</ul><p>Реализовать деталь с полями невозможно исключительно в мастере деталей, поскольку по умолчанию через мастер деталей создается деталь с реестром. Для реализации необходимо использовать комбинацию мастера деталей и Creatio IDE.</p>
+
+<p>Реализация детали с полями для продуктов линейки Financial Services Creatio имеет свои особенности. Функциональность базовой детали с полями продуктов линейки Financial Services Creatio реализована в схеме <span class="filled">BaseFieldsDetail</span> пакета <span class="filled">BaseFinance</span>. Модель представления записи детали с полями реализована в схеме <span class="filled">BaseFieldRowViewModel</span> пакета <span class="filled">BaseFinance</span>.</p>
+
+<h4>Использовать комбинацию мастера деталей и Creatio IDE для реализации детали с полями<a class="title-anchor" href="#title-2338-11" id="title-2338-11"> </a></h4>
+
+<ol><li>Для реализации детали с полями в CRM продуктах Creatio <a href="../../../../sites/default/files/documents/downloads/SDK/Packages/sdkFieldsDetailPackage_2021-10-18_15.06.12.zip">cкачайте пакет</a> <span class="filled">sdkFieldsDetailPackage</span>.</li>
+	<li>Для реализации детали с полями в CRM продуктах Creatio импортируйте пакет в пользовательское приложение. Для этого воспользуйтесь инструкцией, которая приведена в статье <a href="../../instrumenty_razrabotki/upravlenie_postavkami/creatio_ide/obzor.html#case-2942">Перенести пакеты</a>.</li>
+	<li>Для реализации детали с полями в CRM продуктах Creatio добавьте пакет <span class="filled">sdkFieldsDetailPackage</span> в зависимости пользовательского пакета. Для этого воспользуйтесь инструкцией, которая приведена в статье <a href="../../instrumenty_razrabotki/pakety/sozdat_paket.html">Создать пользовательский пакет</a>.</li>
+	<li>Выполните шаг 1 общего <a href="#section_wizard">алгоритма реализации детали с использованием мастера деталей</a>. При необходимости, выполните настройку колонки детали, использовав Creatio IDE.</li>
+	<li>Используя Creatio IDE, замените родительский объект объекта детали на <span class="filled">BaseFieldsDetail</span>.</li>
+	<li>Выполните шаг 2 общего <a href="#section_wizard">алгоритма реализации детали с использованием мастера деталей</a>.</li>
+</ol><h4>Использовать Creatio IDE для реализации детали с полями<a class="title-anchor" href="#title-2338-12" id="title-2338-12"> </a></h4>
+
+<ol><li>Для реализации детали с полями в CRM продуктах Creatio выполните <a href="obzor.html#title-2338-11">шаги 1-3</a> алгоритма реализации детали с полями с помощью комбинации мастера деталей и Creatio IDE.</li>
+	<li>
+	<p><strong>Создайте пользовательскую деталь</strong>.</p>
+
+	<ol><li>
+		<p>Создайте схему объекта детали.</p>
+
+		<ul><li>В качестве родительского объекта выберите <span class="filled">BaseEntity</span>.</li>
+			<li>В схему объекта добавьте необходимые колонки.</li>
+		</ul></li>
+		<li>
+		<p>Создайте схему модели представления детали с полями.</p>
+
+		<ul><li>В качестве родительского объекта выберите <span class="filled">BaseFieldsDetail</span>.</li>
+			<li>На панели инструментов в контекстном меню узла <span class="key">Локализуемые строки</span> (<span class="key">Localizable strings</span>) выберите локализуемую строку <span class="key">Caption</span> и в свойстве <span class="key">Значение</span> (<span class="key">Value</span>) задайте название детали.</li>
+			<li>В свойство <span class="filled">methods</span> добавьте метод <span class="filled">getDisplayColumns</span>, который возвращает массив с названиями колонок, отображающихся как поля в детали.</li>
+		</ul></li>
+		<li>
+		<p>Добавьте пользовательские стили детали (опционально).</p>
+
+		<ol><li>Создайте схему модуля, в которой определите стили. Для этого воспользуйтесь инструкцией, которая приведена в статье <a href="../../../7-17/developer/instrumenty_razrabotki/creatio_ide/razrabotka_konfiguratsionnykh_elementov.html#title-3028-2">Разработка конфигурационных элементов</a>.</li>
+			<li>
+			<p>Укажите наследуемый класс.</p>
+
+			<ul><li>Для реализации детали с полями в CRM продуктах Creatio укажите <span class="filled">UsrBaseFieldRowViewModel</span>.</li>
+				<li>Для реализации детали с полями в продуктах линейки Financial Services Creatio укажите <span class="filled">BaseFieldRowViewModel</span>.</li>
+			</ul></li>
+			<li>В зависимости схемы модели представления реестра детали добавьте схему модуля с реализацией стилей.</li>
+			<li>
+			<p>В свойство <span class="filled">methods</span> добавьте методы переопределения базовых CSS-классов стилей:</p>
+
+			<ul><li><span class="filled">getRowViewModelClassName()</span> — возвращает имя класса модели представления записи на детали.</li>
+				<li><span class="filled">getLeftRowContainerWrapClass()</span> — возвращает массив строк с названиями CSS-классов, используемых для генерации представления контейнеров, содержащих подписи полей записей.</li>
+			</ul></li>
+		</ol></li>
+		<li>
+		<p>Зарегистрируйте деталь в базе данных. Для этого выполните SQL-запрос к таблице <span class="filled">[SysDetails]</span> базы данных.</p>
+
+		<div class="code">
+		<div class="code__widgets">
+		<div class="code__top">
+		<div class="code__title">SQL-запрос</div>
+		</div>
+
+		<div class="code__source">
+		<pre class="prettyprint">
+DECLARE 
+-- Название схемы детали.
+@ClientUnitSchemaName NVARCHAR(100) = 'UsrИмяСхемыДетали',
+-- Название схемы объекта детали.
+@EntitySchemaName NVARCHAR(100) = 'UsrИмяСхемыОбъектаДетали',
+-- Название детали.
+@DetailCaption NVARCHAR(100) = 'ИмяДетали'
+
+INSERT INTO SysDetail(
+    Caption,
+    DetailSchemaUId,
+    EntitySchemaUId
+)
+VALUES(
+    @DetailCaption,
+    (SELECT TOP 1 UId
+    from SysSchema
+    WHERE Name = @ClientUnitSchemaName),
+    (SELECT TOP 1 UId
+    from SysSchema
+    WHERE Name = @EntitySchemaName)
+)
+</pre>
+		</div>
+		</div>
+		</div>
+
+		<p>Регистрация детали выполняется, чтобы деталь стала видимой для мастера разделов и мастера деталей.</p>
+		</li>
+	</ol></li>
+	<li>
+	<p><strong>Добавьте пользовательскую деталь на страницу записи</strong>.</p>
+
+	<p>Создайте схему замещающей модели представления страницы записи, на которой будет размещена деталь с полями.</p>
+
+	<ul><li>В качестве родительского объекта выберите схему модели представления, которую необходимо заместить.</li>
+		<li>В свойство <span class="filled">details</span> добавьте деталь.</li>
+		<li>В массив модификаций <span class="filled">diff</span> добавьте конфигурационный объект модели представления детали.</li>
+	</ul><p>Пример схемы <span class="filled">ContactPageV2</span> замещающей модели представления страницы записи, на которой размещена деталь с полями <span class="filled">UsrRegDocumentFieldsDetail</span> приведен ниже.</p>
+
+	<div class="code">
+	<div class="code__widgets">
+	<div class="code__top">
+	<div class="code__title">Пример схемы замещающей модели представления</div>
+	</div>
+
+	<div class="code__source">
+	<pre class="prettyprint">
+define("ContactPageV2", [], function() {
+    return {
+        entitySchemaName: "Contact",
+        details: /**SCHEMA_DETAILS*/ {
+            /* Добавление детали с полями. */
+            "UsrRegDocumentFieldsDetail": {
+                /* Название клиентской схемы детали. */
+                "schemaName": "UsrRegDocumentFieldsDetail",
+                /* Фильтрация записей детали текущего контакта (физ. лица). */
+                "filter": {
+                    /* Колонка объекта детали. */
+                    "detailColumn": "UsrContact",
+                    /* Колонка идентификатора контакта. */
+                    "masterColumn": "Id"
+                }
+            }
+        } /**SCHEMA_DETAILS*/ ,
+        diff: /**SCHEMA_DIFF*/ [{
+            /* Добавление нового элемента. */
+            "operation": "insert",
+            /* Название элемента. */
+            "name": "UsrRegDocumentFieldsDetail",
+            /* Конфигурационный объект значений. */
+            "values": {
+                /* Тип элемента. */
+                "itemType": Terrasoft.ViewItemType.DETAIL
+            },
+            /* Имя элемента-контейнера. */
+            "parentName": "HistoryTab",
+            /* Имя свойства элемента-контейнера, который содержит коллекцию вложенных элементов. */
+            "propertyName": "items",
+            /* Индекс добавляемого в коллекцию элемента. */
+            "index": 0
+        }] /**SCHEMA_DIFF*/
+    };
+});
+</pre>
+	</div>
+	</div>
+	</div>
+	</li>
+</ol><h3>Реализовать деталь типа <span class="key">Файлы и ссылки</span> (<span class="key">Attachments</span>)<a class="title-anchor" href="#title-2338-13" id="title-2338-13"> </a></h3>
+
+<p><strong>Деталь типа</strong> <span class="key">Файлы и ссылки</span> (<span class="key">Attachments</span>) позволяет хранить внешние файлы, ссылки на веб-ресурсы и статьи базы знаний. Доступна во всех разделах приложения. Функциональность базовой детали типа <span class="key">Файлы и ссылки</span> (<span class="key">Attachments</span>) реализована в схеме <span class="filled">FileDetailV2</span> пакета <span class="filled">UIv2</span>. Деталь типа <span class="key">Файлы и ссылки</span> (<span class="key">Attachments</span>) описана в статье <a href="../../../user/bazis_platformy/interfejs/faily_i_primachaniya/fajly_i_primechaniya.html?id=1297">Файлы и примечания</a>. Примером детали типа <span class="key">Файлы и ссылки</span> (<span class="key">Attachments</span>) является деталь <span class="key">Файлы и ссылки</span> (<span class="key">Attachments</span>) страницы контакта.</p>
+
+<div class="media">
+<div class="media__element"><img src="../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/BasicUIElements/Detail/7.18/scr_Attachments.png" /></div>
+</div>
+
+<p>Реализовать деталь типа <span class="key">Файлы и ссылки</span> (<span class="key">Attachments</span>) невозможно исключительно в мастере деталей, поскольку по умолчанию через мастер деталей создается деталь с реестром. Для реализации необходимо использовать комбинацию мастера деталей и Creatio IDE.</p>
+
+<p>Чтобы реализовать деталь типа <span class="key">Файлы и ссылки</span> (<span class="key">Attachments</span>) с использованием <strong>комбинации мастера деталей и Creatio IDE</strong>:</p>
+
+<ol><li>
+	<p><strong>Создайте пользовательскую деталь</strong>.</p>
+
+	<ol><li>
+		<p>Настройте объект детали типа <span class="key">Файлы и ссылки</span> (<span class="key">Attachments</span>).</p>
+
+		<ul><li>Для этого в свойстве <span class="key">По какому объекту создать деталь?</span> (<span class="key">How to create detail?</span>) выберите "<span class="consolas">Существующему объекту</span>" ("<span class="consolas">Based on existing object</span>").</li>
+			<li>Для этого в свойстве <span class="key">Объект</span> (<span class="key">Object</span>) выберите "<span class="consolas">Файл и ссылка объекта [ИмяПользовательскогоРаздела]</span>" ("<span class="consolas">[CustomSectionName] attachment</span>").</li>
+		</ul></li>
+		<li>Используя Creatio IDE, замените родительский объект страницы записи детали на <span class="filled">FileDetailV2</span>.</li>
+		<li>
+		<p>Добавьте пользовательские стили детали (опционально).</p>
+
+		<ol><li>Создайте схему модуля, в которой определите стили. Для этого воспользуйтесь инструкцией, которая приведена в статье <a href="../../../7-17/developer/instrumenty_razrabotki/creatio_ide/razrabotka_konfiguratsionnykh_elementov.html#title-3028-2">Разработка конфигурационных элементов</a>.</li>
+			<li>В зависимости схемы модели представления детали добавьте схему модуля с реализацией стилей.</li>
+		</ol></li>
+	</ol></li>
+	<li>Выполните шаг 2 общего <a href="#section_wizard">алгоритма реализации детали с использованием мастера деталей</a>.</li>
+</ol><h2>Реализовать множественное добавление записей на деталь<a class="title-anchor" href="#title-2338-14" id="title-2338-14"> </a></h2>
+
+<p>По умолчанию деталь позволяет добавлять только одну запись. <strong>Назначение</strong> миксина <span class="filled">LookupMultiAddMixin</span> — расширение действия по добавлению записи на деталь. Использование миксина позволяет пользователю выбирать несколько записей из справочника за один раз.</p>
+
+<p>Чтобы <strong>реализовать множественное добавление записей на деталь</strong>:</p>
+
+<ol><li>Создайте схему замещающей модели представления детали. Для этого воспользуйтесь инструкцией, которая приведена в статье <a href="../../../7-17/developer/instrumenty_razrabotki/creatio_ide/razrabotka_konfiguratsionnykh_elementov.html#title-3028-4">Разработка конфигурационных элементов</a>.</li>
+	<li>В свойство <span class="filled">mixins</span> добавьте миксин <span class="filled">LookupMultiAddMixin</span>.</li>
+	<li>
+	<p>В свойстве <span class="filled">methods</span>:</p>
+
+	<ul><li>
+		<p>Переопределите методы.</p>
+
+		<ul><li><span class="filled">init()</span> — реализует логику, выполняемую при загрузке модуля. В методе выполните инициализацию миксина <span class="filled">LookupMultiAddMixin</span>. Метод <span class="filled">init()</span> описан в статье <a href="../../front_end_razrabotka/moduli/vidy_modulej/obzor.html#title-3038-8">Виды модулей</a>.</li>
+			<li><span class="filled">getAddRecordButtonVisible()</span> — отвечает за отображение кнопки добавления.</li>
+			<li><span class="filled">onCardSaved()</span> — отвечает за сохранение страницы детали. В переопределенном методе используйте метод <span class="filled">openLookupWithMultiSelect()</span>, который вызывает справочное окно для множественного выбора.</li>
+			<li><span class="filled">addRecord()</span> — отвечает за добавление записи на деталь. Как и для метода <span class="filled">onCardSaved()</span>, в переопределенном методе используйте метод <span class="filled">openLookupWithMultiSelect()</span>. Значение <span class="filled">true</span> указывает на необходимость выполнения проверки является ли запись новой.</li>
+		</ul></li>
+		<li>Реализуйте метод <span class="filled">getMultiSelectLookupConfig()</span>, который связан с методом <span class="filled">openLookupWithMultiSelect()</span>. Метод <span class="filled">getMultiSelectLookupConfig()</span> выполняет конфигурирование справочного окна и возвращает объект конфигурации для справочного окна.</li>
+	</ul></li>
+</ol><h2>Удалить деталь<a class="title-anchor" href="#title-2338-15" id="title-2338-15"> </a></h2>
+
+<div class="message message_warning">
+<p><span class="message__bold message__bold_warning">Важно.</span> Удаление детали невозможно без доступа к конфигурации системы и базе данных.</p>
+</div>
+
+<p>Чтобы <strong>удалить деталь</strong>:</p>
+
+<ol><li>В SVN-хранилище снимите блокировку с файлов детали, которую необходимо удалить.</li>
+	<li>
+	<p>Удалите записи из базы данных. Для этого выполните SQL-запрос в базу данных.</p>
+
+	<div class="code">
+	<div class="code__widgets">
+	<div class="code__top">
+	<div class="code__title">SQL-запрос</div>
+	</div>
+
+	<div class="code__source">
+	<pre class="prettyprint">
+DECLARE @Caption nvarchar(max);
+SET @Caption = 'UsrИмяСхемыДетали';
+DECLARE @UId UNIQUEIDENTIFIER;
+select @UId = EntitySchemaUId from SysDetail
+where Caption = @Caption
+delete from SysDetail where EntitySchemaUId = @UId
+</pre>
+	</div>
+	</div>
+	</div>
+	</li>
+	<li><a href="../../../7-17/developer/instrumenty_razrabotki/creatio_ide/razrabotka_v_creatio_ide.html#title-2093-1">Перейдите в раздел <span class="key">Конфигурация</span></a> (<span class="key">Configuration</span>) и удалите схему модели представления детали и схему объекта детали.</li>
+</ol></div>
+      
+  </div>
+<div class="block block-layout-builder block-field-blocknodedeveloper-documentationfield-linked">
+  
+    
+      
+  <div class="field field--name-field-linked field--type-entity-reference field--label-above">
+    <div class="field__label">Смотрите также</div>
+          <div class="field__items">
+              <div class="field__item"><a href="../../../user/bazis_platformy/interfejs/stranitsy_zapisey/stranicy_zapisej.html" hreflang="ru">Страницы записей</a></div>
+          <div class="field__item"><a href="../../../user/kastomizacija_no_code/nastrojka_biznes_logiki/stranitsa/sozdanie_detali/sozdat_novuyu_detal.html" hreflang="ru">Создать новую деталь</a></div>
+          <div class="field__item"><a href="../../../user/kastomizacija_no_code/nastrojka_biznes_logiki/stranitsa/nastroika_detali/nastroit_suschestvuyuschuyu_detal_na_stranice_zapisi.html" hreflang="ru">Настроить существующую деталь на странице записи</a></div>
+          <div class="field__item"><a href="../../../7-17/developer/instrumenty_razrabotki/creatio_ide/razrabotka_konfiguratsionnykh_elementov.html" hreflang="ru">Разработка конфигурационных элементов</a></div>
+          <div class="field__item"><a href="../../instrumenty_razrabotki/upravlenie_postavkami/creatio_ide/obzor.html" hreflang="ru">Управление поставками в Creatio IDE</a></div>
+          <div class="field__item"><a href="../../instrumenty_razrabotki/pakety/obshchiye_printsipy_raboty_s_paketami/obzor.html" hreflang="ru">Общие принципы работы с пакетами</a></div>
+          <div class="field__item"><a href="../../../user/bazis_platformy/interfejs/faily_i_primachaniya/fajly_i_primechaniya.html" hreflang="ru">Файлы и примечания</a></div>
+          <div class="field__item"><a href="../../front_end_razrabotka/moduli/vidy_modulej/obzor.html" hreflang="ru">Виды модулей</a></div>
+          <div class="field__item"><a href="../../../7-17/developer/instrumenty_razrabotki/creatio_ide/razrabotka_v_creatio_ide.html" hreflang="ru">Принципы разработки в Creatio IDE</a></div>
+              </div>
+      </div>
+
+  </div>
+<div class="block block-layout-builder block-field-blocknodedeveloper-documentationfield-resources">
+  
+    
+      
+  <div class="field field--name-field-resources field--type-link field--label-above">
+    <div class="field__label">Ресурсы</div>
+          <div class="field__items">
+              <div class="field__item"><a href="../../../../sites/default/files/documents/downloads/SDK/Packages/sdkFieldsDetailPackage_2021-10-18_15.06.12.zip" target="_blank">Пакет с реализацией детали с полями для CRM продуктов Creatio</a></div>
+              </div>
+      </div>
+
+  </div>
+
+    </div>
+  </div>
+
+  </div>
+
+</article>
+
+  </div>
+
+  </div>
+
+          </div>
+        </div>
+
+                  <aside class="creatio-sidebar creatio-sidebar_first" role="complementary">
+              <div class="region region-sidebar-first">
+    <div id="block-documentationnaviagtion" class="block block-ts-nav block-ts-nav-doc-nav">
+  
+    
+      <div class="ts-nav-block"><a href="../../../index.html" class="ts-nav-block__link">Документация</a><div class="ts-nav-block__title">Для разработчика</div>
+</div>
+<div class="ts-nav-container"><ul class="ts-nav-menu"><li class="ts-nav-menu__item">
+  <a href="../../s_chego_nachat.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">С чего начать&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../architecture.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Архитектура&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../instrumenty_razrabotki.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Инструменты разработки&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../back_end_razrabotka.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Back-end разработка&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../front_end_razrabotka_freedom_ui.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Front-end разработка Freedom UI&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../front_end_razrabotka.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Front-end разработка&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../integratsiya_i_vneshnij_api.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Интеграция и внешний API&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../ehlementy_interfejsa.html" class="ts-nav-menu__link ts-nav-menu__link_expanded ts-nav-menu__link_open" hreflang="ru">Элементы интерфейса&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+      <ul class="ts-nav-menu__children">
+      <li class="ts-nav-menu__item">
+  <a href="../glavnoe_menyu/obzor.html" class="ts-nav-menu__link" hreflang="ru">Главное меню</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../razdel.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Раздел&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../stranica_zapisi.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Страница записи&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../1215/detail.html" class="ts-nav-menu__link ts-nav-menu__link_expanded ts-nav-menu__link_open" hreflang="ru">Деталь&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+      <ul class="ts-nav-menu__children">
+      <li class="ts-nav-menu__item">
+  <a href="obzor.html" class="ts-nav-menu__link ts-nav-menu__link_guide ts-nav-menu__link_active" hreflang="ru">Обзор</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="nastroit_detal_s_polyami.html" class="ts-nav-menu__link ts-nav-menu__link_case" hreflang="ru">Настроить деталь с полями</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="dobavit_redaktiruemyj_reestr.html" class="ts-nav-menu__link ts-nav-menu__link_case" hreflang="ru">Добавить редактируемый реестр</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="skryt_punkty_menyu_detali_s_reestrom.html" class="ts-nav-menu__link ts-nav-menu__link_case" hreflang="ru">Скрыть пункты меню детали с реестром</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="realizovat_mnozhestvennoe_dobavlenie_zapisej.html" class="ts-nav-menu__link ts-nav-menu__link_case" hreflang="ru">Реализовать множественное добавление записей</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="realizovat_detal_tipa_fajly_i_ssylki.html" class="ts-nav-menu__link ts-nav-menu__link_case" hreflang="ru">Реализовать деталь типа [Файлы и ссылки]</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="basedetailv2.html" class="ts-nav-menu__link ts-nav-menu__link_reference" data-type="JS" hreflang="ru">BaseDetailV2</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="basegriddetailv2.html" class="ts-nav-menu__link ts-nav-menu__link_reference" data-type="JS" hreflang="ru">BaseGridDetailV2</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="gridutilitiesv2.html" class="ts-nav-menu__link ts-nav-menu__link_reference" data-type="JS" hreflang="ru">GridUtilitiesV2</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="configurationgrid.html" class="ts-nav-menu__link ts-nav-menu__link_reference" data-type="JS" hreflang="ru">ConfigurationGrid</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="configurationgridgenerator.html" class="ts-nav-menu__link ts-nav-menu__link_reference" data-type="JS" hreflang="ru">ConfigurationGridGenerator</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="configurationgridutilities.html" class="ts-nav-menu__link ts-nav-menu__link_reference" data-type="JS" hreflang="ru">ConfigurationGridUtilities</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../stranica_zapisi/obzor/basepagev2.html" class="ts-nav-menu__link ts-nav-menu__link_reference" data-type="JS" hreflang="ru">BasePageV2</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="basefieldsdetail.html" class="ts-nav-menu__link ts-nav-menu__link_reference" data-type="JS" hreflang="ru">BaseFieldsDetail</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="filedetailv2.html" class="ts-nav-menu__link ts-nav-menu__link_reference" data-type="JS" hreflang="ru">FileDetailV2</a>
+  </li>
+
+    </ul>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../mini_kartochka.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Мини-карточка&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../modalnoe_okno.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Модальное окно&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../kommunikacionnaya_panel.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Коммуникационная панель&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../komandnaya_stroka/obzor.html" class="ts-nav-menu__link" hreflang="ru">Командная строка</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../dashbordy.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Дашборды&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../chaty.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Чаты&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../upravlenie_ehlementami_interfejsa.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Управление элементами интерфейса&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+
+    </ul>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../komponenty_prilozheniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Компоненты приложения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../razrabotka_mobilnogo_prilozheniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Разработка мобильного приложения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../razrabotka_marketplace_prilozheniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Разработка Marketplace-приложения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+</ul>
+</div>
+
+  </div>
+
+  </div>
+
+            <div class="creatio-sidebar__toggle"></div>
+          </aside>
+        
+                  <aside class="creatio-sidebar creatio-sidebar_second" role="complementary">
+              <div class="region region-sidebar-second">
+    <div id="block-example" class="block block-ts-nav block-ts-nav-page-nav">
+  
+    
+      <div class="ts-nav-page">
+  </div>
+
+  </div>
+<div id="block-adminfeedbackblock" class="block block-admin-feedback block-admin-feedback-block">
+  
+    
+      <div id="feedback-message"><div id="upper-feedback-content"><h2>Был ли данный материал полезен?</h2>
+<input class="feedback-btn feedback-btn__yes button js-form-submit form-submit" data-node-id="2338" data-feedback="yes" type="submit" name="op" value="Да" />
+<input class="feedback-btn feedback-btn__no button js-form-submit form-submit" data-node-id="2338" data-feedback="no" type="submit" name="op" value="Нет" />
+</div>
+<form class="admin-feedback-form" data-drupal-selector="admin-feedback-form" action="https://academy.terrasoft.ua/docs/developer/ehlementy_interfejsa/detail/obzor" method="post" id="admin-feedback-form" accept-charset="UTF-8">
+  <div id="feedback-msg-result"></div><div class="js-form-item form-item js-form-type-textarea form-type-textarea js-form-item-feedback-message form-item-feedback-message form-no-label">
+        <div class="form-textarea-wrapper">
+  <textarea id="edit-feedback-msg" data-drupal-selector="edit-feedback-message" name="feedback_message" rows="5" cols="60" class="form-textarea resize-vertical"></textarea>
+</div>
+
+        </div>
+<input id="feedback-id" data-drupal-selector="edit-feedback-id" type="hidden" name="feedback_id" value="" />
+<input class="feedback-btn feedback-btn__send-comment button js-form-submit form-submit" data-drupal-selector="edit-feedback-send" type="submit" id="edit-feedback-send" name="op" value="Отправить" />
+<input autocomplete="off" data-drupal-selector="form-hj69lnpjtecsw8cknjaf9dd2k2s4l0tit6lk3blmhv8" type="hidden" name="form_build_id" value="form-hJ69lnPJtecSW8CKnjaF9dD2K2s4L0TIT6lk3BlmhV8" />
+<input data-drupal-selector="edit-admin-feedback-form" type="hidden" name="form_id" value="admin_feedback_form" />
+
+</form>
+</div>
+
+  </div>
+
+  </div>
+
+          </aside>
+              </main>
+    </div>
+  </div>
+
+  <footer role="contentinfo">
+    <div class="creatio-region creatio-region_footer">
+      <div class="creatio-container">
+          <div class="region region-footer">
+    <div id="block-footerua" class="block block-simple-block block-simple-blockfooter-ua">
+  
+    
+      <div class="footer">
+<div class="footer-left">
+<ul class="footer-socials"><li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_fb" href="https://www.facebook.com/terrasoft.ua" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_in" href="https://www.linkedin.com/company/terrasoft/" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_yt" href="https://www.youtube.com/c/TerrasoftUkraine" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_tg" href="https://t.me/Terrasoft_UA" target="_blank"> </a></li>
+</ul></div>
+
+<div class="footer-contact">
+<div class="footer-title">Будьте на связи!</div>
+
+<div class="footer-content">
+<div class="footer-items">
+<div class="footer-item"><a class="footer__link footer__link_phone" href="tel:+380443633133">+38 (044) 363-31-33</a></div>
+</div>
+
+<div class="footer-items">
+<div class="footer-item"><a class="footer__link footer__link_email" href="mailto:support@terrasoft.ua">support@terrasoft.ua</a></div>
+</div>
+</div>
+</div>
+</div>
+
+  </div>
+
+  </div>
+
+      </div>
+    </div>
+    <div class="creatio-region creatio-region_bottom">
+      <div class="creatio-container">
+          <div class="region region-bottom">
+    <div id="block-allrightsreservedua" class="block block-simple-block block-simple-blockfooter-bottom-ua">
+  
+    
+      <p>© 2002-2022 Terrasoft.  |  <a href="https://www.terrasoft.ua/privacy-policy" target="_blank">Конфиденциальность</a></p>
+
+  </div>
+
+  </div>
+
+      </div>
+    </div>
+  </footer>
+</div>
+<div class="creatio-bg"></div>
+
+
+  </div>
+
+    
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/docs\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/2338","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"ru"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"ajaxPageState":{"libraries":"admin_feedback\/admin_feedback_block,admin_feedback\/admin_feedback_css,classy\/base,classy\/messages,classy\/node,core\/drupal.ajax,core\/jquery.form,core\/normalize,creatio\/fancybox,creatio\/global,layout_discovery\/onecol,system\/base,ts_doc\/doc_version,ts_feedback\/ts_feedback,ts_nav\/breadcrumb,ts_nav\/doc_nav,ts_nav\/page_nav,ts_title_anchor\/ts_title_anchor","theme":"creatio","theme_token":null},"ajaxTrustedUrl":{"form_action_p_pvdeGsVG5zNF_XLGPTvYSKCf43t8qZYSwcfZl2uzM":true,"\/docs\/developer\/ehlementy_interfejsa\/detail\/obzor?ajax_form=1":true},"admin_feedback":{"yes_response":"\u0421\u043f\u0430\u0441\u0438\u0431\u043e \u0437\u0430 \u043e\u0431\u0440\u0430\u0442\u043d\u0443\u044e \u0441\u0432\u044f\u0437\u044c!","no_response":"\u0421\u043f\u0430\u0441\u0438\u0431\u043e \u0437\u0430 \u043e\u0431\u0440\u0430\u0442\u043d\u0443\u044e \u0441\u0432\u044f\u0437\u044c!","custom_text_response_on_no":{"value":"","format":"full_html"},"feedback_prompt_on_yes":true,"feedback_prompt_on_no":true,"feedback_enable_predefined_answers":false,"feedback_prompt":"\u041a\u0430\u043a \u043c\u043e\u0436\u043d\u043e \u0443\u043b\u0443\u0447\u0448\u0438\u0442\u044c \u044d\u0442\u0443 \u0441\u0442\u0430\u0442\u044c\u044e?"},"ajax":{"edit-feedback-send":{"callback":"::validateFeedbackMsg","event":"mousedown","keypress":true,"prevent":"click","url":"\/docs\/developer\/ehlementy_interfejsa\/detail\/obzor?ajax_form=1","dialogType":"ajax","submit":{"_triggering_element_name":"op","_triggering_element_value":"\u041e\u0442\u043f\u0440\u0430\u0432\u0438\u0442\u044c"}}},"user":{"uid":0,"permissionsHash":"9c2367dfcaba0fa15f0375f97aed64e146c908cee68508d13b79e3ee80e5162d"}}</script>
+<script src="../../../sites/default/files/js/js_Rr-7TvYD7NposuRFJwUqThxM7yJmw8vs03PQwu5gWd8.js"></script>
+
+
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+      <g id="svg-copy" class="svg-icon svg-icon_copy">
+        <path d="M15.111,18H1.889A1.848,1.848,0,0,1,0,16.2V3.6A1.848,1.848,0,0,1,1.889,1.8H5.837a2.87,2.87,0,0,1,5.326,0h3.948A1.848,1.848,0,0,1,17,3.6V16.2A1.848,1.848,0,0,1,15.111,18ZM3.777,12.6v1.8h6.611V12.6Zm0-3.6v1.8h9.445V9Zm0-3.6V7.2h9.445V5.4ZM8.5,1.8a.924.924,0,0,0-.944.9.945.945,0,0,0,1.889,0A.924.924,0,0,0,8.5,1.8Z"/>
+      </g>
+
+      <g id="svg-prev" class="svg-icon svg-icon_arrow">
+        <path d="M5.488,12.779,0,6.39,5.488,0" transform="translate(1 0.652)"/>
+      </g>
+
+      <g id="svg-next" class="svg-icon svg-icon_arrow">
+        <path d="M0,12.779,5.488,6.39,0,0" transform="translate(0.759 0.652)"/>
+      </g>
+    </svg>
+  </body>
+
+<!-- Mirrored from academy.terrasoft.ua/docs/developer/ehlementy_interfejsa/detail/obzor by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Mar 2022 00:43:17 GMT -->
+</html>

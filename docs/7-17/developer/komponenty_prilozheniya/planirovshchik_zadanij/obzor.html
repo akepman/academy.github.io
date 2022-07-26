@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# ">
+  
+<!-- Mirrored from academy.terrasoft.ua/docs/7-17/developer/komponenty_prilozheniya/planirovshchik_zadanij/obzor by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Mar 2022 03:19:03 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+          <!-- Google Tag Manager -->
+      <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          '../../../../../../www.googletagmanager.com/gtm5445.html?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-KLLB8G');</script>
+      <!-- End Google Tag Manager -->
+        <meta charset="utf-8" />
+<link rel="canonical" href="obzor.html" />
+<meta name="description" content="Рекомендации по настройке планировщика заданий 
+
+Все политики Quartz по обработке не отработавших вовремя заданий можно разделить условно на три группы: Ignore misfire policy (Игнорировать), Run immediately and continue (Выполнить немедленно и продолжать) и Discard and wait for next (Отменить и ожидать следующего задания). Далее приведены рекомендации, в каких случаях использовать ту или иную политику." />
+<meta property="og:url" content="https://academy.terrasoft.ua/docs/7-17/developer/komponenty_prilozheniya/planirovshchik_zadanij/obzor" />
+<meta property="og:title" content="Планировщик заданий Quartz" />
+<meta property="og:description" content="Рекомендации по настройке планировщика заданий 
+
+Все политики Quartz по обработке не отработавших вовремя заданий можно разделить условно на три группы: Ignore misfire policy (Игнорировать), Run immediately and continue (Выполнить немедленно и продолжать) и Discard and wait for next (Отменить и ожидать следующего задания). Далее приведены рекомендации, в каких случаях использовать ту или иную политику." />
+<meta name="Generator" content="Drupal 9 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="../../../../themes/custom/creatio/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="revision" href="obzor.html" />
+
+    <title>Планировщик заданий Quartz | Creatio Academy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&amp;family=Open+Sans:ital,wght@0,300;0,400;0,600;1,400&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" media="all" href="../../../../sites/default/files/css/css_6lTP66__-yc6QXFp1zOwoeJ0HVigoYZP-SeoLLii000.css" />
+<link rel="stylesheet" media="all" href="../../../../sites/default/files/css/css_XQJDNhkF3xH5SZCcY-PI89Zu4nYIzQ5oR3SnUKyfXJU.css" />
+<link rel="stylesheet" media="print" href="../../../../sites/default/files/css/css_Zn4VHvcniOOtUwkIVwXzYr_0AI9gUVgZcPqaH4ViagU.css" />
+
+    
+  </head>
+  <body class="path-node page-node-type-developer-documentation">
+          <!-- Google Tag Manager (noscript) -->
+      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KLLB8G"
+                        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+      <!-- End Google Tag Manager (noscript) -->
+    
+        
+      <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    <div class="creatio-page d-flex flex-column">
+        <div class="region region-informer">
+    <div id="block-terrasoftpidtrimueukrainu" class="block block-simple-block block-simple-blockterrasoft-pidtrimue-ukrainu">
+  
+    
+      <style type="text/css">
+<!--/*--><![CDATA[/* ><!--*/
+@import url(../../../../../../www.terrasoft.ua/themes/custom/creatio/css/components/informer.css)
+
+/*--><!]]>*/
+</style><div class="ts-swu">
+<div class="creatio-container">
+<div class="ts-swu__cont">
+<div><a class="ts-swu__link" href="https://www.terrasoft.ua/terrasoft-stands-with-ukraine" target="_blank">Україна понад усе!</a> <span><a href="https://www.terrasoft.ua/terrasoft-stands-with-ukraine" target="_blank">Приєднуйтеся</a> до допомоги!</span></div>
+</div>
+</div></div>
+
+  </div>
+
+  </div>
+
+  
+  <header role="banner">
+          <div class="creatio-region creatio-region_top">
+        <div class="creatio-container">
+            <div class="region region-top">
+    <div id="block-menutoggle" class="block block-simple-block block-simple-blockmenu-toggle">
+  
+    
+      <div class="menu-toggle"><span> </span></div>
+
+  </div>
+<div id="block-logowhite-2" class="block block-simple-block block-simple-blocklogo-white">
+  
+    
+      <p><a class="site-logo" href="../../../../../index.html" rel="home"><img src="../../../../themes/custom/creatio/logo-white.svg" /></a></p>
+
+  </div>
+<div id="block-search" class="block block-simple-block block-simple-blocksearch">
+  
+    
+      <div class="search">
+<form action="https://academy.terrasoft.ua/search" class="search-form" method="get"><input class="search-form__input" name="search" placeholder="Поиск" type="search" /><input class="search-form__button" type="submit" value="Поиск" /> </form>
+
+<div class="search-toggle"> </div>
+</div>
+
+  </div>
+<nav role="navigation" aria-labelledby="block-sitesua-menu" id="block-sitesua" class="block block-menu navigation menu--sites-ua">
+            
+  <h2 class="visually-hidden" id="block-sitesua-menu">Sites UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="https://www.terrasoft.ua/" rel="nofollow" target="_blank">Terrasoft</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://community.terrasoft.ua/" rel="nofollow" target="_blank">Community</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://marketplace.terrasoft.ua/" rel="nofollow" target="_blank">Marketplace</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+<div id="block-usermenu" class="block block-ts-user block-ts-user-menu-block">
+  
+    
+      <ul class="user-menu">
+      <li class="user-menu__item">
+      <a class="user-menu__link" href="https://profile.terrasoft.ua/user/login?destination=academy/ua/docs/7-17/developer/komponenty_prilozheniya/planirovshchik_zadanij/obzor">Войти</a>
+    </li>
+  </ul>
+
+  </div>
+<div id="block-usermenumobile" class="block block-ts-user block-ts-user-menu-mobile-block">
+  
+    
+      <ul class="user-menu-mobile">
+      <li class="user-menu-mobile__item">
+      <div class="user-menu-mobile__user user-menu-mobile__user_icon"></div>
+      <ul class="user-menu-mobile__submenu">
+        <li class="user-menu-mobile__subitem">
+          <a class="user-menu-mobile__sublink" href="https://profile.terrasoft.ua/user/login?destination=academy/ua/docs/7-17/developer/komponenty_prilozheniya/planirovshchik_zadanij/obzor">Войти</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  </div>
+
+  </div>
+
+        </div>
+      </div>
+              <div class="creatio-region creatio-region_header">
+        <div class="creatio-container">
+            <div class="region region-header">
+    <div id="block-logo" class="block block-simple-block block-simple-blocklogo">
+  
+    
+      <p><a class="site-logo" href="../../../../../index.html" rel="home"><img src="../../../../themes/custom/creatio/logo.svg" /></a></p>
+
+  </div>
+<nav role="navigation" aria-labelledby="block-osnovnayanavigaciyaua-menu" id="block-osnovnayanavigaciyaua" class="block block-menu navigation menu--main-ua">
+            
+  <h2 class="visually-hidden" id="block-osnovnayanavigaciyaua-menu">Основная навигация UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="../../../../index.html" data-drupal-link-system-path="&lt;front&gt;">Документация</a>
+              </li>
+                <li class="menu-item">
+        <a href="../../../../../trainings.html">Тренинги</a>
+              </li>
+                <li class="menu-item">
+        <a href="../../../../certification.html" data-drupal-link-system-path="node/3084">Сертификация и тестирование</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+<nav role="navigation" aria-labelledby="block-sitesua-2-menu" id="block-sitesua-2" class="block block-menu navigation menu--sites-ua">
+            
+  <h2 class="visually-hidden" id="block-sitesua-2-menu">Sites UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="https://www.terrasoft.ua/" rel="nofollow" target="_blank">Terrasoft</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://community.terrasoft.ua/" rel="nofollow" target="_blank">Community</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://marketplace.terrasoft.ua/" rel="nofollow" target="_blank">Marketplace</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+
+  </div>
+
+        </div>
+      </div>
+              <div class="creatio-region creatio-region_breadcrumb">
+        <div class="creatio-container">
+            <div class="region region-breadcrumb">
+    <div id="block-logowhite" class="block block-simple-block block-simple-blocklogo-white">
+  
+    
+      <p><a class="site-logo" href="../../../../../index.html" rel="home"><img src="../../../../themes/custom/creatio/logo-white.svg" /></a></p>
+
+  </div>
+<div id="block-breadcrumbnaviagtion" class="block block-ts-nav block-ts-nav-bread">
+  
+    
+      <nav class="breadcrumb"><ol class="ts-nav-breadcrumb__list"><li class="ts-nav-breadcrumb__item"><a href="../../../../index.html" class="ts-nav-breadcrumb__link" title="Документация">Документация</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../../index2132.html?vid_1=2" class="ts-nav-breadcrumb__link" title="Для разработчика">Для разработчика</a></li>
+<li class="ts-nav-breadcrumb__item ts-nav-breadcrumb__item_mobile"><a href="../../komponenty_prilozheniya.html" class="ts-nav-breadcrumb__link" title="Компоненты приложения" hreflang="zxx">Компоненты приложения</a></li>
+<li class="ts-nav-breadcrumb__item"><span class="ts-nav-breadcrumb__link ts-nav-breadcrumb__link_current" title="Обзор">Обзор</span></li>
+</ol>
+</nav>
+
+  </div>
+<div id="block-search-2" class="block block-simple-block block-simple-blocksearch">
+  
+    
+      <div class="search">
+<form action="https://academy.terrasoft.ua/search" class="search-form" method="get"><input class="search-form__input" name="search" placeholder="Поиск" type="search" /><input class="search-form__button" type="submit" value="Поиск" /> </form>
+
+<div class="search-toggle"> </div>
+</div>
+
+  </div>
+
+  </div>
+
+        </div>
+      </div>
+      </header>
+
+  <div class="creatio-region creatio-region_main">
+    <div class="creatio-container">
+                <div class="region region-breadcrumb-mobile">
+    <div id="block-breadcrumbnaviagtion-2" class="block block-ts-nav block-ts-nav-bread">
+  
+    
+      <nav class="breadcrumb"><ol class="ts-nav-breadcrumb__list"><li class="ts-nav-breadcrumb__item"><a href="../../../../index.html" class="ts-nav-breadcrumb__link" title="Документация">Документация</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../../index2132.html?vid_1=2" class="ts-nav-breadcrumb__link" title="Для разработчика">Для разработчика</a></li>
+<li class="ts-nav-breadcrumb__item ts-nav-breadcrumb__item_mobile"><a href="../../komponenty_prilozheniya.html" class="ts-nav-breadcrumb__link" title="Компоненты приложения" hreflang="zxx">Компоненты приложения</a></li>
+<li class="ts-nav-breadcrumb__item"><span class="ts-nav-breadcrumb__link ts-nav-breadcrumb__link_current" title="Обзор">Обзор</span></li>
+</ol>
+</nav>
+
+  </div>
+
+  </div>
+
+      
+      <main class="creatio-main" role="main">
+                                                    
+        <div class="creatio-content creatio-content_small">
+          <div class="creatio-content__inner creatio-content__inner_bg">
+                            <div class="region region-messages">
+    <div data-drupal-messages-fallback class="hidden"></div>
+
+  </div>
+
+            
+              <div class="region region-content">
+    <div id="block-creatio-page-title" class="block block-core block-page-title-block">
+  
+    
+      
+  <h1 class="page-title"><span class="field field--name-title field--type-string field--label-hidden">Планировщик заданий Quartz</span>
+</h1>
+
+
+  </div>
+<div id="block-creatio-content" class="block block-system block-system-main-block">
+  
+    
+      
+<article data-history-node-id="2391" role="article" about="/docs/7-17/developer/komponenty_prilozheniya/planirovshchik_zadanij/obzor" class="node node--type-developer-documentation node--view-mode-full">
+
+  
+    
+
+  
+  <div class="node__content">
+      <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocknodedeveloper-documentationfield-difficulty">
+  
+    
+      
+            <div class="field field--name-field-difficulty field--type-entity-reference field--label-hidden field__item"><div about="/docs/7-17/taxonomy/term/169" id="taxonomy-term-169" class="taxonomy-term vocabulary-difficulty">
+  
+  
+  <div class="content">
+      <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocktaxonomy-termdifficultyfield-icon">
+  
+    
+      
+            <div class="field field--name-field-icon field--type-image field--label-hidden field__item">  <img src="../../../../sites/default/files/difficulty/advanced.svg" alt="" loading="lazy" typeof="foaf:Image" />
+
+</div>
+      
+  </div>
+<div class="block block-layout-builder block-field-blocktaxonomy-termdifficultyname">
+  
+    
+      
+            <div class="field field--name-name field--type-string field--label-hidden field__item"><span style="color: #EF4524;">Сложный</span></div>
+      
+  </div>
+
+    </div>
+  </div>
+
+  </div>
+</div>
+</div>
+      
+  </div>
+<div class="block block-ts-doc block-ts-doc-downloads">
+  
+    
+      <a href="../../../../sites/default/files/pdf/node/2391/Planirovschik_zadaniy_Quartz_.pdf" target="_blank">PDF</a>
+  </div>
+<div class="block block-ts-doc block-ts-doc-versions">
+  
+    
+        <div class="ts-doc-versions">
+    <select class="ts-doc-versions__select">
+                              <option value="/docs/8-0/developer/komponenty_prilozheniya/planirovshchik_zadanij/obzor">Версия 8.0</option>
+                              <option value="/docs/7-18/developer/komponenty_prilozheniya/planirovshchik_zadanij/obzor">Версия 7.18</option>
+                                                <option value="/docs/7-17/developer/komponenty_prilozheniya/planirovshchik_zadanij/obzor" selected>Версия 7.17</option>
+                              <option value="/docs/7-16/developer/komponenty_prilozheniya/planirovshchik_zadanij/obzor">Версия 7.16</option>
+          </select>
+  </div>
+
+  </div>
+
+    </div>
+  </div>
+  <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocknodedeveloper-documentationbody">
+  
+    
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><h2>Рекомендации по настройке планировщика заданий<a class="title-anchor" href="#title-2391-1" id="title-2391-1"> </a></h2>
+
+<p>Все политики Quartz по обработке не отработавших вовремя заданий можно разделить условно на три группы: <span class="filled">Ignore misfire policy</span> (Игнорировать), <span class="filled">Run immediately and continue</span> (Выполнить немедленно и продолжать) и <span class="filled">Discard and wait for next</span> (Отменить и ожидать следующего задания). Далее приведены рекомендации, в каких случаях использовать ту или иную политику.</p>
+
+<h3>Ignore misfire policy<a class="title-anchor" href="#title-2391-2" id="title-2391-2"> </a></h3>
+
+<p>Эта политика представлена одноименной константой <span class="filled">MisfireInstruction.IgnoreMisfirePolicy = -1</span>. Ее рекомендуется применять в том случае, когда необходимо гарантировать, что все запуски триггера будут обязательно выполнены, даже если имеется несколько просроченных запусков триггера. Например, есть задание А с периодичностью в 2 минуты. Из-за нехватки рабочих потоков Quartz или выключения планировщика время следующего старта задания A (<span class="filled">NEXT_FIRE_TIME</span>) отстает на 10 минут от текущего времени. Если необходимо, чтобы все 5 просроченных запусков задания обязательно выполнились, то следует использовать политику <span class="filled">IgnoreMisfirePolicy</span>.</p>
+
+<p>Эту политику рекомендуется применять для триггеров, которые при каждом запуске используют некоторые уникальные данные, и важно, чтобы все запуски триггера были рано или поздно выполнены. Например, есть задание B, которое выполняется с интервалом в 1 час и генерирует отчет за интервал времени от <span class="filled">PREV_FIRE_TIME</span> до <span class="filled">PREV_FIRE_TIME + 1</span> час. При этом планировщик был выключен на 8 часов. В таком случае необходимо, чтобы после включения планировщика все 8 просроченных запусков задания B были в конечном итоге запущены, и таким образом сгенерированы отчеты за каждый из часов простоя.</p>
+
+<p>Следует также отметить, что применение этой политики к триггерам, которые не привязаны к каким-либо уникальным данным, может привести к ненужному загромождению очереди планировщика и ухудшению общей производительности приложения. Например, для каждого из пользователей Сreatio настроена синхронизация почты Exchange с интервалом в 1 минуту. При этом 1.5 часа выполнялось обновление. После обновления Quartz, прежде чем приступить к заданиям, запланированным на текущее время, будет выполнять для каждого из пользователей синхронизацию почты 90 раз. Хотя достаточно выполнить просроченную синхронизацию почты однократно, а затем вернуться к выполнению задания согласно расписанию.</p>
+
+<h3>Run immediately and continue<a class="title-anchor" href="#title-2391-3" id="title-2391-3"> </a></h3>
+
+<p>К этой группе политик относятся:</p>
+
+<ul><li><span class="filled">SimpleTrigger.FireNow</span>;</li>
+	<li><span class="filled">SimpleTrigger.RescheduleNowWithExistingRepeatCount</span>;</li>
+	<li><span class="filled">SimpleTrigger.RescheduleNowWithRemainingRepeatCount;</span></li>
+	<li><span class="filled">CronTrigger.FireOnceNow</span>;</li>
+	<li><span class="filled">CalendarIntervalTrigger.FireOnceNow</span>.</li>
+</ul><p>Эти политики следует применять, если необходимо просроченное задание выполнить как можно скорее, но один раз, а далее выполнять задание согласно расписанию. В такую категорию входят, например, задания по синхронизации почты (такие, как <span class="filled">&lt;user&gt;@&lt;server&gt;_LoadExchangeEmailsProcess_&lt;userId&gt;</span>, <span class="filled">SyncImap_&lt;user&gt;@&lt;server&gt;_&lt;userId&gt;</span>), а также задачи <span class="filled">RemindingCountersJob</span>, <span class="filled">SyncWithLDAPProcess</span>.</p>
+
+<p>Например, для каждого из пользователей настроена синхронизация почты с интервалом 5 минут, запускаемая триггерами <span class="filled">&lt;user&gt;@&lt;server&gt;_LoadExchengeEmailProcess_&lt;userId&gt;Trigger</span>. При этом сайт обновлялся с 1:30 до 2:43. Когда сайт был запущен (в 2:43), время следующего запуска для триггеров <span class="filled">&lt;user&gt;@&lt;server&gt;_LoadExchengeEmailsProcess_&lt;userId&gt;Trigger</span> будет обновлено на текущее (т. е., на 2:43). Соответственно, просроченные задания будут запущены один раз в 2:43 и далее будут выполняться согласно расписанию (т. е., в 2:48, 2:53, 2:58 и т. д.).</p>
+
+<h3>Discard and wait for next<a class="title-anchor" href="#title-2391-4" id="title-2391-4"> </a></h3>
+
+<p>К этой группе политик относятся:</p>
+
+<ul><li><span class="filled">SimpleTrigger.RescheduleNextWithRemainingCount</span>;</li>
+	<li><span class="filled">SimpleTrigger.RescheduleNextWithExistingCount</span>;</li>
+	<li><span class="filled">CronTrigger.DoNothing</span>;</li>
+	<li><span class="filled">CalendarIntervalTrigger.DoNothing</span>.</li>
+</ul><p>Эти политики следует применять для заданий, которые необходимо выполнять строго в определенное время. Например, есть задание по сбору статистики, запускаемое каждый день в 3 часа ночи, когда нет активных пользователей на сайте (используется <span class="filled">CronTrigger</span>). Это задание достаточно ресурсоемкое и длительное, и в рабочее время его запускать нельзя, потому что это может замедлить работу пользователей. В таком случае нужно применить политику <span class="filled">CronTrigger.DoNothing</span>. В итоге, если по какой-то причине задание не было выполнено вовремя, следующий запуск будет запланирован на 3 часа ночи следующих суток.</p>
+
+<h3>Конфигурирование Quartz<a class="title-anchor" href="#title-2391-5" id="title-2391-5"> </a></h3>
+
+<h4>thread count<a class="title-anchor" href="#title-2391-6" id="title-2391-6"> </a></h4>
+
+<p>Если планировщик не успевает своевременно обрабатывать задания или некоторые задания не выполнились ни разу, то, возможно, поможет увеличение числа потоков Quartz. Для этого необходимо установить необходимое количество потоков в файле <span class="filled">Web.config</span> загрузчика приложения.</p>
+
+<div class="code">
+<div class="code__widgets">
+<div class="code__top">
+<div class="code__title">Установка необходимого количества потоков в файле <span class="filled">Web.config</span> загрузчика приложения</div>
+</div>
+
+<div class="code__source">
+<pre class="prettyprint">
+&lt;add key="quartz.threadPool.threadCount" value="5" /&gt;
+</pre>
+</div>
+</div>
+</div>
+
+<div class="message message_warning">
+<p><span class="message__bold message__bold_warning">Важно.</span> Файл <span class="filled">Web.config</span> загрузчика приложения расположен в корневом каталоге установленного приложения Creatio.</p>
+</div>
+
+<h4>misfireThreshold<a class="title-anchor" href="#title-2391-7" id="title-2391-7"> </a></h4>
+
+<p>Если увеличение числа потоков Quartz нежелательно (например, из-за ограниченных ресурсов), то оптимизировать выполнение заданий может изменение настройки <span class="filled">misfireThreshold</span> в файле <span class="filled">Web.config</span> загрузчика приложения.</p>
+
+<p>Например, есть приложение с числом заданий, намного большим, чем число потоков. При этом большинство заданий выполняются с достаточно малым интервалом (1 минута). Значение настройки <span class="filled">misfireThreshold</span> равно одной минуте, число потоков равно 3.</p>
+
+<div class="code">
+<div class="code__widgets">
+<div class="code__top">
+<div class="code__title">Изменение настройки <span class="filled">misfireThreshold</span> в файле <span class="filled">Web.config</span> загрузчика приложения</div>
+</div>
+
+<div class="code__source">
+<pre class="prettyprint">
+&lt;add key="quartz.jobStore.misfireThreshold" value="60000" /&gt;
+&lt;add key="quartz.threadPool.threadCount" value="3" /&gt;
+</pre>
+</div>
+</div>
+</div>
+
+<p>Также для большинства заданий используются политики из группы <span class="filled">Run immediately and continue</span>. Это означает следующее. Quartz для большинства заданий, у которых <span class="filled">MISFIRE_INSTR</span> не равно -1 и <span class="filled">NEXT_FIRE_TIME</span> меньше текущего времени на 1 минуту (60000 мс), будет регулярно устанавливать время следующего запуска на текущее время. Это означает, что будет теряться изначальный порядок запланированных заданий, потому что всем заданиям будет установлено время запуска на текущее время. Как следствие, увеличивается вероятность того, что Quartz чаще будет брать в работу одни и те же задания, при этом игнорируя другие.</p>
+
+<p>На рисунке отображена очередь планировщика после 15 минут работы. Задания, у которых значение <span class="filled">PREV_FIRE_TIME</span> равно <span class="filled">NULL</span>, ни разу не выполнялись. Очевидно, что таких заданий достаточно много.</p>
+
+<p>Затем следует увеличить значение <span class="filled">misfireThreshold</span> до 10 минут (очистив при этом <span class="filled">PREV_FIRE_TIME</span> в <span class="filled">QRTZ_TRIGGERS</span>).</p>
+
+<div class="media">
+<div class="media__element"><img alt="" border="0" src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/RecommendedSchedulerSettings/queue_01.png" /></div>
+</div>
+
+<div class="code">
+<div class="code__widgets">
+<div class="code__top">
+<div class="code__title">Увеличение значения <span class="filled">misfireThreshold</span></div>
+</div>
+
+<div class="code__source">
+<pre class="prettyprint">
+&lt;add key="quartz.jobStore.misfireThreshold" value="600000" /&gt;
+</pre>
+</div>
+</div>
+</div>
+
+<p>После 15 минут работы планировщика очередь будет выглядеть следующим образом:</p>
+
+<div class="media">
+<div class="media__element"><img alt="" border="0" src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/RecommendedSchedulerSettings/queue_02.png" /></div>
+</div>
+
+<p>Очевидно, что ни разу не запущенных заданий стало намного меньше.</p>
+
+<p>Увеличение <span class="filled">misfireThreshold</span> приводит к тому, что планировщик более равномерно выполняет задания. Другими словами, выполняются практически все задания из очереди. Очевидно, что из-за нехватки потоков планировщик не успевает каждое из заданий выполнять через минуту. Это видно по колонке <span class="filled">[Last repeat interval]</span>, значение в которой равно <span class="filled">NEXT_FIRE_TIME - PREV_FIRE_TIME</span>, мин. Однако, при этом планировщик выполняет каждое из заданий.</p>
+
+<h4>batchTriggerAcquisitionMaxCount<a class="title-anchor" href="#title-2391-8" id="title-2391-8"> </a></h4>
+
+<p>Увеличение <span class="filled">batchTriggerAcquisitionMaxCount</span> может оптимизировать работу планировщика, если не используется кластеризованная конфигурация Quartz (используется один узел планировщика).</p>
+
+<h2>Политики Quartz для обработки не отработавших вовремя заданий<a class="title-anchor" href="#title-2391-9" id="title-2391-9"> </a></h2>
+
+<p>В Quartz существуют как политики, общие для всех типов триггеров, так и политики, специфичные для конкретного типа триггера. В таблице перечислены все политики, используемые для триггеров <span class="filled">SimpleTrigger</span>, <span class="filled">CronTrigger</span> и <span class="filled">CalendarIntervalTrigger</span>.</p>
+
+<div class="table">
+<div class="table__caption">Политики триггеров</div>
+
+<table><tbody><tr><th>Политика Quartz</th>
+			<th>Значение <span class="filled">MISFIRE_<wbr></wbr>INSTR</span></th>
+			<th>Значение <span class="filled">Terrasoft.<wbr></wbr>Core.<wbr></wbr>Scheduler.<wbr></wbr>AppScheduler<wbr></wbr>Misfire<wbr></wbr>Instruction</span></th>
+			<th>Тип триггера</th>
+		</tr><tr><td><span class="consolas">Ignore<wbr></wbr>Misfire<wbr></wbr>Policy</span></td>
+			<td>-1</td>
+			<td>Ignore<wbr></wbr>Misfire<wbr></wbr>Policy</td>
+			<td>для всех типов</td>
+		</tr><tr><td colspan="4">
+			<p><strong>Описание поведения <span class="filled">Ignore<wbr></wbr>Misfire<wbr></wbr>Policy</span></strong></p>
+
+			<p>Триггеры с <span class="filled">Ignore<wbr></wbr>Misfire<wbr></wbr>Policy</span> будут обязательно выполнены. Соответственно, для таких триггеров Quartz не будет обновлять время следующего запуска (<span class="filled">NEXT_<wbr></wbr>FIRE_<wbr></wbr>TIME</span>).</p>
+
+			<p>Все просроченные задания Quartz попытается выполнить как можно скорее, после чего вернется к изначальному расписанию триггера. Например, запланировано задание с триггером <span class="filled">Simple<wbr></wbr>Trigger</span> на 10 повторений. Исходные условия:</p>
+
+			<ul><li><span class="filled">START_TIME = 9:00</span>;</li>
+				<li><span class="filled">REPEAT_COUNT = 9</span> (первое выполнение + 9 повторений);</li>
+				<li><span class="filled">REPEAT_INTERVAL = 0:15</span>.</li>
+			</ul><p>Если планировщик был выключен с 8:50 до 9:20, то при включении Quartz попытается как можно скорее выполнить 2 просроченных задания (в 9:00 и 9:15). Далее он будет выполнять 8 оставшихся заданий по расписанию — в 9:30; 9:45 и т.д.</p>
+			</td>
+		</tr><tr><td><span class="consolas">Smart<wbr></wbr>Policy</span></td>
+			<td>0</td>
+			<td><span class="consolas">Smart<wbr></wbr>Policy</span></td>
+			<td>для всех типов</td>
+		</tr><tr><td colspan="4">
+			<p><strong>Описание поведения <span class="filled">Smart<wbr></wbr>Policy</span></strong></p>
+
+			<p>Используется Quartz по умолчанию для всех типов триггеров. В зависимости от типа и конфигурации триггера Quartz выберет соответствующую политику. В псевдокоде ниже приведен алгоритм выбора для версии Quartz 2.3.2.</p>
+
+			<div class="code">
+			<div class="code__widgets">
+			<div class="code__source">
+			<pre class="prettyprint">
+if (TRIGGER_TYPE == 'SIMPLE') // Триггер Simple.
+    if (REPEAT_COUNT == 0) // Без повторов.
+        MISFIRE_INSTR = 1 // SimpleTrigger.FireNow
+    else if (REPEAT_COUNT == -1) // Повторять бесконечно.
+        MISFIRE_INSTR = 4 // SimpleTrigger.RescheduleNextWithRemainingCount
+    else // Указано количество повторов.
+        MISFIRE_INSTR = 2 // SimpleTrigger.RescheduleNowWithExistingRepeatCount
+else if (TRIGGER_TYPE == 'CAL_INT') // Триггер СalendarInterval.
+    MISFIRE_INSTR = 1 // CalendarIntervalTrigger.FireOnceNow
+else if (TRIGGER_TYPE == 'CRON') // Триггер Cron.
+    MISFIRE_INSTR = 1 // CronTrigger.FireOnceNow
+			</pre>
+			</div>
+			</div>
+			</div>
+			</td>
+		</tr><tr><td><span class="consolas">Simple<wbr></wbr>Trigger.<wbr></wbr>Fire<wbr></wbr>Now</span></td>
+			<td>1</td>
+			<td><span class="consolas">Fire<wbr></wbr>Now</span></td>
+			<td>Simple<wbr></wbr>Trigger</td>
+		</tr><tr><td colspan="4">
+			<p><strong>Описание поведения <span class="filled">Simple<wbr></wbr>Trigger.<wbr></wbr>Fire<wbr></wbr>Now</span></strong></p>
+
+			<p>Применяется для триггеров <span class="filled">Simple<wbr></wbr>Trigger</span> у которых значение <span class="filled">REPEAT_<wbr></wbr>COUNT</span> равно 0 (триггеры, рассчитанные на 1 запуск). Если значение <span class="filled">REPEAT_<wbr></wbr>COUNT</span> не равно 0, то будет применена политика <span class="filled">Simple<wbr></wbr>Trigger.<wbr></wbr>Reschedule<wbr></wbr>Now<wbr></wbr>With<wbr></wbr>Remaining<wbr></wbr>Repeat<wbr></wbr>Count</span>.</p>
+
+			<p>Например, запланировано задание с триггером <span class="filled">Simple<wbr></wbr>Trigger</span>. Исходные условия:</p>
+
+			<ul><li><span class="filled">START_TIME = 9:00</span>;</li>
+				<li><span class="filled">REPEAT_COUNT = 0</span>.</li>
+			</ul><p>Если планировщик был выключен с 8:50 до 9:20, то при включении Quartz попытается как можно скорее выполнить задание. В результате, в 9:20 или чуть позже задание будет выполнено.</p>
+			</td>
+		</tr><tr><td><span class="consolas">SimpleTrigger.<wbr></wbr>Reschedule<wbr></wbr>Now<wbr></wbr>With<wbr></wbr>Existing<wbr></wbr>Repeat<wbr></wbr>Count</span></td>
+			<td>2</td>
+			<td>Reschedule<wbr></wbr>Now<wbr></wbr>With<wbr></wbr>Existing<wbr></wbr>Repeat<wbr></wbr>Count</td>
+			<td>SimpleTrigger</td>
+		</tr><tr><td colspan="4">
+			<p><strong>Описание поведения <span class="filled">Simple<wbr></wbr>Trigger.<wbr></wbr>Reschedule<wbr></wbr>Now<wbr></wbr>With<wbr></wbr>Existing<wbr></wbr>Repeat<wbr></wbr>Count</span></strong></p>
+
+			<p>Планировщик пытается как можно скорее выполнить первое просроченное задание. Все остальные запуски триггера будут выполнены с интервалом <span class="filled">REPEAT_<wbr></wbr>INTERVAL</span>.</p>
+
+			<p>Например, запланировано задание с триггером <span class="filled">Simple<wbr></wbr>Trigger</span> на 10 повторений. Исходные условия:</p>
+
+			<ul><li><span class="filled">START_TIME = 9:00</span>;</li>
+				<li><span class="filled">REPEAT_COUNT = 9</span>;</li>
+				<li><span class="filled">REPEAT_INTERVAL = 0:15</span>.</li>
+			</ul><p>Если планировщик был выключен с 8:50 до 9:20, то при включении Quartz выполнит первое просроченное задание, назначенное на 9:00, (из заданий в 9:00 и 9:15) в 9:20. Оставшиеся 9 запусков выполнит в 9:35, 9:50 и т.д. .</p>
+
+			<div class="message">
+			<p><span class="message__bold">На заметку.</span> Для методов <span class="filled">AppScheduler.<wbr></wbr>ScheduleMinutelyJob</span> поведение <span class="filled">Reschedule<wbr></wbr>Now<wbr></wbr>With<wbr></wbr>Existing<wbr></wbr>Repeat<wbr></wbr>Count</span> идентично <span class="filled">Reschedule<wbr></wbr>Now<wbr></wbr>With<wbr></wbr>Remaining<wbr></wbr>Repeat<wbr></wbr>Count</span>, а поведение <span class="filled">Reschedule<wbr></wbr>Next<wbr></wbr>With<wbr></wbr>Remaining<wbr></wbr>Count</span> идентично <span class="filled">Reschedule<wbr></wbr>Next<wbr></wbr>With<wbr></wbr>Existing<wbr></wbr>Count</span>, поскольку используются триггеры с <span class="filled">REPEAT_COUNT = -1</span>.</p>
+			</div>
+			</td>
+		</tr><tr><td><span class="consolas">Simple<wbr></wbr>Trigger.<wbr></wbr>Reschedule<wbr></wbr>Now<wbr></wbr>With<wbr></wbr>Remaining<wbr></wbr>Repeat<wbr></wbr>Count</span></td>
+			<td>3</td>
+			<td>Reschedule<wbr></wbr>Now<wbr></wbr>With<wbr></wbr>Remaining<wbr></wbr>Repeat<wbr></wbr>Count</td>
+			<td>Simple<wbr></wbr>Trigger</td>
+		</tr><tr><td colspan="4">
+			<p><strong>Описание поведения <span class="filled">Simple<wbr></wbr>Trigger.<wbr></wbr>Reschedule<wbr></wbr>Now<wbr></wbr>With<wbr></wbr>Remaining<wbr></wbr>Repeat<wbr></wbr>Count</span></strong></p>
+
+			<p>Планировщик пытается как можно скорее выполнить первое просроченное задание. Остальные просроченные задания игнорируются. Планировщик выполняет оставшиеся задания, которые не были просрочены, с интервалом <span class="filled">REPEAT_<wbr></wbr>INTERVAL</span>.</p>
+
+			<p>Например, запланировано задание с триггером <span class="filled">SimpleTrigger</span> на 10 повторений. Исходные условия:</p>
+
+			<ul><li><span class="filled">START_TIME = 9:00</span>;</li>
+				<li><span class="filled">REPEAT_COUNT = 9</span>;</li>
+				<li><span class="filled">REPEAT_INTERVAL = 0:15</span>.</li>
+			</ul><p>Если планировщик был выключен с 8:50 до 9:20, то при включении Quartz выполнит первое просроченное задание (из заданий в 9:00 и 9:15) в 9:20. Второе просроченное задание будет проигнорировано, и оставшиеся 8 запусков будут выполнены в 9:35, 9:50 и т.д.</p>
+			</td>
+		</tr><tr><td><span class="consolas">Simple<wbr></wbr>Trigger.<wbr></wbr>Reschedule<wbr></wbr>Next<wbr></wbr>With<wbr></wbr>Remaining<wbr></wbr>Count</span></td>
+			<td>4</td>
+			<td>Reschedule<wbr></wbr>Next<wbr></wbr>With<wbr></wbr>Remaining<wbr></wbr>Count</td>
+			<td>SimpleTrigger</td>
+		</tr><tr><td colspan="4">
+			<p><strong>Описание поведения <span class="filled">Simple<wbr></wbr>Trigger.<wbr></wbr>Reschedule<wbr></wbr>Next<wbr></wbr>With<wbr></wbr>Remaining<wbr></wbr>Count</span></strong></p>
+
+			<p>Планировщик игнорирует просроченные задания и ждет следующего планового запуска задания. При наступлении времени следующего запуска будут выполнены оставшиеся не просроченные задания с интервалом <span class="filled">REPEAT_<wbr></wbr>INTERVAL</span>.</p>
+
+			<p>Например, запланировано задание с триггером <span class="filled">Simple<wbr></wbr>Trigger</span> на 10 повторений. Исходные условия:</p>
+
+			<ul><li><span class="filled">START_TIME = 9:00</span>;</li>
+				<li><span class="filled">REPEAT_COUNT = 9</span>;</li>
+				<li><span class="filled">REPEAT_INTERVAL = 0:15</span>.</li>
+			</ul><p>Если планировщик был выключен с 8:50 до 9:20, то при включении Quartz выполнит оставшиеся 8 непросроченных заданий в 9:30; 9:45 и т.д.</p>
+			</td>
+		</tr><tr><td><span class="consolas">Simple<wbr></wbr>Trigger.<wbr></wbr>Reschedule<wbr></wbr>Next<wbr></wbr>With<wbr></wbr>Existing<wbr></wbr>Count</span></td>
+			<td>5</td>
+			<td>Reschedule<wbr></wbr>Next<wbr></wbr>With<wbr></wbr>Existing<wbr></wbr>Count</td>
+			<td>Simple<wbr></wbr>Trigger</td>
+		</tr><tr><td colspan="4">
+			<p><strong>Описание поведения <span class="filled">Simple<wbr></wbr>Trigger.<wbr></wbr>Reschedule<wbr></wbr>Next<wbr></wbr>With<wbr></wbr>Existing<wbr></wbr>Count</span></strong></p>
+
+			<p>Планировщик будет ждать следующего времени запуска и выполнит все оставшиеся задания с интервалом <span class="filled">REPEAT_<wbr></wbr>INTERVAL</span>.</p>
+
+			<p>Например, запланировано задание с триггером <span class="filled">Simple<wbr></wbr>Trigger</span> на 10 повторений. Исходные условия:</p>
+
+			<ul><li><span class="filled">START_TIME = 9:00</span>;</li>
+				<li><span class="filled">REPEAT_COUNT = 9</span>;</li>
+				<li><span class="filled">REPEAT_INTERVAL = 0:15</span>.</li>
+			</ul><p>Если планировщик был выключен с 8:50 до 9:20, то при включении Quartz выполнит все 10 заданий в 9:30; 9:45 и т.д.</p>
+			</td>
+		</tr><tr><td><span class="consolas">Cron<wbr></wbr>Trigger.<wbr></wbr>Fire<wbr></wbr>Once<wbr></wbr>Now</span></td>
+			<td>1</td>
+			<td>-</td>
+			<td>Cron<wbr></wbr>Trigger</td>
+		</tr><tr><td colspan="4">
+			<p><strong>Описание поведения <span class="filled">CronTrigger.<wbr></wbr>Fire<wbr></wbr>Once<wbr></wbr>Now</span></strong></p>
+
+			<p>Планировщик пытается как можно скорее выполнить первое просроченное задание. Остальные просроченные задания игнорируются. Оставшиеся непросроченные задания планировщик выполняет согласно с расписанием.</p>
+
+			<p>Например, запланировано задание с триггером <span class="filled">Cron<wbr></wbr>Trigger</span>: <span class="filled">CRON_<wbr></wbr>EXPRESSION = '0 0 9-17 ? * MON-FRI'</span> (с понедельника по пятницу с 9:00 до 17:00). Если планировщик был выключен с 8:50 до 10:20, то при включении в 10:20 Quartz выполнит первое просроченное задание из двух (в 9:00 и 10:00). Далее задания будут выполняться в 11:00, 12:00 и т.д.</p>
+			</td>
+		</tr><tr><td><span class="consolas">CronTrigger.<wbr></wbr>Do<wbr></wbr>Nothing</span></td>
+			<td>2</td>
+			<td>-</td>
+			<td>Cron<wbr></wbr>Trigger</td>
+		</tr><tr><td colspan="4">
+			<p><strong>Описание поведения <span class="filled">Cron<wbr></wbr>Trigger.<wbr></wbr>Do<wbr></wbr>Nothing</span></strong></p>
+
+			<p>Планировщик игнорирует все просроченные задания. Оставшиеся непросроченные задания выполняются согласно с расписанием.</p>
+
+			<p>Например, запланировано задание с триггером <span class="filled">Cron<wbr></wbr>Trigger</span>: <span class="filled">CRON_<wbr></wbr>EXPRESSION = '0 0 9-17 ? * MON-FRI'</span> (с понедельника по пятницу с 9:00 до 17:00). Если планировщик был выключен с 8:50 до 10:20, то при включении Quartz начнет выполнять задания с 11:00 (в 11:00, 12:00 и т.д).</p>
+			</td>
+		</tr><tr><td><span class="consolas">Calendar<wbr></wbr>Interval<wbr></wbr>Trigger.<wbr></wbr>Fire<wbr></wbr>Once<wbr></wbr>Now</span></td>
+			<td>1</td>
+			<td>-</td>
+			<td>Calendar<wbr></wbr>Interval<wbr></wbr>Trigger</td>
+		</tr><tr><td colspan="4">
+			<p><strong>Описание поведения <span class="filled">Calendar<wbr></wbr>Interval<wbr></wbr>Trigger.<wbr></wbr>Fire<wbr></wbr>Once<wbr></wbr>Now</span></strong></p>
+
+			<p>Поведение аналогично <span class="filled">Cron<wbr></wbr>Trigger.<wbr></wbr>Fire<wbr></wbr>Once<wbr></wbr>Now.</span></p>
+			</td>
+		</tr><tr><td><span class="consolas">Calendar<wbr></wbr>Interval<wbr></wbr>Trigger.<wbr></wbr>Do<wbr></wbr>Nothing</span></td>
+			<td>2</td>
+			<td>-</td>
+			<td>Calendar<wbr></wbr>Interval<wbr></wbr>Trigger</td>
+		</tr><tr><td colspan="4">
+			<p><strong>Описание поведения <span class="filled">Calendar<wbr></wbr>Interval<wbr></wbr>Trigger.<wbr></wbr>Do<wbr></wbr>Nothing</span></strong></p>
+
+			<p>Поведение аналогично <span class="filled">Cron<wbr></wbr>Trigger.<wbr></wbr>Do<wbr></wbr>Nothing</span>.</p>
+			</td>
+		</tr></tbody></table></div>
+
+<p>Особенности работы с планировщиком при использовании горизонтального масштабирования описаны в статье <a href="../../../user/razvertyvanie_onsite/nastroika_dopolnitelnikh_parametrov_i_integraciy/gorizontalnoe_masshtabirovanie/nastroit_gorizontalnoe_masshtabirovanie.html">Настроить горизонтальное масштабирование</a>.</p>
+</div>
+      
+  </div>
+<div class="block block-layout-builder block-field-blocknodedeveloper-documentationfield-linked">
+  
+    
+      
+  <div class="field field--name-field-linked field--type-entity-reference field--label-above">
+    <div class="field__label">Смотрите также</div>
+          <div class="field__items">
+              <div class="field__item"><a href="../../../user/razvertyvanie_onsite/nastroika_dopolnitelnikh_parametrov_i_integraciy/gorizontalnoe_masshtabirovanie/nastroit_gorizontalnoe_masshtabirovanie.html" hreflang="ru">Настроить горизонтальное масштабирование</a></div>
+              </div>
+      </div>
+
+  </div>
+
+    </div>
+  </div>
+
+  </div>
+
+</article>
+
+  </div>
+
+  </div>
+
+          </div>
+        </div>
+
+                  <aside class="creatio-sidebar creatio-sidebar_first" role="complementary">
+              <div class="region region-sidebar-first">
+    <div id="block-documentationnaviagtion" class="block block-ts-nav block-ts-nav-doc-nav">
+  
+    
+      <div class="ts-nav-block"><a href="../../../../index.html" class="ts-nav-block__link">Документация</a><div class="ts-nav-block__title">Для разработчика</div>
+</div>
+<div class="ts-nav-container"><ul class="ts-nav-menu"><li class="ts-nav-menu__item">
+  <a href="../../s_chego_nachat.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">С чего начать&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../architecture.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Архитектура&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../instrumenty_razrabotki.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Инструменты разработки&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../back_end_razrabotka.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Back-end разработка&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../front_end_razrabotka.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Front-end разработка&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../integratsiya_i_vneshnij_api.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Интеграция и внешний API&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../ehlementy_interfejsa.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Элементы интерфейса&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../komponenty_prilozheniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded ts-nav-menu__link_open" hreflang="zxx">Компоненты приложения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+      <ul class="ts-nav-menu__children">
+      <li class="ts-nav-menu__item">
+  <a href="../otchety.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Отчеты&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../komponenty_marketing.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Компоненты Marketing&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../komponenty_sales.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Компоненты Sales&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../komponenty_service.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Компоненты Service&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../portal.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Портал&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../lendingi.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Лендинги&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../telefoniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Телефония&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../mashinnoe_obuchenie.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Машинное обучение&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../elements_and_components/email_soobshcheniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Email-сообщения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../obogashchenie_kontaktov_iz_email/obzor.html" class="ts-nav-menu__link" hreflang="ru">Обогащение контактов из email</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../sinkhronizaciya_sync_engine.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Синхронизация Sync Engine&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="obzor.html" class="ts-nav-menu__link ts-nav-menu__link_open" hreflang="ru">Планировщик заданий</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../bandlirovanie_staticheskogo_kontenta.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Бандлирование статического контента&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+
+    </ul>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../razrabotka_mobilnogo_prilozheniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Разработка мобильного приложения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../razrabotka_marketplace_prilozheniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Разработка Marketplace-приложения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+</ul>
+</div>
+
+  </div>
+
+  </div>
+
+            <div class="creatio-sidebar__toggle"></div>
+          </aside>
+        
+                  <aside class="creatio-sidebar creatio-sidebar_second" role="complementary">
+              <div class="region region-sidebar-second">
+    <div id="block-example" class="block block-ts-nav block-ts-nav-page-nav">
+  
+    
+      <div class="ts-nav-page">
+  </div>
+
+  </div>
+<div id="block-adminfeedbackblock" class="block block-admin-feedback block-admin-feedback-block">
+  
+    
+      <div id="feedback-message"><div id="upper-feedback-content"><h2>Был ли данный материал полезен?</h2>
+<input class="feedback-btn feedback-btn__yes button js-form-submit form-submit" data-node-id="2391" data-feedback="yes" type="submit" name="op" value="Да" />
+<input class="feedback-btn feedback-btn__no button js-form-submit form-submit" data-node-id="2391" data-feedback="no" type="submit" name="op" value="Нет" />
+</div>
+<form class="admin-feedback-form" data-drupal-selector="admin-feedback-form" action="https://academy.terrasoft.ua/docs/7-17/developer/komponenty_prilozheniya/planirovshchik_zadanij/obzor" method="post" id="admin-feedback-form" accept-charset="UTF-8">
+  <div id="feedback-msg-result"></div><div class="js-form-item form-item js-form-type-textarea form-type-textarea js-form-item-feedback-message form-item-feedback-message form-no-label">
+        <div class="form-textarea-wrapper">
+  <textarea id="edit-feedback-msg" data-drupal-selector="edit-feedback-message" name="feedback_message" rows="5" cols="60" class="form-textarea resize-vertical"></textarea>
+</div>
+
+        </div>
+<input id="feedback-id" data-drupal-selector="edit-feedback-id" type="hidden" name="feedback_id" value="" />
+<input class="feedback-btn feedback-btn__send-comment button js-form-submit form-submit" data-drupal-selector="edit-feedback-send" type="submit" id="edit-feedback-send" name="op" value="Отправить" />
+<input autocomplete="off" data-drupal-selector="form-01ctv-nkpkfpfwrrsrblusxhiguhey8iaohgq8wbk7k" type="hidden" name="form_build_id" value="form-01cTV_NKpKfPFWrRSRbLUsxHiGUHey8iaOhGQ8WBk7k" />
+<input data-drupal-selector="edit-admin-feedback-form" type="hidden" name="form_id" value="admin_feedback_form" />
+
+</form>
+</div>
+
+  </div>
+
+  </div>
+
+          </aside>
+              </main>
+    </div>
+  </div>
+
+  <footer role="contentinfo">
+    <div class="creatio-region creatio-region_footer">
+      <div class="creatio-container">
+          <div class="region region-footer">
+    <div id="block-footerua" class="block block-simple-block block-simple-blockfooter-ua">
+  
+    
+      <div class="footer">
+<div class="footer-left">
+<ul class="footer-socials"><li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_fb" href="https://www.facebook.com/terrasoft.ua" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_in" href="https://www.linkedin.com/company/terrasoft/" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_yt" href="https://www.youtube.com/c/TerrasoftUkraine" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_tg" href="https://t.me/Terrasoft_UA" target="_blank"> </a></li>
+</ul></div>
+
+<div class="footer-contact">
+<div class="footer-title">Будьте на связи!</div>
+
+<div class="footer-content">
+<div class="footer-items">
+<div class="footer-item"><a class="footer__link footer__link_phone" href="tel:+380443633133">+38 (044) 363-31-33</a></div>
+</div>
+
+<div class="footer-items">
+<div class="footer-item"><a class="footer__link footer__link_email" href="mailto:support@terrasoft.ua">support@terrasoft.ua</a></div>
+</div>
+</div>
+</div>
+</div>
+
+  </div>
+
+  </div>
+
+      </div>
+    </div>
+    <div class="creatio-region creatio-region_bottom">
+      <div class="creatio-container">
+          <div class="region region-bottom">
+    <div id="block-allrightsreservedua" class="block block-simple-block block-simple-blockfooter-bottom-ua">
+  
+    
+      <p>© 2002-2022 Terrasoft.  |  <a href="https://www.terrasoft.ua/privacy-policy" target="_blank">Конфиденциальность</a></p>
+
+  </div>
+
+  </div>
+
+      </div>
+    </div>
+  </footer>
+</div>
+<div class="creatio-bg"></div>
+
+
+  </div>
+
+    
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/docs\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/2391","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"ru"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"ajaxPageState":{"libraries":"admin_feedback\/admin_feedback_block,admin_feedback\/admin_feedback_css,classy\/base,classy\/messages,classy\/node,core\/drupal.ajax,core\/jquery.form,core\/normalize,creatio\/fancybox,creatio\/global,layout_discovery\/onecol,system\/base,ts_doc\/doc_version,ts_feedback\/ts_feedback,ts_nav\/breadcrumb,ts_nav\/doc_nav,ts_nav\/page_nav,ts_title_anchor\/ts_title_anchor","theme":"creatio","theme_token":null},"ajaxTrustedUrl":{"form_action_p_pvdeGsVG5zNF_XLGPTvYSKCf43t8qZYSwcfZl2uzM":true,"\/docs\/7-17\/developer\/komponenty_prilozheniya\/planirovshchik_zadanij\/obzor?ajax_form=1":true},"admin_feedback":{"yes_response":"\u0421\u043f\u0430\u0441\u0438\u0431\u043e \u0437\u0430 \u043e\u0431\u0440\u0430\u0442\u043d\u0443\u044e \u0441\u0432\u044f\u0437\u044c!","no_response":"\u0421\u043f\u0430\u0441\u0438\u0431\u043e \u0437\u0430 \u043e\u0431\u0440\u0430\u0442\u043d\u0443\u044e \u0441\u0432\u044f\u0437\u044c!","custom_text_response_on_no":{"value":"","format":"full_html"},"feedback_prompt_on_yes":true,"feedback_prompt_on_no":true,"feedback_enable_predefined_answers":false,"feedback_prompt":"\u041a\u0430\u043a \u043c\u043e\u0436\u043d\u043e \u0443\u043b\u0443\u0447\u0448\u0438\u0442\u044c \u044d\u0442\u0443 \u0441\u0442\u0430\u0442\u044c\u044e?"},"ajax":{"edit-feedback-send":{"callback":"::validateFeedbackMsg","event":"mousedown","keypress":true,"prevent":"click","url":"\/docs\/7-17\/developer\/komponenty_prilozheniya\/planirovshchik_zadanij\/obzor?ajax_form=1","dialogType":"ajax","submit":{"_triggering_element_name":"op","_triggering_element_value":"\u041e\u0442\u043f\u0440\u0430\u0432\u0438\u0442\u044c"}}},"user":{"uid":0,"permissionsHash":"9c2367dfcaba0fa15f0375f97aed64e146c908cee68508d13b79e3ee80e5162d"}}</script>
+<script src="../../../../sites/default/files/js/js_Rr-7TvYD7NposuRFJwUqThxM7yJmw8vs03PQwu5gWd8.js"></script>
+
+
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+      <g id="svg-copy" class="svg-icon svg-icon_copy">
+        <path d="M15.111,18H1.889A1.848,1.848,0,0,1,0,16.2V3.6A1.848,1.848,0,0,1,1.889,1.8H5.837a2.87,2.87,0,0,1,5.326,0h3.948A1.848,1.848,0,0,1,17,3.6V16.2A1.848,1.848,0,0,1,15.111,18ZM3.777,12.6v1.8h6.611V12.6Zm0-3.6v1.8h9.445V9Zm0-3.6V7.2h9.445V5.4ZM8.5,1.8a.924.924,0,0,0-.944.9.945.945,0,0,0,1.889,0A.924.924,0,0,0,8.5,1.8Z"/>
+      </g>
+
+      <g id="svg-prev" class="svg-icon svg-icon_arrow">
+        <path d="M5.488,12.779,0,6.39,5.488,0" transform="translate(1 0.652)"/>
+      </g>
+
+      <g id="svg-next" class="svg-icon svg-icon_arrow">
+        <path d="M0,12.779,5.488,6.39,0,0" transform="translate(0.759 0.652)"/>
+      </g>
+    </svg>
+  </body>
+
+<!-- Mirrored from academy.terrasoft.ua/docs/7-17/developer/komponenty_prilozheniya/planirovshchik_zadanij/obzor by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Mar 2022 03:19:04 GMT -->
+</html>

@@ -1,0 +1,1028 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# ">
+  
+<!-- Mirrored from academy.terrasoft.ua/docs/7-18/developer/instrumenty_razrabotki/creatio_ide/principy_razrabotki_v_creatio_ide/obzor by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 22 Mar 2022 19:47:18 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+          <!-- Google Tag Manager -->
+      <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          '../../../../../../../www.googletagmanager.com/gtm5445.html?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-KLLB8G');</script>
+      <!-- End Google Tag Manager -->
+        <meta charset="utf-8" />
+<link rel="canonical" href="obzor.html" />
+<meta name="description" content="Creatio IDE — встроенная среда разработки для управления конфигурацией. Управление конфигурацией подразумевает реализацию сложной бизнес-логики, интеграции и настройки. Управление конфигурацией выполняется с помощью Creatio IDE, которая реализована в виде раздела Конфигурация (Configuration). Назначение раздела Конфигурация — управление конфигурационными элементами, при помощи которых реализована функциональность системы." />
+<meta property="og:url" content="https://academy.terrasoft.ua/docs/7-18/developer/instrumenty_razrabotki/creatio_ide/principy_razrabotki_v_creatio_ide/obzor" />
+<meta property="og:title" content="Принципы разработки в Creatio IDE" />
+<meta property="og:description" content="Creatio IDE — встроенная среда разработки для управления конфигурацией. Управление конфигурацией подразумевает реализацию сложной бизнес-логики, интеграции и настройки. Управление конфигурацией выполняется с помощью Creatio IDE, которая реализована в виде раздела Конфигурация (Configuration). Назначение раздела Конфигурация — управление конфигурационными элементами, при помощи которых реализована функциональность системы." />
+<meta name="Generator" content="Drupal 9 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="../../../../../themes/custom/creatio/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="revision" href="obzor.html" />
+
+    <title>Принципы разработки в Creatio IDE | Creatio Academy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&amp;family=Open+Sans:ital,wght@0,300;0,400;0,600;1,400&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" media="all" href="../../../../../sites/default/files/css/css_6lTP66__-yc6QXFp1zOwoeJ0HVigoYZP-SeoLLii000.css" />
+<link rel="stylesheet" media="all" href="../../../../../sites/default/files/css/css_XQJDNhkF3xH5SZCcY-PI89Zu4nYIzQ5oR3SnUKyfXJU.css" />
+<link rel="stylesheet" media="print" href="../../../../../sites/default/files/css/css_Zn4VHvcniOOtUwkIVwXzYr_0AI9gUVgZcPqaH4ViagU.css" />
+
+    
+  </head>
+  <body class="path-node page-node-type-developer-documentation">
+          <!-- Google Tag Manager (noscript) -->
+      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KLLB8G"
+                        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+      <!-- End Google Tag Manager (noscript) -->
+    
+        
+      <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    <div class="creatio-page d-flex flex-column">
+        <div class="region region-informer">
+    <div id="block-terrasoftpidtrimueukrainu" class="block block-simple-block block-simple-blockterrasoft-pidtrimue-ukrainu">
+  
+    
+      <style type="text/css">
+<!--/*--><![CDATA[/* ><!--*/
+@import url(../../../../../../../www.terrasoft.ua/themes/custom/creatio/css/components/informer.css)
+
+/*--><!]]>*/
+</style><div class="ts-swu">
+<div class="creatio-container">
+<div class="ts-swu__cont">
+<div><a class="ts-swu__link" href="https://www.terrasoft.ua/terrasoft-stands-with-ukraine" target="_blank">Україна понад усе!</a> <span><a href="https://www.terrasoft.ua/terrasoft-stands-with-ukraine" target="_blank">Приєднуйтеся</a> до допомоги!</span></div>
+</div>
+</div></div>
+
+  </div>
+
+  </div>
+
+  
+  <header role="banner">
+          <div class="creatio-region creatio-region_top">
+        <div class="creatio-container">
+            <div class="region region-top">
+    <div id="block-menutoggle" class="block block-simple-block block-simple-blockmenu-toggle">
+  
+    
+      <div class="menu-toggle"><span> </span></div>
+
+  </div>
+<div id="block-logowhite-2" class="block block-simple-block block-simple-blocklogo-white">
+  
+    
+      <p><a class="site-logo" href="../../../../../../index.html" rel="home"><img src="../../../../../themes/custom/creatio/logo-white.svg" /></a></p>
+
+  </div>
+<div id="block-search" class="block block-simple-block block-simple-blocksearch">
+  
+    
+      <div class="search">
+<form action="https://academy.terrasoft.ua/search" class="search-form" method="get"><input class="search-form__input" name="search" placeholder="Поиск" type="search" /><input class="search-form__button" type="submit" value="Поиск" /> </form>
+
+<div class="search-toggle"> </div>
+</div>
+
+  </div>
+<nav role="navigation" aria-labelledby="block-sitesua-menu" id="block-sitesua" class="block block-menu navigation menu--sites-ua">
+            
+  <h2 class="visually-hidden" id="block-sitesua-menu">Sites UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="https://www.terrasoft.ua/" rel="nofollow" target="_blank">Terrasoft</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://community.terrasoft.ua/" rel="nofollow" target="_blank">Community</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://marketplace.terrasoft.ua/" rel="nofollow" target="_blank">Marketplace</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+<div id="block-usermenu" class="block block-ts-user block-ts-user-menu-block">
+  
+    
+      <ul class="user-menu">
+      <li class="user-menu__item">
+      <a class="user-menu__link" href="https://profile.terrasoft.ua/user/login?destination=academy/ua/docs/7-18/developer/instrumenty_razrabotki/creatio_ide/principy_razrabotki_v_creatio_ide/obzor">Войти</a>
+    </li>
+  </ul>
+
+  </div>
+<div id="block-usermenumobile" class="block block-ts-user block-ts-user-menu-mobile-block">
+  
+    
+      <ul class="user-menu-mobile">
+      <li class="user-menu-mobile__item">
+      <div class="user-menu-mobile__user user-menu-mobile__user_icon"></div>
+      <ul class="user-menu-mobile__submenu">
+        <li class="user-menu-mobile__subitem">
+          <a class="user-menu-mobile__sublink" href="https://profile.terrasoft.ua/user/login?destination=academy/ua/docs/7-18/developer/instrumenty_razrabotki/creatio_ide/principy_razrabotki_v_creatio_ide/obzor">Войти</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  </div>
+
+  </div>
+
+        </div>
+      </div>
+              <div class="creatio-region creatio-region_header">
+        <div class="creatio-container">
+            <div class="region region-header">
+    <div id="block-logo" class="block block-simple-block block-simple-blocklogo">
+  
+    
+      <p><a class="site-logo" href="../../../../../../index.html" rel="home"><img src="../../../../../themes/custom/creatio/logo.svg" /></a></p>
+
+  </div>
+<nav role="navigation" aria-labelledby="block-osnovnayanavigaciyaua-menu" id="block-osnovnayanavigaciyaua" class="block block-menu navigation menu--main-ua">
+            
+  <h2 class="visually-hidden" id="block-osnovnayanavigaciyaua-menu">Основная навигация UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="../../../../../index.html" data-drupal-link-system-path="&lt;front&gt;">Документация</a>
+              </li>
+                <li class="menu-item">
+        <a href="../../../../../../trainings.html">Тренинги</a>
+              </li>
+                <li class="menu-item">
+        <a href="../../../../../certification.html" data-drupal-link-system-path="node/3084">Сертификация и тестирование</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+<nav role="navigation" aria-labelledby="block-sitesua-2-menu" id="block-sitesua-2" class="block block-menu navigation menu--sites-ua">
+            
+  <h2 class="visually-hidden" id="block-sitesua-2-menu">Sites UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="https://www.terrasoft.ua/" rel="nofollow" target="_blank">Terrasoft</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://community.terrasoft.ua/" rel="nofollow" target="_blank">Community</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://marketplace.terrasoft.ua/" rel="nofollow" target="_blank">Marketplace</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+
+  </div>
+
+        </div>
+      </div>
+              <div class="creatio-region creatio-region_breadcrumb">
+        <div class="creatio-container">
+            <div class="region region-breadcrumb">
+    <div id="block-logowhite" class="block block-simple-block block-simple-blocklogo-white">
+  
+    
+      <p><a class="site-logo" href="../../../../../../index.html" rel="home"><img src="../../../../../themes/custom/creatio/logo-white.svg" /></a></p>
+
+  </div>
+<div id="block-breadcrumbnaviagtion" class="block block-ts-nav block-ts-nav-bread">
+  
+    
+      <nav class="breadcrumb"><ol class="ts-nav-breadcrumb__list"><li class="ts-nav-breadcrumb__item"><a href="../../../../../index.html" class="ts-nav-breadcrumb__link" title="Документация">Документация</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../../../index2132.html?vid_1=2" class="ts-nav-breadcrumb__link" title="Для разработчика">Для разработчика</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../instrumenty_razrabotki.html" class="ts-nav-breadcrumb__link" title="Инструменты разработки" hreflang="zxx">Инструменты разработки</a></li>
+<li class="ts-nav-breadcrumb__item ts-nav-breadcrumb__item_mobile"><a href="../../creatio_ide.html" class="ts-nav-breadcrumb__link" title="Creatio IDE" hreflang="ru">Creatio IDE</a></li>
+<li class="ts-nav-breadcrumb__item"><span class="ts-nav-breadcrumb__link ts-nav-breadcrumb__link_current" title="Обзор">Обзор</span></li>
+</ol>
+</nav>
+
+  </div>
+<div id="block-search-2" class="block block-simple-block block-simple-blocksearch">
+  
+    
+      <div class="search">
+<form action="https://academy.terrasoft.ua/search" class="search-form" method="get"><input class="search-form__input" name="search" placeholder="Поиск" type="search" /><input class="search-form__button" type="submit" value="Поиск" /> </form>
+
+<div class="search-toggle"> </div>
+</div>
+
+  </div>
+
+  </div>
+
+        </div>
+      </div>
+      </header>
+
+  <div class="creatio-region creatio-region_main">
+    <div class="creatio-container">
+                <div class="region region-breadcrumb-mobile">
+    <div id="block-breadcrumbnaviagtion-2" class="block block-ts-nav block-ts-nav-bread">
+  
+    
+      <nav class="breadcrumb"><ol class="ts-nav-breadcrumb__list"><li class="ts-nav-breadcrumb__item"><a href="../../../../../index.html" class="ts-nav-breadcrumb__link" title="Документация">Документация</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../../../index2132.html?vid_1=2" class="ts-nav-breadcrumb__link" title="Для разработчика">Для разработчика</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../instrumenty_razrabotki.html" class="ts-nav-breadcrumb__link" title="Инструменты разработки" hreflang="zxx">Инструменты разработки</a></li>
+<li class="ts-nav-breadcrumb__item ts-nav-breadcrumb__item_mobile"><a href="../../creatio_ide.html" class="ts-nav-breadcrumb__link" title="Creatio IDE" hreflang="ru">Creatio IDE</a></li>
+<li class="ts-nav-breadcrumb__item"><span class="ts-nav-breadcrumb__link ts-nav-breadcrumb__link_current" title="Обзор">Обзор</span></li>
+</ol>
+</nav>
+
+  </div>
+
+  </div>
+
+      
+      <main class="creatio-main" role="main">
+                                                    
+        <div class="creatio-content creatio-content_small">
+          <div class="creatio-content__inner creatio-content__inner_bg">
+                            <div class="region region-messages">
+    <div data-drupal-messages-fallback class="hidden"></div>
+
+  </div>
+
+            
+              <div class="region region-content">
+    <div id="block-creatio-page-title" class="block block-core block-page-title-block">
+  
+    
+      
+  <h1 class="page-title"><span class="field field--name-title field--type-string field--label-hidden">Принципы разработки в Creatio IDE</span>
+</h1>
+
+
+  </div>
+<div id="block-creatio-content" class="block block-system block-system-main-block">
+  
+    
+      
+<article data-history-node-id="3623" role="article" about="/docs/7-18/developer/instrumenty_razrabotki/creatio_ide/principy_razrabotki_v_creatio_ide/obzor" class="node node--type-developer-documentation node--view-mode-full">
+
+  
+    
+
+  
+  <div class="node__content">
+      <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocknodedeveloper-documentationfield-difficulty">
+  
+    
+      
+            <div class="field field--name-field-difficulty field--type-entity-reference field--label-hidden field__item"><div about="/docs/7-18/taxonomy/term/122" id="taxonomy-term-122" class="taxonomy-term vocabulary-difficulty">
+  
+  
+  <div class="content">
+      <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocktaxonomy-termdifficultyfield-icon">
+  
+    
+      
+            <div class="field field--name-field-icon field--type-image field--label-hidden field__item">  <img src="../../../../../sites/default/files/difficulty/easy.svg" alt="" loading="lazy" typeof="foaf:Image" />
+
+</div>
+      
+  </div>
+<div class="block block-layout-builder block-field-blocktaxonomy-termdifficultyname">
+  
+    
+      
+            <div class="field field--name-name field--type-string field--label-hidden field__item"><span style="color: #FEB000;">Легкий</span></div>
+      
+  </div>
+
+    </div>
+  </div>
+
+  </div>
+</div>
+</div>
+      
+  </div>
+<div class="block block-ts-doc block-ts-doc-downloads">
+  
+    
+      <a href="../../../../../sites/default/files/pdf/node/3623/Principy_razrabotki_v_Creatio_IDE_.pdf" target="_blank">PDF</a>
+  </div>
+<div class="block block-ts-doc block-ts-doc-versions">
+  
+    
+        <div class="ts-doc-versions">
+    <select class="ts-doc-versions__select">
+                              <option value="/docs/8-0/developer/instrumenty_razrabotki/creatio_ide/principy_razrabotki_v_creatio_ide/obzor_creatio_ide">Версия 8.0</option>
+                                                <option value="/docs/7-18/developer/instrumenty_razrabotki/creatio_ide/principy_razrabotki_v_creatio_ide/obzor" selected>Версия 7.18</option>
+                              <option value="/docs/7-17/developer/instrumenty_razrabotki/creatio_ide/razrabotka_v_creatio_ide">Версия 7.17</option>
+                              <option value="/docs/7-16/developer/instrumenty_razrabotki/creatio_ide/razrabotka_v_creatio_ide">Версия 7.16</option>
+          </select>
+  </div>
+
+  </div>
+
+    </div>
+  </div>
+  <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocknodedeveloper-documentationbody">
+  
+    
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><p><strong>Creatio IDE</strong> — встроенная среда разработки для управления конфигурацией. Управление конфигурацией подразумевает реализацию сложной бизнес-логики, интеграции и настройки. Управление конфигурацией выполняется с помощью Creatio IDE, которая реализована в виде раздела <span class="key">Конфигурация</span> (<span class="key">Configuration</span>). <strong>Назначение</strong> раздела <span class="key">Конфигурация</span> — управление конфигурационными элементами, при помощи которых реализована функциональность системы.</p>
+
+<h2>Настроить доступ к разделу <span class="key">Конфигурация</span><a class="title-anchor" href="#title-2093-1" id="title-2093-1"> </a></h2>
+
+<p>Доступ к разделу <span class="key">Конфигурация</span> настраивается на уровне системных операций. По умолчанию доступ к основным системным операциям есть только у администраторов системы. Но его можно <a data-auto-update-caption="dlue" href="../../../../user/ustanovka_i_administrirovanie/upravlenie_polzovateljami_i_dostupom/upravleniye_dostupom/dostup_po_sistemnym_operacijam/nastroit_prava_dostupa_na_sistemnye_operacii.html">настроить</a> для пользователей или групп пользователей. <strong>Настройка доступа</strong> к разделу <span class="key">Конфигурация</span>:</p>
+
+<ol><li>Перейдите в дизайнер системы по кнопке <img src="../../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/SectionConfigurationGeneralInfo/scr_Settings_button.png" />. В блоке <span class="key">Пользователи и администрирование</span> (<span class="key">Users and administration</span>) перейдите по ссылке <span class="key">Права доступа на операции</span> (<span class="key">Operation permissions</span>).</li>
+	<li>Выберите системную операцию <span class="key">Доступ к разделу "Конфигурация"</span> (код <span class="key">CanManageSolution</span>).</li>
+	<li>На детали <span class="key">Доступ к операции</span> (<span class="key">Operation permission</span>) нажмите <img src="../../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/SectionConfigurationGeneralInfo/scr_add_button.png" /> и укажите получателя прав. Запись появится на детали в колонке <span class="key">Уровень доступа</span> (<span class="key">Access level</span>) со значением <span class="key">Да</span> (<span class="key">Yes</span>), а пользователи, входящие в указанную роль, получат доступ к системной операции <span class="key">Доступ к разделу "Конфигурация"</span> (код <span class="key">CanManageSolution</span>).</li>
+</ol><p>Если у пользователя нет доступа к разделу <span class="key">Конфигурация</span>, то выдается стандартное сообщение с указанием операции и недостающих прав.</p>
+
+<h2>Открыть раздел <span class="key">Конфигурация</span><a class="title-anchor" href="#title-2093-2" id="title-2093-2"> </a></h2>
+
+<p>Способы перехода в раздел <span class="key">Конфигурация</span> для фреймворка <strong>.NET Framework</strong>:</p>
+
+<ul><li>По кнопке <img src="../../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/SectionConfigurationGeneralInfo/scr_Settings_button.png" /> через дизайнер системы. В блоке <span class="key">Конфигурирование разработчиком</span> (<span class="key">Admin area</span>) перейдите по ссылке <span class="key">Управление конфигурацией</span> (<span class="key">Advanced settings</span>).</li>
+	<li>По ссылке <span class="filled">[Адрес приложения Creatio]/0/ClientApp/#/WorkspaceExplorer</span>. Например, <span class="filled">http://my.сreatio.com/0/ClientApp/#/WorkspaceExplorer</span>.</li>
+	<li>По алиасу <span class="filled">/we</span>. Например, <span class="filled">http://my.сreatio.com/0/we</span>.</li>
+	<li>По алиасу <span class="filled">/conf</span>. Например, <span class="filled">http://my.сreatio.com/0/conf</span>.</li>
+	<li>По алиасу <span class="filled">/dev</span>. Например, <span class="filled">http://my.сreatio.com/0/dev</span>.</li>
+</ul><p>Для фреймворка <strong>ASP.NET Core</strong> способы перехода в раздел аналогичны. Различие — не нужно использовать приставку <span class="filled">/0</span>.</p>
+
+<p>Раздел <span class="key">Конфигурация</span> будет открыт в новой вкладке.</p>
+
+<h2>Разработка конфигурации<a class="title-anchor" href="#title-2093-3" id="title-2093-3"> </a></h2>
+
+<p><strong>Функциональные области</strong> интерфейса раздела <span class="key">Конфигурация</span>:</p>
+
+<ul><li>Панель инструментов (1).</li>
+	<li>Область работы с пакетами (2).</li>
+	<li>Рабочая область (3).</li>
+</ul><div class="media">
+<div class="media__element"><img src="../../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/SectionConfigurationGeneralInfo/scr_common_view_new.png" /></div>
+</div>
+
+<p><strong>Инструменты</strong> раздела <span class="key">Конфигурация</span> позволяют управлять:</p>
+
+<ul><li>Разработкой в файловой системе.</li>
+	<li>Пакетами.</li>
+	<li>Конфигурационными элементами пакетов.</li>
+	<li>Хранилищами системы контроля версий.</li>
+	<li>Компиляцией конфигурации.</li>
+</ul><h3>Разработка в файловой системе<a class="title-anchor" href="#title-2093-4" id="title-2093-4"> </a></h3>
+
+<p>Действия, связанные с разработкой в файловой системе, реализованы в группе <span class="key">Разработка в файловой системе</span> (<span class="key">File system development mode</span>) (4) выпадающего списка <span class="key">Действия</span> (<span class="key">Actions</span>) панели инструментов (1).</p>
+
+<div class="media">
+<div class="media__element"><img src="../../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/SectionConfigurationGeneralInfo/scr_Actions_new.png" /></div>
+</div>
+
+<p><strong>Группа действий</strong> <span class="key">Разработка в файловой системе</span> (<span class="key">File system development mode</span>) (4) позволяет:</p>
+
+<ul><li>Загрузить пакеты из базы данных приложения в каталог <span class="filled">...\Terrasoft.WebApp\Terrasoft.Configuration\Pkg</span> (пункт <span class="key">Выгрузить все пакеты в файловую систему</span> (<span class="key">Download packages to file system</span>)).</li>
+	<li>Загрузить пакеты из каталога <span class="filled">...\Terrasoft.WebApp\Terrasoft.Configuration\Pkg</span> в базу данных (пункт <span class="key">Обновить пакеты из файловой системы</span> (<span class="key">Update packages from file system</span>)).</li>
+</ul><p>Пункты группы действий <span class="key">Разработка в файловой системе</span> (<span class="key">File system development mode</span>) (4) доступны только при включенном режиме разработки в <a data-auto-update-caption="dlue" href="../../vneshnie_ide/obzor.html">файловой системе</a>. Подсказка по включению режима отображается при наведении курсора на название любого пункта текущей группы действий. Включение режима разработки в файловой системе описано в статье <a data-auto-update-caption="dlue" href="../../vneshnie_ide/obzor.html#title-2098-4">Внешние IDE</a>.</p>
+
+<h3>Пакеты<a class="title-anchor" href="#title-2093-5" id="title-2093-5"> </a></h3>
+
+<p><strong>Инструменты управления</strong> пакетами:</p>
+
+<ul><li>Группа <span class="key">Пакеты</span> (<span class="key">Packages</span>) (5) выпадающего списка <span class="key">Действия</span> (<span class="key">Actions</span>) панели инструментов (1).</li>
+	<li>Область работы с пакетами (2).</li>
+	<li>Меню пакета.</li>
+</ul><p><strong>Группа действий</strong> <span class="key">Пакеты</span> (<span class="key">Packages</span>) (5) позволяет открыть <a data-auto-update-caption="dlue" href="../../pakety/obshchiye_printsipy_raboty_s_paketami/obzor.html#title-2105-3">диаграмму зависимостей</a> пакетов (<span class="key">Диаграмма зависимостей пакетов</span> (<span class="key">Package dependencies diagram</span>)).</p>
+
+<p><strong>Область работы с пакетами</strong> (2) позволяет:</p>
+
+<ul><li>Выполнить поиск пакета по имени (строка поиска <span class="key">Поиск по пакетам</span> (<span class="key">Search by package</span>)).</li>
+	<li>Создать пакет (кнопка <img src="../../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/SectionConfigurationGeneralInfo/scr_Add_Package.png" />). При нажатии на кнопку будет отображено окно создания нового пакета, в котором можно задать название и описание пакета, добавить зависимости, а также указать хранилище системы контроля версий. Создание пакета описано в статье <a href="../../pakety/obshchiye_printsipy_raboty_s_paketami/obzor.html#case-2920">Создать пользовательский пакет</a>.</li>
+	<li>Посмотреть перечень пакетов приложения (группа <span class="key">Все пакеты</span> (<span class="key">All packages</span>)). Пакеты отображаются в алфавитном порядке. Вверху перечня отображаются измененные пакеты и пакеты, доступные для редактирования. При выборе текущей группы конфигурационные элементы всех пакетов приложения будут отображены в алфавитном порядке в рабочей области раздела <span class="key">Конфигурация</span> (3). При выборе пакета группы в алфавитном порядке будут отображены конфигурационные элементы текущего пакета. Измененные пакеты находятся вверху перечня пакетов группы <span class="key">Все пакеты</span> (<span class="key">All packages</span>) и содержат символ <img src="../../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/SectionConfigurationGeneralInfo/scr_ChangedPackage.png" /> возле имени пакета.</li>
+</ul><p><strong>Меню пакета</strong> можно вызвать по нажатию на <img src="../../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/SectionConfigurationGeneralInfo/scr_Package_Settings.png" /> в строке с названием пакета.</p>
+
+<div class="media">
+<div class="media__element"><img src="../../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/SectionConfigurationGeneralInfo/scr_PackageMenu.png" /></div>
+</div>
+
+<p>Меню пакета позволяет:</p>
+
+<ul><li>Удалить пакет (пункт <span class="key">Удалить</span> (<span class="key">Delete</span>)). Пункт неактивен для предустановленных пакетов. Можно удалить пустые пакеты и пакеты с конфигурационными элементами, которые не являются родительскими. При попытке удалить пакет с родительскими конфигурационными элементами будет отображен перечень зависимых пакетов и элементов, зависимых от конфигурационных элементов удаляемого пакета, которые препятствуют удалению.</li>
+	<li>Посмотреть свойства пакета (пункт <span class="key">Свойства</span> (<span class="key">Properties</span>)). Вкладка <span class="key">Свойства пакета</span> (<span class="key">Package properties</span>) позволяет настроить зависимости текущего пакета (если пакет доступен для редактирования). Также можно просмотреть системную информацию: кто создал и отредактировал пакет, даты создания и изменения, уникальный идентификатор, первичный ключ пакета в таблице базы данных. Открыть свойства пакета можно двойным кликом по имени пакета.</li>
+</ul><h3>Конфигурационные элементы пакетов<a class="title-anchor" href="#title-2093-6" id="title-2093-6"> </a></h3>
+
+<p><strong>Инструменты управления</strong> конфигурационными элементами пакетов:</p>
+
+<ul><li>Группа <span class="key">Актуализировать элементы</span> (<span class="key">Actualize items</span>) (7) выпадающего списка <span class="key">Действия</span> (<span class="key">Actions</span>) панели инструментов (1).</li>
+	<li>Группа <span class="key">Исходный код</span> (<span class="key">Source code</span>) (8) выпадающего списка <span class="key">Действия</span> (<span class="key">Actions</span>) панели инструментов (1).</li>
+	<li>Панель инструментов рабочей области (3) раздела <span class="key">Конфигурация</span>.</li>
+	<li>Реестр рабочей области (3) раздела <span class="key">Конфигурация</span>.</li>
+</ul><p><strong>Группа действий</strong> <span class="key">Актуализировать элементы</span> (<span class="key">Actualize items</span>) (7) позволяет:</p>
+
+<ul><li>Обновить структуру базы данных для конфигурационных элементов, которые требуют обновления (пункт <span class="key">Обновить структуру БД для требующих обновления</span> (<span class="key">Update DB structure where it is needed</span>)).</li>
+	<li>Установить SQL-сценарии, которые требуют установки (пункт <span class="key">Установить SQL сценарии для требующих установки</span> (<span class="key">Install SQL scripts where it is needed</span>)).</li>
+	<li>Установить данные, которые требуют установки (пункт <span class="key">Установить данные для требующих установки</span> (<span class="key">Install data where it is needed</span>)).</li>
+</ul><p>После завершения актуализации конфигурационных элементов вы получите уведомление.</p>
+
+<p><strong>Группа действий</strong> <span class="key">Исходный код</span> (<span class="key">Source code</span>) (8) позволяет:</p>
+
+<ul><li>Генерировать исходный код для схем, которые были изменены в текущей конфигурации (пункт <span class="key">Сгенерировать для измененных</span> (<span class="key">Generate for modified schemas</span>)).</li>
+	<li>Генерировать исходный код для схем, которые требуют генерации исходного кода (пункт <span class="key">Сгенерировать для требующих генерации</span> (<span class="key">Generate where it is needed</span>)).</li>
+	<li>Генерировать исходный код для всех без исключения схем текущей конфигурации (пункт <span class="key">Сгенерировать для всех схем</span> (<span class="key">Generate for all schemas</span>)). Эта операция может занять длительное время (больше 10 минут).</li>
+</ul><p>Начиная с версии 7.18.4, генерация исходного кода для схем выполняется в <a href="../../../back_end_razrabotka/operatsii_s_dannymi_back_end/fonovoe_vypolnenie_operacij/obzor.html">фоновом режиме</a>.</p>
+
+<p><strong>Особенности</strong> генерации исходного кода в фоновом режиме:</p>
+
+<ul><li>Выполнение операции не влияет на работу основных пользовательских функций.</li>
+	<li>Во время выполнения операции отсутствует возможность запуска генерации исходных кодов и компиляции приложения. При запуске этих действий приложение отобразит уведомление о выполняющейся операции.</li>
+	<li>Во время выполнения операции не рекомендуется выполнять работы, которые требуют компиляции приложения, например, устанавливать приложения и расширения, настраивать интерфейс и бизнес-логику.</li>
+</ul><p>Уведомление о завершении генерации отобразится в <a href="../../../ehlementy_interfejsa/kommunikacionnaya_panel/obzor.html">коммуникационной панели</a>.</p>
+
+<p><strong>Панель инструментов</strong> рабочей области (3) раздела <span class="key">Конфигурация</span> представлена на рисунке ниже.</p>
+
+<div class="media">
+<div class="media__element"><img src="../../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/SectionConfigurationGeneralInfo/scr_SettingsPanel.png" /></div>
+</div>
+
+<p>Панель инструментов позволяет:</p>
+
+<ul><li>Выбрать вид конфигурационного элемента для добавления (выпадающий список <span class="key">Добавить</span> (<span class="key">Add</span>)). Предварительно необходимо выбрать пакет. Без выбора пакета пункты выпадающего списка <span class="key">Добавить</span> (<span class="key">Add</span>) остаются неактивными. В предустановленные пакеты конфигурационные элементы добавить невозможно. Возможные <strong>виды</strong> конфигурационных элементов для добавления представлены на рисунке ниже.
+
+	<div class="media">
+	<div class="media__element"><img src="../../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/SectionConfigurationGeneralInfo/scr_AddList.png" /></div>
+	</div>
+	</li>
+	<li>
+	<p>Загрузить в пользовательский пакет схему (*.md) или внешнюю сборку (*.dll) (пункт <span class="key">Импортировать</span> (<span class="key">Import</span>) выпадающего списка <span class="key">Добавить</span> (<span class="key">Add</span>)).</p>
+	</li>
+	<li>Выбрать тип конфигурационных элементов для отображения в реестре раздела (выпадающий список <span class="key">Тип</span> (<span class="key">Type</span>)). Возможные <strong>типы</strong> конфигурационных элементов для отображения представлены на рисунке ниже.
+	<div class="media">
+	<div class="media__element"><img src="../../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/SectionConfigurationGeneralInfo/scr_TypeList.png" /></div>
+	</div>
+
+	<p>Конфигурационные элементы с типом <span class="key">Клиентский модуль</span> (<span class="key">Client module</span>):</p>
+
+	<ul><li><span class="key">Модуль</span> (<span class="key">Module</span>).</li>
+		<li><span class="key">Модель представления страницы</span> (<span class="key">Page view model</span>).</li>
+		<li><span class="key">Модель представления раздела</span> (<span class="key">Section view model</span>).</li>
+		<li><span class="key">Модель представления детали с реестром</span> (<span class="key">Detail (list) view model</span>).</li>
+		<li><span class="key">Модель представления детали с полями</span> (<span class="key">Detail (fields) view model</span>).</li>
+		<li><span class="key">Замещающая модель представления</span> (<span class="key">Replacing view model</span>).</li>
+	</ul><p>Конфигурационные элементы с типом <span class="key">Объект</span> (<span class="key">Object</span>):</p>
+
+	<ul><li><span class="key">Объект</span> (<span class="key">Object</span>).</li>
+		<li><span class="key">Замещающий объект</span> (<span class="key">Replacing object</span>).</li>
+	</ul></li>
+	<li>Выбрать состояния конфигурационных элементов для отображения в реестре раздела (выпадающий список <span class="key">Фильтры</span> (<span class="key">Filters</span>)). Настройки выпадающего списка <span class="key">Фильтры</span> (<span class="key">Filters</span>) сохраняются в профиле пользователя и отображаются при входе в раздел <span class="key">Конфигурация</span>. Возможные <strong>состояния</strong> конфигурационных элементов для отображения представлены на рисунке ниже.
+	<div class="media">
+	<div class="media__element"><img src="../../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/SectionConfigurationGeneralInfo/scr_FiltersList.png" /></div>
+	</div>
+
+	<p>Конфигурационные элементы со значением <span class="key">Требующие актуализации</span> (<span class="key">Need actualization</span>) выпадающего списка <span class="key">Фильтры</span> (<span class="key">Filters</span>):</p>
+
+	<ul><li><span class="key">SQL сценарий</span> (<span class="key">SQL script</span>) и <span class="key">Данные</span> (<span class="key">Data</span>) — при установленном свойстве <span class="key">Требует установки в БД</span> (<span class="key">Needs to be installed in database</span>).</li>
+		<li><span class="key">Объект</span> (<span class="key">Object</span>) — при установленном свойстве <span class="key">Требуется обновление в БД</span> (<span class="key">Needs to be updated in database</span>).</li>
+		<li><span class="key">Клиентский модуль</span> (<span class="key">Client module</span>), <span class="key">Исходный код</span> (<span class="key">Source code</span>), <span class="key">Кейс</span> (<span class="key">Case</span>), <span class="key">Маркетинговая кампания</span> (<span class="key">Marketing campaign</span>), <span class="key">Бизнес-процесс</span> (<span class="key">Business-process</span>), <span class="key">Действие процесса</span> (<span class="key">User task</span>) — при установленном свойстве <span class="key">Требует генерации исходного кода</span> (<span class="key">Needs generate source code</span>).</li>
+	</ul></li>
+	<li>Выполнить поиск конфигурационного элемента по имени в реестре раздела (строка поиска <span class="key">Поиск</span> (<span class="key">Search</span>)). Поиск выполняется в текущем пакете. Чтобы выполнять поиск по всем конфигурационным элементам пакетов, необходимо перейти в группу <span class="key">Все пакеты</span> (<span class="key">All packages</span>) области работы с пакетами (2). По нажатию <img src="../../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/SectionConfigurationGeneralInfo/scr_SearchSettings_Button.png" /> настраиваются <strong>параметры поиска</strong>:
+	<ul><li>Поиск по заголовку (опция <span class="key">Поиск по полю "Заголовок"</span> (<span class="key">Search by column "Title"</span>) — по умолчанию включена).</li>
+		<li>Поиск по уникальному идентификатору (опция <span class="key">Поиск по полю "UID"</span> (<span class="key">Search by column "UID"</span>) — по умолчанию выключена).</li>
+		<li>Режим поиска. Возможные значения:
+		<ul><li>Пункт <span class="key">Начинается</span> (<span class="key">Starts with</span>) — по умолчанию включен. Название конфигурационного элемента начинается с текста, который введен в строке поиска <span class="key">Поиск</span> (<span class="key">Search</span>).</li>
+			<li>Пункт <span class="key">Содержит</span> (<span class="key">Contains</span>) — по умолчанию выключен. Название конфигурационного элемента содержит текст, который введен в строке поиска <span class="key">Поиск</span> (<span class="key">Search</span>).</li>
+			<li>Пункт <span class="key">Равно</span> (<span class="key">Equals</span>) — по умолчанию выключен. Название конфигурационного элемента соответствует тексту, который введен в строке поиска <span class="key">Поиск</span> (<span class="key">Search</span>).</li>
+		</ul></li>
+	</ul><p>Для применения внесенных изменений нажмите <span class="key">Применить</span> (<span class="key">Apply</span>).</p>
+
+	<p>Настройки поиска сохраняются в профиле пользователя и отображаются при входе в раздел <span class="key">Конфигурация</span>.</p>
+	</li>
+</ul><p><strong>Реестр раздела</strong> рабочей области (3) раздела <span class="key">Конфигурация</span> содержит перечень конфигурационных элементов. <strong>Свойства</strong> конфигурационных элементов реестра раздела представлены в таблице.</p>
+
+<div class="table">
+<div class="table__caption">Свойства конфигурационных элементов</div>
+
+<div class="table">
+<table border="1" cellpadding="1" cellspacing="1"><thead><tr><th scope="col">Колонка</th>
+			<th scope="col">Описание</th>
+			<th scope="col">Дополнительные сведения</th>
+		</tr></thead><tbody><tr><th><span class="key">Название</span> (<span class="key">Name</span>)</th>
+			<td>Имя конфигурационного элемента, которое было задано при создании</td>
+			<td>Все конфигурационные элементы отсортированы в алфавитном порядке. Колонка позволяет посмотреть перечень измененных конфигурационных элементов (символ <img src="../../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/SectionConfigurationGeneralInfo/scr_star_icon.png" /> возле имени элемента). Измененные конфигурационные элементы находятся вверху перечня конфигурационных элементов реестра раздела.</td>
+		</tr><tr><th><span class="key">Заголовок</span> (<span class="key">Title</span>)</th>
+			<td>Заголовок конфигурационного элемента</td>
+			<td> </td>
+		</tr><tr><th><span class="key">Статус</span> (<span class="key">Status</span>)</th>
+			<td>Состояние конфигурационного элемента</td>
+			<td>Содержит значения выпадающего списка <span class="key">Фильтры</span> (<span class="key">Filters</span>).
+			<p>Колонка <span class="key">Статус</span> (<span class="key">Status</span>) будет содержать <img src="../../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/SectionConfigurationGeneralInfo/scr_NeedActualization_icon.png" />, если необходима актуализация конфигурационного элемента. При наведении на <img src="../../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/SectionConfigurationGeneralInfo/scr_NeedActualization_icon.png" /> можно увидеть <strong>всплывающие подсказки</strong>:</p>
+
+			<ul><li><span class="key">Требует установки в БД</span> (<span class="key">Needs to be installed in database</span>) — для конфигурационных элементов <span class="key">SQL сценарий</span> (<span class="key">SQL script</span>) и <span class="key">Данные</span> (<span class="key">Data</span>).</li>
+				<li><span class="key">Требуется обновление в БД</span> (<span class="key">Needs to be updated in database</span>) — для конфигурационного элемента <span class="key">Объект</span> (<span class="key">Object</span>).</li>
+				<li><span class="key">Требует генерации исходного кода</span> (<span class="key">Needs generate source code</span>) — для конфигурационных элементов <span class="key">Клиентский модуль</span> (<span class="key">Client module</span>), <span class="key">Исходный код</span> (<span class="key">Source code</span>), <span class="key">Кейс</span> (<span class="key">Case</span>), <span class="key">Маркетинговая кампания</span> (<span class="key">Marketing campaign</span>), <span class="key">Бизнес-процесс</span> (<span class="key">Business-process</span>), <span class="key">Действие процесса</span> (<span class="key">User task</span>).</li>
+			</ul><p>Колонка <span class="key">Статус</span> (<span class="key">Status</span>) будет содержать <img src="../../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/SectionConfigurationGeneralInfo/scr_error_icon.png" />, если конфигурационный элемент содержит ошибку. При наведении на <img src="../../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/SectionConfigurationGeneralInfo/scr_error_icon.png" /> можно увидеть текстовое описание ошибки.</p>
+
+			<p>Если необходима актуализация конфигурационного элемента и при этом он содержит ошибку, то колонка <span class="key">Статус</span> (<span class="key">Status</span>) будет содержать <img src="../../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/SectionConfigurationGeneralInfo/scr_error_icon.png" />. При наведении курсора можно увидеть информацию о необходимости актуализации конфигурационного элемента и текстовое описание ошибки.</p>
+			</td>
+		</tr><tr><th><span class="key">Тип</span> (<span class="key">Type</span>)</th>
+			<td>Тип конфигурационного элемента</td>
+			<td> </td>
+		</tr><tr><th><span class="key">Объект</span> (<span class="key">Object</span>)</th>
+			<td>Объект, с которым связаны привязываемые к пакету данные</td>
+			<td>Колонка заполняется только для конфигурационного элемента <span class="key">Данные</span> (<span class="key">Data</span>).</td>
+		</tr><tr><th><span class="key">Дата изменения</span> (<span class="key">Modified on</span>)</th>
+			<td>Дата изменения конфигурационного элемента</td>
+			<td> </td>
+		</tr><tr><th><span class="key">Пакет</span> (<span class="key">Package</span>)</th>
+			<td>Название пакета, который содержит конфигурационный элемент</td>
+			<td> </td>
+		</tr></tbody></table></div>
+</div>
+
+<div class="message">
+<p><span class="message__bold">На заметку.</span> Отсортировать данные в колонке по возрастанию или по убыванию можно нажатием по имени колонки.</p>
+</div>
+
+<p>При нажатии на <img src="../../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/SectionConfigurationGeneralInfo/scr_Package_Settings.png" /> в строке конфигурационного элемента будет отображено меню, которое зависит от значения колонки <span class="key">Тип</span> (<span class="key">Type</span>). Описание действий с конфигурационными элементами, которые можно выполнить с помощью меню конфигурационного элемента, приведено в таблице.</p>
+
+<div class="table">
+<div class="table__caption">Действия над конфигурационными элементами</div>
+
+<div class="table">
+<table border="1" cellpadding="1" cellspacing="1"><thead><tr><th scope="col">Пункт меню</th>
+			<th scope="col">Действие</th>
+			<th scope="col">Дополнительные сведения</th>
+			<th scope="col" width="50%">Конфигурационный элемент</th>
+		</tr></thead><tbody><tr><th><span class="key">Удалить</span> (<span class="key">Delete</span>)</th>
+			<td>Удалить конфигурационный элемент</td>
+			<td>Неактивно для конфигурационных элементов предустановленных пакетов.</td>
+			<td>
+			<p><span class="key">SQL сценарий</span> (<span class="key">SQL script</span>)</p>
+
+			<p><span class="key">Данные</span> (<span class="key">Data</span>)</p>
+
+			<p><span class="key">Внешняя сборка</span> (<span class="key">Reference assembly</span>)</p>
+
+			<p><span class="key">Объект</span> (<span class="key">Object</span>)</p>
+
+			<p><span class="key">Клиентский модуль</span> (<span class="key">Client module</span>)</p>
+
+			<p><span class="key">Исходный код</span> (<span class="key">Source code</span>)</p>
+
+			<p><span class="key">Кейс</span> (<span class="key">Case</span>)</p>
+
+			<p><span class="key">Маркетинговая кампания</span> (<span class="key">Marketing campaign</span>)</p>
+
+			<p><span class="key">Веб-сервис</span> (<span class="key">Web service</span>)</p>
+			</td>
+		</tr><tr><th><span class="key">Установить</span> (<span class="key">Install</span>)</th>
+			<td>Установить конфигурационный элемент</td>
+			<td>
+			<p>Для элемента <span class="key">SQL сценарий</span> (<span class="key">SQL script</span>) выполнится установка в базу данных, для элемента <span class="key">Данные</span> (<span class="key">Data</span>) выполнится установка данных для объекта колонки <span class="key">Объект</span> (<span class="key">Object</span>).</p>
+
+			<p>При некорректной установке данных для объекта колонки <span class="key">Объект</span> (<span class="key">Object</span>) можно посмотреть описание ошибки в колонке <span class="key">Статус</span> (<span class="key">Status</span>). Описание ошибки также можно посмотреть в свойствах конфигурационных элементов.</p>
+			</td>
+			<td>
+			<p><span class="key">SQL сценарий</span> (<span class="key">SQL script</span>)</p>
+
+			<p><span class="key">Данные</span> (<span class="key">Data</span>)</p>
+			</td>
+		</tr><tr><th><span class="key">Отменить изменения</span> (<span class="key">Discard changes</span>)</th>
+			<td>Отменить внесенные изменения</td>
+			<td>Пункт доступен, если к пакету с конфигурационным элементом подключено хранилище системы контроля версий.</td>
+			<td>
+			<p><span class="key">SQL сценарий</span> (<span class="key">SQL script</span>)</p>
+
+			<p><span class="key">Данные</span> (<span class="key">Data</span>)</p>
+
+			<p><span class="key">Внешняя сборка</span> (<span class="key">Reference assembly</span>)</p>
+
+			<p><span class="key">Объект</span> (<span class="key">Object</span>)</p>
+
+			<p><span class="key">Клиентский модуль</span> (<span class="key">Client module</span>)</p>
+
+			<p><span class="key">Исходный код</span> (<span class="key">Source code</span>)</p>
+
+			<p><span class="key">Кейс</span> (<span class="key">Case</span>)</p>
+
+			<p><span class="key">Маркетинговая кампания</span> (<span class="key">Marketing campaign</span>)</p>
+
+			<p><span class="key">Бизнес-процесс</span> (<span class="key">Business-process</span>)</p>
+
+			<p><span class="key">Действие процесса</span> (<span class="key">User task</span>)</p>
+
+			<p><span class="key">Веб-сервис</span> (<span class="key">Web service</span>)</p>
+			</td>
+		</tr><tr><th><span class="key">Свойства</span> (<span class="key">Properties</span>)</th>
+			<td>Открыть окно свойств конфигурационного элемента</td>
+			<td> </td>
+			<td>
+			<p><span class="key">SQL сценарий</span> (<span class="key">SQL script</span>)</p>
+
+			<p><span class="key">Данные</span> (<span class="key">Data</span>)</p>
+
+			<p><span class="key">Внешняя сборка</span> (<span class="key">Reference assembly</span>)</p>
+
+			<p><span class="key">Объект</span> (<span class="key">Object</span>)</p>
+
+			<p><span class="key">Клиентский модуль</span> (<span class="key">Client module</span>)</p>
+
+			<p><span class="key">Исходный код</span> (<span class="key">Source code</span>)</p>
+
+			<p><span class="key">Кейс</span> (<span class="key">Case</span>)</p>
+
+			<p><span class="key">Маркетинговая кампания</span> (<span class="key">Marketing campaign</span>)</p>
+
+			<p><span class="key">Бизнес-процесс</span> (<span class="key">Business-process</span>)</p>
+
+			<p><span class="key">Действие процесса</span> (<span class="key">User task</span>)</p>
+
+			<p><span class="key">Веб-сервис</span> (<span class="key">Web service</span>)</p>
+			</td>
+		</tr><tr><th><span class="key">Изменить процесс</span> (<span class="key">Edit process</span>)</th>
+			<td>Открыть объект для редактирования</td>
+			<td>Если объект создан третьими лицами, будет отображено соответствующее уведомление.</td>
+			<td>
+			<p><span class="key">Объект</span> (<span class="key">Object</span>)</p>
+			</td>
+		</tr><tr><th><span class="key">Экспортировать</span> (<span class="key">Export</span>)</th>
+			<td>Скачать конфигурационный элемент</td>
+			<td>Конфигурационный элемент будет скачан в формате *.md.</td>
+			<td>
+			<p><span class="key">Объект</span> (<span class="key">Object</span>)</p>
+
+			<p><span class="key">Клиентский модуль</span> (<span class="key">Client module</span>)</p>
+
+			<p><span class="key">Исходный код</span> (<span class="key">Source code</span>)</p>
+
+			<p><span class="key">Кейс</span> (<span class="key">Case</span>)</p>
+
+			<p><span class="key">Маркетинговая кампания</span> (<span class="key">Marketing campaign</span>)</p>
+
+			<p><span class="key">Бизнес-процесс</span> (<span class="key">Business-process</span>)</p>
+
+			<p><span class="key">Действие процесса</span> (<span class="key">User task</span>)</p>
+
+			<p><span class="key">Веб-сервис</span> (<span class="key">Web service</span>)</p>
+			</td>
+		</tr><tr><th><span class="key">Обновить структуру БД</span> (<span class="key">Update database structure</span>)</th>
+			<td>Обновить структуру базы данных для объекта</td>
+			<td> </td>
+			<td>
+			<p><span class="key">Объект</span> (<span class="key">Object</span>)</p>
+			</td>
+		</tr><tr><th><span class="key">Сгенерировать исходный код</span> (<span class="key">Generate source code</span>)</th>
+			<td>Сгенерировать исходный код конфигурационного элемента</td>
+			<td>Будет выполнено, если процесс содержит компилируемые элементы.</td>
+			<td>
+			<p><span class="key">Объект</span> (<span class="key">Object</span>)</p>
+
+			<p><span class="key">Бизнес-процесс</span> (<span class="key">Business-process</span>)</p>
+
+			<p><span class="key">Действие процесса</span> (<span class="key">User task</span>)</p>
+
+			<p><span class="key">Веб-сервис</span> (<span class="key">Web service</span>)</p>
+			</td>
+		</tr><tr><th><span class="key">Открыть метаданные</span> (<span class="key">Open metadata</span>)</th>
+			<td>Открыть окно метаданных конфигурационного элемента.</td>
+			<td> </td>
+			<td>
+			<p><span class="key">Объект</span> (<span class="key">Object</span>)</p>
+
+			<p><span class="key">Клиентский модуль</span> (<span class="key">Client module</span>)</p>
+
+			<p><span class="key">Исходный код</span> (<span class="key">Source code</span>)</p>
+
+			<p><span class="key">Кейс</span> (<span class="key">Case</span>)</p>
+
+			<p><span class="key">Маркетинговая кампания</span> (<span class="key">Marketing campaign</span>)</p>
+
+			<p><span class="key">Бизнес-процесс</span> (<span class="key">Business-process</span>)</p>
+
+			<p><span class="key">Действие процесса</span> (<span class="key">User task</span>)</p>
+
+			<p><span class="key">Веб-сервис</span> (<span class="key">Web service</span>)</p>
+			</td>
+		</tr></tbody></table></div>
+</div>
+
+<p>Реестр позволяет удалить конфигурационный элемент (кнопка <img src="../../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/SectionConfigurationGeneralInfo/scr_DeleteButton.png" />). Данная кнопка появляется при наведении курсора на запись реестра раздела <span class="key">Конфигурация</span> только для конфигурационных элементов пользовательских пакетов.</p>
+
+<h3>Хранилища системы контроля версий<a class="title-anchor" href="#title-2093-7" id="title-2093-7"> </a></h3>
+
+<p><strong>Инструменты работы</strong> с хранилищами системы контроля версий:</p>
+
+<ul><li>Группа <span class="key">Хранилища SVN</span> (<span class="key">SVN repositories</span>) (6) выпадающего списка <span class="key">Действия</span> (<span class="key">Actions</span>) панели инструментов (1).</li>
+	<li>Меню пакета.</li>
+</ul><p><strong>Группа действий</strong> <span class="key">Хранилища SVN</span> (<span class="key">SVN repositories</span>) (6) позволяет:</p>
+
+<ul><li>Установить пакет из хранилища системы контроля версий (пункт <span class="key">Установить пакет из хранилища</span> (<span class="key">Install package from repository</span>)).</li>
+	<li>Открыть вкладку <span class="key">Список хранилищ</span> (<span class="key">List of repositories</span>) (пункт <span class="key">Открыть список хранилищ</span> (<span class="key">Open list of repositories</span>)), которая позволяет создавать, настраивать и удалять ссылки на доступные хранилища системы контроля версий.</li>
+	<li>Синхронизировать конфигурацию с хранилищем до последней ревизии (пункт <span class="key">Восстановить из хранилища</span> (<span class="key">Restore from repository</span>)). Это приведет к потере изменений, не зафиксированных в хранилище системы контроля версий.</li>
+</ul><p>Использование системы контроля версий SVN доступно только для приложения Creatio на платформе .NET Framework. Описание работы с хранилищами системы контроля версий содержится в статье <a data-auto-update-caption="dlue" href="../../sistemy_kontrolya_versij/creatio_ide/obzor.html">Контроль версий в Creatio IDE</a>.</p>
+
+<p><strong>Меню пакета</strong> позволяет:</p>
+
+<ul><li>Выгрузить пакет в zip-архив (пункт <span class="key">Экспортировать</span> (<span class="key">Export</span>)). Экспорт пакетов описан в статье <a data-auto-update-caption="true" href="../../upravlenie_postavkami/creatio_ide/obzor.html#case-2492">Перенести пакеты</a>.</li>
+	<li>Обновить пакет из подключенного хранилища системы контроля версий (пункт <span class="key">Обновить из хранилища</span> (<span class="key">Update from repository</span>)). Обновление пакета описано в статье <a data-auto-update-caption="true" href="../../sistemy_kontrolya_versij/creatio_ide/obzor.html#title-2109-3">Контроль версий в Creatio IDE</a>.</li>
+	<li>Зафиксировать пакет в подключенном хранилище системы контроля версий (пункт <span class="key">Зафиксировать в хранилище</span> (<span class="key">Commit to repository</span>)). Фиксация пакета в системе контроля версий описана в статье <a data-auto-update-caption="true" href="../../sistemy_kontrolya_versij/creatio_ide/obzor.html#title-2109-1">Контроль версий в Creatio IDE</a>.</li>
+</ul><h3>Компиляция конфигурации<a class="title-anchor" href="#title-2093-8" id="title-2093-8"> </a></h3>
+
+<p>Запуск компиляции изменений в конфигурации выполняется нажатием <span class="key">Компилировать</span> (<span class="key">Compile</span>) на панели инструментов (1).</p>
+
+<p>Выбор пункта <span class="key">Перекомпилировать все</span> (<span class="key">Compile all</span>) в выпадающем списке кнопки <span class="key">Компилировать</span> (<span class="key">Compile</span>) запускает компиляцию конфигурации всех без исключения конфигурационных элементов. В результате будут обновлены исполняемые файлы и <a data-auto-update-caption="dlue" href="../../pakety/fajlovyj_kontent/obzor.html#title-2102-7">статический контент</a> будет выгружен в каталог <span class="filled">...\Terrasoft.WebApp\conf</span>. После завершения компиляции пользователь получит уведомление и изменения вступят в силу для пользователей, работающих в текущей конфигурации.</p>
+
+<p>При компиляции могут возникнуть <strong>ошибки</strong>, которые отображаются в диалоговом окне. <strong>Свойства</strong> ошибок компиляции:</p>
+
+<ul><li>Иконка типа ошибки (ошибка <img src="../../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/SectionConfigurationGeneralInfo/scr_error_icon.png" /> или предупреждение <img src="../../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/SectionConfigurationGeneralInfo/scr_warning_icon.png" />).</li>
+	<li>Имя файла с ошибкой.</li>
+	<li>Описание ошибки.</li>
+	<li>Код ошибки.</li>
+	<li>Номер строки с ошибкой.</li>
+</ul><h2>Закрыть раздел <span class="key">Конфигурация</span><a class="title-anchor" href="#title-2093-9" id="title-2093-9"> </a></h2>
+
+<p>Чтобы закрыть вкладку с разделом <span class="key">Конфигурация</span>, нажмите <span class="key">Закрыть</span> (<span class="key">Close</span>) на панели инструментов (1).</p>
+</div>
+      
+  </div>
+<div class="block block-layout-builder block-field-blocknodedeveloper-documentationfield-linked">
+  
+    
+      
+  <div class="field field--name-field-linked field--type-entity-reference field--label-above">
+    <div class="field__label">Смотрите также</div>
+          <div class="field__items">
+              <div class="field__item"><a href="../../../../user/ustanovka_i_administrirovanie/upravlenie_polzovateljami_i_dostupom/upravleniye_dostupom/dostup_po_sistemnym_operacijam/nastroit_prava_dostupa_na_sistemnye_operacii.html" hreflang="ru">Настроить права доступа на системные операции</a></div>
+          <div class="field__item"><a href="../../../../../7-16/developer/development_tools/development_in_external_ide/vneshnie_ide.html" hreflang="ru">Внешние IDE</a></div>
+          <div class="field__item"><a href="../../pakety/obshchiye_printsipy_raboty_s_paketami/obzor.html" hreflang="ru">Общие принципы работы с пакетами</a></div>
+          <div class="field__item"><a href="../../../back_end_razrabotka/operatsii_s_dannymi_back_end/fonovoe_vypolnenie_operacij/obzor.html" hreflang="ru">Фоновое выполнение операций</a></div>
+          <div class="field__item"><a href="../../../ehlementy_interfejsa/kommunikacionnaya_panel/obzor.html" hreflang="ru">Коммуникационная панель</a></div>
+          <div class="field__item"><a href="../../sistemy_kontrolya_versij/creatio_ide/obzor.html" hreflang="ru">Контроль версий в Creatio IDE</a></div>
+          <div class="field__item"><a href="../../upravlenie_postavkami/creatio_ide/obzor.html" hreflang="ru">Управление поставками в Creatio IDE</a></div>
+          <div class="field__item"><a href="../../../../../developer/instrumenty_razrabotki/pakety/paket_sborka/obzor.html" hreflang="ru">Пакет-сборка</a></div>
+              </div>
+      </div>
+
+  </div>
+<div class="block block-layout-builder block-field-blocknodedeveloper-documentationfield-video">
+  
+    
+      
+  <div class="field field--name-field-video field--type-link field--label-above">
+    <div class="field__label">Онлайн-курсы</div>
+          <div class="field__items">
+              <div class="field__item"><a href="https://profile.terrasoft.ua/user/login?destination=academy/ua/online-courses/osnovy-razrabotki-na-platforme-creatio/">Основы разработки на платформе Creatio</a></div>
+              </div>
+      </div>
+
+  </div>
+<div class="block block-layout-builder block-field-blocknodedeveloper-documentationfield-resources">
+  
+    
+      
+  <div class="field field--name-field-resources field--type-link field--label-above">
+    <div class="field__label">Ресурсы</div>
+          <div class="field__items">
+              <div class="field__item"><a href="../../../../../developer/front-end_development.html" target="_blank">Документация Creatio по back-end разработке</a></div>
+          <div class="field__item"><a href="../../../../../developer/front-end_development.html" target="_blank">Документация Creatio по front-end разработке</a></div>
+              </div>
+      </div>
+
+  </div>
+
+    </div>
+  </div>
+
+  </div>
+
+</article>
+
+  </div>
+
+  </div>
+
+          </div>
+        </div>
+
+                  <aside class="creatio-sidebar creatio-sidebar_first" role="complementary">
+              <div class="region region-sidebar-first">
+    <div id="block-documentationnaviagtion" class="block block-ts-nav block-ts-nav-doc-nav">
+  
+    
+      <div class="ts-nav-block"><a href="../../../../../index.html" class="ts-nav-block__link">Документация</a><div class="ts-nav-block__title">Для разработчика</div>
+</div>
+<div class="ts-nav-container"><ul class="ts-nav-menu"><li class="ts-nav-menu__item">
+  <a href="../../../s_chego_nachat.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">С чего начать&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../architecture.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Архитектура&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../instrumenty_razrabotki.html" class="ts-nav-menu__link ts-nav-menu__link_expanded ts-nav-menu__link_open" hreflang="zxx">Инструменты разработки&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+      <ul class="ts-nav-menu__children">
+      <li class="ts-nav-menu__item">
+  <a href="../../creatio_ide.html" class="ts-nav-menu__link ts-nav-menu__link_expanded ts-nav-menu__link_open" hreflang="ru">Creatio IDE&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+      <ul class="ts-nav-menu__children">
+      <li class="ts-nav-menu__item">
+  <a href="obzor.html" class="ts-nav-menu__link ts-nav-menu__link_open" hreflang="ru">Обзор</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../razrabotka_konfiguracionnykh_ehlementov.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Разработка конфигурационных элементов&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+
+    </ul>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../vneshnie_ide.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Внешние IDE&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../pakety.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Пакеты&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../sistemy_kontrolya_versij.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Системы контроля версий&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../development_tools/testirovanie.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Тестирование&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../development_tools/instrumenty_dlya_bazy_dannykh.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Инструменты для базы данных&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../logirovanie.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Логирование&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../otladka.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Отладка&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../upravlenie_postavkami.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Управление поставками&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+
+    </ul>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../back_end_razrabotka.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Back-end разработка&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../front_end_razrabotka.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Front-end разработка&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../integratsiya_i_vneshnij_api.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Интеграция и внешний API&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../ehlementy_interfejsa.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Элементы интерфейса&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../komponenty_prilozheniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Компоненты приложения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../razrabotka_mobilnogo_prilozheniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Разработка мобильного приложения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../razrabotka_marketplace_prilozheniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Разработка Marketplace-приложения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+</ul>
+</div>
+
+  </div>
+
+  </div>
+
+            <div class="creatio-sidebar__toggle"></div>
+          </aside>
+        
+                  <aside class="creatio-sidebar creatio-sidebar_second" role="complementary">
+              <div class="region region-sidebar-second">
+    <div id="block-example" class="block block-ts-nav block-ts-nav-page-nav">
+  
+    
+      <div class="ts-nav-page">
+  </div>
+
+  </div>
+<div id="block-adminfeedbackblock" class="block block-admin-feedback block-admin-feedback-block">
+  
+    
+      <div id="feedback-message"><div id="upper-feedback-content"><h2>Был ли данный материал полезен?</h2>
+<input class="feedback-btn feedback-btn__yes button js-form-submit form-submit" data-node-id="3623" data-feedback="yes" type="submit" name="op" value="Да" />
+<input class="feedback-btn feedback-btn__no button js-form-submit form-submit" data-node-id="3623" data-feedback="no" type="submit" name="op" value="Нет" />
+</div>
+<form class="admin-feedback-form" data-drupal-selector="admin-feedback-form" action="https://academy.terrasoft.ua/docs/7-18/developer/instrumenty_razrabotki/creatio_ide/principy_razrabotki_v_creatio_ide/obzor" method="post" id="admin-feedback-form" accept-charset="UTF-8">
+  <div id="feedback-msg-result"></div><div class="js-form-item form-item js-form-type-textarea form-type-textarea js-form-item-feedback-message form-item-feedback-message form-no-label">
+        <div class="form-textarea-wrapper">
+  <textarea id="edit-feedback-msg" data-drupal-selector="edit-feedback-message" name="feedback_message" rows="5" cols="60" class="form-textarea resize-vertical"></textarea>
+</div>
+
+        </div>
+<input id="feedback-id" data-drupal-selector="edit-feedback-id" type="hidden" name="feedback_id" value="" />
+<input class="feedback-btn feedback-btn__send-comment button js-form-submit form-submit" data-drupal-selector="edit-feedback-send" type="submit" id="edit-feedback-send" name="op" value="Отправить" />
+<input autocomplete="off" data-drupal-selector="form-rzvbhusbfnj5udm8i-5oyms7htbctnd8kydqx-hkm0" type="hidden" name="form_build_id" value="form-rzvBHusBFnj5UDm8i-_5oymS7HtBctNd8kYDQx_Hkm0" />
+<input data-drupal-selector="edit-admin-feedback-form" type="hidden" name="form_id" value="admin_feedback_form" />
+
+</form>
+</div>
+
+  </div>
+
+  </div>
+
+          </aside>
+              </main>
+    </div>
+  </div>
+
+  <footer role="contentinfo">
+    <div class="creatio-region creatio-region_footer">
+      <div class="creatio-container">
+          <div class="region region-footer">
+    <div id="block-footerua" class="block block-simple-block block-simple-blockfooter-ua">
+  
+    
+      <div class="footer">
+<div class="footer-left">
+<ul class="footer-socials"><li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_fb" href="https://www.facebook.com/terrasoft.ua" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_in" href="https://www.linkedin.com/company/terrasoft/" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_yt" href="https://www.youtube.com/c/TerrasoftUkraine" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_tg" href="https://t.me/Terrasoft_UA" target="_blank"> </a></li>
+</ul></div>
+
+<div class="footer-contact">
+<div class="footer-title">Будьте на связи!</div>
+
+<div class="footer-content">
+<div class="footer-items">
+<div class="footer-item"><a class="footer__link footer__link_phone" href="tel:+380443633133">+38 (044) 363-31-33</a></div>
+</div>
+
+<div class="footer-items">
+<div class="footer-item"><a class="footer__link footer__link_email" href="mailto:support@terrasoft.ua">support@terrasoft.ua</a></div>
+</div>
+</div>
+</div>
+</div>
+
+  </div>
+
+  </div>
+
+      </div>
+    </div>
+    <div class="creatio-region creatio-region_bottom">
+      <div class="creatio-container">
+          <div class="region region-bottom">
+    <div id="block-allrightsreservedua" class="block block-simple-block block-simple-blockfooter-bottom-ua">
+  
+    
+      <p>© 2002-2022 Terrasoft.  |  <a href="https://www.terrasoft.ua/privacy-policy" target="_blank">Конфиденциальность</a></p>
+
+  </div>
+
+  </div>
+
+      </div>
+    </div>
+  </footer>
+</div>
+<div class="creatio-bg"></div>
+
+
+  </div>
+
+    
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/docs\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/3623","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"ru"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"ajaxPageState":{"libraries":"admin_feedback\/admin_feedback_block,admin_feedback\/admin_feedback_css,classy\/base,classy\/messages,classy\/node,core\/drupal.ajax,core\/jquery.form,core\/normalize,creatio\/fancybox,creatio\/global,layout_discovery\/onecol,system\/base,ts_doc\/doc_version,ts_feedback\/ts_feedback,ts_nav\/breadcrumb,ts_nav\/doc_nav,ts_nav\/page_nav,ts_title_anchor\/ts_title_anchor","theme":"creatio","theme_token":null},"ajaxTrustedUrl":{"form_action_p_pvdeGsVG5zNF_XLGPTvYSKCf43t8qZYSwcfZl2uzM":true,"\/docs\/7-18\/developer\/instrumenty_razrabotki\/creatio_ide\/principy_razrabotki_v_creatio_ide\/obzor?ajax_form=1":true},"admin_feedback":{"yes_response":"\u0421\u043f\u0430\u0441\u0438\u0431\u043e \u0437\u0430 \u043e\u0431\u0440\u0430\u0442\u043d\u0443\u044e \u0441\u0432\u044f\u0437\u044c!","no_response":"\u0421\u043f\u0430\u0441\u0438\u0431\u043e \u0437\u0430 \u043e\u0431\u0440\u0430\u0442\u043d\u0443\u044e \u0441\u0432\u044f\u0437\u044c!","custom_text_response_on_no":{"value":"","format":"full_html"},"feedback_prompt_on_yes":true,"feedback_prompt_on_no":true,"feedback_enable_predefined_answers":false,"feedback_prompt":"\u041a\u0430\u043a \u043c\u043e\u0436\u043d\u043e \u0443\u043b\u0443\u0447\u0448\u0438\u0442\u044c \u044d\u0442\u0443 \u0441\u0442\u0430\u0442\u044c\u044e?"},"ajax":{"edit-feedback-send":{"callback":"::validateFeedbackMsg","event":"mousedown","keypress":true,"prevent":"click","url":"\/docs\/7-18\/developer\/instrumenty_razrabotki\/creatio_ide\/principy_razrabotki_v_creatio_ide\/obzor?ajax_form=1","dialogType":"ajax","submit":{"_triggering_element_name":"op","_triggering_element_value":"\u041e\u0442\u043f\u0440\u0430\u0432\u0438\u0442\u044c"}}},"user":{"uid":0,"permissionsHash":"9c2367dfcaba0fa15f0375f97aed64e146c908cee68508d13b79e3ee80e5162d"}}</script>
+<script src="../../../../../sites/default/files/js/js_Rr-7TvYD7NposuRFJwUqThxM7yJmw8vs03PQwu5gWd8.js"></script>
+
+
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+      <g id="svg-copy" class="svg-icon svg-icon_copy">
+        <path d="M15.111,18H1.889A1.848,1.848,0,0,1,0,16.2V3.6A1.848,1.848,0,0,1,1.889,1.8H5.837a2.87,2.87,0,0,1,5.326,0h3.948A1.848,1.848,0,0,1,17,3.6V16.2A1.848,1.848,0,0,1,15.111,18ZM3.777,12.6v1.8h6.611V12.6Zm0-3.6v1.8h9.445V9Zm0-3.6V7.2h9.445V5.4ZM8.5,1.8a.924.924,0,0,0-.944.9.945.945,0,0,0,1.889,0A.924.924,0,0,0,8.5,1.8Z"/>
+      </g>
+
+      <g id="svg-prev" class="svg-icon svg-icon_arrow">
+        <path d="M5.488,12.779,0,6.39,5.488,0" transform="translate(1 0.652)"/>
+      </g>
+
+      <g id="svg-next" class="svg-icon svg-icon_arrow">
+        <path d="M0,12.779,5.488,6.39,0,0" transform="translate(0.759 0.652)"/>
+      </g>
+    </svg>
+  </body>
+
+<!-- Mirrored from academy.terrasoft.ua/docs/7-18/developer/instrumenty_razrabotki/creatio_ide/principy_razrabotki_v_creatio_ide/obzor by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 22 Mar 2022 19:47:40 GMT -->
+</html>

@@ -1,0 +1,1786 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/ dc: http://purl.org/dc/terms/ foaf: http://xmlns.com/foaf/0.1/ og: http://ogp.me/ns# rdfs: http://www.w3.org/2000/01/rdf-schema# sioc: http://rdfs.org/sioc/ns# sioct: http://rdfs.org/sioc/types# skos: http://www.w3.org/2004/02/skos/core# xsd: http://www.w3.org/2001/XMLSchema#">
+
+<!-- Mirrored from academy.terrasoft.ua/documents/technic-sdk/7-16/integraciya-s-creatio-po-protokolu-odata-3 by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Mar 2022 04:49:07 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+  <link rel="profile" href="http://www.w3.org/1999/xhtml/vocab" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Drupal 7 (http://drupal.org)" />
+<link rel="canonical" href="integraciya-s-creatio-po-protokolu-odata-3.html" />
+<link rel="shortlink" href="integraciya-s-creatio-po-protokolu-odata-3.html" />
+<link rel="shortcut icon" href="../../../sites/default/files/favicon_1.ico" type="image/vnd.microsoft.icon" />
+      <title>Интеграция с Creatio по протоколу OData 3 | Creatio Academy</title>
+      <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i&amp;subset=cyrillic,cyrillic-ext,latin-ext" rel="stylesheet">
+  <style>
+    @font-face {
+      font-family: HelveticaNeueCyr Thin;
+      src: url('../../../sites/all/themes/bpmonline/font/HelveticaNeueCyr-Thin.otf'), url('../../../sites/all/themes/bpmonline/font/helveticaneuecyr-thin-webfont.eot');
+    }
+    @font-face {
+      font-family: HelveticaNeueCyr Light;
+      src: url('../../../sites/all/themes/bpmonline/font/HelveticaNeueCyr-Light.otf'), url('../../../sites/all/themes/bpmonline/font/helveticaneuecyr-light.eot');
+    }
+    @font-face {
+      font-family: HelveticaNeueCyr Normal;
+      src: url('../../../sites/all/themes/bpmonline/font/HelveticaNeueCyr-Medium.otf'), url('../../../sites/all/themes/bpmonline/font/helveticaneuecyr-medium-webfont.eot');
+    }
+    @font-face {
+      font-family: HelveticaNeueCyr-Black;
+      src: url('../../../sites/all/themes/bpmonline/font/Helvetica-Black/fonts/helveticaneuecyrblack.eot'), url('../../../sites/all/themes/bpmonline/font/Helvetica-Black/fonts/helveticaneuecyrblack.ttf');
+    }
+  </style>
+  <link type="text/css" rel="stylesheet" href="../../../sites/default/files/css/css_lQaZfjVpwP_oGNqdtWCSpJT1EMqXdMiU84ekLLxQnc4.css" media="all" />
+<link type="text/css" rel="stylesheet" href="../../../sites/default/files/css/css_iQAX3iHJuTE24F8xNmg8oGm1trAxRJE0iQ7kM4OZgsQ.css" media="all" />
+<link type="text/css" rel="stylesheet" href="../../../sites/default/files/css/css_3zHl2D3Wfu-RpwkaO8yhMGz5Qu_YCDzPyQgK8E8TIlU.css" media="all" />
+<link type="text/css" rel="stylesheet" href="../../../../cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" media="all" />
+<link type="text/css" rel="stylesheet" href="../../../sites/default/files/css/css_PmMQiLpAoAElM3ruzdFYHYBGJyc2ox9-FByY_WScau4.css" media="all" />
+<style>#sliding-popup.sliding-popup-bottom,#sliding-popup.sliding-popup-bottom .eu-cookie-withdraw-banner,.eu-cookie-withdraw-tab{background:#0779bf;}#sliding-popup.sliding-popup-bottom.eu-cookie-withdraw-wrapper{background:transparent}#sliding-popup .popup-content #popup-text h1,#sliding-popup .popup-content #popup-text h2,#sliding-popup .popup-content #popup-text h3,#sliding-popup .popup-content #popup-text p,#sliding-popup label,#sliding-popup div,.eu-cookie-compliance-secondary-button,.eu-cookie-withdraw-tab{color:#fff !important;}.eu-cookie-withdraw-tab{border-color:#fff;}.eu-cookie-compliance-more-button{color:#fff !important;}
+</style>
+<link type="text/css" rel="stylesheet" href="../../../sites/default/files/css/css_g-yp6L9LkMqzZBHcHqsEAIMaqtCEv1nn5Y3qN1YzoHI.css" media="all" />
+<link type="text/css" rel="stylesheet" href="../../../sites/default/files/css/css_aGIJ_VVrF5necSI3BkaZfDFCdMk4oi39Zt38r8o2D4g.css" media="all" />
+  <!-- HTML5 element support for IE6-8 -->
+  <!--[if lt IE 9]>
+    <script src="https://cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+  <script src="../../../sites/default/files/js/js_x0MhBQfHNAIO1NwkQgzf_TGN4b8eMmKre3nqUfoQv3w.js"></script>
+<script src="../../../sites/default/files/js/js_Q2kecghLvvd69tAPGWpW7ObwRsXWuwiJPaPsZga9Egc.js"></script>
+<script src="../../../sites/default/files/js/js_R9UbiVw2xuTUI0GZoaqMDOdX0lrZtgX-ono8RVOUEVc.js"></script>
+<script src="../../../sites/default/files/js/js_d1gsLyvq4UwbmywBgBWlxKDTW_GZ1ZZ9I-Nbn7upZp4.js"></script>
+<script src="../../../sites/default/files/js/js_N32mPu89eMVZeB4r2kHm74RIQOaFIe2IYN3rTnck4V8.js"></script>
+<script src="../../../sites/default/files/js/js_v89jUZ_l2LR8NzEXW2kWQ6me12tC-jCbLw8O3mpuQ2A.js"></script>
+<script>jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"bpmonline","theme_token":"QxvyyT5x-o3qIeSxhKBTxcFjS1ZlIRXNf0Fh-4LSi-A","jquery_version":"1.8","js":{"sites\/all\/libraries\/select2-4.0.1\/dist\/js\/select2.full.min.js":1,"sites\/all\/themes\/bpmonline\/js\/prettify\/prettify.min.js":1,"sites\/all\/themes\/bpmonline\/js\/lib\/slick\/slick.min.js":1,"sites\/all\/libraries\/jquery-cookie\/jquery.cookie.js":1,"sites\/all\/modules\/custom\/ts_kolobiz\/js\/ts_kolobiz.min.js":1,"sites\/all\/modules\/custom\/views_infinite_scroll\/js\/views-infinite-scroll.js":1,"0":1,"sites\/all\/modules\/eu_cookie_compliance\/js\/eu_cookie_compliance.js":1,"sites\/all\/libraries\/jquery-plugin-query-object-master\/jquery.query-object.js":1,"sites\/all\/libraries\/fancybox\/source\/jquery.fancybox.pack.js":1,"1":1,"sites\/all\/themes\/bootstrap\/js\/bootstrap.js":1,"sites\/all\/modules\/jquery_update\/replace\/jquery\/1.8\/jquery.min.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"sites\/all\/modules\/eu_cookie_compliance\/js\/jquery.cookie-1.4.1.min.js":1,"sites\/all\/modules\/jquery_update\/replace\/misc\/jquery.form.min.js":1,"misc\/ajax.js":1,"sites\/all\/modules\/jquery_update\/js\/jquery_update.js":1,"sites\/all\/modules\/admin_menu\/admin_devel\/admin_devel.js":1,"public:\/\/languages\/ru_b73-NeU5or8KO3Tm7HDDG6RAi-cXXhv79Hqb8JxGXss.js":1,"sites\/all\/libraries\/colorbox\/jquery.colorbox-min.js":1,"sites\/all\/modules\/colorbox\/js\/colorbox.js":1,"sites\/all\/modules\/colorbox\/styles\/default\/colorbox_style.js":1,"sites\/all\/modules\/custom\/ts_header\/js\/header-style.min.js":1,"sites\/all\/modules\/tb_megamenu\/js\/tb-megamenu-frontend.js":1,"sites\/all\/modules\/tb_megamenu\/js\/tb-megamenu-touch.js":1,"sites\/all\/modules\/views_show_more\/views_show_more.js":1,"misc\/textarea.js":1,"sites\/all\/modules\/webform\/js\/webform.js":1,"sites\/all\/modules\/views\/js\/base.js":1,"sites\/all\/themes\/bootstrap\/js\/misc\/_progress.js":1,"sites\/all\/modules\/views\/js\/ajax_view.js":1,"sites\/all\/modules\/custom\/ts_course_custom\/js\/course.js":1,"sites\/all\/themes\/bpmonline\/js\/tb-megamenu-frontend.js":1,"sites\/all\/themes\/bpmonline\/js\/lib\/jquery.sticky.js":1,"sites\/all\/themes\/bpmonline\/js\/lib\/perfect-scrollbar.jquery.js":1,"sites\/all\/modules\/custom\/ts_doc\/ts_doc_rate\/js\/script.js":1,"sites\/all\/themes\/bpmonline\/bootstrap\/js\/affix.js":1,"sites\/all\/themes\/bpmonline\/bootstrap\/js\/alert.js":1,"sites\/all\/themes\/bpmonline\/bootstrap\/js\/button.js":1,"sites\/all\/themes\/bpmonline\/bootstrap\/js\/carousel.js":1,"sites\/all\/themes\/bpmonline\/bootstrap\/js\/collapse.js":1,"sites\/all\/themes\/bpmonline\/bootstrap\/js\/dropdown.js":1,"sites\/all\/themes\/bpmonline\/bootstrap\/js\/modal.js":1,"sites\/all\/themes\/bpmonline\/bootstrap\/js\/tooltip.js":1,"sites\/all\/themes\/bpmonline\/bootstrap\/js\/popover.js":1,"sites\/all\/themes\/bpmonline\/bootstrap\/js\/scrollspy.js":1,"sites\/all\/themes\/bpmonline\/bootstrap\/js\/tab.js":1,"sites\/all\/themes\/bpmonline\/bootstrap\/js\/transition.js":1,"sites\/all\/themes\/bpmonline\/js\/script.js":1,"sites\/all\/themes\/bootstrap\/js\/modules\/views\/js\/ajax_view.js":1,"sites\/all\/themes\/bootstrap\/js\/misc\/ajax.js":1},"css":{"modules\/system\/system.base.css":1,"sites\/all\/modules\/calendar\/css\/calendar_multiday.css":1,"sites\/all\/modules\/date\/date_api\/date.css":1,"sites\/all\/modules\/date\/date_popup\/themes\/datepicker.1.7.css":1,"modules\/field\/theme\/field.css":1,"sites\/all\/modules\/logintoboggan\/logintoboggan.css":1,"modules\/node\/node.css":1,"sites\/all\/modules\/quiz\/quiz.css":1,"sites\/all\/modules\/views\/css\/views.css":1,"sites\/all\/modules\/ckeditor\/css\/ckeditor.css":1,"sites\/all\/libraries\/select2-4.0.1\/dist\/css\/select2.min.css":1,"sites\/all\/themes\/bpmonline\/js\/prettify\/prettify.min.css":1,"sites\/all\/themes\/bpmonline\/js\/lib\/slick\/slick.css":1,"sites\/all\/modules\/colorbox\/styles\/default\/colorbox_style.css":1,"sites\/all\/modules\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/genpass\/genpass.css":1,"sites\/all\/modules\/panels\/css\/panels.css":1,"sites\/all\/modules\/custom\/ts_header\/css\/header-style.min.css":1,"https:\/\/cdnjs.cloudflare.com\/ajax\/libs\/font-awesome\/4.4.0\/css\/font-awesome.min.css":1,"sites\/all\/modules\/tb_megamenu\/css\/bootstrap.css":1,"sites\/all\/modules\/tb_megamenu\/css\/base.css":1,"sites\/all\/modules\/tb_megamenu\/css\/default.css":1,"sites\/all\/modules\/tb_megamenu\/css\/compatibility.css":1,"sites\/all\/modules\/webform\/css\/webform.css":1,"sites\/all\/modules\/eu_cookie_compliance\/css\/eu_cookie_compliance.css":1,"sites\/all\/modules\/custom\/ts_course_custom\/css\/course.min.css":1,"sites\/all\/themes\/bpmonline\/css\/header.min.css":1,"sites\/all\/themes\/bpmonline\/css\/footer_ru\/_blocks.min.css":1,"sites\/all\/themes\/bpmonline\/css\/footer_ru\/_footer-small.min.css":1,"sites\/all\/themes\/bpmonline\/css\/footer_ru\/_footer-small-light.min.css":1,"sites\/all\/themes\/bpmonline\/css\/documentation.min.css":1,"sites\/all\/themes\/bpmonline\/css\/lib\/perfect-scrollbar.css":1,"sites\/all\/libraries\/fancybox\/source\/jquery.fancybox.css":1,"sites\/all\/modules\/custom\/ts_doc\/ts_doc_rate\/css\/ts_doc_rate.min.css":1,"0":1,"sites\/all\/themes\/bpmonline\/css\/style.min.css":1,"sites\/all\/themes\/bpmonline\/css\/block.min.css":1,"sites\/all\/themes\/bpmonline\/css\/search.min.css":1,"sites\/all\/themes\/bpmonline\/less\/style_bootstrap.min.css":1,"sites\/all\/themes\/bpmonline\/css\/style-main-menu.css":1}},"colorbox":{"opacity":"0.85","current":"{current} of {total}","previous":"\u00ab Prev","next":"Next \u00bb","close":"Close","maxWidth":"98%","maxHeight":"98%","fixed":true,"mobiledetect":true,"mobiledevicewidth":"480px"},"better_exposed_filters":{"views":{"front_main_banner":{"displays":{"block_ua":{"filters":[]},"block_2":{"filters":[]}}}}},"urlIsAjaxTrusted":{"\/documents\/technic-sdk\/7-16\/integraciya-s-creatio-po-protokolu-odata-3":true,"\/system\/ajax":true},"views_infinite_scroll":{"block":"\u003Cdiv id=\u0022front-feedback\u0022 class=\u0022node col-xs-12\u0022 style=\u0022margin:0 15px 30px; width:Calc(100% - 30px);box-shadow: 1px 1px 6px 2px #d0cece;\u0022\u003E\n  \u003Cdiv class=\u0022container\u0022\u003E\n    \n      \u003Cdiv class=\u0022col-sm-12\u0022\u003E\n        \u003Ch2 class=\u0022block-title\u0022\u003E\u041d\u0430\u043c \u043e\u0447\u0435\u043d\u044c \u0432\u0430\u0436\u043d\u0430 \u0432\u0430\u0448\u0430 \u043e\u0431\u0440\u0430\u0442\u043d\u0430\u044f \u0441\u0432\u044f\u0437\u044c!\u003C\/h2\u003E\n      \u003C\/div\u003E\n        \u003Cform class=\u0022webform-client-form webform-client-form-290718\u0022 action=\u0022\/documents\/technic-sdk\/7-16\/integraciya-s-creatio-po-protokolu-odata-3\u0022 method=\u0022post\u0022 id=\u0022webform-client-form-290718\u0022 accept-charset=\u0022UTF-8\u0022\u003E\u003Cdiv\u003E\u003Cdiv class=\u0022form-item webform-component webform-component-textarea webform-component--feedback form-group form-item form-item-submitted-feedback form-type-textarea form-group\u0022\u003E\u003Cdiv class=\u0022form-textarea-wrapper resizable\u0022\u003E\u003Ctextarea required=\u0022required\u0022 placeholder=\u0022\u041a\u0430\u043a\u0438\u0445 \u043c\u0430\u0442\u0435\u0440\u0438\u0430\u043b\u043e\u0432 \u0432\u044b \u0445\u043e\u0442\u0435\u043b\u0438 \u0431\u044b \u0432\u0438\u0434\u0435\u0442\u044c \u0431\u043e\u043b\u044c\u0448\u0435?\u0022 class=\u0022form-control form-textarea required\u0022 id=\u0022edit-submitted-feedback\u0022 name=\u0022submitted[feedback]\u0022 cols=\u002260\u0022 rows=\u00221\u0022\u003E\u003C\/textarea\u003E\u003C\/div\u003E \u003Clabel class=\u0022control-label element-invisible\u0022 for=\u0022edit-submitted-feedback\u0022\u003Efeedback \u003Cspan class=\u0022form-required\u0022 title=\u0022\u042d\u0442\u043e \u043f\u043e\u043b\u0435 \u043e\u0431\u044f\u0437\u0430\u0442\u0435\u043b\u044c\u043d\u043e \u0434\u043b\u044f \u0437\u0430\u043f\u043e\u043b\u043d\u0435\u043d\u0438\u044f.\u0022\u003E*\u003C\/span\u003E\u003C\/label\u003E\n\u003C\/div\u003E\u003Cinput type=\u0022hidden\u0022 name=\u0022details[sid]\u0022 \/\u003E\u003Cinput type=\u0022hidden\u0022 name=\u0022details[page_num]\u0022 value=\u00221\u0022 \/\u003E\u003Cinput type=\u0022hidden\u0022 name=\u0022details[page_count]\u0022 value=\u00221\u0022 \/\u003E\u003Cinput type=\u0022hidden\u0022 name=\u0022details[finished]\u0022 value=\u00220\u0022 \/\u003E\u003Cinput type=\u0022hidden\u0022 name=\u0022form_build_id\u0022 value=\u0022form-nnAPvql91iqy4uOadQ4DXUE7Ug_0Z8Q6tvC8GDC_9ys\u0022 \/\u003E\u003Cinput type=\u0022hidden\u0022 name=\u0022form_id\u0022 value=\u0022webform_client_form_290718\u0022 \/\u003E\u003Cdiv class=\u0022form-actions\u0022\u003E\u003Cbutton class=\u0022webform-submit button-primary btn btn-primary form-submit\u0022 type=\u0022submit\u0022 name=\u0022op\u0022 value=\u0022\u041e\u0442\u043f\u0440\u0430\u0432\u0438\u0442\u044c\u0022\u003E\u041e\u0442\u043f\u0440\u0430\u0432\u0438\u0442\u044c\u003C\/button\u003E\n\u003C\/div\u003E\u003C\/div\u003E\u003C\/form\u003E    \u003C\/div\u003E\n\n\u003C\/div\u003E\n\u003Cstyle\u003E\n\u003C!--\/*--\u003E\u003C![CDATA[\/* \u003E\u003C!--*\/\n\n#front-feedback form .form-actions .form-submit {\n    width: 100%;\n}\n\n\/*--\u003E\u003C!]]\u003E*\/\n\u003C\/style\u003E","img_path":"\/sites\/all\/modules\/custom\/views_infinite_scroll\/images\/ajax-loader.gif"},"views":{"ajax_path":"\/views\/ajax","ajaxViews":{"views_dom_id:d5f59f7a49eeb031541f8368ad76832d":{"view_name":"front_main_banner","view_display_id":"block_2","view_args":"","view_path":"node\/814979","view_base_path":null,"view_dom_id":"d5f59f7a49eeb031541f8368ad76832d","pager_element":0}}},"eu_cookie_compliance":{"popup_enabled":1,"popup_agreed_enabled":0,"popup_hide_agreed":0,"popup_clicking_confirmation":false,"popup_scrolling_confirmation":false,"popup_html_info":"\u003Cdiv class=\u0022eu-cookie-compliance-banner eu-cookie-compliance-banner-info eu-cookie-compliance-banner--opt-in\u0022\u003E\n  \u003Cdiv class=\u0022popup-content info\u0022\u003E\n    \u003Cdiv id=\u0022popup-text\u0022\u003E\n      \u003Cp\u003E\u041c\u044b \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u0443\u0435\u043c \u0444\u0430\u0439\u043b\u044b cookie \u0434\u043b\u044f \u0443\u043b\u0443\u0447\u0448\u0435\u043d\u0438\u044f \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c\u0441\u043a\u043e\u0433\u043e \u043e\u043f\u044b\u0442\u0430. \u041f\u0440\u043e\u0434\u043e\u043b\u0436\u0430\u044f \u043f\u0440\u043e\u0441\u043c\u0430\u0442\u0440\u0438\u0432\u0430\u0442\u044c \u044d\u0442\u043e\u0442 \u0441\u0430\u0439\u0442, \u0432\u044b \u0441\u043e\u0433\u043b\u0430\u0448\u0430\u0435\u0442\u0435\u0441\u044c \u0441 \u003Ca href=\u0022https:\/\/www.terrasoft.ru\/privacy-policy#addition-cookies\u0022 target=\u0022_blank\u0022\u003E\u0443\u0441\u043b\u043e\u0432\u0438\u044f\u043c\u0438 \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u043d\u0438\u044f cookie-\u0444\u0430\u0439\u043b\u043e\u0432\u003C\/a\u003E\u003C\/p\u003E              \u003Cbutton type=\u0022button\u0022 class=\u0022find-more-button eu-cookie-compliance-more-button\u0022\u003ENo, give me more info\u003C\/button\u003E\n          \u003C\/div\u003E\n    \n    \u003Cdiv id=\u0022popup-buttons\u0022 class=\u0022\u0022\u003E\n      \u003Cbutton type=\u0022button\u0022 class=\u0022agree-button eu-cookie-compliance-secondary-button\u0022\u003E\u041f\u0440\u0438\u043d\u044f\u0442\u044c\u003C\/button\u003E\n              \u003Cbutton type=\u0022button\u0022 class=\u0022decline-button eu-cookie-compliance-default-button\u0022 \u003ENo, thanks\u003C\/button\u003E\n          \u003C\/div\u003E\n  \u003C\/div\u003E\n\u003C\/div\u003E","use_mobile_message":false,"mobile_popup_html_info":"\u003Cdiv class=\u0022eu-cookie-compliance-banner eu-cookie-compliance-banner-info eu-cookie-compliance-banner--opt-in\u0022\u003E\n  \u003Cdiv class=\u0022popup-content info\u0022\u003E\n    \u003Cdiv id=\u0022popup-text\u0022\u003E\n      \u003Ch2\u003EWe use cookies on this site to enhance your user experience\u003C\/h2\u003E\u003Cp\u003EBy tapping the Accept button, you agree to us doing so.\u003C\/p\u003E              \u003Cbutton type=\u0022button\u0022 class=\u0022find-more-button eu-cookie-compliance-more-button\u0022\u003ENo, give me more info\u003C\/button\u003E\n          \u003C\/div\u003E\n    \n    \u003Cdiv id=\u0022popup-buttons\u0022 class=\u0022\u0022\u003E\n      \u003Cbutton type=\u0022button\u0022 class=\u0022agree-button eu-cookie-compliance-secondary-button\u0022\u003E\u041f\u0440\u0438\u043d\u044f\u0442\u044c\u003C\/button\u003E\n              \u003Cbutton type=\u0022button\u0022 class=\u0022decline-button eu-cookie-compliance-default-button\u0022 \u003ENo, thanks\u003C\/button\u003E\n          \u003C\/div\u003E\n  \u003C\/div\u003E\n\u003C\/div\u003E\n","mobile_breakpoint":"768","popup_html_agreed":"\u003Cdiv\u003E\n  \u003Cdiv class=\u0022popup-content agreed\u0022\u003E\n    \u003Cdiv id=\u0022popup-text\u0022\u003E\n      \u003Ch2\u003EThank you for accepting cookies\u003C\/h2\u003E\u003Cp\u003EYou can now hide this message or find out more about cookies.\u003C\/p\u003E    \u003C\/div\u003E\n    \u003Cdiv id=\u0022popup-buttons\u0022\u003E\n      \u003Cbutton type=\u0022button\u0022 class=\u0022hide-popup-button eu-cookie-compliance-hide-button\u0022\u003EHide\u003C\/button\u003E\n              \u003Cbutton type=\u0022button\u0022 class=\u0022find-more-button eu-cookie-compliance-more-button-thank-you\u0022 \u003EMore info\u003C\/button\u003E\n          \u003C\/div\u003E\n  \u003C\/div\u003E\n\u003C\/div\u003E","popup_use_bare_css":false,"popup_height":"auto","popup_width":"100%","popup_delay":1000,"popup_link":"\/privacy-policy","popup_link_new_window":1,"popup_position":null,"fixed_top_position":1,"popup_language":"ru","store_consent":false,"better_support_for_screen_readers":0,"reload_page":0,"domain":"","domain_all_sites":0,"popup_eu_only_js":0,"cookie_lifetime":"100","cookie_session":false,"disagree_do_not_show_popup":0,"method":"opt_in","whitelisted_cookies":"","withdraw_markup":"\u003Cbutton type=\u0022button\u0022 class=\u0022eu-cookie-withdraw-tab\u0022\u003EPrivacy settings\u003C\/button\u003E\n\u003Cdiv class=\u0022eu-cookie-withdraw-banner\u0022\u003E\n  \u003Cdiv class=\u0022popup-content info\u0022\u003E\n    \u003Cdiv id=\u0022popup-text\u0022\u003E\n      \u003Ch2\u003EWe use cookies on this site to enhance your user experience\u003C\/h2\u003E\u003Cp\u003EYou have given your consent for us to set cookies.\u003C\/p\u003E    \u003C\/div\u003E\n    \u003Cdiv id=\u0022popup-buttons\u0022\u003E\n      \u003Cbutton type=\u0022button\u0022 class=\u0022eu-cookie-withdraw-button\u0022\u003EWithdraw consent\u003C\/button\u003E\n    \u003C\/div\u003E\n  \u003C\/div\u003E\n\u003C\/div\u003E\n","withdraw_enabled":false,"withdraw_button_on_info_popup":0,"cookie_categories":[],"enable_save_preferences_button":1,"fix_first_cookie_category":1,"select_all_categories_by_default":0,"cookie_name":""},"ajax":{"edit-rate-up":{"callback":"ts_doc_rate_ajax_up","event":"mousedown","keypress":true,"prevent":"click","url":"\/system\/ajax","submit":{"_triggering_element_name":"rate_up","_triggering_element_value":"\u0414\u0430"}},"edit-rate-down":{"callback":"ts_doc_rate_ajax_down","event":"mousedown","keypress":true,"prevent":"click","url":"\/system\/ajax","submit":{"_triggering_element_name":"rate_down","_triggering_element_value":"\u041d\u0435\u0442"}},"edit-rate-comment-save":{"callback":"ts_doc_rate_ajax_comment_save","event":"mousedown","keypress":true,"prevent":"click","url":"\/system\/ajax","submit":{"_triggering_element_name":"rate_comment_save","_triggering_element_value":"\u041e\u0442\u043f\u0440\u0430\u0432\u0438\u0442\u044c"}}},"bootstrap":{"anchorsFix":"0","anchorsSmoothScrolling":"0","formHasError":1,"popoverEnabled":1,"popoverOptions":{"animation":1,"html":0,"placement":"right","selector":"","trigger":"click","triggerAutoclose":1,"title":"","content":"","delay":0,"container":"body"},"tooltipEnabled":1,"tooltipOptions":{"animation":1,"html":0,"placement":"auto left","selector":"","trigger":"hover focus","delay":0,"container":"body"}}});</script>
+				<!-- Google Tag Manager -->
+		<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+				new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+				j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+				'../../../../www.googletagmanager.com/gtm5445.html?id='+i+dl;f.parentNode.insertBefore(j,f);
+			})(window,document,'script','dataLayer','GTM-KLLB8G');</script>
+		<!-- End Google Tag Manager -->
+		</head>
+<body class="html not-front not-logged-in no-sidebars page-node page-node- page-node-814979 node-type-sdk ru zone_ua">
+	<!-- Google Tag Manager (noscript) -->
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KLLB8G"
+										height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
+  	<div class="site-content">
+		<div id="skip-link">
+			<a href="#main-content" class="element-invisible element-focusable">Перейти к основному содержанию</a>
+		</div>
+				<style type="text/css">
+              @import url(https://fonts.googleapis.com/css2?family=Montserrat:wght@600&amp;display=swap);
+              @import url(../../../../www.terrasoft.ua/themes/custom/creatio/css/components/informer.css);
+            </style>
+              <div class="ts-swu">
+                <div class="creatio-container">
+                  <div class="ts-swu__cont">
+                    <div><a class="ts-swu__link" href="https://www.terrasoft.ua/terrasoft-stands-with-ukraine" target="_blank">Україна понад усе!</a> <span><a href="https://www.terrasoft.ua/terrasoft-stands-with-ukraine" target="_blank">Приєднуйтеся</a> до допомоги!</span></div>
+                  </div>
+                </div>
+              </div>  <div id="new-header">
+    <header id="navbar" role="banner" class="navbar container navbar-default">
+      <div id="top-menu">
+        <div class="container">
+
+          
+
+          <div class="top-menu hidden-xs hidden-sm col-md-12 col-lg-12">
+
+            <ul class="menu nav navbar-nav secondary"><li class="first leaf"><a href="http://community.terrasoft.ua/">Сообщество</a></li>
+<li class="leaf"><a href="https://marketplace.terrasoft.ua/">Marketplace</a></li>
+<li class="leaf"><a href="https://www.terrasoft.ua/">Terrasoft</a></li>
+<li class="last leaf"><a href="https://profile.terrasoft.ua/user/login?destination=academy/ua">Вход</a></li>
+</ul><form action="https://academy.terrasoft.ua/documents/technic-sdk/7-16/integraciya-s-creatio-po-protokolu-odata-3" method="post" id="search-api-page-search-form-solr-search-page-3--2" accept-charset="UTF-8"><div><div class="form-item form-item-keys-4 form-type-textfield form-group"><input placeholder="Поиск" class="form-control form-text" type="text" id="edit-keys-4--3" name="keys_4" value="" size="15" maxlength="128" /> <label class="control-label element-invisible" for="edit-keys-4--3">Введите ключевые слова для поиска</label>
+</div><input type="hidden" name="id" value="4" />
+<button type="submit" id="edit-submit-4--2" name="op" value="Поиск" class="btn btn-primary form-submit">Поиск</button>
+<input type="hidden" name="form_build_id" value="form-3v13xUTfw6WzSbvqRi8JrW1rBDnPV_lRizICFvXilmg" />
+<input type="hidden" name="form_id" value="search_api_page_search_form_solr_search_page_3" />
+</div></form>          </div>
+                  </div>
+      </div>
+      <div id="main-menu">
+
+        <div class="container">
+
+
+          <div class="navbar-mobile">
+            <div class="navbar-mobile__row">
+              <div class="navbar-mobile-toggle">
+                <span class="navbar-mobile-toggle__middle"></span>
+              </div>
+
+              <a class="navbar-mobile-logo" href="../../../index.html" title="Главная">
+                <img class="navbar-mobile-logo__image" src="../../../sites/all/themes/bpmonline/img/bpm-logo-white.svg" />
+              </a>
+
+              <div class="navbar-mobile-user"></div>
+            </div>
+
+              <div class="region region-navigation">
+    <section id="block-tb-megamenu-main-menu" class="block block-tb-megamenu clearfix">
+
+      
+  <div  class="tb-megamenu tb-megamenu-main-menu">
+      <button data-target=".nav-collapse" data-toggle="collapse" class="btn btn-navbar tb-megamenu-button" type="button">
+      <i class="fa fa-reorder"></i>
+    </button>
+    <div class="nav-collapse  always-show">
+    <ul  class="tb-megamenu-nav nav level-0 items-5">
+  <li  data-id="448" data-level="1" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-1 mega dropdown">
+  <a href="#"  class="dropdown-toggle" title="Видео">
+        
+    Видео          <span class="caret"></span>
+          </a>
+  <div  data-class="" data-width="" class="tb-megamenu-submenu dropdown-menu mega-dropdown-menu nav-child">
+  <div class="mega-dropdown-inner">
+    <div  class="tb-megamenu-row row-fluid">
+  <div  data-showblocktitle="0" data-class="container" data-width="12" data-hidewcol="" id="tb-megamenu-column-1" class="tb-megamenu-column span12  mega-col-nav container">
+  <div class="tb-megamenu-column-inner mega-inner clearfix">
+        <div  data-type="block" data-block="ts_custom_megamenu--ts_custom_megamenu_video" class="tb-megamenu-block tb-block tb-megamenu-block">
+  <div class="block-inner">
+    <section id="block-ts-custom-megamenu-ts-custom-megamenu-video" class="block block-ts-custom-megamenu clearfix">
+
+      
+  <div class="container hide_menu_old">
+          <div class="row">
+        <div class="col-md-3" style="margin-bottom: 15px;">
+          <h3><a href="../../../video-courses.html">Видеокурсы</a></h3>
+          <p>Обзорные видеоролики
+            по настройке <nobr>и работе</nobr> в Creatio с пошаговыми инструкциями
+          </p>
+        </div>
+        <div class="col-md-3" style="margin-bottom: 15px;">
+          <h3><a href="../../../index.html">Вебинары</a></h3>
+          <p>Записи вебинаров по функциональным возможностям и разработке <nobr>на платформе</nobr> Creatio</p>
+        </div>
+        <div class="col-md-6" style="margin-top: -10px;">
+          <a class="image" href="../../../trainings.html">
+            <img src="../../../sites/all/themes/bpmonline/img/baners/banner-menu-video.png" alt="Training" style="">
+          </a>
+        </div>
+      </div>
+    </div>
+<div class="container hide_menu_new">
+        <div class="row">
+        <div class="col-md-4" style="margin-bottom: 15px;">
+          <h3><a href="../../../video-courses.html">Видеокурсы</a></h3>
+          <p>Обзорные видеоролики по настройке <nobr>и работе</nobr> в Creatio с пошаговыми инструкциями
+          </p>
+        </div>
+        <div class="col-md-4" style="margin-bottom: 15px;">
+          <h3><a href="../../../index.html">Вебинары</a></h3>
+          <p>Записи вебинаров по функциональным возможностям и разработке <nobr>на платформе</nobr> Creatio</p>
+        </div>
+      </div>
+      <div class="row bottom">
+          <div class="col-md-12 bottom-plates" style="height: 260px;">
+                            <div class="plate plate-1"><a style="height: 100%;" href="../../../webinar/vebinar-osnovy-vnedreniya-creatio.html"><img
+                                src="../../../sites/default/files/photo-1474546652694-a33dd8161d66.jpg"/>
+                        <p>Вебинар "Основы внедрения Creatio"<br/><span>Смотреть >>></span></p></a>
+                </div>
+                                        <div class="plate plate-2">
+                    <a style="height: 100%;" href="../../../webinar/vebinar-obzor-reliza-bpmonline-712.html"><img
+                                src="../../../sites/default/files/33.png"/>
+                        <p>Вебинар: Обзор релиза bpm'online 7.12<br/><span>Смотреть >>></span></p></a>
+                </div>
+                                        <div class="plate plate-3">
+                    <a style="height: 100%;" href="../../../webinar/vebinar-upravlenie-marketingovymi-kampaniyami.html"><img
+                                src="../../../sites/default/files/42_0.png"/>
+                        <p>Вебинар 'Управление маркетинговыми кампаниями'<br/><span>Смотреть >>></span></p></a>
+                </div>
+                          <div class="recent-posts">Последние вебинары</div>
+              <img class="accelerarte" src="../../../sites/all/themes/bpmonline/img/menu/accelerate-logo.png">
+          </div>
+      </div>
+    </div>
+<script type="text/javascript">
+    jQuery(document).ready(function () {
+        if (jQuery(".plate").length > 0) {
+            jQuery(".row.bottom .plate").each(function () {
+                var url = jQuery(this).find("img").attr("src");
+                jQuery(this).css("background", "url(" + url + ") no-repeat").css("background-size", "cover");
+                console.log(url);
+            });
+        }
+    });
+</script>
+</section>
+  </div>
+</div>
+  </div>
+</div>
+</div>
+
+<div  class="tb-megamenu-row row-fluid">
+  <div  data-class="" data-width="12" data-hidewcol="0" id="tb-megamenu-column-4" class="tb-megamenu-column span12  mega-col-nav">
+  <div class="tb-megamenu-column-inner mega-inner clearfix">
+        <ul  class="tb-megamenu-subnav mega-nav level-1 items-2">
+  <li  data-id="901" data-level="2" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-2 mega dropdown-submenu">
+  <a href="#"  class="dropdown-toggle">
+        
+    Видеокурсы          <span class="caret"></span>
+          </a>
+  <div  data-class="" data-width="" class="tb-megamenu-submenu dropdown-menu mega-dropdown-menu nav-child">
+  <div class="mega-dropdown-inner">
+    <div  class="tb-megamenu-row row-fluid">
+  <div  data-class="" data-width="12" data-hidewcol="0" id="tb-megamenu-column-2" class="tb-megamenu-column span12  mega-col-nav">
+  <div class="tb-megamenu-column-inner mega-inner clearfix">
+        <ul  class="tb-megamenu-subnav mega-nav level-2 items-1">
+  <li  data-id="2684" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="https://academy.terrasoft.ru/video-courses" >
+        
+    Видеокурсы bpm'online          </a>
+  </li>
+</ul>
+  </div>
+</div>
+</div>
+  </div>
+</div>
+</li>
+
+<li  data-id="1194" data-level="2" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-2 mega dropdown-submenu">
+  <a href="#"  class="dropdown-toggle">
+        
+    Вебинары          <span class="caret"></span>
+          </a>
+  <div  data-class="" data-width="" class="tb-megamenu-submenu dropdown-menu mega-dropdown-menu nav-child">
+  <div class="mega-dropdown-inner">
+    <div  class="tb-megamenu-row row-fluid">
+  <div  data-class="" data-width="12" data-hidewcol="0" id="tb-megamenu-column-3" class="tb-megamenu-column span12  mega-col-nav">
+  <div class="tb-megamenu-column-inner mega-inner clearfix">
+        <ul  class="tb-megamenu-subnav mega-nav level-2 items-1">
+  <li  data-id="1195" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="https://academy.terrasoft.ru/webinars" >
+        
+    Bpm'online вебинары          </a>
+  </li>
+</ul>
+  </div>
+</div>
+</div>
+  </div>
+</div>
+</li>
+</ul>
+  </div>
+</div>
+</div>
+  </div>
+</div>
+</li>
+
+<li  data-id="447" data-level="1" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-1 mega">
+  <a href="../../../documentation.html"  class="menu-dropdown" title="Документация">
+        
+    Документация          </a>
+  </li>
+
+<li  data-id="445" data-level="1" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-1 mega">
+  <a href="../../../trainings.html" >
+        
+    Тренинги          </a>
+  </li>
+
+<li  data-id="939" data-level="1" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-1 mega">
+  <a href="../../../docs/certification.html" >
+        
+    Сертификация и тестирование          </a>
+  </li>
+</ul>
+      </div>
+  </div>
+
+</section>
+<section id="block-tb-megamenu-user-menu" class="block block-tb-megamenu clearfix">
+
+      
+  <div  class="tb-megamenu tb-megamenu-user-menu">
+      <button data-target=".nav-collapse" data-toggle="collapse" class="btn btn-navbar tb-megamenu-button" type="button">
+      <i class="fa fa-reorder"></i>
+    </button>
+    <div class="nav-collapse  always-show">
+    <ul  class="tb-megamenu-nav nav level-0 items-8">
+  <li  data-id="1112" data-level="1" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-1 mega">
+  <a href="http://community.terrasoft.ua/" >
+        
+    Сообщество          </a>
+  </li>
+
+<li  data-id="1113" data-level="1" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-1 mega">
+  <a href="https://marketplace.terrasoft.ua/" >
+        
+    Marketplace          </a>
+  </li>
+
+<li  data-id="1114" data-level="1" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-1 mega">
+  <a href="https://www.terrasoft.ua/" >
+        
+    Террасофт          </a>
+  </li>
+
+<li  data-id="1062" data-level="1" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-1 mega">
+  <a href="https://profile.terrasoft.ua/user/login?destination=academy/ua" >
+        
+    Вход          </a>
+  </li>
+</ul>
+      </div>
+  </div>
+
+</section>
+  </div>
+          </div>
+
+                          <a class="logo navbar-btn pull-left" href="../../../index.html" title="Главная">
+                <img src="../../../sites/all/themes/bpmonline/img/bpm-logo.svg" alt="Главная" />
+              </a>
+            
+                            <div class="navbar-collapse collapse col-md-7" id="navbar-collapse">
+                    <nav role="navigation">
+                                                      <div class="region region-navigation">
+      <div class="region region-navigation">
+    <section id="block-tb-megamenu-main-menu" class="block block-tb-megamenu clearfix">
+
+      
+  <div  class="tb-megamenu tb-megamenu-main-menu">
+      <button data-target=".nav-collapse" data-toggle="collapse" class="btn btn-navbar tb-megamenu-button" type="button">
+      <i class="fa fa-reorder"></i>
+    </button>
+    <div class="nav-collapse  always-show">
+    <ul  class="tb-megamenu-nav nav level-0 items-5">
+  <li  data-id="448" data-level="1" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-1 mega dropdown">
+  <a href="#"  class="dropdown-toggle" title="Видео">
+        
+    Видео          <span class="caret"></span>
+          </a>
+  <div  data-class="" data-width="" class="tb-megamenu-submenu dropdown-menu mega-dropdown-menu nav-child">
+  <div class="mega-dropdown-inner">
+    <div  class="tb-megamenu-row row-fluid">
+  <div  data-showblocktitle="0" data-class="container" data-width="12" data-hidewcol="" id="tb-megamenu-column-1" class="tb-megamenu-column span12  mega-col-nav container">
+  <div class="tb-megamenu-column-inner mega-inner clearfix">
+        <div  data-type="block" data-block="ts_custom_megamenu--ts_custom_megamenu_video" class="tb-megamenu-block tb-block tb-megamenu-block">
+  <div class="block-inner">
+    <section id="block-ts-custom-megamenu-ts-custom-megamenu-video" class="block block-ts-custom-megamenu clearfix">
+
+      
+  <div class="container hide_menu_old">
+          <div class="row">
+        <div class="col-md-3" style="margin-bottom: 15px;">
+          <h3><a href="../../../video-courses.html">Видеокурсы</a></h3>
+          <p>Обзорные видеоролики
+            по настройке <nobr>и работе</nobr> в Creatio с пошаговыми инструкциями
+          </p>
+        </div>
+        <div class="col-md-3" style="margin-bottom: 15px;">
+          <h3><a href="../../../index.html">Вебинары</a></h3>
+          <p>Записи вебинаров по функциональным возможностям и разработке <nobr>на платформе</nobr> Creatio</p>
+        </div>
+        <div class="col-md-6" style="margin-top: -10px;">
+          <a class="image" href="../../../trainings.html">
+            <img src="../../../sites/all/themes/bpmonline/img/baners/banner-menu-video.png" alt="Training" style="">
+          </a>
+        </div>
+      </div>
+    </div>
+<div class="container hide_menu_new">
+        <div class="row">
+        <div class="col-md-4" style="margin-bottom: 15px;">
+          <h3><a href="../../../video-courses.html">Видеокурсы</a></h3>
+          <p>Обзорные видеоролики по настройке <nobr>и работе</nobr> в Creatio с пошаговыми инструкциями
+          </p>
+        </div>
+        <div class="col-md-4" style="margin-bottom: 15px;">
+          <h3><a href="../../../index.html">Вебинары</a></h3>
+          <p>Записи вебинаров по функциональным возможностям и разработке <nobr>на платформе</nobr> Creatio</p>
+        </div>
+      </div>
+      <div class="row bottom">
+          <div class="col-md-12 bottom-plates" style="height: 260px;">
+                            <div class="plate plate-1"><a style="height: 100%;" href="../../../webinar/vebinar-osnovy-vnedreniya-creatio.html"><img
+                                src="../../../sites/default/files/photo-1474546652694-a33dd8161d66.jpg"/>
+                        <p>Вебинар "Основы внедрения Creatio"<br/><span>Смотреть >>></span></p></a>
+                </div>
+                                        <div class="plate plate-2">
+                    <a style="height: 100%;" href="../../../webinar/vebinar-obzor-reliza-bpmonline-712.html"><img
+                                src="../../../sites/default/files/33.png"/>
+                        <p>Вебинар: Обзор релиза bpm'online 7.12<br/><span>Смотреть >>></span></p></a>
+                </div>
+                                        <div class="plate plate-3">
+                    <a style="height: 100%;" href="../../../webinar/vebinar-upravlenie-marketingovymi-kampaniyami.html"><img
+                                src="../../../sites/default/files/42_0.png"/>
+                        <p>Вебинар 'Управление маркетинговыми кампаниями'<br/><span>Смотреть >>></span></p></a>
+                </div>
+                          <div class="recent-posts">Последние вебинары</div>
+              <img class="accelerarte" src="../../../sites/all/themes/bpmonline/img/menu/accelerate-logo.png">
+          </div>
+      </div>
+    </div>
+<script type="text/javascript">
+    jQuery(document).ready(function () {
+        if (jQuery(".plate").length > 0) {
+            jQuery(".row.bottom .plate").each(function () {
+                var url = jQuery(this).find("img").attr("src");
+                jQuery(this).css("background", "url(" + url + ") no-repeat").css("background-size", "cover");
+                console.log(url);
+            });
+        }
+    });
+</script>
+</section>
+  </div>
+</div>
+  </div>
+</div>
+</div>
+
+<div  class="tb-megamenu-row row-fluid">
+  <div  data-class="" data-width="12" data-hidewcol="0" id="tb-megamenu-column-4" class="tb-megamenu-column span12  mega-col-nav">
+  <div class="tb-megamenu-column-inner mega-inner clearfix">
+        <ul  class="tb-megamenu-subnav mega-nav level-1 items-2">
+  <li  data-id="901" data-level="2" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-2 mega dropdown-submenu">
+  <a href="#"  class="dropdown-toggle">
+        
+    Видеокурсы          <span class="caret"></span>
+          </a>
+  <div  data-class="" data-width="" class="tb-megamenu-submenu dropdown-menu mega-dropdown-menu nav-child">
+  <div class="mega-dropdown-inner">
+    <div  class="tb-megamenu-row row-fluid">
+  <div  data-class="" data-width="12" data-hidewcol="0" id="tb-megamenu-column-2" class="tb-megamenu-column span12  mega-col-nav">
+  <div class="tb-megamenu-column-inner mega-inner clearfix">
+        <ul  class="tb-megamenu-subnav mega-nav level-2 items-1">
+  <li  data-id="2684" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="https://academy.terrasoft.ru/video-courses" >
+        
+    Видеокурсы bpm'online          </a>
+  </li>
+</ul>
+  </div>
+</div>
+</div>
+  </div>
+</div>
+</li>
+
+<li  data-id="1194" data-level="2" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-2 mega dropdown-submenu">
+  <a href="#"  class="dropdown-toggle">
+        
+    Вебинары          <span class="caret"></span>
+          </a>
+  <div  data-class="" data-width="" class="tb-megamenu-submenu dropdown-menu mega-dropdown-menu nav-child">
+  <div class="mega-dropdown-inner">
+    <div  class="tb-megamenu-row row-fluid">
+  <div  data-class="" data-width="12" data-hidewcol="0" id="tb-megamenu-column-3" class="tb-megamenu-column span12  mega-col-nav">
+  <div class="tb-megamenu-column-inner mega-inner clearfix">
+        <ul  class="tb-megamenu-subnav mega-nav level-2 items-1">
+  <li  data-id="1195" data-level="3" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-3 mega">
+  <a href="https://academy.terrasoft.ru/webinars" >
+        
+    Bpm'online вебинары          </a>
+  </li>
+</ul>
+  </div>
+</div>
+</div>
+  </div>
+</div>
+</li>
+</ul>
+  </div>
+</div>
+</div>
+  </div>
+</div>
+</li>
+
+<li  data-id="447" data-level="1" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-1 mega">
+  <a href="../../../documentation.html"  class="menu-dropdown" title="Документация">
+        
+    Документация          </a>
+  </li>
+
+<li  data-id="445" data-level="1" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-1 mega">
+  <a href="../../../trainings.html" >
+        
+    Тренинги          </a>
+  </li>
+
+<li  data-id="939" data-level="1" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-1 mega">
+  <a href="../../../docs/certification.html" >
+        
+    Сертификация и тестирование          </a>
+  </li>
+</ul>
+      </div>
+  </div>
+
+</section>
+<section id="block-tb-megamenu-user-menu" class="block block-tb-megamenu clearfix">
+
+      
+  <div  class="tb-megamenu tb-megamenu-user-menu">
+      <button data-target=".nav-collapse" data-toggle="collapse" class="btn btn-navbar tb-megamenu-button" type="button">
+      <i class="fa fa-reorder"></i>
+    </button>
+    <div class="nav-collapse  always-show">
+    <ul  class="tb-megamenu-nav nav level-0 items-8">
+  <li  data-id="1112" data-level="1" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-1 mega">
+  <a href="http://community.terrasoft.ua/" >
+        
+    Сообщество          </a>
+  </li>
+
+<li  data-id="1113" data-level="1" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-1 mega">
+  <a href="https://marketplace.terrasoft.ua/" >
+        
+    Marketplace          </a>
+  </li>
+
+<li  data-id="1114" data-level="1" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-1 mega">
+  <a href="https://www.terrasoft.ua/" >
+        
+    Террасофт          </a>
+  </li>
+
+<li  data-id="1062" data-level="1" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-1 mega">
+  <a href="https://profile.terrasoft.ua/user/login?destination=academy/ua" >
+        
+    Вход          </a>
+  </li>
+</ul>
+      </div>
+  </div>
+
+</section>
+  </div>
+  </div>
+                                            </nav>
+                    <div id="custom-sub-menu"></div>
+                </div>
+                    </div>
+      </div>
+    </header>
+  </div>
+
+
+
+
+<div id="full-page-top">
+  </div>
+
+<div class="main-container container">
+
+  <header role="banner" id="page-header">
+    
+  </header> <!-- /#page-header -->
+
+  <div class="row">
+
+    
+    <section class="col-sm-12">
+            <a id="main-content"></a>
+                    <!--      --><!--         <h1 class="page-header">--><!--</h1>-->
+<!--      -->                                                      <div class="region region-content">
+    <section id="block-system-main" class="block block-system clearfix">
+
+      
+  <div id="documentation-node-tpl" class="row">
+
+  <div id="title-block">
+    <div class="title-container col-sm-6">
+      <h2 class="title"><a href="../../../documentation.html">Документация</a></h2>
+    </div>
+    <div id="product-info" class="col-sm-6">
+      <div class="product-name">
+        Creatio development guide      </div>
+      <div class="product-version">
+                  <a class="product-ug-pdf" target="_blank" href="../../../sites/default/files/documents/docs/technic/SDK/7.16.0/bpmonline_development_guide.pdf">PDF<span><svg viewbox="0 0 310 301.1" xmlns:xlink="http://www.w3.org/1999/xlink"><use xlink:href="#svg-pdf"></use></svg></span></a>
+        									<select name="product-version-select" id="product-version-select">
+																					<option value="documents/technic-sdk/7-16/integraciya-s-creatio-po-protokolu-odata-3" selected>
+									Версия 7.16								</option>
+																												<option value="documents/technic-sdk/7-15/integraciya-s-creatio-po-protokolu-odata-3" >
+									Версия 7.15								</option>
+																												<option value="documents/technic-sdk/7-14/dokumentaciya-po-razrabotke" >
+									Версия 7.14								</option>
+																												<option value="documents/technic-sdk/7-13/dokumentaciya-po-razrabotke" >
+									Версия 7.13								</option>
+																												<option value="documents/technic-sdk/7-12/dokumentaciya-po-razrabotke" >
+									Версия 7.12								</option>
+																		</select>
+				      </div>
+    </div>
+  </div>
+
+
+  <div class="wrapper-outer">
+    <div id="documentation-menu" class="open col-sm-4">
+      <div id="navigation-panel" class="navigation-panel">
+        <div id="content-panel" class="content-panel">
+					<span class="menu-icon"></span>
+          <span class="caption open">
+            Содержание          </span>
+        </div>
+      </div>
+      <div id="documentation-menu-body">
+        <div class="doc-menu-item" data-tid="795382"><span class="doc-link-item"><a title="Документация по разработке" href="dokumentaciya-po-razrabotke.html" class="doc-menu-title"><span class="doc-menu-ico"></span><span class="md-title">Документация по разработке</span></a></span></span></div><div class="doc-menu-item doc-menu-parent" data-tid="795383"><span class="doc-link-item"><a title="С чего начать" href="s-chego-nachat.html" class="doc-menu-title"><span class="doc-menu-ico"></span><span class="md-title">С чего начать</span></a></span></span></div><div class="doc-menu-item doc-menu-parent" data-tid="795396"><span class="doc-link-item"><a title="Описание платформы" href="opisanie-platformy.html" class="doc-menu-title"><span class="doc-menu-ico"></span><span class="md-title">Описание платформы</span></a></span></span></div><div class="doc-menu-item doc-menu-parent open" data-tid="795657"><span class="doc-link-item"><a title="Библиотеки классов и REST API" href="biblioteki-klassov-i-rest-api.html" class="doc-menu-title"><span class="doc-menu-ico"></span><span class="md-title">Библиотеки классов и REST API</span></a></span></span><div class="doc-menu-item-children"><div class="doc-menu-item" data-tid="795658"><span class="doc-link-item"><a title="Библиотеки классов серверной части ядра платформы" href="biblioteki-klassov-servernoy-chasti-yadra-platformy.html" class="doc-menu-title"><span class="doc-menu-ico"></span><span class="md-title">Библиотеки классов серверной части ядра платформы</span></a></span></span></div><div class="doc-menu-item" data-tid="795659"><span class="doc-link-item"><a title="Библиотеки классов клиентской части ядра платформы" href="biblioteki-klassov-klientskoy-chasti-yadra-platformy.html" class="doc-menu-title"><span class="doc-menu-ico"></span><span class="md-title">Библиотеки классов клиентской части ядра платформы</span></a></span></span></div><div class="doc-menu-item doc-menu-parent open" data-tid="795660"><span class="doc-link-item"><a title="Интеграция с системой и внешний API" href="integraciya-s-sistemoy-i-vneshniy-api.html" class="doc-menu-title"><span class="doc-menu-ico"></span><span class="md-title">Интеграция с системой и внешний API</span></a></span></span><div class="doc-menu-item-children"><div class="doc-menu-item" data-tid="795661"><span class="doc-link-item"><a title="Общие сведения" href="obshchie-svedeniya-23.html" class="doc-menu-title"><span class="doc-menu-ico"></span><span class="md-title">Общие сведения</span></a></span></span></div><div class="doc-menu-item" data-tid="795662"><span class="doc-link-item"><a title="Выбор способа интеграции с Creatio" href="vybor-sposoba-integracii-s-creatio.html" class="doc-menu-title"><span class="doc-menu-ico"></span><span class="md-title">Выбор способа интеграции с Creatio</span></a></span></span></div><div class="doc-menu-item" data-tid="795663"><span class="doc-link-item"><a title="Аутентификация внешних запросов" href="autentifikaciya-vneshnih-zaprosov.html" class="doc-menu-title"><span class="doc-menu-ico"></span><span class="md-title">Аутентификация внешних запросов</span></a></span></span></div><div class="doc-menu-item doc-menu-parent open" data-tid="795664"><span class="doc-link-item"><a title="Интеграция по протоколу OData" href="integraciya-po-protokolu-odata.html" class="doc-menu-title"><span class="doc-menu-ico"></span><span class="md-title">Интеграция по протоколу OData</span></a></span></span><div class="doc-menu-item-children"><div class="doc-menu-item active open" data-tid="795665"><span class="doc-link-item"><a title="Интеграция с Creatio по протоколу OData 3" href="integraciya-s-creatio-po-protokolu-odata-3.html" class="doc-menu-title"><span class="doc-menu-ico"></span><span class="md-title">Интеграция с Creatio по протоколу OData 3</span></a></span></span></div><div class="doc-menu-item" data-tid="795666"><span class="doc-link-item"><a title="Интеграция с Creatio по протоколу OData 4" href="integraciya-s-creatio-po-protokolu-odata-4.html" class="doc-menu-title"><span class="doc-menu-ico"></span><span class="md-title">Интеграция с Creatio по протоколу OData 4</span></a></span></span></div></div></div><div class="doc-menu-item" data-tid="795667"><span class="doc-link-item"><a title="Веб-служба DataService" href="veb-sluzhba-dataservice.html" class="doc-menu-title"><span class="doc-menu-ico"></span><span class="md-title">Веб-служба DataService</span></a></span></span></div><div class="doc-menu-item" data-tid="795668"><span class="doc-link-item"><a title="Веб-сервис ProcessEngineService.svc" href="veb-servis-processengineservicesvc.html" class="doc-menu-title"><span class="doc-menu-ico"></span><span class="md-title">Веб-сервис ProcessEngineService.svc</span></a></span></span></div><div class="doc-menu-item doc-menu-parent" data-tid="795669"><span class="doc-link-item"><a title="Примеры интеграции с Creatio" href="primery-integracii-s-creatio.html" class="doc-menu-title"><span class="doc-menu-ico"></span><span class="md-title">Примеры интеграции с Creatio</span></a></span></span></div></div></div></div></div><div class="doc-menu-item doc-menu-parent" data-tid="795687"><span class="doc-link-item"><a title="Разработка в Creatio на примерах" href="razrabotka-v-creatio-na-primerah.html" class="doc-menu-title"><span class="doc-menu-ico"></span><span class="md-title">Разработка в Creatio на примерах</span></a></span></span></div>      </div>
+    </div>
+      <div id="sdk-documentation" class="col-sm-8">
+        <div class="warning-text">
+          Это документация Creatio версии 7.16.0. Мы рекомендуем использовать <a href=../../../docs/index.html>новую версию документации.</a>        </div>
+        <div id="dxBody">
+          <article id="node-814979" class="node node-sdk clearfix" about="/documents/technic-sdk/7-16/integraciya-s-creatio-po-protokolu-odata-3" typeof="sioc:Item foaf:Document">
+            
+                          <div class="content">
+                <div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even" property="content:encoded">	<!--DXMETADATA start type="Scrap" condition="communityenabled" name="_COMMUNITY_PROPERTIES" --><!--DXMETADATA end -->
+    <div style="display: none">
+        <input type="hidden" id="userDataCache" class="userDataStyle" name="userDataCache" /><input type="hidden" id="hiddenScrollOffset" name="hiddenScrollOffset" /></div>
+    <img id="collapseImage" style="display:none; height:0; width:0;" src="../../../sites/default/files/documents/docs/technic/SDK/7.16.0/images/hs-heading-expanded.png" /><img id="expandImage" style="display:none; height:0; width:0;" src="../../../sites/default/files/documents/docs/technic/SDK/7.16.0/images/hs-heading-collapsed.png" /><img id="copyImage" style="display:none; height:0; width:0;" src="../../../sites/default/files/documents/docs/technic/SDK/7.16.0/images/copycode.gif" /><img id="copyHoverImage" style="display:none; height:0; width:0;" src="../../../sites/default/files/documents/docs/technic/SDK/7.16.0/images/copycodeHighlight.gif" /><img id="dropDownImage" style="display:none; height:0; width:0;" src="../../../sites/default/files/documents/docs/technic/SDK/7.16.0/images/drpdown.gif" /><img id="dropDownHoverImage" style="display:none; height:0; width:0;" src="../../../sites/default/files/documents/docs/technic/SDK/7.16.0/images/drpdown_orange.gif" /><h1>Интеграция с Creatio по протоколу OData 3</h1>
+    <div class="hspopupbubble" id="hsglossaryitembox">
+        <p>Glossary Item Box</p>
+    </div>
+    <div id="pagebody">
+        <div id="mainbody">
+			<!--DXMETADATA start type="TopicSection" name="BodyText"--><div class="hs-inthistopic-container">
+    <ul class="hs-inthistopic-list"><li class="hs-inthistopic-item"><a class="hs-inthistopic-link" href="#hs-inthistopic-befbcef7-60ac-4214-aaef-8cae66b721b5">Общие сведения</a></li>
+
+        <li class="hs-inthistopic-item"><a class="hs-inthistopic-link" href="#hs-inthistopic-30ae2e17-4572-40ae-8207-f5788859218c">Реализация протокола OData 3 в Creatio</a></li>
+
+        <li class="hs-inthistopic-item"><a class="hs-inthistopic-link" href="#hs-inthistopic-52d2e461-91c7-4954-bfad-d798f49ceb9d">Структура запроса по протоколу OData 3</a></li>
+
+        <li class="hs-inthistopic-item"><a class="hs-inthistopic-link" href="#hs-inthistopic-2d4015c9-3e3f-41d2-8191-011a39bf0970">Структура ответа на запрос</a></li>
+
+        <li class="hs-inthistopic-item"><a class="hs-inthistopic-link" href="#hs-inthistopic-f8a0aa4b-6016-46eb-a6e1-3d25558347fb">Типы запросов</a></li>
+    </ul></div>
+
+<h2>Общие сведения<a name="hs-inthistopic-befbcef7-60ac-4214-aaef-8cae66b721b5" id="hs-inthistopic-befbcef7-60ac-4214-aaef-8cae66b721b5"></a></h2>
+
+<p>OData (Open Data Protocol) — это утвержденный ISO/IEC стандарт OASIS, который определяет набор лучших практик для построения и использования REST API. Он позволяет создавать службы на основе REST, которые предоставляют возможность веб-клиентам с помощью простых HTTP-запросов публиковать и редактировать ресурсы, идентифицированные с использованием URL и определенные в модели данных.</p>
+
+<p>Приложение Creatio поддерживает протоколы OData 3 и OData 4. OData 4, пришедший на смену OData 3, значительно расширяет возможности последнего, при этом данные протоколы не совместимы по формату данных, возвращаемых сервером. Детальную информацию про функциональность и отличия можно найти в <a href="http://docs.oasis-open.org/odata/new-in-odata/v4.01/new-in-odata-v4.01.html" target="_blank">документации OData</a>.</p>
+
+<div style="WIDTH: 100%">
+    <p class="FM_Warningheading"></p>
+
+    <p class="FM_Notetext">При планировании интеграции с Creatio по протоколу OData необходимо использовать протокол версии 4. Использование протокола OData 4 описано в статье "<a href="integraciya-s-creatio-po-protokolu-odata-4.html" data-auto-update-caption="true">Интеграция с Creatio по протоколу OData 4</a>".</p>
+</div>
+
+<p> </p>
+
+<div style="WIDTH: 100%">
+    <p class="FM_Warningheading"></p>
+
+    <p class="FM_Notetext">Выполнение запросов к Creatio невозможно без <a href="autentifikaciya-vneshnih-zaprosov.html">аутентификации</a>.</p>
+</div>
+
+<h2>Реализация протокола OData 3 в Creatio<a name="hs-inthistopic-30ae2e17-4572-40ae-8207-f5788859218c" id="hs-inthistopic-30ae2e17-4572-40ae-8207-f5788859218c"></a></h2>
+
+<p>Доступ к объектам Creatio по протоколу OData 3 предоставляет веб-сервис <em>EntityDataService.svc</em>.</p>
+
+<p>Адрес сервиса <em>EntityDataService.svc</em>:</p>
+
+<div id="Syntax_HTTP" class="LanguageSpecific" data-title="HTTP" data-itemid="HTTP">
+    <pre>
+https:<span style="COLOR: #008000">//mycreatio.com/0/ServiceModel/EntityDataService.svc</span>
+</pre>
+</div>
+
+<p></p>
+
+<h2>Структура запроса по протоколу OData 3<a name="hs-inthistopic-52d2e461-91c7-4954-bfad-d798f49ceb9d" id="hs-inthistopic-52d2e461-91c7-4954-bfad-d798f49ceb9d"></a></h2>
+
+<p>Структурные элементы запроса:</p>
+
+<ul><li>Строка.</li>
+
+    <li>Заголовки.</li>
+
+    <li>Тело.</li>
+</ul><h3>Строка запроса</h3>
+
+<p>Структура строки запроса:</p>
+
+<div id="Syntax_JSON" class="LanguageSpecific" data-title="JSON" data-itemid="JSON">
+    <pre>
+method my_Creatio_site/0/ServiceModel/EntityDataService.svc/data_resource?$parameters
+</pre>
+</div>
+
+<div id="Syntax_JSON" class="SimpleTabContainer" data-title="JSON" data-itemid="JSON">
+    <div id="Syntax_JSON" class="LanguageSpecific">
+        <div class="SimpleTabStripContainer">
+            <div class="SimpleTabLeftEnd"></div>
+
+            <div class="SimpleTab">
+                <span class="SimpleTabCaption"><strong>Пример строки POST-запроса</strong></span>
+            </div>
+
+            <div class="SimpleTabRightEnd">
+                <!-- Intentionally empty div --> 
+            </div>
+
+            <div class="SimpleTabCommands">
+                <!-- might be empty div --> 
+            </div>
+        </div>
+
+        <div class="SimpleTabContentArea sourcecode">
+            <pre>
+<span style="COLOR: #008000">// Добавить экземпляр объекта коллекции AcademyURL.
+</span>POST https:<span style="COLOR: #008000">//mycreatio.com/0/ServiceModel/EntityDataService.svc/AcademyURLCollection</span>
+</pre>
+        </div>
+    </div>
+</div>
+
+<div id="Syntax_JSON" class="SimpleTabContainer" data-title="JSON" data-itemid="JSON">
+    <div id="Syntax_JSON" class="LanguageSpecific">
+        <div class="SimpleTabStripContainer">
+            <div class="SimpleTabLeftEnd"></div>
+
+            <div class="SimpleTab">
+                <span class="SimpleTabCaption"><strong>Пример строки GET-запроса</strong></span>
+            </div>
+
+            <div class="SimpleTabRightEnd">
+                <!-- Intentionally empty div --> 
+            </div>
+
+            <div class="SimpleTabCommands">
+                <!-- might be empty div --> 
+            </div>
+        </div>
+
+        <div class="SimpleTabContentArea sourcecode">
+            <pre>
+<span style="COLOR: #008000">// Получить экземпляры объектов коллекции Employee, в которых значение поля FullJobTitle равно Developer и значение поля Name вложенной коллекции объектов Account содержит другие значения кроме Our company.
+</span>GET https:<span style="COLOR: #008000">//mycreatio.com/0/ServiceModel/EntityDataService.svc/EmployeeCollection?$filter=FullJobTitle eq 'Developer' and Account/Name ne 'Our company'</span>
+</pre>
+        </div>
+    </div>
+</div>
+
+<h4>method</h4>
+
+<p>Приложение Creatio поддерживает следующие методы запроса:</p>
+
+<ul><li>GET — получение данных.</li>
+
+    <li>POST — добавление данных.</li>
+
+    <li>PATCH — изменение данных.</li>
+
+    <li>DELETE — удаление данных.</li>
+</ul><h4>data_resource</h4>
+
+<p>Под ресурсом данных необходимо понимать путь к источнику информации, которую необходимо получить в ответе на запрос.</p>
+
+<p>Структура ресурса данных:</p>
+
+<div id="Syntax_JSON" class="LanguageSpecific" data-title="JSON" data-itemid="JSON">
+    <pre>
+objects_collectionCollection(guid<span style="COLOR: #800000">'object_id')/object_field</span>
+</pre>
+</div>
+
+<div style="WIDTH: 100%">
+    <p class="FM_Noteheading"></p>
+
+    <p class="FM_Notetext">При интеграции с Creatio по протоколу OData 3 к первому имени коллекции объектов в строке запроса необходимо добавлять слово <em>Collection</em> (например, <em>ContactCollection</em>). Для указания идентификатора экземпляра объекта коллекции необходимо использовать конструкцию <em>guid'object_id'</em> (например, <em>guid'00000000-0000-0000-0000-000000000000'</em>).</p>
+</div>
+
+<p>Структурные элементы ресурса данных:</p>
+
+<dl><dt class="def-term">objects_collection (required)</dt>
+
+    <dd>Имя таблицы базы данных (имя коллекции объектов).</dd>
+
+    <dd>Получить перечень таблиц базы данных можно выполнив запрос:</dd>
+
+    <dd>
+        для MySQL
+
+        <div id="Syntax_SQL" class="LanguageSpecific" data-title="SQL" data-itemid="SQL">
+            <pre>
+<span style="COLOR: #0000ff">SELECT</span> <span style="COLOR: #808080">*</span> <span style="COLOR: #0000ff">FROM</span> INFORMATION_SCHEMA.TABLES
+</pre>
+        </div>
+    </dd>
+</dl><dl><dd>
+        для Oracle
+
+        <div id="Syntax_SQL" class="LanguageSpecific" data-title="SQL" data-itemid="SQL">
+            <pre>
+<span style="COLOR: #0000ff">SELECT</span> <span style="COLOR: #808080">*</span> <span style="COLOR: #0000ff">FROM</span> ALL_TABLES
+</pre>
+        </div>
+    </dd>
+</dl><dl><dd>
+        для PostgreSQL
+
+        <div id="Syntax_SQL" class="LanguageSpecific" data-title="SQL" data-itemid="SQL">
+            <pre>
+<span style="COLOR: #0000ff">SELECT</span> table_name <span style="COLOR: #0000ff">FROM</span> information_schema.tables
+</pre>
+        </div>
+        <hr /></dd>
+</dl><dl><dt class="def-term">object_id (optional)</dt>
+
+    <dd>
+        Идентификатор строки записи таблицы базы данных (идентификатор экземпляра объекта коллекции).
+        <hr /></dd>
+</dl><dl><dt class="def-term">object_field (optional)</dt>
+
+    <dd>
+        Поле записи таблицы базы данных (поле экземпляра объекта коллекции).
+        <hr /></dd>
+</dl><h4>parameters</h4>
+
+<p>Необязательные параметры OData 3, которые разрешены к использованию в строке GET-запроса к Creatio:</p>
+
+<dl><dt class="def-term"><a href="https://www.odata.org/documentation/odata-version-3-0/odata-version-3-0-core-protocol/#requestingapropertysrawvalueusingvalue" target="_blank">$value</a></dt>
+
+    <dd>
+        Значение поля.
+        <hr /></dd>
+</dl><dl><dt class="def-term"><a href="https://www.odata.org/documentation/odata-version-3-0/odata-version-3-0-core-protocol/#requestingthecountofanentitycollection" target="_blank">$count</a></dt>
+
+    <dd class="def-example">$count</dd>
+
+    <dd>
+        Количество элементов, которые попали в выборку.
+        <hr /></dd>
+</dl><dl><dt class="def-term"><a href="https://www.odata.org/documentation/odata-version-3-0/odata-version-3-0-core-protocol/#theskipsystemqueryoption" target="_blank">$skip</a></dt>
+
+    <dd class="def-example">$skip=n</dd>
+
+    <dd>
+        n первых элементов, которые не должны попасть в выборку.
+        <hr /></dd>
+</dl><dl><dt class="def-term"><a href="https://www.odata.org/documentation/odata-version-3-0/odata-version-3-0-core-protocol/#thetopsystemqueryoption" target="_blank">$top</a></dt>
+
+    <dd class="def-example">$top=n</dd>
+
+    <dd>
+        n первых элементов, которые должны попасть в выборку.
+        <hr /></dd>
+</dl><dl><dt class="def-term"><a href="https://www.odata.org/documentation/odata-version-3-0/odata-version-3-0-core-protocol/#theselectsystemqueryoption" target="_blank">$select</a></dt>
+
+    <dd class="def-example">$select=field1,field2,...</dd>
+
+    <dd>
+        Набор полей, которые должны попасть в выборку.
+        <hr /></dd>
+</dl><dl><dt class="def-term"><a href="https://www.odata.org/documentation/odata-version-3-0/odata-version-3-0-core-protocol/#theorderbysystemqueryoption" target="_blank">$orderby</a></dt>
+
+    <dd class="def-example">$orderby=field asc</dd>
+
+    <dd class="def-example">$orderby=field desc</dd>
+
+    <dd>
+        Сортировка значений поля, которые попали в выборку.
+        <hr /></dd>
+</dl><dl><dt class="def-term"><a href="https://www.odata.org/documentation/odata-version-3-0/odata-version-3-0-core-protocol/#theexpandsystemqueryoption" target="_blank">$expand</a></dt>
+
+    <dd class="def-example">$expand=field1,field2,...</dd>
+
+    <dd>
+        Расширение связанных полей.
+        <hr /></dd>
+</dl><dl><dt class="def-term"><a href="https://www.odata.org/documentation/odata-version-3-0/odata-version-3-0-core-protocol/#thefiltersystemqueryoption" target="_blank">$filter</a></dt>
+
+    <dd class="def-example">$filter=field template 'field_value'</dd>
+
+    <dd>
+        Фильтрация полей, которые должны попасть в выборку.
+        <hr /></dd>
+</dl><p>При работе с параметрами разрешено использовать следующие операторы:</p>
+
+<dl><dt class="def-term">?</dt>
+
+    <dd>
+        Указание параметров.
+        <hr /></dd>
+</dl><dl><dt class="def-term">$</dt>
+
+    <dd>
+        Указание имени параметра.
+        <hr /></dd>
+</dl><dl><dt class="def-term">&amp;</dt>
+
+    <dd>
+        Использование 2-х и более параметров.
+        <hr /></dd>
+</dl><h3>Заголовки запроса</h3>
+
+<p>Заголовки, которые разрешены к использованию в запросе к Creatio:</p>
+
+<dl><dt class="def-term">Accept</dt>
+
+    <dd class="def-example">Accept: application/atom+xml; type=entry</dd>
+
+    <dd>
+        Тип данных, который можно ожидать в ответе от сервера. Сервер возвращает ответ в формате XML.
+        <hr /></dd>
+</dl><dl><dt class="def-term">Content-Type</dt>
+
+    <dd class="def-example">Content-Type: application/json; odata=verbose</dd>
+
+    <dd>
+        Кодировка и тип ресурса, который передается в теле запроса.
+        <hr /></dd>
+</dl><dl><dt class="def-term">ForceUseSession</dt>
+
+    <dd class="def-example">ForceUseSession: true</dd>
+
+    <dd>
+        Заголовок ForceUseSession отвечает за принудительное использование уже существующей сессии. Отсутствует необходимость использования в запросе к сервису аутентификации AuthService.svc.
+        <hr /></dd>
+</dl><dl><dt class="def-term">BPMCSRF</dt>
+
+    <dd class="def-example">BPMCSRF: authentication_cookie_value</dd>
+
+    <dd>
+        Аутентификационный cookie.
+        <hr /></dd>
+</dl><div style="WIDTH: 100%">
+    <p class="FM_Warningheading"></p>
+
+    <p class="FM_Notetext">Заголовки Content-Type и Accept не обязательны к использованию в GET-запросах.</p>
+</div>
+
+<div id="Syntax_JSON" class="SimpleTabContainer" data-title="JSON" data-itemid="JSON">
+    <div id="Syntax_JSON" class="LanguageSpecific">
+        <div class="SimpleTabStripContainer">
+            <div class="SimpleTabLeftEnd"></div>
+
+            <div class="SimpleTab">
+                <span class="SimpleTabCaption"><strong>Пример заголовков POST-запроса</strong></span>
+            </div>
+
+            <div class="SimpleTabRightEnd">
+                <!-- Intentionally empty div --> 
+            </div>
+
+            <div class="SimpleTabCommands">
+                <!-- might be empty div --> 
+            </div>
+        </div>
+
+        <div class="SimpleTabContentArea sourcecode">
+            <pre>
+Accept: application/atom+xml; type=entry
+Content-Type: application/json; odata=verbose
+ForceUseSession: <span style="COLOR: #0000ff">true</span>
+BPMCSRF: OpK/NuJJ1w/SQxmPvwNvfO
+</pre>
+        </div>
+    </div>
+</div>
+
+<div id="Syntax_JSON" class="SimpleTabContainer" data-title="JSON" data-itemid="JSON">
+    <div id="Syntax_JSON" class="LanguageSpecific">
+        <div class="SimpleTabStripContainer">
+            <div class="SimpleTabLeftEnd"></div>
+
+            <div class="SimpleTab">
+                <span class="SimpleTabCaption"><strong>Пример заголовков GET-запроса</strong></span>
+            </div>
+
+            <div class="SimpleTabRightEnd">
+                <!-- Intentionally empty div --> 
+            </div>
+
+            <div class="SimpleTabCommands">
+                <!-- might be empty div --> 
+            </div>
+        </div>
+
+        <div class="SimpleTabContentArea sourcecode">
+            <pre>
+ForceUseSession: <span style="COLOR: #0000ff">true</span>
+BPMCSRF: OpK/NuJJ1w/SQxmPvwNvfO
+</pre>
+        </div>
+    </div>
+</div>
+
+<h3>Тело запроса</h3>
+
+<p>Структура тела запроса:</p>
+
+<div id="Syntax_JSON" class="LanguageSpecific" data-title="JSON" data-itemid="JSON">
+    <pre>
+{
+    <span style="COLOR: #800000">"field1"</span>: <span style="COLOR: #800000">"value1"</span>,
+    <span style="COLOR: #800000">"field2"</span>: <span style="COLOR: #800000">"value2"</span>,
+    ...
+}
+</pre>
+</div>
+
+<p>Структурные элементы тела запроса:</p>
+
+<dl><dt class="def-term">field1, field2, ... (required)</dt>
+
+    <dd>
+        Имена полей, которые передаются в теле запроса.
+        <hr /></dd>
+</dl><dl><dt class="def-term">value1, value2, ... (required)</dt>
+
+    <dd>
+        Значения полей field1, field2, ..., которые передаются в теле запроса.
+        <hr /></dd>
+</dl><div id="Syntax_JSON" class="SimpleTabContainer" data-title="JSON" data-itemid="JSON">
+    <div id="Syntax_JSON" class="LanguageSpecific">
+        <div class="SimpleTabStripContainer">
+            <div class="SimpleTabLeftEnd"></div>
+
+            <div class="SimpleTab">
+                <span class="SimpleTabCaption"><strong>Пример тела POST-запроса</strong></span>
+            </div>
+
+            <div class="SimpleTabRightEnd">
+                <!-- Intentionally empty div --> 
+            </div>
+
+            <div class="SimpleTabCommands">
+                <!-- might be empty div --> 
+            </div>
+        </div>
+
+        <div class="SimpleTabContentArea sourcecode">
+            <pre>
+{
+    <span style="COLOR: #008000">// Добавить в поле Name значение Academy.
+</span>    <span style="COLOR: #800000">"Name"</span>: <span style="COLOR: #800000">"Academy"</span>,
+    <span style="COLOR: #008000">// Добавить в поле Description значение https://academy.creatio.com/.
+</span>    <span style="COLOR: #800000">"Description"</span>: <span style="COLOR: #800000">"https://academy.creatio.com/"</span>
+}
+</pre>
+        </div>
+    </div>
+</div>
+
+<h2>Структура ответа на запрос<a name="hs-inthistopic-2d4015c9-3e3f-41d2-8191-011a39bf0970" id="hs-inthistopic-2d4015c9-3e3f-41d2-8191-011a39bf0970"></a></h2>
+
+<p>Структурные элементы ответа на запрос:</p>
+
+<ul><li>Код состояния.</li>
+
+    <li>Тело.</li>
+</ul><h3>Код состояния</h3>
+
+<p>В ответе на запрос сервер возвращает код состояния, который зашифрован в 3-х цифрах. Первая цифра указывает на класс состояния. Вторая и третья цифры — порядковый номер ответа. При интеграции с приложением Creatio по протоколу OData 3, сервер возвращает следующие классы http-кодов:</p>
+
+<ol><li>2xx (успех) — успешное принятие и обработка запроса клиента.</li>
+
+    <li>3хх (перенаправление) — для успешного выполнения операции необходимо сделать другой запрос.</li>
+
+    <li>4хх (ошибка клиента) — при построении запроса на стороне клиента произошла ошибка. Сервер должен вернуть гипертекстовое объяснение получения кода класса 4хх.</li>
+</ol><p>Получение кода класса 4хх является результатом неуспешного выполнения запроса.</p>
+
+<p>При отправке запроса по протоколу OData 3 в ответ от сервера Creatio можно получить следующие коды состояния:</p>
+
+<div>
+    <a href="javascript:HSToggleSection('a13d4194-61b4-41ed-86bd-9b7e585f1bed')">200 OK</a><span id="a13d4194-61b4-41ed-86bd-9b7e585f1bed" class="hs-collapsed"> Запрос GET, PUT, MERGE или PATCH успешно завершен. Тело ответа должно содержать значение объекта или свойства, указанного в URL-адресе запроса.</span>  
+</div>
+
+<div>
+    <a href="javascript:HSToggleSection('ff07e8c4-41c2-496a-906d-ff4d7acd1b35')">201 Created</a><span id="ff07e8c4-41c2-496a-906d-ff4d7acd1b35" class="hs-collapsed"> Запрос POST успешно создал объект или ссылку. Тело ответа должно содержать обновленный объект.</span>  
+</div>
+
+<div>
+    <a href="javascript:HSToggleSection('f8efbdf5-d953-4535-bb78-f49bd1479287')">202 Accepted</a><span id="f8efbdf5-d953-4535-bb78-f49bd1479287" class="hs-collapsed"> Запрос на изменение данных был принят в обработку, но еще не завершен. Тело ответа должно содержать <a href="https://www.odata.org/documentation/odata-version-3-0/odata-version-3-0-core-protocol/#thelocationheader" target="_blank">заголовок Location</a> в дополнение в <a href="https://www.odata.org/documentation/odata-version-3-0/odata-version-3-0-core-protocol/#theretry-afterheader" target="_blank">заголовке Retry-After</a>. Тело ответа должно быть пустым. Сервер должен вернуть код ответа 303 с <a href="https://www.odata.org/documentation/odata-version-3-0/odata-version-3-0-core-protocol/#thelocationheader" target="_blank">заголовком Location</a>, который содержит окончательный URL-адрес для получения результата запроса. Тело и заголовки окончательного URL-адреса должны быть отформатированы также, как и выполнение первоначального запроса на изменение данных.</span> <a href="_/SPAN.html"></a> 
+</div>
+
+<div>
+    <a href="javascript:HSToggleSection('bad1a2a3-322d-474e-8567-7a03c88e5ce7')">204 No Content</a><span id="bad1a2a3-322d-474e-8567-7a03c88e5ce7" class="hs-collapsed"> Запрос на изменение данных. Запрашиваемый ресурс имеет нулевое значение. Тело ответа должно быть пустым.</span>  
+</div>
+
+<div>
+    <a href="javascript:HSToggleSection('0c4ccecb-a51b-414b-b431-5e35d00d68e4')">3xx Redirection</a><span id="0c4ccecb-a51b-414b-b431-5e35d00d68e4" class="hs-collapsed"> Запрос на изменение данных. Перенаправление указывает что клиент должен предпринимать дальнейшие действия для выполнения запроса. Ответ должен включать <a href="https://www.odata.org/documentation/odata-version-3-0/odata-version-3-0-core-protocol/#thelocationheader" target="_blank">заголовок Location</a> c URL-адресом, по которому можно получить результат.</span> <a href="_/SPAN.html"></a><a href="_/SPAN.html"></a> 
+</div>
+
+<div>
+    <a href="javascript:HSToggleSection('1e032930-fce7-4c35-8c77-fb04a98d6cd0')">4xx Client Error</a><span id="1e032930-fce7-4c35-8c77-fb04a98d6cd0" class="hs-collapsed"> Некорректные запросы. Сервер возвращает код в ответ на клиентские ошибки в дополнение к запросам на несуществующие ресурсы, такие как сущности, коллекции сущностей или свойства. Если тело ответа определено для кода ошибки, тело ошибки является таким, как определено для соответствующего <a href="https://www.odata.org/documentation/odata-version-3-0/odata-version-3-0-core-protocol/#formats" target="_blank">формата</a>.</span>  
+</div>
+
+<div>
+    <a href="javascript:HSToggleSection('dc42bdd9-a3c4-4ed4-b779-ef77c2a3a359')">404 Not Found</a><span id="dc42bdd9-a3c4-4ed4-b779-ef77c2a3a359" class="hs-collapsed"> Объект или коллекция, указанные в URL-адресе, не существуют. Тело ответа должно быть пустым.</span>  
+</div>
+
+<h3>Тело ответа</h3>
+
+<p>Структура тела ответа на запрос:</p>
+
+<div id="Syntax_XML" class="LanguageSpecific" data-title="XML" data-itemid="XML">
+    <pre>
+<span style="COLOR: #0000ff">&lt;?</span><span style="COLOR: #ff00ff">xml version="1.0" encoding="utf-8"</span><span style="COLOR: #0000ff">?&gt;</span>
+<span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">feed </span><span style="COLOR: #ff0000">xml:base</span><span style="COLOR: #0000ff">="http://mycreatio.com/0/ServiceModel/EntityDataService.svc/"</span><span style="COLOR: #ff0000"> xmlns</span><span style="COLOR: #0000ff">="http://www.w3.org/2005/Atom"</span><span style="COLOR: #ff0000"> xmlns:d</span><span style="COLOR: #0000ff">="http://schemas.microsoft.com/ado/2007/08/dataservices"</span><span style="COLOR: #ff0000"> xmlns:m</span><span style="COLOR: #0000ff">="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata"</span><span style="COLOR: #0000ff">&gt;</span>
+    <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">id</span><span style="COLOR: #0000ff">&gt;</span>http://mycreatio.com/0/ServiceModel/EntityDataService.svc/data_resource<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">id</span><span style="COLOR: #0000ff">&gt;</span>
+    <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">title </span><span style="COLOR: #ff0000">type</span><span style="COLOR: #0000ff">="text"</span><span style="COLOR: #0000ff">&gt;</span>data_resource<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">title</span><span style="COLOR: #0000ff">&gt;</span>
+    <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">updated</span><span style="COLOR: #0000ff">&gt;</span>date and time of request<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">updated</span><span style="COLOR: #0000ff">&gt;</span>
+    <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">link </span><span style="COLOR: #ff0000">rel</span><span style="COLOR: #0000ff">="self"</span><span style="COLOR: #ff0000"> title</span><span style="COLOR: #0000ff">="data_resource"</span><span style="COLOR: #ff0000"> href</span><span style="COLOR: #0000ff">="data_resource"</span><span style="COLOR: #ff0000"> </span><span style="COLOR: #0000ff">/&gt;</span>
+    <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">entry</span><span style="COLOR: #0000ff">&gt;</span>
+        metadata_data
+        <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">content </span><span style="COLOR: #ff0000">type</span><span style="COLOR: #0000ff">="application/xml"</span><span style="COLOR: #0000ff">&gt;</span>
+            <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">m:properties</span><span style="COLOR: #0000ff">&gt;</span>
+                <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">d:object1 </span><span style="COLOR: #ff0000">field1</span><span style="COLOR: #0000ff">&gt;</span>object1 field_value1<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">d:object1 field1</span><span style="COLOR: #0000ff">&gt;</span>
+                <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">d:object1 </span><span style="COLOR: #ff0000">field2</span><span style="COLOR: #0000ff">&gt;</span>object1 field_value2<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">d:object1 field2</span><span style="COLOR: #0000ff">&gt;</span>
+                ...
+            <span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">m:properties</span><span style="COLOR: #0000ff">&gt;</span>
+        <span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">content</span><span style="COLOR: #0000ff">&gt;</span>
+    <span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">entry</span><span style="COLOR: #0000ff">&gt;</span>
+    <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">entry</span><span style="COLOR: #0000ff">&gt;</span>
+        metadata_data
+        <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">content </span><span style="COLOR: #ff0000">type</span><span style="COLOR: #0000ff">="application/xml"</span><span style="COLOR: #0000ff">&gt;</span>
+            <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">m:properties</span><span style="COLOR: #0000ff">&gt;</span>
+                <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">d:object2 </span><span style="COLOR: #ff0000">field1</span><span style="COLOR: #0000ff">&gt;</span>object2 field_value1<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">d:object2 field1</span><span style="COLOR: #0000ff">&gt;</span>
+                <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">d:object2 </span><span style="COLOR: #ff0000">field2</span><span style="COLOR: #0000ff">&gt;</span>object2 field_value2<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">d:object2 field2</span><span style="COLOR: #0000ff">&gt;</span>
+                ...
+            <span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">m:properties</span><span style="COLOR: #0000ff">&gt;</span>
+        <span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">content</span><span style="COLOR: #0000ff">&gt;</span>
+    <span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">entry</span><span style="COLOR: #0000ff">&gt;</span>
+    ...
+<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">feed</span><span style="COLOR: #0000ff">&gt;</span>
+</pre>
+</div>
+
+<p>Структурные элементы тела ответа:</p>
+
+<dl><dt class="def-term">entry</dt>
+
+    <dd>
+        Экземпляр объекта коллекции.
+        <hr /></dd>
+</dl><dl><dt class="def-term">metadata_data</dt>
+
+    <dd>
+        Метаданные экземпляра объекта коллекции.
+        <hr /></dd>
+</dl><dl><dt class="def-term">object1 field1, object1 field2, ..., object2 field1, object2 field2, ...</dt>
+
+    <dd>
+        Имена полей field1, field2, ... экземпляров объектов object1, object2, ... коллекции.
+        <hr /></dd>
+</dl><dl><dt class="def-term">object1 field_value1, object1 field_value2, ..., object2 field_value1, object2 field_value2, ...</dt>
+
+    <dd>
+        Значения полей field1, field2, ... экземпляров объектов object1, object2, ... коллекции.
+        <hr /></dd>
+</dl><div id="Syntax_XML" class="SimpleTabContainer" data-title="XML" data-itemid="XML">
+    <div id="Syntax_XML" class="LanguageSpecific">
+        <div class="SimpleTabStripContainer">
+            <div class="SimpleTabLeftEnd"></div>
+
+            <div class="SimpleTab">
+                <span class="SimpleTabCaption"><strong>Пример ответа на POST-запрос</strong></span>
+            </div>
+
+            <div class="SimpleTabRightEnd">
+                <!-- Intentionally empty div --> 
+            </div>
+
+            <div class="SimpleTabCommands">
+                <!-- might be empty div --> 
+            </div>
+        </div>
+
+        <div class="SimpleTabContentArea sourcecode">
+            <pre>
+Status: 201 Created
+
+<span style="COLOR: #0000ff">&lt;?</span><span style="COLOR: #ff00ff">xml version="1.0" encoding="utf-8"</span><span style="COLOR: #0000ff">?&gt;</span>
+<span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">entry </span><span style="COLOR: #ff0000">xml:base</span><span style="COLOR: #0000ff">="http://mycreatio.com/0/ServiceModel/EntityDataService.svc/"</span><span style="COLOR: #ff0000"> xmlns</span><span style="COLOR: #0000ff">="http://www.w3.org/2005/Atom"</span><span style="COLOR: #ff0000"> xmlns:d</span><span style="COLOR: #0000ff">="http://schemas.microsoft.com/ado/2007/08/dataservices"</span><span style="COLOR: #ff0000"> xmlns:m</span><span style="COLOR: #0000ff">="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata"</span><span style="COLOR: #0000ff">&gt;</span>
+    <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">id</span><span style="COLOR: #0000ff">&gt;</span>http://mycreatio.com/0/ServiceModel/EntityDataService.svc/AcademyURLCollection(guid'b634e2d0-6baf-4a13-b9e5-869b717f6406')<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">id</span><span style="COLOR: #0000ff">&gt;</span>
+    <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">category </span><span style="COLOR: #ff0000">term</span><span style="COLOR: #0000ff">="Terrasoft.Configuration.AcademyURL"</span><span style="COLOR: #ff0000"> scheme</span><span style="COLOR: #0000ff">="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme"</span><span style="COLOR: #ff0000"> </span><span style="COLOR: #0000ff">/&gt;</span>
+    <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">link </span><span style="COLOR: #ff0000">rel</span><span style="COLOR: #0000ff">="edit"</span><span style="COLOR: #ff0000"> title</span><span style="COLOR: #0000ff">="AcademyURL"</span><span style="COLOR: #ff0000"> href</span><span style="COLOR: #0000ff">="AcademyURLCollection(guid'b634e2d0-6baf-4a13-b9e5-869b717f6406')"</span><span style="COLOR: #ff0000"> </span><span style="COLOR: #0000ff">/&gt;</span>
+    <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">link </span><span style="COLOR: #ff0000">rel</span><span style="COLOR: #0000ff">="http://schemas.microsoft.com/ado/2007/08/dataservices/related/CreatedBy"</span><span style="COLOR: #ff0000"> type</span><span style="COLOR: #0000ff">="application/atom+xml;type=entry"</span><span style="COLOR: #ff0000"> title</span><span style="COLOR: #0000ff">="CreatedBy"</span><span style="COLOR: #ff0000"> href</span><span style="COLOR: #0000ff">="AcademyURLCollection(guid'b634e2d0-6baf-4a13-b9e5-869b717f6406')/CreatedBy"</span><span style="COLOR: #ff0000"> </span><span style="COLOR: #0000ff">/&gt;</span>
+    <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">link </span><span style="COLOR: #ff0000">rel</span><span style="COLOR: #0000ff">="http://schemas.microsoft.com/ado/2007/08/dataservices/related/ModifiedBy"</span><span style="COLOR: #ff0000"> type</span><span style="COLOR: #0000ff">="application/atom+xml;type=entry"</span><span style="COLOR: #ff0000"> title</span><span style="COLOR: #0000ff">="ModifiedBy"</span><span style="COLOR: #ff0000"> href</span><span style="COLOR: #0000ff">="AcademyURLCollection(guid'b634e2d0-6baf-4a13-b9e5-869b717f6406')/ModifiedBy"</span><span style="COLOR: #ff0000"> </span><span style="COLOR: #0000ff">/&gt;</span>
+    <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">title </span><span style="COLOR: #0000ff">/&gt;</span>
+    <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">updated</span><span style="COLOR: #0000ff">&gt;</span>2020-04-01T05:46:43Z<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">updated</span><span style="COLOR: #0000ff">&gt;</span>
+    <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">author</span><span style="COLOR: #0000ff">&gt;</span>
+        <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">name </span><span style="COLOR: #0000ff">/&gt;</span>
+    <span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">author</span><span style="COLOR: #0000ff">&gt;</span>
+    <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">content </span><span style="COLOR: #ff0000">type</span><span style="COLOR: #0000ff">="application/xml"</span><span style="COLOR: #0000ff">&gt;</span>
+        <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">m:properties</span><span style="COLOR: #0000ff">&gt;</span>
+            <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">d:Id </span><span style="COLOR: #ff0000">m:type</span><span style="COLOR: #0000ff">="Edm.Guid"</span><span style="COLOR: #0000ff">&gt;</span>b634e2d0-6baf-4a13-b9e5-869b717f6406<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">d:Id</span><span style="COLOR: #0000ff">&gt;</span>
+            <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">d:Name</span><span style="COLOR: #0000ff">&gt;</span>Academy<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">d:Name</span><span style="COLOR: #0000ff">&gt;</span>
+            <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">d:CreatedOn </span><span style="COLOR: #ff0000">m:type</span><span style="COLOR: #0000ff">="Edm.DateTime"</span><span style="COLOR: #0000ff">&gt;</span>2020-04-01T05:46:41.7819089Z<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">d:CreatedOn</span><span style="COLOR: #0000ff">&gt;</span>
+            <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">d:CreatedById </span><span style="COLOR: #ff0000">m:type</span><span style="COLOR: #0000ff">="Edm.Guid"</span><span style="COLOR: #0000ff">&gt;</span>410006e1-ca4e-4502-a9ec-e54d922d2c00<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">d:CreatedById</span><span style="COLOR: #0000ff">&gt;</span>
+            <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">d:ModifiedOn </span><span style="COLOR: #ff0000">m:type</span><span style="COLOR: #0000ff">="Edm.DateTime"</span><span style="COLOR: #0000ff">&gt;</span>2020-04-01T05:46:41.7819089Z<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">d:ModifiedOn</span><span style="COLOR: #0000ff">&gt;</span>
+            <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">d:ModifiedById </span><span style="COLOR: #ff0000">m:type</span><span style="COLOR: #0000ff">="Edm.Guid"</span><span style="COLOR: #0000ff">&gt;</span>410006e1-ca4e-4502-a9ec-e54d922d2c00<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">d:ModifiedById</span><span style="COLOR: #0000ff">&gt;</span>
+            <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">d:ProcessListeners </span><span style="COLOR: #ff0000">m:type</span><span style="COLOR: #0000ff">="Edm.Int32"</span><span style="COLOR: #0000ff">&gt;</span>0<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">d:ProcessListeners</span><span style="COLOR: #0000ff">&gt;</span>
+            <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">d:Description</span><span style="COLOR: #0000ff">&gt;</span>https://academy.creatio.com/<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">d:Description</span><span style="COLOR: #0000ff">&gt;</span>
+        <span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">m:properties</span><span style="COLOR: #0000ff">&gt;</span>
+    <span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">content</span><span style="COLOR: #0000ff">&gt;</span>
+<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">entry</span><span style="COLOR: #0000ff">&gt;</span>
+</pre>
+        </div>
+    </div>
+</div>
+
+<div id="Syntax_XML" class="SimpleTabContainer" data-title="XML" data-itemid="XML">
+    <div id="Syntax_XML" class="LanguageSpecific">
+        <div class="SimpleTabStripContainer">
+            <div class="SimpleTabLeftEnd"></div>
+
+            <div class="SimpleTab">
+                <span class="SimpleTabCaption"><strong>Пример ответа на GET-запрос</strong></span>
+            </div>
+
+            <div class="SimpleTabRightEnd">
+                <!-- Intentionally empty div --> 
+            </div>
+
+            <div class="SimpleTabCommands">
+                <!-- might be empty div --> 
+            </div>
+        </div>
+
+        <div class="SimpleTabContentArea sourcecode">
+            <pre>
+Status: 200 OK
+
+<span style="COLOR: #0000ff">&lt;?</span><span style="COLOR: #ff00ff">xml version="1.0" encoding="utf-8"</span><span style="COLOR: #0000ff">?&gt;</span>
+<span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">feed </span><span style="COLOR: #ff0000">xml:base</span><span style="COLOR: #0000ff">="http://mycreatio.com/0/ServiceModel/EntityDataService.svc/"</span><span style="COLOR: #ff0000"> xmlns</span><span style="COLOR: #0000ff">="http://www.w3.org/2005/Atom"</span><span style="COLOR: #ff0000"> xmlns:d</span><span style="COLOR: #0000ff">="http://schemas.microsoft.com/ado/2007/08/dataservices"</span><span style="COLOR: #ff0000"> xmlns:m</span><span style="COLOR: #0000ff">="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata"</span><span style="COLOR: #0000ff">&gt;</span>
+    <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">id</span><span style="COLOR: #0000ff">&gt;</span>http://mycreatio.com/0/ServiceModel/EntityDataService.svc/EmployeeCollection<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">id</span><span style="COLOR: #0000ff">&gt;</span>
+    <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">title </span><span style="COLOR: #ff0000">type</span><span style="COLOR: #0000ff">="text"</span><span style="COLOR: #0000ff">&gt;</span>EmployeeCollection<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">title</span><span style="COLOR: #0000ff">&gt;</span>
+    <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">updated</span><span style="COLOR: #0000ff">&gt;</span>2020-03-31T06:32:52Z<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">updated</span><span style="COLOR: #0000ff">&gt;</span>
+    <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">link </span><span style="COLOR: #ff0000">rel</span><span style="COLOR: #0000ff">="self"</span><span style="COLOR: #ff0000"> title</span><span style="COLOR: #0000ff">="EmployeeCollection"</span><span style="COLOR: #ff0000"> href</span><span style="COLOR: #0000ff">="EmployeeCollection"</span><span style="COLOR: #ff0000"> </span><span style="COLOR: #0000ff">/&gt;</span>
+    <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">entry</span><span style="COLOR: #0000ff">&gt;</span>
+        <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">id</span><span style="COLOR: #0000ff">&gt;</span>http://mycreatio.com/0/ServiceModel/EntityDataService.svc/EmployeeCollection(guid'c31c7862-fe33-4a13-9bbc-0943fa08fd02')<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">id</span><span style="COLOR: #0000ff">&gt;</span>
+        <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">category </span><span style="COLOR: #ff0000">term</span><span style="COLOR: #0000ff">="Terrasoft.Configuration.Employee"</span><span style="COLOR: #ff0000"> scheme</span><span style="COLOR: #0000ff">="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme"</span><span style="COLOR: #ff0000"> </span><span style="COLOR: #0000ff">/&gt;</span>
+        <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">link </span><span style="COLOR: #ff0000">rel</span><span style="COLOR: #0000ff">="edit"</span><span style="COLOR: #ff0000"> title</span><span style="COLOR: #0000ff">="Employee"</span><span style="COLOR: #ff0000"> href</span><span style="COLOR: #0000ff">="EmployeeCollection(guid'c31c7862-fe33-4a13-9bbc-0943fa08fd02')"</span><span style="COLOR: #ff0000"> </span><span style="COLOR: #0000ff">/&gt;</span>
+        <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">link </span><span style="COLOR: #ff0000">rel</span><span style="COLOR: #0000ff">="http://schemas.microsoft.com/ado/2007/08/dataservices/related/CreatedBy"</span><span style="COLOR: #ff0000"> type</span><span style="COLOR: #0000ff">="application/atom+xml;type=entry"</span><span style="COLOR: #ff0000"> title</span><span style="COLOR: #0000ff">="CreatedBy"</span><span style="COLOR: #ff0000"> href</span><span style="COLOR: #0000ff">="EmployeeCollection(guid'c31c7862-fe33-4a13-9bbc-0943fa08fd02')/CreatedBy"</span><span style="COLOR: #ff0000"> </span><span style="COLOR: #0000ff">/&gt;</span>
+        <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">link </span><span style="COLOR: #ff0000">rel</span><span style="COLOR: #0000ff">="http://schemas.microsoft.com/ado/2007/08/dataservices/related/ModifiedBy"</span><span style="COLOR: #ff0000"> type</span><span style="COLOR: #0000ff">="application/atom+xml;type=entry"</span><span style="COLOR: #ff0000"> title</span><span style="COLOR: #0000ff">="ModifiedBy"</span><span style="COLOR: #ff0000"> href</span><span style="COLOR: #0000ff">="EmployeeCollection(guid'c31c7862-fe33-4a13-9bbc-0943fa08fd02')/ModifiedBy"</span><span style="COLOR: #ff0000"> </span><span style="COLOR: #0000ff">/&gt;</span>
+        <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">link </span><span style="COLOR: #ff0000">rel</span><span style="COLOR: #0000ff">="http://schemas.microsoft.com/ado/2007/08/dataservices/related/Contact"</span><span style="COLOR: #ff0000"> type</span><span style="COLOR: #0000ff">="application/atom+xml;type=entry"</span><span style="COLOR: #ff0000"> title</span><span style="COLOR: #0000ff">="Contact"</span><span style="COLOR: #ff0000"> href</span><span style="COLOR: #0000ff">="EmployeeCollection(guid'c31c7862-fe33-4a13-9bbc-0943fa08fd02')/Contact"</span><span style="COLOR: #ff0000"> </span><span style="COLOR: #0000ff">/&gt;</span>
+        <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">link </span><span style="COLOR: #ff0000">rel</span><span style="COLOR: #0000ff">="http://schemas.microsoft.com/ado/2007/08/dataservices/related/OrgStructureUnitCollectionByHead"</span><span style="COLOR: #ff0000"> type</span><span style="COLOR: #0000ff">="application/atom+xml;type=feed"</span><span style="COLOR: #ff0000"> title</span><span style="COLOR: #0000ff">="OrgStructureUnitCollectionByHead"</span><span style="COLOR: #ff0000"> href</span><span style="COLOR: #0000ff">="EmployeeCollection(guid'c31c7862-fe33-4a13-9bbc-0943fa08fd02')/OrgStructureUnitCollectionByHead"</span><span style="COLOR: #ff0000"> </span><span style="COLOR: #0000ff">/&gt;</span>
+        <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">link </span><span style="COLOR: #ff0000">rel</span><span style="COLOR: #0000ff">="http://schemas.microsoft.com/ado/2007/08/dataservices/related/OrgStructureUnit"</span><span style="COLOR: #ff0000"> type</span><span style="COLOR: #0000ff">="application/atom+xml;type=entry"</span><span style="COLOR: #ff0000"> title</span><span style="COLOR: #0000ff">="OrgStructureUnit"</span><span style="COLOR: #ff0000"> href</span><span style="COLOR: #0000ff">="EmployeeCollection(guid'c31c7862-fe33-4a13-9bbc-0943fa08fd02')/OrgStructureUnit"</span><span style="COLOR: #ff0000"> </span><span style="COLOR: #0000ff">/&gt;</span>
+        <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">link </span><span style="COLOR: #ff0000">rel</span><span style="COLOR: #0000ff">="http://schemas.microsoft.com/ado/2007/08/dataservices/related/Job"</span><span style="COLOR: #ff0000"> type</span><span style="COLOR: #0000ff">="application/atom+xml;type=entry"</span><span style="COLOR: #ff0000"> title</span><span style="COLOR: #0000ff">="Job"</span><span style="COLOR: #ff0000"> href</span><span style="COLOR: #0000ff">="EmployeeCollection(guid'c31c7862-fe33-4a13-9bbc-0943fa08fd02')/Job"</span><span style="COLOR: #ff0000"> </span><span style="COLOR: #0000ff">/&gt;</span>
+        <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">link </span><span style="COLOR: #ff0000">rel</span><span style="COLOR: #0000ff">="http://schemas.microsoft.com/ado/2007/08/dataservices/related/Owner"</span><span style="COLOR: #ff0000"> type</span><span style="COLOR: #0000ff">="application/atom+xml;type=entry"</span><span style="COLOR: #ff0000"> title</span><span style="COLOR: #0000ff">="Owner"</span><span style="COLOR: #ff0000"> href</span><span style="COLOR: #0000ff">="EmployeeCollection(guid'c31c7862-fe33-4a13-9bbc-0943fa08fd02')/Owner"</span><span style="COLOR: #ff0000"> </span><span style="COLOR: #0000ff">/&gt;</span>
+        <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">link </span><span style="COLOR: #ff0000">rel</span><span style="COLOR: #0000ff">="http://schemas.microsoft.com/ado/2007/08/dataservices/related/ReasonForDismissal"</span><span style="COLOR: #ff0000"> type</span><span style="COLOR: #0000ff">="application/atom+xml;type=entry"</span><span style="COLOR: #ff0000"> title</span><span style="COLOR: #0000ff">="ReasonForDismissal"</span><span style="COLOR: #ff0000"> href</span><span style="COLOR: #0000ff">="EmployeeCollection(guid'c31c7862-fe33-4a13-9bbc-0943fa08fd02')/ReasonForDismissal"</span><span style="COLOR: #ff0000"> </span><span style="COLOR: #0000ff">/&gt;</span>
+        <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">link </span><span style="COLOR: #ff0000">rel</span><span style="COLOR: #0000ff">="http://schemas.microsoft.com/ado/2007/08/dataservices/related/Account"</span><span style="COLOR: #ff0000"> type</span><span style="COLOR: #0000ff">="application/atom+xml;type=entry"</span><span style="COLOR: #ff0000"> title</span><span style="COLOR: #0000ff">="Account"</span><span style="COLOR: #ff0000"> href</span><span style="COLOR: #0000ff">="EmployeeCollection(guid'c31c7862-fe33-4a13-9bbc-0943fa08fd02')/Account"</span><span style="COLOR: #ff0000"> </span><span style="COLOR: #0000ff">/&gt;</span>
+        <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">link </span><span style="COLOR: #ff0000">rel</span><span style="COLOR: #0000ff">="http://schemas.microsoft.com/ado/2007/08/dataservices/related/Manager"</span><span style="COLOR: #ff0000"> type</span><span style="COLOR: #0000ff">="application/atom+xml;type=entry"</span><span style="COLOR: #ff0000"> title</span><span style="COLOR: #0000ff">="Manager"</span><span style="COLOR: #ff0000"> href</span><span style="COLOR: #0000ff">="EmployeeCollection(guid'c31c7862-fe33-4a13-9bbc-0943fa08fd02')/Manager"</span><span style="COLOR: #ff0000"> </span><span style="COLOR: #0000ff">/&gt;</span>
+        <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">link </span><span style="COLOR: #ff0000">rel</span><span style="COLOR: #0000ff">="http://schemas.microsoft.com/ado/2007/08/dataservices/related/EmployeeCollectionByManager"</span><span style="COLOR: #ff0000"> type</span><span style="COLOR: #0000ff">="application/atom+xml;type=feed"</span><span style="COLOR: #ff0000"> title</span><span style="COLOR: #0000ff">="EmployeeCollectionByManager"</span><span style="COLOR: #ff0000"> href</span><span style="COLOR: #0000ff">="EmployeeCollection(guid'c31c7862-fe33-4a13-9bbc-0943fa08fd02')/EmployeeCollectionByManager"</span><span style="COLOR: #ff0000"> </span><span style="COLOR: #0000ff">/&gt;</span>
+        <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">link </span><span style="COLOR: #ff0000">rel</span><span style="COLOR: #0000ff">="http://schemas.microsoft.com/ado/2007/08/dataservices/related/EmployeeCareerCollectionByEmployee"</span><span style="COLOR: #ff0000"> type</span><span style="COLOR: #0000ff">="application/atom+xml;type=feed"</span><span style="COLOR: #ff0000"> title</span><span style="COLOR: #0000ff">="EmployeeCareerCollectionByEmployee"</span><span style="COLOR: #ff0000"> href</span><span style="COLOR: #0000ff">="EmployeeCollection(guid'c31c7862-fe33-4a13-9bbc-0943fa08fd02')/EmployeeCareerCollectionByEmployee"</span><span style="COLOR: #ff0000"> </span><span style="COLOR: #0000ff">/&gt;</span>
+        <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">link </span><span style="COLOR: #ff0000">rel</span><span style="COLOR: #0000ff">="http://schemas.microsoft.com/ado/2007/08/dataservices/related/EmployeeFileCollectionByEmployee"</span><span style="COLOR: #ff0000"> type</span><span style="COLOR: #0000ff">="application/atom+xml;type=feed"</span><span style="COLOR: #ff0000"> title</span><span style="COLOR: #0000ff">="EmployeeFileCollectionByEmployee"</span><span style="COLOR: #ff0000"> href</span><span style="COLOR: #0000ff">="EmployeeCollection(guid'c31c7862-fe33-4a13-9bbc-0943fa08fd02')/EmployeeFileCollectionByEmployee"</span><span style="COLOR: #ff0000"> </span><span style="COLOR: #0000ff">/&gt;</span>
+        <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">link </span><span style="COLOR: #ff0000">rel</span><span style="COLOR: #0000ff">="http://schemas.microsoft.com/ado/2007/08/dataservices/related/EmployeeInFolderCollectionByEmployee"</span><span style="COLOR: #ff0000"> type</span><span style="COLOR: #0000ff">="application/atom+xml;type=feed"</span><span style="COLOR: #ff0000"> title</span><span style="COLOR: #0000ff">="EmployeeInFolderCollectionByEmployee"</span><span style="COLOR: #ff0000"> href</span><span style="COLOR: #0000ff">="EmployeeCollection(guid'c31c7862-fe33-4a13-9bbc-0943fa08fd02')/EmployeeInFolderCollectionByEmployee"</span><span style="COLOR: #ff0000"> </span><span style="COLOR: #0000ff">/&gt;</span>
+        <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">link </span><span style="COLOR: #ff0000">rel</span><span style="COLOR: #0000ff">="http://schemas.microsoft.com/ado/2007/08/dataservices/related/EmployeeInTagCollectionByEntity"</span><span style="COLOR: #ff0000"> type</span><span style="COLOR: #0000ff">="application/atom+xml;type=feed"</span><span style="COLOR: #ff0000"> title</span><span style="COLOR: #0000ff">="EmployeeInTagCollectionByEntity"</span><span style="COLOR: #ff0000"> href</span><span style="COLOR: #0000ff">="EmployeeCollection(guid'c31c7862-fe33-4a13-9bbc-0943fa08fd02')/EmployeeInTagCollectionByEntity"</span><span style="COLOR: #ff0000"> </span><span style="COLOR: #0000ff">/&gt;</span>
+        <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">link </span><span style="COLOR: #ff0000">rel</span><span style="COLOR: #0000ff">="http://schemas.microsoft.com/ado/2007/08/dataservices/related/SalaryCollectionByEmployee"</span><span style="COLOR: #ff0000"> type</span><span style="COLOR: #0000ff">="application/atom+xml;type=feed"</span><span style="COLOR: #ff0000"> title</span><span style="COLOR: #0000ff">="SalaryCollectionByEmployee"</span><span style="COLOR: #ff0000"> href</span><span style="COLOR: #0000ff">="EmployeeCollection(guid'c31c7862-fe33-4a13-9bbc-0943fa08fd02')/SalaryCollectionByEmployee"</span><span style="COLOR: #ff0000"> </span><span style="COLOR: #0000ff">/&gt;</span>
+        <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">link </span><span style="COLOR: #ff0000">rel</span><span style="COLOR: #0000ff">="http://schemas.microsoft.com/ado/2007/08/dataservices/related/VwEmployeesHierarchyCollectionByEmployee"</span><span style="COLOR: #ff0000"> type</span><span style="COLOR: #0000ff">="application/atom+xml;type=feed"</span><span style="COLOR: #ff0000"> title</span><span style="COLOR: #0000ff">="VwEmployeesHierarchyCollectionByEmployee"</span><span style="COLOR: #ff0000"> href</span><span style="COLOR: #0000ff">="EmployeeCollection(guid'c31c7862-fe33-4a13-9bbc-0943fa08fd02')/VwEmployeesHierarchyCollectionByEmployee"</span><span style="COLOR: #ff0000"> </span><span style="COLOR: #0000ff">/&gt;</span>
+        <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">title </span><span style="COLOR: #0000ff">/&gt;</span>
+        <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">updated</span><span style="COLOR: #0000ff">&gt;</span>2020-03-31T06:32:52Z<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">updated</span><span style="COLOR: #0000ff">&gt;</span>
+        <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">author</span><span style="COLOR: #0000ff">&gt;</span>
+            <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">name </span><span style="COLOR: #0000ff">/&gt;</span>
+        <span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">author</span><span style="COLOR: #0000ff">&gt;</span>
+        <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">content </span><span style="COLOR: #ff0000">type</span><span style="COLOR: #0000ff">="application/xml"</span><span style="COLOR: #0000ff">&gt;</span>
+            <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">m:properties</span><span style="COLOR: #0000ff">&gt;</span>
+                <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">d:Id </span><span style="COLOR: #ff0000">m:type</span><span style="COLOR: #0000ff">="Edm.Guid"</span><span style="COLOR: #0000ff">&gt;</span>c31c7862-fe33-4a13-9bbc-0943fa08fd02<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">d:Id</span><span style="COLOR: #0000ff">&gt;</span>
+                <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">d:Name</span><span style="COLOR: #0000ff">&gt;</span>William Walker<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">d:Name</span><span style="COLOR: #0000ff">&gt;</span>
+                <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">d:CreatedOn </span><span style="COLOR: #ff0000">m:type</span><span style="COLOR: #0000ff">="Edm.DateTime"</span><span style="COLOR: #0000ff">&gt;</span>2017-03-30T14:50:04Z<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">d:CreatedOn</span><span style="COLOR: #0000ff">&gt;</span>
+                <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">d:CreatedById </span><span style="COLOR: #ff0000">m:type</span><span style="COLOR: #0000ff">="Edm.Guid"</span><span style="COLOR: #0000ff">&gt;</span>76929f8c-7e15-4c64-bdb0-adc62d383727<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">d:CreatedById</span><span style="COLOR: #0000ff">&gt;</span>
+                <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">d:ModifiedOn </span><span style="COLOR: #ff0000">m:type</span><span style="COLOR: #0000ff">="Edm.DateTime"</span><span style="COLOR: #0000ff">&gt;</span>2020-02-14T06:30:46.234Z<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">d:ModifiedOn</span><span style="COLOR: #0000ff">&gt;</span>
+                <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">d:ModifiedById </span><span style="COLOR: #ff0000">m:type</span><span style="COLOR: #0000ff">="Edm.Guid"</span><span style="COLOR: #0000ff">&gt;</span>410006e1-ca4e-4502-a9ec-e54d922d2c00<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">d:ModifiedById</span><span style="COLOR: #0000ff">&gt;</span>
+                <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">d:ProcessListeners </span><span style="COLOR: #ff0000">m:type</span><span style="COLOR: #0000ff">="Edm.Int32"</span><span style="COLOR: #0000ff">&gt;</span>0<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">d:ProcessListeners</span><span style="COLOR: #0000ff">&gt;</span>
+                <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">d:ContactId </span><span style="COLOR: #ff0000">m:type</span><span style="COLOR: #0000ff">="Edm.Guid"</span><span style="COLOR: #0000ff">&gt;</span>227aab3b-7c0c-4181-abf9-81585563ab23<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">d:ContactId</span><span style="COLOR: #0000ff">&gt;</span>
+                <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">d:OrgStructureUnitId </span><span style="COLOR: #ff0000">m:type</span><span style="COLOR: #0000ff">="Edm.Guid"</span><span style="COLOR: #0000ff">&gt;</span>d436a9ce-9690-4415-9e03-e8061d7cabb5<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">d:OrgStructureUnitId</span><span style="COLOR: #0000ff">&gt;</span>
+                <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">d:Notes</span><span style="COLOR: #0000ff">&gt;&lt;/</span><span style="COLOR: #800000">d:Notes</span><span style="COLOR: #0000ff">&gt;</span>
+                <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">d:JobId </span><span style="COLOR: #ff0000">m:type</span><span style="COLOR: #0000ff">="Edm.Guid"</span><span style="COLOR: #0000ff">&gt;</span>11d68189-ced6-df11-9b2a-001d60e938c6<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">d:JobId</span><span style="COLOR: #0000ff">&gt;</span>
+                <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">d:FullJobTitle</span><span style="COLOR: #0000ff">&gt;</span>Developer<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">d:FullJobTitle</span><span style="COLOR: #0000ff">&gt;</span>
+                <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">d:OwnerId </span><span style="COLOR: #ff0000">m:type</span><span style="COLOR: #0000ff">="Edm.Guid"</span><span style="COLOR: #0000ff">&gt;</span>76929f8c-7e15-4c64-bdb0-adc62d383727<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">d:OwnerId</span><span style="COLOR: #0000ff">&gt;</span>
+                <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">d:CareerStartDate </span><span style="COLOR: #ff0000">m:type</span><span style="COLOR: #0000ff">="Edm.DateTime"</span><span style="COLOR: #0000ff">&gt;</span>2019-09-08T00:00:00<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">d:CareerStartDate</span><span style="COLOR: #0000ff">&gt;</span>
+                <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">d:CareerDueDate </span><span style="COLOR: #ff0000">m:type</span><span style="COLOR: #0000ff">="Edm.DateTime"</span><span style="COLOR: #0000ff">&gt;</span>0001-01-01T00:00:00<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">d:CareerDueDate</span><span style="COLOR: #0000ff">&gt;</span>
+                <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">d:ProbationDueDate </span><span style="COLOR: #ff0000">m:type</span><span style="COLOR: #0000ff">="Edm.DateTime"</span><span style="COLOR: #0000ff">&gt;</span>2020-01-09T00:00:00<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">d:ProbationDueDate</span><span style="COLOR: #0000ff">&gt;</span>
+                <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">d:ReasonForDismissalId </span><span style="COLOR: #ff0000">m:type</span><span style="COLOR: #0000ff">="Edm.Guid"</span><span style="COLOR: #0000ff">&gt;</span>00000000-0000-0000-0000-000000000000<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">d:ReasonForDismissalId</span><span style="COLOR: #0000ff">&gt;</span>
+                <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">d:AccountId </span><span style="COLOR: #ff0000">m:type</span><span style="COLOR: #0000ff">="Edm.Guid"</span><span style="COLOR: #0000ff">&gt;</span>a0bf3e92-f36b-1410-0499-00155d043204<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">d:AccountId</span><span style="COLOR: #0000ff">&gt;</span>
+                <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">d:ManagerId </span><span style="COLOR: #ff0000">m:type</span><span style="COLOR: #0000ff">="Edm.Guid"</span><span style="COLOR: #0000ff">&gt;</span>3e5bd47e-1ebd-41db-a9a6-a3560dcee3cb<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">d:ManagerId</span><span style="COLOR: #0000ff">&gt;</span>
+            <span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">m:properties</span><span style="COLOR: #0000ff">&gt;</span>
+        <span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">content</span><span style="COLOR: #0000ff">&gt;</span>
+    <span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">entry</span><span style="COLOR: #0000ff">&gt;</span>
+<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">feed</span><span style="COLOR: #0000ff">&gt;</span>
+</pre>
+        </div>
+    </div>
+</div>
+
+<h2>Типы запросов<a name="hs-inthistopic-f8a0aa4b-6016-46eb-a6e1-3d25558347fb" id="hs-inthistopic-f8a0aa4b-6016-46eb-a6e1-3d25558347fb"></a></h2>
+
+<h3>Получение данных</h3>
+
+<p>Основные правила GET-запросов:</p>
+
+<ul><li>Разрешено использовать параметры.</li>
+
+    <li>Отсутствует тело запроса.</li>
+
+    <li>Присутствует тело ответа.</li>
+</ul><p>Структура GET-запроса:</p>
+
+<div id="Syntax_JSON" class="LanguageSpecific" data-title="JSON" data-itemid="JSON">
+    <pre>
+GET my_Creatio_site/0/ServiceModel/EntityDataService.svc/data_resource?$parameters
+
+ForceUseSession: <span style="COLOR: #0000ff">true</span>
+BPMCSRF: authentication_cookie_value
+</pre>
+</div>
+
+<p>Структура тела ответа на GET-запрос:</p>
+
+<div id="Syntax_XML" class="LanguageSpecific" data-title="XML" data-itemid="XML">
+    <pre>
+<span style="COLOR: #0000ff">&lt;?</span><span style="COLOR: #ff00ff">xml version="1.0" encoding="utf-8"</span><span style="COLOR: #0000ff">?&gt;</span>
+<span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">feed </span><span style="COLOR: #ff0000">xml:base</span><span style="COLOR: #0000ff">="http://mycreatio.com/0/ServiceModel/EntityDataService.svc/"</span><span style="COLOR: #ff0000"> xmlns</span><span style="COLOR: #0000ff">="http://www.w3.org/2005/Atom"</span><span style="COLOR: #ff0000"> xmlns:d</span><span style="COLOR: #0000ff">="http://schemas.microsoft.com/ado/2007/08/dataservices"</span><span style="COLOR: #ff0000"> xmlns:m</span><span style="COLOR: #0000ff">="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata"</span><span style="COLOR: #0000ff">&gt;</span>
+    <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">id</span><span style="COLOR: #0000ff">&gt;</span>http://mycreatio.com/0/ServiceModel/EntityDataService.svc/data_resource<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">id</span><span style="COLOR: #0000ff">&gt;</span>
+    <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">title </span><span style="COLOR: #ff0000">type</span><span style="COLOR: #0000ff">="text"</span><span style="COLOR: #0000ff">&gt;</span>data_resource<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">title</span><span style="COLOR: #0000ff">&gt;</span>
+    <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">updated</span><span style="COLOR: #0000ff">&gt;</span>date and time of request<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">updated</span><span style="COLOR: #0000ff">&gt;</span>
+    <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">link </span><span style="COLOR: #ff0000">rel</span><span style="COLOR: #0000ff">="self"</span><span style="COLOR: #ff0000"> title</span><span style="COLOR: #0000ff">="data_resource"</span><span style="COLOR: #ff0000"> href</span><span style="COLOR: #0000ff">="data_resource"</span><span style="COLOR: #ff0000"> </span><span style="COLOR: #0000ff">/&gt;</span>
+    <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">entry</span><span style="COLOR: #0000ff">&gt;</span>
+        metadata_data
+        <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">content </span><span style="COLOR: #ff0000">type</span><span style="COLOR: #0000ff">="application/xml"</span><span style="COLOR: #0000ff">&gt;</span>
+            <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">m:properties</span><span style="COLOR: #0000ff">&gt;</span>
+                <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">d:object1 </span><span style="COLOR: #ff0000">field1</span><span style="COLOR: #0000ff">&gt;</span>object1 field_value1<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">d:object1 field1</span><span style="COLOR: #0000ff">&gt;</span>
+                <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">d:object1 </span><span style="COLOR: #ff0000">field2</span><span style="COLOR: #0000ff">&gt;</span>object1 field_value2<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">d:object1 field2</span><span style="COLOR: #0000ff">&gt;</span>
+                ...
+            <span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">m:properties</span><span style="COLOR: #0000ff">&gt;</span>
+        <span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">content</span><span style="COLOR: #0000ff">&gt;</span>
+    <span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">entry</span><span style="COLOR: #0000ff">&gt;</span>
+    <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">entry</span><span style="COLOR: #0000ff">&gt;</span>
+        metadata_data
+        <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">content </span><span style="COLOR: #ff0000">type</span><span style="COLOR: #0000ff">="application/xml"</span><span style="COLOR: #0000ff">&gt;</span>
+            <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">m:properties</span><span style="COLOR: #0000ff">&gt;</span>
+                <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">d:object2 </span><span style="COLOR: #ff0000">field1</span><span style="COLOR: #0000ff">&gt;</span>object2 field_value1<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">d:object2 field1</span><span style="COLOR: #0000ff">&gt;</span>
+                <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">d:object2 </span><span style="COLOR: #ff0000">field2</span><span style="COLOR: #0000ff">&gt;</span>object2 field_value2<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">d:object2 field2</span><span style="COLOR: #0000ff">&gt;</span>
+                ...
+            <span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">m:properties</span><span style="COLOR: #0000ff">&gt;</span>
+        <span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">content</span><span style="COLOR: #0000ff">&gt;</span>
+    <span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">entry</span><span style="COLOR: #0000ff">&gt;</span>
+    ...
+<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">feed</span><span style="COLOR: #0000ff">&gt;</span>
+</pre>
+</div>
+
+<p>Структурные элементы тела ответа на GET-запрос принимают следующие значения:</p>
+
+<dl><dt class="def-term">entry</dt>
+
+    <dd>
+        Экземпляр объекта коллекции.
+        <hr /></dd>
+</dl><dl><dt class="def-term">metadata_data</dt>
+
+    <dd>
+        Метаданные экземпляра объекта коллекции.
+        <hr /></dd>
+</dl><dl><dt class="def-term">object1 field1, object1 field2, ..., object2 field1, object2 field2, ...</dt>
+
+    <dd>
+        Имена полей field1, field2, ... экземпляров объектов object1, object2, ... коллекции.
+        <hr /></dd>
+</dl><dl><dt class="def-term">object1 field_value1, object1 field_value2, ..., object2 field_value1, object2 field_value2, ...</dt>
+
+    <dd>
+        Значения полей field1, field2, ... экземпляров объектов object1, object2, ... коллекции.
+        <hr /></dd>
+</dl><p></p>
+
+<h3>Добавление данных</h3>
+
+<p>Основные правила POST-запросов:</p>
+
+<ul><li>Запрещено использовать параметры.</li>
+
+    <li>Присутствует тело запроса.</li>
+
+    <li>Присутствует тело ответа.</li>
+</ul><p>Структура POST-запроса:</p>
+
+<div id="Syntax_JSON" class="LanguageSpecific" data-title="JSON" data-itemid="JSON">
+    <pre>
+POST my_Creatio_site/0/ServiceModel/EntityDataService.svc/objects_collectionCollection
+
+Accept: application/atom+xml; type=entry
+Content-Type: application/json; odata=verbose
+ForceUseSession: <span style="COLOR: #0000ff">true</span>
+BPMCSRF: authentication_cookie_value
+</pre>
+</div>
+
+<p>В качестве ресурса данных POST-запроса может выступать только коллекция объектов, в которой необходимо создать новый экземпляр объекта коллекции.</p>
+
+<p>Структурные элементы строки POST-запроса:</p>
+
+<dl><dt class="def-term">objects_collection (required)</dt>
+
+    <dd>
+        Имя коллекции, в которой необходимо создать новый экземпляр объекта коллекции.
+        <hr /></dd>
+</dl><p>Структура тела POST-запроса:</p>
+
+<div id="Syntax_JSON" class="LanguageSpecific" data-title="JSON" data-itemid="JSON">
+    <pre>
+{
+    <span style="COLOR: #800000">"field1"</span>: <span style="COLOR: #800000">"value1"</span>,
+    <span style="COLOR: #800000">"field2"</span>: <span style="COLOR: #800000">"value2"</span>,
+    ...
+}
+</pre>
+</div>
+
+<p>Структурные элементы тела POST-запроса:</p>
+
+<dl><dt class="def-term">field1, field2, ... (required)</dt>
+
+    <dd>
+        Имена полей создаваемого экземпляра объекта коллекции, которые необходимо заполнить.
+        <hr /></dd>
+</dl><dl><dt class="def-term">value1, value2, ... (required)</dt>
+
+    <dd>
+        Значения полей field1, field2, ..., создаваемого экземпляра объекта коллекции, которые необходимо заполнить.
+        <hr /></dd>
+</dl><p>Структура тела ответа на POST-запрос:</p>
+
+<div id="Syntax_XML" class="LanguageSpecific" data-title="XML" data-itemid="XML">
+    <pre>
+<span style="COLOR: #0000ff">&lt;?</span><span style="COLOR: #ff00ff">xml version="1.0" encoding="utf-8"</span><span style="COLOR: #0000ff">?&gt;</span>
+<span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">feed </span><span style="COLOR: #ff0000">xml:base</span><span style="COLOR: #0000ff">="http://mycreatio.com/0/ServiceModel/EntityDataService.svc/"</span><span style="COLOR: #ff0000"> xmlns</span><span style="COLOR: #0000ff">="http://www.w3.org/2005/Atom"</span><span style="COLOR: #ff0000"> xmlns:d</span><span style="COLOR: #0000ff">="http://schemas.microsoft.com/ado/2007/08/dataservices"</span><span style="COLOR: #ff0000"> xmlns:m</span><span style="COLOR: #0000ff">="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata"</span><span style="COLOR: #0000ff">&gt;</span>
+    <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">id</span><span style="COLOR: #0000ff">&gt;</span>http://mycreatio.com/0/ServiceModel/EntityDataService.svc/data_resource<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">id</span><span style="COLOR: #0000ff">&gt;</span>
+    <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">title </span><span style="COLOR: #ff0000">type</span><span style="COLOR: #0000ff">="text"</span><span style="COLOR: #0000ff">&gt;</span>data_resource<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">title</span><span style="COLOR: #0000ff">&gt;</span>
+    <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">updated</span><span style="COLOR: #0000ff">&gt;</span>date and time of request<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">updated</span><span style="COLOR: #0000ff">&gt;</span>
+    <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">link </span><span style="COLOR: #ff0000">rel</span><span style="COLOR: #0000ff">="self"</span><span style="COLOR: #ff0000"> title</span><span style="COLOR: #0000ff">="data_resource"</span><span style="COLOR: #ff0000"> href</span><span style="COLOR: #0000ff">="data_resource"</span><span style="COLOR: #ff0000"> </span><span style="COLOR: #0000ff">/&gt;</span>
+    <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">entry</span><span style="COLOR: #0000ff">&gt;</span>
+        metadata_data
+        <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">content </span><span style="COLOR: #ff0000">type</span><span style="COLOR: #0000ff">="application/xml"</span><span style="COLOR: #0000ff">&gt;</span>
+            <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">m:properties</span><span style="COLOR: #0000ff">&gt;</span>
+                <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">d:object1 </span><span style="COLOR: #ff0000">field1</span><span style="COLOR: #0000ff">&gt;</span>object1 field_value1<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">d:object1 field1</span><span style="COLOR: #0000ff">&gt;</span>
+                <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">d:object1 </span><span style="COLOR: #ff0000">field2</span><span style="COLOR: #0000ff">&gt;</span>object1 field_value2<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">d:object1 field2</span><span style="COLOR: #0000ff">&gt;</span>
+                ...
+            <span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">m:properties</span><span style="COLOR: #0000ff">&gt;</span>
+        <span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">content</span><span style="COLOR: #0000ff">&gt;</span>
+    <span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">entry</span><span style="COLOR: #0000ff">&gt;</span>
+    <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">entry</span><span style="COLOR: #0000ff">&gt;</span>
+        metadata_data
+        <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">content </span><span style="COLOR: #ff0000">type</span><span style="COLOR: #0000ff">="application/xml"</span><span style="COLOR: #0000ff">&gt;</span>
+            <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">m:properties</span><span style="COLOR: #0000ff">&gt;</span>
+                <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">d:object2 </span><span style="COLOR: #ff0000">field1</span><span style="COLOR: #0000ff">&gt;</span>object2 field_value1<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">d:object2 field1</span><span style="COLOR: #0000ff">&gt;</span>
+                <span style="COLOR: #0000ff">&lt;</span><span style="COLOR: #800000">d:object2 </span><span style="COLOR: #ff0000">field2</span><span style="COLOR: #0000ff">&gt;</span>object2 field_value2<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">d:object2 field2</span><span style="COLOR: #0000ff">&gt;</span>
+                ...
+            <span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">m:properties</span><span style="COLOR: #0000ff">&gt;</span>
+        <span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">content</span><span style="COLOR: #0000ff">&gt;</span>
+    <span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">entry</span><span style="COLOR: #0000ff">&gt;</span>
+    ...
+<span style="COLOR: #0000ff">&lt;/</span><span style="COLOR: #800000">feed</span><span style="COLOR: #0000ff">&gt;</span>
+</pre>
+</div>
+
+<p>Структурные элементы тела ответа на POST-запрос принимают следующие значения:</p>
+
+<dl><dt class="def-term">entry</dt>
+
+    <dd>
+        Экземпляр объекта коллекции.
+        <hr /></dd>
+</dl><dl><dt class="def-term">metadata_data</dt>
+
+    <dd>
+        Метаданные созданного экземпляра объекта коллекции.
+        <hr /></dd>
+</dl><dl><dt class="def-term">object1 field1, object1 field2, ..., object2 field1, object2 field2, ...</dt>
+
+    <dd>
+        Имена полей созданного экземпляра объекта коллекции.
+        <hr /></dd>
+</dl><dl><dt class="def-term">object1 field_value1, object1 field_value2, ..., object2 field_value1, object2 field_value2, ...</dt>
+
+    <dd>
+        Значения полей field1, field2, ... созданного экземпляра объекта коллекции.
+        <hr /></dd>
+</dl><h3>Изменение данных</h3>
+
+<p>Основные правила PATCH-запросов:</p>
+
+<ul><li>Запрещено использовать параметры.</li>
+
+    <li>Присутствует тело запроса.</li>
+
+    <li>Отсутствует тело ответа.</li>
+</ul><p>В качестве ресурса данных PATCH-запроса может выступать только коллекция объектов, в которой необходимо изменить данные экземпляра объекта.</p>
+
+<p>Структура PATCH-запроса:</p>
+
+<div id="Syntax_JSON" class="LanguageSpecific" data-title="JSON" data-itemid="JSON">
+    <pre>
+PATCH my_Creatio_site/0/ServiceModel/EntityDataService.svc/objects_collectionCollection(guid<span style="COLOR: #800000">'object_id')
+
+Accept: application/atom+xml; type=entry
+Content-Type: application/json; odata=verbose
+ForceUseSession: true
+BPMCSRF: authentication_cookie_value</span>
+</pre>
+</div>
+
+<p>Структурные элементы строки PATCH-запроса:</p>
+
+<dl><dt class="def-term">objects_collection (required)</dt>
+
+    <dd>
+        Имя коллекции, экземпляр объекта которой необходимо изменить.
+        <hr /></dd>
+</dl><dl><dt class="def-term">object_id (required)</dt>
+
+    <dd>
+        Идентификатор изменяемого экземпляра объекта коллекции.
+        <hr /></dd>
+</dl><p>Структура тела PATCH-запроса:</p>
+
+<div id="Syntax_JSON" class="LanguageSpecific" data-title="JSON" data-itemid="JSON">
+    <pre>
+{
+    <span style="COLOR: #800000">"field1"</span>: <span style="COLOR: #800000">"value1"</span>,
+    <span style="COLOR: #800000">"field2"</span>: <span style="COLOR: #800000">"value2"</span>,
+    ...
+}
+</pre>
+</div>
+
+<p>Структурные элементы тела PATCH-запроса:</p>
+
+<dl><dt class="def-term">field1, field2, ... (required)</dt>
+
+    <dd>
+        Имена полей изменяемого экземпляра объекта коллекции.
+        <hr /></dd>
+</dl><dl><dt class="def-term">value1, value2, ... (required)</dt>
+
+    <dd>
+        Новые значения для полей field1, field2, ... изменяемого экземпляра объекта коллекции.
+        <hr /></dd>
+</dl><h3>Удаление данных</h3>
+
+<p>Основные правила DELETE-запросов:</p>
+
+<ul><li>Запрещено использовать параметры.</li>
+
+    <li>Отсутствует тело запроса.</li>
+
+    <li>Отсутствует тело ответа.</li>
+</ul><p>В качестве ресурса данных DELETE-запроса может выступать только коллекция объектов, экземпляр объекта которой необходимо удалить.</p>
+
+<p>Структура DELETE-запроса:</p>
+
+<div id="Syntax_JSON" class="LanguageSpecific" data-title="JSON" data-itemid="JSON">
+    <pre>
+DELETE my_Creatio_site/0/ServiceModel/EntityDataService.svc/objects_collectionCollection(guid<span style="COLOR: #800000">'object_id')
+
+Accept: application/atom+xml; type=entry
+Content-Type: application/json; odata=verbose
+ForceUseSession: true
+BPMCSRF: authentication_cookie_value</span>
+</pre>
+</div>
+
+<p>Структурные элементы строки DELETE-запроса:</p>
+
+<dl><dt class="def-term">objects_collection (required)</dt>
+
+    <dd>
+        Имя коллекции, экземпляр объекта которой необходимо удалить.
+        <hr /></dd>
+</dl><dl><dt class="def-term">object_id (required)</dt>
+
+    <dd>
+        Идентификатор удаляемого экземпляра объекта коллекции.
+        <hr /></dd>
+</dl><!--DXMETADATA end--><a name="exampleBookmark" id="exampleBookmark"></a>
+            <!--DXMETADATA start type="TaggedComment" source="Item" id="##EXAMPLEINTRO" format="%%replaceinquotes:value=false%%%%scrap:name=_COLLAPSIBLE_HEADER,idprefix=example,caption=""$$Example$$%%designlist:tagidentifier=##EXAMPLECODE,itemtype=Example%%""%%%%comment%%" --><!--DXMETADATA end -->
+			<!--DXMETADATA start type="FilteredItemList" scrap="INLINE_EXAMPLE" namespace="Example" source="Item" filter="type=inline" NoHeader="True" NoFooter="True" format="%%replaceinquotes:value=false%%%%scrap:name=_COLLAPSIBLE_HEADER,idprefix=example,caption=""%%phrase:name=Example%%%%designlist:tagidentifier=##EXAMPLECODE,itemtype=Example%%""%%%%filtereditemlist%%</div>" blankformat="%%taggedcomment:source=item,id=##EXAMPLEINTRO,format=</div>%%" --><!--DXMETADATA end -->
+           
+			<a name="seealsobookmark" id="seealsobookmark"></a>
+            <!--DXMETADATA start type="FilteredItemList" scrap="CATEGORISED_LINKS" namespace="linkcategory" source="Item" filter="" NoHeader="True" NoFooter="True" format="%%replaceinquotes:value=false%%%%scrap:name=_COLLAPSIBLE_HEADER,idprefix=seealso,caption=""%%phrase:name=SeeAlso%%%%designlist:tagidentifier=seealso,itemtype=See Also%%""%%%%filtereditemlist%%</div>"--><!--DXMETADATA end-->
+        </div>
+        <!--DXMETADATA start type="Scrap" condition="communityenabled" name="_COMMUNITY_FOOTER" --><!--DXMETADATA end -->
+        <div id="pagefooter">
+            <!--DXMETADATA start type="Variable" name="CopyrightNotice" format="<p>&nbsp;</p><p>&nbsp;</p><hr style=""height: 1px"" /><p>%%variable%%</p>" --><!--DXMETADATA end -->
+        </div>
+        <!--DXMETADATA start type="FeedbackSection" --><!--DXMETADATA end -->
+    </div>
+    <!--DXMETADATA start type="Variable" name="NonScrollingPageFooter" format="<div id=nonscrollingpagefooter>%%variable%%</div>" --><div id="nonscrollingpagefooter">© Terrasoft 2002-2020.</div><!--DXMETADATA end -->
+<script src="../../../sites/default/files/documents/docs/technic/SDK/7.16.0/script/helpstudio.js" type="text/javascript"></script><script src="../../../sites/default/files/documents/docs/technic/SDK/7.16.0/script/hs-expandcollapse.js" type="text/javascript"></script><script src="../../../sites/default/files/documents/docs/technic/SDK/7.16.0/script/hs-enlargeimage.js" type="text/javascript"></script><script src="../../../sites/default/files/documents/docs/technic/SDK/7.16.0/script/swfobject.js" type="text/javascript"></script><script src="../../../sites/default/files/documents/docs/technic/SDK/7.16.0/script/hs-common.js" type="text/javascript"></script><script src="../../../sites/default/files/documents/docs/technic/SDK/7.16.0/script/hs-heading-expandcollapse.js" type="text/javascript"></script><script src="../../../sites/default/files/documents/docs/technic/SDK/7.16.0/script/hs-tabstrip.js" type="text/javascript"></script></div></div></div>              </div>
+              <form action="https://academy.terrasoft.ua/documents/technic-sdk/7-16/integraciya-s-creatio-po-protokolu-odata-3" method="post" id="ts-doc-rate-form" accept-charset="UTF-8"><div><div id="ts-doc-rate-form-container" class="">
+      <h4 id="vote-title">Был ли данный материал полезен?</h4>
+    <div id="vote-container">
+      <button type="submit" id="edit-rate-up" name="rate_up" value="Да" class="btn btn-default form-submit">Да</button>
+      <button type="submit" id="edit-rate-down" name="rate_down" value="Нет" class="btn btn-default form-submit">Нет</button>
+    </div>
+    <div id="vote-comment-container">
+      <div class="vote-feedback-coment-title">Как можно улучшить эту статью?</div>
+      <div class="form-item form-item-rate-comment form-type-textarea form-group"><div class="form-textarea-wrapper resizable"><textarea class="form-control form-textarea" id="edit-rate-comment" name="rate_comment" cols="60" rows="5"></textarea></div></div>      <button type="submit" id="edit-rate-comment-save" name="rate_comment_save" value="Отправить" class="btn btn-primary form-submit">Отправить</button>
+    </div>
+    <input type="hidden" name="form_build_id" value="form-yNPhOojbxT9fc0LEdWGZ8DMk9vQE7xT_kM6pPrdnyFM" />
+<input type="hidden" name="form_id" value="ts_doc_rate_form" />
+  </div>
+</div></form>            
+                      </article>
+        </div>
+            </div>
+  </div>
+  <div class="om-clearfix"></div>
+  <script>
+    jQuery.each(jQuery('div[align="right"]'), function( index, value ) {
+      if (jQuery(jQuery(value)[0].previousElementSibling).hasClass('FM_Picturecaption')) {
+        jQuery(value).attr('align', 'left');
+      } else {
+        var element = jQuery(jQuery(value)[0].previousElementSibling).append(jQuery(value).find('img'));
+        var text = jQuery(jQuery(value)[0].nextElementSibling).html();
+        jQuery(element).append(text);
+        jQuery(jQuery(value)[0].nextElementSibling).remove();
+        jQuery(value).remove();
+      }
+    });
+    jQuery.each(jQuery('.field-name-body .field-item').children(), function( index, value ) {
+      if((jQuery(value).html() == '' || jQuery(value).html() == ' ') && jQuery(value).prop("tagName") != 'IMG' && jQuery(value).prop("tagName") != 'BR' && jQuery(value).prop("tagName") != 'INPUT') {
+        jQuery(value).remove();
+      }
+    });
+    jQuery(function() {
+      jQuery('#product-version-select').change(function() {
+        window.location.pathname = '/' + jQuery(this).val();
+      });
+    });
+  </script>
+
+
+
+
+</section>
+<section id="block-block-12" class="block block-block clearfix">
+
+      
+  <style type="text/css">
+<!--/*--><![CDATA[/* ><!--*/
+
+html[lang="ru"] .page-requirements-calculator .site-content #documentation-node-tpl #title-block .title-container {
+    width: 242px !important;
+    max-width: 242px !important;
+}
+html[lang="ru"] .page-requirements .site-content #documentation-node-tpl #title-block .title-container {
+    width: 242px !important;
+    max-width: 242px !important;
+}
+.page-requirements-calculator .site-content #documentation-node-tpl #title-block #product-info{
+    width: 242px !important;
+    max-width: 242px !important;
+}
+
+/*--><!]]>*/
+</style>
+</section>
+  </div>
+    </section>
+
+    
+  </div>
+</div>
+
+
+  <footer class="footer container">
+          <div class="region region-footer">
+    <section id="block-block-3" class="block block-block clearfix">
+
+      
+  <div class="footerSmall light  footerBorderTop">
+<div class="container">
+<div class="row flex-row">
+<div class="col-md-6 col-sm-5">
+<div class="footerSmall__widgerLeft">
+<ul class="terrasoft__socials light"><li class="fb__icon"> </li>
+	<li class="ln__icon"> </li>
+	<li class="ytb__icon"> </li>
+	<li class="tw__icon"> </li>
+</ul></div>
+</div>
+
+<div class="col-md-6 col-sm">
+<div class="footerSmall__widgerRight">
+<ul class="terrasoft__contacts light"><li class="phone__icon"><a href="tel:+38 (044) 363-31-33">+38 (044) 363-31-33</a></li>
+	<li class="email__icon"><a href="mailto:support@terrasoft.ua">support@terrasoft.ua</a></li>
+</ul><div class="terrasoft__copyright"><a href="https://www.terrasoft.ua/privacy-policy">Конфиденциальность</a>
+
+<p>© 2002-<span id="date-year"></span> <script>
+<!--//--><![CDATA[// ><!--
+var d = new Date(); document.getElementById("date-year").innerHTML = d.getFullYear();  
+//--><!]]>
+</script>  Terrasoft</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</section>
+  </div>
+  </footer>
+
+<div class="feedback-box">
+  <div class="feedback-box-left">
+  	<div class="feedback-box-question">
+        <a href="http://www.terrasoft.ua/business/feedback/question" target="_blank"><img alt="Задать вопрос" border="0" src="../../../sites/all/themes/bpmonline/img/ico/question_icon.png"></a>
+    </div>
+    <div class="feedback-box-community">
+        <a href="http://community.terrasoft.ua/" target="_blank"><img alt="Задать вопрос" border="0" src="../../../sites/all/themes/bpmonline/img/ico/community_icon.png"></a>
+    </div>
+  </div>
+  <div class="feedback-box-right">
+  	<div class="feedback-box-question-text">
+  	<a href="http://www.terrasoft.ua/business/feedback/question" target="_blank">Задать вопрос</a>
+  	</div>
+  	<div class="feedback-box-community-text">
+  	<a href="http://community.terrasoft.ua/" target="_blank">Добавить дискуссию в community</a>
+  	</div>
+  </div>
+</div>		<script src="../../../sites/default/files/js/js_QBt5TLxJ-PQG9Dvkdn8-P-YUjVsV2UVXDgLcFHEUD6k.js"></script>
+<script>var eu_cookie_compliance_cookie_name = "";</script>
+<script src="../../../sites/default/files/js/js_LJ9ec2CRJZo8o3XYyB71nYWT2tBToPuwelT6F-Oj3RQ.js"></script>
+<script>
+	  jQuery(document).ready(function() {
+
+			jQuery('.fancybox').fancybox({
+			  maxWidth	: 800,
+			  maxHeight	: 600,
+			  fitToView	: false,
+			  width		: '100%',
+			  height		: '100%',
+			  autoSize	: true,
+			  closeClick	: false,
+			  openEffect	: 'none',
+			  closeEffect	: 'none',
+			  padding : 0
+			});
+	  });</script>
+<script src="../../../sites/default/files/js/js_L50O_PWoAuMOxVjnzZCkNSSmI0kFwhZsO1_KS8WnGKw.js"></script>
+	</div>
+
+  	<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+		<g id="svg-pdf">
+			<path d="M253.3,173.7c-19.3,0-43.5,3.4-51.5,4.6c-32.8-34.2-42.1-53.7-44.2-58.9c2.8-7.3,12.7-35,14.1-70.7
+			c0.7-17.8-3.1-31.2-11.2-39.6C152.5,0.7,142.7,0,139.9,0c-9.9,0-26.4,5-26.4,38.4c0,29,13.5,59.8,17.3,67.7
+			c-19.7,57.4-40.8,96.6-45.3,104.7C6.2,240.7,0,269.5,0,277.7c0,14.7,10.5,23.4,28,23.4c42.5,0,81.4-71.4,87.8-83.8
+			c30.2-12,70.6-19.5,80.9-21.3c29.5,28.1,63.6,35.6,77.7,35.6c10.7,0,35.6,0,35.6-25.7C310,182.1,279.5,173.7,253.3,173.7z
+			 M251.3,190.5c23,0,29,7.6,29,11.6c0,2.5-1,10.7-13.3,10.7c-11,0-30.1-6.4-48.9-20.2C226,191.6,237.6,190.5,251.3,190.5z
+			 M138.7,16.3c2.1,0,3.5,0.7,4.6,2.3c6.6,9.2,1.3,39.1-5.2,62.6c-6.3-20.1-11-50.9-4.3-61.8C135,17.2,136.5,16.3,138.7,16.3z
+			 M127.5,195.8c8.3-16.8,17.6-41.3,22.7-55.1c10.2,17,23.8,32.8,31.7,41.4C157.3,187.2,138.7,192.4,127.5,195.8z M16.5,279.9
+			c-0.5-0.6-0.6-2-0.2-3.7c0.9-3.4,7.5-20.5,55.4-41.9c-6.9,10.8-17.6,26.2-29.3,37.7c-8.3,7.8-14.7,11.7-19.2,11.7
+			C21.6,283.7,19.4,283.3,16.5,279.9z"/>
+		</g>
+	</svg>
+</body>
+<!--<link type="text/css" rel="stylesheet" href="/sites/all/modules/custom/ts_course_custom/css/course.min.css?nocache7" media="all" />-->
+<!--<script src="/sites/all/modules/custom/ts_course_custom/js/course.js?nocache91288"></script>-->
+
+<!-- Mirrored from academy.terrasoft.ua/documents/technic-sdk/7-16/integraciya-s-creatio-po-protokolu-odata-3 by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Mar 2022 04:49:08 GMT -->
+</html>

@@ -1,0 +1,1185 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# ">
+  
+<!-- Mirrored from academy.terrasoft.ua/docs/8-0/user/kastomizacija_no_code/web_servisy/rest/nastroit_integraciyu_s_veb_servisom_rest by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Mar 2022 04:03:50 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+          <!-- Google Tag Manager -->
+      <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          '../../../../../../../www.googletagmanager.com/gtm5445.html?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-KLLB8G');</script>
+      <!-- End Google Tag Manager -->
+        <meta charset="utf-8" />
+<link rel="canonical" href="nastroit_integraciyu_s_veb_servisom_rest.html" />
+<meta name="description" content="Creatio поддерживает интеграцию с пользовательскими REST-сервисами с помощью инструментов low-code. Creatio сгенерирует и отправит запрос веб-сервису, получит ответ и предоставит необходимые данные. Данные, полученные от веб-сервиса, можно использовать для создания или обновления записей в Creatio, а также для реализации пользовательской бизнес-логики или автоматизации.
+
+Общая последовательность настройки одинакова для всех REST-сервисов, а детали во многом зависят от специфики веб-сервиса.
+
+Этапы настройки интеграции с веб-сервисом:" />
+<meta property="og:url" content="https://academy.terrasoft.ua/docs/8-0/user/kastomizacija_no_code/web_servisy/rest/nastroit_integraciyu_s_veb_servisom_rest" />
+<meta property="og:title" content="Настроить интеграцию с веб-сервисом REST" />
+<meta property="og:description" content="Creatio поддерживает интеграцию с пользовательскими REST-сервисами с помощью инструментов low-code. Creatio сгенерирует и отправит запрос веб-сервису, получит ответ и предоставит необходимые данные. Данные, полученные от веб-сервиса, можно использовать для создания или обновления записей в Creatio, а также для реализации пользовательской бизнес-логики или автоматизации.
+
+Общая последовательность настройки одинакова для всех REST-сервисов, а детали во многом зависят от специфики веб-сервиса.
+
+Этапы настройки интеграции с веб-сервисом:" />
+<meta name="Generator" content="Drupal 9 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="../../../../../themes/custom/creatio/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="revision" href="nastroit_integraciyu_s_veb_servisom_rest.html" />
+
+    <title>Настроить интеграцию с веб-сервисом REST | Creatio Academy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&amp;family=Open+Sans:ital,wght@0,300;0,400;0,600;1,400&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" media="all" href="../../../../../sites/default/files/css/css_6lTP66__-yc6QXFp1zOwoeJ0HVigoYZP-SeoLLii000.css" />
+<link rel="stylesheet" media="all" href="../../../../../sites/default/files/css/css_XQJDNhkF3xH5SZCcY-PI89Zu4nYIzQ5oR3SnUKyfXJU.css" />
+<link rel="stylesheet" media="print" href="../../../../../sites/default/files/css/css_Zn4VHvcniOOtUwkIVwXzYr_0AI9gUVgZcPqaH4ViagU.css" />
+
+    
+  </head>
+  <body class="path-node page-node-type-user-documentation">
+          <!-- Google Tag Manager (noscript) -->
+      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KLLB8G"
+                        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+      <!-- End Google Tag Manager (noscript) -->
+    
+        
+      <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    <div class="creatio-page d-flex flex-column">
+        <div class="region region-informer">
+    <div id="block-terrasoftpidtrimueukrainu" class="block block-simple-block block-simple-blockterrasoft-pidtrimue-ukrainu">
+  
+    
+      <style type="text/css">
+<!--/*--><![CDATA[/* ><!--*/
+@import url(../../../../../../../www.terrasoft.ua/themes/custom/creatio/css/components/informer.css)
+
+/*--><!]]>*/
+</style><div class="ts-swu">
+<div class="creatio-container">
+<div class="ts-swu__cont">
+<div><a class="ts-swu__link" href="https://www.terrasoft.ua/terrasoft-stands-with-ukraine" target="_blank">Україна понад усе!</a> <span><a href="https://www.terrasoft.ua/terrasoft-stands-with-ukraine" target="_blank">Приєднуйтеся</a> до допомоги!</span></div>
+</div>
+</div></div>
+
+  </div>
+
+  </div>
+
+  
+  <header role="banner">
+          <div class="creatio-region creatio-region_top">
+        <div class="creatio-container">
+            <div class="region region-top">
+    <div id="block-menutoggle" class="block block-simple-block block-simple-blockmenu-toggle">
+  
+    
+      <div class="menu-toggle"><span> </span></div>
+
+  </div>
+<div id="block-logowhite-2" class="block block-simple-block block-simple-blocklogo-white">
+  
+    
+      <p><a class="site-logo" href="../../../../../../index.html" rel="home"><img src="../../../../../themes/custom/creatio/logo-white.svg" /></a></p>
+
+  </div>
+<div id="block-search" class="block block-simple-block block-simple-blocksearch">
+  
+    
+      <div class="search">
+<form action="https://academy.terrasoft.ua/search" class="search-form" method="get"><input class="search-form__input" name="search" placeholder="Поиск" type="search" /><input class="search-form__button" type="submit" value="Поиск" /> </form>
+
+<div class="search-toggle"> </div>
+</div>
+
+  </div>
+<nav role="navigation" aria-labelledby="block-sitesua-menu" id="block-sitesua" class="block block-menu navigation menu--sites-ua">
+            
+  <h2 class="visually-hidden" id="block-sitesua-menu">Sites UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="https://www.terrasoft.ua/" rel="nofollow" target="_blank">Terrasoft</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://community.terrasoft.ua/" rel="nofollow" target="_blank">Community</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://marketplace.terrasoft.ua/" rel="nofollow" target="_blank">Marketplace</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+<div id="block-usermenu" class="block block-ts-user block-ts-user-menu-block">
+  
+    
+      <ul class="user-menu">
+      <li class="user-menu__item">
+      <a class="user-menu__link" href="https://profile.terrasoft.ua/user/login?destination=academy/ua/docs/8-0/user/kastomizacija_no_code/web_servisy/rest/nastroit_integraciyu_s_veb_servisom_rest">Войти</a>
+    </li>
+  </ul>
+
+  </div>
+<div id="block-usermenumobile" class="block block-ts-user block-ts-user-menu-mobile-block">
+  
+    
+      <ul class="user-menu-mobile">
+      <li class="user-menu-mobile__item">
+      <div class="user-menu-mobile__user user-menu-mobile__user_icon"></div>
+      <ul class="user-menu-mobile__submenu">
+        <li class="user-menu-mobile__subitem">
+          <a class="user-menu-mobile__sublink" href="https://profile.terrasoft.ua/user/login?destination=academy/ua/docs/8-0/user/kastomizacija_no_code/web_servisy/rest/nastroit_integraciyu_s_veb_servisom_rest">Войти</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  </div>
+
+  </div>
+
+        </div>
+      </div>
+              <div class="creatio-region creatio-region_header">
+        <div class="creatio-container">
+            <div class="region region-header">
+    <div id="block-logo" class="block block-simple-block block-simple-blocklogo">
+  
+    
+      <p><a class="site-logo" href="../../../../../../index.html" rel="home"><img src="../../../../../themes/custom/creatio/logo.svg" /></a></p>
+
+  </div>
+<nav role="navigation" aria-labelledby="block-osnovnayanavigaciyaua-menu" id="block-osnovnayanavigaciyaua" class="block block-menu navigation menu--main-ua">
+            
+  <h2 class="visually-hidden" id="block-osnovnayanavigaciyaua-menu">Основная навигация UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="../../../../../index.html" data-drupal-link-system-path="&lt;front&gt;">Документация</a>
+              </li>
+                <li class="menu-item">
+        <a href="../../../../../../trainings.html">Тренинги</a>
+              </li>
+                <li class="menu-item">
+        <a href="../../../../../certification.html" data-drupal-link-system-path="node/3084">Сертификация и тестирование</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+<nav role="navigation" aria-labelledby="block-sitesua-2-menu" id="block-sitesua-2" class="block block-menu navigation menu--sites-ua">
+            
+  <h2 class="visually-hidden" id="block-sitesua-2-menu">Sites UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="https://www.terrasoft.ua/" rel="nofollow" target="_blank">Terrasoft</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://community.terrasoft.ua/" rel="nofollow" target="_blank">Community</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://marketplace.terrasoft.ua/" rel="nofollow" target="_blank">Marketplace</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+
+  </div>
+
+        </div>
+      </div>
+              <div class="creatio-region creatio-region_breadcrumb">
+        <div class="creatio-container">
+            <div class="region region-breadcrumb">
+    <div id="block-logowhite" class="block block-simple-block block-simple-blocklogo-white">
+  
+    
+      <p><a class="site-logo" href="../../../../../../index.html" rel="home"><img src="../../../../../themes/custom/creatio/logo-white.svg" /></a></p>
+
+  </div>
+<div id="block-breadcrumbnaviagtion" class="block block-ts-nav block-ts-nav-bread">
+  
+    
+      <nav class="breadcrumb"><ol class="ts-nav-breadcrumb__list"><li class="ts-nav-breadcrumb__item"><a href="../../../../../index.html" class="ts-nav-breadcrumb__link" title="Документация">Документация</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../../../indexd993.html?vid_1=1" class="ts-nav-breadcrumb__link" title="Для пользователя">Для пользователя</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../instrumenty_kastomizacii.html" class="ts-nav-breadcrumb__link" title="Инструменты кастомизации" hreflang="zxx">Инструменты кастомизации</a></li>
+<li class="ts-nav-breadcrumb__item ts-nav-breadcrumb__item_mobile"><a href="../../../instrumenty_kastomizacii/web_servisy.html" class="ts-nav-breadcrumb__link" title="Веб-сервисы" hreflang="zxx">Веб-сервисы</a></li>
+<li class="ts-nav-breadcrumb__item"><span class="ts-nav-breadcrumb__link ts-nav-breadcrumb__link_current" title="Настроить интеграцию с веб-сервисом REST">Настроить интеграцию с веб-сервисом REST</span></li>
+</ol>
+</nav>
+
+  </div>
+<div id="block-search-2" class="block block-simple-block block-simple-blocksearch">
+  
+    
+      <div class="search">
+<form action="https://academy.terrasoft.ua/search" class="search-form" method="get"><input class="search-form__input" name="search" placeholder="Поиск" type="search" /><input class="search-form__button" type="submit" value="Поиск" /> </form>
+
+<div class="search-toggle"> </div>
+</div>
+
+  </div>
+
+  </div>
+
+        </div>
+      </div>
+      </header>
+
+  <div class="creatio-region creatio-region_main">
+    <div class="creatio-container">
+                <div class="region region-breadcrumb-mobile">
+    <div id="block-breadcrumbnaviagtion-2" class="block block-ts-nav block-ts-nav-bread">
+  
+    
+      <nav class="breadcrumb"><ol class="ts-nav-breadcrumb__list"><li class="ts-nav-breadcrumb__item"><a href="../../../../../index.html" class="ts-nav-breadcrumb__link" title="Документация">Документация</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../../../indexd993.html?vid_1=1" class="ts-nav-breadcrumb__link" title="Для пользователя">Для пользователя</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../instrumenty_kastomizacii.html" class="ts-nav-breadcrumb__link" title="Инструменты кастомизации" hreflang="zxx">Инструменты кастомизации</a></li>
+<li class="ts-nav-breadcrumb__item ts-nav-breadcrumb__item_mobile"><a href="../../../instrumenty_kastomizacii/web_servisy.html" class="ts-nav-breadcrumb__link" title="Веб-сервисы" hreflang="zxx">Веб-сервисы</a></li>
+<li class="ts-nav-breadcrumb__item"><span class="ts-nav-breadcrumb__link ts-nav-breadcrumb__link_current" title="Настроить интеграцию с веб-сервисом REST">Настроить интеграцию с веб-сервисом REST</span></li>
+</ol>
+</nav>
+
+  </div>
+
+  </div>
+
+      
+      <main class="creatio-main" role="main">
+                                                    
+        <div class="creatio-content creatio-content_small">
+          <div class="creatio-content__inner creatio-content__inner_bg">
+                            <div class="region region-messages">
+    <div data-drupal-messages-fallback class="hidden"></div>
+
+  </div>
+
+            
+              <div class="region region-content">
+    <div id="block-creatio-page-title" class="block block-core block-page-title-block">
+  
+    
+      
+  <h1 class="page-title"><span class="field field--name-title field--type-string field--label-hidden">Настроить интеграцию с веб-сервисом REST</span>
+</h1>
+
+
+  </div>
+<div id="block-creatio-content" class="block block-system block-system-main-block">
+  
+    
+      
+<article data-history-node-id="3399" role="article" about="/docs/8-0/user/kastomizacija_no_code/web_servisy/rest/nastroit_integraciyu_s_veb_servisom_rest" class="node node--type-user-documentation node--view-mode-full">
+
+  
+    
+
+  
+  <div class="node__content">
+      <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-ts-doc block-ts-doc-downloads">
+  
+    
+      <a href="../../../../../sites/default/files/pdf/node/3399/Nastroit_integraciyu_s_veb_servisom_REST_.pdf" target="_blank">PDF</a>
+  </div>
+<div class="block block-ts-doc block-ts-doc-versions">
+  
+    
+        <div class="ts-doc-versions">
+    <select class="ts-doc-versions__select">
+                                                <option value="/docs/8-0/user/kastomizacija_no_code/web_servisy/rest/nastroit_integraciyu_s_veb_servisom_rest" selected>Версия 8.0</option>
+                              <option value="/docs/7-18/user/kastomizacija_no_code/web_servisy/rest/nastroit_integraciyu_s_veb_servisom_rest">Версия 7.18</option>
+                              <option value="/docs/7-17/user/kastomizacija_no_code/web_servisy/rest/nastroit_integraciyu_s_veb_servisom_rest">Версия 7.17</option>
+          </select>
+  </div>
+
+  </div>
+
+    </div>
+  </div>
+  <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocknodeuser-documentationfield-product">
+  
+    
+      
+  <div class="field field--name-field-product field--type-entity-reference field--label-above">
+    <div class="field__label">Продукты</div>
+          <div class="field__items">
+              <div class="field__item">Все продукты</div>
+              </div>
+      </div>
+
+  </div>
+<div class="block block-layout-builder block-field-blocknodeuser-documentationbody">
+  
+    
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><p>Creatio поддерживает интеграцию с пользовательскими REST-сервисами с помощью инструментов low-code. Creatio сгенерирует и отправит запрос веб-сервису, получит ответ и предоставит необходимые данные. Данные, полученные от веб-сервиса, можно использовать для создания или обновления записей в Creatio, а также для реализации пользовательской бизнес-логики или автоматизации.</p>
+
+<p>Общая последовательность настройки одинакова для всех REST-сервисов, а детали во многом зависят от специфики веб-сервиса.</p>
+
+<p><strong>Этапы</strong> настройки интеграции с веб-сервисом:</p>
+
+<ol><li><a href="../../../../../7-17/user/kastomizacija_no_code/web_servisy/rest/nastroit_integraciyu_s_veb_servisom_rest/index.html#title-2548-22">Добавление веб-сервиса и настройка</a> его свойств и методов.</li>
+	<li>Настройка аутентификации веб-сервиса (опциональный шаг). <a href="../autentifikatsiya/nastroit_autentifikaciyu_s_veb_servisom/index.html">Настройка аутентификации</a> идентична для REST и SOAP-сервисов.</li>
+	<li><a href="../../../../../7-17/user/kastomizacija_no_code/web_servisy/rest/nastroit_integraciyu_s_veb_servisom_rest/index.html#title-2548-42">Проверка настройки интеграции с веб-сервисом</a>.</li>
+</ol><p>После этого можно использовать интеграцию с веб-сервисом в пользовательских бизнес-процессах. Например, можно настроить интеграцию с веб-сервисом “Fixer”, чтобы данные в справочнике <span class="key">Валюты</span> обновлялись в рамках бизнес-процесса. Подробнее данный пример описан в статье <a data-auto-update-caption="true" href="../../../../../user/biznes_processy/primery_nastrojki_processov/integracija_s_veb_servisami/ispolzovat_integraciju_s_veb_servisami_dlja_avtomaticheskogo_obnovlenija_kursov_valjut.html?id=2364">Использовать интеграцию с веб-сервисами для автоматического обновления курсов валют</a>.</p>
+
+<div class="message message_example">
+<p><span class="message__bold message__bold_example">Пример.</span> Настроить интеграцию с REST-сервисом “Fixer” (<a href="https://fixer.io/">https://fixer.io</a>) для получения актуальных курсов обмена валют по отношению к евро.</p>
+</div>
+
+<p>В этом примере необходимо реализовать поддержку следующих параметров:</p>
+
+<ul><li>“<strong>endpoint</strong>” — параметр в адресе метода. Возвращает фактические значения курса валют в режиме реального времени.</li>
+	<li>“<strong>access_key</strong>” — параметр запроса. В него необходимо передать ключ доступа к сервису.</li>
+	<li>“<strong>symbols</strong>” — параметр запроса. В него необходимо передать коды валют. Допускается использование нескольких кодов, указанных через запятую.</li>
+	<li>“<strong>$.base</strong>” — параметр ответа. Содержит значение базовой валюты, в отношении которой были рассчитаны курсы валют. Базовой валютой является евро.</li>
+	<li>“<strong>$.date</strong>” — параметр ответа. Содержит информацию о дате актуальности курсов валют.</li>
+	<li>“<strong>rates</strong>” — параметр ответа. Содержит коллекцию курсов обмена валют по отношению к базовой валюте (каждый курс обмена представлен отдельным параметром, название которого соответствует коду валюты).</li>
+</ul><h2>Настроить свойства и методы веб-сервиса<a class="title-anchor" href="#title-2548-22" id="title-2548-22"> </a></h2>
+
+<p>Перед началом работы с REST-сервисом “Fixer” необходимо зарегистрироваться на сайте <a href="https://fixer.io/">https://fixer.io/</a> и получить API ключ для доступа к сервису.</p>
+
+<p>Creatio предоставляет возможность настроить свойства и методы веб-сервиса <a href="#title-2548-8">автоматически</a> или <a href="#title-2548-9">вручную</a>.</p>
+
+<h3>Автоматическая настройка свойств и методов веб-сервиса<a class="title-anchor" href="#title-2548-8" id="title-2548-8"> </a></h3>
+
+<ol><li>Перейдите в рабочее место <span class="key">Студия</span> и откройте раздел <span class="key">Веб-сервисы</span>.</li>
+	<li>Нажмите <span class="key">Добавить веб-сервис</span> —&gt; <span class="key">REST сервис</span>.</li>
+	<li>Укажите адрес веб-сервиса и нажмите <span class="key">ОК</span> (Рис. 1).
+	<div class="media">
+	<div class="media__caption">Рис. 1 — Автоматическая настройка методов веб-сервиса</div>
+
+	<div class="media__element"><img alt="scr_add_rest_web_service.gif" src="../../../../../sites/default/files/images/NoCode_Customization/web_rest_service/7.18/scr_add_rest_web_service.gif" /></div>
+	</div>
+	</li>
+</ol><h3>Ручная настройка свойств и методов веб-сервиса<a class="title-anchor" href="#title-2548-9" id="title-2548-9"> </a></h3>
+
+<ol><li>Перейдите в рабочее место <span class="key">Студия</span> и откройте раздел <span class="key">Веб-сервисы</span>.</li>
+	<li>Нажмите <span class="key">Добавить веб-сервис</span> —&gt; <span class="key">REST сервис</span>.</li>
+	<li>Заполните <strong>поля страницы свойств</strong> веб-сервиса (Рис. 2).
+	<div class="table">
+	<table><thead><tr><th width="10%">Поле</th>
+				<th width="50%">Комментарий</th>
+				<th>Пример</th>
+			</tr></thead><tbody><tr><th>Название</th>
+				<td>Название будет отображаться в поле <span class="key">Какой сервис вызывать?</span> области свойств элемента процесса <span class="key">Вызвать веб-сервис</span>.</td>
+				<td>Курсы обмена валют (Fixer)</td>
+			</tr><tr><th>Код</th>
+				<td>Используется разработчиками для взаимодействия с веб-сервисом в программном коде Creatio. В данном случае уникальное имя интеграции с веб-сервисом состоит из его названия и префикса “Usr”.</td>
+				<td>Usr<wbr></wbr>Fixer</td>
+			</tr><tr><th>URI сервиса</th>
+				<td>Полный адрес вызова веб-сервиса будет состоять из этого URI и настроек, указанных на странице настройки метода.<br />
+				Используйте такой же протокол (http/https), как и у сайта вашего приложения Creatio.<br />
+				Если веб-сервис содержится в недоступном для редактирования пакете, то его URI будет доступен для редактирования.</td>
+				<td>http://<wbr></wbr>data.fixer.io</td>
+			</tr><tr><th>Повторов вызова при ошибках</th>
+				<td>Если ответ от веб-сервиса пришел с кодом ошибки или истек тайм-аут ответа, то запрос будет повторен указанное количество раз. При заполнении этого поля учитывайте тайм-аут ответа, который будет указан для методов веб-сервиса.</td>
+				<td>10</td>
+			</tr><tr><th>Тип</th>
+				<td>Тип веб-сервиса.</td>
+				<td>Значение по умолчанию — REST</td>
+			</tr><tr><th>Пакет</th>
+				<td>Пакет, в котором будет сохранена данная интеграция с веб-сервисом. В списке отображаются пакеты, которые доступны для изменения текущим пользователем.</td>
+				<td>RestWeb<wbr></wbr>ServicePackage</td>
+			</tr></tbody></table></div>
+
+	<div class="media">
+	<div class="media__caption">Рис. 2 — Заполнение страницы свойств веб-сервиса</div>
+
+	<div class="media__element"><img alt="scr_rest_web_service.gif" src="../../../../../sites/default/files/images/NoCode_Customization/web_rest_service/7.18/scr_rest_web_service.gif" /></div>
+	</div>
+
+	<div class="message">
+	<p><span class="message__bold">На заметку.</span> Интеграции с веб-сервисами сохраняются в виде элементов конфигурации. Если такой элемент конфигурации находится в пакете, который недоступен для редактирования, то вы сможете изменить только URI веб-сервиса. Для внесения других изменений (например, для добавления методов) в такие интеграции с веб-сервисами скопируйте соответствующие элементы конфигурации в доступный для редактирования пакет.</p>
+	</div>
+
+	<p>Для каждого веб-сервиса необходимо настроить вызов методов. При этом для одного веб-сервиса можно настроить несколько методов.</p>
+
+	<div class="message">
+	<p><span class="message__bold">На заметку.</span> В рамках одного процесса можно вызывать любое количество методов, используя несколько <a href="../../../../../user/biznes_processy/spravka_po_elementam_processov/dejstviya_sistemy/vyzvat_veb_servis/element_processa_vyzvat_web_servcie.html?product=BPMS&amp;ver=7&amp;id=7141">элементов процесса <span class="key">Вызвать веб-сервис</span></a>, с передачей значений параметров между ними.</p>
+	</div>
+	</li>
+	<li>На детали <span class="key">Методы</span> страницы настройки интеграции с веб-сервисом при помощи кнопки <img alt="scr_add_button.png" src="../../../../../sites/default/files/inline-images/scr_add_button.png" /> добавьте методы.</li>
+	<li>Изучите <a href="https://fixer.io/documentation#latestrates">документацию веб-сервиса</a> и заполните <strong>свойства метода</strong> (Рис. 3).
+	<div class="table">
+	<table><thead><tr><th width="10%">Поле</th>
+				<th width="45%">Комментарий</th>
+				<th>Пример</th>
+			</tr></thead><tbody><tr><th>Название</th>
+				<td>Название будет отображаться в поле <span class="key">Какой сервис вызывать?</span> области свойств элемента процесса <span class="key">Вызвать веб-сервис</span>.</td>
+				<td>Получить курсы обмена</td>
+			</tr><tr><th>Код (на английском)</th>
+				<td>Используется разработчиками для взаимодействия с веб-сервисом в программном коде Creatio. В данном случае уникальное имя интеграции с веб-сервисом состоит из его названия и префикса “Usr”.</td>
+				<td>UsrLatest</td>
+			</tr><tr><th>Адрес метода</th>
+				<td>
+				<p>Для определения данного значения используется документация веб-сервиса.</p>
+
+				<p>Вы можете указать статическое значение либо использовать “Параметры в адресе метода” в качестве “переменных” для формирования динамического адреса метода, который будет зависеть от свойств конкретного элемента процесса <span class="key">Вызвать веб-сервис</span>. Например, у веб-сервиса “Fixer” есть конечная точка “latest”, которая возвращает актуальные курсы валют.</p>
+
+				<p>Для более гибкой интеграции можно передать конечную точку в качестве параметра адреса метода, указав имя параметра в фигурных скобках. В данном примере мы используем переменную “{endpoint}”. Можно использовать несколько переменных, например: “{parameter1}/<wbr></wbr>{parameter2}”.</p>
+				</td>
+				<td>/{endpoint}?<wbr></wbr>access_key=<wbr></wbr>6f****************************53<wbr></wbr>&amp;symbols=<wbr></wbr>USD,GBP,UAH,RUB</td>
+			</tr><tr><th>Полный адрес</th>
+				<td>
+				<p>Полный адрес генерируется автоматически. Он состоит из URI веб-сервиса и адреса метода с указанием параметров и значений параметров. Используется формат “?paramCode1=<wbr></wbr>value1&amp;<wbr></wbr>paramCode2=<wbr></wbr>value2”.</p>
+
+				<p>Полный адрес отображается для проверки настроек метода.</p>
+
+				<p>Структура адреса: "Web service URI" + "Адрес метода" + "?" + "Параметры вызова, разделенные символом &amp;". Например: http://<wbr></wbr>data.fixer.io/<wbr></wbr>latest?<wbr></wbr>access_key=<wbr></wbr>********************************&amp;<wbr></wbr>symbols=<wbr></wbr>GBP.</p>
+
+				<p>Параметр “access_key” используется для указания ключа доступа к веб-сервису.</p>
+
+				<p>Параметр “symbols” используется для указания валют, курсы обмена которых следует вернуть. Например, для получения курсов обмена доллара США и британского фунта используется следующий запрос: https://data.fixer.io/latest?symbols=USD,GBP. Если параметр “symbols” не был передан в запросе, то будут возвращены курсы обмена всех валют, поддерживаемых веб-сервисом.</p>
+				</td>
+				<td>http://<wbr></wbr>data.fixer.io/<wbr></wbr>api/<wbr></wbr>{endpoint}?<wbr></wbr>access_key=<wbr></wbr>6f****************************53<wbr></wbr>&amp;symbols=<wbr></wbr>USD,GBP,UAH,RUB</td>
+			</tr><tr><th>Тип запроса</th>
+				<td>
+				<p>Тип HTTP-метода, используемый в запросе. Поддерживаются стандартные типы HTTP-методов. Тип запроса, как правило, указан в документации веб-сервиса.</p>
+
+				<p>Например, для получения таких данных как курс валют, используются запросы типа GET.</p>
+				</td>
+				<td>GET</td>
+			</tr><tr><th>Тип содержимого</th>
+				<td>Поддерживается только тип <a href="https://www.json.org/">JSON</a>.</td>
+				<td>JSON</td>
+			</tr><tr><th>Тайм-аут ответа, мс</th>
+				<td>Время ожидания ответа от веб-сервиса. Если после отправки запроса не был получен ответ, либо был получен код ошибки, то по истечении этого времени Creatio повторит запрос (если еще остались неиспользованные попытки повторного вызова).</td>
+				<td>По умолчанию — 5000</td>
+			</tr><tr><th>Использовать аутентификацию</th>
+				<td>Использовать аутентификацию для доступа к веб-сервису. Необходимо настроить аутентификацию на детали <span class="key">Аутентификация</span> страницы настройки интеграции с веб-сервисом. Подробнее: <a data-auto-update-caption="true" href="../autentifikatsiya/nastroit_autentifikaciyu_s_veb_servisom.html">Аутентификация веб-сервиса</a>.</td>
+				<td>По умолчанию — false</td>
+			</tr></tbody></table></div>
+
+	<div class="media">
+	<div class="media__caption">Рис. 3 — Свойства метода веб-сервиса</div>
+
+	<div class="media__element"><img alt="scr_web_service_method_properties.png" src="../../../../../sites/default/files/images/NoCode_Customization/web_rest_service/7.18/scr_web_service_method_properties.png" /></div>
+	</div>
+	</li>
+</ol><h2>Настроить параметры запроса<a class="title-anchor" href="#title-2548-1" id="title-2548-1"> </a></h2>
+
+<p>Параметры запроса можно добавить вручную или импортировать из примеров вызова по кнопке <span class="key">Быстрая настройка</span>, выбрав формат примера (cURL, RAW or JSON) в выпадающем меню. Также параметры вызова можно добавить из поля <span class="key">Адрес метода</span>. В нашем примере для получения актуальных курсов обмена валют можно использовать GET-запрос c конечной точкой “/latest”.</p>
+
+<p>Параметры запроса метода используются для генерации URL-адреса конечной точки, которая будет использоваться Creatio при вызове веб-сервиса.</p>
+
+<p>Количество и типы параметров запроса определяются спецификой веб-сервиса. Вы можете <a href="#title-2548-22">импортировать</a> параметры вызова из примеров или добавить их <a href="#title-2548-3">вручную</a>.</p>
+
+<p>Доступны следующие <strong>типы параметров запроса</strong>:</p>
+
+<div class="table">
+<table><tbody><tr><th>Параметр в адресе метода</th>
+			<td>
+			<p>Этот тип параметра используется как переменные для формирования адреса метода запроса.</p>
+
+			<p>Добавьте названия параметров в адресе метода, заключив их в фигурные скобки в поле <span class="key">Адрес метода</span>. Например: {parameterName1}/{parameterName2}, и т. д.</p>
+
+			<p>При вызове веб-сервиса эти переменные будут заменены фактическими значениями параметров адреса метода, указанными для соответствующего элемента <a href="../../../../../user/biznes_processy/spravka_po_elementam_processov/dejstviya_sistemy/vyzvat_veb_servis/element_processa_vyzvat_web_servcie.html?product=bpms&amp;ver=7&amp;id=7141"><span class="key">Вызвать веб-сервис</span></a> в дизайнере процессов. Например: http://web.service.uri/parameterValue1/parameterValue2.</p>
+
+			<p>Если в свойствах элемента значение параметра не указано, но поле <span class="key">Значение по умолчанию</span> параметра заполнено, то будет отправлено значение по умолчанию.</p>
+
+			<p>Для этого типа параметра признак <span class="key">Обязательный</span> установлен и недоступен для редактирования.</p>
+			</td>
+		</tr><tr><th>Параметр тела</th>
+			<td>
+			<p>Этот тип параметра используется для отправки любых типов данных (включая <a href="#HT_chapter_web_service_integration_collection">коллекции</a>) в теле запроса. Подробнее о методе POST запроса читайте в <a href="https://ru.wikipedia.org/w/index.php?title=POST_(HTTP)&amp;oldid=112783808">Википедии</a>.</p>
+
+			<p>Параметр недоступен для GET-метода.</p>
+			</td>
+		</tr><tr><th>Параметр запроса</th>
+			<td>Параметр будет добавлен в запрос после адреса метода и символа “?”. Подробнее о параметре читайте в <a href="https://en.wikipedia.org/wiki/Query_string">Википедии</a> (статья на английском языке).</td>
+		</tr><tr><th>Параметр заголовка</th>
+			<td>Этот тип параметра используется для генерации заголовка запроса. Подробнее об HTTP-заголовках читайте в <a href="https://ru.wikipedia.org/w/index.php?title=%d0%a1%d0%bf%d0%b8%d1%81%d0%be%d0%ba_%d0%b7%d0%b0%d0%b3%d0%be%d0%bb%d0%be%d0%b2%d0%ba%d0%be%d0%b2_HTTP&amp;oldid=112721782">Википедии</a>.</td>
+		</tr><tr><th>Параметр cookies</th>
+			<td>Параметры этого типа используются для передачи файлов cookie в запросах к сервису. Например, можно передать полученный ранее cookie для аутентификации. Подробнее о cookie читайте в <a href="https://ru.wikipedia.org/w/index.php?title=Cookie&amp;oldid=112937207">Википедии</a>.</td>
+		</tr></tbody></table></div>
+
+<h3>Автоматическая настройка параметров запроса<a class="title-anchor" href="#title-2548-2" id="title-2548-2"> </a></h3>
+
+<ol><li>В правой части поля <span class="key">Адрес метода</span> в правой части поля нажмите кнопку быстрой настройки <img alt="" data-entity-type="file" data-entity-uuid="" height="19" src="../../../../../sites/default/files/images/NoCode_Customization/web_rest_service/icn_magic_wand.png" width="19" />. Тот же результат можно получить, выбрав опцию <span class="key">По полю “Адрес метода”</span> в меню кнопки <span class="key">Быстрая настройка</span>, расположенной в верхней части окна добавления метода (Рис. 4).
+
+	<div class="media">
+	<div class="media__caption">Рис. 4 — Добавление параметров из поля <span class="key">Адрес метода</span></div>
+
+	<div class="media__element"><img alt="scr_web_service_add_method_address.png" src="../../../../../sites/default/files/images/NoCode_Customization/web_rest_service/7.18/scr_web_service_add_method_address.png" /></div>
+	</div>
+	</li>
+	<li>Из открывшегося списка параметров выберите те, которые необходимо добавить в запрос, и нажмите <span class="key">Сохранить</span> (Рис. 5).
+	<div class="media">
+	<div class="media__caption">Рис. 5 — Список параметров адреса метода</div>
+
+	<div class="media__element"><img alt="scr_web_service_method_address_parameters.png" src="../../../../../sites/default/files/images/NoCode_Customization/web_rest_service/7.18/scr_web_service_method_address_parameters.png" /></div>
+	</div>
+	</li>
+</ol><p>В результате выбранные параметры будут добавлены в запрос. Вы можете изменить настройки параметров (например, можно установить признак <span class="key">Обязательный</span> для параметра “Access_key”), чтобы подготовить их для дальнейшего использования на шаге бизнес-процесса <span class="key">Вызвать веб-сервис</span>.</p>
+
+<h3>Ручная настройка параметров запроса<a class="title-anchor" href="#title-2548-3" id="title-2548-3"> </a></h3>
+
+<ol><li>Изучите <a href="https://fixer.io/documentation#latestrates">документацию веб-сервиса</a>.</li>
+	<li>Добавьте <strong>параметры запроса</strong>:
+	<ol><li>На вкладке <span class="key">Параметры вызова</span> нажмите кнопку <span class="key">Добавить параметр</span>.</li>
+		<li>Добавьте параметр “Endpoint” и заполните его свойства (Рис. 6).
+		<div class="table">
+		<table><thead><tr><th width="10%">Поле</th>
+					<th width="50%">Комментарий</th>
+					<th>Пример</th>
+				</tr></thead><tbody><tr><th>Название</th>
+					<td>Название параметра сервиса.</td>
+					<td>Endpoint</td>
+				</tr><tr><th>Тип параметра</th>
+					<td>Тип параметра сервиса.</td>
+					<td>Параметр в адресе метода</td>
+				</tr><tr><th>Код в запросе</th>
+					<td>Код, который используется в запросе.</td>
+					<td>endpoint</td>
+				</tr><tr><th>Код в Creatio</th>
+					<td>Используется разработчиками для взаимодействия с веб-сервисом в программном коде Creatio. В данном случае уникальное имя интеграции с веб-сервисом состоит из его названия и префикса “Usr”.</td>
+					<td>UsrEndpoint</td>
+				</tr><tr><th>Значение по умолчанию</th>
+					<td>Значение параметра по умолчанию.</td>
+					<td>Константа. Значение — “latest”</td>
+				</tr></tbody></table></div>
+
+		<div class="media">
+		<div class="media__caption">Рис. 6 — Настройка параметра “Endpoint”</div>
+
+		<div class="media__element"><img alt="scr_web_service_add_method_request_parameter_endpoint.png" src="../../../../../sites/default/files/images/NoCode_Customization/web_rest_service/7.18/scr_web_service_add_method_request_parameter_endpoint.png" /></div>
+		</div>
+
+		<div class="message">
+		<p><span class="message__bold">На заметку.</span> Системные настройки, используемые при настройке параметров метода, привязываются к пакету веб-сервиса. Это упрощает перенос веб-сервиса в другую <a href="../../../../developer/instrumenty_razrabotki/upravlenie_postavkami/rabochaya_sreda/obzor/index.html">рабочую среду</a>.</p>
+		</div>
+		</li>
+		<li>Добавьте параметр “API ключ” и заполните его свойства (Рис. 7).
+		<div class="table">
+		<table><thead><tr><th width="10%">Поле</th>
+					<th width="50%">Комментарий</th>
+					<th>Пример</th>
+				</tr></thead><tbody><tr><th>Название</th>
+					<td>Название параметра сервиса.</td>
+					<td>API ключ</td>
+				</tr><tr><th>Тип параметра</th>
+					<td>Тип параметра сервиса.</td>
+					<td>Параметр запроса</td>
+				</tr><tr><th>Код в запросе</th>
+					<td>Код, который используется в запросе.</td>
+					<td>access_key</td>
+				</tr><tr><th>Код в Creatio</th>
+					<td>Используется разработчиками для взаимодействия с веб-сервисом в программном коде Creatio. В данном случае уникальное имя интеграции с веб-сервисом состоит из его названия и префикса “Usr”.</td>
+					<td>Usr<wbr></wbr>Access<wbr></wbr>Key</td>
+				</tr><tr><th>Обязательный</th>
+					<td>При установленном признаке параметр будет обязательным в дизайнере процессов. Признак недоступен для редактирования при выборе значения по умолчанию.</td>
+					<td>Признак установлен</td>
+				</tr><tr><th>Значение по умолчанию</th>
+					<td>Значение параметра по умолчанию.</td>
+					<td>Константа</td>
+				</tr></tbody></table></div>
+
+		<div class="media">
+		<div class="media__caption">Рис. 7 — Настройка параметра “API ключ”</div>
+
+		<div class="media__element"><img alt="scr_web_service_add_method_request_parameter_api_key.png" src="../../../../../sites/default/files/images/NoCode_Customization/web_rest_service/7.18/scr_web_service_add_method_request_parameter_api_key.png" /></div>
+		</div>
+		</li>
+		<li>Добавьте параметр “Валюты” и заполните его свойства (Рис. 8).
+		<div class="table">
+		<table><thead><tr><th width="10%">Поле</th>
+					<th width="50%">Комментарий</th>
+					<th>Пример</th>
+				</tr></thead><tbody><tr><th>Название</th>
+					<td>Название параметра сервиса.</td>
+					<td>Валюты</td>
+				</tr><tr><th>Тип параметра</th>
+					<td>Тип параметра сервиса.</td>
+					<td>Параметр запроса</td>
+				</tr><tr><th>Код в запросе</th>
+					<td>Код, который используется в запросе.</td>
+					<td>symbols</td>
+				</tr><tr><th>Код в Creatio</th>
+					<td>Используется разработчиками для взаимодействия с веб-сервисом в программном коде Creatio. В данном случае уникальное имя интеграции с веб-сервисом состоит из его названия и префикса “Usr”.</td>
+					<td>Usr<wbr></wbr>Symbols</td>
+				</tr><tr><th>Обязательный</th>
+					<td>При установленном признаке параметр будет обязательным в дизайнере процессов. Признак недоступен для редактирования при выборе значения по умолчанию.</td>
+					<td>По умолчанию признак снят</td>
+				</tr><tr><th>Значение по умолчанию</th>
+					<td>Значение параметра по умолчанию.</td>
+					<td>Константа</td>
+				</tr></tbody></table></div>
+
+		<div class="media">
+		<div class="media__caption">Рис. 8 — Настройка параметра “Валюты”</div>
+
+		<div class="media__element"><img alt="scr_web_service_add_method_request_parameter_symbols.png" src="../../../../../sites/default/files/images/NoCode_Customization/web_rest_service/7.18/scr_web_service_add_method_request_parameter_symbols.png" /></div>
+		</div>
+		</li>
+	</ol></li>
+</ol><p>В результате Creatio сможет вызывать веб-сервис, используя запросы, автоматически генерируемые бизнес-процессами на основании шаблона:</p>
+
+<div class="code">
+<div class="code__widgets">
+<div class="code__source">
+<pre class="prettyprint">
+http://data.fixer.io/latest?access_key={значение}&amp;symbols={значение}</pre>
+</div>
+</div>
+</div>
+
+<p>Значения в фигурных скобках будут определяться значениями параметров запроса, например:</p>
+
+<div class="code">
+<div class="code__widgets">
+<div class="code__source">
+<pre class="prettyprint">
+http://data.fixer.io/latest?access_key=6f****************************53&amp;symbols=USD
+</pre>
+</div>
+</div>
+</div>
+
+<h2><a name="HT_chapter_web_service_integration_response" id="HT_chapter_web_service_integration_response"></a>Настроить параметры ответа<a class="title-anchor" href="#title-2548-4" id="title-2548-4"> </a></h2>
+
+<p>Ответ от веб-сервиса может приходить в форматах cURL, RAW, JSON. Для использования данных, полученных в ответе веб-сервиса, необходимо настроить обработку и передачу данных из ответа в параметры обработки ответа. Вы можете добавить параметры ответа <a href="#title-2548-5">автоматически</a> или <a href="#title-2548-6">вручную</a>.</p>
+
+<h3>Автоматическая настройка параметров ответа<a class="title-anchor" href="#title-2548-5" id="title-2548-5"> </a></h3>
+
+<p>Если ответ от сервера приходит в формате JSON или RAW, то параметры ответа можно добавить автоматически по кнопке <span class="key">Быстрая настройка</span>.</p>
+
+<ol><li>Нажмите кнопку <span class="key">Быстрая настройка</span>. В блоке меню “По примеру ответа” выберите <span class="key">Пример в формате JSON</span> (Рис. 9).
+
+	<div class="media">
+	<div class="media__caption">Рис. 9 — Настройка параметров ответа по примеру в формате JSON</div>
+
+	<div class="media__element"><img alt="scr_web_service_response_json.png" src="../../../../../sites/default/files/images/NoCode_Customization/web_rest_service/7.18/scr_web_service_response_json.png" /></div>
+	</div>
+	</li>
+	<li>Введите JSON-код ответа сервера (Рис. 10). Код отобразится в браузере, если вы попытаетесь перейти по URL-адресу вызова веб-сервиса.
+	<div class="media">
+	<div class="media__caption">Рис. 10 — Ответ в формате JSON</div>
+
+	<div class="media__element"><img alt="scr_web_service_json_code.png" src="../../../../../sites/default/files/images/NoCode_Customization/web_rest_service/7.18/scr_web_service_json_code.png" /></div>
+	</div>
+
+	<p>Нажмите кнопку <span class="key">Далее</span>.</p>
+	</li>
+	<li>Откроется список параметров:
+	<ul><li>“<strong>Success</strong>” — указывает, был ли запрос успешным.</li>
+		<li>“<strong>Timestamp</strong>” — объект, содержащий стандартную для UNIX отметку времени, которая указывает на время сбора данных, используемых в работе веб-сервиса.</li>
+		<li>“<strong>Base</strong>” — указывает базовую валюту, по отношению к которой были рассчитаны курсы обмена валют. Например, <strong>"base":"EUR"</strong> в ответе указывает на то, что курсы валют были рассчитаны по отношению к евро.</li>
+		<li>“<strong>Date</strong>” — содержит дату актуальности возвращенных курсов. Например, <strong>"date":"2021-05-26"</strong> в ответе указывает на то, что курсы валют были рассчитаны на 26 мая 2021 года.</li>
+		<li>“<strong>Rates</strong>” — содержит массив вложенных параметров, каждый из которых содержит курс обмена определенной валюты по отношению к базовой валюте.
+		<p>Например, <strong>"rates":{"USD":1.222845, "GBP":0.862279, "UAH":33.550002, "RUB":89.876838}</strong> в ответе указывает на то, что сервисом были возвращены курсы обмена доллара США (<strong>"USD":1.222845</strong>), британского фунта (<strong>"GBP":0.862279</strong>), украинской гривны (<strong>"UAH":33.550002</strong>) и русского рубля (<strong>"RUB":89.876838</strong>).</p>
+		</li>
+	</ul><p>Выберите параметры, которые необходимо добавить в ответ, и нажмите <span class="key">Сохранить</span> (Рис. 11).</p>
+
+	<div class="media">
+	<div class="media__caption">Рис. 11 — Список параметров из примера в формате JSON</div>
+
+	<div class="media__element"><img alt="scr_web_service_response_parameters.png" src="../../../../../sites/default/files/images/NoCode_Customization/web_rest_service/7.18/scr_web_service_response_parameters.png" /></div>
+	</div>
+	</li>
+</ol><p>В результате выбранные параметры будут добавлены в ответ. Вы можете изменить настройки параметров (например, можно изменить тип данных для курса валют на “Дробное число”), чтобы подготовить их для дальнейшего использования.</p>
+
+<h3>Ручная настройка параметров ответа<a class="title-anchor" href="#title-2548-6" id="title-2548-6"> </a></h3>
+
+<ol><li>Изучите <a href="https://fixer.io/documentation#latestrates">документацию веб-сервиса</a>.</li>
+	<li>Добавьте <strong>параметры обработки ответа</strong>:
+	<ol><li>На вкладке <span class="key">Обработка ответа</span> нажмите кнопку <span class="key">Добавить параметр</span>.</li>
+		<li>Добавьте параметр “Базовая валюта” и заполните его свойства (Рис. 12).
+		<div class="table">
+		<table><thead><tr><th width="10%">Поле</th>
+					<th width="50%">Комментарий</th>
+					<th>Пример</th>
+				</tr></thead><tbody><tr><th>Название</th>
+					<td>Название параметра сервиса.</td>
+					<td>Базовая валюта</td>
+				</tr><tr><th>Тип параметра</th>
+					<td>Тип параметра сервиса.</td>
+					<td>Параметр тела</td>
+				</tr><tr><th>Путь к элементу (JSONPath)</th>
+					<td>Значение в формате JSON. Например, JSONPath “$.base” получает значение парамера “base” в ответе от веб-сервиса.</td>
+					<td>$.base</td>
+				</tr><tr><th>Код в Creatio</th>
+					<td>Используется разработчиками для взаимодействия с веб-сервисом в программном коде Creatio. В данном случае уникальное имя интеграции с веб-сервисом состоит из его названия и префикса “Usr”.</td>
+					<td>Usr<wbr></wbr>Base<wbr></wbr>Currency</td>
+				</tr><tr><th>Тип данных</th>
+					<td>Тип данных параметров сервиса. Параметр с вложенными элементами должен иметь тип данных “Объект”.</td>
+					<td>Текст</td>
+				</tr><tr><th>Является массивом</th>
+					<td>Значение параметра-массива нельзя задать в элементе “Вызвать веб-сервис” в дизайнере процессов. Необходимо использовать элемент “Задание-сценарий”. Параметр с типом данных “Объект” обязательно должен быть массивом.</td>
+					<td>По умолчанию признак снят</td>
+				</tr><tr><th>Значение по умолчанию</th>
+					<td>Значение параметра по умолчанию.</td>
+					<td>Константа. Значение — “EUR”</td>
+				</tr></tbody></table></div>
+
+		<div class="media">
+		<div class="media__caption">Рис. 12 — Настройка параметра обработки “Базовая валюта”</div>
+
+		<div class="media__element"><img alt="scr_web_service_add_method_response_parameter_base_currency.png" src="../../../../../sites/default/files/images/NoCode_Customization/web_rest_service/7.18/scr_web_service_add_method_response_parameter_base_currency.png" /></div>
+		</div>
+		</li>
+		<li>Добавьте параметр “Дата” и укажите его свойства (Рис. 13).
+		<div class="table">
+		<table><thead><tr><th width="10%">Поле</th>
+					<th width="50%">Комментарий</th>
+					<th>Пример</th>
+				</tr></thead><tbody><tr><th>Название</th>
+					<td>Название параметра сервиса.</td>
+					<td>Дата</td>
+				</tr><tr><th>Тип параметра</th>
+					<td>Тип параметра сервиса.</td>
+					<td>Параметр тела</td>
+				</tr><tr><th>Путь к элементу (JSONPath)</th>
+					<td>Значение в формате JSON. Например, JSONPath “$.date” получает значение парамера “<strong>date</strong>” в ответе от веб-сервиса.</td>
+					<td>$.date</td>
+				</tr><tr><th>Код в Creatio</th>
+					<td>Используется разработчиками для взаимодействия с веб-сервисом в программном коде Creatio. В данном случае уникальное имя интеграции с веб-сервисом состоит из его названия и префикса “Usr”.</td>
+					<td>Usr<wbr></wbr>Date</td>
+				</tr><tr><th>Тип данных</th>
+					<td>Тип данных параметров сервиса. Параметр с вложенными элементами должен иметь тип данных “Объект”.</td>
+					<td>Дата</td>
+				</tr><tr><th>Является массивом</th>
+					<td>Значение параметра-массива нельзя задать в элементе “Вызвать веб-сервис” в дизайнере процессов. Необходимо использовать элемент “Задание-сценарий”. Параметр с типом данных “Объект” обязательно должен быть массивом.</td>
+					<td>По умолчанию признак снят</td>
+				</tr><tr><th>Значение по умолчанию</th>
+					<td>Значение параметра по умолчанию.</td>
+					<td>Константа</td>
+				</tr></tbody></table></div>
+
+		<div class="media">
+		<div class="media__caption">Рис. 13 — Настройка параметра “Дата”</div>
+
+		<div class="media__element"><img alt="scr_web_service_add_method_response_parameter_date.png" src="../../../../../sites/default/files/images/NoCode_Customization/web_rest_service/7.18/scr_web_service_add_method_response_parameter_date.png" /></div>
+		</div>
+		</li>
+		<li>Добавьте параметр “RatesUSD” и заполните его свойства (Рис. 14).
+		<div class="table">
+		<table><thead><tr><th width="10%">Поле</th>
+					<th width="50%">Комментарий</th>
+					<th>Пример</th>
+				</tr></thead><tbody><tr><th>Название</th>
+					<td>Название параметра сервиса.</td>
+					<td>Rates USD</td>
+				</tr><tr><th>Тип параметра</th>
+					<td>Тип параметра сервиса.</td>
+					<td>Параметр тела</td>
+				</tr><tr><th>Путь к элементу (JSONPath)</th>
+					<td>Значение в формате JSON. Например, JSONPath “$.rates.USD” получает значение парамера “USD” в ответе от веб-сервиса.</td>
+					<td>$.rates.USD</td>
+				</tr><tr><th>Код в Creatio</th>
+					<td>Используется разработчиками для взаимодействия с веб-сервисом в программном коде Creatio. В данном случае уникальное имя интеграции с веб-сервисом состоит из его названия и префикса “Usr”.</td>
+					<td>Usr<wbr></wbr>Rates<wbr></wbr>USD</td>
+				</tr><tr><th>Тип данных</th>
+					<td>Тип данных параметров сервиса. Параметр с вложенными элементами должен иметь тип данных “Объект”.</td>
+					<td>Дробное число</td>
+				</tr><tr><th>Является массивом</th>
+					<td>Значение параметра-массива нельзя задать в элементе “Вызвать веб-сервис” в дизайнере процессов. Необходимо использовать элемент “Задание-сценарий”. Параметр с типом данных “Объект” обязательно должен быть массивом.</td>
+					<td>По умолчанию признак снят</td>
+				</tr><tr><th>Значение по умолчанию</th>
+					<td>Значение параметра по умолчанию.</td>
+					<td>Константа</td>
+				</tr></tbody></table></div>
+
+		<div class="media">
+		<div class="media__caption">Рис. 14 — Настройка параметра “Rates USD”</div>
+
+		<div class="media__element"><img alt="scr_web_service_add_method_request_parameter_rate_usd.png" src="../../../../../sites/default/files/images/NoCode_Customization/web_rest_service/7.18/scr_web_service_add_method_request_parameter_rate_usd.png" /></div>
+		</div>
+
+		<div class="message">
+		<p><span class="message__bold">На заметку.</span> JSONpath “$.rates.USD” получает значение параметра “USD”. “USD” — вложенный параметр параметра “rates” ответа веб-сервиса.</p>
+		</div>
+		</li>
+		<li>Аналогичным образом настройте параметры обработки ответа для курсов остальных необходимых валют (Рис. 15).
+		<div class="media">
+		<div class="media__caption">Рис. 15 — Настройка параметров обработки ответа веб-сервиса</div>
+
+		<div class="media__element"><img alt="scr_web_service_add_method_response_parameter.png" src="../../../../../sites/default/files/images/NoCode_Customization/web_rest_service/7.18/scr_web_service_add_method_response_parameter.png" /></div>
+		</div>
+		</li>
+	</ol></li>
+	<li>Нажмите кнопку <span class="key">Ок</span> для сохранения настроек.</li>
+</ol><h2><a name="HT_chapter_web_service_integration_collection" id="HT_chapter_web_service_integration_collection"></a>Настроить параметры запроса и ответа типа “коллекция”<a class="title-anchor" href="#title-2548-7" id="title-2548-7"> </a></h2>
+
+<p>Коллекцией (или массивом) является набор элементов. Creatio может передавать коллекции данных в веб-сервис и обрабатывать его ответы, содержащие коллекции. Если веб-сервис поддерживает получение и/или отправку массивов данных, то параметры типа “коллекция” можно использовать как для вызова веб-сервиса, так и для обработки его ответа.</p>
+
+<p><strong>Типы параметров коллекции</strong>:</p>
+
+<ul><li><strong>Простая коллекция</strong>. Любой параметр можно представить в виде коллекции, установив в свойствах параметров признак “Является массивом”. Простые коллекции являются массивами значений одного типа данных. Каждое значение является отдельным элементом коллекции. Например, “1, 2, 3” — это простой массив значений целых чисел, а “Бостон, Нью-Йорк, Чикаго” — простой массив текстовых значений.</li>
+	<li><strong>Коллекция объекта</strong>. Коллекция представляет собой корневой параметр (т. н. объект), который содержит вложенные параметры. Каждый элемент коллекции объекта может иметь разные типы параметров. Такие параметры элемента коллекции являются вложенными параметрами корневого параметра. Например, коллекция контактов может содержать вложенные параметры для передачи имени контакта, даты рождения и возраста (Рис. 16).</li>
+</ul><div class="media">
+<div class="media__caption">Рис. 16 — Пример коллекции контактов</div>
+
+<div class="media__element"><img alt="scr_web_service_object_collection_example.png" src="../../../../../sites/default/files/images/NoCode_Customization/web_rest_service/scr_web_service_object_collection_example.png" /></div>
+</div>
+
+<p>Коллекция такой структуры выглядит так:</p>
+
+<div class="table">
+<table><tbody><tr><th>ФИО контакта</th>
+			<th>Дата рождения</th>
+			<th>Возраст</th>
+		</tr><tr><td>Евгений Мирный</td>
+			<td>12.04.1991</td>
+			<td>30</td>
+		</tr><tr><td>Сергей Авдоров</td>
+			<td>10.04.1985</td>
+			<td>36</td>
+		</tr><tr><td>Ольга Варенская</td>
+			<td>12.05.1989</td>
+			<td>31</td>
+		</tr></tbody></table></div>
+
+<p>Creatio может передавать коллекции данных в веб-сервис и обрабатывать ответы веб-сервиса, содержащие коллекции. Если веб-сервис поддерживает получение и/или отправку массивов данных, то параметры типа “коллекция” можно использовать как для вызова веб-сервиса, так и для обработки его ответа.</p>
+
+<div class="message">
+<p><span class="message__bold">На заметку.</span> Для параметров типа “Параметр тела” вы можете выбрать только тип данных “коллекция”. Этот тип параметров недоступен для методов с запросами типа GET. Тем не менее, он доступен для ответов типа GET.</p>
+</div>
+
+<p>Для настройки коллекции:</p>
+
+<ol><li>Изучите <a href="https://fixer.io/documentation#latestrates">документацию веб-сервиса</a>.</li>
+	<li>Добавьте метод “Получение контактов”.</li>
+	<li>Для настройки параметров запроса, который является коллекцией, в поле <span class="key">Тип данных</span> укажите “Объект”. Признак <span class="key">Является массивом</span> будет установлен автоматически (Рис. 17).</li>
+</ol><div class="media">
+<div class="media__caption">Рис. 17 — Добавление параметра в коллекцию</div>
+
+<div class="media__element"><img alt="scr_web_service_object.png" src="../../../../../sites/default/files/images/NoCode_Customization/web_rest_service/7.18/scr_web_service_object.png" /></div>
+</div>
+
+<p>В результате параметр ответа веб-сервиса типа “коллекция”, который получает записи контактов с сервера, будет иметь такой вид (Рис. 18).</p>
+
+<div class="media">
+<div class="media__caption">Рис. 18 — Настройка параметров запроса</div>
+
+<div class="media__element"><img alt="scr_web_service_object_parameters.png" src="../../../../../sites/default/files/images/NoCode_Customization/web_rest_service/7.18/scr_web_service_object_parameters.png" /></div>
+</div>
+
+<div class="message">
+<p><span class="message__bold">На заметку.</span> Значение JSONPath для вложенных параметров указывается как суффикс JSONPath корневого параметра. Например, если в поле <span class="key">Путь к элементу (JSONPath)</span> корневого параметра указано значение “$.records”, а значение “$.records.name” должно быть указано для вложенного параметра “Имя”, то в поле <span class="key">Путь к элементу (JSONPath)</span> вложенного параметра достаточно указать “$.records”.</p>
+</div>
+
+<p>Параметры ответа веб-сервиса типа “коллекция” могут использоваться в качестве входящих параметров элемента бизнес-процесса <span class="key">Вызвать веб-сервис</span>. Подробнее: <a href="../../../../../user/biznes_processy/spravka_po_elementam_processov/dejstviya_sistemy/vyzvat_veb_servis/element_processa_vyzvat_web_servcie.html?product=BPMS&amp;ver=7&amp;id=7141">Элемент процесса <span class="key">Вызвать веб-сервис</span></a>.</p>
+
+<h2>Проверить настройку интеграции с REST-сервисом<a class="title-anchor" href="#title-2548-42" id="title-2548-42"> </a></h2>
+
+<p>Для дальнейшего использования данных от сервиса в пользовательских бизнес-задачах необходимо проверить настройку интеграции.</p>
+
+<p>Начиная с версии 7.18.0 появилась возможность проверить настройку интеграции с SOAP-сервисом из интерфейса приложения, без создания тестового бизнес-процесса.</p>
+
+<p>Чтобы <strong>проверить настройку интеграции с REST-сервисом</strong>:</p>
+
+<ol><li>Перейдите в рабочее место <span class="key">Студия</span> и откройте раздел <span class="key">Веб-сервисы</span>.</li>
+	<li>Откройте страницу веб-сервиса, интеграцию с которым необходимо проверить. В нашем примере это “Курсы обмена валют (Fixer)”.</li>
+	<li>На детали <span class="key">Методы</span> страницы настройки интеграции с веб-сервисом откройте метод “Получить курсы обмена”.</li>
+	<li>На странице настройки метода нажмите <span class="key">Отправить тестовый запрос</span>.</li>
+	<li>Задайте значения параметров вызова метода.
+	<div class="table">
+	<table><thead><tr><th>Параметр</th>
+				<th>Значение</th>
+			</tr></thead><tbody><tr><th>Endpoint</th>
+				<td>latest</td>
+			</tr><tr><th>API ключ</th>
+				<td>6f****************************53</td>
+			</tr><tr><th>Валюты</th>
+				<td>USD,GBP,UAH,RUB</td>
+			</tr></tbody></table></div>
+	</li>
+	<li>Нажмите <span class="key">Отправить запрос</span> (Рис. 19).</li>
+</ol><p>В результате выполнения тестового запроса будет получен ответ от веб-сервиса. Значения параметров ответа отображены на вкладке <span class="key">Параметры ответа</span> в соответствующих полях (Рис. 19). Другие вкладки позволяют посмотреть запрос и ответ на запрос на языках JSON и HTTP (формат данных raw).</p>
+
+<div class="media">
+<div class="media__caption">Рис. 19 — Проверка интеграции с REST-сервисом</div>
+
+<div class="media__element"><img alt="scr_send_test_request.gif" src="../../../../../sites/default/files/images/NoCode_Customization/web_rest_service/7.18/scr_send_test_request.gif" /></div>
+</div>
+
+<p>Если при настройке интеграции с веб-сервисом была допущена ошибка, то в результате тестового запроса будет получен ответ с пустыми значениями параметров. В этом случае проверьте все настройки сервиса и повторите попытку.</p>
+
+<p>После проверки вы можете использовать интеграцию с веб-сервисом в пользовательских бизнес-процессах. Подробнее данный пример описан в статье <a data-auto-update-caption="true" href="../../../../../user/biznes_processy/primery_nastrojki_processov/integracija_s_veb_servisami/ispolzovat_integraciju_s_veb_servisami_dlja_avtomaticheskogo_obnovlenija_kursov_valjut.html?id=2364">Использовать интеграцию с веб-сервисами для автоматического обновления курсов валют</a>.</p>
+
+<p>В зависимости от особенностей веб-сервиса, прежде чем он станет доступным для использования, может потребоваться выполнить процедуру аутентификации. Подробнее: <a href="../autentifikatsiya/nastroit_autentifikaciyu_s_veb_servisom/index.html">Настроить аутентификацию веб-сервиса</a>.</p>
+</div>
+      
+  </div>
+<div class="block block-layout-builder block-field-blocknodeuser-documentationfield-linked-link">
+  
+    
+      
+  <div class="field field--name-field-linked-link field--type-link field--label-above">
+    <div class="field__label">Смотрите также</div>
+          <div class="field__items">
+              <div class="field__item"><a href="../obsor/nachalo_raboty_s_low_code_integraciey_veb_servisov.html">Начало работы с low-code интеграцией веб-сервисов</a></div>
+          <div class="field__item"><a href="../../../../../7-17/user/kastomizacija_no_code/web_servisy/soap/nastroit_integraciyu_s_web_servisom_soap.html">Настроить интеграцию с веб-сервисом SOAP </a></div>
+          <div class="field__item"><a href="../autentifikatsiya/nastroit_autentifikaciyu_s_veb_servisom.html">Настроить аутентификацию веб-сервиса</a></div>
+              </div>
+      </div>
+
+  </div>
+<div class="block block-layout-builder block-field-blocknodeuser-documentationfield-video">
+  
+    
+      
+  <div class="field field--name-field-video field--type-link field--label-above">
+    <div class="field__label">Онлайн-курсы</div>
+          <div class="field__items">
+              <div class="field__item"><a href="https://www.youtube.com/watch?v=gw9Jyh0EtaI">Tech Hour: Настраивай интеграции like a boss в Creatio, часть 1</a></div>
+              </div>
+      </div>
+
+  </div>
+
+    </div>
+  </div>
+
+  </div>
+
+</article>
+
+  </div>
+
+  </div>
+
+          </div>
+        </div>
+
+                  <aside class="creatio-sidebar creatio-sidebar_first" role="complementary">
+              <div class="region region-sidebar-first">
+    <div id="block-documentationnaviagtion" class="block block-ts-nav block-ts-nav-doc-nav">
+  
+    
+      <div class="ts-nav-block"><a href="../../../../../index.html" class="ts-nav-block__link">Документация</a><div class="ts-nav-block__title">Для пользователя</div>
+</div>
+<div class="ts-nav-container"><ul class="ts-nav-menu"><li class="ts-nav-menu__item">
+  <a href="../../../nocode_platforma.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">No-сode платформа&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../bazis_platformy.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Базис платформы&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../instrumenty_crm.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Инструменты CRM&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../instrumenty_kastomizacii.html" class="ts-nav-menu__link ts-nav-menu__link_expanded ts-nav-menu__link_open" hreflang="zxx">Инструменты кастомизации&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+      <ul class="ts-nav-menu__children">
+      <li class="ts-nav-menu__item">
+  <a href="../../../instrumenty_kastomizacii/analitika.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Аналитика&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../instrumenty_kastomizacii/nastrojka_biznes_logiki.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Настройка интерфейса и бизнес-логики&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../instrumenty_kastomizacii/web_servisy.html" class="ts-nav-menu__link ts-nav-menu__link_expanded ts-nav-menu__link_open" hreflang="zxx">Веб-сервисы&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+      <ul class="ts-nav-menu__children">
+      <li class="ts-nav-menu__item">
+  <a href="../obsor/nachalo_raboty_s_low_code_integraciey_veb_servisov.html" class="ts-nav-menu__link" hreflang="ru">Обзор</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../soap/nastroit_integraciyu_s_web_servisom_soap.html" class="ts-nav-menu__link" hreflang="ru">SOAP</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="nastroit_integraciyu_s_veb_servisom_rest.html" class="ts-nav-menu__link ts-nav-menu__link_active ts-nav-menu__link_open" hreflang="ru">REST</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../autentifikatsiya/nastroit_autentifikaciyu_s_veb_servisom.html" class="ts-nav-menu__link" hreflang="ru">Аутентификация</a>
+  </li>
+
+    </ul>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../instrumenty_kastomizacii/instrumenty_iskusstvennogo_intellekta.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Инструменты ИИ&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../instrumenty_kastomizacii/otchety_i_pechatnye_formy.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Отчеты и печатные формы&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../instrumenty_kastomizacii/nastrojka_vneshnego_vida.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Настройка внешнего вида&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../instrumenty_kastomizacii/nastrojka_mobilnogo_prilozhenija.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Настройка мобильного приложения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../instrumenty_kastomizacii/polzovatelskaja_lokalizacija.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Пользовательская локализация&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../upravlenie_prilozhenijami/prilozhenie_marketplace/ustanovit_prilozhenie_marketplace.html" class="ts-nav-menu__link" hreflang="ru">Приложения Marketplace</a>
+  </li>
+
+    </ul>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../biznes_processy.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Бизнес-процессы&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../instrumenty_marketinga.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Инструменты маркетинга&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../instrumenty_prodazh.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Инструменты продаж&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../instrumenty_servisa.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Инструменты сервиса&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../ustanovka_i_administrirovanie.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Администрирование&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../razvertyvanie_onsite.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Развертывание on-site&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../banki_i_finansy.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Банки и финансы&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../drugie_reshenija.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Другие решения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+</ul>
+</div>
+
+  </div>
+
+  </div>
+
+            <div class="creatio-sidebar__toggle"></div>
+          </aside>
+        
+                  <aside class="creatio-sidebar creatio-sidebar_second" role="complementary">
+              <div class="region region-sidebar-second">
+    <div id="block-example" class="block block-ts-nav block-ts-nav-page-nav">
+  
+    
+        <div class="ts-nav-title">REST</div>
+<div class="ts-nav-page">
+      <ul class="ts-nav-page__list">
+                                                <li class="ts-nav-page__item ts-nav-page__item_expanded ts-nav-page__item_open"><a href="nastroit_integraciyu_s_veb_servisom_rest.html" class="ts-nav-page__link ts-nav-page__link_expanded ts-nav-page__link_active">Настроить интеграцию с веб-сервисом REST&nbsp;<span class="ts-nav-page__link-arrow"></span></a></li>
+          </ul>
+  </div>
+
+  </div>
+<div id="block-adminfeedbackblock" class="block block-admin-feedback block-admin-feedback-block">
+  
+    
+      <div id="feedback-message"><div id="upper-feedback-content"><h2>Был ли данный материал полезен?</h2>
+<input class="feedback-btn feedback-btn__yes button js-form-submit form-submit" data-node-id="3399" data-feedback="yes" type="submit" name="op" value="Да" />
+<input class="feedback-btn feedback-btn__no button js-form-submit form-submit" data-node-id="3399" data-feedback="no" type="submit" name="op" value="Нет" />
+</div>
+<form class="admin-feedback-form" data-drupal-selector="admin-feedback-form" action="https://academy.terrasoft.ua/docs/8-0/user/kastomizacija_no_code/web_servisy/rest/nastroit_integraciyu_s_veb_servisom_rest" method="post" id="admin-feedback-form" accept-charset="UTF-8">
+  <div id="feedback-msg-result"></div><div class="js-form-item form-item js-form-type-textarea form-type-textarea js-form-item-feedback-message form-item-feedback-message form-no-label">
+        <div class="form-textarea-wrapper">
+  <textarea id="edit-feedback-msg" data-drupal-selector="edit-feedback-message" name="feedback_message" rows="5" cols="60" class="form-textarea resize-vertical"></textarea>
+</div>
+
+        </div>
+<input id="feedback-id" data-drupal-selector="edit-feedback-id" type="hidden" name="feedback_id" value="" />
+<input class="feedback-btn feedback-btn__send-comment button js-form-submit form-submit" data-drupal-selector="edit-feedback-send" type="submit" id="edit-feedback-send" name="op" value="Отправить" />
+<input autocomplete="off" data-drupal-selector="form-1lmdtookipkik6dtxllwt416nswwckhcit9-jq3gw8c" type="hidden" name="form_build_id" value="form-1LmDToOkiPkIk6DtXLLWT416NSWwCKHCiT9-jQ3Gw8c" />
+<input data-drupal-selector="edit-admin-feedback-form" type="hidden" name="form_id" value="admin_feedback_form" />
+
+</form>
+</div>
+
+  </div>
+
+  </div>
+
+          </aside>
+              </main>
+    </div>
+  </div>
+
+  <footer role="contentinfo">
+    <div class="creatio-region creatio-region_footer">
+      <div class="creatio-container">
+          <div class="region region-footer">
+    <div id="block-footerua" class="block block-simple-block block-simple-blockfooter-ua">
+  
+    
+      <div class="footer">
+<div class="footer-left">
+<ul class="footer-socials"><li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_fb" href="https://www.facebook.com/terrasoft.ua" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_in" href="https://www.linkedin.com/company/terrasoft/" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_yt" href="https://www.youtube.com/c/TerrasoftUkraine" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_tg" href="https://t.me/Terrasoft_UA" target="_blank"> </a></li>
+</ul></div>
+
+<div class="footer-contact">
+<div class="footer-title">Будьте на связи!</div>
+
+<div class="footer-content">
+<div class="footer-items">
+<div class="footer-item"><a class="footer__link footer__link_phone" href="tel:+380443633133">+38 (044) 363-31-33</a></div>
+</div>
+
+<div class="footer-items">
+<div class="footer-item"><a class="footer__link footer__link_email" href="mailto:support@terrasoft.ua">support@terrasoft.ua</a></div>
+</div>
+</div>
+</div>
+</div>
+
+  </div>
+
+  </div>
+
+      </div>
+    </div>
+    <div class="creatio-region creatio-region_bottom">
+      <div class="creatio-container">
+          <div class="region region-bottom">
+    <div id="block-allrightsreservedua" class="block block-simple-block block-simple-blockfooter-bottom-ua">
+  
+    
+      <p>© 2002-2022 Terrasoft.  |  <a href="https://www.terrasoft.ua/privacy-policy" target="_blank">Конфиденциальность</a></p>
+
+  </div>
+
+  </div>
+
+      </div>
+    </div>
+  </footer>
+</div>
+<div class="creatio-bg"></div>
+
+
+  </div>
+
+    
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/docs\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/3399","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"ru"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"ajaxPageState":{"libraries":"admin_feedback\/admin_feedback_block,admin_feedback\/admin_feedback_css,classy\/base,classy\/messages,classy\/node,core\/drupal.ajax,core\/jquery.form,core\/normalize,creatio\/creatio.lists,creatio\/fancybox,creatio\/global,layout_discovery\/onecol,system\/base,ts_doc\/doc_version,ts_feedback\/ts_feedback,ts_nav\/breadcrumb,ts_nav\/doc_nav,ts_nav\/page_nav,ts_title_anchor\/ts_title_anchor","theme":"creatio","theme_token":null},"ajaxTrustedUrl":{"form_action_p_pvdeGsVG5zNF_XLGPTvYSKCf43t8qZYSwcfZl2uzM":true,"\/docs\/8-0\/user\/kastomizacija_no_code\/web_servisy\/rest\/nastroit_integraciyu_s_veb_servisom_rest?ajax_form=1":true},"admin_feedback":{"yes_response":"\u0421\u043f\u0430\u0441\u0438\u0431\u043e \u0437\u0430 \u043e\u0431\u0440\u0430\u0442\u043d\u0443\u044e \u0441\u0432\u044f\u0437\u044c!","no_response":"\u0421\u043f\u0430\u0441\u0438\u0431\u043e \u0437\u0430 \u043e\u0431\u0440\u0430\u0442\u043d\u0443\u044e \u0441\u0432\u044f\u0437\u044c!","custom_text_response_on_no":{"value":"","format":"full_html"},"feedback_prompt_on_yes":true,"feedback_prompt_on_no":true,"feedback_enable_predefined_answers":false,"feedback_prompt":"\u041a\u0430\u043a \u043c\u043e\u0436\u043d\u043e \u0443\u043b\u0443\u0447\u0448\u0438\u0442\u044c \u044d\u0442\u0443 \u0441\u0442\u0430\u0442\u044c\u044e?"},"ajax":{"edit-feedback-send":{"callback":"::validateFeedbackMsg","event":"mousedown","keypress":true,"prevent":"click","url":"\/docs\/8-0\/user\/kastomizacija_no_code\/web_servisy\/rest\/nastroit_integraciyu_s_veb_servisom_rest?ajax_form=1","dialogType":"ajax","submit":{"_triggering_element_name":"op","_triggering_element_value":"\u041e\u0442\u043f\u0440\u0430\u0432\u0438\u0442\u044c"}}},"user":{"uid":0,"permissionsHash":"9c2367dfcaba0fa15f0375f97aed64e146c908cee68508d13b79e3ee80e5162d"}}</script>
+<script src="../../../../../sites/default/files/js/js_F2-Y4EzgTnESr58XByoLYEnsbi7ysTfMIKN1RvsMSWY.js"></script>
+
+
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+      <g id="svg-copy" class="svg-icon svg-icon_copy">
+        <path d="M15.111,18H1.889A1.848,1.848,0,0,1,0,16.2V3.6A1.848,1.848,0,0,1,1.889,1.8H5.837a2.87,2.87,0,0,1,5.326,0h3.948A1.848,1.848,0,0,1,17,3.6V16.2A1.848,1.848,0,0,1,15.111,18ZM3.777,12.6v1.8h6.611V12.6Zm0-3.6v1.8h9.445V9Zm0-3.6V7.2h9.445V5.4ZM8.5,1.8a.924.924,0,0,0-.944.9.945.945,0,0,0,1.889,0A.924.924,0,0,0,8.5,1.8Z"/>
+      </g>
+
+      <g id="svg-prev" class="svg-icon svg-icon_arrow">
+        <path d="M5.488,12.779,0,6.39,5.488,0" transform="translate(1 0.652)"/>
+      </g>
+
+      <g id="svg-next" class="svg-icon svg-icon_arrow">
+        <path d="M0,12.779,5.488,6.39,0,0" transform="translate(0.759 0.652)"/>
+      </g>
+    </svg>
+  </body>
+
+<!-- Mirrored from academy.terrasoft.ua/docs/8-0/user/kastomizacija_no_code/web_servisy/rest/nastroit_integraciyu_s_veb_servisom_rest by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Mar 2022 04:03:53 GMT -->
+</html>

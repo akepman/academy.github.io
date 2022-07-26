@@ -1,0 +1,1377 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# ">
+  
+<!-- Mirrored from academy.terrasoft.ua/docs/7-17/user/instrumenty_servisa/servisnye_obraschenija/rabota_s_obrascheniyami/sroki_reakcii_i_razresheniya/raschet_srokov_reakcii_i_razresheniya by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Mar 2022 05:35:05 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+          <!-- Google Tag Manager -->
+      <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          '../../../../../../../../www.googletagmanager.com/gtm5445.html?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-KLLB8G');</script>
+      <!-- End Google Tag Manager -->
+        <meta charset="utf-8" />
+<link rel="canonical" href="raschet_srokov_reakcii_i_razresheniya.html" />
+<meta name="description" content="В Creatio на странице обращения отображаются сроки реакции и разрешения, а также индикаторы, отсчитывающие оставшееся время до планируемого срока, либо время задержки, если плановый срок уже прошел (Рис. 1)." />
+<meta property="og:url" content="https://academy.terrasoft.ua/docs/7-17/user/instrumenty_servisa/servisnye_obraschenija/rabota_s_obrascheniyami/sroki_reakcii_i_razresheniya/raschet_srokov_reakcii_i_razresheniya" />
+<meta property="og:title" content="Расчет сроков реакции и разрешения" />
+<meta property="og:description" content="В Creatio на странице обращения отображаются сроки реакции и разрешения, а также индикаторы, отсчитывающие оставшееся время до планируемого срока, либо время задержки, если плановый срок уже прошел (Рис. 1)." />
+<meta name="Generator" content="Drupal 9 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="../../../../../../themes/custom/creatio/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="revision" href="raschet_srokov_reakcii_i_razresheniya.html" />
+
+    <title>Расчет сроков реакции и разрешения | Creatio Academy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&amp;family=Open+Sans:ital,wght@0,300;0,400;0,600;1,400&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" media="all" href="../../../../../../sites/default/files/css/css_6lTP66__-yc6QXFp1zOwoeJ0HVigoYZP-SeoLLii000.css" />
+<link rel="stylesheet" media="all" href="../../../../../../sites/default/files/css/css_XQJDNhkF3xH5SZCcY-PI89Zu4nYIzQ5oR3SnUKyfXJU.css" />
+<link rel="stylesheet" media="print" href="../../../../../../sites/default/files/css/css_Zn4VHvcniOOtUwkIVwXzYr_0AI9gUVgZcPqaH4ViagU.css" />
+
+    
+  </head>
+  <body class="path-node page-node-type-user-documentation">
+          <!-- Google Tag Manager (noscript) -->
+      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KLLB8G"
+                        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+      <!-- End Google Tag Manager (noscript) -->
+    
+        
+      <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    <div class="creatio-page d-flex flex-column">
+        <div class="region region-informer">
+    <div id="block-terrasoftpidtrimueukrainu" class="block block-simple-block block-simple-blockterrasoft-pidtrimue-ukrainu">
+  
+    
+      <style type="text/css">
+<!--/*--><![CDATA[/* ><!--*/
+@import url(../../../../../../../../www.terrasoft.ua/themes/custom/creatio/css/components/informer.css)
+
+/*--><!]]>*/
+</style><div class="ts-swu">
+<div class="creatio-container">
+<div class="ts-swu__cont">
+<div><a class="ts-swu__link" href="https://www.terrasoft.ua/terrasoft-stands-with-ukraine" target="_blank">Україна понад усе!</a> <span><a href="https://www.terrasoft.ua/terrasoft-stands-with-ukraine" target="_blank">Приєднуйтеся</a> до допомоги!</span></div>
+</div>
+</div></div>
+
+  </div>
+
+  </div>
+
+  
+  <header role="banner">
+          <div class="creatio-region creatio-region_top">
+        <div class="creatio-container">
+            <div class="region region-top">
+    <div id="block-menutoggle" class="block block-simple-block block-simple-blockmenu-toggle">
+  
+    
+      <div class="menu-toggle"><span> </span></div>
+
+  </div>
+<div id="block-logowhite-2" class="block block-simple-block block-simple-blocklogo-white">
+  
+    
+      <p><a class="site-logo" href="../../../../../../../index.html" rel="home"><img src="../../../../../../themes/custom/creatio/logo-white.svg" /></a></p>
+
+  </div>
+<div id="block-search" class="block block-simple-block block-simple-blocksearch">
+  
+    
+      <div class="search">
+<form action="https://academy.terrasoft.ua/search" class="search-form" method="get"><input class="search-form__input" name="search" placeholder="Поиск" type="search" /><input class="search-form__button" type="submit" value="Поиск" /> </form>
+
+<div class="search-toggle"> </div>
+</div>
+
+  </div>
+<nav role="navigation" aria-labelledby="block-sitesua-menu" id="block-sitesua" class="block block-menu navigation menu--sites-ua">
+            
+  <h2 class="visually-hidden" id="block-sitesua-menu">Sites UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="https://www.terrasoft.ua/" rel="nofollow" target="_blank">Terrasoft</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://community.terrasoft.ua/" rel="nofollow" target="_blank">Community</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://marketplace.terrasoft.ua/" rel="nofollow" target="_blank">Marketplace</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+<div id="block-usermenu" class="block block-ts-user block-ts-user-menu-block">
+  
+    
+      <ul class="user-menu">
+      <li class="user-menu__item">
+      <a class="user-menu__link" href="https://profile.terrasoft.ua/user/login?destination=academy/ua/docs/7-17/user/instrumenty_servisa/servisnye_obraschenija/rabota_s_obrascheniyami/sroki_reakcii_i_razresheniya/raschet_srokov_reakcii_i_razresheniya">Войти</a>
+    </li>
+  </ul>
+
+  </div>
+<div id="block-usermenumobile" class="block block-ts-user block-ts-user-menu-mobile-block">
+  
+    
+      <ul class="user-menu-mobile">
+      <li class="user-menu-mobile__item">
+      <div class="user-menu-mobile__user user-menu-mobile__user_icon"></div>
+      <ul class="user-menu-mobile__submenu">
+        <li class="user-menu-mobile__subitem">
+          <a class="user-menu-mobile__sublink" href="https://profile.terrasoft.ua/user/login?destination=academy/ua/docs/7-17/user/instrumenty_servisa/servisnye_obraschenija/rabota_s_obrascheniyami/sroki_reakcii_i_razresheniya/raschet_srokov_reakcii_i_razresheniya">Войти</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  </div>
+
+  </div>
+
+        </div>
+      </div>
+              <div class="creatio-region creatio-region_header">
+        <div class="creatio-container">
+            <div class="region region-header">
+    <div id="block-logo" class="block block-simple-block block-simple-blocklogo">
+  
+    
+      <p><a class="site-logo" href="../../../../../../../index.html" rel="home"><img src="../../../../../../themes/custom/creatio/logo.svg" /></a></p>
+
+  </div>
+<nav role="navigation" aria-labelledby="block-osnovnayanavigaciyaua-menu" id="block-osnovnayanavigaciyaua" class="block block-menu navigation menu--main-ua">
+            
+  <h2 class="visually-hidden" id="block-osnovnayanavigaciyaua-menu">Основная навигация UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="../../../../../../index.html" data-drupal-link-system-path="&lt;front&gt;">Документация</a>
+              </li>
+                <li class="menu-item">
+        <a href="../../../../../../../trainings.html">Тренинги</a>
+              </li>
+                <li class="menu-item">
+        <a href="../../../../../../certification.html" data-drupal-link-system-path="node/3084">Сертификация и тестирование</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+<nav role="navigation" aria-labelledby="block-sitesua-2-menu" id="block-sitesua-2" class="block block-menu navigation menu--sites-ua">
+            
+  <h2 class="visually-hidden" id="block-sitesua-2-menu">Sites UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="https://www.terrasoft.ua/" rel="nofollow" target="_blank">Terrasoft</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://community.terrasoft.ua/" rel="nofollow" target="_blank">Community</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://marketplace.terrasoft.ua/" rel="nofollow" target="_blank">Marketplace</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+
+  </div>
+
+        </div>
+      </div>
+              <div class="creatio-region creatio-region_breadcrumb">
+        <div class="creatio-container">
+            <div class="region region-breadcrumb">
+    <div id="block-logowhite" class="block block-simple-block block-simple-blocklogo-white">
+  
+    
+      <p><a class="site-logo" href="../../../../../../../index.html" rel="home"><img src="../../../../../../themes/custom/creatio/logo-white.svg" /></a></p>
+
+  </div>
+<div id="block-breadcrumbnaviagtion" class="block block-ts-nav block-ts-nav-bread">
+  
+    
+      <nav class="breadcrumb"><ol class="ts-nav-breadcrumb__list"><li class="ts-nav-breadcrumb__item"><a href="../../../../../../index.html" class="ts-nav-breadcrumb__link" title="Документация">Документация</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../../../../indexd993.html?vid_1=1" class="ts-nav-breadcrumb__link" title="Для пользователя">Для пользователя</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../../instrumenty_servisa.html" class="ts-nav-breadcrumb__link" title="Инструменты сервиса" hreflang="zxx">Инструменты сервиса</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../servisnye_obraschenija.html" class="ts-nav-breadcrumb__link" title="Сервисные обращения" hreflang="zxx">Сервисные обращения</a></li>
+<li class="ts-nav-breadcrumb__item ts-nav-breadcrumb__item_mobile"><a href="../../rabota_s_obrascheniyami.html" class="ts-nav-breadcrumb__link" title="Работа с обращениями" hreflang="ru">Работа с обращениями</a></li>
+<li class="ts-nav-breadcrumb__item"><span class="ts-nav-breadcrumb__link ts-nav-breadcrumb__link_current" title="Расчет сроков реакции и разрешения">Расчет сроков реакции и разрешения</span></li>
+</ol>
+</nav>
+
+  </div>
+<div id="block-search-2" class="block block-simple-block block-simple-blocksearch">
+  
+    
+      <div class="search">
+<form action="https://academy.terrasoft.ua/search" class="search-form" method="get"><input class="search-form__input" name="search" placeholder="Поиск" type="search" /><input class="search-form__button" type="submit" value="Поиск" /> </form>
+
+<div class="search-toggle"> </div>
+</div>
+
+  </div>
+
+  </div>
+
+        </div>
+      </div>
+      </header>
+
+  <div class="creatio-region creatio-region_main">
+    <div class="creatio-container">
+                <div class="region region-breadcrumb-mobile">
+    <div id="block-breadcrumbnaviagtion-2" class="block block-ts-nav block-ts-nav-bread">
+  
+    
+      <nav class="breadcrumb"><ol class="ts-nav-breadcrumb__list"><li class="ts-nav-breadcrumb__item"><a href="../../../../../../index.html" class="ts-nav-breadcrumb__link" title="Документация">Документация</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../../../../indexd993.html?vid_1=1" class="ts-nav-breadcrumb__link" title="Для пользователя">Для пользователя</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../../instrumenty_servisa.html" class="ts-nav-breadcrumb__link" title="Инструменты сервиса" hreflang="zxx">Инструменты сервиса</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../servisnye_obraschenija.html" class="ts-nav-breadcrumb__link" title="Сервисные обращения" hreflang="zxx">Сервисные обращения</a></li>
+<li class="ts-nav-breadcrumb__item ts-nav-breadcrumb__item_mobile"><a href="../../rabota_s_obrascheniyami.html" class="ts-nav-breadcrumb__link" title="Работа с обращениями" hreflang="ru">Работа с обращениями</a></li>
+<li class="ts-nav-breadcrumb__item"><span class="ts-nav-breadcrumb__link ts-nav-breadcrumb__link_current" title="Расчет сроков реакции и разрешения">Расчет сроков реакции и разрешения</span></li>
+</ol>
+</nav>
+
+  </div>
+
+  </div>
+
+      
+      <main class="creatio-main" role="main">
+                                                    
+        <div class="creatio-content creatio-content_small">
+          <div class="creatio-content__inner creatio-content__inner_bg">
+                            <div class="region region-messages">
+    <div data-drupal-messages-fallback class="hidden"></div>
+
+  </div>
+
+            
+              <div class="region region-content">
+    <div id="block-creatio-page-title" class="block block-core block-page-title-block">
+  
+    
+      
+  <h1 class="page-title"><span class="field field--name-title field--type-string field--label-hidden">Расчет сроков реакции и разрешения</span>
+</h1>
+
+
+  </div>
+<div id="block-creatio-content" class="block block-system block-system-main-block">
+  
+    
+      
+<article data-history-node-id="2581" role="article" about="/docs/7-17/user/instrumenty_servisa/servisnye_obraschenija/rabota_s_obrascheniyami/sroki_reakcii_i_razresheniya/raschet_srokov_reakcii_i_razresheniya" class="node node--type-user-documentation node--view-mode-full">
+
+  
+    
+
+  
+  <div class="node__content">
+      <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-ts-doc block-ts-doc-downloads">
+  
+    
+      <a href="../../../../../../sites/default/files/pdf/node/2581/Raschet_srokov_reakcii_i_razresheniya_.pdf" target="_blank">PDF</a>
+  </div>
+<div class="block block-ts-doc block-ts-doc-versions">
+  
+    
+        <div class="ts-doc-versions">
+    <select class="ts-doc-versions__select">
+                              <option value="/docs/8-0/user/instrumenty_servisa/servisnye_obraschenija/rabota_s_obrascheniyami/sroki_reakcii_i_razresheniya/raschet_srokov_reakcii_i_razresheniya">Версия 8.0</option>
+                              <option value="/docs/7-18/user/instrumenty_servisa/servisnye_obraschenija/rabota_s_obrascheniyami/sroki_reakcii_i_razresheniya/raschet_srokov_reakcii_i_razresheniya">Версия 7.18</option>
+                                                <option value="/docs/7-17/user/instrumenty_servisa/servisnye_obraschenija/rabota_s_obrascheniyami/sroki_reakcii_i_razresheniya/raschet_srokov_reakcii_i_razresheniya" selected>Версия 7.17</option>
+          </select>
+  </div>
+
+  </div>
+
+    </div>
+  </div>
+  <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocknodeuser-documentationfield-product">
+  
+    
+      
+  <div class="field field--name-field-product field--type-entity-reference field--label-above">
+    <div class="field__label">Продукты</div>
+          <div class="field__items">
+              <div class="field__item">Service Enterprise</div>
+          <div class="field__item">Customer Center</div>
+              </div>
+      </div>
+
+  </div>
+<div class="block block-layout-builder block-field-blocknodeuser-documentationbody">
+  
+    
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><p>В Creatio на странице обращения отображаются сроки реакции и разрешения, а также индикаторы, отсчитывающие оставшееся время до планируемого срока, либо время задержки, если плановый срок уже прошел (<a href="#XREF_68236_200"><span>Рис. 1</span></a>).</p>
+
+<div class="media">
+<div class="media__caption"><span class="FM_Picturecaptionnumber">Рис. 1</span><a name="XREF_68236_200" id="XREF_68236_200"></a> — Страница обращения с рассчитанными сроками реакции и разрешения</div>
+
+<div class="media__element"><img alt="scr_section_service_requests_case_page.png" id="image0" src="../../../../../../sites/default/files/documentation/user/ru/cases_service/BPMonlineHelp/service_cases_calculate_response_and_resolution_time/scr_section_service_requests_case_page.png" /></div>
+</div>
+
+<h2><a name="TOC_Получить_информацию_оbc-1" id="TOC_Получить_информацию_оbc-1"></a><a name="TOC_Получить_информацию_о" id="TOC_Получить_информацию_о"></a>Получить информацию о расчете сроков реакции и разрешения обращений<a class="title-anchor" href="#title-2581-1" id="title-2581-1"> </a></h2>
+
+<p>Вы можете просмотреть используемые параметры и логику расчета сроков реакции и  разрешения обращения. Для этого на детали <span class="key">Сроки</span> вкладки <span class="key">Информация по обращению</span> нажмите кнопку <img alt="btn_question.png" id="image1" src="../../../../../../sites/default/files/documentation/user/ru/cases_service/BPMonlineHelp/service_cases_calculate_response_and_resolution_time/btn_question.png" /> (<a href="#XREF_82082_357"><span>Рис. 1</span></a>) в поле <span class="key">Время реакции</span> либо <span class="key">Время разрешения</span>.</p>
+
+<p>При переходе обращения на каждый следующий этап жизненного цикла сроки разрешения пересчитываются. При этом отображается количество времени, потраченное на текущий момент, а также время, оставшееся до срока разрешения. Время реакции не пересчитывается, поскольку оно фиксируется при первом изменении состояния обращения.</p>
+
+<div class="media">
+<div class="media__caption"><span class="FM_Picturecaptionnumber">Рис. 1</span><a name="XREF_82082_357" id="XREF_82082_357"></a> — Получение информации о расчете сроков</div>
+
+<div class="media__element"><img alt="scr_service_requests_btn_terms_calculate.png" id="image2" src="../../../../../../sites/default/files/documentation/user/ru/cases_service/BPMonlineHelp/service_cases_calculate_response_and_resolution_time/scr_service_requests_btn_terms_calculate.png" /></div>
+</div>
+
+<p>В открывшемся окне (<a href="#XREF_25188_358"><span>Рис. 2</span></a>) отобразятся:</p>
+
+<ul type="disc"><li><strong>Параметры обращения</strong>: приоритет, сервис, дата регистрации, а также сервисный договор, если вы используете Service Creatio, enterprise edition.<br />
+	Вы может перейти к параметрам обращения: сервису либо сервисному договору, кликнув по соответствующей ссылке.</li>
+	<li><strong>Правило расчета сроков</strong>: выбранное правило расчета сроков, календарь и часовой пояс календаря, время реакции или разрешения, которое учитывалось при расчете. Вы можете кликнуть по названию правила, чтобы открыть справочник <span class="key">Правила расчета сроков по обращениям</span>. Если система не сможет выполнить расчет сроков по основному правилу, то запустится расчет по альтернативному правилу.</li>
+	<li><strong>Таблица с расчетом сроков реакции/разрешения по дням</strong> с указанием дня недели и типа дня: будний или рабочий. Расчет по дням недели ведется, начиная от даты регистрации обращения или текущей даты, если происходит пересчет сроков.</li>
+	<li><strong>Рассчитанное время реакции</strong>. Время реакции рассчитывается согласно выбранному правилу расчета сроков.</li>
+</ul><div class="media">
+<div class="media__caption"><span class="FM_Picturecaptionnumber">Рис. 2</span><a name="XREF_25188_358" id="XREF_25188_358"></a> — Информация по расчету сроков обращения</div>
+
+<div class="media__element"><img alt="scr_service_requests_wnd_terms_calculate.png" id="image3" src="../../../../../../sites/default/files/documentation/user/ru/cases_service/BPMonlineHelp/service_cases_calculate_response_and_resolution_time/scr_service_requests_wnd_terms_calculate.png" /></div>
+</div>
+
+<p>Дата и время, которые отображаются в информационном окне и в поле <span class="key">Время реакции</span> / <span class="key">Время разрешения</span> могут отличаться. Это вызвано тем, что в информационном окне для расчетов используется календарь службы поддержки, а в поле — календарь, указанный в профиле пользователя. При его отсутствии время рассчитывается исходя из данных браузера пользователя.</p>
+
+<h2><a name="TOC_Индикаторы_времениbc-2" id="TOC_Индикаторы_времениbc-2"></a><a name="TOC_Индикаторы_времени" id="TOC_Индикаторы_времени"></a><a name="CSH_2" id="CSH_2"></a><a name="HT_specs_service_requests_deadlines_calculation_cases_by_rules" id="HT_specs_service_requests_deadlines_calculation_cases_by_rules"></a><a name="CSH_3" id="CSH_3"></a><a name="HT_specs_service_requests_deadlines_indicators" id="HT_specs_service_requests_deadlines_indicators"></a>Индикаторы времени остатка/задержки сроков<a class="title-anchor" href="#title-2581-2" id="title-2581-2"> </a></h2>
+
+<p>Справа от полей <span class="key">План. реакция</span> и <span class="key">План. разрешение</span> страницы обращения отображаются индикаторы, показывающие текущее состояние работ по обращению (<a href="#XREF_21681_157"><span>Рис. 1</span></a>).</p>
+
+<div class="media">
+<div class="media__caption"><span class="FM_Picturecaptionnumber">Рис. 1</span><a name="XREF_21681_157" id="XREF_21681_157"></a> — Индикаторы времени остатка/задержки сроков по обращению</div>
+
+<div class="media__element"><img alt="scr_section_service_requests_clocks.png" id="image4" src="../../../../../../sites/default/files/documentation/user/ru/cases_service/BPMonlineHelp/service_cases_calculate_response_and_resolution_time/scr_section_service_requests_clocks.png" /></div>
+</div>
+
+<p>Отображение индикатора зависит от своевременности обработки обращения и его текущего состояния. Отсчет времени на индикаторах всегда производится в календарных величинах (минутах, часах, днях).</p>
+
+<p>В зависимости от своевременности обработки обращения:</p>
+
+<ul type="disc"><li>Если плановый срок еще не наступил, то индикатор отображается зеленым цветом и указывает на время, оставшееся до наступления планируемого срока.</li>
+	<li>Если плановый срок уже наступил, то индикатор отображается красным цветом и указывает на время задержки фактического срока.</li>
+	<li>Если плановый срок составляет 14 и более дней, отображается значение “&gt; 14 д.”.</li>
+	<li>Если задержка фактического срока достигла 14 и более дней, отображается значение “&gt; 14 д.”.</li>
+</ul><p>В зависимости от состояния обращения:</p>
+
+<ul type="disc"><li>Если фактический срок заполнен (например, обращение разрешено), то возможны два варианта:
+	<ol><li>
+		<p>Если фактическое значение меньше планируемого (работы выполнены вовремя), то индикатор скрывается.</p>
+		</li>
+		<li>
+		<p>Если фактические значение больше планируемого (работы выполнены с задержкой), то индикатор отображается и останавливает отсчет.</p>
+		</li>
+	</ol></li>
+	<li>Если фактический срок не заполнен, то:
+	<ul><li>
+		<p>для обращений, которые находятся в активном состоянии (например, обращение находится в работе), индикатор отображается и отсчитывает время остатка или задержки срока.</p>
+		</li>
+		<li>
+		<p>для обращений, которые находятся в неактивном состоянии — решены или находятся в состоянии паузы (например, ожидается реакция пользователя), индикатор скрывается. При возобновлении работы по обращению индикатор появляется и отсчет продолжается.</p>
+
+		<div class="message">
+		<p><span class="message__bold">На заметку.</span> Признак конечного состояния, а также состояние паузы и решения устанавливается в справочнике <span class="key">Состояния обращений</span>.</p>
+		</div>
+		</li>
+	</ul></li>
+</ul><h2><a name="TOC_Правила_расчета_сроковbc-3" id="TOC_Правила_расчета_сроковbc-3"></a><a name="TOC_Правила_расчета_сроков" id="TOC_Правила_расчета_сроков"></a><span><font color="#1a4680"><a name="HT_specs_service_requests_deadlines_calculation_strategies_calendar_setup" id="HT_specs_service_requests_deadlines_calculation_strategies_calendar_setup"></a><a name="CSH_4" id="CSH_4"></a></font></span>Правила расчета сроков реакции и разрешения<a class="title-anchor" href="#title-2581-3" id="title-2581-3"> </a></h2>
+
+<p>Расчет сроков реакции и разрешения выполняется на основании данных, которые указаны в обращении и сервисе, а также с учетом календаря, по которому обслуживается клиент (календаря обращения). Если вы используете Service Creatio, enterprise edition, то также будет учитываться сервисный договор.</p>
+
+<p>Правила расчета сроков вы можете сформировать, используя календари и несколько правил расчета: по сервису, по приоритету обращения, по сервису в сервисном договоре, по приоритету обращения с учетом сервиса в сервисном договоре, по приоритету в уровне SLA. Одно из этих правил используется по умолчанию, а остальные могут быть альтернативными. Если система не найдет данных для расчета сроков, используя правило по умолчанию, то расчет выполнится по альтернативному правилу. Далее альтернативное правило будет использоваться каждый раз, когда не будет найдено данных для расчета по предыдущему правилу. Если альтернативное правило не задано, то сроки рассчитаны не будут. Для настройки таких правил используется справочник <span class="key">Правила расчета сроков</span>.</p>
+
+<div class="message">
+<p><span class="message__bold">На заметку.</span> Новые правила создаются средствами разработки на платформе Creatio.</p>
+</div>
+
+<h3>По сервису<a class="title-anchor" href="#title-2581-4" id="title-2581-4"> </a></h3>
+
+<p>В этом правиле для расчета система использует значения плановых сроков реакции и разрешения, указанные на странице сервиса, а также календарь предоставления данного сервиса на странице сервиса (<a href="#XREF_45973_201"><span>Рис. 1</span></a>) или в сервисном договоре, если вы используете c  Creatio, enterprise edition В базовой версии системы Service Creatio, customer center edition, это правило является основным.</p>
+
+<div class="media">
+<div class="media__caption"><span class="FM_Picturecaptionnumber">Рис. 1</span><a name="XREF_45973_201" id="XREF_45973_201"></a> — Данные, которые используются для расчета сроков в правиле “По сервису”</div>
+
+<div class="media__element"><img alt="by_service_strategy_CC.png" id="image5" src="../../../../../../sites/default/files/documentation/user/ru/cases_service/BPMonlineHelp/service_cases_calculate_response_and_resolution_time/by_service_strategy_CC.png" /></div>
+</div>
+
+<h3>По приоритету обращения<a class="title-anchor" href="#title-2581-5" id="title-2581-5"> </a></h3>
+
+<p>В этом правиле система обратится к данным справочника <span class="key">Приоритеты обращений</span>. Для корректной работы данного правила в справочнике должны быть заполнены сроки реакции и разрешения для каждого из приоритетов обращений, использующихся в компании, и указан календарь обслуживания клиента обращения (<a href="#XREF_53506_202"><span>Рис. 1</span></a>).</p>
+
+<div class="media">
+<div class="media__caption"><span class="FM_Picturecaptionnumber">Рис. 1</span><a name="XREF_53506_202" id="XREF_53506_202"></a> — Данные, которые используются для расчета сроков в правиле “По приоритету”</div>
+
+<div class="media__element"><img alt="cases_priority.png" id="image6" src="../../../../../../sites/default/files/documentation/user/ru/cases_service/BPMonlineHelp/service_cases_calculate_response_and_resolution_time/cases_priority.png" /></div>
+</div>
+
+<h3>По сервису в сервисном договоре<a class="title-anchor" href="#title-2581-6" id="title-2581-6"> </a></h3>
+
+<p>В этом правиле система обратится к значениям, указанным в полях <span class="key">Время реакции</span> и <span class="key">Время разрешения</span> на детали <span class="key">Сервисы</span> страницы сервисного договора (<a href="#XREF_77501_203"><span>Рис. 1</span></a>). Там же указывается календарь предоставления сервиса, если он отличается от календаря обслуживания по сервисному договору. В базовых настройках Service Creatio, enterprise edition, это правило используется по умолчанию (как основное). Для него настроено альтернативное правило "По сервису".</p>
+
+<div class="media">
+<div class="media__caption"><span class="FM_Picturecaptionnumber">Рис. 1</span><a name="XREF_77501_203" id="XREF_77501_203"></a> — Данные, которые используются для расчета сроков в правиле “По сервису в сервисном договоре”</div>
+
+<div class="media__element"><img alt="by_service_in_service_agreement_strategy_se.png" id="image7" src="../../../../../../sites/default/files/documentation/user/ru/cases_service/BPMonlineHelp/service_cases_calculate_response_and_resolution_time/by_service_in_service_agreement_strategy_se.png" /></div>
+</div>
+
+<div class="message">
+<p><span class="message__bold">На заметку.</span> Если для сервиса в сервисном договоре указан календарь, то он будет использован при расчете плановых сроков реакции и разрешения. Иначе расчет будет произведен с использованием общего календаря по договору.</p>
+</div>
+
+<h3>По приоритету обращения с учетом сервиса в сервисном договоре<a class="title-anchor" href="#title-2581-7" id="title-2581-7"> </a></h3>
+
+<p>В этом правиле система проверит значения, указанные на детали <span class="key">Сроки по приоритетам</span> страницы сервиса в сервисном договоре (<a href="#XREF_15442_7"><span>Рис. 1</span></a>). Здесь же указывается календарь предоставления сервиса, если он отличается от календаря обслуживания по сервисному договору.</p>
+
+<div class="media">
+<div class="media__caption"><span class="FM_Picturecaptionnumber">Рис. 1</span><a name="XREF_15442_7" id="XREF_15442_7"></a> — Данные, которые используются для расчета сроков в правиле “По приоритету обращения с учетом сервиса в сервисном договоре”</div>
+
+<div class="media__element"><img alt="by_case_priority_considering_service_in_service_agreement_strategy.png" id="image8" src="../../../../../../sites/default/files/documentation/user/ru/cases_service/BPMonlineHelp/service_cases_calculate_response_and_resolution/by_case_priority_considering_service_in_service_agreement_strategy.569a.de" /></div>
+</div>
+
+<h3>По приоритету в уровне SLA<a class="title-anchor" href="#title-2581-8" id="title-2581-8"> </a></h3>
+
+<p>Расчет основывается на данных детали <span class="key">Приоритет в уровне поддержки</span> страницы каждого из уровней поддержки, перечисленных в справочнике <span class="key">Уровни поддержки</span> (<a href="#XREF_43584_204"><span>Рис. 1</span></a>). Для корректной работы этого правила в сервисном договоре должен быть указан уровень поддержки и календарь предоставления сервиса, если он отличается от календаря обслуживания по сервисному договору.</p>
+
+<div class="media">
+<div class="media__caption"><span class="FM_Picturecaptionnumber">Рис. 1</span><a name="XREF_43584_204" id="XREF_43584_204"></a> — Данные, которые используются для расчета сроков в правиле “По приоритету в уровне SLA”</div>
+
+<div class="media__element"><img alt="by_sla_priority_strategy.png" id="image9" src="../../../../../../sites/default/files/documentation/user/ru/cases_service/BPMonlineHelp/service_cases_calculate_response_and_resolution_time/by_sla_priority_strategy.png" /></div>
+</div>
+
+<h2><a name="TOC_Примеры_расчета_сроковbc-4" id="TOC_Примеры_расчета_сроковbc-4"></a><a name="TOC_Примеры_расчета_сроков" id="TOC_Примеры_расчета_сроков"></a><a name="CSH_5" id="CSH_5"></a><a name="HT_specs_service_requests_deadlines_calculation_cases" id="HT_specs_service_requests_deadlines_calculation_cases"></a>Примеры расчета сроков реакции и разрешения<a class="title-anchor" href="#title-2581-9" id="title-2581-9"> </a></h2>
+
+<p>Рассмотрим примеры расчета сроков реакции и разрешения в зависимости от настроенных правил. Во всех примерах заявитель и служба поддержки находятся в одном часовом поясе.</p>
+
+<div class="message">
+<p><span class="message__bold">На заметку.</span> Если время реакции и разрешения указано в календарных величинах (минутах, часах, днях), то расчет производится независимо от календаря предоставления услуги. Если время указано в рабочих величинах, время реакции будет рассчитываться с учетом только рабочих периодов календаря оказания услуг. Например, если обращение было зарегистрировано в 13.00, а время реакции составляет 1 рабочий день, то плановое время реакции будет установлено на конец рабочего периода следующего календарного дня.</p>
+</div>
+
+<h3>Расчет сроков реакции и разрешения обращений “По сервису”<a class="title-anchor" href="#title-2581-10" id="title-2581-10"> </a></h3>
+
+<p>При расчете сроков реакции и разрешения <strong>по сервису</strong> учитываются только параметры, настроенные на странице сервиса, и календарь сервиса в сервисном договоре, если вы используете приложение Service Creatio, enterprise edition. Приоритет обращения и уровень поддержки не учитываются.</p>
+
+<div class="message">
+<p><span class="message__bold">Пример.</span> Для сервиса “Консультация по настройке” в системе указаны:<br />
+Единица времени реакции: 1 рабочий час;<br />
+Единица времени разрешения: 3 рабочих часа;<br />
+Календарь сервиса (или сервиса в сервисном договоре, если вы используете приложение Service Creatio, enterprise edition): пятидневная рабочая неделя (с понедельника по пятницу), рабочее время с 10 до 18 часов, без перерывов.</p>
+</div>
+
+<p>В результате для всех обращений по сервису “Консультация по настройке” сроки реакции будут рассчитываться одинаково, независимо от всех остальных параметров обращений.</p>
+
+<p>Например, для обращения, полученного по данному сервису в 10:00 в понедельник сроки будут рассчитаны следующим образом:</p>
+
+<ul type="disc"><li>Время реакции: понедельник, 11:00 (время регистрации + единица времени реакции).</li>
+	<li>Время разрешения: понедельник, 13:00 (время регистрации + единица времени разрешения).</li>
+</ul><h3>Расчет сроков реакции и разрешения обращений “По приоритету обращения”<a class="title-anchor" href="#title-2581-11" id="title-2581-11"> </a></h3>
+
+<p>При расчете сроков реакции и разрешения <strong>по приоритету обращения</strong> учитываются только приоритет обращения и календарь предоставления услуги. Сервис и уровень поддержки не учитываются.</p>
+
+<div class="message">
+<p><span class="message__bold">Пример.</span> Для критического приоритета обращений в справочнике <span class="key">Приоритеты обращений</span> настроены:<br />
+Единица времени реакции: 30 рабочих минут;<br />
+Единица времени разрешения: 2 рабочих часа;<br />
+Календарь предоставления услуги: пятидневная рабочая неделя (с понедельника по пятницу), рабочее время с 10 до 18 часов, без перерывов.</p>
+</div>
+
+<p>В результате для всех обращений, у которых указан приоритет “Критический”, независимо от сервиса, сервисного договора и уровня поддержки, сроки реакции и разрешения будут рассчитываться одинаково.</p>
+
+<p>Например, для обращения с приоритетом “Критический”, полученного в 10:00 в понедельник, сроки будут рассчитаны следующим образом:</p>
+
+<ul type="disc"><li>Время реакции: понедельник, 10:30 (время регистрации + единица времени реакции).</li>
+	<li>Время разрешения: понедельник, 12:00 (время регистрации + единица времени разрешения).</li>
+</ul><h3>Расчет сроков реакции и разрешения обращений “По сервису в сервисном договоре”<a class="title-anchor" href="#title-2581-12" id="title-2581-12"> </a></h3>
+
+<p>В Service Creatio, enterprise edition расчет сроков реакции и разрешения обращений может проводиться с использованием правила “По сервису в сервисном договоре”. При расчете сроков реакции и разрешения <strong>по сервису в сервисном договоре</strong> учитываются только параметры, настроенные для данного сервиса в сервисном договоре заявителя. Приоритет обращения, уровень поддержки и параметры, настроенные на странице сервиса, не учитываются.</p>
+
+<div class="message">
+<p><span class="message__bold">Пример.</span> Для сервиса “Консультация по настройке” в сервисном договоре “4 — Аксиома” указаны:<br />
+Единица времени реакции: 4 рабочих часа;<br />
+Единица времени разрешения: 1 рабочий день;<br />
+Календарь предоставления услуги: пятидневная рабочая неделя (с понедельника по пятницу), рабочее время с 9 до 17 часов, без перерывов.</p>
+</div>
+
+<p>Для обращения, полученного от сотрудника компании “Аксиома” по сервису “Консультация по настройке”, который входит в сервисный договор “4 — Аксиома”, в 10:00 в понедельник, сроки будут рассчитаны следующим образом:</p>
+
+<ul type="disc"><li>Время реакции: понедельник, 14.00 (время регистрации + единица времени реакции).</li>
+	<li>Время разрешения: вторник, 17.00 (время регистрации + единица времени разрешения).</li>
+</ul><h3>Расчет сроков реакции и разрешения обращений “По приоритету обращения с учетом сервиса в сервисном договоре”<a class="title-anchor" href="#title-2581-13" id="title-2581-13"> </a></h3>
+
+<p>В Service Creatio, enterprise edition расчет сроков реакции и разрешения обращений может проводиться с использованием правила “По приоритету обращения с учетом сервиса в сервисном договоре”. При расчете сроков реакции и разрешения <strong>по приоритету обращения с учетом сервиса в сервисном договоре</strong> учитываются только календарь и параметры, настроенные для обращений разного приоритета на странице данного сервиса в сервисном договоре заявителя. Уровень поддержки и параметры, настроенные на странице сервиса, не учитываются.</p>
+
+<div class="message">
+<p><span class="message__bold">Пример.</span> Для обращений с приоритетом “Средний” на странице сервиса “Консультация по настройке” в сервисном договоре “4 — Аксиома” указаны:<br />
+Единица времени реакции: 2 рабочих часа;<br />
+Единица времени разрешения: 4 рабочих часа;<br />
+Календарь сервиса в сервисном договоре: пятидневная рабочая неделя (с понедельника по пятницу), рабочее время с 9 до 17 часов, без перерывов.</p>
+</div>
+
+<p>Для обращения среднего приоритета, полученного от сотрудника компании “Аксиома” по сервису “Консультация по настройке” в 10:00 в понедельник сроки будут рассчитаны следующим образом:</p>
+
+<ul type="disc"><li>Время реакции: понедельник, 12:00 (время регистрации + единица времени реакции).</li>
+	<li>Время разрешения: понедельник, 14:00 (время регистрации + единица времени разрешения).</li>
+</ul><h3>Расчет сроков реакции и разрешения обращения “По приоритету в уровне SLA”<a class="title-anchor" href="#title-2581-14" id="title-2581-14"> </a></h3>
+
+<p>В Service Creatio, enterprise edition расчет сроков реакции и разрешения обращений может проводиться с использованием правила “По приоритету в уровне SLA”. При расчете сроков реакции и разрешения <strong>по приоритету в уровне SLA</strong> учитываются только параметры, настроенные для данного приоритета в справочнике <span class="key">Уровни поддержки</span> и сервисный договор заявителя. Параметры, настроенные на странице сервиса, не учитываются.</p>
+
+<div class="message">
+<p><span class="message__bold">Пример.</span> У компании “Аксиома” в сервисном договоре “4 — Аксиома” указан уровень поддержки “Бизнес”. Для обращений критического приоритета от клиентов с уровнем поддержки “Бизнес” в справочнике <span class="key">Уровни поддержки</span> настроено:<br />
+Единица времени реакции: 15 рабочих минут;<br />
+Единица времени разрешения: 1 рабочий час;<br />
+В сервисном договоре “4 — Аксиома” выбран календарь предоставления услуги со следующими параметрами: пятидневная рабочая неделя (с понедельника по пятницу), рабочее время с 10 до 18 часов, без перерывов.</p>
+</div>
+
+<p>Таким образом, для обращения с критическим приоритетом, полученного от сотрудника компании “Аксиома” в 10:00 в понедельник, сроки будут рассчитаны следующим образом:</p>
+
+<ul type="disc"><li>Время реакции: понедельник, 10.15 (время регистрации + единица времени реакции).</li>
+	<li>Время разрешения: понедельник, 11.00 (время регистрации + единица времени разрешения).</li>
+</ul><h3>Расчет сроков реакции и разрешения обращений для клиентов, находящихся со службой поддержки в одном часовом поясе<a class="title-anchor" href="#title-2581-15" id="title-2581-15"> </a></h3>
+
+<p>Для расчета системе необходимы данные календаря сервиса или сервиса в сервисном договоре, если вы используете Service Creatio, enterprise edition<strong>. </strong>Календари, использующиеся в системе, формируются в справочнике <span class="key">Календари</span>. Настройка календарей описана в статье “<span><a href="../../nastroyka_obrascheniy/sroki_reakcii_i_razreshenia/nastroit_raschet_srokov_reakcii_i_razresheniya.html#HT_specs_service_requests_deadlines_calculation">Настроить расчет сроков реакции и разрешения</a></span>”.</p>
+
+<p>В <strong>календаре</strong> <strong>сервиса </strong>или сервиса в сервисном договоре, если вы используете Service Creatio, enterprise edition, настроены следующие параметры:</p>
+
+<ul type="disc"><li>Рабочая неделя с понедельника по пятницу.</li>
+	<li>Рабочее время с 09:00 до 18:00, технический перерыв с 13:00 до 14:00.</li>
+	<li>Выходные дни: суббота, воскресенье.</li>
+	<li>Дополнительный выходной: 1 мая 2017 года.</li>
+	<li>Часовой пояс UTC +3.</li>
+</ul><p>Расчет сроков реакции и разрешения производится системой в часовом поясе календаря, по которому обслуживается клиент обращения. Полученные данные пользователи видят в пересчете для своего часового пояса.</p>
+
+<p>Оператор службы поддержки и пользователь портала находятся одном часовом поясе (UTC +3).</p>
+
+<div class="message">
+<p><span class="message__bold">На заметку.</span> Если время реакции и разрешения указано в календарных величинах (минутах, часах, днях), то расчет производится независимо от календаря предоставления услуги. Если время указано в рабочих величинах, время реакции будет рассчитываться с учетом только рабочих периодов календаря оказания услуг. Например, если обращение было зарегистрировано в 13.00, а время реакции составляет 1 рабочий день, то плановое время реакции будет установлено на конец рабочего периода следующего календарного дня.</p>
+</div>
+
+<p>Ниже приведены примеры расчетов срока реакции для обращений, зарегистрированных в выходной (01/05) и рабочий (02/05) дни. Срок разрешения рассчитывается аналогично.</p>
+
+<div class="table">
+<table cellspacing="0"><tbody><tr><td><span class="vertical">Дата/время регистрации обращения </span> <span class="vertical">на портале (UTC +3)</span></td>
+			<td><span class="vertical">Дата/время регистрации обращения </span> <span class="vertical">на странице обращения (UTC +3)</span></td>
+			<td><span class="vertical">Дата/время регистрации обращения </span> <span class="vertical">по календарю предоставления услуги (UTC +3)</span></td>
+			<td><span class="vertical">Время реакции</span></td>
+			<td><span class="vertical">Плановая реакция </span> <span class="vertical">по календарю предоставления услуги (UTC +3)</span></td>
+			<td><span class="vertical">Плановая реакция </span> <span class="vertical">на портале (UTC +3)</span></td>
+			<td><span class="vertical">Плановая реакция </span> <span class="vertical">на странице обращения (UTC +3)</span></td>
+		</tr><tr><td>
+			<p class="FM_Tablecelltextleft">02/05 13:00</p>
+			</td>
+			<td>
+			<p class="FM_Tablecelltextleft">02/05 13:00</p>
+			</td>
+			<td>
+			<p class="FM_Tablecelltextleft">02/05 13:00</p>
+			</td>
+			<td>
+			<p class="FM_Tablecelltextleft">10 календарных минут</p>
+			</td>
+			<td>
+			<p class="FM_Tablecelltextleft">02/05 13:10</p>
+			</td>
+			<td>
+			<p class="FM_Tablecelltextleft">02/05 13:10</p>
+			</td>
+			<td>
+			<p class="FM_Tablecelltextleft">02/05 13:10</p>
+			</td>
+		</tr><tr><td>
+			<p class="FM_Tablecelltextleft">02/05 13:05</p>
+			</td>
+			<td>
+			<p class="FM_Tablecelltextleft">02/05 13:05</p>
+			</td>
+			<td>
+			<p class="FM_Tablecelltextleft">02/05 13:05</p>
+			</td>
+			<td>
+			<p class="FM_Tablecelltextleft">10 рабочих минут</p>
+			</td>
+			<td>
+			<p class="FM_Tablecelltextleft">02/05 14:10</p>
+			</td>
+			<td>
+			<p class="FM_Tablecelltextleft">02/05 14:10</p>
+			</td>
+			<td>
+			<p class="FM_Tablecelltextleft">02/05 14:10</p>
+			</td>
+		</tr><tr><td>
+			<p class="FM_Tablecelltextleft">01/05 13:00</p>
+			</td>
+			<td>
+			<p class="FM_Tablecelltextleft">01/05 13:00</p>
+			</td>
+			<td>
+			<p class="FM_Tablecelltextleft">01/05 13:00</p>
+			</td>
+			<td>
+			<p class="FM_Tablecelltextleft">10 календарных минут</p>
+			</td>
+			<td>
+			<p class="FM_Tablecelltextleft">01/05 13:10</p>
+			</td>
+			<td>
+			<p class="FM_Tablecelltextleft">01/05 13:10</p>
+			</td>
+			<td>
+			<p class="FM_Tablecelltextleft">01/05 13:10</p>
+			</td>
+		</tr><tr><td>
+			<p class="FM_Tablecelltextleft">01/05 13:05</p>
+			</td>
+			<td>
+			<p class="FM_Tablecelltextleft">01/05 13:05</p>
+			</td>
+			<td>
+			<p class="FM_Tablecelltextleft">01/05 13:05</p>
+			</td>
+			<td>
+			<p class="FM_Tablecelltextleft">10 рабочих минут</p>
+			</td>
+			<td>
+			<p class="FM_Tablecelltextleft">02/05 09:10</p>
+			</td>
+			<td>
+			<p class="FM_Tablecelltextleft">02/05 09:10</p>
+			</td>
+			<td>
+			<p class="FM_Tablecelltextleft">02/05 09:10</p>
+			</td>
+		</tr><tr><td>
+			<p class="FM_Tablecelltextleft">02/05 13:00</p>
+			</td>
+			<td>
+			<p class="FM_Tablecelltextleft">02/05 13:00</p>
+			</td>
+			<td>
+			<p class="FM_Tablecelltextleft">02/05 13:00</p>
+			</td>
+			<td>
+			<p class="FM_Tablecelltextleft">1 календарный час</p>
+			</td>
+			<td>
+			<p class="FM_Tablecelltextleft">02/05 14:00</p>
+			</td>
+			<td>
+			<p class="FM_Tablecelltextleft">02/05 14:00</p>
+			</td>
+			<td>
+			<p class="FM_Tablecelltextleft">02/05 14:00</p>
+			</td>
+		</tr><tr><td>
+			<p class="FM_Tablecelltextleft">02/05 13:00</p>
+			</td>
+			<td>
+			<p class="FM_Tablecelltextleft">02/05 13:00</p>
+			</td>
+			<td>
+			<p class="FM_Tablecelltextleft">02/05 13:00</p>
+			</td>
+			<td>
+			<p class="FM_Tablecelltextleft">1 рабочий час</p>
+			</td>
+			<td>
+			<p class="FM_Tablecelltextleft">02/05 15:00</p>
+			</td>
+			<td>
+			<p class="FM_Tablecelltextleft">02/05 15:00</p>
+			</td>
+			<td>
+			<p class="FM_Tablecelltextleft">02/05 15:00</p>
+			</td>
+		</tr><tr><td>
+			<p class="FM_Tablecelltextleft">01/05 13:00</p>
+			</td>
+			<td>
+			<p class="FM_Tablecelltextleft">01/05 13:00</p>
+			</td>
+			<td>
+			<p class="FM_Tablecelltextleft">01/05 13:00</p>
+			</td>
+			<td>
+			<p class="FM_Tablecelltextleft">1 календарный час</p>
+			</td>
+			<td>
+			<p class="FM_Tablecelltextleft">01/05 14:00</p>
+			</td>
+			<td>
+			<p class="FM_Tablecelltextleft">01/05 14:00</p>
+			</td>
+			<td>
+			<p class="FM_Tablecelltextleft">01/05 14:00</p>
+			</td>
+		</tr><tr><td>
+			<p class="FM_Tablecelltextleft">01/05 13:00</p>
+			</td>
+			<td>
+			<p class="FM_Tablecelltextleft">01/05 13:00</p>
+			</td>
+			<td>
+			<p class="FM_Tablecelltextleft">01/05 13:00</p>
+			</td>
+			<td>
+			<p class="FM_Tablecelltextleft">1 рабочий час</p>
+			</td>
+			<td>
+			<p class="FM_Tablecelltextleft">02/05 10:00</p>
+			</td>
+			<td>
+			<p class="FM_Tablecelltextleft">02/05 10:00</p>
+			</td>
+			<td>
+			<p class="FM_Tablecelltextleft">02/05 10:00</p>
+			</td>
+		</tr><tr><td>
+			<p class="FM_Tablecelltextleft">02/05 13:00</p>
+			</td>
+			<td>
+			<p class="FM_Tablecelltextleft">02/05 13:00</p>
+			</td>
+			<td>
+			<p class="FM_Tablecelltextleft">02/05 13:00</p>
+			</td>
+			<td>
+			<p class="FM_Tablecelltextleft">1 календарный день</p>
+			</td>
+			<td>
+			<p class="FM_Tablecelltextleft">03/05 13:00</p>
+			</td>
+			<td>
+			<p class="FM_Tablecelltextleft">03/05 13:00</p>
+			</td>
+			<td>
+			<p class="FM_Tablecelltextleft">03/05 13:00</p>
+			</td>
+		</tr><tr><td>
+			<p class="FM_Tablecelltextleft">02/05 13:00</p>
+			</td>
+			<td>
+			<p class="FM_Tablecelltextleft">02/05 13:00</p>
+			</td>
+			<td>
+			<p class="FM_Tablecelltextleft">02/05 13:00</p>
+			</td>
+			<td>
+			<p class="FM_Tablecelltextleft">1 рабочий день</p>
+			</td>
+			<td>
+			<p class="FM_Tablecelltextleft">03/05 18:00</p>
+			</td>
+			<td>
+			<p class="FM_Tablecelltextleft">03/05 18:00</p>
+			</td>
+			<td>
+			<p class="FM_Tablecelltextleft">03/05 18:00</p>
+			</td>
+		</tr><tr><td>
+			<p class="FM_Tablecelltextleft">01/05 13:00</p>
+			</td>
+			<td>
+			<p class="FM_Tablecelltextleft">01/05 13:00</p>
+			</td>
+			<td>
+			<p class="FM_Tablecelltextleft">01/05 13:00</p>
+			</td>
+			<td>
+			<p class="FM_Tablecelltextleft">1 календарный день</p>
+			</td>
+			<td>
+			<p class="FM_Tablecelltextleft">02/05 13:00</p>
+			</td>
+			<td>
+			<p class="FM_Tablecelltextleft">02/05 13:00</p>
+			</td>
+			<td>
+			<p class="FM_Tablecelltextleft">02/05 13:00</p>
+			</td>
+		</tr><tr><td>
+			<p class="FM_Tablecelltextleft">01/05 13:00</p>
+			</td>
+			<td>
+			<p class="FM_Tablecelltextleft">01/05 13:00</p>
+			</td>
+			<td>
+			<p class="FM_Tablecelltextleft">01/05 13:00</p>
+			</td>
+			<td>
+			<p class="FM_Tablecelltextleft">1 рабочий день</p>
+			</td>
+			<td>
+			<p class="FM_Tablecelltextleft">02/05 18:00</p>
+			</td>
+			<td>
+			<p class="FM_Tablecelltextleft">02/05 18:00</p>
+			</td>
+			<td>
+			<p class="FM_Tablecelltextleft">02/05 18:00</p>
+			</td>
+		</tr></tbody></table></div>
+
+<p> </p>
+
+<h3>Расчет сроков реакции и разрешения обращений для клиентов, находящихся в разных часовых поясах со службой поддержки<a class="title-anchor" href="#title-2581-16" id="title-2581-16"> </a></h3>
+
+<p>Расчет сроков реакции и разрешения производится системой в часовом поясе базового календаря. Полученные данные пользователи видят в пересчете для своего часового пояса.</p>
+
+<p>В <strong>календаре</strong> <strong>сервиса </strong>или сервиса в сервисном договоре, если вы используете Service Creatio, enterprise edition, настроены следующие параметры:</p>
+
+<ul type="disc"><li>Рабочая неделя с понедельника по пятницу.</li>
+	<li>Рабочее время с 09:00 до 18:00, обеденный перерыв с 13:00 и с 14:00.</li>
+	<li>Выходные дни: суббота, воскресенье.</li>
+	<li>Дополнительный выходной: 1 мая 2017 года.</li>
+	<li>Часовой пояс UTC 0.</li>
+</ul><p>Оператор службы поддержки находится в Минске (UTC +3).</p>
+
+<p>Пользователь портала находится в Екатеринбурге (UTC +5).</p>
+
+<div class="message">
+<p><span class="message__bold">На заметку.</span> Часовой пояс текущего пользователя определяется по данным из профиля пользователя, а если часовой пояс в профиле не задан, то по значению, указанному в системной настройке “Часовой пояс по умолчанию”. Если же часовой пояс не определен ни в профиле, ни в системной настройке, то дата и время определяются по локальному времени сервера, на котором развернуто приложение Creatio.</p>
+</div>
+
+<p>Ниже приведены примеры расчетов срока реакции для обращений, зарегистрированных в выходной (01/05) и рабочий (02/05) дни. Срок разрешения рассчитывается аналогично.</p>
+
+<div class="table">
+<table cellspacing="0"><tbody><tr><td><span class="vertical">Дата/время регистрации обращения </span> <span class="vertical">на портале (UTC +5)</span></td>
+			<td><span class="vertical">Дата/время регистрации обращения </span> <span class="vertical">на странице обращения (UTC +3)</span></td>
+			<td><span class="vertical">Дата/время регистрации обращения </span> <span class="vertical">по календарю предоставления услуги (UTC 0)</span></td>
+			<td><span class="vertical">Время реакции</span></td>
+			<td><span class="vertical">Плановая реакция </span> <span class="vertical">по календарю предоставления услуги (UTC 0)</span></td>
+			<td><span class="vertical">Плановая реакция </span> <span class="vertical">на портале (UTC +5)</span></td>
+			<td><span class="vertical">Плановая реакция </span> <span class="vertical">на странице обращения (UTC +3)</span></td>
+		</tr><tr><td>
+			<p class="FM_Tablecelltextleft">02/05 18:00</p>
+			</td>
+			<td>
+			<p class="FM_Tablecelltextleft">02/05 16:00</p>
+			</td>
+			<td>
+			<p class="FM_Tablecelltextleft">02/05 13:00</p>
+			</td>
+			<td>
+			<p class="FM_Tablecelltextleft">10 календарных минут</p>
+			</td>
+			<td>
+			<p class="FM_Tablecelltextleft">02/05 13:10</p>
+			</td>
+			<td>
+			<p class="FM_Tablecelltextleft">02/05 18:10</p>
+			</td>
+			<td>
+			<p class="FM_Tablecelltextleft">02/05 16:10</p>
+			</td>
+		</tr><tr><td>
+			<p class="FM_Tablecelltextleft">02/05 18:00</p>
+			</td>
+			<td>
+			<p class="FM_Tablecelltextleft">02/05 16:00</p>
+			</td>
+			<td>
+			<p class="FM_Tablecelltextleft">02/05 13:00</p>
+			</td>
+			<td>
+			<p class="FM_Tablecelltextleft">10 рабочих минут</p>
+			</td>
+			<td>
+			<p class="FM_Tablecelltextleft">02/05 14:10</p>
+			</td>
+			<td>
+			<p class="FM_Tablecelltextleft">02/05 19:10</p>
+			</td>
+			<td>
+			<p class="FM_Tablecelltextleft">02/05 17:10</p>
+			</td>
+		</tr><tr><td>
+			<p class="FM_Tablecelltextleft">01/05 18:00</p>
+			</td>
+			<td>
+			<p class="FM_Tablecelltextleft">01/05 16:00</p>
+			</td>
+			<td>
+			<p class="FM_Tablecelltextleft">01/05 13:00</p>
+			</td>
+			<td>
+			<p class="FM_Tablecelltextleft">10 календарных минут</p>
+			</td>
+			<td>
+			<p class="FM_Tablecelltextleft">01/05 13:10</p>
+			</td>
+			<td>
+			<p class="FM_Tablecelltextleft">01/05 18:10</p>
+			</td>
+			<td>
+			<p class="FM_Tablecelltextleft">01/05 16:10</p>
+			</td>
+		</tr><tr><td>
+			<p class="FM_Tablecelltextleft">01/05 18:00</p>
+			</td>
+			<td>
+			<p class="FM_Tablecelltextleft">01/05 16:00</p>
+			</td>
+			<td>
+			<p class="FM_Tablecelltextleft">01/05 13:00</p>
+			</td>
+			<td>
+			<p class="FM_Tablecelltextleft">10 рабочих минут</p>
+			</td>
+			<td>
+			<p class="FM_Tablecelltextleft">02/05 09:10</p>
+			</td>
+			<td>
+			<p class="FM_Tablecelltextleft">02/05 14:10</p>
+			</td>
+			<td>
+			<p class="FM_Tablecelltextleft">02/05 12:10</p>
+			</td>
+		</tr><tr><td>
+			<p class="FM_Tablecelltextleft">02/05 18:00</p>
+			</td>
+			<td>
+			<p class="FM_Tablecelltextleft">02/05 16:00</p>
+			</td>
+			<td>
+			<p class="FM_Tablecelltextleft">02/05 13:00</p>
+			</td>
+			<td>
+			<p class="FM_Tablecelltextleft">1 календарный час</p>
+			</td>
+			<td>
+			<p class="FM_Tablecelltextleft">02/05 14:00</p>
+			</td>
+			<td>
+			<p class="FM_Tablecelltextleft">02/05 19:00</p>
+			</td>
+			<td>
+			<p class="FM_Tablecelltextleft">02/05 17:00</p>
+			</td>
+		</tr><tr><td>
+			<p class="FM_Tablecelltextleft">02/05 18:00</p>
+			</td>
+			<td>
+			<p class="FM_Tablecelltextleft">02/05 16:00</p>
+			</td>
+			<td>
+			<p class="FM_Tablecelltextleft">02/05 13:00</p>
+			</td>
+			<td>
+			<p class="FM_Tablecelltextleft">1 рабочий час</p>
+			</td>
+			<td>
+			<p class="FM_Tablecelltextleft">02/05 15:00</p>
+			</td>
+			<td>
+			<p class="FM_Tablecelltextleft">02/05 20:00</p>
+			</td>
+			<td>
+			<p class="FM_Tablecelltextleft">02/05 18:00</p>
+			</td>
+		</tr><tr><td>
+			<p class="FM_Tablecelltextleft">01/05 18:00</p>
+			</td>
+			<td>
+			<p class="FM_Tablecelltextleft">01/05 16:00</p>
+			</td>
+			<td>
+			<p class="FM_Tablecelltextleft">01/05 13:00</p>
+			</td>
+			<td>
+			<p class="FM_Tablecelltextleft">1 календарный час</p>
+			</td>
+			<td>
+			<p class="FM_Tablecelltextleft">01/05 14:00</p>
+			</td>
+			<td>
+			<p class="FM_Tablecelltextleft">01/05 19:00</p>
+			</td>
+			<td>
+			<p class="FM_Tablecelltextleft">01/05 17:00</p>
+			</td>
+		</tr><tr><td>
+			<p class="FM_Tablecelltextleft">01/05 18:00</p>
+			</td>
+			<td>
+			<p class="FM_Tablecelltextleft">01/05 16:00</p>
+			</td>
+			<td>
+			<p class="FM_Tablecelltextleft">01/05 13:00</p>
+			</td>
+			<td>
+			<p class="FM_Tablecelltextleft">1 рабочий час</p>
+			</td>
+			<td>
+			<p class="FM_Tablecelltextleft">02/05 10:00</p>
+			</td>
+			<td>
+			<p class="FM_Tablecelltextleft">02/05 15:00</p>
+			</td>
+			<td>
+			<p class="FM_Tablecelltextleft">02/05 13:00</p>
+			</td>
+		</tr><tr><td>
+			<p class="FM_Tablecelltextleft">02/05 18:00</p>
+			</td>
+			<td>
+			<p class="FM_Tablecelltextleft">02/05 16:00</p>
+			</td>
+			<td>
+			<p class="FM_Tablecelltextleft">02/05 13:00</p>
+			</td>
+			<td>
+			<p class="FM_Tablecelltextleft">1 календарный день</p>
+			</td>
+			<td>
+			<p class="FM_Tablecelltextleft">03/05 13:00</p>
+			</td>
+			<td>
+			<p class="FM_Tablecelltextleft">03/05 18:00</p>
+			</td>
+			<td>
+			<p class="FM_Tablecelltextleft">03/05 16:00</p>
+			</td>
+		</tr><tr><td>
+			<p class="FM_Tablecelltextleft">02/05 18:00</p>
+			</td>
+			<td>
+			<p class="FM_Tablecelltextleft">02/05 16:00</p>
+			</td>
+			<td>
+			<p class="FM_Tablecelltextleft">02/05 13:00</p>
+			</td>
+			<td>
+			<p class="FM_Tablecelltextleft">1 рабочий день</p>
+			</td>
+			<td>
+			<p class="FM_Tablecelltextleft">03/05 18:00</p>
+			</td>
+			<td>
+			<p class="FM_Tablecelltextleft">03/05 23:00</p>
+			</td>
+			<td>
+			<p class="FM_Tablecelltextleft">03/05 21:00</p>
+			</td>
+		</tr><tr><td>
+			<p class="FM_Tablecelltextleft">01/05 18:00</p>
+			</td>
+			<td>
+			<p class="FM_Tablecelltextleft">01/05 16:00</p>
+			</td>
+			<td>
+			<p class="FM_Tablecelltextleft">01/05 13:00</p>
+			</td>
+			<td>
+			<p class="FM_Tablecelltextleft">1 календарный день</p>
+			</td>
+			<td>
+			<p class="FM_Tablecelltextleft">02/05 13:00</p>
+			</td>
+			<td>
+			<p class="FM_Tablecelltextleft">02/05 18:00</p>
+			</td>
+			<td>
+			<p class="FM_Tablecelltextleft">02/05 16:00</p>
+			</td>
+		</tr><tr><td>
+			<p class="FM_Tablecelltextleft">01/05 18:00</p>
+			</td>
+			<td>
+			<p class="FM_Tablecelltextleft">01/05 16:00</p>
+			</td>
+			<td>
+			<p class="FM_Tablecelltextleft">01/05 13:00</p>
+			</td>
+			<td>
+			<p class="FM_Tablecelltextleft">1 рабочий день</p>
+			</td>
+			<td>
+			<p class="FM_Tablecelltextleft">02/05 18:00</p>
+			</td>
+			<td>
+			<p class="FM_Tablecelltextleft">02/05 23:00</p>
+			</td>
+			<td>
+			<p class="FM_Tablecelltextleft">02/05 21:00</p>
+			</td>
+		</tr></tbody></table></div>
+
+<p> </p>
+</div>
+      
+  </div>
+<div class="block block-layout-builder block-field-blocknodeuser-documentationfield-linked-link">
+  
+    
+      
+  <div class="field field--name-field-linked-link field--type-link field--label-above">
+    <div class="field__label">Смотрите также</div>
+          <div class="field__items">
+              <div class="field__item"><a href="../../nastroyka_obrascheniy/sroki_reakcii_i_razreshenia/nastroit_raschet_srokov_reakcii_i_razresheniya.html">Настроить расчет сроков реакции и разрешения</a></div>
+          <div class="field__item"><a href="../../nastroyka_obrascheniy/sostojanie_obrashhenij/nastroit_sostoyaniya_obrascheniy.html">Настроить состояния обращений</a></div>
+          <div class="field__item"><a href="../../nastroyka_obrascheniy/nezhelatelnye_obrashhenija/nastroit_obrabotku_nezhelatelnykh_obrascheniy.html">Настроить обработку нежелательных сообщений</a></div>
+          <div class="field__item"><a href="../podbor_servisnogo_dogovora/podbor_servisnogo_dogovora.html">Подбор сервисного договора</a></div>
+              </div>
+      </div>
+
+  </div>
+
+    </div>
+  </div>
+
+  </div>
+
+</article>
+
+  </div>
+
+  </div>
+
+          </div>
+        </div>
+
+                  <aside class="creatio-sidebar creatio-sidebar_first" role="complementary">
+              <div class="region region-sidebar-first">
+    <div id="block-documentationnaviagtion" class="block block-ts-nav block-ts-nav-doc-nav">
+  
+    
+      <div class="ts-nav-block"><a href="../../../../../../index.html" class="ts-nav-block__link">Документация</a><div class="ts-nav-block__title">Для пользователя</div>
+</div>
+<div class="ts-nav-container"><ul class="ts-nav-menu"><li class="ts-nav-menu__item">
+  <a href="../../../../bazis_platformy.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Базис платформы&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../../instrumenty_crm.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Инструменты CRM&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../../instrumenty_kastomizacii.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Инструменты кастомизации&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../../biznes_processy.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Бизнес-процессы&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../../instrumenty_marketinga.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Инструменты маркетинга&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../../instrumenty_prodazh.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Инструменты продаж&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../../instrumenty_servisa.html" class="ts-nav-menu__link ts-nav-menu__link_expanded ts-nav-menu__link_open" hreflang="zxx">Инструменты сервиса&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+      <ul class="ts-nav-menu__children">
+      <li class="ts-nav-menu__item">
+  <a href="../../../servisnye_obraschenija.html" class="ts-nav-menu__link ts-nav-menu__link_expanded ts-nav-menu__link_open" hreflang="zxx">Сервисные обращения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+      <ul class="ts-nav-menu__children">
+      <li class="ts-nav-menu__item">
+  <a href="../../nastroyka_obrascheniy.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Настройка обращений&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../rabota_s_obrascheniyami.html" class="ts-nav-menu__link ts-nav-menu__link_expanded ts-nav-menu__link_open" hreflang="ru">Работа с обращениями&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+      <ul class="ts-nav-menu__children">
+      <li class="ts-nav-menu__item">
+  <a href="../sozdanie_obrashhenija/sozdat_obraschenie.html" class="ts-nav-menu__link" hreflang="ru">Создание обращения</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../podbor_servisnogo_dogovora/podbor_servisnogo_dogovora.html" class="ts-nav-menu__link" hreflang="ru">Подбор сервисного договора</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="raschet_srokov_reakcii_i_razresheniya.html" class="ts-nav-menu__link ts-nav-menu__link_active ts-nav-menu__link_open" hreflang="ru">Сроки реакции и разрешения</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../prediktivnaja_marshrutizacija/prediktivnaya_marshrutizaciya_obrascheniy.html" class="ts-nav-menu__link" hreflang="ru">Предиктивная маршрутизация</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../poisk_pohozhih_obrashhenij/poisk_pohozhih_obrashenij.html" class="ts-nav-menu__link" hreflang="ru">Поиск похожих обращений</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../obrabotka_obrashhenij%20.html" class="ts-nav-menu__link" hreflang="ru">Обработка обращений</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../servisno_resursnaja_model/analizirovat_servisno-resursnuyu_model.html" class="ts-nav-menu__link" hreflang="ru">Сервисно-ресурсная модель</a>
+  </li>
+
+    </ul>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../obrascheniya_voprosy_i_otvety/chasto_zadavaemye_voprosy_po_obrascheniyam.html" class="ts-nav-menu__link" hreflang="ru">Вопросы и ответы</a>
+  </li>
+
+    </ul>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../instrumenty_contact_tcentra.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Инструменты контакт-центра&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../instrumenty_itsm.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Инструменты ITSM&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+
+    </ul>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../../ustanovka_i_administrirovanie.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Администрирование&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../../razvertyvanie_onsite.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Развертывание on-site&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../../banki_i_finansy.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Банки и финансы&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../../drugie_reshenija.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Другие решения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+</ul>
+</div>
+
+  </div>
+
+  </div>
+
+            <div class="creatio-sidebar__toggle"></div>
+          </aside>
+        
+                  <aside class="creatio-sidebar creatio-sidebar_second" role="complementary">
+              <div class="region region-sidebar-second">
+    <div id="block-example" class="block block-ts-nav block-ts-nav-page-nav">
+  
+    
+        <div class="ts-nav-title">Сроки реакции и разрешения</div>
+<div class="ts-nav-page">
+      <ul class="ts-nav-page__list">
+                                                <li class="ts-nav-page__item ts-nav-page__item_expanded ts-nav-page__item_open"><a href="raschet_srokov_reakcii_i_razresheniya.html" class="ts-nav-page__link ts-nav-page__link_expanded ts-nav-page__link_active">Расчет сроков реакции и разрешения&nbsp;<span class="ts-nav-page__link-arrow"></span></a></li>
+          </ul>
+  </div>
+
+  </div>
+<div id="block-adminfeedbackblock" class="block block-admin-feedback block-admin-feedback-block">
+  
+    
+      <div id="feedback-message"><div id="upper-feedback-content"><h2>Был ли данный материал полезен?</h2>
+<input class="feedback-btn feedback-btn__yes button js-form-submit form-submit" data-node-id="2581" data-feedback="yes" type="submit" name="op" value="Да" />
+<input class="feedback-btn feedback-btn__no button js-form-submit form-submit" data-node-id="2581" data-feedback="no" type="submit" name="op" value="Нет" />
+</div>
+<form class="admin-feedback-form" data-drupal-selector="admin-feedback-form" action="https://academy.terrasoft.ua/docs/7-17/user/instrumenty_servisa/servisnye_obraschenija/rabota_s_obrascheniyami/sroki_reakcii_i_razresheniya/raschet_srokov_reakcii_i_razresheniya" method="post" id="admin-feedback-form" accept-charset="UTF-8">
+  <div id="feedback-msg-result"></div><div class="js-form-item form-item js-form-type-textarea form-type-textarea js-form-item-feedback-message form-item-feedback-message form-no-label">
+        <div class="form-textarea-wrapper">
+  <textarea id="edit-feedback-msg" data-drupal-selector="edit-feedback-message" name="feedback_message" rows="5" cols="60" class="form-textarea resize-vertical"></textarea>
+</div>
+
+        </div>
+<input id="feedback-id" data-drupal-selector="edit-feedback-id" type="hidden" name="feedback_id" value="" />
+<input class="feedback-btn feedback-btn__send-comment button js-form-submit form-submit" data-drupal-selector="edit-feedback-send" type="submit" id="edit-feedback-send" name="op" value="Отправить" />
+<input autocomplete="off" data-drupal-selector="form-yz6a30mfs3ht2b2i-katepfheh0s-0wjusfmf283kia" type="hidden" name="form_build_id" value="form-yZ6a30MFS3hT2B2i_kaTEPFheH0s_0WjUsFmf283KiA" />
+<input data-drupal-selector="edit-admin-feedback-form" type="hidden" name="form_id" value="admin_feedback_form" />
+
+</form>
+</div>
+
+  </div>
+
+  </div>
+
+          </aside>
+              </main>
+    </div>
+  </div>
+
+  <footer role="contentinfo">
+    <div class="creatio-region creatio-region_footer">
+      <div class="creatio-container">
+          <div class="region region-footer">
+    <div id="block-footerua" class="block block-simple-block block-simple-blockfooter-ua">
+  
+    
+      <div class="footer">
+<div class="footer-left">
+<ul class="footer-socials"><li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_fb" href="https://www.facebook.com/terrasoft.ua" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_in" href="https://www.linkedin.com/company/terrasoft/" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_yt" href="https://www.youtube.com/c/TerrasoftUkraine" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_tg" href="https://t.me/Terrasoft_UA" target="_blank"> </a></li>
+</ul></div>
+
+<div class="footer-contact">
+<div class="footer-title">Будьте на связи!</div>
+
+<div class="footer-content">
+<div class="footer-items">
+<div class="footer-item"><a class="footer__link footer__link_phone" href="tel:+380443633133">+38 (044) 363-31-33</a></div>
+</div>
+
+<div class="footer-items">
+<div class="footer-item"><a class="footer__link footer__link_email" href="mailto:support@terrasoft.ua">support@terrasoft.ua</a></div>
+</div>
+</div>
+</div>
+</div>
+
+  </div>
+
+  </div>
+
+      </div>
+    </div>
+    <div class="creatio-region creatio-region_bottom">
+      <div class="creatio-container">
+          <div class="region region-bottom">
+    <div id="block-allrightsreservedua" class="block block-simple-block block-simple-blockfooter-bottom-ua">
+  
+    
+      <p>© 2002-2022 Terrasoft.  |  <a href="https://www.terrasoft.ua/privacy-policy" target="_blank">Конфиденциальность</a></p>
+
+  </div>
+
+  </div>
+
+      </div>
+    </div>
+  </footer>
+</div>
+<div class="creatio-bg"></div>
+
+
+  </div>
+
+    
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/docs\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/2581","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"ru"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"ajaxPageState":{"libraries":"admin_feedback\/admin_feedback_block,admin_feedback\/admin_feedback_css,classy\/base,classy\/messages,classy\/node,core\/drupal.ajax,core\/jquery.form,core\/normalize,creatio\/creatio.lists,creatio\/fancybox,creatio\/global,layout_discovery\/onecol,system\/base,ts_doc\/doc_version,ts_feedback\/ts_feedback,ts_nav\/breadcrumb,ts_nav\/doc_nav,ts_nav\/page_nav,ts_title_anchor\/ts_title_anchor","theme":"creatio","theme_token":null},"ajaxTrustedUrl":{"form_action_p_pvdeGsVG5zNF_XLGPTvYSKCf43t8qZYSwcfZl2uzM":true,"\/docs\/7-17\/user\/instrumenty_servisa\/servisnye_obraschenija\/rabota_s_obrascheniyami\/sroki_reakcii_i_razresheniya\/raschet_srokov_reakcii_i_razresheniya?ajax_form=1":true},"admin_feedback":{"yes_response":"\u0421\u043f\u0430\u0441\u0438\u0431\u043e \u0437\u0430 \u043e\u0431\u0440\u0430\u0442\u043d\u0443\u044e \u0441\u0432\u044f\u0437\u044c!","no_response":"\u0421\u043f\u0430\u0441\u0438\u0431\u043e \u0437\u0430 \u043e\u0431\u0440\u0430\u0442\u043d\u0443\u044e \u0441\u0432\u044f\u0437\u044c!","custom_text_response_on_no":{"value":"","format":"full_html"},"feedback_prompt_on_yes":true,"feedback_prompt_on_no":true,"feedback_enable_predefined_answers":false,"feedback_prompt":"\u041a\u0430\u043a \u043c\u043e\u0436\u043d\u043e \u0443\u043b\u0443\u0447\u0448\u0438\u0442\u044c \u044d\u0442\u0443 \u0441\u0442\u0430\u0442\u044c\u044e?"},"ajax":{"edit-feedback-send":{"callback":"::validateFeedbackMsg","event":"mousedown","keypress":true,"prevent":"click","url":"\/docs\/7-17\/user\/instrumenty_servisa\/servisnye_obraschenija\/rabota_s_obrascheniyami\/sroki_reakcii_i_razresheniya\/raschet_srokov_reakcii_i_razresheniya?ajax_form=1","dialogType":"ajax","submit":{"_triggering_element_name":"op","_triggering_element_value":"\u041e\u0442\u043f\u0440\u0430\u0432\u0438\u0442\u044c"}}},"user":{"uid":0,"permissionsHash":"9c2367dfcaba0fa15f0375f97aed64e146c908cee68508d13b79e3ee80e5162d"}}</script>
+<script src="../../../../../../sites/default/files/js/js_F2-Y4EzgTnESr58XByoLYEnsbi7ysTfMIKN1RvsMSWY.js"></script>
+
+
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+      <g id="svg-copy" class="svg-icon svg-icon_copy">
+        <path d="M15.111,18H1.889A1.848,1.848,0,0,1,0,16.2V3.6A1.848,1.848,0,0,1,1.889,1.8H5.837a2.87,2.87,0,0,1,5.326,0h3.948A1.848,1.848,0,0,1,17,3.6V16.2A1.848,1.848,0,0,1,15.111,18ZM3.777,12.6v1.8h6.611V12.6Zm0-3.6v1.8h9.445V9Zm0-3.6V7.2h9.445V5.4ZM8.5,1.8a.924.924,0,0,0-.944.9.945.945,0,0,0,1.889,0A.924.924,0,0,0,8.5,1.8Z"/>
+      </g>
+
+      <g id="svg-prev" class="svg-icon svg-icon_arrow">
+        <path d="M5.488,12.779,0,6.39,5.488,0" transform="translate(1 0.652)"/>
+      </g>
+
+      <g id="svg-next" class="svg-icon svg-icon_arrow">
+        <path d="M0,12.779,5.488,6.39,0,0" transform="translate(0.759 0.652)"/>
+      </g>
+    </svg>
+  </body>
+
+<!-- Mirrored from academy.terrasoft.ua/docs/7-17/user/instrumenty_servisa/servisnye_obraschenija/rabota_s_obrascheniyami/sroki_reakcii_i_razresheniya/raschet_srokov_reakcii_i_razresheniya by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Mar 2022 05:35:07 GMT -->
+</html>

@@ -1,0 +1,1269 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# ">
+  
+<!-- Mirrored from academy.terrasoft.ua/docs/developer/ehlementy_interfejsa/stranica_zapisi/pole/obzor by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Mar 2022 03:20:00 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+          <!-- Google Tag Manager -->
+      <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          '../../../../../../www.googletagmanager.com/gtm5445.html?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-KLLB8G');</script>
+      <!-- End Google Tag Manager -->
+        <meta charset="utf-8" />
+<link rel="canonical" href="obzor.html" />
+<meta name="description" content="Типы полей и операций с полями 
+
+Типы полей, которые предоставляет Creatio:
+
+Простое поле.
+	Поле с изображением.
+	Вычисляемое поле.
+	Мультивалютное поле.
+Операции с полями, которые позволяет выполнять Creatio:" />
+<meta property="og:url" content="https://academy.terrasoft.ua/docs/developer/ehlementy_interfejsa/stranica_zapisi/pole/obzor" />
+<meta property="og:title" content="Поле" />
+<meta property="og:description" content="Типы полей и операций с полями 
+
+Типы полей, которые предоставляет Creatio:
+
+Простое поле.
+	Поле с изображением.
+	Вычисляемое поле.
+	Мультивалютное поле.
+Операции с полями, которые позволяет выполнять Creatio:" />
+<meta name="Generator" content="Drupal 9 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="../../../../themes/custom/creatio/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="revision" href="obzor.html" />
+
+    <title>Поле | Creatio Academy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&amp;family=Open+Sans:ital,wght@0,300;0,400;0,600;1,400&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" media="all" href="../../../../sites/default/files/css/css_6lTP66__-yc6QXFp1zOwoeJ0HVigoYZP-SeoLLii000.css" />
+<link rel="stylesheet" media="all" href="../../../../sites/default/files/css/css_XQJDNhkF3xH5SZCcY-PI89Zu4nYIzQ5oR3SnUKyfXJU.css" />
+<link rel="stylesheet" media="print" href="../../../../sites/default/files/css/css_Zn4VHvcniOOtUwkIVwXzYr_0AI9gUVgZcPqaH4ViagU.css" />
+
+    
+  </head>
+  <body class="path-node page-node-type-developer-documentation">
+          <!-- Google Tag Manager (noscript) -->
+      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KLLB8G"
+                        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+      <!-- End Google Tag Manager (noscript) -->
+    
+        
+      <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    <div class="creatio-page d-flex flex-column">
+        <div class="region region-informer">
+    <div id="block-terrasoftpidtrimueukrainu" class="block block-simple-block block-simple-blockterrasoft-pidtrimue-ukrainu">
+  
+    
+      <style type="text/css">
+<!--/*--><![CDATA[/* ><!--*/
+@import url(../../../../../../www.terrasoft.ua/themes/custom/creatio/css/components/informer.css)
+
+/*--><!]]>*/
+</style><div class="ts-swu">
+<div class="creatio-container">
+<div class="ts-swu__cont">
+<div><a class="ts-swu__link" href="https://www.terrasoft.ua/terrasoft-stands-with-ukraine" target="_blank">Україна понад усе!</a> <span><a href="https://www.terrasoft.ua/terrasoft-stands-with-ukraine" target="_blank">Приєднуйтеся</a> до допомоги!</span></div>
+</div>
+</div></div>
+
+  </div>
+
+  </div>
+
+  
+  <header role="banner">
+          <div class="creatio-region creatio-region_top">
+        <div class="creatio-container">
+            <div class="region region-top">
+    <div id="block-menutoggle" class="block block-simple-block block-simple-blockmenu-toggle">
+  
+    
+      <div class="menu-toggle"><span> </span></div>
+
+  </div>
+<div id="block-logowhite-2" class="block block-simple-block block-simple-blocklogo-white">
+  
+    
+      <p><a class="site-logo" href="../../../../../index.html" rel="home"><img src="../../../../themes/custom/creatio/logo-white.svg" /></a></p>
+
+  </div>
+<div id="block-search" class="block block-simple-block block-simple-blocksearch">
+  
+    
+      <div class="search">
+<form action="https://academy.terrasoft.ua/search" class="search-form" method="get"><input class="search-form__input" name="search" placeholder="Поиск" type="search" /><input class="search-form__button" type="submit" value="Поиск" /> </form>
+
+<div class="search-toggle"> </div>
+</div>
+
+  </div>
+<nav role="navigation" aria-labelledby="block-sitesua-menu" id="block-sitesua" class="block block-menu navigation menu--sites-ua">
+            
+  <h2 class="visually-hidden" id="block-sitesua-menu">Sites UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="https://www.terrasoft.ua/" rel="nofollow" target="_blank">Terrasoft</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://community.terrasoft.ua/" rel="nofollow" target="_blank">Community</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://marketplace.terrasoft.ua/" rel="nofollow" target="_blank">Marketplace</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+<div id="block-usermenu" class="block block-ts-user block-ts-user-menu-block">
+  
+    
+      <ul class="user-menu">
+      <li class="user-menu__item">
+      <a class="user-menu__link" href="https://profile.terrasoft.ua/user/login?destination=academy/ua/docs/developer/ehlementy_interfejsa/stranica_zapisi/pole/obzor">Войти</a>
+    </li>
+  </ul>
+
+  </div>
+<div id="block-usermenumobile" class="block block-ts-user block-ts-user-menu-mobile-block">
+  
+    
+      <ul class="user-menu-mobile">
+      <li class="user-menu-mobile__item">
+      <div class="user-menu-mobile__user user-menu-mobile__user_icon"></div>
+      <ul class="user-menu-mobile__submenu">
+        <li class="user-menu-mobile__subitem">
+          <a class="user-menu-mobile__sublink" href="https://profile.terrasoft.ua/user/login?destination=academy/ua/docs/developer/ehlementy_interfejsa/stranica_zapisi/pole/obzor">Войти</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  </div>
+
+  </div>
+
+        </div>
+      </div>
+              <div class="creatio-region creatio-region_header">
+        <div class="creatio-container">
+            <div class="region region-header">
+    <div id="block-logo" class="block block-simple-block block-simple-blocklogo">
+  
+    
+      <p><a class="site-logo" href="../../../../../index.html" rel="home"><img src="../../../../themes/custom/creatio/logo.svg" /></a></p>
+
+  </div>
+<nav role="navigation" aria-labelledby="block-osnovnayanavigaciyaua-menu" id="block-osnovnayanavigaciyaua" class="block block-menu navigation menu--main-ua">
+            
+  <h2 class="visually-hidden" id="block-osnovnayanavigaciyaua-menu">Основная навигация UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="../../../../index.html" data-drupal-link-system-path="&lt;front&gt;">Документация</a>
+              </li>
+                <li class="menu-item">
+        <a href="../../../../../trainings.html">Тренинги</a>
+              </li>
+                <li class="menu-item">
+        <a href="../../../../certification.html" data-drupal-link-system-path="node/3084">Сертификация и тестирование</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+<nav role="navigation" aria-labelledby="block-sitesua-2-menu" id="block-sitesua-2" class="block block-menu navigation menu--sites-ua">
+            
+  <h2 class="visually-hidden" id="block-sitesua-2-menu">Sites UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="https://www.terrasoft.ua/" rel="nofollow" target="_blank">Terrasoft</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://community.terrasoft.ua/" rel="nofollow" target="_blank">Community</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://marketplace.terrasoft.ua/" rel="nofollow" target="_blank">Marketplace</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+
+  </div>
+
+        </div>
+      </div>
+              <div class="creatio-region creatio-region_breadcrumb">
+        <div class="creatio-container">
+            <div class="region region-breadcrumb">
+    <div id="block-logowhite" class="block block-simple-block block-simple-blocklogo-white">
+  
+    
+      <p><a class="site-logo" href="../../../../../index.html" rel="home"><img src="../../../../themes/custom/creatio/logo-white.svg" /></a></p>
+
+  </div>
+<div id="block-breadcrumbnaviagtion" class="block block-ts-nav block-ts-nav-bread">
+  
+    
+      <nav class="breadcrumb"><ol class="ts-nav-breadcrumb__list"><li class="ts-nav-breadcrumb__item"><a href="../../../../index.html" class="ts-nav-breadcrumb__link" title="Документация">Документация</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../../index2132.html?vid_1=2" class="ts-nav-breadcrumb__link" title="Для разработчика">Для разработчика</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../ehlementy_interfejsa.html" class="ts-nav-breadcrumb__link" title="Элементы интерфейса" hreflang="ru">Элементы интерфейса</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../stranica_zapisi.html" class="ts-nav-breadcrumb__link" title="Страница записи" hreflang="ru">Страница записи</a></li>
+<li class="ts-nav-breadcrumb__item ts-nav-breadcrumb__item_mobile"><a href="../../../interface_elements/page/pole.html" class="ts-nav-breadcrumb__link" title="Поле" hreflang="ru">Поле</a></li>
+<li class="ts-nav-breadcrumb__item"><span class="ts-nav-breadcrumb__link ts-nav-breadcrumb__link_current" title="Обзор">Обзор</span></li>
+</ol>
+</nav>
+
+  </div>
+<div id="block-search-2" class="block block-simple-block block-simple-blocksearch">
+  
+    
+      <div class="search">
+<form action="https://academy.terrasoft.ua/search" class="search-form" method="get"><input class="search-form__input" name="search" placeholder="Поиск" type="search" /><input class="search-form__button" type="submit" value="Поиск" /> </form>
+
+<div class="search-toggle"> </div>
+</div>
+
+  </div>
+
+  </div>
+
+        </div>
+      </div>
+      </header>
+
+  <div class="creatio-region creatio-region_main">
+    <div class="creatio-container">
+                <div class="region region-breadcrumb-mobile">
+    <div id="block-breadcrumbnaviagtion-2" class="block block-ts-nav block-ts-nav-bread">
+  
+    
+      <nav class="breadcrumb"><ol class="ts-nav-breadcrumb__list"><li class="ts-nav-breadcrumb__item"><a href="../../../../index.html" class="ts-nav-breadcrumb__link" title="Документация">Документация</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../../index2132.html?vid_1=2" class="ts-nav-breadcrumb__link" title="Для разработчика">Для разработчика</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../ehlementy_interfejsa.html" class="ts-nav-breadcrumb__link" title="Элементы интерфейса" hreflang="ru">Элементы интерфейса</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../stranica_zapisi.html" class="ts-nav-breadcrumb__link" title="Страница записи" hreflang="ru">Страница записи</a></li>
+<li class="ts-nav-breadcrumb__item ts-nav-breadcrumb__item_mobile"><a href="../../../interface_elements/page/pole.html" class="ts-nav-breadcrumb__link" title="Поле" hreflang="ru">Поле</a></li>
+<li class="ts-nav-breadcrumb__item"><span class="ts-nav-breadcrumb__link ts-nav-breadcrumb__link_current" title="Обзор">Обзор</span></li>
+</ol>
+</nav>
+
+  </div>
+
+  </div>
+
+      
+      <main class="creatio-main" role="main">
+                                                    
+        <div class="creatio-content creatio-content_small">
+          <div class="creatio-content__inner creatio-content__inner_bg">
+                            <div class="region region-messages">
+    <div data-drupal-messages-fallback class="hidden"></div>
+
+  </div>
+
+            
+              <div class="region region-content">
+    <div id="block-creatio-page-title" class="block block-core block-page-title-block">
+  
+    
+      
+  <h1 class="page-title"><span class="field field--name-title field--type-string field--label-hidden">Поле</span>
+</h1>
+
+
+  </div>
+<div id="block-creatio-content" class="block block-system block-system-main-block">
+  
+    
+      
+<article data-history-node-id="3231" role="article" about="/docs/developer/ehlementy_interfejsa/stranica_zapisi/pole/obzor" class="node node--type-developer-documentation node--view-mode-full">
+
+  
+    
+
+  
+  <div class="node__content">
+      <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocknodedeveloper-documentationfield-difficulty">
+  
+    
+      
+            <div class="field field--name-field-difficulty field--type-entity-reference field--label-hidden field__item"><div about="/docs/taxonomy/term/123" id="taxonomy-term-123" class="taxonomy-term vocabulary-difficulty">
+  
+  
+  <div class="content">
+      <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocktaxonomy-termdifficultyfield-icon">
+  
+    
+      
+            <div class="field field--name-field-icon field--type-image field--label-hidden field__item">  <img src="../../../../sites/default/files/difficulty/medium.svg" alt="" loading="lazy" typeof="foaf:Image" />
+
+</div>
+      
+  </div>
+<div class="block block-layout-builder block-field-blocktaxonomy-termdifficultyname">
+  
+    
+      
+            <div class="field field--name-name field--type-string field--label-hidden field__item"><span style="color: #F57E20;">Средний</span></div>
+      
+  </div>
+
+    </div>
+  </div>
+
+  </div>
+</div>
+</div>
+      
+  </div>
+<div class="block block-ts-doc block-ts-doc-downloads">
+  
+    
+      <a href="../../../../sites/default/files/pdf/node/3231/Pole_.pdf" target="_blank">PDF</a>
+  </div>
+<div class="block block-ts-doc block-ts-doc-versions">
+  
+    
+        <div class="ts-doc-versions">
+    <select class="ts-doc-versions__select">
+                                                <option value="/docs/8-0/developer/ehlementy_interfejsa/stranica_zapisi/pole/obzor" selected>Версия 8.0</option>
+                              <option value="/docs/7-18/developer/ehlementy_interfejsa/stranica_zapisi/pole/obzor">Версия 7.18</option>
+                              <option value="/docs/7-17/developer/ehlementy_interfejsa/stranica_zapisi/pole/obzor">Версия 7.17</option>
+                              <option value="/docs/7-16/developer/ehlementy_interfejsa/stranica_zapisi/pole/obzor">Версия 7.16</option>
+          </select>
+  </div>
+
+  </div>
+
+    </div>
+  </div>
+  <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocknodedeveloper-documentationbody">
+  
+    
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><h2>Типы полей и операций с полями<a class="title-anchor" href="#title-3231-1" id="title-3231-1"> </a></h2>
+
+<p><strong>Типы</strong> полей, которые предоставляет Creatio:</p>
+
+<ul><li>Простое поле.</li>
+	<li>Поле с изображением.</li>
+	<li>Вычисляемое поле.</li>
+	<li>Мультивалютное поле.</li>
+</ul><p><strong>Операции с полями</strong>, которые позволяет выполнять Creatio:</p>
+
+<ul><li>Реализовать валидацию поля.</li>
+	<li>Установить для поля значение по умолчанию.</li>
+	<li>Настроить обязательность для поля.</li>
+	<li>Настроить фильтрацию значений справочного поля.</li>
+	<li>Настроить условия блокировки поля.</li>
+	<li>Настроить исключения блокировки полей.</li>
+	<li>Настроить условия отображения поля.</li>
+	<li>Добавить автонумерацию к полю.</li>
+	<li>Добавить информационную кнопку к полю.</li>
+	<li>Добавить всплывающую подсказку к полю.</li>
+	<li>Вычислить разницу дат в полях.</li>
+</ul><h2>Добавить поле<a class="title-anchor" href="#title-3231-2" id="title-3231-2"> </a></h2>
+
+<p><strong>Инструменты</strong>, которые позволяют добавить поле:</p>
+
+<ul><li>Мастер разделов.</li>
+	<li>Creatio IDE.</li>
+</ul><h3>Добавить простое поле<a class="title-anchor" href="#title-3231-3" id="title-3231-3"> </a></h3>
+
+<p><strong>Способы</strong> добавления простого поля:</p>
+
+<ul><li>С использованием существующей колонки.</li>
+	<li>C использованием новой колонки.</li>
+</ul><h4>Добавить простое поле с использованием мастера разделов<a class="title-anchor" href="#title-3231-4" id="title-3231-4"> </a></h4>
+
+<p>Чтобы добавить простое поле <strong>с использованием мастера разделов</strong>, воспользуйтесь инструкцией, которая приведена в статье <a href="../../../../user/kastomizacija_no_code/nastrojka_biznes_logiki/stranitsa/polya/nastroit_polya_stranicy.html">Настроить поля страницы</a>.</p>
+
+<h4>Добавить простое поле с использованием Creatio IDE<a class="title-anchor" href="#title-3231-5" id="title-3231-5"> </a></h4>
+
+<p>Чтобы добавить простое поле <strong>с использованием существующей колонки</strong> с помощью Creatio IDE:</p>
+
+<ol><li>Создайте схему замещающей модели представления страницы записи, на которой размещено поле. Для этого воспользуйтесь инструкцией, которая приведена в статье <a href="../../../../7-17/developer/instrumenty_razrabotki/creatio_ide/razrabotka_konfiguratsionnykh_elementov.html#title-3028-4">Разработка конфигурационных элементов</a>.</li>
+	<li>В схеме замещающей модели представления настройте расположение поля. Для этого в массив модификаций <span class="filled">diff</span> добавьте конфигурационный объект с настройками расположения поля на странице.</li>
+</ol><p><strong>Способы</strong> добавления простого поля с использованием новой колонки с помощью Creatio IDE:</p>
+
+<ul><li>Создать схему замещающего объекта и добавить в нее колонку.</li>
+	<li>Создать схему замещающей модели представления страницы записи, на которой размещено поле. Затем создать атрибут в схеме модели представления и добавить поле к созданной виртуальной колонке.</li>
+</ul><p>Ниже рассмотрен один из способов.</p>
+
+<p>Чтобы добавить простое поле <strong>с использованием новой колонки</strong> с помощью Creatio IDE:</p>
+
+<ol><li>Создайте схему замещающего объекта. Для этого воспользуйтесь инструкцией, которая приведена в статье <a href="../../../../7-17/developer/instrumenty_razrabotki/creatio_ide/razrabotka_konfiguratsionnykh_elementov.html#title-3028-6">Разработка конфигурационных элементов</a>.</li>
+	<li>В схему замещающего объекта добавьте колонку, которая соответствует полю схемы замещающей модели представления страницы. Для этого воспользуйтесь инструкцией, которая приведена в статье <a href="../../../../7-18/developer/instrumenty_razrabotki/creatio_ide/razrabotka_konfiguracionnykh_ehlementov/obzor.html#title-3028-6">Разработка конфигурационных элементов</a>.</li>
+	<li>Создайте схему замещающей модели представления страницы записи, на которой размещено поле. Для этого воспользуйтесь инструкцией, которая приведена в статье <a href="../../../../7-17/developer/instrumenty_razrabotki/creatio_ide/razrabotka_konfiguratsionnykh_elementov.html#title-3028-4">Разработка конфигурационных элементов</a>.</li>
+	<li>При необходимости, в схему замещающей модели представления добавьте локализуемую строку, которая содержит название поля. Для этого воспользуйтесь инструкцией, которая приведена в статье <a href="../../../back_end_razrabotka/lokalizuemye_resursy/operacii_s_lokalizuemymi_resursami/obzor.html#title-2174-3">Операции с локализуемыми ресурсами</a>.</li>
+	<li>В схеме замещающей модели представления настройте расположение поля. Для этого в массив модификаций <span class="filled">diff</span> добавьте конфигурационный объект с настройками расположения поля на странице.</li>
+</ol><h3>Добавить поле с изображением<a class="title-anchor" href="#title-3231-6" id="title-3231-6"> </a></h3>
+
+<ol><li>Создайте схему замещающего объекта. Для этого воспользуйтесь инструкцией, которая приведена в статье <a href="../../../../7-17/developer/instrumenty_razrabotki/creatio_ide/razrabotka_konfiguratsionnykh_elementov.html#title-3028-6">Разработка конфигурационных элементов</a>.</li>
+	<li>В схему замещающего объекта добавьте колонку типа <span class="key">Ссылка на изображение</span> (<span class="key">Image Link</span>), которая соответствует полю схемы замещающей модели представления страницы. Для этого воспользуйтесь инструкцией, которая приведена в статье <a href="../../../../7-18/developer/instrumenty_razrabotki/creatio_ide/razrabotka_konfiguracionnykh_ehlementov/obzor.html#title-3028-6">Разработка конфигурационных элементов</a>.</li>
+	<li>Создайте схему замещающей модели представления страницы записи, на которой размещено поле. Для этого воспользуйтесь инструкцией, которая приведена в статье <a href="../../../../7-17/developer/instrumenty_razrabotki/creatio_ide/razrabotka_konfiguratsionnykh_elementov.html#title-3028-4">Разработка конфигурационных элементов</a>.</li>
+	<li>При необходимости, в схему замещающей модели представления добавьте локализуемую строку, которая содержит название поля. Для этого воспользуйтесь инструкцией, которая приведена в статье <a href="../../../back_end_razrabotka/lokalizuemye_resursy/operacii_s_lokalizuemymi_resursami/obzor.html#title-2174-3">Операции с локализуемыми ресурсами</a>.</li>
+	<li>В коллекцию изображений схемы добавьте изображение.</li>
+	<li>
+	<p>В схеме замещающей модели представления настройте <strong>поле с изображением</strong>.</p>
+
+	<ol><li>
+		<p>В свойстве <span class="filled">methods</span> реализуйте <strong>методы</strong>:</p>
+
+		<ul><li>Метод, который получает изображение по ссылке.</li>
+			<li>Метод, который вызывается перед открытием диалогового окна выбора изображения.</li>
+			<li>Метод, который вызывается при изменении изображения.</li>
+			<li>Метод, который сохраняет ссылку на измененное изображение в колонке объекта.</li>
+		</ul></li>
+		<li>
+		<p>В массив модификаций <span class="filled">diff</span> добавьте конфигурационный объект с настройками расположения поля. Поле с изображением добавляется на страницу с использованием вспомогательного контейнера-обертки <span class="filled">PhotoContainer</span> с классом <span class="filled">"image-edit-container"</span>. В свойстве <span class="filled">values</span> массива модификаций <span class="filled">diff</span> реализуйте свойства:</p>
+
+		<ul><li><span class="filled">getSrcMethod()</span> — получает изображение по ссылке.</li>
+			<li><span class="filled">onPhotoChange()</span> — вызывается при изменении изображения.</li>
+			<li><span class="filled">beforeFileSelected()</span> — вызывается перед открытием диалогового окна выбора изображения.</li>
+			<li><span class="filled">readonly</span> — определяет возможность модификации изображения.</li>
+			<li><span class="filled">generator</span> — генератор элемента управления. Для поля с изображением укажите <span class="filled">ImageCustomGeneratorV2.generateCustomImageControl</span>.</li>
+		</ul></li>
+	</ol></li>
+</ol><h3>Добавить вычисляемое поле<a class="title-anchor" href="#title-3231-7" id="title-3231-7"> </a></h3>
+
+<p><strong>Вычисляемое поле</strong> — это элемент управления страницы записи, значение которого вычисляется в зависимости от состояния или значений других элементов управления этой страницы.</p>
+
+<p>В Creatio работа вычисляемых полей основана через подписку на события изменения атрибутов схемы модели представления страницы. При изменении значений колонок схемы объекта должно изменится значение текущей колонки.</p>
+
+<p>Чтобы <strong>добавить вычисляемое поле</strong> на страницу записи:</p>
+
+<ol><li>Создайте схему замещающего объекта. Для этого воспользуйтесь инструкцией, которая приведена в статье <a href="../../../../7-17/developer/instrumenty_razrabotki/creatio_ide/razrabotka_konfiguratsionnykh_elementov.html#title-3028-6">Разработка конфигурационных элементов</a>.</li>
+	<li>В схему замещающего объекта добавьте колонку, которая соответствует полю схемы замещающей модели представления страницы. Для этого воспользуйтесь инструкцией, которая приведена в статье <a href="../../../../7-18/developer/instrumenty_razrabotki/creatio_ide/razrabotka_konfiguracionnykh_ehlementov/obzor.html#title-3028-6">Разработка конфигурационных элементов</a>.</li>
+	<li>Создайте схему замещающей модели представления страницы записи, на которой размещено поле. Для этого воспользуйтесь инструкцией, которая приведена в статье <a href="../../../../7-17/developer/instrumenty_razrabotki/creatio_ide/razrabotka_konfiguratsionnykh_elementov.html#title-3028-4">Разработка конфигурационных элементов</a>.</li>
+	<li>
+	<p>В схеме замещающей модели представления настройте <strong>вычисляемое поле</strong>.</p>
+
+	<ol><li>
+		<p>В свойство <span class="filled">attributes</span> добавьте вычисляемую колонку (атрибут), для которой планируется установить зависимость. Для этого атрибута объявите свойство <span class="filled">dependencies</span>, которое содержит массив конфигурационных объектов. Свойства свойства <span class="filled">dependencies</span>:</p>
+
+		<ul><li><span class="filled">сolumns</span> — массив имен колонок, от значений которых зависит значение текущей колонки.</li>
+			<li><span class="filled">methodName</span> — имя метода-обработчика, который вызывается при изменении значения хотя бы одной из перечисленных колонок.</li>
+		</ul></li>
+		<li>
+		<p>В свойстве <span class="filled">methods</span> реализуйте:</p>
+
+		<ul><li>Метод-обработчик события изменения колонки, от которой зависит вычисляемая колонка.</li>
+			<li><span class="filled">onEntityInitialized()</span> — переопределенный базовый виртуальный метод. Срабатывает после выполнения инициализации схемы объекта страницы записи. В метод <span class="filled">onEntityInitialized()</span> добавьте вызов метода-обработчика, который обеспечит расчет вычисляемого поля в момент открытия страницы записи, а не только после изменений в колонках-зависимостях.</li>
+		</ul></li>
+		<li>В массив модификаций <span class="filled">diff</span> добавьте конфигурационный объект с настройками расположения поля.</li>
+	</ol></li>
+</ol><h3>Добавить мультивалютное поле<a class="title-anchor" href="#title-3231-8" id="title-3231-8"> </a></h3>
+
+<p><strong>Мультивалютное поле</strong> — элемент управления страницы записи, значение которого вычисляется в зависимости от состояния или значений других элементов управления этой страницы.</p>
+
+<p>Мультивалютное поле <strong>позволяет</strong>:</p>
+
+<ul><li>Вводить денежную сумму.</li>
+	<li>Указывать валюту введенной денежной суммы.</li>
+	<li>Фиксировать эквивалент суммы в базовой валюте, которая задана в настройках системы.</li>
+</ul><p>При изменении валюты введенная сумма автоматически пересчитывается с учетом обменных курсов валют.</p>
+
+<p>Чтобы <strong>добавить мультивалютное поле</strong> на страницу записи:</p>
+
+<ol><li>Создайте схему замещающего объекта. Для этого воспользуйтесь инструкцией, которая приведена в статье <a href="../../../../7-17/developer/instrumenty_razrabotki/creatio_ide/razrabotka_konfiguratsionnykh_elementov.html#title-3028-6">Разработка конфигурационных элементов</a>.</li>
+	<li>
+	<p>В схему замещающего объекта добавьте <strong>колонки</strong>:</p>
+
+	<ul><li>Колонку типа <span class="key">Справочник</span> (<span class="key">Lookup</span>) для хранения валюты.</li>
+		<li>Колонку курса валюты.</li>
+		<li>Колонку для хранения общей суммы в выбранной валюте.</li>
+		<li>Колонку для хранения суммы в базовой валюте.</li>
+	</ul><p>В схеме объекта может быть определена только одна колонка — для хранения общей суммы в выбранной валюте. Остальные колонки могут являться виртуальными, если бизнес-задача не предполагает хранения в базе данных их значений. Они могут быть определены как атрибуты в схеме модели представления.</p>
+
+	<p>Для добавления колонки воспользуйтесь инструкцией, которая приведена в статье <a href="../../../../7-18/developer/instrumenty_razrabotki/creatio_ide/razrabotka_konfiguracionnykh_ehlementov/obzor.html#title-3028-6">Разработка конфигурационных элементов</a>.</p>
+	</li>
+	<li>Создайте схему замещающей модели представления страницы записи, на которой размещено поле. Для этого воспользуйтесь инструкцией, которая приведена в статье <a href="../../../../7-17/developer/instrumenty_razrabotki/creatio_ide/razrabotka_konfiguratsionnykh_elementov.html#title-3028-4">Разработка конфигурационных элементов</a>.</li>
+	<li>В объявлении класса модели представления в качестве зависимостей добавьте модули <span class="filled">MoneyModule</span>, <span class="filled">MultiCurrencyEdit</span>, <span class="filled">MultiCurrencyEditUtilities</span>.</li>
+	<li>
+	<p>В схеме замещающей модели представления настройте <strong>мультивалютное поле</strong>.</p>
+
+	<ol><li>
+		<p>В свойство <span class="filled">attributes</span> добавьте <strong>атрибуты</strong>:</p>
+
+		<ul><li>Валюта.</li>
+			<li>Курс валюты.</li>
+			<li>Общая сумма.</li>
+			<li>Сумма в базовой валюте.</li>
+			<li>Коллекция курсов валют.</li>
+			<li>Коллекция для кнопки выбора валюты.</li>
+		</ul><p>Для атрибутов объявите свойство <span class="filled">dependencies</span>, которое содержит массив конфигурационных объектов. Свойства свойства <span class="filled">dependencies</span>:</p>
+
+		<ul><li><span class="filled">сolumns</span> — массив имен колонок, от значений которых зависит значение текущей колонки.</li>
+			<li><span class="filled">methodName</span> — имя метода-обработчика, который вызывается при изменении значения хотя бы одной из перечисленных колонок.</li>
+		</ul></li>
+		<li>В свойство <span class="filled">mixins</span> добавьте миксин <span class="filled">MultiCurrencyEditUtilities</span>.</li>
+		<li>
+		<p>В свойстве <span class="filled">methods</span> реализуйте <strong>методы</strong>:</p>
+
+		<ul><li><span class="filled">onEntityInitialized()</span> — переопределяет базовый виртуальный метод. Срабатывает после выполнения инициализации схемы объекта страницы записи.</li>
+			<li><span class="filled">setCurrencyRate()</span> — устанавливает курс валюты.</li>
+			<li><span class="filled">recalculateAmount()</span> — пересчитывает общую сумму.</li>
+			<li><span class="filled">recalculatePrimaryAmount()</span> — пересчитывает сумму в базовой валюте.</li>
+			<li><span class="filled">onVirtualCurrencyChange()</span> — метод-обработчик изменения виртуальной колонки валюты.</li>
+		</ul></li>
+		<li>
+		<p>В массив модификаций <span class="filled">diff</span> добавьте конфигурационный объект с настройками расположения поля. В свойстве <span class="filled">values</span> массива модификаций <span class="filled">diff</span> реализуйте свойства:</p>
+
+		<ul><li><span class="filled">primaryAmount</span> — наименование колонки, которая содержит сумму в базовой валюте.</li>
+			<li><span class="filled">currency</span> — наименование колонки, которая ссылается на справочник валют.</li>
+			<li><span class="filled">rate</span> — наименование колонки, которая содержит курс валюты.</li>
+			<li><span class="filled">generator</span> — генератор элемента управления. Для мультивалютного поля укажите <span class="filled">MultiCurrencyEditViewGenerator.generate</span>.</li>
+		</ul></li>
+	</ol></li>
+</ol><h2>Реализовать валидацию поля<a class="title-anchor" href="#title-3231-9" id="title-3231-9"> </a></h2>
+
+<p><strong>Валидация</strong> — проверка значений заполненных полей на соответствие установленным требованиям. Валидация значений полей страницы в Creatio реализуется на уровне колонок моделей представления страниц. Логика проверки значения поля выполняется в пользовательском методе-валидаторе.</p>
+
+<p>Чтобы <strong>реализовать валидацию поля</strong>:</p>
+
+<ol><li>Создайте схему замещающей модели представления страницы записи, на которой размещено поле. Для этого воспользуйтесь инструкцией, которая приведена в статье <a href="../../../../7-17/developer/instrumenty_razrabotki/creatio_ide/razrabotka_konfiguratsionnykh_elementov.html#title-3028-4">Разработка конфигурационных элементов</a>.</li>
+	<li>При необходимости, в схему замещающей модели представления добавьте локализуемую строку, которая содержит сообщение валидации. Для этого воспользуйтесь инструкцией, которая приведена в статье <a href="../../../back_end_razrabotka/lokalizuemye_resursy/operacii_s_lokalizuemymi_resursami/obzor.html#title-2174-3">Операции с локализуемыми ресурсами</a>.</li>
+	<li>
+	<p>В схеме замещающей модели представления настройте <strong>валидацию поля</strong>.</p>
+
+	<p>Для этого в свойстве <span class="filled">methods</span> реализуйте <strong>методы</strong>:</p>
+
+	<ul><li>
+		<p>Метод-валидатор, который определяет выполнение условия. <strong>Валидатор</strong> — метод модели представления, в котором выполняется анализ значения колонки модели представления на соответствие бизнес-требованиям. Этот метод должен возвращать объект с результатами валидации.</p>
+
+		<ul><li>Если <strong>валидация поля успешна</strong>, то метод-валидатор возвращает объект с пустой строкой.</li>
+			<li>Если <strong>валидация поля неуспешна</strong>, то метод-валидатор возвращает объект из свойством <span class="filled">invalidMessage</span>. Свойство <span class="filled">invalidMessage</span> содержит строку с сообщением, которое отображается под полем при попытке ввести в него некорректное значение и в информационном окне при попытке сохранить страницу с полем, которое не прошло валидацию.</li>
+		</ul></li>
+		<li>
+		<p><span class="filled">setValidationConfig()</span> — переопределенный базовый метод, в котором метод-валидатор привязан к соответствующей колонке схемы замещающей модели представления страницы записи. Метод <span class="filled">setValidationConfig()</span> вызывает метод <span class="filled">addColumnValidator()</span>. <strong>Параметры</strong> метода <span class="filled">addColumnValidator()</span>:</p>
+
+		<ul><li>Имя колонки модели представления, к которой привязывается валидатор.</li>
+			<li>Имя метода-валидатора значения колонки.</li>
+		</ul><p>Если валидация поля реализуется в схеме замещающей модели представления базовой страницы, то для корректной инициализации валидаторов полей базовой страницы перед вызовом метода <span class="filled">addColumnValidator()</span> добавьте вызов родительской реализации метода <span class="filled">setValidationConfig()</span>.</p>
+		</li>
+	</ul></li>
+</ol><h2>Установить для поля значение по умолчанию<a class="title-anchor" href="#title-3231-10" id="title-3231-10"> </a></h2>
+
+<p><strong>Способы</strong> установки для поля значения по умолчанию, которые предоставляет Creatio:</p>
+
+<ul><li>
+	<p><strong>На уровне колонок бизнес-объектов в схеме замещающего объекта</strong>.</p>
+
+	<p>При создании нового объекта некоторые поля страницы необходимо заполнить соответствующими значениями. В этом случае для колонок объекта, которые соответствуют этим полям, в дизайнере объектов укажите эти значения в качестве значений по умолчанию.</p>
+	</li>
+	<li>
+	<p><strong>В исходном коде схемы замещающей модели представления страницы записи</strong>.</p>
+
+	<p>В некоторых случаях невозможно установить значение по умолчанию с помощью свойств колонки объекта. Например, это могут быть вычисляемые значения, которые рассчитываются по значениям других колонок объекта. В таком случае, установить для поля значение по умолчанию можно только программными средствами.</p>
+	</li>
+</ul><p><strong>Виды</strong> значений по умолчанию для полей страницы записи, которые устанавливаются на уровне колонок бизнес-объектов в схеме замещающего объекта, представлены в таблице ниже.</p>
+
+<div class="table">
+<div class="table__caption">Виды значений по умолчанию</div>
+
+<table><thead><tr><th width="30%">
+			<center>Вид значения по умолчанию</center>
+			</th>
+			<th>
+			<center>Описание</center>
+			</th>
+		</tr></thead><tbody><tr><td><span class="key">Константа</span><br />
+			(<span class="key">Constant</span>)</td>
+			<td>
+			<p>Возможные <strong>типы</strong> колонок, для который можно установить константу в качестве значения по умолчанию:</p>
+
+			<ul><li><span class="key">Строка</span> (<span class="key">String</span>).</li>
+				<li><span class="key">Число</span> (<span class="key">Number</span>).</li>
+				<li><span class="key">Справочник</span> (<span class="key">Lookup</span>).</li>
+				<li><span class="key">Логическое</span> (<span class="key">Boolean</span>).</li>
+			</ul></td>
+		</tr><tr><td><span class="key">Системная настройка</span><br />
+			(<span class="key">System setting</span>)</td>
+			<td>Системные настройки содержатся в разделе <span class="key">Системные настройки</span> (<span class="key">System settings</span>), в который можно добавить пользовательскую системную настройку. Значение системной настройки устанавливается на уровне пользователя, а не на уровне приложения.</td>
+		</tr><tr><td><span class="key">Системная переменная</span><br />
+			(<span class="key">System variable</span>)</td>
+			<td><strong>Системные переменные</strong> — глобальные переменные, которые хранят информацию о настройках системы. Значение системной переменной устанавливается на уровне ядра приложения, а не на уровне пользователя.</td>
+		</tr></tbody></table></div>
+
+<p>Чтобы <strong>установить для поля значение по умолчанию</strong>:</p>
+
+<ol><li>Создайте схему замещающей модели представления страницы записи, на которой размещено поле. Для этого воспользуйтесь инструкцией, которая приведена в статье <a href="../../../../7-17/developer/instrumenty_razrabotki/creatio_ide/razrabotka_konfiguratsionnykh_elementov.html#title-3028-4">Разработка конфигурационных элементов</a>.</li>
+	<li>
+	<p>В схеме замещающей модели представления настройте для поля <strong>значение по умолчанию</strong>.</p>
+
+	<p>Для этого в свойстве <span class="filled">methods</span> реализуйте <strong>методы</strong>:</p>
+
+	<ul><li><span class="filled">onEntityInitialized()</span> — переопределенный базовый виртуальный метод. Срабатывает после окончания инициализации схемы объекта. В метод <span class="filled">onEntityInitialized()</span> добавьте вызов метода-обработчика, который обеспечит установку значения поля в момент открытия страницы записи.</li>
+		<li>Метод-обработчик, который рассчитывает значение поля.</li>
+	</ul></li>
+</ol><h2>Настроить обязательность для поля<a class="title-anchor" href="#title-3231-11" id="title-3231-11"> </a></h2>
+
+<ol><li>Создайте схему замещающей модели представления страницы записи, на которой размещено поле. Для этого воспользуйтесь инструкцией, которая приведена в статье <a href="../../../../7-17/developer/instrumenty_razrabotki/creatio_ide/razrabotka_konfiguratsionnykh_elementov.html#title-3028-4">Разработка конфигурационных элементов</a>.</li>
+	<li>В объявлении класса модели представления в качестве зависимостей добавьте модули <span class="filled">BusinessRuleModule</span> и <span class="filled">ConfigurationConstants</span>.</li>
+	<li>
+	<p>В схеме замещающей модели представления настройте <strong>обязательность для поля</strong>.</p>
+
+	<p>Для этого в свойстве <span class="filled">rules</span>:</p>
+
+	<ul><li>В свойстве <span class="filled">ruleType</span> укажите значение <span class="filled">BINDPARAMETER</span>, которое задает тип бизнес-правила. Типы правил представлены перечислением <span class="filled">BusinessRuleModule.enums.RuleType</span>.</li>
+		<li>В свойстве <span class="filled">property</span> укажите значение <span class="filled">REQUIRED</span>, которое устанавливает обязательность заполнения колонки. Свойства бизнес-правила <span class="filled">BINDPARAMETER</span> представлены перечислением <span class="filled">BusinessRuleModule.enums.Property</span>.</li>
+		<li>В массиве <span class="filled">conditions</span> укажите условия выполнения бизнес-правила.</li>
+	</ul></li>
+</ol><h2>Настроить фильтрацию значений справочного поля<a class="title-anchor" href="#title-3231-12" id="title-3231-12"> </a></h2>
+
+<p><strong>Способы</strong> настройки фильтрации значений справочного поля, которые предоставляет Creatio:</p>
+
+<ul><li>С использованием бизнес-правила <span class="key">FILTRATION</span>.</li>
+	<li>Явное указание фильтров в описании колонки в свойстве <span class="filled">attributes</span>.</li>
+</ul><p>Чтобы <strong>настроить фильтрацию значений справочного поля</strong> с использованием бизнес-правила <span class="key">FILTRATION</span>:</p>
+
+<ol><li>Создайте схему замещающей модели представления страницы записи, на которой размещено поле. Для этого воспользуйтесь инструкцией, которая приведена в статье <a href="../../../../7-17/developer/instrumenty_razrabotki/creatio_ide/razrabotka_konfiguratsionnykh_elementov.html#title-3028-4">Разработка конфигурационных элементов</a>.</li>
+	<li>В объявлении класса модели представления в качестве зависимостей добавьте модуль <span class="filled">BusinessRuleModule</span>.</li>
+	<li>
+	<p>В схеме замещающей модели представления настройте <strong>фильтрацию значений справочного поля</strong>.</p>
+
+	<ol><li>
+		<p>В свойстве <span class="filled">rules</span>:</p>
+
+		<ul><li>В свойстве <span class="filled">ruleType</span> укажите значение <span class="filled">FILTRATION</span>, которое задает тип бизнес-правила. Типы правил представлены перечислением <span class="filled">BusinessRuleModule.enums.RuleType</span>.</li>
+			<li>В свойстве <span class="filled">autocomplete</span> укажите значение <span class="filled">true</span>, которое выполняет обратную фильтрацию.</li>
+		</ul></li>
+		<li>В массив модификаций <span class="filled">diff</span> добавьте конфигурационный объект с настройками расположения поля.</li>
+	</ol></li>
+</ol><p>Настройка фильтрации значений справочного поля явным указанием фильтров в описании колонки используется для применения произвольной фильтрации, сортировки и добавления дополнительных колонок в запрос при отображении выпадающего списка.</p>
+
+<p>Чтобы <strong>настроить фильтрацию значений справочного поля</strong> явным указанием фильтров в описании колонки:</p>
+
+<ol><li>Создайте схему замещающей модели представления страницы записи, на которой размещено поле. Для этого воспользуйтесь инструкцией, которая приведена в статье <a href="../../../../7-17/developer/instrumenty_razrabotki/creatio_ide/razrabotka_konfiguratsionnykh_elementov.html#title-3028-4">Разработка конфигурационных элементов</a>.</li>
+	<li>В объявлении класса модели представления в качестве зависимостей добавьте модуль <span class="filled">BusinessRuleModule</span>.</li>
+	<li>
+	<p>В схеме замещающей модели представления настройте <strong>фильтрацию значений справочного поля</strong>.</p>
+
+	<p>Для этого в свойстве <span class="filled">attributes</span>:</p>
+
+	<ul><li>В свойстве <span class="filled">dataValueType</span> укажите значение <span class="filled">LOOKUP</span>, которое устанавливает тип данных колонки. Типы данных колонки представлены перечислением <span class="filled">Terrasoft.core.enums.DataValueType</span>.</li>
+		<li>
+		<p>В свойстве <span class="filled">lookupListConfig</span> укажите конфигурационный объект поля-справочника.</p>
+
+		<p><strong>Опциональные свойства</strong> свойства <span class="filled">lookupListConfig</span>:</p>
+
+		<ul><li><span class="filled">сolumns</span> — массив имен колонок, которые добавлены к запросу дополнительно к колонке <span class="key">Id</span> и первичной для отображения колонки.</li>
+			<li><span class="filled">orders</span> — массив конфигурационных объектов, которые определяют сортировку данных при отображении.</li>
+			<li>
+			<p>Свойство, которое задает фильтрацию:</p>
+
+			<ul><li><span class="filled">filter</span> — метод, который возвращает объект класса <span class="filled">Terrasoft.BaseFilter</span> или его наследника. Объект применяется к запросу.</li>
+				<li><span class="filled">filters</span> — массив методов, которые возвращают коллекцию класса <span class="filled">Terrasoft.FilterGroup</span>.</li>
+			</ul></li>
+		</ul></li>
+	</ul></li>
+</ol><p>Фильтры добавляются в коллекцию с помощью метода <span class="filled">add()</span>. <strong>Параметры</strong> метода <span class="filled">add()</span> представлены в таблице ниже.</p>
+
+<div class="table">
+<div class="table__caption">Параметры метода <span class="filled">add()</span></div>
+
+<table><thead><tr><th>
+			<center>Параметр</center>
+			</th>
+			<th>
+			<center>Тип данных</center>
+			</th>
+			<th>
+			<center>Описание</center>
+			</th>
+		</tr></thead><tbody><tr><td><span class="filled">key</span></td>
+			<td><span class="filled">String</span></td>
+			<td>Ключ.</td>
+		</tr><tr><td><span class="filled">item</span></td>
+			<td><span class="filled">Mixed</span></td>
+			<td>
+			<p>Элемент.</p>
+
+			<p>В качестве параметра <span class="filled">item</span> выступает объект класса <span class="filled">Terrasoft.BaseFilter</span> или его наследника. Настройка фильтров описана в статье <a href="../../../front_end_razrabotka/operatsii_s_dannymi_front_end/obzor.html#title-3073-6">Операции с данными (front-end)</a>.</p>
+
+			<p>По умолчанию фильтры в коллекции объединяются с использованием логической операции <span class="filled">AND</span>. Если необходимо применить операцию <span class="filled">OR</span>, то ее нужно явно указать в свойстве <span class="filled">logicalOperation</span> объекта <span class="filled">Terrasoft.FilterGroup</span>.</p>
+			</td>
+		</tr><tr><td><span class="filled">index</span></td>
+			<td><span class="filled">Number</span></td>
+			<td>Индекс для вставки. Если индекс не указан, то он не учитывается.</td>
+		</tr></tbody></table></div>
+
+<h2>Настроить условия блокировки поля<a class="title-anchor" href="#title-3231-13" id="title-3231-13"> </a></h2>
+
+<p><strong>Назначение</strong> блокировки полей страницы записи — одновременная блокировка всех полей и деталей на странице записи при выполнении соответствующего условия. Блокировка полей страницы записи позволяет решить задачу без написания большого количества бизнес-правил.</p>
+
+<p><strong>Типы</strong> деталей, к полям которых можно применить блокировку:</p>
+
+<ul><li>Деталь с реестром.</li>
+	<li>Деталь с редактируемым реестром.</li>
+	<li>Деталь с полями.</li>
+</ul><p>Чтобы <strong>настроить условия блокировки поля</strong>:</p>
+
+<ol><li>Создайте схему замещающей модели представления страницы записи, на которой размещено поле. Для этого воспользуйтесь инструкцией, которая приведена в статье <a href="../../../../7-17/developer/instrumenty_razrabotki/creatio_ide/razrabotka_konfiguratsionnykh_elementov.html#title-3028-4">Разработка конфигурационных элементов</a>.</li>
+	<li>В объявлении класса модели представления в качестве зависимостей добавьте модуль <span class="filled">BusinessRuleModule</span>.</li>
+	<li>
+	<p>В схеме замещающей модели представления настройте <strong>условия блокировки поля</strong>.</p>
+
+	<ol><li>
+		<p>В свойстве <span class="filled">attributes</span> включите блокировку с помощью атрибута <span class="filled">IsModelItemsEnabled</span>.</p>
+
+		<p><strong>Способы</strong> включения блокировки поля:</p>
+
+		<ul><li>Для атрибута <span class="filled">IsModelItemsEnabled</span> установите значение <span class="filled">false</span>.</li>
+			<li>Для атрибута <span class="filled">IsModelItemsEnabled</span> установите значение по умолчанию.</li>
+			<li>Для детали с полями используйте атрибут <span class="filled">IsEnabled</span>.</li>
+		</ul><div class="code">
+		<div class="code__widgets">
+		<div class="code__source" data-tab="Включение блокировки полей страницы записи (способ 1)">
+		<pre class="prettyprint">
+this.set("IsModelItemsEnabled", false);
+</pre>
+		</div>
+
+		<div class="code__source" data-tab="Включение блокировки полей страницы записи (способ 2)">
+		<pre class="prettyprint">
+"IsModelItemsEnabled": {
+    dataValueType: Terrasoft.DataValueType.BOOLEAN,
+    value: true,
+    dependencies: [{
+        columns: ["PaymentStatus"],
+        methodName: "setCardLockoutStatus"
+    }]
+}
+</pre>
+		</div>
+		</div>
+		</div>
+		</li>
+		<li>
+		<p>В свойство <span class="filled">rules</span>:</p>
+
+		<ul><li>В свойстве <span class="filled">ruleType</span> укажите значение <span class="filled">BINDPARAMETER</span>, которое задает тип бизнес-правила. Типы правил представлены перечислением <span class="filled">BusinessRuleModule.enums.RuleType</span>.</li>
+			<li>В свойстве <span class="filled">property</span> укажите значение <span class="filled">ENABLED</span>, которое устанавливает доступность колонки. Свойства бизнес-правила <span class="filled">BINDPARAMETER</span> представлены перечислением <span class="filled">BusinessRuleModule.enums.Property</span>.</li>
+			<li>В массиве <span class="filled">conditions</span> укажите условия выполнения бизнес-правила.</li>
+		</ul></li>
+		<li>
+		<p>В массив модификаций <span class="filled">diff</span> добавьте конфигурационный объект:</p>
+
+		<ul><li>В свойстве <span class="filled">name</span> для блокировки всех полей страницы записи укажите глобальный контейнер <span class="filled">CardContentWrapper</span>.</li>
+			<li>В свойстве <span class="filled">generator</span> свойства <span class="filled">values</span> укажите генератор <span class="filled">DisableControlsGenerator</span> для тех контейнеров, в которых планируется блокировать поля.</li>
+		</ul><div class="code">
+		<div class="code__widgets">
+		<div class="code__top">
+		<div class="code__title">Пример настройки массива модификаций <span class="filled">diff</span></div>
+		</div>
+
+		<div class="code__source">
+		<pre class="prettyprint">
+diff: /**SCHEMA_DIFF*/[
+    {
+        "operation": "merge",
+        "name": "CardContentWrapper",
+        "values": {
+            "generator": "DisableControlsGenerator.generatePartial"
+        }
+    }
+]/**SCHEMA_DIFF*/
+</pre>
+		</div>
+		</div>
+		</div>
+		</li>
+	</ol></li>
+</ol><p>У деталей блокируются кнопки и элементы меню, которые отвечают за выполнение операций над записью. При этом в детали с редактируемым реестром остается возможность перейти на страницу объекта, на которой в соответствии с бизнес-правилами будут заблокированы поля.</p>
+
+<p>Поле не будет заблокировано, если для поля в массиве модификаций <span class="filled">diff</span> или в бизнес-правиле существует привязка для свойства <span class="filled">enabled</span>.</p>
+
+<h2>Настроить исключения блокировки поля<a class="title-anchor" href="#title-3231-14" id="title-3231-14"> </a></h2>
+
+<p>Creatio предоставляет возможность исключить блокировку для полей и деталей.</p>
+
+<p>Чтобы <strong>настроить исключения блокировки поля</strong>:</p>
+
+<ol><li>Создайте схему замещающей модели представления страницы записи, на которой размещено поле. Для этого воспользуйтесь инструкцией, которая приведена в статье <a href="../../../../7-17/developer/instrumenty_razrabotki/creatio_ide/razrabotka_konfiguratsionnykh_elementov.html#title-3028-4">Разработка конфигурационных элементов</a>.</li>
+	<li>
+	<p>В схеме замещающей модели представления настройте <strong>исключения блокировки поля</strong>.</p>
+
+	<ol><li>В свойстве <span class="filled">attributes</span> включите блокировку с помощью атрибута <span class="filled">IsModelItemsEnabled</span>.</li>
+		<li>
+		<p>В свойстве <span class="filled">methods</span> реализуйте <strong>методы</strong>, которые возвращают списки полей и деталей, которые не должны быть заблокированы:</p>
+
+		<ul><li><span class="filled">getDisableExclusionsColumnTags()</span> — исключает блокировку колонки.</li>
+			<li><span class="filled">getDisableExclusionsDetailSchemaNames()</span> — исключает блокировку детали.</li>
+			<li><span class="filled">isModelItemEnabled()</span> — исключает блокировку колонки. Сложная логика исключений. Метод вызывается для каждого поля. Получает на вход имя и возвращают признак доступности поля.</li>
+			<li><span class="filled">isDetailEnabled()</span> — исключает блокировку детали. Сложная логика исключений. Метод вызывается для каждой детали. Получает на вход имя и возвращают признак доступности детали.</li>
+		</ul><div class="code">
+		<div class="code__widgets">
+		<div class="code__source" data-tab="Пример исключения блокировки поля и детали (способ 1)">
+		<pre class="prettyprint">
+getDisableExclusionsColumnTags: function() {
+    return ["SomeField"];
+}
+getDisableExclusionsDetailSchemaNames: function() {
+    return ["SomeDetailV2"]
+}
+</pre>
+		</div>
+
+		<div class="code__source" data-tab="Пример исключения поля и детали (способ 2)">
+		<pre class="prettyprint">
+isModelItemEnabled: function(fieldName) {
+    var сondition = this.get("SomeConditionAttribute");
+    if (fieldName === "ExampleField" || сondition)) {
+        return true;
+    }
+    return this.callParent(arguments);
+}
+
+isDetailEnabled: function(detailName) {   
+    if (detailName === "ExampleDetail") {
+        var exampleDate = this.get("Date");
+        var dateNow = new Date(this.Ext.Date.now());
+        var condition = this.Ext.Date.isDate(exampleDate) &amp;&amp; exampleDate &gt;= dateNow;
+        return condition;
+    }
+    return this.callParent(arguments);
+}
+</pre>
+		</div>
+		</div>
+		</div>
+		</li>
+		<li>В массив модификаций <span class="filled">diff</span> добавьте конфигурационный объект с настройками контейнера <span class="filled">CardContentWrapper</span>, в котором планируется блокировать поля.</li>
+	</ol></li>
+</ol><p>Чтобы <strong>отключить блокировку полей</strong>, на странице отключения функциональности Feature toggle используйте соответствующий переключатель опции <span class="filled">CompleteCardLockout</span>. Страница функциональности описана в статье <a href="../../upravlenie_ehlementami_interfejsa/feature_toggle/obzor.html">Механизм отключения функциональности Feature Toggle</a>.</p>
+
+<h2>Настроить условия отображения поля<a class="title-anchor" href="#title-3231-15" id="title-3231-15"> </a></h2>
+
+<ol><li>Создайте схему замещающего объекта. Для этого воспользуйтесь инструкцией, которая приведена в статье <a href="../../../../7-17/developer/instrumenty_razrabotki/creatio_ide/razrabotka_konfiguratsionnykh_elementov.html#title-3028-6">Разработка конфигурационных элементов</a>.</li>
+	<li>В схему замещающего объекта добавьте колонку, которая соответствует полю схемы замещающей модели представления страницы. Для этого воспользуйтесь инструкцией, которая приведена в статье <a href="../../../../7-18/developer/instrumenty_razrabotki/creatio_ide/razrabotka_konfiguracionnykh_ehlementov/obzor.html#title-3028-6">Разработка конфигурационных элементов</a>.</li>
+	<li>Создайте схему замещающей модели представления страницы записи, на которой размещено поле. Для этого воспользуйтесь инструкцией, которая приведена в статье <a href="../../../../7-17/developer/instrumenty_razrabotki/creatio_ide/razrabotka_konfiguratsionnykh_elementov.html#title-3028-4">Разработка конфигурационных элементов</a>.</li>
+	<li>
+	<p>В схеме замещающей модели представления настройте <strong>условия отображения поля</strong>.</p>
+
+	<ol><li>
+		<p>В свойстве <span class="filled">rules</span>:</p>
+
+		<ul><li>В свойстве <span class="filled">ruleType</span> укажите значение <span class="filled">BINDPARAMETER</span>, которое задает тип бизнес-правила. Типы правил представлены перечислением <span class="filled">BusinessRuleModule.enums.RuleType</span>.</li>
+			<li>В свойстве <span class="filled">property</span> укажите значение <span class="filled">VISIBLE</span>, которое устанавливает видимость колонки. Свойства бизнес-правила <span class="filled">BINDPARAMETER</span> представлены перечислением <span class="filled">BusinessRuleModule.enums.Property</span>.</li>
+			<li>В массиве <span class="filled">conditions</span> укажите условия выполнения бизнес-правила.</li>
+		</ul></li>
+		<li>В массив модификаций <span class="filled">diff</span> добавьте конфигурационный объект с настройками расположения поля.</li>
+	</ol></li>
+</ol><h2>Добавить автонумерацию к полю<a class="title-anchor" href="#title-3231-16" id="title-3231-16"> </a></h2>
+
+<p><strong>Автонумерация поля</strong> — автоматическая генерация номера записи в заданном шаблоне. Автонумерация реализована в разделах <span class="key">Документы</span> (<span class="key">Documents</span>), <span class="key">Счета</span> (<span class="key">Invoices</span>) и <span class="key">Договоры</span> (<span class="key">Contracts</span>).</p>
+
+<p><strong>Способы</strong> добавления автонумерацию к полю:</p>
+
+<ul><li>На стороне front-end.</li>
+	<li>На стороне back-end.</li>
+</ul><h3>Добавить автонумерацию к полю на стороне front-end<a class="title-anchor" href="#title-3231-17" id="title-3231-17"> </a></h3>
+
+<ol><li>
+	<p>Создайте <strong>системные настройки</strong>:</p>
+
+	<ul><li><span class="filled">[Entity]CodeMask</span> — маска номера объекта.</li>
+		<li><span class="filled">[Entity]LastNumber</span> — текущий номер объекта.</li>
+	</ul><p><span class="filled">Entity</span> — наименование объекта, к колонке которого планируется применить автонумерацию. Например, <span class="filled">InvoiceCodeMask</span> — маска номера счета и <span class="filled">InvoiceLastNumber</span> — текущий номер счета.</p>
+	</li>
+	<li>Создайте схему замещающей модели представления страницы записи, на которой размещено поле. Для этого воспользуйтесь инструкцией, которая приведена в статье <a href="../../../../7-17/developer/instrumenty_razrabotki/creatio_ide/razrabotka_konfiguratsionnykh_elementov.html#title-3028-4">Разработка конфигурационных элементов</a>.</li>
+	<li>
+	<p>В схеме замещающей модели представления настройте <strong>автонумерацию к полю на стороне front-end</strong>.</p>
+
+	<p>Для этого в свойстве <span class="filled">methods</span> реализуйте метод <span class="filled">onEntityInitialized()</span> — переопределенный базовый виртуальный метод. Срабатывает после окончания инициализации схемы объекта. В метод <span class="filled">onEntityInitialized()</span> добавьте вызов метода-обработчика <span class="filled">getIncrementCode()</span> базовой схемы страницы записи <span class="filled">BasePageV2</span>, который присвоит сгенерированный номер полю <span class="key">Код</span> (<span class="key">Code</span>).</p>
+
+	<p><strong>Параметры</strong> метода <span class="filled">getIncrementCode()</span>:</p>
+
+	<ul><li><span class="filled">callback</span> — функция, которая будет вызвана при получении ответа от сервиса. Ответ необходимо передать в соответствующую колонку (атрибут).</li>
+		<li><span class="filled">scope</span> — контекст, в котором будет вызвана функция <span class="filled">callback</span> (необязательный параметр).</li>
+	</ul></li>
+</ol><h3>Добавить автонумерацию к полю на стороне back-end<a class="title-anchor" href="#title-3231-18" id="title-3231-18"> </a></h3>
+
+<ol><li>
+	<p>Создайте <strong>системные настройки</strong>:</p>
+
+	<ul><li><span class="filled">[Entity]CodeMask</span> — маска номера объекта.</li>
+		<li><span class="filled">[Entity]LastNumber</span> — текущий номер объекта.</li>
+	</ul><p><span class="filled">Entity</span> — наименование объекта, к колонке которого планируется применить автонумерацию. Например, <span class="filled">InvoiceCodeMask</span> — маска номера счета и <span class="filled">InvoiceLastNumber</span> — текущий номер счета.</p>
+	</li>
+	<li>Создайте схему замещающего объекта. Для этого воспользуйтесь инструкцией, которая приведена в статье <a href="../../../../7-17/developer/instrumenty_razrabotki/creatio_ide/razrabotka_konfiguratsionnykh_elementov.html#title-3028-6">Разработка конфигурационных элементов</a>.</li>
+	<li>В схему замещающего объекта добавьте событие <span class="key">Перед добавлением записи</span> (<span class="key">Before record added</span>).</li>
+	<li>В бизнес-процессе реализуйте событийный подпроцесс.</li>
+</ol><h2>Добавить информационную кнопку к полю<a class="title-anchor" href="#title-3231-19" id="title-3231-19"> </a></h2>
+
+<ol><li>Создайте схему замещающей модели представления страницы записи, на которой размещено поле. Для этого воспользуйтесь инструкцией, которая приведена в статье <a href="../../../../7-17/developer/instrumenty_razrabotki/creatio_ide/razrabotka_konfiguratsionnykh_elementov.html#title-3028-4">Разработка конфигурационных элементов</a>.</li>
+	<li>При необходимости, в схему замещающей модели представления добавьте локализуемую строку, которая содержит название поля. Для этого воспользуйтесь инструкцией, которая приведена в статье <a href="../../../back_end_razrabotka/lokalizuemye_resursy/operacii_s_lokalizuemymi_resursami/obzor.html#title-2174-3">Операции с локализуемыми ресурсами</a>.</li>
+	<li>
+	<p>В схеме замещающей модели представления <strong>добавьте информационную кнопку к полю</strong>.</p>
+
+	<p>Для этого в массив модификаций <span class="filled">diff</span> добавьте конфигурационный объект с настройками расположения информационной кнопки к полю на странице. В свойстве <span class="filled">values</span> массива модификаций <span class="filled">diff</span> реализуйте свойство <span class="filled">itemType</span>, которому укажите значение <span class="filled">Terrasoft.ViewItemType.INFORMATION_BUTTON</span>.</p>
+	</li>
+</ol><h2>Добавить всплывающую подсказку к полю<a class="title-anchor" href="#title-3231-20" id="title-3231-20"> </a></h2>
+
+<ol><li>Создайте схему замещающей модели представления страницы записи, на которой размещено поле. Для этого воспользуйтесь инструкцией, которая приведена в статье <a href="../../../../7-17/developer/instrumenty_razrabotki/creatio_ide/razrabotka_konfiguratsionnykh_elementov.html#title-3028-4">Разработка конфигурационных элементов</a>.</li>
+	<li>При необходимости, в схему замещающей модели представления добавьте локализуемую строку, которая содержит название поля. Для этого воспользуйтесь инструкцией, которая приведена в статье <a href="../../../back_end_razrabotka/lokalizuemye_resursy/operacii_s_lokalizuemymi_resursami/obzor.html#title-2174-3">Операции с локализуемыми ресурсами</a>.</li>
+	<li>
+	<p>В схеме замещающей модели представления <strong>добавьте информационную кнопку к полю</strong>.</p>
+
+	<p>Для этого в массив модификаций <span class="filled">diff</span> добавьте конфигурационный объект с настройками расположения всплывающей подсказки к полю на странице. В свойстве <span class="filled">tip</span> массива модификаций <span class="filled">diff</span> настройте всплывающую подсказку.</p>
+	</li>
+</ol><h2>Вычислить разницу дат в полях<a class="title-anchor" href="#title-3231-21" id="title-3231-21"> </a></h2>
+
+<ol><li>Создайте схему замещающей модели представления страницы записи, на которой размещено поле. Для этого воспользуйтесь инструкцией, которая приведена в статье <a href="../../../../7-17/developer/instrumenty_razrabotki/creatio_ide/razrabotka_konfiguratsionnykh_elementov.html#title-3028-4">Разработка конфигурационных элементов</a>.</li>
+	<li>
+	<p>В схеме замещающей модели представления <strong>вычислите разницу дат в полях</strong>.</p>
+
+	<p>Для этого в свойстве <span class="filled">methods</span> реализуйте <strong>методы</strong>:</p>
+
+	<ul><li><span class="filled">onEntityInitialized()</span> — переопределяет базовый виртуальный метод. Срабатывает после выполнения инициализации схемы объекта страницы записи.</li>
+		<li><span class="filled">setEndDate()</span> — вспомогательный метод для установки даты. В метод <span class="filled">setEndDate()</span> добавьте вызов метода <span class="filled">getDate()</span>, который получает дату.</li>
+	</ul></li>
+</ol></div>
+      
+  </div>
+<div class="block block-layout-builder block-field-blocknodedeveloper-documentationfield-linked">
+  
+    
+      
+  <div class="field field--name-field-linked field--type-entity-reference field--label-above">
+    <div class="field__label">Смотрите также</div>
+          <div class="field__items">
+              <div class="field__item"><a href="../../../../user/kastomizacija_no_code/nastrojka_biznes_logiki/stranitsa/polya/nastroit_polya_stranicy.html" hreflang="ru">Настроить поля страницы</a></div>
+          <div class="field__item"><a href="../../../../7-18/developer/instrumenty_razrabotki/creatio_ide/razrabotka_konfiguracionnykh_ehlementov/obzor.html" hreflang="ru">Разработка конфигурационных элементов</a></div>
+          <div class="field__item"><a href="../../../back_end_razrabotka/lokalizuemye_resursy/operacii_s_lokalizuemymi_resursami/obzor.html" hreflang="ru">Операции с локализуемыми ресурсами</a></div>
+          <div class="field__item"><a href="../../../front_end_razrabotka/operatsii_s_dannymi_front_end/obzor.html" hreflang="ru">Операции с данными (front-end)</a></div>
+          <div class="field__item"><a href="../../upravlenie_ehlementami_interfejsa/feature_toggle/obzor.html" hreflang="ru">Механизм Feature Toggle</a></div>
+              </div>
+      </div>
+
+  </div>
+
+    </div>
+  </div>
+
+  </div>
+
+</article>
+
+  </div>
+
+  </div>
+
+          </div>
+        </div>
+
+                  <aside class="creatio-sidebar creatio-sidebar_first" role="complementary">
+              <div class="region region-sidebar-first">
+    <div id="block-documentationnaviagtion" class="block block-ts-nav block-ts-nav-doc-nav">
+  
+    
+      <div class="ts-nav-block"><a href="../../../../index.html" class="ts-nav-block__link">Документация</a><div class="ts-nav-block__title">Для разработчика</div>
+</div>
+<div class="ts-nav-container"><ul class="ts-nav-menu"><li class="ts-nav-menu__item">
+  <a href="../../../s_chego_nachat.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">С чего начать&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../architecture.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Архитектура&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../instrumenty_razrabotki.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Инструменты разработки&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../back_end_razrabotka.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Back-end разработка&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../front_end_razrabotka_freedom_ui.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Front-end разработка Freedom UI&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../front_end_razrabotka.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Front-end разработка&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../integratsiya_i_vneshnij_api.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Интеграция и внешний API&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../ehlementy_interfejsa.html" class="ts-nav-menu__link ts-nav-menu__link_expanded ts-nav-menu__link_open" hreflang="ru">Элементы интерфейса&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+      <ul class="ts-nav-menu__children">
+      <li class="ts-nav-menu__item">
+  <a href="../../glavnoe_menyu/obzor.html" class="ts-nav-menu__link" hreflang="ru">Главное меню</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../razdel.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Раздел&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../stranica_zapisi.html" class="ts-nav-menu__link ts-nav-menu__link_expanded ts-nav-menu__link_open" hreflang="ru">Страница записи&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+      <ul class="ts-nav-menu__children">
+      <li class="ts-nav-menu__item">
+  <a href="../../../interface_elements/page/obzor.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Обзор&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../interface_elements/page/panel_dejstvij.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Панель действий&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../interface_elements/page/pole.html" class="ts-nav-menu__link ts-nav-menu__link_expanded ts-nav-menu__link_open" hreflang="ru">Поле&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+      <ul class="ts-nav-menu__children">
+      <li class="ts-nav-menu__item">
+  <a href="obzor.html" class="ts-nav-menu__link ts-nav-menu__link_guide ts-nav-menu__link_active" hreflang="ru">Обзор</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="dobavit_pole_novaya_kolonka.html" class="ts-nav-menu__link ts-nav-menu__link_case" hreflang="ru">Добавить поле (новая колонка)</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="dobavit_pole_sushchestvuyushchaya_kolonka.html" class="ts-nav-menu__link ts-nav-menu__link_case" hreflang="ru">Добавить поле (существующая колонка)</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="dobavit_pole_s_izobrazheniem.html" class="ts-nav-menu__link ts-nav-menu__link_case" hreflang="ru">Добавить поле с изображением</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="dobavit_vychislyaemoe_pole.html" class="ts-nav-menu__link ts-nav-menu__link_case" hreflang="ru">Добавить вычисляемое поле</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="dobavit_multivalyutnoe_pole.html" class="ts-nav-menu__link ts-nav-menu__link_case" hreflang="ru">Добавить мультивалютное поле</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="realizovat_validaciyu_polya_tipa_data_vremya.html" class="ts-nav-menu__link ts-nav-menu__link_case" hreflang="ru">Реализовать валидацию поля типа [Дата/Время]</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="realizovat_validaciyu_polya_tipa_stroka.html" class="ts-nav-menu__link ts-nav-menu__link_case" hreflang="ru">Реализовать валидацию поля типа [Строка]</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="ustanovit_znachenie_po_umolchaniyu.html" class="ts-nav-menu__link ts-nav-menu__link_case" hreflang="ru">Установить значение по умолчанию</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="nastroit_obyazatelnost.html" class="ts-nav-menu__link ts-nav-menu__link_case" hreflang="ru">Настроить обязательность</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="nastroit_filtraciyu_znachenij_spravochnogo_polya.html" class="ts-nav-menu__link ts-nav-menu__link_case" hreflang="ru">Настроить фильтрацию значений справочного поля</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="nastroit_filtraciyu_znachenij_svyazannykh_spravochnykh_polej.html" class="ts-nav-menu__link ts-nav-menu__link_case" hreflang="ru">Настроить фильтрацию значений связанных справочных полей</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="nastroit_usloviya_blokirovki.html" class="ts-nav-menu__link ts-nav-menu__link_case" hreflang="ru">Настроить условия блокировки</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="nastroit_isklyucheniya_blokirovki.html" class="ts-nav-menu__link ts-nav-menu__link_case" hreflang="ru">Настроить исключения блокировки</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="nastroit_usloviya_otobrazheniya.html" class="ts-nav-menu__link ts-nav-menu__link_case" hreflang="ru">Настроить условия отображения</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="dobavit_avtonumeraciyu_front_end.html" class="ts-nav-menu__link ts-nav-menu__link_case" hreflang="ru">Добавить автонумерацию (front-end)</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="dobavit_avtonumeraciyu_back_end.html" class="ts-nav-menu__link ts-nav-menu__link_case" hreflang="ru">Добавить автонумерацию (back-end)</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="dobavit_informacionnuyu_knopku.html" class="ts-nav-menu__link ts-nav-menu__link_case" hreflang="ru">Добавить информационную кнопку</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="dobavit_vsplyvayushchuyu_podskazku.html" class="ts-nav-menu__link ts-nav-menu__link_case" hreflang="ru">Добавить всплывающую подсказку</a>
+  </li>
+
+    </ul>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../interface_elements/page/knopka.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Кнопка&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../interface_elements/page/hronologiya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Хронология&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../interface_elements/page/profil_svyazannoj_sushchnosti.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Профиль связанной сущности&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../interface_elements/page/html_ehlement_iframe.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">HTML-элемент iframe&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+
+    </ul>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../1215/detail.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Деталь&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../mini_kartochka.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Мини-карточка&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../modalnoe_okno.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Модальное окно&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../kommunikacionnaya_panel.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Коммуникационная панель&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../komandnaya_stroka/obzor.html" class="ts-nav-menu__link" hreflang="ru">Командная строка</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../dashbordy.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Дашборды&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../chaty.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Чаты&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../upravlenie_ehlementami_interfejsa.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Управление элементами интерфейса&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+
+    </ul>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../komponenty_prilozheniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Компоненты приложения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../razrabotka_mobilnogo_prilozheniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Разработка мобильного приложения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../razrabotka_marketplace_prilozheniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Разработка Marketplace-приложения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+</ul>
+</div>
+
+  </div>
+
+  </div>
+
+            <div class="creatio-sidebar__toggle"></div>
+          </aside>
+        
+                  <aside class="creatio-sidebar creatio-sidebar_second" role="complementary">
+              <div class="region region-sidebar-second">
+    <div id="block-example" class="block block-ts-nav block-ts-nav-page-nav">
+  
+    
+      <div class="ts-nav-page">
+  </div>
+
+  </div>
+<div id="block-adminfeedbackblock" class="block block-admin-feedback block-admin-feedback-block">
+  
+    
+      <div id="feedback-message"><div id="upper-feedback-content"><h2>Был ли данный материал полезен?</h2>
+<input class="feedback-btn feedback-btn__yes button js-form-submit form-submit" data-node-id="3231" data-feedback="yes" type="submit" name="op" value="Да" />
+<input class="feedback-btn feedback-btn__no button js-form-submit form-submit" data-node-id="3231" data-feedback="no" type="submit" name="op" value="Нет" />
+</div>
+<form class="admin-feedback-form" data-drupal-selector="admin-feedback-form" action="https://academy.terrasoft.ua/docs/developer/ehlementy_interfejsa/stranica_zapisi/pole/obzor" method="post" id="admin-feedback-form" accept-charset="UTF-8">
+  <div id="feedback-msg-result"></div><div class="js-form-item form-item js-form-type-textarea form-type-textarea js-form-item-feedback-message form-item-feedback-message form-no-label">
+        <div class="form-textarea-wrapper">
+  <textarea id="edit-feedback-msg" data-drupal-selector="edit-feedback-message" name="feedback_message" rows="5" cols="60" class="form-textarea resize-vertical"></textarea>
+</div>
+
+        </div>
+<input id="feedback-id" data-drupal-selector="edit-feedback-id" type="hidden" name="feedback_id" value="" />
+<input class="feedback-btn feedback-btn__send-comment button js-form-submit form-submit" data-drupal-selector="edit-feedback-send" type="submit" id="edit-feedback-send" name="op" value="Отправить" />
+<input autocomplete="off" data-drupal-selector="form-i90kibupbwpzuwmh87i2ra-ce0dckemjplfcykpkm3w" type="hidden" name="form_build_id" value="form-I90kIbUpBwPzuWMH87i2rA-CE0dCkemjPlFcYKPKM3w" />
+<input data-drupal-selector="edit-admin-feedback-form" type="hidden" name="form_id" value="admin_feedback_form" />
+
+</form>
+</div>
+
+  </div>
+
+  </div>
+
+          </aside>
+              </main>
+    </div>
+  </div>
+
+  <footer role="contentinfo">
+    <div class="creatio-region creatio-region_footer">
+      <div class="creatio-container">
+          <div class="region region-footer">
+    <div id="block-footerua" class="block block-simple-block block-simple-blockfooter-ua">
+  
+    
+      <div class="footer">
+<div class="footer-left">
+<ul class="footer-socials"><li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_fb" href="https://www.facebook.com/terrasoft.ua" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_in" href="https://www.linkedin.com/company/terrasoft/" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_yt" href="https://www.youtube.com/c/TerrasoftUkraine" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_tg" href="https://t.me/Terrasoft_UA" target="_blank"> </a></li>
+</ul></div>
+
+<div class="footer-contact">
+<div class="footer-title">Будьте на связи!</div>
+
+<div class="footer-content">
+<div class="footer-items">
+<div class="footer-item"><a class="footer__link footer__link_phone" href="tel:+380443633133">+38 (044) 363-31-33</a></div>
+</div>
+
+<div class="footer-items">
+<div class="footer-item"><a class="footer__link footer__link_email" href="mailto:support@terrasoft.ua">support@terrasoft.ua</a></div>
+</div>
+</div>
+</div>
+</div>
+
+  </div>
+
+  </div>
+
+      </div>
+    </div>
+    <div class="creatio-region creatio-region_bottom">
+      <div class="creatio-container">
+          <div class="region region-bottom">
+    <div id="block-allrightsreservedua" class="block block-simple-block block-simple-blockfooter-bottom-ua">
+  
+    
+      <p>© 2002-2022 Terrasoft.  |  <a href="https://www.terrasoft.ua/privacy-policy" target="_blank">Конфиденциальность</a></p>
+
+  </div>
+
+  </div>
+
+      </div>
+    </div>
+  </footer>
+</div>
+<div class="creatio-bg"></div>
+
+
+  </div>
+
+    
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/docs\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/3231","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"ru"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"ajaxPageState":{"libraries":"admin_feedback\/admin_feedback_block,admin_feedback\/admin_feedback_css,classy\/base,classy\/messages,classy\/node,core\/drupal.ajax,core\/jquery.form,core\/normalize,creatio\/fancybox,creatio\/global,layout_discovery\/onecol,system\/base,ts_doc\/doc_version,ts_feedback\/ts_feedback,ts_nav\/breadcrumb,ts_nav\/doc_nav,ts_nav\/page_nav,ts_title_anchor\/ts_title_anchor","theme":"creatio","theme_token":null},"ajaxTrustedUrl":{"form_action_p_pvdeGsVG5zNF_XLGPTvYSKCf43t8qZYSwcfZl2uzM":true,"\/docs\/developer\/ehlementy_interfejsa\/stranica_zapisi\/pole\/obzor?ajax_form=1":true},"admin_feedback":{"yes_response":"\u0421\u043f\u0430\u0441\u0438\u0431\u043e \u0437\u0430 \u043e\u0431\u0440\u0430\u0442\u043d\u0443\u044e \u0441\u0432\u044f\u0437\u044c!","no_response":"\u0421\u043f\u0430\u0441\u0438\u0431\u043e \u0437\u0430 \u043e\u0431\u0440\u0430\u0442\u043d\u0443\u044e \u0441\u0432\u044f\u0437\u044c!","custom_text_response_on_no":{"value":"","format":"full_html"},"feedback_prompt_on_yes":true,"feedback_prompt_on_no":true,"feedback_enable_predefined_answers":false,"feedback_prompt":"\u041a\u0430\u043a \u043c\u043e\u0436\u043d\u043e \u0443\u043b\u0443\u0447\u0448\u0438\u0442\u044c \u044d\u0442\u0443 \u0441\u0442\u0430\u0442\u044c\u044e?"},"ajax":{"edit-feedback-send":{"callback":"::validateFeedbackMsg","event":"mousedown","keypress":true,"prevent":"click","url":"\/docs\/developer\/ehlementy_interfejsa\/stranica_zapisi\/pole\/obzor?ajax_form=1","dialogType":"ajax","submit":{"_triggering_element_name":"op","_triggering_element_value":"\u041e\u0442\u043f\u0440\u0430\u0432\u0438\u0442\u044c"}}},"user":{"uid":0,"permissionsHash":"9c2367dfcaba0fa15f0375f97aed64e146c908cee68508d13b79e3ee80e5162d"}}</script>
+<script src="../../../../sites/default/files/js/js_Rr-7TvYD7NposuRFJwUqThxM7yJmw8vs03PQwu5gWd8.js"></script>
+
+
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+      <g id="svg-copy" class="svg-icon svg-icon_copy">
+        <path d="M15.111,18H1.889A1.848,1.848,0,0,1,0,16.2V3.6A1.848,1.848,0,0,1,1.889,1.8H5.837a2.87,2.87,0,0,1,5.326,0h3.948A1.848,1.848,0,0,1,17,3.6V16.2A1.848,1.848,0,0,1,15.111,18ZM3.777,12.6v1.8h6.611V12.6Zm0-3.6v1.8h9.445V9Zm0-3.6V7.2h9.445V5.4ZM8.5,1.8a.924.924,0,0,0-.944.9.945.945,0,0,0,1.889,0A.924.924,0,0,0,8.5,1.8Z"/>
+      </g>
+
+      <g id="svg-prev" class="svg-icon svg-icon_arrow">
+        <path d="M5.488,12.779,0,6.39,5.488,0" transform="translate(1 0.652)"/>
+      </g>
+
+      <g id="svg-next" class="svg-icon svg-icon_arrow">
+        <path d="M0,12.779,5.488,6.39,0,0" transform="translate(0.759 0.652)"/>
+      </g>
+    </svg>
+  </body>
+
+<!-- Mirrored from academy.terrasoft.ua/docs/developer/ehlementy_interfejsa/stranica_zapisi/pole/obzor by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Mar 2022 03:20:01 GMT -->
+</html>

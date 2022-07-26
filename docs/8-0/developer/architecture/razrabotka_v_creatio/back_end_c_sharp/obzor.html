@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# ">
+  
+<!-- Mirrored from academy.terrasoft.ua/docs/8-0/developer/architecture/razrabotka_v_creatio/back_end_c_sharp/obzor by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Mar 2022 07:03:26 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+          <!-- Google Tag Manager -->
+      <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          '../../../../../../../www.googletagmanager.com/gtm5445.html?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-KLLB8G');</script>
+      <!-- End Google Tag Manager -->
+        <meta charset="utf-8" />
+<link rel="canonical" href="obzor.html" />
+<meta name="description" content="Разработка решений в Creatio предполагает разные уровни кастомизации в зависимости от сложности или типа бизнес-задачи. При этом следует учитывать, что уровень ядра является неизменяемым компонентом системы, а разработка в Creatio реализуется на уровне конфигурации.
+
+Кастомизация приложений на уровне back-end реализуется в направлениях работы с данными, веб-сервисами, настройкой бизнес-логики объектов и т. д." />
+<meta property="og:url" content="https://academy.terrasoft.ua/docs/8-0/developer/architecture/razrabotka_v_creatio/back_end_c_sharp/obzor" />
+<meta property="og:title" content="Back-end (C#)" />
+<meta property="og:description" content="Разработка решений в Creatio предполагает разные уровни кастомизации в зависимости от сложности или типа бизнес-задачи. При этом следует учитывать, что уровень ядра является неизменяемым компонентом системы, а разработка в Creatio реализуется на уровне конфигурации.
+
+Кастомизация приложений на уровне back-end реализуется в направлениях работы с данными, веб-сервисами, настройкой бизнес-логики объектов и т. д." />
+<meta name="Generator" content="Drupal 9 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="../../../../../themes/custom/creatio/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="revision" href="obzor.html" />
+
+    <title>Back-end (C#) | Creatio Academy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&amp;family=Open+Sans:ital,wght@0,300;0,400;0,600;1,400&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" media="all" href="../../../../../sites/default/files/css/css_6lTP66__-yc6QXFp1zOwoeJ0HVigoYZP-SeoLLii000.css" />
+<link rel="stylesheet" media="all" href="../../../../../sites/default/files/css/css_XQJDNhkF3xH5SZCcY-PI89Zu4nYIzQ5oR3SnUKyfXJU.css" />
+<link rel="stylesheet" media="print" href="../../../../../sites/default/files/css/css_Zn4VHvcniOOtUwkIVwXzYr_0AI9gUVgZcPqaH4ViagU.css" />
+
+    
+  </head>
+  <body class="path-node page-node-type-developer-documentation">
+          <!-- Google Tag Manager (noscript) -->
+      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KLLB8G"
+                        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+      <!-- End Google Tag Manager (noscript) -->
+    
+        
+      <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    <div class="creatio-page d-flex flex-column">
+        <div class="region region-informer">
+    <div id="block-terrasoftpidtrimueukrainu" class="block block-simple-block block-simple-blockterrasoft-pidtrimue-ukrainu">
+  
+    
+      <style type="text/css">
+<!--/*--><![CDATA[/* ><!--*/
+@import url(../../../../../../../www.terrasoft.ua/themes/custom/creatio/css/components/informer.css)
+
+/*--><!]]>*/
+</style><div class="ts-swu">
+<div class="creatio-container">
+<div class="ts-swu__cont">
+<div><a class="ts-swu__link" href="https://www.terrasoft.ua/terrasoft-stands-with-ukraine" target="_blank">Україна понад усе!</a> <span><a href="https://www.terrasoft.ua/terrasoft-stands-with-ukraine" target="_blank">Приєднуйтеся</a> до допомоги!</span></div>
+</div>
+</div></div>
+
+  </div>
+
+  </div>
+
+  
+  <header role="banner">
+          <div class="creatio-region creatio-region_top">
+        <div class="creatio-container">
+            <div class="region region-top">
+    <div id="block-menutoggle" class="block block-simple-block block-simple-blockmenu-toggle">
+  
+    
+      <div class="menu-toggle"><span> </span></div>
+
+  </div>
+<div id="block-logowhite-2" class="block block-simple-block block-simple-blocklogo-white">
+  
+    
+      <p><a class="site-logo" href="../../../../../../index.html" rel="home"><img src="../../../../../themes/custom/creatio/logo-white.svg" /></a></p>
+
+  </div>
+<div id="block-search" class="block block-simple-block block-simple-blocksearch">
+  
+    
+      <div class="search">
+<form action="https://academy.terrasoft.ua/search" class="search-form" method="get"><input class="search-form__input" name="search" placeholder="Поиск" type="search" /><input class="search-form__button" type="submit" value="Поиск" /> </form>
+
+<div class="search-toggle"> </div>
+</div>
+
+  </div>
+<nav role="navigation" aria-labelledby="block-sitesua-menu" id="block-sitesua" class="block block-menu navigation menu--sites-ua">
+            
+  <h2 class="visually-hidden" id="block-sitesua-menu">Sites UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="https://www.terrasoft.ua/" rel="nofollow" target="_blank">Terrasoft</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://community.terrasoft.ua/" rel="nofollow" target="_blank">Community</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://marketplace.terrasoft.ua/" rel="nofollow" target="_blank">Marketplace</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+<div id="block-usermenu" class="block block-ts-user block-ts-user-menu-block">
+  
+    
+      <ul class="user-menu">
+      <li class="user-menu__item">
+      <a class="user-menu__link" href="https://profile.terrasoft.ua/user/login?destination=academy/ua/docs/8-0/developer/architecture/razrabotka_v_creatio/back_end_c_sharp/obzor">Войти</a>
+    </li>
+  </ul>
+
+  </div>
+<div id="block-usermenumobile" class="block block-ts-user block-ts-user-menu-mobile-block">
+  
+    
+      <ul class="user-menu-mobile">
+      <li class="user-menu-mobile__item">
+      <div class="user-menu-mobile__user user-menu-mobile__user_icon"></div>
+      <ul class="user-menu-mobile__submenu">
+        <li class="user-menu-mobile__subitem">
+          <a class="user-menu-mobile__sublink" href="https://profile.terrasoft.ua/user/login?destination=academy/ua/docs/8-0/developer/architecture/razrabotka_v_creatio/back_end_c_sharp/obzor">Войти</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  </div>
+
+  </div>
+
+        </div>
+      </div>
+              <div class="creatio-region creatio-region_header">
+        <div class="creatio-container">
+            <div class="region region-header">
+    <div id="block-logo" class="block block-simple-block block-simple-blocklogo">
+  
+    
+      <p><a class="site-logo" href="../../../../../../index.html" rel="home"><img src="../../../../../themes/custom/creatio/logo.svg" /></a></p>
+
+  </div>
+<nav role="navigation" aria-labelledby="block-osnovnayanavigaciyaua-menu" id="block-osnovnayanavigaciyaua" class="block block-menu navigation menu--main-ua">
+            
+  <h2 class="visually-hidden" id="block-osnovnayanavigaciyaua-menu">Основная навигация UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="../../../../../index.html" data-drupal-link-system-path="&lt;front&gt;">Документация</a>
+              </li>
+                <li class="menu-item">
+        <a href="../../../../../../trainings.html">Тренинги</a>
+              </li>
+                <li class="menu-item">
+        <a href="../../../../../certification.html" data-drupal-link-system-path="node/3084">Сертификация и тестирование</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+<nav role="navigation" aria-labelledby="block-sitesua-2-menu" id="block-sitesua-2" class="block block-menu navigation menu--sites-ua">
+            
+  <h2 class="visually-hidden" id="block-sitesua-2-menu">Sites UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="https://www.terrasoft.ua/" rel="nofollow" target="_blank">Terrasoft</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://community.terrasoft.ua/" rel="nofollow" target="_blank">Community</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://marketplace.terrasoft.ua/" rel="nofollow" target="_blank">Marketplace</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+
+  </div>
+
+        </div>
+      </div>
+              <div class="creatio-region creatio-region_breadcrumb">
+        <div class="creatio-container">
+            <div class="region region-breadcrumb">
+    <div id="block-logowhite" class="block block-simple-block block-simple-blocklogo-white">
+  
+    
+      <p><a class="site-logo" href="../../../../../../index.html" rel="home"><img src="../../../../../themes/custom/creatio/logo-white.svg" /></a></p>
+
+  </div>
+<div id="block-breadcrumbnaviagtion" class="block block-ts-nav block-ts-nav-bread">
+  
+    
+      <nav class="breadcrumb"><ol class="ts-nav-breadcrumb__list"><li class="ts-nav-breadcrumb__item"><a href="../../../../../index.html" class="ts-nav-breadcrumb__link" title="Документация">Документация</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../../../index2132.html?vid_1=2" class="ts-nav-breadcrumb__link" title="Для разработчика">Для разработчика</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../architecture.html" class="ts-nav-breadcrumb__link" title="Архитектура" hreflang="zxx">Архитектура</a></li>
+<li class="ts-nav-breadcrumb__item ts-nav-breadcrumb__item_mobile"><a href="../../razrabotka_v_creatio.html" class="ts-nav-breadcrumb__link" title="Разработка в Creatio" hreflang="zxx">Разработка в Creatio</a></li>
+<li class="ts-nav-breadcrumb__item"><span class="ts-nav-breadcrumb__link ts-nav-breadcrumb__link_current" title="Обзор">Обзор</span></li>
+</ol>
+</nav>
+
+  </div>
+<div id="block-search-2" class="block block-simple-block block-simple-blocksearch">
+  
+    
+      <div class="search">
+<form action="https://academy.terrasoft.ua/search" class="search-form" method="get"><input class="search-form__input" name="search" placeholder="Поиск" type="search" /><input class="search-form__button" type="submit" value="Поиск" /> </form>
+
+<div class="search-toggle"> </div>
+</div>
+
+  </div>
+
+  </div>
+
+        </div>
+      </div>
+      </header>
+
+  <div class="creatio-region creatio-region_main">
+    <div class="creatio-container">
+                <div class="region region-breadcrumb-mobile">
+    <div id="block-breadcrumbnaviagtion-2" class="block block-ts-nav block-ts-nav-bread">
+  
+    
+      <nav class="breadcrumb"><ol class="ts-nav-breadcrumb__list"><li class="ts-nav-breadcrumb__item"><a href="../../../../../index.html" class="ts-nav-breadcrumb__link" title="Документация">Документация</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../../../index2132.html?vid_1=2" class="ts-nav-breadcrumb__link" title="Для разработчика">Для разработчика</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../architecture.html" class="ts-nav-breadcrumb__link" title="Архитектура" hreflang="zxx">Архитектура</a></li>
+<li class="ts-nav-breadcrumb__item ts-nav-breadcrumb__item_mobile"><a href="../../razrabotka_v_creatio.html" class="ts-nav-breadcrumb__link" title="Разработка в Creatio" hreflang="zxx">Разработка в Creatio</a></li>
+<li class="ts-nav-breadcrumb__item"><span class="ts-nav-breadcrumb__link ts-nav-breadcrumb__link_current" title="Обзор">Обзор</span></li>
+</ol>
+</nav>
+
+  </div>
+
+  </div>
+
+      
+      <main class="creatio-main" role="main">
+                                                    
+        <div class="creatio-content creatio-content_small">
+          <div class="creatio-content__inner creatio-content__inner_bg">
+                            <div class="region region-messages">
+    <div data-drupal-messages-fallback class="hidden"></div>
+
+  </div>
+
+            
+              <div class="region region-content">
+    <div id="block-creatio-page-title" class="block block-core block-page-title-block">
+  
+    
+      
+  <h1 class="page-title"><span class="field field--name-title field--type-string field--label-hidden">Back-end (C#)</span>
+</h1>
+
+
+  </div>
+<div id="block-creatio-content" class="block block-system block-system-main-block">
+  
+    
+      
+<article data-history-node-id="2087" role="article" about="/docs/8-0/developer/architecture/razrabotka_v_creatio/back_end_c_sharp/obzor" class="node node--type-developer-documentation node--view-mode-full">
+
+  
+    
+
+  
+  <div class="node__content">
+      <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocknodedeveloper-documentationfield-difficulty">
+  
+    
+      
+            <div class="field field--name-field-difficulty field--type-entity-reference field--label-hidden field__item"><div about="/docs/8-0/taxonomy/term/121" id="taxonomy-term-121" class="taxonomy-term vocabulary-difficulty">
+  
+  
+  <div class="content">
+      <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocktaxonomy-termdifficultyfield-icon">
+  
+    
+      
+            <div class="field field--name-field-icon field--type-image field--label-hidden field__item">  <img src="../../../../../sites/default/files/difficulty/beginner.svg" alt="" loading="lazy" typeof="foaf:Image" />
+
+</div>
+      
+  </div>
+<div class="block block-layout-builder block-field-blocktaxonomy-termdifficultyname">
+  
+    
+      
+            <div class="field field--name-name field--type-string field--label-hidden field__item"><span style="color: #7FB441;">Основы</span></div>
+      
+  </div>
+
+    </div>
+  </div>
+
+  </div>
+</div>
+</div>
+      
+  </div>
+<div class="block block-ts-doc block-ts-doc-downloads">
+  
+    
+      <a href="../../../../../sites/default/files/pdf/node/2087/Back_end_(C%23)_.pdf" target="_blank">PDF</a>
+  </div>
+<div class="block block-ts-doc block-ts-doc-versions">
+  
+    
+        <div class="ts-doc-versions">
+    <select class="ts-doc-versions__select">
+                                                <option value="/docs/8-0/developer/architecture/razrabotka_v_creatio/back_end_c_sharp/obzor" selected>Версия 8.0</option>
+                              <option value="/docs/7-18/developer/architecture/razrabotka_v_creatio/back_end_c_sharp/obzor">Версия 7.18</option>
+                              <option value="/docs/7-17/developer/architecture/razrabotka_v_creatio/back_end_c_sharp/obzor">Версия 7.17</option>
+                              <option value="/docs/7-16/developer/architecture/razrabotka_v_creatio/back_end_c_sharp/obzor">Версия 7.16</option>
+          </select>
+  </div>
+
+  </div>
+
+    </div>
+  </div>
+  <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocknodedeveloper-documentationbody">
+  
+    
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><p>Разработка решений в Creatio предполагает разные уровни кастомизации в зависимости от сложности или типа бизнес-задачи. При этом следует учитывать, что уровень ядра является неизменяемым компонентом системы, а разработка в Creatio реализуется на уровне конфигурации.</p>
+
+<p>Кастомизация приложений на уровне back-end реализуется в направлениях работы с данными, веб-сервисами, настройкой бизнес-логики объектов и т. д.</p>
+
+<p>Для этих целей Creatio предоставляет набор различных инструментов — от разработки схемы <span class="key">Исходный код</span> (<span class="key">Source code</span>) или <span class="key">Действие процесса</span> (<span class="key">User Task</span>) во встроенной IDE до создания завершенных пользовательских проектов, подключаемых к приложению в качестве внешних библиотек.</p>
+
+<h2>Направления back-end разработки<a class="title-anchor" href="#title-2087-1" id="title-2087-1"> </a></h2>
+
+<p>На уровне back-end реализуются следующие направления разработки:</p>
+
+<ul><li>ORM-модель данных и методы работы с ней.</li>
+	<li>Реализация прямого доступа к базе данных.</li>
+	<li>Создание и использование системных веб-сервисов.</li>
+	<li>Настройка интеграции с внешними сервисами.</li>
+	<li>Работа с компонентами системы и микросервисами.</li>
+	<li>Расширенная настройка бизнес-процессов и встроенных процессов объектов приложения.</li>
+	<li>Разработка бизнес-логики объектов.</li>
+</ul><h3>ORM-модель данных и прямой доступ к базе данных<a class="title-anchor" href="#title-2087-2" id="title-2087-2"> </a></h3>
+
+<p><strong>ORM-модель данных</strong> реализована в системе классами пространства имен <span class="filled">Terrasoft.Core.Entities</span> :</p>
+
+<ul><li><span class="filled">Terrasoft.Core.Entities.EntitySchemaQuery</span> — построение запросов выборки записей из таблиц базы данных с учетом прав доступа текущего пользователя.</li>
+	<li><span class="filled">Terrasoft.Core.Entities.Entity</span> — доступ к объекту, который представляет собой запись в таблице базы данных.</li>
+</ul><p>В большинстве случаев для доступа к данным рекомендуется использовать именно объектную модель, хотя прямой доступ к базе данных также реализован в back-end компонентах ядра.</p>
+
+<p><strong>Прямой доступ к базе данных</strong> предоставляет группа классов back-end ядра приложения из пространства имен <span class="filled">Terrasoft.Core.DB</span>:</p>
+
+<ul><li><span class="filled">Terrasoft.Core.DB.Select</span> — построение запросов выборки записей из таблиц базы данных.</li>
+	<li><span class="filled">Terrasoft.Core.DB.Insert</span> — построение запросов на добавление записей в таблицы базы данных.</li>
+	<li><span class="filled">Terrasoft.Core.DB.InsertSelect</span> — построение запросов на добавление записей в таблицы базы данных.</li>
+	<li><span class="filled">Terrasoft.Core.DB.Update</span> — построение запросов на изменение записей в таблице базы данных.</li>
+	<li><span class="filled">Terrasoft.Core.DB.Delete</span> — построение запросов на удаление записей в таблице базы данных.</li>
+	<li><span class="filled">Terrasoft.Core.DB.DBExecutor</span> — возможность создания и выполнения сложных запросов (например, с несколькими вложенными фильтрациями, различными комбинациями join-ов и т. д.) к базе данных.</li>
+</ul><h3>Веб-сервисы<a class="title-anchor" href="#title-2087-3" id="title-2087-3"> </a></h3>
+
+<p>Сервисная модель Creatio предоставляет базовый набор веб-сервисов, с помощью которых может быть организована интеграция Creatio с внешними приложениями и системами.</p>
+
+<p>Примеры <strong>системных сервисов</strong>:</p>
+
+<ul><li><a href="../../../integratsiya_i_vneshnij_api/servisy_raboty_s_dannymi/odata/obzor.html">odata</a> — обмен данными с Creatio по протоколу OData 4.</li>
+	<li><a href="../../../integratsiya_i_vneshnij_api/servis_zapuska_biznes_processov/obzor.html">ProcessEngineService.svc</a> — запуск бизнес-процессов Creatio из внешних приложений.</li>
+</ul><p>Кроме системных, в Creatio реализованы <strong>конфигурационные веб-сервисы</strong>, предназначенные для вызова из клиентской части приложения.</p>
+
+<p>Дополнительно к базовым сервисам разработчик имеет возможность создать <strong>пользовательский веб-сервис</strong>, предназначенный для решения узких бизнес-задач конкретного проекта.</p>
+
+<h3>Внешние сервисы<a class="title-anchor" href="#title-2087-4" id="title-2087-4"> </a></h3>
+
+<p>В ядре приложения реализованы классы, обеспечивающие интеграцию с внешними сервисами. Например, пространство имен <span class="filled">Terrasoft.Social</span> предоставляет возможность интеграции с различными социальными сетями.</p>
+
+<h3>Компоненты системы и микросервисы<a class="title-anchor" href="#title-2087-5" id="title-2087-5"> </a></h3>
+
+<p>В ядре приложения реализованы классы, предоставляющие возможности для работы с компонентами системы и микросервисами. Например, пространство имен <span class="filled">Terrasoft.Sync</span> ядра приложения предоставляет классы встроенного механизма синхронизации с внешними хранилищами данных (<a href="../../../komponenty_prilozheniya/sinkhronizaciya_sync_engine/obshchie_principy_raboty_mekhanizma_sinkhronizacii_sync_engine/obzor.html">Sync Engine</a>), который позволяет создавать, изменять и удалять <span class="filled"><a href="../../../../../../api/netcoreapi/7.15.0/index.html#Terrasoft.Core~Terrasoft.Core.Entities.Entity.html" target="_blank">Entity</a></span> в системе на основании данных из внешних систем и экспортировать данные во внешние системы. Процесс синхронизации осуществляется с помощью класса <span class="filled">SyncAgent</span>.</p>
+
+<h3>Бизнес-процессы и встроенные процессы объектов<a class="title-anchor" href="#title-2087-6" id="title-2087-6"> </a></h3>
+
+<p>Back-end разработка может потребоваться для <strong>настройки сложных бизнес-процессов</strong> (Элемент процесса <span class="key">Задание-сценарий</span> (<span class="key">Script-task</span>)) либо для создания пользовательских <strong>повторяющихся операций бизнес-процесса</strong> (Конфигурационная схема <span class="key">Действие процесса</span> (<span class="key">User Task</span>)).</p>
+
+<p><strong>Встроенные процессы объекта </strong>могут быть настроены как при помощи no-code инструментов, так и с использованием back-end разработки. Использование программного кода позволяет более гибко настроить поведение объекта в случае наступления определенных событий.</p>
+
+<h3>Бизнес-логика объектов<a class="title-anchor" href="#title-2087-7" id="title-2087-7"> </a></h3>
+
+<p>В Creatio есть возможность разрабатывать <a href="../../../back_end_razrabotka/biznes_logika_obektov/obzor.html">бизнес-логику объектов</a> без использования событийных подпроцессов. Для этого достаточно создать класс-наследник базового ядрового класса <span class="filled">Terrasoft.Core.Entities.Events.BaseEntityEventListener</span> и декорировать его атрибутом <span class="filled">EntityEventListener</span> с указанием имени сущности, для которой необходимо выполнить подписку событий. После чего можно переопределять методы-обработчики нужных событий.</p>
+
+<h2>Инструменты и утилитные возможности back-end разработки<a class="title-anchor" href="#title-2087-8" id="title-2087-8"> </a></h2>
+
+<h3>Схема исходного кода<a class="title-anchor" href="#title-2087-9" id="title-2087-9"> </a></h3>
+
+<p>Основной возможностью back-end разработки является создание в пользовательском пакете схемы типа <a href="../../../../../7-17/developer/instrumenty_razrabotki/creatio_ide/razrabotka_konfiguratsionnykh_elementov.html#title-3028-8"><span class="key">Исходный код</span></a> (<span class="key">Source code</span>).</p>
+
+<p>Все изменения схемы, выполняемые в дизайнере, осуществляются в оперативной памяти. Чтобы изменения были сохранены на уровне метаданных схемы, схему следует сохранить. Для того чтобы изменения произошли на уровне базы данных, схему необходимо опубликовать.</p>
+
+<p>Разработку схемы типа <span class="key">Исходный код</span> (<span class="key">Source code</span>) можно вести в <a href="../../../instrumenty_razrabotki/vneshnie_ide/obzor.html#case-2913">файловой системе</a> с использованием удобной IDE.</p>
+
+<h3>Конфигурирование бизнес-процессов<a class="title-anchor" href="#title-2087-10" id="title-2087-10"> </a></h3>
+
+<p>Включение специфической back-end логики в бизнес-процесс возможно с помощью программного кода, выполняемого элементом <span class="key">Задание-сценарий</span> (<span class="key">Script-task</span>).</p>
+
+<p>Во время работы с бизнес-процессами в Creatio часто возникает необходимость выполнять однотипные операции. Для этих целей лучше всего подходит элемент <a href="../../../../../7-17/user/biznes_processy/spravka_po_elementam_processov/dejstviya_sistemy/vypolnit_deystvie_processa/element_processa_vypolnit_dejstvije_processa.html"><span class="key">Выполнить действие процесса</span></a> (<span class="key">User task</span>), для которого существует возможность выбрать наиболее подходящий в конкретной ситуации тип действия — <span class="key">Пользовательское действие</span> (<span class="key">User task</span>).</p>
+
+<p>По умолчанию в системе доступно множество пользовательских действий, однако могут возникнуть ситуации, когда для выполнения определенного бизнес-процесса необходимо создать новое пользовательское действие.</p>
+
+<p>Создать новое пользовательское действие можно с помощью конфигурационной схемы <span class="key">Действие процесса</span> (<span class="key">User Task</span>). В простой реализации действие процесса частично повторяет логику элемента процесса <span class="key">Задание-сценарий</span> (<span class="key">Script-task</span>), однако созданное однажды действие можно использовать многократно в разных процессах. А при внесении изменений в действие процесса, такие изменения сразу же будут применены ко всем процессам, в которых это действие использовалось.</p>
+
+<h3>Внешние библиотеки<a class="title-anchor" href="#title-2087-11" id="title-2087-11"> </a></h3>
+
+<p>В структуру пользовательского пакета могут быть включены внешние библиотеки, созданные пользователем. Это позволяет реализовать сложную логику, механизмы наследования, инкапсуляции при разработке специфического проектного решения.</p>
+
+<h3>Пакет-проект<a class="title-anchor" href="#title-2087-12" id="title-2087-12"> </a></h3>
+
+<p>Одним из инструментов Creatio для ускорения back-end разработки приложения является <a href="../../../instrumenty_razrabotki/pakety/paket_proekt/obzor.html">пакет-проект</a>. Это пакет, который позволяет разрабатывать функциональность как обычный C#-проект. Новая функциональность в виде скомпилированной библиотеки и *.cs-файлов включается в <a href="../../../../../7-16/developer/development_tools/packages/rabota_s_faylovym_kontentom.html">файловый контент пакета</a>. При старте или перезапуске приложения Creatio собирает информацию о том, что в пакетах есть подготовленные библиотеки и сразу же подключает их в приложение.</p>
+</div>
+      
+  </div>
+<div class="block block-layout-builder block-field-blocknodedeveloper-documentationfield-linked">
+  
+    
+      
+  <div class="field field--name-field-linked field--type-entity-reference field--label-above">
+    <div class="field__label">Смотрите также</div>
+          <div class="field__items">
+              <div class="field__item"><a href="../front_end_js/obzor.html" hreflang="ru">Front-end (JS)</a></div>
+              </div>
+      </div>
+
+  </div>
+<div class="block block-layout-builder block-field-blocknodedeveloper-documentationfield-video">
+  
+    
+      
+  <div class="field field--name-field-video field--type-link field--label-above">
+    <div class="field__label">Онлайн-курсы</div>
+          <div class="field__items">
+              <div class="field__item"><a href="https://profile.terrasoft.ua/user/login?destination=academy/ua/online-courses/node/">Основы разработки на платформе Creatio</a></div>
+              </div>
+      </div>
+
+  </div>
+
+    </div>
+  </div>
+
+  </div>
+
+</article>
+
+  </div>
+
+  </div>
+
+          </div>
+        </div>
+
+                  <aside class="creatio-sidebar creatio-sidebar_first" role="complementary">
+              <div class="region region-sidebar-first">
+    <div id="block-documentationnaviagtion" class="block block-ts-nav block-ts-nav-doc-nav">
+  
+    
+      <div class="ts-nav-block"><a href="../../../../../index.html" class="ts-nav-block__link">Документация</a><div class="ts-nav-block__title">Для разработчика</div>
+</div>
+<div class="ts-nav-container"><ul class="ts-nav-menu"><li class="ts-nav-menu__item">
+  <a href="../../../s_chego_nachat.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">С чего начать&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../architecture.html" class="ts-nav-menu__link ts-nav-menu__link_expanded ts-nav-menu__link_open" hreflang="zxx">Архитектура&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+      <ul class="ts-nav-menu__children">
+      <li class="ts-nav-menu__item">
+  <a href="../../osnovnoe_prilozhenie/obzor.html" class="ts-nav-menu__link" hreflang="ru">Основное приложение</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../mikroservisy.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Микросервисы&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../razrabotka_v_creatio.html" class="ts-nav-menu__link ts-nav-menu__link_expanded ts-nav-menu__link_open" hreflang="zxx">Разработка в Creatio&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+      <ul class="ts-nav-menu__children">
+      <li class="ts-nav-menu__item">
+  <a href="../obzor/obzor.html" class="ts-nav-menu__link" hreflang="ru">Обзор</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../low_code_no_code/obzor.html" class="ts-nav-menu__link" hreflang="ru">Low-code/no-code</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="obzor.html" class="ts-nav-menu__link ts-nav-menu__link_open" hreflang="ru">Back-end (C#)</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../front_end_js/obzor.html" class="ts-nav-menu__link" hreflang="ru">Front-end (JS)</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../integratsii/obzor.html" class="ts-nav-menu__link" hreflang="ru">Интеграции</a>
+  </li>
+
+    </ul>
+  </li>
+
+    </ul>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../instrumenty_razrabotki.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Инструменты разработки&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../back_end_razrabotka.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Back-end разработка&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../front_end_razrabotka_freedom_ui.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Front-end разработка Freedom UI&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../front_end_razrabotka.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Front-end разработка&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../integratsiya_i_vneshnij_api.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Интеграция и внешний API&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../ehlementy_interfejsa.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Элементы интерфейса&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../komponenty_prilozheniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Компоненты приложения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../razrabotka_mobilnogo_prilozheniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Разработка мобильного приложения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../razrabotka_marketplace_prilozheniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Разработка Marketplace-приложения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+</ul>
+</div>
+
+  </div>
+
+  </div>
+
+            <div class="creatio-sidebar__toggle"></div>
+          </aside>
+        
+                  <aside class="creatio-sidebar creatio-sidebar_second" role="complementary">
+              <div class="region region-sidebar-second">
+    <div id="block-example" class="block block-ts-nav block-ts-nav-page-nav">
+  
+    
+      <div class="ts-nav-page">
+  </div>
+
+  </div>
+<div id="block-adminfeedbackblock" class="block block-admin-feedback block-admin-feedback-block">
+  
+    
+      <div id="feedback-message"><div id="upper-feedback-content"><h2>Был ли данный материал полезен?</h2>
+<input class="feedback-btn feedback-btn__yes button js-form-submit form-submit" data-node-id="2087" data-feedback="yes" type="submit" name="op" value="Да" />
+<input class="feedback-btn feedback-btn__no button js-form-submit form-submit" data-node-id="2087" data-feedback="no" type="submit" name="op" value="Нет" />
+</div>
+<form class="admin-feedback-form" data-drupal-selector="admin-feedback-form" action="https://academy.terrasoft.ua/docs/8-0/developer/architecture/razrabotka_v_creatio/back_end_c_sharp/obzor" method="post" id="admin-feedback-form" accept-charset="UTF-8">
+  <div id="feedback-msg-result"></div><div class="js-form-item form-item js-form-type-textarea form-type-textarea js-form-item-feedback-message form-item-feedback-message form-no-label">
+        <div class="form-textarea-wrapper">
+  <textarea id="edit-feedback-msg" data-drupal-selector="edit-feedback-message" name="feedback_message" rows="5" cols="60" class="form-textarea resize-vertical"></textarea>
+</div>
+
+        </div>
+<input id="feedback-id" data-drupal-selector="edit-feedback-id" type="hidden" name="feedback_id" value="" />
+<input class="feedback-btn feedback-btn__send-comment button js-form-submit form-submit" data-drupal-selector="edit-feedback-send" type="submit" id="edit-feedback-send" name="op" value="Отправить" />
+<input autocomplete="off" data-drupal-selector="form-pj9r8cx3yhnkqflogj4i-hddm399i6nyrt6nquzw9gc" type="hidden" name="form_build_id" value="form-Pj9r8CX3yhNkqfLOGJ4i-Hddm399i6nYrt6nQUzW9Gc" />
+<input data-drupal-selector="edit-admin-feedback-form" type="hidden" name="form_id" value="admin_feedback_form" />
+
+</form>
+</div>
+
+  </div>
+
+  </div>
+
+          </aside>
+              </main>
+    </div>
+  </div>
+
+  <footer role="contentinfo">
+    <div class="creatio-region creatio-region_footer">
+      <div class="creatio-container">
+          <div class="region region-footer">
+    <div id="block-footerua" class="block block-simple-block block-simple-blockfooter-ua">
+  
+    
+      <div class="footer">
+<div class="footer-left">
+<ul class="footer-socials"><li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_fb" href="https://www.facebook.com/terrasoft.ua" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_in" href="https://www.linkedin.com/company/terrasoft/" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_yt" href="https://www.youtube.com/c/TerrasoftUkraine" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_tg" href="https://t.me/Terrasoft_UA" target="_blank"> </a></li>
+</ul></div>
+
+<div class="footer-contact">
+<div class="footer-title">Будьте на связи!</div>
+
+<div class="footer-content">
+<div class="footer-items">
+<div class="footer-item"><a class="footer__link footer__link_phone" href="tel:+380443633133">+38 (044) 363-31-33</a></div>
+</div>
+
+<div class="footer-items">
+<div class="footer-item"><a class="footer__link footer__link_email" href="mailto:support@terrasoft.ua">support@terrasoft.ua</a></div>
+</div>
+</div>
+</div>
+</div>
+
+  </div>
+
+  </div>
+
+      </div>
+    </div>
+    <div class="creatio-region creatio-region_bottom">
+      <div class="creatio-container">
+          <div class="region region-bottom">
+    <div id="block-allrightsreservedua" class="block block-simple-block block-simple-blockfooter-bottom-ua">
+  
+    
+      <p>© 2002-2022 Terrasoft.  |  <a href="https://www.terrasoft.ua/privacy-policy" target="_blank">Конфиденциальность</a></p>
+
+  </div>
+
+  </div>
+
+      </div>
+    </div>
+  </footer>
+</div>
+<div class="creatio-bg"></div>
+
+
+  </div>
+
+    
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/docs\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/2087","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"ru"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"ajaxPageState":{"libraries":"admin_feedback\/admin_feedback_block,admin_feedback\/admin_feedback_css,classy\/base,classy\/messages,classy\/node,core\/drupal.ajax,core\/jquery.form,core\/normalize,creatio\/fancybox,creatio\/global,layout_discovery\/onecol,system\/base,ts_doc\/doc_version,ts_feedback\/ts_feedback,ts_nav\/breadcrumb,ts_nav\/doc_nav,ts_nav\/page_nav,ts_title_anchor\/ts_title_anchor","theme":"creatio","theme_token":null},"ajaxTrustedUrl":{"form_action_p_pvdeGsVG5zNF_XLGPTvYSKCf43t8qZYSwcfZl2uzM":true,"\/docs\/8-0\/developer\/architecture\/razrabotka_v_creatio\/back_end_c_sharp\/obzor?ajax_form=1":true},"admin_feedback":{"yes_response":"\u0421\u043f\u0430\u0441\u0438\u0431\u043e \u0437\u0430 \u043e\u0431\u0440\u0430\u0442\u043d\u0443\u044e \u0441\u0432\u044f\u0437\u044c!","no_response":"\u0421\u043f\u0430\u0441\u0438\u0431\u043e \u0437\u0430 \u043e\u0431\u0440\u0430\u0442\u043d\u0443\u044e \u0441\u0432\u044f\u0437\u044c!","custom_text_response_on_no":{"value":"","format":"full_html"},"feedback_prompt_on_yes":true,"feedback_prompt_on_no":true,"feedback_enable_predefined_answers":false,"feedback_prompt":"\u041a\u0430\u043a \u043c\u043e\u0436\u043d\u043e \u0443\u043b\u0443\u0447\u0448\u0438\u0442\u044c \u044d\u0442\u0443 \u0441\u0442\u0430\u0442\u044c\u044e?"},"ajax":{"edit-feedback-send":{"callback":"::validateFeedbackMsg","event":"mousedown","keypress":true,"prevent":"click","url":"\/docs\/8-0\/developer\/architecture\/razrabotka_v_creatio\/back_end_c_sharp\/obzor?ajax_form=1","dialogType":"ajax","submit":{"_triggering_element_name":"op","_triggering_element_value":"\u041e\u0442\u043f\u0440\u0430\u0432\u0438\u0442\u044c"}}},"user":{"uid":0,"permissionsHash":"9c2367dfcaba0fa15f0375f97aed64e146c908cee68508d13b79e3ee80e5162d"}}</script>
+<script src="../../../../../sites/default/files/js/js_Rr-7TvYD7NposuRFJwUqThxM7yJmw8vs03PQwu5gWd8.js"></script>
+
+
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+      <g id="svg-copy" class="svg-icon svg-icon_copy">
+        <path d="M15.111,18H1.889A1.848,1.848,0,0,1,0,16.2V3.6A1.848,1.848,0,0,1,1.889,1.8H5.837a2.87,2.87,0,0,1,5.326,0h3.948A1.848,1.848,0,0,1,17,3.6V16.2A1.848,1.848,0,0,1,15.111,18ZM3.777,12.6v1.8h6.611V12.6Zm0-3.6v1.8h9.445V9Zm0-3.6V7.2h9.445V5.4ZM8.5,1.8a.924.924,0,0,0-.944.9.945.945,0,0,0,1.889,0A.924.924,0,0,0,8.5,1.8Z"/>
+      </g>
+
+      <g id="svg-prev" class="svg-icon svg-icon_arrow">
+        <path d="M5.488,12.779,0,6.39,5.488,0" transform="translate(1 0.652)"/>
+      </g>
+
+      <g id="svg-next" class="svg-icon svg-icon_arrow">
+        <path d="M0,12.779,5.488,6.39,0,0" transform="translate(0.759 0.652)"/>
+      </g>
+    </svg>
+  </body>
+
+<!-- Mirrored from academy.terrasoft.ua/docs/8-0/developer/architecture/razrabotka_v_creatio/back_end_c_sharp/obzor by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Mar 2022 07:03:28 GMT -->
+</html>

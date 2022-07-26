@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# ">
+  
+<!-- Mirrored from academy.terrasoft.ua/docs/developer/instrumenty_razrabotki/pakety/obshchiye_printsipy_raboty_s_paketami/obzor#title-2105-6 by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 22 Mar 2022 21:36:31 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+          <!-- Google Tag Manager -->
+      <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          '../../../../../../www.googletagmanager.com/gtm5445.html?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-KLLB8G');</script>
+      <!-- End Google Tag Manager -->
+        <meta charset="utf-8" />
+<link rel="canonical" href="obzor.html" />
+<meta name="description" content="Любой продукт Creatio представляет собой определенный набор пакетов.
+
+Пакет Creatio — это совокупность конфигурационных элементов, которые реализуют блок функциональности. Физически пакет представляет собой папку, содержащую определенный набор вложенных папок и файлов.
+
+Классификация пакетов 
+
+
+	Простые пакеты:" />
+<meta property="og:url" content="https://academy.terrasoft.ua/docs/developer/instrumenty_razrabotki/pakety/obshchiye_printsipy_raboty_s_paketami/obzor" />
+<meta property="og:title" content="Общие принципы работы с пакетами" />
+<meta property="og:description" content="Любой продукт Creatio представляет собой определенный набор пакетов.
+
+Пакет Creatio — это совокупность конфигурационных элементов, которые реализуют блок функциональности. Физически пакет представляет собой папку, содержащую определенный набор вложенных папок и файлов.
+
+Классификация пакетов 
+
+
+	Простые пакеты:" />
+<meta name="Generator" content="Drupal 9 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="../../../../themes/custom/creatio/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="revision" href="obzor.html" />
+
+    <title>Общие принципы работы с пакетами | Creatio Academy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&amp;family=Open+Sans:ital,wght@0,300;0,400;0,600;1,400&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" media="all" href="../../../../sites/default/files/css/css_6lTP66__-yc6QXFp1zOwoeJ0HVigoYZP-SeoLLii000.css" />
+<link rel="stylesheet" media="all" href="../../../../sites/default/files/css/css_XQJDNhkF3xH5SZCcY-PI89Zu4nYIzQ5oR3SnUKyfXJU.css" />
+<link rel="stylesheet" media="print" href="../../../../sites/default/files/css/css_Zn4VHvcniOOtUwkIVwXzYr_0AI9gUVgZcPqaH4ViagU.css" />
+
+    
+  </head>
+  <body class="path-node page-node-type-developer-documentation">
+          <!-- Google Tag Manager (noscript) -->
+      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KLLB8G"
+                        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+      <!-- End Google Tag Manager (noscript) -->
+    
+        
+      <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    <div class="creatio-page d-flex flex-column">
+        <div class="region region-informer">
+    <div id="block-terrasoftpidtrimueukrainu" class="block block-simple-block block-simple-blockterrasoft-pidtrimue-ukrainu">
+  
+    
+      <style type="text/css">
+<!--/*--><![CDATA[/* ><!--*/
+@import url(../../../../../../www.terrasoft.ua/themes/custom/creatio/css/components/informer.css)
+
+/*--><!]]>*/
+</style><div class="ts-swu">
+<div class="creatio-container">
+<div class="ts-swu__cont">
+<div><a class="ts-swu__link" href="https://www.terrasoft.ua/terrasoft-stands-with-ukraine" target="_blank">Україна понад усе!</a> <span><a href="https://www.terrasoft.ua/terrasoft-stands-with-ukraine" target="_blank">Приєднуйтеся</a> до допомоги!</span></div>
+</div>
+</div></div>
+
+  </div>
+
+  </div>
+
+  
+  <header role="banner">
+          <div class="creatio-region creatio-region_top">
+        <div class="creatio-container">
+            <div class="region region-top">
+    <div id="block-menutoggle" class="block block-simple-block block-simple-blockmenu-toggle">
+  
+    
+      <div class="menu-toggle"><span> </span></div>
+
+  </div>
+<div id="block-logowhite-2" class="block block-simple-block block-simple-blocklogo-white">
+  
+    
+      <p><a class="site-logo" href="../../../../../index.html" rel="home"><img src="../../../../themes/custom/creatio/logo-white.svg" /></a></p>
+
+  </div>
+<div id="block-search" class="block block-simple-block block-simple-blocksearch">
+  
+    
+      <div class="search">
+<form action="https://academy.terrasoft.ua/search" class="search-form" method="get"><input class="search-form__input" name="search" placeholder="Поиск" type="search" /><input class="search-form__button" type="submit" value="Поиск" /> </form>
+
+<div class="search-toggle"> </div>
+</div>
+
+  </div>
+<nav role="navigation" aria-labelledby="block-sitesua-menu" id="block-sitesua" class="block block-menu navigation menu--sites-ua">
+            
+  <h2 class="visually-hidden" id="block-sitesua-menu">Sites UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="https://www.terrasoft.ua/" rel="nofollow" target="_blank">Terrasoft</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://community.terrasoft.ua/" rel="nofollow" target="_blank">Community</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://marketplace.terrasoft.ua/" rel="nofollow" target="_blank">Marketplace</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+<div id="block-usermenu" class="block block-ts-user block-ts-user-menu-block">
+  
+    
+      <ul class="user-menu">
+      <li class="user-menu__item">
+      <a class="user-menu__link" href="https://profile.terrasoft.ua/user/login?destination=academy/ua/docs/developer/instrumenty_razrabotki/pakety/obshchiye_printsipy_raboty_s_paketami/obzor">Войти</a>
+    </li>
+  </ul>
+
+  </div>
+<div id="block-usermenumobile" class="block block-ts-user block-ts-user-menu-mobile-block">
+  
+    
+      <ul class="user-menu-mobile">
+      <li class="user-menu-mobile__item">
+      <div class="user-menu-mobile__user user-menu-mobile__user_icon"></div>
+      <ul class="user-menu-mobile__submenu">
+        <li class="user-menu-mobile__subitem">
+          <a class="user-menu-mobile__sublink" href="https://profile.terrasoft.ua/user/login?destination=academy/ua/docs/developer/instrumenty_razrabotki/pakety/obshchiye_printsipy_raboty_s_paketami/obzor">Войти</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  </div>
+
+  </div>
+
+        </div>
+      </div>
+              <div class="creatio-region creatio-region_header">
+        <div class="creatio-container">
+            <div class="region region-header">
+    <div id="block-logo" class="block block-simple-block block-simple-blocklogo">
+  
+    
+      <p><a class="site-logo" href="../../../../../index.html" rel="home"><img src="../../../../themes/custom/creatio/logo.svg" /></a></p>
+
+  </div>
+<nav role="navigation" aria-labelledby="block-osnovnayanavigaciyaua-menu" id="block-osnovnayanavigaciyaua" class="block block-menu navigation menu--main-ua">
+            
+  <h2 class="visually-hidden" id="block-osnovnayanavigaciyaua-menu">Основная навигация UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="../../../../index.html" data-drupal-link-system-path="&lt;front&gt;">Документация</a>
+              </li>
+                <li class="menu-item">
+        <a href="../../../../../trainings.html">Тренинги</a>
+              </li>
+                <li class="menu-item">
+        <a href="../../../../certification.html" data-drupal-link-system-path="node/3084">Сертификация и тестирование</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+<nav role="navigation" aria-labelledby="block-sitesua-2-menu" id="block-sitesua-2" class="block block-menu navigation menu--sites-ua">
+            
+  <h2 class="visually-hidden" id="block-sitesua-2-menu">Sites UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="https://www.terrasoft.ua/" rel="nofollow" target="_blank">Terrasoft</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://community.terrasoft.ua/" rel="nofollow" target="_blank">Community</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://marketplace.terrasoft.ua/" rel="nofollow" target="_blank">Marketplace</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+
+  </div>
+
+        </div>
+      </div>
+              <div class="creatio-region creatio-region_breadcrumb">
+        <div class="creatio-container">
+            <div class="region region-breadcrumb">
+    <div id="block-logowhite" class="block block-simple-block block-simple-blocklogo-white">
+  
+    
+      <p><a class="site-logo" href="../../../../../index.html" rel="home"><img src="../../../../themes/custom/creatio/logo-white.svg" /></a></p>
+
+  </div>
+<div id="block-breadcrumbnaviagtion" class="block block-ts-nav block-ts-nav-bread">
+  
+    
+      <nav class="breadcrumb"><ol class="ts-nav-breadcrumb__list"><li class="ts-nav-breadcrumb__item"><a href="../../../../index.html" class="ts-nav-breadcrumb__link" title="Документация">Документация</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../../index2132.html?vid_1=2" class="ts-nav-breadcrumb__link" title="Для разработчика">Для разработчика</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../instrumenty_razrabotki.html" class="ts-nav-breadcrumb__link" title="Инструменты разработки" hreflang="zxx">Инструменты разработки</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../pakety.html" class="ts-nav-breadcrumb__link" title="Пакеты" hreflang="ru">Пакеты</a></li>
+<li class="ts-nav-breadcrumb__item ts-nav-breadcrumb__item_mobile"><a href="../obshchiye_printsipy_raboty_s_paketami.html" class="ts-nav-breadcrumb__link" title="Обзор" hreflang="ru">Обзор</a></li>
+<li class="ts-nav-breadcrumb__item"><span class="ts-nav-breadcrumb__link ts-nav-breadcrumb__link_current" title="Обзор">Обзор</span></li>
+</ol>
+</nav>
+
+  </div>
+<div id="block-search-2" class="block block-simple-block block-simple-blocksearch">
+  
+    
+      <div class="search">
+<form action="https://academy.terrasoft.ua/search" class="search-form" method="get"><input class="search-form__input" name="search" placeholder="Поиск" type="search" /><input class="search-form__button" type="submit" value="Поиск" /> </form>
+
+<div class="search-toggle"> </div>
+</div>
+
+  </div>
+
+  </div>
+
+        </div>
+      </div>
+      </header>
+
+  <div class="creatio-region creatio-region_main">
+    <div class="creatio-container">
+                <div class="region region-breadcrumb-mobile">
+    <div id="block-breadcrumbnaviagtion-2" class="block block-ts-nav block-ts-nav-bread">
+  
+    
+      <nav class="breadcrumb"><ol class="ts-nav-breadcrumb__list"><li class="ts-nav-breadcrumb__item"><a href="../../../../index.html" class="ts-nav-breadcrumb__link" title="Документация">Документация</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../../index2132.html?vid_1=2" class="ts-nav-breadcrumb__link" title="Для разработчика">Для разработчика</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../instrumenty_razrabotki.html" class="ts-nav-breadcrumb__link" title="Инструменты разработки" hreflang="zxx">Инструменты разработки</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../pakety.html" class="ts-nav-breadcrumb__link" title="Пакеты" hreflang="ru">Пакеты</a></li>
+<li class="ts-nav-breadcrumb__item ts-nav-breadcrumb__item_mobile"><a href="../obshchiye_printsipy_raboty_s_paketami.html" class="ts-nav-breadcrumb__link" title="Обзор" hreflang="ru">Обзор</a></li>
+<li class="ts-nav-breadcrumb__item"><span class="ts-nav-breadcrumb__link ts-nav-breadcrumb__link_current" title="Обзор">Обзор</span></li>
+</ol>
+</nav>
+
+  </div>
+
+  </div>
+
+      
+      <main class="creatio-main" role="main">
+                                                    
+        <div class="creatio-content creatio-content_small">
+          <div class="creatio-content__inner creatio-content__inner_bg">
+                            <div class="region region-messages">
+    <div data-drupal-messages-fallback class="hidden"></div>
+
+  </div>
+
+            
+              <div class="region region-content">
+    <div id="block-creatio-page-title" class="block block-core block-page-title-block">
+  
+    
+      
+  <h1 class="page-title"><span class="field field--name-title field--type-string field--label-hidden">Общие принципы работы с пакетами</span>
+</h1>
+
+
+  </div>
+<div id="block-creatio-content" class="block block-system block-system-main-block">
+  
+    
+      
+<article data-history-node-id="3555" role="article" about="/docs/developer/instrumenty_razrabotki/pakety/obshchiye_printsipy_raboty_s_paketami/obzor" class="node node--type-developer-documentation node--view-mode-full">
+
+  
+    
+
+  
+  <div class="node__content">
+      <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocknodedeveloper-documentationfield-difficulty">
+  
+    
+      
+            <div class="field field--name-field-difficulty field--type-entity-reference field--label-hidden field__item"><div about="/docs/taxonomy/term/121" id="taxonomy-term-121" class="taxonomy-term vocabulary-difficulty">
+  
+  
+  <div class="content">
+      <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocktaxonomy-termdifficultyfield-icon">
+  
+    
+      
+            <div class="field field--name-field-icon field--type-image field--label-hidden field__item">  <img src="../../../../sites/default/files/difficulty/beginner.svg" alt="" loading="lazy" typeof="foaf:Image" />
+
+</div>
+      
+  </div>
+<div class="block block-layout-builder block-field-blocktaxonomy-termdifficultyname">
+  
+    
+      
+            <div class="field field--name-name field--type-string field--label-hidden field__item"><span style="color: #7FB441;">Основы</span></div>
+      
+  </div>
+
+    </div>
+  </div>
+
+  </div>
+</div>
+</div>
+      
+  </div>
+<div class="block block-ts-doc block-ts-doc-downloads">
+  
+    
+      <a href="../../../../sites/default/files/pdf/node/3555/Obschie_principy_raboty_s_paketami_.pdf" target="_blank">PDF</a>
+  </div>
+<div class="block block-ts-doc block-ts-doc-versions">
+  
+    
+        <div class="ts-doc-versions">
+    <select class="ts-doc-versions__select">
+                                                <option value="/docs/8-0/developer/instrumenty_razrabotki/pakety/obshchiye_printsipy_raboty_s_paketami/obzor" selected>Версия 8.0</option>
+                              <option value="/docs/7-18/developer/instrumenty_razrabotki/pakety/obshchiye_printsipy_raboty_s_paketami/obzor">Версия 7.18</option>
+                              <option value="/docs/7-17/developer/development_tools/packages/pakety">Версия 7.17</option>
+                              <option value="/docs/7-16/developer/instrumenty_razrabotki/pakety/pakety">Версия 7.16</option>
+          </select>
+  </div>
+
+  </div>
+
+    </div>
+  </div>
+  <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocknodedeveloper-documentationbody">
+  
+    
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><p>Любой продукт Creatio представляет собой определенный набор пакетов.</p>
+
+<p><strong>Пакет Creatio</strong> — это совокупность <a href="../../../../7-17/developer/instrumenty_razrabotki/creatio_ide/razrabotka_konfiguratsionnykh_elementov.html">конфигурационных элементов</a>, которые реализуют блок функциональности. Физически пакет представляет собой папку, содержащую определенный набор вложенных папок и файлов.</p>
+
+<h2>Классификация пакетов<a class="title-anchor" href="#title-2105-1" id="title-2105-1"> </a></h2>
+
+<ul><li>
+	<p><strong>Простые пакеты</strong>:</p>
+
+	<ul><li>
+		<p><img src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/SectionConfigurationGeneralInfo/scr_Package_Blocked.png" /> — предустановленные пакеты. Являются частью приложения и по умолчанию устанавливаются в рабочее пространство. Недоступны для изменения.</p>
+
+		<p><strong>Виды</strong> предустановленных пакетов:</p>
+
+		<ul><li>Пакеты с базовой функциональностью (например, <span class="filled">Base</span>, <span class="filled">NUI</span>).</li>
+			<li>Пакеты сторонних разработчиков.
+			<p>Устанавливаются из *.zip-архивов с помощью <a href="../../../../7-16/developer/development_tools/transferring_solutions/perenos_resheniy__v_creatio_ide.html#case-2942">Creatio IDE</a> или с помощью <a href="../../upravlenie_postavkami/workspaceconsole/obzor.html">утилиты WorkspaceConsole</a>.</p>
+			</li>
+		</ul></li>
+		<li><img src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/SectionConfigurationGeneralInfo/scr_CustomPackage_Blocked.png" /> — пользовательские пакеты. Cозданы другими пользователями системы и заблокированы для изменения в системе контроля версий. Недоступны для изменения.</li>
+		<li><img src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/SectionConfigurationGeneralInfo/scr_CustomPackage.png" /> — пользовательские пакеты. Созданы текущим пользователем либо загружены из системы контроля версий. Доступны для изменения.</li>
+	</ul></li>
+	<li><strong>Пакет-проект</strong> — пакет, который позволяет разрабатывать функциональность как обычный C#-проект. Подробнее читайте в статье <a href="../paket_proekt/obzor.html">Пакет-проект</a>.</li>
+	<li><strong>Пакет-сборка</strong> — пакет, исходный и автогенерируемый код которого компилируется в отдельную сборку. Возможность использования пакета-сборки доступна для приложений Creatio версии 7.18.3 и выше. В Creatio IDE пакет-сборка отображается как пользовательский пакет (<img src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/SectionConfigurationGeneralInfo/scr_CustomPackage.png" />). Подробнее читайте в статье <a href="../../../../7-18/developer/instrumenty_razrabotki/pakety/paket_sborka/obzor.html">Пакет-сборка</a>.</li>
+</ul><p>Сравнение пакетов Creatio представлено в таблице ниже.</p>
+
+<div class="table">
+<div class="table__caption">Сравнение пакетов Creatio</div>
+
+<table><thead><tr><th><center>Ссылки на другие пакеты</center></th>
+			<th><center>Конфигурационные элементы пакета</center></th>
+			<th><center>Файловый контент</center></th>
+			<th><center>Разработка в Creatio IDE</center></th>
+			<th><center>Путь для компиляции кода</center></th>
+		</tr></thead><tbody><tr><th colspan="5">
+			<center>Пакет</center>
+			</th>
+		</tr><tr><td>
+			<center>+</center>
+			</td>
+			<td>
+			<center>+</center>
+			</td>
+			<td>
+			<center>+</center>
+			</td>
+			<td>
+			<center>+</center>
+			</td>
+			<td><span class="filled">...\Terrasoft.WebApp\<wbr></wbr>Terrasoft.Configuration\<wbr></wbr>Terrasoft.Configuration.dll</span></td>
+		</tr><tr><th colspan="5">
+			<center>Пакет-проект</center>
+			</th>
+		</tr><tr><td>
+			<center>–</center>
+			</td>
+			<td>
+			<center>–</center>
+			</td>
+			<td>
+			<center>+</center>
+			</td>
+			<td>
+			<center>–<br />
+			(используется <a href="../../vneshnie_ide/obzor.html">внешняя IDE</a>)</center>
+			</td>
+			<td>
+			<p>Для .NET Framework: <span class="filled">...\Terrasoft.WebApp\<wbr></wbr>Terrasoft.Configuration\<wbr></wbr>Pkg\<wbr></wbr>[Имя пакета]\<wbr></wbr>Files\<wbr></wbr>Bin\<wbr></wbr>[Имя пакета].dll</span></p>
+
+			<p>Для .NET Core: <span class="filled">...\Terrasoft.WebApp\<wbr></wbr>Terrasoft.Configuration\<wbr></wbr>Pkg\<wbr></wbr>[Имя пакета]\<wbr></wbr>Files\<wbr></wbr>Bin\<wbr></wbr>netstandard\<wbr></wbr>[Имя пакета].dll</span></p>
+			</td>
+		</tr><tr><th colspan="5">
+			<center>Пакет-сборка</center>
+			</th>
+		</tr><tr><td>
+			<center>+</center>
+			</td>
+			<td>
+			<center>+<br />
+			(с ограничениями)</center>
+			</td>
+			<td>
+			<center>+</center>
+			</td>
+			<td>
+			<center>+</center>
+			</td>
+			<td>
+			<p>Для .NET Framework: <span class="filled">...\Terrasoft.WebApp\<wbr></wbr>Terrasoft.Configuration\<wbr></wbr>Pkg\<wbr></wbr>[Имя пакета]\<wbr></wbr>Files\<wbr></wbr>Bin\<wbr></wbr>[Имя пакета].dll</span></p>
+
+			<p>Для .NET Core: <span class="filled">...\Terrasoft.WebApp\<wbr></wbr>Terrasoft.Configuration\<wbr></wbr>Pkg\<wbr></wbr>[Имя пакета]\<wbr></wbr>Files\<wbr></wbr>Bin\<wbr></wbr>netstandard\<wbr></wbr>[Имя пакета].dll</span></p>
+			</td>
+		</tr></tbody></table></div>
+
+<p>В этой статье рассматриваются простые пакеты.</p>
+
+<p>Для расширения или изменения функциональности необходимо установить пакет с требуемой функциональностью. Разработка дополнительной функциональности и модификация существующей выполняется исключительно в пользовательских пакетах.</p>
+
+<h3>Основные пакеты приложения<a class="title-anchor" href="#title-2105-7" id="title-2105-7"> </a></h3>
+
+<p>К основным пакетам приложения можно отнести пакеты, которые обязательно присутствуют во всех продуктах.</p>
+
+<div class="table">
+<div class="table__caption">Основные пакеты приложения</div>
+
+<table><tbody><tr><th><center>Название пакета</center></th>
+			<th><center>Описание</center></th>
+		</tr><tr><th><span class="filled">Base</span></th>
+			<td>Базовые схемы основных объектов, разделов системы и связанных с ними схем объектов, страниц, процессов и т. д.</td>
+		</tr><tr><th><span class="filled">Platform</span></th>
+			<td>Модули и страницы мастера разделов, дизайнеров реестра и итогов и т. п.</td>
+		</tr><tr><th><span class="filled">Managers</span></th>
+			<td>Клиентские модули менеджеров схем.</td>
+		</tr><tr><th><span class="filled">NUI</span></th>
+			<td rowspan="2">Функциональность, связанная с пользовательским интерфейсом системы.</td>
+		</tr><tr><th><span class="filled">UIv2</span></th>
+		</tr><tr><th><span class="filled">DesignerTools</span></th>
+			<td>Схемы дизайнеров и их элементов.</td>
+		</tr><tr><th><span class="filled">ProcessDesigner</span></th>
+			<td>Схемы дизайнера процессов.</td>
+		</tr></tbody></table></div>
+
+<h3>Пакет <span class="filled">Custom</span><a class="title-anchor" href="#title-2105-8" id="title-2105-8"> </a></h3>
+
+<p>В процессе работы мастер разделов или мастер деталей создает схемы, которые необходимо сохранить в пользовательский пакет. В только что установленном приложении нет пакетов, доступных для изменения, а в предустановленные пакеты невозможно внести изменения. Для этого предназначен специальный предустановленный пакет <span class="filled">Custom</span>. Он позволяет добавлять схемы как вручную, так и с помощью мастеров.</p>
+
+<p><strong>Особенности</strong> пакета <span class="filled">Custom</span>:</p>
+
+<ul><li>Пакет <span class="filled">Custom</span> невозможно добавить в систему контроля версий. Поэтому его схемы можно перенести на другую рабочую среду только при помощи функциональности <a href="../../../../7-16/developer/development_tools/transferring_solutions/perenos_resheniy__v_creatio_ide.html#case-2943">экспорта и импорта</a> пакетов.</li>
+	<li>В отличие от других предустановленных пакетов, пакет <span class="filled">Custom</span> невозможно выгрузить в файловую систему при помощи <a href="../../upravlenie_postavkami/workspaceconsole/obzor.html">утилиты WorkspaceConsole</a>.</li>
+	<li>В пакете <span class="filled">Custom</span> установлены зависимости от всех предустановленных пакетов приложения. При создании или установке пользовательского пакета в пакет <span class="filled">Custom</span> автоматически добавляется зависимость от пользовательского пакета. Таким образом пакет <span class="filled">Custom</span> всегда должен быть последним в иерархии пакетов.</li>
+	<li>В зависимости пользовательских пакетов невозможно добавить пакет <span class="filled">Custom</span>.</li>
+</ul><p>Рекомендуемые <strong>варианты использования</strong> пакета <span class="filled">Custom</span>:</p>
+
+<ul><li>Не предполагается перенос изменений в другую рабочую среду.
+	<p>В процессе работы мастер разделов или мастер деталей не только создает различные схемы, но и привязывает данные к текущему пакету. Для пакета <span class="filled">Custom</span> не предусмотрено использование стандартного механизм импорта пакетов. Поэтому если текущим пакетом является пакет <span class="filled">Custom</span>, то перенести привязанные данные в другой пользовательский пакет можно только с помощью запросов к базе данных. Мы настоятельно не рекомендуем использовать этот способ, поскольку изменения могут повлиять на структуру базы данных, что приведет к неработоспособности приложения.</p>
+
+	<p>При значительной доработке пользовательской функциональности необходимо <a href="../../../../7-17/developer/development_tools/packages/pakety.html#case-2920">создать пользовательский пакет</a> с использованием системы контроля версий.</p>
+	</li>
+	<li>Изменения выполняются при помощи мастеров или вручную, при этом объем изменений небольшой.</li>
+	<li>Нет необходимости использовать систему контроля версий.</li>
+</ul><h3>Пользовательский пакет<a class="title-anchor" href="#title-2105-10" id="title-2105-10"> </a></h3>
+
+<p>Чтобы выполнять разработку в пользовательском пакете, необходимо в системной настройке <span class="key">Текущий пакет</span> (код <span class="filled">CurrentPackageId</span>) указать имя пользовательского пакета.</p>
+
+<h2>Структура пакета<a class="title-anchor" href="#title-2105-2" id="title-2105-2"> </a></h2>
+
+<p>При фиксации пакета в <a href="../../../development_tools/version_control_system.html" target="_blank">системе контроля версий</a> в хранилище пакета создается папка с именем пакета.</p>
+
+<div class="media">
+<div class="media__element"><img src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/PackageStructureAndContent/7.17/storage_copy_structure.png" /></div>
+</div>
+
+<p><strong>Структура</strong> папки с именем пакета:</p>
+
+<ul><li>Папка <span class="filled">branches</span>.
+
+	<p><strong>Назначение</strong> — хранение версий текущего пакета. Версия пакета — отдельная вложенная папка, имя которой совпадает с номером версии пакета в системе (например, 7.18.0).</p>
+	</li>
+	<li>Папка <span class="filled">tags</span>.
+	<p><strong>Назначение</strong> — хранение меток. <strong>Метки</strong> в системе контроля версий — это "снимок" проекта в определенный момент времени, статическая копия файлов, необходимая для фиксации этапа разработки.</p>
+	</li>
+</ul><p>В Creatio по умолчанию включен режим работы с SVN. Для настройки работы с SVN необходимо изменить значение атрибута <span class="filled">connectionString</span> настройки <span class="filled">defPackagesWorkingCopyPath</span> конфигурационного файла <span class="filled">ConnectionStrings.config</span>. Эта настройка содержит путь к каталогу на диске, в котором размещаются рабочие копии.</p>
+
+<div class="code">
+<div class="code__top">
+<div class="code__title"><span class="filled">ConnectionStrings.config</span></div>
+</div>
+
+<div class="code__widgets">
+<div class="code__source">
+<pre class="prettyprint">
+&lt;add name="defPackagesWorkingCopyPath" connectionString="TEMP\APPLICATION\WORKSPACE\TerrasoftPackages" &gt;
+</pre>
+</div>
+</div>
+</div>
+
+<p>В режиме работе с SVN приложение Creatio использует собственную рабочую копию каждого пользовательского пакета, для которого подключена версионность. Содержимое рабочей копии представляет собой пользовательские пакеты в виде набора папок и файлов. SVN-клиент, встроенный в Creatio, синхронизирует это содержимое с SVN-репозиторием. В качестве значения настройки <span class="filled">defPackagesWorkingCopyPath</span> рекомендуется установить путь на фиксированный каталог, поскольку временный каталог, установленный по умолчанию, может быть очищен операционной системой. Для приложения Creatio на платформе .NET Framework в качестве каталога для хранения рабочих копий запрещено указывать <span class="filled">...\Terrasoft.WebApp\Terrasoft.Configuration\Pkg</span>.</p>
+
+<p><strong>Структура папки пакета</strong> в файловой системе:</p>
+
+<ul><li>Папка <span class="filled">Schemas</span> — содержит схемы пакета.</li>
+	<li>Папка <span class="filled">Assemblies</span> — содержит внешние сборки, привязанные к пакету.</li>
+	<li>Папка <span class="filled">Data</span> — содержит данные, привязанные к пакету.</li>
+	<li>Папка <span class="filled">SqlScripts</span> — содержит SQL-сценарии, привязанные к пакету.</li>
+	<li>Папка <span class="filled">Resources</span> — содержит локализованные ресурсы пакета.</li>
+	<li>Папка <span class="filled">Files</span> — содержит <a href="../../../../7-16/developer/development_tools/packages/rabota_s_faylovym_kontentom.html">файловый контент</a> пакета.</li>
+	<li>Файл <span class="filled">descriptor.json</span> — хранит метаданные пакета в формате JSON. К метаданным пакета относятся идентификатор, наименование, версия, зависимости и т. д.</li>
+</ul><div class="media">
+<div class="media__element"><img src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/PackageStructureAndContent/working_copy_structure.png" /></div>
+</div>
+
+<h2>Зависимости и иерархия пакетов<a class="title-anchor" href="#title-2105-3" id="title-2105-3"> </a></h2>
+
+<p>Разработка приложения Creatio базируется на основных принципах проектирования программного обеспечения, в частности, <strong>принципа отсутствия повторений (DRY)</strong>.</p>
+
+<p>В архитектуре Creatio этот принцип реализован с помощью <strong>зависимостей пакетов</strong>. Каждый пакет содержит определенную функциональность приложения, которая не должна повторяться в других пакетах. Чтобы такую функциональность можно было использовать в другом пакете, необходимо пакет, содержащий эту функциональность, добавить в зависимости пакета, в котором она будет использована.</p>
+
+<p><strong>Виды зависимостей</strong>:</p>
+
+<ul><li>Чтобы текущий пакет наследовал всю <strong>функциональность приложения</strong>, в качестве родительского пакета необходимо выбрать пакет, который в иерархии находится следующим после пакета <span class="filled">Custom</span>.</li>
+	<li>Чтобы текущий пакет наследовал <strong>функциональность пакета</strong>, в качестве родительского пакета необходимо выбрать пакет, функциональность которого необходимо наследовать.</li>
+</ul><p>Пакет может иметь несколько зависимостей. Например, в пакете С установлены зависимости от пакетов А и D. Таким образом, вся функциональность пакетов А и D доступна в пакете С.</p>
+
+<div class="media">
+<div class="media__element"><img src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/PackageDependencies/7.17/hierarchy.png" /></div>
+</div>
+
+<p>Зависимости пакетов формируют <strong>иерархические цепочки</strong>. Это означает, что в пакете доступна не только функциональность дочернего пакета, но и функциональность всех пакетов, для которых дочерний пакет является родительским. Ближайшей аналогией иерархии пакетов является иерархия наследования классов в объектно-ориентированном программировании. Так, например, в пакете Е доступна функциональность не только пакета C, от которого он зависит, но и функциональность пакетов А, В и D. А в пакете F доступна функциональность пакетов B и D.</p>
+
+<h3>Иерархия пакетов приложения<a class="title-anchor" href="#title-2105-6" id="title-2105-6"> </a></h3>
+
+<p>Иерархия и зависимости пакетов отображены на <strong>диаграмме зависимостей пакетов</strong>. Чтобы открыть диаграмму:</p>
+
+<ol><li>Перейдите в раздел <span class="key">Конфигурация</span> (<span class="key">Configuration</span>).</li>
+	<li>В выпадающем списке <span class="key">Действия</span> (<span class="key">Actions</span>) панели инструментов в группе <span class="key">Пакеты</span> (<span class="key">Packages </span>) выберите <span class="key">Диаграмма зависимостей пакетов</span> (<span class="key">Package dependencies diagram</span>).</li>
+</ol><div class="media">
+<div class="media__element"><img src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/PackageDependencies/7.17/package_dependencies_diagram.png" /></div>
+</div>
+
+<p>Диаграмма зависимостей будет открыта в новой вкладке.</p>
+
+<p>Если кликнуть по узловому элементу диаграммы с именем пакета, то в виде анимированных стрелок отобразятся связи с другими пакетами. Например, в продукте SalesEnterpise пакет <span class="filled">SalesEnterpriseSoftkey_Obsolete</span> зависит только от пакета <span class="filled">SalesEnterpise</span> и всех его родительских пакетов. Также пакет <span class="filled">SalesEnterpriseSoftkey_Obsolete</span> является родительским для пакета <span class="filled">Custom</span>.</p>
+
+<div class="media">
+<div class="media__element"><img src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/PackageDependencies/package_dependencies.png" /></div>
+</div>
+
+<h3>Добавление зависимостей пакета<a class="title-anchor" href="#title-2105-4" id="title-2105-4"> </a></h3>
+
+<p>Зависимости можно добавить в пользовательский пакет при создании пакета или уже после него.</p>
+
+<p>Чтобы <strong>добавить зависимости</strong>:</p>
+
+<ol><li>Перейдите на страницу пакета.</li>
+	<li>На вкладке <span class="key">Зависимости</span> (<span class="key">Dependencies</span>) на детали <span class="key">Зависит от пакетов</span> (<span class="key">Depends on packages</span>) нажмите кнопку <span class="key">Добавить</span> (<span class="key">Add</span>).</li>
+	<li>В появившемся окне справочника пакетов выберите необходимый пакет и нажмите кнопку <span class="key">Выбрать</span> (<span class="key">Select</span>).</li>
+</ol><div class="media">
+<div class="media__element"><img src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/PackageDependencies/scr_add_package_dependency.png" /></div>
+</div>
+
+<p>После этого выбранный пакет будет отображен в списке зависимостей текущего пакета, а при добавлении новой зависимости он будет скрыт из справочника пакетов.</p>
+
+<div class="media">
+<div class="media__element"><img src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/PackageDependencies/scr_added_package_dependency.png" /></div>
+</div>
+
+<p>После создания пакет автоматически добавляется в зависимости предустановленного пакета <span class="filled">Custom</span>.</p>
+
+<div class="media">
+<div class="media__element"><img src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/PackageDependencies/scr_dependent_packages_717.png" /></div>
+</div>
+
+<h3>Список зависимостей в метаданных пакета<a class="title-anchor" href="#title-2105-5" id="title-2105-5"> </a></h3>
+
+<p>Список зависимостей хранится в <strong>метаданных пакета</strong>, которые можно посмотреть в свойстве <span class="filled">DependsOn</span> объекта, определенного в файле <span class="filled">descriptor.json</span>.</p>
+
+<p>Свойство <span class="filled">DependsOn</span> — массив объектов, в которых указывается имя пакета, его версия и уникальный идентификатор, по которому можно определить пакет в базе данных приложения. Файл <span class="filled">descriptor.json</span> создается приложением для каждой версии пакета.</p>
+
+<div class="code">
+<div class="code__widgets">
+<div class="code__top">
+<div class="code__title">Пример файла <span class="filled">descriptor.json</span></div>
+</div>
+
+<div class="code__source">
+<pre class="prettyprint">
+{
+    "Descriptor": {
+        "UId": "51b3ed42-678c-4da3-bd16-8596b95c0546",
+        "PackageVersion": "7.18.0",
+        "Name": "UsrDependentPackage",
+        "ModifiedOnUtc": "\/Date(1522653150000)\/",
+        "Maintainer": "Customer",
+        "DependsOn": [
+        {
+            "UId": "e14dcfb1-e53c-4439-a876-af7f97083ed9",
+            "PackageVersion": "7.18.0",
+            "Name": "SalesEnterprise"
+        }
+        ]
+    }
+}
+</pre>
+</div>
+</div>
+</div>
+
+<h2>Привязка данных к пакету<a class="title-anchor" href="#title-2105-9" id="title-2105-9"> </a></h2>
+
+<p>При переносе изменений между <a href="../../upravlenie_postavkami/rabochaya_sreda/obzor.html">рабочими средами</a> часто возникает необходимость вместе с разработанной функциональностью предоставлять некоторые данные. Это может быть, например, наполнение справочников, новые системные настройки, демонстрационные записи раздела и т. д.</p>
+
+<p>При создании раздела с помощью мастера к пакету автоматически привязываются данные, необходимые для регистрации и корректной работы раздела.</p>
+
+<div class="media">
+<div class="media__element"><img src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/PackageDataBindinig/scr_bound_master_717.png" /></div>
+</div>
+
+<p>Привязать необходимые данные к пакету, содержащему разработанную функциональность, можно в разделе <span class="key">Конфигурация</span> (<span class="key">Configuration</span>).</p>
+</div>
+      
+  </div>
+<div class="block block-layout-builder block-field-blocknodedeveloper-documentationfield-linked">
+  
+    
+      
+  <div class="field field--name-field-linked field--type-entity-reference field--label-above">
+    <div class="field__label">Смотрите также</div>
+          <div class="field__items">
+              <div class="field__item"><a href="../../../../7-17/developer/instrumenty_razrabotki/creatio_ide/razrabotka_konfiguratsionnykh_elementov.html" hreflang="ru">Разработка конфигурационных элементов</a></div>
+          <div class="field__item"><a href="../../upravlenie_postavkami/creatio_ide/obzor.html" hreflang="ru">Управление поставками в Creatio IDE</a></div>
+          <div class="field__item"><a href="../../upravlenie_postavkami/workspaceconsole/obzor.html" hreflang="ru">Управление поставками в WorkspaceConsole</a></div>
+          <div class="field__item"><a href="../fajlovyj_kontent/obzor.html" hreflang="ru">Файловый контент пакетов</a></div>
+          <div class="field__item"><a href="../../upravlenie_postavkami/rabochaya_sreda/obzor.html" hreflang="ru">Понятие рабочей среды</a></div>
+          <div class="field__item"><a href="../paket_proekt/obzor.html" hreflang="ru">Пакет-проект</a></div>
+          <div class="field__item"><a href="../../../../7-18/developer/instrumenty_razrabotki/pakety/paket_sborka/obzor.html" hreflang="ru">Пакет-сборка</a></div>
+              </div>
+      </div>
+
+  </div>
+<div class="block block-layout-builder block-field-blocknodedeveloper-documentationfield-video">
+  
+    
+      
+  <div class="field field--name-field-video field--type-link field--label-above">
+    <div class="field__label">Онлайн-курсы</div>
+          <div class="field__items">
+              <div class="field__item"><a href="https://profile.terrasoft.ua/user/login?destination=academy/ua/course-redirect/677906">Работа с пакетами</a></div>
+          <div class="field__item"><a href="https://www.youtube.com/watch?v=iqmtdNfwOQw">Tech Hour: Я написал код. Что дальше?</a></div>
+              </div>
+      </div>
+
+  </div>
+
+    </div>
+  </div>
+
+  </div>
+
+</article>
+
+  </div>
+
+  </div>
+
+          </div>
+        </div>
+
+                  <aside class="creatio-sidebar creatio-sidebar_first" role="complementary">
+              <div class="region region-sidebar-first">
+    <div id="block-documentationnaviagtion" class="block block-ts-nav block-ts-nav-doc-nav">
+  
+    
+      <div class="ts-nav-block"><a href="../../../../index.html" class="ts-nav-block__link">Документация</a><div class="ts-nav-block__title">Для разработчика</div>
+</div>
+<div class="ts-nav-container"><ul class="ts-nav-menu"><li class="ts-nav-menu__item">
+  <a href="../../../s_chego_nachat.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">С чего начать&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../architecture.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Архитектура&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../instrumenty_razrabotki.html" class="ts-nav-menu__link ts-nav-menu__link_expanded ts-nav-menu__link_open" hreflang="zxx">Инструменты разработки&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+      <ul class="ts-nav-menu__children">
+      <li class="ts-nav-menu__item">
+  <a href="../../creatio_ide.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Creatio IDE&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../vneshnie_ide.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Внешние IDE&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../pakety.html" class="ts-nav-menu__link ts-nav-menu__link_expanded ts-nav-menu__link_open" hreflang="ru">Пакеты&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+      <ul class="ts-nav-menu__children">
+      <li class="ts-nav-menu__item">
+  <a href="../obshchiye_printsipy_raboty_s_paketami.html" class="ts-nav-menu__link ts-nav-menu__link_expanded ts-nav-menu__link_open" hreflang="ru">Обзор&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+      <ul class="ts-nav-menu__children">
+      <li class="ts-nav-menu__item">
+  <a href="obzor.html" class="ts-nav-menu__link ts-nav-menu__link_guide ts-nav-menu__link_active" hreflang="ru">Обзор</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../sozdat_paket.html" class="ts-nav-menu__link ts-nav-menu__link_case" hreflang="ru">Создать пакет</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../privyazat_dannye.html" class="ts-nav-menu__link ts-nav-menu__link_case" hreflang="ru">Привязать данные</a>
+  </li>
+
+    </ul>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../paket_proekt/obzor.html" class="ts-nav-menu__link" hreflang="ru">Пакет-проект</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../paket_sborka/obzor.html" class="ts-nav-menu__link" hreflang="ru">Пакет-сборка</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../development_tools/packages/fajlovyj_kontent.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Файловый контент&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+
+    </ul>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../sistemy_kontrolya_versij.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Системы контроля версий&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../development_tools/testirovanie.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Тестирование&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../development_tools/instrumenty_dlya_bazy_dannykh.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Инструменты для базы данных&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../logirovanie.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Логирование&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../otladka.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Отладка&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../upravlenie_postavkami.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Управление поставками&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+
+    </ul>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../back_end_razrabotka.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Back-end разработка&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../front_end_razrabotka_freedom_ui.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Front-end разработка Freedom UI&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../front_end_razrabotka.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Front-end разработка&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../integratsiya_i_vneshnij_api.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Интеграция и внешний API&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../ehlementy_interfejsa.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Элементы интерфейса&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../komponenty_prilozheniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Компоненты приложения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../razrabotka_mobilnogo_prilozheniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Разработка мобильного приложения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../razrabotka_marketplace_prilozheniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Разработка Marketplace-приложения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+</ul>
+</div>
+
+  </div>
+
+  </div>
+
+            <div class="creatio-sidebar__toggle"></div>
+          </aside>
+        
+                  <aside class="creatio-sidebar creatio-sidebar_second" role="complementary">
+              <div class="region region-sidebar-second">
+    <div id="block-example" class="block block-ts-nav block-ts-nav-page-nav">
+  
+    
+      <div class="ts-nav-page">
+  </div>
+
+  </div>
+<div id="block-adminfeedbackblock" class="block block-admin-feedback block-admin-feedback-block">
+  
+    
+      <div id="feedback-message"><div id="upper-feedback-content"><h2>Был ли данный материал полезен?</h2>
+<input class="feedback-btn feedback-btn__yes button js-form-submit form-submit" data-node-id="3555" data-feedback="yes" type="submit" name="op" value="Да" />
+<input class="feedback-btn feedback-btn__no button js-form-submit form-submit" data-node-id="3555" data-feedback="no" type="submit" name="op" value="Нет" />
+</div>
+<form class="admin-feedback-form" data-drupal-selector="admin-feedback-form" action="https://academy.terrasoft.ua/docs/developer/instrumenty_razrabotki/pakety/obshchiye_printsipy_raboty_s_paketami/obzor" method="post" id="admin-feedback-form" accept-charset="UTF-8">
+  <div id="feedback-msg-result"></div><div class="js-form-item form-item js-form-type-textarea form-type-textarea js-form-item-feedback-message form-item-feedback-message form-no-label">
+        <div class="form-textarea-wrapper">
+  <textarea id="edit-feedback-msg" data-drupal-selector="edit-feedback-message" name="feedback_message" rows="5" cols="60" class="form-textarea resize-vertical"></textarea>
+</div>
+
+        </div>
+<input id="feedback-id" data-drupal-selector="edit-feedback-id" type="hidden" name="feedback_id" value="" />
+<input class="feedback-btn feedback-btn__send-comment button js-form-submit form-submit" data-drupal-selector="edit-feedback-send" type="submit" id="edit-feedback-send" name="op" value="Отправить" />
+<input autocomplete="off" data-drupal-selector="form-c3ic3ngijl89cixots1gs5tzrquiudp-kkwq8msio44" type="hidden" name="form_build_id" value="form-c3Ic3NGIjL89cixotS1GS5tzRquiUDP-KkwQ8msIO44" />
+<input data-drupal-selector="edit-admin-feedback-form" type="hidden" name="form_id" value="admin_feedback_form" />
+
+</form>
+</div>
+
+  </div>
+
+  </div>
+
+          </aside>
+              </main>
+    </div>
+  </div>
+
+  <footer role="contentinfo">
+    <div class="creatio-region creatio-region_footer">
+      <div class="creatio-container">
+          <div class="region region-footer">
+    <div id="block-footerua" class="block block-simple-block block-simple-blockfooter-ua">
+  
+    
+      <div class="footer">
+<div class="footer-left">
+<ul class="footer-socials"><li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_fb" href="https://www.facebook.com/terrasoft.ua" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_in" href="https://www.linkedin.com/company/terrasoft/" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_yt" href="https://www.youtube.com/c/TerrasoftUkraine" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_tg" href="https://t.me/Terrasoft_UA" target="_blank"> </a></li>
+</ul></div>
+
+<div class="footer-contact">
+<div class="footer-title">Будьте на связи!</div>
+
+<div class="footer-content">
+<div class="footer-items">
+<div class="footer-item"><a class="footer__link footer__link_phone" href="tel:+380443633133">+38 (044) 363-31-33</a></div>
+</div>
+
+<div class="footer-items">
+<div class="footer-item"><a class="footer__link footer__link_email" href="mailto:support@terrasoft.ua">support@terrasoft.ua</a></div>
+</div>
+</div>
+</div>
+</div>
+
+  </div>
+
+  </div>
+
+      </div>
+    </div>
+    <div class="creatio-region creatio-region_bottom">
+      <div class="creatio-container">
+          <div class="region region-bottom">
+    <div id="block-allrightsreservedua" class="block block-simple-block block-simple-blockfooter-bottom-ua">
+  
+    
+      <p>© 2002-2022 Terrasoft.  |  <a href="https://www.terrasoft.ua/privacy-policy" target="_blank">Конфиденциальность</a></p>
+
+  </div>
+
+  </div>
+
+      </div>
+    </div>
+  </footer>
+</div>
+<div class="creatio-bg"></div>
+
+
+  </div>
+
+    
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/docs\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/3555","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"ru"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"ajaxPageState":{"libraries":"admin_feedback\/admin_feedback_block,admin_feedback\/admin_feedback_css,classy\/base,classy\/messages,classy\/node,core\/drupal.ajax,core\/jquery.form,core\/normalize,creatio\/fancybox,creatio\/global,layout_discovery\/onecol,system\/base,ts_doc\/doc_version,ts_feedback\/ts_feedback,ts_nav\/breadcrumb,ts_nav\/doc_nav,ts_nav\/page_nav,ts_title_anchor\/ts_title_anchor","theme":"creatio","theme_token":null},"ajaxTrustedUrl":{"form_action_p_pvdeGsVG5zNF_XLGPTvYSKCf43t8qZYSwcfZl2uzM":true,"\/docs\/developer\/instrumenty_razrabotki\/pakety\/obshchiye_printsipy_raboty_s_paketami\/obzor?ajax_form=1":true},"admin_feedback":{"yes_response":"\u0421\u043f\u0430\u0441\u0438\u0431\u043e \u0437\u0430 \u043e\u0431\u0440\u0430\u0442\u043d\u0443\u044e \u0441\u0432\u044f\u0437\u044c!","no_response":"\u0421\u043f\u0430\u0441\u0438\u0431\u043e \u0437\u0430 \u043e\u0431\u0440\u0430\u0442\u043d\u0443\u044e \u0441\u0432\u044f\u0437\u044c!","custom_text_response_on_no":{"value":"","format":"full_html"},"feedback_prompt_on_yes":true,"feedback_prompt_on_no":true,"feedback_enable_predefined_answers":false,"feedback_prompt":"\u041a\u0430\u043a \u043c\u043e\u0436\u043d\u043e \u0443\u043b\u0443\u0447\u0448\u0438\u0442\u044c \u044d\u0442\u0443 \u0441\u0442\u0430\u0442\u044c\u044e?"},"ajax":{"edit-feedback-send":{"callback":"::validateFeedbackMsg","event":"mousedown","keypress":true,"prevent":"click","url":"\/docs\/developer\/instrumenty_razrabotki\/pakety\/obshchiye_printsipy_raboty_s_paketami\/obzor?ajax_form=1","dialogType":"ajax","submit":{"_triggering_element_name":"op","_triggering_element_value":"\u041e\u0442\u043f\u0440\u0430\u0432\u0438\u0442\u044c"}}},"user":{"uid":0,"permissionsHash":"9c2367dfcaba0fa15f0375f97aed64e146c908cee68508d13b79e3ee80e5162d"}}</script>
+<script src="../../../../sites/default/files/js/js_Rr-7TvYD7NposuRFJwUqThxM7yJmw8vs03PQwu5gWd8.js"></script>
+
+
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+      <g id="svg-copy" class="svg-icon svg-icon_copy">
+        <path d="M15.111,18H1.889A1.848,1.848,0,0,1,0,16.2V3.6A1.848,1.848,0,0,1,1.889,1.8H5.837a2.87,2.87,0,0,1,5.326,0h3.948A1.848,1.848,0,0,1,17,3.6V16.2A1.848,1.848,0,0,1,15.111,18ZM3.777,12.6v1.8h6.611V12.6Zm0-3.6v1.8h9.445V9Zm0-3.6V7.2h9.445V5.4ZM8.5,1.8a.924.924,0,0,0-.944.9.945.945,0,0,0,1.889,0A.924.924,0,0,0,8.5,1.8Z"/>
+      </g>
+
+      <g id="svg-prev" class="svg-icon svg-icon_arrow">
+        <path d="M5.488,12.779,0,6.39,5.488,0" transform="translate(1 0.652)"/>
+      </g>
+
+      <g id="svg-next" class="svg-icon svg-icon_arrow">
+        <path d="M0,12.779,5.488,6.39,0,0" transform="translate(0.759 0.652)"/>
+      </g>
+    </svg>
+  </body>
+
+<!-- Mirrored from academy.terrasoft.ua/docs/developer/instrumenty_razrabotki/pakety/obshchiye_printsipy_raboty_s_paketami/obzor#title-2105-6 by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 22 Mar 2022 21:36:33 GMT -->
+</html>

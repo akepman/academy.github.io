@@ -1,0 +1,3006 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  
+<!-- Mirrored from academy.terrasoft.ua/api/netcoreapi/7.18.0/api/Terrasoft.Core.Process.Process.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Mar 2022 03:31:55 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class Process
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class Process
+   ">
+    <meta name="generator" content="docfx 2.58.0.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-default ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="https://academy.terrasoft.ru/docs/developer/back-end_development">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Terrasoft.Core.Process.Process">
+  
+  
+  <h1 id="Terrasoft_Core_Process_Process" data-uid="Terrasoft.Core.Process.Process" class="text-break">Class Process
+  </h1>
+  <div class="markdown level0 summary"><p>Represents abstraction for process instances.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><a class="xref" href="Terrasoft.Core.Process.ProcessFlowElement.html">ProcessFlowElement</a></div>
+    <div class="level2"><a class="xref" href="Terrasoft.Core.Process.ProcessActivity.html">ProcessActivity</a></div>
+    <div class="level3"><span class="xref">Process</span></div>
+      <div class="level4"><a class="xref" href="Terrasoft.Core.Process.EmbeddedProcess.html">EmbeddedProcess</a></div>
+      <div class="level4"><a class="xref" href="Terrasoft.Core.Process.ProcessComponentSet.html">ProcessComponentSet</a></div>
+      <div class="level4"><a class="xref" href="Terrasoft.Core.Process.SubProcessProxy.html">SubProcessProxy</a></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="Terrasoft.Core.Process.IProcessDataSerializable.html">IProcessDataSerializable</a></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="Terrasoft.Core.Process.ProcessActivity.html#Terrasoft_Core_Process_ProcessActivity_ProcessNotifier">ProcessActivity.ProcessNotifier</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.Process.ProcessActivity.html#Terrasoft_Core_Process_ProcessActivity_ProcessParameterStore">ProcessActivity.ProcessParameterStore</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.Process.ProcessActivity.html#Terrasoft_Core_Process_ProcessActivity_Owner">ProcessActivity.Owner</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.Process.ProcessActivity.html#Terrasoft_Core_Process_ProcessActivity_SchemaUId">ProcessActivity.SchemaUId</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.Process.ProcessActivity.html#Terrasoft_Core_Process_ProcessActivity_OwnerUId">ProcessActivity.OwnerUId</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.Process.ProcessActivity.html#Terrasoft_Core_Process_ProcessActivity_UserConnection">ProcessActivity.UserConnection</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.Process.ProcessActivity.html#Terrasoft_Core_Process_ProcessActivity_Schema">ProcessActivity.Schema</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.Process.ProcessActivity.html#Terrasoft_Core_Process_ProcessActivity_Storage">ProcessActivity.Storage</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.Process.ProcessActivity.html#Terrasoft_Core_Process_ProcessActivity_IsShownExecutionPage">ProcessActivity.IsShownExecutionPage</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.Process.ProcessActivity.html#Terrasoft_Core_Process_ProcessActivity_ProcessLane">ProcessActivity.ProcessLane</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.Process.ProcessActivity.html#Terrasoft_Core_Process_ProcessActivity_Compressor">ProcessActivity.Compressor</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.Process.ProcessActivity.html#Terrasoft_Core_Process_ProcessActivity_PerformerAssignmentOptions">ProcessActivity.PerformerAssignmentOptions</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.Process.ProcessActivity.html#Terrasoft_Core_Process_ProcessActivity_OnExecuted_Terrasoft_Core_Process_ProcessActivityAfterEventArgs_">ProcessActivity.OnExecuted(ProcessActivityAfterEventArgs)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.Process.ProcessActivity.html#Terrasoft_Core_Process_ProcessActivity_NeedBreakProcessExecuting_Terrasoft_Core_Process_ProcessActivityAfterEventArgs_">ProcessActivity.NeedBreakProcessExecuting(ProcessActivityAfterEventArgs)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.Process.ProcessActivity.html#Terrasoft_Core_Process_ProcessActivity_GetSchema_System_Guid_">ProcessActivity.GetSchema(Guid)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.Process.ProcessActivity.html#Terrasoft_Core_Process_ProcessActivity_AfterInternalExecute">ProcessActivity.AfterInternalExecute()</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.Process.ProcessActivity.html#Terrasoft_Core_Process_ProcessActivity_FindSchemaElement_System_Guid_">ProcessActivity.FindSchemaElement(Guid)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.Process.ProcessActivity.html#Terrasoft_Core_Process_ProcessActivity_ReadSerializableObject__1_DataReader_">ProcessActivity.ReadSerializableObject&lt;T&gt;(DataReader)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.Process.ProcessActivity.html#Terrasoft_Core_Process_ProcessActivity_WriteSerializableObject__1_DataWriter_System_String___0_">ProcessActivity.WriteSerializableObject&lt;T&gt;(DataWriter, String, T)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.Process.ProcessActivity.html#Terrasoft_Core_Process_ProcessActivity_OnCanceled">ProcessActivity.OnCanceled()</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.Process.ProcessActivity.html#Terrasoft_Core_Process_ProcessActivity_MeasureDuration_System_String_">ProcessActivity.MeasureDuration(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.Process.ProcessActivity.html#Terrasoft_Core_Process_ProcessActivity_CreateFlowElementInstanceByType_System_Type_Terrasoft_Core_Process_Process_">ProcessActivity.CreateFlowElementInstanceByType(Type, Process)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.Process.ProcessActivity.html#Terrasoft_Core_Process_ProcessActivity_WriteExecutionData_Terrasoft_Core_Process_IProcessExecutionDataWriter_">ProcessActivity.WriteExecutionData(IProcessExecutionDataWriter)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.Process.ProcessActivity.html#Terrasoft_Core_Process_ProcessActivity_ReadPropertiesDataFromMemory">ProcessActivity.ReadPropertiesDataFromMemory()</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.Process.ProcessActivity.html#Terrasoft_Core_Process_ProcessActivity_CompleteExecuting_System_Object___">ProcessActivity.CompleteExecuting(Object[])</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.Process.ProcessActivity.html#Terrasoft_Core_Process_ProcessActivity_GetResultParameterAllValues_Terrasoft_Core_UserConnection_Terrasoft_Core_Process_ProcessSchemaUserTask_">ProcessActivity.GetResultParameterAllValues(UserConnection, ProcessSchemaUserTask)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.Process.ProcessActivity.html#Terrasoft_Core_Process_ProcessActivity_GetExecutionData">ProcessActivity.GetExecutionData()</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.Process.ProcessActivity.html#Terrasoft_Core_Process_ProcessActivity_GetResultParameterAllowedValues">ProcessActivity.GetResultParameterAllowedValues()</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.Process.ProcessActivity.html#Terrasoft_Core_Process_ProcessActivity_GetResultAllowedValues">ProcessActivity.GetResultAllowedValues()</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.Process.ProcessActivity.html#Terrasoft_Core_Process_ProcessActivity_ExternalExecute_Terrasoft_Core_Process_ProcessActivityAfterEventArgs_">ProcessActivity.ExternalExecute(ProcessActivityAfterEventArgs)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.Process.ProcessActivity.html#Terrasoft_Core_Process_ProcessActivity_SerializeToString_System_Object_">ProcessActivity.SerializeToString(Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.Process.ProcessActivity.html#Terrasoft_Core_Process_ProcessActivity_DeserializeFromString__1_System_String_">ProcessActivity.DeserializeFromString&lt;T&gt;(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.Process.ProcessActivity.html#Terrasoft_Core_Process_ProcessActivity_GetLocalizableString_System_String_System_String_">ProcessActivity.GetLocalizableString(String, String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.Process.ProcessActivity.html#Terrasoft_Core_Process_ProcessActivity_ConvertToProcessDataSourceFilters_System_Guid_System_String_">ProcessActivity.ConvertToProcessDataSourceFilters(Guid, String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.Process.ProcessActivity.html#Terrasoft_Core_Process_ProcessActivity_FindSchemaElement">ProcessActivity.FindSchemaElement()</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.Process.ProcessActivity.html#Terrasoft_Core_Process_ProcessActivity_GetSchemaElement">ProcessActivity.GetSchemaElement()</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.Process.ProcessActivity.html#Terrasoft_Core_Process_ProcessActivity_GetNotificationData">ProcessActivity.GetNotificationData()</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.Process.ProcessActivity.html#Terrasoft_Core_Process_ProcessActivity_GetParameterValues_System_Collections_Generic_IEnumerable_Terrasoft_Core_Process_ProcessSchemaParameter__">ProcessActivity.GetParameterValues(IEnumerable&lt;ProcessSchemaParameter&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.Process.ProcessFlowElement.html#Terrasoft_Core_Process_ProcessFlowElement_IdParameterName">ProcessFlowElement.IdParameterName</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.Process.ProcessFlowElement.html#Terrasoft_Core_Process_ProcessFlowElement_SysSchemaIdParameterName">ProcessFlowElement.SysSchemaIdParameterName</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.Process.ProcessFlowElement.html#Terrasoft_Core_Process_ProcessFlowElement_SysWorkspaceIdParameterName">ProcessFlowElement.SysWorkspaceIdParameterName</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.Process.ProcessFlowElement.html#Terrasoft_Core_Process_ProcessFlowElement_ParentIdParameterName">ProcessFlowElement.ParentIdParameterName</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.Process.ProcessFlowElement.html#Terrasoft_Core_Process_ProcessFlowElement_CreatedOnParameterName">ProcessFlowElement.CreatedOnParameterName</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.Process.ProcessFlowElement.html#Terrasoft_Core_Process_ProcessFlowElement_CreatedByIdParameterName">ProcessFlowElement.CreatedByIdParameterName</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.Process.ProcessFlowElement.html#Terrasoft_Core_Process_ProcessFlowElement_ModifiedOnParameterName">ProcessFlowElement.ModifiedOnParameterName</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.Process.ProcessFlowElement.html#Terrasoft_Core_Process_ProcessFlowElement_ModifiedByIdParameterName">ProcessFlowElement.ModifiedByIdParameterName</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.Process.ProcessFlowElement.html#Terrasoft_Core_Process_ProcessFlowElement_StartDateParameterName">ProcessFlowElement.StartDateParameterName</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.Process.ProcessFlowElement.html#Terrasoft_Core_Process_ProcessFlowElement_CompleteDateParameterName">ProcessFlowElement.CompleteDateParameterName</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.Process.ProcessFlowElement.html#Terrasoft_Core_Process_ProcessFlowElement_SysProcessIdParameterName">ProcessFlowElement.SysProcessIdParameterName</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.Process.ProcessFlowElement.html#Terrasoft_Core_Process_ProcessFlowElement_CaptionParameterName">ProcessFlowElement.CaptionParameterName</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.Process.ProcessFlowElement.html#Terrasoft_Core_Process_ProcessFlowElement_StatusIdParameterName">ProcessFlowElement.StatusIdParameterName</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.Process.ProcessFlowElement.html#Terrasoft_Core_Process_ProcessFlowElement_TypeParameterName">ProcessFlowElement.TypeParameterName</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.Process.ProcessFlowElement.html#Terrasoft_Core_Process_ProcessFlowElement_SchemaElementUIdParameterName">ProcessFlowElement.SchemaElementUIdParameterName</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.Process.ProcessFlowElement.html#Terrasoft_Core_Process_ProcessFlowElement_SchemaUIdParameterName">ProcessFlowElement.SchemaUIdParameterName</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.Process.ProcessFlowElement.html#Terrasoft_Core_Process_ProcessFlowElement_StatusParameterName">ProcessFlowElement.StatusParameterName</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.Process.ProcessFlowElement.html#Terrasoft_Core_Process_ProcessFlowElement_OwnerIdParameterName">ProcessFlowElement.OwnerIdParameterName</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.Process.ProcessFlowElement.html#Terrasoft_Core_Process_ProcessFlowElement_ErrorDescriptionParameterName">ProcessFlowElement.ErrorDescriptionParameterName</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.Process.ProcessFlowElement.html#Terrasoft_Core_Process_ProcessFlowElement_PropertiesDataParameterName">ProcessFlowElement.PropertiesDataParameterName</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.Process.ProcessFlowElement.html#Terrasoft_Core_Process_ProcessFlowElement_GuidTypeName">ProcessFlowElement.GuidTypeName</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.Process.ProcessFlowElement.html#Terrasoft_Core_Process_ProcessFlowElement_IntegerTypeName">ProcessFlowElement.IntegerTypeName</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.Process.ProcessFlowElement.html#Terrasoft_Core_Process_ProcessFlowElement_DateTimeTypeName">ProcessFlowElement.DateTimeTypeName</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.Process.ProcessFlowElement.html#Terrasoft_Core_Process_ProcessFlowElement_TextTypeName">ProcessFlowElement.TextTypeName</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.Process.ProcessFlowElement.html#Terrasoft_Core_Process_ProcessFlowElement_Float1TypeName">ProcessFlowElement.Float1TypeName</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.Process.ProcessFlowElement.html#Terrasoft_Core_Process_ProcessFlowElement_DurationInMinutesParameterName">ProcessFlowElement.DurationInMinutesParameterName</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.Process.ProcessFlowElement.html#Terrasoft_Core_Process_ProcessFlowElement_DurationInHoursParameterName">ProcessFlowElement.DurationInHoursParameterName</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.Process.ProcessFlowElement.html#Terrasoft_Core_Process_ProcessFlowElement_DurationInDaysParameterName">ProcessFlowElement.DurationInDaysParameterName</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.Process.ProcessFlowElement.html#Terrasoft_Core_Process_ProcessFlowElement_DurationInMillisecondsParameterName">ProcessFlowElement.DurationInMillisecondsParameterName</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.Process.ProcessFlowElement.html#Terrasoft_Core_Process_ProcessFlowElement_NodeIdParameterName">ProcessFlowElement.NodeIdParameterName</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.Process.ProcessFlowElement.html#Terrasoft_Core_Process_ProcessFlowElement_UIdPropertyName">ProcessFlowElement.UIdPropertyName</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.Process.ProcessFlowElement.html#Terrasoft_Core_Process_ProcessFlowElement_NamePropertyName">ProcessFlowElement.NamePropertyName</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.Process.ProcessFlowElement.html#Terrasoft_Core_Process_ProcessFlowElement_StatusPropertyName">ProcessFlowElement.StatusPropertyName</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.Process.ProcessFlowElement.html#Terrasoft_Core_Process_ProcessFlowElement_Log">ProcessFlowElement.Log</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.Process.ProcessFlowElement.html#Terrasoft_Core_Process_ProcessFlowElement_UId">ProcessFlowElement.UId</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.Process.ProcessFlowElement.html#Terrasoft_Core_Process_ProcessFlowElement_Name">ProcessFlowElement.Name</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.Process.ProcessFlowElement.html#Terrasoft_Core_Process_ProcessFlowElement_Caption">ProcessFlowElement.Caption</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.Process.ProcessFlowElement.html#Terrasoft_Core_Process_ProcessFlowElement_Type">ProcessFlowElement.Type</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.Process.ProcessFlowElement.html#Terrasoft_Core_Process_ProcessFlowElement_SerializeToDB">ProcessFlowElement.SerializeToDB</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.Process.ProcessFlowElement.html#Terrasoft_Core_Process_ProcessFlowElement_SchemaElementUId">ProcessFlowElement.SchemaElementUId</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.Process.ProcessFlowElement.html#Terrasoft_Core_Process_ProcessFlowElement_Status">ProcessFlowElement.Status</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.Process.ProcessFlowElement.html#Terrasoft_Core_Process_ProcessFlowElement_IsExecuted">ProcessFlowElement.IsExecuted</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.Process.ProcessFlowElement.html#Terrasoft_Core_Process_ProcessFlowElement_ExecutionResult">ProcessFlowElement.ExecutionResult</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.Process.ProcessFlowElement.html#Terrasoft_Core_Process_ProcessFlowElement_LoopCounter">ProcessFlowElement.LoopCounter</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.Process.ProcessFlowElement.html#Terrasoft_Core_Process_ProcessFlowElement_CreatedInSchemaUId">ProcessFlowElement.CreatedInSchemaUId</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.Process.ProcessFlowElement.html#Terrasoft_Core_Process_ProcessFlowElement_PreviousFlowElements">ProcessFlowElement.PreviousFlowElements</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.Process.ProcessFlowElement.html#Terrasoft_Core_Process_ProcessFlowElement_ExecutedEventHandler">ProcessFlowElement.ExecutedEventHandler</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.Process.ProcessFlowElement.html#Terrasoft_Core_Process_ProcessFlowElement_StartDate">ProcessFlowElement.StartDate</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.Process.ProcessFlowElement.html#Terrasoft_Core_Process_ProcessFlowElement_Executed">ProcessFlowElement.Executed</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.Process.ProcessFlowElement.html#Terrasoft_Core_Process_ProcessFlowElement_CompleteApplyingPropertiesDataValues">ProcessFlowElement.CompleteApplyingPropertiesDataValues()</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.Process.ProcessFlowElement.html#Terrasoft_Core_Process_ProcessFlowElement_ReadSerializableObjectValue_DataReader_">ProcessFlowElement.ReadSerializableObjectValue(DataReader)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.Process.ProcessFlowElement.html#Terrasoft_Core_Process_ProcessFlowElement_WritePropertyValues_DataWriter_">ProcessFlowElement.WritePropertyValues(DataWriter)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.Process.ProcessFlowElement.html#Terrasoft_Core_Process_ProcessFlowElement_SetDurationQueryParameters_Terrasoft_Core_DB_QueryParameterCollection_">ProcessFlowElement.SetDurationQueryParameters(QueryParameterCollection)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.Process.ProcessFlowElement.html#Terrasoft_Core_Process_ProcessFlowElement_GetSchemaElement_System_Guid_">ProcessFlowElement.GetSchemaElement(Guid)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.Process.ProcessFlowElement.html#Terrasoft_Core_Process_ProcessFlowElement_ToString">ProcessFlowElement.ToString()</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.Process.ProcessFlowElement.html#Terrasoft_Core_Process_ProcessFlowElement_WritePropertiesData_DataWriter_">ProcessFlowElement.WritePropertiesData(DataWriter)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.Process.ProcessFlowElement.html#Terrasoft_Core_Process_ProcessFlowElement_GetPropertiesData">ProcessFlowElement.GetPropertiesData()</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.Process.ProcessFlowElement.html#Terrasoft_Core_Process_ProcessFlowElement_TryGetPerformer_System_Guid__">ProcessFlowElement.TryGetPerformer(Guid)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.Process.ProcessFlowElement.html#Terrasoft_Core_Process_ProcessFlowElement_WritePropertiesDataToOwner_DataWriter_">ProcessFlowElement.WritePropertiesDataToOwner(DataWriter)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.Process.ProcessFlowElement.html#Terrasoft_Core_Process_ProcessFlowElement_ReadPropertiesDataFromOwner_DataReader_">ProcessFlowElement.ReadPropertiesDataFromOwner(DataReader)</a>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Terrasoft.Core.Process.html">Terrasoft.Core.Process</a></h6>
+  <h6><strong>Assembly</strong>: Terrasoft.Core.dll</h6>
+  <h5 id="Terrasoft_Core_Process_Process_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract class Process : ProcessActivity, IProcessDataSerializable, IHandler&lt;ChangeProcessElementPerformerCommand&gt;</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+  </h3>
+  
+  
+  <a id="Terrasoft_Core_Process_Process__ctor_" data-uid="Terrasoft.Core.Process.Process.#ctor*"></a>
+  <h4 id="Terrasoft_Core_Process_Process__ctor_Terrasoft_Core_UserConnection_" data-uid="Terrasoft.Core.Process.Process.#ctor(Terrasoft.Core.UserConnection)">Process(UserConnection)</h4>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="Terrasoft.Core.Process.Process.html">Process</a> class.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected Process(UserConnection userConnection)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.UserConnection.html">UserConnection</a></td>
+        <td><span class="parametername">userConnection</span></td>
+        <td><p>The user connection.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="fields">Fields
+  </h3>
+  
+  
+  <h4 id="Terrasoft_Core_Process_Process_FlowElementsPropertyName" data-uid="Terrasoft.Core.Process.Process.FlowElementsPropertyName">FlowElementsPropertyName</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected const string FlowElementsPropertyName = &quot;HM7&quot;</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  
+  
+  <a id="Terrasoft_Core_Process_Process_ActivatedEventElements_" data-uid="Terrasoft.Core.Process.Process.ActivatedEventElements*"></a>
+  <h4 id="Terrasoft_Core_Process_Process_ActivatedEventElements" data-uid="Terrasoft.Core.Process.Process.ActivatedEventElements">ActivatedEventElements</h4>
+  <div class="markdown level1 summary"><p>Gets a collection of the activated events.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual Collection&lt;string&gt; ActivatedEventElements { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.ObjectModel.Collection</span>&lt;<span class="xref">System.String</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_Process_Process_FlowElements_" data-uid="Terrasoft.Core.Process.Process.FlowElements*"></a>
+  <h4 id="Terrasoft_Core_Process_Process_FlowElements" data-uid="Terrasoft.Core.Process.Process.FlowElements">FlowElements</h4>
+  <div class="markdown level1 summary"><p>Gets a set of the process elements that were executed or are required to execute.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual Dictionary&lt;Guid, Collection&lt;ProcessFlowElement&gt;&gt; FlowElements { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.Dictionary</span>&lt;<span class="xref">System.Guid</span>, <span class="xref">System.Collections.ObjectModel.Collection</span>&lt;<a class="xref" href="Terrasoft.Core.Process.ProcessFlowElement.html">ProcessFlowElement</a>&gt;&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_Process_Process_InstanceUId_" data-uid="Terrasoft.Core.Process.Process.InstanceUId*"></a>
+  <h4 id="Terrasoft_Core_Process_Process_InstanceUId" data-uid="Terrasoft.Core.Process.Process.InstanceUId">InstanceUId</h4>
+  <div class="markdown level1 summary"><p>Gets string value that represents unique identifier of the current process.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual string InstanceUId { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_Process_Process_InternalContext_" data-uid="Terrasoft.Core.Process.Process.InternalContext*"></a>
+  <h4 id="Terrasoft_Core_Process_Process_InternalContext" data-uid="Terrasoft.Core.Process.Process.InternalContext">InternalContext</h4>
+  <div class="markdown level1 summary"><p>Gets or sets instance of the <a class="xref" href="Terrasoft.Core.Process.ProcessExecutingContext.html">ProcessExecutingContext</a> type.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual ProcessExecutingContext InternalContext { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.Process.ProcessExecutingContext.html">ProcessExecutingContext</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_Process_Process_IsEmbedded_" data-uid="Terrasoft.Core.Process.Process.IsEmbedded*"></a>
+  <h4 id="Terrasoft_Core_Process_Process_IsEmbedded" data-uid="Terrasoft.Core.Process.Process.IsEmbedded">IsEmbedded</h4>
+  <div class="markdown level1 summary"><p>Gets value that determines whether it is embedded process.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual bool IsEmbedded { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_Process_Process_IsLogging_" data-uid="Terrasoft.Core.Process.Process.IsLogging*"></a>
+  <h4 id="Terrasoft_Core_Process_Process_IsLogging" data-uid="Terrasoft.Core.Process.Process.IsLogging">IsLogging</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool IsLogging { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Terrasoft.Core.Process.ProcessFlowElement.html#Terrasoft_Core_Process_ProcessFlowElement_IsLogging">ProcessFlowElement.IsLogging</a></div>
+  
+  
+  <a id="Terrasoft_Core_Process_Process_IsProcess_" data-uid="Terrasoft.Core.Process.Process.IsProcess*"></a>
+  <h4 id="Terrasoft_Core_Process_Process_IsProcess" data-uid="Terrasoft.Core.Process.Process.IsProcess">IsProcess</h4>
+  <div class="markdown level1 summary"><p>Gets value that determines it is a process.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool IsProcess { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Terrasoft.Core.Process.ProcessFlowElement.html#Terrasoft_Core_Process_ProcessFlowElement_IsProcess">ProcessFlowElement.IsProcess</a></div>
+  
+  
+  <a id="Terrasoft_Core_Process_Process_IsProcessExecutedByService_" data-uid="Terrasoft.Core.Process.Process.IsProcessExecutedByService*"></a>
+  <h4 id="Terrasoft_Core_Process_Process_IsProcessExecutedByService" data-uid="Terrasoft.Core.Process.Process.IsProcessExecutedByService">IsProcessExecutedByService</h4>
+  <div class="markdown level1 summary"><p>Gets or sets value that determines whether the current process is started by service.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Obsolete(&quot;7.13.1 | Property is not in use and will be removed in upcoming builds&quot;)]
+public virtual bool IsProcessExecutedByService { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_Process_Process_IsProcessExecutedBySignal_" data-uid="Terrasoft.Core.Process.Process.IsProcessExecutedBySignal*"></a>
+  <h4 id="Terrasoft_Core_Process_Process_IsProcessExecutedBySignal" data-uid="Terrasoft.Core.Process.Process.IsProcessExecutedBySignal">IsProcessExecutedBySignal</h4>
+  <div class="markdown level1 summary"><p>Gets or sets value that determines whether the current process is started by signal.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual bool IsProcessExecutedBySignal { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_Process_Process_IsSaved_" data-uid="Terrasoft.Core.Process.Process.IsSaved*"></a>
+  <h4 id="Terrasoft_Core_Process_Process_IsSaved" data-uid="Terrasoft.Core.Process.Process.IsSaved">IsSaved</h4>
+  <div class="markdown level1 summary"><p>Gets or sets value that determines whether it is embedded process.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual bool IsSaved { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_Process_Process_MaxLoopCount_" data-uid="Terrasoft.Core.Process.Process.MaxLoopCount*"></a>
+  <h4 id="Terrasoft_Core_Process_Process_MaxLoopCount" data-uid="Terrasoft.Core.Process.Process.MaxLoopCount">MaxLoopCount</h4>
+  <div class="markdown level1 summary"><p>Gets maximum number of process repetitions.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual int MaxLoopCount { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_Process_Process_MetaPathParameterValues_" data-uid="Terrasoft.Core.Process.Process.MetaPathParameterValues*"></a>
+  <h4 id="Terrasoft_Core_Process_Process_MetaPathParameterValues" data-uid="Terrasoft.Core.Process.Process.MetaPathParameterValues">MetaPathParameterValues</h4>
+  <div class="markdown level1 summary"><p>Gets a collection of keys and values, where key is the meta-path and value is delegate.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual Dictionary&lt;string, Func&lt;object&gt;&gt; MetaPathParameterValues { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.Dictionary</span>&lt;<span class="xref">System.String</span>, <span class="xref">System.Func</span>&lt;<span class="xref">System.Object</span>&gt;&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_Process_Process_ParameterValueProvider_" data-uid="Terrasoft.Core.Process.Process.ParameterValueProvider*"></a>
+  <h4 id="Terrasoft_Core_Process_Process_ParameterValueProvider" data-uid="Terrasoft.Core.Process.Process.ParameterValueProvider">ParameterValueProvider</h4>
+  <div class="markdown level1 summary"><p>Gets the family of algorithms that are used to obtain the values of the process parameters.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual ProcessParameterValueProvider ParameterValueProvider { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.Process.ProcessParameterValueProvider.html">ProcessParameterValueProvider</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_Process_Process_ProcessModel_" data-uid="Terrasoft.Core.Process.Process.ProcessModel*"></a>
+  <h4 id="Terrasoft_Core_Process_Process_ProcessModel" data-uid="Terrasoft.Core.Process.Process.ProcessModel">ProcessModel</h4>
+  <div class="markdown level1 summary"><p>Gets instance that implements the<a class="xref" href="Terrasoft.Core.Process.IProcessModel.html">IProcessModel</a> interface.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual IProcessModel ProcessModel { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.Process.IProcessModel.html">IProcessModel</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_Process_Process_ProcessSchema_" data-uid="Terrasoft.Core.Process.Process.ProcessSchema*"></a>
+  <h4 id="Terrasoft_Core_Process_Process_ProcessSchema" data-uid="Terrasoft.Core.Process.Process.ProcessSchema">ProcessSchema</h4>
+  <div class="markdown level1 summary"><p>Gets the process schema.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual ProcessSchema ProcessSchema { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.Process.ProcessSchema.html">ProcessSchema</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_Process_Process_ProcessType_" data-uid="Terrasoft.Core.Process.Process.ProcessType*"></a>
+  <h4 id="Terrasoft_Core_Process_Process_ProcessType" data-uid="Terrasoft.Core.Process.Process.ProcessType">ProcessType</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the class type of the current process.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual Type ProcessType { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Type</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_Process_Process_Result_" data-uid="Terrasoft.Core.Process.Process.Result*"></a>
+  <h4 id="Terrasoft_Core_Process_Process_Result" data-uid="Terrasoft.Core.Process.Process.Result">Result</h4>
+  <div class="markdown level1 summary"><p>Gets or sets result of the current process execution.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual object Result { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_Process_Process_SchemaManager_" data-uid="Terrasoft.Core.Process.Process.SchemaManager*"></a>
+  <h4 id="Terrasoft_Core_Process_Process_SchemaManager" data-uid="Terrasoft.Core.Process.Process.SchemaManager">SchemaManager</h4>
+  <div class="markdown level1 summary"><p>Gets instance that implements the <a class="xref" href="Terrasoft.Core.ISchemaManager.html">ISchemaManager</a> interface.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override ISchemaManager SchemaManager { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.ISchemaManager.html">ISchemaManager</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Terrasoft.Core.Process.ProcessActivity.html#Terrasoft_Core_Process_ProcessActivity_SchemaManager">ProcessActivity.SchemaManager</a></div>
+  
+  
+  <a id="Terrasoft_Core_Process_Process_SchemaManagerName_" data-uid="Terrasoft.Core.Process.Process.SchemaManagerName*"></a>
+  <h4 id="Terrasoft_Core_Process_Process_SchemaManagerName" data-uid="Terrasoft.Core.Process.Process.SchemaManagerName">SchemaManagerName</h4>
+  <div class="markdown level1 summary"><p>Gets or sets name of schema manager.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override string SchemaManagerName { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Terrasoft.Core.Process.ProcessActivity.html#Terrasoft_Core_Process_ProcessActivity_SchemaManagerName">ProcessActivity.SchemaManagerName</a></div>
+  
+  
+  <a id="Terrasoft_Core_Process_Process_SchemaManagerNamePropertyName_" data-uid="Terrasoft.Core.Process.Process.SchemaManagerNamePropertyName*"></a>
+  <h4 id="Terrasoft_Core_Process_Process_SchemaManagerNamePropertyName" data-uid="Terrasoft.Core.Process.Process.SchemaManagerNamePropertyName">SchemaManagerNamePropertyName</h4>
+  <div class="markdown level1 summary"><p>Gets the meta data index for the &quot;SchemaManagerName&quot; property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string SchemaManagerNamePropertyName { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_Process_Process_SchemaUIdPropertyName_" data-uid="Terrasoft.Core.Process.Process.SchemaUIdPropertyName*"></a>
+  <h4 id="Terrasoft_Core_Process_Process_SchemaUIdPropertyName" data-uid="Terrasoft.Core.Process.Process.SchemaUIdPropertyName">SchemaUIdPropertyName</h4>
+  <div class="markdown level1 summary"><p>Gets the meta data index for the &quot;SchemaUId&quot; property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string SchemaUIdPropertyName { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_Process_Process_SerializeToMemory_" data-uid="Terrasoft.Core.Process.Process.SerializeToMemory*"></a>
+  <h4 id="Terrasoft_Core_Process_Process_SerializeToMemory" data-uid="Terrasoft.Core.Process.Process.SerializeToMemory">SerializeToMemory</h4>
+  <div class="markdown level1 summary"><p>Gets or sets value that determines whether it is required to serialize the current process in memory.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual bool SerializeToMemory { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_Process_Process_ShowExecutionPage_" data-uid="Terrasoft.Core.Process.Process.ShowExecutionPage*"></a>
+  <h4 id="Terrasoft_Core_Process_Process_ShowExecutionPage" data-uid="Terrasoft.Core.Process.Process.ShowExecutionPage">ShowExecutionPage</h4>
+  <div class="markdown level1 summary"><p>Gets or sets value that determines whether the current process could shows execution pages.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool ShowExecutionPage { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_Process_Process_ThrowEvents_" data-uid="Terrasoft.Core.Process.Process.ThrowEvents*"></a>
+  <h4 id="Terrasoft_Core_Process_Process_ThrowEvents" data-uid="Terrasoft.Core.Process.Process.ThrowEvents">ThrowEvents</h4>
+  <div class="markdown level1 summary"><p>Gets a set of events that are required to trigger.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual Collection&lt;string&gt; ThrowEvents { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.ObjectModel.Collection</span>&lt;<span class="xref">System.String</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_Process_Process_UseFlowEngineMode_" data-uid="Terrasoft.Core.Process.Process.UseFlowEngineMode*"></a>
+  <h4 id="Terrasoft_Core_Process_Process_UseFlowEngineMode" data-uid="Terrasoft.Core.Process.Process.UseFlowEngineMode">UseFlowEngineMode</h4>
+  <div class="markdown level1 summary"><p>Indicates whether the current process can be executed in interpreted environment.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override bool UseFlowEngineMode { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Terrasoft.Core.Process.ProcessActivity.html#Terrasoft_Core_Process_ProcessActivity_UseFlowEngineMode">ProcessActivity.UseFlowEngineMode</a></div>
+  
+  
+  <a id="Terrasoft_Core_Process_Process_UseSystemSecurityContext_" data-uid="Terrasoft.Core.Process.Process.UseSystemSecurityContext*"></a>
+  <h4 id="Terrasoft_Core_Process_Process_UseSystemSecurityContext" data-uid="Terrasoft.Core.Process.Process.UseSystemSecurityContext">UseSystemSecurityContext</h4>
+  <div class="markdown level1 summary"><p>Gets or sets value that indicates whether is needed system security context.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool UseSystemSecurityContext { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_Process_Process_WaitingUserTasks_" data-uid="Terrasoft.Core.Process.Process.WaitingUserTasks*"></a>
+  <h4 id="Terrasoft_Core_Process_Process_WaitingUserTasks" data-uid="Terrasoft.Core.Process.Process.WaitingUserTasks">WaitingUserTasks</h4>
+  <div class="markdown level1 summary"><p>Gets a set of the process elements that are going to show execution page.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual Collection&lt;ProcessFlowElement&gt; WaitingUserTasks { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.ObjectModel.Collection</span>&lt;<a class="xref" href="Terrasoft.Core.Process.ProcessFlowElement.html">ProcessFlowElement</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  
+  
+  <a id="Terrasoft_Core_Process_Process_ApplyPropertiesDataValues_" data-uid="Terrasoft.Core.Process.Process.ApplyPropertiesDataValues*"></a>
+  <h4 id="Terrasoft_Core_Process_Process_ApplyPropertiesDataValues_DataReader_" data-uid="Terrasoft.Core.Process.Process.ApplyPropertiesDataValues(DataReader)">ApplyPropertiesDataValues(DataReader)</h4>
+  <div class="markdown level1 summary"><p>Applies state of the current process element.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void ApplyPropertiesDataValues(DataReader reader)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">DataReader</span></td>
+        <td><span class="parametername">reader</span></td>
+        <td><p>Instance that provides sequential reading of data.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Terrasoft.Core.Process.ProcessActivity.html#Terrasoft_Core_Process_ProcessActivity_ApplyPropertiesDataValues_DataReader_">ProcessActivity.ApplyPropertiesDataValues(DataReader)</a></div>
+  
+  
+  <a id="Terrasoft_Core_Process_Process_Assign_" data-uid="Terrasoft.Core.Process.Process.Assign*"></a>
+  <h4 id="Terrasoft_Core_Process_Process_Assign_Terrasoft_Core_Process_ProcessFlowElement_" data-uid="Terrasoft.Core.Process.Process.Assign(Terrasoft.Core.Process.ProcessFlowElement)">Assign(ProcessFlowElement)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void Assign(ProcessFlowElement processElement)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.Process.ProcessFlowElement.html">ProcessFlowElement</a></td>
+        <td><span class="parametername">processElement</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Terrasoft.Core.Process.ProcessActivity.html#Terrasoft_Core_Process_ProcessActivity_Assign_Terrasoft_Core_Process_ProcessFlowElement_">ProcessActivity.Assign(ProcessFlowElement)</a></div>
+  
+  
+  <a id="Terrasoft_Core_Process_Process_CancelExecuting_" data-uid="Terrasoft.Core.Process.Process.CancelExecuting*"></a>
+  <h4 id="Terrasoft_Core_Process_Process_CancelExecuting_System_Object___" data-uid="Terrasoft.Core.Process.Process.CancelExecuting(System.Object[])">CancelExecuting(Object[])</h4>
+  <div class="markdown level1 summary"><p>Cancels the executing.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void CancelExecuting(params object[] parameters)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span>[]</td>
+        <td><span class="parametername">parameters</span></td>
+        <td><p>Array of the parameter values.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Terrasoft.Core.Process.ProcessActivity.html#Terrasoft_Core_Process_ProcessActivity_CancelExecuting_System_Object___">ProcessActivity.CancelExecuting(Object[])</a></div>
+  
+  
+  <a id="Terrasoft_Core_Process_Process_CancelExecution_" data-uid="Terrasoft.Core.Process.Process.CancelExecution*"></a>
+  <h4 id="Terrasoft_Core_Process_Process_CancelExecution" data-uid="Terrasoft.Core.Process.Process.CancelExecution">CancelExecution()</h4>
+  <div class="markdown level1 summary"><p>Cancels execution of the current process.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void CancelExecution()</code></pre>
+  </div>
+  
+  
+  <a id="Terrasoft_Core_Process_Process_CloneShallow_" data-uid="Terrasoft.Core.Process.Process.CloneShallow*"></a>
+  <h4 id="Terrasoft_Core_Process_Process_CloneShallow" data-uid="Terrasoft.Core.Process.Process.CloneShallow">CloneShallow()</h4>
+  <div class="markdown level1 summary"><p>Creates a shallow copy of the current process.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override object CloneShallow()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><p>Instance that is a copy of the current process.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Terrasoft.Core.Process.ProcessActivity.html#Terrasoft_Core_Process_ProcessActivity_CloneShallow">ProcessActivity.CloneShallow()</a></div>
+  
+  
+  <a id="Terrasoft_Core_Process_Process_CompleteApplyingFlowElementsPropertiesData_" data-uid="Terrasoft.Core.Process.Process.CompleteApplyingFlowElementsPropertiesData*"></a>
+  <h4 id="Terrasoft_Core_Process_Process_CompleteApplyingFlowElementsPropertiesData" data-uid="Terrasoft.Core.Process.Process.CompleteApplyingFlowElementsPropertiesData">CompleteApplyingFlowElementsPropertiesData()</h4>
+  <div class="markdown level1 summary"><p>Method does nothing.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void CompleteApplyingFlowElementsPropertiesData()</code></pre>
+  </div>
+  
+  
+  <a id="Terrasoft_Core_Process_Process_CompleteProcess_" data-uid="Terrasoft.Core.Process.Process.CompleteProcess*"></a>
+  <h4 id="Terrasoft_Core_Process_Process_CompleteProcess" data-uid="Terrasoft.Core.Process.Process.CompleteProcess">CompleteProcess()</h4>
+  <div class="markdown level1 summary"><p>Completes execution of the current process.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual bool CompleteProcess()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_Process_Process_ConvertToProcessDataSourceFilters_" data-uid="Terrasoft.Core.Process.Process.ConvertToProcessDataSourceFilters*"></a>
+  <h4 id="Terrasoft_Core_Process_Process_ConvertToProcessDataSourceFilters_Terrasoft_Core_Process_ProcessActivity_System_Guid_System_String_" data-uid="Terrasoft.Core.Process.Process.ConvertToProcessDataSourceFilters(Terrasoft.Core.Process.ProcessActivity,System.Guid,System.String)">ConvertToProcessDataSourceFilters(ProcessActivity, Guid, String)</h4>
+  <div class="markdown level1 summary"><p>Converts a set of filters to a process format.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual string ConvertToProcessDataSourceFilters(ProcessActivity processActivity, Guid entitySchemaUId, string dataSourceFilters)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.Process.ProcessActivity.html">ProcessActivity</a></td>
+        <td><span class="parametername">processActivity</span></td>
+        <td><p>Instance of the <a class="xref" href="Terrasoft.Core.Process.ProcessActivity.html">ProcessActivity</a> class.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Guid</span></td>
+        <td><span class="parametername">entitySchemaUId</span></td>
+        <td><p>Unique identifier of the entity schema.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">dataSourceFilters</span></td>
+        <td><p>Set of the filter values.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><p>Converted value of the set of filters.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_Process_Process_Execute_" data-uid="Terrasoft.Core.Process.Process.Execute*"></a>
+  <h4 id="Terrasoft_Core_Process_Process_Execute_Terrasoft_Core_Process_ProcessExecutingContext_" data-uid="Terrasoft.Core.Process.Process.Execute(Terrasoft.Core.Process.ProcessExecutingContext)">Execute(ProcessExecutingContext)</h4>
+  <div class="markdown level1 summary"><p>Executes the current process.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool Execute(ProcessExecutingContext context)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.Process.ProcessExecutingContext.html">ProcessExecutingContext</a></td>
+        <td><span class="parametername">context</span></td>
+        <td><p>The execution context.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p><code>true</code>, if element was successfully executed and conditions for moving to the next step were
+satisfied. Otherwise - <code>false</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Terrasoft.Core.Process.ProcessFlowElement.html#Terrasoft_Core_Process_ProcessFlowElement_Execute_Terrasoft_Core_Process_ProcessExecutingContext_">ProcessFlowElement.Execute(ProcessExecutingContext)</a></div>
+  
+  
+  <a id="Terrasoft_Core_Process_Process_Execute_" data-uid="Terrasoft.Core.Process.Process.Execute*"></a>
+  <h4 id="Terrasoft_Core_Process_Process_Execute_Terrasoft_Core_Process_ProcessFlowElement_System_Object___" data-uid="Terrasoft.Core.Process.Process.Execute(Terrasoft.Core.Process.ProcessFlowElement,System.Object[])">Execute(ProcessFlowElement, Object[])</h4>
+  <div class="markdown level1 summary"><p>Executes the process element.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual bool Execute(ProcessFlowElement processElement, params object[] parameters)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.Process.ProcessFlowElement.html">ProcessFlowElement</a></td>
+        <td><span class="parametername">processElement</span></td>
+        <td><p>Process element.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Object</span>[]</td>
+        <td><span class="parametername">parameters</span></td>
+        <td><p>The parameters.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_Process_Process_Execute_" data-uid="Terrasoft.Core.Process.Process.Execute*"></a>
+  <h4 id="Terrasoft_Core_Process_Process_Execute_Terrasoft_Core_UserConnection_" data-uid="Terrasoft.Core.Process.Process.Execute(Terrasoft.Core.UserConnection)">Execute(UserConnection)</h4>
+  <div class="markdown level1 summary"><p>Executes the current process.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual bool Execute(UserConnection userConnection)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.UserConnection.html">UserConnection</a></td>
+        <td><span class="parametername">userConnection</span></td>
+        <td><p>User connection.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_Process_Process_Execute_" data-uid="Terrasoft.Core.Process.Process.Execute*"></a>
+  <h4 id="Terrasoft_Core_Process_Process_Execute_Terrasoft_Core_UserConnection_System_String_" data-uid="Terrasoft.Core.Process.Process.Execute(Terrasoft.Core.UserConnection,System.String)">Execute(UserConnection, String)</h4>
+  <div class="markdown level1 summary"><p>Executes the current process.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual bool Execute(UserConnection userConnection, string startQueueTasksItem)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.UserConnection.html">UserConnection</a></td>
+        <td><span class="parametername">userConnection</span></td>
+        <td><p>User connection.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">startQueueTasksItem</span></td>
+        <td><p>The name of the process element in the queue.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_Process_Process_FillWaitingUserTaskCollection_" data-uid="Terrasoft.Core.Process.Process.FillWaitingUserTaskCollection*"></a>
+  <h4 id="Terrasoft_Core_Process_Process_FillWaitingUserTaskCollection_Terrasoft_Core_Process_ProcessFlowElement_" data-uid="Terrasoft.Core.Process.Process.FillWaitingUserTaskCollection(Terrasoft.Core.Process.ProcessFlowElement)">FillWaitingUserTaskCollection(ProcessFlowElement)</h4>
+  <div class="markdown level1 summary"><p>Fills collection with items of the process elements that can interact with user.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void FillWaitingUserTaskCollection(ProcessFlowElement processElement)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.Process.ProcessFlowElement.html">ProcessFlowElement</a></td>
+        <td><span class="parametername">processElement</span></td>
+        <td><p>Instance of the <a class="xref" href="Terrasoft.Core.Process.ProcessFlowElement.html">ProcessFlowElement</a> type.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_Process_Process_FindFlowElementByName_" data-uid="Terrasoft.Core.Process.Process.FindFlowElementByName*"></a>
+  <h4 id="Terrasoft_Core_Process_Process_FindFlowElementByName_System_String_" data-uid="Terrasoft.Core.Process.Process.FindFlowElementByName(System.String)">FindFlowElementByName(String)</h4>
+  <div class="markdown level1 summary"><p>Finds process element by its name.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual ProcessFlowElement FindFlowElementByName(string name)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">name</span></td>
+        <td><p>Name of the process element.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.Process.ProcessFlowElement.html">ProcessFlowElement</a></td>
+        <td><p>Found process element.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_Process_Process_FindFlowElementBySchemaElementUId_" data-uid="Terrasoft.Core.Process.Process.FindFlowElementBySchemaElementUId*"></a>
+  <h4 id="Terrasoft_Core_Process_Process_FindFlowElementBySchemaElementUId_System_Guid_" data-uid="Terrasoft.Core.Process.Process.FindFlowElementBySchemaElementUId(System.Guid)">FindFlowElementBySchemaElementUId(Guid)</h4>
+  <div class="markdown level1 summary"><p>Finds the flow element by schema element UId.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual ProcessFlowElement FindFlowElementBySchemaElementUId(Guid schemaElementUId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Guid</span></td>
+        <td><span class="parametername">schemaElementUId</span></td>
+        <td><p>The schema element identifier.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.Process.ProcessFlowElement.html">ProcessFlowElement</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_Process_Process_FindFlowElementByUId_" data-uid="Terrasoft.Core.Process.Process.FindFlowElementByUId*"></a>
+  <h4 id="Terrasoft_Core_Process_Process_FindFlowElementByUId_System_Guid_" data-uid="Terrasoft.Core.Process.Process.FindFlowElementByUId(System.Guid)">FindFlowElementByUId(Guid)</h4>
+  <div class="markdown level1 summary"><p>Finds process element by its unique identifier.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual ProcessFlowElement FindFlowElementByUId(Guid elementUId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Guid</span></td>
+        <td><span class="parametername">elementUId</span></td>
+        <td><p>Unique identifier of the process element.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.Process.ProcessFlowElement.html">ProcessFlowElement</a></td>
+        <td><p>Found process element.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_Process_Process_FindParameter_" data-uid="Terrasoft.Core.Process.Process.FindParameter*"></a>
+  <h4 id="Terrasoft_Core_Process_Process_FindParameter_Terrasoft_Core_Process_ProcessParameterMapInfo_" data-uid="Terrasoft.Core.Process.Process.FindParameter(Terrasoft.Core.Process.ProcessParameterMapInfo)">FindParameter(ProcessParameterMapInfo)</h4>
+  <div class="markdown level1 summary"><p>Finds parameter by map info.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual ProcessSchemaParameter FindParameter(ProcessParameterMapInfo mapInfo)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.Process.ProcessParameterMapInfo.html">ProcessParameterMapInfo</a></td>
+        <td><span class="parametername">mapInfo</span></td>
+        <td><p>Parameter map info.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.Process.ProcessSchemaParameter.html">ProcessSchemaParameter</a></td>
+        <td><p>Parameter.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_Process_Process_GetFlowElementBySchemaElementUId_" data-uid="Terrasoft.Core.Process.Process.GetFlowElementBySchemaElementUId*"></a>
+  <h4 id="Terrasoft_Core_Process_Process_GetFlowElementBySchemaElementUId_System_Guid_" data-uid="Terrasoft.Core.Process.Process.GetFlowElementBySchemaElementUId(System.Guid)">GetFlowElementBySchemaElementUId(Guid)</h4>
+  <div class="markdown level1 summary"><p>Gets the flow element by schema element UId</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual ProcessFlowElement GetFlowElementBySchemaElementUId(Guid schemaElementUId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Guid</span></td>
+        <td><span class="parametername">schemaElementUId</span></td>
+        <td><p>The schema element identifier.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.Process.ProcessFlowElement.html">ProcessFlowElement</a></td>
+        <td><p>The process flow element</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_Process_Process_GetFlowElementsBySchemaElementUId_" data-uid="Terrasoft.Core.Process.Process.GetFlowElementsBySchemaElementUId*"></a>
+  <h4 id="Terrasoft_Core_Process_Process_GetFlowElementsBySchemaElementUId_System_Guid_" data-uid="Terrasoft.Core.Process.Process.GetFlowElementsBySchemaElementUId(System.Guid)">GetFlowElementsBySchemaElementUId(Guid)</h4>
+  <div class="markdown level1 summary"><p>Gets the enumerator of the flow elements founded by their schema element UId.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual IEnumerable&lt;ProcessFlowElement&gt; GetFlowElementsBySchemaElementUId(Guid schemaElementUId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Guid</span></td>
+        <td><span class="parametername">schemaElementUId</span></td>
+        <td><p>The schema element identifier.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="Terrasoft.Core.Process.ProcessFlowElement.html">ProcessFlowElement</a>&gt;</td>
+        <td><p>The enumerator of the flow elements.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_Process_Process_GetFlowElementsByShemaElementUId_" data-uid="Terrasoft.Core.Process.Process.GetFlowElementsByShemaElementUId*"></a>
+  <h4 id="Terrasoft_Core_Process_Process_GetFlowElementsByShemaElementUId_System_Guid_" data-uid="Terrasoft.Core.Process.Process.GetFlowElementsByShemaElementUId(System.Guid)">GetFlowElementsByShemaElementUId(Guid)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Obsolete(&quot;7.13.4 | Use GetFlowElementsBySchemaElementUId(Guid schemaElementUId) instead&quot;)]
+public virtual IEnumerable&lt;ProcessFlowElement&gt; GetFlowElementsByShemaElementUId(Guid schemaElementUId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Guid</span></td>
+        <td><span class="parametername">schemaElementUId</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="Terrasoft.Core.Process.ProcessFlowElement.html">ProcessFlowElement</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_Process_Process_GetIsReexecution_" data-uid="Terrasoft.Core.Process.Process.GetIsReexecution*"></a>
+  <h4 id="Terrasoft_Core_Process_Process_GetIsReexecution" data-uid="Terrasoft.Core.Process.Process.GetIsReexecution">GetIsReexecution()</h4>
+  <div class="markdown level1 summary"><p>Returns flag that indicates if process has been executed one or more times.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool GetIsReexecution()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p><code>true</code> if current element has been executed; otherwise<code>false</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Terrasoft.Core.Process.ProcessActivity.html#Terrasoft_Core_Process_ProcessActivity_GetIsReexecution">ProcessActivity.GetIsReexecution()</a></div>
+  
+  
+  <a id="Terrasoft_Core_Process_Process_GetParameterValue_" data-uid="Terrasoft.Core.Process.Process.GetParameterValue*"></a>
+  <h4 id="Terrasoft_Core_Process_Process_GetParameterValue_Terrasoft_Core_Process_ProcessSchemaParameter_" data-uid="Terrasoft.Core.Process.Process.GetParameterValue(Terrasoft.Core.Process.ProcessSchemaParameter)">GetParameterValue(ProcessSchemaParameter)</h4>
+  <div class="markdown level1 summary"><p>Returns parameter value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override object GetParameterValue(ProcessSchemaParameter parameter)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.Process.ProcessSchemaParameter.html">ProcessSchemaParameter</a></td>
+        <td><span class="parametername">parameter</span></td>
+        <td><p>Process schema parameter.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><p>Parameter value.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Terrasoft.Core.Process.ProcessActivity.html#Terrasoft_Core_Process_ProcessActivity_GetParameterValue_Terrasoft_Core_Process_ProcessSchemaParameter_">ProcessActivity.GetParameterValue(ProcessSchemaParameter)</a></div>
+  
+  
+  <a id="Terrasoft_Core_Process_Process_GetParameterValue_" data-uid="Terrasoft.Core.Process.Process.GetParameterValue*"></a>
+  <h4 id="Terrasoft_Core_Process_Process_GetParameterValue__1_System_String_" data-uid="Terrasoft.Core.Process.Process.GetParameterValue``1(System.String)">GetParameterValue&lt;T&gt;(String)</h4>
+  <div class="markdown level1 summary"><p>Gets parameter value by it's name.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual T GetParameterValue&lt;T&gt;(string parameterName)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">parameterName</span></td>
+        <td><p>The name of parameter.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td><p>Returns the value of the property by name.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td><p>The type of parameter.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_Process_Process_GetParameterValueByMetaPath_" data-uid="Terrasoft.Core.Process.Process.GetParameterValueByMetaPath*"></a>
+  <h4 id="Terrasoft_Core_Process_Process_GetParameterValueByMetaPath_System_String_" data-uid="Terrasoft.Core.Process.Process.GetParameterValueByMetaPath(System.String)">GetParameterValueByMetaPath(String)</h4>
+  <div class="markdown level1 summary"><p>Gets the process parameter value by meta path.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual object GetParameterValueByMetaPath(string metaPath)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">metaPath</span></td>
+        <td><p>The process parameter meta path.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><p>The process parameter value.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_Process_Process_GetParameterValueByUId_" data-uid="Terrasoft.Core.Process.Process.GetParameterValueByUId*"></a>
+  <h4 id="Terrasoft_Core_Process_Process_GetParameterValueByUId_System_String_" data-uid="Terrasoft.Core.Process.Process.GetParameterValueByUId(System.String)">GetParameterValueByUId(String)</h4>
+  <div class="markdown level1 summary"><p>Returns value of the parameter.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual object GetParameterValueByUId(string uId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">uId</span></td>
+        <td><p>Unique identifier.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><p>Value of the process parameter.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_Process_Process_GetParameterValues_" data-uid="Terrasoft.Core.Process.Process.GetParameterValues*"></a>
+  <h4 id="Terrasoft_Core_Process_Process_GetParameterValues" data-uid="Terrasoft.Core.Process.Process.GetParameterValues">GetParameterValues()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override Dictionary&lt;ProcessSchemaParameter, object&gt; GetParameterValues()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.Dictionary</span>&lt;<a class="xref" href="Terrasoft.Core.Process.ProcessSchemaParameter.html">ProcessSchemaParameter</a>, <span class="xref">System.Object</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Terrasoft.Core.Process.ProcessActivity.html#Terrasoft_Core_Process_ProcessActivity_GetParameterValues">ProcessActivity.GetParameterValues()</a></div>
+  
+  
+  <a id="Terrasoft_Core_Process_Process_GetParentProcess_" data-uid="Terrasoft.Core.Process.Process.GetParentProcess*"></a>
+  <h4 id="Terrasoft_Core_Process_Process_GetParentProcess" data-uid="Terrasoft.Core.Process.Process.GetParentProcess">GetParentProcess()</h4>
+  <div class="markdown level1 summary"><p>Returns instance of the main process.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual Process GetParentProcess()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.Process.Process.html">Process</a></td>
+        <td><p>Process.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_Process_Process_GetPropertiesData_" data-uid="Terrasoft.Core.Process.Process.GetPropertiesData*"></a>
+  <h4 id="Terrasoft_Core_Process_Process_GetPropertiesData_System_Boolean_" data-uid="Terrasoft.Core.Process.Process.GetPropertiesData(System.Boolean)">GetPropertiesData(Boolean)</h4>
+  <div class="markdown level1 summary"><p>Returns serialized state of the current process.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override string GetPropertiesData(bool shouldWriteElements)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">shouldWriteElements</span></td>
+        <td><p>Indicates whether to write other process elements.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><p>String that represents serialized state of the current process element.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Terrasoft.Core.Process.ProcessFlowElement.html#Terrasoft_Core_Process_ProcessFlowElement_GetPropertiesData_System_Boolean_">ProcessFlowElement.GetPropertiesData(Boolean)</a></div>
+  
+  
+  <a id="Terrasoft_Core_Process_Process_HasMapping_" data-uid="Terrasoft.Core.Process.Process.HasMapping*"></a>
+  <h4 id="Terrasoft_Core_Process_Process_HasMapping_System_String_" data-uid="Terrasoft.Core.Process.Process.HasMapping(System.String)">HasMapping(String)</h4>
+  <div class="markdown level1 summary"><p>Determines whether the specified parameter has mapping value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override bool HasMapping(string parameterName)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">parameterName</span></td>
+        <td><p>Parameter name.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p><code>true</code> if parameter exists and it has mapping value; otherwise<code>false</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Terrasoft.Core.Process.ProcessActivity.html#Terrasoft_Core_Process_ProcessActivity_HasMapping_System_String_">ProcessActivity.HasMapping(String)</a></div>
+  
+  
+  <a id="Terrasoft_Core_Process_Process_InitializeFlowElementProperties_" data-uid="Terrasoft.Core.Process.Process.InitializeFlowElementProperties*"></a>
+  <h4 id="Terrasoft_Core_Process_Process_InitializeFlowElementProperties_Terrasoft_Core_Process_ProcessFlowElement_" data-uid="Terrasoft.Core.Process.Process.InitializeFlowElementProperties(Terrasoft.Core.Process.ProcessFlowElement)">InitializeFlowElementProperties(ProcessFlowElement)</h4>
+  <div class="markdown level1 summary"><p>Method must be implemented in derived classes.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void InitializeFlowElementProperties(ProcessFlowElement flowElement)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.Process.ProcessFlowElement.html">ProcessFlowElement</a></td>
+        <td><span class="parametername">flowElement</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_Process_Process_InitializeMetaPathParameterValues_" data-uid="Terrasoft.Core.Process.Process.InitializeMetaPathParameterValues*"></a>
+  <h4 id="Terrasoft_Core_Process_Process_InitializeMetaPathParameterValues" data-uid="Terrasoft.Core.Process.Process.InitializeMetaPathParameterValues">InitializeMetaPathParameterValues()</h4>
+  <div class="markdown level1 summary"><p>Method does nothing.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void InitializeMetaPathParameterValues()</code></pre>
+  </div>
+  
+  
+  <a id="Terrasoft_Core_Process_Process_InternalExecute_" data-uid="Terrasoft.Core.Process.Process.InternalExecute*"></a>
+  <h4 id="Terrasoft_Core_Process_Process_InternalExecute_Terrasoft_Core_Process_ProcessExecutingContext_" data-uid="Terrasoft.Core.Process.Process.InternalExecute(Terrasoft.Core.Process.ProcessExecutingContext)">InternalExecute(ProcessExecutingContext)</h4>
+  <div class="markdown level1 summary"><p>Executes the current process.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override bool InternalExecute(ProcessExecutingContext context)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.Process.ProcessExecutingContext.html">ProcessExecutingContext</a></td>
+        <td><span class="parametername">context</span></td>
+        <td><p>The execution context.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Terrasoft.Core.Process.ProcessFlowElement.html#Terrasoft_Core_Process_ProcessFlowElement_InternalExecute_Terrasoft_Core_Process_ProcessExecutingContext_">ProcessFlowElement.InternalExecute(ProcessExecutingContext)</a></div>
+  
+  
+  <a id="Terrasoft_Core_Process_Process_PrepareStart_" data-uid="Terrasoft.Core.Process.Process.PrepareStart*"></a>
+  <h4 id="Terrasoft_Core_Process_Process_PrepareStart_Terrasoft_Core_Process_ProcessExecutingContext_" data-uid="Terrasoft.Core.Process.Process.PrepareStart(Terrasoft.Core.Process.ProcessExecutingContext)">PrepareStart(ProcessExecutingContext)</h4>
+  <div class="markdown level1 summary"><p>Method does nothing.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void PrepareStart(ProcessExecutingContext context)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.Process.ProcessExecutingContext.html">ProcessExecutingContext</a></td>
+        <td><span class="parametername">context</span></td>
+        <td><p>The execution context.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_Process_Process_ProcessQueue_" data-uid="Terrasoft.Core.Process.Process.ProcessQueue*"></a>
+  <h4 id="Terrasoft_Core_Process_Process_ProcessQueue_Terrasoft_Core_Process_ProcessExecutingContext_" data-uid="Terrasoft.Core.Process.Process.ProcessQueue(Terrasoft.Core.Process.ProcessExecutingContext)">ProcessQueue(ProcessExecutingContext)</h4>
+  <div class="markdown level1 summary"><p>Processes a queue consisting of process elements.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual bool ProcessQueue(ProcessExecutingContext context)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.Process.ProcessExecutingContext.html">ProcessExecutingContext</a></td>
+        <td><span class="parametername">context</span></td>
+        <td><p>The execution context.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p><code>true</code>, if queue is successfully processed; otherwise - <code>false</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_Process_Process_ReadPropertiesData_" data-uid="Terrasoft.Core.Process.Process.ReadPropertiesData*"></a>
+  <h4 id="Terrasoft_Core_Process_Process_ReadPropertiesData" data-uid="Terrasoft.Core.Process.Process.ReadPropertiesData">ReadPropertiesData()</h4>
+  <div class="markdown level1 summary"><p>Reads state of the current process.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void ReadPropertiesData()</code></pre>
+  </div>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Terrasoft.Core.Process.ProcessActivity.html#Terrasoft_Core_Process_ProcessActivity_ReadPropertiesData">ProcessActivity.ReadPropertiesData()</a></div>
+  
+  
+  <a id="Terrasoft_Core_Process_Process_ReadPropertiesData_" data-uid="Terrasoft.Core.Process.Process.ReadPropertiesData*"></a>
+  <h4 id="Terrasoft_Core_Process_Process_ReadPropertiesData_DataReader_" data-uid="Terrasoft.Core.Process.Process.ReadPropertiesData(DataReader)">ReadPropertiesData(DataReader)</h4>
+  <div class="markdown level1 summary"><p>Reads state of the current process element.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void ReadPropertiesData(DataReader reader)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">DataReader</span></td>
+        <td><span class="parametername">reader</span></td>
+        <td><p>Instance that provides sequential reading of data.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Terrasoft.Core.Process.ProcessFlowElement.html#Terrasoft_Core_Process_ProcessFlowElement_ReadPropertiesData_DataReader_">ProcessFlowElement.ReadPropertiesData(DataReader)</a></div>
+  
+  
+  <a id="Terrasoft_Core_Process_Process_ReadPropertiesDataFromDB_" data-uid="Terrasoft.Core.Process.Process.ReadPropertiesDataFromDB*"></a>
+  <h4 id="Terrasoft_Core_Process_Process_ReadPropertiesDataFromDB_Terrasoft_Core_UserConnection_" data-uid="Terrasoft.Core.Process.Process.ReadPropertiesDataFromDB(Terrasoft.Core.UserConnection)">ReadPropertiesDataFromDB(UserConnection)</h4>
+  <div class="markdown level1 summary"><p>Reads state of the current process from DB.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void ReadPropertiesDataFromDB(UserConnection userConnection)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.UserConnection.html">UserConnection</a></td>
+        <td><span class="parametername">userConnection</span></td>
+        <td><p>User connection.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Terrasoft.Core.Process.ProcessActivity.html#Terrasoft_Core_Process_ProcessActivity_ReadPropertiesDataFromDB_Terrasoft_Core_UserConnection_">ProcessActivity.ReadPropertiesDataFromDB(UserConnection)</a></div>
+  
+  
+  <a id="Terrasoft_Core_Process_Process_SetParameterValue_" data-uid="Terrasoft.Core.Process.Process.SetParameterValue*"></a>
+  <h4 id="Terrasoft_Core_Process_Process_SetParameterValue__1_System_String___0_" data-uid="Terrasoft.Core.Process.Process.SetParameterValue``1(System.String,``0)">SetParameterValue&lt;T&gt;(String, T)</h4>
+  <div class="markdown level1 summary"><p>Sets protected parameter value by it's name.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void SetParameterValue&lt;T&gt;(string parameterName, T value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">parameterName</span></td>
+        <td><p>The parameter name.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The value.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td><p>The type of parameter.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_Process_Process_SetPrivateFieldValue_" data-uid="Terrasoft.Core.Process.Process.SetPrivateFieldValue*"></a>
+  <h4 id="Terrasoft_Core_Process_Process_SetPrivateFieldValue_System_String_System_Object_System_Object_" data-uid="Terrasoft.Core.Process.Process.SetPrivateFieldValue(System.String,System.Object,System.Object)">SetPrivateFieldValue(String, Object, Object)</h4>
+  <div class="markdown level1 summary"><p>Sets the value of private field of a process instance.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void SetPrivateFieldValue(string fieldName, object source, object value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">fieldName</span></td>
+        <td><p>Field name that is declared in the &quot;source&quot; argument.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">source</span></td>
+        <td><p>Instance of the <a class="xref" href="Terrasoft.Core.Process.Process.html">Process</a> type.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The new field value.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Terrasoft.Core.Process.ProcessFlowElement.html#Terrasoft_Core_Process_ProcessFlowElement_SetPrivateFieldValue_System_String_System_Object_System_Object_">ProcessFlowElement.SetPrivateFieldValue(String, Object, Object)</a></div>
+  
+  
+  <a id="Terrasoft_Core_Process_Process_ShouldWriteFlowElementProperties_" data-uid="Terrasoft.Core.Process.Process.ShouldWriteFlowElementProperties*"></a>
+  <h4 id="Terrasoft_Core_Process_Process_ShouldWriteFlowElementProperties_Terrasoft_Core_Process_ProcessFlowElement_" data-uid="Terrasoft.Core.Process.Process.ShouldWriteFlowElementProperties(Terrasoft.Core.Process.ProcessFlowElement)">ShouldWriteFlowElementProperties(ProcessFlowElement)</h4>
+  <div class="markdown level1 summary"><p>Returns value that determines whether the current process should write state of the specified process
+element.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual bool ShouldWriteFlowElementProperties(ProcessFlowElement processElement)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.Process.ProcessFlowElement.html">ProcessFlowElement</a></td>
+        <td><span class="parametername">processElement</span></td>
+        <td><p>Instance of the <a class="xref" href="Terrasoft.Core.Process.ProcessFlowElement.html">ProcessFlowElement</a> type.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p><code>true</code>, if the current process should write state of the specified element;
+otherwise - <code>false</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_Process_Process_ThrowEvent_" data-uid="Terrasoft.Core.Process.Process.ThrowEvent*"></a>
+  <h4 id="Terrasoft_Core_Process_Process_ThrowEvent_Terrasoft_Core_Process_ProcessExecutingContext_System_String_" data-uid="Terrasoft.Core.Process.Process.ThrowEvent(Terrasoft.Core.Process.ProcessExecutingContext,System.String)">ThrowEvent(ProcessExecutingContext, String)</h4>
+  <div class="markdown level1 summary"><p>Method does noting.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void ThrowEvent(ProcessExecutingContext context, string eventHandler)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.Process.ProcessExecutingContext.html">ProcessExecutingContext</a></td>
+        <td><span class="parametername">context</span></td>
+        <td><p>Execution context.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">eventHandler</span></td>
+        <td><p>Name of the event handler.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_Process_Process_TryCreateFlowElementInstance_" data-uid="Terrasoft.Core.Process.Process.TryCreateFlowElementInstance*"></a>
+  <h4 id="Terrasoft_Core_Process_Process_TryCreateFlowElementInstance_System_String_System_Guid_Terrasoft_Core_Process_ProcessFlowElement__" data-uid="Terrasoft.Core.Process.Process.TryCreateFlowElementInstance(System.String,System.Guid,Terrasoft.Core.Process.ProcessFlowElement@)">TryCreateFlowElementInstance(String, Guid, out ProcessFlowElement)</h4>
+  <div class="markdown level1 summary"><p>Tries the create flow element instance.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual bool TryCreateFlowElementInstance(string propertyName, Guid schemaElementUId, out ProcessFlowElement processFlowElement)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">propertyName</span></td>
+        <td><p>Name of the corresponding process class property.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Guid</span></td>
+        <td><span class="parametername">schemaElementUId</span></td>
+        <td><p>The schema element identifier.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.Process.ProcessFlowElement.html">ProcessFlowElement</a></td>
+        <td><span class="parametername">processFlowElement</span></td>
+        <td><p>The process flow element.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p><code>True</code>, if the instance was created, otherwise - <code>false</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_Process_Process_WriteFlowElementsProperty_" data-uid="Terrasoft.Core.Process.Process.WriteFlowElementsProperty*"></a>
+  <h4 id="Terrasoft_Core_Process_Process_WriteFlowElementsProperty_DataWriter_" data-uid="Terrasoft.Core.Process.Process.WriteFlowElementsProperty(DataWriter)">WriteFlowElementsProperty(DataWriter)</h4>
+  <div class="markdown level1 summary"><p>Writes state of the process elements.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void WriteFlowElementsProperty(DataWriter writer)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">DataWriter</span></td>
+        <td><span class="parametername">writer</span></td>
+        <td><p>Instance of the <see cref="!:DataWriter"></see> type.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_Process_Process_WriteProcessParameters_" data-uid="Terrasoft.Core.Process.Process.WriteProcessParameters*"></a>
+  <h4 id="Terrasoft_Core_Process_Process_WriteProcessParameters" data-uid="Terrasoft.Core.Process.Process.WriteProcessParameters">WriteProcessParameters()</h4>
+  <div class="markdown level1 summary"><p>Writes parameter values of the current process element.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void WriteProcessParameters()</code></pre>
+  </div>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Terrasoft.Core.Process.ProcessActivity.html#Terrasoft_Core_Process_ProcessActivity_WriteProcessParameters">ProcessActivity.WriteProcessParameters()</a></div>
+  
+  
+  <a id="Terrasoft_Core_Process_Process_WritePropertiesData_" data-uid="Terrasoft.Core.Process.Process.WritePropertiesData*"></a>
+  <h4 id="Terrasoft_Core_Process_Process_WritePropertiesData" data-uid="Terrasoft.Core.Process.Process.WritePropertiesData">WritePropertiesData()</h4>
+  <div class="markdown level1 summary"><p>Writes state of the current process.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void WritePropertiesData()</code></pre>
+  </div>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Terrasoft.Core.Process.ProcessActivity.html#Terrasoft_Core_Process_ProcessActivity_WritePropertiesData">ProcessActivity.WritePropertiesData()</a></div>
+  
+  
+  <a id="Terrasoft_Core_Process_Process_WritePropertiesData_" data-uid="Terrasoft.Core.Process.Process.WritePropertiesData*"></a>
+  <h4 id="Terrasoft_Core_Process_Process_WritePropertiesData_DataWriter_System_Boolean_" data-uid="Terrasoft.Core.Process.Process.WritePropertiesData(DataWriter,System.Boolean)">WritePropertiesData(DataWriter, Boolean)</h4>
+  <div class="markdown level1 summary"><p>Writes state of the current process.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void WritePropertiesData(DataWriter writer, bool shouldWriteElements)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">DataWriter</span></td>
+        <td><span class="parametername">writer</span></td>
+        <td><p>Instance of the <see cref="!:DataWriter"></see> type.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">shouldWriteElements</span></td>
+        <td><p>Indicates whether to write process elements.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Terrasoft.Core.Process.ProcessActivity.html#Terrasoft_Core_Process_ProcessActivity_WritePropertiesData_DataWriter_System_Boolean_">ProcessActivity.WritePropertiesData(DataWriter, Boolean)</a></div>
+  
+  
+  <a id="Terrasoft_Core_Process_Process_WritePropertiesDataToDB_" data-uid="Terrasoft.Core.Process.Process.WritePropertiesDataToDB*"></a>
+  <h4 id="Terrasoft_Core_Process_Process_WritePropertiesDataToDB_Terrasoft_Core_UserConnection_" data-uid="Terrasoft.Core.Process.Process.WritePropertiesDataToDB(Terrasoft.Core.UserConnection)">WritePropertiesDataToDB(UserConnection)</h4>
+  <div class="markdown level1 summary"><p>Writes state of the current process to DB.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void WritePropertiesDataToDB(UserConnection userConnection)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.UserConnection.html">UserConnection</a></td>
+        <td><span class="parametername">userConnection</span></td>
+        <td><p>User connection.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Terrasoft.Core.Process.ProcessFlowElement.html#Terrasoft_Core_Process_ProcessFlowElement_WritePropertiesDataToDB_Terrasoft_Core_UserConnection_">ProcessFlowElement.WritePropertiesDataToDB(UserConnection)</a></div>
+  
+  
+  <a id="Terrasoft_Core_Process_Process_WritePropertiesDataToMemory_" data-uid="Terrasoft.Core.Process.Process.WritePropertiesDataToMemory*"></a>
+  <h4 id="Terrasoft_Core_Process_Process_WritePropertiesDataToMemory" data-uid="Terrasoft.Core.Process.Process.WritePropertiesDataToMemory">WritePropertiesDataToMemory()</h4>
+  <div class="markdown level1 summary"><p>Writes state of the current process to memory.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void WritePropertiesDataToMemory()</code></pre>
+  </div>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Terrasoft.Core.Process.ProcessActivity.html#Terrasoft_Core_Process_ProcessActivity_WritePropertiesDataToMemory">ProcessActivity.WritePropertiesDataToMemory()</a></div>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="Terrasoft.Core.Process.IProcessDataSerializable.html">IProcessDataSerializable</a>
+  </div>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="Terrasoft.Common.ReflectionUtilities.html#Terrasoft_Common_ReflectionUtilities_GetPropertyValue_System_Object_System_String_">ReflectionUtilities.GetPropertyValue(Object, String)</a>
+  </div>
+  <div>
+      <a class="xref" href="Terrasoft.Common.ReflectionUtilities.html#Terrasoft_Common_ReflectionUtilities_GetPropertyDefValue_System_Object_System_String_System_Object_">ReflectionUtilities.GetPropertyDefValue(Object, String, Object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Terrasoft.Common.ReflectionUtilities.html#Terrasoft_Common_ReflectionUtilities_TryGetPropertyValue_System_Object_System_String_System_Object__">ReflectionUtilities.TryGetPropertyValue(Object, String, out Object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Terrasoft.Common.ReflectionUtilities.html#Terrasoft_Common_ReflectionUtilities_HasProperty_System_Object_System_String_">ReflectionUtilities.HasProperty(Object, String)</a>
+  </div>
+  <div>
+      <a class="xref" href="Terrasoft.Common.ReflectionUtilities.html#Terrasoft_Common_ReflectionUtilities_GetPropertyValue_System_Object_System_String_System_Reflection_BindingFlags_">ReflectionUtilities.GetPropertyValue(Object, String, BindingFlags)</a>
+  </div>
+  <div>
+      <a class="xref" href="Terrasoft.Common.ReflectionUtilities.html#Terrasoft_Common_ReflectionUtilities_GetPropertyValueByPath_System_Object_System_String_">ReflectionUtilities.GetPropertyValueByPath(Object, String)</a>
+  </div>
+  <div>
+      <a class="xref" href="Terrasoft.Common.ReflectionUtilities.html#Terrasoft_Common_ReflectionUtilities_SetPropertyValue_System_Object_System_String_System_Object_">ReflectionUtilities.SetPropertyValue(Object, String, Object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Terrasoft.Common.ReflectionUtilities.html#Terrasoft_Common_ReflectionUtilities_TrySetPropertyValue_System_Object_System_String_System_Object_">ReflectionUtilities.TrySetPropertyValue(Object, String, Object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Terrasoft.Common.ValidateUtilities.html#Terrasoft_Common_ValidateUtilities_CheckArgumentNull_System_Object_System_String_">ValidateUtilities.CheckArgumentNull(Object, String)</a>
+  </div>
+  <div>
+      <a class="xref" href="Terrasoft.Common.ValidateUtilities.html#Terrasoft_Common_ValidateUtilities_CheckDependencyNull_System_Object_System_String_">ValidateUtilities.CheckDependencyNull(Object, String)</a>
+  </div>
+  <div>
+      <a class="xref" href="Terrasoft.Common.ValidateUtilities.html#Terrasoft_Common_ValidateUtilities_EnsureDependencyNotNull__1___0_System_String_">ValidateUtilities.EnsureDependencyNotNull&lt;T&gt;(T, String)</a>
+  </div>
+  <h3 id="seealso">See Also</h3>
+  <div class="seealso">
+      <div><a class="xref" href="Terrasoft.Core.Process.ProcessActivity.html">ProcessActivity</a></div>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>© 2021 Creatio. All rights reserved.</span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+
+<!-- Mirrored from academy.terrasoft.ua/api/netcoreapi/7.18.0/api/Terrasoft.Core.Process.Process.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Mar 2022 03:31:56 GMT -->
+</html>

@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# ">
+  
+<!-- Mirrored from academy.terrasoft.ua/docs/developer/instrumenty_razrabotki/creatio_ide/obekt/obzor#title-3028-7 by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 22 Mar 2022 21:36:29 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+          <!-- Google Tag Manager -->
+      <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          '../../../../../../www.googletagmanager.com/gtm5445.html?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-KLLB8G');</script>
+      <!-- End Google Tag Manager -->
+        <meta charset="utf-8" />
+<link rel="canonical" href="obzor.html" />
+<meta name="description" content="Конфигурационный элемент типа Объект (Object) — это бизнес-сущность, которая на уровне серверного ядра позволяет объявить новый класс ORM-модели. На уровне базы данных создание объекта означает создание записи таблицы с таким же именем, как у созданного объекта, и с таким же набором колонок. То есть в большинстве случаев каждый объект в системе является системным представлением одной физической таблицы в базе данных. Назначение объекта — back-end разработка в приложении Creatio." />
+<meta property="og:url" content="https://academy.terrasoft.ua/docs/developer/instrumenty_razrabotki/creatio_ide/obekt/obzor" />
+<meta property="og:title" content="Объект" />
+<meta property="og:description" content="Конфигурационный элемент типа Объект (Object) — это бизнес-сущность, которая на уровне серверного ядра позволяет объявить новый класс ORM-модели. На уровне базы данных создание объекта означает создание записи таблицы с таким же именем, как у созданного объекта, и с таким же набором колонок. То есть в большинстве случаев каждый объект в системе является системным представлением одной физической таблицы в базе данных. Назначение объекта — back-end разработка в приложении Creatio." />
+<meta name="Generator" content="Drupal 9 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="../../../../themes/custom/creatio/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="revision" href="obzor.html" />
+
+    <title>Объект | Creatio Academy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&amp;family=Open+Sans:ital,wght@0,300;0,400;0,600;1,400&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" media="all" href="../../../../sites/default/files/css/css_6lTP66__-yc6QXFp1zOwoeJ0HVigoYZP-SeoLLii000.css" />
+<link rel="stylesheet" media="all" href="../../../../sites/default/files/css/css_XQJDNhkF3xH5SZCcY-PI89Zu4nYIzQ5oR3SnUKyfXJU.css" />
+<link rel="stylesheet" media="print" href="../../../../sites/default/files/css/css_Zn4VHvcniOOtUwkIVwXzYr_0AI9gUVgZcPqaH4ViagU.css" />
+
+    
+  </head>
+  <body class="path-node page-node-type-developer-documentation">
+          <!-- Google Tag Manager (noscript) -->
+      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KLLB8G"
+                        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+      <!-- End Google Tag Manager (noscript) -->
+    
+        
+      <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    <div class="creatio-page d-flex flex-column">
+        <div class="region region-informer">
+    <div id="block-terrasoftpidtrimueukrainu" class="block block-simple-block block-simple-blockterrasoft-pidtrimue-ukrainu">
+  
+    
+      <style type="text/css">
+<!--/*--><![CDATA[/* ><!--*/
+@import url(../../../../../../www.terrasoft.ua/themes/custom/creatio/css/components/informer.css)
+
+/*--><!]]>*/
+</style><div class="ts-swu">
+<div class="creatio-container">
+<div class="ts-swu__cont">
+<div><a class="ts-swu__link" href="https://www.terrasoft.ua/terrasoft-stands-with-ukraine" target="_blank">Україна понад усе!</a> <span><a href="https://www.terrasoft.ua/terrasoft-stands-with-ukraine" target="_blank">Приєднуйтеся</a> до допомоги!</span></div>
+</div>
+</div></div>
+
+  </div>
+
+  </div>
+
+  
+  <header role="banner">
+          <div class="creatio-region creatio-region_top">
+        <div class="creatio-container">
+            <div class="region region-top">
+    <div id="block-menutoggle" class="block block-simple-block block-simple-blockmenu-toggle">
+  
+    
+      <div class="menu-toggle"><span> </span></div>
+
+  </div>
+<div id="block-logowhite-2" class="block block-simple-block block-simple-blocklogo-white">
+  
+    
+      <p><a class="site-logo" href="../../../../../index.html" rel="home"><img src="../../../../themes/custom/creatio/logo-white.svg" /></a></p>
+
+  </div>
+<div id="block-search" class="block block-simple-block block-simple-blocksearch">
+  
+    
+      <div class="search">
+<form action="https://academy.terrasoft.ua/search" class="search-form" method="get"><input class="search-form__input" name="search" placeholder="Поиск" type="search" /><input class="search-form__button" type="submit" value="Поиск" /> </form>
+
+<div class="search-toggle"> </div>
+</div>
+
+  </div>
+<nav role="navigation" aria-labelledby="block-sitesua-menu" id="block-sitesua" class="block block-menu navigation menu--sites-ua">
+            
+  <h2 class="visually-hidden" id="block-sitesua-menu">Sites UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="https://www.terrasoft.ua/" rel="nofollow" target="_blank">Terrasoft</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://community.terrasoft.ua/" rel="nofollow" target="_blank">Community</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://marketplace.terrasoft.ua/" rel="nofollow" target="_blank">Marketplace</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+<div id="block-usermenu" class="block block-ts-user block-ts-user-menu-block">
+  
+    
+      <ul class="user-menu">
+      <li class="user-menu__item">
+      <a class="user-menu__link" href="https://profile.terrasoft.ua/user/login?destination=academy/ua/docs/developer/instrumenty_razrabotki/creatio_ide/obekt/obzor">Войти</a>
+    </li>
+  </ul>
+
+  </div>
+<div id="block-usermenumobile" class="block block-ts-user block-ts-user-menu-mobile-block">
+  
+    
+      <ul class="user-menu-mobile">
+      <li class="user-menu-mobile__item">
+      <div class="user-menu-mobile__user user-menu-mobile__user_icon"></div>
+      <ul class="user-menu-mobile__submenu">
+        <li class="user-menu-mobile__subitem">
+          <a class="user-menu-mobile__sublink" href="https://profile.terrasoft.ua/user/login?destination=academy/ua/docs/developer/instrumenty_razrabotki/creatio_ide/obekt/obzor">Войти</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  </div>
+
+  </div>
+
+        </div>
+      </div>
+              <div class="creatio-region creatio-region_header">
+        <div class="creatio-container">
+            <div class="region region-header">
+    <div id="block-logo" class="block block-simple-block block-simple-blocklogo">
+  
+    
+      <p><a class="site-logo" href="../../../../../index.html" rel="home"><img src="../../../../themes/custom/creatio/logo.svg" /></a></p>
+
+  </div>
+<nav role="navigation" aria-labelledby="block-osnovnayanavigaciyaua-menu" id="block-osnovnayanavigaciyaua" class="block block-menu navigation menu--main-ua">
+            
+  <h2 class="visually-hidden" id="block-osnovnayanavigaciyaua-menu">Основная навигация UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="../../../../index.html" data-drupal-link-system-path="&lt;front&gt;">Документация</a>
+              </li>
+                <li class="menu-item">
+        <a href="../../../../../trainings.html">Тренинги</a>
+              </li>
+                <li class="menu-item">
+        <a href="../../../../certification.html" data-drupal-link-system-path="node/3084">Сертификация и тестирование</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+<nav role="navigation" aria-labelledby="block-sitesua-2-menu" id="block-sitesua-2" class="block block-menu navigation menu--sites-ua">
+            
+  <h2 class="visually-hidden" id="block-sitesua-2-menu">Sites UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="https://www.terrasoft.ua/" rel="nofollow" target="_blank">Terrasoft</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://community.terrasoft.ua/" rel="nofollow" target="_blank">Community</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://marketplace.terrasoft.ua/" rel="nofollow" target="_blank">Marketplace</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+
+  </div>
+
+        </div>
+      </div>
+              <div class="creatio-region creatio-region_breadcrumb">
+        <div class="creatio-container">
+            <div class="region region-breadcrumb">
+    <div id="block-logowhite" class="block block-simple-block block-simple-blocklogo-white">
+  
+    
+      <p><a class="site-logo" href="../../../../../index.html" rel="home"><img src="../../../../themes/custom/creatio/logo-white.svg" /></a></p>
+
+  </div>
+<div id="block-breadcrumbnaviagtion" class="block block-ts-nav block-ts-nav-bread">
+  
+    
+      <nav class="breadcrumb"><ol class="ts-nav-breadcrumb__list"><li class="ts-nav-breadcrumb__item"><a href="../../../../index.html" class="ts-nav-breadcrumb__link" title="Документация">Документация</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../../index2132.html?vid_1=2" class="ts-nav-breadcrumb__link" title="Для разработчика">Для разработчика</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../instrumenty_razrabotki.html" class="ts-nav-breadcrumb__link" title="Инструменты разработки" hreflang="zxx">Инструменты разработки</a></li>
+<li class="ts-nav-breadcrumb__item ts-nav-breadcrumb__item_mobile"><a href="../../creatio_ide.html" class="ts-nav-breadcrumb__link" title="Creatio IDE" hreflang="ru">Creatio IDE</a></li>
+<li class="ts-nav-breadcrumb__item"><span class="ts-nav-breadcrumb__link ts-nav-breadcrumb__link_current" title="Обзор">Обзор</span></li>
+</ol>
+</nav>
+
+  </div>
+<div id="block-search-2" class="block block-simple-block block-simple-blocksearch">
+  
+    
+      <div class="search">
+<form action="https://academy.terrasoft.ua/search" class="search-form" method="get"><input class="search-form__input" name="search" placeholder="Поиск" type="search" /><input class="search-form__button" type="submit" value="Поиск" /> </form>
+
+<div class="search-toggle"> </div>
+</div>
+
+  </div>
+
+  </div>
+
+        </div>
+      </div>
+      </header>
+
+  <div class="creatio-region creatio-region_main">
+    <div class="creatio-container">
+                <div class="region region-breadcrumb-mobile">
+    <div id="block-breadcrumbnaviagtion-2" class="block block-ts-nav block-ts-nav-bread">
+  
+    
+      <nav class="breadcrumb"><ol class="ts-nav-breadcrumb__list"><li class="ts-nav-breadcrumb__item"><a href="../../../../index.html" class="ts-nav-breadcrumb__link" title="Документация">Документация</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../../index2132.html?vid_1=2" class="ts-nav-breadcrumb__link" title="Для разработчика">Для разработчика</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../instrumenty_razrabotki.html" class="ts-nav-breadcrumb__link" title="Инструменты разработки" hreflang="zxx">Инструменты разработки</a></li>
+<li class="ts-nav-breadcrumb__item ts-nav-breadcrumb__item_mobile"><a href="../../creatio_ide.html" class="ts-nav-breadcrumb__link" title="Creatio IDE" hreflang="ru">Creatio IDE</a></li>
+<li class="ts-nav-breadcrumb__item"><span class="ts-nav-breadcrumb__link ts-nav-breadcrumb__link_current" title="Обзор">Обзор</span></li>
+</ol>
+</nav>
+
+  </div>
+
+  </div>
+
+      
+      <main class="creatio-main" role="main">
+                                                    
+        <div class="creatio-content creatio-content_small">
+          <div class="creatio-content__inner creatio-content__inner_bg">
+                            <div class="region region-messages">
+    <div data-drupal-messages-fallback class="hidden"></div>
+
+  </div>
+
+            
+              <div class="region region-content">
+    <div id="block-creatio-page-title" class="block block-core block-page-title-block">
+  
+    
+      
+  <h1 class="page-title"><span class="field field--name-title field--type-string field--label-hidden">Объект</span>
+</h1>
+
+
+  </div>
+<div id="block-creatio-content" class="block block-system block-system-main-block">
+  
+    
+      
+<article data-history-node-id="3793" role="article" about="/docs/developer/instrumenty_razrabotki/creatio_ide/obekt/obzor" class="node node--type-developer-documentation node--view-mode-full">
+
+  
+    
+
+  
+  <div class="node__content">
+      <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocknodedeveloper-documentationfield-difficulty">
+  
+    
+      
+            <div class="field field--name-field-difficulty field--type-entity-reference field--label-hidden field__item"><div about="/docs/taxonomy/term/121" id="taxonomy-term-121" class="taxonomy-term vocabulary-difficulty">
+  
+  
+  <div class="content">
+      <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocktaxonomy-termdifficultyfield-icon">
+  
+    
+      
+            <div class="field field--name-field-icon field--type-image field--label-hidden field__item">  <img src="../../../../sites/default/files/difficulty/beginner.svg" alt="" loading="lazy" typeof="foaf:Image" />
+
+</div>
+      
+  </div>
+<div class="block block-layout-builder block-field-blocktaxonomy-termdifficultyname">
+  
+    
+      
+            <div class="field field--name-name field--type-string field--label-hidden field__item"><span style="color: #7FB441;">Основы</span></div>
+      
+  </div>
+
+    </div>
+  </div>
+
+  </div>
+</div>
+</div>
+      
+  </div>
+<div class="block block-ts-doc block-ts-doc-downloads">
+  
+    
+      <a href="../../../../sites/default/files/pdf/node/3793/Obekt_.pdf" target="_blank">PDF</a>
+  </div>
+<div class="block block-ts-doc block-ts-doc-versions">
+  
+    
+        <div class="ts-doc-versions">
+    <select class="ts-doc-versions__select">
+                                                <option value="/docs/8-0/developer/instrumenty_razrabotki/creatio_ide/obekt/obzor" selected>Версия 8.0</option>
+          </select>
+  </div>
+
+  </div>
+
+    </div>
+  </div>
+  <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocknodedeveloper-documentationbody">
+  
+    
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><p><strong>Конфигурационный элемент типа</strong> <span class="key">Объект</span> (<span class="key">Object</span>) — это бизнес-сущность, которая на уровне серверного ядра позволяет объявить новый класс ORM-модели. На уровне базы данных создание объекта означает создание записи таблицы с таким же именем, как у созданного объекта, и с таким же набором колонок. То есть в большинстве случаев каждый объект в системе является системным представлением одной физической таблицы в базе данных. <strong>Назначение</strong> объекта — back-end разработка в приложении Creatio.</p>
+
+<p>Виды объектов, которые позволяет добавить Creatio IDE, представлены значениями выпадающего списка <span class="key">Добавить</span> (<span class="key">Add</span>) панели инструментов рабочей области раздела <span class="key">Конфигурация</span> (<span class="key">Configuration</span>).</p>
+
+<p><strong>Виды</strong> объектов представлены на рисунке ниже.</p>
+
+<div class="media">
+<div class="media__element"><img src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/Object/8.0/scr_AddList.png" /></div>
+</div>
+
+<p>Подробнее о видах конфигурационных элементов читайте в статье <a href="../operacii_v_creatio_ide/obzor%23title-2093-12.html?id=15104&amp;anchor=title-2093-12">Операции в Creatio IDE</a>.</p>
+
+<p>Объект представлен схемой типа <span class="key">Объект</span> (<span class="key">Object</span>) выпадающего списка <span class="key">Тип</span> (<span class="key">Type</span>) панели инструментов рабочей области раздела <span class="key">Конфигурация</span> (<span class="key">Configuration</span>). В схеме объекта описывается набор колонок, индексов и методов объекта. Платформа Creatio не ограничивает количество колонок объекта. Количество колонок в объекте ограничивается максимально допустимым количеством столбцов в таблицах базы данных, которую использует клиент.</p>
+
+<p><strong>Тип</strong> схемы объекта представлен на рисунке ниже.</p>
+
+<div class="media">
+<div class="media__element"><img src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/Object/8.0/scr_TypeList.png" /></div>
+</div>
+
+<p>Подробнее о типах конфигурационных элементов читайте в статье <a href="../operacii_v_creatio_ide/obzor%23title-2093-14.html?id=15104&amp;anchor=title-2093-14">Операции в Creatio IDE</a>.</p>
+
+<h2>Реализовать объект<a class="title-anchor" href="#title-3028-6" id="title-3028-6"> </a></h2>
+
+<p>Объект представлен <strong>видом</strong> схемы <span class="key">Объект</span> (<span class="key">Object</span>).</p>
+
+<p>Чтобы <strong>реализовать объект</strong>:</p>
+
+<ol><li><a href="../principy_razrabotki_v_creatio_ide/obzor_creatio_ide%23title-2093-2.html?id=15101&amp;anchor=title-2093-2">Перейдите в раздел <span class="key">Конфигурация</span></a> (<span class="key">Configuration</span>) и выберите пользовательский <a href="../../pakety/obshchiye_printsipy_raboty_s_paketami/obzor.html?id=15121">пакет</a>, в который будет добавлена схема.</li>
+	<li>
+	<p>На панели инструментов реестра раздела нажмите <span class="key">Добавить</span> —&gt; <span class="key">Объект</span> (<span class="key">Add</span> —&gt; <span class="key">Object</span>).</p>
+
+	<div class="media">
+	<div class="media__element"><img src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/Object/8.0/scr_add_object.png" /></div>
+	</div>
+	</li>
+	<li>
+	<p>В дизайнере объекта заполните свойства схемы.</p>
+
+	<p><strong>Основные свойства</strong> схемы:</p>
+
+	<ul><li><span class="key">Код</span> (<span class="key">Code</span>) — название схемы (обязательное свойство). Начинается с префикса (по умолчанию <span class="filled">Usr</span>), который указан в системной настройке <span class="key">Префикс названия объекта</span> (<span class="key">Prefix for object name</span>, код <span class="filled">SchemaNamePrefix</span>). Может содержать символы латинского алфавита и цифры. Допустимая длина имени объекта — 128 символов. На базах Oracle ниже версии 12.2 не допускаются к использованию объекты с длиной имени более 30 символов.</li>
+		<li><span class="key">Заголовок</span> (<span class="key">Title</span>) — локализуемый заголовок схемы (обязательное свойство).</li>
+		<li><span class="key">Пакет</span> (<span class="key">Package</span>) — пользовательский пакет, в котором создается схема. Заполняется автоматически и недоступно для редактирования.</li>
+		<li><span class="key">Описание</span> (<span class="key">Description</span>) — локализуемое описание схемы.</li>
+	</ul><div class="media">
+	<div class="media__element"><img src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/Object/8.0/scr_object_properties.png" /></div>
+	</div>
+	</li>
+	<li>
+	<p>В дизайнере объекта выберите родительский объект.</p>
+
+	<p>Чтобы объект наследовал функциональность другого объекта, в выпадающем списке свойства <span class="key">Родительский объект</span> (<span class="key">Parent object</span>) схемы выберите схему объекта, функциональность которого планируется наследовать. Например, чтобы наследовать функциональность базовой схемы объекта <span class="filled">BaseEntity</span> в качестве родительского объекта укажите схему <span class="filled">BaseEntity</span>. В свойство <span class="key">Унаследованные колонки</span> (<span class="key">Inherited columns</span>) схемы объекта автоматически добавляются колонки, которые унаследованы от родительского объекта.</p>
+
+	<div class="media">
+	<div class="media__element"><img src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/Object/8.0/scr_BaseEntity_props.png" /></div>
+	</div>
+	</li>
+	<li>В дизайнере объекта выберите колонку, которая соответствует идентификатору объекта. <span class="key">Идентификатор</span> (<span class="key">Id</span>) — системная колонка, которая используется в качестве первичного ключа в таблице базы данных (обязательное свойство). Для этого воспользуйтесь инструкцией, которая приведена в пункте <a href="obzor%23title-3028-11.html?id=15107&amp;anchor=title-3028-11">Установить идентификатор объекта</a>.</li>
+	<li>В дизайнере объекта добавьте индекс объекта (опционально). Для этого воспользуйтесь инструкцией, которая приведена в пункте <a href="obzor%23title-3028-13.html?id=15107&amp;anchor=title-3028-13">Добавить индекс объекта</a>.</li>
+	<li>В дизайнере объекта настройте каскадную связь (опционально). Для этого воспользуйтесь инструкцией, которая приведена в пункте <a href="obzor%23title-3028-14.html?id=15107&amp;anchor=title-3028-14">Настроить каскадную связь</a>.</li>
+	<li>
+	<p>На панели инструментов дизайнера объекта нажмите <span class="key">Опубликовать</span> (<span class="key">Publish</span>) для создания соответствующей таблицы в базе данных.</p>
+
+	<p>Кнопка <span class="key">Опубликовать</span> (<span class="key">Publish</span>) позволяет генерировать статический контент и обновлять структуру базы данных. При этом компиляция конфигурации не выполняется. Это позволяет ускорить разработку объектов и замещающих объектов. Компиляция при публикации объекта необходима, если при редактировании встроенного процесса объекта он был сохранен, но не был опубликован в дизайнере процессов. Чтобы компилировать конфигурацию, генерировать статический контент и обновлять структуру базы данных, в выпадающем меню кнопки <span class="key">Опубликовать</span> (<span class="key">Publish</span>) выберите <span class="key">Опубликовать и компилировать</span> (<span class="key">Publish and compile</span>).</p>
+	</li>
+</ol><h3>Установить идентификатор объекта<a class="title-anchor" href="#title-3028-11" id="title-3028-11"> </a></h3>
+
+<p>Поскольку объект в системе является представлением таблицы в базе данных, то он обязательно должен содержать колонку-идентификатор.</p>
+
+<p><strong>Способы</strong> установки идентификатора объекта:</p>
+
+<ul><li>Если свойство <span class="key">Родительский объект</span> (<span class="key">Parent object</span>) — <strong>базовый объект</strong>, то свойство <span class="key">Идентификатор</span> (<span class="key">Id</span>) заполняется автоматически.</li>
+	<li>Если свойство <span class="key">Родительский объект</span> (<span class="key">Parent object</span>) — <strong>пользовательский объект</strong>, то свойство <span class="key">Идентификатор</span> (<span class="key">Id</span>) заполняется вручную.</li>
+</ul><p>Чтобы <strong>добавить пользовательский идентификатор</strong>:</p>
+
+<ol><li>
+	<p>На панели свойств в контекстном меню узла <span class="key">Колонки</span> (<span class="key">Columns</span>) нажмите <img src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/ClientModule/8.0/scr_add_button.png" /> —&gt; <span class="key">Другие</span> —&gt; <span class="key">Уникальный идентификатор</span> (<span class="key">Other</span> —&gt; <span class="key">Unique identifier</span>).</p>
+
+	<div class="media">
+	<div class="media__element"><img src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/Object/8.0/scr_add_unique_identifier.png" /></div>
+	</div>
+	</li>
+	<li>
+	<p>В дизайнере объекта заполните свойства колонки.</p>
+
+	<p><strong>Основные свойства</strong> колонки:</p>
+
+	<div class="media">
+	<div class="media__element"><img src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/Object/8.0/scr_unique_identifier_props.png" /></div>
+	</div>
+
+	<ul><li><span class="key">Код</span> (<span class="key">Code</span>) — название колонки (обязательное свойство). Начинается с префикса (по умолчанию <span class="filled">Usr</span>), который указан в системной настройке <span class="key">Префикс названия объекта</span> (<span class="key">Prefix for object name</span>, код <span class="filled">SchemaNamePrefix</span>). Может содержать символы латинского алфавита и цифры. Значение свойства <span class="key">Код</span> (<span class="key">Code</span>) не должно совпадать со значением аналогичного поля родительского объекта колонки. В другом случае, при попытке опубликовать объект, отображается сообщение об ошибке.</li>
+		<li><span class="key">Заголовок</span> (<span class="key">Title</span>) — локализуемый заголовок колонки (обязательное свойство).</li>
+		<li><span class="key">Тип данных</span> (<span class="key">Data type</span>) — тип данных, которые содержатся в колонке. Заполняется автоматически в соответствии с типом колонки, которая была выбран при добавлении колонки. Недоступно для редактирования.</li>
+		<li><span class="key">Описание</span> (<span class="key">Description</span>) — локализуемое описание колонки.</li>
+		<li><span class="key">Обязательное</span> (<span class="key">Required</span>) — обязательность колонки. Выберите "<span class="consolas">Да</span>" ("<span class="consolas">Yes</span>"), поскольку колонка типа <span class="key">Уникальный идентификатор</span> (<span class="key">Unique identifier</span>) является обязательной для объекта. При попытке сохранить схему объекта без колонки типа <span class="key">Уникальный идентификатор</span> (<span class="key">Unique identifier</span>) отображается соответствующее сообщение.</li>
+		<li><span class="key">Значение по умолчанию</span> (<span class="key">Default value</span>) — значение колонки по умолчанию. Чтобы <strong>установить значение по умолчанию</strong>, воспользуйтесь инструкцией, которая приведена в пункте <a href="obzor%23title-2093-12.html?id=15107&amp;anchor=title-2093-12">Установить значение по умолчанию для колонки типа <span class="key">Уникальный идентификатор</span></a>.</li>
+		<li>
+		<p><span class="key">Режим использования</span> (<span class="key">Usage mode</span>) — выберите "<span class="consolas">Расширенный</span>" ("<span class="consolas">Advanced</span>").</p>
+
+		<p><strong>Режимы использования</strong> колонок, которые доступны в Creatio IDE:</p>
+
+		<ol><li><span class="key">Общие</span> (<span class="key">General</span>) — стандартный режим колонок в приложении.</li>
+			<li><span class="key">Расширенный</span> (<span class="key">Advanced</span>) — колонка отображается в конфигурации и доступна для использования в приложении.</li>
+			<li><span class="key">Никогда</span> (<span class="key">None</span>) — колонка отображается в конфигурации как системная и недоступна для использования в приложении.</li>
+		</ol></li>
+	</ul></li>
+</ol><h3>Установить значение по умолчанию для колонки типа <span class="key">Уникальный идентификатор</span><a class="title-anchor" href="#title-3028-12" id="title-3028-12"> </a></h3>
+
+<p>Чтобы <strong>установить значение по умолчанию</strong> для колонки типа <span class="key">Уникальный идентификатор</span> (<span class="key">Unique identifier</span>):</p>
+
+<ol><li>В свойстве <span class="key">Значение по умолчанию</span> (<span class="key">Default value</span>) нажмите на <img src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/CreateEntitySchema(7.17)/scr_edit_button.png" />.</li>
+	<li>
+	<p>Заполните <strong>свойства значения по умолчанию</strong>:</p>
+
+	<ul><li><span class="key">Тип значения</span> (<span class="key">Default value type</span>) — выберите "<span class="consolas">Cистемная переменная</span>" ("<span class="consolas">System variable</span>").</li>
+		<li><span class="key">Cистемная переменная</span> (<span class="key">System variable</span>) — выберите "<span class="consolas">Новый идентификатор</span>" ("<span class="consolas">New Id</span>"), поскольку идентификаторы должны быть уникальными.</li>
+	</ul><div class="media">
+	<div class="media__element"><img src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/Object/8.0/scr_default_column_value.png" /></div>
+	</div>
+	</li>
+</ol><h3>Добавить индекс объекта<a class="title-anchor" href="#title-3028-13" id="title-3028-13"> </a></h3>
+
+<p>Кроме колонок Creatio IDE позволяет добавить в объект индексы, которые при публикации объекта будут автоматически созданы в таблице базы данных.</p>
+
+<p><strong>Способы</strong> добавления индекса объекта:</p>
+
+<ul><li>
+	<p><strong>Индекс по одной колонке</strong>. В этом случае в блоке свойств <span class="key">Поведение</span> (<span class="key">Behavior</span>) установите признак <span class="key">Индексируемая</span> (<span class="key">Indexed</span>). По умолчанию справочные колонки — индексируемые.</p>
+
+	<div class="media">
+	<div class="media__element"><img src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/Object/8.0/scr_Behavior.png" /></div>
+	</div>
+	</li>
+	<li><strong>Составной индекс</strong>. Для этого воспользуйтесь инструкцией, которая приведена ниже.</li>
+</ul><p>Чтобы <strong>добавить составной индекс объекта</strong>:</p>
+
+<ol><li>На панели свойств в контекстном меню узла <span class="key">Индексы</span> (<span class="key">Indexes</span>) нажмите <img src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/ClientModule/8.0/scr_add_button.png" />.</li>
+	<li>
+	<p>Заполните <strong>свойства индекса</strong>:</p>
+
+	<ul><li><span class="key">Код</span> (<span class="key">Code</span>) — название индекса (обязательное свойство).</li>
+		<li><span class="key">Уникальный</span> (<span class="key">Unique</span>) — установите признак, если для колонок индекса необходимо задать ограничение целостности (исключить возможность вставки повторяющихся комбинаций значений).</li>
+		<li><span class="key">Колонки индекса</span> (<span class="key">Index Columns</span>) — выберите колонки, которые необходимо добавить в индекс. Для этого в блоке свойств <span class="key">Колонки индекса</span> (<span class="key">Index Columns</span>) нажмите <span class="key">Добавить</span> (<span class="key">Add</span>), выберите колонку объекта и укажите направление сортировки.</li>
+	</ul><div class="media">
+	<div class="media__element"><img src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/Object/8.0/scr_index_props.png" /></div>
+	</div>
+	</li>
+</ol><h3>Настроить каскадную связь<a class="title-anchor" href="#title-3028-14" id="title-3028-14"> </a></h3>
+
+<p>Creatio IDE позволяет настроить каскадную связь только для колонки типа <span class="key">Справочник</span> (<span class="key">Lookup</span>).</p>
+
+<p>Чтобы <strong>настроить каскадную связь</strong>:</p>
+
+<ol><li>
+	<p>Добавьте колонку типа <span class="key">Справочник</span> (<span class="key">Lookup</span>) (опционально). Для этого на панели свойств в контекстном меню узла <span class="key">Колонки</span> (<span class="key">Columns</span>) нажмите <img src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/ClientModule/8.0/scr_add_button.png" /> —&gt; <span class="key">Справочник</span> (<span class="key">Lookup</span>).</p>
+
+	<div class="media">
+	<div class="media__element"><img src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/Object/8.0/scr_add_lookup.png" /></div>
+	</div>
+	</li>
+	<li>
+	<p>В блоке свойств <span class="key">Источник данных</span> (<span class="key">Data source</span>) настройте <strong>каскадную связь</strong>.</p>
+
+	<p><strong>Способы</strong> настройки каскадной связи:</p>
+
+	<ul><li>Признак <span class="key">Не контролировать целостность</span> (<span class="key">Do not control integrity</span>).</li>
+		<li>Опции пункта <span class="key">При удалении значения справочника</span> (<span class="key">On lookup value deletion</span>).</li>
+	</ul><div class="media">
+	<div class="media__element"><img src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/Object/8.0/scr_data_source_lookup.png" /></div>
+	</div>
+	</li>
+</ol><p>Рассмотрим работу каскадной связи на примере объекта <span class="key">Контакт</span> (<span class="key">Contact</span>), который по справочной колонке <span class="filled">[AccountId]</span> связан с объектом <span class="key">Контрагент</span> (<span class="key">Account</span>). Для этого в поле <span class="key">Выбор объекта</span> (<span class="key">Lookup</span>) выберите <span class="key">Account</span>.</p>
+
+<p><strong>Варианты настройки</strong> каскадной связи:</p>
+
+<ul><li>Если <strong>установлен признак</strong> <span class="key">Не контролировать целостность</span> (<span class="key">Do not control integrity</span>), то выполняется удаление контрагента. При этом не удаляются контакты, которые связаны с текущим контрагентом.</li>
+	<li>Если <strong>не установлен признак</strong> <span class="key">Не контролировать целостность</span> (<span class="key">Do not control integrity</span>) и <strong>выбрана опция</strong> <span class="key">Блокировать удаление, если есть связанные записи в текущем объекте с этим значением</span> (<span class="key">Block deletion if there are connected records in current object with this value</span>), то удаление контрагента заблокировано, если присутствуют контакты, которые связаны с текущим контрагентом. В этом случае приложение выдает предупреждающее сообщение. После подтверждения выполняется удаление удаление контрагента. При этом не удаляются контакты, которые связаны с текущим контрагентом.</li>
+	<li>Если <strong>не установлен признак</strong> <span class="key">Не контролировать целостность</span> (<span class="key">Do not control integrity</span>) и <strong>выбрана опция</strong> <span class="key">Удалять записи из текущего объекта с этим значением</span> (<span class="key">Delete records from current object with this value</span>), то выполняется удаление контрагента вместе с удалением контактов, которые связаны с текущим контрагентом.</li>
+</ul><h2>Реализовать замещающий объект<a class="title-anchor" href="#title-3028-7" id="title-3028-7"> </a></h2>
+
+<p>Замещающий объект представлен <strong>видом</strong> схемы <span class="key">Замещающий объект</span> (<span class="key">Replacing object</span>).</p>
+
+<p>Чтобы <strong>реализовать замещающий объект</strong>:</p>
+
+<ol><li><a href="../principy_razrabotki_v_creatio_ide/obzor_creatio_ide%23title-2093-2.html?id=15101&amp;anchor=title-2093-2">Перейдите в раздел <span class="key">Конфигурация</span></a> (<span class="key">Configuration</span>) и выберите пользовательский <a href="../../pakety/obshchiye_printsipy_raboty_s_paketami/obzor.html?id=15121">пакет</a>, в который будет добавлена схема.</li>
+	<li>Установите <a href="../../pakety/obshchiye_printsipy_raboty_s_paketami/obzor%23title-2105-3.html?id=15121&amp;anchor=title-2105-3">зависимости</a> пакета. В зависимости обязательно добавьте пакет, который содержит замещаемый объект.</li>
+	<li>
+	<p>На панели инструментов реестра раздела нажмите <span class="key">Добавить</span> —&gt; <span class="key">Замещающий объект</span> (<span class="key">Add</span> —&gt; <span class="key">Replacing object</span>).</p>
+
+	<div class="media">
+	<div class="media__element"><img src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/Object/8.0/scr_add_replacing_object.png" /></div>
+	</div>
+	</li>
+	<li>
+	<p>В дизайнере объекта выберите родительский объект.</p>
+
+	<p>Чтобы объект замещал функциональность базового объекта, в выпадающем списке обязательного свойства <span class="key">Родительский объект</span> (<span class="key">Parent object</span>) схемы выберите схему объекта, которую планируется заместить. Например, чтобы замещать функциональность базовой схемы объекта <span class="filled">BaseEntity</span> в качестве родительского объекта укажите схему <span class="filled">BaseEntity</span>. В свойство <span class="key">Унаследованные колонки</span> (<span class="key">Inherited columns</span>) схемы объекта автоматически добавляются колонки, которые унаследованы от родительского объекта. После выбора родительского объекта остальные свойства объекта заполняются автоматически.</p>
+
+	<div class="media">
+	<div class="media__element"><img src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/Object/8.0/scr_replacing_object_properties.png" /></div>
+	</div>
+	</li>
+	<li>В дизайнере объекта реализуйте функциональность, которая отличает замещающий объект от замещаемого.</li>
+	<li>
+	<p>На панели инструментов дизайнера объекта нажмите <span class="key">Опубликовать</span> (<span class="key">Publish</span>) для создания соответствующей таблицы в базе данных.</p>
+
+	<p>Кнопка <span class="key">Опубликовать</span> (<span class="key">Publish</span>) позволяет генерировать статический контент и обновлять структуру базы данных. При этом компиляция конфигурации не выполняется. Это позволяет ускорить разработку объектов и замещающих объектов. Компиляция при публикации объекта необходима, если при редактировании встроенного процесса объекта он был сохранен, но не был опубликован в дизайнере процессов. Чтобы компилировать конфигурацию, генерировать статический контент и обновлять структуру базы данных, в выпадающем меню кнопки <span class="key">Опубликовать</span> (<span class="key">Publish</span>) выберите <span class="key">Опубликовать и компилировать</span> (<span class="key">Publish and compile</span>).</p>
+	</li>
+</ol><p>Подробнее о замещении конфигурационных элементов читайте в статье <a href="../zameshchenie_konfiguracionnyh_elementov/obzor.html?id=15105">Замещение конфигурационных элементов</a>.</p>
+
+<h2>Деактивировать записи объекта<a class="title-anchor" href="#title-3025-1" id="title-3025-1"> </a></h2>
+
+<p>Creatio предоставляет возможность деактивировать записи объектов приложения для исключения их из бизнес-логики. Это может понадобиться, например, если данные устарели и больше не используются. Функциональность деактивации записей объектов доступна для всех объектов.</p>
+
+<p>Чтобы <strong>деактивировать записи объекта</strong>:</p>
+
+<ol><li>Откройте схему объекта, записи которой планируется деактивировать.</li>
+	<li>
+	<p>В блоке свойств <span class="key">Поведение</span> (<span class="key">Behavior</span>) установите признак <span class="key">Разрешить деактивацию записей</span> (<span class="key">Allow records deactivation</span>).</p>
+
+	<div class="media">
+	<div class="media__element"><img src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/Object/8.0/scr_records_deactivation.png" /></div>
+	</div>
+	</li>
+	<li>На панели инструментов дизайнера объекта нажмите <span class="key">Опубликовать</span> (<span class="key">Publish</span>).</li>
+</ol><p>Автоматическая <strong>фильтрация неактивных записей</strong> доступна для отдельных элементов интерфейса.</p>
+
+<p>Элементы интерфейса, для которых <strong>доступна автоматическая фильтрация записей</strong>:</p>
+
+<ul><li>Выпадающий список.</li>
+	<li>Окно выбора значения из справочника.</li>
+	<li>Быстрый фильтр.</li>
+</ul><p>Элементы интерфейса, для которых <strong>недоступна автоматическая фильтрация записей</strong>:</p>
+
+<ul><li>Страница с содержимым справочников.</li>
+	<li>Раздел.</li>
+	<li>Расширенный фильтр.</li>
+</ul><p>Параметр <span class="filled">UseRecordDeactivation</span> класса <span class="filled">EntitySchemaQuery</span> позволяет управлять фильтрацией по неактивным записям. По умолчанию — <span class="filled">false</span>. Если для параметра <span class="filled">UseRecordDeactivation</span> установить значение <span class="filled">true</span>, то в запрос на выборку данных из объекта, где включена деактивация записей, добавляется фильтр, который исключает неактивные записи.</p>
+
+<p>Пример деактивации записей на front-end стороне приведен ниже.</p>
+
+<div class="code">
+<div class="code__widgets">
+<div class="code__top">
+<div class="code__title">Пример деактивации записей (front-end)</div>
+</div>
+
+<div class="code__source">
+<pre class="prettyprint">
+var esq = Ext.create("Terrasoft.EntitySchemaQuery", {
+   rootSchemaName: "MyCustomLookup",
+   useRecordDeactivation: true
+});
+</pre>
+</div>
+</div>
+</div>
+
+<p>Пример деактивации записей на back-end стороне приведен ниже.</p>
+
+<div class="code">
+<div class="code__widgets">
+<div class="code__top">
+<div class="code__title">Пример деактивации записей (back-end)</div>
+</div>
+
+<div class="code__source">
+<pre class="prettyprint">
+var esq = new EntitySchemaQuery(userConnection.EntitySchemaManager, "ContactType") {
+    UseRecordDeactivation = true
+};
+esq.PrimaryQueryColumn.IsAlwaysSelect = true;
+</pre>
+</div>
+</div>
+</div>
+
+<p>Результирующий SQL-запрос приведен ниже.</p>
+
+<div class="code">
+<div class="code__widgets">
+<div class="code__top">
+<div class="code__title">Пример SQL-запроса</div>
+</div>
+
+<div class="code__source">
+<pre class="prettyprint">
+SELECT [ContactType].[Id] [Id]
+FROM [dbo].[ContactType] [ContactType] WITH(NOLOCK)
+WHERE [ContactType].[RecordInactive] = 0
+</pre>
+</div>
+</div>
+</div>
+</div>
+      
+  </div>
+<div class="block block-layout-builder block-field-blocknodedeveloper-documentationfield-linked">
+  
+    
+      
+  <div class="field field--name-field-linked field--type-entity-reference field--label-above">
+    <div class="field__label">Смотрите также</div>
+          <div class="field__items">
+              <div class="field__item"><a href="../operacii_v_creatio_ide/obzor.html" hreflang="ru">Операции в Creatio IDE</a></div>
+          <div class="field__item"><a href="../principy_razrabotki_v_creatio_ide/obzor_creatio_ide.html" hreflang="ru">Creatio IDE</a></div>
+          <div class="field__item"><a href="../../pakety/obshchiye_printsipy_raboty_s_paketami/obzor.html" hreflang="ru">Общие принципы работы с пакетами</a></div>
+          <div class="field__item"><a href="../zameshchenie_konfiguracionnyh_elementov/obzor.html" hreflang="ru">Замещение конфигурационных элементов</a></div>
+              </div>
+      </div>
+
+  </div>
+<div class="block block-layout-builder block-field-blocknodedeveloper-documentationfield-video">
+  
+    
+      
+  <div class="field field--name-field-video field--type-link field--label-above">
+    <div class="field__label">Онлайн-курсы</div>
+          <div class="field__items">
+              <div class="field__item"><a href="https://profile.terrasoft.ua/user/login?destination=academy/ua/online-courses/osnovy-razrabotki-na-platforme-creatio/">Основы разработки на платформе Creatio</a></div>
+              </div>
+      </div>
+
+  </div>
+<div class="block block-layout-builder block-field-blocknodedeveloper-documentationfield-resources">
+  
+    
+      
+  <div class="field field--name-field-resources field--type-link field--label-above">
+    <div class="field__label">Ресурсы</div>
+          <div class="field__items">
+              <div class="field__item"><a href="../../../back_end_razrabotka.html" target="_blank">Документация Creatio по back-end разработке</a></div>
+              </div>
+      </div>
+
+  </div>
+
+    </div>
+  </div>
+
+  </div>
+
+</article>
+
+  </div>
+
+  </div>
+
+          </div>
+        </div>
+
+                  <aside class="creatio-sidebar creatio-sidebar_first" role="complementary">
+              <div class="region region-sidebar-first">
+    <div id="block-documentationnaviagtion" class="block block-ts-nav block-ts-nav-doc-nav">
+  
+    
+      <div class="ts-nav-block"><a href="../../../../index.html" class="ts-nav-block__link">Документация</a><div class="ts-nav-block__title">Для разработчика</div>
+</div>
+<div class="ts-nav-container"><ul class="ts-nav-menu"><li class="ts-nav-menu__item">
+  <a href="../../../s_chego_nachat.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">С чего начать&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../architecture.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Архитектура&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../instrumenty_razrabotki.html" class="ts-nav-menu__link ts-nav-menu__link_expanded ts-nav-menu__link_open" hreflang="zxx">Инструменты разработки&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+      <ul class="ts-nav-menu__children">
+      <li class="ts-nav-menu__item">
+  <a href="../../creatio_ide.html" class="ts-nav-menu__link ts-nav-menu__link_expanded ts-nav-menu__link_open" hreflang="ru">Creatio IDE&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+      <ul class="ts-nav-menu__children">
+      <li class="ts-nav-menu__item">
+  <a href="../principy_razrabotki_v_creatio_ide.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Обзор&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../operacii_v_creatio_ide/obzor.html" class="ts-nav-menu__link" hreflang="ru">Операции в Creatio IDE</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../klientskij_modul/obzor.html" class="ts-nav-menu__link" hreflang="ru">Клиентский модуль</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="obzor.html" class="ts-nav-menu__link ts-nav-menu__link_open" hreflang="ru">Объект</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../iskhodnyj_kod_c_sharp/obzor.html" class="ts-nav-menu__link" hreflang="ru">Исходный код (C#)</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../zameshchenie_konfiguracionnyh_elementov/obzor.html" class="ts-nav-menu__link" hreflang="ru">Замещение конфигурационных элементов</a>
+  </li>
+
+    </ul>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../vneshnie_ide.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Внешние IDE&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../pakety.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Пакеты&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../sistemy_kontrolya_versij.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Системы контроля версий&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../development_tools/testirovanie.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Тестирование&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../development_tools/instrumenty_dlya_bazy_dannykh.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Инструменты для базы данных&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../logirovanie.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Логирование&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../otladka.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Отладка&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../upravlenie_postavkami.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Управление поставками&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+
+    </ul>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../back_end_razrabotka.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Back-end разработка&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../front_end_razrabotka_freedom_ui.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Front-end разработка Freedom UI&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../front_end_razrabotka.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Front-end разработка&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../integratsiya_i_vneshnij_api.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Интеграция и внешний API&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../ehlementy_interfejsa.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Элементы интерфейса&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../komponenty_prilozheniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Компоненты приложения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../razrabotka_mobilnogo_prilozheniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Разработка мобильного приложения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../razrabotka_marketplace_prilozheniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Разработка Marketplace-приложения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+</ul>
+</div>
+
+  </div>
+
+  </div>
+
+            <div class="creatio-sidebar__toggle"></div>
+          </aside>
+        
+                  <aside class="creatio-sidebar creatio-sidebar_second" role="complementary">
+              <div class="region region-sidebar-second">
+    <div id="block-example" class="block block-ts-nav block-ts-nav-page-nav">
+  
+    
+      <div class="ts-nav-page">
+  </div>
+
+  </div>
+<div id="block-adminfeedbackblock" class="block block-admin-feedback block-admin-feedback-block">
+  
+    
+      <div id="feedback-message"><div id="upper-feedback-content"><h2>Был ли данный материал полезен?</h2>
+<input class="feedback-btn feedback-btn__yes button js-form-submit form-submit" data-node-id="3793" data-feedback="yes" type="submit" name="op" value="Да" />
+<input class="feedback-btn feedback-btn__no button js-form-submit form-submit" data-node-id="3793" data-feedback="no" type="submit" name="op" value="Нет" />
+</div>
+<form class="admin-feedback-form" data-drupal-selector="admin-feedback-form" action="https://academy.terrasoft.ua/docs/developer/instrumenty_razrabotki/creatio_ide/obekt/obzor" method="post" id="admin-feedback-form" accept-charset="UTF-8">
+  <div id="feedback-msg-result"></div><div class="js-form-item form-item js-form-type-textarea form-type-textarea js-form-item-feedback-message form-item-feedback-message form-no-label">
+        <div class="form-textarea-wrapper">
+  <textarea id="edit-feedback-msg" data-drupal-selector="edit-feedback-message" name="feedback_message" rows="5" cols="60" class="form-textarea resize-vertical"></textarea>
+</div>
+
+        </div>
+<input id="feedback-id" data-drupal-selector="edit-feedback-id" type="hidden" name="feedback_id" value="" />
+<input class="feedback-btn feedback-btn__send-comment button js-form-submit form-submit" data-drupal-selector="edit-feedback-send" type="submit" id="edit-feedback-send" name="op" value="Отправить" />
+<input autocomplete="off" data-drupal-selector="form-2xygwsyludtutkaqaukm1bulfrccdv8limiqoqieo4e" type="hidden" name="form_build_id" value="form-2XYGwSYlUdTUTKaQaUKM1BULFrCCDv8LiMiqOqIeO4E" />
+<input data-drupal-selector="edit-admin-feedback-form" type="hidden" name="form_id" value="admin_feedback_form" />
+
+</form>
+</div>
+
+  </div>
+
+  </div>
+
+          </aside>
+              </main>
+    </div>
+  </div>
+
+  <footer role="contentinfo">
+    <div class="creatio-region creatio-region_footer">
+      <div class="creatio-container">
+          <div class="region region-footer">
+    <div id="block-footerua" class="block block-simple-block block-simple-blockfooter-ua">
+  
+    
+      <div class="footer">
+<div class="footer-left">
+<ul class="footer-socials"><li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_fb" href="https://www.facebook.com/terrasoft.ua" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_in" href="https://www.linkedin.com/company/terrasoft/" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_yt" href="https://www.youtube.com/c/TerrasoftUkraine" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_tg" href="https://t.me/Terrasoft_UA" target="_blank"> </a></li>
+</ul></div>
+
+<div class="footer-contact">
+<div class="footer-title">Будьте на связи!</div>
+
+<div class="footer-content">
+<div class="footer-items">
+<div class="footer-item"><a class="footer__link footer__link_phone" href="tel:+380443633133">+38 (044) 363-31-33</a></div>
+</div>
+
+<div class="footer-items">
+<div class="footer-item"><a class="footer__link footer__link_email" href="mailto:support@terrasoft.ua">support@terrasoft.ua</a></div>
+</div>
+</div>
+</div>
+</div>
+
+  </div>
+
+  </div>
+
+      </div>
+    </div>
+    <div class="creatio-region creatio-region_bottom">
+      <div class="creatio-container">
+          <div class="region region-bottom">
+    <div id="block-allrightsreservedua" class="block block-simple-block block-simple-blockfooter-bottom-ua">
+  
+    
+      <p>© 2002-2022 Terrasoft.  |  <a href="https://www.terrasoft.ua/privacy-policy" target="_blank">Конфиденциальность</a></p>
+
+  </div>
+
+  </div>
+
+      </div>
+    </div>
+  </footer>
+</div>
+<div class="creatio-bg"></div>
+
+
+  </div>
+
+    
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/docs\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/3793","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"ru"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"ajaxPageState":{"libraries":"admin_feedback\/admin_feedback_block,admin_feedback\/admin_feedback_css,classy\/base,classy\/messages,classy\/node,core\/drupal.ajax,core\/jquery.form,core\/normalize,creatio\/fancybox,creatio\/global,layout_discovery\/onecol,system\/base,ts_doc\/doc_version,ts_feedback\/ts_feedback,ts_nav\/breadcrumb,ts_nav\/doc_nav,ts_nav\/page_nav,ts_title_anchor\/ts_title_anchor","theme":"creatio","theme_token":null},"ajaxTrustedUrl":{"form_action_p_pvdeGsVG5zNF_XLGPTvYSKCf43t8qZYSwcfZl2uzM":true,"\/docs\/developer\/instrumenty_razrabotki\/creatio_ide\/obekt\/obzor?ajax_form=1":true},"admin_feedback":{"yes_response":"\u0421\u043f\u0430\u0441\u0438\u0431\u043e \u0437\u0430 \u043e\u0431\u0440\u0430\u0442\u043d\u0443\u044e \u0441\u0432\u044f\u0437\u044c!","no_response":"\u0421\u043f\u0430\u0441\u0438\u0431\u043e \u0437\u0430 \u043e\u0431\u0440\u0430\u0442\u043d\u0443\u044e \u0441\u0432\u044f\u0437\u044c!","custom_text_response_on_no":{"value":"","format":"full_html"},"feedback_prompt_on_yes":true,"feedback_prompt_on_no":true,"feedback_enable_predefined_answers":false,"feedback_prompt":"\u041a\u0430\u043a \u043c\u043e\u0436\u043d\u043e \u0443\u043b\u0443\u0447\u0448\u0438\u0442\u044c \u044d\u0442\u0443 \u0441\u0442\u0430\u0442\u044c\u044e?"},"ajax":{"edit-feedback-send":{"callback":"::validateFeedbackMsg","event":"mousedown","keypress":true,"prevent":"click","url":"\/docs\/developer\/instrumenty_razrabotki\/creatio_ide\/obekt\/obzor?ajax_form=1","dialogType":"ajax","submit":{"_triggering_element_name":"op","_triggering_element_value":"\u041e\u0442\u043f\u0440\u0430\u0432\u0438\u0442\u044c"}}},"user":{"uid":0,"permissionsHash":"9c2367dfcaba0fa15f0375f97aed64e146c908cee68508d13b79e3ee80e5162d"}}</script>
+<script src="../../../../sites/default/files/js/js_Rr-7TvYD7NposuRFJwUqThxM7yJmw8vs03PQwu5gWd8.js"></script>
+
+
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+      <g id="svg-copy" class="svg-icon svg-icon_copy">
+        <path d="M15.111,18H1.889A1.848,1.848,0,0,1,0,16.2V3.6A1.848,1.848,0,0,1,1.889,1.8H5.837a2.87,2.87,0,0,1,5.326,0h3.948A1.848,1.848,0,0,1,17,3.6V16.2A1.848,1.848,0,0,1,15.111,18ZM3.777,12.6v1.8h6.611V12.6Zm0-3.6v1.8h9.445V9Zm0-3.6V7.2h9.445V5.4ZM8.5,1.8a.924.924,0,0,0-.944.9.945.945,0,0,0,1.889,0A.924.924,0,0,0,8.5,1.8Z"/>
+      </g>
+
+      <g id="svg-prev" class="svg-icon svg-icon_arrow">
+        <path d="M5.488,12.779,0,6.39,5.488,0" transform="translate(1 0.652)"/>
+      </g>
+
+      <g id="svg-next" class="svg-icon svg-icon_arrow">
+        <path d="M0,12.779,5.488,6.39,0,0" transform="translate(0.759 0.652)"/>
+      </g>
+    </svg>
+  </body>
+
+<!-- Mirrored from academy.terrasoft.ua/docs/developer/instrumenty_razrabotki/creatio_ide/obekt/obzor#title-3028-7 by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 22 Mar 2022 21:36:31 GMT -->
+</html>

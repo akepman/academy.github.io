@@ -1,0 +1,1023 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# ">
+  
+<!-- Mirrored from academy.terrasoft.ua/docs/user/razvertyvanie_onsite/nastroika_dopolnitelnikh_parametrov_i_integraciy/gorizontalnoe_masshtabirovanie/nastroit_gorizontalnoe_masshtabirovanie by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 22 Mar 2022 19:55:06 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+          <!-- Google Tag Manager -->
+      <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          '../../../../../../www.googletagmanager.com/gtm5445.html?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-KLLB8G');</script>
+      <!-- End Google Tag Manager -->
+        <meta charset="utf-8" />
+<link rel="canonical" href="nastroit_gorizontalnoe_masshtabirovanie.html" />
+<meta name="description" content="В Creatio существует возможность повысить производительность крупных проектов (до нескольких тысяч пользователей) за счет горизонтального масштабирования — увеличения количества серверов, на которых развернуто приложение, и распределения нагрузки между ними." />
+<meta property="og:url" content="https://academy.terrasoft.ua/docs/user/razvertyvanie_onsite/nastroika_dopolnitelnikh_parametrov_i_integraciy/gorizontalnoe_masshtabirovanie/nastroit_gorizontalnoe_masshtabirovanie" />
+<meta property="og:title" content="Настроить горизонтальное масштабирование" />
+<meta property="og:description" content="В Creatio существует возможность повысить производительность крупных проектов (до нескольких тысяч пользователей) за счет горизонтального масштабирования — увеличения количества серверов, на которых развернуто приложение, и распределения нагрузки между ними." />
+<meta name="Generator" content="Drupal 9 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="../../../../themes/custom/creatio/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="revision" href="nastroit_gorizontalnoe_masshtabirovanie.html" />
+
+    <title>Настроить горизонтальное масштабирование | Creatio Academy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&amp;family=Open+Sans:ital,wght@0,300;0,400;0,600;1,400&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" media="all" href="../../../../sites/default/files/css/css_6lTP66__-yc6QXFp1zOwoeJ0HVigoYZP-SeoLLii000.css" />
+<link rel="stylesheet" media="all" href="../../../../sites/default/files/css/css_XQJDNhkF3xH5SZCcY-PI89Zu4nYIzQ5oR3SnUKyfXJU.css" />
+<link rel="stylesheet" media="print" href="../../../../sites/default/files/css/css_Zn4VHvcniOOtUwkIVwXzYr_0AI9gUVgZcPqaH4ViagU.css" />
+
+    
+  </head>
+  <body class="path-node page-node-type-user-documentation">
+          <!-- Google Tag Manager (noscript) -->
+      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KLLB8G"
+                        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+      <!-- End Google Tag Manager (noscript) -->
+    
+        
+      <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    <div class="creatio-page d-flex flex-column">
+        <div class="region region-informer">
+    <div id="block-terrasoftpidtrimueukrainu" class="block block-simple-block block-simple-blockterrasoft-pidtrimue-ukrainu">
+  
+    
+      <style type="text/css">
+<!--/*--><![CDATA[/* ><!--*/
+@import url(../../../../../../www.terrasoft.ua/themes/custom/creatio/css/components/informer.css)
+
+/*--><!]]>*/
+</style><div class="ts-swu">
+<div class="creatio-container">
+<div class="ts-swu__cont">
+<div><a class="ts-swu__link" href="https://www.terrasoft.ua/terrasoft-stands-with-ukraine" target="_blank">Україна понад усе!</a> <span><a href="https://www.terrasoft.ua/terrasoft-stands-with-ukraine" target="_blank">Приєднуйтеся</a> до допомоги!</span></div>
+</div>
+</div></div>
+
+  </div>
+
+  </div>
+
+  
+  <header role="banner">
+          <div class="creatio-region creatio-region_top">
+        <div class="creatio-container">
+            <div class="region region-top">
+    <div id="block-menutoggle" class="block block-simple-block block-simple-blockmenu-toggle">
+  
+    
+      <div class="menu-toggle"><span> </span></div>
+
+  </div>
+<div id="block-logowhite-2" class="block block-simple-block block-simple-blocklogo-white">
+  
+    
+      <p><a class="site-logo" href="../../../../../index.html" rel="home"><img src="../../../../themes/custom/creatio/logo-white.svg" /></a></p>
+
+  </div>
+<div id="block-search" class="block block-simple-block block-simple-blocksearch">
+  
+    
+      <div class="search">
+<form action="https://academy.terrasoft.ua/search" class="search-form" method="get"><input class="search-form__input" name="search" placeholder="Поиск" type="search" /><input class="search-form__button" type="submit" value="Поиск" /> </form>
+
+<div class="search-toggle"> </div>
+</div>
+
+  </div>
+<nav role="navigation" aria-labelledby="block-sitesua-menu" id="block-sitesua" class="block block-menu navigation menu--sites-ua">
+            
+  <h2 class="visually-hidden" id="block-sitesua-menu">Sites UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="https://www.terrasoft.ua/" rel="nofollow" target="_blank">Terrasoft</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://community.terrasoft.ua/" rel="nofollow" target="_blank">Community</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://marketplace.terrasoft.ua/" rel="nofollow" target="_blank">Marketplace</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+<div id="block-usermenu" class="block block-ts-user block-ts-user-menu-block">
+  
+    
+      <ul class="user-menu">
+      <li class="user-menu__item">
+      <a class="user-menu__link" href="https://profile.terrasoft.ua/user/login?destination=academy/ua/docs/user/razvertyvanie_onsite/nastroika_dopolnitelnikh_parametrov_i_integraciy/gorizontalnoe_masshtabirovanie/nastroit_gorizontalnoe_masshtabirovanie">Войти</a>
+    </li>
+  </ul>
+
+  </div>
+<div id="block-usermenumobile" class="block block-ts-user block-ts-user-menu-mobile-block">
+  
+    
+      <ul class="user-menu-mobile">
+      <li class="user-menu-mobile__item">
+      <div class="user-menu-mobile__user user-menu-mobile__user_icon"></div>
+      <ul class="user-menu-mobile__submenu">
+        <li class="user-menu-mobile__subitem">
+          <a class="user-menu-mobile__sublink" href="https://profile.terrasoft.ua/user/login?destination=academy/ua/docs/user/razvertyvanie_onsite/nastroika_dopolnitelnikh_parametrov_i_integraciy/gorizontalnoe_masshtabirovanie/nastroit_gorizontalnoe_masshtabirovanie">Войти</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  </div>
+
+  </div>
+
+        </div>
+      </div>
+              <div class="creatio-region creatio-region_header">
+        <div class="creatio-container">
+            <div class="region region-header">
+    <div id="block-logo" class="block block-simple-block block-simple-blocklogo">
+  
+    
+      <p><a class="site-logo" href="../../../../../index.html" rel="home"><img src="../../../../themes/custom/creatio/logo.svg" /></a></p>
+
+  </div>
+<nav role="navigation" aria-labelledby="block-osnovnayanavigaciyaua-menu" id="block-osnovnayanavigaciyaua" class="block block-menu navigation menu--main-ua">
+            
+  <h2 class="visually-hidden" id="block-osnovnayanavigaciyaua-menu">Основная навигация UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="../../../../index.html" data-drupal-link-system-path="&lt;front&gt;">Документация</a>
+              </li>
+                <li class="menu-item">
+        <a href="../../../../../trainings.html">Тренинги</a>
+              </li>
+                <li class="menu-item">
+        <a href="../../../../certification.html" data-drupal-link-system-path="node/3084">Сертификация и тестирование</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+<nav role="navigation" aria-labelledby="block-sitesua-2-menu" id="block-sitesua-2" class="block block-menu navigation menu--sites-ua">
+            
+  <h2 class="visually-hidden" id="block-sitesua-2-menu">Sites UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="https://www.terrasoft.ua/" rel="nofollow" target="_blank">Terrasoft</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://community.terrasoft.ua/" rel="nofollow" target="_blank">Community</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://marketplace.terrasoft.ua/" rel="nofollow" target="_blank">Marketplace</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+
+  </div>
+
+        </div>
+      </div>
+              <div class="creatio-region creatio-region_breadcrumb">
+        <div class="creatio-container">
+            <div class="region region-breadcrumb">
+    <div id="block-logowhite" class="block block-simple-block block-simple-blocklogo-white">
+  
+    
+      <p><a class="site-logo" href="../../../../../index.html" rel="home"><img src="../../../../themes/custom/creatio/logo-white.svg" /></a></p>
+
+  </div>
+<div id="block-breadcrumbnaviagtion" class="block block-ts-nav block-ts-nav-bread">
+  
+    
+      <nav class="breadcrumb"><ol class="ts-nav-breadcrumb__list"><li class="ts-nav-breadcrumb__item"><a href="../../../../index.html" class="ts-nav-breadcrumb__link" title="Документация">Документация</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../../indexd993.html?vid_1=1" class="ts-nav-breadcrumb__link" title="Для пользователя">Для пользователя</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../razvertyvanie_onsite.html" class="ts-nav-breadcrumb__link" title="Развертывание on-site" hreflang="ru">Развертывание on-site</a></li>
+<li class="ts-nav-breadcrumb__item ts-nav-breadcrumb__item_mobile"><a href="../../nastroika_dopolnitelnikh_parametrov_i_integraciy.html" class="ts-nav-breadcrumb__link" title="Настройка дополнительных параметров и интеграций" hreflang="ru">Настройка дополнительных параметров и интеграций</a></li>
+<li class="ts-nav-breadcrumb__item"><span class="ts-nav-breadcrumb__link ts-nav-breadcrumb__link_current" title="Настроить горизонтальное масштабирование">Настроить горизонтальное масштабирование</span></li>
+</ol>
+</nav>
+
+  </div>
+<div id="block-search-2" class="block block-simple-block block-simple-blocksearch">
+  
+    
+      <div class="search">
+<form action="https://academy.terrasoft.ua/search" class="search-form" method="get"><input class="search-form__input" name="search" placeholder="Поиск" type="search" /><input class="search-form__button" type="submit" value="Поиск" /> </form>
+
+<div class="search-toggle"> </div>
+</div>
+
+  </div>
+
+  </div>
+
+        </div>
+      </div>
+      </header>
+
+  <div class="creatio-region creatio-region_main">
+    <div class="creatio-container">
+                <div class="region region-breadcrumb-mobile">
+    <div id="block-breadcrumbnaviagtion-2" class="block block-ts-nav block-ts-nav-bread">
+  
+    
+      <nav class="breadcrumb"><ol class="ts-nav-breadcrumb__list"><li class="ts-nav-breadcrumb__item"><a href="../../../../index.html" class="ts-nav-breadcrumb__link" title="Документация">Документация</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../../indexd993.html?vid_1=1" class="ts-nav-breadcrumb__link" title="Для пользователя">Для пользователя</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../razvertyvanie_onsite.html" class="ts-nav-breadcrumb__link" title="Развертывание on-site" hreflang="ru">Развертывание on-site</a></li>
+<li class="ts-nav-breadcrumb__item ts-nav-breadcrumb__item_mobile"><a href="../../nastroika_dopolnitelnikh_parametrov_i_integraciy.html" class="ts-nav-breadcrumb__link" title="Настройка дополнительных параметров и интеграций" hreflang="ru">Настройка дополнительных параметров и интеграций</a></li>
+<li class="ts-nav-breadcrumb__item"><span class="ts-nav-breadcrumb__link ts-nav-breadcrumb__link_current" title="Настроить горизонтальное масштабирование">Настроить горизонтальное масштабирование</span></li>
+</ol>
+</nav>
+
+  </div>
+
+  </div>
+
+      
+      <main class="creatio-main" role="main">
+                                                    
+        <div class="creatio-content creatio-content_small">
+          <div class="creatio-content__inner creatio-content__inner_bg">
+                            <div class="region region-messages">
+    <div data-drupal-messages-fallback class="hidden"></div>
+
+  </div>
+
+            
+              <div class="region region-content">
+    <div id="block-creatio-page-title" class="block block-core block-page-title-block">
+  
+    
+      
+  <h1 class="page-title"><span class="field field--name-title field--type-string field--label-hidden">Настроить горизонтальное масштабирование</span>
+</h1>
+
+
+  </div>
+<div id="block-creatio-content" class="block block-system block-system-main-block">
+  
+    
+      
+<article data-history-node-id="2491" role="article" about="/docs/user/razvertyvanie_onsite/nastroika_dopolnitelnikh_parametrov_i_integraciy/gorizontalnoe_masshtabirovanie/nastroit_gorizontalnoe_masshtabirovanie" class="node node--type-user-documentation node--view-mode-full">
+
+  
+    
+
+  
+  <div class="node__content">
+      <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-ts-doc block-ts-doc-downloads">
+  
+    
+      <a href="../../../../sites/default/files/pdf/node/2491/Nastroit_gorizontalnoe_masshtabirovanie_.pdf" target="_blank">PDF</a>
+  </div>
+<div class="block block-ts-doc block-ts-doc-versions">
+  
+    
+        <div class="ts-doc-versions">
+    <select class="ts-doc-versions__select">
+                                                <option value="/docs/8-0/user/razvertyvanie_onsite/nastroika_dopolnitelnikh_parametrov_i_integraciy/gorizontalnoe_masshtabirovanie/nastroit_gorizontalnoe_masshtabirovanie" selected>Версия 8.0</option>
+                              <option value="/docs/7-18/user/razvertyvanie_onsite/nastroika_dopolnitelnikh_parametrov_i_integraciy/gorizontalnoe_masshtabirovanie/nastroit_gorizontalnoe_masshtabirovanie">Версия 7.18</option>
+                              <option value="/docs/7-17/user/razvertyvanie_onsite/nastroika_dopolnitelnikh_parametrov_i_integraciy/gorizontalnoe_masshtabirovanie/nastroit_gorizontalnoe_masshtabirovanie">Версия 7.17</option>
+          </select>
+  </div>
+
+  </div>
+
+    </div>
+  </div>
+  <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocknodeuser-documentationfield-product">
+  
+    
+      
+  <div class="field field--name-field-product field--type-entity-reference field--label-above">
+    <div class="field__label">Продукты</div>
+          <div class="field__items">
+              <div class="field__item">Все продукты</div>
+              </div>
+      </div>
+
+  </div>
+<div class="block block-layout-builder block-field-blocknodeuser-documentationbody">
+  
+    
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><p>В Creatio существует возможность повысить производительность крупных проектов (до нескольких тысяч пользователей) за счет горизонтального масштабирования — увеличения количества серверов, на которых развернуто приложение, и распределения нагрузки между ними.</p>
+
+<p>Балансировщик может быть аппаратным или программным. Для работы в отказоустойчивом режиме используется балансировщик HTTP/HTTPS-трафика с поддержкой протокола WebSocket. Работа приложения тестировалась на программном балансировщике нагрузки HAProxy. Известны случаи успешного использования других балансировщиков Citrix, Cisco, NginX, FortiGate, MS ARR.</p>
+
+<div class="message">
+<p><span class="message__bold">На заметку.</span> Установка дополнений Marketplace и пользовательских доработок на среду с балансировщиком отличается от обычного процесса поставки. Подробнее: <a href="../../../kastomizacija_no_code/upravlenie_prilozhenijami/prilozhenie_marketplace/ustanovit_prilozhenie_marketplace.html?id=1835">Установить приложение Marketplace</a>.</p>
+</div>
+
+<p>Данный документ рассматривает вариант горизонтального масштабирования Creatio с иcпользованием бесплатного open-source балансировщика HAProxy для распределения нагрузки на серверы сессий.</p>
+
+<div class="message">
+<p><span class="message__bold">На заметку.</span> Серверное время на нодах (серверах и машинах), на которых развернуты экземпляры приложения Creatio, должно быть синхронизировано во избежание проблем с работоспособностью системы.</p>
+</div>
+
+<h2><a name="TOC_Общий_порядокbc-1" id="TOC_Общий_порядокbc-1"></a><a name="TOC_Общий_порядок" id="TOC_Общий_порядок"></a>Общий порядок развертывания<a class="title-anchor" href="#title-2491-1" id="title-2491-1"> </a></h2>
+
+<h3>Для приложений на .NET Framework<a class="title-anchor" href="#title-2491-10" id="title-2491-10"> </a></h3>
+
+<p>Общий порядок развертывания приложения Creatio с горизонтальным масштабированием на <strong>.NET Framework</strong> следующий:</p>
+
+<ol><li>
+	<p>Разверните необходимое количество экземпляров приложения Creatio в web-ферме.</p>
+
+	<div class="message">
+	<p><span class="message__bold">На заметку.</span> Рекомендуется, чтобы у всех экземпляров приложения имена в IIS и настройки Application pool совпадали.</p>
+	</div>
+	</li>
+	<li>
+	<p>В файле ConnectionStrings.config для всех экземпляров укажите одинаковые базы данных SQL и Redis.</p>
+
+	<div class="code">
+	<div class="code__widgets">
+	<div class="code__source">
+	<pre class="prettyprint">
+&lt;add name="redis" connectionString="host=DOMAIN.COM;db=0;port=6379;maxReadPoolSize=10;maxWritePoolSize=500"/&gt;
+&lt;add name="db" connectionString="Data Source=DOMAIN.COM;Initial Catalog=DatabaseName;Integrated Security=SSPI; MultipleActiveResultSets=True;Pooling-true;Max Pool Size=100"/&gt;</pre>
+	</div>
+	</div>
+	</div>
+	</li>
+	<li>
+	<p>В конфигурационном файле (Web.config) каждого приложения, в блоке &lt;appSettings&gt; добавьте ключ:</p>
+
+	<div class="code">
+	<div class="code__widgets">
+	<div class="code__source">
+	<pre class="prettyprint">
+&lt;add key="TenantId" value="1" /&gt;</pre>
+	</div>
+	</div>
+	</div>
+
+	<p>Номер “value” должен быть одинаковым у всех экземпляров приложения в web-ферме.</p>
+
+	<div class="message message_warning">
+	<p><span class="message__bold message__bold_warning">Важно.</span> Начиная с версии 7.14.1 ключ &lt;add key="TenantId" value="..." /&gt; нужно добавить только во внутренний конфигурационный файл Web.config (путь к файлу Terrasoft.WebApp\Web.config). Добавление ключа во внешний конфигурационный файл может привести к ошибкам в работе приложения.</p>
+	</div>
+	</li>
+	<li>Сгенерируйте для одного из экземпляров приложения уникальное значение machineKey. Подробно об этом читайте в статье <a href="../../windows_net_framework/nastroika_web_config/nastroit_web.html">Настроить Web.config</a>. Полученное значение скопируйте и укажите для каждого экземпляра приложения в конфигурационных файлах Web.config, которые находятся в корневой папке Creatio и в папке Terrasoft.WebApp.</li>
+	<li>
+	<p>Во внешнем конфигурационном файле (Web.config) каждой ноды для всех планировщиков в блоке &lt;quartzConfig&gt; включите кластерный режим:</p>
+
+	<div class="code">
+	<div class="code__widgets">
+	<div class="code__source">
+	<pre class="prettyprint">
+&lt;add key="quartz.jobStore.clustered" value="true" /&gt;
+&lt;add key="quartz.jobStore.acquireTriggersWithinLock" value="true" /&gt;
+</pre>
+	</div>
+	</div>
+	</div>
+	</li>
+	<li>
+	<p>В случае совпадения настроек instanceId сформируйте уникальные значения для каждой ноды планировщиков.</p>
+
+	<p><strong>Способы формирования</strong> уникальных instanceId:</p>
+
+	<ul><li>
+		<p>Во внешнем конфигурационном файле (Web.config) каждой ноды для всех планировщиков в блоке &lt;quartzConfig&gt; добавьте строку</p>
+
+		<div class="code">
+		<div class="code__widgets">
+		<div class="code__source">
+		<pre class="prettyprint">
+&lt;add key="quartz.scheduler.instanceId" value="AUTO" /&gt;
+</pre>
+		</div>
+		</div>
+		</div>
+
+		<div class="message message_warning">
+		<p><span class="message__bold message__bold_warning">Важно.</span> Для значения AUTO атрибута value необходимо использовать верхний регистр. В другом случае значение будет расцениваться как имя ноды и при работе планировщика могут возникать ошибки.</p>
+		</div>
+
+		<p>В результате планировщик автоматически будет генерировать уникальное имя ноды в формате &lt;имя ноды&gt;+timestamp.</p>
+		</li>
+		<li>Вручную добавьте уникальные значения quartz.scheduler.instanceId.</li>
+	</ul></li>
+	<li>
+	<p>Для атрибута value настройки quartz.jobStore.clustered установите значение true.</p>
+
+	<div class="code">
+	<div class="code__widgets">
+	<div class="code__source">
+	<pre class="prettyprint">
+&lt;add key="quartz.jobStore.clustered" value="true" /&gt;
+</pre>
+	</div>
+	</div>
+	</div>
+	</li>
+	<li>Раздайте права на созданные директории приложений пользователю IUSR и пользователю, под которым запущен Application pool в IIS.</li>
+	<li>Настройте балансировщик (например, HAproxy) для распределения нагрузки между развернутыми серверами приложения.</li>
+	<li>
+	<p>При необходимости настройте балансировку нагрузки для серверов баз данных и сессий.</p>
+
+	<div class="message">
+	<p><span class="message__bold">На заметку.</span> Информация о настройке кластеризации доступна в документации <a href="https://docs.microsoft.com/en-us/sql/sql-server/failover-clusters/install/create-a-new-sql-server-failover-cluster-setup?view=sql-server-2017">MSSQL</a> и <a href="https://docs.oracle.com/cd/B28359_01/rac.111/b28254/admcon.htm#i1058057">Oracle</a>. Настройка отказоустойчивости системы при помощи Redis Cluster рассмотрена в статье <a href="../../server_keshirovaniya/redis_cluster/nastroit_redis_cluster.html">Настроить Redis Cluster</a>.</p>
+	</div>
+	</li>
+</ol><h3><a name="TOC_Установить_балансировщикbc-2" id="TOC_Установить_балансировщикbc-2"></a><a name="TOC_Установить_балансировщик" id="TOC_Установить_балансировщик"></a><a name="CSH_1" id="CSH_1"></a><a name="HT_chapter_setup_additional_scaling_install" id="HT_chapter_setup_additional_scaling_install"></a>Для приложений на .NET Core<a class="title-anchor" href="#title-2491-11" id="title-2491-11"> </a></h3>
+
+<p>Общий порядок развертывания приложения Creatio с горизонтальным масштабированием на <strong>.NET Core</strong> следующий:</p>
+
+<ol><li>Разверните необходимое количество <a href="../../linux_net_core/ustanovka/ustanovit_creatio_net_core_na_linux.html?product=administration&amp;ver=7&amp;id=2148">экземпляров приложения Creatio</a>.</li>
+	<li>В <a href="../../linux_net_core/podgotovka_k_ustanovke/podgotovka_k_ustanovke_net_core_na_linux.html?product=administration&amp;ver=7&amp;id=2120">файле ConnectionStrings.config</a> для всех экземпляров укажите одинаковые базы данных SQL и Redis для всех экземпляров приложения.</li>
+	<li>Перейдите в корневую папку любого из экземпляров приложения и найдите файл Terrasoft.WebHost.dll.</li>
+	<li>
+	<p>Запустите команду:</p>
+
+	<div class="code">
+	<div class="code__widgets">
+	<div class="code__source">
+	<pre class="prettyprint">
+dotnet Terrasoft.WebHost.dll configureWebFarmMode</pre>
+	</div>
+	</div>
+	</div>
+
+	<p>В результате конфигурационные файлы данного экземпляра приложения обновятся.</p>
+	</li>
+	<li>
+	<p>Во внешнем конфигурационном файле (Terrasoft.WebHost.dll) каждой ноды для всех планировщиков в блоке &lt;quartzConfig&gt; включите кластерный режим:</p>
+
+	<div class="code">
+	<div class="code__widgets">
+	<div class="code__source">
+	<pre class="prettyprint">
+&lt;add key="quartz.jobStore.clustered" value="true" /&gt;
+&lt;add key="quartz.jobStore.acquireTriggersWithinLock" value="true" /&gt;</pre>
+	</div>
+	</div>
+	</div>
+	</li>
+	<li>
+	<p>В случае совпадения настроек instanceId сформируйте уникальные значения для каждой ноды планировщиков.</p>
+
+	<p><strong>Способы формирования</strong> уникальных instanceId:</p>
+
+	<ul><li>
+		<p>Во внешнем конфигурационном файле (Terrasoft.WebHost.dll) каждой ноды для всех планировщиков в блоке &lt;quartzConfig&gt; добавьте строку</p>
+
+		<div class="code">
+		<div class="code__widgets">
+		<div class="code__source">
+		<pre class="prettyprint">
+&lt;add key="quartz.scheduler.instanceId" value="AUTO" /&gt;
+</pre>
+		</div>
+		</div>
+		</div>
+
+		<div class="message message_warning">
+		<p><span class="message__bold message__bold_warning">Важно.</span> Для значения AUTO атрибута value необходимо использовать верхний регистр. В другом случае значение будет расцениваться как имя ноды и при работе планировщика могут возникать ошибки.</p>
+		</div>
+
+		<p>В результате планировщик автоматически будет генерировать уникальное имя ноды в формате &lt;имя ноды&gt;+timestamp.</p>
+		</li>
+		<li>Вручную добавьте уникальные значения quartz.scheduler.instanceId.</li>
+	</ul></li>
+	<li>
+	<p>Для атрибута value настройки quartz.jobStore.clustered установите значение true.</p>
+
+	<div class="code">
+	<div class="code__widgets">
+	<div class="code__source">
+	<pre class="prettyprint">
+&lt;add key="quartz.jobStore.clustered" value="true" /&gt;
+</pre>
+	</div>
+	</div>
+	</div>
+	</li>
+	<li>При необходимости настройте балансировку нагрузки для серверов баз данных и сессий.</li>
+	<li>Скопируйте все обновленные конфигурационные файлы в корневые папки других экземпляров приложения.</li>
+	<li>Настройте балансировщик (например, HAproxy) для распределения нагрузки между развернутыми серверами приложения.</li>
+</ol><div class="message">
+<p><span class="message__bold">На заметку.</span> Подробная информация о создании и настройке кластеров содержится в документации СУБД. Настройка отказоустойчивости системы при помощи Redis Cluster рассмотрена в статье <a href="../../server_keshirovaniya/redis_cluster/nastroit_redis_cluster.html">Настроить Redis Cluster</a>.</p>
+</div>
+
+<h2>Установить балансировщик HAProxy<a class="title-anchor" href="#title-2491-2" id="title-2491-2"> </a></h2>
+
+<p>Балансировщик нагрузки HAProxy поддерживает ряд бесплатных open-source ОС. В данном документе мы рассмотрим один из наиболее простых способов развертывания HAProxy на ОС Debian при помощи сервиса haproxy.debian.net.</p>
+
+<ol><li>Откройте страницу сервиса установки, перейдя по ссылке <a href="https://haproxy.debian.net/">https://haproxy.debian.net/</a>.</li>
+	<li>
+	<p>Выберите ОС и ее версию, а также версию HAProxy.</p>
+
+	<div class="message">
+	<p><span class="message__bold">На заметку.</span> Чтобы узнать установленную версию Debian, воспользуйтесь командой cat /etc/issue.</p>
+	</div>
+
+	<p>В результате сервис сгенерирует набор команд, которые необходимо выполнить в ОС Debian для установки HAProxy.</p>
+
+	<div class="media">
+	<div class="media__caption"><span class="FM_Picturecaptionnumber">Рис. 1</span> — Пример команд установки HAProxy, сгенерированных сервисом haproxy.debian.net</div>
+
+	<div class="media__element"><img alt="haproxy_settings_commands.png" id="image0" src="../../../../sites/default/files/documentation/user/ru/on_site_deployment/BPMonlineHelp/app_server_webfarm/haproxy_settings_commands.png" /></div>
+	</div>
+	</li>
+	<li>Выполните сгенерированные команды одну за другой.</li>
+</ol><h2><a name="TOC_Настроить_балансировщикbc-3" id="TOC_Настроить_балансировщикbc-3"></a><a name="TOC_Настроить_балансировщик" id="TOC_Настроить_балансировщик"></a><a name="CSH_2" id="CSH_2"></a><a name="HT_chapter_setup_additional_scaling_setup" id="HT_chapter_setup_additional_scaling_setup"></a>Настроить балансировщик HAProxy<a class="title-anchor" href="#title-2491-3" id="title-2491-3"> </a></h2>
+
+<p>Для настройки HAProxy необходимо внести изменения в файл haproxy.cfg. Файл находится по следующему пути:</p>
+
+<div class="code">
+<div class="code__widgets">
+<div class="code__source">
+<pre class="prettyprint">
+.../etc/haproxy/haproxy.cfg</pre>
+</div>
+</div>
+</div>
+
+<h3><a name="TOC_Основные_минимальныеbc-4" id="TOC_Основные_минимальныеbc-4"></a><a name="TOC_Основные_минимальные" id="TOC_Основные_минимальные"></a>Основные (минимальные) настройки<a class="title-anchor" href="#title-2491-4" id="title-2491-4"> </a></h3>
+
+<p>Минимальные настройки, необходимые для работы HAProxy, состоят в добавлении в файл двух секций: <strong>frontend</strong> и <strong>backend</strong>.</p>
+
+<h4>Секция frontend<a class="title-anchor" href="#title-2491-5" id="title-2491-5"> </a></h4>
+
+<p>В секцию frontend необходимо добавить 2 настройки: <strong>bind </strong>и <strong>default_backend</strong>:</p>
+
+<ul><li>В настройке <strong>bind</strong> укажите адрес и порт, на который будут поступать запросы, распределение которых будет производить HAProxy.</li>
+	<li>В опции <strong>default_backend</strong> укажите имя, которое будет указано для секции backend.</li>
+</ul><p>В результате настройка будет выглядеть следующим образом:</p>
+
+<div class="code">
+<div class="code__widgets">
+<div class="code__source">
+<pre class="prettyprint">
+frontend front
+maxconn 10000
+#Using these ports for binding
+bind *:80
+bind *:443
+#Convert cookies to be secure
+rspirep ^(set-cookie:.*)  \1;\ Secure
+default_backend creatio</pre>
+</div>
+</div>
+</div>
+
+<h4>Секция backend<a class="title-anchor" href="#title-2491-6" id="title-2491-6"> </a></h4>
+
+<p>В секцию backend необходимо добавить как минимум 2 обязательные настройки:</p>
+
+<ul><li>В параметре <strong>balance</strong> укажите тип балансировки, например <strong>roundrobin</strong>. Информация о различных типах балансировки доступна в <a href="https://cbonte.github.io/haproxy-dconv/configuration-1.5.html#4.2-balance">документации HAProxy</a>.</li>
+	<li>При помощи параметра <strong>server</strong> укажите все серверы (или “nodes”), между которыми должна распределяться нагрузка.</li>
+</ul><p>Для каждого сервера (развернутого экземпляра приложения Creatio) необходимо добавить отдельный параметр server с указанием адреса сервера, порта и веса. Вес позволяет балансировщику распределять нагрузку на основании физических возможностей серверов. Чем больший вес указан для сервера, тем больше запросов он будет получать. Например, если необходимо распределить нагрузку между двумя серверами Creatio, добавьте в backend 2 параметра server:</p>
+
+<div class="code">
+<div class="code__widgets">
+<div class="code__source">
+<pre class="prettyprint">
+server node_1 [server address]:[port] weight
+server node_2 [server address]:[port] weight</pre>
+</div>
+</div>
+</div>
+
+<p>В результате настройка будет выглядеть следующим образом:</p>
+
+<div class="code">
+<div class="code__widgets">
+<div class="code__source">
+<pre class="prettyprint">
+backend creatio
+#set balance type
+balance roundrobin
+            
+server node_1 nodeserver1:80 check inter 10000 weight 2
+server node_2 nodeserver2:80/sitename check inter 10000 weight 1
+</pre>
+</div>
+</div>
+</div>
+
+<p>Новые настройки вступят в силу после перезапуска HAProxy. Используйте следующую команду для перезапуска HAProxy:</p>
+
+<div class="code">
+<div class="code__widgets">
+<div class="code__source">
+<pre class="prettyprint">
+service haproxy restart</pre>
+</div>
+</div>
+</div>
+
+<h3><a name="TOC_Проверить_состояниеbc-5" id="TOC_Проверить_состояниеbc-5"></a><a name="TOC_Проверить_состояние" id="TOC_Проверить_состояние"></a>Проверить состояние сервера<a class="title-anchor" href="#title-2491-7" id="title-2491-7"> </a></h3>
+
+<p>С точки зрения балансировщика HAProxy у сервера может быть несколько состояний:</p>
+
+<div class="table">
+<table><tbody><tr><th>Состояние</th>
+			<th>Описание</th>
+		</tr><tr><td>UP</td>
+			<td>Сервер работает.</td>
+		</tr><tr><td>UP - transitionally DOWN</td>
+			<td>Сервер в настоящий момент считается работоспособным, но последняя проверка не удалась. Следовательно, сервер переходит в состояние DOWN.</td>
+		</tr><tr><td>DOWN - transitionally UP</td>
+			<td>В настоящее время сервер считается неработоспособным, но последняя проверка прошла успешно. Следовательно, сервер переходит в состояние UP.</td>
+		</tr><tr><td>DOWN</td>
+			<td>Сервер не работает.</td>
+		</tr></tbody></table></div>
+
+<p>Изменения рабочего состояния инициируются параметрами проверки работоспособности (health check). Для самой простой проверки работоспособности необходимо ключевое слово check в строке настройки server. Для запуска проверки работоспособности требуется как минимум IP-адрес и порт TCP от сервера. Пример проверки:</p>
+
+<div class="code">
+<div class="code__widgets">
+<div class="code__source">
+<pre class="prettyprint">
+server node1 ... check
+option httpchk GET /Login/NuiLogin.aspx
+option httpchk GET /0/ping</pre>
+</div>
+</div>
+</div>
+
+<h3><a name="TOC_Настроить_веб_статистикуbc-6" id="TOC_Настроить_веб_статистикуbc-6"></a><a name="TOC_Настроить_веб_статистику" id="TOC_Настроить_веб_статистику"></a>Настроить веб-статистику (опционально)<a class="title-anchor" href="#title-2491-8" id="title-2491-8"> </a></h3>
+
+<p>Чтобы включить веб-статистику, добавьте новую секцию listen со следующими параметрами: <strong>bind</strong>, <strong>mode http</strong>, <strong>stats enable</strong>, <strong>stats uri</strong>. Секция выглядит следующим образом:</p>
+
+<div class="code">
+<div class="code__widgets">
+<div class="code__source">
+<pre class="prettyprint">
+listen stats # Define a listen section called "stats"
+    bind :9000 # Listen on localhost:9000
+    mode http
+    stats enable  # Enable stats page
+    stats uri /haproxy_stats  # Stats URI</pre>
+</div>
+</div>
+</div>
+
+<p>В результате веб-статистика балансировки нагрузки Creatio будет доступна для просмотра в браузере.</p>
+
+<div class="media">
+<div class="media__caption"><span class="FM_Picturecaptionnumber">Рис. 2</span> — Пример веб-статистики балансировщика нагрузки</div>
+
+<div class="media__element"><img alt="load_balancer_stats.png" id="image1" src="../../../../sites/default/files/documentation/user/ru/on_site_deployment/BPMonlineHelp/app_server_webfarm/load_balancer_stats.png" /></div>
+</div>
+
+<p>Для просмотра статистики перейдите по адресу: <span class="key">адрес балансировщика</span>:9000/haproxy_stats.</p>
+
+<h3>Настроить отображение IP-адресов в журнале аудита для .Net Core (опционально)<a class="title-anchor" href="#title-2491-19" id="title-2491-19"> </a></h3>
+
+<p>При работе веб-фермы запросы пользователей приходят на веб-серверы через балансировщик и/или прокси-сервер. В этом случае по умолчанию в <a href="../../../ustanovka_i_administrirovanie/instrumenty_logirovanija/zhurnal_audita/prosmotr_i_arhivacija_logov/prosmotret_i_arkhivirovat_zhurnal_audita/index.html">журнале аудита</a> будет отображаться адрес последнего из прокси-серверов, через которые прошел запрос пользователя, а не его IP-адрес.<br />
+Вы можете настроить отображение в журнале аудита реального IP-адреса пользователя. Для этого:</p>
+
+<ol><li>Настройте балансировщик таким образом, чтобы каждому запросу, который он перенаправляет на один из экземпляров приложения, был установлен заголовок, имя которого соответствует "ForwardedForHeaderName", а значение — IP-адресу клиента.</li>
+	<li>
+	<p>Внесите изменения в конфигурационные файлы приложений.</p>
+
+	<ol><li>Откройте файл appsettings.json, который находится в корневой папке приложения.</li>
+		<li>
+		<p>Отредактируйте блок "ForwardedHeaders":</p>
+
+		<div class="code">
+		<div class="code__widgets">
+		<div class="code__source">
+		<pre class="prettyprint">
+{
+    ...
+    "ForwardedHeaders": {
+        "Enable": true,
+        "ForwardedForHeaderName": "X-Forwarded-For",
+        "KnownProxiesIP": [доверенные IP-адреса]
+    }
+    ...
+}</pre>
+		</div>
+		</div>
+		</div>
+
+		<p>Где:</p>
+
+		<p>"<strong>Enable</strong>" — включение функции обработки Forwarded headers в веб-приложении;</p>
+
+		<p>"<strong>ForwardedForHeaderName</strong>" — имя заголовка, из которого будет получен IP-адрес;</p>
+
+		<p>"<strong>KnownProxiesIP</strong>" — список доверенных IP-адресов, при получении запроса от которых будет происходить обработка значения "<strong>ForwardedHeader</strong>". Например, это может быть адрес балансировщика, reverse proxy и т. д. Если это значение не заполнено, то обработка ForwardedHeader будет выполняться для всех IP-адресов, с которых приходят запросы.</p>
+		</li>
+		<li>Повторите шаги a–b для всех экземпляров приложения, которые входят в веб-ферму.</li>
+	</ol></li>
+</ol><div class="code">
+<div class="code__top">
+<div class="code__title">Пример</div>
+</div>
+
+<div class="code__widgets">
+<div class="code__source">
+<pre class="prettyprint">
+"KnownProxiesIP": ["127.0.0.1", "12.34.56.78", "2001:0db8:85a3:0000:0000:8a2e:0370:7334"]
+</pre>
+</div>
+</div>
+</div>
+</div>
+      
+  </div>
+<div class="block block-layout-builder block-field-blocknodeuser-documentationfield-linked-link">
+  
+    
+      
+  <div class="field field--name-field-linked-link field--type-link field--label-above">
+    <div class="field__label">Смотрите также</div>
+          <div class="field__items">
+              <div class="field__item"><a href="../../sistemnie_trebovania/servera/sistemnye_trebovaniya_k_serveram.html?product=base&amp;ver=7&amp;id=1456">Системные требованиях к серверам</a></div>
+          <div class="field__item"><a href="../bezopasnyj_dostup_k_portalu/nastroit_bezopasnyy_dostup_k_portalu.html">Настроить безопасный доступ к порталу</a></div>
+          <div class="field__item"><a href="../../../../developer/komponenty_prilozheniya/planirovshchik_zadanij/obzor.html">Планировщик заданий Quartz</a></div>
+          <div class="field__item"><a href="../../server_keshirovaniya/redis_cluster/nastroit_redis_cluster.html">Настроить Redis Cluster</a></div>
+          <div class="field__item"><a href="../../../kastomizacija_no_code/upravlenie_prilozhenijami/prilozhenie_marketplace/ustanovit_prilozhenie_marketplace.html?id=1835">Установить приложение Marketplace</a></div>
+              </div>
+      </div>
+
+  </div>
+
+    </div>
+  </div>
+
+  </div>
+
+</article>
+
+  </div>
+
+  </div>
+
+          </div>
+        </div>
+
+                  <aside class="creatio-sidebar creatio-sidebar_first" role="complementary">
+              <div class="region region-sidebar-first">
+    <div id="block-documentationnaviagtion" class="block block-ts-nav block-ts-nav-doc-nav">
+  
+    
+      <div class="ts-nav-block"><a href="../../../../index.html" class="ts-nav-block__link">Документация</a><div class="ts-nav-block__title">Для пользователя</div>
+</div>
+<div class="ts-nav-container"><ul class="ts-nav-menu"><li class="ts-nav-menu__item">
+  <a href="../../../nocode_platforma.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">No-сode платформа&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../bazis_platformy.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Базис платформы&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../instrumenty_crm.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Инструменты CRM&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../instrumenty_kastomizacii.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Инструменты кастомизации&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../biznes_processy.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Бизнес-процессы&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../instrumenty_marketinga.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Инструменты маркетинга&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../instrumenty_prodazh.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Инструменты продаж&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../instrumenty_servisa.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Инструменты сервиса&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../ustanovka_i_administrirovanie.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Администрирование&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../razvertyvanie_onsite.html" class="ts-nav-menu__link ts-nav-menu__link_expanded ts-nav-menu__link_open" hreflang="ru">Развертывание on-site&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+      <ul class="ts-nav-menu__children">
+      <li class="ts-nav-menu__item">
+  <a href="../../sistemnie_trebovania.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Системные требования&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../obshhij_porjadok_ustanovki/obcchij_poriadok_ustanovki.html" class="ts-nav-menu__link" hreflang="ru">Общий порядок установки</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../subd_server.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Сервер СУБД&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../server_keshirovaniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Сервер кэширования&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../linux_net_core.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Сервер приложений .NET Core на Linux&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../windows_net_framework.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Сервер приложений .NET Framework на Windows&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../nastroika_dopolnitelnikh_parametrov_i_integraciy.html" class="ts-nav-menu__link ts-nav-menu__link_expanded ts-nav-menu__link_open" hreflang="ru">Настройка дополнительных параметров и интеграций&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+      <ul class="ts-nav-menu__children">
+      <li class="ts-nav-menu__item">
+  <a href="../integracija_s_google/nastroit_integraciyu_s_google.html" class="ts-nav-menu__link" hreflang="ru">Интеграция с Google</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../integracija_s_lendingami/nastroit_integraciyu_s_lendingami.html" class="ts-nav-menu__link" hreflang="ru">Интеграция с лендингами</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../uvedomlenija_ob_obrashhenijah/nastroit_uvedomleniya_o_razreshenii_obrascheniy.html" class="ts-nav-menu__link" hreflang="ru">Уведомления об обращениях</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../servis_obogashhenija_dannyh/nastroit_servis_obogascheniya_dannykh.html" class="ts-nav-menu__link" hreflang="ru">Сервис обогащения данных</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../zapusk_massovykh_rassylok/nastroit_zapusk_massovykh_rassylok.html" class="ts-nav-menu__link" hreflang="ru">Запуск массовых рассылок</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="nastroit_gorizontalnoe_masshtabirovanie.html" class="ts-nav-menu__link ts-nav-menu__link_active ts-nav-menu__link_open" hreflang="ru">Горизонтальное масштабирование</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../bezopasnyj_dostup_k_portalu/nastroit_bezopasnyy_dostup_k_portalu.html" class="ts-nav-menu__link" hreflang="ru">Безопасный доступ к порталу</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../sistema_upravlenija_versijami/nastroit_sistemu_upravleniya_versiyami_dlya_sredy_razrabotki.html" class="ts-nav-menu__link" hreflang="ru">Система управления версиями</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../dostup_k_servisu_chatov/nastriot_dostup_k_servisu_chatov.html" class="ts-nav-menu__link" hreflang="ru">Доступ к сервису чатов</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../avtorizacija_po_protokolu_oauth_2_0/nastroit_avtorizaciyu_prilozhenij_po_protokolu_oauth20.html" class="ts-nav-menu__link" hreflang="ru">Авторизация по протоколу OAuth 2.0</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../fajlovoe_hranilische_s3/nastroit_integratsiyu_s_faylovym_khranilishchem_s3.html" class="ts-nav-menu__link" hreflang="ru">Файловое хранилище S3</a>
+  </li>
+
+    </ul>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../nastrojka_konteinernikh_komponentov.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Настройка контейнерных компонентов&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../voprosi_i_otvety_onsite/chasto_zadavaemye_voprosy_po_ustanovke_creatio.html" class="ts-nav-menu__link" hreflang="ru">Вопросы и ответы</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../produkti_na_net_core/produkti_creatio_na_platforme_net_core.html" class="ts-nav-menu__link" hreflang="ru">Продукты на .NET Core</a>
+  </li>
+
+    </ul>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../banki_i_finansy.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Банки и финансы&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../drugie_reshenija.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Другие решения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+</ul>
+</div>
+
+  </div>
+
+  </div>
+
+            <div class="creatio-sidebar__toggle"></div>
+          </aside>
+        
+                  <aside class="creatio-sidebar creatio-sidebar_second" role="complementary">
+              <div class="region region-sidebar-second">
+    <div id="block-example" class="block block-ts-nav block-ts-nav-page-nav">
+  
+    
+        <div class="ts-nav-title">Горизонтальное масштабирование</div>
+<div class="ts-nav-page">
+      <ul class="ts-nav-page__list">
+                                                <li class="ts-nav-page__item ts-nav-page__item_expanded ts-nav-page__item_open"><a href="nastroit_gorizontalnoe_masshtabirovanie.html" class="ts-nav-page__link ts-nav-page__link_expanded ts-nav-page__link_active">Настроить горизонтальное масштабирование&nbsp;<span class="ts-nav-page__link-arrow"></span></a></li>
+          </ul>
+  </div>
+
+  </div>
+<div id="block-adminfeedbackblock" class="block block-admin-feedback block-admin-feedback-block">
+  
+    
+      <div id="feedback-message"><div id="upper-feedback-content"><h2>Был ли данный материал полезен?</h2>
+<input class="feedback-btn feedback-btn__yes button js-form-submit form-submit" data-node-id="2491" data-feedback="yes" type="submit" name="op" value="Да" />
+<input class="feedback-btn feedback-btn__no button js-form-submit form-submit" data-node-id="2491" data-feedback="no" type="submit" name="op" value="Нет" />
+</div>
+<form class="admin-feedback-form" data-drupal-selector="admin-feedback-form" action="https://academy.terrasoft.ua/docs/user/razvertyvanie_onsite/nastroika_dopolnitelnikh_parametrov_i_integraciy/gorizontalnoe_masshtabirovanie/nastroit_gorizontalnoe_masshtabirovanie" method="post" id="admin-feedback-form" accept-charset="UTF-8">
+  <div id="feedback-msg-result"></div><div class="js-form-item form-item js-form-type-textarea form-type-textarea js-form-item-feedback-message form-item-feedback-message form-no-label">
+        <div class="form-textarea-wrapper">
+  <textarea id="edit-feedback-msg" data-drupal-selector="edit-feedback-message" name="feedback_message" rows="5" cols="60" class="form-textarea resize-vertical"></textarea>
+</div>
+
+        </div>
+<input id="feedback-id" data-drupal-selector="edit-feedback-id" type="hidden" name="feedback_id" value="" />
+<input class="feedback-btn feedback-btn__send-comment button js-form-submit form-submit" data-drupal-selector="edit-feedback-send" type="submit" id="edit-feedback-send" name="op" value="Отправить" />
+<input autocomplete="off" data-drupal-selector="form-yn6-fqtndvgq8dhynisnwjq-0-fno-wju9lb145fsou" type="hidden" name="form_build_id" value="form-YN6_FqtNdVgQ8DhYnisNWjq_0-Fno-Wju9LB145fsoU" />
+<input data-drupal-selector="edit-admin-feedback-form" type="hidden" name="form_id" value="admin_feedback_form" />
+
+</form>
+</div>
+
+  </div>
+
+  </div>
+
+          </aside>
+              </main>
+    </div>
+  </div>
+
+  <footer role="contentinfo">
+    <div class="creatio-region creatio-region_footer">
+      <div class="creatio-container">
+          <div class="region region-footer">
+    <div id="block-footerua" class="block block-simple-block block-simple-blockfooter-ua">
+  
+    
+      <div class="footer">
+<div class="footer-left">
+<ul class="footer-socials"><li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_fb" href="https://www.facebook.com/terrasoft.ua" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_in" href="https://www.linkedin.com/company/terrasoft/" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_yt" href="https://www.youtube.com/c/TerrasoftUkraine" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_tg" href="https://t.me/Terrasoft_UA" target="_blank"> </a></li>
+</ul></div>
+
+<div class="footer-contact">
+<div class="footer-title">Будьте на связи!</div>
+
+<div class="footer-content">
+<div class="footer-items">
+<div class="footer-item"><a class="footer__link footer__link_phone" href="tel:+380443633133">+38 (044) 363-31-33</a></div>
+</div>
+
+<div class="footer-items">
+<div class="footer-item"><a class="footer__link footer__link_email" href="mailto:support@terrasoft.ua">support@terrasoft.ua</a></div>
+</div>
+</div>
+</div>
+</div>
+
+  </div>
+
+  </div>
+
+      </div>
+    </div>
+    <div class="creatio-region creatio-region_bottom">
+      <div class="creatio-container">
+          <div class="region region-bottom">
+    <div id="block-allrightsreservedua" class="block block-simple-block block-simple-blockfooter-bottom-ua">
+  
+    
+      <p>© 2002-2022 Terrasoft.  |  <a href="https://www.terrasoft.ua/privacy-policy" target="_blank">Конфиденциальность</a></p>
+
+  </div>
+
+  </div>
+
+      </div>
+    </div>
+  </footer>
+</div>
+<div class="creatio-bg"></div>
+
+
+  </div>
+
+    
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/docs\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/2491","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"ru"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"ajaxPageState":{"libraries":"admin_feedback\/admin_feedback_block,admin_feedback\/admin_feedback_css,classy\/base,classy\/messages,classy\/node,core\/drupal.ajax,core\/jquery.form,core\/normalize,creatio\/creatio.lists,creatio\/fancybox,creatio\/global,layout_discovery\/onecol,system\/base,ts_doc\/doc_version,ts_feedback\/ts_feedback,ts_nav\/breadcrumb,ts_nav\/doc_nav,ts_nav\/page_nav,ts_title_anchor\/ts_title_anchor","theme":"creatio","theme_token":null},"ajaxTrustedUrl":{"form_action_p_pvdeGsVG5zNF_XLGPTvYSKCf43t8qZYSwcfZl2uzM":true,"\/docs\/user\/razvertyvanie_onsite\/nastroika_dopolnitelnikh_parametrov_i_integraciy\/gorizontalnoe_masshtabirovanie\/nastroit_gorizontalnoe_masshtabirovanie?ajax_form=1":true},"admin_feedback":{"yes_response":"\u0421\u043f\u0430\u0441\u0438\u0431\u043e \u0437\u0430 \u043e\u0431\u0440\u0430\u0442\u043d\u0443\u044e \u0441\u0432\u044f\u0437\u044c!","no_response":"\u0421\u043f\u0430\u0441\u0438\u0431\u043e \u0437\u0430 \u043e\u0431\u0440\u0430\u0442\u043d\u0443\u044e \u0441\u0432\u044f\u0437\u044c!","custom_text_response_on_no":{"value":"","format":"full_html"},"feedback_prompt_on_yes":true,"feedback_prompt_on_no":true,"feedback_enable_predefined_answers":false,"feedback_prompt":"\u041a\u0430\u043a \u043c\u043e\u0436\u043d\u043e \u0443\u043b\u0443\u0447\u0448\u0438\u0442\u044c \u044d\u0442\u0443 \u0441\u0442\u0430\u0442\u044c\u044e?"},"ajax":{"edit-feedback-send":{"callback":"::validateFeedbackMsg","event":"mousedown","keypress":true,"prevent":"click","url":"\/docs\/user\/razvertyvanie_onsite\/nastroika_dopolnitelnikh_parametrov_i_integraciy\/gorizontalnoe_masshtabirovanie\/nastroit_gorizontalnoe_masshtabirovanie?ajax_form=1","dialogType":"ajax","submit":{"_triggering_element_name":"op","_triggering_element_value":"\u041e\u0442\u043f\u0440\u0430\u0432\u0438\u0442\u044c"}}},"user":{"uid":0,"permissionsHash":"9c2367dfcaba0fa15f0375f97aed64e146c908cee68508d13b79e3ee80e5162d"}}</script>
+<script src="../../../../sites/default/files/js/js_F2-Y4EzgTnESr58XByoLYEnsbi7ysTfMIKN1RvsMSWY.js"></script>
+
+
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+      <g id="svg-copy" class="svg-icon svg-icon_copy">
+        <path d="M15.111,18H1.889A1.848,1.848,0,0,1,0,16.2V3.6A1.848,1.848,0,0,1,1.889,1.8H5.837a2.87,2.87,0,0,1,5.326,0h3.948A1.848,1.848,0,0,1,17,3.6V16.2A1.848,1.848,0,0,1,15.111,18ZM3.777,12.6v1.8h6.611V12.6Zm0-3.6v1.8h9.445V9Zm0-3.6V7.2h9.445V5.4ZM8.5,1.8a.924.924,0,0,0-.944.9.945.945,0,0,0,1.889,0A.924.924,0,0,0,8.5,1.8Z"/>
+      </g>
+
+      <g id="svg-prev" class="svg-icon svg-icon_arrow">
+        <path d="M5.488,12.779,0,6.39,5.488,0" transform="translate(1 0.652)"/>
+      </g>
+
+      <g id="svg-next" class="svg-icon svg-icon_arrow">
+        <path d="M0,12.779,5.488,6.39,0,0" transform="translate(0.759 0.652)"/>
+      </g>
+    </svg>
+  </body>
+
+<!-- Mirrored from academy.terrasoft.ua/docs/user/razvertyvanie_onsite/nastroika_dopolnitelnikh_parametrov_i_integraciy/gorizontalnoe_masshtabirovanie/nastroit_gorizontalnoe_masshtabirovanie by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 22 Mar 2022 19:55:13 GMT -->
+</html>

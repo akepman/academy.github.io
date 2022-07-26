@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# ">
+  
+<!-- Mirrored from academy.terrasoft.ua/docs/8-0/developer/instrumenty_razrabotki/vneshnie_ide/razrabotat_c_sharp_kod_v_polzovatelskom_proekte by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Mar 2022 07:00:16 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+          <!-- Google Tag Manager -->
+      <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          '../../../../../../www.googletagmanager.com/gtm5445.html?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-KLLB8G');</script>
+      <!-- End Google Tag Manager -->
+        <meta charset="utf-8" />
+<link rel="canonical" href="razrabotat_c_sharp_kod_v_polzovatelskom_proekte.html" />
+<meta name="description" content="Предварительные настройки 
+
+Для подключения библиотек классов Creatio, развертывания локальной базы данных из архивной копии, а также для работы с утилитой WorkspaceConsole рекомендуется использовать дистрибутив Creatio, распакованный на локальный диск компьютера разработчика. Во всех примерах этой статьи используется дистрибутив Creatio, распакованный в локальный каталог C:\Creatio." />
+<meta property="og:url" content="https://academy.terrasoft.ua/docs/8-0/developer/instrumenty_razrabotki/vneshnie_ide/razrabotat_c_sharp_kod_v_polzovatelskom_proekte" />
+<meta property="og:title" content="Разработать C# код в пользовательском проекте" />
+<meta property="og:description" content="Предварительные настройки 
+
+Для подключения библиотек классов Creatio, развертывания локальной базы данных из архивной копии, а также для работы с утилитой WorkspaceConsole рекомендуется использовать дистрибутив Creatio, распакованный на локальный диск компьютера разработчика. Во всех примерах этой статьи используется дистрибутив Creatio, распакованный в локальный каталог C:\Creatio." />
+<meta name="Generator" content="Drupal 9 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="../../../../themes/custom/creatio/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="revision" href="razrabotat_c_sharp_kod_v_polzovatelskom_proekte.html" />
+
+    <title>Разработать C# код в пользовательском проекте | Creatio Academy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&amp;family=Open+Sans:ital,wght@0,300;0,400;0,600;1,400&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" media="all" href="../../../../sites/default/files/css/css_6lTP66__-yc6QXFp1zOwoeJ0HVigoYZP-SeoLLii000.css" />
+<link rel="stylesheet" media="all" href="../../../../sites/default/files/css/css_XQJDNhkF3xH5SZCcY-PI89Zu4nYIzQ5oR3SnUKyfXJU.css" />
+<link rel="stylesheet" media="print" href="../../../../sites/default/files/css/css_Zn4VHvcniOOtUwkIVwXzYr_0AI9gUVgZcPqaH4ViagU.css" />
+
+    
+  </head>
+  <body class="path-node page-node-type-case">
+          <!-- Google Tag Manager (noscript) -->
+      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KLLB8G"
+                        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+      <!-- End Google Tag Manager (noscript) -->
+    
+        
+      <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    <div class="creatio-page d-flex flex-column">
+        <div class="region region-informer">
+    <div id="block-terrasoftpidtrimueukrainu" class="block block-simple-block block-simple-blockterrasoft-pidtrimue-ukrainu">
+  
+    
+      <style type="text/css">
+<!--/*--><![CDATA[/* ><!--*/
+@import url(../../../../../../www.terrasoft.ua/themes/custom/creatio/css/components/informer.css)
+
+/*--><!]]>*/
+</style><div class="ts-swu">
+<div class="creatio-container">
+<div class="ts-swu__cont">
+<div><a class="ts-swu__link" href="https://www.terrasoft.ua/terrasoft-stands-with-ukraine" target="_blank">Україна понад усе!</a> <span><a href="https://www.terrasoft.ua/terrasoft-stands-with-ukraine" target="_blank">Приєднуйтеся</a> до допомоги!</span></div>
+</div>
+</div></div>
+
+  </div>
+
+  </div>
+
+  
+  <header role="banner">
+          <div class="creatio-region creatio-region_top">
+        <div class="creatio-container">
+            <div class="region region-top">
+    <div id="block-menutoggle" class="block block-simple-block block-simple-blockmenu-toggle">
+  
+    
+      <div class="menu-toggle"><span> </span></div>
+
+  </div>
+<div id="block-logowhite-2" class="block block-simple-block block-simple-blocklogo-white">
+  
+    
+      <p><a class="site-logo" href="../../../../../index.html" rel="home"><img src="../../../../themes/custom/creatio/logo-white.svg" /></a></p>
+
+  </div>
+<div id="block-search" class="block block-simple-block block-simple-blocksearch">
+  
+    
+      <div class="search">
+<form action="https://academy.terrasoft.ua/search" class="search-form" method="get"><input class="search-form__input" name="search" placeholder="Поиск" type="search" /><input class="search-form__button" type="submit" value="Поиск" /> </form>
+
+<div class="search-toggle"> </div>
+</div>
+
+  </div>
+<nav role="navigation" aria-labelledby="block-sitesua-menu" id="block-sitesua" class="block block-menu navigation menu--sites-ua">
+            
+  <h2 class="visually-hidden" id="block-sitesua-menu">Sites UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="https://www.terrasoft.ua/" rel="nofollow" target="_blank">Terrasoft</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://community.terrasoft.ua/" rel="nofollow" target="_blank">Community</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://marketplace.terrasoft.ua/" rel="nofollow" target="_blank">Marketplace</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+<div id="block-usermenu" class="block block-ts-user block-ts-user-menu-block">
+  
+    
+      <ul class="user-menu">
+      <li class="user-menu__item">
+      <a class="user-menu__link" href="https://profile.terrasoft.ua/user/login?destination=academy/ua/docs/8-0/developer/instrumenty_razrabotki/vneshnie_ide/razrabotat_c_sharp_kod_v_polzovatelskom_proekte">Войти</a>
+    </li>
+  </ul>
+
+  </div>
+<div id="block-usermenumobile" class="block block-ts-user block-ts-user-menu-mobile-block">
+  
+    
+      <ul class="user-menu-mobile">
+      <li class="user-menu-mobile__item">
+      <div class="user-menu-mobile__user user-menu-mobile__user_icon"></div>
+      <ul class="user-menu-mobile__submenu">
+        <li class="user-menu-mobile__subitem">
+          <a class="user-menu-mobile__sublink" href="https://profile.terrasoft.ua/user/login?destination=academy/ua/docs/8-0/developer/instrumenty_razrabotki/vneshnie_ide/razrabotat_c_sharp_kod_v_polzovatelskom_proekte">Войти</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  </div>
+
+  </div>
+
+        </div>
+      </div>
+              <div class="creatio-region creatio-region_header">
+        <div class="creatio-container">
+            <div class="region region-header">
+    <div id="block-logo" class="block block-simple-block block-simple-blocklogo">
+  
+    
+      <p><a class="site-logo" href="../../../../../index.html" rel="home"><img src="../../../../themes/custom/creatio/logo.svg" /></a></p>
+
+  </div>
+<nav role="navigation" aria-labelledby="block-osnovnayanavigaciyaua-menu" id="block-osnovnayanavigaciyaua" class="block block-menu navigation menu--main-ua">
+            
+  <h2 class="visually-hidden" id="block-osnovnayanavigaciyaua-menu">Основная навигация UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="../../../../index.html" data-drupal-link-system-path="&lt;front&gt;">Документация</a>
+              </li>
+                <li class="menu-item">
+        <a href="../../../../../trainings.html">Тренинги</a>
+              </li>
+                <li class="menu-item">
+        <a href="../../../../certification.html" data-drupal-link-system-path="node/3084">Сертификация и тестирование</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+<nav role="navigation" aria-labelledby="block-sitesua-2-menu" id="block-sitesua-2" class="block block-menu navigation menu--sites-ua">
+            
+  <h2 class="visually-hidden" id="block-sitesua-2-menu">Sites UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="https://www.terrasoft.ua/" rel="nofollow" target="_blank">Terrasoft</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://community.terrasoft.ua/" rel="nofollow" target="_blank">Community</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://marketplace.terrasoft.ua/" rel="nofollow" target="_blank">Marketplace</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+
+  </div>
+
+        </div>
+      </div>
+              <div class="creatio-region creatio-region_breadcrumb">
+        <div class="creatio-container">
+            <div class="region region-breadcrumb">
+    <div id="block-logowhite" class="block block-simple-block block-simple-blocklogo-white">
+  
+    
+      <p><a class="site-logo" href="../../../../../index.html" rel="home"><img src="../../../../themes/custom/creatio/logo-white.svg" /></a></p>
+
+  </div>
+<div id="block-breadcrumbnaviagtion" class="block block-ts-nav block-ts-nav-bread">
+  
+    
+      <nav class="breadcrumb"><ol class="ts-nav-breadcrumb__list"><li class="ts-nav-breadcrumb__item"><a href="../../../../index.html" class="ts-nav-breadcrumb__link" title="Документация">Документация</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../../index2132.html?vid_1=2" class="ts-nav-breadcrumb__link" title="Для разработчика">Для разработчика</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../instrumenty_razrabotki.html" class="ts-nav-breadcrumb__link" title="Инструменты разработки" hreflang="zxx">Инструменты разработки</a></li>
+<li class="ts-nav-breadcrumb__item ts-nav-breadcrumb__item_mobile"><a href="../vneshnie_ide.html" class="ts-nav-breadcrumb__link" title="Внешние IDE" hreflang="ru">Внешние IDE</a></li>
+<li class="ts-nav-breadcrumb__item"><span class="ts-nav-breadcrumb__link ts-nav-breadcrumb__link_current" title="Разработать C# код в пользовательском проекте">Разработать C# код в пользовательском проекте</span></li>
+</ol>
+</nav>
+
+  </div>
+<div id="block-search-2" class="block block-simple-block block-simple-blocksearch">
+  
+    
+      <div class="search">
+<form action="https://academy.terrasoft.ua/search" class="search-form" method="get"><input class="search-form__input" name="search" placeholder="Поиск" type="search" /><input class="search-form__button" type="submit" value="Поиск" /> </form>
+
+<div class="search-toggle"> </div>
+</div>
+
+  </div>
+
+  </div>
+
+        </div>
+      </div>
+      </header>
+
+  <div class="creatio-region creatio-region_main">
+    <div class="creatio-container">
+                <div class="region region-breadcrumb-mobile">
+    <div id="block-breadcrumbnaviagtion-2" class="block block-ts-nav block-ts-nav-bread">
+  
+    
+      <nav class="breadcrumb"><ol class="ts-nav-breadcrumb__list"><li class="ts-nav-breadcrumb__item"><a href="../../../../index.html" class="ts-nav-breadcrumb__link" title="Документация">Документация</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../../index2132.html?vid_1=2" class="ts-nav-breadcrumb__link" title="Для разработчика">Для разработчика</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../instrumenty_razrabotki.html" class="ts-nav-breadcrumb__link" title="Инструменты разработки" hreflang="zxx">Инструменты разработки</a></li>
+<li class="ts-nav-breadcrumb__item ts-nav-breadcrumb__item_mobile"><a href="../vneshnie_ide.html" class="ts-nav-breadcrumb__link" title="Внешние IDE" hreflang="ru">Внешние IDE</a></li>
+<li class="ts-nav-breadcrumb__item"><span class="ts-nav-breadcrumb__link ts-nav-breadcrumb__link_current" title="Разработать C# код в пользовательском проекте">Разработать C# код в пользовательском проекте</span></li>
+</ol>
+</nav>
+
+  </div>
+
+  </div>
+
+      
+      <main class="creatio-main" role="main">
+                                                    
+        <div class="creatio-content creatio-content_small">
+          <div class="creatio-content__inner creatio-content__inner_bg">
+                            <div class="region region-messages">
+    <div data-drupal-messages-fallback class="hidden"></div>
+
+  </div>
+
+            
+              <div class="region region-content">
+    <div id="block-creatio-page-title" class="block block-core block-page-title-block">
+  
+    
+      
+  <h1 class="page-title"><span class="field field--name-title field--type-string field--label-hidden">Разработать C# код в пользовательском проекте</span>
+</h1>
+
+
+  </div>
+<div id="block-creatio-content" class="block block-system block-system-main-block">
+  
+    
+      
+<article data-history-node-id="2096" role="article" about="/docs/8-0/developer/instrumenty_razrabotki/vneshnie_ide/razrabotat_c_sharp_kod_v_polzovatelskom_proekte" class="node node--type-case node--view-mode-full">
+
+  
+    
+
+  
+  <div class="node__content">
+      <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocknodecasefield-difficulty">
+  
+    
+      
+            <div class="field field--name-field-difficulty field--type-entity-reference field--label-hidden field__item"><div about="/docs/8-0/taxonomy/term/169" id="taxonomy-term-169" class="taxonomy-term vocabulary-difficulty">
+  
+  
+  <div class="content">
+      <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocktaxonomy-termdifficultyfield-icon">
+  
+    
+      
+            <div class="field field--name-field-icon field--type-image field--label-hidden field__item">  <img src="../../../../sites/default/files/difficulty/advanced.svg" alt="" loading="lazy" typeof="foaf:Image" />
+
+</div>
+      
+  </div>
+<div class="block block-layout-builder block-field-blocktaxonomy-termdifficultyname">
+  
+    
+      
+            <div class="field field--name-name field--type-string field--label-hidden field__item"><span style="color: #EF4524;">Сложный</span></div>
+      
+  </div>
+
+    </div>
+  </div>
+
+  </div>
+</div>
+</div>
+      
+  </div>
+<div class="block block-ts-doc block-ts-doc-downloads">
+  
+    
+      <a href="../../../../sites/default/files/pdf/node/2096/Razrabotat_C%23_kod_v_polzovatelskom_proekte_.pdf" target="_blank">PDF</a>
+  </div>
+<div class="block block-ts-doc block-ts-doc-versions">
+  
+    
+        <div class="ts-doc-versions">
+    <select class="ts-doc-versions__select">
+                                                <option value="/docs/8-0/developer/instrumenty_razrabotki/vneshnie_ide/razrabotat_c_sharp_kod_v_polzovatelskom_proekte" selected>Версия 8.0</option>
+                              <option value="/docs/7-18/developer/instrumenty_razrabotki/vneshnie_ide/razrabotat_c_sharp_kod_v_polzovatelskom_proekte">Версия 7.18</option>
+                              <option value="/docs/7-17/developer/instrumenty_razrabotki/vneshnie_ide/razrabotat_c_sharp_kod_v_polzovatelskom_proekte">Версия 7.17</option>
+                              <option value="/docs/7-16/developer/instrumenty_razrabotki/vneshnie_ide/razrabotat_c_sharp_kod_v_polzovatelskom_proekte">Версия 7.16</option>
+          </select>
+  </div>
+
+  </div>
+
+    </div>
+  </div>
+  <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocknodecasebody">
+  
+    
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><h2>Предварительные настройки<a class="title-anchor" href="#title-2096-2" id="title-2096-2"> </a></h2>
+
+<p>Для подключения библиотек классов Creatio, развертывания локальной базы данных из архивной копии, а также для работы с утилитой WorkspaceConsole рекомендуется использовать дистрибутив Creatio, распакованный на локальный диск компьютера разработчика. Во всех примерах этой статьи используется дистрибутив Creatio, распакованный в локальный каталог <span class="filled">C:\Creatio</span>.</p>
+
+<p>Для примера работы с облачным приложением Creatio используется утилита Executor, находящаяся в каталоге <span class="filled">C:\Executor</span>. Скачать утилиту, настроенную для выполнения примера, можно по <a href="../../../../../sites/default/files/documents/downloads/SDK/Executor.zip" target="_blank">ссылке</a>.</p>
+
+<h2>Разработка C# кода для on-site приложения<a class="title-anchor" href="#title-2096-3" id="title-2096-3"> </a></h2>
+
+<h3>1. Восстановить базу данных из резервной копии (при необходимости)<a class="title-anchor" href="#title-2096-4" id="title-2096-4"> </a></h3>
+
+<p><a href="../../../../user/razvertyvanie_onsite.html" target="_blank">Разверните</a> базу данных Creatio из резервной копии. Архивная копия базы данных приложения размещена в каталоге <span class="filled">C:\Creatio\db</span>.</p>
+
+<h3>2. Настроить утилиту WorkspaceConsole<a class="title-anchor" href="#title-2096-5" id="title-2096-5"> </a></h3>
+
+<p>Для работы с развернутой базой данных <a data-auto-update-caption="dlue" href="../upravlenie_postavkami/workspaceconsole/obzor.html#case-2132">настройте  утилиту WorkspaceConsole</a>, используя файлы приложения:</p>
+
+<ol><li>Перейдите в каталог <span class="filled">C:\Creatio\Terrasoft.WebApp\DesktopBin\WorkspaceConsole</span>.</li>
+	<li>Запустите один из пакетных файлов <span class="filled">PrepareWorkspaceConsole.x64.bat</span> или <span class="filled">PrepareWorkspaceConsole.x86.bat</span>, в зависимости от версии Windows.</li>
+</ol><div class="message">
+<p><span class="message__bold">На заметку.</span> После отработки пакетного файла команд удостоверьтесь, что в каталог <span class="filled">Terrasoft.WebApp\DesktopBin\WorkspaceConsole</span> также скопировались файлы <span class="filled">SharpPlink-xXX.svnExe</span> и <span class="filled">SharpSvn-DB44-20-xXX.svnDll</span> из соответствующей папки (x64 или x86).</p>
+</div>
+
+<ol><li>Укажите параметры подключения к базе данных в файле <span class="filled">Terrasoft.Tools.WorkspaceConsole.exe.config</span>, размещенном в каталоге <span class="filled">C:\Creatio\Terrasoft.WebApp\DesktopBin\WorkspaceConsole</span>). Например, если на сервере <span class="filled">dbserver</span> развернута база данных <strong>CreatioDB</strong>, то строка подключения будет иметь следующий вид:</li>
+</ol><div class="code">
+<div class="code__widgets">
+<div class="code__top">
+<div class="code__title">Строка подключения базы данных CreatioDB</div>
+</div>
+
+<div class="code__source">
+<pre class="prettyprint">
+<span>&lt;</span><span>connectionStrings</span><span>&gt;</span>
+    <span>&lt;</span><span>add </span><span>name</span><span>="db"</span><span> connectionString</span><span>="Data Source=dbserver; Initial Catalog=CreatioDB; Persist Security Info=True; MultipleActiveResultSets=True; Integrated Security=SSPI; Pooling = true; Max Pool Size = 100; Async = true; Connection Timeout=500"</span><span> </span><span>/&gt;</span>
+<span>&lt;/</span><span>connectionStrings</span><span>&gt;</span>
+</pre>
+</div>
+</div>
+</div>
+
+<h3>3. Создать и настроить проект Visual Studio<a class="title-anchor" href="#title-2096-6" id="title-2096-6"> </a></h3>
+
+<p>Создайте в Visual Studio обычный проект библиотеки классов. </p>
+
+<div class="media">
+<div class="media__element"><img alt="" border="0" src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/ServerCodeDeveloping/scr_new_solution.png" /></div>
+</div>
+
+<p>На вкладке <span class="key">Debug</span> окна свойств созданного проекта библиотеки классов укажите в свойстве <span class="key">Start external program</span> полный путь к настроенной утилите WorkspaceConsole. Утилита WorkspaceConsole используется как внешнее приложение для отладки разрабатываемой программной логики.</p>
+
+<div class="media">
+<div class="media__element"><img alt="" border="0" src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/ServerCodeDeveloping/scr_proj_props_local.png" /></div>
+</div>
+
+<p>В свойстве <span class="key">Command line arguments</span> укажите следующие <a data-auto-update-caption="dlue" href="../upravlenie_postavkami/workspaceconsole/obzor.html#reference-2137">параметры запуска WorkspaceConsole</a>:</p>
+
+<ul><li><span class="filled">-filename</span> — полный путь к отладочной версии разрабатываемой библиотеки классов ("C:\Projects\CreatioCustomServerLogic\CreatioCustomServerLogic\bin\Debug\CreatioCustomServerLogic.dll");</li>
+	<li><span class="filled">-typeName</span> — полное имя класса, в котором реализуется разрабатываемая программная логика, включая названия всех пространств имен ("CreatioCustomServerLogic.MyContactCreator");</li>
+	<li><span class="filled">-operation</span> — операция WorkspaceConsole ("<span class="consolas">ExecuteScript</span>");</li>
+	<li><span class="filled">-workspaceName</span> — название рабочего пространства ("<span class="consolas">Default</span>");</li>
+	<li><span class="filled">-confRuntimeParentDirectory</span> — путь к <a data-auto-update-caption="dlue" href="../../../../7-16/developer/development_tools/packages/rabota_s_faylovym_kontentom.html">родительскому каталогу</a> для директории <span class="filled">conf</span>  ("C:\creatio\Terrasoft.WebApp").</li>
+</ul><div class="code">
+<div class="code__widgets">
+<div class="code__top">
+<div class="code__title">Пример строки аргументов запуска WorkspaceConsole</div>
+</div>
+
+<div class="code__source">
+<pre class="prettyprint">
+-filename="C:\Projects\CreatioCustomServerLogic\CreatioCustomServerLogic\bin\Debug\CreatioCustomServerLogic.dll" -typeName=CreatioCustomServerLogic.MyContactCreator -operation=ExecuteScript -workspaceName=Default -logPath=C:\Projects\Logs -confRuntimeParentDirectory=C:\creatio\Terrasoft.WebApp -autoExit=true
+</pre>
+</div>
+</div>
+</div>
+
+<div class="message message_warning">
+<p><span class="message__bold message__bold_warning">Важно.</span> В свойствах проектов Visual Studio, работающих с версией приложения 7.11.0 и выше, нужно указывать версию .NET Framework 4.7 (вкладка <span class="key">Application</span>, свойство <span class="key">Target framework</span>).</p>
+</div>
+
+<p>Для работы с классами серверной части ядра Creatio в созданном проекте установите зависимости от нужных библиотек классов Creatio. Например, добавьте зависимость от библиотеки <span class="filled">Terrasoft.Core.dll</span>. </p>
+
+<div class="media">
+<div class="media__element"><img alt="" border="0" src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/ServerCodeDeveloping/scr_references.png" /></div>
+</div>
+
+<p>Библиотеки классов пространства имен <span class="filled">Terrasoft</span> можно найти в каталоге <span class="filled">Terrasoft.WebApp\DesktopBin\WorkspaceConsole</span> дистрибутива приложения.</p>
+
+<div class="message">
+<p><span class="message__bold">На заметку.</span> Библиотеки классов копируются в каталог <span class="filled">Terrasoft.WebApp\DesktopBin\WorkspaceConsole</span> во время <a data-auto-update-caption="dlue" href="../upravlenie_postavkami/workspaceconsole/obzor.html#title-2132-2">выполнения пакетных файлов</a>.</p>
+</div>
+
+<h3>4. Выполнить разработку функциональности<a class="title-anchor" href="#title-2096-7" id="title-2096-7"> </a></h3>
+
+<p>В созданный проект библиотеки классов добавьте класс, полное название которого должно совпадать с названием, указанным в аргументе <span class="filled">-typeName</span> строки аргументов запуска утилиты WorkspaceConsole ("CreatioCustomServerLogic.MyContactCreator"). Класс должен реализовывать интерфейс <span class="filled">Terrasoft.Core.IExecutor</span>.</p>
+
+<div class="code">
+<div class="code__widgets">
+<div class="code__top">
+<div class="code__title">MyContactCreator.cs</div>
+</div>
+
+<div class="code__source">
+<pre class="prettyprint">
+<span>using</span> System;
+<span>using</span> Terrasoft.Core;
+
+<span>namespace</span> CreatioCustomServerLogic
+{
+    <span>public</span> <span>class</span> MyContactCreator : IExecutor
+    {
+        <span>public</span> <span>void</span> Execute(UserConnection userConnection)
+        {
+            <span>// Получение экземпляра схемы [Контакты].
+</span>            <span>var</span> schema = userConnection.EntitySchemaManager.GetInstanceByName(<span>"Contact"</span>);
+            <span>var</span> length = 10;
+            <span>for</span> (<span>int</span> i = 0; i &lt; length; i++)
+            {
+                <span>// Создание нового контакта.
+</span>                <span>var</span> entity = schema.CreateEntity(userConnection);
+                <span>// Установка свойств контакта.
+</span>                entity.SetColumnValue(<span>"Name"</span>, <span>string</span>.Format(<span>"Name {0}"</span>, i));
+                entity.SetDefColumnValues();
+                <span>// Сохранение контакта в базу данных.
+</span>                entity.Save(<span>false</span>);
+            }
+            <span>// Вывод сообщения в консоль.
+</span>            Console.WriteLine($<span>"{length} contacts created"</span>);
+        }
+    }
+}
+</pre>
+</div>
+</div>
+</div>
+
+<p>После запуска проекта на выполнение (клавиша <span class="filled">F5</span>) появится окно утилиты WorkspaceConsole с соответствующим сообщением.</p>
+
+<div class="media">
+<div class="media__element"><img alt="" border="0" src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/ServerCodeDeveloping/scr_result_01.png" /></div>
+</div>
+
+<p>Также можно установить точку останова на любой строке исходного кода и во время выполнения программы посмотреть текущие значения переменных, т. е. выполнить отладку. </p>
+
+<p>Результат выполнения приведенного выше программного кода можно посмотреть в в разделе <span class="key">Контакты</span> приложения Creatio, либо выполнив запрос в базу данных.</p>
+
+<div class="media">
+<div class="media__caption">Добавленные контакты</div>
+
+<div class="media__element"><img alt="" border="0" src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/ServerCodeDeveloping/scr_result_02.png" /></div>
+</div>
+
+<div class="media">
+<div class="media__caption">Запрос к таблице контактов базы данных</div>
+
+<div class="media__element"><img alt="" border="0" src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/ServerCodeDeveloping/scr_result_03.png" /></div>
+</div>
+
+<h2>Разработка C# кода для cloud приложения<a class="title-anchor" href="#title-2096-8" id="title-2096-8"> </a></h2>
+
+<h3>1. Создать проект библиотеки классов<a class="title-anchor" href="#title-2096-9" id="title-2096-9"> </a></h3>
+
+<p>Создайте в Visual Studio обычный проект библиотеки классов.  В качестве имени проекта укажите, например, значение "<span class="consolas">CreatioCustomServerLogic.Cloud</span>".</p>
+
+<p>Для работы с классами серверной части ядра Creatio в созданном проекте установите зависимости от нужных библиотек классов Creatio. Например, добавить зависимость от библиотеки <span class="filled">Terrasoft.Core.dll</span>. </p>
+
+<p>На вкладке <span class="key">BuildEvents</span> окна свойств созданного проекта библиотеки классов указажите в свойстве <span class="key">Post-build event command line</span> полный путь к настроенной утилите Executor ("C:\Executor\Executor.exe") и выберите условие запуска события сборки библиотеки ("Always").</p>
+
+<div class="media">
+<div class="media__caption">Свойства вкладки <span class="key">Build Events</span></div>
+
+<div class="media__element"><img alt="" border="0" src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/ServerCodeDeveloping/scr_build_events.png" /></div>
+</div>
+
+<h3>2. Выполнить разработку функциональности<a class="title-anchor" href="#title-2096-10" id="title-2096-10"> </a></h3>
+
+<p>В созданный проект библиотеки классов добавьте класс, который должен реализовывать интерфейс <span class="filled">Terrasoft.Core.IExecutor</span>.</p>
+
+<div class="code">
+<div class="code__widgets">
+<div class="code__top">
+<div class="code__title">MyContactReader.cs</div>
+</div>
+
+<div class="code__source">
+<pre class="prettyprint">
+<span>using</span> System;
+<span>using</span> System.Web;
+<span>using</span> Terrasoft.Core;
+<span>using</span> Terrasoft.Core.Entities;
+
+<span>namespace</span> CreatioCustomServerLogic.Cloud
+{
+    <span>public</span> <span>class</span> MyContactReader : IExecutor
+    {
+        <span>public</span> <span>void</span> Execute(UserConnection userConnection)
+        {
+            <span>// Получение экземпляра схемы [Контакты].
+</span>            <span>var</span> entitySchema = userConnection.EntitySchemaManager.GetInstanceByName(<span>"Contact"</span>);
+            <span>// Создание экземпляра класса запроса.
+</span>            <span>var</span> esq = <span>new</span> EntitySchemaQuery(entitySchema);
+            <span>// Добавление в запрос всех колонок схемы.
+</span>            esq.AddAllSchemaColumns();
+            <span>// Получение коллекции записей раздела [Контакты].
+</span>            <span>var</span> collection = esq.GetEntityCollection(userConnection);
+            <span>foreach</span> (<span>var</span> entity <span>in</span> collection)
+            {
+                <span>// Вывод в http-ответ запроса от утилиты Executor необходимых значений.
+</span>                HttpContext.Current.Response.Write(entity.GetTypedColumnValue&lt;<span>string</span>&gt;(<span>"Name"</span>));
+                HttpContext.Current.Response.Write(Environment.NewLine);
+            }
+        }
+    }
+}
+</pre>
+</div>
+</div>
+</div>
+
+<h3>3. Настроить утилиту Executor<a class="title-anchor" href="#title-2096-11" id="title-2096-11"> </a></h3>
+
+<div class="message">
+<p><span class="message__bold">На заметку.</span> Скачать утилиту, настроенную для выполнения этого примера, можно по <a href="../../../../../sites/default/files/documents/downloads/SDK/Executor.zip" target="_blank">ссылке</a>.</p>
+</div>
+
+<p>Перейдите в каталог с установленной утилитой Executor (<span class="filled">C:\Executor</span>). Затем в конфигурационном файле укажите значения для следующих элементов настройки:</p>
+
+<ul><li><span class="filled">Loader</span> — URL загрузчика приложения Creatio. Как правило, это URL сайта Creatio, например "<span class="consolas">https://mycloudapp.creatio.com</span>".</li>
+	<li><span class="filled">WebApp</span> — URL приложения Creatio. Как правило, это путь к конфигурации по умолчанию приложения Creatio, например "<span class="consolas">https://mycloudapp.creatio.com/0</span>".</li>
+	<li><span class="filled">Login</span> — имя пользователя Creatio, например, "<span class="consolas">Supervisor</span>".</li>
+	<li><span class="filled">Password</span> — пароль пользователя Creatio.</li>
+	<li><span class="filled">LibraryOriginalPath</span> — путь к исходной копии библиотеки классов. Как правило, это путь, по которому создается библиотека классов после компиляции в Visual Studio, например, "<span class="consolas">C:\Projects\CreatioCustomServerLogic\CreatioCustomServerLogic.Cloud\bin\Debug\<wbr></wbr>CreatioCustomServerLogic.Cloud.dll</span>".</li>
+	<li><span class="filled">LibraryCopyPath</span> — путь, по которому будет создана копия библиотеки классов для работы с удаленным сервером. Это может быть любая временная папка или каталог, содержащий утилиту Executor, например, "<span class="consolas">C:\Executor\CreatioCustomServerLogic.Cloud.dll</span>".</li>
+	<li><span class="filled">LibraryType</span> — полное имя класса, в котором реализуется разрабатываемая программная логика, включая названия всех пространств имен. Например, "<span class="consolas">CreatioCustomServerLogic.Cloud.MyContactReader</span>".</li>
+	<li><span class="filled">LibraryName</span> — название библиотеки классов, например, "<span class="consolas">CreatioCustomServerLogic.Cloud.dll</span>".</li>
+</ul><h3>4. Выполнить разработанный программный код<a class="title-anchor" href="#title-2096-12" id="title-2096-12"> </a></h3>
+
+<p>Для запуска процесса сборки воспользуйтесь командами меню <span class="key">Build Solution</span> и <span class="key">Rebuild Solution</span>.</p>
+
+<div class="media">
+<div class="media__element"><img alt="" border="0" src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/ServerCodeDeveloping/scr_build_menu.png" /></div>
+</div>
+
+<p>Результат выполнения разработанного программного кода можно увидеть в окне <span class="key">Output</span> Visual Studio после каждой успешной сборки библиотеки классов.</p>
+
+<div class="media">
+<div class="media__element"><img alt="" border="0" src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/ServerCodeDeveloping/scr_result_04.png" /></div>
+</div>
+</div>
+      
+  </div>
+
+    </div>
+  </div>
+
+  </div>
+
+</article>
+
+  </div>
+
+  </div>
+
+          </div>
+        </div>
+
+                  <aside class="creatio-sidebar creatio-sidebar_first" role="complementary">
+              <div class="region region-sidebar-first">
+    <div id="block-documentationnaviagtion" class="block block-ts-nav block-ts-nav-doc-nav">
+  
+    
+      <div class="ts-nav-block"><a href="../../../../index.html" class="ts-nav-block__link">Документация</a><div class="ts-nav-block__title">Для разработчика</div>
+</div>
+<div class="ts-nav-container"><ul class="ts-nav-menu"><li class="ts-nav-menu__item">
+  <a href="../../s_chego_nachat.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">С чего начать&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../architecture.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Архитектура&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../instrumenty_razrabotki.html" class="ts-nav-menu__link ts-nav-menu__link_expanded ts-nav-menu__link_open" hreflang="zxx">Инструменты разработки&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+      <ul class="ts-nav-menu__children">
+      <li class="ts-nav-menu__item">
+  <a href="../creatio_ide.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Creatio IDE&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../vneshnie_ide.html" class="ts-nav-menu__link ts-nav-menu__link_expanded ts-nav-menu__link_open" hreflang="ru">Внешние IDE&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+      <ul class="ts-nav-menu__children">
+      <li class="ts-nav-menu__item">
+  <a href="obzor.html" class="ts-nav-menu__link ts-nav-menu__link_guide" hreflang="ru">Обзор</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="razrabotat_c_sharp_kod_v_konfiguracionnom_proekte.html" class="ts-nav-menu__link ts-nav-menu__link_case" hreflang="ru">Разработать C# код в конфигурационном проекте</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="razrabotat_c_sharp_kod_v_polzovatelskom_proekte.html" class="ts-nav-menu__link ts-nav-menu__link_case ts-nav-menu__link_active" hreflang="ru">Разработать C# код в пользовательском проекте</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="razrabotat_klientskij_kod.html" class="ts-nav-menu__link ts-nav-menu__link_case" hreflang="ru">Разработать клиентский код</a>
+  </li>
+
+    </ul>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../pakety.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Пакеты&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../sistemy_kontrolya_versij.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Системы контроля версий&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../development_tools/testirovanie.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Тестирование&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../development_tools/instrumenty_dlya_bazy_dannykh.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Инструменты для базы данных&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../logirovanie.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Логирование&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../otladka.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Отладка&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../upravlenie_postavkami.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Управление поставками&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+
+    </ul>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../back_end_razrabotka.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Back-end разработка&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../front_end_razrabotka_freedom_ui.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Front-end разработка Freedom UI&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../front_end_razrabotka.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Front-end разработка&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../integratsiya_i_vneshnij_api.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Интеграция и внешний API&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../ehlementy_interfejsa.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Элементы интерфейса&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../komponenty_prilozheniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Компоненты приложения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../razrabotka_mobilnogo_prilozheniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Разработка мобильного приложения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../razrabotka_marketplace_prilozheniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Разработка Marketplace-приложения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+</ul>
+</div>
+
+  </div>
+
+  </div>
+
+            <div class="creatio-sidebar__toggle"></div>
+          </aside>
+        
+                  <aside class="creatio-sidebar creatio-sidebar_second" role="complementary">
+              <div class="region region-sidebar-second">
+    <div id="block-example" class="block block-ts-nav block-ts-nav-page-nav">
+  
+    
+      <div class="ts-nav-page">
+  </div>
+
+  </div>
+<div id="block-adminfeedbackblock" class="block block-admin-feedback block-admin-feedback-block">
+  
+    
+      <div id="feedback-message"><div id="upper-feedback-content"><h2>Был ли данный материал полезен?</h2>
+<input class="feedback-btn feedback-btn__yes button js-form-submit form-submit" data-node-id="2096" data-feedback="yes" type="submit" name="op" value="Да" />
+<input class="feedback-btn feedback-btn__no button js-form-submit form-submit" data-node-id="2096" data-feedback="no" type="submit" name="op" value="Нет" />
+</div>
+<form class="admin-feedback-form" data-drupal-selector="admin-feedback-form" action="https://academy.terrasoft.ua/docs/8-0/developer/instrumenty_razrabotki/vneshnie_ide/razrabotat_c_sharp_kod_v_polzovatelskom_proekte" method="post" id="admin-feedback-form" accept-charset="UTF-8">
+  <div id="feedback-msg-result"></div><div class="js-form-item form-item js-form-type-textarea form-type-textarea js-form-item-feedback-message form-item-feedback-message form-no-label">
+        <div class="form-textarea-wrapper">
+  <textarea id="edit-feedback-msg" data-drupal-selector="edit-feedback-message" name="feedback_message" rows="5" cols="60" class="form-textarea resize-vertical"></textarea>
+</div>
+
+        </div>
+<input id="feedback-id" data-drupal-selector="edit-feedback-id" type="hidden" name="feedback_id" value="" />
+<input class="feedback-btn feedback-btn__send-comment button js-form-submit form-submit" data-drupal-selector="edit-feedback-send" type="submit" id="edit-feedback-send" name="op" value="Отправить" />
+<input autocomplete="off" data-drupal-selector="form-ije-sffzyosf3d-q2rdkuxzthfyimsu0xq4yc0r8qbi" type="hidden" name="form_build_id" value="form-Ije_SffZyOsF3D_Q2rDkUXzTHFYimsU0XQ4YC0r8qbI" />
+<input data-drupal-selector="edit-admin-feedback-form" type="hidden" name="form_id" value="admin_feedback_form" />
+
+</form>
+</div>
+
+  </div>
+
+  </div>
+
+          </aside>
+              </main>
+    </div>
+  </div>
+
+  <footer role="contentinfo">
+    <div class="creatio-region creatio-region_footer">
+      <div class="creatio-container">
+          <div class="region region-footer">
+    <div id="block-footerua" class="block block-simple-block block-simple-blockfooter-ua">
+  
+    
+      <div class="footer">
+<div class="footer-left">
+<ul class="footer-socials"><li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_fb" href="https://www.facebook.com/terrasoft.ua" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_in" href="https://www.linkedin.com/company/terrasoft/" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_yt" href="https://www.youtube.com/c/TerrasoftUkraine" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_tg" href="https://t.me/Terrasoft_UA" target="_blank"> </a></li>
+</ul></div>
+
+<div class="footer-contact">
+<div class="footer-title">Будьте на связи!</div>
+
+<div class="footer-content">
+<div class="footer-items">
+<div class="footer-item"><a class="footer__link footer__link_phone" href="tel:+380443633133">+38 (044) 363-31-33</a></div>
+</div>
+
+<div class="footer-items">
+<div class="footer-item"><a class="footer__link footer__link_email" href="mailto:support@terrasoft.ua">support@terrasoft.ua</a></div>
+</div>
+</div>
+</div>
+</div>
+
+  </div>
+
+  </div>
+
+      </div>
+    </div>
+    <div class="creatio-region creatio-region_bottom">
+      <div class="creatio-container">
+          <div class="region region-bottom">
+    <div id="block-allrightsreservedua" class="block block-simple-block block-simple-blockfooter-bottom-ua">
+  
+    
+      <p>© 2002-2022 Terrasoft.  |  <a href="https://www.terrasoft.ua/privacy-policy" target="_blank">Конфиденциальность</a></p>
+
+  </div>
+
+  </div>
+
+      </div>
+    </div>
+  </footer>
+</div>
+<div class="creatio-bg"></div>
+
+
+  </div>
+
+    
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/docs\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/2096","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"ru"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"ajaxPageState":{"libraries":"admin_feedback\/admin_feedback_block,admin_feedback\/admin_feedback_css,classy\/base,classy\/messages,classy\/node,core\/drupal.ajax,core\/jquery.form,core\/normalize,creatio\/fancybox,creatio\/global,layout_discovery\/onecol,system\/base,ts_doc\/doc_version,ts_feedback\/ts_feedback,ts_nav\/breadcrumb,ts_nav\/doc_nav,ts_nav\/page_nav,ts_title_anchor\/ts_title_anchor","theme":"creatio","theme_token":null},"ajaxTrustedUrl":{"form_action_p_pvdeGsVG5zNF_XLGPTvYSKCf43t8qZYSwcfZl2uzM":true,"\/docs\/8-0\/developer\/instrumenty_razrabotki\/vneshnie_ide\/razrabotat_c_sharp_kod_v_polzovatelskom_proekte?ajax_form=1":true},"admin_feedback":{"yes_response":"\u0421\u043f\u0430\u0441\u0438\u0431\u043e \u0437\u0430 \u043e\u0431\u0440\u0430\u0442\u043d\u0443\u044e \u0441\u0432\u044f\u0437\u044c!","no_response":"\u0421\u043f\u0430\u0441\u0438\u0431\u043e \u0437\u0430 \u043e\u0431\u0440\u0430\u0442\u043d\u0443\u044e \u0441\u0432\u044f\u0437\u044c!","custom_text_response_on_no":{"value":"","format":"full_html"},"feedback_prompt_on_yes":true,"feedback_prompt_on_no":true,"feedback_enable_predefined_answers":false,"feedback_prompt":"\u041a\u0430\u043a \u043c\u043e\u0436\u043d\u043e \u0443\u043b\u0443\u0447\u0448\u0438\u0442\u044c \u044d\u0442\u0443 \u0441\u0442\u0430\u0442\u044c\u044e?"},"ajax":{"edit-feedback-send":{"callback":"::validateFeedbackMsg","event":"mousedown","keypress":true,"prevent":"click","url":"\/docs\/8-0\/developer\/instrumenty_razrabotki\/vneshnie_ide\/razrabotat_c_sharp_kod_v_polzovatelskom_proekte?ajax_form=1","dialogType":"ajax","submit":{"_triggering_element_name":"op","_triggering_element_value":"\u041e\u0442\u043f\u0440\u0430\u0432\u0438\u0442\u044c"}}},"user":{"uid":0,"permissionsHash":"9c2367dfcaba0fa15f0375f97aed64e146c908cee68508d13b79e3ee80e5162d"}}</script>
+<script src="../../../../sites/default/files/js/js_Rr-7TvYD7NposuRFJwUqThxM7yJmw8vs03PQwu5gWd8.js"></script>
+
+
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+      <g id="svg-copy" class="svg-icon svg-icon_copy">
+        <path d="M15.111,18H1.889A1.848,1.848,0,0,1,0,16.2V3.6A1.848,1.848,0,0,1,1.889,1.8H5.837a2.87,2.87,0,0,1,5.326,0h3.948A1.848,1.848,0,0,1,17,3.6V16.2A1.848,1.848,0,0,1,15.111,18ZM3.777,12.6v1.8h6.611V12.6Zm0-3.6v1.8h9.445V9Zm0-3.6V7.2h9.445V5.4ZM8.5,1.8a.924.924,0,0,0-.944.9.945.945,0,0,0,1.889,0A.924.924,0,0,0,8.5,1.8Z"/>
+      </g>
+
+      <g id="svg-prev" class="svg-icon svg-icon_arrow">
+        <path d="M5.488,12.779,0,6.39,5.488,0" transform="translate(1 0.652)"/>
+      </g>
+
+      <g id="svg-next" class="svg-icon svg-icon_arrow">
+        <path d="M0,12.779,5.488,6.39,0,0" transform="translate(0.759 0.652)"/>
+      </g>
+    </svg>
+  </body>
+
+<!-- Mirrored from academy.terrasoft.ua/docs/8-0/developer/instrumenty_razrabotki/vneshnie_ide/razrabotat_c_sharp_kod_v_polzovatelskom_proekte by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Mar 2022 07:00:17 GMT -->
+</html>

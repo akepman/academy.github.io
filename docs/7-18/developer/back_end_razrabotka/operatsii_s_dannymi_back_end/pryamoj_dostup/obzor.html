@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# ">
+  
+<!-- Mirrored from academy.terrasoft.ua/docs/7-18/developer/back_end_razrabotka/operatsii_s_dannymi_back_end/pryamoj_dostup/obzor by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Mar 2022 03:25:10 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+          <!-- Google Tag Manager -->
+      <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          '../../../../../../../www.googletagmanager.com/gtm5445.html?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-KLLB8G');</script>
+      <!-- End Google Tag Manager -->
+        <meta charset="utf-8" />
+<link rel="canonical" href="obzor.html" />
+<meta name="description" content="Способы доступа к базе данных, которые предоставляют back-end компоненты ядра:
+
+Доступ через ORM-модель.
+	Прямой доступ.
+Для доступа к данным рекомендуется использовать ORM-модель, хотя прямой доступ к базе данных также реализован в back-end компонентах ядра. Выполнение запросов к базе данных через ORM-модель подробно описано в статье Доступ к данным через ORM.
+
+В этой статье будет рассмотрено выполнение запросов к базе данных через прямой доступ." />
+<meta property="og:url" content="https://academy.terrasoft.ua/docs/7-18/developer/back_end_razrabotka/operatsii_s_dannymi_back_end/pryamoj_dostup/obzor" />
+<meta property="og:title" content="Прямой доступ к данным" />
+<meta property="og:description" content="Способы доступа к базе данных, которые предоставляют back-end компоненты ядра:
+
+Доступ через ORM-модель.
+	Прямой доступ.
+Для доступа к данным рекомендуется использовать ORM-модель, хотя прямой доступ к базе данных также реализован в back-end компонентах ядра. Выполнение запросов к базе данных через ORM-модель подробно описано в статье Доступ к данным через ORM.
+
+В этой статье будет рассмотрено выполнение запросов к базе данных через прямой доступ." />
+<meta name="Generator" content="Drupal 9 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="../../../../../themes/custom/creatio/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="revision" href="obzor.html" />
+
+    <title>Прямой доступ к данным | Creatio Academy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&amp;family=Open+Sans:ital,wght@0,300;0,400;0,600;1,400&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" media="all" href="../../../../../sites/default/files/css/css_6lTP66__-yc6QXFp1zOwoeJ0HVigoYZP-SeoLLii000.css" />
+<link rel="stylesheet" media="all" href="../../../../../sites/default/files/css/css_XQJDNhkF3xH5SZCcY-PI89Zu4nYIzQ5oR3SnUKyfXJU.css" />
+<link rel="stylesheet" media="print" href="../../../../../sites/default/files/css/css_Zn4VHvcniOOtUwkIVwXzYr_0AI9gUVgZcPqaH4ViagU.css" />
+
+    
+  </head>
+  <body class="path-node page-node-type-developer-documentation">
+          <!-- Google Tag Manager (noscript) -->
+      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KLLB8G"
+                        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+      <!-- End Google Tag Manager (noscript) -->
+    
+        
+      <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    <div class="creatio-page d-flex flex-column">
+        <div class="region region-informer">
+    <div id="block-terrasoftpidtrimueukrainu" class="block block-simple-block block-simple-blockterrasoft-pidtrimue-ukrainu">
+  
+    
+      <style type="text/css">
+<!--/*--><![CDATA[/* ><!--*/
+@import url(../../../../../../../www.terrasoft.ua/themes/custom/creatio/css/components/informer.css)
+
+/*--><!]]>*/
+</style><div class="ts-swu">
+<div class="creatio-container">
+<div class="ts-swu__cont">
+<div><a class="ts-swu__link" href="https://www.terrasoft.ua/terrasoft-stands-with-ukraine" target="_blank">Україна понад усе!</a> <span><a href="https://www.terrasoft.ua/terrasoft-stands-with-ukraine" target="_blank">Приєднуйтеся</a> до допомоги!</span></div>
+</div>
+</div></div>
+
+  </div>
+
+  </div>
+
+  
+  <header role="banner">
+          <div class="creatio-region creatio-region_top">
+        <div class="creatio-container">
+            <div class="region region-top">
+    <div id="block-menutoggle" class="block block-simple-block block-simple-blockmenu-toggle">
+  
+    
+      <div class="menu-toggle"><span> </span></div>
+
+  </div>
+<div id="block-logowhite-2" class="block block-simple-block block-simple-blocklogo-white">
+  
+    
+      <p><a class="site-logo" href="../../../../../../index.html" rel="home"><img src="../../../../../themes/custom/creatio/logo-white.svg" /></a></p>
+
+  </div>
+<div id="block-search" class="block block-simple-block block-simple-blocksearch">
+  
+    
+      <div class="search">
+<form action="https://academy.terrasoft.ua/search" class="search-form" method="get"><input class="search-form__input" name="search" placeholder="Поиск" type="search" /><input class="search-form__button" type="submit" value="Поиск" /> </form>
+
+<div class="search-toggle"> </div>
+</div>
+
+  </div>
+<nav role="navigation" aria-labelledby="block-sitesua-menu" id="block-sitesua" class="block block-menu navigation menu--sites-ua">
+            
+  <h2 class="visually-hidden" id="block-sitesua-menu">Sites UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="https://www.terrasoft.ua/" rel="nofollow" target="_blank">Terrasoft</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://community.terrasoft.ua/" rel="nofollow" target="_blank">Community</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://marketplace.terrasoft.ua/" rel="nofollow" target="_blank">Marketplace</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+<div id="block-usermenu" class="block block-ts-user block-ts-user-menu-block">
+  
+    
+      <ul class="user-menu">
+      <li class="user-menu__item">
+      <a class="user-menu__link" href="https://profile.terrasoft.ua/user/login?destination=academy/ua/docs/7-18/developer/back_end_razrabotka/operatsii_s_dannymi_back_end/pryamoj_dostup/obzor">Войти</a>
+    </li>
+  </ul>
+
+  </div>
+<div id="block-usermenumobile" class="block block-ts-user block-ts-user-menu-mobile-block">
+  
+    
+      <ul class="user-menu-mobile">
+      <li class="user-menu-mobile__item">
+      <div class="user-menu-mobile__user user-menu-mobile__user_icon"></div>
+      <ul class="user-menu-mobile__submenu">
+        <li class="user-menu-mobile__subitem">
+          <a class="user-menu-mobile__sublink" href="https://profile.terrasoft.ua/user/login?destination=academy/ua/docs/7-18/developer/back_end_razrabotka/operatsii_s_dannymi_back_end/pryamoj_dostup/obzor">Войти</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  </div>
+
+  </div>
+
+        </div>
+      </div>
+              <div class="creatio-region creatio-region_header">
+        <div class="creatio-container">
+            <div class="region region-header">
+    <div id="block-logo" class="block block-simple-block block-simple-blocklogo">
+  
+    
+      <p><a class="site-logo" href="../../../../../../index.html" rel="home"><img src="../../../../../themes/custom/creatio/logo.svg" /></a></p>
+
+  </div>
+<nav role="navigation" aria-labelledby="block-osnovnayanavigaciyaua-menu" id="block-osnovnayanavigaciyaua" class="block block-menu navigation menu--main-ua">
+            
+  <h2 class="visually-hidden" id="block-osnovnayanavigaciyaua-menu">Основная навигация UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="../../../../../index.html" data-drupal-link-system-path="&lt;front&gt;">Документация</a>
+              </li>
+                <li class="menu-item">
+        <a href="../../../../../../trainings.html">Тренинги</a>
+              </li>
+                <li class="menu-item">
+        <a href="../../../../../certification.html" data-drupal-link-system-path="node/3084">Сертификация и тестирование</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+<nav role="navigation" aria-labelledby="block-sitesua-2-menu" id="block-sitesua-2" class="block block-menu navigation menu--sites-ua">
+            
+  <h2 class="visually-hidden" id="block-sitesua-2-menu">Sites UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="https://www.terrasoft.ua/" rel="nofollow" target="_blank">Terrasoft</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://community.terrasoft.ua/" rel="nofollow" target="_blank">Community</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://marketplace.terrasoft.ua/" rel="nofollow" target="_blank">Marketplace</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+
+  </div>
+
+        </div>
+      </div>
+              <div class="creatio-region creatio-region_breadcrumb">
+        <div class="creatio-container">
+            <div class="region region-breadcrumb">
+    <div id="block-logowhite" class="block block-simple-block block-simple-blocklogo-white">
+  
+    
+      <p><a class="site-logo" href="../../../../../../index.html" rel="home"><img src="../../../../../themes/custom/creatio/logo-white.svg" /></a></p>
+
+  </div>
+<div id="block-breadcrumbnaviagtion" class="block block-ts-nav block-ts-nav-bread">
+  
+    
+      <nav class="breadcrumb"><ol class="ts-nav-breadcrumb__list"><li class="ts-nav-breadcrumb__item"><a href="../../../../../index.html" class="ts-nav-breadcrumb__link" title="Документация">Документация</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../../../index2132.html?vid_1=2" class="ts-nav-breadcrumb__link" title="Для разработчика">Для разработчика</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../back_end_razrabotka.html" class="ts-nav-breadcrumb__link" title="Back-end разработка" hreflang="zxx">Back-end разработка</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../back-end_development/operatsii_s_dannymi_back_end.html" class="ts-nav-breadcrumb__link" title="Операции с данными" hreflang="ru">Операции с данными</a></li>
+<li class="ts-nav-breadcrumb__item ts-nav-breadcrumb__item_mobile"><a href="../../../back-end_development/operatsii_s_dannymi_back_end/pryamoj_dostup.html" class="ts-nav-breadcrumb__link" title="Прямой доступ" hreflang="ru">Прямой доступ</a></li>
+<li class="ts-nav-breadcrumb__item"><span class="ts-nav-breadcrumb__link ts-nav-breadcrumb__link_current" title="Обзор">Обзор</span></li>
+</ol>
+</nav>
+
+  </div>
+<div id="block-search-2" class="block block-simple-block block-simple-blocksearch">
+  
+    
+      <div class="search">
+<form action="https://academy.terrasoft.ua/search" class="search-form" method="get"><input class="search-form__input" name="search" placeholder="Поиск" type="search" /><input class="search-form__button" type="submit" value="Поиск" /> </form>
+
+<div class="search-toggle"> </div>
+</div>
+
+  </div>
+
+  </div>
+
+        </div>
+      </div>
+      </header>
+
+  <div class="creatio-region creatio-region_main">
+    <div class="creatio-container">
+                <div class="region region-breadcrumb-mobile">
+    <div id="block-breadcrumbnaviagtion-2" class="block block-ts-nav block-ts-nav-bread">
+  
+    
+      <nav class="breadcrumb"><ol class="ts-nav-breadcrumb__list"><li class="ts-nav-breadcrumb__item"><a href="../../../../../index.html" class="ts-nav-breadcrumb__link" title="Документация">Документация</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../../../index2132.html?vid_1=2" class="ts-nav-breadcrumb__link" title="Для разработчика">Для разработчика</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../back_end_razrabotka.html" class="ts-nav-breadcrumb__link" title="Back-end разработка" hreflang="zxx">Back-end разработка</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../back-end_development/operatsii_s_dannymi_back_end.html" class="ts-nav-breadcrumb__link" title="Операции с данными" hreflang="ru">Операции с данными</a></li>
+<li class="ts-nav-breadcrumb__item ts-nav-breadcrumb__item_mobile"><a href="../../../back-end_development/operatsii_s_dannymi_back_end/pryamoj_dostup.html" class="ts-nav-breadcrumb__link" title="Прямой доступ" hreflang="ru">Прямой доступ</a></li>
+<li class="ts-nav-breadcrumb__item"><span class="ts-nav-breadcrumb__link ts-nav-breadcrumb__link_current" title="Обзор">Обзор</span></li>
+</ol>
+</nav>
+
+  </div>
+
+  </div>
+
+      
+      <main class="creatio-main" role="main">
+                                                    
+        <div class="creatio-content creatio-content_small">
+          <div class="creatio-content__inner creatio-content__inner_bg">
+                            <div class="region region-messages">
+    <div data-drupal-messages-fallback class="hidden"></div>
+
+  </div>
+
+            
+              <div class="region region-content">
+    <div id="block-creatio-page-title" class="block block-core block-page-title-block">
+  
+    
+      
+  <h1 class="page-title"><span class="field field--name-title field--type-string field--label-hidden">Прямой доступ к данным</span>
+</h1>
+
+
+  </div>
+<div id="block-creatio-content" class="block block-system block-system-main-block">
+  
+    
+      
+<article data-history-node-id="3514" role="article" about="/docs/7-18/developer/back_end_razrabotka/operatsii_s_dannymi_back_end/pryamoj_dostup/obzor" class="node node--type-developer-documentation node--view-mode-full">
+
+  
+    
+
+  
+  <div class="node__content">
+      <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocknodedeveloper-documentationfield-difficulty">
+  
+    
+      
+            <div class="field field--name-field-difficulty field--type-entity-reference field--label-hidden field__item"><div about="/docs/7-18/taxonomy/term/123" id="taxonomy-term-123" class="taxonomy-term vocabulary-difficulty">
+  
+  
+  <div class="content">
+      <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocktaxonomy-termdifficultyfield-icon">
+  
+    
+      
+            <div class="field field--name-field-icon field--type-image field--label-hidden field__item">  <img src="../../../../../sites/default/files/difficulty/medium.svg" alt="" loading="lazy" typeof="foaf:Image" />
+
+</div>
+      
+  </div>
+<div class="block block-layout-builder block-field-blocktaxonomy-termdifficultyname">
+  
+    
+      
+            <div class="field field--name-name field--type-string field--label-hidden field__item"><span style="color: #F57E20;">Средний</span></div>
+      
+  </div>
+
+    </div>
+  </div>
+
+  </div>
+</div>
+</div>
+      
+  </div>
+<div class="block block-ts-doc block-ts-doc-downloads">
+  
+    
+      <a href="../../../../../sites/default/files/pdf/node/3514/Pryamoy_dostup_k_dannym_.pdf" target="_blank">PDF</a>
+  </div>
+<div class="block block-ts-doc block-ts-doc-versions">
+  
+    
+        <div class="ts-doc-versions">
+    <select class="ts-doc-versions__select">
+                              <option value="/docs/8-0/developer/back_end_razrabotka/operatsii_s_dannymi_back_end/pryamoj_dostup/obzor">Версия 8.0</option>
+                                                <option value="/docs/7-18/developer/back_end_razrabotka/operatsii_s_dannymi_back_end/pryamoj_dostup/obzor" selected>Версия 7.18</option>
+                              <option value="/docs/7-17/developer/back-end_development/operatsii_s_dannymi_back_end/dostup_k_dannym_cherez_orm">Версия 7.17</option>
+                              <option value="/docs/7-16/developer/back-end_development/operatsii_s_dannymi_back_end/dostup_k_dannym_cherez_orm">Версия 7.16</option>
+          </select>
+  </div>
+
+  </div>
+
+    </div>
+  </div>
+  <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocknodedeveloper-documentationbody">
+  
+    
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><p><strong>Способы доступа</strong> к базе данных, которые предоставляют back-end компоненты ядра:</p>
+
+<ul><li>Доступ через ORM-модель.</li>
+	<li>Прямой доступ.</li>
+</ul><p>Для доступа к данным рекомендуется использовать ORM-модель, хотя прямой доступ к базе данных также реализован в back-end компонентах ядра. Выполнение запросов к базе данных через ORM-модель подробно описано в статье <a href="../orm/obzor.html">Доступ к данным через ORM</a>.</p>
+
+<p>В этой статье будет рассмотрено выполнение запросов к базе данных через прямой доступ.</p>
+
+<p><strong>Классы</strong>, которые реализуют работу с данными через прямой доступ:</p>
+
+<ul><li><span class="filled">Terrasoft.Core.DB.Select</span> — построение запросов на получение записей из таблиц базы данных.</li>
+	<li><span class="filled">Terrasoft.Core.DB.Insert</span> — построение запросов на добавление записей в таблицы базы данных.</li>
+	<li><span class="filled">Terrasoft.Core.DB.InsertSelect</span> — построение запросов на добавление записей в таблицу базы данных на основании данных, полученных в запросах на получение записей из таблицы базы данных.</li>
+	<li><span class="filled">Terrasoft.Core.DB.Update</span> — построение запросов на изменение записей в таблице базы данных.</li>
+	<li><span class="filled">Terrasoft.Core.DB.UpdateSelect</span> — построение запросов на изменение записей в таблице базы данных на основании данных, полученных в запросах на получение записей из таблицы базы данных.</li>
+	<li><span class="filled">Terrasoft.Core.DB.Delete</span> — построение запросов на удаление записей в таблице базы данных.</li>
+	<li><span class="filled">Terrasoft.Core.DB.DBExecutor</span> — построение и выполнение сложных запросов (например, с несколькими вложенными фильтрациями, различными комбинациями join-ов и т. д.) к базе данных.</li>
+</ul><h2>Получить данные из базы данных<a class="title-anchor" href="#title-3514-1" id="title-3514-1"> </a></h2>
+
+<p><strong>Классы</strong>, которые реализуют получение данных из базы данных:</p>
+
+<ul><li><span class="filled">Terrasoft.Core.DB.Select</span> — получение данных из базы данных через прямой доступ.</li>
+	<li><span class="filled">Terrasoft.Core.Entities.EntitySchemaQuery</span> — получение данных из базы данных через ORM-модель. Выполнение запросов к базе данных с использованием класса <span class="filled">Terrasoft.Core.Entities.EntitySchemaQuery</span> подробно описано в статье <a href="../orm/obzor.html#title-3515-4">Доступ к данным через ORM</a>.</li>
+</ul><p><strong>Назначение</strong> класса <span class="filled">Terrasoft.Core.DB.Select</span> — построение запросов на выборку записей из таблиц базы данных. После создания и конфигурирования экземпляра класса будет построен <span class="filled">SELECT</span>-запрос к базе данных приложения. В запрос можно добавить колонки, фильтры и условия ограничений.</p>
+
+<p><strong>Особенности</strong> класса <span class="filled">Terrasoft.Core.DB.Select</span>:</p>
+
+<ul><li>В результирующем запросе не учитываются права доступа текущего пользователя. Пользователь получает доступ ко всем таблицам и записям базы данных.</li>
+	<li>В результирующем запросе не учитываются <a href="../../hranilishche_kehsha/obzor.html">данные из хранилища кэша</a>.</li>
+</ul><p><strong>Результат выполнения запроса</strong> — экземпляр, реализующий интерфейс <span class="filled">System.Data.IDataReader</span>, или скалярное значение соответствующего типа.</p>
+
+<p>При необходимости построения запросов на выборку записей из базы данных с учетом прав доступа пользователя и данных из хранилища кэша, используйте класс <span class="filled">Terrasoft.Core.Entities.EntitySchemaQuery</span>.</p>
+
+<h2>Добавить данные в базу данных<a class="title-anchor" href="#title-3514-2" id="title-3514-2"> </a></h2>
+
+<p><strong>Классы</strong>, которые реализуют добавление данных в базу данных:</p>
+
+<ul><li><span class="filled">Terrasoft.Core.DB.Insert</span>.</li>
+	<li><span class="filled">Terrasoft.Core.DB.InsertSelect</span>.</li>
+</ul><h3>Массовое добавление данных<a class="title-anchor" href="#title-3514-3" id="title-3514-3"> </a></h3>
+
+<p><strong>Назначение</strong> класса <span class="filled">Terrasoft.Core.DB.Insert</span> — построение запросов на добавление записей в таблицы базы данных. После создания и конфигурирования экземпляра класса будет построен <span class="filled">INSERT</span>-запрос к базе данных приложения.</p>
+
+<p><strong>Результат выполнения запроса</strong> — количество записей, которые были добавлены с помощью запроса.</p>
+
+<p>Класс содержит реализацию функциональности многострочной вставки. Для этого предназначен метод <span class="filled">Values()</span>. При вызове метода <span class="filled">Values()</span> все последующие вызовы метода <span class="filled">Set()</span> попадают в новый экземпляр <span class="filled">ColumnsValues</span>. Если коллекция <span class="filled">ColumnsValuesCollection</span> содержит более одного набора данных, то будет построен запрос с несколькими блоками <span class="filled">Values()</span>.</p>
+
+<div class="code">
+<div class="code__widgets">
+<div class="code__top">
+<div class="code__title">Пример многострочной вставки</div>
+</div>
+
+<div class="code__source">
+<pre class="prettyprint">
+new Insert(UserConnection)
+.Into("Table")
+.Values()
+    .Set("Column1", Column.Parameter(1))
+    .Set("Column2", Column.Parameter(1))
+    .Set("Column3", Column.Parameter(1))
+.Values()
+    .Set("Column1", Column.Parameter(2))
+    .Set("Column2", Column.Parameter(2))
+    .Set("Column3", Column.Parameter(2))
+.Values()
+    .Set("Column1", Column.Parameter(3))
+    .Set("Column2", Column.Parameter(3))
+    .Set("Column3", Column.Parameter(3))
+.Execute();
+</pre>
+</div>
+</div>
+</div>
+
+<p>В результате будет сформирован SQL-запрос.</p>
+
+<div class="code">
+<div class="code__widgets">
+<div class="code__top">
+<div class="code__title">SQL-запрос</div>
+</div>
+
+<div class="code__source">
+<pre class="prettyprint">
+-- Для MSSQL или PostgreSQL
+INSERT INTO [dbo].[Table] (Column1, Column2, Column3)
+VALUES (1, 1, 1),
+    (2, 2, 2),
+    (3, 3, 3)
+	
+-- Для Oracle
+INSERT ALL
+    into Table (column1, column2, column3) values (1, 1, 1)
+    into Table (column1, column2, column3) values (2, 2, 2)
+    into Table (column1, column2, column3) values (3, 3, 3)
+SELECT * FROM dual
+</pre>
+</div>
+</div>
+</div>
+
+<p><strong>Особенности использования</strong> многострочного добавления данных:</p>
+
+<ul><li>Ограничение количества параметров в MS SQL при использовании <span class="filled">Column.Parameter</span> в выражении <span class="filled">Set()</span> — 2100 параметров.</li>
+	<li>
+	<p>При превышении допустимого количества параметров разбивку запроса на подзапросы должен выполнить разработчик, поскольку класс <span class="filled">Terrasoft.Core.DB.Insert</span> не предоставляет такую возможность.</p>
+
+	<div class="code">
+	<div class="code__widgets">
+	<div class="code__top">
+	<div class="code__title">Пример</div>
+	</div>
+
+	<div class="code__source">
+	<pre class="prettyprint">
+IEnumerable&lt;IEnumerable&lt;ImportEntity&gt;&gt; GetImportEntitiesChunks(IEnumerable&lt;ImportEntity&gt; entities, IEnumerable&lt;ImportColumn&gt; keyColumns) {
+    var entitiesList = entities.ToList();
+    var columnsList = keyColumns.ToList();
+    var maxParamsPerChunk = Math.Abs(MaxParametersCountPerQueryChunk / columnsList.Count + 1);
+    var chunksCount = (int)Math.Ceiling(entitiesList.Count / (double)maxParamsPerChunk);
+    return entitiesList.SplitOnParts(chunksCount);
+}
+
+var entitiesList = GetImportEntitiesChunks(entities, importColumns);
+entitiesList.AsParallel().AsOrdered()
+    .ForAll(entitiesBatch =&gt; {
+        try {
+            var insertQuery = GetBufferedImportEntityInsertQuery();
+            foreach (var importEntity in entitiesBatch) {
+                insertQuery.Values();
+                SetBufferedImportEntityInsertColumnValues(importEntity, insertQuery,
+                        importColumns);
+                insertQuery.Set("ImportSessionId", Column.Parameter(importSessionId));
+            }
+            insertQuery.Execute();
+        } catch (Exception e) {
+            //...
+        }
+});
+</pre>
+	</div>
+	</div>
+	</div>
+	</li>
+	<li>Валидацию совпадения количества колонок и количества условий <span class="filled">Set()</span> должен выполнить разработчик, поскольку класс <span class="filled">Terrasoft.Core.DB.Insert</span> не предоставляет такую возможность. При несовпадении количества возникнет исключение на уровне работы СУБД.</li>
+</ul><h3>Добавление данных из выборки<a class="title-anchor" href="#title-3514-4" id="title-3514-4"> </a></h3>
+
+<p><strong>Назначение</strong> класса <span class="filled">Terrasoft.Core.DB.InsertSelect</span> — построение запросов на добавление записей в таблицы базы данных на основании данных, полученных в запросах на получение записей из таблицы базы данных. То есть в качестве источника данных запроса используется экземпляр класса <span class="filled">Terrasoft.Core.DB.Select</span>. После создания и конфигурирования экземпляра класса будет построен <span class="filled">INSERT INTO SELECT</span>-запрос к базе данных приложения.</p>
+
+<p><strong>Особенность</strong> класса <span class="filled">Terrasoft.Core.DB.InsertSelect</span> — в результирующем запросе для добавляемых записей не учитываются права доступа текущего пользователя. Пользовательское соединение используется только для доступа к таблице базы данных.</p>
+
+<p><strong>Результат выполнения запроса</strong> — добавление в таблицы базы данных записей, которые были получены в <span class="filled">Select</span>-запросе.</p>
+
+<h2>Изменить данные в базе данных<a class="title-anchor" href="#title-3514-5" id="title-3514-5"> </a></h2>
+
+<p><strong>Классы</strong>, которые реализуют изменение данных в базе данных:</p>
+
+<ul><li><span class="filled">Terrasoft.Core.DB.Update</span>.</li>
+	<li><span class="filled">Terrasoft.Core.DB.UpdateSelect</span>.</li>
+</ul><h3>Массовое изменение данных<a class="title-anchor" href="#title-3514-6" id="title-3514-6"> </a></h3>
+
+<p><strong>Назначение</strong> класса <span class="filled">Terrasoft.Core.DB.Update</span> — построение запросов на изменение записей в таблицах базы данных. После создания и конфигурирования экземпляра класса будет построен <span class="filled">UPDATE</span>-запрос к базе данных приложения.</p>
+
+<h3>Изменение данных на основании выборки<a class="title-anchor" href="#title-3514-7" id="title-3514-7"> </a></h3>
+
+<p><strong>Назначение</strong> класса <span class="filled">Terrasoft.Core.DB.UpdateSelect</span> — построение запросов на изменение записей в таблицах базы данных на основании данных, полученных в запросах на получение записей из таблицы базы данных. То есть в качестве источника данных запроса используется экземпляр класса <span class="filled">Terrasoft.Core.DB.Select</span>. После создания и конфигурирования экземпляра класса будет построен <span class="filled">UPDATE FROM</span>-запрос к базе данных приложения.</p>
+
+<p><strong>Результат выполнения запроса</strong> — изменение в таблице базы данных записей, которые были получены в <span class="filled">Select</span>-запросе.</p>
+
+<h2>Удалить данные из базы данных<a class="title-anchor" href="#title-3514-8" id="title-3514-8"> </a></h2>
+
+<p><span class="filled">Terrasoft.Core.DB.Delete</span> — класс, который реализует удаление данных из базы данных.</p>
+
+<p><strong>Назначение</strong> класса <span class="filled">Terrasoft.Core.DB.Delete</span> — построение запросов на удаление записей из таблиц базы данных. После создания и конфигурирования экземпляра класса будет построен <span class="filled">DELETE</span>-запрос к базе данных приложения.</p>
+
+<h2>Использовать многопоточность при работе с базой данных<a class="title-anchor" href="#title-3514-9" id="title-3514-9"> </a></h2>
+
+<p><strong>Многопоточность</strong> — использование нескольких параллельных потоков при отправке запросов к базе данных через <span class="filled">UserConnection</span>.</p>
+
+<p><span class="filled">Terrasoft.Core.DB.DBExecutor</span> — класс, который позволяет использовать многопоточность. Реализует построение и выполнение нескольких запросов к базе данных в одной транзакции. Одному пользователю доступен только один экземпляр <span class="filled">DBExecutor</span>. Пользователь не имеет возможности создавать новые экземпляры.</p>
+
+<p>Использование многопоточности может привести к проблемам синхронизации старта и подтверждения транзакций. Проблема возникает, даже если <span class="filled">DBExecutor</span> не используется напрямую, а используется, например, через <span class="filled">EntitySchemaQuery</span>.</p>
+
+<p><strong>Особенность</strong> класса <span class="filled">Terrasoft.Core.DB.DBExecutor</span> — создание экземпляра <span class="filled">DBExecutor</span> необходимо оборачивать в оператор <span class="filled">using</span>. Это связано с тем, что для работы с базой данных используются неуправляемые (<span class="filled">unmanaged</span>) ресурсы. Также для освобождения ресурсов можно явно вызвать метод <span class="filled">Dispose()</span> . Использование оператора <span class="filled">using</span> подробно описано в официальной <a href="https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/using-statement" target="_blank">документации Microsoft</a>.</p>
+
+<p>Транзакция начинается вызовом метода <span class="filled">dbExecutor.StartTransaction</span> и заканчивается вызовом <span class="filled">dbExecutor.CommitTransaction</span> или <span class="filled">dbExecutor.RollbackTransaction</span>. Если выполнение вышло за область видимости блока <span class="filled">using</span> и не был вызван метод <span class="filled">dbExecutor.CommitTransaction</span>, происходит автоматический откат транзакции.</p>
+
+<div class="message message_warning">
+<p><span class="message__bold message__bold_warning">Важно.</span> При выполнении нескольких запросов в одной транзакции необходимо передавать <span class="filled">dbExecutor</span> в методы <span class="filled">Execute</span>, <span class="filled">ExecuteReader</span>, <span class="filled">ExecuteScalar</span>.</p>
+</div>
+
+<p>Ниже представлены фрагменты исходного кода с использованием <span class="filled">DBExecutor</span>. Нельзя выполнять вызов методов экземпляра <span class="filled">DBExecutor</span> в параллельных потоках.</p>
+
+<div class="code">
+<div class="code__widgets">
+<div class="code__source" data-tab="Пример правильного использования DBExecutor">
+<pre class="prettyprint">
+/* Первое использование экземпляра DBExecutor в основном потоке. */
+using (DBExecutor dbExecutor = UserConnection.EnsureDBConnection()) {
+    dbExecutor.StartTransaction();
+    //...
+    dbExecutor.CommitTransaction();
+}
+//...
+var select = (Select)new Select(UserConnection)
+    .Column("Id")
+    .From("Contact")
+    .Where("Name")
+    .IsEqual(Column.Parameter("Supervisor"));
+/* Повторное использование экземпляра DBExecutor в основном потоке. */
+using (DBExecutor dbExecutor = UserConnection.EnsureDBConnection()) {
+    using (IDataReader dataReader = select.ExecuteReader(dbExecutor)) {
+        while (dataReader.Read()) {
+            //...
+        }
+    }
+}
+</pre>
+</div>
+
+<div class="code__source" data-tab="Пример неправильного использования DBExecutor">
+<pre class="prettyprint">
+/* Создание параллельного потока. */
+var task = new Task(() =&gt; {
+
+    /* Использование экземпляра DBExecutor в параллельном потоке. */
+    using (DBExecutor dbExecutor = UserConnection.EnsureDBConnection()) {
+        dbExecutor.StartTransaction();
+        //...
+        dbExecutor.CommitTransaction();
+    }
+});
+
+/* Запуск асинхронной задачи в параллельном потоке. Выполнение программы в основном потоке продолжается дальше. */
+task.Start();
+//...
+var select = (Select)new Select(UserConnection)
+    .Column("Id")
+    .From("Contact")
+    .Where("Name")
+    .IsEqual(Column.Parameter("Supervisor"));
+
+/* Использование экземпляра DBExecutor в основном потоке приведет к возникновению ошибки, поскольку экземпляр DBExecutor уже используется в параллельном потоке. */
+using (DBExecutor dbExecutor = UserConnection.EnsureDBConnection()) {
+    using (IDataReader dataReader = select.ExecuteReader(dbExecutor)) {
+        while (dataReader.Read()) {
+            //...
+        }
+    }
+}
+</pre>
+</div>
+</div>
+</div>
+</div>
+      
+  </div>
+<div class="block block-layout-builder block-field-blocknodedeveloper-documentationfield-linked">
+  
+    
+      
+  <div class="field field--name-field-linked field--type-entity-reference field--label-above">
+    <div class="field__label">Смотрите также</div>
+          <div class="field__items">
+              <div class="field__item"><a href="../orm/obzor.html" hreflang="ru">Доступ к данным через ORM</a></div>
+          <div class="field__item"><a href="../../hranilishche_kehsha/obzor.html" hreflang="ru">Хранилища данных и кэш</a></div>
+              </div>
+      </div>
+
+  </div>
+<div class="block block-layout-builder block-field-blocknodedeveloper-documentationfield-resources">
+  
+    
+      
+  <div class="field field--name-field-resources field--type-link field--label-above">
+    <div class="field__label">Ресурсы</div>
+          <div class="field__items">
+              <div class="field__item"><a href="https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/using-statement" target="_blank">Официальная документация Microsoft (использование оператора using)</a></div>
+              </div>
+      </div>
+
+  </div>
+
+    </div>
+  </div>
+
+  </div>
+
+</article>
+
+  </div>
+
+  </div>
+
+          </div>
+        </div>
+
+                  <aside class="creatio-sidebar creatio-sidebar_first" role="complementary">
+              <div class="region region-sidebar-first">
+    <div id="block-documentationnaviagtion" class="block block-ts-nav block-ts-nav-doc-nav">
+  
+    
+      <div class="ts-nav-block"><a href="../../../../../index.html" class="ts-nav-block__link">Документация</a><div class="ts-nav-block__title">Для разработчика</div>
+</div>
+<div class="ts-nav-container"><ul class="ts-nav-menu"><li class="ts-nav-menu__item">
+  <a href="../../../s_chego_nachat.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">С чего начать&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../architecture.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Архитектура&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../instrumenty_razrabotki.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Инструменты разработки&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../back_end_razrabotka.html" class="ts-nav-menu__link ts-nav-menu__link_expanded ts-nav-menu__link_open" hreflang="zxx">Back-end разработка&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+      <ul class="ts-nav-menu__children">
+      <li class="ts-nav-menu__item">
+  <a href="../../fabrika_zameshchayushchikh_klassov.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Фабрика замещающих классов&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../back-end_development/operatsii_s_dannymi_back_end.html" class="ts-nav-menu__link ts-nav-menu__link_expanded ts-nav-menu__link_open" hreflang="ru">Операции с данными&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+      <ul class="ts-nav-menu__children">
+      <li class="ts-nav-menu__item">
+  <a href="../../../back-end_development/operatsii_s_dannymi_back_end/fonovoe_vypolnenie_operacij.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Фоновое выполнение операций&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../back-end_development/operatsii_s_dannymi_back_end/pryamoj_dostup.html" class="ts-nav-menu__link ts-nav-menu__link_expanded ts-nav-menu__link_open" hreflang="ru">Прямой доступ&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+      <ul class="ts-nav-menu__children">
+      <li class="ts-nav-menu__item">
+  <a href="obzor.html" class="ts-nav-menu__link ts-nav-menu__link_guide ts-nav-menu__link_active" hreflang="ru">Обзор</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../poluchit_dannye.html" class="ts-nav-menu__link ts-nav-menu__link_case" hreflang="ru">Получить данные</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../dobavit_dannye.html" class="ts-nav-menu__link ts-nav-menu__link_case" hreflang="ru">Добавить данные</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../dobavit_dannye_podzaprosy.html" class="ts-nav-menu__link ts-nav-menu__link_case" hreflang="ru">Добавить данные (подзапросы)</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../izmenit_dannye.html" class="ts-nav-menu__link ts-nav-menu__link_case" hreflang="ru">Изменить данные</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../udalit_dannye.html" class="ts-nav-menu__link ts-nav-menu__link_case" hreflang="ru">Удалить данные</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../select.html" class="ts-nav-menu__link ts-nav-menu__link_reference" data-type="C#" hreflang="ru">Select</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../insert.html" class="ts-nav-menu__link ts-nav-menu__link_reference" data-type="C#" hreflang="ru">Insert</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../insertselect.html" class="ts-nav-menu__link ts-nav-menu__link_reference" data-type="C#" hreflang="ru">InsertSelect</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../update.html" class="ts-nav-menu__link ts-nav-menu__link_reference" data-type="C#" hreflang="ru">Update</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../updateselect.html" class="ts-nav-menu__link ts-nav-menu__link_reference" data-type="C#" hreflang="ru">UpdateSelect</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../delete.html" class="ts-nav-menu__link ts-nav-menu__link_reference" data-type="C#" hreflang="ru">Delete</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../queryfunction.html" class="ts-nav-menu__link ts-nav-menu__link_reference" data-type="C#" hreflang="ru">QueryFunction</a>
+  </li>
+
+    </ul>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../back-end_development/operatsii_s_dannymi_back_end/orm.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">ORM&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../slozhnye_select_zaprosy/obzor.html" class="ts-nav-menu__link" hreflang="ru">Сложные Select-запросы</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../kopirovanie_ierarkhicheskikh_dannykh/obzor.html" class="ts-nav-menu__link" hreflang="ru">Копирование иерархических данных</a>
+  </li>
+
+    </ul>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../veb_servisy.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Веб-сервисы&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../biznes_logika_obektov/obzor.html" class="ts-nav-menu__link" hreflang="ru">Бизнес-логика объектов</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../hranilishche_kehsha/obzor.html" class="ts-nav-menu__link" hreflang="ru">Хранилище кэша</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../lokalizuemye_resursy.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Локализуемые ресурсы&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../avtomaticheskaya_privyazka_dannykh/obzor.html" class="ts-nav-menu__link" hreflang="ru">Автоматическая привязка данных</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../api_dlya_raboty_s_fajlami.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">API для работы с файлами&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../../../../api/netcoreapi/7.18.0/api/index.html" class="ts-nav-menu__link" hreflang="ru">Библиотека .NET классов</a>
+  </li>
+
+    </ul>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../front_end_razrabotka.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Front-end разработка&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../integratsiya_i_vneshnij_api.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Интеграция и внешний API&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../ehlementy_interfejsa.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Элементы интерфейса&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../komponenty_prilozheniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Компоненты приложения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../razrabotka_mobilnogo_prilozheniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Разработка мобильного приложения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../razrabotka_marketplace_prilozheniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Разработка Marketplace-приложения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+</ul>
+</div>
+
+  </div>
+
+  </div>
+
+            <div class="creatio-sidebar__toggle"></div>
+          </aside>
+        
+                  <aside class="creatio-sidebar creatio-sidebar_second" role="complementary">
+              <div class="region region-sidebar-second">
+    <div id="block-example" class="block block-ts-nav block-ts-nav-page-nav">
+  
+    
+      <div class="ts-nav-page">
+  </div>
+
+  </div>
+<div id="block-adminfeedbackblock" class="block block-admin-feedback block-admin-feedback-block">
+  
+    
+      <div id="feedback-message"><div id="upper-feedback-content"><h2>Был ли данный материал полезен?</h2>
+<input class="feedback-btn feedback-btn__yes button js-form-submit form-submit" data-node-id="3514" data-feedback="yes" type="submit" name="op" value="Да" />
+<input class="feedback-btn feedback-btn__no button js-form-submit form-submit" data-node-id="3514" data-feedback="no" type="submit" name="op" value="Нет" />
+</div>
+<form class="admin-feedback-form" data-drupal-selector="admin-feedback-form" action="https://academy.terrasoft.ua/docs/7-18/developer/back_end_razrabotka/operatsii_s_dannymi_back_end/pryamoj_dostup/obzor" method="post" id="admin-feedback-form" accept-charset="UTF-8">
+  <div id="feedback-msg-result"></div><div class="js-form-item form-item js-form-type-textarea form-type-textarea js-form-item-feedback-message form-item-feedback-message form-no-label">
+        <div class="form-textarea-wrapper">
+  <textarea id="edit-feedback-msg" data-drupal-selector="edit-feedback-message" name="feedback_message" rows="5" cols="60" class="form-textarea resize-vertical"></textarea>
+</div>
+
+        </div>
+<input id="feedback-id" data-drupal-selector="edit-feedback-id" type="hidden" name="feedback_id" value="" />
+<input class="feedback-btn feedback-btn__send-comment button js-form-submit form-submit" data-drupal-selector="edit-feedback-send" type="submit" id="edit-feedback-send" name="op" value="Отправить" />
+<input autocomplete="off" data-drupal-selector="form-cow5txeljwi51sl0fjiunfenkfgkpwjvv6poeczjrs8" type="hidden" name="form_build_id" value="form-cow5txElJWI51Sl0fjiUNfenKfGkpWJVv6pOeCZjRs8" />
+<input data-drupal-selector="edit-admin-feedback-form" type="hidden" name="form_id" value="admin_feedback_form" />
+
+</form>
+</div>
+
+  </div>
+
+  </div>
+
+          </aside>
+              </main>
+    </div>
+  </div>
+
+  <footer role="contentinfo">
+    <div class="creatio-region creatio-region_footer">
+      <div class="creatio-container">
+          <div class="region region-footer">
+    <div id="block-footerua" class="block block-simple-block block-simple-blockfooter-ua">
+  
+    
+      <div class="footer">
+<div class="footer-left">
+<ul class="footer-socials"><li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_fb" href="https://www.facebook.com/terrasoft.ua" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_in" href="https://www.linkedin.com/company/terrasoft/" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_yt" href="https://www.youtube.com/c/TerrasoftUkraine" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_tg" href="https://t.me/Terrasoft_UA" target="_blank"> </a></li>
+</ul></div>
+
+<div class="footer-contact">
+<div class="footer-title">Будьте на связи!</div>
+
+<div class="footer-content">
+<div class="footer-items">
+<div class="footer-item"><a class="footer__link footer__link_phone" href="tel:+380443633133">+38 (044) 363-31-33</a></div>
+</div>
+
+<div class="footer-items">
+<div class="footer-item"><a class="footer__link footer__link_email" href="mailto:support@terrasoft.ua">support@terrasoft.ua</a></div>
+</div>
+</div>
+</div>
+</div>
+
+  </div>
+
+  </div>
+
+      </div>
+    </div>
+    <div class="creatio-region creatio-region_bottom">
+      <div class="creatio-container">
+          <div class="region region-bottom">
+    <div id="block-allrightsreservedua" class="block block-simple-block block-simple-blockfooter-bottom-ua">
+  
+    
+      <p>© 2002-2022 Terrasoft.  |  <a href="https://www.terrasoft.ua/privacy-policy" target="_blank">Конфиденциальность</a></p>
+
+  </div>
+
+  </div>
+
+      </div>
+    </div>
+  </footer>
+</div>
+<div class="creatio-bg"></div>
+
+
+  </div>
+
+    
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/docs\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/3514","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"ru"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"ajaxPageState":{"libraries":"admin_feedback\/admin_feedback_block,admin_feedback\/admin_feedback_css,classy\/base,classy\/messages,classy\/node,core\/drupal.ajax,core\/jquery.form,core\/normalize,creatio\/fancybox,creatio\/global,layout_discovery\/onecol,system\/base,ts_doc\/doc_version,ts_feedback\/ts_feedback,ts_nav\/breadcrumb,ts_nav\/doc_nav,ts_nav\/page_nav,ts_title_anchor\/ts_title_anchor","theme":"creatio","theme_token":null},"ajaxTrustedUrl":{"form_action_p_pvdeGsVG5zNF_XLGPTvYSKCf43t8qZYSwcfZl2uzM":true,"\/docs\/7-18\/developer\/back_end_razrabotka\/operatsii_s_dannymi_back_end\/pryamoj_dostup\/obzor?ajax_form=1":true},"admin_feedback":{"yes_response":"\u0421\u043f\u0430\u0441\u0438\u0431\u043e \u0437\u0430 \u043e\u0431\u0440\u0430\u0442\u043d\u0443\u044e \u0441\u0432\u044f\u0437\u044c!","no_response":"\u0421\u043f\u0430\u0441\u0438\u0431\u043e \u0437\u0430 \u043e\u0431\u0440\u0430\u0442\u043d\u0443\u044e \u0441\u0432\u044f\u0437\u044c!","custom_text_response_on_no":{"value":"","format":"full_html"},"feedback_prompt_on_yes":true,"feedback_prompt_on_no":true,"feedback_enable_predefined_answers":false,"feedback_prompt":"\u041a\u0430\u043a \u043c\u043e\u0436\u043d\u043e \u0443\u043b\u0443\u0447\u0448\u0438\u0442\u044c \u044d\u0442\u0443 \u0441\u0442\u0430\u0442\u044c\u044e?"},"ajax":{"edit-feedback-send":{"callback":"::validateFeedbackMsg","event":"mousedown","keypress":true,"prevent":"click","url":"\/docs\/7-18\/developer\/back_end_razrabotka\/operatsii_s_dannymi_back_end\/pryamoj_dostup\/obzor?ajax_form=1","dialogType":"ajax","submit":{"_triggering_element_name":"op","_triggering_element_value":"\u041e\u0442\u043f\u0440\u0430\u0432\u0438\u0442\u044c"}}},"user":{"uid":0,"permissionsHash":"9c2367dfcaba0fa15f0375f97aed64e146c908cee68508d13b79e3ee80e5162d"}}</script>
+<script src="../../../../../sites/default/files/js/js_Rr-7TvYD7NposuRFJwUqThxM7yJmw8vs03PQwu5gWd8.js"></script>
+
+
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+      <g id="svg-copy" class="svg-icon svg-icon_copy">
+        <path d="M15.111,18H1.889A1.848,1.848,0,0,1,0,16.2V3.6A1.848,1.848,0,0,1,1.889,1.8H5.837a2.87,2.87,0,0,1,5.326,0h3.948A1.848,1.848,0,0,1,17,3.6V16.2A1.848,1.848,0,0,1,15.111,18ZM3.777,12.6v1.8h6.611V12.6Zm0-3.6v1.8h9.445V9Zm0-3.6V7.2h9.445V5.4ZM8.5,1.8a.924.924,0,0,0-.944.9.945.945,0,0,0,1.889,0A.924.924,0,0,0,8.5,1.8Z"/>
+      </g>
+
+      <g id="svg-prev" class="svg-icon svg-icon_arrow">
+        <path d="M5.488,12.779,0,6.39,5.488,0" transform="translate(1 0.652)"/>
+      </g>
+
+      <g id="svg-next" class="svg-icon svg-icon_arrow">
+        <path d="M0,12.779,5.488,6.39,0,0" transform="translate(0.759 0.652)"/>
+      </g>
+    </svg>
+  </body>
+
+<!-- Mirrored from academy.terrasoft.ua/docs/7-18/developer/back_end_razrabotka/operatsii_s_dannymi_back_end/pryamoj_dostup/obzor by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Mar 2022 03:25:11 GMT -->
+</html>

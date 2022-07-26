@@ -1,0 +1,1051 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# ">
+  
+<!-- Mirrored from academy.terrasoft.ua/docs/7-16/developer/ehlementy_interfejsa/detail/nastroit_detal_s_polyami by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Mar 2022 05:09:41 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+          <!-- Google Tag Manager -->
+      <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          '../../../../../../www.googletagmanager.com/gtm5445.html?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-KLLB8G');</script>
+      <!-- End Google Tag Manager -->
+        <meta charset="utf-8" />
+<link rel="canonical" href="nastroit_detal_s_polyami.html" />
+<meta name="description" content="Важно. При разработке детали с полями для продуктов линейки Financial Services Creatio используется схема BaseFieldsDetail пакета BaseFinance. Этот пакет присутствует только в продуктах линейки Financial Services Creatio.
+
+
+Чтобы использовать деталь с полями в CRM продуктах Creatio:" />
+<meta property="og:url" content="https://academy.terrasoft.ua/docs/7-16/developer/ehlementy_interfejsa/detail/nastroit_detal_s_polyami" />
+<meta property="og:title" content="Настроить деталь с полями" />
+<meta property="og:description" content="Важно. При разработке детали с полями для продуктов линейки Financial Services Creatio используется схема BaseFieldsDetail пакета BaseFinance. Этот пакет присутствует только в продуктах линейки Financial Services Creatio.
+
+
+Чтобы использовать деталь с полями в CRM продуктах Creatio:" />
+<meta name="Generator" content="Drupal 9 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="../../../../themes/custom/creatio/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="revision" href="nastroit_detal_s_polyami.html" />
+
+    <title>Настроить деталь с полями | Creatio Academy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&amp;family=Open+Sans:ital,wght@0,300;0,400;0,600;1,400&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" media="all" href="../../../../sites/default/files/css/css_6lTP66__-yc6QXFp1zOwoeJ0HVigoYZP-SeoLLii000.css" />
+<link rel="stylesheet" media="all" href="../../../../sites/default/files/css/css_XQJDNhkF3xH5SZCcY-PI89Zu4nYIzQ5oR3SnUKyfXJU.css" />
+<link rel="stylesheet" media="print" href="../../../../sites/default/files/css/css_Zn4VHvcniOOtUwkIVwXzYr_0AI9gUVgZcPqaH4ViagU.css" />
+
+    
+  </head>
+  <body class="path-node page-node-type-case">
+          <!-- Google Tag Manager (noscript) -->
+      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KLLB8G"
+                        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+      <!-- End Google Tag Manager (noscript) -->
+    
+        
+      <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    <div class="creatio-page d-flex flex-column">
+        <div class="region region-informer">
+    <div id="block-terrasoftpidtrimueukrainu" class="block block-simple-block block-simple-blockterrasoft-pidtrimue-ukrainu">
+  
+    
+      <style type="text/css">
+<!--/*--><![CDATA[/* ><!--*/
+@import url(../../../../../../www.terrasoft.ua/themes/custom/creatio/css/components/informer.css)
+
+/*--><!]]>*/
+</style><div class="ts-swu">
+<div class="creatio-container">
+<div class="ts-swu__cont">
+<div><a class="ts-swu__link" href="https://www.terrasoft.ua/terrasoft-stands-with-ukraine" target="_blank">Україна понад усе!</a> <span><a href="https://www.terrasoft.ua/terrasoft-stands-with-ukraine" target="_blank">Приєднуйтеся</a> до допомоги!</span></div>
+</div>
+</div></div>
+
+  </div>
+
+  </div>
+
+  
+  <header role="banner">
+          <div class="creatio-region creatio-region_top">
+        <div class="creatio-container">
+            <div class="region region-top">
+    <div id="block-menutoggle" class="block block-simple-block block-simple-blockmenu-toggle">
+  
+    
+      <div class="menu-toggle"><span> </span></div>
+
+  </div>
+<div id="block-logowhite-2" class="block block-simple-block block-simple-blocklogo-white">
+  
+    
+      <p><a class="site-logo" href="../../../../../index.html" rel="home"><img src="../../../../themes/custom/creatio/logo-white.svg" /></a></p>
+
+  </div>
+<div id="block-search" class="block block-simple-block block-simple-blocksearch">
+  
+    
+      <div class="search">
+<form action="https://academy.terrasoft.ua/search" class="search-form" method="get"><input class="search-form__input" name="search" placeholder="Поиск" type="search" /><input class="search-form__button" type="submit" value="Поиск" /> </form>
+
+<div class="search-toggle"> </div>
+</div>
+
+  </div>
+<nav role="navigation" aria-labelledby="block-sitesua-menu" id="block-sitesua" class="block block-menu navigation menu--sites-ua">
+            
+  <h2 class="visually-hidden" id="block-sitesua-menu">Sites UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="https://www.terrasoft.ua/" rel="nofollow" target="_blank">Terrasoft</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://community.terrasoft.ua/" rel="nofollow" target="_blank">Community</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://marketplace.terrasoft.ua/" rel="nofollow" target="_blank">Marketplace</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+<div id="block-usermenu" class="block block-ts-user block-ts-user-menu-block">
+  
+    
+      <ul class="user-menu">
+      <li class="user-menu__item">
+      <a class="user-menu__link" href="https://profile.terrasoft.ua/user/login?destination=academy/ua/docs/7-16/developer/ehlementy_interfejsa/detail/nastroit_detal_s_polyami">Войти</a>
+    </li>
+  </ul>
+
+  </div>
+<div id="block-usermenumobile" class="block block-ts-user block-ts-user-menu-mobile-block">
+  
+    
+      <ul class="user-menu-mobile">
+      <li class="user-menu-mobile__item">
+      <div class="user-menu-mobile__user user-menu-mobile__user_icon"></div>
+      <ul class="user-menu-mobile__submenu">
+        <li class="user-menu-mobile__subitem">
+          <a class="user-menu-mobile__sublink" href="https://profile.terrasoft.ua/user/login?destination=academy/ua/docs/7-16/developer/ehlementy_interfejsa/detail/nastroit_detal_s_polyami">Войти</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  </div>
+
+  </div>
+
+        </div>
+      </div>
+              <div class="creatio-region creatio-region_header">
+        <div class="creatio-container">
+            <div class="region region-header">
+    <div id="block-logo" class="block block-simple-block block-simple-blocklogo">
+  
+    
+      <p><a class="site-logo" href="../../../../../index.html" rel="home"><img src="../../../../themes/custom/creatio/logo.svg" /></a></p>
+
+  </div>
+<nav role="navigation" aria-labelledby="block-osnovnayanavigaciyaua-menu" id="block-osnovnayanavigaciyaua" class="block block-menu navigation menu--main-ua">
+            
+  <h2 class="visually-hidden" id="block-osnovnayanavigaciyaua-menu">Основная навигация UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="../../../../index.html" data-drupal-link-system-path="&lt;front&gt;">Документация</a>
+              </li>
+                <li class="menu-item">
+        <a href="../../../../../trainings.html">Тренинги</a>
+              </li>
+                <li class="menu-item">
+        <a href="../../../../certification.html" data-drupal-link-system-path="node/3084">Сертификация и тестирование</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+<nav role="navigation" aria-labelledby="block-sitesua-2-menu" id="block-sitesua-2" class="block block-menu navigation menu--sites-ua">
+            
+  <h2 class="visually-hidden" id="block-sitesua-2-menu">Sites UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="https://www.terrasoft.ua/" rel="nofollow" target="_blank">Terrasoft</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://community.terrasoft.ua/" rel="nofollow" target="_blank">Community</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://marketplace.terrasoft.ua/" rel="nofollow" target="_blank">Marketplace</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+
+  </div>
+
+        </div>
+      </div>
+              <div class="creatio-region creatio-region_breadcrumb">
+        <div class="creatio-container">
+            <div class="region region-breadcrumb">
+    <div id="block-logowhite" class="block block-simple-block block-simple-blocklogo-white">
+  
+    
+      <p><a class="site-logo" href="../../../../../index.html" rel="home"><img src="../../../../themes/custom/creatio/logo-white.svg" /></a></p>
+
+  </div>
+<div id="block-breadcrumbnaviagtion" class="block block-ts-nav block-ts-nav-bread">
+  
+    
+      <nav class="breadcrumb"><ol class="ts-nav-breadcrumb__list"><li class="ts-nav-breadcrumb__item"><a href="../../../../index.html" class="ts-nav-breadcrumb__link" title="Документация">Документация</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../../index2132.html?vid_1=2" class="ts-nav-breadcrumb__link" title="Для разработчика">Для разработчика</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../ehlementy_interfejsa.html" class="ts-nav-breadcrumb__link" title="Элементы интерфейса" hreflang="ru">Элементы интерфейса</a></li>
+<li class="ts-nav-breadcrumb__item ts-nav-breadcrumb__item_mobile"><a href="../../1215/detail.html" class="ts-nav-breadcrumb__link" title="Деталь" hreflang="ru">Деталь</a></li>
+<li class="ts-nav-breadcrumb__item"><span class="ts-nav-breadcrumb__link ts-nav-breadcrumb__link_current" title="Настроить деталь с полями">Настроить деталь с полями</span></li>
+</ol>
+</nav>
+
+  </div>
+<div id="block-search-2" class="block block-simple-block block-simple-blocksearch">
+  
+    
+      <div class="search">
+<form action="https://academy.terrasoft.ua/search" class="search-form" method="get"><input class="search-form__input" name="search" placeholder="Поиск" type="search" /><input class="search-form__button" type="submit" value="Поиск" /> </form>
+
+<div class="search-toggle"> </div>
+</div>
+
+  </div>
+
+  </div>
+
+        </div>
+      </div>
+      </header>
+
+  <div class="creatio-region creatio-region_main">
+    <div class="creatio-container">
+                <div class="region region-breadcrumb-mobile">
+    <div id="block-breadcrumbnaviagtion-2" class="block block-ts-nav block-ts-nav-bread">
+  
+    
+      <nav class="breadcrumb"><ol class="ts-nav-breadcrumb__list"><li class="ts-nav-breadcrumb__item"><a href="../../../../index.html" class="ts-nav-breadcrumb__link" title="Документация">Документация</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../../index2132.html?vid_1=2" class="ts-nav-breadcrumb__link" title="Для разработчика">Для разработчика</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../ehlementy_interfejsa.html" class="ts-nav-breadcrumb__link" title="Элементы интерфейса" hreflang="ru">Элементы интерфейса</a></li>
+<li class="ts-nav-breadcrumb__item ts-nav-breadcrumb__item_mobile"><a href="../../1215/detail.html" class="ts-nav-breadcrumb__link" title="Деталь" hreflang="ru">Деталь</a></li>
+<li class="ts-nav-breadcrumb__item"><span class="ts-nav-breadcrumb__link ts-nav-breadcrumb__link_current" title="Настроить деталь с полями">Настроить деталь с полями</span></li>
+</ol>
+</nav>
+
+  </div>
+
+  </div>
+
+      
+      <main class="creatio-main" role="main">
+                                                    
+        <div class="creatio-content creatio-content_small">
+          <div class="creatio-content__inner creatio-content__inner_bg">
+                            <div class="region region-messages">
+    <div data-drupal-messages-fallback class="hidden"></div>
+
+  </div>
+
+            
+              <div class="region region-content">
+    <div id="block-creatio-page-title" class="block block-core block-page-title-block">
+  
+    
+      
+  <h1 class="page-title"><span class="field field--name-title field--type-string field--label-hidden">Настроить деталь с полями</span>
+</h1>
+
+
+  </div>
+<div id="block-creatio-content" class="block block-system block-system-main-block">
+  
+    
+      
+<article data-history-node-id="3210" role="article" about="/docs/7-16/developer/ehlementy_interfejsa/detail/nastroit_detal_s_polyami" class="node node--type-case node--view-mode-full">
+
+  
+    
+
+  
+  <div class="node__content">
+      <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocknodecasefield-difficulty">
+  
+    
+      
+            <div class="field field--name-field-difficulty field--type-entity-reference field--label-hidden field__item"><div about="/docs/7-16/taxonomy/term/169" id="taxonomy-term-169" class="taxonomy-term vocabulary-difficulty">
+  
+  
+  <div class="content">
+      <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocktaxonomy-termdifficultyfield-icon">
+  
+    
+      
+            <div class="field field--name-field-icon field--type-image field--label-hidden field__item">  <img src="../../../../sites/default/files/difficulty/advanced.svg" alt="" loading="lazy" typeof="foaf:Image" />
+
+</div>
+      
+  </div>
+<div class="block block-layout-builder block-field-blocktaxonomy-termdifficultyname">
+  
+    
+      
+            <div class="field field--name-name field--type-string field--label-hidden field__item"><span style="color: #EF4524;">Сложный</span></div>
+      
+  </div>
+
+    </div>
+  </div>
+
+  </div>
+</div>
+</div>
+      
+  </div>
+<div class="block block-ts-doc block-ts-doc-downloads">
+  
+    
+      <a href="../../../../sites/default/files/pdf/node/3210/Nastroit_detal_s_polyami_.pdf" target="_blank">PDF</a>
+  </div>
+<div class="block block-ts-doc block-ts-doc-versions">
+  
+    
+        <div class="ts-doc-versions">
+    <select class="ts-doc-versions__select">
+                              <option value="/docs/8-0/developer/ehlementy_interfejsa/detail/nastroit_detal_s_polyami">Версия 8.0</option>
+                              <option value="/docs/7-18/developer/ehlementy_interfejsa/detail/nastroit_detal_s_polyami">Версия 7.18</option>
+                              <option value="/docs/7-17/developer/ehlementy_interfejsa/detail/nastroit_detal_s_polyami">Версия 7.17</option>
+                                                <option value="/docs/7-16/developer/ehlementy_interfejsa/detail/nastroit_detal_s_polyami" selected>Версия 7.16</option>
+          </select>
+  </div>
+
+  </div>
+
+    </div>
+  </div>
+  <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocknodecasebody">
+  
+    
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><div class="message message_warning">
+<p><span class="message__bold message__bold_warning">Важно.</span> При разработке детали с полями для продуктов линейки Financial Services Creatio используется схема <span class="filled">BaseFieldsDetail</span> пакета <span class="filled">BaseFinance</span>. Этот пакет присутствует только в продуктах линейки Financial Services Creatio.</p>
+</div>
+
+<p>Чтобы <strong>использовать деталь с полями в CRM продуктах Creatio</strong>:</p>
+
+<ol><li><a href="../../../../../sites/default/files/documents/downloads/SDK/Packages/sdkFieldsDetailPackage_2021-10-18_15.06.12.zip">Cкачайте пакет</a> <span class="filled">sdkFieldsDetailPackage</span>.</li>
+	<li>Импортируйте пакет в пользовательское приложение. Для этого воспользуйтесь инструкцией, которая приведена в статье <a href="../../../../developer/instrumenty_razrabotki/upravlenie_postavkami/creatio_ide/obzor.html#case-2942">Перенести пакеты</a>.</li>
+	<li>Добавьте пакет <span class="filled">sdkFieldsDetailPackage</span> в зависимости пользовательского пакета.</li>
+</ol><div class="message message_example">
+<p><span class="message__bold message__bold_example">Пример.</span> Реализовать пользовательскую деталь <span class="key">Медицинские документы</span> (<span class="key">Medical documents</span>), которая содержит виртуальные поля <span class="key">Номер</span> (<span class="key">Number</span>) и <span class="key">Серия</span> (<span class="key">Series</span>). Добавить деталь на вкладку <span class="key">История</span> (<span class="key">History</span>) страницы физического лица. Значение, введенное в поле <span class="key">Номер</span> (<span class="key">Number</span>), не должно быть отрицательным. Названия полей детали отображать синим цветом.</p>
+</div>
+
+<h2>1. Создать пользовательскую деталь<a class="title-anchor" href="#title-2250-1" id="title-2250-1"> </a></h2>
+
+<ol><li>Создайте пользовательский пакет и установите его в качестве текущего. Подробнее читайте в статье <a href="../../../../developer/instrumenty_razrabotki/pakety/obshchiye_printsipy_raboty_s_paketami/obzor.html#title-2105-10">Общие принципы работы с пакетами</a>.</li>
+	<li>Перейдите в дизайнер системы по кнопке <img src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/TryIt/scr_system_designer.png" />.</li>
+	<li>В блоке <span class="key">Настройка системы</span> (<span class="key">System setup</span>) перейдите по ссылке <span class="key">Мастер деталей</span> (<span class="key">Detail wizard</span>).</li>
+	<li>
+	<p>Заполните свойства детали:</p>
+
+	<ul><li><span class="key">Заголовок</span> (<span class="key">Title</span>) — "<span class="consolas">Медицинские документы</span>" ("<span class="consolas">Medical documents</span>").</li>
+		<li>
+		<p><span class="key">По какому объекту создать деталь?</span> (<span class="key">How to create detail?</span>) — выберите "<span class="consolas">Новому объекту</span>" ("<span class="consolas">Create new object</span>").</p>
+
+		<p>Заполните свойства объекта:</p>
+
+		<ul><li><span class="key">Заголовок</span> (<span class="key">Title</span>) — "<span class="consolas">Медицинский документ</span>" ("<span class="consolas">Medical document</span>").</li>
+			<li><span class="key">Код</span> (<span class="key">Code</span>) — "<span class="consolas">UsrMedDocument</span>".</li>
+		</ul><div class="media">
+		<div class="media__element"><img src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/BaseFieldsDetailExtended/7.18/scr_detail_schema_props.png" /></div>
+		</div>
+		</li>
+	</ul><p>После сохранения в конфигурации будут созданы:</p>
+
+	<ul><li>Схема <span class="filled">UsrMedDocument</span> объекта детали.</li>
+		<li>Схема <span class="filled">UsrSchemac6fd3fd0Detail</span> модели представления реестра детали <span class="key">Медицинские документы</span> (<span class="key">Medical documents</span>).</li>
+		<li>Схема <span class="filled">UsrUsrMedDocument4988cee4Page</span> модели представления страницы записи детали <span class="key">Медицинские документы</span> (<span class="key">Medical documents</span>).</li>
+	</ul></li>
+	<li>Перейдите на вкладку <span class="key">Страница</span> (<span class="key">Page</span>) для настройки страницы записи детали.</li>
+	<li>
+	<p>Настройте поля детали.</p>
+
+	<ol><li>
+		<p>Заполните свойства поля <span class="key">Contact</span> типа <span class="key">Справочник</span> (<span class="key">Lookup</span>).</p>
+
+		<ol><li><span class="key">Заголовок</span> (<span class="key">Title</span>) — "<span class="consolas">Физ. лицо</span>" ("<span class="consolas">Contact</span>").</li>
+			<li><span class="key">Код</span> (<span class="key">Code</span>) — "<span class="consolas">UsrContact</span>".</li>
+			<li>Установите признак <span class="key">Обязательное</span> (<span class="key">Required</span>).</li>
+			<li><span class="key">Справочник</span> (<span class="key">Lookup</span>) — выберите "<span class="consolas">Контакт</span>" ("<span class="consolas">Contact</span>").</li>
+		</ol><div class="media">
+		<div class="media__element"><img src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/BaseFieldsDetailExtended/7.18/scr_UsrContact_props.png" /></div>
+		</div>
+		</li>
+		<li>
+		<p>Заполните свойства поля <span class="key">Series</span> типа <span class="key">Строка</span> (<span class="key">String</span>).</p>
+
+		<ol><li><span class="key">Заголовок</span> (<span class="key">Title</span>) — "<span class="consolas">Серия</span>" ("<span class="consolas">Series</span>").</li>
+			<li><span class="key">Код</span> (<span class="key">Code</span>) — "<span class="consolas">UsrSeries</span>".</li>
+			<li><span class="key">Длина строки</span> (<span class="key">Text length</span>) — выберите "<span class="consolas">Строка (50 символов)</span>" ("<span class="consolas">Text (50 characters)</span>").</li>
+			<li>Установите признак <span class="key">Обязательное</span> (<span class="key">Required</span>).</li>
+		</ol><div class="media">
+		<div class="media__element"><img src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/BaseFieldsDetailExtended/7.18/scr_UsrSeries_props.png" /></div>
+		</div>
+		</li>
+		<li>
+		<p>Заполните свойства поля <span class="key">Number</span> типа <span class="key">Целое число</span> (<span class="key">Integer</span>).</p>
+
+		<ol><li><span class="key">Заголовок</span> (<span class="key">Title</span>) — "<span class="consolas">Номер</span>" ("<span class="consolas">Number</span>").</li>
+			<li><span class="key">Код</span> (<span class="key">Code</span>) — "<span class="consolas">UsrNumber</span>".</li>
+			<li>Установите признак <span class="key">Обязательное</span> (<span class="key">Required</span>).</li>
+		</ol><div class="media">
+		<div class="media__element"><img src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/BaseFieldsDetailExtended/7.18/scr_UsrNumber_props.png" /></div>
+		</div>
+		</li>
+	</ol></li>
+	<li>При необходимости, измените расположение полей детали.</li>
+	<li>На панели инструментов мастера деталей нажмите <span class="key">Сохранить</span> (<span class="key">Save</span>).</li>
+</ol><p>После сохранения в конфигурации будет модифицирована схема <span class="filled">UsrUsrMedDocument4988cee4Page</span> модели представления страницы записи детали <span class="key">Медицинские документы</span> (<span class="key">Medical documents</span>).</p>
+
+<h2>2. Настроить пользовательскую деталь<a class="title-anchor" href="#title-2250-2" id="title-2250-2"> </a></h2>
+
+<ol><li><a href="../../../../7-17/developer/instrumenty_razrabotki/creatio_ide/razrabotka_v_creatio_ide.html#title-2093-1">Перейдите в раздел <span class="key">Конфигурация</span></a> (<span class="key">Configuration</span>) и выберите пользовательский <a href="../../../../developer/instrumenty_razrabotki/pakety/obshchiye_printsipy_raboty_s_paketami/obzor.html">пакет</a>, который был установлен в качестве текущего.</li>
+	<li>Откройте схему <span class="filled">UsrMedDocument</span> объекта детали.</li>
+	<li>
+	<p>В контекстном меню узла <span class="key">Колонки</span> (<span class="key">Columns</span>) структуры объекта удалите обязательную колонку <span class="filled">[UsrName]</span>.</p>
+
+	<div class="media">
+	<div class="media__element"><img src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/BaseFieldsDetailExtended/7.18/scr_UsrName_delete.png" /></div>
+	</div>
+	</li>
+	<li>На панели инструментов дизайнера объектов нажмите <span class="key">Опубликовать</span> (<span class="key">Publish</span>).</li>
+	<li>Откройте схему <span class="filled">UsrSchemac6fd3fd0Detail</span> модели представления реестра детали <span class="key">Медицинские документы</span> (<span class="key">Medical documents</span>).</li>
+	<li>
+	<p>На панели свойств нажмите кнопку <img src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/CreateClientSchema(7.17)/scr_edit_button.png" /> и измените значение поля <span class="key">Родительский объект</span> (<span class="key">Parent object</span>) на <span class="filled">BaseFieldsDetail</span>. Схема <span class="filled">BaseFieldsDetail</span> реализует деталь с полями. По умолчанию в мастере деталей в качестве родительского объекта устанавливается базовая схема детали с реестром.</p>
+
+	<div class="media">
+	<div class="media__element"><img src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/BaseFieldsDetailExtended/7.18/scr_parent_object.png" /></div>
+	</div>
+	</li>
+	<li>
+	<p>В свойство <span class="filled">methods</span> схемы модели представления детали добавьте метод <span class="filled">getDisplayColumns</span>, который возвращает массив с названиями колонок, отображающихся как поля в детали.</p>
+
+	<p>Исходный код схемы <span class="filled">UsrSchemac6fd3fd0Detail</span> представлен ниже.</p>
+
+	<div class="code">
+	<div class="code__widgets">
+	<div class="code__top">
+	<div class="code__title"><span class="filled">UsrSchemac6fd3fd0Detail</span></div>
+	</div>
+
+	<div class="code__source">
+	<pre class="prettyprint">
+define("UsrSchemac6fd3fd0Detail", [], function() {
+    return {
+        entitySchemaName: "UsrMedDocument",
+        details: /**SCHEMA_DETAILS*/{}/**SCHEMA_DETAILS*/,
+        diff: /**SCHEMA_DIFF*/[]/**SCHEMA_DIFF*/,
+        methods: {
+            getDisplayColumns: function() {
+                return ["UsrSeries", "UsrNumber"];
+            }
+        }
+    };
+});
+</pre>
+	</div>
+	</div>
+	</div>
+	</li>
+	<li>На панели инструментов дизайнера модуля нажмите <span class="key">Сохранить</span> (<span class="key">Save</span>).</li>
+</ol><h2>3. Добавить деталь на страницу записи раздела<a class="title-anchor" href="#title-2250-3" id="title-2250-3"> </a></h2>
+
+<ol><li>Перейдите в раздел <span class="key">Физ. лица</span> (<span class="key">Contacts</span>) и откройте страницу физического лица.</li>
+	<li>На панели инструментов кликните <span class="key">Вид</span> —&gt; <span class="key">Открыть мастер раздела</span> (<span class="key">View</span> —&gt; <span class="key">Open section wizard</span>).</li>
+	<li>В рабочей области мастера разделов перейдите на вкладку <span class="key">История</span> (<span class="key">History</span>) и нажмите кнопку <span class="key">Добавить деталь</span> (<span class="key">New detail</span>).</li>
+	<li>
+	<p>Заполните настройки детали.</p>
+
+	<ul><li><span class="key">Деталь</span> (<span class="key">Detail</span>) — выберите "<span class="consolas">Медицинские документы</span>" ("<span class="consolas">Medical documents</span>"). Поля <span class="key">Заголовок</span> (<span class="key">Title</span>) и <span class="key">Код (на английском)</span> (<span class="key">Code</span>) заполнятся автоматически.</li>
+		<li>
+		<p><span class="key">У которых колонка детали</span> (<span class="key">Where detail column</span>) — выберите "<span class="consolas">Физ. лицо</span>" ("<span class="consolas">Contact</span>").</p>
+
+		<p>Значения остальных колонок оставьте без изменений.</p>
+		</li>
+	</ul><div class="media">
+	<div class="media__element"><img src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/BaseFieldsDetailExtended/7.18/scr_DetailInWizard_props.png" /></div>
+	</div>
+	</li>
+	<li>Нажмите <span class="key">Сохранить</span> —&gt; <span class="key">Мастер раздела</span> —&gt; <span class="key">Сохранить</span> (<span class="key">Save</span> —&gt; <span class="key">Section wizard</span> —&gt; <span class="key">Save</span>).</li>
+</ol><p>В результате деталь <span class="key">Медицинские документы</span> (<span class="key">Medical documents</span>) будет добавлена на вкладку <span class="key">История</span> (<span class="key">History</span>) страницы физического лица.</p>
+
+<div class="media">
+<div class="media__element"><img src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/BaseFieldsDetailExtended/7.18/scr_DetailInSection.png" /></div>
+</div>
+
+<h2>4. Добавить пользовательские стили детали<a class="title-anchor" href="#title-2250-4" id="title-2250-4"> </a></h2>
+
+<p>Поскольку в схеме модели представления страницы детали невозможно задать стили для отображения, необходимо:</p>
+
+<ol><li>Создать схему модуля, в которой определить стили.</li>
+	<li>Добавить модуль со стилями в зависимости модуля детали.</li>
+</ol><h3>1. Создать схему модуля<a class="title-anchor" href="#title-2250-5" id="title-2250-5"> </a></h3>
+
+<ol><li><a data-auto-update-caption="true" href="../../instrumenty_razrabotki/creatio_ide/razrabotka_v_creatio_ide.html#title-2093-1">Перейдите в раздел <span class="key">Конфигурация</span></a> (<span class="key">Configuration</span>) и выберите пользовательский <a href="../../../../developer/instrumenty_razrabotki/pakety/obshchiye_printsipy_raboty_s_paketami/obzor.html">пакет</a>, который был установлен в качестве текущего.</li>
+	<li>
+	<p>На панели инструментов реестра раздела нажмите <span class="key">Добавить</span> —&gt; <span class="key">Модуль</span> (<span class="key">Add</span> —&gt; <span class="key">Module</span>).</p>
+
+	<div class="media">
+	<div class="media__element"><img src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/CreateClientSchema(7.17)/scr_add_module.png" /></div>
+	</div>
+	</li>
+	<li>
+	<p>Заполните свойства схемы:</p>
+
+	<ul><li><span class="key">Код</span> (<span class="key">Code</span>) — "<span class="consolas">UsrMedDocumentRowViewModel</span>".</li>
+		<li><span class="key">Заголовок</span> (<span class="key">Title</span>) — "<span class="consolas">MedDocumentRowViewModel</span>".</li>
+	</ul><div class="media">
+	<div class="media__element"><img src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/BaseFieldsDetailExtended/7.18/scr_module_props.png" /></div>
+	</div>
+
+	<p>Для применения заданных свойств нажмите <span class="key">Применить</span> (<span class="key">Apply</span>).</p>
+	</li>
+	<li>
+	<p>В дизайнере схем добавьте исходный код. В исходном коде схемы создайте описание модуля и определите в нем класс <span class="filled">Terrasoft.configuration.UsrMedDocumentRowViewModel</span>, унаследованный от класса <span class="filled">Terrasoft.BaseFieldRowViewModel</span>.</p>
+
+	<div class="code">
+	<div class="code__widgets">
+	<div class="code__top">
+	<div class="code__title"><span class="filled">UsrMedDocumentRowViewModel</span></div>
+	</div>
+
+	<div class="code__source">
+	<pre class="prettyprint">
+define("UsrMedDocumentRowViewModel", ["BaseFieldRowViewModel"], function() {
+    Ext.define("Terrasoft.configuration.UsrMedDocumentRowViewModel", {
+        extend: "Terrasoft.BaseFieldRowViewModel",
+        alternateClassName: "Terrasoft.UsrMedDocumentRowViewModel"
+    });
+    return Terrasoft.UsrMedDocumentRowViewModel;
+});
+</pre>
+	</div>
+	</div>
+	</div>
+	</li>
+	<li>
+	<p>Перейдите в узел <span class="key">LESS</span> структуры объекта и задайте необходимые стили отображения детали.</p>
+
+	<div class="code">
+	<div class="code__widgets">
+	<div class="code__top">
+	<div class="code__title">Настройка стилей отображения детали</div>
+	</div>
+
+	<div class="code__source">
+	<pre class="prettyprint">
+.med-document-left-row-container {
+    .t-label {
+        color: blue;
+    }
+}
+.field-detail-row {
+    width: 100;
+    display: inline-flex;
+    margin-bottom: 10px;
+
+    .field-detail-row-left {
+        display: flex;
+        flex-wrap: wrap;
+        
+        .control-width-15 {
+            min-width: 300px;
+            width: 50;
+            margin-bottom: 5px;
+        }
+    }
+    .field-detail-row-left.singlecolumn {
+        width: 50%;
+    }
+}
+</pre>
+	</div>
+	</div>
+	</div>
+	</li>
+	<li>На панели инструментов дизайнера нажмите <span class="key">Сохранить</span> (<span class="key">Save</span>).</li>
+</ol><h3>2. Модифицировать схему модели представления детали<a class="title-anchor" href="#title-2250-6" id="title-2250-6"> </a></h3>
+
+<p>Чтобы <strong>использовать созданный модуль и его стили</strong> в схеме детали:</p>
+
+<ol><li>Откройте схему <span class="filled">UsrSchemac6fd3fd0Detail</span> модели представления реестра детали <span class="key">Медицинские документы</span> (<span class="key">Medical documents</span>).</li>
+	<li>В зависимости схемы <span class="filled">UsrSchemac6fd3fd0Detail</span> добавьте модуль <span class="filled">UsrMedDocumentRowViewModel</span>.</li>
+	<li>
+	<p>В определение модуля схемы детали добавьте методы переопределения базовых CSS-классов стилей:</p>
+
+	<ul><li><span class="filled">getRowViewModelClassName()</span> — метод, который возвращает имя класса модели представления записи на детали.</li>
+		<li><span class="filled">getLeftRowContainerWrapClass()</span> — метод, который возвращает массив строк с названиями CSS-классов, используемых для генерации представления контейнеров, содержащих подписи полей записей.</li>
+	</ul><p>Исходный код модифицированной схемы представлен ниже.</p>
+
+	<div class="code">
+	<div class="code__widgets">
+	<div class="code__top">
+	<div class="code__title"><span class="filled">UsrSchemac6fd3fd0Detail</span></div>
+	</div>
+
+	<div class="code__source">
+	<pre class="prettyprint">
+define("UsrSchemac6fd3fd0Detail", ["UsrMedDocumentRowViewModel", "css!UsrMedDocumentRowViewModel"], function() {
+    return {
+        entitySchemaName: "UsrMedDocument",
+        details: /**SCHEMA_DETAILS*/{}/**SCHEMA_DETAILS*/,
+        diff: /**SCHEMA_DIFF*/ [], /**SCHEMA_DIFF*/
+        methods: {
+            getDisplayColumns: function() {
+                return ["UsrSeries", "UsrNumber"];
+            },
+            getRowViewModelClassName: function() {
+                return "Terrasoft.UsrMedDocumentRowViewModel";
+            },
+            getLeftRowContainerWrapClass: function() {
+                return ["med-document-left-row-container", "field-detail-row"];
+            }
+        }
+    };
+});
+</pre>
+	</div>
+	</div>
+	</div>
+	</li>
+	<li>На панели инструментов дизайнера нажмите <span class="key">Сохранить</span> (<span class="key">Save</span>).</li>
+</ol><p>В результате названия полей детали <span class="key">Медицинские документы</span> (<span class="key">Medical documents</span>), которая была добавлена на вкладку <span class="key">История</span> (<span class="key">History</span>) страницы физического лица, отображаются синим цветом.</p>
+
+<div class="media">
+<div class="media__element"><img src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/BaseFieldsDetailExtended/7.18/scr_result_1.png" /></div>
+</div>
+
+<h2>5. Добавить валидацию к полю детали<a class="title-anchor" href="#title-2250-7" id="title-2250-7"> </a></h2>
+
+<ol><li>Откройте схему <span class="filled">UsrMedDocumentRowViewModel</span> модуля.</li>
+	<li>
+	<p>Добавьте локализуемую строку с сообщением о неверном значении поля <span class="key">Номер</span> (<span class="key">Number</span>).</p>
+
+	<ol><li>В контекстном меню узла <span class="key">Локализуемые строки</span> (<span class="key">Localizable strings</span>) нажмите кнопку <img src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/CreateClientSchema(7.17)/scr_add_button.png" />.</li>
+		<li>
+		<p>Заполните свойства локализуемой строки:</p>
+
+		<ul><li><span class="key">Код</span> (<span class="key">Code</span>) — "<span class="consolas">NumberMustBeGreaterThenZeroMessage</span>".</li>
+			<li><span class="key">Значение</span> (<span class="key">Value</span>) — "<span class="consolas">Number must be greater thаn zero</span>" ("<span class="consolas">Введите номер больше нуля</span>").</li>
+		</ul><div class="media">
+		<div class="media__element"><img src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/BaseFieldsDetailExtended/7.18/scr_localizable_string.png" /></div>
+		</div>
+		</li>
+		<li>Для добавления локализуемой строки нажмите <span class="key">Добавить</span> (<span class="key">Add</span>).</li>
+		<li>В зависимости модуля <span class="filled">UsrMedDocumentRowViewModel</span> добавьте модуль ресурсов <span class="filled">UsrMedDocumentRowViewModelResources</span>. Это необходимо, чтобы значение локализуемой строки отобразилось во front-end части приложения.</li>
+	</ol></li>
+	<li>
+	<p>Добавьте логику работы валидации значения поля <span class="key">Номер</span> (<span class="key">Number</span>). Для этого реализуйте методы:</p>
+
+	<ul><li><span class="filled">validateNumberMoreThenZero()</span> — метод, который содержит логику валидации значения поля.</li>
+		<li><span class="filled">setValidationConfig()</span> — метод, который связывает колонку <span class="filled">[Number]</span> и метод-валидатор <span class="filled">validateNumberMoreThenZero()</span>.</li>
+		<li><span class="filled">init()</span> — переопределенный базовый метод, в котором выполняется вызов базовой логики и метода <span class="filled">setValidationConfig()</span>.</li>
+	</ul><p>Исходный код модифицированной схемы представлен ниже.</p>
+
+	<div class="code">
+	<div class="code__widgets">
+	<div class="code__top">
+	<div class="code__title"><span class="filled">UsrMedDocumentFieldsDetail</span></div>
+	</div>
+
+	<div class="code__source">
+	<pre class="prettyprint">
+define("UsrMedDocumentRowViewModel", ["BaseFieldRowViewModel", "UsrMedDocumentRowViewModelResources"],
+function(resources) {
+    Ext.define("Terrasoft.configuration.UsrMedDocumentRowViewModel", {
+        extend: "Terrasoft.BaseFieldRowViewModel",
+        alternateClassName: "Terrasoft.UsrMedDocumentRowViewModel",
+        validateNumberMoreThenZero: function(columnValue) {
+            var invalidMessage ="";
+            if (columnValue &lt; 0) {
+                invalidMessage = resources.localizableStrings.NumberMustBeGreaterThenZeroMessage;
+            }
+            return {
+                fullInvalidMessage: invalidMessage,
+                invalidMessage: invalidMessage
+            };
+        },
+        setValidationConfig: function() {
+            this.addColumnValidator("UsrNumber", this.validateNumberMoreThenZero);
+        },
+        init: function() {
+            this.callParent(arguments);
+            this.setValidationConfig();
+        }
+    });
+    return Terrasoft.UsrMedDocumentRowViewModel;
+});
+</pre>
+	</div>
+	</div>
+	</div>
+	</li>
+	<li>На панели инструментов дизайнера нажмите <span class="key">Сохранить</span> (<span class="key">Save</span>).</li>
+</ol><p>В результате при вводе отрицательного значения в поле <span class="key">Номер</span> (<span class="key">Number</span>) отображается соответствующее предупреждение.</p>
+
+<div class="media">
+<div class="media__element"><img src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/BaseFieldsDetailExtended/7.18/scr_result_2.png" /></div>
+</div>
+
+<h2>6. Сделать виртуальными поля детали<a class="title-anchor" href="#title-2250-8" id="title-2250-8"> </a></h2>
+
+<ol><li>Откройте схему <span class="filled">UsrSchemac6fd3fd0Detail</span> модели представления реестра детали <span class="key">Медицинские документы</span> (<span class="key">Medical documents</span>).</li>
+	<li>
+	<p>Добавьте реализацию метода <span class="filled">useVirtualRecord()</span>.</p>
+
+	<p>Исходный код модифицированной схемы представлен ниже.</p>
+
+	<div class="code">
+	<div class="code__widgets">
+	<div class="code__top">
+	<div class="code__title"><span class="filled">UsrSchemac6fd3fd0Detail</span></div>
+	</div>
+
+	<div class="code__source">
+	<pre class="prettyprint">
+define("UsrSchemac6fd3fd0Detail", ["UsrMedDocumentRowViewModel", "css!UsrMedDocumentRowViewModel"], function() {
+    return {
+        entitySchemaName: "UsrMedDocument",
+        details: /**SCHEMA_DETAILS*/{}/**SCHEMA_DETAILS*/,
+        diff: /**SCHEMA_DIFF*/ [], /**SCHEMA_DIFF*/
+        methods: {
+            getDisplayColumns: function() {
+                return ["UsrSeries", "UsrNumber"];
+            },
+            getRowViewModelClassName: function() {
+                return "Terrasoft.UsrMedDocumentRowViewModel";
+            },
+            getLeftRowContainerWrapClass: function() {
+                return ["med-document-left-row-container", "field-detail-row"];
+            },
+            useVirtualRecord: function() {
+                return true;
+            }
+        }
+    };
+});
+</pre>
+	</div>
+	</div>
+	</div>
+	</li>
+	<li>На панели инструментов дизайнера нажмите <span class="key">Сохранить</span> (<span class="key">Save</span>).</li>
+</ol><p>В результате при открытии вкладки <span class="key">История</span> (<span class="key">History</span>), которая содержит деталь <span class="key">Медицинские документы</span> (<span class="key">Medical documents</span>), отображается виртуальная запись.</p>
+
+<div class="media">
+<div class="media__element"><img src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/BaseFieldsDetailExtended/7.18/scr_result_3.png" /></div>
+</div>
+</div>
+      
+  </div>
+<div class="block block-layout-builder block-field-blocknodecasefield-resources">
+  
+    
+      
+  <div class="field field--name-field-resources field--type-link field--label-above">
+    <div class="field__label">Ресурсы</div>
+          <div class="field__items">
+              <div class="field__item"><a href="../../../../../sites/default/files/documents/downloads/SDK/Packages/sdkFieldsDetailPackage_2021-10-18_15.00.18.zip" target="_blank">Пакет с реализацией примера для продуктов линейки Financial Services Creatio</a></div>
+          <div class="field__item"><a href="../../../../../sites/default/files/documents/downloads/SDK/Packages/sdkFieldsDetailPackage_2021-10-18_15.06.12.zip" target="_blank">Пакет с реализацией примера для CRM продуктов Creatio</a></div>
+              </div>
+      </div>
+
+  </div>
+
+    </div>
+  </div>
+
+  </div>
+
+</article>
+
+  </div>
+
+  </div>
+
+          </div>
+        </div>
+
+                  <aside class="creatio-sidebar creatio-sidebar_first" role="complementary">
+              <div class="region region-sidebar-first">
+    <div id="block-documentationnaviagtion" class="block block-ts-nav block-ts-nav-doc-nav">
+  
+    
+      <div class="ts-nav-block"><a href="../../../../index.html" class="ts-nav-block__link">Документация</a><div class="ts-nav-block__title">Для разработчика</div>
+</div>
+<div class="ts-nav-container"><ul class="ts-nav-menu"><li class="ts-nav-menu__item">
+  <a href="../../s_chego_nachat.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">С чего начать&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../architecture.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Архитектура&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../instrumenty_razrabotki.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Инструменты разработки&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../back_end_razrabotka.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Back-end разработка&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../front_end_razrabotka.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Front-end разработка&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../integratsiya_i_vneshnij_api.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Интеграция и внешний API&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../ehlementy_interfejsa.html" class="ts-nav-menu__link ts-nav-menu__link_expanded ts-nav-menu__link_open" hreflang="ru">Элементы интерфейса&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+      <ul class="ts-nav-menu__children">
+      <li class="ts-nav-menu__item">
+  <a href="../glavnoe_menyu/obzor.html" class="ts-nav-menu__link" hreflang="ru">Главное меню</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../razdel.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Раздел&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../stranica_zapisi.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Страница записи&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../1215/detail.html" class="ts-nav-menu__link ts-nav-menu__link_expanded ts-nav-menu__link_open" hreflang="ru">Деталь&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+      <ul class="ts-nav-menu__children">
+      <li class="ts-nav-menu__item">
+  <a href="obzor.html" class="ts-nav-menu__link ts-nav-menu__link_guide" hreflang="ru">Обзор</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="nastroit_detal_s_polyami.html" class="ts-nav-menu__link ts-nav-menu__link_case ts-nav-menu__link_active" hreflang="ru">Настроить деталь с полями</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="dobavit_redaktiruemyj_reestr.html" class="ts-nav-menu__link ts-nav-menu__link_case" hreflang="ru">Добавить редактируемый реестр</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="skryt_punkty_menyu_detali_s_reestrom.html" class="ts-nav-menu__link ts-nav-menu__link_case" hreflang="ru">Скрыть пункты меню детали с реестром</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="realizovat_mnozhestvennoe_dobavlenie_zapisej.html" class="ts-nav-menu__link ts-nav-menu__link_case" hreflang="ru">Реализовать множественное добавление записей</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="realizovat_detal_tipa_fajly_i_ssylki.html" class="ts-nav-menu__link ts-nav-menu__link_case" hreflang="ru">Реализовать деталь типа [Файлы и ссылки]</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="basedetailv2.html" class="ts-nav-menu__link ts-nav-menu__link_reference" data-type="JS" hreflang="ru">BaseDetailV2</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="basegriddetailv2.html" class="ts-nav-menu__link ts-nav-menu__link_reference" data-type="JS" hreflang="ru">BaseGridDetailV2</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="gridutilitiesv2.html" class="ts-nav-menu__link ts-nav-menu__link_reference" data-type="JS" hreflang="ru">GridUtilitiesV2</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="configurationgrid.html" class="ts-nav-menu__link ts-nav-menu__link_reference" data-type="JS" hreflang="ru">ConfigurationGrid</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="configurationgridgenerator.html" class="ts-nav-menu__link ts-nav-menu__link_reference" data-type="JS" hreflang="ru">ConfigurationGridGenerator</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="configurationgridutilities.html" class="ts-nav-menu__link ts-nav-menu__link_reference" data-type="JS" hreflang="ru">ConfigurationGridUtilities</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../stranica_zapisi/obzor/basepagev2.html" class="ts-nav-menu__link ts-nav-menu__link_reference" data-type="JS" hreflang="ru">BasePageV2</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="basefieldsdetail.html" class="ts-nav-menu__link ts-nav-menu__link_reference" data-type="JS" hreflang="ru">BaseFieldsDetail</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="filedetailv2.html" class="ts-nav-menu__link ts-nav-menu__link_reference" data-type="JS" hreflang="ru">FileDetailV2</a>
+  </li>
+
+    </ul>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../mini_kartochka.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Мини-карточка&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../modalnoe_okno.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Модальное окно&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../kommunikacionnaya_panel.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Коммуникационная панель&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../komandnaya_stroka/obzor.html" class="ts-nav-menu__link" hreflang="ru">Командная строка</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../dashbordy.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Дашборды&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../upravlenie_ehlementami_interfejsa.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Управление элементами интерфейса&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+
+    </ul>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../komponenty_prilozheniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Компоненты приложения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../razrabotka_mobilnogo_prilozheniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Разработка мобильного приложения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../razrabotka_marketplace_prilozheniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Разработка Marketplace-приложения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+</ul>
+</div>
+
+  </div>
+
+  </div>
+
+            <div class="creatio-sidebar__toggle"></div>
+          </aside>
+        
+                  <aside class="creatio-sidebar creatio-sidebar_second" role="complementary">
+              <div class="region region-sidebar-second">
+    <div id="block-example" class="block block-ts-nav block-ts-nav-page-nav">
+  
+    
+      <div class="ts-nav-page">
+  </div>
+
+  </div>
+<div id="block-adminfeedbackblock" class="block block-admin-feedback block-admin-feedback-block">
+  
+    
+      <div id="feedback-message"><div id="upper-feedback-content"><h2>Был ли данный материал полезен?</h2>
+<input class="feedback-btn feedback-btn__yes button js-form-submit form-submit" data-node-id="3210" data-feedback="yes" type="submit" name="op" value="Да" />
+<input class="feedback-btn feedback-btn__no button js-form-submit form-submit" data-node-id="3210" data-feedback="no" type="submit" name="op" value="Нет" />
+</div>
+<form class="admin-feedback-form" data-drupal-selector="admin-feedback-form" action="https://academy.terrasoft.ua/docs/7-16/developer/ehlementy_interfejsa/detail/nastroit_detal_s_polyami" method="post" id="admin-feedback-form" accept-charset="UTF-8">
+  <div id="feedback-msg-result"></div><div class="js-form-item form-item js-form-type-textarea form-type-textarea js-form-item-feedback-message form-item-feedback-message form-no-label">
+        <div class="form-textarea-wrapper">
+  <textarea id="edit-feedback-msg" data-drupal-selector="edit-feedback-message" name="feedback_message" rows="5" cols="60" class="form-textarea resize-vertical"></textarea>
+</div>
+
+        </div>
+<input id="feedback-id" data-drupal-selector="edit-feedback-id" type="hidden" name="feedback_id" value="" />
+<input class="feedback-btn feedback-btn__send-comment button js-form-submit form-submit" data-drupal-selector="edit-feedback-send" type="submit" id="edit-feedback-send" name="op" value="Отправить" />
+<input autocomplete="off" data-drupal-selector="form-wpicfbixt9mk0ogos39tnenpg-2obaofpfxrbmz8b7g" type="hidden" name="form_build_id" value="form-wpICfbIXt9mk0oGOS39tneNpG-2ObaOfpfxrbmZ8B7g" />
+<input data-drupal-selector="edit-admin-feedback-form" type="hidden" name="form_id" value="admin_feedback_form" />
+
+</form>
+</div>
+
+  </div>
+
+  </div>
+
+          </aside>
+              </main>
+    </div>
+  </div>
+
+  <footer role="contentinfo">
+    <div class="creatio-region creatio-region_footer">
+      <div class="creatio-container">
+          <div class="region region-footer">
+    <div id="block-footerua" class="block block-simple-block block-simple-blockfooter-ua">
+  
+    
+      <div class="footer">
+<div class="footer-left">
+<ul class="footer-socials"><li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_fb" href="https://www.facebook.com/terrasoft.ua" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_in" href="https://www.linkedin.com/company/terrasoft/" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_yt" href="https://www.youtube.com/c/TerrasoftUkraine" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_tg" href="https://t.me/Terrasoft_UA" target="_blank"> </a></li>
+</ul></div>
+
+<div class="footer-contact">
+<div class="footer-title">Будьте на связи!</div>
+
+<div class="footer-content">
+<div class="footer-items">
+<div class="footer-item"><a class="footer__link footer__link_phone" href="tel:+380443633133">+38 (044) 363-31-33</a></div>
+</div>
+
+<div class="footer-items">
+<div class="footer-item"><a class="footer__link footer__link_email" href="mailto:support@terrasoft.ua">support@terrasoft.ua</a></div>
+</div>
+</div>
+</div>
+</div>
+
+  </div>
+
+  </div>
+
+      </div>
+    </div>
+    <div class="creatio-region creatio-region_bottom">
+      <div class="creatio-container">
+          <div class="region region-bottom">
+    <div id="block-allrightsreservedua" class="block block-simple-block block-simple-blockfooter-bottom-ua">
+  
+    
+      <p>© 2002-2022 Terrasoft.  |  <a href="https://www.terrasoft.ua/privacy-policy" target="_blank">Конфиденциальность</a></p>
+
+  </div>
+
+  </div>
+
+      </div>
+    </div>
+  </footer>
+</div>
+<div class="creatio-bg"></div>
+
+
+  </div>
+
+    
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/docs\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/3210","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"ru"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"ajaxPageState":{"libraries":"admin_feedback\/admin_feedback_block,admin_feedback\/admin_feedback_css,classy\/base,classy\/messages,classy\/node,core\/drupal.ajax,core\/jquery.form,core\/normalize,creatio\/fancybox,creatio\/global,layout_discovery\/onecol,system\/base,ts_doc\/doc_version,ts_feedback\/ts_feedback,ts_nav\/breadcrumb,ts_nav\/doc_nav,ts_nav\/page_nav,ts_title_anchor\/ts_title_anchor","theme":"creatio","theme_token":null},"ajaxTrustedUrl":{"form_action_p_pvdeGsVG5zNF_XLGPTvYSKCf43t8qZYSwcfZl2uzM":true,"\/docs\/7-16\/developer\/ehlementy_interfejsa\/detail\/nastroit_detal_s_polyami?ajax_form=1":true},"admin_feedback":{"yes_response":"\u0421\u043f\u0430\u0441\u0438\u0431\u043e \u0437\u0430 \u043e\u0431\u0440\u0430\u0442\u043d\u0443\u044e \u0441\u0432\u044f\u0437\u044c!","no_response":"\u0421\u043f\u0430\u0441\u0438\u0431\u043e \u0437\u0430 \u043e\u0431\u0440\u0430\u0442\u043d\u0443\u044e \u0441\u0432\u044f\u0437\u044c!","custom_text_response_on_no":{"value":"","format":"full_html"},"feedback_prompt_on_yes":true,"feedback_prompt_on_no":true,"feedback_enable_predefined_answers":false,"feedback_prompt":"\u041a\u0430\u043a \u043c\u043e\u0436\u043d\u043e \u0443\u043b\u0443\u0447\u0448\u0438\u0442\u044c \u044d\u0442\u0443 \u0441\u0442\u0430\u0442\u044c\u044e?"},"ajax":{"edit-feedback-send":{"callback":"::validateFeedbackMsg","event":"mousedown","keypress":true,"prevent":"click","url":"\/docs\/7-16\/developer\/ehlementy_interfejsa\/detail\/nastroit_detal_s_polyami?ajax_form=1","dialogType":"ajax","submit":{"_triggering_element_name":"op","_triggering_element_value":"\u041e\u0442\u043f\u0440\u0430\u0432\u0438\u0442\u044c"}}},"user":{"uid":0,"permissionsHash":"9c2367dfcaba0fa15f0375f97aed64e146c908cee68508d13b79e3ee80e5162d"}}</script>
+<script src="../../../../sites/default/files/js/js_Rr-7TvYD7NposuRFJwUqThxM7yJmw8vs03PQwu5gWd8.js"></script>
+
+
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+      <g id="svg-copy" class="svg-icon svg-icon_copy">
+        <path d="M15.111,18H1.889A1.848,1.848,0,0,1,0,16.2V3.6A1.848,1.848,0,0,1,1.889,1.8H5.837a2.87,2.87,0,0,1,5.326,0h3.948A1.848,1.848,0,0,1,17,3.6V16.2A1.848,1.848,0,0,1,15.111,18ZM3.777,12.6v1.8h6.611V12.6Zm0-3.6v1.8h9.445V9Zm0-3.6V7.2h9.445V5.4ZM8.5,1.8a.924.924,0,0,0-.944.9.945.945,0,0,0,1.889,0A.924.924,0,0,0,8.5,1.8Z"/>
+      </g>
+
+      <g id="svg-prev" class="svg-icon svg-icon_arrow">
+        <path d="M5.488,12.779,0,6.39,5.488,0" transform="translate(1 0.652)"/>
+      </g>
+
+      <g id="svg-next" class="svg-icon svg-icon_arrow">
+        <path d="M0,12.779,5.488,6.39,0,0" transform="translate(0.759 0.652)"/>
+      </g>
+    </svg>
+  </body>
+
+<!-- Mirrored from academy.terrasoft.ua/docs/7-16/developer/ehlementy_interfejsa/detail/nastroit_detal_s_polyami by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Mar 2022 05:09:41 GMT -->
+</html>

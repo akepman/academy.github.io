@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# ">
+  
+<!-- Mirrored from academy.terrasoft.ua/docs/developer/instrumenty_razrabotki/pakety/fajlovyj_kontent/razrabotat_klientskuyu_funkcionalnost_typescript by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Mar 2022 00:15:19 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+          <!-- Google Tag Manager -->
+      <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          '../../../../../../www.googletagmanager.com/gtm5445.html?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-KLLB8G');</script>
+      <!-- End Google Tag Manager -->
+        <meta charset="utf-8" />
+<link rel="canonical" href="razrabotat_klientskuyu_funkcionalnost_typescript.html" />
+<meta name="description" content="При разработке клиентской функциональности файловый контент позволяет использовать компилируемые в JavaScript языки, например, TypeScript. Подробнее о TypeScript можно узнать на официальном сайте TypeScript." />
+<meta property="og:url" content="https://academy.terrasoft.ua/docs/developer/instrumenty_razrabotki/pakety/fajlovyj_kontent/razrabotat_klientskuyu_funkcionalnost_typescript" />
+<meta property="og:title" content="Использовать TypeScript при разработке клиентской функциональности" />
+<meta property="og:description" content="При разработке клиентской функциональности файловый контент позволяет использовать компилируемые в JavaScript языки, например, TypeScript. Подробнее о TypeScript можно узнать на официальном сайте TypeScript." />
+<meta name="Generator" content="Drupal 9 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="../../../../themes/custom/creatio/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="revision" href="razrabotat_klientskuyu_funkcionalnost_typescript.html" />
+
+    <title>Использовать TypeScript при разработке клиентской функциональности | Creatio Academy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&amp;family=Open+Sans:ital,wght@0,300;0,400;0,600;1,400&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" media="all" href="../../../../sites/default/files/css/css_6lTP66__-yc6QXFp1zOwoeJ0HVigoYZP-SeoLLii000.css" />
+<link rel="stylesheet" media="all" href="../../../../sites/default/files/css/css_XQJDNhkF3xH5SZCcY-PI89Zu4nYIzQ5oR3SnUKyfXJU.css" />
+<link rel="stylesheet" media="print" href="../../../../sites/default/files/css/css_Zn4VHvcniOOtUwkIVwXzYr_0AI9gUVgZcPqaH4ViagU.css" />
+
+    
+  </head>
+  <body class="path-node page-node-type-case">
+          <!-- Google Tag Manager (noscript) -->
+      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KLLB8G"
+                        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+      <!-- End Google Tag Manager (noscript) -->
+    
+        
+      <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    <div class="creatio-page d-flex flex-column">
+        <div class="region region-informer">
+    <div id="block-terrasoftpidtrimueukrainu" class="block block-simple-block block-simple-blockterrasoft-pidtrimue-ukrainu">
+  
+    
+      <style type="text/css">
+<!--/*--><![CDATA[/* ><!--*/
+@import url(../../../../../../www.terrasoft.ua/themes/custom/creatio/css/components/informer.css)
+
+/*--><!]]>*/
+</style><div class="ts-swu">
+<div class="creatio-container">
+<div class="ts-swu__cont">
+<div><a class="ts-swu__link" href="https://www.terrasoft.ua/terrasoft-stands-with-ukraine" target="_blank">Україна понад усе!</a> <span><a href="https://www.terrasoft.ua/terrasoft-stands-with-ukraine" target="_blank">Приєднуйтеся</a> до допомоги!</span></div>
+</div>
+</div></div>
+
+  </div>
+
+  </div>
+
+  
+  <header role="banner">
+          <div class="creatio-region creatio-region_top">
+        <div class="creatio-container">
+            <div class="region region-top">
+    <div id="block-menutoggle" class="block block-simple-block block-simple-blockmenu-toggle">
+  
+    
+      <div class="menu-toggle"><span> </span></div>
+
+  </div>
+<div id="block-logowhite-2" class="block block-simple-block block-simple-blocklogo-white">
+  
+    
+      <p><a class="site-logo" href="../../../../../index.html" rel="home"><img src="../../../../themes/custom/creatio/logo-white.svg" /></a></p>
+
+  </div>
+<div id="block-search" class="block block-simple-block block-simple-blocksearch">
+  
+    
+      <div class="search">
+<form action="https://academy.terrasoft.ua/search" class="search-form" method="get"><input class="search-form__input" name="search" placeholder="Поиск" type="search" /><input class="search-form__button" type="submit" value="Поиск" /> </form>
+
+<div class="search-toggle"> </div>
+</div>
+
+  </div>
+<nav role="navigation" aria-labelledby="block-sitesua-menu" id="block-sitesua" class="block block-menu navigation menu--sites-ua">
+            
+  <h2 class="visually-hidden" id="block-sitesua-menu">Sites UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="https://www.terrasoft.ua/" rel="nofollow" target="_blank">Terrasoft</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://community.terrasoft.ua/" rel="nofollow" target="_blank">Community</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://marketplace.terrasoft.ua/" rel="nofollow" target="_blank">Marketplace</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+<div id="block-usermenu" class="block block-ts-user block-ts-user-menu-block">
+  
+    
+      <ul class="user-menu">
+      <li class="user-menu__item">
+      <a class="user-menu__link" href="https://profile.terrasoft.ua/user/login?destination=academy/ua/docs/developer/instrumenty_razrabotki/pakety/fajlovyj_kontent/razrabotat_klientskuyu_funkcionalnost_typescript">Войти</a>
+    </li>
+  </ul>
+
+  </div>
+<div id="block-usermenumobile" class="block block-ts-user block-ts-user-menu-mobile-block">
+  
+    
+      <ul class="user-menu-mobile">
+      <li class="user-menu-mobile__item">
+      <div class="user-menu-mobile__user user-menu-mobile__user_icon"></div>
+      <ul class="user-menu-mobile__submenu">
+        <li class="user-menu-mobile__subitem">
+          <a class="user-menu-mobile__sublink" href="https://profile.terrasoft.ua/user/login?destination=academy/ua/docs/developer/instrumenty_razrabotki/pakety/fajlovyj_kontent/razrabotat_klientskuyu_funkcionalnost_typescript">Войти</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  </div>
+
+  </div>
+
+        </div>
+      </div>
+              <div class="creatio-region creatio-region_header">
+        <div class="creatio-container">
+            <div class="region region-header">
+    <div id="block-logo" class="block block-simple-block block-simple-blocklogo">
+  
+    
+      <p><a class="site-logo" href="../../../../../index.html" rel="home"><img src="../../../../themes/custom/creatio/logo.svg" /></a></p>
+
+  </div>
+<nav role="navigation" aria-labelledby="block-osnovnayanavigaciyaua-menu" id="block-osnovnayanavigaciyaua" class="block block-menu navigation menu--main-ua">
+            
+  <h2 class="visually-hidden" id="block-osnovnayanavigaciyaua-menu">Основная навигация UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="../../../../index.html" data-drupal-link-system-path="&lt;front&gt;">Документация</a>
+              </li>
+                <li class="menu-item">
+        <a href="../../../../../trainings.html">Тренинги</a>
+              </li>
+                <li class="menu-item">
+        <a href="../../../../certification.html" data-drupal-link-system-path="node/3084">Сертификация и тестирование</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+<nav role="navigation" aria-labelledby="block-sitesua-2-menu" id="block-sitesua-2" class="block block-menu navigation menu--sites-ua">
+            
+  <h2 class="visually-hidden" id="block-sitesua-2-menu">Sites UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="https://www.terrasoft.ua/" rel="nofollow" target="_blank">Terrasoft</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://community.terrasoft.ua/" rel="nofollow" target="_blank">Community</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://marketplace.terrasoft.ua/" rel="nofollow" target="_blank">Marketplace</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+
+  </div>
+
+        </div>
+      </div>
+              <div class="creatio-region creatio-region_breadcrumb">
+        <div class="creatio-container">
+            <div class="region region-breadcrumb">
+    <div id="block-logowhite" class="block block-simple-block block-simple-blocklogo-white">
+  
+    
+      <p><a class="site-logo" href="../../../../../index.html" rel="home"><img src="../../../../themes/custom/creatio/logo-white.svg" /></a></p>
+
+  </div>
+<div id="block-breadcrumbnaviagtion" class="block block-ts-nav block-ts-nav-bread">
+  
+    
+      <nav class="breadcrumb"><ol class="ts-nav-breadcrumb__list"><li class="ts-nav-breadcrumb__item"><a href="../../../../index.html" class="ts-nav-breadcrumb__link" title="Документация">Документация</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../../index2132.html?vid_1=2" class="ts-nav-breadcrumb__link" title="Для разработчика">Для разработчика</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../instrumenty_razrabotki.html" class="ts-nav-breadcrumb__link" title="Инструменты разработки" hreflang="zxx">Инструменты разработки</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../pakety.html" class="ts-nav-breadcrumb__link" title="Пакеты" hreflang="ru">Пакеты</a></li>
+<li class="ts-nav-breadcrumb__item ts-nav-breadcrumb__item_mobile"><a href="../../../development_tools/packages/fajlovyj_kontent.html" class="ts-nav-breadcrumb__link" title="Файловый контент" hreflang="ru">Файловый контент</a></li>
+<li class="ts-nav-breadcrumb__item"><span class="ts-nav-breadcrumb__link ts-nav-breadcrumb__link_current" title="Разработать клиентскую функциональность (TypeScript)">Разработать клиентскую функциональность (TypeScript)</span></li>
+</ol>
+</nav>
+
+  </div>
+<div id="block-search-2" class="block block-simple-block block-simple-blocksearch">
+  
+    
+      <div class="search">
+<form action="https://academy.terrasoft.ua/search" class="search-form" method="get"><input class="search-form__input" name="search" placeholder="Поиск" type="search" /><input class="search-form__button" type="submit" value="Поиск" /> </form>
+
+<div class="search-toggle"> </div>
+</div>
+
+  </div>
+
+  </div>
+
+        </div>
+      </div>
+      </header>
+
+  <div class="creatio-region creatio-region_main">
+    <div class="creatio-container">
+                <div class="region region-breadcrumb-mobile">
+    <div id="block-breadcrumbnaviagtion-2" class="block block-ts-nav block-ts-nav-bread">
+  
+    
+      <nav class="breadcrumb"><ol class="ts-nav-breadcrumb__list"><li class="ts-nav-breadcrumb__item"><a href="../../../../index.html" class="ts-nav-breadcrumb__link" title="Документация">Документация</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../../index2132.html?vid_1=2" class="ts-nav-breadcrumb__link" title="Для разработчика">Для разработчика</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../instrumenty_razrabotki.html" class="ts-nav-breadcrumb__link" title="Инструменты разработки" hreflang="zxx">Инструменты разработки</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../pakety.html" class="ts-nav-breadcrumb__link" title="Пакеты" hreflang="ru">Пакеты</a></li>
+<li class="ts-nav-breadcrumb__item ts-nav-breadcrumb__item_mobile"><a href="../../../development_tools/packages/fajlovyj_kontent.html" class="ts-nav-breadcrumb__link" title="Файловый контент" hreflang="ru">Файловый контент</a></li>
+<li class="ts-nav-breadcrumb__item"><span class="ts-nav-breadcrumb__link ts-nav-breadcrumb__link_current" title="Разработать клиентскую функциональность (TypeScript)">Разработать клиентскую функциональность (TypeScript)</span></li>
+</ol>
+</nav>
+
+  </div>
+
+  </div>
+
+      
+      <main class="creatio-main" role="main">
+                                                    
+        <div class="creatio-content creatio-content_small">
+          <div class="creatio-content__inner creatio-content__inner_bg">
+                            <div class="region region-messages">
+    <div data-drupal-messages-fallback class="hidden"></div>
+
+  </div>
+
+            
+              <div class="region region-content">
+    <div id="block-creatio-page-title" class="block block-core block-page-title-block">
+  
+    
+      
+  <h1 class="page-title"><span class="field field--name-title field--type-string field--label-hidden">Использовать TypeScript при разработке клиентской функциональности</span>
+</h1>
+
+
+  </div>
+<div id="block-creatio-content" class="block block-system block-system-main-block">
+  
+    
+      
+<article data-history-node-id="2982" role="article" about="/docs/developer/instrumenty_razrabotki/pakety/fajlovyj_kontent/razrabotat_klientskuyu_funkcionalnost_typescript" class="node node--type-case node--view-mode-full">
+
+  
+    
+
+  
+  <div class="node__content">
+      <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocknodecasefield-difficulty">
+  
+    
+      
+            <div class="field field--name-field-difficulty field--type-entity-reference field--label-hidden field__item"><div about="/docs/taxonomy/term/169" id="taxonomy-term-169" class="taxonomy-term vocabulary-difficulty">
+  
+  
+  <div class="content">
+      <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocktaxonomy-termdifficultyfield-icon">
+  
+    
+      
+            <div class="field field--name-field-icon field--type-image field--label-hidden field__item">  <img src="../../../../sites/default/files/difficulty/advanced.svg" alt="" loading="lazy" typeof="foaf:Image" />
+
+</div>
+      
+  </div>
+<div class="block block-layout-builder block-field-blocktaxonomy-termdifficultyname">
+  
+    
+      
+            <div class="field field--name-name field--type-string field--label-hidden field__item"><span style="color: #EF4524;">Сложный</span></div>
+      
+  </div>
+
+    </div>
+  </div>
+
+  </div>
+</div>
+</div>
+      
+  </div>
+<div class="block block-ts-doc block-ts-doc-downloads">
+  
+    
+      <a href="../../../../sites/default/files/pdf/node/2982/Ispolzovat_TypeScript_pri_razrabotke_klientskoy_funkcionalnosti_.pdf" target="_blank">PDF</a>
+  </div>
+<div class="block block-ts-doc block-ts-doc-versions">
+  
+    
+        <div class="ts-doc-versions">
+    <select class="ts-doc-versions__select">
+                                                <option value="/docs/8-0/developer/instrumenty_razrabotki/pakety/fajlovyj_kontent/razrabotat_klientskuyu_funkcionalnost_typescript" selected>Версия 8.0</option>
+                              <option value="/docs/7-18/developer/instrumenty_razrabotki/pakety/fajlovyj_kontent/razrabotat_klientskuyu_funkcionalnost_typescript">Версия 7.18</option>
+                              <option value="/docs/7-17/developer/instrumenty_razrabotki/pakety/fajlovyj_kontent/razrabotat_klientskuyu_funkcionalnost_typescript">Версия 7.17</option>
+          </select>
+  </div>
+
+  </div>
+
+    </div>
+  </div>
+  <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocknodecasebody">
+  
+    
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><p>При разработке клиентской функциональности файловый контент позволяет использовать компилируемые в JavaScript языки, например, <strong>TypeScript</strong>. Подробнее о TypeScript можно узнать на официальном <a href="https://www.typescriptlang.org/">сайте TypeScript</a>.</p>
+
+<div class="message message_example">
+<p><span class="message__bold message__bold_example">Пример.</span> При сохранении записи контрагента выводить для пользователя сообщение о правильности заполнения поля <span class="key">Альтернативные названия</span> (<span class="key">Also known as</span>). Поле должно содержать только буквенные символы. Логику валидации поля реализовать на языке TypeScript.</p>
+</div>
+
+<h2>1. Установить TypeScript<a class="title-anchor" href="#title-2100-1" id="title-2100-1"> </a></h2>
+
+<p>Одним из способов установки TypeScript является использование <strong>менеджера пакетов NPM</strong> для <span class="filled">Node.js</span>.</p>
+
+<p>Чтобы <strong>установить TypeScript</strong>:</p>
+
+<ol><li>Проверьте наличие среды выполнения <span class="filled">Node.js</span> в вашей операционной системе.
+
+	<p>Скачать инсталлятор можно на сайте <a href="https://nodejs.org/" target="_blank">https://nodejs.org</a>.</p>
+	</li>
+	<li>В консоли Windows выполните команду:
+	<div class="code">
+	<div class="code__widgets">
+	<div class="code__top">
+	<div class="code__title">Команда для установки TypeScript</div>
+	</div>
+
+	<div class="code__source">
+	<pre class="prettyprint">
+npm install -g typescript
+</pre>
+	</div>
+	</div>
+	</div>
+	</li>
+</ol><h2>2. Перейти в режим разработки в файловой системе<a class="title-anchor" href="#title-2100-4" id="title-2100-4"> </a></h2>
+
+<p>Чтобы <strong>настроить Creatio для работы в файловой системе</strong>:</p>
+
+<ol><li><strong>Включите режим разработки в файловой системе.</strong>
+
+	<p>В файле <span class="filled">Web.config</span>, который находится в корневом каталоге приложения, установите значение <span class="filled">true</span> для атрибута <span class="filled">enabled</span> элемента <span class="filled">fileDesignMode</span>.</p>
+	</li>
+	<li><strong>Отключите получение статического клиентского контента из файловой системы.</strong>
+	<p>В файле <span class="filled">Web.config</span>, который находится в корневом каталоге приложения, установите значение <span class="filled">false</span> для флага <span class="filled">UseStaticFileContent</span>.</p>
+
+	<div class="code">
+	<div class="code__top">
+	<div class="code__title"><span class="filled">Web.config</span></div>
+	</div>
+
+	<div class="code__widgets">
+	<div class="code__source">
+	<pre class="prettyprint">
+&lt;filedesignmode enabled="true"/&gt;
+...
+&lt;add key="UseStaticFileContent" value="false"/&gt;</pre>
+	</div>
+	</div>
+	</div>
+	</li>
+	<li><strong>Скомпилируйте приложение.</strong>
+	<p>В разделе <span class="key">Конфигурация</span> (<span class="key">Configuration</span>) выполните действие <span class="key">Компилировать все</span> (<span class="key">Compile all items</span>).</p>
+
+	<div class="media">
+	<div class="media__element"><img src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/UsingTypeScript/7.17/scr_compile_all.png" /></div>
+	</div>
+	</li>
+	<li><strong>Предоставьте доступ IIS к каталогу конфигурации.</strong>
+	<p>Чтобы приложение могло корректно работать с конфигурационным проектом, необходимо предоставить полный доступ пользователю операционной системы, от имени которого запущен пул приложений IIS, к каталогу <span class="filled">[Путь к приложению]\Terrasoft.WebApp\Terrasoft.Configuration</span>. Как правило, это встроенный пользователь <span class="filled">IIS_IUSRS</span>.</p>
+
+	<div class="media">
+	<div class="media__element"><img src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/WorkingWithIDE/permissions.png" /></div>
+	</div>
+	</li>
+</ol><p>Режим разработки в файловой системе описан в статье <a href="../../vneshnie_ide/obzor.html">Внешние IDE</a>.</p>
+
+<h2>3. Создать структуру хранения файлового контента<a class="title-anchor" href="#title-2100-5" id="title-2100-5"> </a></h2>
+
+<p>Чтобы <strong>создать структуру хранения файлового контента</strong>:</p>
+
+<ol><li>В пользовательском пакете, выгруженном в файловую систему, создайте каталог <span class="filled">Files</span>.</li>
+	<li>В каталоге <span class="filled">Files</span> создайте вложенный каталог <span class="filled">src</span>.</li>
+	<li>В каталоге <span class="filled">src</span> создайте вложенный каталог <span class="filled">js</span>.</li>
+	<li>В каталоге <span class="filled">Files</span> создайте файл <span class="filled">descriptor.json</span>.
+	<div class="code">
+	<div class="code__widgets">
+	<div class="code__top">
+	<div class="code__title"><span class="filled">descriptor.json</span></div>
+	</div>
+
+	<div class="code__source">
+	<pre class="prettyprint">
+{
+    "bootstraps": [
+        "src/js/bootstrap.js"
+    ]
+}
+</pre>
+	</div>
+	</div>
+	</div>
+	</li>
+	<li>В каталоге <span class="filled">Files\src\js</span> создайте файл <span class="filled">bootstrap.js</span>.
+	<div class="code">
+	<div class="code__widgets">
+	<div class="code__top">
+	<div class="code__title"><span class="filled">bootstrap.js</span></div>
+	</div>
+
+	<div class="code__source">
+	<pre class="prettyprint">
+(function() {
+    require.config({
+        paths: {
+            "LettersOnlyValidator": Terrasoft.getFileContentUrl("sdkTypeScript", "src/js/LettersOnlyValidator.js")
+        }
+    });
+})();
+</pre>
+	</div>
+	</div>
+	</div>
+	</li>
+</ol><h2>4. Реализовать валидацию на языке TypeScript<a class="title-anchor" href="#title-2100-6" id="title-2100-6"> </a></h2>
+
+<p>Чтобы <strong>реализовать валидацию на языке TypeScript</strong>:</p>
+
+<ol><li>В каталоге <span class="filled">Files\src\js</span> создайте файл <span class="filled">Validation.ts</span>, в котором объявите интерфейс <span class="filled">StringValidator</span>.
+
+	<div class="code">
+	<div class="code__widgets">
+	<div class="code__top">
+	<div class="code__title"><span class="filled">Validation.ts</span></div>
+	</div>
+
+	<div class="code__source">
+	<pre class="prettyprint">
+interface StringValidator {
+    isAcceptable(s: string): boolean;
+}
+export = StringValidator;
+</pre>
+	</div>
+	</div>
+	</div>
+	</li>
+	<li>В каталоге <span class="filled">Files\src\js</span> создайте файл <span class="filled">LettersOnlyValidator.ts</span>. Объявите в нем класс <span class="filled">LettersOnlyValidator</span>, реализующий интерфейс <span class="filled">StringValidator</span>.
+	<div class="code">
+	<div class="code__widgets">
+	<div class="code__top">
+	<div class="code__title"><span class="filled">LettersOnlyValidator.ts</span></div>
+	</div>
+
+	<div class="code__source">
+	<pre class="prettyprint">
+// Импорт модуля, в котором реализован интерфейс StringValidator.
+import StringValidator = require("Validation");
+ 
+// Создаваемый класс должен принадлежать пространству имен (модулю) Terrasoft.
+module Terrasoft {
+    // Объявление класса валидации значений.
+    export class LettersOnlyValidator implements StringValidator {
+        // Регулярное выражение, допускающее использование только буквенных символов.
+        lettersRegexp: any = /^[A-Za-z]+$/;
+        // Валидирующий метод.
+        isAcceptable(s: string) {
+            return !Ext.isEmpty(s) &amp;&amp; this.lettersRegexp.test(s);
+        }
+    }
+}
+// Создание и экспорт экземпляра класса для require. 
+export = new Terrasoft.LettersOnlyValidator();
+</pre>
+	</div>
+	</div>
+	</div>
+	</li>
+</ol><h2>5. Выполнить компиляцию исходных кодов TypeScript в исходные коды JavaScript<a class="title-anchor" href="#title-2100-7" id="title-2100-7"> </a></h2>
+
+<p>Чтобы <strong>выполнить компиляцию исходных кодов TypeScript в исходные коды JavaScript</strong>:</p>
+
+<ol><li>Для настройки компиляции добавьте в каталог <span class="filled">Files\src\js</span> конфигурационный файл <span class="filled">tsconfig.json</span>.
+
+	<div class="code">
+	<div class="code__widgets">
+	<div class="code__top">
+	<div class="code__title"><span class="filled">tsconfig.json</span></div>
+	</div>
+
+	<div class="code__source">
+	<pre class="prettyprint">
+{
+    "compilerOptions":
+    {
+        "target": "es5",
+        "module": "amd",
+        "sourceMap": true
+    }
+}
+</pre>
+	</div>
+	</div>
+	</div>
+	</li>
+	<li>В консоли Windows перейдите в каталог <span class="filled">Files\src\js</span> и выполните команду <span class="filled">tsc</span>.
+	<div class="media">
+	<div class="media__element"><img src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/UsingTypeScript/scr_compile.png" /></div>
+	</div>
+
+	<p>В результате выполнения компиляции в каталоге <span class="filled">Files\src\js</span> будут созданы JavaScript-версии файлов <span class="filled">Validation.ts</span> и <span class="filled">LettersOnlyValidator.ts</span>, а также *.map-файлы, облегчающие отладку в браузере.</p>
+
+	<div class="media">
+	<div class="media__element"><img src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/UsingTypeScript/scr_src_files.png" /></div>
+	</div>
+
+	<p>Содержимое файла <span class="filled">LettersOnlyValidator.js</span>, который будет использоваться в Creatio, получено автоматически.</p>
+
+	<div class="code">
+	<div class="code__widgets">
+	<div class="code__top">
+	<div class="code__title"><span class="filled">LettersOnlyValidator.js</span></div>
+	</div>
+
+	<div class="code__source">
+	<pre class="prettyprint">
+define(["require", "exports"], function (require, exports) {
+    "use strict";
+    var Terrasoft;
+    (function (Terrasoft) {
+        var LettersOnlyValidator = /** @class */ (function () {
+            function LettersOnlyValidator() {
+                this.lettersRegexp = /^[A-Za-z]+$/;
+            }
+            LettersOnlyValidator.prototype.isAcceptable = function (s) {
+                return !Ext.isEmpty(s) &amp;&amp; this.lettersRegexp.test(s);
+            };
+            return LettersOnlyValidator;
+        }());
+        Terrasoft.LettersOnlyValidator = LettersOnlyValidator;
+    })(Terrasoft || (Terrasoft = {}));
+    return new Terrasoft.LettersOnlyValidator();
+});
+//# sourceMappingURL=LettersOnlyValidator.js.map
+
+</pre>
+	</div>
+	</div>
+	</div>
+	</li>
+</ol><h2>6. Выполнить генерацию вспомогательных файлов<a class="title-anchor" href="#title-2100-8" id="title-2100-8"> </a></h2>
+
+<p>Чтобы <strong>выполнить генерацию вспомогательных файлов</strong> <span class="filled">_FileContentBootstraps.js</span> и <span class="filled">FileContentDescriptors.js</span>:</p>
+
+<ol><li>Перейдите в раздел <span class="key">Конфигурация</span> (<span class="key">Configuration</span>).</li>
+	<li>Выполните загрузку пакетов из файловой системы (действие <span class="key">Обновить пакеты из файловой системы</span> (<span class="key">Update packages from file system</span>)).
+	<div class="media">
+	<div class="media__element"><img src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/UsingTypeScript/7.17/scr_update_packages_from_file_system.png" /></div>
+	</div>
+	</li>
+	<li>Для применения изменений в файле <span class="filled">bootstrap.js</span> выполните компиляцию приложения (действие <span class="key">Компилировать все</span> (<span class="key">Compile all items</span>)).
+	<div class="media">
+	<div class="media__element"><img src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/UsingTypeScript/7.17/scr_compile_all.png" /></div>
+	</div>
+	</li>
+</ol><h2>7. Проверить результат выполнения примера<a class="title-anchor" href="#title-2100-9" id="title-2100-9"> </a></h2>
+
+<p>Чтобы <strong>использовать валидацию</strong>:</p>
+
+<ol><li>Перейдите в раздел <span class="key">Конфигурация</span> (<span class="key">Configuration</span>).</li>
+	<li>Выполните загрузку пакетов из файловой системы (действие <span class="key">Обновить пакеты из файловой системы</span> (<span class="key">Update packages from file system</span>)).
+	<div class="media">
+	<div class="media__element"><img src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/UsingTypeScript/7.17/scr_update_packages_from_file_system.png" /></div>
+	</div>
+	</li>
+	<li>Cоздайте <a href="../../../../7-17/developer/instrumenty_razrabotki/creatio_ide/razrabotka_konfiguratsionnykh_elementov.html#title-3028-4">схему замещающей модели представления</a> страницы контрагента.
+	<div class="media">
+	<div class="media__element"><img src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/UsingTypeScript/7.17/scr_schema_props_717.png" /></div>
+	</div>
+	</li>
+	<li>Выполните выгрузку пакетов в файловую систему (действие <span class="key">Выгрузить пакеты в файловую систему</span> (<span class="key">Download packages to file system</span>)).</li>
+	<li>В файловой системе измените файл <span class="filled">..\sdkTypeScript\Schemas\AccountPageV2\AccountPageV2.js</span>.
+	<div class="code">
+	<div class="code__widgets">
+	<div class="code__top">
+	<div class="code__title"><span class="filled">..\sdkTypeScript\Schemas\AccountPageV2\AccountPageV2.js</span></div>
+	</div>
+
+	<div class="code__source">
+	<pre class="prettyprint">
+// Объявление модуля и его зависимостей.
+define("AccountPageV2", ["LettersOnlyValidator"], function(LettersOnlyValidator) {
+    return {
+        entitySchemaName: "Account",
+        methods: {
+            // Метод валидации.
+            validateMethod: function() {
+                // Определение правильности заполнения колонки AlternativeName.
+                var res = LettersOnlyValidator.isAcceptable(this.get("AlternativeName"));
+                // Вывод результата пользователю.
+                Terrasoft.showInformation("Is 'Also known as' field valid: " + res);
+            },
+            // Переопределение метода родительской схемы, вызываемого при сохранении записи.
+            save: function() {
+                // Вызов метода валидации.
+                this.validateMethod();
+                // Вызов базовой функциональности.
+                this.callParent(arguments);
+            }
+        },
+        diff: /**SCHEMA_DIFF*/ [] /**SCHEMA_DIFF*/
+    };
+});
+</pre>
+	</div>
+	</div>
+	</div>
+	</li>
+	<li>Cохраните файл с исходным кодом схемы и обновите страницу контрагента.</li>
+</ol><p>При сохранении записи будет выполняться <a href="../../../ehlementy_interfejsa/stranica_zapisi/pole/obzor.html#case-3187">валидация</a> и отображаться соответствующее сообщение.</p>
+
+<div class="media">
+<div class="media__caption">Сообщение о некорректно заполненном поле</div>
+
+<div class="media__element"><img src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/UsingTypeScript/7.17/scr_result_01.png" /></div>
+</div>
+
+<div class="media">
+<div class="media__caption">Сообщение о корректно заполненном поле</div>
+
+<div class="media__element"><img src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/UsingTypeScript/7.17/scr_result_02.png" /></div>
+</div>
+</div>
+      
+  </div>
+<div class="block block-layout-builder block-field-blocknodecasefield-resources">
+  
+    
+      
+  <div class="field field--name-field-resources field--type-link field--label-above">
+    <div class="field__label">Ресурсы</div>
+          <div class="field__items">
+              <div class="field__item"><a href="../../../../../sites/default/files/documents/downloads/SDK/Packages/sdkTypeScript_18.05.09_15.53.19.zip" target="_blank">Пакет с реализацией примера</a></div>
+              </div>
+      </div>
+
+  </div>
+
+    </div>
+  </div>
+
+  </div>
+
+</article>
+
+  </div>
+
+  </div>
+
+          </div>
+        </div>
+
+                  <aside class="creatio-sidebar creatio-sidebar_first" role="complementary">
+              <div class="region region-sidebar-first">
+    <div id="block-documentationnaviagtion" class="block block-ts-nav block-ts-nav-doc-nav">
+  
+    
+      <div class="ts-nav-block"><a href="../../../../index.html" class="ts-nav-block__link">Документация</a><div class="ts-nav-block__title">Для разработчика</div>
+</div>
+<div class="ts-nav-container"><ul class="ts-nav-menu"><li class="ts-nav-menu__item">
+  <a href="../../../s_chego_nachat.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">С чего начать&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../architecture.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Архитектура&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../instrumenty_razrabotki.html" class="ts-nav-menu__link ts-nav-menu__link_expanded ts-nav-menu__link_open" hreflang="zxx">Инструменты разработки&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+      <ul class="ts-nav-menu__children">
+      <li class="ts-nav-menu__item">
+  <a href="../../creatio_ide.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Creatio IDE&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../vneshnie_ide.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Внешние IDE&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../pakety.html" class="ts-nav-menu__link ts-nav-menu__link_expanded ts-nav-menu__link_open" hreflang="ru">Пакеты&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+      <ul class="ts-nav-menu__children">
+      <li class="ts-nav-menu__item">
+  <a href="../obshchiye_printsipy_raboty_s_paketami.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Обзор&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../paket_proekt/obzor.html" class="ts-nav-menu__link" hreflang="ru">Пакет-проект</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../paket_sborka/obzor.html" class="ts-nav-menu__link" hreflang="ru">Пакет-сборка</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../development_tools/packages/fajlovyj_kontent.html" class="ts-nav-menu__link ts-nav-menu__link_expanded ts-nav-menu__link_open" hreflang="ru">Файловый контент&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+      <ul class="ts-nav-menu__children">
+      <li class="ts-nav-menu__item">
+  <a href="obzor.html" class="ts-nav-menu__link ts-nav-menu__link_guide" hreflang="ru">Обзор</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../lokalizovat_fajlovyj_kontent_konfiguracionnye_resursy.html" class="ts-nav-menu__link ts-nav-menu__link_case" hreflang="ru">Локализовать файловый контент (конфигурационные ресурсы)</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../lokalizovat_fajlovyj_kontent_plagin_i18n.html" class="ts-nav-menu__link ts-nav-menu__link_case" hreflang="ru">Локализовать файловый контент (плагин i18n)</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="razrabotat_klientskuyu_funkcionalnost_typescript.html" class="ts-nav-menu__link ts-nav-menu__link_case ts-nav-menu__link_active" hreflang="ru">Разработать клиентскую функциональность (TypeScript)</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../sozdat_angular_komponent.html" class="ts-nav-menu__link ts-nav-menu__link_case" hreflang="ru">Создать Angular-компонент</a>
+  </li>
+
+    </ul>
+  </li>
+
+    </ul>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../sistemy_kontrolya_versij.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Системы контроля версий&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../development_tools/testirovanie.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Тестирование&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../development_tools/instrumenty_dlya_bazy_dannykh.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Инструменты для базы данных&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../logirovanie.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Логирование&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../otladka.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Отладка&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../upravlenie_postavkami.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Управление поставками&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+
+    </ul>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../back_end_razrabotka.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Back-end разработка&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../front_end_razrabotka_freedom_ui.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Front-end разработка Freedom UI&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../front_end_razrabotka.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Front-end разработка&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../integratsiya_i_vneshnij_api.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Интеграция и внешний API&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../ehlementy_interfejsa.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Элементы интерфейса&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../komponenty_prilozheniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Компоненты приложения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../razrabotka_mobilnogo_prilozheniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Разработка мобильного приложения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../razrabotka_marketplace_prilozheniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Разработка Marketplace-приложения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+</ul>
+</div>
+
+  </div>
+
+  </div>
+
+            <div class="creatio-sidebar__toggle"></div>
+          </aside>
+        
+                  <aside class="creatio-sidebar creatio-sidebar_second" role="complementary">
+              <div class="region region-sidebar-second">
+    <div id="block-example" class="block block-ts-nav block-ts-nav-page-nav">
+  
+    
+      <div class="ts-nav-page">
+  </div>
+
+  </div>
+<div id="block-adminfeedbackblock" class="block block-admin-feedback block-admin-feedback-block">
+  
+    
+      <div id="feedback-message"><div id="upper-feedback-content"><h2>Был ли данный материал полезен?</h2>
+<input class="feedback-btn feedback-btn__yes button js-form-submit form-submit" data-node-id="2982" data-feedback="yes" type="submit" name="op" value="Да" />
+<input class="feedback-btn feedback-btn__no button js-form-submit form-submit" data-node-id="2982" data-feedback="no" type="submit" name="op" value="Нет" />
+</div>
+<form class="admin-feedback-form" data-drupal-selector="admin-feedback-form" action="https://academy.terrasoft.ua/docs/developer/instrumenty_razrabotki/pakety/fajlovyj_kontent/razrabotat_klientskuyu_funkcionalnost_typescript" method="post" id="admin-feedback-form" accept-charset="UTF-8">
+  <div id="feedback-msg-result"></div><div class="js-form-item form-item js-form-type-textarea form-type-textarea js-form-item-feedback-message form-item-feedback-message form-no-label">
+        <div class="form-textarea-wrapper">
+  <textarea id="edit-feedback-msg" data-drupal-selector="edit-feedback-message" name="feedback_message" rows="5" cols="60" class="form-textarea resize-vertical"></textarea>
+</div>
+
+        </div>
+<input id="feedback-id" data-drupal-selector="edit-feedback-id" type="hidden" name="feedback_id" value="" />
+<input class="feedback-btn feedback-btn__send-comment button js-form-submit form-submit" data-drupal-selector="edit-feedback-send" type="submit" id="edit-feedback-send" name="op" value="Отправить" />
+<input autocomplete="off" data-drupal-selector="form-obcvudjjn-dppyrv2yvwquwhft8-vzh8rnxfiotfuku" type="hidden" name="form_build_id" value="form-OBCvudJJn_dppYrV2yVwQUwhFT8_VZH8rNxfIOTfuKU" />
+<input data-drupal-selector="edit-admin-feedback-form" type="hidden" name="form_id" value="admin_feedback_form" />
+
+</form>
+</div>
+
+  </div>
+
+  </div>
+
+          </aside>
+              </main>
+    </div>
+  </div>
+
+  <footer role="contentinfo">
+    <div class="creatio-region creatio-region_footer">
+      <div class="creatio-container">
+          <div class="region region-footer">
+    <div id="block-footerua" class="block block-simple-block block-simple-blockfooter-ua">
+  
+    
+      <div class="footer">
+<div class="footer-left">
+<ul class="footer-socials"><li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_fb" href="https://www.facebook.com/terrasoft.ua" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_in" href="https://www.linkedin.com/company/terrasoft/" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_yt" href="https://www.youtube.com/c/TerrasoftUkraine" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_tg" href="https://t.me/Terrasoft_UA" target="_blank"> </a></li>
+</ul></div>
+
+<div class="footer-contact">
+<div class="footer-title">Будьте на связи!</div>
+
+<div class="footer-content">
+<div class="footer-items">
+<div class="footer-item"><a class="footer__link footer__link_phone" href="tel:+380443633133">+38 (044) 363-31-33</a></div>
+</div>
+
+<div class="footer-items">
+<div class="footer-item"><a class="footer__link footer__link_email" href="mailto:support@terrasoft.ua">support@terrasoft.ua</a></div>
+</div>
+</div>
+</div>
+</div>
+
+  </div>
+
+  </div>
+
+      </div>
+    </div>
+    <div class="creatio-region creatio-region_bottom">
+      <div class="creatio-container">
+          <div class="region region-bottom">
+    <div id="block-allrightsreservedua" class="block block-simple-block block-simple-blockfooter-bottom-ua">
+  
+    
+      <p>© 2002-2022 Terrasoft.  |  <a href="https://www.terrasoft.ua/privacy-policy" target="_blank">Конфиденциальность</a></p>
+
+  </div>
+
+  </div>
+
+      </div>
+    </div>
+  </footer>
+</div>
+<div class="creatio-bg"></div>
+
+
+  </div>
+
+    
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/docs\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/2982","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"ru"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"ajaxPageState":{"libraries":"admin_feedback\/admin_feedback_block,admin_feedback\/admin_feedback_css,classy\/base,classy\/messages,classy\/node,core\/drupal.ajax,core\/jquery.form,core\/normalize,creatio\/fancybox,creatio\/global,layout_discovery\/onecol,system\/base,ts_doc\/doc_version,ts_feedback\/ts_feedback,ts_nav\/breadcrumb,ts_nav\/doc_nav,ts_nav\/page_nav,ts_title_anchor\/ts_title_anchor","theme":"creatio","theme_token":null},"ajaxTrustedUrl":{"form_action_p_pvdeGsVG5zNF_XLGPTvYSKCf43t8qZYSwcfZl2uzM":true,"\/docs\/developer\/instrumenty_razrabotki\/pakety\/fajlovyj_kontent\/razrabotat_klientskuyu_funkcionalnost_typescript?ajax_form=1":true},"admin_feedback":{"yes_response":"\u0421\u043f\u0430\u0441\u0438\u0431\u043e \u0437\u0430 \u043e\u0431\u0440\u0430\u0442\u043d\u0443\u044e \u0441\u0432\u044f\u0437\u044c!","no_response":"\u0421\u043f\u0430\u0441\u0438\u0431\u043e \u0437\u0430 \u043e\u0431\u0440\u0430\u0442\u043d\u0443\u044e \u0441\u0432\u044f\u0437\u044c!","custom_text_response_on_no":{"value":"","format":"full_html"},"feedback_prompt_on_yes":true,"feedback_prompt_on_no":true,"feedback_enable_predefined_answers":false,"feedback_prompt":"\u041a\u0430\u043a \u043c\u043e\u0436\u043d\u043e \u0443\u043b\u0443\u0447\u0448\u0438\u0442\u044c \u044d\u0442\u0443 \u0441\u0442\u0430\u0442\u044c\u044e?"},"ajax":{"edit-feedback-send":{"callback":"::validateFeedbackMsg","event":"mousedown","keypress":true,"prevent":"click","url":"\/docs\/developer\/instrumenty_razrabotki\/pakety\/fajlovyj_kontent\/razrabotat_klientskuyu_funkcionalnost_typescript?ajax_form=1","dialogType":"ajax","submit":{"_triggering_element_name":"op","_triggering_element_value":"\u041e\u0442\u043f\u0440\u0430\u0432\u0438\u0442\u044c"}}},"user":{"uid":0,"permissionsHash":"9c2367dfcaba0fa15f0375f97aed64e146c908cee68508d13b79e3ee80e5162d"}}</script>
+<script src="../../../../sites/default/files/js/js_Rr-7TvYD7NposuRFJwUqThxM7yJmw8vs03PQwu5gWd8.js"></script>
+
+
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+      <g id="svg-copy" class="svg-icon svg-icon_copy">
+        <path d="M15.111,18H1.889A1.848,1.848,0,0,1,0,16.2V3.6A1.848,1.848,0,0,1,1.889,1.8H5.837a2.87,2.87,0,0,1,5.326,0h3.948A1.848,1.848,0,0,1,17,3.6V16.2A1.848,1.848,0,0,1,15.111,18ZM3.777,12.6v1.8h6.611V12.6Zm0-3.6v1.8h9.445V9Zm0-3.6V7.2h9.445V5.4ZM8.5,1.8a.924.924,0,0,0-.944.9.945.945,0,0,0,1.889,0A.924.924,0,0,0,8.5,1.8Z"/>
+      </g>
+
+      <g id="svg-prev" class="svg-icon svg-icon_arrow">
+        <path d="M5.488,12.779,0,6.39,5.488,0" transform="translate(1 0.652)"/>
+      </g>
+
+      <g id="svg-next" class="svg-icon svg-icon_arrow">
+        <path d="M0,12.779,5.488,6.39,0,0" transform="translate(0.759 0.652)"/>
+      </g>
+    </svg>
+  </body>
+
+<!-- Mirrored from academy.terrasoft.ua/docs/developer/instrumenty_razrabotki/pakety/fajlovyj_kontent/razrabotat_klientskuyu_funkcionalnost_typescript by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Mar 2022 00:15:22 GMT -->
+</html>

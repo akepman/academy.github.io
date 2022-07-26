@@ -1,0 +1,2412 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  
+<!-- Mirrored from academy.terrasoft.ua/api/netcoreapi/7.18.0/api/Terrasoft.Core.DB.Select.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Mar 2022 03:31:48 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class Select
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class Select
+   ">
+    <meta name="generator" content="docfx 2.58.0.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-default ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="https://academy.terrasoft.ru/docs/developer/back-end_development">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Terrasoft.Core.DB.Select">
+  
+  
+  <h1 id="Terrasoft_Core_DB_Select" data-uid="Terrasoft.Core.DB.Select" class="text-break">Class Select
+  </h1>
+  <div class="markdown level0 summary"><p>Запрос на выборку данных.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><a class="xref" href="Terrasoft.Core.DB.Query.html">Query</a></div>
+    <div class="level2"><span class="xref">Select</span></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="Terrasoft.Core.DB.IParametrizedQuery.html">IParametrizedQuery</a></div>
+    <div><a class="xref" href="Terrasoft.Core.DB.ISqlGenerating.html">ISqlGenerating</a></div>
+    <div><a class="xref" href="Terrasoft.Core.DB.ICacheableQuery.html">ICacheableQuery</a></div>
+    <div><span class="xref">System.ICloneable</span></div>
+    <div><a class="xref" href="Terrasoft.Core.DB.IDBReadableCommand.html">IDBReadableCommand</a></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_DBEngine">Query.DBEngine</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_UserConnection">Query.UserConnection</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_RowCount">Query.RowCount</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_Parameters">Query.Parameters</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_HasParameters">Query.HasParameters</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_BuildParametersAsValue">Query.BuildParametersAsValue</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_Joins">Query.Joins</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_HasJoins">Query.HasJoins</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_Condition">Query.Condition</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_HasCondition">Query.HasCondition</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_HavingCondition">Query.HavingCondition</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_HasHavingCondition">Query.HasHavingCondition</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_OrderByItems">Query.OrderByItems</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_HasOrderByItems">Query.HasOrderByItems</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_GroupByItems">Query.GroupByItems</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_HasGroupByItems">Query.HasGroupByItems</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_UnionQueries">Query.UnionQueries</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_HasUnionQueries">Query.HasUnionQueries</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_IsUnionTypeAll">Query.IsUnionTypeAll</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_IsCacheEnabled">Query.IsCacheEnabled</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_CachedSqlText">Query.CachedSqlText</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_Execute">Query.Execute()</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_Execute_Terrasoft_Core_DB_DBExecutor_">Query.Execute(DBExecutor)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_ResetParameters">Query.ResetParameters()</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_InitializeParameters">Query.InitializeParameters()</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_Terrasoft_Core_DB_IParametrizedQuery_InitializeParameters">Query.IParametrizedQuery.InitializeParameters()</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_Join_Terrasoft_Core_DB_JoinType_System_String_">Query.Join(JoinType, String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_Join_Terrasoft_Core_DB_JoinType_Terrasoft_Core_DB_Select_">Query.Join(JoinType, Select)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_Join_Terrasoft_Core_DB_JoinType_Terrasoft_Core_DB_Query_">Query.Join(JoinType, Query)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_Join_Terrasoft_Core_DB_JoinType_Terrasoft_Core_DB_QuerySourceExpression_">Query.Join(JoinType, QuerySourceExpression)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_InnerJoin_System_String_">Query.InnerJoin(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_InnerJoin_Terrasoft_Core_DB_Select_">Query.InnerJoin(Select)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_InnerJoin_Terrasoft_Core_DB_Query_">Query.InnerJoin(Query)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_InnerJoin_Terrasoft_Core_DB_QuerySourceExpression_">Query.InnerJoin(QuerySourceExpression)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_LeftOuterJoin_System_String_">Query.LeftOuterJoin(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_LeftOuterJoin_Terrasoft_Core_DB_Select_">Query.LeftOuterJoin(Select)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_LeftOuterJoin_Terrasoft_Core_DB_Query_">Query.LeftOuterJoin(Query)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_LeftOuterJoin_Terrasoft_Core_DB_QuerySourceExpression_">Query.LeftOuterJoin(QuerySourceExpression)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_RightOuterJoin_System_String_">Query.RightOuterJoin(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_RightOuterJoin_Terrasoft_Core_DB_Select_">Query.RightOuterJoin(Select)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_RightOuterJoin_Terrasoft_Core_DB_Query_">Query.RightOuterJoin(Query)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_RightOuterJoin_Terrasoft_Core_DB_QuerySourceExpression_">Query.RightOuterJoin(QuerySourceExpression)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_FullOuterJoin_System_String_">Query.FullOuterJoin(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_FullOuterJoin_Terrasoft_Core_DB_Select_">Query.FullOuterJoin(Select)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_FullOuterJoin_Terrasoft_Core_DB_Query_">Query.FullOuterJoin(Query)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_FullOuterJoin_Terrasoft_Core_DB_QuerySourceExpression_">Query.FullOuterJoin(QuerySourceExpression)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_Where">Query.Where()</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_Where_System_String_">Query.Where(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_Where_System_String_System_String_">Query.Where(String, String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_Where_Terrasoft_Core_DB_Select_">Query.Where(Select)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_Where_Terrasoft_Core_DB_Query_">Query.Where(Query)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_Where_Terrasoft_Core_DB_QueryParameter_">Query.Where(QueryParameter)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_Where_Terrasoft_Core_DB_QueryColumnExpression_">Query.Where(QueryColumnExpression)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_Where_Terrasoft_Core_DB_IQueryColumnExpressionConvertible_">Query.Where(IQueryColumnExpressionConvertible)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_Where_Terrasoft_Core_DB_QueryCondition_">Query.Where(QueryCondition)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_And">Query.And()</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_And_System_String_">Query.And(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_And_System_String_System_String_">Query.And(String, String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_And_Terrasoft_Core_DB_Select_">Query.And(Select)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_And_Terrasoft_Core_DB_Query_">Query.And(Query)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_And_Terrasoft_Core_DB_QueryParameter_">Query.And(QueryParameter)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_And_Terrasoft_Core_DB_QueryColumnExpression_">Query.And(QueryColumnExpression)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_And_Terrasoft_Core_DB_IQueryColumnExpressionConvertible_">Query.And(IQueryColumnExpressionConvertible)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_And_Terrasoft_Core_DB_QueryCondition_">Query.And(QueryCondition)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_Or">Query.Or()</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_Or_System_String_">Query.Or(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_Or_System_String_System_String_">Query.Or(String, String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_Or_Terrasoft_Core_DB_Select_">Query.Or(Select)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_Or_Terrasoft_Core_DB_Query_">Query.Or(Query)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_Or_Terrasoft_Core_DB_QueryParameter_">Query.Or(QueryParameter)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_Or_Terrasoft_Core_DB_QueryColumnExpression_">Query.Or(QueryColumnExpression)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_Or_Terrasoft_Core_DB_IQueryColumnExpressionConvertible_">Query.Or(IQueryColumnExpressionConvertible)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_Or_Terrasoft_Core_DB_QueryCondition_">Query.Or(QueryCondition)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_AddCondition_LogicalOperation_">Query.AddCondition(LogicalOperation)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_AddCondition_System_String_LogicalOperation_">Query.AddCondition(String, LogicalOperation)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_AddCondition_System_String_System_String_LogicalOperation_">Query.AddCondition(String, String, LogicalOperation)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_AddCondition_Terrasoft_Core_DB_Select_LogicalOperation_">Query.AddCondition(Select, LogicalOperation)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_AddCondition_Terrasoft_Core_DB_Query_LogicalOperation_">Query.AddCondition(Query, LogicalOperation)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_AddCondition_Terrasoft_Core_DB_QueryParameter_LogicalOperation_">Query.AddCondition(QueryParameter, LogicalOperation)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_AddCondition_Terrasoft_Core_DB_QueryColumnExpression_LogicalOperation_">Query.AddCondition(QueryColumnExpression, LogicalOperation)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_AddCondition_Terrasoft_Core_DB_IQueryColumnExpressionConvertible_LogicalOperation_">Query.AddCondition(IQueryColumnExpressionConvertible, LogicalOperation)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_AddCondition_Terrasoft_Core_DB_QueryCondition_LogicalOperation_">Query.AddCondition(QueryCondition, LogicalOperation)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_CloseBlock">Query.CloseBlock()</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_OrderBy_OrderDirectionStrict_System_String_">Query.OrderBy(OrderDirectionStrict, String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_OrderBy_OrderDirectionStrict_System_String_System_String_">Query.OrderBy(OrderDirectionStrict, String, String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_OrderBy_OrderDirectionStrict_Terrasoft_Core_DB_QueryFunction_">Query.OrderBy(OrderDirectionStrict, QueryFunction)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_OrderBy_OrderDirectionStrict_Terrasoft_Core_DB_Select_">Query.OrderBy(OrderDirectionStrict, Select)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_OrderBy_OrderDirectionStrict_Terrasoft_Core_DB_Query_">Query.OrderBy(OrderDirectionStrict, Query)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_OrderBy_OrderDirectionStrict_Terrasoft_Core_DB_QueryColumnExpression_">Query.OrderBy(OrderDirectionStrict, QueryColumnExpression)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_OrderBy_OrderDirectionStrict_Terrasoft_Core_DB_IQueryColumnExpressionConvertible_">Query.OrderBy(OrderDirectionStrict, IQueryColumnExpressionConvertible)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_OrderByAsc_System_String_">Query.OrderByAsc(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_OrderByAsc_System_String_System_String_">Query.OrderByAsc(String, String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_OrderByAsc_Terrasoft_Core_DB_Select_">Query.OrderByAsc(Select)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_OrderByAsc_Terrasoft_Core_DB_Query_">Query.OrderByAsc(Query)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_OrderByAsc_Terrasoft_Core_DB_QueryColumnExpression_">Query.OrderByAsc(QueryColumnExpression)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_OrderByAsc_Terrasoft_Core_DB_IQueryColumnExpressionConvertible_">Query.OrderByAsc(IQueryColumnExpressionConvertible)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_OrderByDesc_System_String_">Query.OrderByDesc(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_OrderByDesc_System_String_System_String_">Query.OrderByDesc(String, String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_OrderByDesc_Terrasoft_Core_DB_Select_">Query.OrderByDesc(Select)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_OrderByDesc_Terrasoft_Core_DB_Query_">Query.OrderByDesc(Query)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_OrderByDesc_Terrasoft_Core_DB_QueryColumnExpression_">Query.OrderByDesc(QueryColumnExpression)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_OrderByDesc_Terrasoft_Core_DB_IQueryColumnExpressionConvertible_">Query.OrderByDesc(IQueryColumnExpressionConvertible)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_GroupBy_System_String_">Query.GroupBy(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_GroupBy_System_String_System_String_">Query.GroupBy(String, String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_GroupBy_Terrasoft_Core_DB_QueryColumnExpression_">Query.GroupBy(QueryColumnExpression)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_GroupBy_Terrasoft_Core_DB_IQueryColumnExpressionConvertible_">Query.GroupBy(IQueryColumnExpressionConvertible)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_Having">Query.Having()</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_Having_System_String_">Query.Having(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_Having_System_String_System_String_">Query.Having(String, String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_Having_Terrasoft_Core_DB_Select_">Query.Having(Select)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_Having_Terrasoft_Core_DB_Query_">Query.Having(Query)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_Having_Terrasoft_Core_DB_IQueryColumnExpressionConvertible_">Query.Having(IQueryColumnExpressionConvertible)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_Having_Terrasoft_Core_DB_QueryParameter_">Query.Having(QueryParameter)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_Having_Terrasoft_Core_DB_QueryColumnExpression_">Query.Having(QueryColumnExpression)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_Union_Terrasoft_Core_DB_Select_">Query.Union(Select)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_Union_Terrasoft_Core_DB_Query_">Query.Union(Query)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_UnionAll_Terrasoft_Core_DB_Select_">Query.UnionAll(Select)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_UnionAll_Terrasoft_Core_DB_Query_">Query.UnionAll(Query)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_ResetCachedSqlText">Query.ResetCachedSqlText()</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_SetParameterValue_System_String_System_Object_">Query.SetParameterValue(String, Object)</a>
+    </div>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Terrasoft.Core.DB.html">Terrasoft.Core.DB</a></h6>
+  <h6><strong>Assembly</strong>: Terrasoft.Core.dll</h6>
+  <h5 id="Terrasoft_Core_DB_Select_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class Select : Query, IParametrizedQuery, ISqlGenerating, ICacheableQuery, ICloneable, IDBReadableCommand</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+  </h3>
+  
+  
+  <a id="Terrasoft_Core_DB_Select__ctor_" data-uid="Terrasoft.Core.DB.Select.#ctor*"></a>
+  <h4 id="Terrasoft_Core_DB_Select__ctor_Terrasoft_Core_DB_Select_" data-uid="Terrasoft.Core.DB.Select.#ctor(Terrasoft.Core.DB.Select)">Select(Select)</h4>
+  <div class="markdown level1 summary"><p>Инициализирует новый экземпляр <a class="xref" href="Terrasoft.Core.DB.Select.html">Select</a>, являющийся клоном переданного запроса.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Select(Select source)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.Select.html">Select</a></td>
+        <td><span class="parametername">source</span></td>
+        <td><p>Запрос на выборку данных, клон которого создается.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_DB_Select__ctor_" data-uid="Terrasoft.Core.DB.Select.#ctor*"></a>
+  <h4 id="Terrasoft_Core_DB_Select__ctor_Terrasoft_Core_UserConnection_" data-uid="Terrasoft.Core.DB.Select.#ctor(Terrasoft.Core.UserConnection)">Select(UserConnection)</h4>
+  <div class="markdown level1 summary"><p>Initialises a new instance of <a class="xref" href="Terrasoft.Core.DB.Select.html">Select</a>, using given user's connection.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Select(UserConnection userConnection)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.UserConnection.html">UserConnection</a></td>
+        <td><span class="parametername">userConnection</span></td>
+        <td><p>User's connection.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_DB_Select__ctor_" data-uid="Terrasoft.Core.DB.Select.#ctor*"></a>
+  <h4 id="Terrasoft_Core_DB_Select__ctor_Terrasoft_Core_UserConnection_System_Threading_CancellationToken_" data-uid="Terrasoft.Core.DB.Select.#ctor(Terrasoft.Core.UserConnection,System.Threading.CancellationToken)">Select(UserConnection, CancellationToken)</h4>
+  <div class="markdown level1 summary"><p>Initialises a new instance of <a class="xref" href="Terrasoft.Core.DB.Select.html">Select</a>, using given user's connection
+and a <span class="xref">System.Threading.CancellationToken</span>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Select(UserConnection userConnection, CancellationToken cancellationToken)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.UserConnection.html">UserConnection</a></td>
+        <td><span class="parametername">userConnection</span></td>
+        <td><p>User's connection.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Threading.CancellationToken</span></td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td><p>Cancellation token to be passed to requests.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  
+  
+  <a id="Terrasoft_Core_DB_Select_CanReadUncommitedData_" data-uid="Terrasoft.Core.DB.Select.CanReadUncommitedData*"></a>
+  <h4 id="Terrasoft_Core_DB_Select_CanReadUncommitedData" data-uid="Terrasoft.Core.DB.Select.CanReadUncommitedData">CanReadUncommitedData</h4>
+  <div class="markdown level1 summary"><p>Признак, определяющий, будут ли попадать в результаты запроса данные, для которых не завершена транзакция.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool CanReadUncommitedData { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_DB_Select_Columns_" data-uid="Terrasoft.Core.DB.Select.Columns*"></a>
+  <h4 id="Terrasoft_Core_DB_Select_Columns" data-uid="Terrasoft.Core.DB.Select.Columns">Columns</h4>
+  <div class="markdown level1 summary"><p>Коллекция выражений колонок запроса.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public QueryColumnExpressionCollection Columns { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.QueryColumnExpressionCollection.html">QueryColumnExpressionCollection</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_DB_Select_ConnectBySelect_" data-uid="Terrasoft.Core.DB.Select.ConnectBySelect*"></a>
+  <h4 id="Terrasoft_Core_DB_Select_ConnectBySelect" data-uid="Terrasoft.Core.DB.Select.ConnectBySelect">ConnectBySelect</h4>
+  <div class="markdown level1 summary"><p>ConnectBy select. Using for pageable hierarchical queries.
+<a class="xref" href="Terrasoft.Core.DB.Select.html">Select</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Select ConnectBySelect { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.Select.html">Select</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_DB_Select_HierarchicalOptions_" data-uid="Terrasoft.Core.DB.Select.HierarchicalOptions*"></a>
+  <h4 id="Terrasoft_Core_DB_Select_HierarchicalOptions" data-uid="Terrasoft.Core.DB.Select.HierarchicalOptions">HierarchicalOptions</h4>
+  <div class="markdown level1 summary"><p>Parameters for building hierarchical queries.
+<a class="xref" href="Terrasoft.Core.DB.HierarchicalSelectOptions.html">HierarchicalSelectOptions</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public HierarchicalSelectOptions HierarchicalOptions { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.HierarchicalSelectOptions.html">HierarchicalSelectOptions</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_DB_Select_IsDistinct_" data-uid="Terrasoft.Core.DB.Select.IsDistinct*"></a>
+  <h4 id="Terrasoft_Core_DB_Select_IsDistinct" data-uid="Terrasoft.Core.DB.Select.IsDistinct">IsDistinct</h4>
+  <div class="markdown level1 summary"><p>Определяет, возвращает ли запрос только уникальные записи.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsDistinct { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_DB_Select_OffsetFetchPaging_" data-uid="Terrasoft.Core.DB.Select.OffsetFetchPaging*"></a>
+  <h4 id="Terrasoft_Core_DB_Select_OffsetFetchPaging" data-uid="Terrasoft.Core.DB.Select.OffsetFetchPaging">OffsetFetchPaging</h4>
+  <div class="markdown level1 summary"><p>Determines if offset-fetch paging is using.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool OffsetFetchPaging { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_DB_Select_PageableOptions_" data-uid="Terrasoft.Core.DB.Select.PageableOptions*"></a>
+  <h4 id="Terrasoft_Core_DB_Select_PageableOptions" data-uid="Terrasoft.Core.DB.Select.PageableOptions">PageableOptions</h4>
+  <div class="markdown level1 summary"><p>Parameters for paging query results.
+<a class="xref" href="Terrasoft.Core.DB.PageableSelectOptions.html">PageableSelectOptions</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public PageableSelectOptions PageableOptions { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.PageableSelectOptions.html">PageableSelectOptions</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_DB_Select_QueryKind_" data-uid="Terrasoft.Core.DB.Select.QueryKind*"></a>
+  <h4 id="Terrasoft_Core_DB_Select_QueryKind" data-uid="Terrasoft.Core.DB.Select.QueryKind">QueryKind</h4>
+  <div class="markdown level1 summary"><p>Query kind, that is used to request special executor.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public QueryKind QueryKind { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">QueryKind</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_DB_Select_QueryOptimize_" data-uid="Terrasoft.Core.DB.Select.QueryOptimize*"></a>
+  <h4 id="Terrasoft_Core_DB_Select_QueryOptimize" data-uid="Terrasoft.Core.DB.Select.QueryOptimize">QueryOptimize</h4>
+  <div class="markdown level1 summary"><p>Additional information about the query, that can by use to optimization
+<a class="xref" href="Terrasoft.Core.DB.DBEngine.html">DBEngine</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool QueryOptimize { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_DB_Select_RowsOffset_" data-uid="Terrasoft.Core.DB.Select.RowsOffset*"></a>
+  <h4 id="Terrasoft_Core_DB_Select_RowsOffset" data-uid="Terrasoft.Core.DB.Select.RowsOffset">RowsOffset</h4>
+  <div class="markdown level1 summary"><p>Number of rows to skip.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int RowsOffset { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_DB_Select_SourceExpression_" data-uid="Terrasoft.Core.DB.Select.SourceExpression*"></a>
+  <h4 id="Terrasoft_Core_DB_Select_SourceExpression" data-uid="Terrasoft.Core.DB.Select.SourceExpression">SourceExpression</h4>
+  <div class="markdown level1 summary"><p>Выражение источника данных запроса.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public QuerySourceExpression SourceExpression { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.QuerySourceExpression.html">QuerySourceExpression</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  
+  
+  <a id="Terrasoft_Core_DB_Select_AddColumn_" data-uid="Terrasoft.Core.DB.Select.AddColumn*"></a>
+  <h4 id="Terrasoft_Core_DB_Select_AddColumn_Terrasoft_Core_DB_QueryColumnExpression_" data-uid="Terrasoft.Core.DB.Select.AddColumn(Terrasoft.Core.DB.QueryColumnExpression)">AddColumn(QueryColumnExpression)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected void AddColumn(QueryColumnExpression columnExpression)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.QueryColumnExpression.html">QueryColumnExpression</a></td>
+        <td><span class="parametername">columnExpression</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_DB_Select_AddFrom_" data-uid="Terrasoft.Core.DB.Select.AddFrom*"></a>
+  <h4 id="Terrasoft_Core_DB_Select_AddFrom_Terrasoft_Core_DB_QuerySourceExpression_" data-uid="Terrasoft.Core.DB.Select.AddFrom(Terrasoft.Core.DB.QuerySourceExpression)">AddFrom(QuerySourceExpression)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected void AddFrom(QuerySourceExpression sourceExpression)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.QuerySourceExpression.html">QuerySourceExpression</a></td>
+        <td><span class="parametername">sourceExpression</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_DB_Select_As_" data-uid="Terrasoft.Core.DB.Select.As*"></a>
+  <h4 id="Terrasoft_Core_DB_Select_As_System_String_" data-uid="Terrasoft.Core.DB.Select.As(System.String)">As(String)</h4>
+  <div class="markdown level1 summary"><p>Добавляет указанный псевдоним для последнего заданного выражения запроса.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Select As(string alias)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">alias</span></td>
+        <td><p>Псевдоним выражения запроса.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.Select.html">Select</a></td>
+        <td><p>Текущий экземпляр <a class="xref" href="Terrasoft.Core.DB.Select.html">Select</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_DB_Select_BuildSqlText_" data-uid="Terrasoft.Core.DB.Select.BuildSqlText*"></a>
+  <h4 id="Terrasoft_Core_DB_Select_BuildSqlText_System_Text_StringBuilder_" data-uid="Terrasoft.Core.DB.Select.BuildSqlText(System.Text.StringBuilder)">BuildSqlText(StringBuilder)</h4>
+  <div class="markdown level1 summary"><p>Формирует текст запроса с использованием заданного экземпляра <span class="xref">System.Text.StringBuilder</span>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void BuildSqlText(StringBuilder sb)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Text.StringBuilder</span></td>
+        <td><span class="parametername">sb</span></td>
+        <td><p>Экземпляр <span class="xref">System.Text.StringBuilder</span>, с помощью которого формируется текст
+запроса.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_BuildSqlText_System_Text_StringBuilder_">Query.BuildSqlText(StringBuilder)</a></div>
+  
+  
+  <a id="Terrasoft_Core_DB_Select_Clone_" data-uid="Terrasoft.Core.DB.Select.Clone*"></a>
+  <h4 id="Terrasoft_Core_DB_Select_Clone" data-uid="Terrasoft.Core.DB.Select.Clone">Clone()</h4>
+  <div class="markdown level1 summary"><p>Создает клон текущего экземпляра <a class="xref" href="Terrasoft.Core.DB.Select.html">Select</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override object Clone()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><p>Новый экземпляр <a class="xref" href="Terrasoft.Core.DB.Select.html">Select</a>, представляющий копию текущего экземпляра.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_Clone">Query.Clone()</a></div>
+  
+  
+  <a id="Terrasoft_Core_DB_Select_Column_" data-uid="Terrasoft.Core.DB.Select.Column*"></a>
+  <h4 id="Terrasoft_Core_DB_Select_Column_System_String_" data-uid="Terrasoft.Core.DB.Select.Column(System.String)">Column(String)</h4>
+  <div class="markdown level1 summary"><p>Добавляет в коллекцию выражений колонок текущего запроса выражение для колонки с заданным псевдонимом.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Select Column(string sourceColumnAlias)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">sourceColumnAlias</span></td>
+        <td><p>Псевдоним колонки.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.Select.html">Select</a></td>
+        <td><p>Текущий экземпляр <a class="xref" href="Terrasoft.Core.DB.Select.html">Select</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_DB_Select_Column_" data-uid="Terrasoft.Core.DB.Select.Column*"></a>
+  <h4 id="Terrasoft_Core_DB_Select_Column_System_String_System_String_" data-uid="Terrasoft.Core.DB.Select.Column(System.String,System.String)">Column(String, String)</h4>
+  <div class="markdown level1 summary"><p>Добавляет в коллекцию выражений колонок текущего запроса выражение для колонки с заданным псевдонимом из
+указанного источника.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Select Column(string sourceAlias, string sourceColumnAlias)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">sourceAlias</span></td>
+        <td><p>Псевдоним источника.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">sourceColumnAlias</span></td>
+        <td><p>Псевдоним колонки.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.Select.html">Select</a></td>
+        <td><p>Текущий экземпляр <a class="xref" href="Terrasoft.Core.DB.Select.html">Select</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_DB_Select_Column_" data-uid="Terrasoft.Core.DB.Select.Column*"></a>
+  <h4 id="Terrasoft_Core_DB_Select_Column_Terrasoft_Core_DB_IQueryColumnExpressionConvertible_" data-uid="Terrasoft.Core.DB.Select.Column(Terrasoft.Core.DB.IQueryColumnExpressionConvertible)">Column(IQueryColumnExpressionConvertible)</h4>
+  <div class="markdown level1 summary"><p>Добавляет в текущую коллекцию выражений колонок переданное выражение.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Select Column(IQueryColumnExpressionConvertible expression)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.IQueryColumnExpressionConvertible.html">IQueryColumnExpressionConvertible</a></td>
+        <td><span class="parametername">expression</span></td>
+        <td><p>Выражение.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.Select.html">Select</a></td>
+        <td><p>Текущий экземпляр <a class="xref" href="Terrasoft.Core.DB.Select.html">Select</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_DB_Select_Column_" data-uid="Terrasoft.Core.DB.Select.Column*"></a>
+  <h4 id="Terrasoft_Core_DB_Select_Column_Terrasoft_Core_DB_Query_" data-uid="Terrasoft.Core.DB.Select.Column(Terrasoft.Core.DB.Query)">Column(Query)</h4>
+  <div class="markdown level1 summary"><p>Добавляет в коллекцию выражений колонок текущего запроса выражение для переданного произвольного подзапроса.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Select Column(Query subSelectQuery)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.Query.html">Query</a></td>
+        <td><span class="parametername">subSelectQuery</span></td>
+        <td><p>Произвольный подзапрос.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.Select.html">Select</a></td>
+        <td><p>Текущий экземпляр <a class="xref" href="Terrasoft.Core.DB.Select.html">Select</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_DB_Select_Column_" data-uid="Terrasoft.Core.DB.Select.Column*"></a>
+  <h4 id="Terrasoft_Core_DB_Select_Column_Terrasoft_Core_DB_QueryCase_" data-uid="Terrasoft.Core.DB.Select.Column(Terrasoft.Core.DB.QueryCase)">Column(QueryCase)</h4>
+  <div class="markdown level1 summary"><p>Добавляет в коллекцию выражений колонок текущего запроса выражение для переданного оператора Case.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Select Column(QueryCase queryCase)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.QueryCase.html">QueryCase</a></td>
+        <td><span class="parametername">queryCase</span></td>
+        <td><p>Оператор Case запроса.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.Select.html">Select</a></td>
+        <td><p>Текущий экземпляр <a class="xref" href="Terrasoft.Core.DB.Select.html">Select</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_DB_Select_Column_" data-uid="Terrasoft.Core.DB.Select.Column*"></a>
+  <h4 id="Terrasoft_Core_DB_Select_Column_Terrasoft_Core_DB_QueryColumnExpression_" data-uid="Terrasoft.Core.DB.Select.Column(Terrasoft.Core.DB.QueryColumnExpression)">Column(QueryColumnExpression)</h4>
+  <div class="markdown level1 summary"><p>Добавляет в текущую коллекцию выражений колонок переданное выражение колонки.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Select Column(QueryColumnExpression columnExpression)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.QueryColumnExpression.html">QueryColumnExpression</a></td>
+        <td><span class="parametername">columnExpression</span></td>
+        <td><p>Выражение колонки запроса.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.Select.html">Select</a></td>
+        <td><p>Текущий экземпляр <a class="xref" href="Terrasoft.Core.DB.Select.html">Select</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_DB_Select_Column_" data-uid="Terrasoft.Core.DB.Select.Column*"></a>
+  <h4 id="Terrasoft_Core_DB_Select_Column_Terrasoft_Core_DB_QueryParameter_" data-uid="Terrasoft.Core.DB.Select.Column(Terrasoft.Core.DB.QueryParameter)">Column(QueryParameter)</h4>
+  <div class="markdown level1 summary"><p>Добавляет в текущую коллекцию выражений колонок выражения для переданного параметра запроса.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Select Column(QueryParameter queryParameter)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.QueryParameter.html">QueryParameter</a></td>
+        <td><span class="parametername">queryParameter</span></td>
+        <td><p>Параметр запроса.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.Select.html">Select</a></td>
+        <td><p>Текущий экземпляр <a class="xref" href="Terrasoft.Core.DB.Select.html">Select</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_DB_Select_Column_" data-uid="Terrasoft.Core.DB.Select.Column*"></a>
+  <h4 id="Terrasoft_Core_DB_Select_Column_Terrasoft_Core_DB_Select_" data-uid="Terrasoft.Core.DB.Select.Column(Terrasoft.Core.DB.Select)">Column(Select)</h4>
+  <div class="markdown level1 summary"><p>Добавляет в коллекцию выражений колонок текущего запроса выражение для переданного подзапроса на выборку.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Select Column(Select subSelect)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.Select.html">Select</a></td>
+        <td><span class="parametername">subSelect</span></td>
+        <td><p>Подзапрос на выборку.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.Select.html">Select</a></td>
+        <td><p>Текущий экземпляр <a class="xref" href="Terrasoft.Core.DB.Select.html">Select</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_DB_Select_CrossJoin_" data-uid="Terrasoft.Core.DB.Select.CrossJoin*"></a>
+  <h4 id="Terrasoft_Core_DB_Select_CrossJoin_System_String_" data-uid="Terrasoft.Core.DB.Select.CrossJoin(System.String)">CrossJoin(String)</h4>
+  <div class="markdown level1 summary"><p>Связывает с текущим запросом схему с указанным именем, используя перекрестное соединение.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Select CrossJoin(string schemaName)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">schemaName</span></td>
+        <td><p>Имя связываемой схемы.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.Select.html">Select</a></td>
+        <td><p>Текущий экземпляр <a class="xref" href="Terrasoft.Core.DB.Select.html">Select</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_DB_Select_CrossJoin_" data-uid="Terrasoft.Core.DB.Select.CrossJoin*"></a>
+  <h4 id="Terrasoft_Core_DB_Select_CrossJoin_Terrasoft_Core_DB_Query_" data-uid="Terrasoft.Core.DB.Select.CrossJoin(Terrasoft.Core.DB.Query)">CrossJoin(Query)</h4>
+  <div class="markdown level1 summary"><p>Связывает с текущим запросом указанный произвольный подзапроса, используя перекрестное соединение.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Select CrossJoin(Query subSelectQuery)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.Query.html">Query</a></td>
+        <td><span class="parametername">subSelectQuery</span></td>
+        <td><p>Произвольный подзапрос.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.Select.html">Select</a></td>
+        <td><p>Текущий экземпляр <a class="xref" href="Terrasoft.Core.DB.Select.html">Select</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_DB_Select_CrossJoin_" data-uid="Terrasoft.Core.DB.Select.CrossJoin*"></a>
+  <h4 id="Terrasoft_Core_DB_Select_CrossJoin_Terrasoft_Core_DB_QuerySourceExpression_" data-uid="Terrasoft.Core.DB.Select.CrossJoin(Terrasoft.Core.DB.QuerySourceExpression)">CrossJoin(QuerySourceExpression)</h4>
+  <div class="markdown level1 summary"><p>Связывает с текущим запросом указанное выражение, используя перекрестное соединение.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Select CrossJoin(QuerySourceExpression sourceExpression)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.QuerySourceExpression.html">QuerySourceExpression</a></td>
+        <td><span class="parametername">sourceExpression</span></td>
+        <td><p>Выражение для присоединяемого источника данных.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.Select.html">Select</a></td>
+        <td><p>Текущий экземпляр <a class="xref" href="Terrasoft.Core.DB.Select.html">Select</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_DB_Select_CrossJoin_" data-uid="Terrasoft.Core.DB.Select.CrossJoin*"></a>
+  <h4 id="Terrasoft_Core_DB_Select_CrossJoin_Terrasoft_Core_DB_Select_" data-uid="Terrasoft.Core.DB.Select.CrossJoin(Terrasoft.Core.DB.Select)">CrossJoin(Select)</h4>
+  <div class="markdown level1 summary"><p>Связывает с текущим запросом указанный подзапрос на выборку, используя перекрестное соединение.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Select CrossJoin(Select subSelect)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.Select.html">Select</a></td>
+        <td><span class="parametername">subSelect</span></td>
+        <td><p>Подзапрос на выборку.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.Select.html">Select</a></td>
+        <td><p>Текущий экземпляр <a class="xref" href="Terrasoft.Core.DB.Select.html">Select</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_DB_Select_Distinct_" data-uid="Terrasoft.Core.DB.Select.Distinct*"></a>
+  <h4 id="Terrasoft_Core_DB_Select_Distinct" data-uid="Terrasoft.Core.DB.Select.Distinct">Distinct()</h4>
+  <div class="markdown level1 summary"><p>Добавляет к текущему запросу на выборку ключевое слово Distinct.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Select Distinct()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.Select.html">Select</a></td>
+        <td><p>Текущий экземпляр <a class="xref" href="Terrasoft.Core.DB.Select.html">Select</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_DB_Select_EnsureSpecialDBExecutor_" data-uid="Terrasoft.Core.DB.Select.EnsureSpecialDBExecutor*"></a>
+  <h4 id="Terrasoft_Core_DB_Select_EnsureSpecialDBExecutor_Terrasoft_Core_UserConnection_QueryKind_" data-uid="Terrasoft.Core.DB.Select.EnsureSpecialDBExecutor(Terrasoft.Core.UserConnection,QueryKind)">EnsureSpecialDBExecutor(UserConnection, QueryKind)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected DBExecutor EnsureSpecialDBExecutor(UserConnection userConnection, QueryKind queryKind)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.UserConnection.html">UserConnection</a></td>
+        <td><span class="parametername">userConnection</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">QueryKind</span></td>
+        <td><span class="parametername">queryKind</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.DBExecutor.html">DBExecutor</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_DB_Select_ExecuteReader_" data-uid="Terrasoft.Core.DB.Select.ExecuteReader*"></a>
+  <h4 id="Terrasoft_Core_DB_Select_ExecuteReader_Terrasoft_Core_DB_DBExecutor_" data-uid="Terrasoft.Core.DB.Select.ExecuteReader(Terrasoft.Core.DB.DBExecutor)">ExecuteReader(DBExecutor)</h4>
+  <div class="markdown level1 summary"><p>Executes SQL query using given instance of <a class="xref" href="Terrasoft.Core.DB.DBExecutor.html">DBExecutor</a>
+and returns <span class="xref">System.Data.IDataReader</span> for the resulting set of records.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IDataReader ExecuteReader(DBExecutor dbExecutor)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.DBExecutor.html">DBExecutor</a></td>
+        <td><span class="parametername">dbExecutor</span></td>
+        <td><p>Instance of <a class="xref" href="Terrasoft.Core.DB.DBExecutor.html">DBExecutor</a>, to be used for SQL query.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Data.IDataReader</span></td>
+        <td><p>Instance implementing <span class="xref">System.Data.IDataReader</span>
+for the resulting set of records.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_DB_Select_ExecuteReader_" data-uid="Terrasoft.Core.DB.Select.ExecuteReader*"></a>
+  <h4 id="Terrasoft_Core_DB_Select_ExecuteReader_Terrasoft_Core_DB_DBExecutor_System_Data_CommandBehavior_" data-uid="Terrasoft.Core.DB.Select.ExecuteReader(Terrasoft.Core.DB.DBExecutor,System.Data.CommandBehavior)">ExecuteReader(DBExecutor, CommandBehavior)</h4>
+  <div class="markdown level1 summary"><p>Executes SQL query using given instance of <a class="xref" href="Terrasoft.Core.DB.DBExecutor.html">DBExecutor</a>
+and returns <span class="xref">System.Data.IDataReader</span> for the resulting set of records.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IDataReader ExecuteReader(DBExecutor dbExecutor, CommandBehavior behavior)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.DBExecutor.html">DBExecutor</a></td>
+        <td><span class="parametername">dbExecutor</span></td>
+        <td><p>Instance of <a class="xref" href="Terrasoft.Core.DB.DBExecutor.html">DBExecutor</a>, to be used for SQL query.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Data.CommandBehavior</span></td>
+        <td><span class="parametername">behavior</span></td>
+        <td><p>Provides a description of the results of the query
+and its effect on the database.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Data.IDataReader</span></td>
+        <td><p>Instance implementing <span class="xref">System.Data.IDataReader</span>
+for the resulting set of records.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_DB_Select_ExecuteReader_" data-uid="Terrasoft.Core.DB.Select.ExecuteReader*"></a>
+  <h4 id="Terrasoft_Core_DB_Select_ExecuteReader_Terrasoft_Core_DB_Select_ExecuteReaderReadMethod_" data-uid="Terrasoft.Core.DB.Select.ExecuteReader(Terrasoft.Core.DB.Select.ExecuteReaderReadMethod)">ExecuteReader(Select.ExecuteReaderReadMethod)</h4>
+  <div class="markdown level1 summary"><p>Executes SQL query and executes delegate <a class="xref" href="Terrasoft.Core.DB.Select.ExecuteReaderReadMethod.html">Select.ExecuteReaderReadMethod</a>
+for each row of the resulting set of records.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ExecuteReader(Select.ExecuteReaderReadMethod readMethod)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.Select.ExecuteReaderReadMethod.html">Select.ExecuteReaderReadMethod</a></td>
+        <td><span class="parametername">readMethod</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_DB_Select_ExecuteScalar_" data-uid="Terrasoft.Core.DB.Select.ExecuteScalar*"></a>
+  <h4 id="Terrasoft_Core_DB_Select_ExecuteScalar__1" data-uid="Terrasoft.Core.DB.Select.ExecuteScalar``1">ExecuteScalar&lt;TResult&gt;()</h4>
+  <div class="markdown level1 summary"><p>Executes the query and returns the first column of the first row in the result set returned by the query.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TResult ExecuteScalar&lt;TResult&gt;()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TResult</span></td>
+        <td><p>The first row in the result set of type <code data-dev-comment-type="typeparamref" class="typeparamref">TResult</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TResult</span></td>
+        <td><p>The type of the return value.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_DB_Select_ExecuteScalar_" data-uid="Terrasoft.Core.DB.Select.ExecuteScalar*"></a>
+  <h4 id="Terrasoft_Core_DB_Select_ExecuteScalar__1_Terrasoft_Core_DB_DBExecutor_" data-uid="Terrasoft.Core.DB.Select.ExecuteScalar``1(Terrasoft.Core.DB.DBExecutor)">ExecuteScalar&lt;TResult&gt;(DBExecutor)</h4>
+  <div class="markdown level1 summary"><p>Используя переданный экземпляр <a class="xref" href="Terrasoft.Core.DB.DBExecutor.html">DBExecutor</a>, выполняет текущий запрос на выборку и возвращает
+типизированный первый столбец первой записи результирующего набора, возвращаемого запросом.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TResult ExecuteScalar&lt;TResult&gt;(DBExecutor dbExecutor)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.DBExecutor.html">DBExecutor</a></td>
+        <td><span class="parametername">dbExecutor</span></td>
+        <td><p>Экземпляр <a class="xref" href="Terrasoft.Core.DB.DBExecutor.html">DBExecutor</a>, с помощью которого выполняется запрос к базе
+данных.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TResult</span></td>
+        <td><p>Первый столбец первой записи в результирующем наборе данных типа <code data-dev-comment-type="typeparamref" class="typeparamref">TResult</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TResult</span></td>
+        <td><p>Тип возвращаемого значения столбца.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_DB_Select_ExecuteScalarAsync_" data-uid="Terrasoft.Core.DB.Select.ExecuteScalarAsync*"></a>
+  <h4 id="Terrasoft_Core_DB_Select_ExecuteScalarAsync__1" data-uid="Terrasoft.Core.DB.Select.ExecuteScalarAsync``1">ExecuteScalarAsync&lt;TResult&gt;()</h4>
+  <div class="markdown level1 summary"><p>An asynchronous version of ExecuteScalar, which executes the query and returns the
+first column of the first row in the result set returned by the query.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;TResult&gt; ExecuteScalarAsync&lt;TResult&gt;()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;TResult&gt;</td>
+        <td><p>A task representing the asynchronous operation.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TResult</span></td>
+        <td><p>The type of the return value.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_DB_Select_From_" data-uid="Terrasoft.Core.DB.Select.From*"></a>
+  <h4 id="Terrasoft_Core_DB_Select_From_System_String_" data-uid="Terrasoft.Core.DB.Select.From(System.String)">From(String)</h4>
+  <div class="markdown level1 summary"><p>Добавляет в качестве выражения источника данных текущего запроса схему с указанным именем.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Select From(string schemaName)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">schemaName</span></td>
+        <td><p>Имя схемы.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.Select.html">Select</a></td>
+        <td><p>Текущий экземпляр <a class="xref" href="Terrasoft.Core.DB.Select.html">Select</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_DB_Select_From_" data-uid="Terrasoft.Core.DB.Select.From*"></a>
+  <h4 id="Terrasoft_Core_DB_Select_From_Terrasoft_Core_DB_Query_" data-uid="Terrasoft.Core.DB.Select.From(Terrasoft.Core.DB.Query)">From(Query)</h4>
+  <div class="markdown level1 summary"><p>Добавляет в качестве выражения источника данных текущего запроса выражение для переданного произвольного
+подзапроса.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Select From(Query subSelectQuery)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.Query.html">Query</a></td>
+        <td><span class="parametername">subSelectQuery</span></td>
+        <td><p>Произвольный подзапрос.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.Select.html">Select</a></td>
+        <td><p>Текущий экземпляр <a class="xref" href="Terrasoft.Core.DB.Select.html">Select</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_DB_Select_From_" data-uid="Terrasoft.Core.DB.Select.From*"></a>
+  <h4 id="Terrasoft_Core_DB_Select_From_Terrasoft_Core_DB_QuerySourceExpression_" data-uid="Terrasoft.Core.DB.Select.From(Terrasoft.Core.DB.QuerySourceExpression)">From(QuerySourceExpression)</h4>
+  <div class="markdown level1 summary"><p>Добавляет в качестве выражения источника данных текущего запроса переданное выражение.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Select From(QuerySourceExpression sourceExpression)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.QuerySourceExpression.html">QuerySourceExpression</a></td>
+        <td><span class="parametername">sourceExpression</span></td>
+        <td><p>Выражение источника данных запроса.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.Select.html">Select</a></td>
+        <td><p>Текущий экземпляр <a class="xref" href="Terrasoft.Core.DB.Select.html">Select</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_DB_Select_From_" data-uid="Terrasoft.Core.DB.Select.From*"></a>
+  <h4 id="Terrasoft_Core_DB_Select_From_Terrasoft_Core_DB_Select_" data-uid="Terrasoft.Core.DB.Select.From(Terrasoft.Core.DB.Select)">From(Select)</h4>
+  <div class="markdown level1 summary"><p>Добавляет в качестве выражения источника данных текущего запроса выражение для переданного подзапроса на
+выборку.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Select From(Select subSelect)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.Select.html">Select</a></td>
+        <td><span class="parametername">subSelect</span></td>
+        <td><p>ПОдзапрос на выборку.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.Select.html">Select</a></td>
+        <td><p>Текущий экземпляр <a class="xref" href="Terrasoft.Core.DB.Select.html">Select</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_DB_Select_GetSqlText_" data-uid="Terrasoft.Core.DB.Select.GetSqlText*"></a>
+  <h4 id="Terrasoft_Core_DB_Select_GetSqlText" data-uid="Terrasoft.Core.DB.Select.GetSqlText">GetSqlText()</h4>
+  <div class="markdown level1 summary"><p>Возвращает sql-текст текущего запроса.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override string GetSqlText()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><p>Sql-текст текущего запроса.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_GetSqlText">Query.GetSqlText()</a></div>
+  
+  
+  <a id="Terrasoft_Core_DB_Select_GetUsingParameters_" data-uid="Terrasoft.Core.DB.Select.GetUsingParameters*"></a>
+  <h4 id="Terrasoft_Core_DB_Select_GetUsingParameters" data-uid="Terrasoft.Core.DB.Select.GetUsingParameters">GetUsingParameters()</h4>
+  <div class="markdown level1 summary"><p>Возвращает коллекцию используемых запросом параметров.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override QueryParameterCollection GetUsingParameters()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.QueryParameterCollection.html">QueryParameterCollection</a></td>
+        <td><p>Коллекция параметров, используемых запросом.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_GetUsingParameters">Query.GetUsingParameters()</a></div>
+  
+  
+  <a id="Terrasoft_Core_DB_Select_OffsetFetch_" data-uid="Terrasoft.Core.DB.Select.OffsetFetch*"></a>
+  <h4 id="Terrasoft_Core_DB_Select_OffsetFetch_System_Int32_System_Int32_" data-uid="Terrasoft.Core.DB.Select.OffsetFetch(System.Int32,System.Int32)">OffsetFetch(Int32, Int32)</h4>
+  <div class="markdown level1 summary"><p>Adds offset-fetch clause to select.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Select OffsetFetch(int rowsOffset, int rowsCount)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">rowsOffset</span></td>
+        <td><p>Number of rows to skip.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">rowsCount</span></td>
+        <td><p>Number of rows to select.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.Select.html">Select</a></td>
+        <td><p>Modified select.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_DB_Select_Top_" data-uid="Terrasoft.Core.DB.Select.Top*"></a>
+  <h4 id="Terrasoft_Core_DB_Select_Top_System_Int32_" data-uid="Terrasoft.Core.DB.Select.Top(System.Int32)">Top(Int32)</h4>
+  <div class="markdown level1 summary"><p>Устанавливает количество первых записей, возвращаемых результирующим набором данных.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Select Top(int rowCount)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">rowCount</span></td>
+        <td><p>Количество первых записей результирующего набора.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.Select.html">Select</a></td>
+        <td><p>Текущий экземпляр <a class="xref" href="Terrasoft.Core.DB.Select.html">Select</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_DB_Select_ToPageable_" data-uid="Terrasoft.Core.DB.Select.ToPageable*"></a>
+  <h4 id="Terrasoft_Core_DB_Select_ToPageable_Terrasoft_Core_DB_PageableSelectOptions_" data-uid="Terrasoft.Core.DB.Select.ToPageable(Terrasoft.Core.DB.PageableSelectOptions)">ToPageable(PageableSelectOptions)</h4>
+  <div class="markdown level1 summary"><p>Преобразует текущий запрос к запросу с возможностью постраничного вывода с заданными параметрами.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Select ToPageable(PageableSelectOptions options)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.PageableSelectOptions.html">PageableSelectOptions</a></td>
+        <td><span class="parametername">options</span></td>
+        <td><p>Параметры постраничного вывода результатов запроса.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.Select.html">Select</a></td>
+        <td><p>Запрос на выборку данных с постраничным выводом.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="Terrasoft.Core.DB.IParametrizedQuery.html">IParametrizedQuery</a>
+  </div>
+  <div>
+      <a class="xref" href="Terrasoft.Core.DB.ISqlGenerating.html">ISqlGenerating</a>
+  </div>
+  <div>
+      <a class="xref" href="Terrasoft.Core.DB.ICacheableQuery.html">ICacheableQuery</a>
+  </div>
+  <div>
+      <span class="xref">System.ICloneable</span>
+  </div>
+  <div>
+      <a class="xref" href="Terrasoft.Core.DB.IDBReadableCommand.html">IDBReadableCommand</a>
+  </div>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="Terrasoft.Common.ReflectionUtilities.html#Terrasoft_Common_ReflectionUtilities_GetPropertyValue_System_Object_System_String_">ReflectionUtilities.GetPropertyValue(Object, String)</a>
+  </div>
+  <div>
+      <a class="xref" href="Terrasoft.Common.ReflectionUtilities.html#Terrasoft_Common_ReflectionUtilities_GetPropertyDefValue_System_Object_System_String_System_Object_">ReflectionUtilities.GetPropertyDefValue(Object, String, Object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Terrasoft.Common.ReflectionUtilities.html#Terrasoft_Common_ReflectionUtilities_TryGetPropertyValue_System_Object_System_String_System_Object__">ReflectionUtilities.TryGetPropertyValue(Object, String, out Object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Terrasoft.Common.ReflectionUtilities.html#Terrasoft_Common_ReflectionUtilities_HasProperty_System_Object_System_String_">ReflectionUtilities.HasProperty(Object, String)</a>
+  </div>
+  <div>
+      <a class="xref" href="Terrasoft.Common.ReflectionUtilities.html#Terrasoft_Common_ReflectionUtilities_GetPropertyValue_System_Object_System_String_System_Reflection_BindingFlags_">ReflectionUtilities.GetPropertyValue(Object, String, BindingFlags)</a>
+  </div>
+  <div>
+      <a class="xref" href="Terrasoft.Common.ReflectionUtilities.html#Terrasoft_Common_ReflectionUtilities_GetPropertyValueByPath_System_Object_System_String_">ReflectionUtilities.GetPropertyValueByPath(Object, String)</a>
+  </div>
+  <div>
+      <a class="xref" href="Terrasoft.Common.ReflectionUtilities.html#Terrasoft_Common_ReflectionUtilities_SetPropertyValue_System_Object_System_String_System_Object_">ReflectionUtilities.SetPropertyValue(Object, String, Object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Terrasoft.Common.ReflectionUtilities.html#Terrasoft_Common_ReflectionUtilities_TrySetPropertyValue_System_Object_System_String_System_Object_">ReflectionUtilities.TrySetPropertyValue(Object, String, Object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Terrasoft.Common.ValidateUtilities.html#Terrasoft_Common_ValidateUtilities_CheckArgumentNull_System_Object_System_String_">ValidateUtilities.CheckArgumentNull(Object, String)</a>
+  </div>
+  <div>
+      <a class="xref" href="Terrasoft.Common.ValidateUtilities.html#Terrasoft_Common_ValidateUtilities_CheckDependencyNull_System_Object_System_String_">ValidateUtilities.CheckDependencyNull(Object, String)</a>
+  </div>
+  <div>
+      <a class="xref" href="Terrasoft.Common.ValidateUtilities.html#Terrasoft_Common_ValidateUtilities_EnsureDependencyNotNull__1___0_System_String_">ValidateUtilities.EnsureDependencyNotNull&lt;T&gt;(T, String)</a>
+  </div>
+  <div>
+      <a class="xref" href="Terrasoft.Core.DB.HintsHelper.html#Terrasoft_Core_DB_HintsHelper_WithHints_Terrasoft_Core_DB_Select_Terrasoft_Core_DB_BaseHint___">HintsHelper.WithHints(Select, BaseHint[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Terrasoft.Core.DB.HintsHelper.html#Terrasoft_Core_DB_HintsHelper_SpecifyNoLockHints_Terrasoft_Core_DB_Select_System_Boolean_">HintsHelper.SpecifyNoLockHints(Select, Boolean)</a>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>© 2021 Creatio. All rights reserved.</span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+
+<!-- Mirrored from academy.terrasoft.ua/api/netcoreapi/7.18.0/api/Terrasoft.Core.DB.Select.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Mar 2022 03:31:48 GMT -->
+</html>

@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# ">
+  
+<!-- Mirrored from academy.terrasoft.ua/docs/user/ustanovka_i_administrirovanie/upravlenie_polzovateljami_i_dostupom/upravleniye_dostupom/dostup_po_operacijam/nastroit_dostup_po_operaciam by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 22 Mar 2022 22:21:55 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+          <!-- Google Tag Manager -->
+      <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          '../../../../../../../www.googletagmanager.com/gtm5445.html?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-KLLB8G');</script>
+      <!-- End Google Tag Manager -->
+        <meta charset="utf-8" />
+<link rel="canonical" href="nastroit_dostup_po_operaciam.html" />
+<meta name="description" content="В этой статье рассмотрена настройка прав доступа к бизнес-данным. Доступ к бизнес-данным подразумевает выполнение CRUD-операций с данными (создание, чтение, редактирование и удаление) и выполняется через настройку прав доступа к соответствующим объектам системы.
+
+Если вы только начинаете знакомство с Creatio, то рекомендуем ознакомиться с концепцией прав доступа на объекты Creatio в онлайн-курсе Управление пользователями и ролями. Права доступа." />
+<meta property="og:url" content="https://academy.terrasoft.ua/docs/user/ustanovka_i_administrirovanie/upravlenie_polzovateljami_i_dostupom/upravleniye_dostupom/dostup_po_operacijam/nastroit_dostup_po_operaciam" />
+<meta property="og:title" content="Настроить доступ по операциям" />
+<meta property="og:description" content="В этой статье рассмотрена настройка прав доступа к бизнес-данным. Доступ к бизнес-данным подразумевает выполнение CRUD-операций с данными (создание, чтение, редактирование и удаление) и выполняется через настройку прав доступа к соответствующим объектам системы.
+
+Если вы только начинаете знакомство с Creatio, то рекомендуем ознакомиться с концепцией прав доступа на объекты Creatio в онлайн-курсе Управление пользователями и ролями. Права доступа." />
+<meta name="Generator" content="Drupal 9 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="../../../../../themes/custom/creatio/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="revision" href="nastroit_dostup_po_operaciam.html" />
+
+    <title>Настроить доступ по операциям | Creatio Academy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&amp;family=Open+Sans:ital,wght@0,300;0,400;0,600;1,400&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" media="all" href="../../../../../sites/default/files/css/css_6lTP66__-yc6QXFp1zOwoeJ0HVigoYZP-SeoLLii000.css" />
+<link rel="stylesheet" media="all" href="../../../../../sites/default/files/css/css_XQJDNhkF3xH5SZCcY-PI89Zu4nYIzQ5oR3SnUKyfXJU.css" />
+<link rel="stylesheet" media="print" href="../../../../../sites/default/files/css/css_Zn4VHvcniOOtUwkIVwXzYr_0AI9gUVgZcPqaH4ViagU.css" />
+
+    
+  </head>
+  <body class="path-node page-node-type-user-documentation">
+          <!-- Google Tag Manager (noscript) -->
+      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KLLB8G"
+                        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+      <!-- End Google Tag Manager (noscript) -->
+    
+        
+      <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    <div class="creatio-page d-flex flex-column">
+        <div class="region region-informer">
+    <div id="block-terrasoftpidtrimueukrainu" class="block block-simple-block block-simple-blockterrasoft-pidtrimue-ukrainu">
+  
+    
+      <style type="text/css">
+<!--/*--><![CDATA[/* ><!--*/
+@import url(../../../../../../../www.terrasoft.ua/themes/custom/creatio/css/components/informer.css)
+
+/*--><!]]>*/
+</style><div class="ts-swu">
+<div class="creatio-container">
+<div class="ts-swu__cont">
+<div><a class="ts-swu__link" href="https://www.terrasoft.ua/terrasoft-stands-with-ukraine" target="_blank">Україна понад усе!</a> <span><a href="https://www.terrasoft.ua/terrasoft-stands-with-ukraine" target="_blank">Приєднуйтеся</a> до допомоги!</span></div>
+</div>
+</div></div>
+
+  </div>
+
+  </div>
+
+  
+  <header role="banner">
+          <div class="creatio-region creatio-region_top">
+        <div class="creatio-container">
+            <div class="region region-top">
+    <div id="block-menutoggle" class="block block-simple-block block-simple-blockmenu-toggle">
+  
+    
+      <div class="menu-toggle"><span> </span></div>
+
+  </div>
+<div id="block-logowhite-2" class="block block-simple-block block-simple-blocklogo-white">
+  
+    
+      <p><a class="site-logo" href="../../../../../../index.html" rel="home"><img src="../../../../../themes/custom/creatio/logo-white.svg" /></a></p>
+
+  </div>
+<div id="block-search" class="block block-simple-block block-simple-blocksearch">
+  
+    
+      <div class="search">
+<form action="https://academy.terrasoft.ua/search" class="search-form" method="get"><input class="search-form__input" name="search" placeholder="Поиск" type="search" /><input class="search-form__button" type="submit" value="Поиск" /> </form>
+
+<div class="search-toggle"> </div>
+</div>
+
+  </div>
+<nav role="navigation" aria-labelledby="block-sitesua-menu" id="block-sitesua" class="block block-menu navigation menu--sites-ua">
+            
+  <h2 class="visually-hidden" id="block-sitesua-menu">Sites UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="https://www.terrasoft.ua/" rel="nofollow" target="_blank">Terrasoft</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://community.terrasoft.ua/" rel="nofollow" target="_blank">Community</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://marketplace.terrasoft.ua/" rel="nofollow" target="_blank">Marketplace</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+<div id="block-usermenu" class="block block-ts-user block-ts-user-menu-block">
+  
+    
+      <ul class="user-menu">
+      <li class="user-menu__item">
+      <a class="user-menu__link" href="https://profile.terrasoft.ua/user/login?destination=academy/ua/docs/user/ustanovka_i_administrirovanie/upravlenie_polzovateljami_i_dostupom/upravleniye_dostupom/dostup_po_operacijam/nastroit_dostup_po_operaciam">Войти</a>
+    </li>
+  </ul>
+
+  </div>
+<div id="block-usermenumobile" class="block block-ts-user block-ts-user-menu-mobile-block">
+  
+    
+      <ul class="user-menu-mobile">
+      <li class="user-menu-mobile__item">
+      <div class="user-menu-mobile__user user-menu-mobile__user_icon"></div>
+      <ul class="user-menu-mobile__submenu">
+        <li class="user-menu-mobile__subitem">
+          <a class="user-menu-mobile__sublink" href="https://profile.terrasoft.ua/user/login?destination=academy/ua/docs/user/ustanovka_i_administrirovanie/upravlenie_polzovateljami_i_dostupom/upravleniye_dostupom/dostup_po_operacijam/nastroit_dostup_po_operaciam">Войти</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  </div>
+
+  </div>
+
+        </div>
+      </div>
+              <div class="creatio-region creatio-region_header">
+        <div class="creatio-container">
+            <div class="region region-header">
+    <div id="block-logo" class="block block-simple-block block-simple-blocklogo">
+  
+    
+      <p><a class="site-logo" href="../../../../../../index.html" rel="home"><img src="../../../../../themes/custom/creatio/logo.svg" /></a></p>
+
+  </div>
+<nav role="navigation" aria-labelledby="block-osnovnayanavigaciyaua-menu" id="block-osnovnayanavigaciyaua" class="block block-menu navigation menu--main-ua">
+            
+  <h2 class="visually-hidden" id="block-osnovnayanavigaciyaua-menu">Основная навигация UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="../../../../../index.html" data-drupal-link-system-path="&lt;front&gt;">Документация</a>
+              </li>
+                <li class="menu-item">
+        <a href="../../../../../../trainings.html">Тренинги</a>
+              </li>
+                <li class="menu-item">
+        <a href="../../../../../certification.html" data-drupal-link-system-path="node/3084">Сертификация и тестирование</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+<nav role="navigation" aria-labelledby="block-sitesua-2-menu" id="block-sitesua-2" class="block block-menu navigation menu--sites-ua">
+            
+  <h2 class="visually-hidden" id="block-sitesua-2-menu">Sites UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="https://www.terrasoft.ua/" rel="nofollow" target="_blank">Terrasoft</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://community.terrasoft.ua/" rel="nofollow" target="_blank">Community</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://marketplace.terrasoft.ua/" rel="nofollow" target="_blank">Marketplace</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+
+  </div>
+
+        </div>
+      </div>
+              <div class="creatio-region creatio-region_breadcrumb">
+        <div class="creatio-container">
+            <div class="region region-breadcrumb">
+    <div id="block-logowhite" class="block block-simple-block block-simple-blocklogo-white">
+  
+    
+      <p><a class="site-logo" href="../../../../../../index.html" rel="home"><img src="../../../../../themes/custom/creatio/logo-white.svg" /></a></p>
+
+  </div>
+<div id="block-breadcrumbnaviagtion" class="block block-ts-nav block-ts-nav-bread">
+  
+    
+      <nav class="breadcrumb"><ol class="ts-nav-breadcrumb__list"><li class="ts-nav-breadcrumb__item"><a href="../../../../../index.html" class="ts-nav-breadcrumb__link" title="Документация">Документация</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../../../indexd993.html?vid_1=1" class="ts-nav-breadcrumb__link" title="Для пользователя">Для пользователя</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../../ustanovka_i_administrirovanie.html" class="ts-nav-breadcrumb__link" title="Администрирование" hreflang="zxx">Администрирование</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../upravlenie_polzovateljami_i_dostupom.html" class="ts-nav-breadcrumb__link" title="Пользователи и доступ" hreflang="zxx">Пользователи и доступ</a></li>
+<li class="ts-nav-breadcrumb__item ts-nav-breadcrumb__item_mobile"><a href="../../upravleniye_dostupom.html" class="ts-nav-breadcrumb__link" title="Управление доступом" hreflang="ru">Управление доступом</a></li>
+<li class="ts-nav-breadcrumb__item"><span class="ts-nav-breadcrumb__link ts-nav-breadcrumb__link_current" title="Настроить доступ по операциям">Настроить доступ по операциям</span></li>
+</ol>
+</nav>
+
+  </div>
+<div id="block-search-2" class="block block-simple-block block-simple-blocksearch">
+  
+    
+      <div class="search">
+<form action="https://academy.terrasoft.ua/search" class="search-form" method="get"><input class="search-form__input" name="search" placeholder="Поиск" type="search" /><input class="search-form__button" type="submit" value="Поиск" /> </form>
+
+<div class="search-toggle"> </div>
+</div>
+
+  </div>
+
+  </div>
+
+        </div>
+      </div>
+      </header>
+
+  <div class="creatio-region creatio-region_main">
+    <div class="creatio-container">
+                <div class="region region-breadcrumb-mobile">
+    <div id="block-breadcrumbnaviagtion-2" class="block block-ts-nav block-ts-nav-bread">
+  
+    
+      <nav class="breadcrumb"><ol class="ts-nav-breadcrumb__list"><li class="ts-nav-breadcrumb__item"><a href="../../../../../index.html" class="ts-nav-breadcrumb__link" title="Документация">Документация</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../../../indexd993.html?vid_1=1" class="ts-nav-breadcrumb__link" title="Для пользователя">Для пользователя</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../../ustanovka_i_administrirovanie.html" class="ts-nav-breadcrumb__link" title="Администрирование" hreflang="zxx">Администрирование</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../upravlenie_polzovateljami_i_dostupom.html" class="ts-nav-breadcrumb__link" title="Пользователи и доступ" hreflang="zxx">Пользователи и доступ</a></li>
+<li class="ts-nav-breadcrumb__item ts-nav-breadcrumb__item_mobile"><a href="../../upravleniye_dostupom.html" class="ts-nav-breadcrumb__link" title="Управление доступом" hreflang="ru">Управление доступом</a></li>
+<li class="ts-nav-breadcrumb__item"><span class="ts-nav-breadcrumb__link ts-nav-breadcrumb__link_current" title="Настроить доступ по операциям">Настроить доступ по операциям</span></li>
+</ol>
+</nav>
+
+  </div>
+
+  </div>
+
+      
+      <main class="creatio-main" role="main">
+                                                    
+        <div class="creatio-content creatio-content_small">
+          <div class="creatio-content__inner creatio-content__inner_bg">
+                            <div class="region region-messages">
+    <div data-drupal-messages-fallback class="hidden"></div>
+
+  </div>
+
+            
+              <div class="region region-content">
+    <div id="block-creatio-page-title" class="block block-core block-page-title-block">
+  
+    
+      
+  <h1 class="page-title"><span class="field field--name-title field--type-string field--label-hidden">Настроить доступ по операциям</span>
+</h1>
+
+
+  </div>
+<div id="block-creatio-content" class="block block-system block-system-main-block">
+  
+    
+      
+<article data-history-node-id="3798" role="article" about="/docs/user/ustanovka_i_administrirovanie/upravlenie_polzovateljami_i_dostupom/upravleniye_dostupom/dostup_po_operacijam/nastroit_dostup_po_operaciam" class="node node--type-user-documentation node--view-mode-full">
+
+  
+    
+
+  
+  <div class="node__content">
+      <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-ts-doc block-ts-doc-downloads">
+  
+    
+      <a href="../../../../../sites/default/files/pdf/node/3798/Nastroit_dostup_po_operaciyam_.pdf" target="_blank">PDF</a>
+  </div>
+<div class="block block-ts-doc block-ts-doc-versions">
+  
+    
+        <div class="ts-doc-versions">
+    <select class="ts-doc-versions__select">
+                                                <option value="/docs/8-0/user/ustanovka_i_administrirovanie/upravlenie_polzovateljami_i_dostupom/upravleniye_dostupom/dostup_po_operacijam/nastroit_dostup_po_operaciam" selected>Версия 8.0</option>
+                              <option value="/docs/7-18/user/ustanovka_i_administrirovanie/upravlenie_polzovateljami_i_dostupom/upravleniye_dostupom/dostup_po_operacijam/nastroit_dostup_po_operaciyam">Версия 7.18</option>
+                              <option value="/docs/7-17/user/ustanovka_i_administrirovanie/upravlenie_polzovateljami_i_dostupom/upravleniye_dostupom/dostup_po_operacijam/nastroit_dostup_po_operaciyam">Версия 7.17</option>
+          </select>
+  </div>
+
+  </div>
+
+    </div>
+  </div>
+  <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocknodeuser-documentationfield-product">
+  
+    
+      
+  <div class="field field--name-field-product field--type-entity-reference field--label-above">
+    <div class="field__label">Продукты</div>
+          <div class="field__items">
+              <div class="field__item">Все продукты</div>
+              </div>
+      </div>
+
+  </div>
+<div class="block block-layout-builder block-field-blocknodeuser-documentationbody">
+  
+    
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><p>В этой статье рассмотрена настройка прав <strong>доступа к бизнес-данным</strong>. Доступ к бизнес-данным подразумевает выполнение CRUD-операций с данными (создание, чтение, редактирование и удаление) и выполняется через настройку прав доступа к соответствующим объектам системы.</p>
+
+<p>Если вы только начинаете знакомство с Creatio, то рекомендуем ознакомиться с концепцией прав доступа на объекты Creatio в онлайн-курсе <a href="https://profile.terrasoft.ua/user/login?destination=academy/ua/node/678070/takecourse">Управление пользователями и ролями. Права доступа</a>.</p>
+
+<p>Права доступа на объекты можно ограничить на следующих уровнях:</p>
+
+<ul><li><strong>По операциям</strong>. Ниже будет рассмотрена настройка прав на выполнение операций с данными, содержащимися в двух разных объектах системы — в разделе и на детали.</li>
+	<li><strong>По записям</strong>. Подробнее: <a href="../dostup_po_zapisjam/nastroit_dostup_po_zapisyam.html?id=1966">Настроить доступ по записям</a>.</li>
+	<li><strong>По колонкам</strong>. Подробнее: <a href="../dostup_na_kolonki/nastroit_prava_dostupa_na_kolonku.html?id=264">Настроить права доступа на колонки</a>.</li>
+</ul><p><strong>Доступ к действиям системы</strong> предоставляется с помощью системных операций. Операции в объекте не следует путать с системными операциями. Настройки прав доступа к действиям системы выполняются в разделе <span class="key">Доступ к операциям</span> дизайнера системы. Подробнее: <a href="../dostup_po_sistemnym_operacijam/nastroit_prava_dostupa_na_sistemnye_operacii.html?id=258">Настроить права доступа на системные операции</a>.</p>
+
+<div class="message">
+<p><span class="message__bold">На заметку.</span> Существует четыре системные операции, которые отменяют любые другие настройки прав на объект: “Просмотр любых данных” (код “CanSelectEverything”), “Добавление любых данных” (код “CanInsertEverything”), “Изменение любых данных” (код “CanUpdateEverything”) и “Удаление любых данных” (код “CanDeleteEverything”). Пользователь с доступом к этим операциям получит права независимо от настроек в разделе <span class="key">Доступ к объектам</span>.</p>
+</div>
+
+<p>По умолчанию в приложении настроены права:</p>
+
+<ul><li>Для организационной роли “<strong>All employees</strong>” (“Все сотрудники”) предоставляется доступ на операции чтения, создания, редактирования и удаления записей всех объектов. Пользователи, входящие в роль “All employees”, будут иметь права на указанные операции, даже если доступ по операциям не используется и переключатель выключен.</li>
+	<li>Для организационной роли “<strong>All portal users</strong>” (“Все пользователи портала”) запрещен доступ на выполнение любых операций с записями системы. Чтобы пользователи, входящие в роль “All portal users”, могли видеть на портале свои записи и данные своей организации, необходимо настроить в разделах, доступных на портале, права доступа по операциям.</li>
+	<li>Для организационной роли “<strong>System administrators</strong>” (“Системные администраторы”) настроен доступ на системные операции “Добавление любых данных”, “Чтение любых данных”, “Изменение любых данных”, “Удаление любых данных”, имеющие более высокий приоритет, чем настройки, заданные в разделе <span class="key">Права доступа на объекты</span>.</li>
+</ul><h2><a name="TOC_Настроить_доступ_по1bc-1" id="TOC_Настроить_доступ_по1bc-1"></a><a name="TOC_Настроить_доступ_по1" id="TOC_Настроить_доступ_по1"></a><a name="XREF_72961" id="XREF_72961"></a><a name="CSH_2" id="CSH_2"></a><a name="HT_administering_objects_section_operations_permissions" id="HT_administering_objects_section_operations_permissions"></a>Настроить доступ по операциям в объекте раздела<a class="title-anchor" href="#title-2462-1" id="title-2462-1"> </a></h2>
+
+<div class="message">
+<p><span class="message__bold">Пример.</span> Выполним настройку прав доступа к разделу <span class="key">Продажи</span>.<br />
+У менеджеров по продажам должны быть все права на записи раздела, кроме удаления.<br />
+У их руководителей должен быть неограниченный доступ к записям.<br />
+У одного из сотрудников с ролью “Секретари” должна быть возможность просматривать записи раздела, а для остальных секретарей раздел <span class="key">Продажи</span> должен быть скрыт.</p>
+</div>
+
+<div class="message message_warning">
+<p><span class="message__bold message__bold_warning">Важно.</span> Если удалить роль “All employees” из области настройки доступа по операциям, а затем выключить переключатель “Использовать доступ по операциям” и применить изменения, то пользователи не смогут видеть записи объекта.</p>
+</div>
+
+<ol><li>
+	<p>Перейдите в дизайнер системы, например, по кнопке <img alt="btn_system_designer.png" id="image0" src="../../../../../sites/default/files/documentation/user/ru/user_access_management/BPMonlineHelp/operation_permissions/btn_system_designer.png" />, и откройте раздел настройки доступа к объектам по ссылке “<strong>Права доступа на объекты</strong>”.</p>
+
+	<p>Обратите внимание, признаки в колонках <span class="key">Доступ по операциям ограничен</span>, <span class="key">Доступ по записям ограничен</span> и <span class="key">Доступ к колонкам ограничен</span> в реестре объектов не редактируются. Они устанавливаются автоматически в зависимости от того, какой тип администрирования доступа (по операциям, по записям, по колонкам) используется для каждого объекта. Если ни один из типов доступа к объекту не ограничен (не установлен ни один из признаков), то все пользователи имеют полный доступ к объекту и имеют право на создание, чтение, редактирование и удаление данных объекта.</p>
+	</li>
+	<li>
+	<p>Выберите необходимый объект из списка или с помощью строки поиска. Например, чтобы настроить права доступа к разделу <span class="key">Продажи</span>, установите фильтр “Разделы” и выберите объект “Продажа”. Кликните по его заголовку или названию — откроется страница настройки прав доступа к объекту раздела <span class="key">Продажи</span> (Рис. 1).</p>
+
+	<div class="message">
+	<p><span class="message__bold">На заметку.</span> Подробнее о выборе объекта читайте в статье <a href="https://profile.terrasoft.ua/user/login?destination=academy/ua/node/678070/takecourse">Права доступа на объекты</a> (онлайн-курс).</p>
+	</div>
+
+	<div class="media">
+	<div class="media__caption">Рис. 1 — Выбор объекта раздела и переход на страницу настройки прав доступа</div>
+
+	<div class="media__element"><img alt="chapter_obgect_permissions_administer_by_operations_section.gif" id="image1" src="../../../../../sites/default/files/documentation/user/ru/user_access_management/BPMonlineHelp/operation_permissions/chapter_obgect_permissions_administer_by_operations_section.gif" /></div>
+	</div>
+	</li>
+	<li>
+	<p>Включите ограничение доступа по операциям с помощью переключателя “Использовать доступ по операциям” (Рис. 2).</p>
+
+	<div class="media">
+	<div class="media__caption">Рис. 2 — Включение администрирования по операциям</div>
+
+	<div class="media__element"><img alt="chapter_objects_permissions_section_permissions_administer_by_operations.png" id="image2" src="../../../../../sites/default/files/documentation/user/ru/user_access_management/BPMonlineHelp/operation_permissions/chapter_objects_permissions_section_permissions_administer_by_operations.png" /></div>
+	</div>
+	</li>
+	<li>
+	<p>По кнопке <span class="key">Добавить</span> добавьте роли и пользователей, для которых необходимо настроить права доступа. Используйте строку поиска, а также вкладки <span class="key">Организационные роли</span>, <span class="key">Функциональные роли</span> и <span class="key">Пользователи</span>, чтобы быстро найти нужную роль или пользователя в списке окна выбора. В нашем примере это:</p>
+
+	<ol><li>
+		<p>роль “All employees” (Все сотрудники) — добавляется автоматически;</p>
+		</li>
+		<li>
+		<p>организационная роль “Менеджеры по продажам”;</p>
+		</li>
+		<li>
+		<p>организационная роль “Менеджеры по продажам. Группа руководителей”;</p>
+		</li>
+		<li>
+		<p>организационная роль “Секретари”;</p>
+		</li>
+		<li>
+		<p>определенный пользователь с ролью “Секретари” (Рис. 3), например, Ульяненко Александра.</p>
+
+		<div class="media">
+		<div class="media__caption">Рис. 3 — Добавление ролей и пользователей для предоставления им доступа к разделу</div>
+
+		<div class="media__element"><img alt="chapter_obgect_permissions_administer_by_operations_adding_roles_and_users.gif" id="image3" src="../../../../../sites/default/files/documentation/user/ru/user_access_management/BPMonlineHelp/operation_permissions/chapter_obgect_permissions_administer_by_operations_adding_roles_and_users.gif" /></div>
+		</div>
+		</li>
+	</ol></li>
+	<li>
+	<p>По умолчанию для каждой добавленной роли или пользователя устанавливается доступ на просмотр, создание, редактирование и удаление данных объекта. Откорректируйте уровень доступа в соответствии с необходимостью:</p>
+
+	<ol><li>
+		<p>Для роли “<strong>Все сотрудники</strong>” оставьте признак только в колонке <span class="key">Чтение</span>, а признаки в колонках <span class="key">Создание</span>, <span class="key">Редактирование</span> и <span class="key">Удаление</span> снимите. В итоге все сотрудники компании смогут просматривать записи раздела <span class="key">Продажи</span>, но не смогут их добавлять, вносить изменения и удалять.</p>
+		</li>
+		<li>
+		<p>Для роли “<strong>Менеджеры по продажам</strong>” оставьте признаки в колонках <span class="key">Создание</span>, <span class="key">Чтение</span> и <span class="key">Редактирование</span>, а признак в колонке <span class="key">Удаление</span> снимите. В итоге сотрудники отдела продаж смогут просматривать, добавлять и редактировать записи раздела, но не будут иметь возможности их удалять.</p>
+		</li>
+		<li>
+		<p>Оставьте признаки в колонках <span class="key">Создание</span>, <span class="key">Чтение</span>, <span class="key">Редактирование</span> и <span class="key">Удаление</span> для роли<strong> </strong>“<strong>Менеджеры по продажам. Группа руководителей</strong>”. Так руководитель менеджеров по продажам получит право на просмотр, добавление, изменение и удаление записей раздела <span class="key">Продажи</span>.</p>
+		</li>
+		<li>
+		<p>Для роли “<strong>Секретари</strong>” снимите признаки в колонках <span class="key">Создание</span>, <span class="key">Чтение</span>, <span class="key">Редактирование</span> и <span class="key">Удаление</span>. В итоге для секретарей компании раздел <span class="key">Продажи</span> будет скрыт.</p>
+		</li>
+		<li>
+		<p>Для <strong>определенного пользователя</strong>, который входит в роль “Секретари” (в нашем примере это Ульяненко Александра) оставьте признак в колонке <span class="key">Чтение</span>. Так пользователь Ульяненко Александра получит право на просмотр записей раздела <span class="key">Продажи</span>.</p>
+
+		<p>После выполнения настроек рядом с некоторыми правами доступа могут отображаться значки <img alt="icn_access_rights_priority.png" id="image4" src="../../../../../sites/default/files/documentation/user/ru/user_access_management/BPMonlineHelp/operation_permissions/icn_access_rights_priority.png" />. Это означает, что некоторые настройки противоречат друг другу и для корректной работы прав доступа необходимо настроить их приоритет.</p>
+		</li>
+	</ol></li>
+</ol><h2><a name="TOC_Настроить_приоритет_правbc-2" id="TOC_Настроить_приоритет_правbc-2"></a><a name="TOC_Настроить_приоритет_прав" id="TOC_Настроить_приоритет_прав"></a><a name="XREF_22895" id="XREF_22895"></a>Настроить приоритет прав доступа по операциям объекта<a class="title-anchor" href="#title-2462-2" id="title-2462-2"> </a></h2>
+
+<p>Возможны случаи, когда настроенные для некоторых ролей уровни доступа противоречат друг другу, т. к. роли пересекаются. Например, роли “Менеджеры по продажам”, “Менеджеры по продажам. Группа руководителей” и “Секретари” входят в роль “Все сотрудники”. А для одного из секретарей настроены права доступа, которые отличаются от прав, настроенных для всех секретарей. О необходимости настроить приоритеты свидетельствует значок <img alt="icn_access_rights_priority00001.png" id="image5" src="../../../../../sites/default/files/documentation/user/ru/user_access_management/BPMonlineHelp/operation_permissions/icn_access_rights_priority00001.png" /> рядом с противоречащим правом доступа.</p>
+
+<p>Чем выше в списке правило, тем выше его приоритет. Наиболее приоритетному правилу соответствует значение “0” в колонке <span class="key">Приоритет</span>. Чем ниже в списке расположено правило и чем больше число в колонке <span class="key">Приоритет</span>, тем ниже приоритет этого правила. Значок <img alt="icn_access_rights_priority00002.png" id="image6" src="../../../../../sites/default/files/documentation/user/ru/user_access_management/BPMonlineHelp/operation_permissions/icn_access_rights_priority00002.png" />, который может отображаться рядом с некоторыми из правил, обозначает, что некоторые из настроенных правил пересекаются. Необходимо понизить или повысить приоритет одного правила, чтобы корректно работало другое (Рис. 4).</p>
+
+<div class="media">
+<div class="media__caption">Рис. 4 — Предупреждение о необходимости откорректировать приоритет прав доступа</div>
+
+<div class="media__element"><img alt="chapter_objects_permissions_section_permissions_permission_priority.png" id="image7" src="../../../../../sites/default/files/documentation/user/ru/user_access_management/BPMonlineHelp/operation_permissions/chapter_objects_permissions_section_permissions_permission_priority.png" /></div>
+</div>
+
+<p>При настройке приоритетов прав доступа <strong>руководствуйтесь следующими правилами</strong>:</p>
+
+<ul type="disc"><li>
+	<p>Например, мы хотим запретить всем пользователям доступ к записям раздела <span class="key">Продажи</span>, но менеджерам по продажам (они также входят в роль “Все пользователи”) необходимо дать все права, кроме удаления записей. Для этого расположим роль “Менеджеры по продажам” выше, а роль “Все пользователи” — ниже.</p>
+	</li>
+	<li>
+	<p>Если пользователь входит в несколько ролей, для которых настраиваются права доступа, то для него будет применен уровень доступа той роли, которая расположена <strong>выше</strong> в списке.Если определенной роли, за исключением одного или нескольких пользователей, необходимо запретить доступ к какой-либо операции, то расположите такую роль <strong>ниже</strong>, а пользователей, которым надо предоставить доступ — выше. Так, если мы запрещаем доступ к разделу <span class="key">Продажи</span> для всех секретарей, но предоставляем право просмотра данных одному из них, то роль “Секретари” должна быть расположена ниже того сотрудника, который должен иметь доступ к разделу.</p>
+	</li>
+	<li>Пользователи или роли, которые <strong>не добавлены</strong> в область настройки доступа по операциям, не получают доступа к операциям и не участвуют при определении приоритетов прав.</li>
+</ul><p>Настроим приоритет прав доступа для приведенного выше примера. Для изменения порядка отображения правил захватите правило курсором мыши и перетащите на нужное место (Рис. 5):</p>
+
+<ol><li>
+	<p>Организационную роль с максимальным уровнем доступа (в нашем примере это “Менеджеры по продажам. Группа руководителей”) расположите вверху списка.</p>
+	</li>
+	<li>
+	<p>Далее расположите роль “Менеджеры по продажам”.</p>
+	</li>
+	<li>
+	<p>Роль “All employees” и пользователь Ульяненко Александра, который входит в роль “Секретари”, имеют одинаковый уровень доступа. Поэтому расположите их под ролью “Менеджеры по продажам” в любом порядке.</p>
+	</li>
+	<li>
+	<p>У роли “Секретари” не должно быть доступа к разделу <span class="key">Продажи</span>, поэтому расположите ее внизу списка.</p>
+	</li>
+	<li>
+	<p>Сохраните настройки по кнопке <span class="key">Применить</span> в верхнем левом углу страницы.</p>
+
+	<div class="media">
+	<div class="media__caption">Рис. 5 — Настройка приоритета прав доступа</div>
+
+	<div class="media__element"><img alt="chapter_objects_permissions_section_permissions_result.png" id="image8" src="../../../../../sites/default/files/documentation/user/ru/user_access_management/BPMonlineHelp/operation_permissions/chapter_objects_permissions_section_permissions_result.png" /></div>
+	</div>
+	</li>
+</ol><p>В результате выполненных настроек:</p>
+
+<ul type="disc"><li>У пользователей с ролью “<strong>Менеджеры по продажам</strong>” будет доступ к разделу <span class="key">Продажи</span> с возможностью создавать и редактировать записи раздела. Удалять записи менеджеры по продажам не смогут.</li>
+	<li>У <strong>руководителей менеджеров по продажам</strong> будет полный доступ к разделу с возможностью удаления записей.</li>
+	<li><strong>Все сотрудники компании</strong> смогут просматривать записи раздела, но не смогут их создавать, редактировать и удалять.</li>
+	<li>Для всех <strong>секретарей</strong> компании, кроме Ульяненко Александры, раздел <span class="key">Продажи</span> будет скрыт.</li>
+	<li>Секретарь <strong>Ульяненко Александра</strong> сможет перейти в раздел и просмотреть записи.</li>
+</ul><h2><a name="TOC_Настроить_доступ_по2bc-3" id="TOC_Настроить_доступ_по2bc-3"></a><a name="TOC_Настроить_доступ_по2" id="TOC_Настроить_доступ_по2"></a><a name="XREF_73322" id="XREF_73322"></a><a name="CSH_3" id="CSH_3"></a><a name="HT_administering_objects_detail_operations_permissions" id="HT_administering_objects_detail_operations_permissions"></a>Настроить доступ по операциям в объекте детали<a class="title-anchor" href="#title-2462-3" id="title-2462-3"> </a></h2>
+
+<div class="message">
+<p><span class="message__bold">Пример.</span> Выполним настройку доступа к детали <span class="key">Файлы и ссылки</span> раздела <span class="key">Договоры</span>. Пользователи с ролью “Менеджеры по продажам” должны иметь полный доступ к записям на детали.</p>
+</div>
+
+<p>Остальным пользователям необходимо разрешить только просмотр содержащихся на детали файлов и ссылок и запретить их редактирование и удаление.</p>
+
+<ol><li>
+	<p>Перейдите в дизайнер системы, например, по кнопке <img alt="btn_system_designer00003.png" id="image9" src="../../../../../sites/default/files/documentation/user/ru/user_access_management/BPMonlineHelp/operation_permissions/btn_system_designer00003.png" />, и откройте раздел настройки доступа к объектам по ссылке “<strong>Права доступа на объекты</strong>”.</p>
+	</li>
+	<li>
+	<p>Установите фильтр “Все объекты”.</p>
+	</li>
+	<li>
+	<p>Найдите объект “Файл и ссылка договора” с помощью строки поиска.</p>
+	</li>
+	<li>
+	<p>Кликните по заголовку или названию найденного объекта.</p>
+	</li>
+	<li>
+	<p>Включите ограничение доступа по операциям с помощью переключателя “Использовать доступ по операциям” (Рис. 6).</p>
+
+	<div class="media">
+	<div class="media__caption">Рис. 6 — Включение администрирования по операциям</div>
+
+	<div class="media__element"><img alt="chapter_objects_permissions_section_permissions_administer_by_operations_2.png" id="image10" src="../../../../../sites/default/files/documentation/user/ru/user_access_management/BPMonlineHelp/operation_permissions/chapter_objects_permissions_section_permissions_administer_by_operations_2.png" /></div>
+	</div>
+	</li>
+	<li>
+	<p>По кнопке <span class="key">Добавить</span> добавьте роли и пользователей, для которых необходимо настроить права доступа. Используйте строку поиска, чтобы быстро найти нужную роль или пользователя в списке. В нашем примере это:</p>
+
+	<ol><li>
+		<p>роль “All employees” (Все сотрудники) — добавляется автоматически;</p>
+		</li>
+		<li>
+		<p>роль “Менеджеры по продажам”.</p>
+		</li>
+	</ol></li>
+	<li>
+	<p>По умолчанию для каждой добавленной роли или пользователя устанавливаются права на просмотр, создание, редактирование и удаление данных объекта. Откорректируйте уровень прав доступа в соответствии с необходимостью.</p>
+
+	<ol><li>
+		<p>Для роли “<strong>Менеджеры по продажам</strong>” оставьте признаки в колонках <span class="key">Создание</span>, <span class="key">Чтение</span>, <span class="key">Редактирование</span> и <span class="key">Удаление</span>. Так сотрудники отдела продаж смогут просматривать, добавлять, изменять и удалять данные на детали <span class="key">Файлы и ссылки</span>.</p>
+		</li>
+		<li>
+		<p>Для роли “<strong>Все сотрудники</strong>” оставьте признак только в колонке <span class="key">Чтение</span>, а признаки в колонках <span class="key">Создание</span>, <span class="key">Редактирование</span> и <span class="key">Удаление</span> снимите. Так все сотрудники смогут только просматривать содержимое детали <span class="key">Файлы и ссылки</span> договора, но не смогут его добавлять, редактировать и удалять.</p>
+		</li>
+	</ol></li>
+	<li>
+	<p>При необходимости настройте приоритеты прав доступа для указанных ролей. Настройка может потребоваться, если уровни доступа противоречат друг другу, т. к. роли пересекаются. Например, роль “Менеджеры по продажам” входит в роль “Все сотрудники”. О необходимости настроить приоритеты свидетельствует значок <img alt="icn_access_rights_priority00004.png" id="image11" src="../../../../../sites/default/files/documentation/user/ru/user_access_management/BPMonlineHelp/operation_permissions/icn_access_rights_priority00004.png" /> рядом с противоречащим правом доступа.</p>
+	</li>
+</ol><p>В результате выполненных настроек:</p>
+
+<ul type="disc"><li>У пользователей с ролью “<strong>Менеджеры по продажам</strong>” будет полный доступ к детали <span class="key">Файлы и ссылки</span> договора с возможностью просматривать, создавать, редактировать и удалять содержимое детали.</li>
+	<li><strong>Все сотрудники компании</strong> смогут просматривать содержимое детали <span class="key">Файлы и ссылки</span> договора, но не смогут их создавать, редактировать и удалять.</li>
+</ul></div>
+      
+  </div>
+<div class="block block-layout-builder block-field-blocknodeuser-documentationfield-linked-link">
+  
+    
+      
+  <div class="field field--name-field-linked-link field--type-link field--label-above">
+    <div class="field__label">Смотрите также</div>
+          <div class="field__items">
+              <div class="field__item"><a href="../dostup_po_zapisjam/nastroit_dostup_po_zapisyam.html?id=1966">Настроить доступ по записям</a></div>
+          <div class="field__item"><a href="../dostup_na_kolonki/nastroit_prava_dostupa_na_kolonku.html?id=264">Настроить права доступа на колонки</a></div>
+              </div>
+      </div>
+
+  </div>
+<div class="block block-layout-builder block-field-blocknodeuser-documentationfield-video">
+  
+    
+      
+  <div class="field field--name-field-video field--type-link field--label-above">
+    <div class="field__label">Онлайн-курсы</div>
+          <div class="field__items">
+              <div class="field__item"><a href="https://profile.terrasoft.ua/user/login?destination=academy/ua/course-redirect/678070">Управление пользователями и ролями. Права доступа.</a></div>
+          <div class="field__item"><a href="https://www.youtube.com/watch?v=qpjdGuLBgqI">Tech Hour: Альтернативный способ настраивать права доступа на странице - используйте атрибуты!</a></div>
+              </div>
+      </div>
+
+  </div>
+
+    </div>
+  </div>
+
+  </div>
+
+</article>
+
+  </div>
+
+  </div>
+
+          </div>
+        </div>
+
+                  <aside class="creatio-sidebar creatio-sidebar_first" role="complementary">
+              <div class="region region-sidebar-first">
+    <div id="block-documentationnaviagtion" class="block block-ts-nav block-ts-nav-doc-nav">
+  
+    
+      <div class="ts-nav-block"><a href="../../../../../index.html" class="ts-nav-block__link">Документация</a><div class="ts-nav-block__title">Для пользователя</div>
+</div>
+<div class="ts-nav-container"><ul class="ts-nav-menu"><li class="ts-nav-menu__item">
+  <a href="../../../../nocode_platforma.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">No-сode платформа&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../../bazis_platformy.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Базис платформы&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../../instrumenty_crm.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Инструменты CRM&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../../instrumenty_kastomizacii.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Инструменты кастомизации&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../../biznes_processy.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Бизнес-процессы&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../../instrumenty_marketinga.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Инструменты маркетинга&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../../instrumenty_prodazh.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Инструменты продаж&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../../instrumenty_servisa.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Инструменты сервиса&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../../ustanovka_i_administrirovanie.html" class="ts-nav-menu__link ts-nav-menu__link_expanded ts-nav-menu__link_open" hreflang="zxx">Администрирование&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+      <ul class="ts-nav-menu__children">
+      <li class="ts-nav-menu__item">
+  <a href="../../../upravlenie_polzovateljami_i_dostupom.html" class="ts-nav-menu__link ts-nav-menu__link_expanded ts-nav-menu__link_open" hreflang="zxx">Пользователи и доступ&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+      <ul class="ts-nav-menu__children">
+      <li class="ts-nav-menu__item">
+  <a href="../../autentifikaciya_v_prilojenii.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Аутентификация в приложении&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../sinhronizaciya_polzovatelej_s_ldap.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Синхронизация пользователей с LDAP&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../upravleniye_polzovateliami.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Управление пользователями&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../upravleniye_dostupom.html" class="ts-nav-menu__link ts-nav-menu__link_expanded ts-nav-menu__link_open" hreflang="ru">Управление доступом&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+      <ul class="ts-nav-menu__children">
+      <li class="ts-nav-menu__item">
+  <a href="nastroit_dostup_po_operaciam.html" class="ts-nav-menu__link ts-nav-menu__link_active ts-nav-menu__link_open" hreflang="ru">Доступ по операциям</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../dostup_na_kolonki/nastroit_prava_dostupa_na_kolonku.html" class="ts-nav-menu__link" hreflang="ru">Доступ на колонки</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../dostup_po_zapisjam/nastroit_dostup_po_zapisyam.html" class="ts-nav-menu__link" hreflang="ru">Доступ по записям</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../dostup_po_sistemnym_operacijam/nastroit_prava_dostupa_na_sistemnye_operacii.html" class="ts-nav-menu__link" hreflang="ru">Доступ по системным операциям</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../opisanie_sistemnykh_operacij/opisanie-sistemnyh-operaciy.html" class="ts-nav-menu__link" hreflang="ru">Описание системных операций</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../delegirovanie_prav/delegirovat_prava_dostupa.html" class="ts-nav-menu__link" hreflang="ru">Делегирование прав</a>
+  </li>
+
+    </ul>
+  </li>
+
+    </ul>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../sistemnye_nastrojki_i_spravochniki.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Системные настройки и справочники&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../instrumenty_logirovanija.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Инструменты логирования&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../licenzirovanie.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Лицензирование&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../nastrojka_bazovyh_intgracij.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Настройка базовых интеграций&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../nactrojka_domena_email_rassylok.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Настройка домена для рассылок&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../nastrojki_bezopasnosti.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Настройки безопасности&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../obsluzhivanie_prilozhenija.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Обслуживание приложения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+
+    </ul>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../../razvertyvanie_onsite.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Развертывание on-site&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../../banki_i_finansy.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Банки и финансы&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../../drugie_reshenija.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Другие решения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+</ul>
+</div>
+
+  </div>
+
+  </div>
+
+            <div class="creatio-sidebar__toggle"></div>
+          </aside>
+        
+                  <aside class="creatio-sidebar creatio-sidebar_second" role="complementary">
+              <div class="region region-sidebar-second">
+    <div id="block-example" class="block block-ts-nav block-ts-nav-page-nav">
+  
+    
+        <div class="ts-nav-title">Доступ по операциям</div>
+<div class="ts-nav-page">
+      <ul class="ts-nav-page__list">
+                                                <li class="ts-nav-page__item ts-nav-page__item_expanded ts-nav-page__item_open"><a href="nastroit_dostup_po_operaciam.html" class="ts-nav-page__link ts-nav-page__link_expanded ts-nav-page__link_active">Настроить доступ по операциям&nbsp;<span class="ts-nav-page__link-arrow"></span></a></li>
+          </ul>
+  </div>
+
+  </div>
+<div id="block-adminfeedbackblock" class="block block-admin-feedback block-admin-feedback-block">
+  
+    
+      <div id="feedback-message"><div id="upper-feedback-content"><h2>Был ли данный материал полезен?</h2>
+<input class="feedback-btn feedback-btn__yes button js-form-submit form-submit" data-node-id="3798" data-feedback="yes" type="submit" name="op" value="Да" />
+<input class="feedback-btn feedback-btn__no button js-form-submit form-submit" data-node-id="3798" data-feedback="no" type="submit" name="op" value="Нет" />
+</div>
+<form class="admin-feedback-form" data-drupal-selector="admin-feedback-form" action="https://academy.terrasoft.ua/docs/user/ustanovka_i_administrirovanie/upravlenie_polzovateljami_i_dostupom/upravleniye_dostupom/dostup_po_operacijam/nastroit_dostup_po_operaciam" method="post" id="admin-feedback-form" accept-charset="UTF-8">
+  <div id="feedback-msg-result"></div><div class="js-form-item form-item js-form-type-textarea form-type-textarea js-form-item-feedback-message form-item-feedback-message form-no-label">
+        <div class="form-textarea-wrapper">
+  <textarea id="edit-feedback-msg" data-drupal-selector="edit-feedback-message" name="feedback_message" rows="5" cols="60" class="form-textarea resize-vertical"></textarea>
+</div>
+
+        </div>
+<input id="feedback-id" data-drupal-selector="edit-feedback-id" type="hidden" name="feedback_id" value="" />
+<input class="feedback-btn feedback-btn__send-comment button js-form-submit form-submit" data-drupal-selector="edit-feedback-send" type="submit" id="edit-feedback-send" name="op" value="Отправить" />
+<input autocomplete="off" data-drupal-selector="form-achr5-z0wkiux8d7echtfrvstvkttxcdg4kwoyybl-4" type="hidden" name="form_build_id" value="form-AcHR5_Z0WkIUx8D7ecHtfrvSTvKTTxCDg4kwoyYbL-4" />
+<input data-drupal-selector="edit-admin-feedback-form" type="hidden" name="form_id" value="admin_feedback_form" />
+
+</form>
+</div>
+
+  </div>
+
+  </div>
+
+          </aside>
+              </main>
+    </div>
+  </div>
+
+  <footer role="contentinfo">
+    <div class="creatio-region creatio-region_footer">
+      <div class="creatio-container">
+          <div class="region region-footer">
+    <div id="block-footerua" class="block block-simple-block block-simple-blockfooter-ua">
+  
+    
+      <div class="footer">
+<div class="footer-left">
+<ul class="footer-socials"><li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_fb" href="https://www.facebook.com/terrasoft.ua" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_in" href="https://www.linkedin.com/company/terrasoft/" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_yt" href="https://www.youtube.com/c/TerrasoftUkraine" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_tg" href="https://t.me/Terrasoft_UA" target="_blank"> </a></li>
+</ul></div>
+
+<div class="footer-contact">
+<div class="footer-title">Будьте на связи!</div>
+
+<div class="footer-content">
+<div class="footer-items">
+<div class="footer-item"><a class="footer__link footer__link_phone" href="tel:+380443633133">+38 (044) 363-31-33</a></div>
+</div>
+
+<div class="footer-items">
+<div class="footer-item"><a class="footer__link footer__link_email" href="mailto:support@terrasoft.ua">support@terrasoft.ua</a></div>
+</div>
+</div>
+</div>
+</div>
+
+  </div>
+
+  </div>
+
+      </div>
+    </div>
+    <div class="creatio-region creatio-region_bottom">
+      <div class="creatio-container">
+          <div class="region region-bottom">
+    <div id="block-allrightsreservedua" class="block block-simple-block block-simple-blockfooter-bottom-ua">
+  
+    
+      <p>© 2002-2022 Terrasoft.  |  <a href="https://www.terrasoft.ua/privacy-policy" target="_blank">Конфиденциальность</a></p>
+
+  </div>
+
+  </div>
+
+      </div>
+    </div>
+  </footer>
+</div>
+<div class="creatio-bg"></div>
+
+
+  </div>
+
+    
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/docs\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/3798","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"ru"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"ajaxPageState":{"libraries":"admin_feedback\/admin_feedback_block,admin_feedback\/admin_feedback_css,classy\/base,classy\/messages,classy\/node,core\/drupal.ajax,core\/jquery.form,core\/normalize,creatio\/creatio.lists,creatio\/fancybox,creatio\/global,layout_discovery\/onecol,system\/base,ts_doc\/doc_version,ts_feedback\/ts_feedback,ts_nav\/breadcrumb,ts_nav\/doc_nav,ts_nav\/page_nav,ts_title_anchor\/ts_title_anchor","theme":"creatio","theme_token":null},"ajaxTrustedUrl":{"form_action_p_pvdeGsVG5zNF_XLGPTvYSKCf43t8qZYSwcfZl2uzM":true,"\/docs\/user\/ustanovka_i_administrirovanie\/upravlenie_polzovateljami_i_dostupom\/upravleniye_dostupom\/dostup_po_operacijam\/nastroit_dostup_po_operaciam?ajax_form=1":true},"admin_feedback":{"yes_response":"\u0421\u043f\u0430\u0441\u0438\u0431\u043e \u0437\u0430 \u043e\u0431\u0440\u0430\u0442\u043d\u0443\u044e \u0441\u0432\u044f\u0437\u044c!","no_response":"\u0421\u043f\u0430\u0441\u0438\u0431\u043e \u0437\u0430 \u043e\u0431\u0440\u0430\u0442\u043d\u0443\u044e \u0441\u0432\u044f\u0437\u044c!","custom_text_response_on_no":{"value":"","format":"full_html"},"feedback_prompt_on_yes":true,"feedback_prompt_on_no":true,"feedback_enable_predefined_answers":false,"feedback_prompt":"\u041a\u0430\u043a \u043c\u043e\u0436\u043d\u043e \u0443\u043b\u0443\u0447\u0448\u0438\u0442\u044c \u044d\u0442\u0443 \u0441\u0442\u0430\u0442\u044c\u044e?"},"ajax":{"edit-feedback-send":{"callback":"::validateFeedbackMsg","event":"mousedown","keypress":true,"prevent":"click","url":"\/docs\/user\/ustanovka_i_administrirovanie\/upravlenie_polzovateljami_i_dostupom\/upravleniye_dostupom\/dostup_po_operacijam\/nastroit_dostup_po_operaciam?ajax_form=1","dialogType":"ajax","submit":{"_triggering_element_name":"op","_triggering_element_value":"\u041e\u0442\u043f\u0440\u0430\u0432\u0438\u0442\u044c"}}},"user":{"uid":0,"permissionsHash":"9c2367dfcaba0fa15f0375f97aed64e146c908cee68508d13b79e3ee80e5162d"}}</script>
+<script src="../../../../../sites/default/files/js/js_F2-Y4EzgTnESr58XByoLYEnsbi7ysTfMIKN1RvsMSWY.js"></script>
+
+
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+      <g id="svg-copy" class="svg-icon svg-icon_copy">
+        <path d="M15.111,18H1.889A1.848,1.848,0,0,1,0,16.2V3.6A1.848,1.848,0,0,1,1.889,1.8H5.837a2.87,2.87,0,0,1,5.326,0h3.948A1.848,1.848,0,0,1,17,3.6V16.2A1.848,1.848,0,0,1,15.111,18ZM3.777,12.6v1.8h6.611V12.6Zm0-3.6v1.8h9.445V9Zm0-3.6V7.2h9.445V5.4ZM8.5,1.8a.924.924,0,0,0-.944.9.945.945,0,0,0,1.889,0A.924.924,0,0,0,8.5,1.8Z"/>
+      </g>
+
+      <g id="svg-prev" class="svg-icon svg-icon_arrow">
+        <path d="M5.488,12.779,0,6.39,5.488,0" transform="translate(1 0.652)"/>
+      </g>
+
+      <g id="svg-next" class="svg-icon svg-icon_arrow">
+        <path d="M0,12.779,5.488,6.39,0,0" transform="translate(0.759 0.652)"/>
+      </g>
+    </svg>
+  </body>
+
+<!-- Mirrored from academy.terrasoft.ua/docs/user/ustanovka_i_administrirovanie/upravlenie_polzovateljami_i_dostupom/upravleniye_dostupom/dostup_po_operacijam/nastroit_dostup_po_operaciam by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 22 Mar 2022 22:22:05 GMT -->
+</html>

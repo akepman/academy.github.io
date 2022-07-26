@@ -1,0 +1,931 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# ">
+  
+<!-- Mirrored from academy.terrasoft.ua/docs/7-17/user/biznes_processy/ispolzovanie_elementov_processa/sobytiia/ispolzovat_sobytiya by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Mar 2022 04:00:01 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+          <!-- Google Tag Manager -->
+      <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          '../../../../../../../www.googletagmanager.com/gtm5445.html?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-KLLB8G');</script>
+      <!-- End Google Tag Manager -->
+        <meta charset="utf-8" />
+<link rel="canonical" href="ispolzovat_sobytiya.html" />
+<meta name="description" content="Использовать события для ветвления процесса 
+
+Для ветвления процесса в зависимости от наступления тех или иных событий используется логический опера" />
+<meta property="og:url" content="https://academy.terrasoft.ua/docs/7-17/user/biznes_processy/ispolzovanie_elementov_processa/sobytiia/ispolzovat_sobytiya" />
+<meta property="og:title" content="Использовать события" />
+<meta property="og:description" content="Использовать события для ветвления процесса 
+
+Для ветвления процесса в зависимости от наступления тех или иных событий используется логический опера" />
+<meta name="Generator" content="Drupal 9 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="../../../../../themes/custom/creatio/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="revision" href="ispolzovat_sobytiya.html" />
+
+    <title>Использовать события | Creatio Academy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&amp;family=Open+Sans:ital,wght@0,300;0,400;0,600;1,400&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" media="all" href="../../../../../sites/default/files/css/css_6lTP66__-yc6QXFp1zOwoeJ0HVigoYZP-SeoLLii000.css" />
+<link rel="stylesheet" media="all" href="../../../../../sites/default/files/css/css_XQJDNhkF3xH5SZCcY-PI89Zu4nYIzQ5oR3SnUKyfXJU.css" />
+<link rel="stylesheet" media="print" href="../../../../../sites/default/files/css/css_Zn4VHvcniOOtUwkIVwXzYr_0AI9gUVgZcPqaH4ViagU.css" />
+
+    
+  </head>
+  <body class="path-node page-node-type-user-documentation">
+          <!-- Google Tag Manager (noscript) -->
+      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KLLB8G"
+                        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+      <!-- End Google Tag Manager (noscript) -->
+    
+        
+      <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    <div class="creatio-page d-flex flex-column">
+        <div class="region region-informer">
+    <div id="block-terrasoftpidtrimueukrainu" class="block block-simple-block block-simple-blockterrasoft-pidtrimue-ukrainu">
+  
+    
+      <style type="text/css">
+<!--/*--><![CDATA[/* ><!--*/
+@import url(../../../../../../../www.terrasoft.ua/themes/custom/creatio/css/components/informer.css)
+
+/*--><!]]>*/
+</style><div class="ts-swu">
+<div class="creatio-container">
+<div class="ts-swu__cont">
+<div><a class="ts-swu__link" href="https://www.terrasoft.ua/terrasoft-stands-with-ukraine" target="_blank">Україна понад усе!</a> <span><a href="https://www.terrasoft.ua/terrasoft-stands-with-ukraine" target="_blank">Приєднуйтеся</a> до допомоги!</span></div>
+</div>
+</div></div>
+
+  </div>
+
+  </div>
+
+  
+  <header role="banner">
+          <div class="creatio-region creatio-region_top">
+        <div class="creatio-container">
+            <div class="region region-top">
+    <div id="block-menutoggle" class="block block-simple-block block-simple-blockmenu-toggle">
+  
+    
+      <div class="menu-toggle"><span> </span></div>
+
+  </div>
+<div id="block-logowhite-2" class="block block-simple-block block-simple-blocklogo-white">
+  
+    
+      <p><a class="site-logo" href="../../../../../../index.html" rel="home"><img src="../../../../../themes/custom/creatio/logo-white.svg" /></a></p>
+
+  </div>
+<div id="block-search" class="block block-simple-block block-simple-blocksearch">
+  
+    
+      <div class="search">
+<form action="https://academy.terrasoft.ua/search" class="search-form" method="get"><input class="search-form__input" name="search" placeholder="Поиск" type="search" /><input class="search-form__button" type="submit" value="Поиск" /> </form>
+
+<div class="search-toggle"> </div>
+</div>
+
+  </div>
+<nav role="navigation" aria-labelledby="block-sitesua-menu" id="block-sitesua" class="block block-menu navigation menu--sites-ua">
+            
+  <h2 class="visually-hidden" id="block-sitesua-menu">Sites UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="https://www.terrasoft.ua/" rel="nofollow" target="_blank">Terrasoft</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://community.terrasoft.ua/" rel="nofollow" target="_blank">Community</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://marketplace.terrasoft.ua/" rel="nofollow" target="_blank">Marketplace</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+<div id="block-usermenu" class="block block-ts-user block-ts-user-menu-block">
+  
+    
+      <ul class="user-menu">
+      <li class="user-menu__item">
+      <a class="user-menu__link" href="https://profile.terrasoft.ua/user/login?destination=academy/ua/docs/7-17/user/biznes_processy/ispolzovanie_elementov_processa/sobytiia/ispolzovat_sobytiya">Войти</a>
+    </li>
+  </ul>
+
+  </div>
+<div id="block-usermenumobile" class="block block-ts-user block-ts-user-menu-mobile-block">
+  
+    
+      <ul class="user-menu-mobile">
+      <li class="user-menu-mobile__item">
+      <div class="user-menu-mobile__user user-menu-mobile__user_icon"></div>
+      <ul class="user-menu-mobile__submenu">
+        <li class="user-menu-mobile__subitem">
+          <a class="user-menu-mobile__sublink" href="https://profile.terrasoft.ua/user/login?destination=academy/ua/docs/7-17/user/biznes_processy/ispolzovanie_elementov_processa/sobytiia/ispolzovat_sobytiya">Войти</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  </div>
+
+  </div>
+
+        </div>
+      </div>
+              <div class="creatio-region creatio-region_header">
+        <div class="creatio-container">
+            <div class="region region-header">
+    <div id="block-logo" class="block block-simple-block block-simple-blocklogo">
+  
+    
+      <p><a class="site-logo" href="../../../../../../index.html" rel="home"><img src="../../../../../themes/custom/creatio/logo.svg" /></a></p>
+
+  </div>
+<nav role="navigation" aria-labelledby="block-osnovnayanavigaciyaua-menu" id="block-osnovnayanavigaciyaua" class="block block-menu navigation menu--main-ua">
+            
+  <h2 class="visually-hidden" id="block-osnovnayanavigaciyaua-menu">Основная навигация UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="../../../../../index.html" data-drupal-link-system-path="&lt;front&gt;">Документация</a>
+              </li>
+                <li class="menu-item">
+        <a href="../../../../../../trainings.html">Тренинги</a>
+              </li>
+                <li class="menu-item">
+        <a href="../../../../../certification.html" data-drupal-link-system-path="node/3084">Сертификация и тестирование</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+<nav role="navigation" aria-labelledby="block-sitesua-2-menu" id="block-sitesua-2" class="block block-menu navigation menu--sites-ua">
+            
+  <h2 class="visually-hidden" id="block-sitesua-2-menu">Sites UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="https://www.terrasoft.ua/" rel="nofollow" target="_blank">Terrasoft</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://community.terrasoft.ua/" rel="nofollow" target="_blank">Community</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://marketplace.terrasoft.ua/" rel="nofollow" target="_blank">Marketplace</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+
+  </div>
+
+        </div>
+      </div>
+              <div class="creatio-region creatio-region_breadcrumb">
+        <div class="creatio-container">
+            <div class="region region-breadcrumb">
+    <div id="block-logowhite" class="block block-simple-block block-simple-blocklogo-white">
+  
+    
+      <p><a class="site-logo" href="../../../../../../index.html" rel="home"><img src="../../../../../themes/custom/creatio/logo-white.svg" /></a></p>
+
+  </div>
+<div id="block-breadcrumbnaviagtion" class="block block-ts-nav block-ts-nav-bread">
+  
+    
+      <nav class="breadcrumb"><ol class="ts-nav-breadcrumb__list"><li class="ts-nav-breadcrumb__item"><a href="../../../../../index.html" class="ts-nav-breadcrumb__link" title="Документация">Документация</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../../../indexd993.html?vid_1=1" class="ts-nav-breadcrumb__link" title="Для пользователя">Для пользователя</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../biznes_processy.html" class="ts-nav-breadcrumb__link" title="Бизнес-процессы" hreflang="zxx">Бизнес-процессы</a></li>
+<li class="ts-nav-breadcrumb__item ts-nav-breadcrumb__item_mobile"><a href="../../ispolzovanie_elementov_processa.html" class="ts-nav-breadcrumb__link" title="Использование элементов процесса" hreflang="ru">Использование элементов процесса</a></li>
+<li class="ts-nav-breadcrumb__item"><span class="ts-nav-breadcrumb__link ts-nav-breadcrumb__link_current" title="Использовать события">Использовать события</span></li>
+</ol>
+</nav>
+
+  </div>
+<div id="block-search-2" class="block block-simple-block block-simple-blocksearch">
+  
+    
+      <div class="search">
+<form action="https://academy.terrasoft.ua/search" class="search-form" method="get"><input class="search-form__input" name="search" placeholder="Поиск" type="search" /><input class="search-form__button" type="submit" value="Поиск" /> </form>
+
+<div class="search-toggle"> </div>
+</div>
+
+  </div>
+
+  </div>
+
+        </div>
+      </div>
+      </header>
+
+  <div class="creatio-region creatio-region_main">
+    <div class="creatio-container">
+                <div class="region region-breadcrumb-mobile">
+    <div id="block-breadcrumbnaviagtion-2" class="block block-ts-nav block-ts-nav-bread">
+  
+    
+      <nav class="breadcrumb"><ol class="ts-nav-breadcrumb__list"><li class="ts-nav-breadcrumb__item"><a href="../../../../../index.html" class="ts-nav-breadcrumb__link" title="Документация">Документация</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../../../indexd993.html?vid_1=1" class="ts-nav-breadcrumb__link" title="Для пользователя">Для пользователя</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../biznes_processy.html" class="ts-nav-breadcrumb__link" title="Бизнес-процессы" hreflang="zxx">Бизнес-процессы</a></li>
+<li class="ts-nav-breadcrumb__item ts-nav-breadcrumb__item_mobile"><a href="../../ispolzovanie_elementov_processa.html" class="ts-nav-breadcrumb__link" title="Использование элементов процесса" hreflang="ru">Использование элементов процесса</a></li>
+<li class="ts-nav-breadcrumb__item"><span class="ts-nav-breadcrumb__link ts-nav-breadcrumb__link_current" title="Использовать события">Использовать события</span></li>
+</ol>
+</nav>
+
+  </div>
+
+  </div>
+
+      
+      <main class="creatio-main" role="main">
+                                                    
+        <div class="creatio-content creatio-content_small">
+          <div class="creatio-content__inner creatio-content__inner_bg">
+                            <div class="region region-messages">
+    <div data-drupal-messages-fallback class="hidden"></div>
+
+  </div>
+
+            
+              <div class="region region-content">
+    <div id="block-creatio-page-title" class="block block-core block-page-title-block">
+  
+    
+      
+  <h1 class="page-title"><span class="field field--name-title field--type-string field--label-hidden">Использовать события</span>
+</h1>
+
+
+  </div>
+<div id="block-creatio-content" class="block block-system block-system-main-block">
+  
+    
+      
+<article data-history-node-id="2783" role="article" about="/docs/7-17/user/biznes_processy/ispolzovanie_elementov_processa/sobytiia/ispolzovat_sobytiya" class="node node--type-user-documentation node--view-mode-full">
+
+  
+    
+
+  
+  <div class="node__content">
+      <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-ts-doc block-ts-doc-downloads">
+  
+    
+      <a href="../../../../../sites/default/files/pdf/node/2783/Ispolzovat_sobytiya_.pdf" target="_blank">PDF</a>
+  </div>
+<div class="block block-ts-doc block-ts-doc-versions">
+  
+    
+        <div class="ts-doc-versions">
+    <select class="ts-doc-versions__select">
+                              <option value="/docs/8-0/user/biznes_processy/ispolzovanie_elementov_processa/sobytiia/ispolzovat_sobytiya">Версия 8.0</option>
+                              <option value="/docs/7-18/user/biznes_processy/ispolzovanie_elementov_processa/sobytiia/ispolzovat_sobytiya">Версия 7.18</option>
+                                                <option value="/docs/7-17/user/biznes_processy/ispolzovanie_elementov_processa/sobytiia/ispolzovat_sobytiya" selected>Версия 7.17</option>
+          </select>
+  </div>
+
+  </div>
+
+    </div>
+  </div>
+  <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocknodeuser-documentationfield-product">
+  
+    
+      
+  <div class="field field--name-field-product field--type-entity-reference field--label-above">
+    <div class="field__label">Продукты</div>
+          <div class="field__items">
+              <div class="field__item">Все продукты</div>
+              </div>
+      </div>
+
+  </div>
+<div class="block block-layout-builder block-field-blocknodeuser-documentationbody">
+  
+    
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><h2><a name="TOC_Как_использовать_события1bc-1" id="TOC_Как_использовать_события1bc-1"></a><a name="TOC_Как_использовать_события1" id="TOC_Как_использовать_события1"></a><a name="CSH_2" id="CSH_2"></a><a name="HT_chapter_process_creation_designer_events_use_branching" id="HT_chapter_process_creation_designer_events_use_branching"></a><a name="XREF_33140" id="XREF_33140"></a>Использовать события для ветвления процесса<a class="title-anchor" href="#title-2783-1" id="title-2783-1"> </a></h2>
+
+<p>Для ветвления процесса в зависимости от наступления тех или иных событий используется логический оператор <span class="key">Исключающее “ИЛИ” по событиям</span>. События, от выполнения которых зависит ветвление процесса, помещаются на исходящие потоки логического оператора (<span>Рис. 1</span>).</p>
+
+<div class="media">
+<div class="media__caption"><span class="FM_Picturecaptionnumber">Рис. 1</span><a name="XREF_16044_5_47" id="XREF_16044_5_47"></a> — Использование логического оператора <span class="key">Исключающее “ИЛИ” по событиям</span></div>
+
+<div class="media__element"><span contenteditable="false" tabindex="-1"><img alt="scr_process_creation_designer_event_gateway_example.png" data-entity-type="" data-entity-uuid="" data-widget="image" id="image0" src="../../../../../sites/default/files/documentation/user/ru/bpms/BPMonlineHelp/chapter_process_creation_events/scr_process_creation_designer_event_gateway_example.png" /></span></div>
+</div>
+
+<div class="message message_example">
+<p><span class="message__bold">Пример.</span> После создания договора необходимо отправить его на визирование. Дальнейшее выполнение бизнес-процесса будет зависеть от результата визирования. При получении визы договор необходимо подписать. Если виза была отклонена, то договор необходимо отправить на доработку.</p>
+</div>
+
+<p>Для создания договора используется элемент <span class="key">Открыть страницу редактирования</span>. Настройки на странице идентичны настройкам при создании нового документа.</p>
+
+<p>Для отправки договора на визирование необходимо использовать элемент <span class="key">Автогененируемая страница</span>. Настройка данного элемента описана в статье <a href="../../spravka_po_elementam_processov/dejstviya_polzovatelya/avtogeneriruemaya_stranitsa/element_processa_avtogenerirujemaja_stranica/index.html"><span>Элемент процесса <span class="key">Автогенерируемая страница</span></span></a>. После отправки договора на визирование необходимо добавить визу на страницу договора. Для добавления визы используется элемент <span class="key">Добавить данные</span>.</p>
+
+<p>Схема с реализованным ветвлением представлена на <span>Рис. 2</span>.</p>
+
+<div class="media">
+<div class="media__caption"><span class="FM_Picturecaptionnumber">Рис. 2 </span><a name="XREF_99247_5_52" id="XREF_99247_5_52"></a>— Процесс визирования договора</div>
+
+<div class="media__element"><span contenteditable="false" tabindex="-1"><img alt="scr_process_creation_designer_process_with_events_contracts.png" data-entity-type="" data-entity-uuid="" data-widget="image" id="image1" src="../../../../../sites/default/files/documentation/user/ru/bpms/BPMonlineHelp/chapter_process_creation_events/scr_process_creation_designer_process_with_events_contracts.png" /></span></div>
+</div>
+
+<p>Чтобы построить ветвление процесса, исходящий поток каждой ветви которого должен активироваться в зависимости от результата:</p>
+
+<ol class="start"><li>
+	<p>Поместите логический оператор <span class="key">Исключающее “ИЛИ” по событиям</span> после действия “Добавить визу” и соедините потоком управления.</p>
+	</li>
+	<li>
+	<p>Поместите элемент <span class="key">Обработка сигнала</span> после логического оператора и соедините потоком управления.</p>
+	</li>
+	<li>
+	<p>Заполните страницу настройки элемента <span class="key">Обработка сигнала</span> в случае успешного визирования договора (<span>Рис. 3</span>):</p>
+
+	<div class="media">
+	<div class="media__caption"><span class="FM_Picturecaptionnumber">Рис. 3 </span><a name="XREF_85871_81" id="XREF_85871_81"></a>— Настройки элемента <span class="key">Обработка сигнала</span> для успешного визирования</div>
+
+	<div class="media__element"><span contenteditable="false" tabindex="-1"><img alt="scr_process_creation_designer_signal_for_visa.png" data-entity-type="" data-entity-uuid="" data-widget="image" id="image2" src="../../../../../sites/default/files/documentation/user/ru/bpms/BPMonlineHelp/chapter_process_creation_events/scr_process_creation_designer_signal_for_visa.png" /></span></div>
+	</div>
+	</li>
+	<li>
+	<p>В поле <span class="key">Сигнал какого типа получен?</span> выберите значение “Получен сигнал от объекта”.</p>
+	</li>
+	<li>
+	<p>Нажмите на поле <span class="key">Идентификатор записи</span>, чтобы открыть окно определения значения параметра:</p>
+
+	<ol><li>
+		<p>Выберите элемент <span class="key">Добавить визу</span> на вкладке <span class="key">Элементы процесса</span>.</p>
+		</li>
+		<li>
+		<p>Кликните дважды на значении параметра <span class="key">Id созданной записи</span>. Выбранное значение появится в верхней части окна определения значения параметра.</p>
+		</li>
+	</ol></li>
+	<li>Нажмите кнопку <span class="key">Сохранить</span>.</li>
+	<li>Укажите объект, от которого необходимо получить сигнал. В нашем примере это объект “Виза договора”.</li>
+	<li>В поле <span class="key">Какое событие должно произойти?</span> укажите “Изменение записи”.</li>
+	<li>Выберите колонку, изменения в которой активируют сигнал. В нашем примере это колонка “Состояние”.</li>
+	<li>Настройте условия, которым должна соответствовать запись после изменения. Чтобы сигнал активировался после установки визы и открылась страница ранее созданного договора для его подписания, состояние визы должно быть положительным.</li>
+	<li>
+	<p>Поместите еще один элемент <span class="key">Обработка сигнала</span> после логического оператора и соедините потоком управления. Это сигнал “Отправить на доработку”, который должен срабатывать, если визирующий отклонил визу.</p>
+	</li>
+	<li>
+	<p>Для запуска обрабатывающего сигнала заполните панель настройки элемента <span class="key">Обработка сигнала</span> (<span>Рис. 4</span>): Настройки идентичны настройкам сигнала, который срабатывает после получения визы, с той разницей, что в условиях фильтрации необходимо указать “Состояние=Отрицательная”.</p>
+
+	<div class="media">
+	<div class="media__caption"><span class="FM_Picturecaptionnumber">Рис. 4 </span><a name="XREF_65969_138" id="XREF_65969_138"></a> — Настройки элемента <span class="key">Обработка сигнала</span> в случае отклонения визы</div>
+
+	<div class="media__element"><span contenteditable="false" tabindex="-1"><img alt="scr_process_creation_designer_signal_for_visa_cancel.png" data-entity-type="" data-entity-uuid="" data-widget="image" id="image3" src="../../../../../sites/default/files/documentation/user/ru/bpms/BPMonlineHelp/chapter_process_creation_events/scr_process_creation_designer_signal_for_visa_cancel.png" /></span></div>
+	</div>
+	</li>
+	<li>
+	<p>Добавьте элемент <span class="key">Открыть страницу редактирования</span> после элементов “Договор завизирован” и “Отправить на доработку”. В случае положительной визы открывается ранее созданный договор, в котором необходимо изменить состояние на “Подписан”. В случае отрицательной визы открывается страница ранее созданного договора для доработки.</p>
+	</li>
+	<li>
+	<p>Сохраните процесс.</p>
+
+	<div class="message message_warning">
+	<p><span class="message__bold message__bold_warning">Важно.</span> Логический оператор <span class="key">Исключающее “ИЛИ” по событиям</span> требует публикации процесса. В ходе публикации осуществляется проверка всех созданных процессов.</p>
+	</div>
+	</li>
+</ol><h2><a name="TOC_Как_запустить_процессbc-2" id="TOC_Как_запустить_процессbc-2"></a><a name="TOC_Как_запустить_процесс" id="TOC_Как_запустить_процесс"></a><a name="CSH_3" id="CSH_3"></a><a name="HT_chapter_process_creation_designer_run_process_upon_changes" id="HT_chapter_process_creation_designer_run_process_upon_changes"></a><a name="XREF_46718_How_to_run_a" id="XREF_46718_How_to_run_a"></a>Запускать процесс автоматически после изменений в Creatio<a class="title-anchor" href="#title-2783-2" id="title-2783-2"> </a></h2>
+
+<p>Бизнес-процессы могут запускаться автоматически после добавления, изменения или удаления записи в Creatio. Чтобы настроить такой процесс, используйте начальный элемент <span class="key">Сигнал</span> как стартовое событие. Детальное описание элемента читайте в статье <span><a href="../../spravka_po_elementam_processov/sobytiya/signal/nachalnoje_sobytije_signal/index.html">Начальное событие <span class="key">Cигнал</span></a></span>.</p>
+
+<p>Например, процесс обработки нового клиента может запускаться автоматически каждый раз при регистрации новой записи клиента в Creatio.</p>
+
+<ol><li>Для автоматического запуска процесса после изменений в Creatio используйте начальное событие <span class="key">Cигнал</span> (<span>Рис. 5</span>) и заполните область настройки элемента (<span>Рис. 6</span>):
+
+	<div class="media">
+	<div class="media__caption"><span class="FM_Picturecaptionnumber">Рис. 5 </span><a name="XREF_37085_Fig_24_The" id="XREF_37085_Fig_24_The"></a> — Процесс со стартовым событием <span class="key">Cигнал</span></div>
+
+	<div class="media__element"><span contenteditable="false" tabindex="-1"><img alt="scr_chapter_process_designer_start_main_process_with_signal.png" data-entity-type="" data-entity-uuid="" data-widget="image" id="image4" src="../../../../../sites/default/files/documentation/user/ru/bpms/BPMonlineHelp/chapter_process_creation_events/scr_chapter_process_designer_start_main_process_with_signal.png" /></span></div>
+	</div>
+
+	<div class="media">
+	<div class="media__caption"><span class="FM_Picturecaptionnumber">Рис. 6 </span><a name="XREF_27852_Fig_25_Configuring" id="XREF_27852_Fig_25_Configuring"></a>— Настройка параметров начального сигнала</div>
+
+	<div class="media__element"><span contenteditable="false" tabindex="-1"><img alt="scr_chapter_process_designer_start_signal_param_main_process.png" data-entity-type="" data-entity-uuid="" data-widget="image" id="image5" src="../../../../../sites/default/files/documentation/user/ru/bpms/BPMonlineHelp/chapter_process_creation_events/scr_chapter_process_designer_start_signal_param_main_process.png" /></span></div>
+	</div>
+
+	<ol class="start"><li>
+		<p>В поле <span class="key">Сигнал какого типа получен?</span> выберите значение “Получен сигнал от объекта”.</p>
+		</li>
+		<li>
+		<p>В поле <span class="key">Объект</span> выберите объект (раздел, деталь или справочник), изменения которого автоматически запустят процесс. Например, для запуска процесса в ответ на изменения в разделе <span class="key">Контрагенты</span>, выберите объект “Контрагент”.</p>
+		</li>
+		<li>
+		<p>В поле <span class="key">Какое событие должно произойти?</span> укажите тип события (добавление, изменение или удаление записи) в выбранном объекте, которое запустит процесс автоматически. Например, чтобы запускать процесс каждый раз при добавлении нового контрагента, выберите значение “Добавление записи”.</p>
+		</li>
+		<li>
+		<p>Укажите любые дополнительные требования к записи, которая должна инициировать сигнал. Чтобы сигнал срабатывал только при добавлении контрагента типа “Клиент”, установите фильтр “Тип = Клиент”.</p>
+		</li>
+	</ol></li>
+	<li>
+	<p>Сохраните процесс.</p>
+
+	<p>В результате процесс будет запущен автоматически каждый раз, когда соответствующие изменения будут происходить в записях Creatio. Например, процесс обработки нового клиента запустится при добавлении нового контрагента с типом “Клиент”.</p>
+	</li>
+</ol><h2><a name="TOC_Как_запустить_процесс_изbc-3" id="TOC_Как_запустить_процесс_изbc-3"></a><a name="TOC_Как_запустить_процесс_из" id="TOC_Как_запустить_процесс_из"></a><a name="CSH_4" id="CSH_4"></a><a name="HT_chapter_process_creation_designer_run_process_from_another_process_signals" id="HT_chapter_process_creation_designer_run_process_from_another_process_signals"></a><a name="XREF_94504_How_to_run_a" id="XREF_94504_How_to_run_a"></a>Запускать процесс из другого процесса по сигналу<a class="title-anchor" href="#title-2783-3" id="title-2783-3"> </a></h2>
+
+<p>Для запуска бизнес-процесса по сигналу из другого процсса добавьте элемент <span><a href="../../spravka_po_elementam_processov/sobytiya/generacija_signala/promezhutochnoje_sobytije_generacia_signala/index.html"><span class="key">Генерация сигнала</span></a></span> на диаграмму родительского процесса. А связанный процесс, который должен запускаться по произвольному сигналу из родительского процесса, начните с элемента <span><a href="../../spravka_po_elementam_processov/sobytiya/signal/nachalnoje_sobytije_signal/index.html"> <span class="key">Сигнал</span></a></span>.</p>
+
+<p>Например, можно настроить бизнес-процесс “Подготовка к вебинару”, по сигналу из которого будут запускаться несколько параллельных независимых процессов. Это могут быть процессы по отправке напоминаний участникам вебинара, по сбору обратной связи и т. д.</p>
+
+<ol class="start"><li>
+	<p>Добавьте элемент <span class="key">Генерация сигнала</span>, который будет передавать сигнал для запуска связанных процессов, на диаграмму бизнес-процесса. Например, связанные процессы могут стартовать после того, как будет выполнена задача “Подтвердить дату вебинара”. Так, элемент <span class="key">Генерация сигнала</span>, который передаст сигнал “Дата вебинара подтверждена”, должен быть добавлен на схему процесса после задачи по подтверждению даты вебинара (<span>Рис. 7</span>).</p>
+
+	<div class="media">
+	<div class="media__caption"><span class="FM_Picturecaptionnumber">Рис. 7 </span><a name="XREF_69836_Fig_26_Placing_the" id="XREF_69836_Fig_26_Placing_the"></a> — Элемент <span class="key">Генерация сигнала</span> на диаграмме родительского бизнес-процесса</div>
+
+	<div class="media__element"> <span contenteditable="false" tabindex="-1"><img alt="scr_chapter_process_designer_prepare_for_webinar.png" data-entity-type="" data-entity-uuid="" data-widget="image" id="image6" src="../../../../../sites/default/files/documentation/user/ru/bpms/BPMonlineHelp/chapter_process_creation_events/scr_chapter_process_designer_prepare_for_webinar.png" /></span></div>
+	</div>
+	</li>
+	<li>
+	<p>В поле <span class="key">Какой сигнал сгенерировать</span> панели настройки свойств элемента <span class="key">Генерация синала</span> укажите название пользовательского сигнала, который будет передаваться. Убедитесь, что указанное название не совпадает с названиями других пользовательских сигналов. Можно использовать произвольные названия сигнала, например “Дата вебинара подтверждена” (<span>Рис. 8</span>).</p>
+
+	<div class="media">
+	<div class="media__caption"><span class="FM_Picturecaptionnumber">Рис. 8 </span><a name="XREF_41243_Fig_27_Throw" id="XREF_41243_Fig_27_Throw"></a> — Панель настройки элемента <span class="key">Генерация сигнала</span></div>
+
+	<div class="media__element"><span contenteditable="false" tabindex="-1"><img alt="scr_chapter_process_designer_throw_signal_setup.png" data-entity-type="" data-entity-uuid="" data-widget="image" id="image7" src="../../../../../sites/default/files/documentation/user/ru/bpms/BPMonlineHelp/chapter_process_creation_events/scr_chapter_process_designer_throw_signal_setup.png" /></span></div>
+	</div>
+	</li>
+	<li>
+	<p>Добавьте начальный элемент <span class="key">Сигнал</span> на диаграмму связанного процесса, который должен запускаться по сигналу из родительского процесса (<span>Рис. 9</span>)</p>
+
+	<div class="media">
+	<div class="media__caption"><span class="FM_Picturecaptionnumber">Рис. 9 </span><a name="XREF_19246_Fig_27_Starting" id="XREF_19246_Fig_27_Starting"></a> — Начальный элемент процесса, который стартует по произвольному сигналу</div>
+
+	<div class="media__element"><span contenteditable="false" tabindex="-1"><img alt="scr_chapter_process_designer_email_reminder.png" data-entity-type="" data-entity-uuid="" data-widget="image" id="image8" src="../../../../../sites/default/files/documentation/user/ru/bpms/BPMonlineHelp/chapter_process_creation_events/scr_chapter_process_designer_email_reminder.png" /></span></div>
+	</div>
+	</li>
+	<li>
+	<p>Настройте свойства элемента <span class="key">Сигнал</span> (<span>Рис. 10</span>):</p>
+
+	<div class="media">
+	<div class="media__caption"><span class="FM_Picturecaptionnumber">Рис. 10 </span><a name="XREF_92285_Fig_28_Signal" id="XREF_92285_Fig_28_Signal"></a> — Панель настройки элемента <span class="key">Сигнал</span></div>
+
+	<div class="media__element"><span contenteditable="false" tabindex="-1"><img alt="scr_chapter_process_designer_start_signal_setup.png" data-entity-type="" data-entity-uuid="" data-widget="image" id="image9" src="../../../../../sites/default/files/documentation/user/ru/bpms/BPMonlineHelp/chapter_process_creation_events/scr_chapter_process_designer_start_signal_setup.png" /></span></div>
+	</div>
+
+	<ol class="inner"><li>
+		<p>В поле <span class="key">Сигнал какого типа получен?</span> выберите “Получен произвольный сигнал”.</p>
+		</li>
+		<li>
+		<p>В поле <span class="key">Сигнал</span> скопируйте название сигнала, указанного в настройках элемента <span class="key">Геренация сигнала</span> основного процесса, например, “Дата вебинара подтверждена”.</p>
+		</li>
+	</ol></li>
+	<li>
+	<p>Сохраните процесс.</p>
+
+	<p>В результате связанные процессы будут запущены автоматически, после получения соответствующего сигнала из основного процесса.</p>
+	</li>
+</ol><h2><a name="TOC_Как_запустить_процесс_вbc-4" id="TOC_Как_запустить_процесс_вbc-4"></a>Запускать процесс в определенное время<a class="title-anchor" href="#title-2783-4" id="title-2783-4"> </a></h2>
+
+<p>Вы можете запустить бизнес-процесс один раз, в определенную дату, используя элемент <span class="key">Стартовый таймер</span>. Детальное описание элемента читайте в статье<span> <a href="../../spravka_po_elementam_processov/sobytiya/startovyi_taimer/sobytije_startovyj_tajmer/index.html">Событие <span class="key">Стартовый таймер</span></a></span>.</p>
+
+<p>Например, можно запланировать подготовку презентации для клиента на конкретную дату и время.</p>
+
+<p>Чтобы настроить процесс, который выполняется в определенную дату:</p>
+
+<ol><li>Добавьте элемент <span class="key">Стартовый таймер</span> на диаграмме процесса в качестве начального события (<span>Рис. 11</span>) и заполните область настройки элемента (<span>Рис. 12</span>):
+
+	<div class="media">
+	<div class="media__caption"><span class="FM_Picturecaptionnumber">Рис. 11 </span><a name="XREF_99082_Fig_29_Running_a" id="XREF_99082_Fig_29_Running_a"></a> — Запуск бизнес-процесса в определенную дату</div>
+
+	<div class="media__element"><span contenteditable="false" tabindex="-1"><img alt="scr_chapter_process_designer_running_process_once.png" data-entity-type="" data-entity-uuid="" data-widget="image" id="image10" src="../../../../../sites/default/files/documentation/user/ru/bpms/BPMonlineHelp/chapter_process_creation_events/scr_chapter_process_designer_running_process_once.png" /></span></div>
+	</div>
+
+	<div class="media">
+	<div class="media__caption"><span class="FM_Picturecaptionnumber">Рис. 12 </span><a name="XREF_12321_Fig_30_Start_timer" id="XREF_12321_Fig_30_Start_timer"></a> — Настройка элемента <span class="key">Стартовый таймер</span> для запуска в определенную дату</div>
+
+	<div class="media__element"><span contenteditable="false" tabindex="-1"><img alt="scr_chapter_process_designer_running_process_once_setup.png" data-entity-type="" data-entity-uuid="" data-widget="image" id="image11" src="../../../../../sites/default/files/documentation/user/ru/bpms/BPMonlineHelp/chapter_process_creation_events/scr_chapter_process_designer_running_process_once_setup.png" /></span></div>
+	</div>
+
+	<ol class="start"><li>
+		<p>В поле <span class="key">Периодичность запуска процесса</span> выберите “Однократно”.</p>
+		</li>
+		<li>
+		<p>В поле <span class="key">Дата и время запуска</span> укажите дату и время, когда процесс будет запущен.</p>
+		</li>
+		<li>
+		<p><span class="key">Повторять при пропуске</span> — отметьте признак в поле <span class="key">Дополнительные настройки</span>, чтобы перезапустить таймер, если он не смог стартовать, например, во время перезагрузки сайта на сервере. В этом случае процесс запустится автоматически в ближайшее доступное время.</p>
+		</li>
+		<li>
+		<p>Укажите нужную временную зону в поле <span class="key">Часовой пояс</span>. Процесс запустится согласно времени в этом часовом поясе.</p>
+		</li>
+	</ol></li>
+	<li>
+	<p>Сохраните процесс.</p>
+
+	<p>В результате процесс запустится автоматически, во время, указанное при настройке свойств элемента <span class="key">Стартовый таймер</span>.</p>
+	</li>
+</ol><h2><a name="TOC_Как_настроитьbc-5" id="TOC_Как_настроитьbc-5"></a><a name="TOC_Как_настроить" id="TOC_Как_настроить"></a><a name="CSH_6" id="CSH_6"></a><a name="HT_chapter_process_creation_designer_run_process_weekly" id="HT_chapter_process_creation_designer_run_process_weekly"></a><a name="XREF_25309_How_to_run_a" id="XREF_25309_How_to_run_a"></a>Запускать процесс еженедельно<a class="title-anchor" href="#title-2783-5" id="title-2783-5"> </a></h2>
+
+<p>Вы можете настроить процесс, который запускается автоматически еженедельно, в определенный день и в указанное время.</p>
+
+<p>Так можно настроить процесс отправки напоминаний о вебинаре, который проводится в течение декабря по пятницам.</p>
+
+<p>Для настройки процесса, который запускается автоматически еженедельно:</p>
+
+<ol><li>Добавьте начальный элемент <span><a href="../../spravka_po_elementam_processov/sobytiya/startovyi_taimer/sobytije_startovyj_tajmer/index.html"><span class="key">Стартовый таймер</span></a></span> на диаграмму процесса (<span>Рис. 13</span>) и настройте его свойства (<span>Рис. 14</span>):
+
+	<div class="media">
+	<div class="media__caption"><span class="FM_Picturecaptionnumber">Рис. 13 </span><a name="XREF_14360_Fig_25_Running_a" id="XREF_14360_Fig_25_Running_a"></a> — Еженедельный запуск бизнес-процесса</div>
+
+	<div class="media__element"><span contenteditable="false" tabindex="-1"><img alt="scr_chapter_process_designer_run_weekly_timer.png" data-entity-type="" data-entity-uuid="" data-widget="image" id="image12" src="../../../../../sites/default/files/documentation/user/ru/bpms/BPMonlineHelp/chapter_process_creation_events/scr_chapter_process_designer_run_weekly_timer.png" /></span></div>
+	</div>
+
+	<div class="media">
+	<div class="media__caption"><span class="FM_Picturecaptionnumber">Рис. 14 </span><a name="XREF_38933_Fig_26_Start_timer" id="XREF_38933_Fig_26_Start_timer"></a> — Пример настройки свойств элемента <span class="key">Стартовый таймер</span> для еженедельного запуска процесса</div>
+
+	<div class="media__element"><span contenteditable="false" tabindex="-1"><img alt="scr_chapter_process_designer_run_weekly_timer_setup.png" data-entity-type="" data-entity-uuid="" data-widget="image" id="image13" src="../../../../../sites/default/files/documentation/user/ru/bpms/BPMonlineHelp/chapter_process_creation_events/scr_chapter_process_designer_run_weekly_timer_setup.png" /></span></div>
+	</div>
+
+	<ol class="start"><li>
+		<p>В поле <span class="key">Периодичность запуска процесса</span> выберите “Неделя”.</p>
+		</li>
+		<li>
+		<p>В поле <span class="key">Время запуска процесса</span> укажите время, в которое должен запускаться процесс.</p>
+		</li>
+		<li>
+		<p>В поле <span class="key">В какие дни недели запускать?</span> укажите дни недели, в которые процесс будет запускаться.</p>
+		</li>
+		<li>
+		<p>В блоке <span class="key">Период действия таймера</span> укажите период, в течение которого будет действовать такой режим запуска процесса. Например, если необходимо, чтобы процесс запускался в течение декабря, выберите 01.12.2018 в поле <span class="key">Дата и время начала</span> и 31.12.2018.</p>
+		</li>
+		<li>
+		<p>Установите признак <span class="key">Повторять при пропуске</span>, чтобы процесс запустился повторно, даже если в указанное время сигнал <span class="key">Стартовый таймер</span> не сработает, например, по причине сбоя сервера. В этом случае процесс запустится автоматически в ближайшее доступное время.</p>
+		</li>
+		<li>
+		<p>Укажите нужную временную зону в поле <span class="key">Часовой пояс</span>. Процесс запустится по времени этого часового пояса.</p>
+		</li>
+	</ol></li>
+	<li>
+	<p>Сохраните процесс.</p>
+
+	<p>В результате процесс будет запускаться автоматически, по указанному режиму в указанный период. Так, процесс из нашего примера будет запускаться каждую пятницу в течение октября, в 9:45 утра.</p>
+	</li>
+</ol><h2><a name="TOC_Как_настроить1bc-6" id="TOC_Как_настроить1bc-6"></a><a name="TOC_Как_настроить1" id="TOC_Как_настроить1"></a><a name="CSH_7" id="CSH_7"></a><a name="HT_chapter_process_creation_designer_run_process_custom_schedule" id="HT_chapter_process_creation_designer_run_process_custom_schedule"></a><a name="XREF_38868_How_to_run_a" id="XREF_38868_How_to_run_a"></a>Запускать процесс периодически по cron-выражению<a class="title-anchor" href="#title-2783-6" id="title-2783-6"> </a></h2>
+
+<p>Для настройки пользовательских режимов запуска бизнес-процессов в Creatio используются cron-выражения. Функциональность сron-выражений позволяет более гибко  настраивать дату и время запуска бизнес-процессов с помощью специальных cron-символов (цифры, слова и/или символы, размещенные в строго определенном порядке). Больше информации о синтаксисе сron-выражений доступно в <span><a href="http://www.quartz-scheduler.org/documentation/quartz-2.3.0/tutorials/tutorial-lesson-06.html">документации QUARTZ</a></span>.</p>
+
+<p>Например, можно настроить, чтобы бизнес-процесс запускался в определенное время в 15 день месяца в течение января, февраля и марта.</p>
+
+<p>Для настройки пользовательского режима запуска бизнес-процесса:</p>
+
+<ol><li>Добавьте элемент <span><a href="../../spravka_po_elementam_processov/sobytiya/startovyi_taimer/sobytije_startovyj_tajmer/index.html"><span class="key">Стартовый таймер</span></a></span> на диаграмму процесса (<span>Рис. 15</span>). Настройте свойства элемента (<span>Рис. 16</span>):
+
+	<div class="media">
+	<div class="media__caption"><span class="FM_Picturecaptionnumber">Рис. 15</span> — Запуск бизнес-процесса с пользовательской периодичностью</div>
+
+	<div class="media__element"><span contenteditable="false" tabindex="-1"><img alt="scr_chapter_process_designer_run_custom_schedule.png" data-entity-type="" data-entity-uuid="" data-widget="image" id="image14" src="../../../../../sites/default/files/documentation/user/ru/bpms/BPMonlineHelp/chapter_process_creation_events/scr_chapter_process_designer_run_custom_schedule.png" /></span></div>
+	</div>
+
+	<div class="media">
+	<div class="media__caption"><span class="FM_Picturecaptionnumber">Рис. 16</span> — Пример настройки свойств элемента <span class="key">Стартовый таймер</span> для запуска процесса с пользовательской периодичностью</div>
+
+	<div class="media__element"><span contenteditable="false" tabindex="-1"><img alt="scr_chapter_process_designer_start_timer_other_frequency.png" data-entity-type="" data-entity-uuid="" data-widget="image" id="image15" src="../../../../../sites/default/files/documentation/user/ru/bpms/BPMonlineHelp/chapter_process_creation_events/scr_chapter_process_designer_start_timer_other_frequency.png" /></span></div>
+	</div>
+
+	<ol class="start"><li>
+		<p>В поле <span class="key">Периодичность запуска процесса</span> выберите “Другая периодичность”.</p>
+		</li>
+		<li>
+		<p>В поле <span class="key">Cron-выражение</span> введите выражение, обозначающее периодичность, с которой будет запускаться процесс. Если введенное cron-выражение корректно, то под полем <span class="key">Cron-выражение</span> вы увидите время и дату запуска процесса в традиционном виде. Например, используйте выражение “0 15 10 15 * ?” для запуска процесса в 10:15 утра 15го дня каждого месяца. Больше информации о cron-выражениях ищите в <span><a href="http://www.quartz-scheduler.org/documentation/quartz-2.3.0/tutorials/tutorial-lesson-06.html">документации QUARTZ</a></span>.</p>
+		</li>
+		<li>
+		<p>В блоке <span class="key">Период действия таймера</span> укажите период, в течение которого будет действовать такой режим запуска процесса. Например, если необходимо, чтобы процесс запускался c января по март 2019, выберите 01.01.2019 в поле <span class="key">Дата и время начала</span> и 31.03.2019 в поле <span class="key">Дата и время завершения</span>.</p>
+		</li>
+		<li>
+		<p>Установите признак <span class="key">Повторять при пропуске</span>, чтобы процесс запустился повторно, даже если в указанное время сигнал <span class="key">Стартовый таймер</span> не сработает, например, по причине сбоя сервера. В этом случае процесс запустится автоматически в ближайшее доступное время.</p>
+		</li>
+		<li>
+		<p>Укажите нужную временную зону в поле <span class="key">Часовой пояс</span>. Процесс запустится согласно времени в этом часовом поясе.</p>
+		</li>
+	</ol></li>
+	<li>
+	<p>Сохраните процесс.</p>
+
+	<p>В результате процесс будет запускаться автоматически, по указанному режиму в указанный период. Например, в 10:15 каждого 15 дня месяца с января по март 2019, по времени UTS.</p>
+	</li>
+</ol><h2><a name="TOC_Как_настроить_запускbc-7" id="TOC_Как_настроить_запускbc-7"></a><a name="TOC_Как_настроить_запуск" id="TOC_Как_настроить_запуск"></a><a name="CSH_8" id="CSH_8"></a><a name="HT_chapter_process_creation_designer_resume_process_message" id="HT_chapter_process_creation_designer_resume_process_message"></a><a name="XREF_70721_How_to_resume_a" id="XREF_70721_How_to_resume_a"></a>Запускать процесс по факту поступления сообщения<a class="title-anchor" href="#title-2783-7" id="title-2783-7"> </a></h2>
+
+<p>Промежуточные сообщения используются для синхронизации независимых потоков в рамках одного процесса. Так, можно настроить бизнес-процесс, который на определенном шаге прекратит выполняться, и будет ожидать поступления определенного сообщения для активации следующего элемента на схеме процесса и продолжения выполнения.</p>
+
+<p>Например, бизнес-процесс может ожидать сообщения об оплате счета, прежде чем переходить на шаг отправки товара.</p>
+
+<p>Для настройки возобновления выполнения процесса при поступлении сообщения:</p>
+
+<ol class="start"><li>
+	<p>Добавьте два промежуточных элемента, работающих с сообщениями, на схему процесса (<span>Рис. 17</span>).</p>
+
+	<ol class="inner"><li>
+		<p>Элемент <span><a href="../../spravka_po_elementam_processov/sobytiya/generacija_soobshhenija/promezhutochnoje_sobytije_generacia_soobschenija/index.html"><span class="key">Генерация сообщения</span></a></span> разместите на схеме после задачи по процессу, после выполнения которой должно передаваться активирующее процесс сообщение.</p>
+		</li>
+		<li>
+		<p>Элемент <span><a href="../../spravka_po_elementam_processov/sobytiya/obrabotka_soobshhenija/promezhutochnoje_sobytije_obrabotka_soobschenija/index.html"><span class="key">Обработка сообщения</span></a></span> разместите перед задачей, которая должна выполняться после поступления сообщения.</p>
+
+		<div class="media">
+		<div class="media__caption"><span class="FM_Picturecaptionnumber">Рис. 17 </span>— Возобновление выполнения процесса после поступления сообщения</div>
+
+		<div class="media__element"><span contenteditable="false" tabindex="-1"><img alt="scr_chapter_process_designer_resume_using_message.png" data-entity-type="" data-entity-uuid="" data-widget="image" id="image16" src="../../../../../sites/default/files/documentation/user/ru/bpms/BPMonlineHelp/chapter_process_creation_events/scr_chapter_process_designer_resume_using_message.png" /></span></div>
+		</div>
+		</li>
+	</ol></li>
+	<li>
+	<p>В поле <span class="key">Какое сообщение сгенерировать?</span> панели настройки элемента <span class="key">Генерация сообщения</span> (<span>Рис. 18</span>) введите произвольное сообщение. Текст может быть произвольным, например, “Счет оплачен”.</p>
+
+	<div class="media">
+	<div class="media__caption"><span class="FM_Picturecaptionnumber">Рис. 18 </span><a name="XREF_75666_Fig_32_Throw" id="XREF_75666_Fig_32_Throw"></a>— Панель настройки элемента <span class="key">Генерация ообщения</span></div>
+
+	<div class="media__element"><span contenteditable="false" tabindex="-1"><img alt="scr_chapter_process_designer_throw-message-setup.png" data-entity-type="" data-entity-uuid="" data-widget="image" id="image17" src="../../../../../sites/default/files/documentation/user/ru/bpms/BPMonlineHelp/chapter_process_creation_events/scr_chapter_process_designer_throw-message-setup.png" /></span></div>
+	</div>
+	</li>
+	<li>
+	<p>Заполните панель настройки элемента <span class="key">Обработка сообщения</span> (<span>Рис. 19</span>):</p>
+
+	<div class="media">
+	<div class="media__caption"><span class="FM_Picturecaptionnumber">Рис. 19 </span><a name="XREF_51953_Fig_33_Wait_for" id="XREF_51953_Fig_33_Wait_for"></a>— Панель настройки элемента <span class="key">Обработка сообщения</span></div>
+
+	<div class="media__element"><span contenteditable="false" tabindex="-1"><img alt="scr_chapter_process_designer_wait_for_message_setup.png" data-entity-type="" data-entity-uuid="" data-widget="image" id="image18" src="../../../../../sites/default/files/documentation/user/ru/bpms/BPMonlineHelp/chapter_process_creation_events/scr_chapter_process_designer_wait_for_message_setup.png" /></span></div>
+	</div>
+
+	<ol class="inner"><li>
+		<p>В поле <span class="key">Какое сообщение должно быть получено?</span> скопируйте сообщение, указанное в настройках элемента <span class="key">Генерация сообщения</span>.</p>
+		</li>
+		<li>
+		<p>Если установить признак <span class="key">Выполнять следующие элементы в фоновом режиме</span>, то все шаги процесса, следующие после данного элемента, будут выполнятсья в фоновом режиме без отображения маски загрузки.</p>
+		</li>
+	</ol></li>
+	<li>
+	<p>Сохраните процесс.</p>
+
+	<p>В результате выполненных настроек процесс прекратит выполняться на шаге <span class="key">Обработка сообщения</span> и возобновит выполнение только после поступления сообщения, указанного в настройках элемента <span class="key">Генерация сообщения</span>.</p>
+	</li>
+</ol></div>
+      
+  </div>
+<div class="block block-layout-builder block-field-blocknodeuser-documentationfield-linked-link">
+  
+    
+      
+  <div class="field field--name-field-linked-link field--type-link field--label-above">
+    <div class="field__label">Смотрите также</div>
+          <div class="field__items">
+              <div class="field__item"><a href="../../nastrojka_processov/dannye/dannye_biznes_processov.html">Данные бизнес-процессов</a></div>
+          <div class="field__item"><a href="../../primery_nastrojki_processov/izmenenie_prav_dostupa/izmenit_prava_dostupa_v_ramkakh_biznes-processa.html">Управлять правами доступа в рамках бизнес-процесса</a></div>
+          <div class="field__item"><a href="../../../../../user/biznes_processy/primery_nastrojki_processov.html">Примеры настройки бизнес-процессов</a></div>
+              </div>
+      </div>
+
+  </div>
+
+    </div>
+  </div>
+
+  </div>
+
+</article>
+
+  </div>
+
+  </div>
+
+          </div>
+        </div>
+
+                  <aside class="creatio-sidebar creatio-sidebar_first" role="complementary">
+              <div class="region region-sidebar-first">
+    <div id="block-documentationnaviagtion" class="block block-ts-nav block-ts-nav-doc-nav">
+  
+    
+      <div class="ts-nav-block"><a href="../../../../../index.html" class="ts-nav-block__link">Документация</a><div class="ts-nav-block__title">Для пользователя</div>
+</div>
+<div class="ts-nav-container"><ul class="ts-nav-menu"><li class="ts-nav-menu__item">
+  <a href="../../../bazis_platformy.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Базис платформы&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../instrumenty_crm.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Инструменты CRM&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../instrumenty_kastomizacii.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Инструменты кастомизации&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../biznes_processy.html" class="ts-nav-menu__link ts-nav-menu__link_expanded ts-nav-menu__link_open" hreflang="zxx">Бизнес-процессы&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+      <ul class="ts-nav-menu__children">
+      <li class="ts-nav-menu__item">
+  <a href="../../nastrojka_processov.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Настройка процессов&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../spravka_po_elementam_processov.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Справка по элементам процессов&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../ispolzovanie_elementov_processa.html" class="ts-nav-menu__link ts-nav-menu__link_expanded ts-nav-menu__link_open" hreflang="ru">Использование элементов процесса&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+      <ul class="ts-nav-menu__children">
+      <li class="ts-nav-menu__item">
+  <a href="ispolzovat_sobytiya.html" class="ts-nav-menu__link ts-nav-menu__link_active ts-nav-menu__link_open" hreflang="ru">События</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../parametri/ispolzovat_parametry.html" class="ts-nav-menu__link" hreflang="ru">Параметры</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../use_podprocess/ispolzovat_podprocess.html" class="ts-nav-menu__link" hreflang="ru">Подпроцесс</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../dannie/rabota_s_dannymi_v_processe.html" class="ts-nav-menu__link" hreflang="ru">Данные</a>
+  </li>
+
+    </ul>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../primery_nastrojki_processov.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Примеры настройки процессов&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../administrirovanie_biznes_processov.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Администрирование процессов&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../modelirovanie_processov_v_studio_free.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Моделирование процессов в Studio free&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../nastrojka_dinamicheskih_kejsov.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Настройка динамических кейсов (DCM)&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+
+    </ul>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../instrumenty_marketinga.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Инструменты маркетинга&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../instrumenty_prodazh.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Инструменты продаж&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../instrumenty_servisa.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Инструменты сервиса&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../ustanovka_i_administrirovanie.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Администрирование&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../razvertyvanie_onsite.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Развертывание on-site&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../banki_i_finansy.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Банки и финансы&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../drugie_reshenija.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Другие решения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+</ul>
+</div>
+
+  </div>
+
+  </div>
+
+            <div class="creatio-sidebar__toggle"></div>
+          </aside>
+        
+                  <aside class="creatio-sidebar creatio-sidebar_second" role="complementary">
+              <div class="region region-sidebar-second">
+    <div id="block-example" class="block block-ts-nav block-ts-nav-page-nav">
+  
+    
+        <div class="ts-nav-title">События</div>
+<div class="ts-nav-page">
+      <ul class="ts-nav-page__list">
+                                                <li class="ts-nav-page__item ts-nav-page__item_expanded ts-nav-page__item_open"><a href="ispolzovat_sobytiya.html" class="ts-nav-page__link ts-nav-page__link_expanded ts-nav-page__link_active">Использовать события&nbsp;<span class="ts-nav-page__link-arrow"></span></a></li>
+          </ul>
+  </div>
+
+  </div>
+<div id="block-adminfeedbackblock" class="block block-admin-feedback block-admin-feedback-block">
+  
+    
+      <div id="feedback-message"><div id="upper-feedback-content"><h2>Был ли данный материал полезен?</h2>
+<input class="feedback-btn feedback-btn__yes button js-form-submit form-submit" data-node-id="2783" data-feedback="yes" type="submit" name="op" value="Да" />
+<input class="feedback-btn feedback-btn__no button js-form-submit form-submit" data-node-id="2783" data-feedback="no" type="submit" name="op" value="Нет" />
+</div>
+<form class="admin-feedback-form" data-drupal-selector="admin-feedback-form" action="https://academy.terrasoft.ua/docs/7-17/user/biznes_processy/ispolzovanie_elementov_processa/sobytiia/ispolzovat_sobytiya" method="post" id="admin-feedback-form" accept-charset="UTF-8">
+  <div id="feedback-msg-result"></div><div class="js-form-item form-item js-form-type-textarea form-type-textarea js-form-item-feedback-message form-item-feedback-message form-no-label">
+        <div class="form-textarea-wrapper">
+  <textarea id="edit-feedback-msg" data-drupal-selector="edit-feedback-message" name="feedback_message" rows="5" cols="60" class="form-textarea resize-vertical"></textarea>
+</div>
+
+        </div>
+<input id="feedback-id" data-drupal-selector="edit-feedback-id" type="hidden" name="feedback_id" value="" />
+<input class="feedback-btn feedback-btn__send-comment button js-form-submit form-submit" data-drupal-selector="edit-feedback-send" type="submit" id="edit-feedback-send" name="op" value="Отправить" />
+<input autocomplete="off" data-drupal-selector="form-9nwhfx3jl436vd3qky8c77a-pfknihfkq5uyiuhm5os" type="hidden" name="form_build_id" value="form-9NwHFX3jl436vd3QKy8c77A-PFknIhFKq5uyIUhm5Os" />
+<input data-drupal-selector="edit-admin-feedback-form" type="hidden" name="form_id" value="admin_feedback_form" />
+
+</form>
+</div>
+
+  </div>
+
+  </div>
+
+          </aside>
+              </main>
+    </div>
+  </div>
+
+  <footer role="contentinfo">
+    <div class="creatio-region creatio-region_footer">
+      <div class="creatio-container">
+          <div class="region region-footer">
+    <div id="block-footerua" class="block block-simple-block block-simple-blockfooter-ua">
+  
+    
+      <div class="footer">
+<div class="footer-left">
+<ul class="footer-socials"><li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_fb" href="https://www.facebook.com/terrasoft.ua" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_in" href="https://www.linkedin.com/company/terrasoft/" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_yt" href="https://www.youtube.com/c/TerrasoftUkraine" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_tg" href="https://t.me/Terrasoft_UA" target="_blank"> </a></li>
+</ul></div>
+
+<div class="footer-contact">
+<div class="footer-title">Будьте на связи!</div>
+
+<div class="footer-content">
+<div class="footer-items">
+<div class="footer-item"><a class="footer__link footer__link_phone" href="tel:+380443633133">+38 (044) 363-31-33</a></div>
+</div>
+
+<div class="footer-items">
+<div class="footer-item"><a class="footer__link footer__link_email" href="mailto:support@terrasoft.ua">support@terrasoft.ua</a></div>
+</div>
+</div>
+</div>
+</div>
+
+  </div>
+
+  </div>
+
+      </div>
+    </div>
+    <div class="creatio-region creatio-region_bottom">
+      <div class="creatio-container">
+          <div class="region region-bottom">
+    <div id="block-allrightsreservedua" class="block block-simple-block block-simple-blockfooter-bottom-ua">
+  
+    
+      <p>© 2002-2022 Terrasoft.  |  <a href="https://www.terrasoft.ua/privacy-policy" target="_blank">Конфиденциальность</a></p>
+
+  </div>
+
+  </div>
+
+      </div>
+    </div>
+  </footer>
+</div>
+<div class="creatio-bg"></div>
+
+
+  </div>
+
+    
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/docs\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/2783","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"ru"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"ajaxPageState":{"libraries":"admin_feedback\/admin_feedback_block,admin_feedback\/admin_feedback_css,classy\/base,classy\/messages,classy\/node,core\/drupal.ajax,core\/jquery.form,core\/normalize,creatio\/creatio.lists,creatio\/fancybox,creatio\/global,layout_discovery\/onecol,system\/base,ts_doc\/doc_version,ts_feedback\/ts_feedback,ts_nav\/breadcrumb,ts_nav\/doc_nav,ts_nav\/page_nav,ts_title_anchor\/ts_title_anchor","theme":"creatio","theme_token":null},"ajaxTrustedUrl":{"form_action_p_pvdeGsVG5zNF_XLGPTvYSKCf43t8qZYSwcfZl2uzM":true,"\/docs\/7-17\/user\/biznes_processy\/ispolzovanie_elementov_processa\/sobytiia\/ispolzovat_sobytiya?ajax_form=1":true},"admin_feedback":{"yes_response":"\u0421\u043f\u0430\u0441\u0438\u0431\u043e \u0437\u0430 \u043e\u0431\u0440\u0430\u0442\u043d\u0443\u044e \u0441\u0432\u044f\u0437\u044c!","no_response":"\u0421\u043f\u0430\u0441\u0438\u0431\u043e \u0437\u0430 \u043e\u0431\u0440\u0430\u0442\u043d\u0443\u044e \u0441\u0432\u044f\u0437\u044c!","custom_text_response_on_no":{"value":"","format":"full_html"},"feedback_prompt_on_yes":true,"feedback_prompt_on_no":true,"feedback_enable_predefined_answers":false,"feedback_prompt":"\u041a\u0430\u043a \u043c\u043e\u0436\u043d\u043e \u0443\u043b\u0443\u0447\u0448\u0438\u0442\u044c \u044d\u0442\u0443 \u0441\u0442\u0430\u0442\u044c\u044e?"},"ajax":{"edit-feedback-send":{"callback":"::validateFeedbackMsg","event":"mousedown","keypress":true,"prevent":"click","url":"\/docs\/7-17\/user\/biznes_processy\/ispolzovanie_elementov_processa\/sobytiia\/ispolzovat_sobytiya?ajax_form=1","dialogType":"ajax","submit":{"_triggering_element_name":"op","_triggering_element_value":"\u041e\u0442\u043f\u0440\u0430\u0432\u0438\u0442\u044c"}}},"user":{"uid":0,"permissionsHash":"9c2367dfcaba0fa15f0375f97aed64e146c908cee68508d13b79e3ee80e5162d"}}</script>
+<script src="../../../../../sites/default/files/js/js_F2-Y4EzgTnESr58XByoLYEnsbi7ysTfMIKN1RvsMSWY.js"></script>
+
+
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+      <g id="svg-copy" class="svg-icon svg-icon_copy">
+        <path d="M15.111,18H1.889A1.848,1.848,0,0,1,0,16.2V3.6A1.848,1.848,0,0,1,1.889,1.8H5.837a2.87,2.87,0,0,1,5.326,0h3.948A1.848,1.848,0,0,1,17,3.6V16.2A1.848,1.848,0,0,1,15.111,18ZM3.777,12.6v1.8h6.611V12.6Zm0-3.6v1.8h9.445V9Zm0-3.6V7.2h9.445V5.4ZM8.5,1.8a.924.924,0,0,0-.944.9.945.945,0,0,0,1.889,0A.924.924,0,0,0,8.5,1.8Z"/>
+      </g>
+
+      <g id="svg-prev" class="svg-icon svg-icon_arrow">
+        <path d="M5.488,12.779,0,6.39,5.488,0" transform="translate(1 0.652)"/>
+      </g>
+
+      <g id="svg-next" class="svg-icon svg-icon_arrow">
+        <path d="M0,12.779,5.488,6.39,0,0" transform="translate(0.759 0.652)"/>
+      </g>
+    </svg>
+  </body>
+
+<!-- Mirrored from academy.terrasoft.ua/docs/7-17/user/biznes_processy/ispolzovanie_elementov_processa/sobytiia/ispolzovat_sobytiya by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Mar 2022 04:00:03 GMT -->
+</html>

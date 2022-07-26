@@ -1,0 +1,2479 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  
+<!-- Mirrored from academy.terrasoft.ua/api/netcoreapi/7.18.0/api/Terrasoft.Core.Packages.PackageFileStorage.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Mar 2022 03:31:53 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class PackageFileStorage
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class PackageFileStorage
+   ">
+    <meta name="generator" content="docfx 2.58.0.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-default ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="https://academy.terrasoft.ru/docs/developer/back-end_development">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Terrasoft.Core.Packages.PackageFileStorage">
+  
+  
+  <h1 id="Terrasoft_Core_Packages_PackageFileStorage" data-uid="Terrasoft.Core.Packages.PackageFileStorage" class="text-break">Class PackageFileStorage
+  </h1>
+  <div class="markdown level0 summary"><p>Represents file system packages storage.
+Provides support for saving, updating and deleting packages in file system.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><a class="xref" href="Terrasoft.Core.Packages.PackageStorage.html">PackageStorage</a></div>
+    <div class="level2"><span class="xref">PackageFileStorage</span></div>
+      <div class="level3"><a class="xref" href="Terrasoft.Core.Packages.PackageNonRemovableResourcesStorage.html">PackageNonRemovableResourcesStorage</a></div>
+      <div class="level3"><a class="xref" href="Terrasoft.Core.Packages.PackageRepositoryStorage.html">PackageRepositoryStorage</a></div>
+      <div class="level3"><a class="xref" href="Terrasoft.Core.Packages.PackageZipFileStorage.html">PackageZipFileStorage</a></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="Terrasoft.Core.Packages.PackageStorage.html#Terrasoft_Core_Packages_PackageStorage_ResourceManagerName">PackageStorage.ResourceManagerName</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.Packages.PackageStorage.html#Terrasoft_Core_Packages_PackageStorage_Packages">PackageStorage.Packages</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.Packages.PackageStorage.html#Terrasoft_Core_Packages_PackageStorage_Schemas">PackageStorage.Schemas</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.Packages.PackageStorage.html#Terrasoft_Core_Packages_PackageStorage_LoadOptions">PackageStorage.LoadOptions</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.Packages.PackageStorage.html#Terrasoft_Core_Packages_PackageStorage_PackageSaving">PackageStorage.PackageSaving</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.Packages.PackageStorage.html#Terrasoft_Core_Packages_PackageStorage_OnPackageSaving_Terrasoft_Core_Packages_Package_">PackageStorage.OnPackageSaving(Package)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.Packages.PackageStorage.html#Terrasoft_Core_Packages_PackageStorage_PackageSaved">PackageStorage.PackageSaved</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.Packages.PackageStorage.html#Terrasoft_Core_Packages_PackageStorage_OnPackageSaved_Terrasoft_Core_Packages_Package_">PackageStorage.OnPackageSaved(Package)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.Packages.PackageStorage.html#Terrasoft_Core_Packages_PackageStorage_SchemaSaving">PackageStorage.SchemaSaving</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.Packages.PackageStorage.html#Terrasoft_Core_Packages_PackageStorage_OnSchemaSaving_Terrasoft_Core_Packages_Package_Terrasoft_Core_Packages_SchemaDescriptor_">PackageStorage.OnSchemaSaving(Package, SchemaDescriptor)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.Packages.PackageStorage.html#Terrasoft_Core_Packages_PackageStorage_SchemaSaved">PackageStorage.SchemaSaved</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.Packages.PackageStorage.html#Terrasoft_Core_Packages_PackageStorage_OnSchemaSaved_Terrasoft_Core_Packages_Package_Terrasoft_Core_Packages_SchemaDescriptor_">PackageStorage.OnSchemaSaved(Package, SchemaDescriptor)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.Packages.PackageStorage.html#Terrasoft_Core_Packages_PackageStorage_ResourceSaved">PackageStorage.ResourceSaved</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.Packages.PackageStorage.html#Terrasoft_Core_Packages_PackageStorage_PackageDependenciesSaved">PackageStorage.PackageDependenciesSaved</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.Packages.PackageStorage.html#Terrasoft_Core_Packages_PackageStorage_SchemasCaptionLocalizationSaved">PackageStorage.SchemasCaptionLocalizationSaved</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.Packages.PackageStorage.html#Terrasoft_Core_Packages_PackageStorage_PackageHierarchySaved">PackageStorage.PackageHierarchySaved</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.Packages.PackageStorage.html#Terrasoft_Core_Packages_PackageStorage_AssemblySaving">PackageStorage.AssemblySaving</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.Packages.PackageStorage.html#Terrasoft_Core_Packages_PackageStorage_OnAssemblySaving_Terrasoft_Core_Packages_Package_Terrasoft_Core_Packages_AssemblyDescriptor_">PackageStorage.OnAssemblySaving(Package, AssemblyDescriptor)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.Packages.PackageStorage.html#Terrasoft_Core_Packages_PackageStorage_AssemblySaved">PackageStorage.AssemblySaved</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.Packages.PackageStorage.html#Terrasoft_Core_Packages_PackageStorage_OnAssemblySaved_Terrasoft_Core_Packages_Package_Terrasoft_Core_Packages_AssemblyDescriptor_">PackageStorage.OnAssemblySaved(Package, AssemblyDescriptor)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.Packages.PackageStorage.html#Terrasoft_Core_Packages_PackageStorage_SqlScriptSaving">PackageStorage.SqlScriptSaving</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.Packages.PackageStorage.html#Terrasoft_Core_Packages_PackageStorage_OnSqlScriptSaving_Terrasoft_Core_Packages_Package_Terrasoft_Core_Packages_SqlScriptDescriptor_">PackageStorage.OnSqlScriptSaving(Package, SqlScriptDescriptor)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.Packages.PackageStorage.html#Terrasoft_Core_Packages_PackageStorage_SqlScriptSaved">PackageStorage.SqlScriptSaved</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.Packages.PackageStorage.html#Terrasoft_Core_Packages_PackageStorage_OnSqlScriptSaved_Terrasoft_Core_Packages_Package_Terrasoft_Core_Packages_SqlScriptDescriptor_">PackageStorage.OnSqlScriptSaved(Package, SqlScriptDescriptor)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.Packages.PackageStorage.html#Terrasoft_Core_Packages_PackageStorage_SchemaDataSaving">PackageStorage.SchemaDataSaving</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.Packages.PackageStorage.html#Terrasoft_Core_Packages_PackageStorage_OnSchemaDataSaving_Terrasoft_Core_Packages_Package_Terrasoft_Core_Packages_PackageSchemaDataDescriptor_">PackageStorage.OnSchemaDataSaving(Package, PackageSchemaDataDescriptor)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.Packages.PackageStorage.html#Terrasoft_Core_Packages_PackageStorage_SchemaDataSaved">PackageStorage.SchemaDataSaved</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.Packages.PackageStorage.html#Terrasoft_Core_Packages_PackageStorage_OnSchemaDataSaved_Terrasoft_Core_Packages_Package_Terrasoft_Core_Packages_PackageSchemaDataDescriptor_">PackageStorage.OnSchemaDataSaved(Package, PackageSchemaDataDescriptor)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.Packages.PackageStorage.html#Terrasoft_Core_Packages_PackageStorage_ItemOperationError">PackageStorage.ItemOperationError</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.Packages.PackageStorage.html#Terrasoft_Core_Packages_PackageStorage_SpecifySqlScriptDependency">PackageStorage.SpecifySqlScriptDependency()</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.Packages.PackageStorage.html#Terrasoft_Core_Packages_PackageStorage_Clear">PackageStorage.Clear()</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.Packages.PackageStorage.html#Terrasoft_Core_Packages_PackageStorage_SpecifyDependencies">PackageStorage.SpecifyDependencies()</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.Packages.PackageStorage.html#Terrasoft_Core_Packages_PackageStorage_SpecifyPackageSchemaData">PackageStorage.SpecifyPackageSchemaData()</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.Packages.PackageStorage.html#Terrasoft_Core_Packages_PackageStorage_Remove_Terrasoft_Core_Packages_Package_">PackageStorage.Remove(Package)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.Packages.PackageStorage.html#Terrasoft_Core_Packages_PackageStorage_GetIsChangedPackageResources_Terrasoft_Core_Packages_Package_">PackageStorage.GetIsChangedPackageResources(Package)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.Packages.PackageStorage.html#Terrasoft_Core_Packages_PackageStorage_SafeItemOperation_Terrasoft_Core_Packages_Descriptor_System_Action_">PackageStorage.SafeItemOperation(Descriptor, Action)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.Packages.PackageStorage.html#Terrasoft_Core_Packages_PackageStorage_HandleItemOperationException_Terrasoft_Core_Packages_Descriptor_System_Exception_">PackageStorage.HandleItemOperationException(Descriptor, Exception)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.Packages.PackageStorage.html#Terrasoft_Core_Packages_PackageStorage_Load">PackageStorage.Load()</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.Packages.PackageStorage.html#Terrasoft_Core_Packages_PackageStorage_Save_Terrasoft_Core_Packages_IPackageContentProvider_Terrasoft_Core_Packages_PackageStorageChangeCollection__">PackageStorage.Save(IPackageContentProvider, PackageStorageChangeCollection)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.Packages.PackageStorage.html#Terrasoft_Core_Packages_PackageStorage_Save_Terrasoft_Core_Packages_IPackageContentProvider_Terrasoft_Core_Packages_PackageStorageChangeCollection__System_Collections_Generic_ICollection_System_String__">PackageStorage.Save(IPackageContentProvider, PackageStorageChangeCollection, ICollection&lt;String&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.Packages.PackageStorage.html#Terrasoft_Core_Packages_PackageStorage_FindPackageByUId_System_Guid_">PackageStorage.FindPackageByUId(Guid)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.Packages.PackageStorage.html#Terrasoft_Core_Packages_PackageStorage_GetPackageByUId_System_Guid_">PackageStorage.GetPackageByUId(Guid)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.Packages.PackageStorage.html#Terrasoft_Core_Packages_PackageStorage_FindSchemaByUId_System_Guid_">PackageStorage.FindSchemaByUId(Guid)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.Packages.PackageStorage.html#Terrasoft_Core_Packages_PackageStorage_Add_Terrasoft_Core_Packages_Package_System_Boolean_">PackageStorage.Add(Package, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.Packages.PackageStorage.html#Terrasoft_Core_Packages_PackageStorage_FindPackageByName_System_String_">PackageStorage.FindPackageByName(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.Packages.PackageStorage.html#Terrasoft_Core_Packages_PackageStorage_GetPackageByName_System_String_">PackageStorage.GetPackageByName(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.Packages.PackageStorage.html#Terrasoft_Core_Packages_PackageStorage_GetPackageStorageChangeCollection">PackageStorage.GetPackageStorageChangeCollection()</a>
+    </div>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Terrasoft.Core.Packages.html">Terrasoft.Core.Packages</a></h6>
+  <h6><strong>Assembly</strong>: Terrasoft.Core.dll</h6>
+  <h5 id="Terrasoft_Core_Packages_PackageFileStorage_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class PackageFileStorage : PackageStorage</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+  </h3>
+  
+  
+  <a id="Terrasoft_Core_Packages_PackageFileStorage__ctor_" data-uid="Terrasoft.Core.Packages.PackageFileStorage.#ctor*"></a>
+  <h4 id="Terrasoft_Core_Packages_PackageFileStorage__ctor" data-uid="Terrasoft.Core.Packages.PackageFileStorage.#ctor">PackageFileStorage()</h4>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="Terrasoft.Core.Packages.PackageFileStorage.html">PackageFileStorage</a> class.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected PackageFileStorage()</code></pre>
+  </div>
+  
+  
+  <a id="Terrasoft_Core_Packages_PackageFileStorage__ctor_" data-uid="Terrasoft.Core.Packages.PackageFileStorage.#ctor*"></a>
+  <h4 id="Terrasoft_Core_Packages_PackageFileStorage__ctor_System_String_" data-uid="Terrasoft.Core.Packages.PackageFileStorage.#ctor(System.String)">PackageFileStorage(String)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public PackageFileStorage(string storageDirectoryPath)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">storageDirectoryPath</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  
+  
+  <a id="Terrasoft_Core_Packages_PackageFileStorage_DataWriterSettings_" data-uid="Terrasoft.Core.Packages.PackageFileStorage.DataWriterSettings*"></a>
+  <h4 id="Terrasoft_Core_Packages_PackageFileStorage_DataWriterSettings" data-uid="Terrasoft.Core.Packages.PackageFileStorage.DataWriterSettings">DataWriterSettings</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected JsonDataWriterSettings DataWriterSettings { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">JsonDataWriterSettings</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_Packages_PackageFileStorage_DataWriterWriteDefValuesSettings_" data-uid="Terrasoft.Core.Packages.PackageFileStorage.DataWriterWriteDefValuesSettings*"></a>
+  <h4 id="Terrasoft_Core_Packages_PackageFileStorage_DataWriterWriteDefValuesSettings" data-uid="Terrasoft.Core.Packages.PackageFileStorage.DataWriterWriteDefValuesSettings">DataWriterWriteDefValuesSettings</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected JsonDataWriterSettings DataWriterWriteDefValuesSettings { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">JsonDataWriterSettings</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_Packages_PackageFileStorage_SchemaContentSaver_" data-uid="Terrasoft.Core.Packages.PackageFileStorage.SchemaContentSaver*"></a>
+  <h4 id="Terrasoft_Core_Packages_PackageFileStorage_SchemaContentSaver" data-uid="Terrasoft.Core.Packages.PackageFileStorage.SchemaContentSaver">SchemaContentSaver</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual ISchemaContentSaver SchemaContentSaver { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DesignMode.ISchemaContentSaver.html">ISchemaContentSaver</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_Packages_PackageFileStorage_StorageDirectoryPath_" data-uid="Terrasoft.Core.Packages.PackageFileStorage.StorageDirectoryPath*"></a>
+  <h4 id="Terrasoft_Core_Packages_PackageFileStorage_StorageDirectoryPath" data-uid="Terrasoft.Core.Packages.PackageFileStorage.StorageDirectoryPath">StorageDirectoryPath</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected string StorageDirectoryPath { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  
+  
+  <a id="Terrasoft_Core_Packages_PackageFileStorage_CalculateSchemaChecksum_" data-uid="Terrasoft.Core.Packages.PackageFileStorage.CalculateSchemaChecksum*"></a>
+  <h4 id="Terrasoft_Core_Packages_PackageFileStorage_CalculateSchemaChecksum_Terrasoft_Core_Packages_SchemaDescriptor_System_String_" data-uid="Terrasoft.Core.Packages.PackageFileStorage.CalculateSchemaChecksum(Terrasoft.Core.Packages.SchemaDescriptor,System.String)">CalculateSchemaChecksum(SchemaDescriptor, String)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected void CalculateSchemaChecksum(SchemaDescriptor schema, string schemaDirectoryPath)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.Packages.SchemaDescriptor.html">SchemaDescriptor</a></td>
+        <td><span class="parametername">schema</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">schemaDirectoryPath</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_Packages_PackageFileStorage_CheckFileExist_" data-uid="Terrasoft.Core.Packages.PackageFileStorage.CheckFileExist*"></a>
+  <h4 id="Terrasoft_Core_Packages_PackageFileStorage_CheckFileExist_System_String_System_Boolean_" data-uid="Terrasoft.Core.Packages.PackageFileStorage.CheckFileExist(System.String,System.Boolean)">CheckFileExist(String, Boolean)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected bool CheckFileExist(string filePath, bool throwException = true)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">filePath</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">throwException</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_Packages_PackageFileStorage_ClearDirectory_" data-uid="Terrasoft.Core.Packages.PackageFileStorage.ClearDirectory*"></a>
+  <h4 id="Terrasoft_Core_Packages_PackageFileStorage_ClearDirectory_System_String_" data-uid="Terrasoft.Core.Packages.PackageFileStorage.ClearDirectory(System.String)">ClearDirectory(String)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void ClearDirectory(string directoryPath)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">directoryPath</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_Packages_PackageFileStorage_CreateAssembliesDirectory_" data-uid="Terrasoft.Core.Packages.PackageFileStorage.CreateAssembliesDirectory*"></a>
+  <h4 id="Terrasoft_Core_Packages_PackageFileStorage_CreateAssembliesDirectory_System_String_" data-uid="Terrasoft.Core.Packages.PackageFileStorage.CreateAssembliesDirectory(System.String)">CreateAssembliesDirectory(String)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual string CreateAssembliesDirectory(string parentDirectoryPath)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">parentDirectoryPath</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_Packages_PackageFileStorage_CreateDirectory_" data-uid="Terrasoft.Core.Packages.PackageFileStorage.CreateDirectory*"></a>
+  <h4 id="Terrasoft_Core_Packages_PackageFileStorage_CreateDirectory_System_String_" data-uid="Terrasoft.Core.Packages.PackageFileStorage.CreateDirectory(System.String)">CreateDirectory(String)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void CreateDirectory(string directoryPath)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">directoryPath</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_Packages_PackageFileStorage_CreateDirectoryIfNotExists_" data-uid="Terrasoft.Core.Packages.PackageFileStorage.CreateDirectoryIfNotExists*"></a>
+  <h4 id="Terrasoft_Core_Packages_PackageFileStorage_CreateDirectoryIfNotExists_System_String_" data-uid="Terrasoft.Core.Packages.PackageFileStorage.CreateDirectoryIfNotExists(System.String)">CreateDirectoryIfNotExists(String)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected void CreateDirectoryIfNotExists(string directoryPath)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">directoryPath</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_Packages_PackageFileStorage_CreatePackageDataDirectory_" data-uid="Terrasoft.Core.Packages.PackageFileStorage.CreatePackageDataDirectory*"></a>
+  <h4 id="Terrasoft_Core_Packages_PackageFileStorage_CreatePackageDataDirectory_System_String_" data-uid="Terrasoft.Core.Packages.PackageFileStorage.CreatePackageDataDirectory(System.String)">CreatePackageDataDirectory(String)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual string CreatePackageDataDirectory(string parentDirectoryPath)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">parentDirectoryPath</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_Packages_PackageFileStorage_CreateSchemasDirectory_" data-uid="Terrasoft.Core.Packages.PackageFileStorage.CreateSchemasDirectory*"></a>
+  <h4 id="Terrasoft_Core_Packages_PackageFileStorage_CreateSchemasDirectory_System_String_" data-uid="Terrasoft.Core.Packages.PackageFileStorage.CreateSchemasDirectory(System.String)">CreateSchemasDirectory(String)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual string CreateSchemasDirectory(string parentDirectoryPath)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">parentDirectoryPath</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_Packages_PackageFileStorage_CreateSqlScriptsDirectory_" data-uid="Terrasoft.Core.Packages.PackageFileStorage.CreateSqlScriptsDirectory*"></a>
+  <h4 id="Terrasoft_Core_Packages_PackageFileStorage_CreateSqlScriptsDirectory_System_String_" data-uid="Terrasoft.Core.Packages.PackageFileStorage.CreateSqlScriptsDirectory(System.String)">CreateSqlScriptsDirectory(String)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual string CreateSqlScriptsDirectory(string parentDirectoryPath)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">parentDirectoryPath</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_Packages_PackageFileStorage_DeleteDirectory_" data-uid="Terrasoft.Core.Packages.PackageFileStorage.DeleteDirectory*"></a>
+  <h4 id="Terrasoft_Core_Packages_PackageFileStorage_DeleteDirectory_System_String_" data-uid="Terrasoft.Core.Packages.PackageFileStorage.DeleteDirectory(System.String)">DeleteDirectory(String)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void DeleteDirectory(string directoryPath)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">directoryPath</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_Packages_PackageFileStorage_GetDirectoryFilesToDelete_" data-uid="Terrasoft.Core.Packages.PackageFileStorage.GetDirectoryFilesToDelete*"></a>
+  <h4 id="Terrasoft_Core_Packages_PackageFileStorage_GetDirectoryFilesToDelete_System_String_" data-uid="Terrasoft.Core.Packages.PackageFileStorage.GetDirectoryFilesToDelete(System.String)">GetDirectoryFilesToDelete(String)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual IEnumerable&lt;string&gt; GetDirectoryFilesToDelete(string directoryPath)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">directoryPath</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<span class="xref">System.String</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_Packages_PackageFileStorage_GetFullSchemaDataDirectoryPath_" data-uid="Terrasoft.Core.Packages.PackageFileStorage.GetFullSchemaDataDirectoryPath*"></a>
+  <h4 id="Terrasoft_Core_Packages_PackageFileStorage_GetFullSchemaDataDirectoryPath_System_String_System_String_" data-uid="Terrasoft.Core.Packages.PackageFileStorage.GetFullSchemaDataDirectoryPath(System.String,System.String)">GetFullSchemaDataDirectoryPath(String, String)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual string GetFullSchemaDataDirectoryPath(string packageName, string name)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">packageName</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">name</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_Packages_PackageFileStorage_GetFullSqlScriptDirectoryPath_" data-uid="Terrasoft.Core.Packages.PackageFileStorage.GetFullSqlScriptDirectoryPath*"></a>
+  <h4 id="Terrasoft_Core_Packages_PackageFileStorage_GetFullSqlScriptDirectoryPath_System_String_System_String_" data-uid="Terrasoft.Core.Packages.PackageFileStorage.GetFullSqlScriptDirectoryPath(System.String,System.String)">GetFullSqlScriptDirectoryPath(String, String)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual string GetFullSqlScriptDirectoryPath(string packageName, string name)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">packageName</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">name</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_Packages_PackageFileStorage_GetPackageContentProvider_" data-uid="Terrasoft.Core.Packages.PackageFileStorage.GetPackageContentProvider*"></a>
+  <h4 id="Terrasoft_Core_Packages_PackageFileStorage_GetPackageContentProvider" data-uid="Terrasoft.Core.Packages.PackageFileStorage.GetPackageContentProvider">GetPackageContentProvider()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override IPackageContentProvider GetPackageContentProvider()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.Packages.IPackageContentProvider.html">IPackageContentProvider</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Terrasoft.Core.Packages.PackageStorage.html#Terrasoft_Core_Packages_PackageStorage_GetPackageContentProvider">PackageStorage.GetPackageContentProvider()</a></div>
+  
+  
+  <a id="Terrasoft_Core_Packages_PackageFileStorage_GetPackageDirectoryPath_" data-uid="Terrasoft.Core.Packages.PackageFileStorage.GetPackageDirectoryPath*"></a>
+  <h4 id="Terrasoft_Core_Packages_PackageFileStorage_GetPackageDirectoryPath_System_String_" data-uid="Terrasoft.Core.Packages.PackageFileStorage.GetPackageDirectoryPath(System.String)">GetPackageDirectoryPath(String)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual string GetPackageDirectoryPath(string packageName)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">packageName</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_Packages_PackageFileStorage_GetPackageInstallType_" data-uid="Terrasoft.Core.Packages.PackageFileStorage.GetPackageInstallType*"></a>
+  <h4 id="Terrasoft_Core_Packages_PackageFileStorage_GetPackageInstallType" data-uid="Terrasoft.Core.Packages.PackageFileStorage.GetPackageInstallType">GetPackageInstallType()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual SysPackageInstallType GetPackageInstallType()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">SysPackageInstallType</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_Packages_PackageFileStorage_GetReferenceAssembliesDirectoryPath_" data-uid="Terrasoft.Core.Packages.PackageFileStorage.GetReferenceAssembliesDirectoryPath*"></a>
+  <h4 id="Terrasoft_Core_Packages_PackageFileStorage_GetReferenceAssembliesDirectoryPath_System_String_" data-uid="Terrasoft.Core.Packages.PackageFileStorage.GetReferenceAssembliesDirectoryPath(System.String)">GetReferenceAssembliesDirectoryPath(String)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected string GetReferenceAssembliesDirectoryPath(string parentDirectoryPath)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">parentDirectoryPath</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_Packages_PackageFileStorage_GetReferenceAssemblyDirectoryPath_" data-uid="Terrasoft.Core.Packages.PackageFileStorage.GetReferenceAssemblyDirectoryPath*"></a>
+  <h4 id="Terrasoft_Core_Packages_PackageFileStorage_GetReferenceAssemblyDirectoryPath_System_String_System_String_" data-uid="Terrasoft.Core.Packages.PackageFileStorage.GetReferenceAssemblyDirectoryPath(System.String,System.String)">GetReferenceAssemblyDirectoryPath(String, String)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected string GetReferenceAssemblyDirectoryPath(string packageDirectoryPath, string assemblyName)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">packageDirectoryPath</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">assemblyName</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_Packages_PackageFileStorage_GetResourcesDirectoryPath_" data-uid="Terrasoft.Core.Packages.PackageFileStorage.GetResourcesDirectoryPath*"></a>
+  <h4 id="Terrasoft_Core_Packages_PackageFileStorage_GetResourcesDirectoryPath_System_String_" data-uid="Terrasoft.Core.Packages.PackageFileStorage.GetResourcesDirectoryPath(System.String)">GetResourcesDirectoryPath(String)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected string GetResourcesDirectoryPath(string packageDirectoryPath)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">packageDirectoryPath</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_Packages_PackageFileStorage_GetResourcesDirectoryPath_" data-uid="Terrasoft.Core.Packages.PackageFileStorage.GetResourcesDirectoryPath*"></a>
+  <h4 id="Terrasoft_Core_Packages_PackageFileStorage_GetResourcesDirectoryPath_System_String_System_String_" data-uid="Terrasoft.Core.Packages.PackageFileStorage.GetResourcesDirectoryPath(System.String,System.String)">GetResourcesDirectoryPath(String, String)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected string GetResourcesDirectoryPath(string packageDirectoryPath, string resourceName)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">packageDirectoryPath</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">resourceName</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_Packages_PackageFileStorage_GetSchemaDataDirectoryPath_" data-uid="Terrasoft.Core.Packages.PackageFileStorage.GetSchemaDataDirectoryPath*"></a>
+  <h4 id="Terrasoft_Core_Packages_PackageFileStorage_GetSchemaDataDirectoryPath_System_String_System_String_" data-uid="Terrasoft.Core.Packages.PackageFileStorage.GetSchemaDataDirectoryPath(System.String,System.String)">GetSchemaDataDirectoryPath(String, String)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected string GetSchemaDataDirectoryPath(string packageDirectoryPath, string schemaDataName)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">packageDirectoryPath</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">schemaDataName</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_Packages_PackageFileStorage_GetSchemaDataLocalizationPath_" data-uid="Terrasoft.Core.Packages.PackageFileStorage.GetSchemaDataLocalizationPath*"></a>
+  <h4 id="Terrasoft_Core_Packages_PackageFileStorage_GetSchemaDataLocalizationPath_System_String_System_String_" data-uid="Terrasoft.Core.Packages.PackageFileStorage.GetSchemaDataLocalizationPath(System.String,System.String)">GetSchemaDataLocalizationPath(String, String)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected string GetSchemaDataLocalizationPath(string packageDirectoryPath, string directoryName)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">packageDirectoryPath</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">directoryName</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_Packages_PackageFileStorage_GetSchemaDatasDirectoryPath_" data-uid="Terrasoft.Core.Packages.PackageFileStorage.GetSchemaDatasDirectoryPath*"></a>
+  <h4 id="Terrasoft_Core_Packages_PackageFileStorage_GetSchemaDatasDirectoryPath_System_String_" data-uid="Terrasoft.Core.Packages.PackageFileStorage.GetSchemaDatasDirectoryPath(System.String)">GetSchemaDatasDirectoryPath(String)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected string GetSchemaDatasDirectoryPath(string parentDirectoryPath)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">parentDirectoryPath</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_Packages_PackageFileStorage_GetSchemaDirectoryPath_" data-uid="Terrasoft.Core.Packages.PackageFileStorage.GetSchemaDirectoryPath*"></a>
+  <h4 id="Terrasoft_Core_Packages_PackageFileStorage_GetSchemaDirectoryPath_System_String_System_String_" data-uid="Terrasoft.Core.Packages.PackageFileStorage.GetSchemaDirectoryPath(System.String,System.String)">GetSchemaDirectoryPath(String, String)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected string GetSchemaDirectoryPath(string packageDirectoryPath, string schemaName)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">packageDirectoryPath</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">schemaName</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_Packages_PackageFileStorage_GetSchemasDirectoryPath_" data-uid="Terrasoft.Core.Packages.PackageFileStorage.GetSchemasDirectoryPath*"></a>
+  <h4 id="Terrasoft_Core_Packages_PackageFileStorage_GetSchemasDirectoryPath_System_String_" data-uid="Terrasoft.Core.Packages.PackageFileStorage.GetSchemasDirectoryPath(System.String)">GetSchemasDirectoryPath(String)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected string GetSchemasDirectoryPath(string packageDirectoryPath)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">packageDirectoryPath</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_Packages_PackageFileStorage_GetSqlScriptDirectoryPath_" data-uid="Terrasoft.Core.Packages.PackageFileStorage.GetSqlScriptDirectoryPath*"></a>
+  <h4 id="Terrasoft_Core_Packages_PackageFileStorage_GetSqlScriptDirectoryPath_System_String_System_String_" data-uid="Terrasoft.Core.Packages.PackageFileStorage.GetSqlScriptDirectoryPath(System.String,System.String)">GetSqlScriptDirectoryPath(String, String)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected string GetSqlScriptDirectoryPath(string packageDirectoryPath, string sqlScriptName)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">packageDirectoryPath</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">sqlScriptName</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_Packages_PackageFileStorage_GetSqlScriptsDirectoryPath_" data-uid="Terrasoft.Core.Packages.PackageFileStorage.GetSqlScriptsDirectoryPath*"></a>
+  <h4 id="Terrasoft_Core_Packages_PackageFileStorage_GetSqlScriptsDirectoryPath_System_String_" data-uid="Terrasoft.Core.Packages.PackageFileStorage.GetSqlScriptsDirectoryPath(System.String)">GetSqlScriptsDirectoryPath(String)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected string GetSqlScriptsDirectoryPath(string parentDirectoryPath)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">parentDirectoryPath</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_Packages_PackageFileStorage_GetStorageDirectories_" data-uid="Terrasoft.Core.Packages.PackageFileStorage.GetStorageDirectories*"></a>
+  <h4 id="Terrasoft_Core_Packages_PackageFileStorage_GetStorageDirectories" data-uid="Terrasoft.Core.Packages.PackageFileStorage.GetStorageDirectories">GetStorageDirectories()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual IEnumerable&lt;string&gt; GetStorageDirectories()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<span class="xref">System.String</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_Packages_PackageFileStorage_LoadInternal_" data-uid="Terrasoft.Core.Packages.PackageFileStorage.LoadInternal*"></a>
+  <h4 id="Terrasoft_Core_Packages_PackageFileStorage_LoadInternal" data-uid="Terrasoft.Core.Packages.PackageFileStorage.LoadInternal">LoadInternal()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void LoadInternal()</code></pre>
+  </div>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Terrasoft.Core.Packages.PackageStorage.html#Terrasoft_Core_Packages_PackageStorage_LoadInternal">PackageStorage.LoadInternal()</a></div>
+  
+  
+  <a id="Terrasoft_Core_Packages_PackageFileStorage_LoadPackage_" data-uid="Terrasoft.Core.Packages.PackageFileStorage.LoadPackage*"></a>
+  <h4 id="Terrasoft_Core_Packages_PackageFileStorage_LoadPackage_System_String_" data-uid="Terrasoft.Core.Packages.PackageFileStorage.LoadPackage(System.String)">LoadPackage(String)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual Package LoadPackage(string packageDirectoryPath)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">packageDirectoryPath</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.Packages.Package.html">Package</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_Packages_PackageFileStorage_LoadPackageDescriptor_" data-uid="Terrasoft.Core.Packages.PackageFileStorage.LoadPackageDescriptor*"></a>
+  <h4 id="Terrasoft_Core_Packages_PackageFileStorage_LoadPackageDescriptor_System_String_" data-uid="Terrasoft.Core.Packages.PackageFileStorage.LoadPackageDescriptor(System.String)">LoadPackageDescriptor(String)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected Package LoadPackageDescriptor(string directoryPath)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">directoryPath</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.Packages.Package.html">Package</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_Packages_PackageFileStorage_MoveDirectory_" data-uid="Terrasoft.Core.Packages.PackageFileStorage.MoveDirectory*"></a>
+  <h4 id="Terrasoft_Core_Packages_PackageFileStorage_MoveDirectory_System_String_System_String_" data-uid="Terrasoft.Core.Packages.PackageFileStorage.MoveDirectory(System.String,System.String)">MoveDirectory(String, String)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void MoveDirectory(string sourceDirectoryPath, string targetDirectoryPath)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">sourceDirectoryPath</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">targetDirectoryPath</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_Packages_PackageFileStorage_MoveDirectory_" data-uid="Terrasoft.Core.Packages.PackageFileStorage.MoveDirectory*"></a>
+  <h4 id="Terrasoft_Core_Packages_PackageFileStorage_MoveDirectory_System_String_Terrasoft_Core_Packages_SchemaDescriptor_System_String_" data-uid="Terrasoft.Core.Packages.PackageFileStorage.MoveDirectory(System.String,Terrasoft.Core.Packages.SchemaDescriptor,System.String)">MoveDirectory(String, SchemaDescriptor, String)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void MoveDirectory(string packageDirectoryPath, SchemaDescriptor schema, string schemaDirectoryPath)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">packageDirectoryPath</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.Packages.SchemaDescriptor.html">SchemaDescriptor</a></td>
+        <td><span class="parametername">schema</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">schemaDirectoryPath</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_Packages_PackageFileStorage_Read_" data-uid="Terrasoft.Core.Packages.PackageFileStorage.Read*"></a>
+  <h4 id="Terrasoft_Core_Packages_PackageFileStorage_Read_DataReader_Terrasoft_Core_Packages_AssemblyDescriptor_" data-uid="Terrasoft.Core.Packages.PackageFileStorage.Read(DataReader,Terrasoft.Core.Packages.AssemblyDescriptor)">Read(DataReader, AssemblyDescriptor)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected void Read(DataReader reader, AssemblyDescriptor assemblyDescriptor)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">DataReader</span></td>
+        <td><span class="parametername">reader</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.Packages.AssemblyDescriptor.html">AssemblyDescriptor</a></td>
+        <td><span class="parametername">assemblyDescriptor</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_Packages_PackageFileStorage_Read_" data-uid="Terrasoft.Core.Packages.PackageFileStorage.Read*"></a>
+  <h4 id="Terrasoft_Core_Packages_PackageFileStorage_Read_DataReader_Terrasoft_Core_Packages_Package_" data-uid="Terrasoft.Core.Packages.PackageFileStorage.Read(DataReader,Terrasoft.Core.Packages.Package)">Read(DataReader, Package)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected void Read(DataReader reader, Package package)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">DataReader</span></td>
+        <td><span class="parametername">reader</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.Packages.Package.html">Package</a></td>
+        <td><span class="parametername">package</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_Packages_PackageFileStorage_Read_" data-uid="Terrasoft.Core.Packages.PackageFileStorage.Read*"></a>
+  <h4 id="Terrasoft_Core_Packages_PackageFileStorage_Read_DataReader_Terrasoft_Core_Packages_PackageSchemaDataColumnDescriptor_" data-uid="Terrasoft.Core.Packages.PackageFileStorage.Read(DataReader,Terrasoft.Core.Packages.PackageSchemaDataColumnDescriptor)">Read(DataReader, PackageSchemaDataColumnDescriptor)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected void Read(DataReader reader, PackageSchemaDataColumnDescriptor dataColumn)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">DataReader</span></td>
+        <td><span class="parametername">reader</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.Packages.PackageSchemaDataColumnDescriptor.html">PackageSchemaDataColumnDescriptor</a></td>
+        <td><span class="parametername">dataColumn</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_Packages_PackageFileStorage_Read_" data-uid="Terrasoft.Core.Packages.PackageFileStorage.Read*"></a>
+  <h4 id="Terrasoft_Core_Packages_PackageFileStorage_Read_DataReader_Terrasoft_Core_Packages_PackageSchemaDataDescriptor_" data-uid="Terrasoft.Core.Packages.PackageFileStorage.Read(DataReader,Terrasoft.Core.Packages.PackageSchemaDataDescriptor)">Read(DataReader, PackageSchemaDataDescriptor)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected void Read(DataReader reader, PackageSchemaDataDescriptor dataDescriptor)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">DataReader</span></td>
+        <td><span class="parametername">reader</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.Packages.PackageSchemaDataDescriptor.html">PackageSchemaDataDescriptor</a></td>
+        <td><span class="parametername">dataDescriptor</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_Packages_PackageFileStorage_Read_" data-uid="Terrasoft.Core.Packages.PackageFileStorage.Read*"></a>
+  <h4 id="Terrasoft_Core_Packages_PackageFileStorage_Read_DataReader_Terrasoft_Core_Packages_SchemaDescriptor_" data-uid="Terrasoft.Core.Packages.PackageFileStorage.Read(DataReader,Terrasoft.Core.Packages.SchemaDescriptor)">Read(DataReader, SchemaDescriptor)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected void Read(DataReader reader, SchemaDescriptor schema)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">DataReader</span></td>
+        <td><span class="parametername">reader</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.Packages.SchemaDescriptor.html">SchemaDescriptor</a></td>
+        <td><span class="parametername">schema</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_Packages_PackageFileStorage_Read_" data-uid="Terrasoft.Core.Packages.PackageFileStorage.Read*"></a>
+  <h4 id="Terrasoft_Core_Packages_PackageFileStorage_Read_DataReader_Terrasoft_Core_Packages_SqlScriptDescriptor_" data-uid="Terrasoft.Core.Packages.PackageFileStorage.Read(DataReader,Terrasoft.Core.Packages.SqlScriptDescriptor)">Read(DataReader, SqlScriptDescriptor)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected void Read(DataReader reader, SqlScriptDescriptor sqlScriptDescriptor)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">DataReader</span></td>
+        <td><span class="parametername">reader</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.Packages.SqlScriptDescriptor.html">SqlScriptDescriptor</a></td>
+        <td><span class="parametername">sqlScriptDescriptor</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_Packages_PackageFileStorage_ReadPackageSchemaColumns_" data-uid="Terrasoft.Core.Packages.PackageFileStorage.ReadPackageSchemaColumns*"></a>
+  <h4 id="Terrasoft_Core_Packages_PackageFileStorage_ReadPackageSchemaColumns_DataReader_Terrasoft_Core_Packages_PackageSchemaDataDescriptor_" data-uid="Terrasoft.Core.Packages.PackageFileStorage.ReadPackageSchemaColumns(DataReader,Terrasoft.Core.Packages.PackageSchemaDataDescriptor)">ReadPackageSchemaColumns(DataReader, PackageSchemaDataDescriptor)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected void ReadPackageSchemaColumns(DataReader reader, PackageSchemaDataDescriptor dataDescriptor)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">DataReader</span></td>
+        <td><span class="parametername">reader</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.Packages.PackageSchemaDataDescriptor.html">PackageSchemaDataDescriptor</a></td>
+        <td><span class="parametername">dataDescriptor</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_Packages_PackageFileStorage_ReadProperties_" data-uid="Terrasoft.Core.Packages.PackageFileStorage.ReadProperties*"></a>
+  <h4 id="Terrasoft_Core_Packages_PackageFileStorage_ReadProperties_DataReader_Terrasoft_Core_Packages_Package_" data-uid="Terrasoft.Core.Packages.PackageFileStorage.ReadProperties(DataReader,Terrasoft.Core.Packages.Package)">ReadProperties(DataReader, Package)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual bool ReadProperties(DataReader reader, Package package)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">DataReader</span></td>
+        <td><span class="parametername">reader</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.Packages.Package.html">Package</a></td>
+        <td><span class="parametername">package</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_Packages_PackageFileStorage_Save_" data-uid="Terrasoft.Core.Packages.PackageFileStorage.Save*"></a>
+  <h4 id="Terrasoft_Core_Packages_PackageFileStorage_Save_Terrasoft_Core_Packages_IPackageContentProvider_" data-uid="Terrasoft.Core.Packages.PackageFileStorage.Save(Terrasoft.Core.Packages.IPackageContentProvider)">Save(IPackageContentProvider)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool Save(IPackageContentProvider packageContentProvider)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.Packages.IPackageContentProvider.html">IPackageContentProvider</a></td>
+        <td><span class="parametername">packageContentProvider</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Terrasoft.Core.Packages.PackageStorage.html#Terrasoft_Core_Packages_PackageStorage_Save_Terrasoft_Core_Packages_IPackageContentProvider_">PackageStorage.Save(IPackageContentProvider)</a></div>
+  
+  
+  <a id="Terrasoft_Core_Packages_PackageFileStorage_SavePackage_" data-uid="Terrasoft.Core.Packages.PackageFileStorage.SavePackage*"></a>
+  <h4 id="Terrasoft_Core_Packages_PackageFileStorage_SavePackage_Terrasoft_Core_Packages_Package_Terrasoft_Core_Packages_IPackageContentProvider_" data-uid="Terrasoft.Core.Packages.PackageFileStorage.SavePackage(Terrasoft.Core.Packages.Package,Terrasoft.Core.Packages.IPackageContentProvider)">SavePackage(Package, IPackageContentProvider)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void SavePackage(Package package, IPackageContentProvider contentProvider)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.Packages.Package.html">Package</a></td>
+        <td><span class="parametername">package</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.Packages.IPackageContentProvider.html">IPackageContentProvider</a></td>
+        <td><span class="parametername">contentProvider</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_Packages_PackageFileStorage_SavePackageData_" data-uid="Terrasoft.Core.Packages.PackageFileStorage.SavePackageData*"></a>
+  <h4 id="Terrasoft_Core_Packages_PackageFileStorage_SavePackageData_System_String_Terrasoft_Core_Packages_Package_Terrasoft_Core_Packages_IPackageContentProvider_" data-uid="Terrasoft.Core.Packages.PackageFileStorage.SavePackageData(System.String,Terrasoft.Core.Packages.Package,Terrasoft.Core.Packages.IPackageContentProvider)">SavePackageData(String, Package, IPackageContentProvider)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void SavePackageData(string packagePath, Package package, IPackageContentProvider contentProvider)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">packagePath</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.Packages.Package.html">Package</a></td>
+        <td><span class="parametername">package</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.Packages.IPackageContentProvider.html">IPackageContentProvider</a></td>
+        <td><span class="parametername">contentProvider</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_Packages_PackageFileStorage_SavePackageDescriptor_" data-uid="Terrasoft.Core.Packages.PackageFileStorage.SavePackageDescriptor*"></a>
+  <h4 id="Terrasoft_Core_Packages_PackageFileStorage_SavePackageDescriptor_System_String_Terrasoft_Core_Packages_Package_" data-uid="Terrasoft.Core.Packages.PackageFileStorage.SavePackageDescriptor(System.String,Terrasoft.Core.Packages.Package)">SavePackageDescriptor(String, Package)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void SavePackageDescriptor(string path, Package descriptor)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">path</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.Packages.Package.html">Package</a></td>
+        <td><span class="parametername">descriptor</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_Packages_PackageFileStorage_SavePackageReferenceAssemblies_" data-uid="Terrasoft.Core.Packages.PackageFileStorage.SavePackageReferenceAssemblies*"></a>
+  <h4 id="Terrasoft_Core_Packages_PackageFileStorage_SavePackageReferenceAssemblies_System_String_Terrasoft_Core_Packages_Package_Terrasoft_Core_Packages_IPackageContentProvider_" data-uid="Terrasoft.Core.Packages.PackageFileStorage.SavePackageReferenceAssemblies(System.String,Terrasoft.Core.Packages.Package,Terrasoft.Core.Packages.IPackageContentProvider)">SavePackageReferenceAssemblies(String, Package, IPackageContentProvider)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void SavePackageReferenceAssemblies(string packagePath, Package package, IPackageContentProvider contentProvider)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">packagePath</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.Packages.Package.html">Package</a></td>
+        <td><span class="parametername">package</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.Packages.IPackageContentProvider.html">IPackageContentProvider</a></td>
+        <td><span class="parametername">contentProvider</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_Packages_PackageFileStorage_SavePackageSchemas_" data-uid="Terrasoft.Core.Packages.PackageFileStorage.SavePackageSchemas*"></a>
+  <h4 id="Terrasoft_Core_Packages_PackageFileStorage_SavePackageSchemas_System_String_Terrasoft_Core_Packages_Package_Terrasoft_Core_Packages_IPackageContentProvider_" data-uid="Terrasoft.Core.Packages.PackageFileStorage.SavePackageSchemas(System.String,Terrasoft.Core.Packages.Package,Terrasoft.Core.Packages.IPackageContentProvider)">SavePackageSchemas(String, Package, IPackageContentProvider)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void SavePackageSchemas(string packagePath, Package package, IPackageContentProvider contentProvider)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">packagePath</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.Packages.Package.html">Package</a></td>
+        <td><span class="parametername">package</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.Packages.IPackageContentProvider.html">IPackageContentProvider</a></td>
+        <td><span class="parametername">contentProvider</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_Packages_PackageFileStorage_SavePackageSqlScripts_" data-uid="Terrasoft.Core.Packages.PackageFileStorage.SavePackageSqlScripts*"></a>
+  <h4 id="Terrasoft_Core_Packages_PackageFileStorage_SavePackageSqlScripts_System_String_Terrasoft_Core_Packages_Package_Terrasoft_Core_Packages_IPackageContentProvider_" data-uid="Terrasoft.Core.Packages.PackageFileStorage.SavePackageSqlScripts(System.String,Terrasoft.Core.Packages.Package,Terrasoft.Core.Packages.IPackageContentProvider)">SavePackageSqlScripts(String, Package, IPackageContentProvider)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void SavePackageSqlScripts(string packagePath, Package package, IPackageContentProvider contentProvider)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">packagePath</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.Packages.Package.html">Package</a></td>
+        <td><span class="parametername">package</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.Packages.IPackageContentProvider.html">IPackageContentProvider</a></td>
+        <td><span class="parametername">contentProvider</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_Packages_PackageFileStorage_SaveSchemaContent_" data-uid="Terrasoft.Core.Packages.PackageFileStorage.SaveSchemaContent*"></a>
+  <h4 id="Terrasoft_Core_Packages_PackageFileStorage_SaveSchemaContent_Terrasoft_Core_Packages_Package_Terrasoft_Core_Packages_SchemaDescriptor_Terrasoft_Core_Packages_IPackageContentProvider_" data-uid="Terrasoft.Core.Packages.PackageFileStorage.SaveSchemaContent(Terrasoft.Core.Packages.Package,Terrasoft.Core.Packages.SchemaDescriptor,Terrasoft.Core.Packages.IPackageContentProvider)">SaveSchemaContent(Package, SchemaDescriptor, IPackageContentProvider)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void SaveSchemaContent(Package package, SchemaDescriptor schema, IPackageContentProvider contentProvider)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.Packages.Package.html">Package</a></td>
+        <td><span class="parametername">package</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.Packages.SchemaDescriptor.html">SchemaDescriptor</a></td>
+        <td><span class="parametername">schema</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.Packages.IPackageContentProvider.html">IPackageContentProvider</a></td>
+        <td><span class="parametername">contentProvider</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_Packages_PackageFileStorage_Write_" data-uid="Terrasoft.Core.Packages.PackageFileStorage.Write*"></a>
+  <h4 id="Terrasoft_Core_Packages_PackageFileStorage_Write_DataWriter_Terrasoft_Core_Packages_AssemblyDescriptor_" data-uid="Terrasoft.Core.Packages.PackageFileStorage.Write(DataWriter,Terrasoft.Core.Packages.AssemblyDescriptor)">Write(DataWriter, AssemblyDescriptor)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected void Write(DataWriter writer, AssemblyDescriptor descriptor)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">DataWriter</span></td>
+        <td><span class="parametername">writer</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.Packages.AssemblyDescriptor.html">AssemblyDescriptor</a></td>
+        <td><span class="parametername">descriptor</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_Packages_PackageFileStorage_Write_" data-uid="Terrasoft.Core.Packages.PackageFileStorage.Write*"></a>
+  <h4 id="Terrasoft_Core_Packages_PackageFileStorage_Write_DataWriter_Terrasoft_Core_Packages_Package_" data-uid="Terrasoft.Core.Packages.PackageFileStorage.Write(DataWriter,Terrasoft.Core.Packages.Package)">Write(DataWriter, Package)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void Write(DataWriter writer, Package package)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">DataWriter</span></td>
+        <td><span class="parametername">writer</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.Packages.Package.html">Package</a></td>
+        <td><span class="parametername">package</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_Packages_PackageFileStorage_Write_" data-uid="Terrasoft.Core.Packages.PackageFileStorage.Write*"></a>
+  <h4 id="Terrasoft_Core_Packages_PackageFileStorage_Write_DataWriter_Terrasoft_Core_Packages_PackageSchemaDataDescriptor_" data-uid="Terrasoft.Core.Packages.PackageFileStorage.Write(DataWriter,Terrasoft.Core.Packages.PackageSchemaDataDescriptor)">Write(DataWriter, PackageSchemaDataDescriptor)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected void Write(DataWriter writer, PackageSchemaDataDescriptor descriptor)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">DataWriter</span></td>
+        <td><span class="parametername">writer</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.Packages.PackageSchemaDataDescriptor.html">PackageSchemaDataDescriptor</a></td>
+        <td><span class="parametername">descriptor</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_Packages_PackageFileStorage_Write_" data-uid="Terrasoft.Core.Packages.PackageFileStorage.Write*"></a>
+  <h4 id="Terrasoft_Core_Packages_PackageFileStorage_Write_DataWriter_Terrasoft_Core_Packages_SchemaDescriptor_" data-uid="Terrasoft.Core.Packages.PackageFileStorage.Write(DataWriter,Terrasoft.Core.Packages.SchemaDescriptor)">Write(DataWriter, SchemaDescriptor)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected void Write(DataWriter writer, SchemaDescriptor descriptor)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">DataWriter</span></td>
+        <td><span class="parametername">writer</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.Packages.SchemaDescriptor.html">SchemaDescriptor</a></td>
+        <td><span class="parametername">descriptor</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_Packages_PackageFileStorage_Write_" data-uid="Terrasoft.Core.Packages.PackageFileStorage.Write*"></a>
+  <h4 id="Terrasoft_Core_Packages_PackageFileStorage_Write_DataWriter_Terrasoft_Core_Packages_SqlScriptDescriptor_" data-uid="Terrasoft.Core.Packages.PackageFileStorage.Write(DataWriter,Terrasoft.Core.Packages.SqlScriptDescriptor)">Write(DataWriter, SqlScriptDescriptor)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected void Write(DataWriter writer, SqlScriptDescriptor descriptor)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">DataWriter</span></td>
+        <td><span class="parametername">writer</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.Packages.SqlScriptDescriptor.html">SqlScriptDescriptor</a></td>
+        <td><span class="parametername">descriptor</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="Terrasoft.Common.ReflectionUtilities.html#Terrasoft_Common_ReflectionUtilities_GetPropertyValue_System_Object_System_String_">ReflectionUtilities.GetPropertyValue(Object, String)</a>
+  </div>
+  <div>
+      <a class="xref" href="Terrasoft.Common.ReflectionUtilities.html#Terrasoft_Common_ReflectionUtilities_GetPropertyDefValue_System_Object_System_String_System_Object_">ReflectionUtilities.GetPropertyDefValue(Object, String, Object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Terrasoft.Common.ReflectionUtilities.html#Terrasoft_Common_ReflectionUtilities_TryGetPropertyValue_System_Object_System_String_System_Object__">ReflectionUtilities.TryGetPropertyValue(Object, String, out Object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Terrasoft.Common.ReflectionUtilities.html#Terrasoft_Common_ReflectionUtilities_HasProperty_System_Object_System_String_">ReflectionUtilities.HasProperty(Object, String)</a>
+  </div>
+  <div>
+      <a class="xref" href="Terrasoft.Common.ReflectionUtilities.html#Terrasoft_Common_ReflectionUtilities_GetPropertyValue_System_Object_System_String_System_Reflection_BindingFlags_">ReflectionUtilities.GetPropertyValue(Object, String, BindingFlags)</a>
+  </div>
+  <div>
+      <a class="xref" href="Terrasoft.Common.ReflectionUtilities.html#Terrasoft_Common_ReflectionUtilities_GetPropertyValueByPath_System_Object_System_String_">ReflectionUtilities.GetPropertyValueByPath(Object, String)</a>
+  </div>
+  <div>
+      <a class="xref" href="Terrasoft.Common.ReflectionUtilities.html#Terrasoft_Common_ReflectionUtilities_SetPropertyValue_System_Object_System_String_System_Object_">ReflectionUtilities.SetPropertyValue(Object, String, Object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Terrasoft.Common.ReflectionUtilities.html#Terrasoft_Common_ReflectionUtilities_TrySetPropertyValue_System_Object_System_String_System_Object_">ReflectionUtilities.TrySetPropertyValue(Object, String, Object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Terrasoft.Common.ValidateUtilities.html#Terrasoft_Common_ValidateUtilities_CheckArgumentNull_System_Object_System_String_">ValidateUtilities.CheckArgumentNull(Object, String)</a>
+  </div>
+  <div>
+      <a class="xref" href="Terrasoft.Common.ValidateUtilities.html#Terrasoft_Common_ValidateUtilities_CheckDependencyNull_System_Object_System_String_">ValidateUtilities.CheckDependencyNull(Object, String)</a>
+  </div>
+  <div>
+      <a class="xref" href="Terrasoft.Common.ValidateUtilities.html#Terrasoft_Common_ValidateUtilities_EnsureDependencyNotNull__1___0_System_String_">ValidateUtilities.EnsureDependencyNotNull&lt;T&gt;(T, String)</a>
+  </div>
+  <div>
+      <a class="xref" href="Terrasoft.Core.Packages.PackageUtilities.html#Terrasoft_Core_Packages_PackageUtilities_SetPackagesStateByInstallType_Terrasoft_Core_Packages_PackageStorage_Terrasoft_Core_Packages_PackageStorageObjectState_SysPackageInstallType_">PackageUtilities.SetPackagesStateByInstallType(PackageStorage, PackageStorageObjectState, SysPackageInstallType)</a>
+  </div>
+  <div>
+      <a class="xref" href="Terrasoft.Core.Packages.PackageUtilities.html#Terrasoft_Core_Packages_PackageUtilities_SetPackageStateByCondition_Terrasoft_Core_Packages_PackageStorage_Terrasoft_Core_Packages_PackageStorageObjectState_System_Func_Terrasoft_Core_Packages_Package_System_Boolean__">PackageUtilities.SetPackageStateByCondition(PackageStorage, PackageStorageObjectState, Func&lt;Package, Boolean&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Terrasoft.Core.Packages.PackageUtilities.html#Terrasoft_Core_Packages_PackageUtilities_SetPackagesNotModifiedAndUnlocked_Terrasoft_Core_Packages_PackageStorage_">PackageUtilities.SetPackagesNotModifiedAndUnlocked(PackageStorage)</a>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>© 2021 Creatio. All rights reserved.</span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+
+<!-- Mirrored from academy.terrasoft.ua/api/netcoreapi/7.18.0/api/Terrasoft.Core.Packages.PackageFileStorage.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Mar 2022 03:31:53 GMT -->
+</html>

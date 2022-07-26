@@ -1,0 +1,1065 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# ">
+  
+<!-- Mirrored from academy.terrasoft.ua/docs/7-18/developer/ehlementy_interfejsa/razdel/obzor by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Mar 2022 03:25:02 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+          <!-- Google Tag Manager -->
+      <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          '../../../../../../www.googletagmanager.com/gtm5445.html?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-KLLB8G');</script>
+      <!-- End Google Tag Manager -->
+        <meta charset="utf-8" />
+<link rel="canonical" href="obzor.html" />
+<meta name="description" content="Раздел — элемент интерфейса, который отражает определенную бизнес-сущность и содержит набор записей. Примерами раздела являются разделы Контрагенты (Accounts), Контакты (Contacts), Активности (Activities) и т. д. Разделы доступны в боковой панели, их можно сгруппировать в рабочие места для удобства работы отдельных ролей. Раздел описан в блоке статей Раздел." />
+<meta property="og:url" content="https://academy.terrasoft.ua/docs/7-18/developer/ehlementy_interfejsa/razdel/obzor" />
+<meta property="og:title" content="Раздел" />
+<meta property="og:description" content="Раздел — элемент интерфейса, который отражает определенную бизнес-сущность и содержит набор записей. Примерами раздела являются разделы Контрагенты (Accounts), Контакты (Contacts), Активности (Activities) и т. д. Разделы доступны в боковой панели, их можно сгруппировать в рабочие места для удобства работы отдельных ролей. Раздел описан в блоке статей Раздел." />
+<meta name="Generator" content="Drupal 9 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="../../../../themes/custom/creatio/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="revision" href="obzor.html" />
+
+    <title>Раздел | Creatio Academy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&amp;family=Open+Sans:ital,wght@0,300;0,400;0,600;1,400&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" media="all" href="../../../../sites/default/files/css/css_6lTP66__-yc6QXFp1zOwoeJ0HVigoYZP-SeoLLii000.css" />
+<link rel="stylesheet" media="all" href="../../../../sites/default/files/css/css_XQJDNhkF3xH5SZCcY-PI89Zu4nYIzQ5oR3SnUKyfXJU.css" />
+<link rel="stylesheet" media="print" href="../../../../sites/default/files/css/css_Zn4VHvcniOOtUwkIVwXzYr_0AI9gUVgZcPqaH4ViagU.css" />
+
+    
+  </head>
+  <body class="path-node page-node-type-developer-documentation">
+          <!-- Google Tag Manager (noscript) -->
+      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KLLB8G"
+                        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+      <!-- End Google Tag Manager (noscript) -->
+    
+        
+      <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    <div class="creatio-page d-flex flex-column">
+        <div class="region region-informer">
+    <div id="block-terrasoftpidtrimueukrainu" class="block block-simple-block block-simple-blockterrasoft-pidtrimue-ukrainu">
+  
+    
+      <style type="text/css">
+<!--/*--><![CDATA[/* ><!--*/
+@import url(../../../../../../www.terrasoft.ua/themes/custom/creatio/css/components/informer.css)
+
+/*--><!]]>*/
+</style><div class="ts-swu">
+<div class="creatio-container">
+<div class="ts-swu__cont">
+<div><a class="ts-swu__link" href="https://www.terrasoft.ua/terrasoft-stands-with-ukraine" target="_blank">Україна понад усе!</a> <span><a href="https://www.terrasoft.ua/terrasoft-stands-with-ukraine" target="_blank">Приєднуйтеся</a> до допомоги!</span></div>
+</div>
+</div></div>
+
+  </div>
+
+  </div>
+
+  
+  <header role="banner">
+          <div class="creatio-region creatio-region_top">
+        <div class="creatio-container">
+            <div class="region region-top">
+    <div id="block-menutoggle" class="block block-simple-block block-simple-blockmenu-toggle">
+  
+    
+      <div class="menu-toggle"><span> </span></div>
+
+  </div>
+<div id="block-logowhite-2" class="block block-simple-block block-simple-blocklogo-white">
+  
+    
+      <p><a class="site-logo" href="../../../../../index.html" rel="home"><img src="../../../../themes/custom/creatio/logo-white.svg" /></a></p>
+
+  </div>
+<div id="block-search" class="block block-simple-block block-simple-blocksearch">
+  
+    
+      <div class="search">
+<form action="https://academy.terrasoft.ua/search" class="search-form" method="get"><input class="search-form__input" name="search" placeholder="Поиск" type="search" /><input class="search-form__button" type="submit" value="Поиск" /> </form>
+
+<div class="search-toggle"> </div>
+</div>
+
+  </div>
+<nav role="navigation" aria-labelledby="block-sitesua-menu" id="block-sitesua" class="block block-menu navigation menu--sites-ua">
+            
+  <h2 class="visually-hidden" id="block-sitesua-menu">Sites UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="https://www.terrasoft.ua/" rel="nofollow" target="_blank">Terrasoft</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://community.terrasoft.ua/" rel="nofollow" target="_blank">Community</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://marketplace.terrasoft.ua/" rel="nofollow" target="_blank">Marketplace</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+<div id="block-usermenu" class="block block-ts-user block-ts-user-menu-block">
+  
+    
+      <ul class="user-menu">
+      <li class="user-menu__item">
+      <a class="user-menu__link" href="https://profile.terrasoft.ua/user/login?destination=academy/ua/docs/7-18/developer/ehlementy_interfejsa/razdel/obzor">Войти</a>
+    </li>
+  </ul>
+
+  </div>
+<div id="block-usermenumobile" class="block block-ts-user block-ts-user-menu-mobile-block">
+  
+    
+      <ul class="user-menu-mobile">
+      <li class="user-menu-mobile__item">
+      <div class="user-menu-mobile__user user-menu-mobile__user_icon"></div>
+      <ul class="user-menu-mobile__submenu">
+        <li class="user-menu-mobile__subitem">
+          <a class="user-menu-mobile__sublink" href="https://profile.terrasoft.ua/user/login?destination=academy/ua/docs/7-18/developer/ehlementy_interfejsa/razdel/obzor">Войти</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  </div>
+
+  </div>
+
+        </div>
+      </div>
+              <div class="creatio-region creatio-region_header">
+        <div class="creatio-container">
+            <div class="region region-header">
+    <div id="block-logo" class="block block-simple-block block-simple-blocklogo">
+  
+    
+      <p><a class="site-logo" href="../../../../../index.html" rel="home"><img src="../../../../themes/custom/creatio/logo.svg" /></a></p>
+
+  </div>
+<nav role="navigation" aria-labelledby="block-osnovnayanavigaciyaua-menu" id="block-osnovnayanavigaciyaua" class="block block-menu navigation menu--main-ua">
+            
+  <h2 class="visually-hidden" id="block-osnovnayanavigaciyaua-menu">Основная навигация UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="../../../../index.html" data-drupal-link-system-path="&lt;front&gt;">Документация</a>
+              </li>
+                <li class="menu-item">
+        <a href="../../../../../trainings.html">Тренинги</a>
+              </li>
+                <li class="menu-item">
+        <a href="../../../../certification.html" data-drupal-link-system-path="node/3084">Сертификация и тестирование</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+<nav role="navigation" aria-labelledby="block-sitesua-2-menu" id="block-sitesua-2" class="block block-menu navigation menu--sites-ua">
+            
+  <h2 class="visually-hidden" id="block-sitesua-2-menu">Sites UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="https://www.terrasoft.ua/" rel="nofollow" target="_blank">Terrasoft</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://community.terrasoft.ua/" rel="nofollow" target="_blank">Community</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://marketplace.terrasoft.ua/" rel="nofollow" target="_blank">Marketplace</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+
+  </div>
+
+        </div>
+      </div>
+              <div class="creatio-region creatio-region_breadcrumb">
+        <div class="creatio-container">
+            <div class="region region-breadcrumb">
+    <div id="block-logowhite" class="block block-simple-block block-simple-blocklogo-white">
+  
+    
+      <p><a class="site-logo" href="../../../../../index.html" rel="home"><img src="../../../../themes/custom/creatio/logo-white.svg" /></a></p>
+
+  </div>
+<div id="block-breadcrumbnaviagtion" class="block block-ts-nav block-ts-nav-bread">
+  
+    
+      <nav class="breadcrumb"><ol class="ts-nav-breadcrumb__list"><li class="ts-nav-breadcrumb__item"><a href="../../../../index.html" class="ts-nav-breadcrumb__link" title="Документация">Документация</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../../index2132.html?vid_1=2" class="ts-nav-breadcrumb__link" title="Для разработчика">Для разработчика</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../ehlementy_interfejsa.html" class="ts-nav-breadcrumb__link" title="Элементы интерфейса" hreflang="ru">Элементы интерфейса</a></li>
+<li class="ts-nav-breadcrumb__item ts-nav-breadcrumb__item_mobile"><a href="../razdel.html" class="ts-nav-breadcrumb__link" title="Раздел" hreflang="ru">Раздел</a></li>
+<li class="ts-nav-breadcrumb__item"><span class="ts-nav-breadcrumb__link ts-nav-breadcrumb__link_current" title="Обзор">Обзор</span></li>
+</ol>
+</nav>
+
+  </div>
+<div id="block-search-2" class="block block-simple-block block-simple-blocksearch">
+  
+    
+      <div class="search">
+<form action="https://academy.terrasoft.ua/search" class="search-form" method="get"><input class="search-form__input" name="search" placeholder="Поиск" type="search" /><input class="search-form__button" type="submit" value="Поиск" /> </form>
+
+<div class="search-toggle"> </div>
+</div>
+
+  </div>
+
+  </div>
+
+        </div>
+      </div>
+      </header>
+
+  <div class="creatio-region creatio-region_main">
+    <div class="creatio-container">
+                <div class="region region-breadcrumb-mobile">
+    <div id="block-breadcrumbnaviagtion-2" class="block block-ts-nav block-ts-nav-bread">
+  
+    
+      <nav class="breadcrumb"><ol class="ts-nav-breadcrumb__list"><li class="ts-nav-breadcrumb__item"><a href="../../../../index.html" class="ts-nav-breadcrumb__link" title="Документация">Документация</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../../index2132.html?vid_1=2" class="ts-nav-breadcrumb__link" title="Для разработчика">Для разработчика</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../ehlementy_interfejsa.html" class="ts-nav-breadcrumb__link" title="Элементы интерфейса" hreflang="ru">Элементы интерфейса</a></li>
+<li class="ts-nav-breadcrumb__item ts-nav-breadcrumb__item_mobile"><a href="../razdel.html" class="ts-nav-breadcrumb__link" title="Раздел" hreflang="ru">Раздел</a></li>
+<li class="ts-nav-breadcrumb__item"><span class="ts-nav-breadcrumb__link ts-nav-breadcrumb__link_current" title="Обзор">Обзор</span></li>
+</ol>
+</nav>
+
+  </div>
+
+  </div>
+
+      
+      <main class="creatio-main" role="main">
+                                                    
+        <div class="creatio-content creatio-content_small">
+          <div class="creatio-content__inner creatio-content__inner_bg">
+                            <div class="region region-messages">
+    <div data-drupal-messages-fallback class="hidden"></div>
+
+  </div>
+
+            
+              <div class="region region-content">
+    <div id="block-creatio-page-title" class="block block-core block-page-title-block">
+  
+    
+      
+  <h1 class="page-title"><span class="field field--name-title field--type-string field--label-hidden">Раздел</span>
+</h1>
+
+
+  </div>
+<div id="block-creatio-content" class="block block-system block-system-main-block">
+  
+    
+      
+<article data-history-node-id="2330" role="article" about="/docs/7-18/developer/ehlementy_interfejsa/razdel/obzor" class="node node--type-developer-documentation node--view-mode-full">
+
+  
+    
+
+  
+  <div class="node__content">
+      <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocknodedeveloper-documentationfield-difficulty">
+  
+    
+      
+            <div class="field field--name-field-difficulty field--type-entity-reference field--label-hidden field__item"><div about="/docs/7-18/taxonomy/term/121" id="taxonomy-term-121" class="taxonomy-term vocabulary-difficulty">
+  
+  
+  <div class="content">
+      <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocktaxonomy-termdifficultyfield-icon">
+  
+    
+      
+            <div class="field field--name-field-icon field--type-image field--label-hidden field__item">  <img src="../../../../sites/default/files/difficulty/beginner.svg" alt="" loading="lazy" typeof="foaf:Image" />
+
+</div>
+      
+  </div>
+<div class="block block-layout-builder block-field-blocktaxonomy-termdifficultyname">
+  
+    
+      
+            <div class="field field--name-name field--type-string field--label-hidden field__item"><span style="color: #7FB441;">Основы</span></div>
+      
+  </div>
+
+    </div>
+  </div>
+
+  </div>
+</div>
+</div>
+      
+  </div>
+<div class="block block-ts-doc block-ts-doc-downloads">
+  
+    
+      <a href="../../../../sites/default/files/pdf/node/2330/Razdel_.pdf" target="_blank">PDF</a>
+  </div>
+<div class="block block-ts-doc block-ts-doc-versions">
+  
+    
+        <div class="ts-doc-versions">
+    <select class="ts-doc-versions__select">
+                              <option value="/docs/8-0/developer/ehlementy_interfejsa/razdel/obzor">Версия 8.0</option>
+                                                <option value="/docs/7-18/developer/ehlementy_interfejsa/razdel/obzor" selected>Версия 7.18</option>
+                              <option value="/docs/7-17/developer/ehlementy_interfejsa/razdel/obzor">Версия 7.17</option>
+                              <option value="/docs/7-16/developer/ehlementy_interfejsa/razdel/obzor">Версия 7.16</option>
+          </select>
+  </div>
+
+  </div>
+
+    </div>
+  </div>
+  <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocknodedeveloper-documentationbody">
+  
+    
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><p><strong>Раздел</strong> — элемент интерфейса, который отражает определенную бизнес-сущность и содержит набор записей. Примерами раздела являются разделы <span class="key">Контрагенты</span> (<span class="key">Accounts</span>), <span class="key">Контакты</span> (<span class="key">Contacts</span>), <span class="key">Активности</span> (<span class="key">Activities</span>) и т. д. Разделы доступны в боковой панели, их можно сгруппировать в рабочие места для удобства работы отдельных ролей. Раздел описан в блоке статей <a href="../../../../user/razdel.html">Раздел</a>.</p>
+
+<h2>Контейнеры раздела<a class="title-anchor" href="#title-2330-1" id="title-2330-1"> </a></h2>
+
+<p>Элементы пользовательского интерфейса приложения, которые относятся к разделу, размещены в соответствующих контейнерах. Контейнеры конфигурируются в базовой схеме раздела или схеме замещающей модели представления раздела. Контейнеры зависят от представления раздела.</p>
+
+<p><strong>Представления</strong> раздела:</p>
+
+<ul><li>Реестр раздела.</li>
+	<li>Аналитика раздела.</li>
+</ul><div class="message">
+<p><span class="message__bold">На заметку.</span> В приложении используются мета-имена html-контейнеров. На основании мета-имен приложение формирует фактические идентификаторы соответствующих html-элементов раздела.</p>
+</div>
+
+<p>Основные <strong>контейнеры реестра</strong> раздела представлены на рисунке ниже.</p>
+
+<div class="media">
+<div class="media__element"><img src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/Section/7.18/scr_intro_ui_section_01.png" /></div>
+</div>
+
+<p>Основные <strong>контейнеры аналитики</strong> раздела представлены на рисунке ниже.</p>
+
+<div class="media">
+<div class="media__element"><img src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/Section/7.18/scr_intro_ui_section_02.png" /></div>
+</div>
+
+<ul><li>Контейнер кнопок действий (<span class="filled">ActionButtonsContainer</span>) — содержит кнопку действия раздела и кнопку с выпадающим списком действий.</li>
+	<li>Контейнер фильтров (<span class="filled">QuickFilterViewContainer</span>) — содержит фильтры и теги.</li>
+	<li>Контейнер отображения реестра раздела (<span class="filled">GridDataViewContainer</span>) — содержит записи раздела. В активной записи реестра размещаются кнопки действий редактирования, копирования и удаления текущей записи. Отображается в реестре раздела.</li>
+	<li>Контейнер отображения аналитики раздела (<span class="filled">AnalyticsDataViewContainer</span>) — содержит дашборды раздела. Отображается в аналитике раздела.</li>
+</ul><h2>Структура раздела<a class="title-anchor" href="#title-2330-2" id="title-2330-2"> </a></h2>
+
+<p><strong>Составляющие</strong> раздела:</p>
+
+<ul><li><strong>Реестр</strong> — компонент, в котором в плиточном или списочном представлении отображается список записей раздела. Отображается в контейнере <span class="filled">GridDataViewContainer</span>.</li>
+	<li><strong>Аналитика</strong> — компонент, который используется для визуализации статистических данных с помощью графиков, единичных показателей или списков. Блоки итогов и пользовательские дашборды отображаются в контейнере <span class="filled">AnalyticsDataViewContainer</span>.</li>
+	<li><strong>Действия</strong> — функциональный элемент, который представляет набор операций над активной записью реестра раздела. Действия вызываются при помощи кнопок, которые размещены в контейнере <span class="filled">ActionButtonsContainer</span>, и в активной записи реестра раздела.</li>
+	<li><strong>Фильтр</strong> — инструмент для поиска и сегментации записей реестра по заданным условиям. Отображается в контейнере <span class="filled">QuickFilterViewContainer</span>.</li>
+	<li><strong>Тег</strong> — метка, которая используется для сегментации записей вручную. Как и фильтр, отображается в контейнере <span class="filled">QuickFilterViewContainer</span>.</li>
+</ul><h3>Реестр<a class="title-anchor" href="#title-2330-3" id="title-2330-3"> </a></h3>
+
+<p><strong>Реестр</strong> — элемент интерфейса для отображения перечня записей, которые добавлены в раздел или на деталь. Например, перечень контактов в разделе <span class="key">Контакты</span> (<span class="key">Contacts</span>).</p>
+
+<p><strong>Виды</strong> реестра раздела:</p>
+
+<ul><li><strong>Вертикальный реестр</strong> — способ отображения реестра, при котором можно переключаться между записями, не закрывая страницу.</li>
+	<li><strong>Редактируемый реестр</strong> — реестр записей, которые предоставляет возможность редактирования записей в самом реестре, без перехода к их страницам.</li>
+</ul><p><strong>Представления</strong> реестра раздела:</p>
+
+<ul><li><strong>Плиточное представление</strong> — отображает поля записи реестра в несколько строк. Установлено по умолчанию.</li>
+	<li><strong>Списочное представление</strong> — отображает записи в виде простой таблицы, в которой каждой записи соответствует одна строка. При этом последовательность расположения полей в списочном представлении может не совпадать с последовательностью расположения полей в плиточном представлении.</li>
+</ul><p>Плиточное представление реестра раздела <span class="key">Контакты</span> (<span class="key">Contacts</span>) представлено на рисунке ниже.</p>
+
+<div class="media">
+<div class="media__element"><img src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/Section/7.18/scr_intro_ui_sectiongrid_01.png" /></div>
+</div>
+
+<p>Списочное представление реестра раздела <span class="key">Контакты</span> (<span class="key">Contacts</span>) представлено на рисунке ниже.</p>
+
+<div class="media">
+<div class="media__element"><img src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/Section/7.18/scr_intro_ui_sectiongrid_02.png" /></div>
+</div>
+
+<p>Каждому разделу соответствует конфигурационная схема, которая описывает структуру соответствующей таблицы базы данных с данными записи и содержит определенные инструкции по обработке этих данных. Например, конфигурирование раздела <span class="key">Контакты</span> (<span class="key">Contacts</span>) выполняется в схеме <span class="filled">ContactSectionV2</span>. Все схемы разделов являются наследниками базовой схемы <span class="filled">BaseSectionV2</span> раздела. Условно каждая строка таблицы соответствует записи реестра раздела. Например, разделу <span class="key">Контакты</span> (<span class="key">Contacts</span>) соответствует схема бизнес-объекта <span class="filled">Contact</span>, которая содержит перечень и свойства колонок таблицы <span class="filled">[Contact]</span>. По умолчанию, реестр раздела отображает не все колонки соответствующей таблицы базы данных. Это необходимо для избежания избыточности отображаемых данных. Посмотреть все колонки можно на <a href="../stranica_zapisi/obzor/stranica_zapisi.html">странице записи</a> раздела.</p>
+
+<p>Внешний вид реестра, перечень отображаемых полей и сортировку данных позволяет настроить выпадающее меню кнопки <span class="key">Вид</span> (<span class="key">View</span>) панели инструментов раздела. Подробнее читайте в статье <a href="../../../../user/bazis_platformy/interfejs/reestr/reestr_razdela.html?id=1016">Реестр раздела</a>.</p>
+
+<h3>Аналитика<a class="title-anchor" href="#title-2330-4" id="title-2330-4"> </a></h3>
+
+<p><strong>Назначение</strong> аналитики раздела — анализ статистических данных разделов. По умолчанию раздел отображается в представлении реестра. Чтобы <strong>перейти в представление аналитики раздела</strong>, нажмите на кнопку <span class="key">Итоги</span> (<span class="key">Dashboards</span>) возле названия раздела. Чтобы <strong>перейти в представление аналитики всех разделов</strong>, откройте раздел <span class="key">Итоги</span> (<span class="key">Dashboards</span>).</p>
+
+<p>Пример аналитики раздела <span class="key">Активности</span> (<span class="key">Ativities</span>) представлены на рисунке ниже.</p>
+
+<div class="media">
+<div class="media__element"><img src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/Section/7.18/scr_intro_ui_section_analitycs.png" /></div>
+</div>
+
+<p>Аналитическая информация отображается на <strong>дашбордах</strong>. Дашборды описаны в статье <a href="../dashbordy/obzor.html">Дашборды</a> и блоке статей <a href="../../../../user/kastomizacija_no_code/analitika.html">Аналитика</a>. Дашборды размещены на <strong>панели итогов</strong>. Панель итогов описана в статье <a href="../../../../user/kastomizacija_no_code/analitika/dobavlenie_v_razdel/dobavit_analitiku_v_razdel.html?id=1405">Добавить аналитику в раздел</a>.</p>
+
+<h3>Действия<a class="title-anchor" href="#title-2330-5" id="title-2330-5"> </a></h3>
+
+<p><strong>Действия раздела</strong> — функциональные элементы, которые представляют собой перечень операций с одной или несколькими записями реестра. Действие можно вызвать при помощи кнопок разного вида, которые размещены как в контейнере действий текущего раздела, так и в контейнере активной записи.</p>
+
+<p>Действия раздела <span class="key">Контакты</span> (<span class="key">Contacts</span>) представлены на рисунке ниже.</p>
+
+<div class="media">
+<div class="media__element"><img src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/Section/7.18/scr_basic_elements.png" /></div>
+</div>
+
+<p><strong>Виды</strong> действий раздела:</p>
+
+<ul><li>Стандартные.</li>
+	<li>Дополнительные.</li>
+</ul><p><strong>Стандартные</strong> действия раздела <span class="key">Контакты</span> (<span class="key">Contacts</span>):</p>
+
+<ul><li><span class="key">Добавить контакт</span> (<span class="key">New contact</span>) — вызывает всплывающее окно для добавления и сохранения новой записи раздела.</li>
+	<li><span class="key">Открыть</span> (<span class="key">Open</span>) — открывает страницу активной записи раздела.</li>
+	<li><span class="key">Копировать</span> (<span class="key">Copy</span>) — открывает страницу записи раздела, копирует в нее данные активной записи и при сохранении создает новую запись.</li>
+	<li><span class="key">Удалить</span> (<span class="key">Delete</span>) — удаляет активную запись.</li>
+	<li><span class="key">Выбрать несколько записей</span> (<span class="key">Select multiple records</span>) — выполняет множественный выбор записей реестра.</li>
+	<li><span class="key">Выбрать все</span> (<span class="key">Select all</span>) — выполняет выбор всех записей реестра.</li>
+	<li><span class="key">Экспорт в Excel</span> (<span class="key">Export to Excel</span>) — экспортирует все записи реестра текущего раздела в *.xlsx-файл. Экспорт данных описан в статье <a href="../../../../user/bazis_platformy/dannye/excel_export/export_v_excel.html?id=1864">Экспорт в Excel</a>.</li>
+	<li><span class="key">Импорт данных</span> (<span class="key">Data import</span>) — импортирует в Creatio данные из *.xlsx-файла. Импорт данных описан в статье <a href="../../../../user/bazis_platformy/dannye/excel_import/import_iz_excel.html?id=1252">Импорт из Excel</a>.</li>
+	<li><span class="key">Настроить журнал изменений</span> (<span class="key">Change log setup</span>) — открывает страницу управления логированием и выбора колонок раздела, которые будут логироваться при изменении записи.</li>
+</ul><p><strong>Дополнительные</strong> действия реализуют функциональность, которая зависит от бизнес-логики раздела. Дополнительные действия раздела <span class="key">Контакты</span> (<span class="key">Contacts</span>):</p>
+
+<ul><li><span class="key">Запустить синхронизацию</span> (<span class="key">Synchronize now</span>) — выполняет синхронизацию Creatio с контактами Google. Синхронизация контактов из Creatio в Google выполняется только для записей, которые отмечены тегом, указанным в настройках синхронизации. Синхронизация контактов описана в статье <a href="../../../../user/ustanovka_i_administrirovanie/nastrojka_bazovyh_intgracij/pochta_kontakty_i_kalendari_google/sinhronizatsja_kontaktov_i_aktivnostej/sinkhronizirovat_kontakty_i_aktivnosti_s_google.21f2.de?id=1424">Синхронизировать контакты и активности с Google</a>.</li>
+	<li><span class="key">Добавить аккаунт для синхронизации</span> (<span class="key">Add new account for synchronization</span>) — выполняет синхронизацию с Google для Creatio Cloud. Синхронизация описана в статье <a href="../../../../user/ustanovka_i_administrirovanie/nastrojka_bazovyh_intgracij/pochta_kontakty_i_kalendari_google/sinhronizatsja_kontaktov_i_aktivnostej/sinkhronizirovat_kontakty_i_aktivnosti_s_google.21f2.de?id=1424">Синхронизировать контакты и активности с Google</a>.</li>
+	<li><span class="key">Поместить в группу</span> (<span class="key">Add to folder</span>) — вызывает всплывающее окно для выбора группы, в которую необходимо поместить активную запись.</li>
+	<li><span class="key">Исключить из группы</span> (<span class="key">Exclude from folder</span>) — исключить активную запись из всех групп, в которую она входит.</li>
+	<li><span class="key">Перейти к дублям раздела 'Контакты'</span> (<span class="key">Show duplicate 'Contacts'</span>) — открывает дополнительную страницу, которая содержит все предполагаемые дубли контактов. Записи добавляются на эту страницу автоматически после выполнения поиска дублей.</li>
+	<li><span class="key">Показать на карте</span> (<span class="key">Show on map</span>) — позволяет отобразить на карте местоположение активных контактов. По действию открывается окно с картой, на которой отмечены выбранные в реестре контакты. Если для всех выбранных контактов адрес не заполнен, то действие не выполняется. Если для некоторых контактов адрес не заполнен или заполнен некорректно, то в окне отображается соответствующая информация.</li>
+	<li><span class="key">Обновить возраст</span> (<span class="key">Update the values in the 'Age' column</span>) — обновляет значения в колонке <span class="key">Возраст</span> (<span class="key">Age</span>) на странице активного контакта.</li>
+	<li><span class="key">Настроить время обновления возраста</span> (<span class="key">Schedule daily update of the 'Age' column</span>) — вызывает всплывающее окно для настройки времени ежедневного обновления информации о возрасте контакта.</li>
+	<li><span class="key">Снять признак 'Неактуальный' у email-адресов</span> (<span class="key">Mark all email addresses as valid</span>) — устанавливает признак <span class="key">Является актуальным</span> (<span class="key">Valid</span>) email-адресу активной записи контакта.</li>
+</ul><h3>Фильтры<a class="title-anchor" href="#title-2330-6" id="title-2330-6"> </a></h3>
+
+<p><strong>Фильтр</strong> — инструмент для поиска и сегментации записей системы по заданным условиям. Фильтры могут использоваться как самостоятельный инструмент в разделах Creatio. Также инструменты фильтрации применяются при выполнении других настроек, например, при настройке динамических групп, дашбордов, бизнес-процессов. Элементы управления фильтрами отображаются над реестром разделов приложения. Фильтры описаны в статье <a href="../../../../user/bazis_platformy/dannye/filtry/filtry.html?id=1017">Фильтры</a>.</p>
+
+<p><strong>Виды</strong> фильтров:</p>
+
+<ul><li>Быстрый фильтр.</li>
+	<li>Расширенный фильтр.</li>
+	<li>Стандартный фильтр.</li>
+</ul><p>Управление быстрым фильтром осуществляется из панели инструментов, а управление стандартным и расширенным фильтрами — из меню <span class="key">Фильтры/группы</span> (<span class="key">Filters/folders</span>).</p>
+
+<div class="media">
+<div class="media__element"><img src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/Section/7.18/scr_intro_ui_section_filters01.png" /></div>
+</div>
+
+<p><strong>Быстрый фильтр</strong> — фильтр, который используется в реестре некоторых разделов Creatio для поиска данных по наиболее часто используемым параметрам (обычно — по периоду и ответственному). Например, быстрый фильтр присутствует в разделе <span class="key">Активности</span> (<span class="key">Activities</span>), поскольку чаще всего нужно просматривать активности одного сотрудника за указанный период времени. Быстрый фильтр описан в статье <a href="../../../../user/bazis_platformy/dannye/filtry/filtry%23title-2646-1.html?id=1232&amp;anchor=title-2646-1">Фильтры</a>.</p>
+
+<p>Чтобы <strong>установить быстрый фильтр</strong>, в выпадающем меню <span class="key">Выбрать период</span> (<span class="key">Select period</span>) выберите период, по которому планируется отфильтровать записи реестра раздела.</p>
+
+<p>Пример быстрого фильтра, который фильтрует активности по текущему месяцу (в выпадающем меню <span class="key">Выбрать период</span> (<span class="key">Select period</span>) выбрано значение <span class="key">Текущий месяц</span> (<span class="key">Current month</span>)), представлен на рисунке ниже.</p>
+
+<div class="media">
+<div class="media__element"><img src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/Section/7.18/scr_quick_filters.png" /></div>
+</div>
+
+<p><strong>Стандартный фильтр</strong> — фильтр, который используется для быстрого поиска записей по значениям одной или нескольких колонок текущего раздела. Доступен в реестре большинства разделов. Стандартный фильтр описан в статье <a href="../../../../user/bazis_platformy/dannye/filtry/filtry%23title-2646-4.html?id=1233&amp;anchor=title-2646-4">Фильтры</a>.</p>
+
+<p>Чтобы <strong>установить стандартный фильтр</strong>:</p>
+
+<ul><li>В выпадающем меню <span class="key">Фильтры/группы</span> (<span class="key">Filters/folders</span>) выберите пункт <span class="key">Добавить условие</span> (<span class="key">Add filter</span>).</li>
+	<li>Выберите поле и значение поля, по которому планируется отфильтровать записи реестра раздела.</li>
+</ul><p>Пример стандартного фильтра, который фильтрует активности по значению контрагента (для поля <span class="key">Контрагент</span> (<span class="key">Account</span>) выбрано значение <span class="key">Estron</span>), представлен на рисунке ниже.</p>
+
+<div class="media">
+<div class="media__element"><img src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/Section/7.18/scr_intro_ui_section_filters02.png" /></div>
+</div>
+
+<p><strong>Расширенный фильтр</strong> — фильтр, который состоит из нескольких параметров и сложных условий поиска. Например, при помощи расширенной фильтрации вы можете отобразить в разделе <span class="key">Активности</span> (<span class="key">Activities</span>) все встречи по новым клиентам. Также, настроив условия расширенного фильтра, можно сохранить динамическую группу для дальнейшего использования. Расширенный фильтр описан в статье <a href="../../../../user/bazis_platformy/dannye/filtry/filtry%23title-2646-10.html?id=1234&amp;anchor=title-2646-10">Фильтры</a>.</p>
+
+<p>Чтобы <strong>установить расширенный фильтр</strong>:</p>
+
+<ul><li>В выпадающем меню <span class="key">Фильтры/группы</span> (<span class="key">Filters/folders</span>) выберите пункт <span class="key">Перейти в расширенный режим</span> (<span class="key">Switch to advanced mode</span>).</li>
+	<li>Выберите объект, колонку объекта и значение колонки, по которой планируется отфильтровать записи реестра раздела.</li>
+</ul><p>Пример расширенного фильтра, который фильтрует активности по значению контрагента (для поля <span class="key">Название</span> (<span class="key">Name</span>) объекта <span class="key">Контрагент</span> (<span class="key">Account</span>) выбрано значение <span class="key">Novelty</span>) и по значению должности (для поля <span class="key">Должность</span> (<span class="key">Job title</span>) объекта <span class="key">Контакт</span> (<span class="key">Contact</span>) выбрано значение <span class="key">Специалист</span> (<span class="key">Specialist</span>)), представлен на рисунке ниже.</p>
+
+<div class="media">
+<div class="media__element"><img src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/Section/7.18/scr_intro_ui_section_filters03.png" /></div>
+</div>
+
+<p><strong>Группа</strong> — инструмент фильтрации записей путем объединения их по определенным условиям. Группы могут формировать иерархическую структуру. Группы описаны в статье <a href="../../../../user/bazis_platformy/dannye/gryppy/gruppy.html?id=1018">Группы</a>.</p>
+
+<p><strong>Виды</strong> групп:</p>
+
+<ul><li><strong>Динамическая группа</strong> — группа, содержащая только те записи раздела, которые соответствуют заданным условиям фильтрации. Например, динамической может быть группа <span class="key">Новые клиенты</span> (<span class="key">New client</span>), поскольку отобрать записи в такую группу можно, используя фильтр по дате создания записи в системе. Наполнение такой группы формируется и обновляется автоматически.</li>
+	<li><strong>Статическая группа</strong> — группа, содержащая только те записи раздела, которые были добавлены в нее пользователем (вручную или при конвертации из динамической группы). Например, статическими может быть группа <span class="key">VIP-клиенты</span> (<span class="key">VIP Customers</span>), поскольку решение о включении клиента в такую группу принимается менеджером или руководителем лично.</li>
+</ul><p>Включение записи в группу, как и исключение из нее, возможно только для статических групп. В динамической группе запись отображается автоматически, если она отвечает условиям фильтрации группы. Если запись не соответствует условиям фильтра группы, то она автоматически исключается из группы.</p>
+
+<p>Чтобы <strong>установить группу</strong>:</p>
+
+<ul><li>В выпадающем меню <span class="key">Фильтры/группы</span> (<span class="key">Filters/folders</span>) выберите пункт <span class="key">Показать группы</span> (<span class="key">Show folders</span>).</li>
+	<li>Выберите группу, по которой планируется отфильтровать записи реестра раздела.</li>
+</ul><p>Пример группы контактов без контрагентов (группа <span class="key">Контакты без контрагента</span> (<span class="key">Contact not connected to accounts</span>)), представлен на рисунке ниже.</p>
+
+<div class="media">
+<div class="media__element"><img src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/Section/7.18/scr_intro_ui_section_filters04.png" /></div>
+</div>
+
+<h3>Теги<a class="title-anchor" href="#title-2330-7" id="title-2330-7"> </a></h3>
+
+<p><strong>Тег</strong> — специальная метка, которую можно использовать для сегментации записей вручную. Например, тегировав записи в разделе <span class="key">Контакты</span> (<span class="key">Contacts</span>), можно выделить VIP-клиентов или определить черный список клиентов. Тегирование записей выполняется вручную. Чтобы <strong>выбрать тег</strong>, нажмите на кнопку <span class="key">Тег</span> (<span class="key">Tag</span>) и выберите тег, по которому планируется отфильтровать записи реестра раздела. Теги описаны в статье <a href="../../../../user/bazis_platformy/dannye/tegi/tegi.html?id=1881">Теги</a>.</p>
+
+<p><strong>Виды</strong> тегов, которые предоставляет Creatio:</p>
+
+<ul><li><strong>Личные</strong> — теги, которые может видеть и использовать только тот сотрудник, который их создал. Любой пользователь системы может создать необходимое количество личных тегов. Ни администраторы системы, ни руководители не смогут увидеть личные теги сотрудников. Личные теги в Creatio отображаются зеленым цветом.</li>
+	<li><strong>Корпоративные</strong> — теги, которые отображаются для всех сотрудников компании. Любой сотрудник может установить или снять корпоративный тег. Создавать новые корпоративные теги могут все сотрудники/роли, которым предоставлено право на операцию <span class="key">Управление корпоративными тегами</span> (<span class="key">Corporate tags management</span>, код <span class="filled">CanManageCorporateTags</span>). Корпоративные теги в Creatio отображаются голубым цветом.</li>
+	<li><strong>Публичные</strong> — теги, которые отображаются для всех сотрудников компании, а также для пользователей портала самообслуживания. Любой сотрудник может установить или снять публичный тег. Создавать новые публичные теги могут все сотрудники/роли, которым предоставлено право на операцию <span class="key">Управление публичными тегами</span> (<span class="key">Public tags management</span>, код <span class="filled">CanManagePublicTags</span>). Публичные теги в Creatio отображаются красным цветом.</li>
+</ul><p>Пример VIP-клиентов, которыми являются контакты (выбран корпоративный тег <span class="key">VIP</span> (<span class="key">VIP customer</span>)), представлен на рисунке ниже.</p>
+
+<div class="media">
+<div class="media__element"><img src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/Section/7.18/scr_intro_ui_section_tag.png" /></div>
+</div>
+
+<h2>Создать раздел<a class="title-anchor" href="#title-2330-8" id="title-2330-8"> </a></h2>
+
+<p>Создать раздел можно с использованием мастера разделов. Чтобы создать раздел, воспользуйтесь инструкцией, которая приведена в статье <a href="../../../../user/kastomizacija_no_code/nastrojka_biznes_logiki/razdel/dobavlenie_razdela/dobavit_novyy_razdel.html?id=1245">Добавить новый раздел</a>.</p>
+
+<p>Схемы объектов и клиентские схемы, которые создаются в пользовательском пакете при создании раздела, приведены в таблице ниже.</p>
+
+<div class="table">
+<div class="table__caption">Схемы, которые создаются мастером разделов</div>
+
+<table><thead><tr><th>Название</th>
+			<th>Назначение</th>
+			<th>Родительский объект</th>
+		</tr></thead><tbody><tr><th colspan="3">
+			<center>Схемы объектов</center>
+			</th>
+		</tr><tr><td><span class="filled">[Имя объекта раздела]</span></td>
+			<td>Основной объект раздела.</td>
+			<td>Базовый объект <span class="filled">BaseEntity</span>.</td>
+		</tr><tr><td><span class="filled">[Имя объекта раздела]Folder</span></td>
+			<td>
+			<p>Группа объекта.</p>
+
+			<p>Служебный объект для корректной группировки записей в разделе. Формирует общую структуру дерева групп раздела.</p>
+			</td>
+			<td>Базовая группа <span class="filled">BaseFolder</span>.</td>
+		</tr><tr><td><span class="filled">[Имя объекта раздела]InFolder</span></td>
+			<td>
+			<p>Объект в группе.</p>
+
+			<p>Служебный объект для корректной работы группировки записей в разделе. Определяет связи между записями раздела и группами, в которые они входят.</p>
+			</td>
+			<td>Базовый элемент <span class="filled">BaseItemInFolder</span> в группе.</td>
+		</tr><tr><td><span class="filled">[Имя объекта раздела]File</span></td>
+			<td>Объект для детали <span class="key">Файлы и ссылки</span> (<span class="key">Attachments</span>).</td>
+			<td>Файл <span class="filled">File</span>.</td>
+		</tr><tr><td><span class="filled">[Имя объекта раздела]Tag</span></td>
+			<td>Тег раздела.</td>
+			<td>Базовый тег <span class="filled">BaseTag</span>.</td>
+		</tr><tr><td><span class="filled">[Имя объекта раздела]InTag</span></td>
+			<td>Тег в объекте раздела.</td>
+			<td>Базовый тег в базовом объекте <span class="filled">BaseEntityInTag</span>.</td>
+		</tr><tr><th colspan="3">
+			<center>Клиентские схемы</center>
+			</th>
+		</tr><tr><td><span class="filled">[Имя объекта раздела]Section</span></td>
+			<td>Схема раздела.</td>
+			<td>
+			<p>Базовая схема <span class="filled">BaseSectionV2</span> раздела.</p>
+			</td>
+		</tr><tr><td><span class="filled">[Имя объекта раздела]Page</span></td>
+			<td>Схема страницы записи раздела.</td>
+			<td>Базовая схема <span class="filled">BaseModulePageV2</span> страницы записи раздела.</td>
+		</tr></tbody></table></div>
+
+<h2>Добавить пользовательскую колонку в реестр раздела<a class="title-anchor" href="#title-2330-9" id="title-2330-9"> </a></h2>
+
+<p>Добавление пользовательской колонки в реестр раздела значит, что колонка добавляется в схему бизнес-объекта раздела. При добавлении пользовательской колонки в текущем пакете создается схема замещающей модели представления схемы, которая унаследует колонки базового объекта. В созданную схему будет добавлена новая пользовательская колонка.</p>
+
+<p><strong>Инструменты</strong>, которые позволяют добавить пользовательскую колонку в схему бизнес-объекта раздела:</p>
+
+<ul><li>Мастер разделов.</li>
+	<li>Creatio IDE.</li>
+</ul><p>Чтобы добавить пользовательскую колонку в реестр раздела с использованием <strong>мастера разделов</strong>, воспользуйтесь инструкцией, которая приведена в статье <a href="../../../../user/bazis_platformy/interfejs/reestr/reestr_razdela%23title-756-9.html?id=1016&amp;anchor=title-756-9">Реестр раздела</a>.</p>
+
+<p>Чтобы добавить пользовательскую колонку на страницу раздела с использованием <strong>Creatio IDE</strong>:</p>
+
+<ol><li>Создайте схему замещающей модели представления страницы раздела, на которой будет размещена пользовательская колонка. Для этого воспользуйтесь инструкцией, которая приведена в статье <a href="../../instrumenty_razrabotki/creatio_ide/razrabotka_konfiguracionnykh_ehlementov/obzor.html#title-3028-4">Разработка конфигурационных элементов</a>.</li>
+	<li>В качестве родительского объекта выберите схему модели представления, которую необходимо заместить.</li>
+	<li>В схему замещающей модели представления страницы раздела добавьте пользовательскую колонку соответствующего типа.</li>
+	<li>Настройте отображение пользовательской колонки в реестре раздела.</li>
+</ol><h2>Настроить условия отображения реестра раздела<a class="title-anchor" href="#title-2330-10" id="title-2330-10"> </a></h2>
+
+<p>Creatio позволяет настроить условия отображения реестра раздела. Записи реестра, для которых выполняются заданные условия, отображаются в соответствии с установленными стилями.</p>
+
+<p>Чтобы <strong>настроить условия отображения реестра раздела</strong>:</p>
+
+<ol><li>Создайте схему замещающей модели представления страницы раздела. Для этого воспользуйтесь инструкцией, которая приведена в статье <a href="../../instrumenty_razrabotki/creatio_ide/razrabotka_konfiguracionnykh_ehlementov/obzor.html#title-3028-4">Разработка конфигурационных элементов</a>.</li>
+	<li>В качестве родительского объекта выберите схему модели представления, которую необходимо заместить.</li>
+	<li>
+	<p>Настройте <strong>условия отображения реестра раздела</strong>. Для этого в свойстве <span class="filled">methods</span> реализуйте метод <span class="filled">prepareResponseCollectionItem()</span>, который переопределяет базовый метод и модифицирует строку данных перед загрузкой в реестр. В методе реализуйте присвоение определенного значения свойству <span class="filled">customStyle</span>, которое отвечает за отображение строки реестра. Является объектом, который содержит свойства-аналоги CSS-свойств и формирует стиль отображения необходимых записей реестра.</p>
+
+	<p>Пример настройки свойства <span class="filled">customStyle</span> представлен ниже.</p>
+
+	<div class="code">
+	<div class="code__widgets">
+	<div class="code__top">
+	<div class="code__title">Пример настройки свойства <span class="filled">customStyle</span></div>
+	</div>
+
+	<div class="code__source">
+	<pre class="prettyprint">
+item.customStyle = {
+	/* Цвет текста — белый. */
+	"color": "white",
+	/* Цвет фона — оранжевый. */
+	"background": "orange"
+};
+</pre>
+	</div>
+	</div>
+	</div>
+	</li>
+</ol><h2>Добавить действие для записей раздела<a class="title-anchor" href="#title-2330-11" id="title-2330-11"> </a></h2>
+
+<p>Приложение предоставляет возможность добавить пользовательские действия как для единичной записи, так и для нескольких записей. Базовое наполнение выпадающего меню <span class="key">Действия</span> (<span class="key">Actions</span>) страницы раздела реализовано в схема <span class="filled">BaseSectionV2</span> пакета <span class="filled">NUI</span>.</p>
+
+<p>Чтобы <strong>добавить действие для единичной записи раздела</strong>:</p>
+
+<ol><li>Создайте схему замещающей модели представления страницы раздела. Для этого воспользуйтесь инструкцией, которая приведена в статье <a href="../../instrumenty_razrabotki/creatio_ide/razrabotka_konfiguracionnykh_ehlementov/obzor.html#title-3028-4">Разработка конфигурационных элементов</a>.</li>
+	<li>В качестве родительского объекта выберите схему модели представления, которую необходимо заместить.</li>
+	<li>
+	<p>Перечень действий раздела является экземпляром класса <span class="filled">Terrasoft.BaseViewModelCollection</span>. Каждый элемент перечня действий — модель представления. Настройка действия выполняется в конфигурационном объекте, который позволяет как явно задавать свойства модели представления действий, так и использовать базовый механизм привязки.</p>
+
+	<p>Настройте <strong>логику работы пункта меню</strong>. Для этого в свойстве <span class="filled">methods</span> реализуйте метод <span class="filled">getSectionActions()</span> — переопределенный метод родительской схемы, который возвращает коллекцию действий раздела. При замещении базовых разделов в методе <span class="filled">getSectionActions()</span> замещающего модуля необходимо вызвать родительскую реализацию этого метода для инициализации действий родительского раздела. Для этого выполните метод <span class="filled">this.callParent(arguments)</span>, который возвращает коллекцию действий базового раздела.</p>
+
+	<p>Добавление действия в коллекцию выполняется с помощью вызова метода <span class="filled">addItem()</span>. В качестве параметра методу передается callback-метод <span class="filled">getButtonMenuItem(</span>). Метод создает экземпляр модели представления действия по конфигурационному объекту, который передан ему в качестве параметра.</p>
+
+	<p>Обращение к выделенной записи выполняется через атрибут <span class="filled">ActiveRow</span> модели представления раздела. Атрибут возвращает значение первичной колонки выделенной записи. В свою очередь, значение первичной колонки выделенной записи может использоваться для получения значений, загруженных в реестр полей выбранного объекта.</p>
+
+	<p>Значение первичных колонок выбранных записей хранится в свойстве <span class="filled">SelectedRows</span> модели представления раздела. Эти значения могут использоваться для получения значений, загруженных в реестр полей выбранных объектов, например, из коллекции данных списочного реестра, которая хранится в свойстве <span class="filled">GridData</span> модели представления реестра.</p>
+
+	<p>Базовая реализация добавления действия представлена ниже.</p>
+
+	<div class="code">
+	<div class="code__widgets">
+	<div class="code__top">
+	<div class="code__title"><span class="filled">BaseSectionV2</span></div>
+	</div>
+
+	<div class="code__source">
+	<pre class="prettyprint">
+/**
+* Возвращает коллекцию действий раздела в режиме отображения реестра.
+* @protected
+* @virtual
+* @return {Terrasoft.BaseViewModelCollection} Коллекция действий раздела.
+*/
+getSectionActions: function() {
+	/* Коллекция действий. Экземпляр Terrasoft.BaseViewModelCollection. */
+	var actionMenuItems = this.Ext.create("Terrasoft.BaseViewModelCollection"); 
+	/* Добавление действия в коллекцию. В качестве callback-метода передается метод, который инстанцирует экземпляр модели действия переданному конфигурационному объекту. */
+	actionMenuItems.addItem(
+		this.getButtonMenuItem({
+		/* Конфигурационный объект настройки действия. */
+		...
+		})
+	);
+	return actionMenuItems;
+}
+</pre>
+	</div>
+	</div>
+	</div>
+	</li>
+</ol><p>Свойства конфигурационного объекта действия раздела, который передается в качестве параметра в метод <span class="filled">getButtonMenuItem()</span> представлены в таблице ниже.</p>
+
+<div class="table">
+<div class="table__caption">Свойства конфигурационного объекта</div>
+
+<table><thead><tr><th>
+			<center>Свойство</center>
+			</th>
+			<th>
+			<center>Описание</center>
+			</th>
+		</tr></thead><tbody><tr><td><span class="filled">Type</span></td>
+			<td>Тип элемента выпадающего меню <span class="key">Действия</span> (<span class="key">Actions</span>). Это свойство позволяет добавить в меню действий горизонтальную линию для отделения блоков меню. Для этого в качестве значения свойства необходимо указать <span class="filled">Terrasoft.MenuSeparator</span>. Если значение свойства не указано, то по умолчанию добавляется пункт меню.</td>
+		</tr><tr><td><span class="filled">Caption</span></td>
+			<td>Заголовок пункта меню <span class="key">Действия</span> (<span class="key">Actions</span>). Для заголовков рекомендуется использовать <a href="../../back_end_razrabotka/lokalizuemye_resursy/operacii_s_lokalizuemymi_resursami/obzor.html#title-2174-3">локализуемые строки</a>.</td>
+		</tr><tr><td><span class="filled">Click</span></td>
+			<td>Привязка метода-обработчика действия по имени метода.</td>
+		</tr><tr><td><span class="filled">Enabled</span></td>
+			<td>Логическое свойство, которое регулирует доступность пункта меню.</td>
+		</tr><tr><td><span class="filled">Visible</span></td>
+			<td>Логическое свойство, которое регулирует видимость пункта меню.</td>
+		</tr></tbody></table></div>
+
+<h2>Настроить блок быстрых фильтров раздела<a class="title-anchor" href="#title-2330-12" id="title-2330-12"> </a></h2>
+
+<p>Приложение предоставляет возможность реализовать пользовательский блок быстрых фильтров для записей реестра раздела.</p>
+
+<p>Чтобы <strong>настроить блок быстрых фильтров раздела</strong>:</p>
+
+<ol><li>Создайте схему замещающей модели представления страницы раздела. Для этого воспользуйтесь инструкцией, которая приведена в статье <a href="../../instrumenty_razrabotki/creatio_ide/razrabotka_konfiguracionnykh_ehlementov/obzor.html#title-3028-4">Разработка конфигурационных элементов</a>.</li>
+	<li>В качестве родительского объекта выберите схему модели представления, которую необходимо заместить.</li>
+	<li>Реализуйте <strong>логику работы фильтрации</strong>. Для этого в свойстве <span class="filled">methods</span> реализуйте метод <span class="filled">initFixedFiltersConfig()</span>, который инициализирует фиксированные фильтры. В методе создайте конфигурационный объект с массивом фильтров, присвойте ссылку на объект атрибуту <span class="filled">fixedFiltersConfig</span> модели представления.</li>
+</ol><h2>Удалить раздел<a class="title-anchor" href="#title-2330-13" id="title-2330-13"> </a></h2>
+
+<ol><li>Проверьте наличие доступа к конфигурации системы и базе данных.</li>
+	<li>Снимите блокировку с соответствующего удаляемому разделу файла в SVN-хранилище.</li>
+	<li>
+	<p>Удалите раздел, созданный на основании объекта, который планируется удалить. Для этого выполните SQL-запрос.</p>
+
+	<div class="code">
+	<div class="code__widgets">
+	<div class="code__top">
+	<div class="code__title">SQL-запрос</div>
+	</div>
+
+	<div class="code__source">
+	<pre class="prettyprint">
+DECLARE @UId UNIQUEIDENTIFIER
+DECLARE @ModuleEntityUID UNIQUEIDENTIFIER;
+DECLARE @ModuleID UNIQUEIDENTIFIER;
+DECLARE @Name NVARCHAR(max) = 'ToDelete';
+select @UId = UId from SysSchema where Name Like @Name
+select @ModuleEntityUID = Id from SysModuleEntity where
+SysEntitySchemaUId = @UId
+select @ModuleID = Id from SysModule where SysModuleEntityId = @ModuleEntityUID;
+delete from SysModuleInWorkplace where SysModuleId = @ModuleID;
+delete from SysModule where Id = @ModuleID;
+delete from SysModuleEdit where SysModuleEntityId = @ModuleEntityUID;
+delete from SysModuleEntity where Id = @ModuleEntityUID;
+delete from SysDetail where EntitySchemaUId = @UId;
+delete from SysLookup where SysEntitySchemaUId = @UId;
+delete from [Lookup] where SysEntitySchemaUId = @UId;
+</pre>
+	</div>
+	</div>
+	</div>
+
+	<p>Значение <span class="filled">ToDelete</span> замените на название схемы пользовательского раздела.</p>
+	</li>
+	<li>
+	<p>После очистки базы данных удалите пользовательские схемы в разделе <span class="key">Конфигурация</span> (<span class="key">Configuration</span>).</p>
+
+	<p><strong>Порядок</strong> удаления конфигурационных схем:</p>
+
+	<ol><li><span class="filled">ToDeleteFile</span>.</li>
+		<li><span class="filled">ToDeleteInFolder</span>.</li>
+		<li><span class="filled">ToDeleteInTag</span>.</li>
+		<li><span class="filled">ToDeleteTag</span>.</li>
+		<li><span class="filled">ToDeleteFolder</span>.</li>
+		<li><span class="filled">ToDelete</span>.</li>
+	</ol></li>
+</ol></div>
+      
+  </div>
+<div class="block block-layout-builder block-field-blocknodedeveloper-documentationfield-linked">
+  
+    
+      
+  <div class="field field--name-field-linked field--type-entity-reference field--label-above">
+    <div class="field__label">Смотрите также</div>
+          <div class="field__items">
+              <div class="field__item"><a href="../stranica_zapisi/obzor/stranica_zapisi.html" hreflang="ru">Страница записи</a></div>
+          <div class="field__item"><a href="../../../user/bazis_platformy/interfejs/reestr/reestr_razdela.html" hreflang="ru">Реестр раздела</a></div>
+          <div class="field__item"><a href="../dashbordy/obzor.html" hreflang="ru">Дашборды</a></div>
+          <div class="field__item"><a href="../../../user/bazis_platformy/dannye/excel_export/export_v_excel.html" hreflang="ru">Экспорт в Excel</a></div>
+          <div class="field__item"><a href="../../../user/bazis_platformy/dannye/excel_import/import_iz_excel.html" hreflang="ru">Импорт из Excel</a></div>
+          <div class="field__item"><a href="../../../user/ustanovka_i_administrirovanie/nastrojka_bazovyh_intgracij/pochta_kontakty_i_kalendari_google/sinhronizatsja_kontaktov_i_aktivnostej/sinkhronizirovat_kontakty_i_aktivnosti_s_google.26" hreflang="ru">Синхронизировать контакты и активности с Google</a></div>
+          <div class="field__item"><a href="../../../user/bazis_platformy/dannye/filtry/filtry.html" hreflang="ru">Фильтры</a></div>
+          <div class="field__item"><a href="../../../user/bazis_platformy/dannye/gryppy/gruppy.html" hreflang="ru">Группы</a></div>
+          <div class="field__item"><a href="../../../user/bazis_platformy/dannye/tegi/tegi.html" hreflang="ru">Теги</a></div>
+          <div class="field__item"><a href="../../../user/kastomizacija_no_code/nastrojka_biznes_logiki/razdel/dobavlenie_razdela/dobavit_novyy_razdel.html" hreflang="ru">Добавить новый раздел</a></div>
+          <div class="field__item"><a href="../../instrumenty_razrabotki/creatio_ide/razrabotka_konfiguracionnykh_ehlementov/obzor.html" hreflang="ru">Разработка конфигурационных элементов</a></div>
+          <div class="field__item"><a href="../../back_end_razrabotka/lokalizuemye_resursy/operacii_s_lokalizuemymi_resursami/obzor.html" hreflang="ru">Операции с локализуемыми ресурсами</a></div>
+              </div>
+      </div>
+
+  </div>
+<div class="block block-layout-builder block-field-blocknodedeveloper-documentationfield-resources">
+  
+    
+      
+  <div class="field field--name-field-resources field--type-link field--label-above">
+    <div class="field__label">Ресурсы</div>
+          <div class="field__items">
+              <div class="field__item"><a href="https://www.youtube.com/watch?v=KS52VoNQuk8" target="_blank">Tech Hour: Нажимать аккуратно. Работа с кнопками и действиями в Creatio</a></div>
+          <div class="field__item"><a href="../../../../user/razdel.html" target="_blank">Документация Creatio по разделу</a></div>
+          <div class="field__item"><a href="../../../../user/kastomizacija_no_code/analitika.html" target="_blank">Документация Creatio по аналитике раздела</a></div>
+              </div>
+      </div>
+
+  </div>
+
+    </div>
+  </div>
+
+  </div>
+
+</article>
+
+  </div>
+
+  </div>
+
+          </div>
+        </div>
+
+                  <aside class="creatio-sidebar creatio-sidebar_first" role="complementary">
+              <div class="region region-sidebar-first">
+    <div id="block-documentationnaviagtion" class="block block-ts-nav block-ts-nav-doc-nav">
+  
+    
+      <div class="ts-nav-block"><a href="../../../../index.html" class="ts-nav-block__link">Документация</a><div class="ts-nav-block__title">Для разработчика</div>
+</div>
+<div class="ts-nav-container"><ul class="ts-nav-menu"><li class="ts-nav-menu__item">
+  <a href="../../s_chego_nachat.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">С чего начать&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../architecture.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Архитектура&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../instrumenty_razrabotki.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Инструменты разработки&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../back_end_razrabotka.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Back-end разработка&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../front_end_razrabotka.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Front-end разработка&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../integratsiya_i_vneshnij_api.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Интеграция и внешний API&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../ehlementy_interfejsa.html" class="ts-nav-menu__link ts-nav-menu__link_expanded ts-nav-menu__link_open" hreflang="ru">Элементы интерфейса&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+      <ul class="ts-nav-menu__children">
+      <li class="ts-nav-menu__item">
+  <a href="../glavnoe_menyu/obzor.html" class="ts-nav-menu__link" hreflang="ru">Главное меню</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../razdel.html" class="ts-nav-menu__link ts-nav-menu__link_expanded ts-nav-menu__link_open" hreflang="ru">Раздел&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+      <ul class="ts-nav-menu__children">
+      <li class="ts-nav-menu__item">
+  <a href="obzor.html" class="ts-nav-menu__link ts-nav-menu__link_guide ts-nav-menu__link_active" hreflang="ru">Обзор</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="dobavit_dejstvie_dlya_edinichnoj_zapisi.html" class="ts-nav-menu__link ts-nav-menu__link_case" hreflang="ru">Добавить действие для единичной записи</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="dobavit_dejstvie_dlya_neskolkikh_zapisej.html" class="ts-nav-menu__link ts-nav-menu__link_case" hreflang="ru">Добавить действие для нескольких записей</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="nastroit_obrabotku_dejstviya_dlya_neskolkikh_zapisej.html" class="ts-nav-menu__link ts-nav-menu__link_case" hreflang="ru">Настроить обработку действия для нескольких записей</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="nastroit_obrabotku_dejstviya_spravochnik_dlya_neskol%27kikh_zapisej.html" class="ts-nav-menu__link ts-nav-menu__link_case" hreflang="ru">Настроить обработку действия (справочник) для нескольких записей</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="nastroit_usloviya_otobrazheniya_reestra.html" class="ts-nav-menu__link ts-nav-menu__link_case" hreflang="ru">Настроить условия отображения реестра</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="nastroit_blok_bystrykh_filtrov.html" class="ts-nav-menu__link ts-nav-menu__link_case" hreflang="ru">Настроить блок быстрых фильтров</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="basesectionv2.html" class="ts-nav-menu__link ts-nav-menu__link_reference" data-type="JS" hreflang="ru">BaseSectionV2</a>
+  </li>
+
+    </ul>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../stranica_zapisi.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Страница записи&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../1215/detail.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Деталь&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../mini_kartochka.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Мини-карточка&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../modalnoe_okno.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Модальное окно&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../kommunikacionnaya_panel.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Коммуникационная панель&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../komandnaya_stroka/obzor.html" class="ts-nav-menu__link" hreflang="ru">Командная строка</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../dashbordy.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Дашборды&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../chaty.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Чаты&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../upravlenie_ehlementami_interfejsa.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Управление элементами интерфейса&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+
+    </ul>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../komponenty_prilozheniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Компоненты приложения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../razrabotka_mobilnogo_prilozheniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Разработка мобильного приложения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../razrabotka_marketplace_prilozheniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Разработка Marketplace-приложения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+</ul>
+</div>
+
+  </div>
+
+  </div>
+
+            <div class="creatio-sidebar__toggle"></div>
+          </aside>
+        
+                  <aside class="creatio-sidebar creatio-sidebar_second" role="complementary">
+              <div class="region region-sidebar-second">
+    <div id="block-example" class="block block-ts-nav block-ts-nav-page-nav">
+  
+    
+      <div class="ts-nav-page">
+  </div>
+
+  </div>
+<div id="block-adminfeedbackblock" class="block block-admin-feedback block-admin-feedback-block">
+  
+    
+      <div id="feedback-message"><div id="upper-feedback-content"><h2>Был ли данный материал полезен?</h2>
+<input class="feedback-btn feedback-btn__yes button js-form-submit form-submit" data-node-id="2330" data-feedback="yes" type="submit" name="op" value="Да" />
+<input class="feedback-btn feedback-btn__no button js-form-submit form-submit" data-node-id="2330" data-feedback="no" type="submit" name="op" value="Нет" />
+</div>
+<form class="admin-feedback-form" data-drupal-selector="admin-feedback-form" action="https://academy.terrasoft.ua/docs/7-18/developer/ehlementy_interfejsa/razdel/obzor" method="post" id="admin-feedback-form" accept-charset="UTF-8">
+  <div id="feedback-msg-result"></div><div class="js-form-item form-item js-form-type-textarea form-type-textarea js-form-item-feedback-message form-item-feedback-message form-no-label">
+        <div class="form-textarea-wrapper">
+  <textarea id="edit-feedback-msg" data-drupal-selector="edit-feedback-message" name="feedback_message" rows="5" cols="60" class="form-textarea resize-vertical"></textarea>
+</div>
+
+        </div>
+<input id="feedback-id" data-drupal-selector="edit-feedback-id" type="hidden" name="feedback_id" value="" />
+<input class="feedback-btn feedback-btn__send-comment button js-form-submit form-submit" data-drupal-selector="edit-feedback-send" type="submit" id="edit-feedback-send" name="op" value="Отправить" />
+<input autocomplete="off" data-drupal-selector="form-qaiptkq7fv5sbfjt-fzkhvpwac8hrzsydzllwbwh4fk" type="hidden" name="form_build_id" value="form-qAiptkQ7fv5SBFJt_FZkhvpwac8hRzsYDzLlwBwH4Fk" />
+<input data-drupal-selector="edit-admin-feedback-form" type="hidden" name="form_id" value="admin_feedback_form" />
+
+</form>
+</div>
+
+  </div>
+
+  </div>
+
+          </aside>
+              </main>
+    </div>
+  </div>
+
+  <footer role="contentinfo">
+    <div class="creatio-region creatio-region_footer">
+      <div class="creatio-container">
+          <div class="region region-footer">
+    <div id="block-footerua" class="block block-simple-block block-simple-blockfooter-ua">
+  
+    
+      <div class="footer">
+<div class="footer-left">
+<ul class="footer-socials"><li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_fb" href="https://www.facebook.com/terrasoft.ua" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_in" href="https://www.linkedin.com/company/terrasoft/" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_yt" href="https://www.youtube.com/c/TerrasoftUkraine" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_tg" href="https://t.me/Terrasoft_UA" target="_blank"> </a></li>
+</ul></div>
+
+<div class="footer-contact">
+<div class="footer-title">Будьте на связи!</div>
+
+<div class="footer-content">
+<div class="footer-items">
+<div class="footer-item"><a class="footer__link footer__link_phone" href="tel:+380443633133">+38 (044) 363-31-33</a></div>
+</div>
+
+<div class="footer-items">
+<div class="footer-item"><a class="footer__link footer__link_email" href="mailto:support@terrasoft.ua">support@terrasoft.ua</a></div>
+</div>
+</div>
+</div>
+</div>
+
+  </div>
+
+  </div>
+
+      </div>
+    </div>
+    <div class="creatio-region creatio-region_bottom">
+      <div class="creatio-container">
+          <div class="region region-bottom">
+    <div id="block-allrightsreservedua" class="block block-simple-block block-simple-blockfooter-bottom-ua">
+  
+    
+      <p>© 2002-2022 Terrasoft.  |  <a href="https://www.terrasoft.ua/privacy-policy" target="_blank">Конфиденциальность</a></p>
+
+  </div>
+
+  </div>
+
+      </div>
+    </div>
+  </footer>
+</div>
+<div class="creatio-bg"></div>
+
+
+  </div>
+
+    
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/docs\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/2330","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"ru"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"ajaxPageState":{"libraries":"admin_feedback\/admin_feedback_block,admin_feedback\/admin_feedback_css,classy\/base,classy\/messages,classy\/node,core\/drupal.ajax,core\/jquery.form,core\/normalize,creatio\/fancybox,creatio\/global,layout_discovery\/onecol,system\/base,ts_doc\/doc_version,ts_feedback\/ts_feedback,ts_nav\/breadcrumb,ts_nav\/doc_nav,ts_nav\/page_nav,ts_title_anchor\/ts_title_anchor","theme":"creatio","theme_token":null},"ajaxTrustedUrl":{"form_action_p_pvdeGsVG5zNF_XLGPTvYSKCf43t8qZYSwcfZl2uzM":true,"\/docs\/7-18\/developer\/ehlementy_interfejsa\/razdel\/obzor?ajax_form=1":true},"admin_feedback":{"yes_response":"\u0421\u043f\u0430\u0441\u0438\u0431\u043e \u0437\u0430 \u043e\u0431\u0440\u0430\u0442\u043d\u0443\u044e \u0441\u0432\u044f\u0437\u044c!","no_response":"\u0421\u043f\u0430\u0441\u0438\u0431\u043e \u0437\u0430 \u043e\u0431\u0440\u0430\u0442\u043d\u0443\u044e \u0441\u0432\u044f\u0437\u044c!","custom_text_response_on_no":{"value":"","format":"full_html"},"feedback_prompt_on_yes":true,"feedback_prompt_on_no":true,"feedback_enable_predefined_answers":false,"feedback_prompt":"\u041a\u0430\u043a \u043c\u043e\u0436\u043d\u043e \u0443\u043b\u0443\u0447\u0448\u0438\u0442\u044c \u044d\u0442\u0443 \u0441\u0442\u0430\u0442\u044c\u044e?"},"ajax":{"edit-feedback-send":{"callback":"::validateFeedbackMsg","event":"mousedown","keypress":true,"prevent":"click","url":"\/docs\/7-18\/developer\/ehlementy_interfejsa\/razdel\/obzor?ajax_form=1","dialogType":"ajax","submit":{"_triggering_element_name":"op","_triggering_element_value":"\u041e\u0442\u043f\u0440\u0430\u0432\u0438\u0442\u044c"}}},"user":{"uid":0,"permissionsHash":"9c2367dfcaba0fa15f0375f97aed64e146c908cee68508d13b79e3ee80e5162d"}}</script>
+<script src="../../../../sites/default/files/js/js_Rr-7TvYD7NposuRFJwUqThxM7yJmw8vs03PQwu5gWd8.js"></script>
+
+
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+      <g id="svg-copy" class="svg-icon svg-icon_copy">
+        <path d="M15.111,18H1.889A1.848,1.848,0,0,1,0,16.2V3.6A1.848,1.848,0,0,1,1.889,1.8H5.837a2.87,2.87,0,0,1,5.326,0h3.948A1.848,1.848,0,0,1,17,3.6V16.2A1.848,1.848,0,0,1,15.111,18ZM3.777,12.6v1.8h6.611V12.6Zm0-3.6v1.8h9.445V9Zm0-3.6V7.2h9.445V5.4ZM8.5,1.8a.924.924,0,0,0-.944.9.945.945,0,0,0,1.889,0A.924.924,0,0,0,8.5,1.8Z"/>
+      </g>
+
+      <g id="svg-prev" class="svg-icon svg-icon_arrow">
+        <path d="M5.488,12.779,0,6.39,5.488,0" transform="translate(1 0.652)"/>
+      </g>
+
+      <g id="svg-next" class="svg-icon svg-icon_arrow">
+        <path d="M0,12.779,5.488,6.39,0,0" transform="translate(0.759 0.652)"/>
+      </g>
+    </svg>
+  </body>
+
+<!-- Mirrored from academy.terrasoft.ua/docs/7-18/developer/ehlementy_interfejsa/razdel/obzor by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Mar 2022 03:25:09 GMT -->
+</html>

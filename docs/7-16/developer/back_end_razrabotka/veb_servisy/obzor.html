@@ -1,0 +1,1059 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# ">
+  
+<!-- Mirrored from academy.terrasoft.ua/docs/7-16/developer/back_end_razrabotka/veb_servisy/obzor by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Mar 2022 05:07:24 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+          <!-- Google Tag Manager -->
+      <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          '../../../../../../www.googletagmanager.com/gtm5445.html?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-KLLB8G');</script>
+      <!-- End Google Tag Manager -->
+        <meta charset="utf-8" />
+<link rel="canonical" href="obzor.html" />
+<meta name="description" content="Веб-сервис — идентифицируемая уникальным веб-адресом (URL-адресом) программная система, которая обеспечивает взаимодействие между приложениями. Назначение веб-сервиса — настройка интеграции между Creatio и внешними приложениями и системами.
+
+На основе пользовательской бизнес-логики Creatio сгенерирует и отправит запрос веб-сервису, получит ответ и предоставит необходимые данные. Эти данные можно использовать для создания или обновления записей в Creatio, а также для реализации пользовательской бизнес-логики или автоматизации." />
+<meta property="og:url" content="https://academy.terrasoft.ua/docs/7-16/developer/back_end_razrabotka/veb_servisy/obzor" />
+<meta property="og:title" content="Пользовательские веб-сервисы" />
+<meta property="og:description" content="Веб-сервис — идентифицируемая уникальным веб-адресом (URL-адресом) программная система, которая обеспечивает взаимодействие между приложениями. Назначение веб-сервиса — настройка интеграции между Creatio и внешними приложениями и системами.
+
+На основе пользовательской бизнес-логики Creatio сгенерирует и отправит запрос веб-сервису, получит ответ и предоставит необходимые данные. Эти данные можно использовать для создания или обновления записей в Creatio, а также для реализации пользовательской бизнес-логики или автоматизации." />
+<meta name="Generator" content="Drupal 9 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="../../../../themes/custom/creatio/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="revision" href="obzor.html" />
+
+    <title>Пользовательские веб-сервисы | Creatio Academy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&amp;family=Open+Sans:ital,wght@0,300;0,400;0,600;1,400&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" media="all" href="../../../../sites/default/files/css/css_6lTP66__-yc6QXFp1zOwoeJ0HVigoYZP-SeoLLii000.css" />
+<link rel="stylesheet" media="all" href="../../../../sites/default/files/css/css_XQJDNhkF3xH5SZCcY-PI89Zu4nYIzQ5oR3SnUKyfXJU.css" />
+<link rel="stylesheet" media="print" href="../../../../sites/default/files/css/css_Zn4VHvcniOOtUwkIVwXzYr_0AI9gUVgZcPqaH4ViagU.css" />
+
+    
+  </head>
+  <body class="path-node page-node-type-developer-documentation">
+          <!-- Google Tag Manager (noscript) -->
+      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KLLB8G"
+                        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+      <!-- End Google Tag Manager (noscript) -->
+    
+        
+      <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    <div class="creatio-page d-flex flex-column">
+        <div class="region region-informer">
+    <div id="block-terrasoftpidtrimueukrainu" class="block block-simple-block block-simple-blockterrasoft-pidtrimue-ukrainu">
+  
+    
+      <style type="text/css">
+<!--/*--><![CDATA[/* ><!--*/
+@import url(../../../../../../www.terrasoft.ua/themes/custom/creatio/css/components/informer.css)
+
+/*--><!]]>*/
+</style><div class="ts-swu">
+<div class="creatio-container">
+<div class="ts-swu__cont">
+<div><a class="ts-swu__link" href="https://www.terrasoft.ua/terrasoft-stands-with-ukraine" target="_blank">Україна понад усе!</a> <span><a href="https://www.terrasoft.ua/terrasoft-stands-with-ukraine" target="_blank">Приєднуйтеся</a> до допомоги!</span></div>
+</div>
+</div></div>
+
+  </div>
+
+  </div>
+
+  
+  <header role="banner">
+          <div class="creatio-region creatio-region_top">
+        <div class="creatio-container">
+            <div class="region region-top">
+    <div id="block-menutoggle" class="block block-simple-block block-simple-blockmenu-toggle">
+  
+    
+      <div class="menu-toggle"><span> </span></div>
+
+  </div>
+<div id="block-logowhite-2" class="block block-simple-block block-simple-blocklogo-white">
+  
+    
+      <p><a class="site-logo" href="../../../../../index.html" rel="home"><img src="../../../../themes/custom/creatio/logo-white.svg" /></a></p>
+
+  </div>
+<div id="block-search" class="block block-simple-block block-simple-blocksearch">
+  
+    
+      <div class="search">
+<form action="https://academy.terrasoft.ua/search" class="search-form" method="get"><input class="search-form__input" name="search" placeholder="Поиск" type="search" /><input class="search-form__button" type="submit" value="Поиск" /> </form>
+
+<div class="search-toggle"> </div>
+</div>
+
+  </div>
+<nav role="navigation" aria-labelledby="block-sitesua-menu" id="block-sitesua" class="block block-menu navigation menu--sites-ua">
+            
+  <h2 class="visually-hidden" id="block-sitesua-menu">Sites UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="https://www.terrasoft.ua/" rel="nofollow" target="_blank">Terrasoft</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://community.terrasoft.ua/" rel="nofollow" target="_blank">Community</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://marketplace.terrasoft.ua/" rel="nofollow" target="_blank">Marketplace</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+<div id="block-usermenu" class="block block-ts-user block-ts-user-menu-block">
+  
+    
+      <ul class="user-menu">
+      <li class="user-menu__item">
+      <a class="user-menu__link" href="https://profile.terrasoft.ua/user/login?destination=academy/ua/docs/7-16/developer/back_end_razrabotka/veb_servisy/obzor">Войти</a>
+    </li>
+  </ul>
+
+  </div>
+<div id="block-usermenumobile" class="block block-ts-user block-ts-user-menu-mobile-block">
+  
+    
+      <ul class="user-menu-mobile">
+      <li class="user-menu-mobile__item">
+      <div class="user-menu-mobile__user user-menu-mobile__user_icon"></div>
+      <ul class="user-menu-mobile__submenu">
+        <li class="user-menu-mobile__subitem">
+          <a class="user-menu-mobile__sublink" href="https://profile.terrasoft.ua/user/login?destination=academy/ua/docs/7-16/developer/back_end_razrabotka/veb_servisy/obzor">Войти</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  </div>
+
+  </div>
+
+        </div>
+      </div>
+              <div class="creatio-region creatio-region_header">
+        <div class="creatio-container">
+            <div class="region region-header">
+    <div id="block-logo" class="block block-simple-block block-simple-blocklogo">
+  
+    
+      <p><a class="site-logo" href="../../../../../index.html" rel="home"><img src="../../../../themes/custom/creatio/logo.svg" /></a></p>
+
+  </div>
+<nav role="navigation" aria-labelledby="block-osnovnayanavigaciyaua-menu" id="block-osnovnayanavigaciyaua" class="block block-menu navigation menu--main-ua">
+            
+  <h2 class="visually-hidden" id="block-osnovnayanavigaciyaua-menu">Основная навигация UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="../../../../index.html" data-drupal-link-system-path="&lt;front&gt;">Документация</a>
+              </li>
+                <li class="menu-item">
+        <a href="../../../../../trainings.html">Тренинги</a>
+              </li>
+                <li class="menu-item">
+        <a href="../../../../certification.html" data-drupal-link-system-path="node/3084">Сертификация и тестирование</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+<nav role="navigation" aria-labelledby="block-sitesua-2-menu" id="block-sitesua-2" class="block block-menu navigation menu--sites-ua">
+            
+  <h2 class="visually-hidden" id="block-sitesua-2-menu">Sites UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="https://www.terrasoft.ua/" rel="nofollow" target="_blank">Terrasoft</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://community.terrasoft.ua/" rel="nofollow" target="_blank">Community</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://marketplace.terrasoft.ua/" rel="nofollow" target="_blank">Marketplace</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+
+  </div>
+
+        </div>
+      </div>
+              <div class="creatio-region creatio-region_breadcrumb">
+        <div class="creatio-container">
+            <div class="region region-breadcrumb">
+    <div id="block-logowhite" class="block block-simple-block block-simple-blocklogo-white">
+  
+    
+      <p><a class="site-logo" href="../../../../../index.html" rel="home"><img src="../../../../themes/custom/creatio/logo-white.svg" /></a></p>
+
+  </div>
+<div id="block-breadcrumbnaviagtion" class="block block-ts-nav block-ts-nav-bread">
+  
+    
+      <nav class="breadcrumb"><ol class="ts-nav-breadcrumb__list"><li class="ts-nav-breadcrumb__item"><a href="../../../../index.html" class="ts-nav-breadcrumb__link" title="Документация">Документация</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../../index2132.html?vid_1=2" class="ts-nav-breadcrumb__link" title="Для разработчика">Для разработчика</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../back_end_razrabotka.html" class="ts-nav-breadcrumb__link" title="Back-end разработка" hreflang="zxx">Back-end разработка</a></li>
+<li class="ts-nav-breadcrumb__item ts-nav-breadcrumb__item_mobile"><a href="../veb_servisy.html" class="ts-nav-breadcrumb__link" title="Веб-сервисы" hreflang="ru">Веб-сервисы</a></li>
+<li class="ts-nav-breadcrumb__item"><span class="ts-nav-breadcrumb__link ts-nav-breadcrumb__link_current" title="Обзор">Обзор</span></li>
+</ol>
+</nav>
+
+  </div>
+<div id="block-search-2" class="block block-simple-block block-simple-blocksearch">
+  
+    
+      <div class="search">
+<form action="https://academy.terrasoft.ua/search" class="search-form" method="get"><input class="search-form__input" name="search" placeholder="Поиск" type="search" /><input class="search-form__button" type="submit" value="Поиск" /> </form>
+
+<div class="search-toggle"> </div>
+</div>
+
+  </div>
+
+  </div>
+
+        </div>
+      </div>
+      </header>
+
+  <div class="creatio-region creatio-region_main">
+    <div class="creatio-container">
+                <div class="region region-breadcrumb-mobile">
+    <div id="block-breadcrumbnaviagtion-2" class="block block-ts-nav block-ts-nav-bread">
+  
+    
+      <nav class="breadcrumb"><ol class="ts-nav-breadcrumb__list"><li class="ts-nav-breadcrumb__item"><a href="../../../../index.html" class="ts-nav-breadcrumb__link" title="Документация">Документация</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../../index2132.html?vid_1=2" class="ts-nav-breadcrumb__link" title="Для разработчика">Для разработчика</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../back_end_razrabotka.html" class="ts-nav-breadcrumb__link" title="Back-end разработка" hreflang="zxx">Back-end разработка</a></li>
+<li class="ts-nav-breadcrumb__item ts-nav-breadcrumb__item_mobile"><a href="../veb_servisy.html" class="ts-nav-breadcrumb__link" title="Веб-сервисы" hreflang="ru">Веб-сервисы</a></li>
+<li class="ts-nav-breadcrumb__item"><span class="ts-nav-breadcrumb__link ts-nav-breadcrumb__link_current" title="Обзор">Обзор</span></li>
+</ol>
+</nav>
+
+  </div>
+
+  </div>
+
+      
+      <main class="creatio-main" role="main">
+                                                    
+        <div class="creatio-content creatio-content_small">
+          <div class="creatio-content__inner creatio-content__inner_bg">
+                            <div class="region region-messages">
+    <div data-drupal-messages-fallback class="hidden"></div>
+
+  </div>
+
+            
+              <div class="region region-content">
+    <div id="block-creatio-page-title" class="block block-core block-page-title-block">
+  
+    
+      
+  <h1 class="page-title"><span class="field field--name-title field--type-string field--label-hidden">Пользовательские веб-сервисы</span>
+</h1>
+
+
+  </div>
+<div id="block-creatio-content" class="block block-system block-system-main-block">
+  
+    
+      
+<article data-history-node-id="2148" role="article" about="/docs/7-16/developer/back_end_razrabotka/veb_servisy/obzor" class="node node--type-developer-documentation node--view-mode-full">
+
+  
+    
+
+  
+  <div class="node__content">
+      <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocknodedeveloper-documentationfield-difficulty">
+  
+    
+      
+            <div class="field field--name-field-difficulty field--type-entity-reference field--label-hidden field__item"><div about="/docs/7-16/taxonomy/term/123" id="taxonomy-term-123" class="taxonomy-term vocabulary-difficulty">
+  
+  
+  <div class="content">
+      <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocktaxonomy-termdifficultyfield-icon">
+  
+    
+      
+            <div class="field field--name-field-icon field--type-image field--label-hidden field__item">  <img src="../../../../sites/default/files/difficulty/medium.svg" alt="" loading="lazy" typeof="foaf:Image" />
+
+</div>
+      
+  </div>
+<div class="block block-layout-builder block-field-blocktaxonomy-termdifficultyname">
+  
+    
+      
+            <div class="field field--name-name field--type-string field--label-hidden field__item"><span style="color: #F57E20;">Средний</span></div>
+      
+  </div>
+
+    </div>
+  </div>
+
+  </div>
+</div>
+</div>
+      
+  </div>
+<div class="block block-ts-doc block-ts-doc-downloads">
+  
+    
+      <a href="../../../../sites/default/files/pdf/node/2148/Polzovatelskie_veb_servisy_.pdf" target="_blank">PDF</a>
+  </div>
+<div class="block block-ts-doc block-ts-doc-versions">
+  
+    
+        <div class="ts-doc-versions">
+    <select class="ts-doc-versions__select">
+                              <option value="/docs/8-0/developer/back_end_razrabotka/veb_servisy/obzor">Версия 8.0</option>
+                              <option value="/docs/7-18/developer/back_end_razrabotka/veb_servisy/obzor">Версия 7.18</option>
+                              <option value="/docs/7-17/developer/back_end_razrabotka/veb_servisy/obzor">Версия 7.17</option>
+                                                <option value="/docs/7-16/developer/back_end_razrabotka/veb_servisy/obzor" selected>Версия 7.16</option>
+          </select>
+  </div>
+
+  </div>
+
+    </div>
+  </div>
+  <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocknodedeveloper-documentationbody">
+  
+    
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><p><strong>Веб-сервис</strong> — идентифицируемая уникальным веб-адресом (URL-адресом) программная система, которая обеспечивает взаимодействие между приложениями. <strong>Назначение</strong> веб-сервиса — настройка интеграции между Creatio и внешними приложениями и системами.</p>
+
+<p>На основе пользовательской бизнес-логики Creatio сгенерирует и отправит запрос веб-сервису, получит ответ и предоставит необходимые данные. Эти данные можно использовать для создания или обновления записей в Creatio, а также для реализации пользовательской бизнес-логики или автоматизации.</p>
+
+<p>Виды веб-сервисов в Creatio:</p>
+
+<ul><li><strong>Внешние REST и SOAP-сервисы</strong>, с которыми можно настроить интеграцию low-code инструментами. Подробнее читайте в блоке статей <a href="hhttps://academy.terrasoft.ua/docs/user/instrumenty_kastomizacii/web_servisy">Веб-сервисы</a> документации для пользователя.</li>
+	<li>
+	<p><strong>Системные веб-сервисы</strong>.</p>
+
+	<ul><li>Системные веб-сервисы с аутентификацией на основе cookies.</li>
+		<li>Системные веб-сервисы с анонимной аутентификацией.</li>
+	</ul></li>
+	<li>
+	<p><strong>Пользовательские веб-сервисы</strong>.</p>
+
+	<ul><li>Пользовательские веб-сервисы с аутентификацией на основе cookies.</li>
+		<li>Пользовательские веб-сервисы с анонимной аутентификацией.</li>
+	</ul></li>
+</ul><p>Системные веб-сервисы, разработанные на .NET Framework, реализованы на основе технологии <a href="https://docs.microsoft.com/en-us/dotnet/framework/wcf/" target="_blank">WCF</a> и управляются на уровне IIS. Системные веб-сервисы, разработанные на .NET Core, реализованы на основе технологии <a href="https://docs.microsoft.com/en-us/aspnet/core/web-api/?view=aspnetcore-5.0" target="_blank">ASP.NET Core Web API</a>.</p>
+
+<p>Виды аутентификации, которые поддерживаются веб-сервисами в Creatio, описаны в статье <a href="../../integratsiya_i_vneshnij_api/autentifikatsiya/obzor.html">Аутентификация</a>. Рекомендуемым способом аутентификации является аутентификация на основе открытого протокола авторизации OAuth 2.0, которая описана в статье <a href="../../../../user/razvertyvanie_onsite/nastroika_dopolnitelnikh_parametrov_i_integraciy/avtorizacija_po_protokolu_oauth_2_0/nastroit_avtorizaciyu_prilozhenij_po_protokolu_oauth20.html">Настроить авторизацию интегрированных приложений по протоколу OAuth 2.0</a>.</p>
+
+<p>Примеры <strong>системных веб-сервисов с аутентификацией на основе cookies</strong>, предоставляемых Creatio:</p>
+
+<ul><li><span class="filled">odata</span> — выполнение запросов от внешних приложений к серверу баз данных Creatio по протоколу OData 4. Описание использования протокола OData 4 в Creatio содержится в статье <a href="../../integratsiya_i_vneshnij_api/servisy_raboty_s_dannymi/odata/obzor.html#title-2306-1">OData</a>.</li>
+	<li><span class="filled">EntityDataService.svc</span> — выполнение запросов от внешних приложений к серверу баз данных Creatio по протоколу OData 3. Описание использования протокола OData 3 в Creatio содержится в статье <a href="../../integratsiya_i_vneshnij_api/servisy_raboty_s_dannymi/odata/obzor.html#title-2306-2">OData</a>.</li>
+	<li><span class="filled">ProcessEngineService.svc</span> — запуск бизнес-процессов Creatio из внешних приложений. Описание веб-сервиса содержится в статье <a href="../../integratsiya_i_vneshnij_api/servis_zapuska_biznes_processov/obzor.html">Сервис запуска бизнес-процессов</a>.</li>
+</ul><p>Примеры <strong>системных веб-сервисов с анонимной аутентификацией</strong>, предоставляемых Creatio:</p>
+
+<ul><li><span class="filled">AuthService.svc</span> — выполнение запроса на аутентификацию в приложении Creatio. Описание веб-сервиса содержится в статье <a href="../../integratsiya_i_vneshnij_api/autentifikatsiya/obzor.html">Аутентификация</a>.</li>
+</ul><p>В этой статье рассмотрены пользовательские веб-сервисы. Системные веб-сервисы описаны в разделе <a href="../../../../developer/integrations_and_api.html">Интеграция и внешний API</a>.</p>
+
+<h2>Разработать пользовательский веб-сервис<a class="title-anchor" href="#title-2148-1" id="title-2148-1"> </a></h2>
+
+<p><strong>Пользовательский веб-сервис</strong> — RESTful-сервис, реализованный на базе технологии WCF (для .NET Framework) или ASP.NET Core Web API (для .NET Core). <strong>Отличие</strong> пользовательского веб-сервиса от системного — возможность реализации специфических интеграционных задач.</p>
+
+<p>В зависимости от платформы, на которой развернуто приложение, разработка пользовательского веб-сервиса имеет свои особенности. Ниже рассмотрены особенности разработки пользовательского веб-сервиса для платформ .NET Framework и .NET Core.</p>
+
+<h3>Разработать пользовательский веб-сервис с аутентификацией на основе cookies<a class="title-anchor" href="#title-2148-2" id="title-2148-2"> </a></h3>
+
+<ol><li>Создайте схему <span class="key">Исходный код</span> (<span class="key">Source code</span>). Для создания схемы воспользуйтесь статьей <a href="../../../../7-17/developer/instrumenty_razrabotki/creatio_ide/razrabotka_konfiguratsionnykh_elementov.html#title-3028-8">Разработка конфигурационных элементов</a>.</li>
+	<li>
+	<p>Создайте класс сервиса.</p>
+
+	<ol><li>В дизайнере схем добавьте пространство имен <span class="filled">Terrasoft.Configuration</span> или любое вложенное в него пространство имен. Название пространства имен может быть любым.</li>
+		<li>C помощью директивы <span class="filled">using</span> добавьте пространства имен, типы данных которых будут задействованы в классе.</li>
+		<li>Используйте пространство имен <span class="filled">Terrasoft.Web.Http.Abstractions</span>, которое позволит пользовательскому веб-сервису работать на платформах .NET Framework и .NET Core. Если при разработке веб-сервиса было использовано пространство имен <span class="filled">System.Web</span> и необходимо запустить веб-сервис на платформе .NET Core, то <a href="obzor.html#title-2148-7">выполните адаптацию веб-сервиса </a>.</li>
+		<li>Добавьте название класса, которое соответствует названию схемы (свойство <span class="key">Код</span> (<span class="key">Code</span>)).</li>
+		<li>В качестве родительского класса укажите класс <span class="filled">Terrasoft.Nui.ServiceModel.WebService.BaseService</span>.</li>
+		<li>Для класса добавьте атрибуты <span class="filled">[ServiceContract]</span> и <span class="filled">[AspNetCompatibilityRequirements]</span> с необходимыми параметрами. Атрибут <span class="filled">[ServiceContract]</span> описан в официальной <a href="https://docs.microsoft.com/en-us/dotnet/api/system.servicemodel.servicecontractattribute?view=dotnet-plat-ext-5.0" target="_blank">документации Microsoft</a>. Атрибут <span class="filled">[AspNetCompatibilityRequirements]</span> описан в официальной <a href="https://docs.microsoft.com/en-us/dotnet/api/system.servicemodel.activation.aspnetcompatibilityrequirementsattribute?view=netframework-4.8" target="_blank">документации Microsoft</a>.</li>
+	</ol></li>
+	<li>
+	<p>Реализуйте методы класса, которые соответствуют конечным точкам веб-сервиса.</p>
+
+	<p>Для методов добавьте атрибуты <span class="filled">[OperationContract]</span> и <span class="filled">[WebInvoke]</span> с необходимыми параметрами. Атрибут <span class="filled">[OperationContract]</span> описан в официальной <a href="https://docs.microsoft.com/en-us/dotnet/api/system.servicemodel.operationcontractattribute?view=dotnet-plat-ext-5.0" target="_blank">документации Microsoft</a>. Атрибут <span class="filled">[WebInvoke]</span> описан в официальной <a href="https://docs.microsoft.com/en-us/dotnet/api/system.servicemodel.web.webinvokeattribute?view=netframework-4.8" target="_blank">документации Microsoft</a>.</p>
+	</li>
+	<li>
+	<p>Реализуйте дополнительные классы, экземпляры которых будут принимать или возвращать методы веб-сервиса (опционально). Выполняется при необходимости передачи данных сложных типов (экземпляры объектов, коллекции, массивы и т. д.).</p>
+
+	<p>Для класса добавьте атрибут <span class="filled">[DataContract]</span>, а для полей класса — атрибут <span class="filled">[DataMember]</span>. Атрибут <span class="filled">[DataContract]</span> описан в официальной <a href="https://docs.microsoft.com/en-us/dotnet/api/system.runtime.serialization.datacontractattribute?view=net-5.0" target="_blank">документации Microsoft</a>. Атрибут <span class="filled">[DataMember]</span> описан в официальной <a href="https://docs.microsoft.com/en-us/dotnet/api/system.runtime.serialization.datamemberattribute?view=net-5.0" target="_blank">документации Microsoft</a>.</p>
+	</li>
+	<li>Опубликуйте схему исходного кода.</li>
+</ol><p>В результате пользовательский веб-сервис с аутентификацией на основе cookies будет доступен для вызова из программного кода конфигурационных схем, а также из внешних приложений.</p>
+
+<h3>Разработать пользовательский веб-сервис с анонимной аутентификацией<a class="title-anchor" href="#title-2148-3" id="title-2148-3"> </a></h3>
+
+<p><strong>Пользовательские веб-сервисы с анонимной аутентификацией</strong> — веб-сервисы, которые не требуют предварительной аутентификации пользователя, т. е. доступны для анонимного использования.</p>
+
+<div class="message message_warning">
+<p><span class="message__bold message__bold_warning">Важно.</span> При реализации пользовательских веб-сервисов не рекомендуется использовать анонимную аутентификацию, поскольку это может снижать безопасность и производительность.</p>
+</div>
+
+<h4>Разработать пользовательский веб-сервис с анонимной аутентификацией для платформы .NET Framework<a class="title-anchor" href="#title-2148-4" id="title-2148-4"> </a></h4>
+
+<ol><li>Выполните шаги 1-5 инструкции <a href="obzor.html#title-2148-2">Разработать пользовательский веб-сервис с аутентификацией на основе cookies</a>.</li>
+	<li>При создании класса сервиса добавьте системное подключение <span class="filled">SystemUserConnection</span>.</li>
+	<li>
+	<p>При создании метода класса укажите пользователя, от имени которого будет выполняться обработка http-запроса. Для этого после получения <span class="filled">SystemUserConnection</span> вызовите метод <span class="filled">SessionHelper.SpecifyWebOperationIdentity</span> пространства имен <span class="filled">Terrasoft.Web.Common</span>. Этот метод обеспечивает работоспособность бизнес-процессов при работе с сущностью (<span class="filled">Entity</span>) базы данных из пользовательского веб-сервиса с анонимной аутентификацией.</p>
+
+	<div class="code">
+	<div class="code__widgets">
+	<div class="code__source">
+	<pre class="prettyprint">
+Terrasoft.Web.Common.SessionHelper.SpecifyWebOperationIdentity(HttpContextAccessor.GetInstance(), SystemUserConnection.CurrentUser);
+</pre>
+	</div>
+	</div>
+	</div>
+	</li>
+	<li>
+	<p>Зарегистрируйте пользовательский веб-сервис с анонимной аутентификацией:</p>
+
+	<ol><li>Перейдите в каталог <span class="filled">..\Terrasoft.WebApp\ServiceModel</span>.</li>
+		<li>
+		<p>Создайте файл с названием веб-сервиса и расширением *.svc. Добавьте в него запись.</p>
+
+		<div class="code">
+		<div class="code__widgets">
+		<div class="code__source" data-tab="Шаблон регистрации пользовательского веб-сервиса с анонимной аутентификацией">
+		<pre class="prettyprint">
+&lt;% @ServiceHost
+    Service = "Service, ServiceNamespace"
+    Factory = "Factory, FactoryNamespace"
+    Debug = "Debug"
+    Language = "Language"
+    CodeBehind = "CodeBehind"
+%&gt;
+</pre>
+		</div>
+
+		<div class="code__source" data-tab="Пример регистрации пользовательского веб-сервиса с анонимной аутентификацией">
+		<pre class="prettyprint">
+&lt;% @ServiceHost
+    Service = "Terrasoft.Configuration.UsrAnonymousConfigurationServiceNamespace.UsrAnonymousConfigurationService"
+    Debug = "true"
+    Language = "C#"
+%&gt;
+</pre>
+		</div>
+		</div>
+		</div>
+
+		<p>Атрибут <span class="filled">Service</span> должен содержать полное имя класса веб-сервиса с указанием пространства имен.</p>
+
+		<p>WCF-директива <span class="filled">@ServiceHost</span> описана в официальной <a href="https://docs.microsoft.com/en-us/dotnet/framework/configure-apps/file-schema/wcf-directive/servicehost" target="_blank">документации Microsoft</a>.</p>
+		</li>
+	</ol></li>
+	<li>
+	<p>Настройте пользовательский веб-сервис с анонимной аутентификацией для работы по протоколам http и https:</p>
+
+	<ol><li>
+		<p>Откройте файл <span class="filled">..\Terrasoft.WebApp\ServiceModel\http\services.config</span> и добавьте в него запись.</p>
+
+		<div class="code">
+		<div class="code__widgets">
+		<div class="code__top">
+		<div class="code__title">Пример изменений файла <span class="filled">..\Terrasoft.WebApp\ServiceModel\http\services.config</span></div>
+		</div>
+
+		<div class="code__source">
+		<pre class="prettyprint">
+&lt;services&gt;
+    ...
+    &lt;service name="Terrasoft.Configuration.[Custom namespace].[Service name]"&gt;
+        &lt;endpoint name="[Service name]EndPoint"
+            address=""
+            binding="webHttpBinding"
+            behaviorConfiguration="RestServiceBehavior"
+            bindingNamespace="http://Terrasoft.WebApp.ServiceModel"
+            contract="Terrasoft.Configuration.[Custom namespace].[Service name]" /&gt;
+    &lt;/service&gt;
+&lt;/services&gt;
+</pre>
+		</div>
+		</div>
+		</div>
+
+		<p><span class="filled">&lt;services&gt;</span> — элемент, который содержит перечень конфигураций всех веб-сервисов приложения (вложенные элементы <span class="filled">&lt;service&gt;</span>).</p>
+
+		<p><span class="filled">name</span> — атрибут, который содержит название типа (класса или интерфейса), реализующего контракт веб-сервиса.</p>
+
+		<p><span class="filled">&lt;endpoint&gt;</span> — вложенный элемент, который содержит адрес, привязку и интерфейс, определяющий контракт веб-сервиса, указанного в атрибуте <span class="filled">name</span> элемента <span class="filled">&lt;service&gt;</span>.</p>
+
+		<p>Описание элементов конфигурирования веб-сервиса доступно в официальной <a href="https://docs.microsoft.com/en-us/dotnet/framework/wcf/configuring-services-using-configuration-files" target="_blank">документации Microsoft</a>.</p>
+		</li>
+		<li>Аналогичную запись добавьте в файл <span class="filled">..\Terrasoft.WebApp\ServiceModel\https\services.config</span>.</li>
+	</ol></li>
+	<li>
+	<p>Настройте доступ к пользовательскому веб-сервису с анонимной аутентификацией для всех пользователей:</p>
+
+	<ol><li>Откройте файл <span class="filled">..\Terrasoft.WebApp\Web.config</span>.</li>
+		<li>
+		<p>Добавьте элемент <span class="filled">&lt;location&gt;</span>, определяющий относительный путь и права доступа к веб-сервису.</p>
+
+		<div class="code">
+		<div class="code__widgets">
+		<div class="code__top">
+		<div class="code__title">Пример изменений файла <span class="filled">..\Terrasoft.WebApp\Web.config</span></div>
+		</div>
+
+		<div class="code__source">
+		<pre class="prettyprint">
+&lt;configuration&gt;
+    ...
+    &lt;location path="ServiceModel/[Service name].svc"&gt;
+        &lt;system.web&gt;
+            &lt;authorization&gt;
+                &lt;allow users="*" /&gt;
+            &lt;/authorization&gt;
+        &lt;/system.web&gt;
+    &lt;/location&gt;
+    ...
+&lt;/configuration&gt;
+</pre>
+		</div>
+		</div>
+		</div>
+		</li>
+		<li>
+		<p>В атрибут <span class="filled">value</span> ключа <span class="filled">AllowedLocations</span> элемента <span class="filled">&lt;appSettings&gt;</span> добавьте относительный путь к веб-сервису.</p>
+
+		<div class="code">
+		<div class="code__widgets">
+		<div class="code__top">
+		<div class="code__title">Пример изменений файла <span class="filled">..\Terrasoft.WebApp\Web.config</span></div>
+		</div>
+
+		<div class="code__source">
+		<pre class="prettyprint">
+&lt;configuration&gt;
+    ...
+    &lt;appSettings&gt;
+    ...
+        &lt;add key="AllowedLocations" value="[Предыдущие значения];<wbr></wbr>ServiceModel/<wbr></wbr>[Service name].svc"  /&gt;
+    ...
+    &lt;/appSettings&gt;
+    ...
+&lt;/configuration&gt;
+</pre>
+		</div>
+		</div>
+		</div>
+		</li>
+	</ol></li>
+	<li>Перезапустите приложение в IIS.</li>
+</ol><p>В результате пользовательский веб-сервис с анонимной аутентификацией будет доступен для вызова из программного кода конфигурационных схем, а также из внешних приложений. К веб-сервису можно обращаться, как с предварительной аутентификацией, так и без нее.</p>
+
+<h4>Разработать пользовательский веб-сервис с анонимной аутентификацией для платформы .NET Core<a class="title-anchor" href="#title-2148-5" id="title-2148-5"> </a></h4>
+
+<ol><li>Выполните шаги 1-5 инструкции <a href="obzor.html#title-2148-5">Разработать пользовательский веб-сервис с аутентификацией на основе cookies</a>.</li>
+	<li>
+	<p>Настройте доступ к пользовательскому веб-сервису с анонимной аутентификацией для всех пользователей:</p>
+
+	<div class="code">
+	<div class="code__widgets">
+	<div class="code__top">
+	<div class="code__title">Пример изменений файла <span class="filled">..\Terrasoft.WebHost\appsettings.json</span></div>
+	</div>
+
+	<div class="code__source">
+	<pre class="prettyprint">
+"Terrasoft.Configuration.[Service name]": [
+    "/ServiceModel/[Service name].svc"
+]
+</pre>
+	</div>
+	</div>
+	</div>
+
+	<ol><li>Откройте конфигурационный файл <span class="filled">..\Terrasoft.WebHost\appsettings.json</span>.</li>
+		<li>Добавьте информацию о веб-сервисе в блок <span class="filled">AnonymousRoutes</span> файла.</li>
+	</ol></li>
+	<li>Перезапустите приложение.</li>
+</ol><p>В результате пользовательский веб-сервис с анонимной аутентификацией будет доступен для вызова из программного кода конфигурационных схем, а также из внешних приложений. К веб-сервису можно обращаться, как с предварительным вводом логина и пароля, так и без их использования.</p>
+
+<div class="message message_warning">
+<p><span class="message__bold message__bold_warning">Важно.</span> После обновления приложения необходимо выполнить повторную настройку веб-сервиса, поскольку при обновлении приложения все конфигурационные файлы заменяются новыми.</p>
+</div>
+
+<h2>Вызвать пользовательский веб-сервис<a class="title-anchor" href="#title-2148-6" id="title-2148-6"> </a></h2>
+
+<p>Пользовательский веб-сервис можно вызвать из браузера и из front-end части.</p>
+
+<h3>Вызвать пользовательский веб-сервис из браузера<a class="title-anchor" href="#title-2148-7" id="title-2148-7"> </a></h3>
+
+<h4>Вызвать из браузера пользовательский веб-сервис с аутентификацией на основе cookies <a class="title-anchor" href="#title-2148-8" id="title-2148-8"> </a></h4>
+
+<p>Чтобы вызвать из браузера пользовательский веб-сервис с аутентификацией на основе cookies для платформы <strong>.NET Framework</strong>:</p>
+
+<ol><li>Для получения аутентификационных cookie используйте системный веб-сервис <span class="filled">AuthService.svc</span>.</li>
+	<li>
+	<p>Для вызова пользовательского веб-сервиса используйте строку запроса:</p>
+
+	<div class="SimpleTabContainer" data-itemid="JSON" data-title="JSON" id="Syntax_JSON">
+	<div class="code">
+	<div class="code__widgets">
+	<div class="code__source" data-tab="Шаблон адреса пользовательского веб-сервиса с аутентификацией на основе cookies">
+	<pre class="prettyprint">
+[Адрес приложения Creatio/0/rest/[Название пользовательского веб-сервиса]/[Конечная точка пользовательского веб-сервиса]?[Опциональные параметры]
+</pre>
+	</div>
+
+	<div class="code__source" data-tab="Пример адреса пользовательского веб-сервиса с аутентификацией на основе cookies">
+	<pre class="prettyprint">
+http://myсreatio.com/0/rest/UsrCustomConfigurationService/GetContactIdByName?Name=User1
+</pre>
+	</div>
+	</div>
+	</div>
+	</div>
+	</li>
+</ol><p>Для платформы <strong>.NET Core</strong> процедура вызова пользовательского веб-сервиса с аутентификацией на основе cookies аналогична. Различие — не нужно использовать приставку <span class="filled">/0</span>.</p>
+
+<h4>Вызвать из браузера пользовательский веб-сервис с анонимной аутентификацией <a class="title-anchor" href="#title-2148-9" id="title-2148-9"> </a></h4>
+
+<p>Чтобы вызвать из браузера пользовательский веб-сервис с анонимной аутентификацией для платформы <strong>.NET Framework</strong>, используйте строку запроса:</p>
+
+<div class="SimpleTabContainer" data-itemid="JSON" data-title="JSON" id="Syntax_JSON">
+<div class="code">
+<div class="code__widgets">
+<div class="code__source" data-tab="Шаблон адреса пользовательского веб-сервиса с анонимной аутентификацией">
+<pre class="prettyprint">
+[Адрес приложения Creatio]/0/ServiceModel/[Название пользовательского веб-сервиса]/[Конечная точка пользовательского веб-сервиса]?[Опциональные параметры]
+</pre>
+</div>
+
+<div class="code__source" data-tab="Пример адреса пользовательского веб-сервиса с анонимной аутентификацией">
+<pre class="prettyprint">
+http://myсreatio.com/0/ServiceModel/UsrCustomConfigurationService.svc/GetContactIdByName?Name=User1
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<p>Для платформы <strong>.NET Core</strong> процедура вызова пользовательского веб-сервиса с анонимной аутентификацией аналогична. Различие — не нужно использовать приставку <span class="filled">/0</span>.</p>
+
+<h3>Вызвать пользовательский веб-сервис из front-end части<a class="title-anchor" href="#title-2148-10" id="title-2148-10"> </a></h3>
+
+<ol><li>В модуль страницы, из которой вызывается веб-сервис, в качестве зависимости подключите модуль <span class="filled">ServiceHelper</span>. Этот модуль предоставляет удобный интерфейс для выполнения запросов к серверу через провайдер запросов <span class="filled">Terrasoft.AjaxProvider</span>, реализованный в клиентском ядре.</li>
+	<li>
+	<p>Вызовите пользовательский веб-сервис из модуля <span class="filled">ServiceHelper</span>.</p>
+
+	<p><strong>Способы вызова</strong> пользовательского веб-сервиса:</p>
+
+	<ul><li>Вызовите метод <span class="filled">callService(serviceName, <wbr></wbr>serviceMethodName, <wbr></wbr>callback, <wbr></wbr>serviceData, <wbr></wbr>scope)</span>.</li>
+		<li>
+		<p>Вызовите метод <span class="filled">callService(config)</span>, где <span class="filled">config</span> — конфигурационный объект со свойствами:</p>
+
+		<p><span class="filled">serviceName</span> — имя пользовательского веб-сервиса.</p>
+
+		<p><span class="filled">methodName</span> — имя вызываемого метода пользовательского сервиса.</p>
+
+		<p><span class="filled">callback</span> — функция обратного вызова, в которой выполняется обработка ответа от веб-сервиса.</p>
+
+		<p><span class="filled">data</span> — объект с проинициализированными входящими параметрами для метода веб-сервиса.</p>
+
+		<p><span class="filled">scope</span> — контекст выполнения запроса.</p>
+		</li>
+	</ul></li>
+</ol><div class="message message_warning">
+<p><span class="message__bold message__bold_warning">Важно.</span> Модуль <span class="filled">ServiceHelper</span> работает только с <span class="filled">POST</span>-запросами. Поэтому к методам пользовательского веб-сервиса необходимо добавить атрибут <span class="filled">[WebInvoke]</span> с параметром <span class="filled">Method = "POST"</span>.</p>
+</div>
+
+<h2>Перенести существующий пользовательский веб-сервис на платформу .NET Core<a class="title-anchor" href="#title-2148-11" id="title-2148-11"> </a></h2>
+
+<p>Пользовательский веб-сервис, который был разработан на платформе .NET Framework и получает контекст без наследования базового класса <span class="filled">Terrasoft.Web.Common.BaseService</span>, можно перенести на платформу .NET Core. Для переноса необходимо <strong>выполнить адаптацию пользовательского веб-сервиса</strong>.</p>
+
+<p>Свойство <span class="filled">HttpContextAccessor</span> класса <span class="filled">Terrasoft.Web.Common.BaseService</span> обеспечивает унифицированный доступ к контексту (<span class="filled">HttpContext</span>) в .NET Framework и .NET Core. Свойства <span class="filled">UserConnection</span> и <span class="filled">AppConnection</span> позволяют получить объект пользовательского подключения и объект подключения на уровне приложения. Это позволяет отказаться от использования свойства <span class="filled">HttpContext.Current</span> библиотеки <span class="filled">System.Web</span>.</p>
+
+<div class="code">
+<div class="code__widgets">
+<div class="code__top">
+<div class="code__title">Пример использования свойств родительского класса <span class="filled">Terrasoft.Web.Common.BaseService</span></div>
+</div>
+
+<div class="code__source">
+<pre class="prettyprint">
+namespace Terrasoft.Configuration.UsrCustomNamespace
+{
+    using Terrasoft.Web.Common;
+
+    [ServiceContract]
+    [AspNetCompatibilityRequirements(RequirementsMode = AspNetCompatibilityRequirementsMode.Required)]
+    public class UsrCustomConfigurationService: BaseService
+    {
+        /* Метод веб-сервиса. */
+        [OperationContract]
+        [WebInvoke(Method = "GET", RequestFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Wrapped,
+        ResponseFormat = WebMessageFormat.Json)]
+        public void SomeMethod() {
+            ...
+            /* UserConnection — свойство BaseService. */
+            var currentUser = UserConnection.CurrentUser;
+            /* AppConnection — свойство BaseService. */
+            var sdkHelpUrl = AppConnection.SdkHelpUrl; 
+            /* HttpContextAccessor — свойство BaseService. */
+            var httpContext = HttpContextAccessor.GetInstance(); 
+            ...
+        }
+    }
+}
+</pre>
+</div>
+</div>
+</div>
+
+<p>Для веб-сервиса, который был разработан без наследования класса <span class="filled">Terrasoft.Web.Common.BaseService</span> реализованы следующие <strong>способы получения контекста</strong>:</p>
+
+<ul><li>
+	<p>Через <span class="filled">IHttpContextAccessor</span>, зарегистрированный в <span class="filled">DI</span> (<span class="filled">ClassFactory)</span>.</p>
+
+	<p>Этот способ позволяет покрывать код тестами и отображает явные зависимости класса. Подробнее об использовании фабрики классов можно узнать из статьи <a href="../fabrika_zameshchayushchikh_klassov/obzor.html">Принцип замещения классов</a>.</p>
+	</li>
+	<li>
+	<p>Через статическое свойство <span class="filled">HttpContext.Current</span>.</p>
+
+	<p>В исходный код с помощью директивы <span class="filled">using</span> необходимо добавить пространство имен <span class="filled">Terrasoft.Web.Http.Abstractions</span>. Статическое свойство <span class="filled">HttpContext.Current</span> реализует унифицированный доступ к <span class="filled">HttpContext</span>. Для адаптации кода веб-сервиса для платформы .NET Core замените пространство имен <span class="filled">System.Web</span> на <span class="filled">Terrasoft.Web.Http.Abstractions</span>.</p>
+	</li>
+</ul><div class="message message_warning">
+<p><span class="message__bold message__bold_warning">Важно.</span> В конфигурации запрещено использовать конкретную реализацию доступа к контексту запроса из .NET Framework (библиотека <span class="filled">System.Web</span>) или .NET Core (библиотека <span class="filled">Microsoft.AspNetCore.Http</span>).</p>
+</div>
+
+<div class="code">
+<div class="code__widgets">
+<div class="code__top">
+<div class="code__title">Пример адаптации веб-сервиса к платформе .NET Core</div>
+</div>
+
+<div class="code__source">
+<pre class="prettyprint">
+namespace Terrasoft.Configuration.UsrCustomNamespace
+{
+    /* Использовать вместо System.Web. */
+    using Terrasoft.Web.Http.Abstractions;
+
+    [ServiceContract]
+    [AspNetCompatibilityRequirements(RequirementsMode = AspNetCompatibilityRequirementsMode.Required)]
+    public class UsrCustomConfigurationService
+    {
+        /* Метод веб-сервиса. */
+        [OperationContract]
+        [WebInvoke(Method = "GET", RequestFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Wrapped,
+        ResponseFormat = WebMessageFormat.Json)]
+        public void SomeMethod() {
+            ...
+            var httpContext = HttpContext.Current;
+            ...
+        }
+    }
+}
+</pre>
+</div>
+</div>
+</div>
+</div>
+      
+  </div>
+<div class="block block-layout-builder block-field-blocknodedeveloper-documentationfield-linked">
+  
+    
+      
+  <div class="field field--name-field-linked field--type-entity-reference field--label-above">
+    <div class="field__label">Смотрите также</div>
+          <div class="field__items">
+              <div class="field__item"><a href="../../integratsiya_i_vneshnij_api/autentifikatsiya/obzor.html" hreflang="ru">Аутентификация</a></div>
+          <div class="field__item"><a href="../../integratsiya_i_vneshnij_api/servisy_raboty_s_dannymi/odata/obzor.html" hreflang="ru">OData</a></div>
+          <div class="field__item"><a href="../../integratsiya_i_vneshnij_api/servis_zapuska_biznes_processov/obzor.html" hreflang="ru">Сервис запуска бизнес-процессов</a></div>
+          <div class="field__item"><a href="../../../../7-17/developer/instrumenty_razrabotki/creatio_ide/razrabotka_v_creatio_ide.html" hreflang="ru">Принципы разработки в Creatio IDE</a></div>
+          <div class="field__item"><a href="../../../../developer/instrumenty_razrabotki/pakety/obshchiye_printsipy_raboty_s_paketami/obzor.html" hreflang="ru">Общие принципы работы с пакетами</a></div>
+          <div class="field__item"><a href="../fabrika_zameshchayushchikh_klassov/obzor.html" hreflang="ru">Фабрика замещающих классов</a></div>
+          <div class="field__item"><a href="../../../../7-17/developer/instrumenty_razrabotki/creatio_ide/razrabotka_konfiguratsionnykh_elementov.html" hreflang="ru">Разработка конфигурационных элементов</a></div>
+              </div>
+      </div>
+
+  </div>
+<div class="block block-layout-builder block-field-blocknodedeveloper-documentationfield-resources">
+  
+    
+      
+  <div class="field field--name-field-resources field--type-link field--label-above">
+    <div class="field__label">Ресурсы</div>
+          <div class="field__items">
+              <div class="field__item"><a href="../../../../user/instrumenty_kastomizacii/web_servisy.html" target="_blank">Документация Creatio по веб-сервисам</a></div>
+          <div class="field__item"><a href="../../../../developer/integrations_and_api.html" target="_blank">Документация Creatio по интеграциям и внешним API</a></div>
+          <div class="field__item"><a href="https://docs.microsoft.com/en-us/dotnet/framework/wcf/" target="_blank">Официальная документация Microsoft (описание технологии WCF)</a></div>
+          <div class="field__item"><a href="https://docs.microsoft.com/en-us/aspnet/core/web-api/?view=aspnetcore-5.0" target="_blank">Официальная документация Microsoft (описание технологии ASP.NET Core Web API)</a></div>
+          <div class="field__item"><a href="https://docs.microsoft.com/en-us/dotnet/api/system.servicemodel.servicecontractattribute?view=dotnet-plat-ext-5.0" target="_blank">Официальная документация Microsoft (описание атрибута [ServiceContract])</a></div>
+          <div class="field__item"><a href="https://docs.microsoft.com/en-us/dotnet/api/system.servicemodel.activation.aspnetcompatibilityrequirementsattribute?view=netframework-4.8" target="_blank">Официальная документация Microsoft (описание атрибута [AspNetCompatibilityRequirements])</a></div>
+          <div class="field__item"><a href="https://docs.microsoft.com/en-us/dotnet/api/system.servicemodel.operationcontractattribute?view=dotnet-plat-ext-5.0" target="_blank">Официальная документация Microsoft (описание атрибута [OperationContract])</a></div>
+          <div class="field__item"><a href="https://docs.microsoft.com/en-us/dotnet/api/system.servicemodel.web.webinvokeattribute?view=netframework-4.8" target="_blank">Официальная документация Microsoft (описание атрибута [WebInvoke])</a></div>
+          <div class="field__item"><a href="https://docs.microsoft.com/en-us/dotnet/api/system.runtime.serialization.datacontractattribute?view=net-5.0" target="_blank">Официальная документация Microsoft (описание атрибута [DataContract])</a></div>
+          <div class="field__item"><a href="https://docs.microsoft.com/en-us/dotnet/api/system.runtime.serialization.datamemberattribute?view=net-5.0" target="_blank">Официальная документация Microsoft (описание атрибута [DataMember])</a></div>
+          <div class="field__item"><a href="https://docs.microsoft.com/en-us/dotnet/framework/configure-apps/file-schema/wcf-directive/servicehost" target="_blank">Официальная документация Microsoft (описание WCF-директивы @ServiceHost)</a></div>
+          <div class="field__item"><a href="https://docs.microsoft.com/en-us/dotnet/framework/wcf/configuring-services-using-configuration-files" target="_blank">Официальная документация Microsoft (описание элементов конфигурирования сервиса)</a></div>
+              </div>
+      </div>
+
+  </div>
+
+    </div>
+  </div>
+
+  </div>
+
+</article>
+
+  </div>
+
+  </div>
+
+          </div>
+        </div>
+
+                  <aside class="creatio-sidebar creatio-sidebar_first" role="complementary">
+              <div class="region region-sidebar-first">
+    <div id="block-documentationnaviagtion" class="block block-ts-nav block-ts-nav-doc-nav">
+  
+    
+      <div class="ts-nav-block"><a href="../../../../index.html" class="ts-nav-block__link">Документация</a><div class="ts-nav-block__title">Для разработчика</div>
+</div>
+<div class="ts-nav-container"><ul class="ts-nav-menu"><li class="ts-nav-menu__item">
+  <a href="../../s_chego_nachat.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">С чего начать&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../architecture.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Архитектура&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../instrumenty_razrabotki.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Инструменты разработки&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../back_end_razrabotka.html" class="ts-nav-menu__link ts-nav-menu__link_expanded ts-nav-menu__link_open" hreflang="zxx">Back-end разработка&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+      <ul class="ts-nav-menu__children">
+      <li class="ts-nav-menu__item">
+  <a href="../fabrika_zameshchayushchikh_klassov.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Фабрика замещающих классов&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../back-end_development/operatsii_s_dannymi_back_end.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Операции с данными&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../veb_servisy.html" class="ts-nav-menu__link ts-nav-menu__link_expanded ts-nav-menu__link_open" hreflang="ru">Веб-сервисы&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+      <ul class="ts-nav-menu__children">
+      <li class="ts-nav-menu__item">
+  <a href="obzor.html" class="ts-nav-menu__link ts-nav-menu__link_guide ts-nav-menu__link_active" hreflang="ru">Обзор</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="razrabotat_veb_servis_cookies_autentifikaciya.html" class="ts-nav-menu__link ts-nav-menu__link_case" hreflang="ru">Разработать веб-сервис (cookies-аутентификация)</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="razrabotat_veb_servis_anonimnaya_autentifikaciya.html" class="ts-nav-menu__link ts-nav-menu__link_case" hreflang="ru">Разработать веб-сервис (анонимная аутентификация)</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="vyzvat_veb_servis_front_end.html" class="ts-nav-menu__link ts-nav-menu__link_case" hreflang="ru">Вызвать веб-сервис (front-end)</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="vyzvat_veb_servis_postman.html" class="ts-nav-menu__link ts-nav-menu__link_case" hreflang="ru">Вызвать веб-сервис (Postman)</a>
+  </li>
+
+    </ul>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../biznes_logika_obektov/obzor.html" class="ts-nav-menu__link" hreflang="ru">Бизнес-логика объектов</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../hranilishche_kehsha/obzor.html" class="ts-nav-menu__link" hreflang="ru">Хранилище кэша</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../lokalizuemye_resursy.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Локализуемые ресурсы&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../avtomaticheskaya_privyazka_dannykh/obzor.html" class="ts-nav-menu__link" hreflang="ru">Автоматическая привязка данных</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../../../api/netcoreapi/7.18.0/api/index.html" class="ts-nav-menu__link" hreflang="ru">Библиотека .NET классов</a>
+  </li>
+
+    </ul>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../front_end_razrabotka.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Front-end разработка&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../integratsiya_i_vneshnij_api.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Интеграция и внешний API&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../ehlementy_interfejsa.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Элементы интерфейса&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../komponenty_prilozheniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Компоненты приложения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../razrabotka_mobilnogo_prilozheniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Разработка мобильного приложения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../razrabotka_marketplace_prilozheniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Разработка Marketplace-приложения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+</ul>
+</div>
+
+  </div>
+
+  </div>
+
+            <div class="creatio-sidebar__toggle"></div>
+          </aside>
+        
+                  <aside class="creatio-sidebar creatio-sidebar_second" role="complementary">
+              <div class="region region-sidebar-second">
+    <div id="block-example" class="block block-ts-nav block-ts-nav-page-nav">
+  
+    
+      <div class="ts-nav-page">
+  </div>
+
+  </div>
+<div id="block-adminfeedbackblock" class="block block-admin-feedback block-admin-feedback-block">
+  
+    
+      <div id="feedback-message"><div id="upper-feedback-content"><h2>Был ли данный материал полезен?</h2>
+<input class="feedback-btn feedback-btn__yes button js-form-submit form-submit" data-node-id="2148" data-feedback="yes" type="submit" name="op" value="Да" />
+<input class="feedback-btn feedback-btn__no button js-form-submit form-submit" data-node-id="2148" data-feedback="no" type="submit" name="op" value="Нет" />
+</div>
+<form class="admin-feedback-form" data-drupal-selector="admin-feedback-form" action="https://academy.terrasoft.ua/docs/7-16/developer/back_end_razrabotka/veb_servisy/obzor" method="post" id="admin-feedback-form" accept-charset="UTF-8">
+  <div id="feedback-msg-result"></div><div class="js-form-item form-item js-form-type-textarea form-type-textarea js-form-item-feedback-message form-item-feedback-message form-no-label">
+        <div class="form-textarea-wrapper">
+  <textarea id="edit-feedback-msg" data-drupal-selector="edit-feedback-message" name="feedback_message" rows="5" cols="60" class="form-textarea resize-vertical"></textarea>
+</div>
+
+        </div>
+<input id="feedback-id" data-drupal-selector="edit-feedback-id" type="hidden" name="feedback_id" value="" />
+<input class="feedback-btn feedback-btn__send-comment button js-form-submit form-submit" data-drupal-selector="edit-feedback-send" type="submit" id="edit-feedback-send" name="op" value="Отправить" />
+<input autocomplete="off" data-drupal-selector="form-9c-tsytgyt8m9vomip-f1try9x4m286x4sek9pzd9iu" type="hidden" name="form_build_id" value="form-9c_tsYTgyt8M9vomip-F1TRY9X4m286x4SEk9PZd9iU" />
+<input data-drupal-selector="edit-admin-feedback-form" type="hidden" name="form_id" value="admin_feedback_form" />
+
+</form>
+</div>
+
+  </div>
+
+  </div>
+
+          </aside>
+              </main>
+    </div>
+  </div>
+
+  <footer role="contentinfo">
+    <div class="creatio-region creatio-region_footer">
+      <div class="creatio-container">
+          <div class="region region-footer">
+    <div id="block-footerua" class="block block-simple-block block-simple-blockfooter-ua">
+  
+    
+      <div class="footer">
+<div class="footer-left">
+<ul class="footer-socials"><li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_fb" href="https://www.facebook.com/terrasoft.ua" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_in" href="https://www.linkedin.com/company/terrasoft/" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_yt" href="https://www.youtube.com/c/TerrasoftUkraine" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_tg" href="https://t.me/Terrasoft_UA" target="_blank"> </a></li>
+</ul></div>
+
+<div class="footer-contact">
+<div class="footer-title">Будьте на связи!</div>
+
+<div class="footer-content">
+<div class="footer-items">
+<div class="footer-item"><a class="footer__link footer__link_phone" href="tel:+380443633133">+38 (044) 363-31-33</a></div>
+</div>
+
+<div class="footer-items">
+<div class="footer-item"><a class="footer__link footer__link_email" href="mailto:support@terrasoft.ua">support@terrasoft.ua</a></div>
+</div>
+</div>
+</div>
+</div>
+
+  </div>
+
+  </div>
+
+      </div>
+    </div>
+    <div class="creatio-region creatio-region_bottom">
+      <div class="creatio-container">
+          <div class="region region-bottom">
+    <div id="block-allrightsreservedua" class="block block-simple-block block-simple-blockfooter-bottom-ua">
+  
+    
+      <p>© 2002-2022 Terrasoft.  |  <a href="https://www.terrasoft.ua/privacy-policy" target="_blank">Конфиденциальность</a></p>
+
+  </div>
+
+  </div>
+
+      </div>
+    </div>
+  </footer>
+</div>
+<div class="creatio-bg"></div>
+
+
+  </div>
+
+    
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/docs\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/2148","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"ru"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"ajaxPageState":{"libraries":"admin_feedback\/admin_feedback_block,admin_feedback\/admin_feedback_css,classy\/base,classy\/messages,classy\/node,core\/drupal.ajax,core\/jquery.form,core\/normalize,creatio\/fancybox,creatio\/global,layout_discovery\/onecol,system\/base,ts_doc\/doc_version,ts_feedback\/ts_feedback,ts_nav\/breadcrumb,ts_nav\/doc_nav,ts_nav\/page_nav,ts_title_anchor\/ts_title_anchor","theme":"creatio","theme_token":null},"ajaxTrustedUrl":{"form_action_p_pvdeGsVG5zNF_XLGPTvYSKCf43t8qZYSwcfZl2uzM":true,"\/docs\/7-16\/developer\/back_end_razrabotka\/veb_servisy\/obzor?ajax_form=1":true},"admin_feedback":{"yes_response":"\u0421\u043f\u0430\u0441\u0438\u0431\u043e \u0437\u0430 \u043e\u0431\u0440\u0430\u0442\u043d\u0443\u044e \u0441\u0432\u044f\u0437\u044c!","no_response":"\u0421\u043f\u0430\u0441\u0438\u0431\u043e \u0437\u0430 \u043e\u0431\u0440\u0430\u0442\u043d\u0443\u044e \u0441\u0432\u044f\u0437\u044c!","custom_text_response_on_no":{"value":"","format":"full_html"},"feedback_prompt_on_yes":true,"feedback_prompt_on_no":true,"feedback_enable_predefined_answers":false,"feedback_prompt":"\u041a\u0430\u043a \u043c\u043e\u0436\u043d\u043e \u0443\u043b\u0443\u0447\u0448\u0438\u0442\u044c \u044d\u0442\u0443 \u0441\u0442\u0430\u0442\u044c\u044e?"},"ajax":{"edit-feedback-send":{"callback":"::validateFeedbackMsg","event":"mousedown","keypress":true,"prevent":"click","url":"\/docs\/7-16\/developer\/back_end_razrabotka\/veb_servisy\/obzor?ajax_form=1","dialogType":"ajax","submit":{"_triggering_element_name":"op","_triggering_element_value":"\u041e\u0442\u043f\u0440\u0430\u0432\u0438\u0442\u044c"}}},"user":{"uid":0,"permissionsHash":"9c2367dfcaba0fa15f0375f97aed64e146c908cee68508d13b79e3ee80e5162d"}}</script>
+<script src="../../../../sites/default/files/js/js_Rr-7TvYD7NposuRFJwUqThxM7yJmw8vs03PQwu5gWd8.js"></script>
+
+
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+      <g id="svg-copy" class="svg-icon svg-icon_copy">
+        <path d="M15.111,18H1.889A1.848,1.848,0,0,1,0,16.2V3.6A1.848,1.848,0,0,1,1.889,1.8H5.837a2.87,2.87,0,0,1,5.326,0h3.948A1.848,1.848,0,0,1,17,3.6V16.2A1.848,1.848,0,0,1,15.111,18ZM3.777,12.6v1.8h6.611V12.6Zm0-3.6v1.8h9.445V9Zm0-3.6V7.2h9.445V5.4ZM8.5,1.8a.924.924,0,0,0-.944.9.945.945,0,0,0,1.889,0A.924.924,0,0,0,8.5,1.8Z"/>
+      </g>
+
+      <g id="svg-prev" class="svg-icon svg-icon_arrow">
+        <path d="M5.488,12.779,0,6.39,5.488,0" transform="translate(1 0.652)"/>
+      </g>
+
+      <g id="svg-next" class="svg-icon svg-icon_arrow">
+        <path d="M0,12.779,5.488,6.39,0,0" transform="translate(0.759 0.652)"/>
+      </g>
+    </svg>
+  </body>
+
+<!-- Mirrored from academy.terrasoft.ua/docs/7-16/developer/back_end_razrabotka/veb_servisy/obzor by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Mar 2022 05:07:25 GMT -->
+</html>

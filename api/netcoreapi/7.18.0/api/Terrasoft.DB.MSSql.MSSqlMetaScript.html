@@ -1,0 +1,3164 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  
+<!-- Mirrored from academy.terrasoft.ua/api/netcoreapi/7.18.0/api/Terrasoft.DB.MSSql.MSSqlMetaScript.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Mar 2022 03:32:03 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class MSSqlMetaScript
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class MSSqlMetaScript
+   ">
+    <meta name="generator" content="docfx 2.58.0.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-default ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="https://academy.terrasoft.ru/docs/developer/back-end_development">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Terrasoft.DB.MSSql.MSSqlMetaScript">
+  
+  
+  <h1 id="Terrasoft_DB_MSSql_MSSqlMetaScript" data-uid="Terrasoft.DB.MSSql.MSSqlMetaScript" class="text-break">Class MSSqlMetaScript
+  </h1>
+  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html">DBMetaScript</a></div>
+    <div class="level2"><span class="xref">MSSqlMetaScript</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_CascadeDeleteAction">DBMetaScript.CascadeDeleteAction</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript__indexQuery">DBMetaScript._indexQuery</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript__foreignKeyQuery">DBMetaScript._foreignKeyQuery</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript__foreignKeysQuery">DBMetaScript._foreignKeysQuery</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript__triggerQuery">DBMetaScript._triggerQuery</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript__columnForeignKeyQuery">DBMetaScript._columnForeignKeyQuery</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_DbStructureReader">DBMetaScript.DbStructureReader</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_UserConnection">DBMetaScript.UserConnection</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_DBEngine">DBMetaScript.DBEngine</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_DBMetaEngine">DBMetaScript.DBMetaEngine</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_DBSecurityEngine">DBMetaScript.DBSecurityEngine</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_GuidDBMetaTypeConverter">DBMetaScript.GuidDBMetaTypeConverter</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_ReferenceSchemaCollectionDBMetaTypeConverter">DBMetaScript.ReferenceSchemaCollectionDBMetaTypeConverter</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_LocalizableStringDBMetaTypeConverter">DBMetaScript.LocalizableStringDBMetaTypeConverter</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_DataValueTypeDBMetaTypeConverter">DBMetaScript.DataValueTypeDBMetaTypeConverter</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_DataValueTypeManager">DBMetaScript.DataValueTypeManager</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_IsForceIndexRebuild">DBMetaScript.IsForceIndexRebuild</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_ValidationMessages">DBMetaScript.ValidationMessages</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_IsAlwaysRegenerateColumnMetaPropertyData">DBMetaScript.IsAlwaysRegenerateColumnMetaPropertyData</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_SchemaDBActionMessage">DBMetaScript.SchemaDBActionMessage</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_OnSchemaDBActionMessage_System_String_System_String_">DBMetaScript.OnSchemaDBActionMessage(String, String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_CheckIsArgumentNull_System_Object_System_String_">DBMetaScript.CheckIsArgumentNull(Object, String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_AddColumnEditingActions_Terrasoft_Core_DB_DBMetaActionCollection_System_Data_IDataReader_Terrasoft_Core_DB_ColumnAction_Terrasoft_Core_DB_DBMetaPropertyCollection_">DBMetaScript.AddColumnEditingActions(DBMetaActionCollection, IDataReader, ColumnAction, DBMetaPropertyCollection)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_AddForeignKeyEditingActions_Terrasoft_Core_DB_DBMetaActionCollection_System_Data_IDataReader_Terrasoft_Core_DB_ColumnAction_">DBMetaScript.AddForeignKeyEditingActions(DBMetaActionCollection, IDataReader, ColumnAction)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_AddCreateNotExistColumnActions_Terrasoft_Core_DB_DBMetaActionCollection_Terrasoft_Core_DB_EntitySchemaAction_">DBMetaScript.AddCreateNotExistColumnActions(DBMetaActionCollection, EntitySchemaAction)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_CheckIfDataWillBeTruncated_System_String_System_String_Terrasoft_Core_DataValueType_Terrasoft_Core_DataValueType_">DBMetaScript.CheckIfDataWillBeTruncated(String, String, DataValueType, DataValueType)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_CheckIsArgumentNullOrEmpty_System_String_System_String_">DBMetaScript.CheckIsArgumentNullOrEmpty(String, String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_AddUniqueIndexExistWarningMessage_Terrasoft_Core_DB_DBMetaAction_">DBMetaScript.AddUniqueIndexExistWarningMessage(DBMetaAction)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_AddImageLookupTriggersCreatingActions_Terrasoft_Core_DB_DBMetaActionCollection_Terrasoft_Core_Entities_EntitySchema_Terrasoft_Core_Entities_EntitySchemaColumn_">DBMetaScript.AddImageLookupTriggersCreatingActions(DBMetaActionCollection, EntitySchema, EntitySchemaColumn)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_GetIsPrimaryColumn_Terrasoft_Core_Entities_EntitySchema_Terrasoft_Core_Entities_EntitySchemaColumn_">DBMetaScript.GetIsPrimaryColumn(EntitySchema, EntitySchemaColumn)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_GetIndexesDataReader_Terrasoft_Core_DB_DBExecutor_System_String_">DBMetaScript.GetIndexesDataReader(DBExecutor, String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_GetColumnIndexesDataReader_Terrasoft_Core_DB_DBExecutor_System_String_System_String_">DBMetaScript.GetColumnIndexesDataReader(DBExecutor, String, String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_GetIsUniqueIndexContainColumn_Terrasoft_Core_Entities_EntitySchema_Terrasoft_Core_Entities_EntitySchemaColumn_">DBMetaScript.GetIsUniqueIndexContainColumn(EntitySchema, EntitySchemaColumn)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_GetIsTextColumnContainGuid_System_String_System_String_">DBMetaScript.GetIsTextColumnContainGuid(String, String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_GetPrimaryKeyNameFromDB_System_String_">DBMetaScript.GetPrimaryKeyNameFromDB(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_GetIsActionExist_Terrasoft_Core_DB_DBMetaActionCollection_Terrasoft_Core_DB_ActionModifyType_Terrasoft_Core_Entities_EntitySchemaIndex_">DBMetaScript.GetIsActionExist(DBMetaActionCollection, ActionModifyType, EntitySchemaIndex)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_ExecuteWithDBElementCache_System_String_System_Action_">DBMetaScript.ExecuteWithDBElementCache(String, Action)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_GetUniqueDataValidateQuery_System_String_System_String___">DBMetaScript.GetUniqueDataValidateQuery(String, String[])</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_GetDanglingReferenceValidateQuery_System_String_System_String_System_String_System_String_Terrasoft_Core_DataValueType_">DBMetaScript.GetDanglingReferenceValidateQuery(String, String, String, String, DataValueType)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_GetNotNullColumnValidateQuery_System_String_System_String_">DBMetaScript.GetNotNullColumnValidateQuery(String, String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_InitializeModifyTypeValidateQueryParameters_Terrasoft_Core_DB_QueryParameterCollection_System_String_System_String_System_String_">DBMetaScript.InitializeModifyTypeValidateQueryParameters(QueryParameterCollection, String, String, String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_GetModifyColumnTypeValidateQuery_System_String_Terrasoft_Core_Entities_EntitySchemaColumn_Terrasoft_Core_Entities_EntitySchemaColumn_">DBMetaScript.GetModifyColumnTypeValidateQuery(String, EntitySchemaColumn, EntitySchemaColumn)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_GetModifyColumnTypeQuery_System_String_Terrasoft_Core_Entities_EntitySchemaColumn_Terrasoft_Core_Entities_EntitySchemaColumn_">DBMetaScript.GetModifyColumnTypeQuery(String, EntitySchemaColumn, EntitySchemaColumn)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_GetModifyLookupColumnTypeQuery_Terrasoft_Core_DB_ModifyLookupColumnDirectionType_System_String_Terrasoft_Core_Entities_EntitySchemaColumn_Terrasoft_Core_Entities_EntitySchemaColumn_System_Boolean_">DBMetaScript.GetModifyLookupColumnTypeQuery(ModifyLookupColumnDirectionType, String, EntitySchemaColumn, EntitySchemaColumn, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_CreateTemporaryColumn_Terrasoft_Core_Entities_EntitySchema_Terrasoft_Core_Entities_EntitySchemaColumn_">DBMetaScript.CreateTemporaryColumn(EntitySchema, EntitySchemaColumn)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_CreateColumn_System_Data_IDataReader_Terrasoft_Core_DataValueType_Terrasoft_Core_DB_DBMetaPropertyCollection_Terrasoft_Core_DB_ColumnAction_">DBMetaScript.CreateColumn(IDataReader, DataValueType, DBMetaPropertyCollection, ColumnAction)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_CreateColumn_System_String_System_String_Terrasoft_Core_Entities_EntitySchema_">DBMetaScript.CreateColumn(String, String, EntitySchema)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_CreateValidateAction_Terrasoft_Core_Entities_EntitySchema_Terrasoft_Core_Entities_EntitySchemaColumn_">DBMetaScript.CreateValidateAction(EntitySchema, EntitySchemaColumn)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_CreateNotNullColumnValidateGroupAction_Terrasoft_Core_Entities_EntitySchema_Terrasoft_Core_Entities_EntitySchemaColumn_">DBMetaScript.CreateNotNullColumnValidateGroupAction(EntitySchema, EntitySchemaColumn)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_CreateDanglingReferenceValidateGroupAction_Terrasoft_Core_Entities_EntitySchema_Terrasoft_Core_Entities_EntitySchemaColumn_">DBMetaScript.CreateDanglingReferenceValidateGroupAction(EntitySchema, EntitySchemaColumn)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_CreateColumnIndexes_Terrasoft_Core_DB_ColumnAction_">DBMetaScript.CreateColumnIndexes(ColumnAction)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_AddNotNullConstraintEditingActions_Terrasoft_Core_DB_DBMetaActionCollection_System_Data_IDataReader_Terrasoft_Core_DB_ColumnAction_">DBMetaScript.AddNotNullConstraintEditingActions(DBMetaActionCollection, IDataReader, ColumnAction)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_AddLookupToTextColumnModificationBranch_Terrasoft_Core_DB_DBMetaActionCollection_System_Data_IDataReader_Terrasoft_Core_Entities_EntitySchemaColumn_Terrasoft_Core_DB_ColumnAction_">DBMetaScript.AddLookupToTextColumnModificationBranch(DBMetaActionCollection, IDataReader, EntitySchemaColumn, ColumnAction)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_AddTextToLookupColumnModificationBranch_Terrasoft_Core_DB_DBMetaActionCollection_System_Data_IDataReader_Terrasoft_Core_Entities_EntitySchemaColumn_Terrasoft_Core_DB_ColumnAction_">DBMetaScript.AddTextToLookupColumnModificationBranch(DBMetaActionCollection, IDataReader, EntitySchemaColumn, ColumnAction)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_AddColumnIndexEditingActions_Terrasoft_Core_DB_DBMetaActionCollection_Terrasoft_Core_DB_ColumnAction_">DBMetaScript.AddColumnIndexEditingActions(DBMetaActionCollection, ColumnAction)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_AddUniqueDataValidateSavingActions_Terrasoft_Core_DB_DBMetaActionCollection_Terrasoft_Core_DB_ColumnAction_">DBMetaScript.AddUniqueDataValidateSavingActions(DBMetaActionCollection, ColumnAction)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_AddUniqueDataValidateSavingActions_Terrasoft_Core_DB_DBMetaActionCollection_Terrasoft_Core_DB_IndexAction_">DBMetaScript.AddUniqueDataValidateSavingActions(DBMetaActionCollection, IndexAction)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_AddForeignKeySavingActions_Terrasoft_Core_DB_DBMetaActionCollection_System_Data_IDataReader_Terrasoft_Core_DB_ColumnAction_">DBMetaScript.AddForeignKeySavingActions(DBMetaActionCollection, IDataReader, ColumnAction)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_AddDanglingReferenceValidateSavingActions_Terrasoft_Core_DB_DBMetaActionCollection_System_Data_IDataReader_Terrasoft_Core_DB_ColumnAction_">DBMetaScript.AddDanglingReferenceValidateSavingActions(DBMetaActionCollection, IDataReader, ColumnAction)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_AddMetaPropertyGroupCreatingActions_Terrasoft_Core_DB_DBMetaActionCollection_Terrasoft_Core_DB_EntitySchemaAction_">DBMetaScript.AddMetaPropertyGroupCreatingActions(DBMetaActionCollection, EntitySchemaAction)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_AddMetaPropertyGroupCreatingActions_Terrasoft_Core_DB_DBMetaActionCollection_Terrasoft_Core_DB_ColumnAction_">DBMetaScript.AddMetaPropertyGroupCreatingActions(DBMetaActionCollection, ColumnAction)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_AddMetaPropertyGroupCreatingActions_Terrasoft_Core_DB_DBMetaActionCollection_Terrasoft_Core_DB_IndexAction_">DBMetaScript.AddMetaPropertyGroupCreatingActions(DBMetaActionCollection, IndexAction)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_AddMetaPropertyGroupCreatingActions_Terrasoft_Core_DB_DBMetaActionCollection_Terrasoft_Core_DB_PrimaryKeyAction_">DBMetaScript.AddMetaPropertyGroupCreatingActions(DBMetaActionCollection, PrimaryKeyAction)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_AddMetaPropertyGroupCreatingActions_Terrasoft_Core_DB_DBMetaActionCollection_Terrasoft_Core_DB_ForeignKeyAction_">DBMetaScript.AddMetaPropertyGroupCreatingActions(DBMetaActionCollection, ForeignKeyAction)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_AddMetaPropertyGroupCreatingActions_Terrasoft_Core_DB_DBMetaActionCollection_Terrasoft_Core_DB_DefValueAction_">DBMetaScript.AddMetaPropertyGroupCreatingActions(DBMetaActionCollection, DefValueAction)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_AddColumnsDeletingActions_Terrasoft_Core_DB_DBMetaActionCollection_Terrasoft_Core_DB_EntitySchemaAction_">DBMetaScript.AddColumnsDeletingActions(DBMetaActionCollection, EntitySchemaAction)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_AddColumnIndexDeletingActions_Terrasoft_Core_DB_DBMetaActionCollection_Terrasoft_Core_DB_ColumnAction_">DBMetaScript.AddColumnIndexDeletingActions(DBMetaActionCollection, ColumnAction)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_AddIndexesDeletingActions_Terrasoft_Core_DB_DBMetaActionCollection_Terrasoft_Core_DB_EntitySchemaAction_">DBMetaScript.AddIndexesDeletingActions(DBMetaActionCollection, EntitySchemaAction)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_AddImageLookupTriggersDeletingActions_Terrasoft_Core_DB_DBMetaActionCollection_Terrasoft_Core_Entities_EntitySchema_Terrasoft_Core_Entities_EntitySchemaColumn_">DBMetaScript.AddImageLookupTriggersDeletingActions(DBMetaActionCollection, EntitySchema, EntitySchemaColumn)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_AddPrimaryKeyDeletingActions_Terrasoft_Core_DB_DBMetaActionCollection_Terrasoft_Core_Entities_EntitySchema_System_String_">DBMetaScript.AddPrimaryKeyDeletingActions(DBMetaActionCollection, EntitySchema, String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_AddForeignKeyDeletingActions_Terrasoft_Core_DB_DBMetaActionCollection_Terrasoft_Core_Entities_EntitySchema_System_String_Terrasoft_Core_Entities_EntitySchemaColumn_System_String_">DBMetaScript.AddForeignKeyDeletingActions(DBMetaActionCollection, EntitySchema, String, EntitySchemaColumn, String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_AddForeignKeyDeletingActions_Terrasoft_Core_DB_DBMetaActionCollection_Terrasoft_Core_DB_ColumnAction_">DBMetaScript.AddForeignKeyDeletingActions(DBMetaActionCollection, ColumnAction)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_AddIndexDeletingActions_Terrasoft_Core_DB_DBMetaActionCollection_Terrasoft_Core_DB_ColumnAction_Terrasoft_Core_Entities_EntitySchemaIndex_">DBMetaScript.AddIndexDeletingActions(DBMetaActionCollection, ColumnAction, EntitySchemaIndex)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_AddIndexDeletingActions_Terrasoft_Core_DB_DBMetaActionCollection_Terrasoft_Core_DB_EntitySchemaAction_Terrasoft_Core_Entities_EntitySchemaIndex_">DBMetaScript.AddIndexDeletingActions(DBMetaActionCollection, EntitySchemaAction, EntitySchemaIndex)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_AddForeignKeyDeletingAction_Terrasoft_Core_DB_DBMetaActionCollection_Terrasoft_Core_Entities_EntitySchema_System_String_Terrasoft_Core_Entities_EntitySchemaColumn_System_String_">DBMetaScript.AddForeignKeyDeletingAction(DBMetaActionCollection, EntitySchema, String, EntitySchemaColumn, String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_AddForeignKeyDeletingAction_Terrasoft_Core_DB_DBMetaActionCollection_Terrasoft_Core_DB_ColumnAction_">DBMetaScript.AddForeignKeyDeletingAction(DBMetaActionCollection, ColumnAction)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_RaiseUnsupportedActionModifyTypeException_Terrasoft_Core_DB_ActionModifyType_">DBMetaScript.RaiseUnsupportedActionModifyTypeException(ActionModifyType)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_GetTriggerDataReader_Terrasoft_Core_DB_DBExecutor_System_String_System_String_">DBMetaScript.GetTriggerDataReader(DBExecutor, String, String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_AddEntitySchemaBaseStructureSavingActions_Terrasoft_Core_DB_DBMetaActionCollection_Terrasoft_Core_Entities_EntitySchema_">DBMetaScript.AddEntitySchemaBaseStructureSavingActions(DBMetaActionCollection, EntitySchema)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_AddDBSchemaNameParameter_Terrasoft_Core_DB_IParametrizedQuery_">DBMetaScript.AddDBSchemaNameParameter(IParametrizedQuery)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_Initialize_Terrasoft_Core_UserConnection_">DBMetaScript.Initialize(UserConnection)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_GetTypedValue__1_System_Object_">DBMetaScript.GetTypedValue&lt;TResult&gt;(Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_GetPrimaryColumnName_System_String_">DBMetaScript.GetPrimaryColumnName(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_GetIsDataValueTypeEquals_Terrasoft_Core_DataValueType_Terrasoft_Core_DataValueType_">DBMetaScript.GetIsDataValueTypeEquals(DataValueType, DataValueType)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_GetColumnDataReader_Terrasoft_Core_DB_DBExecutor_System_String_System_String_">DBMetaScript.GetColumnDataReader(DBExecutor, String, String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_GetColumnsDataReader_Terrasoft_Core_DB_DBExecutor_System_String_">DBMetaScript.GetColumnsDataReader(DBExecutor, String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_ApplyTypesCastOptions">DBMetaScript.ApplyTypesCastOptions()</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_GetIsDBDataExist_System_String_">DBMetaScript.GetIsDBDataExist(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_GetIsDBDataExist_System_String_System_String_">DBMetaScript.GetIsDBDataExist(String, String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_GetIsEntitySchemaExist_System_String_">DBMetaScript.GetIsEntitySchemaExist(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_GetIsColumnExist_System_String_System_String_">DBMetaScript.GetIsColumnExist(String, String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_GetIsIndexExist_System_String_System_String_">DBMetaScript.GetIsIndexExist(String, String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_GetIsForeignKeyExist_System_String_System_String_">DBMetaScript.GetIsForeignKeyExist(String, String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_GetIsTriggerExist_System_String_System_String_">DBMetaScript.GetIsTriggerExist(String, String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_GetTriggerBody_System_String_System_String_">DBMetaScript.GetTriggerBody(String, String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_GetForeignKeyColumnName_System_String_System_String_">DBMetaScript.GetForeignKeyColumnName(String, String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_GetGroupResourceItemName_Terrasoft_Core_DB_GroupAction_Terrasoft_Core_DB_ActionType_">DBMetaScript.GetGroupResourceItemName(GroupAction, ActionType)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_GetGroupShortResourceItemName_Terrasoft_Core_DB_DBMetaAction_Terrasoft_Core_DB_ActionType_">DBMetaScript.GetGroupShortResourceItemName(DBMetaAction, ActionType)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_GetGroupActionTypeText_Terrasoft_Core_DB_DBMetaAction_">DBMetaScript.GetGroupActionTypeText(DBMetaAction)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_BuildColumnCaptions_System_Text_StringBuilder_System_Collections_Generic_ICollection_Terrasoft_Core_Entities_EntitySchemaColumn__">DBMetaScript.BuildColumnCaptions(StringBuilder, ICollection&lt;EntitySchemaColumn&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_BuildColumnShortCaptions_System_Text_StringBuilder_System_Collections_Generic_ICollection_Terrasoft_Core_Entities_EntitySchemaColumn__">DBMetaScript.BuildColumnShortCaptions(StringBuilder, ICollection&lt;EntitySchemaColumn&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_InitializeNullableColumnQuery_Terrasoft_Core_DB_ColumnAction_">DBMetaScript.InitializeNullableColumnQuery(ColumnAction)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_InitializeNotNullColumnQuery_Terrasoft_Core_DB_NotNullColumnAction_">DBMetaScript.InitializeNotNullColumnQuery(NotNullColumnAction)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_InitializeTriggerQuery_Terrasoft_Core_DB_TriggerAction_">DBMetaScript.InitializeTriggerQuery(TriggerAction)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_InitializeSetColumnValueQuery_Terrasoft_Core_DB_SetColumnValueAction_">DBMetaScript.InitializeSetColumnValueQuery(SetColumnValueAction)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_CreateEntitySchemaAction_Terrasoft_Core_DB_ActionModifyType_Terrasoft_Core_Entities_EntitySchema_System_String_">DBMetaScript.CreateEntitySchemaAction(ActionModifyType, EntitySchema, String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_CreateEntitySchemaAction_Terrasoft_Core_DB_ActionModifyType_Terrasoft_Core_Entities_EntitySchema_">DBMetaScript.CreateEntitySchemaAction(ActionModifyType, EntitySchema)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_CreateEntitySchemaAction_Terrasoft_Core_Entities_EntitySchema_System_String_">DBMetaScript.CreateEntitySchemaAction(EntitySchema, String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_CreateEntitySchemaAction_Terrasoft_Core_Entities_EntitySchema_">DBMetaScript.CreateEntitySchemaAction(EntitySchema)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_CreateColumnAction_Terrasoft_Core_DB_ActionModifyType_Terrasoft_Core_Entities_EntitySchema_Terrasoft_Core_Entities_EntitySchemaColumn_System_String_">DBMetaScript.CreateColumnAction(ActionModifyType, EntitySchema, EntitySchemaColumn, String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_CreateColumnAction_Terrasoft_Core_DB_ActionModifyType_Terrasoft_Core_Entities_EntitySchema_Terrasoft_Core_Entities_EntitySchemaColumn_">DBMetaScript.CreateColumnAction(ActionModifyType, EntitySchema, EntitySchemaColumn)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_CreateColumnAction_Terrasoft_Core_Entities_EntitySchema_Terrasoft_Core_Entities_EntitySchemaColumn_System_String_">DBMetaScript.CreateColumnAction(EntitySchema, EntitySchemaColumn, String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_CreateColumnAction_Terrasoft_Core_Entities_EntitySchema_Terrasoft_Core_Entities_EntitySchemaColumn_">DBMetaScript.CreateColumnAction(EntitySchema, EntitySchemaColumn)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_CreateNotNullColumnAction_Terrasoft_Core_DB_ActionModifyType_Terrasoft_Core_Entities_EntitySchema_Terrasoft_Core_Entities_EntitySchemaColumn_">DBMetaScript.CreateNotNullColumnAction(ActionModifyType, EntitySchema, EntitySchemaColumn)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_CreateNotNullColumnAction_Terrasoft_Core_Entities_EntitySchema_Terrasoft_Core_Entities_EntitySchemaColumn_">DBMetaScript.CreateNotNullColumnAction(EntitySchema, EntitySchemaColumn)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_CreateSetColumnValueAction_Terrasoft_Core_Entities_EntitySchema_Terrasoft_Core_Entities_EntitySchemaColumn_">DBMetaScript.CreateSetColumnValueAction(EntitySchema, EntitySchemaColumn)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_CreateIndexAction_Terrasoft_Core_DB_ActionModifyType_Terrasoft_Core_Entities_EntitySchema_Terrasoft_Core_Entities_EntitySchemaIndex_System_String_">DBMetaScript.CreateIndexAction(ActionModifyType, EntitySchema, EntitySchemaIndex, String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_CreateIndexAction_Terrasoft_Core_DB_ActionModifyType_Terrasoft_Core_Entities_EntitySchema_Terrasoft_Core_Entities_EntitySchemaIndex_">DBMetaScript.CreateIndexAction(ActionModifyType, EntitySchema, EntitySchemaIndex)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_CreateIndexAction_Terrasoft_Core_Entities_EntitySchema_Terrasoft_Core_Entities_EntitySchemaIndex_System_String_">DBMetaScript.CreateIndexAction(EntitySchema, EntitySchemaIndex, String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_CreateIndexAction_Terrasoft_Core_Entities_EntitySchema_Terrasoft_Core_Entities_EntitySchemaIndex_">DBMetaScript.CreateIndexAction(EntitySchema, EntitySchemaIndex)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_CreatePrimaryKeyAction_Terrasoft_Core_DB_ActionModifyType_Terrasoft_Core_Entities_EntitySchema_Terrasoft_Core_Entities_EntitySchemaColumn_System_String_">DBMetaScript.CreatePrimaryKeyAction(ActionModifyType, EntitySchema, EntitySchemaColumn, String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_CreatePrimaryKeyAction_Terrasoft_Core_DB_ActionModifyType_Terrasoft_Core_Entities_EntitySchema_Terrasoft_Core_Entities_EntitySchemaColumn_">DBMetaScript.CreatePrimaryKeyAction(ActionModifyType, EntitySchema, EntitySchemaColumn)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_CreatePrimaryKeyAction_Terrasoft_Core_DB_ActionModifyType_Terrasoft_Core_Entities_EntitySchema_">DBMetaScript.CreatePrimaryKeyAction(ActionModifyType, EntitySchema)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_CreatePrimaryKeyAction_Terrasoft_Core_Entities_EntitySchema_Terrasoft_Core_Entities_EntitySchemaColumn_System_String_">DBMetaScript.CreatePrimaryKeyAction(EntitySchema, EntitySchemaColumn, String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_CreatePrimaryKeyAction_Terrasoft_Core_Entities_EntitySchema_Terrasoft_Core_Entities_EntitySchemaColumn_">DBMetaScript.CreatePrimaryKeyAction(EntitySchema, EntitySchemaColumn)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_CreatePrimaryKeyAction_Terrasoft_Core_Entities_EntitySchema_">DBMetaScript.CreatePrimaryKeyAction(EntitySchema)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_CreateTriggerAction_Terrasoft_Core_DB_ActionModifyType_Terrasoft_Core_DB_TriggerType_Terrasoft_Core_Entities_EntitySchema_">DBMetaScript.CreateTriggerAction(ActionModifyType, TriggerType, EntitySchema)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_CreateForeignKeyAction_Terrasoft_Core_Entities_EntitySchema_Terrasoft_Core_Entities_EntitySchemaColumn_Terrasoft_Core_Entities_EntitySchema_">DBMetaScript.CreateForeignKeyAction(EntitySchema, EntitySchemaColumn, EntitySchema)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_CreateForeignKeyAction_Terrasoft_Core_DB_ActionModifyType_Terrasoft_Core_Entities_EntitySchema_Terrasoft_Core_Entities_EntitySchemaColumn_System_String_">DBMetaScript.CreateForeignKeyAction(ActionModifyType, EntitySchema, EntitySchemaColumn, String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_CreateForeignKeyAction_Terrasoft_Core_Entities_EntitySchema_Terrasoft_Core_Entities_EntitySchemaColumn_System_String_">DBMetaScript.CreateForeignKeyAction(EntitySchema, EntitySchemaColumn, String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_CreateDefValueAction_Terrasoft_Core_DB_ActionModifyType_Terrasoft_Core_Entities_EntitySchema_Terrasoft_Core_Entities_EntitySchemaColumn_System_String_System_Object_">DBMetaScript.CreateDefValueAction(ActionModifyType, EntitySchema, EntitySchemaColumn, String, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_CreateDefValueAction_Terrasoft_Core_Entities_EntitySchema_Terrasoft_Core_Entities_EntitySchemaColumn_System_String_System_Object_">DBMetaScript.CreateDefValueAction(EntitySchema, EntitySchemaColumn, String, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_CreateUniqueDataValidateAction_Terrasoft_Core_Entities_EntitySchema_System_Collections_Generic_IList_Terrasoft_Core_Entities_EntitySchemaColumn__">DBMetaScript.CreateUniqueDataValidateAction(EntitySchema, IList&lt;EntitySchemaColumn&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_CreateUniqueDataValidateAction_Terrasoft_Core_Entities_EntitySchema_Terrasoft_Core_Entities_EntitySchemaColumn_">DBMetaScript.CreateUniqueDataValidateAction(EntitySchema, EntitySchemaColumn)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_CreateDanglingReferenceValidateAction_Terrasoft_Core_Entities_EntitySchema_Terrasoft_Core_Entities_EntitySchemaColumn_">DBMetaScript.CreateDanglingReferenceValidateAction(EntitySchema, EntitySchemaColumn)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_CreateNotNullColumnValidateAction_Terrasoft_Core_Entities_EntitySchema_Terrasoft_Core_Entities_EntitySchemaColumn_">DBMetaScript.CreateNotNullColumnValidateAction(EntitySchema, EntitySchemaColumn)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_CreateModifyColumnTypeValidateAction_Terrasoft_Core_Entities_EntitySchema_Terrasoft_Core_Entities_EntitySchemaColumn_">DBMetaScript.CreateModifyColumnTypeValidateAction(EntitySchema, EntitySchemaColumn)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_CreateTemporaryGroupAction">DBMetaScript.CreateTemporaryGroupAction()</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_CreateGroupAction_Terrasoft_Core_Entities_EntitySchema_Terrasoft_Core_Entities_EntitySchemaColumn_">DBMetaScript.CreateGroupAction(EntitySchema, EntitySchemaColumn)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_CreateGroupAction_Terrasoft_Core_Entities_EntitySchema_">DBMetaScript.CreateGroupAction(EntitySchema)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_AddSysSettingsAddTriggerActions_Terrasoft_Core_DB_DBMetaActionCollection_Terrasoft_Core_Configuration_SysSettings_">DBMetaScript.AddSysSettingsAddTriggerActions(DBMetaActionCollection, SysSettings)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_AddEntitySchemaDeletingActions_Terrasoft_Core_DB_DBMetaActionCollection_Terrasoft_Core_Entities_EntitySchema_">DBMetaScript.AddEntitySchemaDeletingActions(DBMetaActionCollection, EntitySchema)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_AddForeignKeyDeletingActions_Terrasoft_Core_DB_DBMetaActionCollection_Terrasoft_Core_Entities_EntitySchema_Terrasoft_Core_Entities_EntitySchemaColumn_">DBMetaScript.AddForeignKeyDeletingActions(DBMetaActionCollection, EntitySchema, EntitySchemaColumn)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_CheckActions_Terrasoft_Core_DB_DBMetaActionCollection_">DBMetaScript.CheckActions(DBMetaActionCollection)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_CheckObject_Terrasoft_Core_Entities_EntitySchemaColumn_">DBMetaScript.CheckObject(EntitySchemaColumn)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_CheckObject_Terrasoft_Core_Entities_EntitySchemaIndex_">DBMetaScript.CheckObject(EntitySchemaIndex)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_CheckObject_Terrasoft_Core_Entities_EntitySchema_">DBMetaScript.CheckObject(EntitySchema)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_ExecuteActions_Terrasoft_Core_DB_DBMetaActionCollection_">DBMetaScript.ExecuteActions(DBMetaActionCollection)</a>
+    </div>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Terrasoft.DB.MSSql.html">Terrasoft.DB.MSSql</a></h6>
+  <h6><strong>Assembly</strong>: Terrasoft.DB.MSSql.dll</h6>
+  <h5 id="Terrasoft_DB_MSSql_MSSqlMetaScript_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class MSSqlMetaScript : DBMetaScript</code></pre>
+  </div>
+  <h3 id="properties">Properties
+  </h3>
+  
+  
+  <a id="Terrasoft_DB_MSSql_MSSqlMetaScript_TriggerBeforeInsertUpdateActionTriggerType_" data-uid="Terrasoft.DB.MSSql.MSSqlMetaScript.TriggerBeforeInsertUpdateActionTriggerType*"></a>
+  <h4 id="Terrasoft_DB_MSSql_MSSqlMetaScript_TriggerBeforeInsertUpdateActionTriggerType" data-uid="Terrasoft.DB.MSSql.MSSqlMetaScript.TriggerBeforeInsertUpdateActionTriggerType">TriggerBeforeInsertUpdateActionTriggerType</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override TriggerType TriggerBeforeInsertUpdateActionTriggerType { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.TriggerType.html">TriggerType</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_TriggerBeforeInsertUpdateActionTriggerType">DBMetaScript.TriggerBeforeInsertUpdateActionTriggerType</a></div>
+  <h3 id="methods">Methods
+  </h3>
+  
+  
+  <a id="Terrasoft_DB_MSSql_MSSqlMetaScript_AddColumnCreatingActions_" data-uid="Terrasoft.DB.MSSql.MSSqlMetaScript.AddColumnCreatingActions*"></a>
+  <h4 id="Terrasoft_DB_MSSql_MSSqlMetaScript_AddColumnCreatingActions_Terrasoft_Core_DB_DBMetaActionCollection_Terrasoft_Core_DB_EntitySchemaAction_Terrasoft_Core_DB_ColumnAction_" data-uid="Terrasoft.DB.MSSql.MSSqlMetaScript.AddColumnCreatingActions(Terrasoft.Core.DB.DBMetaActionCollection,Terrasoft.Core.DB.EntitySchemaAction,Terrasoft.Core.DB.ColumnAction)">AddColumnCreatingActions(DBMetaActionCollection, EntitySchemaAction, ColumnAction)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void AddColumnCreatingActions(DBMetaActionCollection actions, EntitySchemaAction entitySchemaAction, ColumnAction columnAction)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.DBMetaActionCollection.html">DBMetaActionCollection</a></td>
+        <td><span class="parametername">actions</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.EntitySchemaAction.html">EntitySchemaAction</a></td>
+        <td><span class="parametername">entitySchemaAction</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.ColumnAction.html">ColumnAction</a></td>
+        <td><span class="parametername">columnAction</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_AddColumnCreatingActions_Terrasoft_Core_DB_DBMetaActionCollection_Terrasoft_Core_DB_EntitySchemaAction_Terrasoft_Core_DB_ColumnAction_">DBMetaScript.AddColumnCreatingActions(DBMetaActionCollection, EntitySchemaAction, ColumnAction)</a></div>
+  
+  
+  <a id="Terrasoft_DB_MSSql_MSSqlMetaScript_AddColumnDeletingActions_" data-uid="Terrasoft.DB.MSSql.MSSqlMetaScript.AddColumnDeletingActions*"></a>
+  <h4 id="Terrasoft_DB_MSSql_MSSqlMetaScript_AddColumnDeletingActions_Terrasoft_Core_DB_DBMetaActionCollection_Terrasoft_Core_Entities_EntitySchema_System_String_Terrasoft_Core_Entities_EntitySchemaColumn_" data-uid="Terrasoft.DB.MSSql.MSSqlMetaScript.AddColumnDeletingActions(Terrasoft.Core.DB.DBMetaActionCollection,Terrasoft.Core.Entities.EntitySchema,System.String,Terrasoft.Core.Entities.EntitySchemaColumn)">AddColumnDeletingActions(DBMetaActionCollection, EntitySchema, String, EntitySchemaColumn)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void AddColumnDeletingActions(DBMetaActionCollection actions, EntitySchema entitySchema, string entitySchemaName, EntitySchemaColumn entitySchemaColumn)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.DBMetaActionCollection.html">DBMetaActionCollection</a></td>
+        <td><span class="parametername">actions</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.Entities.EntitySchema.html">EntitySchema</a></td>
+        <td><span class="parametername">entitySchema</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">entitySchemaName</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.Entities.EntitySchemaColumn.html">EntitySchemaColumn</a></td>
+        <td><span class="parametername">entitySchemaColumn</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_AddColumnDeletingActions_Terrasoft_Core_DB_DBMetaActionCollection_Terrasoft_Core_Entities_EntitySchema_System_String_Terrasoft_Core_Entities_EntitySchemaColumn_">DBMetaScript.AddColumnDeletingActions(DBMetaActionCollection, EntitySchema, String, EntitySchemaColumn)</a></div>
+  
+  
+  <a id="Terrasoft_DB_MSSql_MSSqlMetaScript_AddColumnIndexesDeletingActions_" data-uid="Terrasoft.DB.MSSql.MSSqlMetaScript.AddColumnIndexesDeletingActions*"></a>
+  <h4 id="Terrasoft_DB_MSSql_MSSqlMetaScript_AddColumnIndexesDeletingActions_Terrasoft_Core_DB_DBMetaActionCollection_Terrasoft_Core_DB_ColumnAction_" data-uid="Terrasoft.DB.MSSql.MSSqlMetaScript.AddColumnIndexesDeletingActions(Terrasoft.Core.DB.DBMetaActionCollection,Terrasoft.Core.DB.ColumnAction)">AddColumnIndexesDeletingActions(DBMetaActionCollection, ColumnAction)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void AddColumnIndexesDeletingActions(DBMetaActionCollection actions, ColumnAction columnAction)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.DBMetaActionCollection.html">DBMetaActionCollection</a></td>
+        <td><span class="parametername">actions</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.ColumnAction.html">ColumnAction</a></td>
+        <td><span class="parametername">columnAction</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_AddColumnIndexesDeletingActions_Terrasoft_Core_DB_DBMetaActionCollection_Terrasoft_Core_DB_ColumnAction_">DBMetaScript.AddColumnIndexesDeletingActions(DBMetaActionCollection, ColumnAction)</a></div>
+  
+  
+  <a id="Terrasoft_DB_MSSql_MSSqlMetaScript_AddColumnIndexesEditingActions_" data-uid="Terrasoft.DB.MSSql.MSSqlMetaScript.AddColumnIndexesEditingActions*"></a>
+  <h4 id="Terrasoft_DB_MSSql_MSSqlMetaScript_AddColumnIndexesEditingActions_Terrasoft_Core_DB_DBMetaActionCollection_Terrasoft_Core_DB_ColumnAction_" data-uid="Terrasoft.DB.MSSql.MSSqlMetaScript.AddColumnIndexesEditingActions(Terrasoft.Core.DB.DBMetaActionCollection,Terrasoft.Core.DB.ColumnAction)">AddColumnIndexesEditingActions(DBMetaActionCollection, ColumnAction)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void AddColumnIndexesEditingActions(DBMetaActionCollection actions, ColumnAction columnAction)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.DBMetaActionCollection.html">DBMetaActionCollection</a></td>
+        <td><span class="parametername">actions</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.ColumnAction.html">ColumnAction</a></td>
+        <td><span class="parametername">columnAction</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_AddColumnIndexesEditingActions_Terrasoft_Core_DB_DBMetaActionCollection_Terrasoft_Core_DB_ColumnAction_">DBMetaScript.AddColumnIndexesEditingActions(DBMetaActionCollection, ColumnAction)</a></div>
+  
+  
+  <a id="Terrasoft_DB_MSSql_MSSqlMetaScript_AddColumnIndexRenamingActions_" data-uid="Terrasoft.DB.MSSql.MSSqlMetaScript.AddColumnIndexRenamingActions*"></a>
+  <h4 id="Terrasoft_DB_MSSql_MSSqlMetaScript_AddColumnIndexRenamingActions_Terrasoft_Core_DB_DBMetaActionCollection_Terrasoft_Core_DB_ColumnAction_System_String_" data-uid="Terrasoft.DB.MSSql.MSSqlMetaScript.AddColumnIndexRenamingActions(Terrasoft.Core.DB.DBMetaActionCollection,Terrasoft.Core.DB.ColumnAction,System.String)">AddColumnIndexRenamingActions(DBMetaActionCollection, ColumnAction, String)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override IndexAction AddColumnIndexRenamingActions(DBMetaActionCollection actions, ColumnAction columnAction, string indexName)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.DBMetaActionCollection.html">DBMetaActionCollection</a></td>
+        <td><span class="parametername">actions</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.ColumnAction.html">ColumnAction</a></td>
+        <td><span class="parametername">columnAction</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">indexName</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.IndexAction.html">IndexAction</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_AddColumnIndexRenamingActions_Terrasoft_Core_DB_DBMetaActionCollection_Terrasoft_Core_DB_ColumnAction_System_String_">DBMetaScript.AddColumnIndexRenamingActions(DBMetaActionCollection, ColumnAction, String)</a></div>
+  
+  
+  <a id="Terrasoft_DB_MSSql_MSSqlMetaScript_AddColumnIndexSavingActions_" data-uid="Terrasoft.DB.MSSql.MSSqlMetaScript.AddColumnIndexSavingActions*"></a>
+  <h4 id="Terrasoft_DB_MSSql_MSSqlMetaScript_AddColumnIndexSavingActions_Terrasoft_Core_DB_DBMetaActionCollection_Terrasoft_Core_DB_ColumnAction_" data-uid="Terrasoft.DB.MSSql.MSSqlMetaScript.AddColumnIndexSavingActions(Terrasoft.Core.DB.DBMetaActionCollection,Terrasoft.Core.DB.ColumnAction)">AddColumnIndexSavingActions(DBMetaActionCollection, ColumnAction)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void AddColumnIndexSavingActions(DBMetaActionCollection actions, ColumnAction columnAction)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.DBMetaActionCollection.html">DBMetaActionCollection</a></td>
+        <td><span class="parametername">actions</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.ColumnAction.html">ColumnAction</a></td>
+        <td><span class="parametername">columnAction</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_AddColumnIndexSavingActions_Terrasoft_Core_DB_DBMetaActionCollection_Terrasoft_Core_DB_ColumnAction_">DBMetaScript.AddColumnIndexSavingActions(DBMetaActionCollection, ColumnAction)</a></div>
+  
+  
+  <a id="Terrasoft_DB_MSSql_MSSqlMetaScript_AddColumnModificationActions_" data-uid="Terrasoft.DB.MSSql.MSSqlMetaScript.AddColumnModificationActions*"></a>
+  <h4 id="Terrasoft_DB_MSSql_MSSqlMetaScript_AddColumnModificationActions_Terrasoft_Core_DB_DBMetaActionCollection_System_Data_IDataReader_Terrasoft_Core_Entities_EntitySchemaColumn_Terrasoft_Core_DB_ColumnAction_" data-uid="Terrasoft.DB.MSSql.MSSqlMetaScript.AddColumnModificationActions(Terrasoft.Core.DB.DBMetaActionCollection,System.Data.IDataReader,Terrasoft.Core.Entities.EntitySchemaColumn,Terrasoft.Core.DB.ColumnAction)">AddColumnModificationActions(DBMetaActionCollection, IDataReader, EntitySchemaColumn, ColumnAction)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void AddColumnModificationActions(DBMetaActionCollection actions, IDataReader dataReader, EntitySchemaColumn sourceColumn, ColumnAction columnAction)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.DBMetaActionCollection.html">DBMetaActionCollection</a></td>
+        <td><span class="parametername">actions</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Data.IDataReader</span></td>
+        <td><span class="parametername">dataReader</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.Entities.EntitySchemaColumn.html">EntitySchemaColumn</a></td>
+        <td><span class="parametername">sourceColumn</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.ColumnAction.html">ColumnAction</a></td>
+        <td><span class="parametername">columnAction</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_AddColumnModificationActions_Terrasoft_Core_DB_DBMetaActionCollection_System_Data_IDataReader_Terrasoft_Core_Entities_EntitySchemaColumn_Terrasoft_Core_DB_ColumnAction_">DBMetaScript.AddColumnModificationActions(DBMetaActionCollection, IDataReader, EntitySchemaColumn, ColumnAction)</a></div>
+  
+  
+  <a id="Terrasoft_DB_MSSql_MSSqlMetaScript_AddColumnParametersToActions_" data-uid="Terrasoft.DB.MSSql.MSSqlMetaScript.AddColumnParametersToActions*"></a>
+  <h4 id="Terrasoft_DB_MSSql_MSSqlMetaScript_AddColumnParametersToActions_Terrasoft_Core_DB_DBMetaActionCollection_System_Data_IDataReader_Terrasoft_Core_DB_ColumnAction_Terrasoft_Core_DB_DBMetaPropertyCollection_Terrasoft_Core_DataValueType_Terrasoft_Core_DataValueType_System_String_" data-uid="Terrasoft.DB.MSSql.MSSqlMetaScript.AddColumnParametersToActions(Terrasoft.Core.DB.DBMetaActionCollection,System.Data.IDataReader,Terrasoft.Core.DB.ColumnAction,Terrasoft.Core.DB.DBMetaPropertyCollection,Terrasoft.Core.DataValueType,Terrasoft.Core.DataValueType,System.String)">AddColumnParametersToActions(DBMetaActionCollection, IDataReader, ColumnAction, DBMetaPropertyCollection, DataValueType, DataValueType, String)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void AddColumnParametersToActions(DBMetaActionCollection actions, IDataReader dataReader, ColumnAction columnAction, DBMetaPropertyCollection existingProperties, DataValueType dbDataValueType, DataValueType dataValueType, string entitySchemaName)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.DBMetaActionCollection.html">DBMetaActionCollection</a></td>
+        <td><span class="parametername">actions</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Data.IDataReader</span></td>
+        <td><span class="parametername">dataReader</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.ColumnAction.html">ColumnAction</a></td>
+        <td><span class="parametername">columnAction</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.DBMetaPropertyCollection.html">DBMetaPropertyCollection</a></td>
+        <td><span class="parametername">existingProperties</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DataValueType.html">DataValueType</a></td>
+        <td><span class="parametername">dbDataValueType</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DataValueType.html">DataValueType</a></td>
+        <td><span class="parametername">dataValueType</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">entitySchemaName</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_AddColumnParametersToActions_Terrasoft_Core_DB_DBMetaActionCollection_System_Data_IDataReader_Terrasoft_Core_DB_ColumnAction_Terrasoft_Core_DB_DBMetaPropertyCollection_Terrasoft_Core_DataValueType_Terrasoft_Core_DataValueType_System_String_">DBMetaScript.AddColumnParametersToActions(DBMetaActionCollection, IDataReader, ColumnAction, DBMetaPropertyCollection, DataValueType, DataValueType, String)</a></div>
+  
+  
+  <a id="Terrasoft_DB_MSSql_MSSqlMetaScript_AddColumnRenamingActions_" data-uid="Terrasoft.DB.MSSql.MSSqlMetaScript.AddColumnRenamingActions*"></a>
+  <h4 id="Terrasoft_DB_MSSql_MSSqlMetaScript_AddColumnRenamingActions_Terrasoft_Core_DB_DBMetaActionCollection_Terrasoft_Core_DB_ColumnAction_" data-uid="Terrasoft.DB.MSSql.MSSqlMetaScript.AddColumnRenamingActions(Terrasoft.Core.DB.DBMetaActionCollection,Terrasoft.Core.DB.ColumnAction)">AddColumnRenamingActions(DBMetaActionCollection, ColumnAction)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override ColumnAction AddColumnRenamingActions(DBMetaActionCollection actions, ColumnAction columnAction)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.DBMetaActionCollection.html">DBMetaActionCollection</a></td>
+        <td><span class="parametername">actions</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.ColumnAction.html">ColumnAction</a></td>
+        <td><span class="parametername">columnAction</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.ColumnAction.html">ColumnAction</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_AddColumnRenamingActions_Terrasoft_Core_DB_DBMetaActionCollection_Terrasoft_Core_DB_ColumnAction_">DBMetaScript.AddColumnRenamingActions(DBMetaActionCollection, ColumnAction)</a></div>
+  
+  
+  <a id="Terrasoft_DB_MSSql_MSSqlMetaScript_AddColumnSavingActions_" data-uid="Terrasoft.DB.MSSql.MSSqlMetaScript.AddColumnSavingActions*"></a>
+  <h4 id="Terrasoft_DB_MSSql_MSSqlMetaScript_AddColumnSavingActions_Terrasoft_Core_DB_DBMetaActionCollection_Terrasoft_Core_DB_EntitySchemaAction_Terrasoft_Core_Entities_EntitySchemaColumn_" data-uid="Terrasoft.DB.MSSql.MSSqlMetaScript.AddColumnSavingActions(Terrasoft.Core.DB.DBMetaActionCollection,Terrasoft.Core.DB.EntitySchemaAction,Terrasoft.Core.Entities.EntitySchemaColumn)">AddColumnSavingActions(DBMetaActionCollection, EntitySchemaAction, EntitySchemaColumn)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void AddColumnSavingActions(DBMetaActionCollection actions, EntitySchemaAction entitySchemaAction, EntitySchemaColumn entitySchemaColumn)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.DBMetaActionCollection.html">DBMetaActionCollection</a></td>
+        <td><span class="parametername">actions</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.EntitySchemaAction.html">EntitySchemaAction</a></td>
+        <td><span class="parametername">entitySchemaAction</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.Entities.EntitySchemaColumn.html">EntitySchemaColumn</a></td>
+        <td><span class="parametername">entitySchemaColumn</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_AddColumnSavingActions_Terrasoft_Core_DB_DBMetaActionCollection_Terrasoft_Core_DB_EntitySchemaAction_Terrasoft_Core_Entities_EntitySchemaColumn_">DBMetaScript.AddColumnSavingActions(DBMetaActionCollection, EntitySchemaAction, EntitySchemaColumn)</a></div>
+  
+  
+  <a id="Terrasoft_DB_MSSql_MSSqlMetaScript_AddColumnsCreatingActions_" data-uid="Terrasoft.DB.MSSql.MSSqlMetaScript.AddColumnsCreatingActions*"></a>
+  <h4 id="Terrasoft_DB_MSSql_MSSqlMetaScript_AddColumnsCreatingActions_Terrasoft_Core_DB_DBMetaActionCollection_Terrasoft_Core_DB_EntitySchemaAction_" data-uid="Terrasoft.DB.MSSql.MSSqlMetaScript.AddColumnsCreatingActions(Terrasoft.Core.DB.DBMetaActionCollection,Terrasoft.Core.DB.EntitySchemaAction)">AddColumnsCreatingActions(DBMetaActionCollection, EntitySchemaAction)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void AddColumnsCreatingActions(DBMetaActionCollection actions, EntitySchemaAction action)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.DBMetaActionCollection.html">DBMetaActionCollection</a></td>
+        <td><span class="parametername">actions</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.EntitySchemaAction.html">EntitySchemaAction</a></td>
+        <td><span class="parametername">action</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_AddColumnsCreatingActions_Terrasoft_Core_DB_DBMetaActionCollection_Terrasoft_Core_DB_EntitySchemaAction_">DBMetaScript.AddColumnsCreatingActions(DBMetaActionCollection, EntitySchemaAction)</a></div>
+  
+  
+  <a id="Terrasoft_DB_MSSql_MSSqlMetaScript_AddDefValueEditingActions_" data-uid="Terrasoft.DB.MSSql.MSSqlMetaScript.AddDefValueEditingActions*"></a>
+  <h4 id="Terrasoft_DB_MSSql_MSSqlMetaScript_AddDefValueEditingActions_Terrasoft_Core_DB_DBMetaActionCollection_System_Data_IDataReader_Terrasoft_Core_DB_ColumnAction_" data-uid="Terrasoft.DB.MSSql.MSSqlMetaScript.AddDefValueEditingActions(Terrasoft.Core.DB.DBMetaActionCollection,System.Data.IDataReader,Terrasoft.Core.DB.ColumnAction)">AddDefValueEditingActions(DBMetaActionCollection, IDataReader, ColumnAction)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void AddDefValueEditingActions(DBMetaActionCollection actions, IDataReader dataReader, ColumnAction columnAction)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.DBMetaActionCollection.html">DBMetaActionCollection</a></td>
+        <td><span class="parametername">actions</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Data.IDataReader</span></td>
+        <td><span class="parametername">dataReader</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.ColumnAction.html">ColumnAction</a></td>
+        <td><span class="parametername">columnAction</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_AddDefValueEditingActions_Terrasoft_Core_DB_DBMetaActionCollection_System_Data_IDataReader_Terrasoft_Core_DB_ColumnAction_">DBMetaScript.AddDefValueEditingActions(DBMetaActionCollection, IDataReader, ColumnAction)</a></div>
+  
+  
+  <a id="Terrasoft_DB_MSSql_MSSqlMetaScript_AddDefValueRenamingActions_" data-uid="Terrasoft.DB.MSSql.MSSqlMetaScript.AddDefValueRenamingActions*"></a>
+  <h4 id="Terrasoft_DB_MSSql_MSSqlMetaScript_AddDefValueRenamingActions_Terrasoft_Core_DB_DBMetaActionCollection_Terrasoft_Core_DB_ColumnAction_System_String_" data-uid="Terrasoft.DB.MSSql.MSSqlMetaScript.AddDefValueRenamingActions(Terrasoft.Core.DB.DBMetaActionCollection,Terrasoft.Core.DB.ColumnAction,System.String)">AddDefValueRenamingActions(DBMetaActionCollection, ColumnAction, String)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override DefValueAction AddDefValueRenamingActions(DBMetaActionCollection actions, ColumnAction columnAction, string defValueName)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.DBMetaActionCollection.html">DBMetaActionCollection</a></td>
+        <td><span class="parametername">actions</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.ColumnAction.html">ColumnAction</a></td>
+        <td><span class="parametername">columnAction</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">defValueName</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.DefValueAction.html">DefValueAction</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_AddDefValueRenamingActions_Terrasoft_Core_DB_DBMetaActionCollection_Terrasoft_Core_DB_ColumnAction_System_String_">DBMetaScript.AddDefValueRenamingActions(DBMetaActionCollection, ColumnAction, String)</a></div>
+  
+  
+  <a id="Terrasoft_DB_MSSql_MSSqlMetaScript_AddDefValueSavingActions_" data-uid="Terrasoft.DB.MSSql.MSSqlMetaScript.AddDefValueSavingActions*"></a>
+  <h4 id="Terrasoft_DB_MSSql_MSSqlMetaScript_AddDefValueSavingActions_Terrasoft_Core_DB_DBMetaActionCollection_Terrasoft_Core_DB_ColumnAction_" data-uid="Terrasoft.DB.MSSql.MSSqlMetaScript.AddDefValueSavingActions(Terrasoft.Core.DB.DBMetaActionCollection,Terrasoft.Core.DB.ColumnAction)">AddDefValueSavingActions(DBMetaActionCollection, ColumnAction)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void AddDefValueSavingActions(DBMetaActionCollection actions, ColumnAction columnAction)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.DBMetaActionCollection.html">DBMetaActionCollection</a></td>
+        <td><span class="parametername">actions</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.ColumnAction.html">ColumnAction</a></td>
+        <td><span class="parametername">columnAction</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_AddDefValueSavingActions_Terrasoft_Core_DB_DBMetaActionCollection_Terrasoft_Core_DB_ColumnAction_">DBMetaScript.AddDefValueSavingActions(DBMetaActionCollection, ColumnAction)</a></div>
+  
+  
+  <a id="Terrasoft_DB_MSSql_MSSqlMetaScript_AddEntitySchemaCreatingActions_" data-uid="Terrasoft.DB.MSSql.MSSqlMetaScript.AddEntitySchemaCreatingActions*"></a>
+  <h4 id="Terrasoft_DB_MSSql_MSSqlMetaScript_AddEntitySchemaCreatingActions_Terrasoft_Core_DB_DBMetaActionCollection_Terrasoft_Core_DB_EntitySchemaAction_System_Boolean_" data-uid="Terrasoft.DB.MSSql.MSSqlMetaScript.AddEntitySchemaCreatingActions(Terrasoft.Core.DB.DBMetaActionCollection,Terrasoft.Core.DB.EntitySchemaAction,System.Boolean)">AddEntitySchemaCreatingActions(DBMetaActionCollection, EntitySchemaAction, Boolean)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void AddEntitySchemaCreatingActions(DBMetaActionCollection actions, EntitySchemaAction entitySchemaAction, bool skeepForeignKeyActions = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.DBMetaActionCollection.html">DBMetaActionCollection</a></td>
+        <td><span class="parametername">actions</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.EntitySchemaAction.html">EntitySchemaAction</a></td>
+        <td><span class="parametername">entitySchemaAction</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">skeepForeignKeyActions</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_AddEntitySchemaCreatingActions_Terrasoft_Core_DB_DBMetaActionCollection_Terrasoft_Core_DB_EntitySchemaAction_System_Boolean_">DBMetaScript.AddEntitySchemaCreatingActions(DBMetaActionCollection, EntitySchemaAction, Boolean)</a></div>
+  
+  
+  <a id="Terrasoft_DB_MSSql_MSSqlMetaScript_AddEntitySchemaEditingActions_" data-uid="Terrasoft.DB.MSSql.MSSqlMetaScript.AddEntitySchemaEditingActions*"></a>
+  <h4 id="Terrasoft_DB_MSSql_MSSqlMetaScript_AddEntitySchemaEditingActions_Terrasoft_Core_DB_DBMetaActionCollection_Terrasoft_Core_DB_EntitySchemaAction_" data-uid="Terrasoft.DB.MSSql.MSSqlMetaScript.AddEntitySchemaEditingActions(Terrasoft.Core.DB.DBMetaActionCollection,Terrasoft.Core.DB.EntitySchemaAction)">AddEntitySchemaEditingActions(DBMetaActionCollection, EntitySchemaAction)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void AddEntitySchemaEditingActions(DBMetaActionCollection actions, EntitySchemaAction entitySchemaAction)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.DBMetaActionCollection.html">DBMetaActionCollection</a></td>
+        <td><span class="parametername">actions</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.EntitySchemaAction.html">EntitySchemaAction</a></td>
+        <td><span class="parametername">entitySchemaAction</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_AddEntitySchemaEditingActions_Terrasoft_Core_DB_DBMetaActionCollection_Terrasoft_Core_DB_EntitySchemaAction_">DBMetaScript.AddEntitySchemaEditingActions(DBMetaActionCollection, EntitySchemaAction)</a></div>
+  
+  
+  <a id="Terrasoft_DB_MSSql_MSSqlMetaScript_AddEntitySchemaIndexRenamingActions_" data-uid="Terrasoft.DB.MSSql.MSSqlMetaScript.AddEntitySchemaIndexRenamingActions*"></a>
+  <h4 id="Terrasoft_DB_MSSql_MSSqlMetaScript_AddEntitySchemaIndexRenamingActions_Terrasoft_Core_DB_DBMetaActionCollection_Terrasoft_Core_DB_IndexAction_System_String_" data-uid="Terrasoft.DB.MSSql.MSSqlMetaScript.AddEntitySchemaIndexRenamingActions(Terrasoft.Core.DB.DBMetaActionCollection,Terrasoft.Core.DB.IndexAction,System.String)">AddEntitySchemaIndexRenamingActions(DBMetaActionCollection, IndexAction, String)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override IndexAction AddEntitySchemaIndexRenamingActions(DBMetaActionCollection actions, IndexAction indexAction, string indexName)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.DBMetaActionCollection.html">DBMetaActionCollection</a></td>
+        <td><span class="parametername">actions</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.IndexAction.html">IndexAction</a></td>
+        <td><span class="parametername">indexAction</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">indexName</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.IndexAction.html">IndexAction</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_AddEntitySchemaIndexRenamingActions_Terrasoft_Core_DB_DBMetaActionCollection_Terrasoft_Core_DB_IndexAction_System_String_">DBMetaScript.AddEntitySchemaIndexRenamingActions(DBMetaActionCollection, IndexAction, String)</a></div>
+  
+  
+  <a id="Terrasoft_DB_MSSql_MSSqlMetaScript_AddEntitySchemaIndexSavingActions_" data-uid="Terrasoft.DB.MSSql.MSSqlMetaScript.AddEntitySchemaIndexSavingActions*"></a>
+  <h4 id="Terrasoft_DB_MSSql_MSSqlMetaScript_AddEntitySchemaIndexSavingActions_Terrasoft_Core_DB_DBMetaActionCollection_Terrasoft_Core_DB_EntitySchemaAction_Terrasoft_Core_Entities_EntitySchemaIndex_" data-uid="Terrasoft.DB.MSSql.MSSqlMetaScript.AddEntitySchemaIndexSavingActions(Terrasoft.Core.DB.DBMetaActionCollection,Terrasoft.Core.DB.EntitySchemaAction,Terrasoft.Core.Entities.EntitySchemaIndex)">AddEntitySchemaIndexSavingActions(DBMetaActionCollection, EntitySchemaAction, EntitySchemaIndex)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void AddEntitySchemaIndexSavingActions(DBMetaActionCollection actions, EntitySchemaAction entitySchemaAction, EntitySchemaIndex entitySchemaIndex)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.DBMetaActionCollection.html">DBMetaActionCollection</a></td>
+        <td><span class="parametername">actions</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.EntitySchemaAction.html">EntitySchemaAction</a></td>
+        <td><span class="parametername">entitySchemaAction</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.Entities.EntitySchemaIndex.html">EntitySchemaIndex</a></td>
+        <td><span class="parametername">entitySchemaIndex</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_AddEntitySchemaIndexSavingActions_Terrasoft_Core_DB_DBMetaActionCollection_Terrasoft_Core_DB_EntitySchemaAction_Terrasoft_Core_Entities_EntitySchemaIndex_">DBMetaScript.AddEntitySchemaIndexSavingActions(DBMetaActionCollection, EntitySchemaAction, EntitySchemaIndex)</a></div>
+  
+  
+  <a id="Terrasoft_DB_MSSql_MSSqlMetaScript_AddEntitySchemaRenamingActions_" data-uid="Terrasoft.DB.MSSql.MSSqlMetaScript.AddEntitySchemaRenamingActions*"></a>
+  <h4 id="Terrasoft_DB_MSSql_MSSqlMetaScript_AddEntitySchemaRenamingActions_Terrasoft_Core_DB_DBMetaActionCollection_Terrasoft_Core_Entities_EntitySchema_System_String_" data-uid="Terrasoft.DB.MSSql.MSSqlMetaScript.AddEntitySchemaRenamingActions(Terrasoft.Core.DB.DBMetaActionCollection,Terrasoft.Core.Entities.EntitySchema,System.String)">AddEntitySchemaRenamingActions(DBMetaActionCollection, EntitySchema, String)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override EntitySchemaAction AddEntitySchemaRenamingActions(DBMetaActionCollection actions, EntitySchema entitySchema, string entitySchemaName)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.DBMetaActionCollection.html">DBMetaActionCollection</a></td>
+        <td><span class="parametername">actions</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.Entities.EntitySchema.html">EntitySchema</a></td>
+        <td><span class="parametername">entitySchema</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">entitySchemaName</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.EntitySchemaAction.html">EntitySchemaAction</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_AddEntitySchemaRenamingActions_Terrasoft_Core_DB_DBMetaActionCollection_Terrasoft_Core_Entities_EntitySchema_System_String_">DBMetaScript.AddEntitySchemaRenamingActions(DBMetaActionCollection, EntitySchema, String)</a></div>
+  
+  
+  <a id="Terrasoft_DB_MSSql_MSSqlMetaScript_AddEntitySchemaSavingActions_" data-uid="Terrasoft.DB.MSSql.MSSqlMetaScript.AddEntitySchemaSavingActions*"></a>
+  <h4 id="Terrasoft_DB_MSSql_MSSqlMetaScript_AddEntitySchemaSavingActions_Terrasoft_Core_DB_DBMetaActionCollection_Terrasoft_Core_Entities_EntitySchema_System_Boolean_" data-uid="Terrasoft.DB.MSSql.MSSqlMetaScript.AddEntitySchemaSavingActions(Terrasoft.Core.DB.DBMetaActionCollection,Terrasoft.Core.Entities.EntitySchema,System.Boolean)">AddEntitySchemaSavingActions(DBMetaActionCollection, EntitySchema, Boolean)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void AddEntitySchemaSavingActions(DBMetaActionCollection actions, EntitySchema entitySchema, bool saveAdditionalSchemas = true)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.DBMetaActionCollection.html">DBMetaActionCollection</a></td>
+        <td><span class="parametername">actions</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.Entities.EntitySchema.html">EntitySchema</a></td>
+        <td><span class="parametername">entitySchema</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">saveAdditionalSchemas</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_AddEntitySchemaSavingActions_Terrasoft_Core_DB_DBMetaActionCollection_Terrasoft_Core_Entities_EntitySchema_System_Boolean_">DBMetaScript.AddEntitySchemaSavingActions(DBMetaActionCollection, EntitySchema, Boolean)</a></div>
+  
+  
+  <a id="Terrasoft_DB_MSSql_MSSqlMetaScript_AddForeignKeyCreatingActions_" data-uid="Terrasoft.DB.MSSql.MSSqlMetaScript.AddForeignKeyCreatingActions*"></a>
+  <h4 id="Terrasoft_DB_MSSql_MSSqlMetaScript_AddForeignKeyCreatingActions_Terrasoft_Core_DB_DBMetaActionCollection_Terrasoft_Core_Entities_EntitySchema_Terrasoft_Core_Entities_EntitySchemaColumn_" data-uid="Terrasoft.DB.MSSql.MSSqlMetaScript.AddForeignKeyCreatingActions(Terrasoft.Core.DB.DBMetaActionCollection,Terrasoft.Core.Entities.EntitySchema,Terrasoft.Core.Entities.EntitySchemaColumn)">AddForeignKeyCreatingActions(DBMetaActionCollection, EntitySchema, EntitySchemaColumn)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override ForeignKeyAction AddForeignKeyCreatingActions(DBMetaActionCollection actions, EntitySchema entitySchema, EntitySchemaColumn entitySchemaColumn)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.DBMetaActionCollection.html">DBMetaActionCollection</a></td>
+        <td><span class="parametername">actions</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.Entities.EntitySchema.html">EntitySchema</a></td>
+        <td><span class="parametername">entitySchema</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.Entities.EntitySchemaColumn.html">EntitySchemaColumn</a></td>
+        <td><span class="parametername">entitySchemaColumn</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.ForeignKeyAction.html">ForeignKeyAction</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_AddForeignKeyCreatingActions_Terrasoft_Core_DB_DBMetaActionCollection_Terrasoft_Core_Entities_EntitySchema_Terrasoft_Core_Entities_EntitySchemaColumn_">DBMetaScript.AddForeignKeyCreatingActions(DBMetaActionCollection, EntitySchema, EntitySchemaColumn)</a></div>
+  
+  
+  <a id="Terrasoft_DB_MSSql_MSSqlMetaScript_AddForeignKeyRenamingActions_" data-uid="Terrasoft.DB.MSSql.MSSqlMetaScript.AddForeignKeyRenamingActions*"></a>
+  <h4 id="Terrasoft_DB_MSSql_MSSqlMetaScript_AddForeignKeyRenamingActions_Terrasoft_Core_DB_DBMetaActionCollection_Terrasoft_Core_DB_ColumnAction_System_String_" data-uid="Terrasoft.DB.MSSql.MSSqlMetaScript.AddForeignKeyRenamingActions(Terrasoft.Core.DB.DBMetaActionCollection,Terrasoft.Core.DB.ColumnAction,System.String)">AddForeignKeyRenamingActions(DBMetaActionCollection, ColumnAction, String)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override ForeignKeyAction AddForeignKeyRenamingActions(DBMetaActionCollection actions, ColumnAction columnAction, string foreignKeyName)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.DBMetaActionCollection.html">DBMetaActionCollection</a></td>
+        <td><span class="parametername">actions</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.ColumnAction.html">ColumnAction</a></td>
+        <td><span class="parametername">columnAction</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">foreignKeyName</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.ForeignKeyAction.html">ForeignKeyAction</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_AddForeignKeyRenamingActions_Terrasoft_Core_DB_DBMetaActionCollection_Terrasoft_Core_DB_ColumnAction_System_String_">DBMetaScript.AddForeignKeyRenamingActions(DBMetaActionCollection, ColumnAction, String)</a></div>
+  
+  
+  <a id="Terrasoft_DB_MSSql_MSSqlMetaScript_AddIndexCreatingActions_" data-uid="Terrasoft.DB.MSSql.MSSqlMetaScript.AddIndexCreatingActions*"></a>
+  <h4 id="Terrasoft_DB_MSSql_MSSqlMetaScript_AddIndexCreatingActions_Terrasoft_Core_DB_DBMetaActionCollection_Terrasoft_Core_Entities_EntitySchema_Terrasoft_Core_Entities_EntitySchemaIndex_System_Boolean_" data-uid="Terrasoft.DB.MSSql.MSSqlMetaScript.AddIndexCreatingActions(Terrasoft.Core.DB.DBMetaActionCollection,Terrasoft.Core.Entities.EntitySchema,Terrasoft.Core.Entities.EntitySchemaIndex,System.Boolean)">AddIndexCreatingActions(DBMetaActionCollection, EntitySchema, EntitySchemaIndex, Boolean)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override IndexAction AddIndexCreatingActions(DBMetaActionCollection actions, EntitySchema entitySchema, EntitySchemaIndex entitySchemaIndex, bool isColumnIndex)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.DBMetaActionCollection.html">DBMetaActionCollection</a></td>
+        <td><span class="parametername">actions</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.Entities.EntitySchema.html">EntitySchema</a></td>
+        <td><span class="parametername">entitySchema</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.Entities.EntitySchemaIndex.html">EntitySchemaIndex</a></td>
+        <td><span class="parametername">entitySchemaIndex</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">isColumnIndex</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.IndexAction.html">IndexAction</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_AddIndexCreatingActions_Terrasoft_Core_DB_DBMetaActionCollection_Terrasoft_Core_Entities_EntitySchema_Terrasoft_Core_Entities_EntitySchemaIndex_System_Boolean_">DBMetaScript.AddIndexCreatingActions(DBMetaActionCollection, EntitySchema, EntitySchemaIndex, Boolean)</a></div>
+  
+  
+  <a id="Terrasoft_DB_MSSql_MSSqlMetaScript_AddLookupColumnModificationActions_" data-uid="Terrasoft.DB.MSSql.MSSqlMetaScript.AddLookupColumnModificationActions*"></a>
+  <h4 id="Terrasoft_DB_MSSql_MSSqlMetaScript_AddLookupColumnModificationActions_Terrasoft_Core_DB_DBMetaActionCollection_System_Data_IDataReader_Terrasoft_Core_DB_ModifyLookupColumnDirectionType_Terrasoft_Core_Entities_EntitySchemaColumn_Terrasoft_Core_DB_ColumnAction_System_Boolean_" data-uid="Terrasoft.DB.MSSql.MSSqlMetaScript.AddLookupColumnModificationActions(Terrasoft.Core.DB.DBMetaActionCollection,System.Data.IDataReader,Terrasoft.Core.DB.ModifyLookupColumnDirectionType,Terrasoft.Core.Entities.EntitySchemaColumn,Terrasoft.Core.DB.ColumnAction,System.Boolean)">AddLookupColumnModificationActions(DBMetaActionCollection, IDataReader, ModifyLookupColumnDirectionType, EntitySchemaColumn, ColumnAction, Boolean)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void AddLookupColumnModificationActions(DBMetaActionCollection actions, IDataReader dataReader, ModifyLookupColumnDirectionType directionType, EntitySchemaColumn sourceColumn, ColumnAction columnAction, bool isAddNewRecords)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.DBMetaActionCollection.html">DBMetaActionCollection</a></td>
+        <td><span class="parametername">actions</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Data.IDataReader</span></td>
+        <td><span class="parametername">dataReader</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.ModifyLookupColumnDirectionType.html">ModifyLookupColumnDirectionType</a></td>
+        <td><span class="parametername">directionType</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.Entities.EntitySchemaColumn.html">EntitySchemaColumn</a></td>
+        <td><span class="parametername">sourceColumn</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.ColumnAction.html">ColumnAction</a></td>
+        <td><span class="parametername">columnAction</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">isAddNewRecords</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_AddLookupColumnModificationActions_Terrasoft_Core_DB_DBMetaActionCollection_System_Data_IDataReader_Terrasoft_Core_DB_ModifyLookupColumnDirectionType_Terrasoft_Core_Entities_EntitySchemaColumn_Terrasoft_Core_DB_ColumnAction_System_Boolean_">DBMetaScript.AddLookupColumnModificationActions(DBMetaActionCollection, IDataReader, ModifyLookupColumnDirectionType, EntitySchemaColumn, ColumnAction, Boolean)</a></div>
+  
+  
+  <a id="Terrasoft_DB_MSSql_MSSqlMetaScript_AddMetaPropertyGroupCreatingActions_" data-uid="Terrasoft.DB.MSSql.MSSqlMetaScript.AddMetaPropertyGroupCreatingActions*"></a>
+  <h4 id="Terrasoft_DB_MSSql_MSSqlMetaScript_AddMetaPropertyGroupCreatingActions_Terrasoft_Core_DB_DBMetaActionCollection_Terrasoft_Core_DB_ColumnAction_Terrasoft_Core_DB_DBMetaPropertyCollection_" data-uid="Terrasoft.DB.MSSql.MSSqlMetaScript.AddMetaPropertyGroupCreatingActions(Terrasoft.Core.DB.DBMetaActionCollection,Terrasoft.Core.DB.ColumnAction,Terrasoft.Core.DB.DBMetaPropertyCollection)">AddMetaPropertyGroupCreatingActions(DBMetaActionCollection, ColumnAction, DBMetaPropertyCollection)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void AddMetaPropertyGroupCreatingActions(DBMetaActionCollection actions, ColumnAction action, DBMetaPropertyCollection existingProperties)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.DBMetaActionCollection.html">DBMetaActionCollection</a></td>
+        <td><span class="parametername">actions</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.ColumnAction.html">ColumnAction</a></td>
+        <td><span class="parametername">action</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.DBMetaPropertyCollection.html">DBMetaPropertyCollection</a></td>
+        <td><span class="parametername">existingProperties</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_AddMetaPropertyGroupCreatingActions_Terrasoft_Core_DB_DBMetaActionCollection_Terrasoft_Core_DB_ColumnAction_Terrasoft_Core_DB_DBMetaPropertyCollection_">DBMetaScript.AddMetaPropertyGroupCreatingActions(DBMetaActionCollection, ColumnAction, DBMetaPropertyCollection)</a></div>
+  
+  
+  <a id="Terrasoft_DB_MSSql_MSSqlMetaScript_AddMetaPropertyGroupCreatingActions_" data-uid="Terrasoft.DB.MSSql.MSSqlMetaScript.AddMetaPropertyGroupCreatingActions*"></a>
+  <h4 id="Terrasoft_DB_MSSql_MSSqlMetaScript_AddMetaPropertyGroupCreatingActions_Terrasoft_Core_DB_DBMetaActionCollection_Terrasoft_Core_DB_DefValueAction_Terrasoft_Core_DB_DBMetaPropertyCollection_" data-uid="Terrasoft.DB.MSSql.MSSqlMetaScript.AddMetaPropertyGroupCreatingActions(Terrasoft.Core.DB.DBMetaActionCollection,Terrasoft.Core.DB.DefValueAction,Terrasoft.Core.DB.DBMetaPropertyCollection)">AddMetaPropertyGroupCreatingActions(DBMetaActionCollection, DefValueAction, DBMetaPropertyCollection)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void AddMetaPropertyGroupCreatingActions(DBMetaActionCollection actions, DefValueAction action, DBMetaPropertyCollection existingProperties)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.DBMetaActionCollection.html">DBMetaActionCollection</a></td>
+        <td><span class="parametername">actions</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.DefValueAction.html">DefValueAction</a></td>
+        <td><span class="parametername">action</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.DBMetaPropertyCollection.html">DBMetaPropertyCollection</a></td>
+        <td><span class="parametername">existingProperties</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_AddMetaPropertyGroupCreatingActions_Terrasoft_Core_DB_DBMetaActionCollection_Terrasoft_Core_DB_DefValueAction_Terrasoft_Core_DB_DBMetaPropertyCollection_">DBMetaScript.AddMetaPropertyGroupCreatingActions(DBMetaActionCollection, DefValueAction, DBMetaPropertyCollection)</a></div>
+  
+  
+  <a id="Terrasoft_DB_MSSql_MSSqlMetaScript_AddMetaPropertyGroupCreatingActions_" data-uid="Terrasoft.DB.MSSql.MSSqlMetaScript.AddMetaPropertyGroupCreatingActions*"></a>
+  <h4 id="Terrasoft_DB_MSSql_MSSqlMetaScript_AddMetaPropertyGroupCreatingActions_Terrasoft_Core_DB_DBMetaActionCollection_Terrasoft_Core_DB_ForeignKeyAction_Terrasoft_Core_DB_DBMetaPropertyCollection_" data-uid="Terrasoft.DB.MSSql.MSSqlMetaScript.AddMetaPropertyGroupCreatingActions(Terrasoft.Core.DB.DBMetaActionCollection,Terrasoft.Core.DB.ForeignKeyAction,Terrasoft.Core.DB.DBMetaPropertyCollection)">AddMetaPropertyGroupCreatingActions(DBMetaActionCollection, ForeignKeyAction, DBMetaPropertyCollection)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void AddMetaPropertyGroupCreatingActions(DBMetaActionCollection actions, ForeignKeyAction action, DBMetaPropertyCollection existingProperties)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.DBMetaActionCollection.html">DBMetaActionCollection</a></td>
+        <td><span class="parametername">actions</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.ForeignKeyAction.html">ForeignKeyAction</a></td>
+        <td><span class="parametername">action</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.DBMetaPropertyCollection.html">DBMetaPropertyCollection</a></td>
+        <td><span class="parametername">existingProperties</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_AddMetaPropertyGroupCreatingActions_Terrasoft_Core_DB_DBMetaActionCollection_Terrasoft_Core_DB_ForeignKeyAction_Terrasoft_Core_DB_DBMetaPropertyCollection_">DBMetaScript.AddMetaPropertyGroupCreatingActions(DBMetaActionCollection, ForeignKeyAction, DBMetaPropertyCollection)</a></div>
+  
+  
+  <a id="Terrasoft_DB_MSSql_MSSqlMetaScript_AddMetaPropertyGroupCreatingActions_" data-uid="Terrasoft.DB.MSSql.MSSqlMetaScript.AddMetaPropertyGroupCreatingActions*"></a>
+  <h4 id="Terrasoft_DB_MSSql_MSSqlMetaScript_AddMetaPropertyGroupCreatingActions_Terrasoft_Core_DB_DBMetaActionCollection_Terrasoft_Core_DB_IndexAction_Terrasoft_Core_DB_DBMetaPropertyCollection_" data-uid="Terrasoft.DB.MSSql.MSSqlMetaScript.AddMetaPropertyGroupCreatingActions(Terrasoft.Core.DB.DBMetaActionCollection,Terrasoft.Core.DB.IndexAction,Terrasoft.Core.DB.DBMetaPropertyCollection)">AddMetaPropertyGroupCreatingActions(DBMetaActionCollection, IndexAction, DBMetaPropertyCollection)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void AddMetaPropertyGroupCreatingActions(DBMetaActionCollection actions, IndexAction action, DBMetaPropertyCollection existingProperties)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.DBMetaActionCollection.html">DBMetaActionCollection</a></td>
+        <td><span class="parametername">actions</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.IndexAction.html">IndexAction</a></td>
+        <td><span class="parametername">action</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.DBMetaPropertyCollection.html">DBMetaPropertyCollection</a></td>
+        <td><span class="parametername">existingProperties</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_AddMetaPropertyGroupCreatingActions_Terrasoft_Core_DB_DBMetaActionCollection_Terrasoft_Core_DB_IndexAction_Terrasoft_Core_DB_DBMetaPropertyCollection_">DBMetaScript.AddMetaPropertyGroupCreatingActions(DBMetaActionCollection, IndexAction, DBMetaPropertyCollection)</a></div>
+  
+  
+  <a id="Terrasoft_DB_MSSql_MSSqlMetaScript_AddMetaPropertyGroupCreatingActions_" data-uid="Terrasoft.DB.MSSql.MSSqlMetaScript.AddMetaPropertyGroupCreatingActions*"></a>
+  <h4 id="Terrasoft_DB_MSSql_MSSqlMetaScript_AddMetaPropertyGroupCreatingActions_Terrasoft_Core_DB_DBMetaActionCollection_Terrasoft_Core_DB_PrimaryKeyAction_Terrasoft_Core_DB_DBMetaPropertyCollection_" data-uid="Terrasoft.DB.MSSql.MSSqlMetaScript.AddMetaPropertyGroupCreatingActions(Terrasoft.Core.DB.DBMetaActionCollection,Terrasoft.Core.DB.PrimaryKeyAction,Terrasoft.Core.DB.DBMetaPropertyCollection)">AddMetaPropertyGroupCreatingActions(DBMetaActionCollection, PrimaryKeyAction, DBMetaPropertyCollection)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void AddMetaPropertyGroupCreatingActions(DBMetaActionCollection actions, PrimaryKeyAction action, DBMetaPropertyCollection existingProperties)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.DBMetaActionCollection.html">DBMetaActionCollection</a></td>
+        <td><span class="parametername">actions</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.PrimaryKeyAction.html">PrimaryKeyAction</a></td>
+        <td><span class="parametername">action</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.DBMetaPropertyCollection.html">DBMetaPropertyCollection</a></td>
+        <td><span class="parametername">existingProperties</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_AddMetaPropertyGroupCreatingActions_Terrasoft_Core_DB_DBMetaActionCollection_Terrasoft_Core_DB_PrimaryKeyAction_Terrasoft_Core_DB_DBMetaPropertyCollection_">DBMetaScript.AddMetaPropertyGroupCreatingActions(DBMetaActionCollection, PrimaryKeyAction, DBMetaPropertyCollection)</a></div>
+  
+  
+  <a id="Terrasoft_DB_MSSql_MSSqlMetaScript_AddMetaPropertyGroupSavingActions_" data-uid="Terrasoft.DB.MSSql.MSSqlMetaScript.AddMetaPropertyGroupSavingActions*"></a>
+  <h4 id="Terrasoft_DB_MSSql_MSSqlMetaScript_AddMetaPropertyGroupSavingActions_Terrasoft_Core_DB_DBMetaActionCollection_Terrasoft_Core_DB_EntitySchemaAction_Terrasoft_Core_DB_DBMetaPropertyCollection_" data-uid="Terrasoft.DB.MSSql.MSSqlMetaScript.AddMetaPropertyGroupSavingActions(Terrasoft.Core.DB.DBMetaActionCollection,Terrasoft.Core.DB.EntitySchemaAction,Terrasoft.Core.DB.DBMetaPropertyCollection)">AddMetaPropertyGroupSavingActions(DBMetaActionCollection, EntitySchemaAction, DBMetaPropertyCollection)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void AddMetaPropertyGroupSavingActions(DBMetaActionCollection actions, EntitySchemaAction action, DBMetaPropertyCollection existingProperties)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.DBMetaActionCollection.html">DBMetaActionCollection</a></td>
+        <td><span class="parametername">actions</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.EntitySchemaAction.html">EntitySchemaAction</a></td>
+        <td><span class="parametername">action</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.DBMetaPropertyCollection.html">DBMetaPropertyCollection</a></td>
+        <td><span class="parametername">existingProperties</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_AddMetaPropertyGroupSavingActions_Terrasoft_Core_DB_DBMetaActionCollection_Terrasoft_Core_DB_EntitySchemaAction_Terrasoft_Core_DB_DBMetaPropertyCollection_">DBMetaScript.AddMetaPropertyGroupSavingActions(DBMetaActionCollection, EntitySchemaAction, DBMetaPropertyCollection)</a></div>
+  
+  
+  <a id="Terrasoft_DB_MSSql_MSSqlMetaScript_AddNotNullValidateChain_" data-uid="Terrasoft.DB.MSSql.MSSqlMetaScript.AddNotNullValidateChain*"></a>
+  <h4 id="Terrasoft_DB_MSSql_MSSqlMetaScript_AddNotNullValidateChain_Terrasoft_Core_DB_DBMetaActionCollection_Terrasoft_Core_Entities_EntitySchema_Terrasoft_Core_Entities_EntitySchemaColumn_" data-uid="Terrasoft.DB.MSSql.MSSqlMetaScript.AddNotNullValidateChain(Terrasoft.Core.DB.DBMetaActionCollection,Terrasoft.Core.Entities.EntitySchema,Terrasoft.Core.Entities.EntitySchemaColumn)">AddNotNullValidateChain(DBMetaActionCollection, EntitySchema, EntitySchemaColumn)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void AddNotNullValidateChain(DBMetaActionCollection actions, EntitySchema entitySchema, EntitySchemaColumn entitySchemaColumn)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.DBMetaActionCollection.html">DBMetaActionCollection</a></td>
+        <td><span class="parametername">actions</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.Entities.EntitySchema.html">EntitySchema</a></td>
+        <td><span class="parametername">entitySchema</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.Entities.EntitySchemaColumn.html">EntitySchemaColumn</a></td>
+        <td><span class="parametername">entitySchemaColumn</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_AddNotNullValidateChain_Terrasoft_Core_DB_DBMetaActionCollection_Terrasoft_Core_Entities_EntitySchema_Terrasoft_Core_Entities_EntitySchemaColumn_">DBMetaScript.AddNotNullValidateChain(DBMetaActionCollection, EntitySchema, EntitySchemaColumn)</a></div>
+  
+  
+  <a id="Terrasoft_DB_MSSql_MSSqlMetaScript_AddPrimaryKeyCreatingActions_" data-uid="Terrasoft.DB.MSSql.MSSqlMetaScript.AddPrimaryKeyCreatingActions*"></a>
+  <h4 id="Terrasoft_DB_MSSql_MSSqlMetaScript_AddPrimaryKeyCreatingActions_Terrasoft_Core_DB_DBMetaActionCollection_Terrasoft_Core_Entities_EntitySchema_Terrasoft_Core_Entities_EntitySchemaColumn_" data-uid="Terrasoft.DB.MSSql.MSSqlMetaScript.AddPrimaryKeyCreatingActions(Terrasoft.Core.DB.DBMetaActionCollection,Terrasoft.Core.Entities.EntitySchema,Terrasoft.Core.Entities.EntitySchemaColumn)">AddPrimaryKeyCreatingActions(DBMetaActionCollection, EntitySchema, EntitySchemaColumn)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override PrimaryKeyAction AddPrimaryKeyCreatingActions(DBMetaActionCollection actions, EntitySchema entitySchema, EntitySchemaColumn primaryColumn)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.DBMetaActionCollection.html">DBMetaActionCollection</a></td>
+        <td><span class="parametername">actions</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.Entities.EntitySchema.html">EntitySchema</a></td>
+        <td><span class="parametername">entitySchema</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.Entities.EntitySchemaColumn.html">EntitySchemaColumn</a></td>
+        <td><span class="parametername">primaryColumn</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.PrimaryKeyAction.html">PrimaryKeyAction</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_AddPrimaryKeyCreatingActions_Terrasoft_Core_DB_DBMetaActionCollection_Terrasoft_Core_Entities_EntitySchema_Terrasoft_Core_Entities_EntitySchemaColumn_">DBMetaScript.AddPrimaryKeyCreatingActions(DBMetaActionCollection, EntitySchema, EntitySchemaColumn)</a></div>
+  
+  
+  <a id="Terrasoft_DB_MSSql_MSSqlMetaScript_AddPrimaryKeyEditingActions_" data-uid="Terrasoft.DB.MSSql.MSSqlMetaScript.AddPrimaryKeyEditingActions*"></a>
+  <h4 id="Terrasoft_DB_MSSql_MSSqlMetaScript_AddPrimaryKeyEditingActions_Terrasoft_Core_DB_DBMetaActionCollection_System_Data_IDataReader_Terrasoft_Core_DB_ColumnAction_" data-uid="Terrasoft.DB.MSSql.MSSqlMetaScript.AddPrimaryKeyEditingActions(Terrasoft.Core.DB.DBMetaActionCollection,System.Data.IDataReader,Terrasoft.Core.DB.ColumnAction)">AddPrimaryKeyEditingActions(DBMetaActionCollection, IDataReader, ColumnAction)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void AddPrimaryKeyEditingActions(DBMetaActionCollection actions, IDataReader dataReader, ColumnAction columnAction)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.DBMetaActionCollection.html">DBMetaActionCollection</a></td>
+        <td><span class="parametername">actions</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Data.IDataReader</span></td>
+        <td><span class="parametername">dataReader</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.ColumnAction.html">ColumnAction</a></td>
+        <td><span class="parametername">columnAction</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_AddPrimaryKeyEditingActions_Terrasoft_Core_DB_DBMetaActionCollection_System_Data_IDataReader_Terrasoft_Core_DB_ColumnAction_">DBMetaScript.AddPrimaryKeyEditingActions(DBMetaActionCollection, IDataReader, ColumnAction)</a></div>
+  
+  
+  <a id="Terrasoft_DB_MSSql_MSSqlMetaScript_AddPrimaryKeyRenamingActions_" data-uid="Terrasoft.DB.MSSql.MSSqlMetaScript.AddPrimaryKeyRenamingActions*"></a>
+  <h4 id="Terrasoft_DB_MSSql_MSSqlMetaScript_AddPrimaryKeyRenamingActions_Terrasoft_Core_DB_DBMetaActionCollection_Terrasoft_Core_DB_ColumnAction_System_String_" data-uid="Terrasoft.DB.MSSql.MSSqlMetaScript.AddPrimaryKeyRenamingActions(Terrasoft.Core.DB.DBMetaActionCollection,Terrasoft.Core.DB.ColumnAction,System.String)">AddPrimaryKeyRenamingActions(DBMetaActionCollection, ColumnAction, String)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override PrimaryKeyAction AddPrimaryKeyRenamingActions(DBMetaActionCollection actions, ColumnAction columnAction, string primaryKeyName)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.DBMetaActionCollection.html">DBMetaActionCollection</a></td>
+        <td><span class="parametername">actions</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.ColumnAction.html">ColumnAction</a></td>
+        <td><span class="parametername">columnAction</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">primaryKeyName</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.PrimaryKeyAction.html">PrimaryKeyAction</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_AddPrimaryKeyRenamingActions_Terrasoft_Core_DB_DBMetaActionCollection_Terrasoft_Core_DB_ColumnAction_System_String_">DBMetaScript.AddPrimaryKeyRenamingActions(DBMetaActionCollection, ColumnAction, String)</a></div>
+  
+  
+  <a id="Terrasoft_DB_MSSql_MSSqlMetaScript_CreateColumnIndex_" data-uid="Terrasoft.DB.MSSql.MSSqlMetaScript.CreateColumnIndex*"></a>
+  <h4 id="Terrasoft_DB_MSSql_MSSqlMetaScript_CreateColumnIndex_Terrasoft_Core_DB_ColumnAction_" data-uid="Terrasoft.DB.MSSql.MSSqlMetaScript.CreateColumnIndex(Terrasoft.Core.DB.ColumnAction)">CreateColumnIndex(ColumnAction)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override EntitySchemaIndex CreateColumnIndex(ColumnAction columnAction)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.ColumnAction.html">ColumnAction</a></td>
+        <td><span class="parametername">columnAction</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.Entities.EntitySchemaIndex.html">EntitySchemaIndex</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_CreateColumnIndex_Terrasoft_Core_DB_ColumnAction_">DBMetaScript.CreateColumnIndex(ColumnAction)</a></div>
+  
+  
+  <a id="Terrasoft_DB_MSSql_MSSqlMetaScript_CreateDBDataValueType_" data-uid="Terrasoft.DB.MSSql.MSSqlMetaScript.CreateDBDataValueType*"></a>
+  <h4 id="Terrasoft_DB_MSSql_MSSqlMetaScript_CreateDBDataValueType_System_Data_IDataReader_" data-uid="Terrasoft.DB.MSSql.MSSqlMetaScript.CreateDBDataValueType(System.Data.IDataReader)">CreateDBDataValueType(IDataReader)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override DataValueType CreateDBDataValueType(IDataReader dataReader)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Data.IDataReader</span></td>
+        <td><span class="parametername">dataReader</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DataValueType.html">DataValueType</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_CreateDBDataValueType_System_Data_IDataReader_">DBMetaScript.CreateDBDataValueType(IDataReader)</a></div>
+  
+  
+  <a id="Terrasoft_DB_MSSql_MSSqlMetaScript_CreateEntitySchemaIndex_" data-uid="Terrasoft.DB.MSSql.MSSqlMetaScript.CreateEntitySchemaIndex*"></a>
+  <h4 id="Terrasoft_DB_MSSql_MSSqlMetaScript_CreateEntitySchemaIndex_Terrasoft_Core_DB_IndexAction_" data-uid="Terrasoft.DB.MSSql.MSSqlMetaScript.CreateEntitySchemaIndex(Terrasoft.Core.DB.IndexAction)">CreateEntitySchemaIndex(IndexAction)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override EntitySchemaIndex CreateEntitySchemaIndex(IndexAction indexAction)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.IndexAction.html">IndexAction</a></td>
+        <td><span class="parametername">indexAction</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.Entities.EntitySchemaIndex.html">EntitySchemaIndex</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_CreateEntitySchemaIndex_Terrasoft_Core_DB_IndexAction_">DBMetaScript.CreateEntitySchemaIndex(IndexAction)</a></div>
+  
+  
+  <a id="Terrasoft_DB_MSSql_MSSqlMetaScript_CreateEntitySchemaIndexes_" data-uid="Terrasoft.DB.MSSql.MSSqlMetaScript.CreateEntitySchemaIndexes*"></a>
+  <h4 id="Terrasoft_DB_MSSql_MSSqlMetaScript_CreateEntitySchemaIndexes_System_String_Terrasoft_Core_Entities_EntitySchema_" data-uid="Terrasoft.DB.MSSql.MSSqlMetaScript.CreateEntitySchemaIndexes(System.String,Terrasoft.Core.Entities.EntitySchema)">CreateEntitySchemaIndexes(String, EntitySchema)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override ICollection&lt;EntitySchemaIndex&gt; CreateEntitySchemaIndexes(string entitySchemaName, EntitySchema entitySchema = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">entitySchemaName</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.Entities.EntitySchema.html">EntitySchema</a></td>
+        <td><span class="parametername">entitySchema</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.ICollection</span>&lt;<a class="xref" href="Terrasoft.Core.Entities.EntitySchemaIndex.html">EntitySchemaIndex</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_CreateEntitySchemaIndexes_System_String_Terrasoft_Core_Entities_EntitySchema_">DBMetaScript.CreateEntitySchemaIndexes(String, EntitySchema)</a></div>
+  
+  
+  <a id="Terrasoft_DB_MSSql_MSSqlMetaScript_GetColumnForeignKeyDataReader_" data-uid="Terrasoft.DB.MSSql.MSSqlMetaScript.GetColumnForeignKeyDataReader*"></a>
+  <h4 id="Terrasoft_DB_MSSql_MSSqlMetaScript_GetColumnForeignKeyDataReader_Terrasoft_Core_DB_DBExecutor_System_String_System_String_" data-uid="Terrasoft.DB.MSSql.MSSqlMetaScript.GetColumnForeignKeyDataReader(Terrasoft.Core.DB.DBExecutor,System.String,System.String)">GetColumnForeignKeyDataReader(DBExecutor, String, String)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override IDataReader GetColumnForeignKeyDataReader(DBExecutor dbExecutor, string entitySchemaName, string foreignKeyName)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.DBExecutor.html">DBExecutor</a></td>
+        <td><span class="parametername">dbExecutor</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">entitySchemaName</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">foreignKeyName</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Data.IDataReader</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_GetColumnForeignKeyDataReader_Terrasoft_Core_DB_DBExecutor_System_String_System_String_">DBMetaScript.GetColumnForeignKeyDataReader(DBExecutor, String, String)</a></div>
+  
+  
+  <a id="Terrasoft_DB_MSSql_MSSqlMetaScript_GetDBRowsCount_" data-uid="Terrasoft.DB.MSSql.MSSqlMetaScript.GetDBRowsCount*"></a>
+  <h4 id="Terrasoft_DB_MSSql_MSSqlMetaScript_GetDBRowsCount_System_String_" data-uid="Terrasoft.DB.MSSql.MSSqlMetaScript.GetDBRowsCount(System.String)">GetDBRowsCount(String)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override int GetDBRowsCount(string entitySchemaName)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">entitySchemaName</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_GetDBRowsCount_System_String_">DBMetaScript.GetDBRowsCount(String)</a></div>
+  
+  
+  <a id="Terrasoft_DB_MSSql_MSSqlMetaScript_GetForeignKeyDataReader_" data-uid="Terrasoft.DB.MSSql.MSSqlMetaScript.GetForeignKeyDataReader*"></a>
+  <h4 id="Terrasoft_DB_MSSql_MSSqlMetaScript_GetForeignKeyDataReader_Terrasoft_Core_DB_DBExecutor_System_String_System_String_" data-uid="Terrasoft.DB.MSSql.MSSqlMetaScript.GetForeignKeyDataReader(Terrasoft.Core.DB.DBExecutor,System.String,System.String)">GetForeignKeyDataReader(DBExecutor, String, String)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override IDataReader GetForeignKeyDataReader(DBExecutor dbExecutor, string entitySchemaName, string columnName)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.DBExecutor.html">DBExecutor</a></td>
+        <td><span class="parametername">dbExecutor</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">entitySchemaName</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">columnName</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Data.IDataReader</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_GetForeignKeyDataReader_Terrasoft_Core_DB_DBExecutor_System_String_System_String_">DBMetaScript.GetForeignKeyDataReader(DBExecutor, String, String)</a></div>
+  
+  
+  <a id="Terrasoft_DB_MSSql_MSSqlMetaScript_GetForeignKeysDataReader_" data-uid="Terrasoft.DB.MSSql.MSSqlMetaScript.GetForeignKeysDataReader*"></a>
+  <h4 id="Terrasoft_DB_MSSql_MSSqlMetaScript_GetForeignKeysDataReader_Terrasoft_Core_DB_DBExecutor_System_String_" data-uid="Terrasoft.DB.MSSql.MSSqlMetaScript.GetForeignKeysDataReader(Terrasoft.Core.DB.DBExecutor,System.String)">GetForeignKeysDataReader(DBExecutor, String)</h4>
+  <div class="markdown level1 summary"><p>Returns foreign keys data reader.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override IDataReader GetForeignKeysDataReader(DBExecutor dbExecutor, string entitySchemaName)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.DBExecutor.html">DBExecutor</a></td>
+        <td><span class="parametername">dbExecutor</span></td>
+        <td><p>Instance of <a class="xref" href="Terrasoft.Core.DB.DBExecutor.html">DBExecutor</a>. Provides DB query execution.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">entitySchemaName</span></td>
+        <td><p>Schema name to get foreign keys for.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Data.IDataReader</span></td>
+        <td><p><span class="xref">System.Data.IDataReader</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_GetForeignKeysDataReader_Terrasoft_Core_DB_DBExecutor_System_String_">DBMetaScript.GetForeignKeysDataReader(DBExecutor, String)</a></div>
+  
+  
+  <a id="Terrasoft_DB_MSSql_MSSqlMetaScript_GetIndexDataReader_" data-uid="Terrasoft.DB.MSSql.MSSqlMetaScript.GetIndexDataReader*"></a>
+  <h4 id="Terrasoft_DB_MSSql_MSSqlMetaScript_GetIndexDataReader_Terrasoft_Core_DB_DBExecutor_System_String_System_String_" data-uid="Terrasoft.DB.MSSql.MSSqlMetaScript.GetIndexDataReader(Terrasoft.Core.DB.DBExecutor,System.String,System.String)">GetIndexDataReader(DBExecutor, String, String)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override IDataReader GetIndexDataReader(DBExecutor dbExecutor, string entitySchemaName, string indexName)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.DBExecutor.html">DBExecutor</a></td>
+        <td><span class="parametername">dbExecutor</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">entitySchemaName</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">indexName</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Data.IDataReader</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_GetIndexDataReader_Terrasoft_Core_DB_DBExecutor_System_String_System_String_">DBMetaScript.GetIndexDataReader(DBExecutor, String, String)</a></div>
+  
+  
+  <a id="Terrasoft_DB_MSSql_MSSqlMetaScript_GetIsDBLevelRequirementTypeColumn_" data-uid="Terrasoft.DB.MSSql.MSSqlMetaScript.GetIsDBLevelRequirementTypeColumn*"></a>
+  <h4 id="Terrasoft_DB_MSSql_MSSqlMetaScript_GetIsDBLevelRequirementTypeColumn_Terrasoft_Core_Entities_EntitySchema_Terrasoft_Core_Entities_EntitySchemaColumn_" data-uid="Terrasoft.DB.MSSql.MSSqlMetaScript.GetIsDBLevelRequirementTypeColumn(Terrasoft.Core.Entities.EntitySchema,Terrasoft.Core.Entities.EntitySchemaColumn)">GetIsDBLevelRequirementTypeColumn(EntitySchema, EntitySchemaColumn)</h4>
+  <div class="markdown level1 summary"><p>Determines if column value is required on database level.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool GetIsDBLevelRequirementTypeColumn(EntitySchema entitySchema, EntitySchemaColumn entitySchemaColumn)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.Entities.EntitySchema.html">EntitySchema</a></td>
+        <td><span class="parametername">entitySchema</span></td>
+        <td><p>Schema.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.Entities.EntitySchemaColumn.html">EntitySchemaColumn</a></td>
+        <td><span class="parametername">entitySchemaColumn</span></td>
+        <td><p>Column in schema.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p>Value that indicates whether column value is required on database level.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_GetIsDBLevelRequirementTypeColumn_Terrasoft_Core_Entities_EntitySchema_Terrasoft_Core_Entities_EntitySchemaColumn_">DBMetaScript.GetIsDBLevelRequirementTypeColumn(EntitySchema, EntitySchemaColumn)</a></div>
+  
+  
+  <a id="Terrasoft_DB_MSSql_MSSqlMetaScript_GetIsDefValueTypeColumn_" data-uid="Terrasoft.DB.MSSql.MSSqlMetaScript.GetIsDefValueTypeColumn*"></a>
+  <h4 id="Terrasoft_DB_MSSql_MSSqlMetaScript_GetIsDefValueTypeColumn_Terrasoft_Core_Entities_EntitySchema_Terrasoft_Core_Entities_EntitySchemaColumn_" data-uid="Terrasoft.DB.MSSql.MSSqlMetaScript.GetIsDefValueTypeColumn(Terrasoft.Core.Entities.EntitySchema,Terrasoft.Core.Entities.EntitySchemaColumn)">GetIsDefValueTypeColumn(EntitySchema, EntitySchemaColumn)</h4>
+  <div class="markdown level1 summary"><p>Determines if column is of type that requires default value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool GetIsDefValueTypeColumn(EntitySchema entitySchema, EntitySchemaColumn entitySchemaColumn)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.Entities.EntitySchema.html">EntitySchema</a></td>
+        <td><span class="parametername">entitySchema</span></td>
+        <td><p>Schema.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.Entities.EntitySchemaColumn.html">EntitySchemaColumn</a></td>
+        <td><span class="parametername">entitySchemaColumn</span></td>
+        <td><p>Column in schema.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p>Value that indicates whether column is of type that requires default value.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_GetIsDefValueTypeColumn_Terrasoft_Core_Entities_EntitySchema_Terrasoft_Core_Entities_EntitySchemaColumn_">DBMetaScript.GetIsDefValueTypeColumn(EntitySchema, EntitySchemaColumn)</a></div>
+  
+  
+  <a id="Terrasoft_DB_MSSql_MSSqlMetaScript_GetIsForeignKeyCascade_" data-uid="Terrasoft.DB.MSSql.MSSqlMetaScript.GetIsForeignKeyCascade*"></a>
+  <h4 id="Terrasoft_DB_MSSql_MSSqlMetaScript_GetIsForeignKeyCascade_System_Data_IDataReader_" data-uid="Terrasoft.DB.MSSql.MSSqlMetaScript.GetIsForeignKeyCascade(System.Data.IDataReader)">GetIsForeignKeyCascade(IDataReader)</h4>
+  <div class="markdown level1 summary"><p>Determines whether foreign key is cascade.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool GetIsForeignKeyCascade(IDataReader dataReader)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Data.IDataReader</span></td>
+        <td><span class="parametername">dataReader</span></td>
+        <td><blockquote>
+<p>Instance of <span class="xref">Terrasoft.Core.DataReader</span> to read property.</p>
+</blockquote>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p><code>true</code> if foreign key is cascade. Otherwise returns <code>false</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_GetIsForeignKeyCascade_System_Data_IDataReader_">DBMetaScript.GetIsForeignKeyCascade(IDataReader)</a></div>
+  
+  
+  <a id="Terrasoft_DB_MSSql_MSSqlMetaScript_GetIsForeignKeyEqual_" data-uid="Terrasoft.DB.MSSql.MSSqlMetaScript.GetIsForeignKeyEqual*"></a>
+  <h4 id="Terrasoft_DB_MSSql_MSSqlMetaScript_GetIsForeignKeyEqual_System_Data_IDataReader_Terrasoft_Core_Entities_EntitySchemaColumn_" data-uid="Terrasoft.DB.MSSql.MSSqlMetaScript.GetIsForeignKeyEqual(System.Data.IDataReader,Terrasoft.Core.Entities.EntitySchemaColumn)">GetIsForeignKeyEqual(IDataReader, EntitySchemaColumn)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override bool GetIsForeignKeyEqual(IDataReader dataReader, EntitySchemaColumn entitySchemaColumn)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Data.IDataReader</span></td>
+        <td><span class="parametername">dataReader</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.Entities.EntitySchemaColumn.html">EntitySchemaColumn</a></td>
+        <td><span class="parametername">entitySchemaColumn</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_GetIsForeignKeyEqual_System_Data_IDataReader_Terrasoft_Core_Entities_EntitySchemaColumn_">DBMetaScript.GetIsForeignKeyEqual(IDataReader, EntitySchemaColumn)</a></div>
+  
+  
+  <a id="Terrasoft_DB_MSSql_MSSqlMetaScript_GetIsIndexEqual_" data-uid="Terrasoft.DB.MSSql.MSSqlMetaScript.GetIsIndexEqual*"></a>
+  <h4 id="Terrasoft_DB_MSSql_MSSqlMetaScript_GetIsIndexEqual_Terrasoft_Core_Entities_EntitySchemaIndex_Terrasoft_Core_Entities_EntitySchemaIndex_" data-uid="Terrasoft.DB.MSSql.MSSqlMetaScript.GetIsIndexEqual(Terrasoft.Core.Entities.EntitySchemaIndex,Terrasoft.Core.Entities.EntitySchemaIndex)">GetIsIndexEqual(EntitySchemaIndex, EntitySchemaIndex)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool GetIsIndexEqual(EntitySchemaIndex indexA, EntitySchemaIndex indexB)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.Entities.EntitySchemaIndex.html">EntitySchemaIndex</a></td>
+        <td><span class="parametername">indexA</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.Entities.EntitySchemaIndex.html">EntitySchemaIndex</a></td>
+        <td><span class="parametername">indexB</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_GetIsIndexEqual_Terrasoft_Core_Entities_EntitySchemaIndex_Terrasoft_Core_Entities_EntitySchemaIndex_">DBMetaScript.GetIsIndexEqual(EntitySchemaIndex, EntitySchemaIndex)</a></div>
+  
+  
+  <a id="Terrasoft_DB_MSSql_MSSqlMetaScript_GetIsIndexUnique_" data-uid="Terrasoft.DB.MSSql.MSSqlMetaScript.GetIsIndexUnique*"></a>
+  <h4 id="Terrasoft_DB_MSSql_MSSqlMetaScript_GetIsIndexUnique_System_Data_IDataReader_" data-uid="Terrasoft.DB.MSSql.MSSqlMetaScript.GetIsIndexUnique(System.Data.IDataReader)">GetIsIndexUnique(IDataReader)</h4>
+  <div class="markdown level1 summary"><p>Determines whether index is unique.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool GetIsIndexUnique(IDataReader dataReader)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Data.IDataReader</span></td>
+        <td><span class="parametername">dataReader</span></td>
+        <td><blockquote>
+<p>Instance of <span class="xref">Terrasoft.Core.DataReader</span> to read property.</p>
+</blockquote>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p><code>true</code> if index is unique. Otherwise returns <code>false</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_GetIsIndexUnique_System_Data_IDataReader_">DBMetaScript.GetIsIndexUnique(IDataReader)</a></div>
+  
+  
+  <a id="Terrasoft_DB_MSSql_MSSqlMetaScript_GetIsNotNullColumn_" data-uid="Terrasoft.DB.MSSql.MSSqlMetaScript.GetIsNotNullColumn*"></a>
+  <h4 id="Terrasoft_DB_MSSql_MSSqlMetaScript_GetIsNotNullColumn_Terrasoft_Core_Entities_EntitySchema_Terrasoft_Core_Entities_EntitySchemaColumn_" data-uid="Terrasoft.DB.MSSql.MSSqlMetaScript.GetIsNotNullColumn(Terrasoft.Core.Entities.EntitySchema,Terrasoft.Core.Entities.EntitySchemaColumn)">GetIsNotNullColumn(EntitySchema, EntitySchemaColumn)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool GetIsNotNullColumn(EntitySchema entitySchema, EntitySchemaColumn entitySchemaColumn)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.Entities.EntitySchema.html">EntitySchema</a></td>
+        <td><span class="parametername">entitySchema</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.Entities.EntitySchemaColumn.html">EntitySchemaColumn</a></td>
+        <td><span class="parametername">entitySchemaColumn</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_GetIsNotNullColumn_Terrasoft_Core_Entities_EntitySchema_Terrasoft_Core_Entities_EntitySchemaColumn_">DBMetaScript.GetIsNotNullColumn(EntitySchema, EntitySchemaColumn)</a></div>
+  
+  
+  <a id="Terrasoft_DB_MSSql_MSSqlMetaScript_GetNotNullDataReaderValue_" data-uid="Terrasoft.DB.MSSql.MSSqlMetaScript.GetNotNullDataReaderValue*"></a>
+  <h4 id="Terrasoft_DB_MSSql_MSSqlMetaScript_GetNotNullDataReaderValue_System_Data_IDataReader_" data-uid="Terrasoft.DB.MSSql.MSSqlMetaScript.GetNotNullDataReaderValue(System.Data.IDataReader)">GetNotNullDataReaderValue(IDataReader)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool GetNotNullDataReaderValue(IDataReader dataReader)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Data.IDataReader</span></td>
+        <td><span class="parametername">dataReader</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_GetNotNullDataReaderValue_System_Data_IDataReader_">DBMetaScript.GetNotNullDataReaderValue(IDataReader)</a></div>
+  
+  
+  <a id="Terrasoft_DB_MSSql_MSSqlMetaScript_InitializeColumnQuery_" data-uid="Terrasoft.DB.MSSql.MSSqlMetaScript.InitializeColumnQuery*"></a>
+  <h4 id="Terrasoft_DB_MSSql_MSSqlMetaScript_InitializeColumnQuery_Terrasoft_Core_DB_ColumnAction_" data-uid="Terrasoft.DB.MSSql.MSSqlMetaScript.InitializeColumnQuery(Terrasoft.Core.DB.ColumnAction)">InitializeColumnQuery(ColumnAction)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void InitializeColumnQuery(ColumnAction action)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.ColumnAction.html">ColumnAction</a></td>
+        <td><span class="parametername">action</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_InitializeColumnQuery_Terrasoft_Core_DB_ColumnAction_">DBMetaScript.InitializeColumnQuery(ColumnAction)</a></div>
+  
+  
+  <a id="Terrasoft_DB_MSSql_MSSqlMetaScript_InitializeDefValueQuery_" data-uid="Terrasoft.DB.MSSql.MSSqlMetaScript.InitializeDefValueQuery*"></a>
+  <h4 id="Terrasoft_DB_MSSql_MSSqlMetaScript_InitializeDefValueQuery_Terrasoft_Core_DB_DefValueAction_" data-uid="Terrasoft.DB.MSSql.MSSqlMetaScript.InitializeDefValueQuery(Terrasoft.Core.DB.DefValueAction)">InitializeDefValueQuery(DefValueAction)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void InitializeDefValueQuery(DefValueAction action)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.DefValueAction.html">DefValueAction</a></td>
+        <td><span class="parametername">action</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_InitializeDefValueQuery_Terrasoft_Core_DB_DefValueAction_">DBMetaScript.InitializeDefValueQuery(DefValueAction)</a></div>
+  
+  
+  <a id="Terrasoft_DB_MSSql_MSSqlMetaScript_InitializeEntitySchemaQuery_" data-uid="Terrasoft.DB.MSSql.MSSqlMetaScript.InitializeEntitySchemaQuery*"></a>
+  <h4 id="Terrasoft_DB_MSSql_MSSqlMetaScript_InitializeEntitySchemaQuery_Terrasoft_Core_DB_EntitySchemaAction_" data-uid="Terrasoft.DB.MSSql.MSSqlMetaScript.InitializeEntitySchemaQuery(Terrasoft.Core.DB.EntitySchemaAction)">InitializeEntitySchemaQuery(EntitySchemaAction)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void InitializeEntitySchemaQuery(EntitySchemaAction action)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.EntitySchemaAction.html">EntitySchemaAction</a></td>
+        <td><span class="parametername">action</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_InitializeEntitySchemaQuery_Terrasoft_Core_DB_EntitySchemaAction_">DBMetaScript.InitializeEntitySchemaQuery(EntitySchemaAction)</a></div>
+  
+  
+  <a id="Terrasoft_DB_MSSql_MSSqlMetaScript_InitializeForeignKeyQuery_" data-uid="Terrasoft.DB.MSSql.MSSqlMetaScript.InitializeForeignKeyQuery*"></a>
+  <h4 id="Terrasoft_DB_MSSql_MSSqlMetaScript_InitializeForeignKeyQuery_Terrasoft_Core_DB_ForeignKeyAction_" data-uid="Terrasoft.DB.MSSql.MSSqlMetaScript.InitializeForeignKeyQuery(Terrasoft.Core.DB.ForeignKeyAction)">InitializeForeignKeyQuery(ForeignKeyAction)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void InitializeForeignKeyQuery(ForeignKeyAction action)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.ForeignKeyAction.html">ForeignKeyAction</a></td>
+        <td><span class="parametername">action</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_InitializeForeignKeyQuery_Terrasoft_Core_DB_ForeignKeyAction_">DBMetaScript.InitializeForeignKeyQuery(ForeignKeyAction)</a></div>
+  
+  
+  <a id="Terrasoft_DB_MSSql_MSSqlMetaScript_InitializeIndexQuery_" data-uid="Terrasoft.DB.MSSql.MSSqlMetaScript.InitializeIndexQuery*"></a>
+  <h4 id="Terrasoft_DB_MSSql_MSSqlMetaScript_InitializeIndexQuery_Terrasoft_Core_DB_IndexAction_" data-uid="Terrasoft.DB.MSSql.MSSqlMetaScript.InitializeIndexQuery(Terrasoft.Core.DB.IndexAction)">InitializeIndexQuery(IndexAction)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void InitializeIndexQuery(IndexAction action)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.IndexAction.html">IndexAction</a></td>
+        <td><span class="parametername">action</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_InitializeIndexQuery_Terrasoft_Core_DB_IndexAction_">DBMetaScript.InitializeIndexQuery(IndexAction)</a></div>
+  
+  
+  <a id="Terrasoft_DB_MSSql_MSSqlMetaScript_InitializePrimaryKeyQuery_" data-uid="Terrasoft.DB.MSSql.MSSqlMetaScript.InitializePrimaryKeyQuery*"></a>
+  <h4 id="Terrasoft_DB_MSSql_MSSqlMetaScript_InitializePrimaryKeyQuery_Terrasoft_Core_DB_PrimaryKeyAction_" data-uid="Terrasoft.DB.MSSql.MSSqlMetaScript.InitializePrimaryKeyQuery(Terrasoft.Core.DB.PrimaryKeyAction)">InitializePrimaryKeyQuery(PrimaryKeyAction)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void InitializePrimaryKeyQuery(PrimaryKeyAction action)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.PrimaryKeyAction.html">PrimaryKeyAction</a></td>
+        <td><span class="parametername">action</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Terrasoft.Core.DB.DBMetaScript.html#Terrasoft_Core_DB_DBMetaScript_InitializePrimaryKeyQuery_Terrasoft_Core_DB_PrimaryKeyAction_">DBMetaScript.InitializePrimaryKeyQuery(PrimaryKeyAction)</a></div>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="Terrasoft.Common.ReflectionUtilities.html#Terrasoft_Common_ReflectionUtilities_GetPropertyValue_System_Object_System_String_">ReflectionUtilities.GetPropertyValue(Object, String)</a>
+  </div>
+  <div>
+      <a class="xref" href="Terrasoft.Common.ReflectionUtilities.html#Terrasoft_Common_ReflectionUtilities_GetPropertyDefValue_System_Object_System_String_System_Object_">ReflectionUtilities.GetPropertyDefValue(Object, String, Object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Terrasoft.Common.ReflectionUtilities.html#Terrasoft_Common_ReflectionUtilities_TryGetPropertyValue_System_Object_System_String_System_Object__">ReflectionUtilities.TryGetPropertyValue(Object, String, out Object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Terrasoft.Common.ReflectionUtilities.html#Terrasoft_Common_ReflectionUtilities_HasProperty_System_Object_System_String_">ReflectionUtilities.HasProperty(Object, String)</a>
+  </div>
+  <div>
+      <a class="xref" href="Terrasoft.Common.ReflectionUtilities.html#Terrasoft_Common_ReflectionUtilities_GetPropertyValue_System_Object_System_String_System_Reflection_BindingFlags_">ReflectionUtilities.GetPropertyValue(Object, String, BindingFlags)</a>
+  </div>
+  <div>
+      <a class="xref" href="Terrasoft.Common.ReflectionUtilities.html#Terrasoft_Common_ReflectionUtilities_GetPropertyValueByPath_System_Object_System_String_">ReflectionUtilities.GetPropertyValueByPath(Object, String)</a>
+  </div>
+  <div>
+      <a class="xref" href="Terrasoft.Common.ReflectionUtilities.html#Terrasoft_Common_ReflectionUtilities_SetPropertyValue_System_Object_System_String_System_Object_">ReflectionUtilities.SetPropertyValue(Object, String, Object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Terrasoft.Common.ReflectionUtilities.html#Terrasoft_Common_ReflectionUtilities_TrySetPropertyValue_System_Object_System_String_System_Object_">ReflectionUtilities.TrySetPropertyValue(Object, String, Object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Terrasoft.Common.ValidateUtilities.html#Terrasoft_Common_ValidateUtilities_CheckArgumentNull_System_Object_System_String_">ValidateUtilities.CheckArgumentNull(Object, String)</a>
+  </div>
+  <div>
+      <a class="xref" href="Terrasoft.Common.ValidateUtilities.html#Terrasoft_Common_ValidateUtilities_CheckDependencyNull_System_Object_System_String_">ValidateUtilities.CheckDependencyNull(Object, String)</a>
+  </div>
+  <div>
+      <a class="xref" href="Terrasoft.Common.ValidateUtilities.html#Terrasoft_Common_ValidateUtilities_EnsureDependencyNotNull__1___0_System_String_">ValidateUtilities.EnsureDependencyNotNull&lt;T&gt;(T, String)</a>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>© 2021 Creatio. All rights reserved.</span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+
+<!-- Mirrored from academy.terrasoft.ua/api/netcoreapi/7.18.0/api/Terrasoft.DB.MSSql.MSSqlMetaScript.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Mar 2022 03:32:03 GMT -->
+</html>

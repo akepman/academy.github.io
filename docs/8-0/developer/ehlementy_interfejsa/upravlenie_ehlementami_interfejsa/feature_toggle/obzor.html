@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# ">
+  
+<!-- Mirrored from academy.terrasoft.ua/docs/8-0/developer/ehlementy_interfejsa/upravlenie_ehlementami_interfejsa/feature_toggle/obzor by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Mar 2022 05:34:19 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+          <!-- Google Tag Manager -->
+      <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          '../../../../../../../www.googletagmanager.com/gtm5445.html?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-KLLB8G');</script>
+      <!-- End Google Tag Manager -->
+        <meta charset="utf-8" />
+<link rel="canonical" href="obzor.html" />
+<meta name="description" content="Feature toggle — техника разработки программных продуктов. Назначение Feature toggle — возможность подключения дополнительной функциональности в работающем приложении.
+
+В Creatio Feature toggle использует непрерывную интеграцию, которая позволяет сохранить работоспособность приложения и скрыть функциональность на стадии разработки. В исходном коде приложения присутствует блок с дополнительной функциональностью и условный оператор, который определяет состояние подключения функциональности." />
+<meta property="og:url" content="https://academy.terrasoft.ua/docs/8-0/developer/ehlementy_interfejsa/upravlenie_ehlementami_interfejsa/feature_toggle/obzor" />
+<meta property="og:title" content="Механизм Feature Toggle" />
+<meta property="og:description" content="Feature toggle — техника разработки программных продуктов. Назначение Feature toggle — возможность подключения дополнительной функциональности в работающем приложении.
+
+В Creatio Feature toggle использует непрерывную интеграцию, которая позволяет сохранить работоспособность приложения и скрыть функциональность на стадии разработки. В исходном коде приложения присутствует блок с дополнительной функциональностью и условный оператор, который определяет состояние подключения функциональности." />
+<meta name="Generator" content="Drupal 9 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="../../../../../themes/custom/creatio/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="revision" href="obzor.html" />
+
+    <title>Механизм Feature Toggle | Creatio Academy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&amp;family=Open+Sans:ital,wght@0,300;0,400;0,600;1,400&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" media="all" href="../../../../../sites/default/files/css/css_6lTP66__-yc6QXFp1zOwoeJ0HVigoYZP-SeoLLii000.css" />
+<link rel="stylesheet" media="all" href="../../../../../sites/default/files/css/css_XQJDNhkF3xH5SZCcY-PI89Zu4nYIzQ5oR3SnUKyfXJU.css" />
+<link rel="stylesheet" media="print" href="../../../../../sites/default/files/css/css_Zn4VHvcniOOtUwkIVwXzYr_0AI9gUVgZcPqaH4ViagU.css" />
+
+    
+  </head>
+  <body class="path-node page-node-type-developer-documentation">
+          <!-- Google Tag Manager (noscript) -->
+      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KLLB8G"
+                        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+      <!-- End Google Tag Manager (noscript) -->
+    
+        
+      <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    <div class="creatio-page d-flex flex-column">
+        <div class="region region-informer">
+    <div id="block-terrasoftpidtrimueukrainu" class="block block-simple-block block-simple-blockterrasoft-pidtrimue-ukrainu">
+  
+    
+      <style type="text/css">
+<!--/*--><![CDATA[/* ><!--*/
+@import url(../../../../../../../www.terrasoft.ua/themes/custom/creatio/css/components/informer.css)
+
+/*--><!]]>*/
+</style><div class="ts-swu">
+<div class="creatio-container">
+<div class="ts-swu__cont">
+<div><a class="ts-swu__link" href="https://www.terrasoft.ua/terrasoft-stands-with-ukraine" target="_blank">Україна понад усе!</a> <span><a href="https://www.terrasoft.ua/terrasoft-stands-with-ukraine" target="_blank">Приєднуйтеся</a> до допомоги!</span></div>
+</div>
+</div></div>
+
+  </div>
+
+  </div>
+
+  
+  <header role="banner">
+          <div class="creatio-region creatio-region_top">
+        <div class="creatio-container">
+            <div class="region region-top">
+    <div id="block-menutoggle" class="block block-simple-block block-simple-blockmenu-toggle">
+  
+    
+      <div class="menu-toggle"><span> </span></div>
+
+  </div>
+<div id="block-logowhite-2" class="block block-simple-block block-simple-blocklogo-white">
+  
+    
+      <p><a class="site-logo" href="../../../../../../index.html" rel="home"><img src="../../../../../themes/custom/creatio/logo-white.svg" /></a></p>
+
+  </div>
+<div id="block-search" class="block block-simple-block block-simple-blocksearch">
+  
+    
+      <div class="search">
+<form action="https://academy.terrasoft.ua/search" class="search-form" method="get"><input class="search-form__input" name="search" placeholder="Поиск" type="search" /><input class="search-form__button" type="submit" value="Поиск" /> </form>
+
+<div class="search-toggle"> </div>
+</div>
+
+  </div>
+<nav role="navigation" aria-labelledby="block-sitesua-menu" id="block-sitesua" class="block block-menu navigation menu--sites-ua">
+            
+  <h2 class="visually-hidden" id="block-sitesua-menu">Sites UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="https://www.terrasoft.ua/" rel="nofollow" target="_blank">Terrasoft</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://community.terrasoft.ua/" rel="nofollow" target="_blank">Community</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://marketplace.terrasoft.ua/" rel="nofollow" target="_blank">Marketplace</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+<div id="block-usermenu" class="block block-ts-user block-ts-user-menu-block">
+  
+    
+      <ul class="user-menu">
+      <li class="user-menu__item">
+      <a class="user-menu__link" href="https://profile.terrasoft.ua/user/login?destination=academy/ua/docs/8-0/developer/ehlementy_interfejsa/upravlenie_ehlementami_interfejsa/feature_toggle/obzor">Войти</a>
+    </li>
+  </ul>
+
+  </div>
+<div id="block-usermenumobile" class="block block-ts-user block-ts-user-menu-mobile-block">
+  
+    
+      <ul class="user-menu-mobile">
+      <li class="user-menu-mobile__item">
+      <div class="user-menu-mobile__user user-menu-mobile__user_icon"></div>
+      <ul class="user-menu-mobile__submenu">
+        <li class="user-menu-mobile__subitem">
+          <a class="user-menu-mobile__sublink" href="https://profile.terrasoft.ua/user/login?destination=academy/ua/docs/8-0/developer/ehlementy_interfejsa/upravlenie_ehlementami_interfejsa/feature_toggle/obzor">Войти</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  </div>
+
+  </div>
+
+        </div>
+      </div>
+              <div class="creatio-region creatio-region_header">
+        <div class="creatio-container">
+            <div class="region region-header">
+    <div id="block-logo" class="block block-simple-block block-simple-blocklogo">
+  
+    
+      <p><a class="site-logo" href="../../../../../../index.html" rel="home"><img src="../../../../../themes/custom/creatio/logo.svg" /></a></p>
+
+  </div>
+<nav role="navigation" aria-labelledby="block-osnovnayanavigaciyaua-menu" id="block-osnovnayanavigaciyaua" class="block block-menu navigation menu--main-ua">
+            
+  <h2 class="visually-hidden" id="block-osnovnayanavigaciyaua-menu">Основная навигация UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="../../../../../index.html" data-drupal-link-system-path="&lt;front&gt;">Документация</a>
+              </li>
+                <li class="menu-item">
+        <a href="../../../../../../trainings.html">Тренинги</a>
+              </li>
+                <li class="menu-item">
+        <a href="../../../../../certification.html" data-drupal-link-system-path="node/3084">Сертификация и тестирование</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+<nav role="navigation" aria-labelledby="block-sitesua-2-menu" id="block-sitesua-2" class="block block-menu navigation menu--sites-ua">
+            
+  <h2 class="visually-hidden" id="block-sitesua-2-menu">Sites UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="https://www.terrasoft.ua/" rel="nofollow" target="_blank">Terrasoft</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://community.terrasoft.ua/" rel="nofollow" target="_blank">Community</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://marketplace.terrasoft.ua/" rel="nofollow" target="_blank">Marketplace</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+
+  </div>
+
+        </div>
+      </div>
+              <div class="creatio-region creatio-region_breadcrumb">
+        <div class="creatio-container">
+            <div class="region region-breadcrumb">
+    <div id="block-logowhite" class="block block-simple-block block-simple-blocklogo-white">
+  
+    
+      <p><a class="site-logo" href="../../../../../../index.html" rel="home"><img src="../../../../../themes/custom/creatio/logo-white.svg" /></a></p>
+
+  </div>
+<div id="block-breadcrumbnaviagtion" class="block block-ts-nav block-ts-nav-bread">
+  
+    
+      <nav class="breadcrumb"><ol class="ts-nav-breadcrumb__list"><li class="ts-nav-breadcrumb__item"><a href="../../../../../index.html" class="ts-nav-breadcrumb__link" title="Документация">Документация</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../../../index2132.html?vid_1=2" class="ts-nav-breadcrumb__link" title="Для разработчика">Для разработчика</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../ehlementy_interfejsa.html" class="ts-nav-breadcrumb__link" title="Элементы интерфейса" hreflang="ru">Элементы интерфейса</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../upravlenie_ehlementami_interfejsa.html" class="ts-nav-breadcrumb__link" title="Управление элементами интерфейса" hreflang="ru">Управление элементами интерфейса</a></li>
+<li class="ts-nav-breadcrumb__item ts-nav-breadcrumb__item_mobile"><a href="../../../interface_elements/interface_control_tools/feature_toggle.html" class="ts-nav-breadcrumb__link" title="Feature Toggle" hreflang="ru">Feature Toggle</a></li>
+<li class="ts-nav-breadcrumb__item"><span class="ts-nav-breadcrumb__link ts-nav-breadcrumb__link_current" title="Обзор">Обзор</span></li>
+</ol>
+</nav>
+
+  </div>
+<div id="block-search-2" class="block block-simple-block block-simple-blocksearch">
+  
+    
+      <div class="search">
+<form action="https://academy.terrasoft.ua/search" class="search-form" method="get"><input class="search-form__input" name="search" placeholder="Поиск" type="search" /><input class="search-form__button" type="submit" value="Поиск" /> </form>
+
+<div class="search-toggle"> </div>
+</div>
+
+  </div>
+
+  </div>
+
+        </div>
+      </div>
+      </header>
+
+  <div class="creatio-region creatio-region_main">
+    <div class="creatio-container">
+                <div class="region region-breadcrumb-mobile">
+    <div id="block-breadcrumbnaviagtion-2" class="block block-ts-nav block-ts-nav-bread">
+  
+    
+      <nav class="breadcrumb"><ol class="ts-nav-breadcrumb__list"><li class="ts-nav-breadcrumb__item"><a href="../../../../../index.html" class="ts-nav-breadcrumb__link" title="Документация">Документация</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../../../index2132.html?vid_1=2" class="ts-nav-breadcrumb__link" title="Для разработчика">Для разработчика</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../ehlementy_interfejsa.html" class="ts-nav-breadcrumb__link" title="Элементы интерфейса" hreflang="ru">Элементы интерфейса</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../upravlenie_ehlementami_interfejsa.html" class="ts-nav-breadcrumb__link" title="Управление элементами интерфейса" hreflang="ru">Управление элементами интерфейса</a></li>
+<li class="ts-nav-breadcrumb__item ts-nav-breadcrumb__item_mobile"><a href="../../../interface_elements/interface_control_tools/feature_toggle.html" class="ts-nav-breadcrumb__link" title="Feature Toggle" hreflang="ru">Feature Toggle</a></li>
+<li class="ts-nav-breadcrumb__item"><span class="ts-nav-breadcrumb__link ts-nav-breadcrumb__link_current" title="Обзор">Обзор</span></li>
+</ol>
+</nav>
+
+  </div>
+
+  </div>
+
+      
+      <main class="creatio-main" role="main">
+                                                    
+        <div class="creatio-content creatio-content_small">
+          <div class="creatio-content__inner creatio-content__inner_bg">
+                            <div class="region region-messages">
+    <div data-drupal-messages-fallback class="hidden"></div>
+
+  </div>
+
+            
+              <div class="region region-content">
+    <div id="block-creatio-page-title" class="block block-core block-page-title-block">
+  
+    
+      
+  <h1 class="page-title"><span class="field field--name-title field--type-string field--label-hidden">Механизм Feature Toggle</span>
+</h1>
+
+
+  </div>
+<div id="block-creatio-content" class="block block-system block-system-main-block">
+  
+    
+      
+<article data-history-node-id="3459" role="article" about="/docs/8-0/developer/ehlementy_interfejsa/upravlenie_ehlementami_interfejsa/feature_toggle/obzor" class="node node--type-developer-documentation node--view-mode-full">
+
+  
+    
+
+  
+  <div class="node__content">
+      <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocknodedeveloper-documentationfield-difficulty">
+  
+    
+      
+            <div class="field field--name-field-difficulty field--type-entity-reference field--label-hidden field__item"><div about="/docs/8-0/taxonomy/term/123" id="taxonomy-term-123" class="taxonomy-term vocabulary-difficulty">
+  
+  
+  <div class="content">
+      <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocktaxonomy-termdifficultyfield-icon">
+  
+    
+      
+            <div class="field field--name-field-icon field--type-image field--label-hidden field__item">  <img src="../../../../../sites/default/files/difficulty/medium.svg" alt="" loading="lazy" typeof="foaf:Image" />
+
+</div>
+      
+  </div>
+<div class="block block-layout-builder block-field-blocktaxonomy-termdifficultyname">
+  
+    
+      
+            <div class="field field--name-name field--type-string field--label-hidden field__item"><span style="color: #F57E20;">Средний</span></div>
+      
+  </div>
+
+    </div>
+  </div>
+
+  </div>
+</div>
+</div>
+      
+  </div>
+<div class="block block-ts-doc block-ts-doc-downloads">
+  
+    
+      <a href="../../../../../sites/default/files/pdf/node/3459/Mekhanizm_Feature_Toggle_.pdf" target="_blank">PDF</a>
+  </div>
+<div class="block block-ts-doc block-ts-doc-versions">
+  
+    
+        <div class="ts-doc-versions">
+    <select class="ts-doc-versions__select">
+                                                <option value="/docs/8-0/developer/ehlementy_interfejsa/upravlenie_ehlementami_interfejsa/feature_toggle/obzor" selected>Версия 8.0</option>
+                              <option value="/docs/7-18/developer/ehlementy_interfejsa/upravlenie_ehlementami_interfejsa/feature_toggle/obzor">Версия 7.18</option>
+                              <option value="/docs/7-17/developer/ehlementy_interfejsa/upravlenie_ehlementami_interfejsa/feature_toggle/obzor">Версия 7.17</option>
+                              <option value="/docs/7-16/developer/ehlementy_interfejsa/upravlenie_ehlementami_interfejsa/feature_toggle/obzor">Версия 7.16</option>
+          </select>
+  </div>
+
+  </div>
+
+    </div>
+  </div>
+  <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocknodedeveloper-documentationbody">
+  
+    
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><p><strong>Feature toggle</strong> — техника разработки программных продуктов. <strong>Назначение</strong> Feature toggle — возможность подключения дополнительной функциональности в работающем приложении.</p>
+
+<p>В Creatio Feature toggle использует непрерывную интеграцию, которая позволяет сохранить работоспособность приложения и скрыть функциональность на стадии разработки. В исходном коде приложения присутствует блок с дополнительной функциональностью и условный оператор, который определяет состояние подключения функциональности.</p>
+
+<p>Понятие Feature toggle описано на <a href="https://en.wikipedia.org/w/index.php?title=Feature_toggle&amp;oldid=1072248468" target="_blank">Википедии</a>.</p>
+
+<h2>Хранить сведения о функциональности<a class="title-anchor" href="#title-3459-4" id="title-3459-4"> </a></h2>
+
+<p>Сведения о функциональности хранятся в базе данных приложения.</p>
+
+<p><strong>Таблицы</strong> базы данных, которые хранят информацию о функциональности:</p>
+
+<ul><li><span class="filled">[Feature]</span> — перечень функциональности, которая доступна для подключения/отключения. По умолчанию таблица пуста.</li>
+	<li><span class="filled">[AdminUnitFeatureState]</span> (колонка <span class="filled">[FeatureState]</span>) — информация о состоянии функциональности (подключена/отключена). Таблица <span class="filled">[AdminUnitFeatureState]</span> связывает таблицы <span class="filled">[Feature]</span> и <span class="filled">[SysAdminUnit]</span> базы данных. Таблица <span class="filled">[SysAdminUnit]</span> содержит информацию о пользователях и группах пользователей приложения.</li>
+</ul><p>Диаграмма взаимосвязи таблиц базы данных, которые хранят информацию о функциональности, представлена на рисунке ниже.</p>
+
+<div class="media">
+<div class="media__element"><img src="../../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/FeatureToggle/7.18/scr_featuretoggle_diagram.png" /></div>
+</div>
+
+<p>Основные колонки таблицы <span class="filled">[Feature]</span> базы данных приведены в таблице ниже.</p>
+
+<div class="table">
+<div class="table__caption">Основные колонки таблицы <span class="filled">[Feature]</span></div>
+
+<table><tbody><tr><th width="20%">Колонка</th>
+			<th width="20%">Тип</th>
+			<th>Описание</th>
+		</tr><tr><td><span class="filled">[Id]</span></td>
+			<td><span class="filled">uniqueidentifier</span></td>
+			<td>Уникальный идентификатор записи.</td>
+		</tr><tr><td><span class="filled">[Name]</span></td>
+			<td><span class="filled">nvarchar(250)</span></td>
+			<td>Имя функциональности.</td>
+		</tr><tr><td><span class="filled">[Code]</span></td>
+			<td><span class="filled">nvarchar( 50 )</span></td>
+			<td>Код функциональности.</td>
+		</tr></tbody></table></div>
+
+<p>Основные колонки таблицы <span class="filled">[AdminUnitFeatureState]</span> базы данных приведены в таблице ниже.</p>
+
+<div class="table">
+<div class="table__caption">Основные колонки таблицы <span class="filled">[AdminUnitFeatureState]</span></div>
+
+<table><tbody><tr><th width="20%">Колонка</th>
+			<th width="20%">Тип</th>
+			<th>Описание</th>
+		</tr><tr><td><span class="filled">[Id]</span></td>
+			<td><span class="filled">uniqueidentifier</span></td>
+			<td>Уникальный идентификатор записи.</td>
+		</tr><tr><td><span class="filled">[FeatureId]</span></td>
+			<td><span class="filled">uniqueidentifier</span></td>
+			<td>Уникальный идентификатор записи из таблицы <span class="filled">[Feature]</span>.</td>
+		</tr><tr><td><span class="filled">[SysAdminUnitId]</span></td>
+			<td><span class="filled">uniqueidentifier</span></td>
+			<td>Уникальный идентификатор записи пользователя.</td>
+		</tr><tr><td><span class="filled">[FeatureState]</span></td>
+			<td><span class="filled">int</span></td>
+			<td>Состояние функциональности (<span class="filled">1</span> — подключена, <span class="filled">0</span> — отключена).</td>
+		</tr></tbody></table></div>
+
+<h2>Подключить дополнительную функциональность<a class="title-anchor" href="#title-3459-1" id="title-3459-1"> </a></h2>
+
+<p><strong>Способы</strong> подключения дополнительной функциональности:</p>
+
+<ul><li>Для текущего пользователя приложения.</li>
+	<li>Для всех пользователей приложения.</li>
+</ul><h3>Подключить функциональность для текущего пользователя приложения<a class="title-anchor" href="#title-3459-2" id="title-3459-2"> </a></h3>
+
+<ol><li>
+	<p>Перейдите на страницу <span class="key">Функциональность</span> (<span class="key">Features</span>), которая используется для точечного подключения функциональности.</p>
+
+	<div class="SimpleTabContainer" data-itemid="JSON" data-title="JSON" id="Syntax_JSON">
+	<div class="code">
+	<div class="code__widgets">
+	<div class="code__source" data-tab="Шаблон адреса страницы функциональности">
+	<pre class="prettyprint">
+[Адрес приложения]/0/Nui/ViewModule.aspx#BaseSchemaModuleV2/FeaturesPage
+</pre>
+	</div>
+
+	<div class="code__source" data-tab="Пример адреса страницы функциональности">
+	<pre class="prettyprint">
+http://myсreatio.com/0/Nui/ViewModule.aspx#BaseSchemaModuleV2/FeaturesPage
+</pre>
+	</div>
+	</div>
+	</div>
+	</div>
+	</li>
+	<li>Переключите соответствующий переключатель функциональности, которую планируется подключить.</li>
+	<li>Нажмите кнопку <span class="key">Сохранить изменения</span> (<span class="key">Save changes</span>).</li>
+</ol><p>Всплывающая подсказка отображает статус функциональности для группы пользователей, в которую входит текущий пользователь. Подключение функциональности для текущего пользователя не меняет ее статус для группы пользователей. Т. е. для текущего пользователя создается дополнительное правило приоритет которого выше, чем приоритет правила для группы пользователей, в которую входит текущий пользователь.</p>
+
+<p>Пример страницы <span class="key">Функциональность</span> (<span class="key">Features</span>) приведен на рисунке ниже.</p>
+
+<div class="media">
+<div class="media__element"><img src="../../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/FeatureToggle/8.0/scr_FeatureToggle_page.png" /></div>
+</div>
+
+<h3>Подключить функциональность для всех пользователей приложения<a class="title-anchor" href="#title-3459-3" id="title-3459-3"> </a></h3>
+
+<p>Чтобы <strong>подключить функциональность для всех пользователей приложения</strong>, выполните SQL-запрос к базе данных, который приведен ниже.</p>
+
+<div class="code">
+<div class="code__top">
+<div class="code__title">Пример SQL-запроса</div>
+
+<div class="code__langs">
+<div class="code__lang code__lang_active">MSSQL</div>
+
+<div class="code__lang">PostgreSQL</div>
+
+<div class="code__lang">Oracle</div>
+</div>
+</div>
+
+<div class="code__widgets">
+<div class="code__source code__source_active" data-insert="false" data-type="MSSQL">
+<pre class="prettyprint">
+DECLARE @featureCode varchar(max) = 'NewEmailSettingsWithoutAutoSynchronization', @featureId uniqueidentifier;
+set @featureId = (select top 1 Id from Feature where Code = @featureCode);
+IF @featureId is null
+    BEGIN
+        insert into Feature
+            (Name, Code)
+        values
+            (@featureCode, @featureCode);
+        set @featureId = (select top 1 Id from Feature where Code = @featureCode);
+    END;
+delete from AdminUnitFeatureState where FeatureId = @featureId;
+insert into AdminUnitFeatureState
+    (SysAdminUnitId, FeatureState, FeatureId)
+    values
+        ('A29A3BA5-4B0D-DE11-9A51-005056C00008', 1, @featureId),
+        ('720B771C-E7A7-4F31-9CFB-52CD21C3739F', 1, @featureId);
+</pre>
+</div>
+
+<div class="code__source" data-insert="false" data-type="PostgreSQL">
+<pre class="prettyprint">
+do $$
+    DECLARE
+        featureCode varchar(100) = 'EmailIntegrationV2';
+        featureId UUID;
+    BEGIN
+        featureId = (select "Id" from "Feature" where "Code" = featureCode limit 1);
+        IF featureId is null THEN
+            insert into "Feature"
+                ("Name", "Code")
+            values
+                (featureCode, featureCode);
+            featureId = (select "Id" from "Feature" where "Code" = featureCode limit 1);
+        end IF;
+    delete from "AdminUnitFeatureState" where "FeatureId" = featureId;
+    insert into "AdminUnitFeatureState"
+        ("SysAdminUnitId", "FeatureState", "FeatureId")
+        values
+            ('A29A3BA5-4B0D-DE11-9A51-005056C00008', 1, featureId),
+            ('720B771C-E7A7-4F31-9CFB-52CD21C3739F', 1, featureId);
+end $$;
+</pre>
+</div>
+
+<div class="code__source" data-insert="false" data-type="Oracle">
+<pre class="prettyprint">
+DECLARE
+    existObject NUMBER := 0;
+    v_featurecode VARCHAR2(50) := 'LoadAttachmentsInSameProcess';
+    v_featureid VARCHAR2(38);
+BEGIN
+    SELECT COUNT(1) INTO existObject FROM "Feature" WHERE "Code" = v_featurecode;
+    if existObject = 0 THEN 
+        INSERT INTO "Feature" ("Name", "Code") VALUES (:v_featurecode, :v_featurecode);
+    END IF; 
+SELECT "Id" INTO v_featureid FROM "Feature" WHERE "Code" = v_featurecode AND rownum &lt;= 1;
+DELETE FROM "AdminUnitFeatureState" WHERE "FeatureId" = v_featureid;
+INSERT INTO "AdminUnitFeatureState" ("SysAdminUnitId", "FeatureState", "FeatureId") 
+    VALUES ('{A29A3BA5-4B0D-DE11-9A51-005056C00008}', 1, v_featureid);
+END;
+/
+</pre>
+</div>
+</div>
+</div>
+
+<p><span class="filled">featureCode</span> — переменная, которая содержит необходимое имя функциональности.</p>
+
+<p>С помощью SQL-запроса Creatio позволяет подключить функциональность для группы пользователей и отключить функциональность для текущего пользователя и наоборот.</p>
+
+<p>Чтобы <strong>отключить функциональность для всех пользователей приложения</strong>, выполните SQL-запрос к базе данных, в котором для колонки <span class="filled">[FeatureState]</span> таблицы <span class="filled">[AdminUnitFeatureState]</span> установите значение <span class="consolas">0</span>.</p>
+
+<div class="message message_warning">
+<p><span class="message__bold message__bold_warning">Важно.</span> Creatio предоставляет возможность отключения функциональности, которая была подключена через SQL-запрос к базе данных, только путем выполнения соответствующего SQL-запроса к базе данных. Отсутствует возможность отключения функциональности на странице <span class="key">Функциональность</span> (<span class="key">Features</span>).</p>
+</div>
+
+<h2>Реализовать пользовательскую функциональность<a class="title-anchor" href="#title-3459-3" id="title-3459-3"> </a></h2>
+
+<ol><li>
+	<p>Добавьте <strong>пользовательскую функциональность</strong>.</p>
+
+	<ol><li>Перейдите на страницу <span class="key">Функциональность</span> (<span class="key">Features</span>), которая используется для точечного подключения функциональности.</li>
+		<li>
+		<p>Заполните <strong>свойства добавляемой функциональности</strong>:</p>
+
+		<ul><li><span class="key">Код функциональности</span> (<span class="key">Feature code</span>) — код пользовательской функциональности, которую планируется добавить (обязательное свойство).</li>
+			<li><span class="key">Имя функциональности</span> (<span class="key">Feature name</span>) — имя пользовательской функциональности, которую планируется добавить.</li>
+			<li><span class="key">Описание функциональности</span> (<span class="key">Feature description</span>) — описание пользовательской функциональности, которую планируется добавить.</li>
+		</ul><div class="media">
+		<div class="media__element"><img src="../../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/FeatureToggle/8.0/scr_feature_props.png" /></div>
+		</div>
+		</li>
+		<li>Нажмите кнопку <span class="key">Добавить функциональность</span> (<span class="key">Create feature</span>).</li>
+	</ol><p>В результате пользовательская функциональность добавлена в реестр страницы <span class="key">Функциональность</span> (<span class="key">Features</span>).</p>
+
+	<div class="media">
+	<div class="media__element"><img src="../../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/FeatureToggle/8.0/scr_feature_result.png" /></div>
+	</div>
+	</li>
+	<li>
+	<p>Реализуйте <strong>пользовательскую функциональность в исходном коде</strong>. Пользовательская функциональность определяется в блоке условного оператора, который проверяет состояние подключения функциональности (колонка <span class="filled">[FeatureState]</span> таблицы <span class="filled">[AdminUnitFeatureState]</span>).</p>
+
+	<p><strong>Варианты</strong> реализации пользовательской функциональности:</p>
+
+	<ul><li>На front-end стороне. Для этого воспользуйтесь инструкцией, которая приведена в пункте <a href="../../../../../developer/ehlementy_interfejsa/upravlenie_ehlementami_interfejsa/feature_toggle/obzor%23title-3459-5.html?id=15631&amp;anchor=title-3459-5">Реализовать пользовательскую функциональность (front-end)</a>.</li>
+		<li>На back-end стороне. Для этого воспользуйтесь инструкцией, которая приведена в пункте <a href="../../../../../developer/ehlementy_interfejsa/upravlenie_ehlementami_interfejsa/feature_toggle/obzor%23title-3459-6.html?id=15631&amp;anchor=title-3459-6">Реализовать пользовательскую функциональность (back-end)</a>.</li>
+	</ul></li>
+</ol><h3>Реализовать пользовательскую функциональность (front-end)<a class="title-anchor" href="#title-3459-5" id="title-3459-5"> </a></h3>
+
+<ol><li>Создайте схему модели представления. Для этого воспользуйтесь инструкцией, которая приведена в статье <a href="../../../../../index.html?id=15106&amp;anchor=title-3028-15">Клиентский модуль</a>.</li>
+	<li>
+	<p>В дизайнере модуля добавьте исходный код. Для этого используйте шаблон, который приведен ниже.</p>
+
+	<div class="code">
+	<div class="code__widgets">
+	<div class="code__top">
+	<div class="code__title">Шаблон реализации пользовательской функциональности</div>
+	</div>
+
+	<div class="code__source">
+	<pre class="prettyprint">
+/* Метод, в котором определяется дополнительная функциональность. */
+someMethod: function() {
+    /* Проверка подключения функциональности. */
+    if (Terrasoft.Features.getIsEnabled("КодФункциональности")) {
+        /* Реализация дополнительной функциональности. */
+        ...
+    }
+    /* Реализация метода. */
+    ...
+}
+</pre>
+	</div>
+	</div>
+	</div>
+
+	<p>Для удобства использования в базовой схеме <span class="filled">BaseSchemaViewModel</span> модели представления определен метод <span class="filled">getIsFeatureEnabled</span>. Поэтому можно заменить метод <span class="filled">Terrasoft.Features.getIsEnabled</span> на <span class="filled">this.getIsFeatureEnabled("КодФункциональности")</span>.</p>
+	</li>
+	<li>На панели инструментов дизайнера модуля нажмите <span class="key">Сохранить</span> (<span class="key">Save</span>).</li>
+</ol><p>Чтобы пользовательская функциональность отобразилась в клиентском коде и загружалась браузером на front-end стороне, обновите страницу.</p>
+
+<h3>Реализовать пользовательскую функциональность (back-end)<a class="title-anchor" href="#title-3459-6" id="title-3459-6"> </a></h3>
+
+<ol><li>Создайте схему исходного кода. Для этого воспользуйтесь инструкцией, которая приведена в статье <a href="../../../../../developer/instrumenty_razrabotki/creatio_ide/iskhodnyj_kod_c_sharp/obzor%23title-3028-8.html?id=15108&amp;anchor=title-3028-8">Исходный код</a>.</li>
+	<li>
+	<p>В дизайнере исходного кода добавьте исходный код.</p>
+
+	<p>Класс <span class="filled">Terrasoft.Configuration.FeatureUtilities</span> предоставляет набор расширяющих методов класса <span class="filled">UserConnection</span>, которые позволяют использовать функциональность <span class="filled">Feature toggle</span> в схемах исходного кода на back-end стороне приложения. Для этого используйте шаблон, который приведен ниже.</p>
+
+	<div class="code">
+	<div class="code__widgets">
+	<div class="code__top">
+	<div class="code__title">Шаблон реализации пользовательской функциональности</div>
+	</div>
+
+	<div class="code__source">
+	<pre class="prettyprint">
+...
+/* Пространство имен, в котором определена возможность переключения дополнительной функциональности. */
+using Terrasoft.Configuration;
+...
+/* Метод, в котором будет определяться дополнительная функциональность. */
+public void AnyMethod() {
+    /* Проверка, подключена ли функциональность. */
+    if (UserConnection.GetIsFeatureEnabled("КодФункциональности")) {
+        /* Реализация дополнительной функциональности. */
+    }
+    /* Реализация метода. */
+    ...
+}
+</pre>
+	</div>
+	</div>
+	</div>
+	</li>
+	<li>
+	<p>Установите состояние функциональности, вызвав метод <span class="filled">SetFeatureState</span>. Для этого используйте шаблон, который приведен ниже.</p>
+
+	<div class="code">
+	<div class="code__widgets">
+	<div class="code__top">
+	<div class="code__title">Шаблон вызова метода <span class="filled">SetFeatureState</span></div>
+	</div>
+
+	<div class="code__source">
+	<pre class="prettyprint">
+UserConnection.SetFeatureState("КодФункциональности", FeatureState);
+</pre>
+	</div>
+	</div>
+	</div>
+	</li>
+</ol></div>
+      
+  </div>
+<div class="block block-layout-builder block-field-blocknodedeveloper-documentationfield-linked">
+  
+    
+      
+  <div class="field field--name-field-linked field--type-entity-reference field--label-above">
+    <div class="field__label">Смотрите также</div>
+          <div class="field__items">
+              <div class="field__item"><a href="../../../instrumenty_razrabotki/creatio_ide/klientskij_modul/obzor.html" hreflang="ru">Клиентский модуль</a></div>
+          <div class="field__item"><a href="../../../instrumenty_razrabotki/creatio_ide/iskhodnyj_kod_c_sharp/obzor.html" hreflang="ru">Исходный код (C#)</a></div>
+              </div>
+      </div>
+
+  </div>
+<div class="block block-layout-builder block-field-blocknodedeveloper-documentationfield-resources">
+  
+    
+      
+  <div class="field field--name-field-resources field--type-link field--label-above">
+    <div class="field__label">Ресурсы</div>
+          <div class="field__items">
+              <div class="field__item"><a href="https://en.wikipedia.org/w/index.php?title=Feature_toggle&amp;oldid=1072248468" target="_blank">Понятие Feature toggle</a></div>
+              </div>
+      </div>
+
+  </div>
+
+    </div>
+  </div>
+
+  </div>
+
+</article>
+
+  </div>
+
+  </div>
+
+          </div>
+        </div>
+
+                  <aside class="creatio-sidebar creatio-sidebar_first" role="complementary">
+              <div class="region region-sidebar-first">
+    <div id="block-documentationnaviagtion" class="block block-ts-nav block-ts-nav-doc-nav">
+  
+    
+      <div class="ts-nav-block"><a href="../../../../../index.html" class="ts-nav-block__link">Документация</a><div class="ts-nav-block__title">Для разработчика</div>
+</div>
+<div class="ts-nav-container"><ul class="ts-nav-menu"><li class="ts-nav-menu__item">
+  <a href="../../../s_chego_nachat.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">С чего начать&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../architecture.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Архитектура&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../instrumenty_razrabotki.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Инструменты разработки&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../back_end_razrabotka.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Back-end разработка&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../front_end_razrabotka_freedom_ui.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Front-end разработка Freedom UI&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../front_end_razrabotka.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Front-end разработка&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../integratsiya_i_vneshnij_api.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Интеграция и внешний API&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../ehlementy_interfejsa.html" class="ts-nav-menu__link ts-nav-menu__link_expanded ts-nav-menu__link_open" hreflang="ru">Элементы интерфейса&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+      <ul class="ts-nav-menu__children">
+      <li class="ts-nav-menu__item">
+  <a href="../../glavnoe_menyu/obzor.html" class="ts-nav-menu__link" hreflang="ru">Главное меню</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../razdel.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Раздел&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../stranica_zapisi.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Страница записи&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../1215/detail.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Деталь&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../mini_kartochka.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Мини-карточка&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../modalnoe_okno.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Модальное окно&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../kommunikacionnaya_panel.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Коммуникационная панель&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../komandnaya_stroka/obzor.html" class="ts-nav-menu__link" hreflang="ru">Командная строка</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../dashbordy.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Дашборды&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../chaty.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Чаты&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../upravlenie_ehlementami_interfejsa.html" class="ts-nav-menu__link ts-nav-menu__link_expanded ts-nav-menu__link_open" hreflang="ru">Управление элементами интерфейса&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+      <ul class="ts-nav-menu__children">
+      <li class="ts-nav-menu__item">
+  <a href="../../../interface_elements/interface_control_tools/feature_toggle.html" class="ts-nav-menu__link ts-nav-menu__link_expanded ts-nav-menu__link_open" hreflang="ru">Feature Toggle&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+      <ul class="ts-nav-menu__children">
+      <li class="ts-nav-menu__item">
+  <a href="obzor.html" class="ts-nav-menu__link ts-nav-menu__link_guide ts-nav-menu__link_active" hreflang="ru">Обзор</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="featureutilities.html" class="ts-nav-menu__link ts-nav-menu__link_reference" data-type="C#" hreflang="ru">FeatureUtilities</a>
+  </li>
+
+    </ul>
+  </li>
+
+    </ul>
+  </li>
+
+    </ul>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../komponenty_prilozheniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Компоненты приложения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../razrabotka_mobilnogo_prilozheniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Разработка мобильного приложения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../razrabotka_marketplace_prilozheniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Разработка Marketplace-приложения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+</ul>
+</div>
+
+  </div>
+
+  </div>
+
+            <div class="creatio-sidebar__toggle"></div>
+          </aside>
+        
+                  <aside class="creatio-sidebar creatio-sidebar_second" role="complementary">
+              <div class="region region-sidebar-second">
+    <div id="block-example" class="block block-ts-nav block-ts-nav-page-nav">
+  
+    
+      <div class="ts-nav-page">
+  </div>
+
+  </div>
+<div id="block-adminfeedbackblock" class="block block-admin-feedback block-admin-feedback-block">
+  
+    
+      <div id="feedback-message"><div id="upper-feedback-content"><h2>Был ли данный материал полезен?</h2>
+<input class="feedback-btn feedback-btn__yes button js-form-submit form-submit" data-node-id="3459" data-feedback="yes" type="submit" name="op" value="Да" />
+<input class="feedback-btn feedback-btn__no button js-form-submit form-submit" data-node-id="3459" data-feedback="no" type="submit" name="op" value="Нет" />
+</div>
+<form class="admin-feedback-form" data-drupal-selector="admin-feedback-form" action="https://academy.terrasoft.ua/docs/8-0/developer/ehlementy_interfejsa/upravlenie_ehlementami_interfejsa/feature_toggle/obzor" method="post" id="admin-feedback-form" accept-charset="UTF-8">
+  <div id="feedback-msg-result"></div><div class="js-form-item form-item js-form-type-textarea form-type-textarea js-form-item-feedback-message form-item-feedback-message form-no-label">
+        <div class="form-textarea-wrapper">
+  <textarea id="edit-feedback-msg" data-drupal-selector="edit-feedback-message" name="feedback_message" rows="5" cols="60" class="form-textarea resize-vertical"></textarea>
+</div>
+
+        </div>
+<input id="feedback-id" data-drupal-selector="edit-feedback-id" type="hidden" name="feedback_id" value="" />
+<input class="feedback-btn feedback-btn__send-comment button js-form-submit form-submit" data-drupal-selector="edit-feedback-send" type="submit" id="edit-feedback-send" name="op" value="Отправить" />
+<input autocomplete="off" data-drupal-selector="form-jadumf9heqopbo-4evfy-398hefr21dpze6vafn-g1k" type="hidden" name="form_build_id" value="form-JAdUmf9HEqopbO_4eVfY-398HEfr21dPZE6VafN-G1k" />
+<input data-drupal-selector="edit-admin-feedback-form" type="hidden" name="form_id" value="admin_feedback_form" />
+
+</form>
+</div>
+
+  </div>
+
+  </div>
+
+          </aside>
+              </main>
+    </div>
+  </div>
+
+  <footer role="contentinfo">
+    <div class="creatio-region creatio-region_footer">
+      <div class="creatio-container">
+          <div class="region region-footer">
+    <div id="block-footerua" class="block block-simple-block block-simple-blockfooter-ua">
+  
+    
+      <div class="footer">
+<div class="footer-left">
+<ul class="footer-socials"><li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_fb" href="https://www.facebook.com/terrasoft.ua" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_in" href="https://www.linkedin.com/company/terrasoft/" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_yt" href="https://www.youtube.com/c/TerrasoftUkraine" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_tg" href="https://t.me/Terrasoft_UA" target="_blank"> </a></li>
+</ul></div>
+
+<div class="footer-contact">
+<div class="footer-title">Будьте на связи!</div>
+
+<div class="footer-content">
+<div class="footer-items">
+<div class="footer-item"><a class="footer__link footer__link_phone" href="tel:+380443633133">+38 (044) 363-31-33</a></div>
+</div>
+
+<div class="footer-items">
+<div class="footer-item"><a class="footer__link footer__link_email" href="mailto:support@terrasoft.ua">support@terrasoft.ua</a></div>
+</div>
+</div>
+</div>
+</div>
+
+  </div>
+
+  </div>
+
+      </div>
+    </div>
+    <div class="creatio-region creatio-region_bottom">
+      <div class="creatio-container">
+          <div class="region region-bottom">
+    <div id="block-allrightsreservedua" class="block block-simple-block block-simple-blockfooter-bottom-ua">
+  
+    
+      <p>© 2002-2022 Terrasoft.  |  <a href="https://www.terrasoft.ua/privacy-policy" target="_blank">Конфиденциальность</a></p>
+
+  </div>
+
+  </div>
+
+      </div>
+    </div>
+  </footer>
+</div>
+<div class="creatio-bg"></div>
+
+
+  </div>
+
+    
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/docs\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/3459","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"ru"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"ajaxPageState":{"libraries":"admin_feedback\/admin_feedback_block,admin_feedback\/admin_feedback_css,classy\/base,classy\/messages,classy\/node,core\/drupal.ajax,core\/jquery.form,core\/normalize,creatio\/fancybox,creatio\/global,layout_discovery\/onecol,system\/base,ts_doc\/doc_version,ts_feedback\/ts_feedback,ts_nav\/breadcrumb,ts_nav\/doc_nav,ts_nav\/page_nav,ts_title_anchor\/ts_title_anchor","theme":"creatio","theme_token":null},"ajaxTrustedUrl":{"form_action_p_pvdeGsVG5zNF_XLGPTvYSKCf43t8qZYSwcfZl2uzM":true,"\/docs\/8-0\/developer\/ehlementy_interfejsa\/upravlenie_ehlementami_interfejsa\/feature_toggle\/obzor?ajax_form=1":true},"admin_feedback":{"yes_response":"\u0421\u043f\u0430\u0441\u0438\u0431\u043e \u0437\u0430 \u043e\u0431\u0440\u0430\u0442\u043d\u0443\u044e \u0441\u0432\u044f\u0437\u044c!","no_response":"\u0421\u043f\u0430\u0441\u0438\u0431\u043e \u0437\u0430 \u043e\u0431\u0440\u0430\u0442\u043d\u0443\u044e \u0441\u0432\u044f\u0437\u044c!","custom_text_response_on_no":{"value":"","format":"full_html"},"feedback_prompt_on_yes":true,"feedback_prompt_on_no":true,"feedback_enable_predefined_answers":false,"feedback_prompt":"\u041a\u0430\u043a \u043c\u043e\u0436\u043d\u043e \u0443\u043b\u0443\u0447\u0448\u0438\u0442\u044c \u044d\u0442\u0443 \u0441\u0442\u0430\u0442\u044c\u044e?"},"ajax":{"edit-feedback-send":{"callback":"::validateFeedbackMsg","event":"mousedown","keypress":true,"prevent":"click","url":"\/docs\/8-0\/developer\/ehlementy_interfejsa\/upravlenie_ehlementami_interfejsa\/feature_toggle\/obzor?ajax_form=1","dialogType":"ajax","submit":{"_triggering_element_name":"op","_triggering_element_value":"\u041e\u0442\u043f\u0440\u0430\u0432\u0438\u0442\u044c"}}},"user":{"uid":0,"permissionsHash":"9c2367dfcaba0fa15f0375f97aed64e146c908cee68508d13b79e3ee80e5162d"}}</script>
+<script src="../../../../../sites/default/files/js/js_Rr-7TvYD7NposuRFJwUqThxM7yJmw8vs03PQwu5gWd8.js"></script>
+
+
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+      <g id="svg-copy" class="svg-icon svg-icon_copy">
+        <path d="M15.111,18H1.889A1.848,1.848,0,0,1,0,16.2V3.6A1.848,1.848,0,0,1,1.889,1.8H5.837a2.87,2.87,0,0,1,5.326,0h3.948A1.848,1.848,0,0,1,17,3.6V16.2A1.848,1.848,0,0,1,15.111,18ZM3.777,12.6v1.8h6.611V12.6Zm0-3.6v1.8h9.445V9Zm0-3.6V7.2h9.445V5.4ZM8.5,1.8a.924.924,0,0,0-.944.9.945.945,0,0,0,1.889,0A.924.924,0,0,0,8.5,1.8Z"/>
+      </g>
+
+      <g id="svg-prev" class="svg-icon svg-icon_arrow">
+        <path d="M5.488,12.779,0,6.39,5.488,0" transform="translate(1 0.652)"/>
+      </g>
+
+      <g id="svg-next" class="svg-icon svg-icon_arrow">
+        <path d="M0,12.779,5.488,6.39,0,0" transform="translate(0.759 0.652)"/>
+      </g>
+    </svg>
+  </body>
+
+<!-- Mirrored from academy.terrasoft.ua/docs/8-0/developer/ehlementy_interfejsa/upravlenie_ehlementami_interfejsa/feature_toggle/obzor by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Mar 2022 05:34:22 GMT -->
+</html>

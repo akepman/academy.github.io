@@ -1,0 +1,1492 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  
+<!-- Mirrored from academy.terrasoft.ua/api/netcoreapi/7.18.0/api/Terrasoft.IO.IFile.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Mar 2022 03:32:05 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Interface IFile
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Interface IFile
+   ">
+    <meta name="generator" content="docfx 2.58.0.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-default ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="https://academy.terrasoft.ru/docs/developer/back-end_development">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Terrasoft.IO.IFile">
+  
+  
+  <h1 id="Terrasoft_IO_IFile" data-uid="Terrasoft.IO.IFile" class="text-break">Interface IFile
+  </h1>
+  <div class="markdown level0 summary"><p>Provides methods for working with file.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Terrasoft.IO.html">Terrasoft.IO</a></h6>
+  <h6><strong>Assembly</strong>: Terrasoft.IO.dll</h6>
+  <h5 id="Terrasoft_IO_IFile_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public interface IFile</code></pre>
+  </div>
+  <h3 id="methods">Methods
+  </h3>
+  
+  
+  <a id="Terrasoft_IO_IFile_Copy_" data-uid="Terrasoft.IO.IFile.Copy*"></a>
+  <h4 id="Terrasoft_IO_IFile_Copy_System_String_System_String_" data-uid="Terrasoft.IO.IFile.Copy(System.String,System.String)">Copy(String, String)</h4>
+  <div class="markdown level1 summary"><p>Copies an existing file to a new file. Overwriting a file of the same name is not allowed.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void Copy(string sourceFileName, string destinationFileName)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">sourceFileName</span></td>
+        <td><p>The file to copy.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">destinationFileName</span></td>
+        <td><p>The name of the destination file. This cannot be a directory or an existing file.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.ArgumentException</span></td>
+        <td><p><code data-dev-comment-type="paramref" class="paramref">sourceFileName</code> or <code data-dev-comment-type="paramref" class="paramref">destinationFileName</code> is a zero-length string,
+contains only white space, or contains invalid characters as defined in
+<see cref="!:Path.GetInvalidPathChars"></see>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_IO_IFile_Copy_" data-uid="Terrasoft.IO.IFile.Copy*"></a>
+  <h4 id="Terrasoft_IO_IFile_Copy_System_String_System_String_System_Boolean_" data-uid="Terrasoft.IO.IFile.Copy(System.String,System.String,System.Boolean)">Copy(String, String, Boolean)</h4>
+  <div class="markdown level1 summary"><p>Copies an existing file to a new file. Overwriting a file of the same name is allowed.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void Copy(string sourceFileName, string destFileName, bool overwrite)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">sourceFileName</span></td>
+        <td><p>The file to copy.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">destFileName</span></td>
+        <td><p>The name of the destination file. This cannot be a directory.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">overwrite</span></td>
+        <td><p>true if the destination file can be overwritten; otherwise, false.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_IO_IFile_Create_" data-uid="Terrasoft.IO.IFile.Create*"></a>
+  <h4 id="Terrasoft_IO_IFile_Create_System_String_" data-uid="Terrasoft.IO.IFile.Create(System.String)">Create(String)</h4>
+  <div class="markdown level1 summary"><p>Creates or overwrites a file that can be used for asynchronous reading and writing in the specified path.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Stream Create(string path)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">path</span></td>
+        <td><p>The path and name of the file to create.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Stream</span></td>
+        <td><p>A <see cref="!:System.IO.Stream"></see> that provides read/write access to the specified path.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_IO_IFile_Delete_" data-uid="Terrasoft.IO.IFile.Delete*"></a>
+  <h4 id="Terrasoft_IO_IFile_Delete_System_String_" data-uid="Terrasoft.IO.IFile.Delete(System.String)">Delete(String)</h4>
+  <div class="markdown level1 summary"><p>Deletes specified file.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void Delete(string path)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">path</span></td>
+        <td><p>Name of file to be deleted. Wildcard characters are not supported.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_IO_IFile_Exists_" data-uid="Terrasoft.IO.IFile.Exists*"></a>
+  <h4 id="Terrasoft_IO_IFile_Exists_System_String_" data-uid="Terrasoft.IO.IFile.Exists(System.String)">Exists(String)</h4>
+  <div class="markdown level1 summary"><p>Determines whether specified file exists.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">bool Exists(string path)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">path</span></td>
+        <td><p>File to check.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p><code>True</code> if caller has required permissions and path contains name of an existing file.
+Otherwise returns <code>false</code>. Also returns <code>false</code> when path is <code>null</code>, contains wrong
+value or zero-length string. If caller does not have sufficient permissions to read specified file,
+no exception is thrown and method returns <code>false</code> regardless of path existence.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_IO_IFile_GetAttributes_" data-uid="Terrasoft.IO.IFile.GetAttributes*"></a>
+  <h4 id="Terrasoft_IO_IFile_GetAttributes_System_String_" data-uid="Terrasoft.IO.IFile.GetAttributes(System.String)">GetAttributes(String)</h4>
+  <div class="markdown level1 summary"><p>Gets the <span class="xref">System.IO.FileAttributes</span> of the file on the path.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">FileAttributes GetAttributes(string path)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">path</span></td>
+        <td><p>The path to the file.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">FileAttributes</span></td>
+        <td><p>The <span class="xref">System.IO.FileAttributes</span> of the file on the path.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.ArgumentException</span></td>
+        <td><p><code data-dev-comment-type="paramref" class="paramref">path</code> is empty, contains only white spaces, or contains invalid characters.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.IO.PathTooLongException</span></td>
+        <td><p>The specified path, file name, or both exceed
+the system-defined maximum length. For example, on Windows-based platforms, paths must be
+less than 248 characters, and file names must be less than 260 characters.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.NotSupportedException</span></td>
+        <td><p><code data-dev-comment-type="paramref" class="paramref">path</code> is in an invalid format.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.IO.FileNotFoundException</span></td>
+        <td><p><code data-dev-comment-type="paramref" class="paramref">path</code> represents a file and is invalid, such as being on an unmapped drive, or the file
+cannot be found.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.IO.DirectoryNotFoundException</span></td>
+        <td><p><code data-dev-comment-type="paramref" class="paramref">path</code> represents a directory and is invalid, such as being on an unmapped drive, or the
+directory cannot be found.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.IO.IOException</span></td>
+        <td><p>This file is being used by another process.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.UnauthorizedAccessException</span></td>
+        <td><p>The caller does not have the required permission.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_IO_IFile_Move_" data-uid="Terrasoft.IO.IFile.Move*"></a>
+  <h4 id="Terrasoft_IO_IFile_Move_System_String_System_String_" data-uid="Terrasoft.IO.IFile.Move(System.String,System.String)">Move(String, String)</h4>
+  <div class="markdown level1 summary"><p>Moves a specified file to a new location, providing the option to specify a new file name.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void Move(string sourceFileName, string destFileName)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">sourceFileName</span></td>
+        <td><p>The name of the file to move. Can include a relative or absolute path.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">destFileName</span></td>
+        <td><p>The new path and name for the file.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.IO.IOException</span></td>
+        <td><p>The destination file already exists.</p>
+<p>-or-</p>
+<code data-dev-comment-type="paramref" class="paramref">sourceFileName</code> was not found.
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.ArgumentNullException</span></td>
+        <td><p><code data-dev-comment-type="paramref" class="paramref">sourceFileName</code> or <code data-dev-comment-type="paramref" class="paramref">destFileName</code> is null.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.ArgumentException</span></td>
+        <td><p><code data-dev-comment-type="paramref" class="paramref">sourceFileName</code> or <code data-dev-comment-type="paramref" class="paramref">destFileName</code> is a zero-length string, contains only
+white space, or contains invalid characters as defined in <span class="xref">Path.GetInvalidPathChars</span>.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.UnauthorizedAccessException</span></td>
+        <td><p>The caller does not have the required permission.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.IO.PathTooLongException</span></td>
+        <td><p>The specified path, file name, or both exceed the system-defined maximum length. For example,
+on Windows-based platforms, paths must be less than 248 characters,
+and file names must be less than 260 characters.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.IO.DirectoryNotFoundException</span></td>
+        <td><p>The path specified in <code data-dev-comment-type="paramref" class="paramref">sourceFileName</code> or <code data-dev-comment-type="paramref" class="paramref">destFileName</code> is invalid,
+(for example, it is on an unmapped drive).</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.NotSupportedException</span></td>
+        <td><p><code data-dev-comment-type="paramref" class="paramref">sourceFileName</code> or <code data-dev-comment-type="paramref" class="paramref">destFileName</code> is in an invalid format.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_IO_IFile_Open_" data-uid="Terrasoft.IO.IFile.Open*"></a>
+  <h4 id="Terrasoft_IO_IFile_Open_System_String_FileMode_" data-uid="Terrasoft.IO.IFile.Open(System.String,FileMode)">Open(String, FileMode)</h4>
+  <div class="markdown level1 summary"><p>Opens a <span class="xref">System.IO.FileStream</span> on the specified path with read/write access.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Stream Open(string path, FileMode mode)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">path</span></td>
+        <td><p>The file to open.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">FileMode</span></td>
+        <td><span class="parametername">mode</span></td>
+        <td><p>A <span class="xref">System.IO.FileMode</span> value that specifies whether a file is created
+if one does not exist, and determines whether the contents of existing files are retained or overwritten.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Stream</span></td>
+        <td><p>A <span class="xref">System.IO.Stream</span> opened in the specified mode and path, with read/write
+access and not shared.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.ArgumentException</span></td>
+        <td><p><code data-dev-comment-type="paramref" class="paramref">path</code> is a zero-length string, contains only white space, or contains one or more
+invalid characters as defined by <span class="xref">Path.GetInvalidPathChars</span>.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.ArgumentNullException</span></td>
+        <td><p><code data-dev-comment-type="paramref" class="paramref">path</code> is <span class="xref">null</span>.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.IO.PathTooLongException</span></td>
+        <td><p>The specified path, file name, or both exceed the
+system-defined maximum length. For example, on Windows-based platforms, paths must be
+less than 248 characters, and file names must be less than 260 characters.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.IO.DirectoryNotFoundException</span></td>
+        <td><p>The specified path is invalid,
+(for example, it is on an unmapped drive).</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.IO.IOException</span></td>
+        <td><p>An I/O error occurred while opening the file.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.UnauthorizedAccessException</span></td>
+        <td><p><code data-dev-comment-type="paramref" class="paramref">path</code> specified a file that is read-only.-or- This operation is not supported on
+the current platform.-or-
+<code data-dev-comment-type="paramref" class="paramref">path</code> specified a directory.-or- The caller does not have the required permission. -or-
+<code data-dev-comment-type="paramref" class="paramref">mode</code> is <span class="xref">System.IO.FileMode.Create</span> and the specified file
+is a hidden file.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.ArgumentOutOfRangeException</span></td>
+        <td><p><code data-dev-comment-type="paramref" class="paramref">mode</code> specified an invalid value.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.IO.FileNotFoundException</span></td>
+        <td><p>The file specified in
+<code data-dev-comment-type="paramref" class="paramref">path</code> was not found.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.NotSupportedException</span></td>
+        <td><p><code data-dev-comment-type="paramref" class="paramref">path</code> is in an invalid format.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_IO_IFile_OpenRead_" data-uid="Terrasoft.IO.IFile.OpenRead*"></a>
+  <h4 id="Terrasoft_IO_IFile_OpenRead_System_String_" data-uid="Terrasoft.IO.IFile.OpenRead(System.String)">OpenRead(String)</h4>
+  <div class="markdown level1 summary"><p>Opens an existing file for reading.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Stream OpenRead(string path)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">path</span></td>
+        <td><p>The file to be opened for reading.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Stream</span></td>
+        <td><p>A read-only <see cref="!:System.IO.Stream"></see> on the specified path.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_IO_IFile_ReadAllBytes_" data-uid="Terrasoft.IO.IFile.ReadAllBytes*"></a>
+  <h4 id="Terrasoft_IO_IFile_ReadAllBytes_System_String_" data-uid="Terrasoft.IO.IFile.ReadAllBytes(System.String)">ReadAllBytes(String)</h4>
+  <div class="markdown level1 summary"><p>Opens a binary file, reads contents of file into a byte array, and then closes file.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">byte[] ReadAllBytes(string path)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">path</span></td>
+        <td><p>File to open for reading.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Byte</span>[]</td>
+        <td><p>A byte array containing data of file.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_IO_IFile_ReadAllLines_" data-uid="Terrasoft.IO.IFile.ReadAllLines*"></a>
+  <h4 id="Terrasoft_IO_IFile_ReadAllLines_System_String_" data-uid="Terrasoft.IO.IFile.ReadAllLines(System.String)">ReadAllLines(String)</h4>
+  <div class="markdown level1 summary"><p>Opens a text file, reads all lines of the file, and then closes the file.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IEnumerable&lt;string&gt; ReadAllLines(string path)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">path</span></td>
+        <td><p>The file to read from.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IEnumerable</span>&lt;<span class="xref">System.String</span>&gt;</td>
+        <td><p>A string enumeration containing all lines of the file.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Security.SecurityException</span></td>
+        <td><p>The caller does not have the required permission.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_IO_IFile_ReadAllText_" data-uid="Terrasoft.IO.IFile.ReadAllText*"></a>
+  <h4 id="Terrasoft_IO_IFile_ReadAllText_System_String_" data-uid="Terrasoft.IO.IFile.ReadAllText(System.String)">ReadAllText(String)</h4>
+  <div class="markdown level1 summary"><p>Opens a text file, reads all lines of the file, and then closes the file.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">string ReadAllText(string path)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">path</span></td>
+        <td><p>The file to open for reading.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><p>A string containing all lines of the file.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.ArgumentException</span></td>
+        <td><p><code data-dev-comment-type="paramref" class="paramref">path</code> is a zero-length string, contains only white space, or contains one
+or more invalid characters as defined by <span class="xref">Path.GetInvalidPathChars</span>.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.ArgumentNullException</span></td>
+        <td><p><code data-dev-comment-type="paramref" class="paramref">path</code> is null.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.IO.PathTooLongException</span></td>
+        <td><p>The specified path, file name,
+or both exceed the system-defined maximum length. For example, on Windows-based platforms,
+paths must be less than 248 characters, and file names must be less than 260 characters.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.IO.DirectoryNotFoundException</span></td>
+        <td><p>The specified path is invalid
+(for example, it is on an unmapped drive).</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.IO.IOException</span></td>
+        <td><p>An I/O error occurred while opening the file.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.UnauthorizedAccessException</span></td>
+        <td><p><code data-dev-comment-type="paramref" class="paramref">path</code> specified a file that is read-only.
+-or- This operation is not supported on the current platform.
+-or- <code data-dev-comment-type="paramref" class="paramref">path</code> specified a directory.
+-or- The caller does not have the required permission.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.IO.FileNotFoundException</span></td>
+        <td><p>The file specified in <code data-dev-comment-type="paramref" class="paramref">path</code>
+was not found.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.NotSupportedException</span></td>
+        <td><p><code data-dev-comment-type="paramref" class="paramref">path</code> is in an invalid format.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Security.SecurityException</span></td>
+        <td><p>The caller does not have
+the required permission.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_IO_IFile_ReadAllText_" data-uid="Terrasoft.IO.IFile.ReadAllText*"></a>
+  <h4 id="Terrasoft_IO_IFile_ReadAllText_System_String_Encoding_" data-uid="Terrasoft.IO.IFile.ReadAllText(System.String,Encoding)">ReadAllText(String, Encoding)</h4>
+  <div class="markdown level1 summary"><p>Opens a file, reads all lines of the file with the specified encoding, and then closes the
+file.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">string ReadAllText(string path, Encoding encoding)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">path</span></td>
+        <td><p>The file to open for reading.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Encoding</span></td>
+        <td><span class="parametername">encoding</span></td>
+        <td><p>The encoding applied to the contents of the file.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><p>A string containing all lines of the file.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.ArgumentException</span></td>
+        <td><p><code data-dev-comment-type="paramref" class="paramref">path</code> is a zero-length string, contains only white space, or contains one or more
+invalid characters as defined by <span class="xref">Path.GetInvalidPathChars</span>.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.ArgumentNullException</span></td>
+        <td><p><code data-dev-comment-type="paramref" class="paramref">path</code> is <span class="xref">null</span>.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.IO.PathTooLongException</span></td>
+        <td><p>The specified path, file name, or both exceed
+the system-defined maximum length. For example, on Windows-based platforms, paths must be less
+than 248 characters, and file names must be less than 260 characters.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.IO.DirectoryNotFoundException</span></td>
+        <td><p>The specified path is invalid
+(for example, it is on an unmapped drive).</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.IO.IOException</span></td>
+        <td><p>An I/O error occurred while opening the file.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.UnauthorizedAccessException</span></td>
+        <td><p><code data-dev-comment-type="paramref" class="paramref">path</code> specified a file that is read-only.-or- This operation is not supported on the
+current platform.-or-
+<code data-dev-comment-type="paramref" class="paramref">path</code> specified a directory.-or- The caller does not have the required permission.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.IO.FileNotFoundException</span></td>
+        <td><p>The file specified in <code data-dev-comment-type="paramref" class="paramref">path</code>
+was not found.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.NotSupportedException</span></td>
+        <td><p><code data-dev-comment-type="paramref" class="paramref">path</code> is in an invalid format.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Security.SecurityException</span></td>
+        <td><p>The caller does not have the required permission.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_IO_IFile_SetAttributes_" data-uid="Terrasoft.IO.IFile.SetAttributes*"></a>
+  <h4 id="Terrasoft_IO_IFile_SetAttributes_System_String_FileAttributes_" data-uid="Terrasoft.IO.IFile.SetAttributes(System.String,FileAttributes)">SetAttributes(String, FileAttributes)</h4>
+  <div class="markdown level1 summary"><p>Sets the specified <span class="xref">System.IO.FileAttributes</span> of the file on the specified path.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void SetAttributes(string path, FileAttributes fileAttributes)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">path</span></td>
+        <td><p>The path to the file.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">FileAttributes</span></td>
+        <td><span class="parametername">fileAttributes</span></td>
+        <td><p>A bitwise combination of the enumeration values.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.ArgumentException</span></td>
+        <td><p><code data-dev-comment-type="paramref" class="paramref">path</code> is empty, contains only white spaces, contains invalid characters,
+or the file attribute is invalid.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.IO.PathTooLongException</span></td>
+        <td><p>The specified path, file name, or both exceed
+the system-defined maximum length. For example, on Windows-based platforms, paths must
+be less than 248 characters, and file names must be less than 260 characters.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.NotSupportedException</span></td>
+        <td><p><code data-dev-comment-type="paramref" class="paramref">path</code> is in an invalid format.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.IO.DirectoryNotFoundException</span></td>
+        <td><p>The specified path is invalid,
+(for example, it is on an unmapped drive).</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.IO.FileNotFoundException</span></td>
+        <td><p>The file cannot be found.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.UnauthorizedAccessException</span></td>
+        <td><p><code data-dev-comment-type="paramref" class="paramref">path</code> specified a file that is read-only.-or- This operation is not supported
+on the current platform.-or-
+<code data-dev-comment-type="paramref" class="paramref">path</code> specified a directory.-or- The caller does not have the required permission.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_IO_IFile_SetLastWriteTimeUtc_" data-uid="Terrasoft.IO.IFile.SetLastWriteTimeUtc*"></a>
+  <h4 id="Terrasoft_IO_IFile_SetLastWriteTimeUtc_System_String_DateTime_" data-uid="Terrasoft.IO.IFile.SetLastWriteTimeUtc(System.String,DateTime)">SetLastWriteTimeUtc(String, DateTime)</h4>
+  <div class="markdown level1 summary"><p>Sets the date and time, in coordinated universal time (UTC), that the specified file was last written to.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void SetLastWriteTimeUtc(string path, DateTime lastWriteTimeUtc)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">path</span></td>
+        <td><p>The file for which to set the date and time information.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">DateTime</span></td>
+        <td><span class="parametername">lastWriteTimeUtc</span></td>
+        <td><p>A DateTime containing the value to set
+for the last write date and time of path. This value is expressed in UTC time.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_IO_IFile_WriteAllBytes_" data-uid="Terrasoft.IO.IFile.WriteAllBytes*"></a>
+  <h4 id="Terrasoft_IO_IFile_WriteAllBytes_System_String_System_Byte___" data-uid="Terrasoft.IO.IFile.WriteAllBytes(System.String,System.Byte[])">WriteAllBytes(String, Byte[])</h4>
+  <div class="markdown level1 summary"><p>Creates a new file, writes the specified byte array to the file, and then closes
+the file. If the target file already exists, it is overwritten.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void WriteAllBytes(string path, byte[] bytes)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">path</span></td>
+        <td><p>The file to write to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Byte</span>[]</td>
+        <td><span class="parametername">bytes</span></td>
+        <td><p>The bytes to write to the file.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_IO_IFile_WriteAllLines_" data-uid="Terrasoft.IO.IFile.WriteAllLines*"></a>
+  <h4 id="Terrasoft_IO_IFile_WriteAllLines_System_String_IEnumerable_System_String__" data-uid="Terrasoft.IO.IFile.WriteAllLines(System.String,IEnumerable{System.String})">WriteAllLines(String, IEnumerable&lt;String&gt;)</h4>
+  <div class="markdown level1 summary"><p>Creates a new file, writes a collection of strings <code data-dev-comment-type="paramref" class="paramref">contents</code> to the file,
+and then closes the file.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void WriteAllLines(string path, IEnumerable&lt;string&gt; contents)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">path</span></td>
+        <td><p>The file to write to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">IEnumerable</span>&lt;<span class="xref">System.String</span>&gt;</td>
+        <td><span class="parametername">contents</span></td>
+        <td><p>The lines to write to the file.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.ArgumentException</span></td>
+        <td><p><code data-dev-comment-type="paramref" class="paramref">path</code> is a zero-length string, contains only white space,
+or contains one or more invalid characters defined by the
+<span class="xref">System.IO.Path.GetInvalidPathChars</span> method.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.ArgumentNullException</span></td>
+        <td><p>Either <code data-dev-comment-type="paramref" class="paramref"> path </code> or <code data-dev-comment-type="paramref" class="paramref">contents</code> is null.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.IO.DirectoryNotFoundException</span></td>
+        <td><p><code data-dev-comment-type="paramref" class="paramref">path</code> is invalid (for example, it is on an unmapped drive).</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.IO.IOException</span></td>
+        <td><p>An I/O error occurred while opening the file.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.NotSupportedException</span></td>
+        <td><p><code data-dev-comment-type="paramref" class="paramref">path</code> is in an invalid format.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Security.SecurityException</span></td>
+        <td><p>The caller does not have the required permission.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.UnauthorizedAccessException</span></td>
+        <td><p><code data-dev-comment-type="paramref" class="paramref">path</code> specifies a file that is read-only.</p>
+<p>-or-</p>
+This operation is not supported on the current platform.
+<p>-or-</p>
+<code data-dev-comment-type="paramref" class="paramref">path</code> is a directory.
+<p>-or-</p>
+The caller does not have the required permission.
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_IO_IFile_WriteAllText_" data-uid="Terrasoft.IO.IFile.WriteAllText*"></a>
+  <h4 id="Terrasoft_IO_IFile_WriteAllText_System_String_System_String_" data-uid="Terrasoft.IO.IFile.WriteAllText(System.String,System.String)">WriteAllText(String, String)</h4>
+  <div class="markdown level1 summary"><p>Creates a new file, writes the specified string to the file,
+and then closes the file. If the target file already exists, it is overwritten.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void WriteAllText(string path, string contents)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">path</span></td>
+        <td><p>The file to write to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">contents</span></td>
+        <td><p>The string to write to the file.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.ArgumentException</span></td>
+        <td><p><code data-dev-comment-type="paramref" class="paramref">path</code> is a zero-length string, contains only white space,
+or contains one or more invalid characters
+as defined by <span class="xref">Path.GetInvalidPathChars</span>.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.ArgumentNullException</span></td>
+        <td><p><code data-dev-comment-type="paramref" class="paramref">path</code> is null or <code data-dev-comment-type="paramref" class="paramref">contents</code> is empty.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.IO.PathTooLongException</span></td>
+        <td><p>The specified path, file name,
+or both exceed the system-defined maximum length. For example, on Windows-based platforms,
+paths must be less than 248 characters, and file names must be less than 260 characters.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.IO.DirectoryNotFoundException</span></td>
+        <td><p>The specified path
+is invalid (for example, it is on an unmapped drive).</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.IO.IOException</span></td>
+        <td><p>An I/O error occurred while opening the file.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.UnauthorizedAccessException</span></td>
+        <td><p><code data-dev-comment-type="paramref" class="paramref">path</code> specified a file that is read-only.-or-
+This operation is not supported on the current platform.-or- <code data-dev-comment-type="paramref" class="paramref">path</code>
+specified a directory.-or- The caller does not have the required permission.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.NotSupportedException</span></td>
+        <td><p><code data-dev-comment-type="paramref" class="paramref">path</code> is in an invalid format.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Security.SecurityException</span></td>
+        <td><p>The caller does not have
+the required permission.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_IO_IFile_WriteAllText_" data-uid="Terrasoft.IO.IFile.WriteAllText*"></a>
+  <h4 id="Terrasoft_IO_IFile_WriteAllText_System_String_System_String_Encoding_" data-uid="Terrasoft.IO.IFile.WriteAllText(System.String,System.String,Encoding)">WriteAllText(String, String, Encoding)</h4>
+  <div class="markdown level1 summary"><p>Creates a new file, writes the specified string to the file, and then closes the file.
+If the target file already exists, it is overwritten.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void WriteAllText(string path, string contents, Encoding encoding)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">path</span></td>
+        <td><p>The file to write to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">contents</span></td>
+        <td><p>The string to write to the file.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Encoding</span></td>
+        <td><span class="parametername">encoding</span></td>
+        <td><p>The encoding to apply to the string.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.ArgumentException</span></td>
+        <td><p><code data-dev-comment-type="paramref" class="paramref">path</code> is a zero-length string, contains only white space, or contains one or more
+invalid characters as defined by <span class="xref">Path.GetInvalidPathChars</span>.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.ArgumentNullException</span></td>
+        <td><p><code data-dev-comment-type="paramref" class="paramref">path</code> is <span class="xref">null</span> or <code data-dev-comment-type="paramref" class="paramref">contents</code> is empty.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.IO.PathTooLongException</span></td>
+        <td><p>The specified path, file name, or both exceed
+the system-defined maximum length. For example, on Windows-based platforms, paths must
+be less than 248 characters, and file names must be less than 260 characters.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.IO.DirectoryNotFoundException</span></td>
+        <td><p>The specified path is invalid
+(for example, it is on an unmapped drive).</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.IO.IOException</span></td>
+        <td><p>An I/O error occurred while opening the file.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.UnauthorizedAccessException</span></td>
+        <td><p><code data-dev-comment-type="paramref" class="paramref">path</code> specified a file that is read-only.-or- This operation is not supported on
+the current platform.-or-
+<code data-dev-comment-type="paramref" class="paramref">path</code> specified a directory.-or- The caller does not have the required permission.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.NotSupportedException</span></td>
+        <td><p><code data-dev-comment-type="paramref" class="paramref">path</code> is in an invalid format.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Security.SecurityException</span></td>
+        <td><p>The caller does not have the required permission.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="Terrasoft.Common.ReflectionUtilities.html#Terrasoft_Common_ReflectionUtilities_GetPropertyValue_System_Object_System_String_">ReflectionUtilities.GetPropertyValue(Object, String)</a>
+  </div>
+  <div>
+      <a class="xref" href="Terrasoft.Common.ReflectionUtilities.html#Terrasoft_Common_ReflectionUtilities_GetPropertyDefValue_System_Object_System_String_System_Object_">ReflectionUtilities.GetPropertyDefValue(Object, String, Object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Terrasoft.Common.ReflectionUtilities.html#Terrasoft_Common_ReflectionUtilities_TryGetPropertyValue_System_Object_System_String_System_Object__">ReflectionUtilities.TryGetPropertyValue(Object, String, out Object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Terrasoft.Common.ReflectionUtilities.html#Terrasoft_Common_ReflectionUtilities_HasProperty_System_Object_System_String_">ReflectionUtilities.HasProperty(Object, String)</a>
+  </div>
+  <div>
+      <a class="xref" href="Terrasoft.Common.ReflectionUtilities.html#Terrasoft_Common_ReflectionUtilities_GetPropertyValue_System_Object_System_String_System_Reflection_BindingFlags_">ReflectionUtilities.GetPropertyValue(Object, String, BindingFlags)</a>
+  </div>
+  <div>
+      <a class="xref" href="Terrasoft.Common.ReflectionUtilities.html#Terrasoft_Common_ReflectionUtilities_GetPropertyValueByPath_System_Object_System_String_">ReflectionUtilities.GetPropertyValueByPath(Object, String)</a>
+  </div>
+  <div>
+      <a class="xref" href="Terrasoft.Common.ReflectionUtilities.html#Terrasoft_Common_ReflectionUtilities_SetPropertyValue_System_Object_System_String_System_Object_">ReflectionUtilities.SetPropertyValue(Object, String, Object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Terrasoft.Common.ReflectionUtilities.html#Terrasoft_Common_ReflectionUtilities_TrySetPropertyValue_System_Object_System_String_System_Object_">ReflectionUtilities.TrySetPropertyValue(Object, String, Object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Terrasoft.Common.ValidateUtilities.html#Terrasoft_Common_ValidateUtilities_CheckArgumentNull_System_Object_System_String_">ValidateUtilities.CheckArgumentNull(Object, String)</a>
+  </div>
+  <div>
+      <a class="xref" href="Terrasoft.Common.ValidateUtilities.html#Terrasoft_Common_ValidateUtilities_CheckDependencyNull_System_Object_System_String_">ValidateUtilities.CheckDependencyNull(Object, String)</a>
+  </div>
+  <div>
+      <a class="xref" href="Terrasoft.Common.ValidateUtilities.html#Terrasoft_Common_ValidateUtilities_EnsureDependencyNotNull__1___0_System_String_">ValidateUtilities.EnsureDependencyNotNull&lt;T&gt;(T, String)</a>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>© 2021 Creatio. All rights reserved.</span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+
+<!-- Mirrored from academy.terrasoft.ua/api/netcoreapi/7.18.0/api/Terrasoft.IO.IFile.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Mar 2022 03:32:05 GMT -->
+</html>

@@ -1,0 +1,1038 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# ">
+  
+<!-- Mirrored from academy.terrasoft.ua/docs/7-18/developer/instrumenty_razrabotki/upravlenie_postavkami/workspaceconsole/obzor by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Mar 2022 00:20:07 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+          <!-- Google Tag Manager -->
+      <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          '../../../../../../../www.googletagmanager.com/gtm5445.html?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-KLLB8G');</script>
+      <!-- End Google Tag Manager -->
+        <meta charset="utf-8" />
+<link rel="canonical" href="obzor.html" />
+<meta name="description" content="Creatio предоставляет различные инструменты поставок функциональности.
+
+Инструменты управления поставками, которые предоставляет Creatio:
+
+Creatio IDE.
+	Утилита WorskspaceConsole.
+В этой статье будет рассмотрено управление поставками с использованием утилиты WorkspaceConsole." />
+<meta property="og:url" content="https://academy.terrasoft.ua/docs/7-18/developer/instrumenty_razrabotki/upravlenie_postavkami/workspaceconsole/obzor" />
+<meta property="og:title" content="Управление поставками в WorkspaceConsole" />
+<meta property="og:description" content="Creatio предоставляет различные инструменты поставок функциональности.
+
+Инструменты управления поставками, которые предоставляет Creatio:
+
+Creatio IDE.
+	Утилита WorskspaceConsole.
+В этой статье будет рассмотрено управление поставками с использованием утилиты WorkspaceConsole." />
+<meta name="Generator" content="Drupal 9 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="../../../../../themes/custom/creatio/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="revision" href="obzor.html" />
+
+    <title>Управление поставками в WorkspaceConsole | Creatio Academy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&amp;family=Open+Sans:ital,wght@0,300;0,400;0,600;1,400&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" media="all" href="../../../../../sites/default/files/css/css_6lTP66__-yc6QXFp1zOwoeJ0HVigoYZP-SeoLLii000.css" />
+<link rel="stylesheet" media="all" href="../../../../../sites/default/files/css/css_XQJDNhkF3xH5SZCcY-PI89Zu4nYIzQ5oR3SnUKyfXJU.css" />
+<link rel="stylesheet" media="print" href="../../../../../sites/default/files/css/css_Zn4VHvcniOOtUwkIVwXzYr_0AI9gUVgZcPqaH4ViagU.css" />
+
+    
+  </head>
+  <body class="path-node page-node-type-developer-documentation">
+          <!-- Google Tag Manager (noscript) -->
+      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KLLB8G"
+                        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+      <!-- End Google Tag Manager (noscript) -->
+    
+        
+      <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    <div class="creatio-page d-flex flex-column">
+        <div class="region region-informer">
+    <div id="block-terrasoftpidtrimueukrainu" class="block block-simple-block block-simple-blockterrasoft-pidtrimue-ukrainu">
+  
+    
+      <style type="text/css">
+<!--/*--><![CDATA[/* ><!--*/
+@import url(../../../../../../../www.terrasoft.ua/themes/custom/creatio/css/components/informer.css)
+
+/*--><!]]>*/
+</style><div class="ts-swu">
+<div class="creatio-container">
+<div class="ts-swu__cont">
+<div><a class="ts-swu__link" href="https://www.terrasoft.ua/terrasoft-stands-with-ukraine" target="_blank">Україна понад усе!</a> <span><a href="https://www.terrasoft.ua/terrasoft-stands-with-ukraine" target="_blank">Приєднуйтеся</a> до допомоги!</span></div>
+</div>
+</div></div>
+
+  </div>
+
+  </div>
+
+  
+  <header role="banner">
+          <div class="creatio-region creatio-region_top">
+        <div class="creatio-container">
+            <div class="region region-top">
+    <div id="block-menutoggle" class="block block-simple-block block-simple-blockmenu-toggle">
+  
+    
+      <div class="menu-toggle"><span> </span></div>
+
+  </div>
+<div id="block-logowhite-2" class="block block-simple-block block-simple-blocklogo-white">
+  
+    
+      <p><a class="site-logo" href="../../../../../../index.html" rel="home"><img src="../../../../../themes/custom/creatio/logo-white.svg" /></a></p>
+
+  </div>
+<div id="block-search" class="block block-simple-block block-simple-blocksearch">
+  
+    
+      <div class="search">
+<form action="https://academy.terrasoft.ua/search" class="search-form" method="get"><input class="search-form__input" name="search" placeholder="Поиск" type="search" /><input class="search-form__button" type="submit" value="Поиск" /> </form>
+
+<div class="search-toggle"> </div>
+</div>
+
+  </div>
+<nav role="navigation" aria-labelledby="block-sitesua-menu" id="block-sitesua" class="block block-menu navigation menu--sites-ua">
+            
+  <h2 class="visually-hidden" id="block-sitesua-menu">Sites UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="https://www.terrasoft.ua/" rel="nofollow" target="_blank">Terrasoft</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://community.terrasoft.ua/" rel="nofollow" target="_blank">Community</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://marketplace.terrasoft.ua/" rel="nofollow" target="_blank">Marketplace</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+<div id="block-usermenu" class="block block-ts-user block-ts-user-menu-block">
+  
+    
+      <ul class="user-menu">
+      <li class="user-menu__item">
+      <a class="user-menu__link" href="https://profile.terrasoft.ua/user/login?destination=academy/ua/docs/7-18/developer/instrumenty_razrabotki/upravlenie_postavkami/workspaceconsole/obzor">Войти</a>
+    </li>
+  </ul>
+
+  </div>
+<div id="block-usermenumobile" class="block block-ts-user block-ts-user-menu-mobile-block">
+  
+    
+      <ul class="user-menu-mobile">
+      <li class="user-menu-mobile__item">
+      <div class="user-menu-mobile__user user-menu-mobile__user_icon"></div>
+      <ul class="user-menu-mobile__submenu">
+        <li class="user-menu-mobile__subitem">
+          <a class="user-menu-mobile__sublink" href="https://profile.terrasoft.ua/user/login?destination=academy/ua/docs/7-18/developer/instrumenty_razrabotki/upravlenie_postavkami/workspaceconsole/obzor">Войти</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  </div>
+
+  </div>
+
+        </div>
+      </div>
+              <div class="creatio-region creatio-region_header">
+        <div class="creatio-container">
+            <div class="region region-header">
+    <div id="block-logo" class="block block-simple-block block-simple-blocklogo">
+  
+    
+      <p><a class="site-logo" href="../../../../../../index.html" rel="home"><img src="../../../../../themes/custom/creatio/logo.svg" /></a></p>
+
+  </div>
+<nav role="navigation" aria-labelledby="block-osnovnayanavigaciyaua-menu" id="block-osnovnayanavigaciyaua" class="block block-menu navigation menu--main-ua">
+            
+  <h2 class="visually-hidden" id="block-osnovnayanavigaciyaua-menu">Основная навигация UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="../../../../../index.html" data-drupal-link-system-path="&lt;front&gt;">Документация</a>
+              </li>
+                <li class="menu-item">
+        <a href="../../../../../../trainings.html">Тренинги</a>
+              </li>
+                <li class="menu-item">
+        <a href="../../../../../certification.html" data-drupal-link-system-path="node/3084">Сертификация и тестирование</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+<nav role="navigation" aria-labelledby="block-sitesua-2-menu" id="block-sitesua-2" class="block block-menu navigation menu--sites-ua">
+            
+  <h2 class="visually-hidden" id="block-sitesua-2-menu">Sites UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="https://www.terrasoft.ua/" rel="nofollow" target="_blank">Terrasoft</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://community.terrasoft.ua/" rel="nofollow" target="_blank">Community</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://marketplace.terrasoft.ua/" rel="nofollow" target="_blank">Marketplace</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+
+  </div>
+
+        </div>
+      </div>
+              <div class="creatio-region creatio-region_breadcrumb">
+        <div class="creatio-container">
+            <div class="region region-breadcrumb">
+    <div id="block-logowhite" class="block block-simple-block block-simple-blocklogo-white">
+  
+    
+      <p><a class="site-logo" href="../../../../../../index.html" rel="home"><img src="../../../../../themes/custom/creatio/logo-white.svg" /></a></p>
+
+  </div>
+<div id="block-breadcrumbnaviagtion" class="block block-ts-nav block-ts-nav-bread">
+  
+    
+      <nav class="breadcrumb"><ol class="ts-nav-breadcrumb__list"><li class="ts-nav-breadcrumb__item"><a href="../../../../../index.html" class="ts-nav-breadcrumb__link" title="Документация">Документация</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../../../index2132.html?vid_1=2" class="ts-nav-breadcrumb__link" title="Для разработчика">Для разработчика</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../instrumenty_razrabotki.html" class="ts-nav-breadcrumb__link" title="Инструменты разработки" hreflang="zxx">Инструменты разработки</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../upravlenie_postavkami.html" class="ts-nav-breadcrumb__link" title="Управление поставками" hreflang="ru">Управление поставками</a></li>
+<li class="ts-nav-breadcrumb__item ts-nav-breadcrumb__item_mobile"><a href="../../../development_tools/transferring_solutions/workspaceconsole.html" class="ts-nav-breadcrumb__link" title="WorkspaceConsole" hreflang="ru">WorkspaceConsole</a></li>
+<li class="ts-nav-breadcrumb__item"><span class="ts-nav-breadcrumb__link ts-nav-breadcrumb__link_current" title="Обзор">Обзор</span></li>
+</ol>
+</nav>
+
+  </div>
+<div id="block-search-2" class="block block-simple-block block-simple-blocksearch">
+  
+    
+      <div class="search">
+<form action="https://academy.terrasoft.ua/search" class="search-form" method="get"><input class="search-form__input" name="search" placeholder="Поиск" type="search" /><input class="search-form__button" type="submit" value="Поиск" /> </form>
+
+<div class="search-toggle"> </div>
+</div>
+
+  </div>
+
+  </div>
+
+        </div>
+      </div>
+      </header>
+
+  <div class="creatio-region creatio-region_main">
+    <div class="creatio-container">
+                <div class="region region-breadcrumb-mobile">
+    <div id="block-breadcrumbnaviagtion-2" class="block block-ts-nav block-ts-nav-bread">
+  
+    
+      <nav class="breadcrumb"><ol class="ts-nav-breadcrumb__list"><li class="ts-nav-breadcrumb__item"><a href="../../../../../index.html" class="ts-nav-breadcrumb__link" title="Документация">Документация</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../../../index2132.html?vid_1=2" class="ts-nav-breadcrumb__link" title="Для разработчика">Для разработчика</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../instrumenty_razrabotki.html" class="ts-nav-breadcrumb__link" title="Инструменты разработки" hreflang="zxx">Инструменты разработки</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../upravlenie_postavkami.html" class="ts-nav-breadcrumb__link" title="Управление поставками" hreflang="ru">Управление поставками</a></li>
+<li class="ts-nav-breadcrumb__item ts-nav-breadcrumb__item_mobile"><a href="../../../development_tools/transferring_solutions/workspaceconsole.html" class="ts-nav-breadcrumb__link" title="WorkspaceConsole" hreflang="ru">WorkspaceConsole</a></li>
+<li class="ts-nav-breadcrumb__item"><span class="ts-nav-breadcrumb__link ts-nav-breadcrumb__link_current" title="Обзор">Обзор</span></li>
+</ol>
+</nav>
+
+  </div>
+
+  </div>
+
+      
+      <main class="creatio-main" role="main">
+                                                    
+        <div class="creatio-content creatio-content_small">
+          <div class="creatio-content__inner creatio-content__inner_bg">
+                            <div class="region region-messages">
+    <div data-drupal-messages-fallback class="hidden"></div>
+
+  </div>
+
+            
+              <div class="region region-content">
+    <div id="block-creatio-page-title" class="block block-core block-page-title-block">
+  
+    
+      
+  <h1 class="page-title"><span class="field field--name-title field--type-string field--label-hidden">Управление поставками в WorkspaceConsole</span>
+</h1>
+
+
+  </div>
+<div id="block-creatio-content" class="block block-system block-system-main-block">
+  
+    
+      
+<article data-history-node-id="2138" role="article" about="/docs/7-18/developer/instrumenty_razrabotki/upravlenie_postavkami/workspaceconsole/obzor" class="node node--type-developer-documentation node--view-mode-full">
+
+  
+    
+
+  
+  <div class="node__content">
+      <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocknodedeveloper-documentationfield-difficulty">
+  
+    
+      
+            <div class="field field--name-field-difficulty field--type-entity-reference field--label-hidden field__item"><div about="/docs/7-18/taxonomy/term/123" id="taxonomy-term-123" class="taxonomy-term vocabulary-difficulty">
+  
+  
+  <div class="content">
+      <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocktaxonomy-termdifficultyfield-icon">
+  
+    
+      
+            <div class="field field--name-field-icon field--type-image field--label-hidden field__item">  <img src="../../../../../sites/default/files/difficulty/medium.svg" alt="" loading="lazy" typeof="foaf:Image" />
+
+</div>
+      
+  </div>
+<div class="block block-layout-builder block-field-blocktaxonomy-termdifficultyname">
+  
+    
+      
+            <div class="field field--name-name field--type-string field--label-hidden field__item"><span style="color: #F57E20;">Средний</span></div>
+      
+  </div>
+
+    </div>
+  </div>
+
+  </div>
+</div>
+</div>
+      
+  </div>
+<div class="block block-ts-doc block-ts-doc-downloads">
+  
+    
+      <a href="../../../../../sites/default/files/pdf/node/2138/Upravlenie_postavkami_v_WorkspaceConsole_.pdf" target="_blank">PDF</a>
+  </div>
+<div class="block block-ts-doc block-ts-doc-versions">
+  
+    
+        <div class="ts-doc-versions">
+    <select class="ts-doc-versions__select">
+                              <option value="/docs/8-0/developer/instrumenty_razrabotki/upravlenie_postavkami/workspaceconsole/obzor">Версия 8.0</option>
+                                                <option value="/docs/7-18/developer/instrumenty_razrabotki/upravlenie_postavkami/workspaceconsole/obzor" selected>Версия 7.18</option>
+                              <option value="/docs/7-17/developer/instrumenty_razrabotki/upravlenie_postavkami/workspaceconsole/obzor">Версия 7.17</option>
+                              <option value="/docs/7-16/developer/instrumenty_razrabotki/upravlenie_postavkami/workspaceconsole/obzor">Версия 7.16</option>
+          </select>
+  </div>
+
+  </div>
+
+    </div>
+  </div>
+  <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocknodedeveloper-documentationbody">
+  
+    
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><p>Creatio предоставляет различные инструменты поставок функциональности.</p>
+
+<p><strong>Инструменты управления поставками</strong>, которые предоставляет Creatio:</p>
+
+<ul><li>Creatio IDE.</li>
+	<li>Утилита WorskspaceConsole.</li>
+</ul><p>В этой статье будет рассмотрено управление поставками с использованием утилиты WorkspaceConsole.</p>
+
+<p><strong>WorkspaceConsole</strong> — это утилита, которая предназначена для выполнения операций с <a href="../../../../../developer/instrumenty_razrabotki/pakety/obshchiye_printsipy_raboty_s_paketami/obzor.html?id=15121">пакетами</a> и <a href="../../../../../developer/instrumenty_razrabotki/creatio_ide/klientskij_modul/obzor.html?id=15102">схемами конфигурационных элементов</a> Creatio.</p>
+
+<p><strong>Использование</strong> утилиты WorkspaceConsole в качестве инструмента переноса решений позволяет:</p>
+
+<ul><li>Переносить <a href="../../../../../developer/instrumenty_razrabotki/pakety/obshchiye_printsipy_raboty_s_paketami/obzor.html?id=15121">пакеты</a> и <a href="../../../../../developer/instrumenty_razrabotki/creatio_ide/klientskij_modul/obzor.html?id=15102">схемы конфигурационных элементов</a> между <a href="../../../../../developer/instrumenty_razrabotki/upravlenie_postavkami/rabochaya_sreda/obzor.html?id=15201">рабочими средами</a> и конфигурациями.</li>
+	<li>Устанавливать новые пакеты при обновлении или при экспорте из среды разработки.</li>
+	<li>Переносить привязанные к пакету данные, например, наполнение справочников, новые системные настройки, демонстрационные записи раздела и т. д.</li>
+	<li>Переносить ресурсы для локализации.</li>
+	<li>Создавать и переносить рабочие пространства между рабочими средами.</li>
+</ul><p>Перед использованием утилиты WorkspaceConsole необходимо выполнить ее настройку.</p>
+
+<h2>Настройка утилиты WorkspaceConsole<a class="title-anchor" href="#title-2138-7" id="title-2138-7"> </a></h2>
+
+<ol><li>
+	<p>Узнайте значение используемой строки подключения.</p>
+
+	<p>Для этого откройте файл <span class="filled">..\Terrasoft.WebApp\DesktopBin\WorkspaceConsole\Terrasoft.Tools.WorkspaceConsole.exe.config</span>. Строка подключения содержится в атрибуте <span class="filled">connectionStringName</span> XML-элемента <span class="filled">&lt;db&gt;</span>.</p>
+
+	<div class="code">
+	<div class="code__widgets">
+	<div class="code__top">
+	<div class="code__title">Файл <span class="filled">Terrasoft.Tools.WorkspaceConsole.exe.config</span></div>
+	</div>
+
+	<div class="code__source">
+	<pre class="prettyprint">
+&lt;terrasoft&gt;
+    ...
+    &lt;db&gt;
+        &lt;general connectionStringName="db" securityEngineType="Terrasoft.DB.MSSql.MSSqlSecurityEngine, Terrasoft.DB.MSSql" ... /&gt;
+    &lt;/db&gt;
+    ...
+&lt;/terrasoft&gt;
+</pre>
+	</div>
+	</div>
+	</div>
+	</li>
+	<li>
+	<p>Отредактируйте строку подключения.</p>
+
+	<p>Для этого откройте файл <span class="filled">ConnectionStrings.config</span>, который находится в корневом каталоге приложения. Строка подключения содержится в атрибуте <span class="filled">name</span> XML-элемента <span class="filled">&lt;connectionStrings&gt;</span>. Значение атрибута <span class="filled">name</span> файла <span class="filled">ConnectionStrings.config</span> должно совпадать со значением атрибута <span class="filled">connectionStringName</span> файла <span class="filled">Terrasoft.Tools.WorkspaceConsole.exe.config</span>.</p>
+
+	<div class="code">
+	<div class="code__widgets">
+	<div class="code__top">
+	<div class="code__title">Файл <span class="filled">ConnectionStrings.config</span></div>
+	</div>
+
+	<div class="code__source">
+	<pre class="prettyprint">
+&lt;connectionStrings&gt;
+    &lt;add name="db" connectionString="Data Source=dbserver\MSSQL2016; Initial Catalog=YourDBName; Persist Security Info=True; MultipleActiveResultSets=True; Integrated Security = true; Pooling = true; Max Pool Size = 100" /&gt;
+    &lt;add name="dbOracle" connectionString="Data Source=(DESCRIPTION = (ADDRESS_LIST = (ADDRESS = (PROTOCOL = TCP)(HOST = dbOracleServer.yourdomain.com)(PORT = 1521))) (CONNECT_DATA = (SERVICE_NAME = TSOra10) (SERVER = DEDICATED)));User Id=CreatioUser;Password=CreatioUserPassword;" /&gt;
+&lt;/connectionStrings&gt;               
+</pre>
+	</div>
+	</div>
+	</div>
+
+	<div class="message">
+	<p><span class="message__bold">На заметку.</span> Как правило, в конфигурационном файле по умолчанию настроено только две строки подключения. Строка с названием <span class="filled">"db"</span> используется для подключения к базе данных MS SQL Server, а строка с названием <span class="filled">"dbOracle"</span> — к базе данных Oracle.</p>
+	</div>
+
+	<p>Если с помощью WorkspaceConsole необходимо выполнить разовую операцию, то утилиту можно запустить с параметром <span class="filled"><nobr>-webApplicationPath</nobr></span>. В этом параметре необходимо указать путь к каталогу с установленным приложением. В таком случае утилита самостоятельно определит все необходимые параметры подключения к базе данных из файла <span class="filled">ConnectionStrings.config</span>. При этом параметры подключения из файла <span class="filled">Terrasoft.Tools.WorkspaceConsole.exe.config</span> будут проигнорированы.</p>
+	</li>
+	<li>
+	<p>В файле <span class="filled">Terrasoft.Tools.WorkspaceConsole.exe.config</span> установите значение <span class="filled">true</span> для атрибута <span class="filled">enabled</span> элемента <span class="filled">loadFromRemoteSources</span>.</p>
+
+	<div class="code">
+	<div class="code__widgets">
+	<div class="code__source">
+	<pre class="prettyprint">
+&lt;loadFromRemoteSources enabled="true" /&gt;
+</pre>
+	</div>
+	</div>
+	</div>
+	</li>
+	<li>
+	<p>Установите утилиту WorkspaceConsole.</p>
+
+	<p>Для этого с правами администратора запустите на выполнение предустановленный пакетный файл команд, который находится по пути <span class="filled">..\Terrasoft.WebApp\DesktopBin\WorkspaceConsole\</span>. Это необходимо для установки версии исполняемого файла утилиты и библиотек, которые используются утилитой.</p>
+
+	<p>Пакетные файлы команд утилиты WorkspaceConsole:</p>
+
+	<ul><li>Для <strong>32-битной операционной системы</strong> необходимо запустить файл <span class="filled">PrepareWorkspaceConsole.x86.bat</span>.</li>
+		<li>Для <strong>64-битной операционной системы</strong> необходимо запустить файл <span class="filled">PrepareWorkspaceConsole.x64.bat</span>.</li>
+	</ul></li>
+	<li>
+	<p>Настройте утилиту на выполнение операций с хранилищем SVN (опционально).</p>
+
+	<p>Для этого скопируйте файлы <span class="filled">SharpPlink-x64.svnExe</span>, <span class="filled">SharpSvn.dll</span> и <span class="filled">SharpSvn-DB44-20-x64.svnDll</span> из соответствующего каталога в каталог <span class="filled">...\Terrasoft.WebApp\DesktopBin\WorkspaceConsole</span>.</p>
+
+	<ul><li>Для <strong>32-битной операционной системы</strong> скопируйте файлы из каталога <span class="filled">...\Terrasoft.WebApp\DesktopBin\WorkspaceConsole\x86</span>.</li>
+		<li>Для <strong>64-битной операционной системы</strong> скопируйте файлы из каталога <span class="filled">...\Terrasoft.WebApp\DesktopBin\WorkspaceConsole\x64</span>.</li>
+	</ul></li>
+</ol><h2>Использование утилиты WorkspaceConsole<a class="title-anchor" href="#title-2138-3" id="title-2138-3"> </a></h2>
+
+<p>Исполняемый файл утилиты <span class="filled">Terrasoft.Tools.WorkspaceConsole.exe</span> расположен в каталоге <span class="filled">..\Terrasoft.WebApp\DesktopBin\WorkspaceConsole</span>, а версия утилиты совпадает с версией приложения.</p>
+
+<div class="message message_warning">
+<p><span class="message__bold message__bold_warning">Важно.</span> Версия утилиты WorkspaceConsole должна совпадать с версией приложения Creatio. Например, если текущая версия приложения 7.18.1.1794, а пакеты необходимо обновить до версии 7.18.2.1658, то используйте утилиту версии 7.18.2.1658. Чтобы получить утилиту требуемой версии, обратитесь в службу поддержки.</p>
+</div>
+
+<p>Утилита WorkspaceConsole работает напрямую с базой данных приложения. Поэтому для корректной работы утилиты необходимо внести информацию о базе данных в конфигурационный файл <span class="filled">Terrasoft.Tools.WorkspaceConsole.exe.config</span> утилиты. Если приложение развернуто в облаке, то работать с утилитой могут только сотрудники отдела облачных сервисов. В таком случае для переноса изменений необходимо обратиться в службу поддержки.</p>
+
+<p>Команды для <span class="filled">WorkspaceConsole</span> рекомендуется формировать в пакетном файле (*.bat или *.cmd), созданном в текстовом редакторе.</p>
+
+<p>Чтобы <strong>выполнить перенос решений с помощью утилиты WorkspaceConsole</strong>:</p>
+
+<ol><li>Проверьте привязки данных.</li>
+	<li>Выполните резервное копирование базы данных.</li>
+	<li>Экспортируйте пакеты.</li>
+	<li>Импортируйте пакеты.</li>
+	<li>Перезапустите приложение в IIS.</li>
+</ol><h3>1. Проверить привязки данных<a class="title-anchor" href="#title-2138-8" id="title-2138-8"> </a></h3>
+
+<p>Перед экспортом пакета проверьте правильность <a href="../../../../../developer/instrumenty_razrabotki/pakety/privyazat_dannye.html?id=15123">привязки данных</a> к пакету. К привязанным данным относятся наполнение справочников, новые системные настройки, демонстрационные записи раздела и т. д.</p>
+
+<p>Если раздел был создан при помощи мастера, то данные, необходимые для работы раздела, автоматически привязываются мастером раздела. Чтобы после импорта раздел отобразился в рабочем месте, необходимо привязать соответствующее значение объекта <span class="filled">SysModuleInWorkplace</span>.</p>
+
+<h3>2. Выполнить резервное копирование базы данных<a class="title-anchor" href="#title-2138-9" id="title-2138-9"> </a></h3>
+
+<p>Перед внесением изменений в приложение с помощью утилиты WorkspaceConsole выполните резервное копирование базы данных. Это позволит восстановить приложение при некорректном использовании команд и параметров утилиты.</p>
+
+<h3>3. Экспортировать пакеты<a class="title-anchor" href="#title-2138-4" id="title-2138-4"> </a></h3>
+
+<p>Утилита WorkspaceConsole позволяет экспортировать пакет из базы данных или из хранилища SVN.</p>
+
+<h4>Экспортировать пакеты из базы данных<a class="title-anchor" href="#title-2138-9" id="title-2138-9"> </a></h4>
+
+<ol><li>
+	<p>Cформируйте команду для экспорта пакетов.</p>
+
+	<div class="table">
+	<div class="table__caption">Параметры WorkspaceConsole для экспорта пакетов из базы данных</div>
+
+	<table><tbody><tr><th width="30%">Параметр</th>
+				<th>Значение</th>
+				<th>Описание</th>
+			</tr><tr><th><span class="filled"><nobr>-operation</nobr></span></th>
+				<td><span class="filled">SaveDBContent</span></td>
+				<td>
+				<p>Сохраняет содержимое базы данных в файловую систему. Тип содержимого определяется значением параметра <span class="filled"><nobr>-contentTypes</nobr></span>. Место в файловой системе, куда будет экспортировано содержимое, определяется параметром <span class="filled"><nobr>-destinationPath</nobr></span>.</p>
+
+				<p>Требует указания одного из параметров <span class="filled"><nobr>-webApplicationPath</nobr></span> или <span class="filled"><nobr>-configurationPath</nobr></span>.</p>
+				</td>
+			</tr><tr><th><span class="filled"><nobr>-contentTypes</nobr></span></th>
+				<td><span class="filled">Repository</span></td>
+				<td>Тип содержимого, экспортируемого из базы данных на диск. Значение <span class="filled">Repository</span> определяет экспорт рабочего пространства, имя которого задается значением параметра <span class="filled"><nobr>-workspaceName</nobr></span>, в каталог, путь к которому задается значением параметра <span class="filled"><nobr>-destinationPath</nobr></span>.</td>
+			</tr><tr><th><span class="filled"><nobr>-workspaceName</nobr></span></th>
+				<td><span class="key">Название рабочего пространства</span></td>
+				<td>Название рабочего пространства (конфигурации), в котором выполняется операция. По умолчанию все пользователи работают в рабочем пространстве <span class="filled">Default</span>.</td>
+			</tr><tr><th><span class="filled"><nobr>-destinationPath</nobr></span></th>
+				<td><span class="key">Путь к локальному каталогу</span></td>
+				<td>Путь к локальному каталогу на диске. В этот каталог будут экспортированы *.gz-архивы пакетов.</td>
+			</tr><tr><th><span class="filled"><nobr>-webApplicationPath</nobr></span></th>
+				<td><span class="key">Путь к локальному каталогу</span></td>
+				<td>Путь к каталогу на диске, в который установлено приложение Creatio. По этому пути из файла <span class="filled">ConnectionStrings.config</span> будет считана информация по соединению с базой данных. Если параметр не указан, то будет установлено соединение с базой данных, указанной в строке соединения в конфигурационном файле утилиты.</td>
+			</tr><tr><th><span class="filled"><nobr>-configurationPath</nobr></span></th>
+				<td><span class="key">Путь к локальному каталогу</span></td>
+				<td>Путь к каталогу <span class="filled">..\Terrasoft.WebApp\<wbr></wbr>Terrasoft.Configuration</span>. В этот каталог экспортируются исходные коды и ресурсы схем пользовательских пакетов в режиме разработки в <a href="../../../../../developer/instrumenty_razrabotki/pakety/fajlovyj_kontent/obzor.html?id=15126">файловой системе</a>.</td>
+			</tr></tbody></table></div>
+
+	<p>Сигнатура команды, которую необходимо выполнить в интерпретаторе команд (консоли) Windows, для выполнения операции экспорта пакетов из базы данных:</p>
+
+	<div class="code">
+	<div class="code__widgets">
+	<div class="code__source">
+	<pre class="prettyprint">
+[Путь к WorkspaceConsole]\Terrasoft.Tools.WorkspaceConsole.exe -operation=SaveDBContent -contentTypes=Repository -workspaceName=[Название рабочего пространства] -destinationPath=[Путь к локальному каталогу] -webApplicationPath=[Путь к каталогу приложения] -configurationPath=[Путь к локальному каталогу]
+</pre>
+	</div>
+	</div>
+	</div>
+	</li>
+	<li>Запустите утилиту.</li>
+</ol><div class="message">
+<p><span class="message__bold">На заметку.</span> Во время выполнения операции экспорта пакетов, экспортируются все пакеты рабочего пространства. Процесс может занять несколько десятков минут.</p>
+</div>
+
+<p>В результате выполнения архивы пакетов указанного рабочего пространства будут экспортированы в локальный каталог.</p>
+
+<h4>Экспортировать пакеты из хранилища SVN<a class="title-anchor" href="#title-2138-5" id="title-2138-5"> </a></h4>
+
+<ol><li>
+	<p>Cформируйте команду для экспорта пакетов.</p>
+
+	<div class="table">
+	<div class="table__caption">Параметры WorkspaceConsole для экспорта пакетов из SVN</div>
+
+	<table><tbody><tr><th width="30%">Параметр</th>
+				<th>Значение</th>
+				<th>Описание</th>
+			</tr><tr><th><span class="filled"><nobr>-operation</nobr></span></th>
+				<td><span class="filled">SaveVersionSvnContent</span></td>
+				<td>Выгружает иерархию пакетов в виде *.zip-архивов. Место в файловой системе, куда будет экспортировано содержимое, определяется параметром <span class="filled"><nobr>-destinationPath</nobr></span>. SVN-хранилища определяются параметром <span class="filled"><nobr>-sourcePath</nobr></span>.</td>
+			</tr><tr><th><span class="filled"><nobr>-workspaceName</nobr></span></th>
+				<td><span class="key">Название рабочего пространства</span></td>
+				<td>Название рабочего пространства (конфигурации), в котором выполняется операция. По умолчанию все пользователи работают в рабочем пространстве <span class="filled">Default</span>.</td>
+			</tr><tr><th><span class="filled"><nobr>-destinationPath</nobr></span></th>
+				<td><span class="key">Путь к локальному каталогу</span></td>
+				<td>Путь к локальному каталогу на диске. В этот каталог будут экспортированы *.gz-архивы пакетов.</td>
+			</tr><tr><th><span class="filled"><nobr>-workingCopyPath</nobr></span></th>
+				<td><span class="key">Путь к локальному каталогу</span></td>
+				<td>Локальный каталог для рабочей копии пакетов, которые хранятся в SVN.</td>
+			</tr><tr><th><span class="filled"><nobr>-sourcePath</nobr></span></th>
+				<td><span class="key">Путь к SVN-хранилищу</span></td>
+				<td>Адрес хранилища SVN для хранения структуры и метаданных пакетов. Может принимать несколько значений, указанных через запятую.</td>
+			</tr><tr><th><span class="filled"><nobr>-packageName</nobr></span></th>
+				<td><span class="key">Имя пакета</span></td>
+				<td>Имя пакета в SVN-хранилище, которое будет использоваться для экспорта. Все пакеты, от которых зависит текущий пакет, также будут задействованы.</td>
+			</tr><tr><th><span class="filled"><nobr>-packageVersion</nobr></span></th>
+				<td><span class="key">Версия пакета</span></td>
+				<td>Версия пакета в SVN-хранилище, которое будет использоваться для экспорта.</td>
+			</tr><tr><th><span class="filled"><nobr>-sourceControlLogin</nobr></span></th>
+				<td><span class="key">Имя пользователя SVN</span></td>
+				<td>Логин пользователя хранилища SVN.</td>
+			</tr><tr><th><span class="filled"><nobr>-sourceControlPassword</nobr></span></th>
+				<td><span class="key">Пароль пользователя SVN</span></td>
+				<td>Пароль пользователя хранилища SVN.</td>
+			</tr><tr><th><span class="filled"><nobr>-cultureName</nobr></span></th>
+				<td><span class="key">Языковая культура</span></td>
+				<td>Код языковой культуры. Например, <span class="filled">en-US</span>.</td>
+			</tr><tr><th><span class="filled"><nobr>-excludeDependentPackages</nobr></span></th>
+				<td><span class="filled">true</span> или <span class="filled">false</span></td>
+				<td>Признак необходимости экспорта пакетов, от которых зависит пакет, указанный в параметре <span class="filled"><nobr>-packageName</nobr></span>.</td>
+			</tr><tr><th><span class="filled"><nobr>-logPath</nobr></span></th>
+				<td><span class="key">Путь к локальному каталогу</span></td>
+				<td>Путь к каталогу, в который будет сохранен файл с логом операции. Название файла состоит из даты и времени запуска операции. Необязательный параметр.</td>
+			</tr></tbody></table></div>
+
+	<p>Сигнатура команды, которую необходимо выполнить в интерпретаторе команд (консоли) Windows, для выполнения операции экспорта пакетов из SVN-хранилища:</p>
+
+	<div class="code">
+	<div class="code__widgets">
+	<div class="code__source">
+	<pre class="prettyprint">
+[Путь к WorkspaceConsole]\Terrasoft.Tools.WorkspaceConsole.exe -operation=SaveVersionSvnContent -workspaceName=[Название рабочего пространства] -destinationPath=[Путь к локальному каталогу] -workingCopyPath=[Путь к локальному каталогу] -sourcePath=[Путь к SVN-хранилищу] -packageName=[Имя пакета] -packageVersion=[Версия пакета] -sourceControlLogin=[Имя пользователя SVN] -sourceControlPassword=[Пароль пользователя SVN] -cultureName=[Языковая культура] -excludeDependentPackages=true -logPath=[Путь к локальному каталогу]  
+</pre>
+	</div>
+	</div>
+	</div>
+	</li>
+	<li>Запустите утилиту.</li>
+</ol><p>В результате выполнения архивы пакетов указанного рабочего пространства будут экспортированы в локальный каталог.</p>
+
+<h3>4. Импортировать пакеты<a class="title-anchor" href="#title-2138-6" id="title-2138-6"> </a></h3>
+
+<ol><li>
+	<p>Cформируйте команду для импорта пакетов.</p>
+
+	<div class="table">
+	<div class="table__caption">Параметры WorkspaceConsole для импорта пакетов в базу данных</div>
+
+	<table><tbody><tr><th width="30%">Параметр</th>
+				<th>Значение</th>
+				<th>Описание</th>
+			</tr><tr><th><span class="filled"><nobr>-operation</nobr></span></th>
+				<td><span class="filled">InstallFromRepository</span></td>
+				<td>
+				<p>Импортирует в конфигурацию содержимое и метаданные пакетов из *.zip-архивов. При необходимости выполняются привязанные SQL-скрипты, перегенерация исходных кодов, установка привязанных данных. Работает только с измененными или новыми пакетами и их элементами. Требует указания одного из параметров <span class="filled"><nobr>-webApplicationPath</nobr></span> или <span class="filled"><nobr>-configurationPath</nobr></span>.</p>
+
+				<p>Требует указания параметра <span class="filled"><nobr>-confRuntimeParentDirectory</nobr></span>.</p>
+				</td>
+			</tr><tr><th><span class="filled"><nobr>-packageName</nobr></span></th>
+				<td><span class="key">Имя пакета</span></td>
+				<td>Имя пакета в конфигурации, которая указана в параметре <span class="filled"><nobr>-workspaceName</nobr></span>. Все пакеты, от которых зависит текущий пакет, также будут задействованы. Если параметр не указан, то будут задействованы все пакеты конфигурации.</td>
+			</tr><tr><th><span class="filled"><nobr>-workspaceName</nobr></span></th>
+				<td><span class="key">Название рабочего пространства</span></td>
+				<td>Название рабочего пространства (конфигурации), в котором выполняется операция. По умолчанию все пользователи работают в рабочем пространстве <span class="filled">Default</span>.</td>
+			</tr><tr><th><span class="filled"><nobr>-sourcePath</nobr></span></th>
+				<td><span class="key">Путь к локальному каталогу</span></td>
+				<td>Путь к локальному каталогу на диске. В этом каталоге находятся *.gz-архивы пакетов, которые необходимо установить.</td>
+			</tr><tr><th><span class="filled"><nobr>-destinationPath</nobr></span></th>
+				<td><span class="key">Путь к локальному каталогу</span></td>
+				<td>Путь к локальному каталогу на диске. В этот каталог будут экспортированы *.gz-архивы пакетов, которые определены в параметре <span class="filled"><nobr>-sourcePath</nobr></span>.</td>
+			</tr><tr><th><span class="filled"><nobr>-skipConstraints</nobr></span></th>
+				<td><span class="filled">false</span></td>
+				<td>Пропустить создание внешних ключей в таблицах базы данных. Принимает значения <span class="filled">true</span> или <span class="filled">false</span>.</td>
+			</tr><tr><th><span class="filled"><nobr>-skipValidateActions</nobr></span></th>
+				<td><span class="filled">true</span></td>
+				<td>Пропустить проверку возможности создания индексов таблиц при обновлении структуры базы данных. Принимает значения <span class="filled">true</span> или <span class="filled">false</span>.</td>
+			</tr><tr><th><span class="filled"><nobr>-regenerateSchemaSources</nobr></span></th>
+				<td><span class="filled">true</span></td>
+				<td>Указывает на необходимость перегенерации исходных кодов после сохранения пакетов в базе данных. Принимает значения <span class="filled">true</span> или <span class="filled">false</span>. По умолчанию — <span class="filled">true</span>.</td>
+			</tr><tr><th><span class="filled"><nobr>-updateDBStructure</nobr></span></th>
+				<td><span class="filled">true</span></td>
+				<td>Указывает на необходимость обновления структуры базы данных после сохранения пакетов. Принимает значения <span class="filled">true</span> или <span class="filled">false</span>. По умолчанию — <span class="filled">true</span>.</td>
+			</tr><tr><th><span class="filled"><nobr>-updateSystemDBStructure</nobr></span></th>
+				<td><span class="filled">true</span></td>
+				<td>Указывает на необходимость изменения структуры базы данных системных схем перед выполнением установки пакетов. Также создает все отсутствующие индексы в системных таблицах. Принимает значения <span class="filled">true</span> или <span class="filled">false</span>.</td>
+			</tr><tr><th><span class="filled"><nobr>-installPackageSqlScript</nobr></span></th>
+				<td><span class="filled">true</span></td>
+				<td>Указывает на необходимость выполнения SQL скриптов до и после сохранения пакетов. Принимает значения <span class="filled">true</span> или <span class="filled">false</span>. По умолчанию — <span class="filled">true</span>.</td>
+			</tr><tr><th><span class="filled"><nobr>-installPackageData</nobr></span></th>
+				<td><span class="filled">true</span></td>
+				<td>Указывает на необходимость установки привязанных к пакету данных после сохранения пакетов. Принимает значения <span class="filled">true</span> или <span class="filled">false</span>. По умолчанию — <span class="filled">true</span>.</td>
+			</tr><tr><th><span class="filled"><nobr>-continueIfError</nobr></span></th>
+				<td><span class="filled">true</span></td>
+				<td>Указывает на необходимость прервать выполнение процесса установки при получении первой ошибки. Если значение параметра — <span class="filled">true</span>, то процесс установки пройдет до конца, а пользователь получит список всех возникших ошибок. Принимает значения <span class="filled">true</span> или <span class="filled">false</span>. По умолчанию — <span class="filled">false</span>.</td>
+			</tr><tr><th><span class="filled"><nobr>-webApplicationPath</nobr></span></th>
+				<td><span class="key">Путь к локальному каталогу</span></td>
+				<td>Путь к каталогу на диске, в который установлено приложение Creatio. По этому пути из файла <span class="filled">ConnectionStrings.config</span> будет считана информация по соединению с базой данных. Если параметр не указан, то будет установлено соединение с базой данных, указанной в строке соединения в конфигурационном файле утилиты.</td>
+			</tr><tr><th><span class="filled"><nobr>-confRuntimeParentDirectory</nobr></span></th>
+				<td><span class="key">Путь к локальному каталогу</span></td>
+				<td>Путь к родительскому каталогу директории <span class="filled">..\Terrasoft.WebApp\conf</span>.</td>
+			</tr><tr><th><span class="filled"><nobr>-logPath</nobr></span></th>
+				<td><span class="key">Путь к локальному каталогу</span></td>
+				<td>Путь к каталогу, в который будет сохранен файл с логом операции. Название файла состоит из даты и времени запуска операции. Необязательный параметр.</td>
+			</tr><tr><th><span class="filled"><nobr>-configurationPath</nobr></span></th>
+				<td><span class="key">Путь к локальному каталогу</span></td>
+				<td>Путь к каталогу <span class="filled">..\Terrasoft.WebApp\<wbr></wbr>Terrasoft.Configuration</span>. В этот каталог экспортируются исходные коды и ресурсы схем пользовательских пакетов в режиме разработки в <a href="../../../../../developer/instrumenty_razrabotki/pakety/fajlovyj_kontent/obzor.html?id=15126">файловой системе</a>.</td>
+			</tr></tbody></table></div>
+
+	<p>Сигнатура команды, которую необходимо выполнить в интерпретаторе команд (консоли) Windows, для выполнения операции импорта пакетов в базу данных:</p>
+
+	<div class="code">
+	<div class="code__widgets">
+	<div class="code__source">
+	<pre class="prettyprint">
+[Путь к WorkspaceConsole]\Terrasoft.Tools.WorkspaceConsole.exe -operation=InstallFromRepository -packageName=[Имя пакета] -workspaceName=[Название рабочего пространства] -packageName=[Имя пакета] -sourcePath=[Путь к локальному каталогу] -destinationPath=[Путь к локальному каталогу] -skipConstraints=false -skipValidateActions=true -regenerateSchemaSources=true -updateDBStructure=true -updateSystemDBStructure=true -installPackageSqlScript=true -installPackageData=true -continueIfError=true  -webApplicationPath=[Путь к локальному каталогу] -confRuntimeParentDirectory=[Путь к локальному каталогу] -logPath=[Путь к локальному каталогу] -configurationPath=[Путь к локальному каталогу]
+</pre>
+	</div>
+	</div>
+	</div>
+	</li>
+	<li>Запустите утилиту.</li>
+	<li>
+	<p>Cформируйте команду для генерации статического контента в файловую систему.</p>
+
+	<div class="table">
+	<div class="table__caption">Параметры WorkspaceConsole для компиляции конфигурации</div>
+
+	<table><tbody><tr><th width="30%">Параметр</th>
+				<th>Значение</th>
+				<th>Описание</th>
+			</tr><tr><th><span class="filled"><nobr>-operation</nobr></span></th>
+				<td><span class="filled">BuildConfiguration</span></td>
+				<td>
+				<p>Выполняет <a href="../../../../../developer/instrumenty_razrabotki/pakety/fajlovyj_kontent/obzor.html?id=15126">генерацию статического контента в файловую систему</a>.</p>
+
+				<p>Требует указания одного из параметров <span class="filled"><nobr>-webApplicationPath</nobr></span> или <span class="filled"><nobr>-configurationPath</nobr></span>.</p>
+				</td>
+			</tr><tr><th><span class="filled"><nobr>-workspaceName</nobr></span></th>
+				<td><span class="key">Название рабочего пространства</span></td>
+				<td>Название рабочего пространства (конфигурации), в котором определены экспортируемые пакеты. По умолчанию все пользователи работают в рабочем пространстве <span class="filled">Default</span>.</td>
+			</tr><tr><th><span class="filled"><nobr>-destinationPath</nobr></span></th>
+				<td><span class="key">Путь к локальному каталогу</span></td>
+				<td>Путь к локальному каталогу на диске. В этот каталог будут экспортированы *.gz-архивы пакетов, которые определены в параметре <span class="filled"><nobr>-sourcePath</nobr></span>.</td>
+			</tr><tr><th><span class="filled"><nobr>-webApplicationPath</nobr></span></th>
+				<td><span class="key">Путь к локальному каталогу</span></td>
+				<td>Путь к каталогу на диске, в который установлено приложение Creatio. По этому пути из файла <span class="filled">ConnectionStrings.config</span> будет считана информация по соединению с базой данных. Если параметр не указан, то будет установлено соединение с базой данных, указанной в строке соединения в конфигурационном файле утилиты.</td>
+			</tr><tr><th><span class="filled"><nobr>-confRuntimeParentDirectory</nobr></span></th>
+				<td><span class="key">Путь к локальному каталогу</span></td>
+				<td>Путь к родительскому каталогу директории <span class="filled">..\Terrasoft.WebApp\conf</span>.</td>
+			</tr><tr><th><span class="filled"><nobr>-logPath</nobr></span></th>
+				<td><span class="key">Путь к локальному каталогу</span></td>
+				<td>Путь к каталогу, в который будет сохранен файл с логом операции. Название файла состоит из даты и времени запуска операции. Необязательный параметр.</td>
+			</tr><tr><th><span class="filled"><nobr>-force</nobr></span></th>
+				<td><span class="filled">true</span> или <span class="filled">false</span></td>
+				<td>
+				<p>Задает условия генерации файлового контента. Если значение параметра равно <span class="filled">true</span>, то генерация файлового контента выполняется по всем схемам. Если значение параметра равно <span class="filled">false</span>, то генерация файлового контента выполняется по измененным схемам. По умолчанию — <span class="filled">false</span>.</p>
+
+				<p>Требует указания одного из параметров <span class="filled"><nobr>-webApplicationPath</nobr></span> или <span class="filled"><nobr>-configurationPath</nobr></span>.</p>
+				</td>
+			</tr><tr><th><span class="filled"><nobr>-configurationPath</nobr></span></th>
+				<td><span class="key">Путь к локальному каталогу</span></td>
+				<td>Путь к каталогу <span class="filled">..\Terrasoft.WebApp\<wbr></wbr>Terrasoft.Configuration</span>. В этот каталог экспортируются исходные коды и ресурсы схем пользовательских пакетов в режиме разработки в <a href="../../../../../developer/instrumenty_razrabotki/vneshnie_ide/obzor.html?id=15111">файловой системе</a>.</td>
+			</tr></tbody></table></div>
+
+	<p>Сигнатура команды, которую необходимо выполнить в интерпретаторе команд (консоли) Windows, для выполнения операции генерации статического контента в файловую систему:</p>
+
+	<div class="code">
+	<div class="code__widgets">
+	<div class="code__source">
+	<pre class="prettyprint">
+[Путь к WorkspaceConsole]\Terrasoft.Tools.WorkspaceConsole.exe -operation=BuildConfiguration -workspaceName=[Название рабочего пространства] -destinationPath=[Путь к локальному каталогу] -webApplicationPath=[Путь к локальному каталогу] -confRuntimeParentDirectory=[Путь к локальному каталогу] -logPath=[Путь к локальному каталогу] -configurationPath=[Путь к локальному каталогу]
+</pre>
+	</div>
+	</div>
+	</div>
+	</li>
+	<li>Запустите утилиту.</li>
+</ol><div class="message">
+<p><span class="message__bold">На заметку.</span> Пакеты, импортируемые в приложение с помощью WorkspaceConsole, считаются предустановленными и недоступны для изменения.</p>
+</div>
+
+<p>Не рекомендуется использовать утилиту WorkspaceConsole для импорта пакетов в базу данных при <strong>включенном режиме разработки в файловой системе</strong>. Если утилита будет использована, то исходный код измененных схем будет изменен в базе данных, но останется без изменений в файловой системе. Т. е. при открытии схемы конфигурационного элемента в Creatio IDE отобразится неизмененный код из файловой системы. При этом дата модификации схемы конфигурационного элемента будет обновлена. Это приводит к ложному ощущению, что перенос схемы прошел корректно.</p>
+
+<p>Чтобы импортировать пакеты в базу данных при <strong>включенном режиме разработки в файловой системе</strong>:</p>
+
+<ol><li>Воспользуйтесь <a href="../../../../../developer/instrumenty_razrabotki/upravlenie_postavkami/workspaceconsole/obzor%23title-2138-6.html?id=15207&amp;anchor=title-2138-6" target="_blank">инструкцией</a> и импортируйте пакеты в базу данных с помощью утилиты WorkspaceConsole.</li>
+	<li>На панели инструментов в группе действий <span class="key">Разработка в файловой системе</span> (<span class="key">File system development mode</span>) выберите <span class="key">Выгрузить все пакеты в файловую систему</span> (<span class="key">Download packages to file system</span>).
+	<div class="media">
+	<div class="media__element"><img src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/CreatingPackageInFileSystem(7.17)/scr_download_to_fs.png" /></div>
+	</div>
+	</li>
+</ol><p>В результате все пакеты будут выгружены по пути <span class="filled">..\Terrasoft.WebApp\Terrasoft.Configuration\Pkg</span> в каталог с соответствующим названием пакета.</p>
+
+<h3>5. Перезапустить приложение в IIS<a class="title-anchor" href="#title-2138-10" id="title-2138-10"> </a></h3>
+
+<p>Для применения изменений перезапустите приложение в IIS. Это необходимо, поскольку утилита WorkspaceConsole вносит изменения напрямую в базу данных.</p>
+</div>
+      
+  </div>
+<div class="block block-layout-builder block-field-blocknodedeveloper-documentationfield-linked">
+  
+    
+      
+  <div class="field field--name-field-linked field--type-entity-reference field--label-above">
+    <div class="field__label">Смотрите также</div>
+          <div class="field__items">
+              <div class="field__item"><a href="../../pakety/obshchiye_printsipy_raboty_s_paketami/obzor.html" hreflang="ru">Общие принципы работы с пакетами</a></div>
+          <div class="field__item"><a href="../../creatio_ide/razrabotka_konfiguracionnykh_ehlementov/obzor.html" hreflang="ru">Разработка конфигурационных элементов</a></div>
+          <div class="field__item"><a href="../rabochaya_sreda/obzor.html" hreflang="ru">Понятие рабочей среды</a></div>
+          <div class="field__item"><a href="../../vneshnie_ide/obzor.html" hreflang="ru">Внешние IDE</a></div>
+          <div class="field__item"><a href="../../pakety/fajlovyj_kontent/obzor.html" hreflang="ru">Файловый контент пакетов</a></div>
+              </div>
+      </div>
+
+  </div>
+
+    </div>
+  </div>
+
+  </div>
+
+</article>
+
+  </div>
+
+  </div>
+
+          </div>
+        </div>
+
+                  <aside class="creatio-sidebar creatio-sidebar_first" role="complementary">
+              <div class="region region-sidebar-first">
+    <div id="block-documentationnaviagtion" class="block block-ts-nav block-ts-nav-doc-nav">
+  
+    
+      <div class="ts-nav-block"><a href="../../../../../index.html" class="ts-nav-block__link">Документация</a><div class="ts-nav-block__title">Для разработчика</div>
+</div>
+<div class="ts-nav-container"><ul class="ts-nav-menu"><li class="ts-nav-menu__item">
+  <a href="../../../s_chego_nachat.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">С чего начать&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../architecture.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Архитектура&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../instrumenty_razrabotki.html" class="ts-nav-menu__link ts-nav-menu__link_expanded ts-nav-menu__link_open" hreflang="zxx">Инструменты разработки&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+      <ul class="ts-nav-menu__children">
+      <li class="ts-nav-menu__item">
+  <a href="../../creatio_ide.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Creatio IDE&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../vneshnie_ide.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Внешние IDE&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../pakety.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Пакеты&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../sistemy_kontrolya_versij.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Системы контроля версий&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../development_tools/testirovanie.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Тестирование&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../development_tools/instrumenty_dlya_bazy_dannykh.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Инструменты для базы данных&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../logirovanie.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Логирование&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../otladka.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Отладка&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../upravlenie_postavkami.html" class="ts-nav-menu__link ts-nav-menu__link_expanded ts-nav-menu__link_open" hreflang="ru">Управление поставками&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+      <ul class="ts-nav-menu__children">
+      <li class="ts-nav-menu__item">
+  <a href="../rabochaya_sreda/obzor.html" class="ts-nav-menu__link" hreflang="ru">Рабочая среда</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../process_upravleniya_postavkami/obzor.html" class="ts-nav-menu__link" hreflang="ru">Процесс управления поставками</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../development_tools/transferring_solutions/creatio_ide.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Creatio IDE&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../development_tools/transferring_solutions/workspaceconsole.html" class="ts-nav-menu__link ts-nav-menu__link_expanded ts-nav-menu__link_open" hreflang="ru">WorkspaceConsole&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+      <ul class="ts-nav-menu__children">
+      <li class="ts-nav-menu__item">
+  <a href="obzor.html" class="ts-nav-menu__link ts-nav-menu__link_guide ts-nav-menu__link_active" hreflang="ru">Обзор</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="ehksportirovat_pakety_iz_bazy_dannykh.html" class="ts-nav-menu__link ts-nav-menu__link_case" hreflang="ru">Экспортировать пакеты из базы данных</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="ehksportirovat_paket_iz_svn.html" class="ts-nav-menu__link ts-nav-menu__link_case" hreflang="ru">Экспортировать пакет из SVN</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="importirovat_paket_v_bazu_dannykh.html" class="ts-nav-menu__link ts-nav-menu__link_case" hreflang="ru">Импортировать пакет в базу данных</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="parametry_workspaceconsole.html" class="ts-nav-menu__link ts-nav-menu__link_reference" data-type="CLI" hreflang="ru">Параметры WorkspaceConsole</a>
+  </li>
+
+    </ul>
+  </li>
+
+    </ul>
+  </li>
+
+    </ul>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../back_end_razrabotka.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Back-end разработка&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../front_end_razrabotka.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Front-end разработка&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../integratsiya_i_vneshnij_api.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Интеграция и внешний API&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../ehlementy_interfejsa.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Элементы интерфейса&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../komponenty_prilozheniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Компоненты приложения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../razrabotka_mobilnogo_prilozheniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Разработка мобильного приложения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../razrabotka_marketplace_prilozheniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Разработка Marketplace-приложения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+</ul>
+</div>
+
+  </div>
+
+  </div>
+
+            <div class="creatio-sidebar__toggle"></div>
+          </aside>
+        
+                  <aside class="creatio-sidebar creatio-sidebar_second" role="complementary">
+              <div class="region region-sidebar-second">
+    <div id="block-example" class="block block-ts-nav block-ts-nav-page-nav">
+  
+    
+      <div class="ts-nav-page">
+  </div>
+
+  </div>
+<div id="block-adminfeedbackblock" class="block block-admin-feedback block-admin-feedback-block">
+  
+    
+      <div id="feedback-message"><div id="upper-feedback-content"><h2>Был ли данный материал полезен?</h2>
+<input class="feedback-btn feedback-btn__yes button js-form-submit form-submit" data-node-id="2138" data-feedback="yes" type="submit" name="op" value="Да" />
+<input class="feedback-btn feedback-btn__no button js-form-submit form-submit" data-node-id="2138" data-feedback="no" type="submit" name="op" value="Нет" />
+</div>
+<form class="admin-feedback-form" data-drupal-selector="admin-feedback-form" action="https://academy.terrasoft.ua/docs/7-18/developer/instrumenty_razrabotki/upravlenie_postavkami/workspaceconsole/obzor" method="post" id="admin-feedback-form" accept-charset="UTF-8">
+  <div id="feedback-msg-result"></div><div class="js-form-item form-item js-form-type-textarea form-type-textarea js-form-item-feedback-message form-item-feedback-message form-no-label">
+        <div class="form-textarea-wrapper">
+  <textarea id="edit-feedback-msg" data-drupal-selector="edit-feedback-message" name="feedback_message" rows="5" cols="60" class="form-textarea resize-vertical"></textarea>
+</div>
+
+        </div>
+<input id="feedback-id" data-drupal-selector="edit-feedback-id" type="hidden" name="feedback_id" value="" />
+<input class="feedback-btn feedback-btn__send-comment button js-form-submit form-submit" data-drupal-selector="edit-feedback-send" type="submit" id="edit-feedback-send" name="op" value="Отправить" />
+<input autocomplete="off" data-drupal-selector="form-hn7eqwwhc-czvceoe24tqiq7nkndz4iw-n1imm5gcnq" type="hidden" name="form_build_id" value="form-Hn7EQwWHc_czvceoe24TQIQ7Nkndz4iW-n1ImM5gCNQ" />
+<input data-drupal-selector="edit-admin-feedback-form" type="hidden" name="form_id" value="admin_feedback_form" />
+
+</form>
+</div>
+
+  </div>
+
+  </div>
+
+          </aside>
+              </main>
+    </div>
+  </div>
+
+  <footer role="contentinfo">
+    <div class="creatio-region creatio-region_footer">
+      <div class="creatio-container">
+          <div class="region region-footer">
+    <div id="block-footerua" class="block block-simple-block block-simple-blockfooter-ua">
+  
+    
+      <div class="footer">
+<div class="footer-left">
+<ul class="footer-socials"><li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_fb" href="https://www.facebook.com/terrasoft.ua" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_in" href="https://www.linkedin.com/company/terrasoft/" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_yt" href="https://www.youtube.com/c/TerrasoftUkraine" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_tg" href="https://t.me/Terrasoft_UA" target="_blank"> </a></li>
+</ul></div>
+
+<div class="footer-contact">
+<div class="footer-title">Будьте на связи!</div>
+
+<div class="footer-content">
+<div class="footer-items">
+<div class="footer-item"><a class="footer__link footer__link_phone" href="tel:+380443633133">+38 (044) 363-31-33</a></div>
+</div>
+
+<div class="footer-items">
+<div class="footer-item"><a class="footer__link footer__link_email" href="mailto:support@terrasoft.ua">support@terrasoft.ua</a></div>
+</div>
+</div>
+</div>
+</div>
+
+  </div>
+
+  </div>
+
+      </div>
+    </div>
+    <div class="creatio-region creatio-region_bottom">
+      <div class="creatio-container">
+          <div class="region region-bottom">
+    <div id="block-allrightsreservedua" class="block block-simple-block block-simple-blockfooter-bottom-ua">
+  
+    
+      <p>© 2002-2022 Terrasoft.  |  <a href="https://www.terrasoft.ua/privacy-policy" target="_blank">Конфиденциальность</a></p>
+
+  </div>
+
+  </div>
+
+      </div>
+    </div>
+  </footer>
+</div>
+<div class="creatio-bg"></div>
+
+
+  </div>
+
+    
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/docs\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/2138","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"ru"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"ajaxPageState":{"libraries":"admin_feedback\/admin_feedback_block,admin_feedback\/admin_feedback_css,classy\/base,classy\/messages,classy\/node,core\/drupal.ajax,core\/jquery.form,core\/normalize,creatio\/fancybox,creatio\/global,layout_discovery\/onecol,system\/base,ts_doc\/doc_version,ts_feedback\/ts_feedback,ts_nav\/breadcrumb,ts_nav\/doc_nav,ts_nav\/page_nav,ts_title_anchor\/ts_title_anchor","theme":"creatio","theme_token":null},"ajaxTrustedUrl":{"form_action_p_pvdeGsVG5zNF_XLGPTvYSKCf43t8qZYSwcfZl2uzM":true,"\/docs\/7-18\/developer\/instrumenty_razrabotki\/upravlenie_postavkami\/workspaceconsole\/obzor?ajax_form=1":true},"admin_feedback":{"yes_response":"\u0421\u043f\u0430\u0441\u0438\u0431\u043e \u0437\u0430 \u043e\u0431\u0440\u0430\u0442\u043d\u0443\u044e \u0441\u0432\u044f\u0437\u044c!","no_response":"\u0421\u043f\u0430\u0441\u0438\u0431\u043e \u0437\u0430 \u043e\u0431\u0440\u0430\u0442\u043d\u0443\u044e \u0441\u0432\u044f\u0437\u044c!","custom_text_response_on_no":{"value":"","format":"full_html"},"feedback_prompt_on_yes":true,"feedback_prompt_on_no":true,"feedback_enable_predefined_answers":false,"feedback_prompt":"\u041a\u0430\u043a \u043c\u043e\u0436\u043d\u043e \u0443\u043b\u0443\u0447\u0448\u0438\u0442\u044c \u044d\u0442\u0443 \u0441\u0442\u0430\u0442\u044c\u044e?"},"ajax":{"edit-feedback-send":{"callback":"::validateFeedbackMsg","event":"mousedown","keypress":true,"prevent":"click","url":"\/docs\/7-18\/developer\/instrumenty_razrabotki\/upravlenie_postavkami\/workspaceconsole\/obzor?ajax_form=1","dialogType":"ajax","submit":{"_triggering_element_name":"op","_triggering_element_value":"\u041e\u0442\u043f\u0440\u0430\u0432\u0438\u0442\u044c"}}},"user":{"uid":0,"permissionsHash":"9c2367dfcaba0fa15f0375f97aed64e146c908cee68508d13b79e3ee80e5162d"}}</script>
+<script src="../../../../../sites/default/files/js/js_Rr-7TvYD7NposuRFJwUqThxM7yJmw8vs03PQwu5gWd8.js"></script>
+
+
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+      <g id="svg-copy" class="svg-icon svg-icon_copy">
+        <path d="M15.111,18H1.889A1.848,1.848,0,0,1,0,16.2V3.6A1.848,1.848,0,0,1,1.889,1.8H5.837a2.87,2.87,0,0,1,5.326,0h3.948A1.848,1.848,0,0,1,17,3.6V16.2A1.848,1.848,0,0,1,15.111,18ZM3.777,12.6v1.8h6.611V12.6Zm0-3.6v1.8h9.445V9Zm0-3.6V7.2h9.445V5.4ZM8.5,1.8a.924.924,0,0,0-.944.9.945.945,0,0,0,1.889,0A.924.924,0,0,0,8.5,1.8Z"/>
+      </g>
+
+      <g id="svg-prev" class="svg-icon svg-icon_arrow">
+        <path d="M5.488,12.779,0,6.39,5.488,0" transform="translate(1 0.652)"/>
+      </g>
+
+      <g id="svg-next" class="svg-icon svg-icon_arrow">
+        <path d="M0,12.779,5.488,6.39,0,0" transform="translate(0.759 0.652)"/>
+      </g>
+    </svg>
+  </body>
+
+<!-- Mirrored from academy.terrasoft.ua/docs/7-18/developer/instrumenty_razrabotki/upravlenie_postavkami/workspaceconsole/obzor by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Mar 2022 00:20:14 GMT -->
+</html>

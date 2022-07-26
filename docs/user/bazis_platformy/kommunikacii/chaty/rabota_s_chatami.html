@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# ">
+  
+<!-- Mirrored from academy.terrasoft.ua/docs/user/bazis_platformy/kommunikacii/chaty/rabota_s_chatami by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 22 Mar 2022 19:56:34 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+          <!-- Google Tag Manager -->
+      <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          '../../../../../../www.googletagmanager.com/gtm5445.html?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-KLLB8G');</script>
+      <!-- End Google Tag Manager -->
+        <meta charset="utf-8" />
+<link rel="canonical" href="rabota_s_chatami.html" />
+<meta name="description" content="Функциональность чатов в Creatio позволяет вести коммуникации с клиентами и обрабатывать запросы по удобным для них каналам связи в режиме реального времени. Сотрудники компании могут написать клиенту в любой удобный ему канал связи из панели действий любого раздела. А входящие запросы обрабатывают операторы чатов в коммуникационной панели. В ходе беседы оператор может предоставлять консультации клиентам, делиться файлами и запускать бизнес-процессы прямо из коммуникационной панели Creatio. Вся история взаимодействия сохраняется на странице контакта." />
+<meta property="og:url" content="https://academy.terrasoft.ua/docs/user/bazis_platformy/kommunikacii/chaty/rabota_s_chatami" />
+<meta property="og:title" content="Работа с чатами" />
+<meta property="og:description" content="Функциональность чатов в Creatio позволяет вести коммуникации с клиентами и обрабатывать запросы по удобным для них каналам связи в режиме реального времени. Сотрудники компании могут написать клиенту в любой удобный ему канал связи из панели действий любого раздела. А входящие запросы обрабатывают операторы чатов в коммуникационной панели. В ходе беседы оператор может предоставлять консультации клиентам, делиться файлами и запускать бизнес-процессы прямо из коммуникационной панели Creatio. Вся история взаимодействия сохраняется на странице контакта." />
+<meta name="Generator" content="Drupal 9 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="../../../../themes/custom/creatio/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="revision" href="rabota_s_chatami.html" />
+
+    <title>Работа с чатами | Creatio Academy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&amp;family=Open+Sans:ital,wght@0,300;0,400;0,600;1,400&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" media="all" href="../../../../sites/default/files/css/css_6lTP66__-yc6QXFp1zOwoeJ0HVigoYZP-SeoLLii000.css" />
+<link rel="stylesheet" media="all" href="../../../../sites/default/files/css/css_XQJDNhkF3xH5SZCcY-PI89Zu4nYIzQ5oR3SnUKyfXJU.css" />
+<link rel="stylesheet" media="print" href="../../../../sites/default/files/css/css_Zn4VHvcniOOtUwkIVwXzYr_0AI9gUVgZcPqaH4ViagU.css" />
+
+    
+  </head>
+  <body class="path-node page-node-type-user-documentation">
+          <!-- Google Tag Manager (noscript) -->
+      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KLLB8G"
+                        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+      <!-- End Google Tag Manager (noscript) -->
+    
+        
+      <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    <div class="creatio-page d-flex flex-column">
+        <div class="region region-informer">
+    <div id="block-terrasoftpidtrimueukrainu" class="block block-simple-block block-simple-blockterrasoft-pidtrimue-ukrainu">
+  
+    
+      <style type="text/css">
+<!--/*--><![CDATA[/* ><!--*/
+@import url(../../../../../../www.terrasoft.ua/themes/custom/creatio/css/components/informer.css)
+
+/*--><!]]>*/
+</style><div class="ts-swu">
+<div class="creatio-container">
+<div class="ts-swu__cont">
+<div><a class="ts-swu__link" href="https://www.terrasoft.ua/terrasoft-stands-with-ukraine" target="_blank">Україна понад усе!</a> <span><a href="https://www.terrasoft.ua/terrasoft-stands-with-ukraine" target="_blank">Приєднуйтеся</a> до допомоги!</span></div>
+</div>
+</div></div>
+
+  </div>
+
+  </div>
+
+  
+  <header role="banner">
+          <div class="creatio-region creatio-region_top">
+        <div class="creatio-container">
+            <div class="region region-top">
+    <div id="block-menutoggle" class="block block-simple-block block-simple-blockmenu-toggle">
+  
+    
+      <div class="menu-toggle"><span> </span></div>
+
+  </div>
+<div id="block-logowhite-2" class="block block-simple-block block-simple-blocklogo-white">
+  
+    
+      <p><a class="site-logo" href="../../../../../index.html" rel="home"><img src="../../../../themes/custom/creatio/logo-white.svg" /></a></p>
+
+  </div>
+<div id="block-search" class="block block-simple-block block-simple-blocksearch">
+  
+    
+      <div class="search">
+<form action="https://academy.terrasoft.ua/search" class="search-form" method="get"><input class="search-form__input" name="search" placeholder="Поиск" type="search" /><input class="search-form__button" type="submit" value="Поиск" /> </form>
+
+<div class="search-toggle"> </div>
+</div>
+
+  </div>
+<nav role="navigation" aria-labelledby="block-sitesua-menu" id="block-sitesua" class="block block-menu navigation menu--sites-ua">
+            
+  <h2 class="visually-hidden" id="block-sitesua-menu">Sites UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="https://www.terrasoft.ua/" rel="nofollow" target="_blank">Terrasoft</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://community.terrasoft.ua/" rel="nofollow" target="_blank">Community</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://marketplace.terrasoft.ua/" rel="nofollow" target="_blank">Marketplace</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+<div id="block-usermenu" class="block block-ts-user block-ts-user-menu-block">
+  
+    
+      <ul class="user-menu">
+      <li class="user-menu__item">
+      <a class="user-menu__link" href="https://profile.terrasoft.ua/user/login?destination=academy/ua/docs/user/bazis_platformy/kommunikacii/chaty/rabota_s_chatami">Войти</a>
+    </li>
+  </ul>
+
+  </div>
+<div id="block-usermenumobile" class="block block-ts-user block-ts-user-menu-mobile-block">
+  
+    
+      <ul class="user-menu-mobile">
+      <li class="user-menu-mobile__item">
+      <div class="user-menu-mobile__user user-menu-mobile__user_icon"></div>
+      <ul class="user-menu-mobile__submenu">
+        <li class="user-menu-mobile__subitem">
+          <a class="user-menu-mobile__sublink" href="https://profile.terrasoft.ua/user/login?destination=academy/ua/docs/user/bazis_platformy/kommunikacii/chaty/rabota_s_chatami">Войти</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  </div>
+
+  </div>
+
+        </div>
+      </div>
+              <div class="creatio-region creatio-region_header">
+        <div class="creatio-container">
+            <div class="region region-header">
+    <div id="block-logo" class="block block-simple-block block-simple-blocklogo">
+  
+    
+      <p><a class="site-logo" href="../../../../../index.html" rel="home"><img src="../../../../themes/custom/creatio/logo.svg" /></a></p>
+
+  </div>
+<nav role="navigation" aria-labelledby="block-osnovnayanavigaciyaua-menu" id="block-osnovnayanavigaciyaua" class="block block-menu navigation menu--main-ua">
+            
+  <h2 class="visually-hidden" id="block-osnovnayanavigaciyaua-menu">Основная навигация UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="../../../../index.html" data-drupal-link-system-path="&lt;front&gt;">Документация</a>
+              </li>
+                <li class="menu-item">
+        <a href="../../../../../trainings.html">Тренинги</a>
+              </li>
+                <li class="menu-item">
+        <a href="../../../../certification.html" data-drupal-link-system-path="node/3084">Сертификация и тестирование</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+<nav role="navigation" aria-labelledby="block-sitesua-2-menu" id="block-sitesua-2" class="block block-menu navigation menu--sites-ua">
+            
+  <h2 class="visually-hidden" id="block-sitesua-2-menu">Sites UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="https://www.terrasoft.ua/" rel="nofollow" target="_blank">Terrasoft</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://community.terrasoft.ua/" rel="nofollow" target="_blank">Community</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://marketplace.terrasoft.ua/" rel="nofollow" target="_blank">Marketplace</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+
+  </div>
+
+        </div>
+      </div>
+              <div class="creatio-region creatio-region_breadcrumb">
+        <div class="creatio-container">
+            <div class="region region-breadcrumb">
+    <div id="block-logowhite" class="block block-simple-block block-simple-blocklogo-white">
+  
+    
+      <p><a class="site-logo" href="../../../../../index.html" rel="home"><img src="../../../../themes/custom/creatio/logo-white.svg" /></a></p>
+
+  </div>
+<div id="block-breadcrumbnaviagtion" class="block block-ts-nav block-ts-nav-bread">
+  
+    
+      <nav class="breadcrumb"><ol class="ts-nav-breadcrumb__list"><li class="ts-nav-breadcrumb__item"><a href="../../../../index.html" class="ts-nav-breadcrumb__link" title="Документация">Документация</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../../indexd993.html?vid_1=1" class="ts-nav-breadcrumb__link" title="Для пользователя">Для пользователя</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../bazis_platformy.html" class="ts-nav-breadcrumb__link" title="Базис платформы" hreflang="zxx">Базис платформы</a></li>
+<li class="ts-nav-breadcrumb__item ts-nav-breadcrumb__item_mobile"><a href="../../kommunikacii.html" class="ts-nav-breadcrumb__link" title="Коммуникации" hreflang="zxx">Коммуникации</a></li>
+<li class="ts-nav-breadcrumb__item"><span class="ts-nav-breadcrumb__link ts-nav-breadcrumb__link_current" title="Работа с чатами">Работа с чатами</span></li>
+</ol>
+</nav>
+
+  </div>
+<div id="block-search-2" class="block block-simple-block block-simple-blocksearch">
+  
+    
+      <div class="search">
+<form action="https://academy.terrasoft.ua/search" class="search-form" method="get"><input class="search-form__input" name="search" placeholder="Поиск" type="search" /><input class="search-form__button" type="submit" value="Поиск" /> </form>
+
+<div class="search-toggle"> </div>
+</div>
+
+  </div>
+
+  </div>
+
+        </div>
+      </div>
+      </header>
+
+  <div class="creatio-region creatio-region_main">
+    <div class="creatio-container">
+                <div class="region region-breadcrumb-mobile">
+    <div id="block-breadcrumbnaviagtion-2" class="block block-ts-nav block-ts-nav-bread">
+  
+    
+      <nav class="breadcrumb"><ol class="ts-nav-breadcrumb__list"><li class="ts-nav-breadcrumb__item"><a href="../../../../index.html" class="ts-nav-breadcrumb__link" title="Документация">Документация</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../../indexd993.html?vid_1=1" class="ts-nav-breadcrumb__link" title="Для пользователя">Для пользователя</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../bazis_platformy.html" class="ts-nav-breadcrumb__link" title="Базис платформы" hreflang="zxx">Базис платформы</a></li>
+<li class="ts-nav-breadcrumb__item ts-nav-breadcrumb__item_mobile"><a href="../../kommunikacii.html" class="ts-nav-breadcrumb__link" title="Коммуникации" hreflang="zxx">Коммуникации</a></li>
+<li class="ts-nav-breadcrumb__item"><span class="ts-nav-breadcrumb__link ts-nav-breadcrumb__link_current" title="Работа с чатами">Работа с чатами</span></li>
+</ol>
+</nav>
+
+  </div>
+
+  </div>
+
+      
+      <main class="creatio-main" role="main">
+                                                    
+        <div class="creatio-content creatio-content_small">
+          <div class="creatio-content__inner creatio-content__inner_bg">
+                            <div class="region region-messages">
+    <div data-drupal-messages-fallback class="hidden"></div>
+
+  </div>
+
+            
+              <div class="region region-content">
+    <div id="block-creatio-page-title" class="block block-core block-page-title-block">
+  
+    
+      
+  <h1 class="page-title"><span class="field field--name-title field--type-string field--label-hidden">Работа с чатами</span>
+</h1>
+
+
+  </div>
+<div id="block-creatio-content" class="block block-system block-system-main-block">
+  
+    
+      
+<article data-history-node-id="3540" role="article" about="/docs/user/bazis_platformy/kommunikacii/chaty/rabota_s_chatami" class="node node--type-user-documentation node--view-mode-full">
+
+  
+    
+
+  
+  <div class="node__content">
+      <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-ts-doc block-ts-doc-downloads">
+  
+    
+      <a href="../../../../sites/default/files/pdf/node/3540/Rabota_s_chatami_.pdf" target="_blank">PDF</a>
+  </div>
+<div class="block block-ts-doc block-ts-doc-versions">
+  
+    
+        <div class="ts-doc-versions">
+    <select class="ts-doc-versions__select">
+                                                <option value="/docs/8-0/user/bazis_platformy/kommunikacii/chaty/rabota_s_chatami" selected>Версия 8.0</option>
+                              <option value="/docs/7-18/user/bazis_platformy/kommunikacii/chaty/rabota_s_chatami">Версия 7.18</option>
+                              <option value="/docs/7-17/user/bazis_platformy/kommunikacii/chaty/rabota_s_chatami">Версия 7.17</option>
+          </select>
+  </div>
+
+  </div>
+
+    </div>
+  </div>
+  <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocknodeuser-documentationfield-product">
+  
+    
+      
+  <div class="field field--name-field-product field--type-entity-reference field--label-above">
+    <div class="field__label">Продукты</div>
+          <div class="field__items">
+              <div class="field__item">Все продукты</div>
+              </div>
+      </div>
+
+  </div>
+<div class="block block-layout-builder block-field-blocknodeuser-documentationbody">
+  
+    
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><p>Функциональность чатов в Creatio позволяет вести коммуникации с клиентами и обрабатывать запросы по удобным для них каналам связи в режиме реального времени. Сотрудники компании могут написать клиенту в любой удобный ему канал связи из панели действий любого раздела. А входящие запросы обрабатывают операторы чатов в коммуникационной панели. В ходе беседы оператор может предоставлять консультации клиентам, делиться файлами и запускать бизнес-процессы прямо из коммуникационной панели Creatio. Вся история взаимодействия сохраняется на странице контакта.</p>
+
+<p><strong>Новые чаты</strong> в Creatio создаются при следующих условиях:</p>
+
+<ul><li>Клиент впервые написал личное сообщение в Facebook Messenger, WhatsApp или Telegram-бот вашей компании.</li>
+	<li>Клиент написал не впервые, но на текущий момент у него нет активных чатов.</li>
+</ul><p>В остальных случаях сообщение клиента отобразится как продолжение беседы с оператором в активном чате.</p>
+
+<p><strong>Новые контакты</strong> по входящим чатам создаются при выполнении следующих условий:</p>
+
+<ul><li>Клиент впервые написал на страницу Facebook, в Telegram-бот или WhatsApp компании.</li>
+	<li>В Creatio не найден контакт с идентификатором пользователя Facebook, Telegram или номером WhatsApp.</li>
+</ul><p>При создании контакта автоматически заполняются общедоступные данные, которые можно получить из профиля пользователя:</p>
+
+<ul><li>Имя, фото контакта и идентификатор пользователя Facebook.</li>
+	<li>Имя, фото и идентификатор пользователя Telegram.</li>
+	<li>Имя, фото и номер телефона WhatsApp.</li>
+</ul><h2>Изменить статус оператора<a class="title-anchor" href="#title-3020-1" id="title-3020-1"> </a></h2>
+
+<p>Статус оператора определяет возможность получать и обрабатывать чаты на коммуникационной панели Creatio:</p>
+
+<ul><li><strong>Активный</strong>. Пользователь с этим статусом будет видеть новые сообщения и чаты на коммуникационной панели приложения, сможет их обрабатывать и отправлять ответы.</li>
+	<li><strong>Неактивный</strong>. Пользователь с этим статусом будет видеть на коммуникационной панели только ранее полученные чаты, сможет их обрабатывать и отправлять ответы. Новые чаты на пользователей с неактивным статусом не распределяются.</li>
+</ul><p>По умолчанию при первом входе в систему у всех операторов установлен статус “Неактивный”. Изменить статус можно на коммуникационной панели или в меню профиля пользователя (Рис. 1).</p>
+
+<div class="media">
+<div class="media__caption">Рис. 1 — Смена статуса оператора в меню профиля пользователя</div>
+
+<div class="media__element"><img alt="Смена статуса оператора" height="234" src="../../../../sites/default/files/2020-12/set_operator_status.png" typeof="foaf:Image" width="183" /></div>
+</div>
+
+<p>После выхода оператора из приложения (завершения сессии пользователя) его статус будет автоматически изменен на “Неактивный”, чтобы на него не распределялись новые чаты. При последующем входе для оператора будет автоматически установлен статус, который использовался до выхода из системы.</p>
+
+<h2>Обработать сообщения чата<a class="title-anchor" href="#title-3020-2" id="title-3020-2"> </a></h2>
+
+<p>Обработка чатов выполняется оператором на коммуникационной панели, вкладка <span class="key">Чаты</span>. Оператору доступны:</p>
+
+<ul><li><strong>Активные </strong>чаты, по которым ведется взаимодействие с клиентом.</li>
+	<li><strong>Новые </strong>чаты, ожидающие обработки.
+	<div class="message">
+	<p><span class="message__bold">На заметку.</span> Обратите внимание, что время взятия нового чата в работу и ожидания чата в активном состоянии может быть ограничено. Подробнее читайте в статье <a href="../../../../7-17/user/ustanovka_i_administrirovanie/nastrojka_bazovyh_intgracij/chaty/nastriot_chat.html#title-3019-1">Добавить очередь чата</a>.</p>
+	</div>
+	</li>
+</ul><div class="media">
+<div class="media__caption">Рис. 2 — Чаты на коммуникационной панели приложения</div>
+
+<div class="media__element"><img alt="" data-entity-type="file" data-entity-uuid="" height="550" src="../../../../sites/default/files/images/Platform_basics/working_with_chats/new_chats_in_com_panel.png" width="405" /></div>
+</div>
+
+<p>Если в вашем браузере разрешены оповещения для сайта Creatio, то при распределении на вас нового чата вы получите браузерное уведомление со звуковым сигналом.</p>
+
+<p>Чтобы <strong>начать работу</strong> с чатом, нажмите <span class="key">Принять чат</span> — вы будете назначены ответственным по данному чату. После этого вам будут доступны:</p>
+
+<ul><li>Текстовые сообщения чата;</li>
+	<li>Файлы, отправленные в чат;</li>
+	<li>Данные контакта;</li>
+	<li>Источник чата;</li>
+	<li>Действия чата.</li>
+</ul><p>Чтобы использовать <strong>шаблон быстрого ответа</strong>, нажмите кнопку <img alt="" data-entity-type="file" data-entity-uuid="" height="16" src="../../../../sites/default/files/images/Platform_basics/working_with_chats/btn_com_view_chat_templates.png" width="18" /> или в поле для ответа введите “//” и начните вводить название или текст шаблона. Откроется окно с перечнем <a href="../../../../7-17/user/bazis_platformy/kommunikacii/shablony_email_i_chatov/rabota_s_shablonami_soobschenij.html#title-3397-3">преднастроенных шаблонов</a> (Рис. 3).</p>
+
+<div class="media">
+<div class="media__caption">Рис. 3 — Поиск шаблона быстрого ответа</div>
+
+<div class="media__element"><img alt="" data-entity-type="file" data-entity-uuid="" height="566" src="../../../../sites/default/files/images/Platform_basics/working_with_chats/scr_chat_templates.png" width="416" /></div>
+</div>
+
+<p>Если вы вышли из чата, не отправив введенный ответ, то в приложении будет автоматически сохранен <strong>черновик</strong> сообщения. Вы сможете вернуться к редактированию ответа в любой момент после возвращения к чату. Черновик отобразится в поле для ввода текста.</p>
+
+<p>Чтобы <strong>запустить действие</strong> чата, например, создать обращение, нажмите кнопку <img alt="" data-entity-type="file" data-entity-uuid="" height="19" src="../../../../sites/default/files/images/2020-12/btn_menu.png" width="16" /> в правом верхнем углу коммуникационной панели и выберите действие, которое необходимо выполнить (Рис. 4).</p>
+
+<div class="message">
+<p><span class="message__bold">На заметку.</span> Подробнее о настройке действий чата читайте в статье <a href="../../../../7-17/user/ustanovka_i_administrirovanie/nastrojka_bazovyh_intgracij/chaty/nastriot_chat.html#title-3019-5">Настроить действия чата</a>.</p>
+</div>
+
+<div class="media">
+<div class="media__caption">Рис. 4 — Запуск действия чата</div>
+
+<div class="media__element"><img alt="" data-entity-type="file" data-entity-uuid="" height="168" src="../../../../sites/default/files/images/Platform_basics/working_with_chats/perform_chat_actions.png" width="415" /></div>
+</div>
+
+<p>По завершению разговора в открытом чате нажмите кнопку <img alt="" data-entity-type="file" data-entity-uuid="" height="28" src="../../../../sites/default/files/images/Platform_basics/working_with_chats/btn_com_end_open_chat.png" width="28" /> в верхней части коммуникационной панели. Вы также можете завершить любой активный чат на коммуникационной панели по кнопке <img alt="" data-entity-type="file" data-entity-uuid="" height="17" src="../../../../sites/default/files/images/Platform_basics/working_with_chats/btn_com_end_chat.png" width="17" />. Чат можно завершить вручную в любой момент, не ожидая автоматического завершения. Если клиент напишет после того, как чат был завершен, то в Creatio будет создан новый чат, который попадет в очередь для обработки.</p>
+
+<h2>Инициировать чат с клиентом<a class="title-anchor" href="#title-3540-1" id="title-3540-1"> </a></h2>
+
+<p>В Creatio вы можете не только обрабатывать входящие запросы, но также инициировать переписку с клиентом в чате. Сотрудник вашей компании в процессе работы может написать клиенту в любой из доступных каналов чата. Эта функциональность доступна на <a href="../../../../7-17/user/bazis_platformy/interfejs/stranitsy_zapisey/stranicy_zapisej.html#title-759-5">панели действий</a> любого раздела. Например, можно написать контакту обращения, лиду, участникам продажи или контактам контрагента.</p>
+
+<p>По клику на кнопку канала на панели действий приложение определит связанный контакт или список контактов, которым можно написать в выбранный канал.</p>
+
+<p>Отправка сообщения клиенту возможна, при выполнении следующих условий:</p>
+
+<ul><li>В приложении есть активный канал выбранного провайдера.</li>
+	<li>С данным контактом уже была хотя бы одна коммуникация по выбранному каналу.</li>
+	<li>Прошло не более 24 часов с момента получения последнего входящего сообщения от клиента по выбранному каналу (только для Facebook Messenger и WhatsApp).</li>
+</ul><div class="media">
+<div class="media__caption">Рис. 5 — Пример перехода к чатам в разделе <span class="key">Продажи</span></div>
+
+<div class="media__element"><img alt="" data-entity-type="file" data-entity-uuid="" src="../../../../sites/default/files/images/Platform_basics/working_with_chats/scr_start_chat_from_opportunity_page.png" /></div>
+</div>
+
+<p>Если по крайней мере одно из вышеперечисленных условий не выполнено, то по клику на кнопку канала появится уведомление о невозможности отправить сообщение выбранному контакту.</p>
+
+<h2>Найти похожие контакты<a class="title-anchor" href="#title-3020-3" id="title-3020-3"> </a></h2>
+
+<p>Клиенты могут обращаться в компанию по разным каналам связи. Не всегда разные каналы позволяют однозначно сопоставить клиента и в системе могут появляться дубли контактов. При получении нового чата автоматически выполняется поиск похожих контактов.</p>
+
+<p>Поиск похожих контактов выполняется по активным <a href="../../dannye/dubli/poisk_i_obedinenie_dubly%23title-2641-10.html?id=1591&amp;anchor=title-2641-10">правилам поиска дублей</a>, настроенным в системе. После выполнения поиска в окне чата отображается информация о наличии похожих записей контактов в системе, благодаря чему вы сможете минимизировать создание дублей в системе.</p>
+
+<p>При нажатии на ссылку с количеством найденных дублей выполняется переход к странице дублей, контакт из активного чата маркируется отметкой “Текущий”. Если оператор принимает решение о необходимости объединения дублей, то контакт чата будет изменен на результирующую запись.</p>
+
+<div class="media">
+<div class="media__caption">Рис. 6 — Результат поиска похожих контактов</div>
+
+<div class="media__element"><img alt="" data-entity-type="file" data-entity-uuid="" height="620" src="../../../../sites/default/files/images/Platform_basics/working_with_chats/merge_duplicates.png" width="1284" /></div>
+</div>
+
+<h2>Создать обращение из чата<a class="title-anchor" href="#title-3020-4" id="title-3020-4"> </a></h2>
+
+<p>Действие чата “Создать обращение” доступно операторам в продуктах:</p>
+
+<ul><li>Service Creatio, enterprise edition;</li>
+	<li>Service Creatio, customer center edition;</li>
+	<li>Financial services Creatio, bank customer journey edition.</li>
+</ul><p>При выполнении данного действия в системе будет создано новое обращение, в котором заполнятся следующие поля:</p>
+
+<ul><li><span class="key">Тема</span> — текст первого сообщения в чате.</li>
+	<li><span class="key">Описание</span> — текст всех сообщений клиента до первого ответа оператора в чате (если было отправлено не одно сообщение).</li>
+	<li><span class="key">Происхождение</span> — “Чат”.</li>
+	<li><span class="key">Дата регистрации</span> — дата создания обращения.</li>
+	<li><span class="key">Состояние</span> — “Новое”.</li>
+	<li><span class="key">Контакт</span> — контакт из чата.</li>
+	<li><span class="key">Контрагент</span> — контрагент контакта.</li>
+	<li><span class="key">Ответственный</span> — оператор чата.</li>
+</ul><h2>Перевести чат на другого оператора<a class="title-anchor" href="#title-3020-15" id="title-3020-15"> </a></h2>
+
+<p>Иногда в чатах могут появляться вопросы, которые не соответствуют основной тематике канала. Например, в канал, предназначенный для технической поддержки пользователей, может написать клиент, который столкнулся со сложностями при оформлении заказа онлайн и хочет передать его альтернативным способом. В таких случаях после предоставления консультации по возникшим сложностям оператор может передать чат на другую очередь, например, отдел продаж. Также можно перевести чат на определенного сотрудника, например менеджера, который сопровождает данного клиента. Чтобы выполнить перевод чата:</p>
+
+<ol><li>Откройте на коммуникационной панели чат, который необходимо передать другому ответственному.</li>
+	<li>В верхней части панели нажмите кнопку <img src="../../../../sites/default/files/images/Platform_basics/working_with_chats/btn_transfer_chat.png" />. Откроется меню, в котором отобразятся все настроенные в приложении очереди и полный список операторов.</li>
+	<li>
+	<p>В открывшемся меню выберите очередь или оператора, на которого необходимо перевести чат (Рис. 6). Для каждого из операторов в списке будет указан статус: “Активен” (зеленый индикатор), "Неактивен” (красный индикатор) или “Исчерпан лимит чатов” (серый индикатор). Перевести чат можно на оператора со статусом “Активен" или “Неактивен".</p>
+
+	<div class="message">
+	<p><span class="message__bold">На заметку.</span> Статус “Исчерпан лимит чатов” устанавливается автоматически, когда количество активных чатов у него в работе равно значению, указанному в <a href="../../../ustanovka_i_administrirovanie/sistemnye_nastrojki_i_spravochniki/opisanie_sistemnykh_nastroek/opisanie_sistemnyh_nastroek.html#title-3469-15">системной настройке</a> “Количество одновременных чатов”. По умолчанию это 5 чатов. Данный статус отображается только в перечне операторов при переводе чата и не может быть установлен вручную.</p>
+	</div>
+
+	<div class="media">
+	<div class="media__caption">Рис. 7 — Перевод чата на другого оператора или очередь</div>
+
+	<div class="media__element"><img src="../../../../sites/default/files/images/Platform_basics/working_with_chats/scr_transfer%20chat.png" /></div>
+	</div>
+	</li>
+</ol><p>После передачи текущий чат завершается и автоматически создается дочерний чат. Состояние, которое будет установлено для нового чата, зависит от того, на кого он был переведен:</p>
+
+<ul><li>При передаче на определенного сотрудника новый чат в состоянии “В работе” будет добавлен в список активных чатов выбранного оператора.</li>
+	<li>При передаче на очередь чат в состоянии “Ожидает обработки” будет отправлен на распределение между операторами выбранной очереди согласно настроенным для нее правилам маршрутизации. До того, как конкретный оператор примет чат, последний отображается в списке <span class="key">Новые чаты</span>. После принятия, состояние чата изменится на: “В работе”. Открыв его, оператор увидит всю переписку из родительского чата и сможет продолжить общение с клиентом.</li>
+</ul><h2>Просмотреть завершенные чаты и аналитику<a class="title-anchor" href="#title-3020-5" id="title-3020-5"> </a></h2>
+
+<p>После завершения чата все сообщения и отправленные файлы доступны для просмотра в разделе <span class="key">Чаты</span>, а также на страницах соответствующих контактов на вкладке <span class="key">Хронология</span>.</p>
+
+<p>В разделе <span class="key">Чаты</span> вы можете ознакомиться с детальной информацией о чатах, сгруппировать их по различным параметрам, просмотреть историю коммуникации с клиентом, провести анализ по динамике обращений клиентов за определенный период, загрузку операторов, а также скорость обработки чатов.</p>
+
+<p>Сообщения незавершенных чатов доступны для просмотра только оператору в коммуникационной панели.</p>
+
+<h2>Обработать чаты внешним чат-ботом<a class="title-anchor" href="#title-3020-11" id="title-3020-11"> </a></h2>
+
+<p>Используйте чат-боты для первичной обработки входящих сообщений канала Facebook Messenger, чтобы снизить нагрузку на операторов. Чат-бот предоставит клиентам ответы на часто задаваемые вопросы, а также проведет предварительную обработку запроса перед передачей чата оператору. Бот-платформа интегрируется непосредственно с вашей публичной страницей Facebook, а обработанные ею запросы клиентов загружаются в Creatio.</p>
+
+<p>Использование чат-ботов возможно только для чатов, которые поступают по каналу Facebook Messenger. Настройка функциональности описана в отдельной статье: <a href="../../../ustanovka_i_administrirovanie/nastrojka_bazovyh_intgracij/chaty/nastroika_facebook_messenger/nastriot_integraciu_s_facebook_messenger.html#title-3019-14">Настроить интеграцию Creatio с внешним чат-ботом</a>.</p>
+
+<p>Сообщение, отправленное клиентом через Facebook Messenger на вашу публичную страницу, попадет на обработку к чат-боту. В зависимости от настройки бота переписка может быть сохранена в Creatio после завершения диалога или распределена на оператора.</p>
+
+<h3>Первичная обработка запроса чат-ботом<a class="title-anchor" href="#title-3020-12" id="title-3020-12"> </a></h3>
+
+<p>Данная логика предполагает, что после обработки чат-ботом запрос клиента будет направлен на оператора Creatio, который примет решение о необходимости продолжения работы по данному чату. Такая настройка может быть использована для чатов, в которых задают нестандартные вопросы или клиентам требуется доступ к непубличной информации, например, к договорам по продаже.</p>
+
+<p>В общем случае процесс обработки запроса чат-ботом выглядит следующим образом:</p>
+
+<ol><li>В Creatio создается новый чат в состоянии “Обработка ботом”. Он доступен в разделе <span class="key">Чаты</span>, но не отображается операторам на коммуникационной панели.</li>
+	<li>После передачи управления на Creatio созданный чат завершается и автоматически создается дочерний чат в состоянии “Ожидает обработки”.</li>
+	<li>Новый чат направляется оператору в соответствии с настроенными для данного канала правилами маршрутизации.</li>
+	<li>При обработке созданного чата оператору на коммуникационной панели доступна вся переписка родительского чата. На ее основании оператор принимает решение о необходимости продолжения или завершении чата.</li>
+	<li>После завершения чата с оператором управление диалогом с данным клиентом передается основному получателю протокола передачи (бот-платформе). Если в дальнейшем от клиента придет новое сообщение, по нему будет создан новый чат.</li>
+</ol><h3>Полная обработка запроса чат-ботом<a class="title-anchor" href="#title-3020-13" id="title-3020-13"> </a></h3>
+
+<p>Данная логика предполагает, что запросы клиентов из Facebook Messenger будут обрабатываться чат-ботом без передачи на операторов. Такая настройка может быть использована для чатов, в которых предоставляются ответы на часто задаваемые вопросы или обрабатываются типовые запросы, например, о ценах на продукты компании.</p>
+
+<p>В общем случае процесс обработки запроса чат-ботом выглядит следующим образом:</p>
+
+<ol><li>В Creatio создается новый чат в состоянии “Обработка ботом”. Он доступен в разделе <span class="key">Чаты</span>, но не отображается операторам на коммуникационной панели.</li>
+	<li>Завершение чата происходит автоматически через некоторое время после отправки/получения последнего сообщения. Время завершения чата определяется настройками канала:
+	<ul><li><strong>По завершении времени ожидания</strong>, если в настройках очереди чата заполнено поле <span class="key">Таймаут для завершения чата</span>. Подробнее: <a href="../../../../7-17/user/ustanovka_i_administrirovanie/nastrojka_bazovyh_intgracij/chaty/nastriot_chat.html#title-3019-1">Добавить очередь чата</a></li>
+		<li><strong>Через 60 минут</strong>, если в настройках очереди не указан таймаут для завершения чата.</li>
+	</ul></li>
+	<li>После завершения чата управление диалогом с клиентом передается основному получателю протокола передачи (бот-платформе), а в разделе <span class="key">Чаты</span> отображается вся история переписки между клиентом и ботом.</li>
+</ol></div>
+      
+  </div>
+<div class="block block-layout-builder block-field-blocknodeuser-documentationfield-linked-link">
+  
+    
+      
+  <div class="field field--name-field-linked-link field--type-link field--label-above">
+    <div class="field__label">Смотрите также</div>
+          <div class="field__items">
+              <div class="field__item"><a href="../../../../7-17/user/ustanovka_i_administrirovanie/nastrojka_bazovyh_intgracij/chaty/nastriot_chat.html">Настроить чат</a></div>
+          <div class="field__item"><a href="../../../razvertyvanie_onsite/nastroika_dopolnitelnikh_parametrov_i_integraciy/dostup_k_servisu_chatov/nastriot_dostup_k_servisu_chatov.html">Настроить доступ к сервису чатов</a></div>
+              </div>
+      </div>
+
+  </div>
+
+    </div>
+  </div>
+
+  </div>
+
+</article>
+
+  </div>
+
+  </div>
+
+          </div>
+        </div>
+
+                  <aside class="creatio-sidebar creatio-sidebar_first" role="complementary">
+              <div class="region region-sidebar-first">
+    <div id="block-documentationnaviagtion" class="block block-ts-nav block-ts-nav-doc-nav">
+  
+    
+      <div class="ts-nav-block"><a href="../../../../index.html" class="ts-nav-block__link">Документация</a><div class="ts-nav-block__title">Для пользователя</div>
+</div>
+<div class="ts-nav-container"><ul class="ts-nav-menu"><li class="ts-nav-menu__item">
+  <a href="../../../nocode_platforma.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">No-сode платформа&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../bazis_platformy.html" class="ts-nav-menu__link ts-nav-menu__link_expanded ts-nav-menu__link_open" hreflang="zxx">Базис платформы&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+      <ul class="ts-nav-menu__children">
+      <li class="ts-nav-menu__item">
+  <a href="../../interfejs.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Интерфейс&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../dannye.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Данные&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../kommunikacii.html" class="ts-nav-menu__link ts-nav-menu__link_expanded ts-nav-menu__link_open" hreflang="zxx">Коммуникации&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+      <ul class="ts-nav-menu__children">
+      <li class="ts-nav-menu__item">
+  <a href="../uvedomleniya/rabota_s_uvedomleniami.html" class="ts-nav-menu__link" hreflang="ru">Уведомления</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../vizy/rabota_s_vizami.html" class="ts-nav-menu__link" hreflang="ru">Визы</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../zvonki/rabota_so_zvonkami.html" class="ts-nav-menu__link" hreflang="ru">Звонки</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../chasovie_poyasa/rabota_v_neskolkih_chasovyh_poyasah.html" class="ts-nav-menu__link" hreflang="ru">Часовые пояса</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../pochta/rabota_s_pochtoy.html" class="ts-nav-menu__link" hreflang="ru">Почта</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="rabota_s_chatami.html" class="ts-nav-menu__link ts-nav-menu__link_active ts-nav-menu__link_open" hreflang="ru">Чаты</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../shablony_email_i_chatov/rabota_s_shablonami_soobschenii.html" class="ts-nav-menu__link" hreflang="ru">Шаблоны email и чатов</a>
+  </li>
+
+    </ul>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../mobilnoe_prilozhenie.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Мобильное приложение&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../vypolnenie_biznes-processov.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Выполнение бизнес-процессов&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+
+    </ul>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../instrumenty_crm.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Инструменты CRM&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../instrumenty_kastomizacii.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Инструменты кастомизации&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../biznes_processy.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Бизнес-процессы&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../instrumenty_marketinga.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Инструменты маркетинга&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../instrumenty_prodazh.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Инструменты продаж&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../instrumenty_servisa.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Инструменты сервиса&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../ustanovka_i_administrirovanie.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Администрирование&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../razvertyvanie_onsite.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Развертывание on-site&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../banki_i_finansy.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Банки и финансы&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../drugie_reshenija.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Другие решения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+</ul>
+</div>
+
+  </div>
+
+  </div>
+
+            <div class="creatio-sidebar__toggle"></div>
+          </aside>
+        
+                  <aside class="creatio-sidebar creatio-sidebar_second" role="complementary">
+              <div class="region region-sidebar-second">
+    <div id="block-example" class="block block-ts-nav block-ts-nav-page-nav">
+  
+    
+        <div class="ts-nav-title">Чаты</div>
+<div class="ts-nav-page">
+      <ul class="ts-nav-page__list">
+                                                <li class="ts-nav-page__item ts-nav-page__item_expanded ts-nav-page__item_open"><a href="rabota_s_chatami.html" class="ts-nav-page__link ts-nav-page__link_expanded ts-nav-page__link_active">Работа с чатами&nbsp;<span class="ts-nav-page__link-arrow"></span></a></li>
+          </ul>
+  </div>
+
+  </div>
+<div id="block-adminfeedbackblock" class="block block-admin-feedback block-admin-feedback-block">
+  
+    
+      <div id="feedback-message"><div id="upper-feedback-content"><h2>Был ли данный материал полезен?</h2>
+<input class="feedback-btn feedback-btn__yes button js-form-submit form-submit" data-node-id="3540" data-feedback="yes" type="submit" name="op" value="Да" />
+<input class="feedback-btn feedback-btn__no button js-form-submit form-submit" data-node-id="3540" data-feedback="no" type="submit" name="op" value="Нет" />
+</div>
+<form class="admin-feedback-form" data-drupal-selector="admin-feedback-form" action="https://academy.terrasoft.ua/docs/user/bazis_platformy/kommunikacii/chaty/rabota_s_chatami" method="post" id="admin-feedback-form" accept-charset="UTF-8">
+  <div id="feedback-msg-result"></div><div class="js-form-item form-item js-form-type-textarea form-type-textarea js-form-item-feedback-message form-item-feedback-message form-no-label">
+        <div class="form-textarea-wrapper">
+  <textarea id="edit-feedback-msg" data-drupal-selector="edit-feedback-message" name="feedback_message" rows="5" cols="60" class="form-textarea resize-vertical"></textarea>
+</div>
+
+        </div>
+<input id="feedback-id" data-drupal-selector="edit-feedback-id" type="hidden" name="feedback_id" value="" />
+<input class="feedback-btn feedback-btn__send-comment button js-form-submit form-submit" data-drupal-selector="edit-feedback-send" type="submit" id="edit-feedback-send" name="op" value="Отправить" />
+<input autocomplete="off" data-drupal-selector="form-imnxztqvxlurpeek7garmvrez6yphvbzwkgks-j0mf8" type="hidden" name="form_build_id" value="form-iMNXztQvxlurpeeK7garMVReZ6yPhVbZwkGKS-j0mF8" />
+<input data-drupal-selector="edit-admin-feedback-form" type="hidden" name="form_id" value="admin_feedback_form" />
+
+</form>
+</div>
+
+  </div>
+
+  </div>
+
+          </aside>
+              </main>
+    </div>
+  </div>
+
+  <footer role="contentinfo">
+    <div class="creatio-region creatio-region_footer">
+      <div class="creatio-container">
+          <div class="region region-footer">
+    <div id="block-footerua" class="block block-simple-block block-simple-blockfooter-ua">
+  
+    
+      <div class="footer">
+<div class="footer-left">
+<ul class="footer-socials"><li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_fb" href="https://www.facebook.com/terrasoft.ua" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_in" href="https://www.linkedin.com/company/terrasoft/" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_yt" href="https://www.youtube.com/c/TerrasoftUkraine" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_tg" href="https://t.me/Terrasoft_UA" target="_blank"> </a></li>
+</ul></div>
+
+<div class="footer-contact">
+<div class="footer-title">Будьте на связи!</div>
+
+<div class="footer-content">
+<div class="footer-items">
+<div class="footer-item"><a class="footer__link footer__link_phone" href="tel:+380443633133">+38 (044) 363-31-33</a></div>
+</div>
+
+<div class="footer-items">
+<div class="footer-item"><a class="footer__link footer__link_email" href="mailto:support@terrasoft.ua">support@terrasoft.ua</a></div>
+</div>
+</div>
+</div>
+</div>
+
+  </div>
+
+  </div>
+
+      </div>
+    </div>
+    <div class="creatio-region creatio-region_bottom">
+      <div class="creatio-container">
+          <div class="region region-bottom">
+    <div id="block-allrightsreservedua" class="block block-simple-block block-simple-blockfooter-bottom-ua">
+  
+    
+      <p>© 2002-2022 Terrasoft.  |  <a href="https://www.terrasoft.ua/privacy-policy" target="_blank">Конфиденциальность</a></p>
+
+  </div>
+
+  </div>
+
+      </div>
+    </div>
+  </footer>
+</div>
+<div class="creatio-bg"></div>
+
+
+  </div>
+
+    
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/docs\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/3540","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"ru"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"ajaxPageState":{"libraries":"admin_feedback\/admin_feedback_block,admin_feedback\/admin_feedback_css,classy\/base,classy\/messages,classy\/node,core\/drupal.ajax,core\/jquery.form,core\/normalize,creatio\/creatio.lists,creatio\/fancybox,creatio\/global,layout_discovery\/onecol,system\/base,ts_doc\/doc_version,ts_feedback\/ts_feedback,ts_nav\/breadcrumb,ts_nav\/doc_nav,ts_nav\/page_nav,ts_title_anchor\/ts_title_anchor","theme":"creatio","theme_token":null},"ajaxTrustedUrl":{"form_action_p_pvdeGsVG5zNF_XLGPTvYSKCf43t8qZYSwcfZl2uzM":true,"\/docs\/user\/bazis_platformy\/kommunikacii\/chaty\/rabota_s_chatami?ajax_form=1":true},"admin_feedback":{"yes_response":"\u0421\u043f\u0430\u0441\u0438\u0431\u043e \u0437\u0430 \u043e\u0431\u0440\u0430\u0442\u043d\u0443\u044e \u0441\u0432\u044f\u0437\u044c!","no_response":"\u0421\u043f\u0430\u0441\u0438\u0431\u043e \u0437\u0430 \u043e\u0431\u0440\u0430\u0442\u043d\u0443\u044e \u0441\u0432\u044f\u0437\u044c!","custom_text_response_on_no":{"value":"","format":"full_html"},"feedback_prompt_on_yes":true,"feedback_prompt_on_no":true,"feedback_enable_predefined_answers":false,"feedback_prompt":"\u041a\u0430\u043a \u043c\u043e\u0436\u043d\u043e \u0443\u043b\u0443\u0447\u0448\u0438\u0442\u044c \u044d\u0442\u0443 \u0441\u0442\u0430\u0442\u044c\u044e?"},"ajax":{"edit-feedback-send":{"callback":"::validateFeedbackMsg","event":"mousedown","keypress":true,"prevent":"click","url":"\/docs\/user\/bazis_platformy\/kommunikacii\/chaty\/rabota_s_chatami?ajax_form=1","dialogType":"ajax","submit":{"_triggering_element_name":"op","_triggering_element_value":"\u041e\u0442\u043f\u0440\u0430\u0432\u0438\u0442\u044c"}}},"user":{"uid":0,"permissionsHash":"9c2367dfcaba0fa15f0375f97aed64e146c908cee68508d13b79e3ee80e5162d"}}</script>
+<script src="../../../../sites/default/files/js/js_F2-Y4EzgTnESr58XByoLYEnsbi7ysTfMIKN1RvsMSWY.js"></script>
+
+
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+      <g id="svg-copy" class="svg-icon svg-icon_copy">
+        <path d="M15.111,18H1.889A1.848,1.848,0,0,1,0,16.2V3.6A1.848,1.848,0,0,1,1.889,1.8H5.837a2.87,2.87,0,0,1,5.326,0h3.948A1.848,1.848,0,0,1,17,3.6V16.2A1.848,1.848,0,0,1,15.111,18ZM3.777,12.6v1.8h6.611V12.6Zm0-3.6v1.8h9.445V9Zm0-3.6V7.2h9.445V5.4ZM8.5,1.8a.924.924,0,0,0-.944.9.945.945,0,0,0,1.889,0A.924.924,0,0,0,8.5,1.8Z"/>
+      </g>
+
+      <g id="svg-prev" class="svg-icon svg-icon_arrow">
+        <path d="M5.488,12.779,0,6.39,5.488,0" transform="translate(1 0.652)"/>
+      </g>
+
+      <g id="svg-next" class="svg-icon svg-icon_arrow">
+        <path d="M0,12.779,5.488,6.39,0,0" transform="translate(0.759 0.652)"/>
+      </g>
+    </svg>
+  </body>
+
+<!-- Mirrored from academy.terrasoft.ua/docs/user/bazis_platformy/kommunikacii/chaty/rabota_s_chatami by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 22 Mar 2022 19:56:43 GMT -->
+</html>

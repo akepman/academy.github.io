@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# ">
+  
+<!-- Mirrored from academy.terrasoft.ua/docs/7-17/developer/razrabotka_marketplace_prilozheniya/razrabotka_prilozheniya/obshchie_principy_razrabotki_prilozheniya_marketplace/primer_razrabotki_prilozheniya_s_razdelom by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Mar 2022 05:50:28 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+          <!-- Google Tag Manager -->
+      <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          '../../../../../../../www.googletagmanager.com/gtm5445.html?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-KLLB8G');</script>
+      <!-- End Google Tag Manager -->
+        <meta charset="utf-8" />
+<link rel="canonical" href="primer_razrabotki_prilozheniya_s_razdelom.html" />
+<meta name="description" content="Приложение для Creatio Marketplace, в котором реализован пользовательский раздел, практически ничем не отличается от разработки обычного проектного решения создания пользовательского раздела." />
+<meta property="og:url" content="https://academy.terrasoft.ua/docs/7-17/developer/razrabotka_marketplace_prilozheniya/razrabotka_prilozheniya/obshchie_principy_razrabotki_prilozheniya_marketplace/primer_razrabotki_prilozheniya_s_razdelom" />
+<meta property="og:title" content="Пример разработки приложения с пользовательским разделом для Marketplace" />
+<meta property="og:description" content="Приложение для Creatio Marketplace, в котором реализован пользовательский раздел, практически ничем не отличается от разработки обычного проектного решения создания пользовательского раздела." />
+<meta name="Generator" content="Drupal 9 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="../../../../../themes/custom/creatio/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="revision" href="primer_razrabotki_prilozheniya_s_razdelom.html" />
+
+    <title>Пример разработки приложения с пользовательским разделом для Marketplace | Creatio Academy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&amp;family=Open+Sans:ital,wght@0,300;0,400;0,600;1,400&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" media="all" href="../../../../../sites/default/files/css/css_6lTP66__-yc6QXFp1zOwoeJ0HVigoYZP-SeoLLii000.css" />
+<link rel="stylesheet" media="all" href="../../../../../sites/default/files/css/css_XQJDNhkF3xH5SZCcY-PI89Zu4nYIzQ5oR3SnUKyfXJU.css" />
+<link rel="stylesheet" media="print" href="../../../../../sites/default/files/css/css_Zn4VHvcniOOtUwkIVwXzYr_0AI9gUVgZcPqaH4ViagU.css" />
+
+    
+  </head>
+  <body class="path-node page-node-type-case">
+          <!-- Google Tag Manager (noscript) -->
+      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KLLB8G"
+                        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+      <!-- End Google Tag Manager (noscript) -->
+    
+        
+      <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    <div class="creatio-page d-flex flex-column">
+        <div class="region region-informer">
+    <div id="block-terrasoftpidtrimueukrainu" class="block block-simple-block block-simple-blockterrasoft-pidtrimue-ukrainu">
+  
+    
+      <style type="text/css">
+<!--/*--><![CDATA[/* ><!--*/
+@import url(../../../../../../../www.terrasoft.ua/themes/custom/creatio/css/components/informer.css)
+
+/*--><!]]>*/
+</style><div class="ts-swu">
+<div class="creatio-container">
+<div class="ts-swu__cont">
+<div><a class="ts-swu__link" href="https://www.terrasoft.ua/terrasoft-stands-with-ukraine" target="_blank">Україна понад усе!</a> <span><a href="https://www.terrasoft.ua/terrasoft-stands-with-ukraine" target="_blank">Приєднуйтеся</a> до допомоги!</span></div>
+</div>
+</div></div>
+
+  </div>
+
+  </div>
+
+  
+  <header role="banner">
+          <div class="creatio-region creatio-region_top">
+        <div class="creatio-container">
+            <div class="region region-top">
+    <div id="block-menutoggle" class="block block-simple-block block-simple-blockmenu-toggle">
+  
+    
+      <div class="menu-toggle"><span> </span></div>
+
+  </div>
+<div id="block-logowhite-2" class="block block-simple-block block-simple-blocklogo-white">
+  
+    
+      <p><a class="site-logo" href="../../../../../../index.html" rel="home"><img src="../../../../../themes/custom/creatio/logo-white.svg" /></a></p>
+
+  </div>
+<div id="block-search" class="block block-simple-block block-simple-blocksearch">
+  
+    
+      <div class="search">
+<form action="https://academy.terrasoft.ua/search" class="search-form" method="get"><input class="search-form__input" name="search" placeholder="Поиск" type="search" /><input class="search-form__button" type="submit" value="Поиск" /> </form>
+
+<div class="search-toggle"> </div>
+</div>
+
+  </div>
+<nav role="navigation" aria-labelledby="block-sitesua-menu" id="block-sitesua" class="block block-menu navigation menu--sites-ua">
+            
+  <h2 class="visually-hidden" id="block-sitesua-menu">Sites UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="https://www.terrasoft.ua/" rel="nofollow" target="_blank">Terrasoft</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://community.terrasoft.ua/" rel="nofollow" target="_blank">Community</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://marketplace.terrasoft.ua/" rel="nofollow" target="_blank">Marketplace</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+<div id="block-usermenu" class="block block-ts-user block-ts-user-menu-block">
+  
+    
+      <ul class="user-menu">
+      <li class="user-menu__item">
+      <a class="user-menu__link" href="https://profile.terrasoft.ua/user/login?destination=academy/ua/docs/7-17/developer/razrabotka_marketplace_prilozheniya/razrabotka_prilozheniya/obshchie_principy_razrabotki_prilozheniya_marketplace/primer_razrabotki_prilozheniya_s_razdelom">Войти</a>
+    </li>
+  </ul>
+
+  </div>
+<div id="block-usermenumobile" class="block block-ts-user block-ts-user-menu-mobile-block">
+  
+    
+      <ul class="user-menu-mobile">
+      <li class="user-menu-mobile__item">
+      <div class="user-menu-mobile__user user-menu-mobile__user_icon"></div>
+      <ul class="user-menu-mobile__submenu">
+        <li class="user-menu-mobile__subitem">
+          <a class="user-menu-mobile__sublink" href="https://profile.terrasoft.ua/user/login?destination=academy/ua/docs/7-17/developer/razrabotka_marketplace_prilozheniya/razrabotka_prilozheniya/obshchie_principy_razrabotki_prilozheniya_marketplace/primer_razrabotki_prilozheniya_s_razdelom">Войти</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  </div>
+
+  </div>
+
+        </div>
+      </div>
+              <div class="creatio-region creatio-region_header">
+        <div class="creatio-container">
+            <div class="region region-header">
+    <div id="block-logo" class="block block-simple-block block-simple-blocklogo">
+  
+    
+      <p><a class="site-logo" href="../../../../../../index.html" rel="home"><img src="../../../../../themes/custom/creatio/logo.svg" /></a></p>
+
+  </div>
+<nav role="navigation" aria-labelledby="block-osnovnayanavigaciyaua-menu" id="block-osnovnayanavigaciyaua" class="block block-menu navigation menu--main-ua">
+            
+  <h2 class="visually-hidden" id="block-osnovnayanavigaciyaua-menu">Основная навигация UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="../../../../../index.html" data-drupal-link-system-path="&lt;front&gt;">Документация</a>
+              </li>
+                <li class="menu-item">
+        <a href="../../../../../../trainings.html">Тренинги</a>
+              </li>
+                <li class="menu-item">
+        <a href="../../../../../certification.html" data-drupal-link-system-path="node/3084">Сертификация и тестирование</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+<nav role="navigation" aria-labelledby="block-sitesua-2-menu" id="block-sitesua-2" class="block block-menu navigation menu--sites-ua">
+            
+  <h2 class="visually-hidden" id="block-sitesua-2-menu">Sites UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="https://www.terrasoft.ua/" rel="nofollow" target="_blank">Terrasoft</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://community.terrasoft.ua/" rel="nofollow" target="_blank">Community</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://marketplace.terrasoft.ua/" rel="nofollow" target="_blank">Marketplace</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+
+  </div>
+
+        </div>
+      </div>
+              <div class="creatio-region creatio-region_breadcrumb">
+        <div class="creatio-container">
+            <div class="region region-breadcrumb">
+    <div id="block-logowhite" class="block block-simple-block block-simple-blocklogo-white">
+  
+    
+      <p><a class="site-logo" href="../../../../../../index.html" rel="home"><img src="../../../../../themes/custom/creatio/logo-white.svg" /></a></p>
+
+  </div>
+<div id="block-breadcrumbnaviagtion" class="block block-ts-nav block-ts-nav-bread">
+  
+    
+      <nav class="breadcrumb"><ol class="ts-nav-breadcrumb__list"><li class="ts-nav-breadcrumb__item"><a href="../../../../../index.html" class="ts-nav-breadcrumb__link" title="Документация">Документация</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../../../index2132.html?vid_1=2" class="ts-nav-breadcrumb__link" title="Для разработчика">Для разработчика</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../razrabotka_marketplace_prilozheniya.html" class="ts-nav-breadcrumb__link" title="Разработка Marketplace-приложения" hreflang="zxx">Разработка Marketplace-приложения</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../razrabotka_prilozheniya.html" class="ts-nav-breadcrumb__link" title="Разработка приложения" hreflang="ru">Разработка приложения</a></li>
+<li class="ts-nav-breadcrumb__item ts-nav-breadcrumb__item_mobile"><a href="../obshchie_principy_razrabotki_prilozheniya_marketplace.html" class="ts-nav-breadcrumb__link" title="Обзор" hreflang="ru">Обзор</a></li>
+<li class="ts-nav-breadcrumb__item"><span class="ts-nav-breadcrumb__link ts-nav-breadcrumb__link_current" title="Пример разработки приложения с разделом">Пример разработки приложения с разделом</span></li>
+</ol>
+</nav>
+
+  </div>
+<div id="block-search-2" class="block block-simple-block block-simple-blocksearch">
+  
+    
+      <div class="search">
+<form action="https://academy.terrasoft.ua/search" class="search-form" method="get"><input class="search-form__input" name="search" placeholder="Поиск" type="search" /><input class="search-form__button" type="submit" value="Поиск" /> </form>
+
+<div class="search-toggle"> </div>
+</div>
+
+  </div>
+
+  </div>
+
+        </div>
+      </div>
+      </header>
+
+  <div class="creatio-region creatio-region_main">
+    <div class="creatio-container">
+                <div class="region region-breadcrumb-mobile">
+    <div id="block-breadcrumbnaviagtion-2" class="block block-ts-nav block-ts-nav-bread">
+  
+    
+      <nav class="breadcrumb"><ol class="ts-nav-breadcrumb__list"><li class="ts-nav-breadcrumb__item"><a href="../../../../../index.html" class="ts-nav-breadcrumb__link" title="Документация">Документация</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../../../index2132.html?vid_1=2" class="ts-nav-breadcrumb__link" title="Для разработчика">Для разработчика</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../razrabotka_marketplace_prilozheniya.html" class="ts-nav-breadcrumb__link" title="Разработка Marketplace-приложения" hreflang="zxx">Разработка Marketplace-приложения</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../razrabotka_prilozheniya.html" class="ts-nav-breadcrumb__link" title="Разработка приложения" hreflang="ru">Разработка приложения</a></li>
+<li class="ts-nav-breadcrumb__item ts-nav-breadcrumb__item_mobile"><a href="../obshchie_principy_razrabotki_prilozheniya_marketplace.html" class="ts-nav-breadcrumb__link" title="Обзор" hreflang="ru">Обзор</a></li>
+<li class="ts-nav-breadcrumb__item"><span class="ts-nav-breadcrumb__link ts-nav-breadcrumb__link_current" title="Пример разработки приложения с разделом">Пример разработки приложения с разделом</span></li>
+</ol>
+</nav>
+
+  </div>
+
+  </div>
+
+      
+      <main class="creatio-main" role="main">
+                                                    
+        <div class="creatio-content creatio-content_small">
+          <div class="creatio-content__inner creatio-content__inner_bg">
+                            <div class="region region-messages">
+    <div data-drupal-messages-fallback class="hidden"></div>
+
+  </div>
+
+            
+              <div class="region region-content">
+    <div id="block-creatio-page-title" class="block block-core block-page-title-block">
+  
+    
+      
+  <h1 class="page-title"><span class="field field--name-title field--type-string field--label-hidden">Пример разработки приложения с пользовательским разделом для Marketplace</span>
+</h1>
+
+
+  </div>
+<div id="block-creatio-content" class="block block-system block-system-main-block">
+  
+    
+      
+<article data-history-node-id="2396" role="article" about="/docs/7-17/developer/razrabotka_marketplace_prilozheniya/razrabotka_prilozheniya/obshchie_principy_razrabotki_prilozheniya_marketplace/primer_razrabotki_prilozheniya_s_razdelom" class="node node--type-case node--view-mode-full">
+
+  
+    
+
+  
+  <div class="node__content">
+      <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocknodecasefield-difficulty">
+  
+    
+      
+            <div class="field field--name-field-difficulty field--type-entity-reference field--label-hidden field__item"><div about="/docs/7-17/taxonomy/term/123" id="taxonomy-term-123" class="taxonomy-term vocabulary-difficulty">
+  
+  
+  <div class="content">
+      <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocktaxonomy-termdifficultyfield-icon">
+  
+    
+      
+            <div class="field field--name-field-icon field--type-image field--label-hidden field__item">  <img src="../../../../../sites/default/files/difficulty/medium.svg" alt="" loading="lazy" typeof="foaf:Image" />
+
+</div>
+      
+  </div>
+<div class="block block-layout-builder block-field-blocktaxonomy-termdifficultyname">
+  
+    
+      
+            <div class="field field--name-name field--type-string field--label-hidden field__item"><span style="color: #F57E20;">Средний</span></div>
+      
+  </div>
+
+    </div>
+  </div>
+
+  </div>
+</div>
+</div>
+      
+  </div>
+<div class="block block-ts-doc block-ts-doc-downloads">
+  
+    
+      <a href="../../../../../sites/default/files/pdf/node/2396/Primer_razrabotki_prilozheniya_s_polzovatelskim_razdelom_dlya_Marketplace_.pdf" target="_blank">PDF</a>
+  </div>
+<div class="block block-ts-doc block-ts-doc-versions">
+  
+    
+        <div class="ts-doc-versions">
+    <select class="ts-doc-versions__select">
+                              <option value="/docs/8-0/developer/razrabotka_marketplace_prilozheniya/razrabotka_prilozheniya/obshchie_principy_razrabotki_prilozheniya_marketplace/primer_razrabotki_prilozheniya_s_razdelom">Версия 8.0</option>
+                              <option value="/docs/7-18/developer/razrabotka_marketplace_prilozheniya/razrabotka_prilozheniya/obshchie_principy_razrabotki_prilozheniya_marketplace/primer_razrabotki_prilozheniya_s_razdelom">Версия 7.18</option>
+                                                <option value="/docs/7-17/developer/razrabotka_marketplace_prilozheniya/razrabotka_prilozheniya/obshchie_principy_razrabotki_prilozheniya_marketplace/primer_razrabotki_prilozheniya_s_razdelom" selected>Версия 7.17</option>
+                              <option value="/docs/7-16/developer/razrabotka_marketplace_prilozheniya/razrabotka_prilozheniya/obshchie_principy_razrabotki_prilozheniya_marketplace/primer_razrabotki_prilozheniya_s_razdelom">Версия 7.16</option>
+          </select>
+  </div>
+
+  </div>
+
+    </div>
+  </div>
+  <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocknodecasebody">
+  
+    
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><p>Приложение для Creatio Marketplace, в котором реализован пользовательский раздел, практически ничем не отличается от разработки обычного проектного решения создания пользовательского раздела.</p>
+
+<p>Для создания пользовательского раздела необходимо использовать <a data-auto-update-caption="dlue" href="../../../../user/kastomizacija_no_code/nastrojka_biznes_logiki/razdel/dobavlenie_razdela/dobavit_novyy_razdel.html">мастер разделов</a>. Все схемы, создаваемые мастером разделов, сохраняются в пакет, который указан в системной настройке <span class="key">Текущий пакет</span> (<span class="filled">CurrentPackageId</span>). По умолчанию текущим пакетом является пакет <span class="key">Custom</span>.</p>
+
+<p>Однако, если изменения необходимо переносить в другую среду, то вести разработку в <a data-auto-update-caption="dlue" href="../../../development_tools/packages/pakety.html#title-2105-8">пакете <span class="key">Custom</span></a> нельзя. Это связано с тем, что сам пакет <span class="key">Custom</span> является системным пакетом, следовательно, его нельзя экспортировать ни с помощью утилиты WorkspaceConsole, ни с помощью SVN.</p>
+
+<div class="message">
+<p><span class="message__bold">На заметку.</span> Из пакета <span class="key">Custom</span> можно экспортировать только схемы с помощью <a data-auto-update-caption="dlue" href="../../../../../7-16/developer/development_tools/transferring_solutions/perenos_resheniy__v_creatio_ide.html">механизма экспорта и импорта схем</a>. Однако привязанные к пакету данные и SQL-сценарии с помощью этого механизма перенести в другой пакет нельзя.</p>
+</div>
+
+<p>Поэтому всю разработку новой функциональности следует вести в пользовательском пакете.</p>
+
+<p><strong>Последовательность создания приложения с пользовательским разделом</strong>:</p>
+
+<ol><li>Создать пользовательский пакет.</li>
+	<li>Установить значения системных настроек <span class="key">Текущий пакет</span> и <span class="key">Префикс названия объекта</span> для разработки в пользовательском пакете. Значение системной настройки <span class="key">Префикс названия объекта</span> должно соответствовать префиксу, указанному в Кабинете разработчика.</li>
+	<li>С помощью мастера разделов создать раздел.</li>
+	<li>Реализовать необходимую функциональность раздела.</li>
+	<li>Привязать к пользовательскому пакету все необходимые данные, относящиеся к разделу.</li>
+</ol><div class="message message_example">
+<p><span class="message__bold message__bold_example">Пример.</span> Создать проектное решение, реализующее в рабочем месте <span class="key">Маркетинг</span> новый раздел <span class="key">Web-данные</span>. На странице записи раздела нужно реализовать отображение статистики по заданному названию сайта (его URL). Статистику отображать в html-элементе <span class="filled">&lt;iframe&gt;</span> с помощью стороннего Web-сайта <a href="https://www.similarweb.com/" target="_blank">https://www.similarweb.com</a>.</p>
+</div>
+
+<h2>1. Создать пользовательский пакет<a class="title-anchor" href="#title-2396-3" id="title-2396-3"> </a></h2>
+
+<ol><li>Перейдите в дизайнер системы по кнопке <img src="../../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/TryIt/scr_system_designer.png" />.</li>
+	<li>В блоке <span class="key">Конфигурирование разработчиком</span> (<span class="key">Admin area</span>) перейдите по ссылке <span class="key">Управление конфигурацией</span> (<span class="key">Advanced settings</span>).</li>
+	<li>В области работы с пакетами нажмите кнопку <img src="../../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/CreateNewPackage/scr_pkg_create_button.png" />.</li>
+	<li>Заполните <strong>свойства пакета</strong>:
+	<ul><li><span class="key">Название</span> (<span class="key">Name</span>) — "tsaWebData".</li>
+		<li><span class="key">Описание</span> (<span class="key">Description</span>) — "Раздел веб-статистика" ("Web data section").</li>
+		<li>
+		<p><span class="key">Хранилище системы контроля версий</span> (<span class="key">Version control system repository</span>) — название хранилища системы контроля версий, в котором будут фиксироваться изменения пакета (обязательное свойство). Хранилища, которые находятся в перечне хранилищ конфигурации, но не помечены как активные, не попадут в выпадающий список доступных хранилищ.</p>
+
+		<div class="message message_warning">
+		<p><span class="message__bold message__bold_warning">Важно.</span> Поле Хранилище системы контроля версий (Version control system repository) заполняется при создании нового пакета и в дальнейшем недоступно для редактирования.</p>
+		</div>
+		</li>
+		<li><span class="key">Версия</span> (<span class="key">Version</span>) — "1.0.0".</li>
+	</ul><div class="media">
+	<div class="media__element"><img src="../../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/AdvancedMarketPlaceApplication/scr_pkg_new_card.png" /></div>
+	</div>
+	</li>
+	<li>
+	<p>Определите зависимости пакета<a class="title-anchor" href="#title-2103-4" id="title-2103-4"> </a></p>
+
+	<p>Чтобы текущий пакет наследовал функциональность приложения, необходимо определить <strong>зависимости пакета</strong>.</p>
+
+	<p>Чтобы <strong>добавить зависимости</strong> пакета:</p>
+
+	<ol><li>В карточке пакета нажмите кнопку <span class="key">Создать и добавить зависимости</span> (<span class="key">Create and add dependencies</span>).</li>
+		<li>На вкладке <span class="key">Зависимости</span> (<span class="key">Dependencies</span>) в детали <span class="key">Зависит от пакетов</span> (<span class="key">Depends on packages</span>) установите необходимые зависимости. Поскольку по условию примера необходимо добавить раздел в рабочее место <span class="key">Маркетинг</span>, то необходимо добавить зависимость от пакета <span class="key">MarketingSoftkey </span> (<span class="key">MarketingSoftKeyEnu</span>).</li>
+	</ol><div class="media">
+	<div class="media__element"><img alt="" border="0" src="../../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/AdvancedMarketPlaceApplication/scr_pkg_create_dependencies.png" /></div>
+	</div>
+	</li>
+</ol><h2>2. Установить значения системных настроек <span class="key">Текущий пакет</span> и <span class="key">Префикс названия объекта</span><a class="title-anchor" href="#title-2396-4" id="title-2396-4"> </a></h2>
+
+<p>Для того чтобы мастер разделов сохранил связанные с разделом схемы в пользовательский пакет, следует указать этот пакет в качестве текущего. Для этого необходимо в дизайнере системы перейти в раздел <span class="key">Системные настройки</span>, открыть системную настройку <span class="key">Текущий пакет</span> и в поле <span class="key">Значение по умолчанию</span> выбрать из справочника пакетов необходимый пользовательский пакет.</p>
+
+<div class="media">
+<div class="media__element"><img alt="" border="0" src="../../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/AdvancedMarketPlaceApplication/sdk_sys_settings.png" /></div>
+</div>
+
+<p>Затем системную настройку необходимо сохранить.</p>
+
+<p>Также необходимо установить указанное в профиле разработчика значение для системной настройки <span class="key">Префикс названия объекта</span>.</p>
+
+<div class="media">
+<div class="media__element"><img alt="" border="0" src="../../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/AdvancedMarketPlaceApplication/sdk_sys_settings_prefix.png" /></div>
+</div>
+
+<p>Этот префикс будет автоматически добавлен мастером к названиям всех схем, которые он создаст.</p>
+
+<h2>3. Создать раздел с помощью мастера<a class="title-anchor" href="#title-2396-5" id="title-2396-5"> </a></h2>
+
+<p>Для <a data-auto-update-caption="dlue" href="../../../../user/kastomizacija_no_code/nastrojka_biznes_logiki/razdel/dobavlenie_razdela/dobavit_novyy_razdel.html">нового раздела</a> в мастере необходимо указать значения для следующих свойств:</p>
+
+<div class="media">
+<div class="media__element"><img alt="" border="0" src="../../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/AdvancedMarketPlaceApplication/scr_master_section.png" /></div>
+</div>
+
+<ul><li><span class="key">Заголовок</span> — "<span class="consolas">Web-данные</span>". Заголовок отображается в главном меню приложения и на странице раздела.</li>
+	<li><span class="key">Код</span> — "<span class="consolas">tsaWebData</span>". Это название схемы объекта раздела.</li>
+	<li><span class="key">Рабочее место</span> — "<span class="consolas">Маркетинг</span>". Рабочее место, в котором будет отображен раздел.</li>
+</ul><p>Исходя из условий примера, на странице записи раздела необходимо создать поле для ввода названия URL сайта, для которого будет отображена статистика. Для этого можно использовать колонку <span class="key">Название</span>, создаваемую мастером по умолчанию (1). Также нужно добавить вспомогательное поле (2), в котором будет храниться создаваемая программно ссылка на страницу статистики Web-сайта <a href="https://www.similarweb.com/" target="_blank">https://www.similarweb.com</a> для введенного URL. Эта ссылка будет присваиваться атрибуту <span class="filled">src</span> элемента <span class="filled">&lt;iframe&gt;</span>, размещенного на странице. Для размещения элемента <span class="filled">&lt;iframe&gt;</span> необходимо добавить новую вкладку <span class="key">Web-данные</span> (3) на панель вкладок.</p>
+
+<div class="media">
+<div class="media__element"><img alt="" border="0" src="../../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/AdvancedMarketPlaceApplication/scr_master_page.png" /></div>
+</div>
+
+<p>После нажатия на кнопку <span class="key">Сохранить</span> мастер создаст все необходимые схемы в пакете и сохранит результаты в базу данных.</p>
+
+<div class="message">
+<p><span class="message__bold">На заметку.</span> Для завершения работы мастеру разделов может потребоваться несколько минут. После сохранения всех результатов работы мастера, в системе отобразится соответствующее сообщение.</p>
+
+<p>Для отображения нового раздела необходимо перезагрузить страницу браузера с очисткой кэша.</p>
+</div>
+
+<h2>4. Реализовать необходимую функциональность раздела<a class="title-anchor" href="#title-2396-6" id="title-2396-6"> </a></h2>
+
+<p>Созданный при помощи мастера раздел уже имеет всю необходимую функциональность по добавлению, удалению и сортировке записей. Также в схеме страницы записи уже унаследована вся функциональность, необходимая для сохранения и загрузки основных данных записи.</p>
+
+<p>Для формирования ссылки на страницу статистики, отображаемой в поле URL, необходимо добавить кнопку. Для добавления кнопки используется конфигурационный объект, добавляемый в массив <span class="filled"><a data-auto-update-caption="dlue" href="../../../front-end_development/client_schema_structure/massiv_diff.html">diff</a></span> модели представления страницы. Заголовок кнопки связан с локализируемой строкой <span class="filled">AddUrlButtonCaption</span>. Событие <span class="filled">click</span> нажатия кнопки нужно связать с методом <span class="filled">addUrl()</span>, в котором формируется ссылка на страницу статистики и устанавливается новое значение для колонки <span class="filled">tsaURL</span>, связанной с полем <span class="key">URL</span> страницы записи. Также эта ссылка присваивается атрибуту <span class="filled">src</span> элемента <span class="filled">&lt;iframe&gt;</span>.</p>
+
+<p>Элемент <span class="filled">&lt;iframe&gt;</span> добавляется на созданную мастером вкладку также с помощью конфигурационного объекта, добавляемого в массив <span class="filled">diff</span>. В свойстве html конфигурационного объекта формируется html-элемент <span class="filled">&lt;iframe&gt;</span> с заданием нужных стилей. При этом атрибут <span class="filled">src</span> не указывается, поскольку он формируется программно в методе <span class="filled">addUrl()</span>. Для того чтобы в элементе <span class="filled">&lt;iframe&gt;</span> данные восстанавливались после переключения на другую вкладку, необходимо связать событие <span class="filled">afterrerender</span> перерисовки контейнера, содержащего элемент <span class="filled">&lt;iframe&gt;</span>, с методом <span class="filled">addUrl()</span>.</p>
+
+<p>После открытия сохраненной записи, событие <span class="filled">afterrerender</span> отрисовки контейнера с элементом <span class="filled">&lt;iframe&gt;</span> наступает, как правило, раньше полной загрузки данных. Поэтому метод <span class="filled">addUrl()</span> следует также вызвать в методе-обработчике события загрузки данных <span class="filled">onEntityInitialized()</span>.</p>
+
+<p>Полностью исходный код схемы модели представления страницы записи представлен ниже.</p>
+
+<div class="code">
+<div class="code__widgets">
+<div class="code__top">
+<div class="code__title"><span class="filled">tsaWebData1Page</span></div>
+</div>
+
+<div class="code__source">
+<pre class="prettyprint">
+define(<span>"tsaWebData1Page"</span>, [], <span>function</span>() {
+    <span>return</span> {
+        entitySchemaName: <span>"tsaWebData"</span>,
+        details: <span>/**SCHEMA_DETAILS*/</span>{}<span>/**SCHEMA_DETAILS*/</span>,
+        diff: <span>/**SCHEMA_DIFF*/</span>[
+            <span>// Название Web-страницы.
+</span>            {
+                <span>"operation"</span>: <span>"insert"</span>,
+                <span>"name"</span>: <span>"tsaName"</span>,
+                <span>"values"</span>: {
+                    <span>"layout"</span>: {
+                        <span>"colSpan"</span>: 24,
+                        <span>"rowSpan"</span>: 1,
+                        <span>"column"</span>: 0,
+                        <span>"row"</span>: 0,
+                        <span>"layoutName"</span>: <span>"ProfileContainer"</span>
+                    },
+                    <span>"bindTo"</span>: <span>"tsaName"</span>
+                },
+                <span>"parentName"</span>: <span>"ProfileContainer"</span>,
+                <span>"propertyName"</span>: <span>"items"</span>,
+                <span>"index"</span>: 0
+            },
+            <span>// Cсылка на статистику Web-страницы.
+</span>            {
+                <span>"operation"</span>: <span>"insert"</span>,
+                <span>"name"</span>: <span>"tsaURL"</span>,
+                <span>"values"</span>: {
+                    <span>"layout"</span>: {
+                        <span>"colSpan"</span>: 24,
+                        <span>"rowSpan"</span>: 1,
+                        <span>"column"</span>: 0,
+                        <span>"row"</span>: 0,
+                        <span>"layoutName"</span>: <span>"Header"</span>
+                    },
+                    <span>"labelConfig"</span>: {},
+                    <span>"enabled"</span>: <span>true</span>,
+                    <span>"readonly"</span>: <span>true</span>,
+                    <span>"bindTo"</span>: <span>"tsaURL"</span>
+                },
+                <span>"parentName"</span>: <span>"Header"</span>,
+                <span>"propertyName"</span>: <span>"items"</span>,
+                <span>"index"</span>: 0
+            },
+            <span>// Вкладка на панели вкладок.
+</span>            {
+                <span>"operation"</span>: <span>"insert"</span>,
+                <span>"name"</span>: <span>"TabData"</span>,
+                <span>"values"</span>: {
+                    <span>"caption"</span>: <span>"Web-данные"</span>,
+                    <span>"items"</span>: []
+                },
+                <span>"parentName"</span>: <span>"Tabs"</span>,
+                <span>"propertyName"</span>: <span>"tabs"</span>,
+                <span>"index"</span>: 0
+            },
+            <span>// Кнопка добавления URL.
+</span>            {
+                <span>"operation"</span>: <span>"insert"</span>,
+                <span>"parentName"</span>: <span>"ProfileContainer"</span>,
+                <span>"propertyName"</span>: <span>"items"</span>,
+                <span>"name"</span>: <span>"AddUrlButton"</span>,
+                <span>"values"</span>: {
+                    <span>"layout"</span>: {
+                        <span>"colSpan"</span>: 24,
+                        <span>"rowSpan"</span>: 1,
+                        <span>"column"</span>: 0,
+                        <span>"row"</span>: 1
+                    },
+                    <span>"itemType"</span>: Terrasoft.ViewItemType.BUTTON,
+                    <span>"caption"</span>: {<span>"bindTo"</span>: <span>"Resources.Strings.AddUrlButtonCaption"</span>},
+                    <span>"click"</span>: {<span>"bindTo"</span>: <span>"addUrl"</span>},
+                    <span>"style"</span>: Terrasoft.controls.ButtonEnums.style.BLUE
+                }
+            },
+            <span>// Контейнер с внедренным Html-элементом iframe.
+</span>            {
+                <span>"operation"</span>: <span>"insert"</span>,
+                <span>"name"</span>: <span>"IFrameStat"</span>,
+                <span>"parentName"</span>: <span>"TabData"</span>,
+                <span>"propertyName"</span>: <span>"items"</span>,
+                <span>"values"</span>: {
+                    <span>"id"</span>: <span>"testiframe"</span>,
+                    <span>"itemType"</span>: Terrasoft.ViewItemType.CONTAINER,
+                    <span>"selectors"</span>: {<span>"wrapEl"</span>: <span>"#stat-iframe"</span>},
+                    <span>"layout"</span>: { <span>"colSpan"</span>: 24, <span>"rowSpan"</span>: 1, <span>"column"</span>: 0, <span>"row"</span>: 0 },
+                    <span>"html"</span>: <span>"&lt;iframe id='stat-iframe' class='stat-iframe' width='100%' height='550px'"</span> +
+                        <span>"style = 'border: 1px solid silver;'&gt;&lt;/iframe&gt;"</span>,
+                    <span>"afterrerender"</span>: {
+                        <span>"bindTo"</span>: <span>"addUrl"</span>
+                    }
+                }
+            }
+        ]<span>/**SCHEMA_DIFF*/</span>,
+        methods: {
+            <span>// Обработчик события полной загрузки данных.
+</span>            onEntityInitialized: <span>function</span>() {
+                <span>// Вызов родительской реализации метода.
+</span>                <span>this</span>.callParent(arguments);
+                <span>// Вызов метода добавления URL к Html-элементу iframe
+</span>                <span>this</span>.addUrl();
+            },
+            <span>// Метод добавления URL к Html-элементу iframe.
+</span>            addUrl: <span>function</span>() {
+                <span>// Получение компонента по его id.
+</span>                <span>var</span> iframe = Ext.get(<span>"stat-iframe"</span>);
+                <span>if</span> (!iframe) {
+                    window.console.error(<span>"Не найдена вкладка с элементом iframe"</span>);
+                    <span>return</span>;
+                }
+                <span>// Получение значения колонки [tsaName].
+</span>                <span>var</span> siteName = <span>this</span>.get(<span>"tsaName"</span>);
+                <span>if</span> (!siteName) {
+                    window.console.error(<span>"Не указано имя сайта"</span>);
+                    <span>return</span>;
+                }
+                <span>// Формирование ссылки на страницу статистики.
+</span>                <span>var</span> url = <span>"https://www.similarweb.com/website/"</span> + siteName;
+                <span>// Установка значения колонки [tsaName].
+</span>                <span>this</span>.set(<span>"tsaURL"</span>, url);
+                <span>// Присвоение ссылки на страницу статистики Html-элементу iframe.
+</span>                iframe.dom.src = url;
+            }
+        },
+        rules: {}
+    };
+});
+</pre>
+</div>
+</div>
+</div>
+
+<p>После сохранения схемы, на странице записи раздела <span class="key">Web-статистика</span> появится кнопка добавления URL и элемент <span class="filled">&lt;iframe&gt;</span>, в котором будет отображаться статистика по введенному Web-ресурсу.</p>
+
+<div class="media">
+<div class="media__element"><img alt="" border="0" src="../../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/AdvancedMarketPlaceApplication/scr_result.png" /></div>
+</div>
+</div>
+      
+  </div>
+
+    </div>
+  </div>
+
+  </div>
+
+</article>
+
+  </div>
+
+  </div>
+
+          </div>
+        </div>
+
+                  <aside class="creatio-sidebar creatio-sidebar_first" role="complementary">
+              <div class="region region-sidebar-first">
+    <div id="block-documentationnaviagtion" class="block block-ts-nav block-ts-nav-doc-nav">
+  
+    
+      <div class="ts-nav-block"><a href="../../../../../index.html" class="ts-nav-block__link">Документация</a><div class="ts-nav-block__title">Для разработчика</div>
+</div>
+<div class="ts-nav-container"><ul class="ts-nav-menu"><li class="ts-nav-menu__item">
+  <a href="../../../s_chego_nachat.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">С чего начать&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../architecture.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Архитектура&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../instrumenty_razrabotki.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Инструменты разработки&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../back_end_razrabotka.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Back-end разработка&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../front_end_razrabotka.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Front-end разработка&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../integratsiya_i_vneshnij_api.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Интеграция и внешний API&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../ehlementy_interfejsa.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Элементы интерфейса&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../komponenty_prilozheniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Компоненты приложения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../razrabotka_mobilnogo_prilozheniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Разработка мобильного приложения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../razrabotka_marketplace_prilozheniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded ts-nav-menu__link_open" hreflang="zxx">Разработка Marketplace-приложения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+      <ul class="ts-nav-menu__children">
+      <li class="ts-nav-menu__item">
+  <a href="../../podgotovka_k_razrabotke_prilozheniya/obzor.html" class="ts-nav-menu__link" hreflang="ru">Подготовка к разработке приложения</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../razrabotka_prilozheniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded ts-nav-menu__link_open" hreflang="ru">Разработка приложения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+      <ul class="ts-nav-menu__children">
+      <li class="ts-nav-menu__item">
+  <a href="../obshchie_principy_razrabotki_prilozheniya_marketplace.html" class="ts-nav-menu__link ts-nav-menu__link_expanded ts-nav-menu__link_open" hreflang="ru">Обзор&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+      <ul class="ts-nav-menu__children">
+      <li class="ts-nav-menu__item">
+  <a href="obzor.html" class="ts-nav-menu__link ts-nav-menu__link_guide" hreflang="ru">Обзор</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="primer_razrabotki_prilozheniya.html" class="ts-nav-menu__link ts-nav-menu__link_case" hreflang="ru">Пример разработки приложения</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="primer_razrabotki_prilozheniya_s_razdelom.html" class="ts-nav-menu__link ts-nav-menu__link_case ts-nav-menu__link_active" hreflang="ru">Пример разработки приложения с разделом</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="lichelper.html" class="ts-nav-menu__link ts-nav-menu__link_reference" data-type="C#" hreflang="ru">LicHelper</a>
+  </li>
+
+    </ul>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../zashchita_koda_ot_plagiata/obzor.html" class="ts-nav-menu__link" hreflang="ru">Защита кода от плагиата</a>
+  </li>
+
+    </ul>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../publikaciya_prilozheniya/obzor.html" class="ts-nav-menu__link" hreflang="ru">Публикация приложения</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../sertifikaciya_prilozheniya/obzor.html" class="ts-nav-menu__link" hreflang="ru">Сертификация приложения</a>
+  </li>
+
+    </ul>
+  </li>
+</ul>
+</div>
+
+  </div>
+
+  </div>
+
+            <div class="creatio-sidebar__toggle"></div>
+          </aside>
+        
+                  <aside class="creatio-sidebar creatio-sidebar_second" role="complementary">
+              <div class="region region-sidebar-second">
+    <div id="block-example" class="block block-ts-nav block-ts-nav-page-nav">
+  
+    
+      <div class="ts-nav-page">
+  </div>
+
+  </div>
+<div id="block-adminfeedbackblock" class="block block-admin-feedback block-admin-feedback-block">
+  
+    
+      <div id="feedback-message"><div id="upper-feedback-content"><h2>Был ли данный материал полезен?</h2>
+<input class="feedback-btn feedback-btn__yes button js-form-submit form-submit" data-node-id="2396" data-feedback="yes" type="submit" name="op" value="Да" />
+<input class="feedback-btn feedback-btn__no button js-form-submit form-submit" data-node-id="2396" data-feedback="no" type="submit" name="op" value="Нет" />
+</div>
+<form class="admin-feedback-form" data-drupal-selector="admin-feedback-form" action="https://academy.terrasoft.ua/docs/7-17/developer/razrabotka_marketplace_prilozheniya/razrabotka_prilozheniya/obshchie_principy_razrabotki_prilozheniya_marketplace/primer_razrabotki_prilozheniya_s_razdelom" method="post" id="admin-feedback-form" accept-charset="UTF-8">
+  <div id="feedback-msg-result"></div><div class="js-form-item form-item js-form-type-textarea form-type-textarea js-form-item-feedback-message form-item-feedback-message form-no-label">
+        <div class="form-textarea-wrapper">
+  <textarea id="edit-feedback-msg" data-drupal-selector="edit-feedback-message" name="feedback_message" rows="5" cols="60" class="form-textarea resize-vertical"></textarea>
+</div>
+
+        </div>
+<input id="feedback-id" data-drupal-selector="edit-feedback-id" type="hidden" name="feedback_id" value="" />
+<input class="feedback-btn feedback-btn__send-comment button js-form-submit form-submit" data-drupal-selector="edit-feedback-send" type="submit" id="edit-feedback-send" name="op" value="Отправить" />
+<input autocomplete="off" data-drupal-selector="form-u9avjfqzw2pnyvfxkr8yu4eejca2nacyqq0vtg9cbmy" type="hidden" name="form_build_id" value="form-u9avjFqzw2PNYvFxkR8Yu4Eejca2nAcyqq0Vtg9CBMY" />
+<input data-drupal-selector="edit-admin-feedback-form" type="hidden" name="form_id" value="admin_feedback_form" />
+
+</form>
+</div>
+
+  </div>
+
+  </div>
+
+          </aside>
+              </main>
+    </div>
+  </div>
+
+  <footer role="contentinfo">
+    <div class="creatio-region creatio-region_footer">
+      <div class="creatio-container">
+          <div class="region region-footer">
+    <div id="block-footerua" class="block block-simple-block block-simple-blockfooter-ua">
+  
+    
+      <div class="footer">
+<div class="footer-left">
+<ul class="footer-socials"><li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_fb" href="https://www.facebook.com/terrasoft.ua" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_in" href="https://www.linkedin.com/company/terrasoft/" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_yt" href="https://www.youtube.com/c/TerrasoftUkraine" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_tg" href="https://t.me/Terrasoft_UA" target="_blank"> </a></li>
+</ul></div>
+
+<div class="footer-contact">
+<div class="footer-title">Будьте на связи!</div>
+
+<div class="footer-content">
+<div class="footer-items">
+<div class="footer-item"><a class="footer__link footer__link_phone" href="tel:+380443633133">+38 (044) 363-31-33</a></div>
+</div>
+
+<div class="footer-items">
+<div class="footer-item"><a class="footer__link footer__link_email" href="mailto:support@terrasoft.ua">support@terrasoft.ua</a></div>
+</div>
+</div>
+</div>
+</div>
+
+  </div>
+
+  </div>
+
+      </div>
+    </div>
+    <div class="creatio-region creatio-region_bottom">
+      <div class="creatio-container">
+          <div class="region region-bottom">
+    <div id="block-allrightsreservedua" class="block block-simple-block block-simple-blockfooter-bottom-ua">
+  
+    
+      <p>© 2002-2022 Terrasoft.  |  <a href="https://www.terrasoft.ua/privacy-policy" target="_blank">Конфиденциальность</a></p>
+
+  </div>
+
+  </div>
+
+      </div>
+    </div>
+  </footer>
+</div>
+<div class="creatio-bg"></div>
+
+
+  </div>
+
+    
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/docs\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/2396","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"ru"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"ajaxPageState":{"libraries":"admin_feedback\/admin_feedback_block,admin_feedback\/admin_feedback_css,classy\/base,classy\/messages,classy\/node,core\/drupal.ajax,core\/jquery.form,core\/normalize,creatio\/fancybox,creatio\/global,layout_discovery\/onecol,system\/base,ts_doc\/doc_version,ts_feedback\/ts_feedback,ts_nav\/breadcrumb,ts_nav\/doc_nav,ts_nav\/page_nav,ts_title_anchor\/ts_title_anchor","theme":"creatio","theme_token":null},"ajaxTrustedUrl":{"form_action_p_pvdeGsVG5zNF_XLGPTvYSKCf43t8qZYSwcfZl2uzM":true,"\/docs\/7-17\/developer\/razrabotka_marketplace_prilozheniya\/razrabotka_prilozheniya\/obshchie_principy_razrabotki_prilozheniya_marketplace\/primer_razrabotki_prilozheniya_s_razdelom?ajax_form=1":true},"admin_feedback":{"yes_response":"\u0421\u043f\u0430\u0441\u0438\u0431\u043e \u0437\u0430 \u043e\u0431\u0440\u0430\u0442\u043d\u0443\u044e \u0441\u0432\u044f\u0437\u044c!","no_response":"\u0421\u043f\u0430\u0441\u0438\u0431\u043e \u0437\u0430 \u043e\u0431\u0440\u0430\u0442\u043d\u0443\u044e \u0441\u0432\u044f\u0437\u044c!","custom_text_response_on_no":{"value":"","format":"full_html"},"feedback_prompt_on_yes":true,"feedback_prompt_on_no":true,"feedback_enable_predefined_answers":false,"feedback_prompt":"\u041a\u0430\u043a \u043c\u043e\u0436\u043d\u043e \u0443\u043b\u0443\u0447\u0448\u0438\u0442\u044c \u044d\u0442\u0443 \u0441\u0442\u0430\u0442\u044c\u044e?"},"ajax":{"edit-feedback-send":{"callback":"::validateFeedbackMsg","event":"mousedown","keypress":true,"prevent":"click","url":"\/docs\/7-17\/developer\/razrabotka_marketplace_prilozheniya\/razrabotka_prilozheniya\/obshchie_principy_razrabotki_prilozheniya_marketplace\/primer_razrabotki_prilozheniya_s_razdelom?ajax_form=1","dialogType":"ajax","submit":{"_triggering_element_name":"op","_triggering_element_value":"\u041e\u0442\u043f\u0440\u0430\u0432\u0438\u0442\u044c"}}},"user":{"uid":0,"permissionsHash":"9c2367dfcaba0fa15f0375f97aed64e146c908cee68508d13b79e3ee80e5162d"}}</script>
+<script src="../../../../../sites/default/files/js/js_Rr-7TvYD7NposuRFJwUqThxM7yJmw8vs03PQwu5gWd8.js"></script>
+
+
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+      <g id="svg-copy" class="svg-icon svg-icon_copy">
+        <path d="M15.111,18H1.889A1.848,1.848,0,0,1,0,16.2V3.6A1.848,1.848,0,0,1,1.889,1.8H5.837a2.87,2.87,0,0,1,5.326,0h3.948A1.848,1.848,0,0,1,17,3.6V16.2A1.848,1.848,0,0,1,15.111,18ZM3.777,12.6v1.8h6.611V12.6Zm0-3.6v1.8h9.445V9Zm0-3.6V7.2h9.445V5.4ZM8.5,1.8a.924.924,0,0,0-.944.9.945.945,0,0,0,1.889,0A.924.924,0,0,0,8.5,1.8Z"/>
+      </g>
+
+      <g id="svg-prev" class="svg-icon svg-icon_arrow">
+        <path d="M5.488,12.779,0,6.39,5.488,0" transform="translate(1 0.652)"/>
+      </g>
+
+      <g id="svg-next" class="svg-icon svg-icon_arrow">
+        <path d="M0,12.779,5.488,6.39,0,0" transform="translate(0.759 0.652)"/>
+      </g>
+    </svg>
+  </body>
+
+<!-- Mirrored from academy.terrasoft.ua/docs/7-17/developer/razrabotka_marketplace_prilozheniya/razrabotka_prilozheniya/obshchie_principy_razrabotki_prilozheniya_marketplace/primer_razrabotki_prilozheniya_s_razdelom by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Mar 2022 05:50:29 GMT -->
+</html>

@@ -1,0 +1,1443 @@
+  <!DOCTYPE html>
+<html lang="ru" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# ">
+  
+<!-- Mirrored from academy.terrasoft.ua/docs/7-18/developer/razrabotka_mobilnogo_prilozheniya/kastomizaciya/biznes_pravila/config by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Mar 2022 03:45:27 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+          <!-- Google Tag Manager -->
+      <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          '../../../../../../../www.googletagmanager.com/gtm5445.html?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-KLLB8G');</script>
+      <!-- End Google Tag Manager -->
+        <meta charset="utf-8" />
+<link rel="canonical" href="config.html" />
+<meta name="description" content="Базовые бизнес-правила 
+
+Базовое бизнес-правило является абстрактным классом, т.е. все бизнес-правила должны быть его наследниками.
+
+Свойства конфигурационного объекта config могут быть использованы наследниками базового бизнес-правила." />
+<meta property="og:url" content="https://academy.terrasoft.ua/docs/7-18/developer/razrabotka_mobilnogo_prilozheniya/kastomizaciya/biznes_pravila/config" />
+<meta property="og:title" content="Свойства объекта config" />
+<meta property="og:description" content="Базовые бизнес-правила 
+
+Базовое бизнес-правило является абстрактным классом, т.е. все бизнес-правила должны быть его наследниками.
+
+Свойства конфигурационного объекта config могут быть использованы наследниками базового бизнес-правила." />
+<meta name="Generator" content="Drupal 9 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="../../../../../themes/custom/creatio/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="revision" href="config.html" />
+
+    <title>Свойства объекта config | Creatio Academy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&amp;family=Open+Sans:ital,wght@0,300;0,400;0,600;1,400&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" media="all" href="../../../../../sites/default/files/css/css_6lTP66__-yc6QXFp1zOwoeJ0HVigoYZP-SeoLLii000.css" />
+<link rel="stylesheet" media="all" href="../../../../../sites/default/files/css/css_XQJDNhkF3xH5SZCcY-PI89Zu4nYIzQ5oR3SnUKyfXJU.css" />
+<link rel="stylesheet" media="print" href="../../../../../sites/default/files/css/css_Zn4VHvcniOOtUwkIVwXzYr_0AI9gUVgZcPqaH4ViagU.css" />
+
+    
+  </head>
+  <body class="path-node page-node-type-reference"data-type="C#">
+          <!-- Google Tag Manager (noscript) -->
+      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KLLB8G"
+                        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+      <!-- End Google Tag Manager (noscript) -->
+    
+        
+      <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    <div class="creatio-page d-flex flex-column">
+        <div class="region region-informer">
+    <div id="block-terrasoftpidtrimueukrainu" class="block block-simple-block block-simple-blockterrasoft-pidtrimue-ukrainu">
+  
+    
+      <style type="text/css">
+<!--/*--><![CDATA[/* ><!--*/
+@import url(../../../../../../../www.terrasoft.ua/themes/custom/creatio/css/components/informer.css)
+
+/*--><!]]>*/
+</style><div class="ts-swu">
+<div class="creatio-container">
+<div class="ts-swu__cont">
+<div><a class="ts-swu__link" href="https://www.terrasoft.ua/terrasoft-stands-with-ukraine" target="_blank">Україна понад усе!</a> <span><a href="https://www.terrasoft.ua/terrasoft-stands-with-ukraine" target="_blank">Приєднуйтеся</a> до допомоги!</span></div>
+</div>
+</div></div>
+
+  </div>
+
+  </div>
+
+  
+  <header role="banner">
+          <div class="creatio-region creatio-region_top">
+        <div class="creatio-container">
+            <div class="region region-top">
+    <div id="block-menutoggle" class="block block-simple-block block-simple-blockmenu-toggle">
+  
+    
+      <div class="menu-toggle"><span> </span></div>
+
+  </div>
+<div id="block-logowhite-2" class="block block-simple-block block-simple-blocklogo-white">
+  
+    
+      <p><a class="site-logo" href="../../../../../../index.html" rel="home"><img src="../../../../../themes/custom/creatio/logo-white.svg" /></a></p>
+
+  </div>
+<div id="block-search" class="block block-simple-block block-simple-blocksearch">
+  
+    
+      <div class="search">
+<form action="https://academy.terrasoft.ua/search" class="search-form" method="get"><input class="search-form__input" name="search" placeholder="Поиск" type="search" /><input class="search-form__button" type="submit" value="Поиск" /> </form>
+
+<div class="search-toggle"> </div>
+</div>
+
+  </div>
+<nav role="navigation" aria-labelledby="block-sitesua-menu" id="block-sitesua" class="block block-menu navigation menu--sites-ua">
+            
+  <h2 class="visually-hidden" id="block-sitesua-menu">Sites UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="https://www.terrasoft.ua/" rel="nofollow" target="_blank">Terrasoft</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://community.terrasoft.ua/" rel="nofollow" target="_blank">Community</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://marketplace.terrasoft.ua/" rel="nofollow" target="_blank">Marketplace</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+<div id="block-usermenu" class="block block-ts-user block-ts-user-menu-block">
+  
+    
+      <ul class="user-menu">
+      <li class="user-menu__item">
+      <a class="user-menu__link" href="https://profile.terrasoft.ua/user/login?destination=academy/ua/docs/7-18/developer/razrabotka_mobilnogo_prilozheniya/kastomizaciya/biznes_pravila/config">Войти</a>
+    </li>
+  </ul>
+
+  </div>
+<div id="block-usermenumobile" class="block block-ts-user block-ts-user-menu-mobile-block">
+  
+    
+      <ul class="user-menu-mobile">
+      <li class="user-menu-mobile__item">
+      <div class="user-menu-mobile__user user-menu-mobile__user_icon"></div>
+      <ul class="user-menu-mobile__submenu">
+        <li class="user-menu-mobile__subitem">
+          <a class="user-menu-mobile__sublink" href="https://profile.terrasoft.ua/user/login?destination=academy/ua/docs/7-18/developer/razrabotka_mobilnogo_prilozheniya/kastomizaciya/biznes_pravila/config">Войти</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  </div>
+
+  </div>
+
+        </div>
+      </div>
+              <div class="creatio-region creatio-region_header">
+        <div class="creatio-container">
+            <div class="region region-header">
+    <div id="block-logo" class="block block-simple-block block-simple-blocklogo">
+  
+    
+      <p><a class="site-logo" href="../../../../../../index.html" rel="home"><img src="../../../../../themes/custom/creatio/logo.svg" /></a></p>
+
+  </div>
+<nav role="navigation" aria-labelledby="block-osnovnayanavigaciyaua-menu" id="block-osnovnayanavigaciyaua" class="block block-menu navigation menu--main-ua">
+            
+  <h2 class="visually-hidden" id="block-osnovnayanavigaciyaua-menu">Основная навигация UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="../../../../../index.html" data-drupal-link-system-path="&lt;front&gt;">Документация</a>
+              </li>
+                <li class="menu-item">
+        <a href="../../../../../../trainings.html">Тренинги</a>
+              </li>
+                <li class="menu-item">
+        <a href="../../../../../certification.html" data-drupal-link-system-path="node/3084">Сертификация и тестирование</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+<nav role="navigation" aria-labelledby="block-sitesua-2-menu" id="block-sitesua-2" class="block block-menu navigation menu--sites-ua">
+            
+  <h2 class="visually-hidden" id="block-sitesua-2-menu">Sites UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="https://www.terrasoft.ua/" rel="nofollow" target="_blank">Terrasoft</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://community.terrasoft.ua/" rel="nofollow" target="_blank">Community</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://marketplace.terrasoft.ua/" rel="nofollow" target="_blank">Marketplace</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+
+  </div>
+
+        </div>
+      </div>
+              <div class="creatio-region creatio-region_breadcrumb">
+        <div class="creatio-container">
+            <div class="region region-breadcrumb">
+    <div id="block-logowhite" class="block block-simple-block block-simple-blocklogo-white">
+  
+    
+      <p><a class="site-logo" href="../../../../../../index.html" rel="home"><img src="../../../../../themes/custom/creatio/logo-white.svg" /></a></p>
+
+  </div>
+<div id="block-breadcrumbnaviagtion" class="block block-ts-nav block-ts-nav-bread">
+  
+    
+      <nav class="breadcrumb"><ol class="ts-nav-breadcrumb__list"><li class="ts-nav-breadcrumb__item"><a href="../../../../../index.html" class="ts-nav-breadcrumb__link" title="Документация">Документация</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../../../index2132.html?vid_1=2" class="ts-nav-breadcrumb__link" title="Для разработчика">Для разработчика</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../razrabotka_mobilnogo_prilozheniya.html" class="ts-nav-breadcrumb__link" title="Разработка мобильного приложения" hreflang="zxx">Разработка мобильного приложения</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../kastomizaciya.html" class="ts-nav-breadcrumb__link" title="Кастомизация" hreflang="zxx">Кастомизация</a></li>
+<li class="ts-nav-breadcrumb__item ts-nav-breadcrumb__item_mobile"><a href="../../../mobile_creatio_development/mobile_application_customization/biznes_pravila.html" class="ts-nav-breadcrumb__link" title="Бизнес-правила" hreflang="ru">Бизнес-правила</a></li>
+<li class="ts-nav-breadcrumb__item"><span class="ts-nav-breadcrumb__link ts-nav-breadcrumb__link_current" title="config">config</span></li>
+</ol>
+</nav>
+
+  </div>
+<div id="block-search-2" class="block block-simple-block block-simple-blocksearch">
+  
+    
+      <div class="search">
+<form action="https://academy.terrasoft.ua/search" class="search-form" method="get"><input class="search-form__input" name="search" placeholder="Поиск" type="search" /><input class="search-form__button" type="submit" value="Поиск" /> </form>
+
+<div class="search-toggle"> </div>
+</div>
+
+  </div>
+
+  </div>
+
+        </div>
+      </div>
+      </header>
+
+  <div class="creatio-region creatio-region_main">
+    <div class="creatio-container">
+                <div class="region region-breadcrumb-mobile">
+    <div id="block-breadcrumbnaviagtion-2" class="block block-ts-nav block-ts-nav-bread">
+  
+    
+      <nav class="breadcrumb"><ol class="ts-nav-breadcrumb__list"><li class="ts-nav-breadcrumb__item"><a href="../../../../../index.html" class="ts-nav-breadcrumb__link" title="Документация">Документация</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../../../index2132.html?vid_1=2" class="ts-nav-breadcrumb__link" title="Для разработчика">Для разработчика</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../razrabotka_mobilnogo_prilozheniya.html" class="ts-nav-breadcrumb__link" title="Разработка мобильного приложения" hreflang="zxx">Разработка мобильного приложения</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../kastomizaciya.html" class="ts-nav-breadcrumb__link" title="Кастомизация" hreflang="zxx">Кастомизация</a></li>
+<li class="ts-nav-breadcrumb__item ts-nav-breadcrumb__item_mobile"><a href="../../../mobile_creatio_development/mobile_application_customization/biznes_pravila.html" class="ts-nav-breadcrumb__link" title="Бизнес-правила" hreflang="ru">Бизнес-правила</a></li>
+<li class="ts-nav-breadcrumb__item"><span class="ts-nav-breadcrumb__link ts-nav-breadcrumb__link_current" title="config">config</span></li>
+</ol>
+</nav>
+
+  </div>
+
+  </div>
+
+      
+      <main class="creatio-main" role="main">
+                                                    
+        <div class="creatio-content creatio-content_small">
+          <div class="creatio-content__inner creatio-content__inner_bg">
+                            <div class="region region-messages">
+    <div data-drupal-messages-fallback class="hidden"></div>
+
+  </div>
+
+            
+              <div class="region region-content">
+    <div id="block-creatio-page-title" class="block block-core block-page-title-block">
+  
+    
+      
+  <h1 class="page-title"><span class="field field--name-title field--type-string field--label-hidden">Свойства объекта config</span>
+</h1>
+
+
+  </div>
+<div id="block-creatio-content" class="block block-system block-system-main-block">
+  
+    
+      
+<article data-history-node-id="2430" role="article" about="/docs/7-18/developer/razrabotka_mobilnogo_prilozheniya/kastomizaciya/biznes_pravila/config" class="node node--type-reference node--view-mode-full">
+
+  
+    
+
+  
+  <div class="node__content">
+      <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocknodereferencefield-difficulty">
+  
+    
+      
+            <div class="field field--name-field-difficulty field--type-entity-reference field--label-hidden field__item"><div about="/docs/7-18/taxonomy/term/169" id="taxonomy-term-169" class="taxonomy-term vocabulary-difficulty">
+  
+  
+  <div class="content">
+      <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocktaxonomy-termdifficultyfield-icon">
+  
+    
+      
+            <div class="field field--name-field-icon field--type-image field--label-hidden field__item">  <img src="../../../../../sites/default/files/difficulty/advanced.svg" alt="" loading="lazy" typeof="foaf:Image" />
+
+</div>
+      
+  </div>
+<div class="block block-layout-builder block-field-blocktaxonomy-termdifficultyname">
+  
+    
+      
+            <div class="field field--name-name field--type-string field--label-hidden field__item"><span style="color: #EF4524;">Сложный</span></div>
+      
+  </div>
+
+    </div>
+  </div>
+
+  </div>
+</div>
+</div>
+      
+  </div>
+<div class="block block-ts-doc block-ts-doc-downloads">
+  
+    
+      <a href="../../../../../sites/default/files/pdf/node/2430/Svoystva_obekta_config_.pdf" target="_blank">PDF</a>
+  </div>
+<div class="block block-ts-doc block-ts-doc-versions">
+  
+    
+        <div class="ts-doc-versions">
+    <select class="ts-doc-versions__select">
+                              <option value="/docs/8-0/developer/razrabotka_mobilnogo_prilozheniya/kastomizaciya/biznes_pravila/config">Версия 8.0</option>
+                                                <option value="/docs/7-18/developer/razrabotka_mobilnogo_prilozheniya/kastomizaciya/biznes_pravila/config" selected>Версия 7.18</option>
+                              <option value="/docs/7-17/developer/razrabotka_mobilnogo_prilozheniya/kastomizaciya/biznes_pravila/config">Версия 7.17</option>
+                              <option value="/docs/7-16/developer/razrabotka_mobilnogo_prilozheniya/kastomizaciya/biznes_pravila/config">Версия 7.16</option>
+          </select>
+  </div>
+
+  </div>
+
+    </div>
+  </div>
+  <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocknodereferencebody">
+  
+    
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><h2>Базовые бизнес-правила<a class="title-anchor" href="#title-2430-1" id="title-2430-1"> </a></h2>
+
+<p>Базовое бизнес-правило является абстрактным классом, т.е. все бизнес-правила должны быть его наследниками.</p>
+
+<p>Свойства конфигурационного объекта <span class="filled">config</span> могут быть использованы наследниками базового бизнес-правила.</p>
+
+<div class="block-collapse">
+<h3 class="block-collapse__title">Свойства конфигурационного объекта <span class="filled">config</span><a class="title-anchor" href="#title-2430-10" id="title-2430-10"> </a></h3>
+
+<div class="block-collapse__content">
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+ruleType
+</pre>
+</div>
+</div>
+</div>
+
+<p>Тип правила. Значение должно входить в перечисление <span class="filled">Terrasoft.RuleTypes</span>.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+triggeredByColumns
+</pre>
+</div>
+</div>
+</div>
+
+<p>Массив колонок, инициирующих срабатывание бизнес-правила.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+message
+</pre>
+</div>
+</div>
+</div>
+
+<p>Текстовое сообщение, которое выводится под элементом управления, который связан с колонкой, в случае невыполнения бизнес-правила. Необходимо для правил, сообщающих пользователю предупреждающую информацию.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+name
+</pre>
+</div>
+</div>
+</div>
+
+<p>Уникальное имя бизнес-правила. Необходимо, если нужно удалить правило методами <span class="filled">Terrasoft.sdk</span>.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+position
+</pre>
+</div>
+</div>
+</div>
+
+<p>Позиция бизнес-правила, определяющая приоритет вызова правила в очереди текущих запускаемых правил.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+events
+</pre>
+</div>
+</div>
+</div>
+
+<p>Массив событий, определяющий время запуска бизнес-правил. Должен содержать значения, входящие в перечисление <span class="filled">Terrasoft.BusinessRuleEvents</span>.</p>
+
+<div class="block-collapse">
+<div class="block-collapse__title block-collapse__title_mb-16">Возможные значения (<span class="filled">Terrasoft.BusinessRuleEvents</span>)</div>
+
+<div class="block-collapse__content">
+<div class="table">
+<table><tbody><tr><td><span class="consolas">Save</span></td>
+			<td>Правило отработает перед сохранением данных.</td>
+		</tr><tr><td><span class="consolas">ValueChanged</span></td>
+			<td>Правило отработает после изменения данных (при редактировании).</td>
+		</tr><tr><td><span class="consolas">Load</span></td>
+			<td>Правило отработает при открытии страницы записи.</td>
+		</tr></tbody></table></div>
+</div>
+</div>
+</div>
+</div>
+
+<h2 data-type="C#">Бизнес-правило <span class="key">Обязательность заполнения</span> (<span class="filled">Terrasoft.RuleTypes.Requirement</span>)<a class="title-anchor" href="#title-2430-2" id="title-2430-2"> </a></h2>
+
+<p>Определяет обязательность заполнения поля на странице записи.</p>
+
+<div class="block-collapse">
+<h3 class="block-collapse__title">Свойства конфигурационного объекта <span class="filled">config</span><a class="title-anchor" href="#title-2430-12" id="title-2430-12"> </a></h3>
+
+<div class="block-collapse__content">
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+ruleType
+</pre>
+</div>
+</div>
+</div>
+
+<p>Для этого правила должно содержать значение <span class="filled">Terrasoft.RuleTypes.Requirement</span>.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+requireType
+</pre>
+</div>
+</div>
+</div>
+
+<p>Тип проверки. Значение должно входить в перечисление <span class="filled">Terrasoft.RequirementTypes</span>. Правило может проверять одну или все колонки из <span class="filled">triggeredByColumns</span>.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+triggeredByColumns
+</pre>
+</div>
+</div>
+</div>
+
+<p>Массив колонок, инициирующих срабатывание бизнес-правила. Если тип проверки равен <span class="filled">Terrasoft.RequirementTypes.Simple</span>, то должна быть указана одна колонка в массиве.</p>
+
+<div class="block-collapse">
+<div class="block-collapse__title block-collapse__title_mb-16">Возможные значения (<span class="filled">Terrasoft.RequirementTypes</span>)</div>
+
+<div class="block-collapse__content">
+<div class="table">
+<table><tbody><tr><td><span class="consolas">Simple</span></td>
+			<td>Проверка значения в одной колонке.</td>
+		</tr><tr><td><span class="consolas">OneOf</span></td>
+			<td>Одна из колонок, указанных в <span class="filled">triggeredByColumns</span> должна быть обязательно заполнена.</td>
+		</tr></tbody></table></div>
+</div>
+</div>
+
+<div class="code">
+<div class="code__widgets">
+<div class="code__top">
+<div class="code__title">Пример использования</div>
+</div>
+
+<div class="code__source">
+<pre class="prettyprint">
+Terrasoft.sdk.Model.addBusinessRule(<span>"Contact"</span>, {
+    ruleType: Terrasoft.RuleTypes.Requirement,
+    requireType : Terrasoft.RequirementTypes.OneOf,
+    events: [Terrasoft.BusinessRuleEvents.Save],
+    triggeredByColumns: [<span>"HomeNumber"</span>, <span>"BusinessNumber"</span>],
+    columnNames: [<span>"HomeNumber"</span>, <span>"BusinessNumber"</span>]
+});
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<h2 data-type="C#">Бизнес-правило <span class="key">Видимость</span> (<span class="filled">Terrasoft.RuleTypes.Visibility</span>)<a class="title-anchor" href="#title-2430-3" id="title-2430-3"> </a></h2>
+
+<p>С помощью этого бизнес-правила можно скрывать и отображать поля по определенному условию.</p>
+
+<div class="block-collapse">
+<h3 class="block-collapse__title">Свойства конфигурационного объекта <span class="filled">config</span><a class="title-anchor" href="#title-2430-12" id="title-2430-12"> </a></h3>
+
+<div class="block-collapse__content">
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+ruleType
+</pre>
+</div>
+</div>
+</div>
+
+<p>Для этого правила должно содержать значение <span class="filled">Terrasoft.RuleTypes.Visibility</span>.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+triggeredByColumns
+</pre>
+</div>
+</div>
+</div>
+
+<p>Массив колонок, инициирующих срабатывание бизнес-правила.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+events
+</pre>
+</div>
+</div>
+</div>
+
+<p>Массив событий, определяющий время запуска бизнес-правил. Должен содержать значения, входящие в перечисление <span class="filled">Terrasoft.BusinessRuleEvents</span>.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+conditionalColumns
+</pre>
+</div>
+</div>
+</div>
+
+<p>Массив условий срабатывания бизнес-правила. Обычно это определенные значения колонок.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+dependentColumnNames
+</pre>
+</div>
+</div>
+</div>
+
+<p>Массив названий колонок, к которым применяется данное бизнес-правило.</p>
+
+<div class="code">
+<div class="code__widgets">
+<div class="code__top">
+<div class="code__title">Пример использования</div>
+</div>
+
+<div class="code__source">
+<pre class="prettyprint">
+Terrasoft.sdk.Model.addBusinessRule(<span>"Account"</span>, {
+    ruleType: Terrasoft.RuleTypes.Visibility,
+    conditionalColumns: [
+        {name: <span>"Type"</span>, value: Terrasoft.Configuration.Consts.AccountTypePharmacy}
+    ],
+    triggeredByColumns: [<span>"Type"</span>],
+    dependentColumnNames: [<span>"IsRx"</span>, <span>"IsOTC"</span>]
+});
+</pre>
+</div>
+</div>
+</div>
+
+<p>Поля, связанные с колонками <span class="filled">IsRx</span> и <span class="filled">IsOTC</span> будут отображены, если колонка <span class="filled">Type</span> будет содержать значение, определенное константой <span class="filled">Terrasoft.Configuration.Consts.AccountTypePharmacy</span>.</p>
+
+<div class="code">
+<div class="code__widgets">
+<div class="code__source">
+<pre class="prettyprint">
+Terrasoft.Configuration.Consts = {
+    AccountTypePharmacy: <span>"d12dc11d-8c74-46b7-9198-5a4385428f9a"</span>
+};
+</pre>
+</div>
+</div>
+</div>
+
+<p>Вместо константы можно использовать значение "<span class="consolas">d12dc11d-8c74-46b7-9198-5a4385428f9a</span>".</p>
+</div>
+</div>
+
+<h2 data-type="C#">Бизнес-правило <span class="key">Доступность</span> (<span class="filled">Terrasoft.RuleTypes.Activation</span>)<a class="title-anchor" href="#title-2430-4" id="title-2430-4"> </a></h2>
+
+<p>С помощью этого бизнес-правила можно делать поля недоступными (или наоборот — доступными) для ввода значений по определенному условию.</p>
+
+<div class="block-collapse">
+<h3 class="block-collapse__title">Свойства конфигурационного объекта <span class="filled">config</span><a class="title-anchor" href="#title-2430-17" id="title-2430-17"> </a></h3>
+
+<div class="block-collapse__content">
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+ruleType
+</pre>
+</div>
+</div>
+</div>
+
+<p>Для этого правила должно содержать значение <span class="filled">Terrasoft.RuleTypes.Activation</span>.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+triggeredByColumns
+</pre>
+</div>
+</div>
+</div>
+
+<p>Массив колонок, инициирующих срабатывание бизнес-правила.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+events
+</pre>
+</div>
+</div>
+</div>
+
+<p>Массив событий, определяющий время запуска бизнес-правил. Должен содержать значения, входящие в перечисление <span class="filled">Terrasoft.BusinessRuleEvents</span>.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+conditionalColumns
+</pre>
+</div>
+</div>
+</div>
+
+<p>Массив условий срабатывания бизнес-правила. Обычно это определенные значения колонок.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+dependentColumnNames
+</pre>
+</div>
+</div>
+</div>
+
+<p>Массив названий колонок, к которым применяется данное бизнес-правило.</p>
+
+<p>Доступность поля, связанного с колонкой <span class="filled">Stock</span>, зависит от значения в колонке <span class="filled">IsPresence</span>.</p>
+
+<div class="code">
+<div class="code__widgets">
+<div class="code__top">
+<div class="code__title">Пример использования</div>
+</div>
+
+<div class="code__source">
+<pre class="prettyprint">
+Terrasoft.sdk.Model.addBusinessRule(<span>"ActivitySKU"</span>, {
+    ruleType: Terrasoft.RuleTypes.Activation,
+    events: [Terrasoft.BusinessRuleEvents.Load, Terrasoft.BusinessRuleEvents.ValueChanged],
+    triggeredByColumns: [<span>"IsPresence"</span>],
+    conditionalColumns: [
+        {name: <span>"IsPresence"</span>, value: <span>true</span>}
+    ],
+    dependentColumnNames: [<span>"Stock"</span>]
+});
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<h2>Бизнес-правило <span class="key">Фильтрация</span> (<span class="filled">Terrasoft.RuleTypes.Filtration</span>)<a class="title-anchor" href="#title-2430-5" id="title-2430-5"> </a></h2>
+
+<p>Это бизнес-правило можно использовать для фильтрации значений справочных колонок по условию, либо по значению другой колонки.</p>
+
+<div class="block-collapse">
+<h3 class="block-collapse__title">Свойства конфигурационного объекта <span class="filled">config</span><a class="title-anchor" href="#title-2430-17" id="title-2430-17"> </a></h3>
+
+<div class="block-collapse__content">
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+ruleType
+</pre>
+</div>
+</div>
+</div>
+
+<p>Для этого правила должно содержать значение <span class="filled">Terrasoft.RuleTypes.Filtration</span>.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+triggeredByColumns
+</pre>
+</div>
+</div>
+</div>
+
+<p>Массив колонок, инициирующих срабатывание бизнес-правила.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+events
+</pre>
+</div>
+</div>
+</div>
+
+<p>Массив событий, определяющий время запуска бизнес-правил. Должен содержать значения, входящие в перечисление <span class="filled">Terrasoft.BusinessRuleEvents</span>.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+filters
+</pre>
+</div>
+</div>
+</div>
+
+<p>Фильтр. Свойство должно содержать экземпляр класса <span class="filled">Terrasoft.Filter</span>.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+filteredColumn
+</pre>
+</div>
+</div>
+</div>
+
+<p>Колонка, на основании которой выполняется фильтрация значений.</p>
+</div>
+</div>
+
+<h2 data-type="C#">Бизнес-правило <span class="key">Взаимная фильтрация</span> (<span class="filled">Terrasoft.RuleTypes.MutualFiltration</span>)<a class="title-anchor" href="#title-2430-6" id="title-2430-6"> </a></h2>
+
+<p>Это бизнес-правило позволяет выполнять взаимную фильтрацию двух справочных полей. Работает только с колонками, связанными отношением "один-ко-многим", например, <span class="key">Страна</span> — <span class="key">Город</span>. Для каждой связки полей необходимо создавать свое бизнес-правило. Например, для связок <span class="key">Страна</span> — <span class="key">Область</span> — <span class="key">Город</span> и <span class="key">Страна</span> — <span class="key">Город</span> необходимо создать три бизнес-правила:</p>
+
+<ul><li><span class="key">Страна</span> — <span class="key">Область</span>;</li>
+	<li><span class="key">Область</span> — <span class="key">Город</span>;</li>
+	<li><span class="key">Страна</span> — <span class="key">Город</span>.</li>
+</ul><div class="block-collapse">
+<h3 class="block-collapse__title">Свойства конфигурационного объекта <span class="filled">config</span><a class="title-anchor" href="#title-2430-12" id="title-2430-12"> </a></h3>
+
+<div class="block-collapse__content">
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+ruleType
+</pre>
+</div>
+</div>
+</div>
+
+<p>Для этого правила должно содержать значение <span class="filled">Terrasoft.RuleTypes.MutualFiltration</span>.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+triggeredByColumns
+</pre>
+</div>
+</div>
+</div>
+
+<p>Массив колонок, инициирующих срабатывание бизнес-правила.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+соnnections
+</pre>
+</div>
+</div>
+</div>
+
+<p>Массив объектов, конфигурирующих отношение связок.</p>
+
+<div class="SimpleTabContainer" data-itemid="JSON" data-title="JSON" id="Syntax_JSON">
+<div class="code">
+<div class="code__widgets">
+<div class="code__source" data-tab="Взаимная фильтрация полей [Страна], [Область] и [Город]">
+<pre class="prettyprint">
+Terrasoft.sdk.Model.addBusinessRule(<span>"ContactAddress"</span>, {
+    ruleType: Terrasoft.RuleTypes.MutualFiltration,
+    triggeredByColumns: [<span>"City"</span>, <span>"Region"</span>, <span>"Country"</span>],
+    connections: [
+        {
+            parent: <span>"Country"</span>,
+            child: <span>"City"</span>
+        },
+        {
+            parent: <span>"Country"</span>,
+            child: <span>"Region"</span>
+        },
+        {
+            parent: <span>"Region"</span>,
+            child: <span>"City"</span>
+        }
+    ]
+});
+</pre>
+</div>
+
+<div class="code__source" data-tab="Взаимная фильтрация полей [Контакт], [Контрагент]">
+<pre class="prettyprint">
+Terrasoft.sdk.Model.addBusinessRule(<span>"Activity"</span>, {
+    ruleType: Terrasoft.RuleTypes.MutualFiltration,
+    triggeredByColumns: [<span>"Contact"</span>, <span>"Account"</span>],
+    connections: [
+        {
+            parent: <span>"Contact"</span>,
+            child: <span>"Account"</span>,
+            connectedBy: <span>"PrimaryContact"</span>
+        }
+    ]
+});
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<h2 data-type="C#">Бизнес-правило <span class="key">Регулярное выражение</span> (<span class="filled">Terrasoft.RuleTypes.RegExp</span>)<a class="title-anchor" href="#title-2430-7" id="title-2430-7"> </a></h2>
+
+<p>Выполняет проверку соответствия значения колонки регулярному выражению.</p>
+
+<div class="block-collapse">
+<h3 class="block-collapse__title">Свойства конфигурационного объекта <span class="filled">config</span><a class="title-anchor" href="#title-2430-12" id="title-2430-12"> </a></h3>
+
+<div class="block-collapse__content">
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+ruleType
+</pre>
+</div>
+</div>
+</div>
+
+<p>Для этого правила должно содержать значение <span class="filled">Terrasoft.RuleTypes.RegExp</span>.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+RegExp
+</pre>
+</div>
+</div>
+</div>
+
+<p>Регулярное выражение, на соответствие которому проверяются все колонки из массива <span class="filled">triggeredByColumns</span>.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+triggeredByColumns
+</pre>
+</div>
+</div>
+</div>
+
+<p>Массив колонок, инициирующих срабатывание бизнес-правила.</p>
+
+<div class="code">
+<div class="code__widgets">
+<div class="code__top">
+<div class="code__title">Пример использования</div>
+</div>
+
+<div class="code__source">
+<pre class="prettyprint">
+Terrasoft.sdk.Model.addBusinessRule(<span>"Contact"</span>, {
+    ruleType: Terrasoft.RuleTypes.RegExp,
+    regExp : /^([0-9\(\)\/\+ \-]*)$/
+    triggeredByColumns: [<span>"HomeNumber"</span>, <span>"BusinessNumber"</span>]
+});
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<h2>Пользовательские бизнес-правила<a class="title-anchor" href="#title-2430-8" id="title-2430-8"> </a></h2>
+
+<p>При добавлении пользовательского бизнес-правила с помощью метода <span class="filled">Terrasoft.sdk.Model.addBusinessRule(name, config)</span> можно использовать свойства конфигурационного объекта <span class="filled">config</span> базового бизнес-правила. Также дополнительно предусмотрено свойство <span class="filled">executeFn</span>.</p>
+
+<div class="block-collapse">
+<h3 class="block-collapse__title">Свойства конфигурационного объекта <span class="filled">config</span><a class="title-anchor" href="#title-2430-12" id="title-2430-12"> </a></h3>
+
+<div class="block-collapse__content">
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+ruleType
+</pre>
+</div>
+</div>
+</div>
+
+<p>Тип правила. Для пользовательских правил должно содержать значение <span class="filled">Terrasoft.RuleTypes.Custom</span>.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+triggeredByColumns
+</pre>
+</div>
+</div>
+</div>
+
+<p>Массив колонок, инициирующих срабатывание бизнес-правила.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+events
+</pre>
+</div>
+</div>
+</div>
+
+<p>Массив событий, определяющий время запуска бизнес-правил. Должен содержать значения из перечисления <span class="filled">Terrasoft.BusinessRuleEvents</span>. Значение по умолчанию: <span class="filled">Terrasoft.BusinessRuleEvents.ValueChanged</span>.</p>
+
+<div class="block-collapse">
+<div class="block-collapse__title block-collapse__title_mb-16">Возможные значения (<span class="filled">Terrasoft.BusinessRuleEvents</span>)</div>
+
+<div class="block-collapse__content">
+<div class="table">
+<table><tbody><tr><td><span class="consolas">Save</span></td>
+			<td>Правило сработает перед сохранением данных.</td>
+		</tr><tr><td><span class="consolas">ValueChanged</span></td>
+			<td>Правило сработает после изменения данных (при редактировании).</td>
+		</tr><tr><td><span class="consolas">Load</span></td>
+			<td>Правило сработает при открытии страницы записи.</td>
+		</tr></tbody></table></div>
+</div>
+</div>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+executeFn
+</pre>
+</div>
+</div>
+</div>
+
+<p>Функция-обработчик, содержащая пользовательскую логику выполнения бизнес-правила.</p>
+</div>
+</div>
+
+<div class="block-collapse">
+<h3 class="block-collapse__title">Свойства функции-обработчика <span class="filled">executeFn</span><a class="title-anchor" href="#title-2430-9" id="title-2430-9"> </a></h3>
+
+<div class="block-collapse__content">
+<p>Функция-обработчик объявляется в свойстве <span class="filled">executeFn</span>.</p>
+
+<div class="code">
+<div class="code__widgets">
+<div class="code__top">
+<div class="code__title">Сигнатура функции-обработчика</div>
+</div>
+
+<div class="code__source">
+<pre class="prettyprint">
+executeFn: function(record, rule, checkColumnName, customData, callbackConfig, event) {    }
+</pre>
+</div>
+</div>
+</div>
+
+<div class="block-collapse">
+<div class="block-collapse__title block-collapse__title_mb-16">Параметры</div>
+
+<div class="block-collapse__content">
+<div class="table">
+<table><tbody><tr><td><span class="consolas">record</span></td>
+			<td>Запись, для которой выполняется бизнес-правило.</td>
+		</tr><tr><td><span class="consolas">rule</span></td>
+			<td>Экземпляр текущего бизнес-правила.</td>
+		</tr><tr><td><span class="consolas">checkColumnName</span></td>
+			<td>Название колонки, которая вызвала срабатывание бизнес-правила.</td>
+		</tr><tr><td><span class="consolas">customData</span></td>
+			<td>Объект, разделяемый между всем правилами. Не используется. Оставлен для совместимости с предыдущими версиями.</td>
+		</tr><tr><td><span class="consolas">callbackConfig</span></td>
+			<td>Конфигурационный объект асинхронного возврата <span class="filled">Ext.callback</span>.</td>
+		</tr><tr><td><span class="consolas">event</span></td>
+			<td>Событие, по которому было запущено бизнес-правило.</td>
+		</tr></tbody></table></div>
+</div>
+</div>
+
+<p>При завершении работы функции необходимо обязательно вызвать или <span class="filled">callbackConfig.success</span> , или <span class="filled">callbackConfig.failure</span>.</p>
+
+<div class="code">
+<div class="code__widgets">
+<div class="code__top">
+<div class="code__title">Варианты вызова</div>
+</div>
+
+<div class="code__source">
+<pre class="prettyprint">
+Ext.callback(callbackConfig.success, callbackConfig.scope, [result]);
+Ext.callback(callbackConfig.failure, callbackConfig.scope, [exception]);
+</pre>
+</div>
+</div>
+</div>
+
+<p>Где:</p>
+
+<ul><li><span class="filled">result</span> — возвращаемое логическое значение, полученное при выполнении функции (<span class="filled">true</span>/<span class="filled">false</span>).</li>
+	<li><span class="filled">exception</span> — исключение типа <span class="filled">Terrasoft.Exception</span>, возникшее в функции-обработчике.</li>
+</ul></div>
+
+<div class="block-collapse">
+<h3 class="block-collapse__title">Методы<a class="title-anchor" href="#title-2430-27" id="title-2430-27"> </a></h3>
+
+<div class="block-collapse__content">В исходном коде функции-обработчика удобно использовать следующие методы модели, передаваемой в параметре <span class="filled">record</span>:
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+get(columnName)
+</pre>
+</div>
+</div>
+</div>
+
+<p>Для получения значения колонки записи. Аргумент <span class="filled">columnName</span> должен содержать название колонки.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+set(columnName, value, fireEventConfig)
+</pre>
+</div>
+</div>
+</div>
+
+<p>Для установки значения колонки записи.</p>
+
+<div class="block-collapse">
+<div class="block-collapse__title block-collapse__title_mb-16">Параметры</div>
+
+<div class="block-collapse__content">
+<div class="table">
+<table><tbody><tr><td><span class="consolas">columnName</span></td>
+			<td>Название колонки.</td>
+		</tr><tr><td><span class="consolas">value</span></td>
+			<td>Значение, присваиваемое колонке.</td>
+		</tr><tr><td><span class="consolas">fireEventConfig</span></td>
+			<td>Конфигурационный объект для установки свойств, передаваемых в событие изменения колонки.</td>
+		</tr></tbody></table></div>
+</div>
+</div>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+changeProperty(columnName, propertyConfig)
+</pre>
+</div>
+</div>
+</div>
+
+<p>Для изменения свойств колонки, кроме ее значения. Аргумент <span class="filled">columnName</span> должен содержать название колонки, а <span class="filled">propertyConfig</span> — объект, устанавливающий свойства колонки.</p>
+
+<div class="block-collapse">
+<div class="block-collapse__title block-collapse__title_mb-16">Свойства объекта <span class="filled">propertyConfig</span></div>
+
+<div class="block-collapse__content">
+<div class="table">
+<table><tbody><tr><td><span class="consolas">disabled</span></td>
+			<td>Активность колонки. Если <span class="filled">true</span>, то элемент управления, связанный с колонкой, будет неактивным и закрытым для работы.</td>
+		</tr><tr><td><span class="consolas">readOnly</span></td>
+			<td>Признак "только для чтения". Если <span class="filled">true</span>, то элемент управления, связанный с колонкой, будет доступен только для чтения. Если <span class="filled">false</span>— для чтения и записи.</td>
+		</tr><tr><td><span class="consolas">hidden</span></td>
+			<td>Видимость колонки. Если <span class="filled">true</span>, то элемент управления, связанный с колонкой, будет скрыт. Если <span class="filled">false</span> — отображен.</td>
+		</tr><tr><td><span class="consolas">addFilter</span></td>
+			<td>Добавить фильтр. Если свойство указано, то в нем должен быть указан фильтр типа <span class="filled">Terrasoft.Filter</span>, который будет добавлен к фильтрации колонки. Свойство используется только для справочных полей.</td>
+		</tr><tr><td><span class="consolas">removeFilter</span></td>
+			<td>Удалить фильтр. Если свойство указано, то в нем должно быть указано имя фильтра, который будет удален из фильтрации колонки. Свойство используется только для справочных полей.</td>
+		</tr><tr><td><span class="consolas">isValid</span></td>
+			<td>Признак корректности колонки. Если свойство указано, то оно изменит признак корректности элемента управления, связанного с колонкой. Если колонка некорректна, то это может означать отмену событий по сохранению записи, а также может привести к признанию записи некорректной.</td>
+		</tr></tbody></table></div>
+</div>
+</div>
+
+<div class="code">
+<div class="code__widgets">
+<div class="code__top">
+<div class="code__title">Пример изменения свойств (но не значения) колонки <span class="filled">Owner</span></div>
+</div>
+
+<div class="code__source">
+<pre class="prettyprint">
+record.changeProperty(<span>"Owner"</span>, {
+    disabled: <span>false</span>,
+    readOnly: <span>false</span>,
+    hidden: <span>false</span>,
+    addFilter: {
+        property: <span>"IsChief"</span>,
+        value: <span>true</span>
+    },
+    isValid: {
+        value: <span>false</span>,
+        message: LocalizableStrings[<span>"Owner_should_be_a_chief_only"</span>]
+    }
+ });
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+      
+  </div>
+
+    </div>
+  </div>
+
+  </div>
+
+</article>
+
+  </div>
+
+  </div>
+
+          </div>
+        </div>
+
+                  <aside class="creatio-sidebar creatio-sidebar_first" role="complementary">
+              <div class="region region-sidebar-first">
+    <div id="block-documentationnaviagtion" class="block block-ts-nav block-ts-nav-doc-nav">
+  
+    
+      <div class="ts-nav-block"><a href="../../../../../index.html" class="ts-nav-block__link">Документация</a><div class="ts-nav-block__title">Для разработчика</div>
+</div>
+<div class="ts-nav-container"><ul class="ts-nav-menu"><li class="ts-nav-menu__item">
+  <a href="../../../s_chego_nachat.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">С чего начать&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../architecture.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Архитектура&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../instrumenty_razrabotki.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Инструменты разработки&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../back_end_razrabotka.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Back-end разработка&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../front_end_razrabotka.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Front-end разработка&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../integratsiya_i_vneshnij_api.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Интеграция и внешний API&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../ehlementy_interfejsa.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Элементы интерфейса&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../komponenty_prilozheniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Компоненты приложения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../razrabotka_mobilnogo_prilozheniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded ts-nav-menu__link_open" hreflang="zxx">Разработка мобильного приложения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+      <ul class="ts-nav-menu__children">
+      <li class="ts-nav-menu__item">
+  <a href="../../arhitektura.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Архитектура&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../kastomizaciya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded ts-nav-menu__link_open" hreflang="zxx">Кастомизация&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+      <ul class="ts-nav-menu__children">
+      <li class="ts-nav-menu__item">
+  <a href="../../../mobile_creatio_development/mobile_application_customization/manifest.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Манифест&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../mobile_creatio_development/mobile_application_customization/reestr.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Реестр&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../mobile_creatio_development/mobile_application_customization/biznes_pravila.html" class="ts-nav-menu__link ts-nav-menu__link_expanded ts-nav-menu__link_open" hreflang="ru">Бизнес-правила&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+      <ul class="ts-nav-menu__children">
+      <li class="ts-nav-menu__item">
+  <a href="obzor.html" class="ts-nav-menu__link ts-nav-menu__link_guide" hreflang="ru">Обзор</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="vypolnit_filtraciyu.html" class="ts-nav-menu__link ts-nav-menu__link_case" hreflang="ru">Выполнить фильтрацию</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="vydelit_pole_po_usloviyu.html" class="ts-nav-menu__link ts-nav-menu__link_case" hreflang="ru">Выделить поле по условию</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="sbrosit_otricatelnye_znacheniya_v_0.html" class="ts-nav-menu__link ts-nav-menu__link_case" hreflang="ru">Сбросить отрицательные значения в 0</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="sgenerirovat_zagolovok_aktivnosti.html" class="ts-nav-menu__link ts-nav-menu__link_case" hreflang="ru">Сгенерировать заголовок активности</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="config.html" class="ts-nav-menu__link ts-nav-menu__link_reference ts-nav-menu__link_active" data-type="C#" hreflang="ru">config</a>
+  </li>
+
+    </ul>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../dashbordy.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Дашборды&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../mobilnyj_portal/obzor.html" class="ts-nav-menu__link" hreflang="ru">Мобильный портал</a>
+  </li>
+
+    </ul>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../otladka/obzor.html" class="ts-nav-menu__link" hreflang="ru">Отладка</a>
+  </li>
+
+    </ul>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../razrabotka_marketplace_prilozheniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Разработка Marketplace-приложения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+</ul>
+</div>
+
+  </div>
+
+  </div>
+
+            <div class="creatio-sidebar__toggle"></div>
+          </aside>
+        
+                  <aside class="creatio-sidebar creatio-sidebar_second" role="complementary">
+              <div class="region region-sidebar-second">
+    <div id="block-example" class="block block-ts-nav block-ts-nav-page-nav">
+  
+    
+      <div class="ts-nav-page">
+  </div>
+
+  </div>
+<div id="block-adminfeedbackblock" class="block block-admin-feedback block-admin-feedback-block">
+  
+    
+      <div id="feedback-message"><div id="upper-feedback-content"><h2>Был ли данный материал полезен?</h2>
+<input class="feedback-btn feedback-btn__yes button js-form-submit form-submit" data-node-id="2430" data-feedback="yes" type="submit" name="op" value="Да" />
+<input class="feedback-btn feedback-btn__no button js-form-submit form-submit" data-node-id="2430" data-feedback="no" type="submit" name="op" value="Нет" />
+</div>
+<form class="admin-feedback-form" data-drupal-selector="admin-feedback-form" action="https://academy.terrasoft.ua/docs/7-18/developer/razrabotka_mobilnogo_prilozheniya/kastomizaciya/biznes_pravila/config" method="post" id="admin-feedback-form" accept-charset="UTF-8">
+  <div id="feedback-msg-result"></div><div class="js-form-item form-item js-form-type-textarea form-type-textarea js-form-item-feedback-message form-item-feedback-message form-no-label">
+        <div class="form-textarea-wrapper">
+  <textarea id="edit-feedback-msg" data-drupal-selector="edit-feedback-message" name="feedback_message" rows="5" cols="60" class="form-textarea resize-vertical"></textarea>
+</div>
+
+        </div>
+<input id="feedback-id" data-drupal-selector="edit-feedback-id" type="hidden" name="feedback_id" value="" />
+<input class="feedback-btn feedback-btn__send-comment button js-form-submit form-submit" data-drupal-selector="edit-feedback-send" type="submit" id="edit-feedback-send" name="op" value="Отправить" />
+<input autocomplete="off" data-drupal-selector="form-jdtg3uik19v903kqojdmciaibybugg9dx2mv-0nxpue" type="hidden" name="form_build_id" value="form-JDtG3UIk19V903KqojDMcIAibYBuGG9dx2mV-0nxpUE" />
+<input data-drupal-selector="edit-admin-feedback-form" type="hidden" name="form_id" value="admin_feedback_form" />
+
+</form>
+</div>
+
+  </div>
+
+  </div>
+
+          </aside>
+              </main>
+    </div>
+  </div>
+
+  <footer role="contentinfo">
+    <div class="creatio-region creatio-region_footer">
+      <div class="creatio-container">
+          <div class="region region-footer">
+    <div id="block-footerua" class="block block-simple-block block-simple-blockfooter-ua">
+  
+    
+      <div class="footer">
+<div class="footer-left">
+<ul class="footer-socials"><li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_fb" href="https://www.facebook.com/terrasoft.ua" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_in" href="https://www.linkedin.com/company/terrasoft/" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_yt" href="https://www.youtube.com/c/TerrasoftUkraine" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_tg" href="https://t.me/Terrasoft_UA" target="_blank"> </a></li>
+</ul></div>
+
+<div class="footer-contact">
+<div class="footer-title">Будьте на связи!</div>
+
+<div class="footer-content">
+<div class="footer-items">
+<div class="footer-item"><a class="footer__link footer__link_phone" href="tel:+380443633133">+38 (044) 363-31-33</a></div>
+</div>
+
+<div class="footer-items">
+<div class="footer-item"><a class="footer__link footer__link_email" href="mailto:support@terrasoft.ua">support@terrasoft.ua</a></div>
+</div>
+</div>
+</div>
+</div>
+
+  </div>
+
+  </div>
+
+      </div>
+    </div>
+    <div class="creatio-region creatio-region_bottom">
+      <div class="creatio-container">
+          <div class="region region-bottom">
+    <div id="block-allrightsreservedua" class="block block-simple-block block-simple-blockfooter-bottom-ua">
+  
+    
+      <p>© 2002-2022 Terrasoft.  |  <a href="https://www.terrasoft.ua/privacy-policy" target="_blank">Конфиденциальность</a></p>
+
+  </div>
+
+  </div>
+
+      </div>
+    </div>
+  </footer>
+</div>
+<div class="creatio-bg"></div>
+
+
+  </div>
+
+    
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/docs\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/2430","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"ru"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"ajaxPageState":{"libraries":"admin_feedback\/admin_feedback_block,admin_feedback\/admin_feedback_css,classy\/base,classy\/messages,classy\/node,core\/drupal.ajax,core\/jquery.form,core\/normalize,creatio\/fancybox,creatio\/global,layout_discovery\/onecol,system\/base,ts_doc\/doc_version,ts_feedback\/ts_feedback,ts_nav\/breadcrumb,ts_nav\/doc_nav,ts_nav\/page_nav,ts_title_anchor\/ts_title_anchor","theme":"creatio","theme_token":null},"ajaxTrustedUrl":{"form_action_p_pvdeGsVG5zNF_XLGPTvYSKCf43t8qZYSwcfZl2uzM":true,"\/docs\/7-18\/developer\/razrabotka_mobilnogo_prilozheniya\/kastomizaciya\/biznes_pravila\/config?ajax_form=1":true},"admin_feedback":{"yes_response":"\u0421\u043f\u0430\u0441\u0438\u0431\u043e \u0437\u0430 \u043e\u0431\u0440\u0430\u0442\u043d\u0443\u044e \u0441\u0432\u044f\u0437\u044c!","no_response":"\u0421\u043f\u0430\u0441\u0438\u0431\u043e \u0437\u0430 \u043e\u0431\u0440\u0430\u0442\u043d\u0443\u044e \u0441\u0432\u044f\u0437\u044c!","custom_text_response_on_no":{"value":"","format":"full_html"},"feedback_prompt_on_yes":true,"feedback_prompt_on_no":true,"feedback_enable_predefined_answers":false,"feedback_prompt":"\u041a\u0430\u043a \u043c\u043e\u0436\u043d\u043e \u0443\u043b\u0443\u0447\u0448\u0438\u0442\u044c \u044d\u0442\u0443 \u0441\u0442\u0430\u0442\u044c\u044e?"},"ajax":{"edit-feedback-send":{"callback":"::validateFeedbackMsg","event":"mousedown","keypress":true,"prevent":"click","url":"\/docs\/7-18\/developer\/razrabotka_mobilnogo_prilozheniya\/kastomizaciya\/biznes_pravila\/config?ajax_form=1","dialogType":"ajax","submit":{"_triggering_element_name":"op","_triggering_element_value":"\u041e\u0442\u043f\u0440\u0430\u0432\u0438\u0442\u044c"}}},"user":{"uid":0,"permissionsHash":"9c2367dfcaba0fa15f0375f97aed64e146c908cee68508d13b79e3ee80e5162d"}}</script>
+<script src="../../../../../sites/default/files/js/js_Rr-7TvYD7NposuRFJwUqThxM7yJmw8vs03PQwu5gWd8.js"></script>
+
+
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+      <g id="svg-copy" class="svg-icon svg-icon_copy">
+        <path d="M15.111,18H1.889A1.848,1.848,0,0,1,0,16.2V3.6A1.848,1.848,0,0,1,1.889,1.8H5.837a2.87,2.87,0,0,1,5.326,0h3.948A1.848,1.848,0,0,1,17,3.6V16.2A1.848,1.848,0,0,1,15.111,18ZM3.777,12.6v1.8h6.611V12.6Zm0-3.6v1.8h9.445V9Zm0-3.6V7.2h9.445V5.4ZM8.5,1.8a.924.924,0,0,0-.944.9.945.945,0,0,0,1.889,0A.924.924,0,0,0,8.5,1.8Z"/>
+      </g>
+
+      <g id="svg-prev" class="svg-icon svg-icon_arrow">
+        <path d="M5.488,12.779,0,6.39,5.488,0" transform="translate(1 0.652)"/>
+      </g>
+
+      <g id="svg-next" class="svg-icon svg-icon_arrow">
+        <path d="M0,12.779,5.488,6.39,0,0" transform="translate(0.759 0.652)"/>
+      </g>
+    </svg>
+  </body>
+
+<!-- Mirrored from academy.terrasoft.ua/docs/7-18/developer/razrabotka_mobilnogo_prilozheniya/kastomizaciya/biznes_pravila/config by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Mar 2022 03:45:28 GMT -->
+</html>

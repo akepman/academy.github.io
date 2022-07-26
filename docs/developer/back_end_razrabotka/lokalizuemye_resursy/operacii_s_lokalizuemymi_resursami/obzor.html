@@ -1,0 +1,1094 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# ">
+  
+<!-- Mirrored from academy.terrasoft.ua/docs/developer/back_end_razrabotka/lokalizuemye_resursy/operacii_s_lokalizuemymi_resursami/obzor by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Mar 2022 01:15:42 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+          <!-- Google Tag Manager -->
+      <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          '../../../../../../www.googletagmanager.com/gtm5445.html?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-KLLB8G');</script>
+      <!-- End Google Tag Manager -->
+        <meta charset="utf-8" />
+<link rel="canonical" href="obzor.html" />
+<meta name="description" content="Инструменты, которые позволяют выполнять операции с локализуемыми ресурсами:
+
+Creatio IDE.
+	База данных.
+	Система контроля версий SVN.
+	Файловая система.
+Использовать Creatio IDE для выполнения операций с локализуемыми ресурсами 
+
+Использование Creatio IDE позволяет выполнять следующие операции с локализуемыми ресурсами:" />
+<meta property="og:url" content="https://academy.terrasoft.ua/docs/developer/back_end_razrabotka/lokalizuemye_resursy/operacii_s_lokalizuemymi_resursami/obzor" />
+<meta property="og:title" content="Операции с локализуемыми ресурсами" />
+<meta property="og:description" content="Инструменты, которые позволяют выполнять операции с локализуемыми ресурсами:
+
+Creatio IDE.
+	База данных.
+	Система контроля версий SVN.
+	Файловая система.
+Использовать Creatio IDE для выполнения операций с локализуемыми ресурсами 
+
+Использование Creatio IDE позволяет выполнять следующие операции с локализуемыми ресурсами:" />
+<meta name="Generator" content="Drupal 9 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="../../../../themes/custom/creatio/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="revision" href="obzor.html" />
+
+    <title>Операции с локализуемыми ресурсами | Creatio Academy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&amp;family=Open+Sans:ital,wght@0,300;0,400;0,600;1,400&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" media="all" href="../../../../sites/default/files/css/css_6lTP66__-yc6QXFp1zOwoeJ0HVigoYZP-SeoLLii000.css" />
+<link rel="stylesheet" media="all" href="../../../../sites/default/files/css/css_XQJDNhkF3xH5SZCcY-PI89Zu4nYIzQ5oR3SnUKyfXJU.css" />
+<link rel="stylesheet" media="print" href="../../../../sites/default/files/css/css_Zn4VHvcniOOtUwkIVwXzYr_0AI9gUVgZcPqaH4ViagU.css" />
+
+    
+  </head>
+  <body class="path-node page-node-type-developer-documentation">
+          <!-- Google Tag Manager (noscript) -->
+      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KLLB8G"
+                        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+      <!-- End Google Tag Manager (noscript) -->
+    
+        
+      <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    <div class="creatio-page d-flex flex-column">
+        <div class="region region-informer">
+    <div id="block-terrasoftpidtrimueukrainu" class="block block-simple-block block-simple-blockterrasoft-pidtrimue-ukrainu">
+  
+    
+      <style type="text/css">
+<!--/*--><![CDATA[/* ><!--*/
+@import url(../../../../../../www.terrasoft.ua/themes/custom/creatio/css/components/informer.css)
+
+/*--><!]]>*/
+</style><div class="ts-swu">
+<div class="creatio-container">
+<div class="ts-swu__cont">
+<div><a class="ts-swu__link" href="https://www.terrasoft.ua/terrasoft-stands-with-ukraine" target="_blank">Україна понад усе!</a> <span><a href="https://www.terrasoft.ua/terrasoft-stands-with-ukraine" target="_blank">Приєднуйтеся</a> до допомоги!</span></div>
+</div>
+</div></div>
+
+  </div>
+
+  </div>
+
+  
+  <header role="banner">
+          <div class="creatio-region creatio-region_top">
+        <div class="creatio-container">
+            <div class="region region-top">
+    <div id="block-menutoggle" class="block block-simple-block block-simple-blockmenu-toggle">
+  
+    
+      <div class="menu-toggle"><span> </span></div>
+
+  </div>
+<div id="block-logowhite-2" class="block block-simple-block block-simple-blocklogo-white">
+  
+    
+      <p><a class="site-logo" href="../../../../../index.html" rel="home"><img src="../../../../themes/custom/creatio/logo-white.svg" /></a></p>
+
+  </div>
+<div id="block-search" class="block block-simple-block block-simple-blocksearch">
+  
+    
+      <div class="search">
+<form action="https://academy.terrasoft.ua/search" class="search-form" method="get"><input class="search-form__input" name="search" placeholder="Поиск" type="search" /><input class="search-form__button" type="submit" value="Поиск" /> </form>
+
+<div class="search-toggle"> </div>
+</div>
+
+  </div>
+<nav role="navigation" aria-labelledby="block-sitesua-menu" id="block-sitesua" class="block block-menu navigation menu--sites-ua">
+            
+  <h2 class="visually-hidden" id="block-sitesua-menu">Sites UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="https://www.terrasoft.ua/" rel="nofollow" target="_blank">Terrasoft</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://community.terrasoft.ua/" rel="nofollow" target="_blank">Community</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://marketplace.terrasoft.ua/" rel="nofollow" target="_blank">Marketplace</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+<div id="block-usermenu" class="block block-ts-user block-ts-user-menu-block">
+  
+    
+      <ul class="user-menu">
+      <li class="user-menu__item">
+      <a class="user-menu__link" href="https://profile.terrasoft.ua/user/login?destination=academy/ua/docs/developer/back_end_razrabotka/lokalizuemye_resursy/operacii_s_lokalizuemymi_resursami/obzor">Войти</a>
+    </li>
+  </ul>
+
+  </div>
+<div id="block-usermenumobile" class="block block-ts-user block-ts-user-menu-mobile-block">
+  
+    
+      <ul class="user-menu-mobile">
+      <li class="user-menu-mobile__item">
+      <div class="user-menu-mobile__user user-menu-mobile__user_icon"></div>
+      <ul class="user-menu-mobile__submenu">
+        <li class="user-menu-mobile__subitem">
+          <a class="user-menu-mobile__sublink" href="https://profile.terrasoft.ua/user/login?destination=academy/ua/docs/developer/back_end_razrabotka/lokalizuemye_resursy/operacii_s_lokalizuemymi_resursami/obzor">Войти</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  </div>
+
+  </div>
+
+        </div>
+      </div>
+              <div class="creatio-region creatio-region_header">
+        <div class="creatio-container">
+            <div class="region region-header">
+    <div id="block-logo" class="block block-simple-block block-simple-blocklogo">
+  
+    
+      <p><a class="site-logo" href="../../../../../index.html" rel="home"><img src="../../../../themes/custom/creatio/logo.svg" /></a></p>
+
+  </div>
+<nav role="navigation" aria-labelledby="block-osnovnayanavigaciyaua-menu" id="block-osnovnayanavigaciyaua" class="block block-menu navigation menu--main-ua">
+            
+  <h2 class="visually-hidden" id="block-osnovnayanavigaciyaua-menu">Основная навигация UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="../../../../index.html" data-drupal-link-system-path="&lt;front&gt;">Документация</a>
+              </li>
+                <li class="menu-item">
+        <a href="../../../../../trainings.html">Тренинги</a>
+              </li>
+                <li class="menu-item">
+        <a href="../../../../certification.html" data-drupal-link-system-path="node/3084">Сертификация и тестирование</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+<nav role="navigation" aria-labelledby="block-sitesua-2-menu" id="block-sitesua-2" class="block block-menu navigation menu--sites-ua">
+            
+  <h2 class="visually-hidden" id="block-sitesua-2-menu">Sites UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="https://www.terrasoft.ua/" rel="nofollow" target="_blank">Terrasoft</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://community.terrasoft.ua/" rel="nofollow" target="_blank">Community</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://marketplace.terrasoft.ua/" rel="nofollow" target="_blank">Marketplace</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+
+  </div>
+
+        </div>
+      </div>
+              <div class="creatio-region creatio-region_breadcrumb">
+        <div class="creatio-container">
+            <div class="region region-breadcrumb">
+    <div id="block-logowhite" class="block block-simple-block block-simple-blocklogo-white">
+  
+    
+      <p><a class="site-logo" href="../../../../../index.html" rel="home"><img src="../../../../themes/custom/creatio/logo-white.svg" /></a></p>
+
+  </div>
+<div id="block-breadcrumbnaviagtion" class="block block-ts-nav block-ts-nav-bread">
+  
+    
+      <nav class="breadcrumb"><ol class="ts-nav-breadcrumb__list"><li class="ts-nav-breadcrumb__item"><a href="../../../../index.html" class="ts-nav-breadcrumb__link" title="Документация">Документация</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../../index2132.html?vid_1=2" class="ts-nav-breadcrumb__link" title="Для разработчика">Для разработчика</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../back_end_razrabotka.html" class="ts-nav-breadcrumb__link" title="Back-end разработка" hreflang="zxx">Back-end разработка</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../lokalizuemye_resursy.html" class="ts-nav-breadcrumb__link" title="Локализуемые ресурсы" hreflang="zxx">Локализуемые ресурсы</a></li>
+<li class="ts-nav-breadcrumb__item ts-nav-breadcrumb__item_mobile"><a href="../../../back-end_development/localizable_resources/operacii_s_lokalizuemymi_resursami.html" class="ts-nav-breadcrumb__link" title="Операции с локализуемыми ресурсами" hreflang="ru">Операции с локализуемыми ресурсами</a></li>
+<li class="ts-nav-breadcrumb__item"><span class="ts-nav-breadcrumb__link ts-nav-breadcrumb__link_current" title="Обзор">Обзор</span></li>
+</ol>
+</nav>
+
+  </div>
+<div id="block-search-2" class="block block-simple-block block-simple-blocksearch">
+  
+    
+      <div class="search">
+<form action="https://academy.terrasoft.ua/search" class="search-form" method="get"><input class="search-form__input" name="search" placeholder="Поиск" type="search" /><input class="search-form__button" type="submit" value="Поиск" /> </form>
+
+<div class="search-toggle"> </div>
+</div>
+
+  </div>
+
+  </div>
+
+        </div>
+      </div>
+      </header>
+
+  <div class="creatio-region creatio-region_main">
+    <div class="creatio-container">
+                <div class="region region-breadcrumb-mobile">
+    <div id="block-breadcrumbnaviagtion-2" class="block block-ts-nav block-ts-nav-bread">
+  
+    
+      <nav class="breadcrumb"><ol class="ts-nav-breadcrumb__list"><li class="ts-nav-breadcrumb__item"><a href="../../../../index.html" class="ts-nav-breadcrumb__link" title="Документация">Документация</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../../index2132.html?vid_1=2" class="ts-nav-breadcrumb__link" title="Для разработчика">Для разработчика</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../back_end_razrabotka.html" class="ts-nav-breadcrumb__link" title="Back-end разработка" hreflang="zxx">Back-end разработка</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../lokalizuemye_resursy.html" class="ts-nav-breadcrumb__link" title="Локализуемые ресурсы" hreflang="zxx">Локализуемые ресурсы</a></li>
+<li class="ts-nav-breadcrumb__item ts-nav-breadcrumb__item_mobile"><a href="../../../back-end_development/localizable_resources/operacii_s_lokalizuemymi_resursami.html" class="ts-nav-breadcrumb__link" title="Операции с локализуемыми ресурсами" hreflang="ru">Операции с локализуемыми ресурсами</a></li>
+<li class="ts-nav-breadcrumb__item"><span class="ts-nav-breadcrumb__link ts-nav-breadcrumb__link_current" title="Обзор">Обзор</span></li>
+</ol>
+</nav>
+
+  </div>
+
+  </div>
+
+      
+      <main class="creatio-main" role="main">
+                                                    
+        <div class="creatio-content creatio-content_small">
+          <div class="creatio-content__inner creatio-content__inner_bg">
+                            <div class="region region-messages">
+    <div data-drupal-messages-fallback class="hidden"></div>
+
+  </div>
+
+            
+              <div class="region region-content">
+    <div id="block-creatio-page-title" class="block block-core block-page-title-block">
+  
+    
+      
+  <h1 class="page-title"><span class="field field--name-title field--type-string field--label-hidden">Операции с локализуемыми ресурсами</span>
+</h1>
+
+
+  </div>
+<div id="block-creatio-content" class="block block-system block-system-main-block">
+  
+    
+      
+<article data-history-node-id="2178" role="article" about="/docs/developer/back_end_razrabotka/lokalizuemye_resursy/operacii_s_lokalizuemymi_resursami/obzor" class="node node--type-developer-documentation node--view-mode-full">
+
+  
+    
+
+  
+  <div class="node__content">
+      <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocknodedeveloper-documentationfield-difficulty">
+  
+    
+      
+            <div class="field field--name-field-difficulty field--type-entity-reference field--label-hidden field__item"><div about="/docs/taxonomy/term/169" id="taxonomy-term-169" class="taxonomy-term vocabulary-difficulty">
+  
+  
+  <div class="content">
+      <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocktaxonomy-termdifficultyfield-icon">
+  
+    
+      
+            <div class="field field--name-field-icon field--type-image field--label-hidden field__item">  <img src="../../../../sites/default/files/difficulty/advanced.svg" alt="" loading="lazy" typeof="foaf:Image" />
+
+</div>
+      
+  </div>
+<div class="block block-layout-builder block-field-blocktaxonomy-termdifficultyname">
+  
+    
+      
+            <div class="field field--name-name field--type-string field--label-hidden field__item"><span style="color: #EF4524;">Сложный</span></div>
+      
+  </div>
+
+    </div>
+  </div>
+
+  </div>
+</div>
+</div>
+      
+  </div>
+<div class="block block-ts-doc block-ts-doc-downloads">
+  
+    
+      <a href="../../../../sites/default/files/pdf/node/2178/Operacii_s_lokalizuemymi_resursami_.pdf" target="_blank">PDF</a>
+  </div>
+<div class="block block-ts-doc block-ts-doc-versions">
+  
+    
+        <div class="ts-doc-versions">
+    <select class="ts-doc-versions__select">
+                                                <option value="/docs/8-0/developer/back_end_razrabotka/lokalizuemye_resursy/operacii_s_lokalizuemymi_resursami/obzor" selected>Версия 8.0</option>
+                              <option value="/docs/7-18/developer/back_end_razrabotka/lokalizuemye_resursy/operacii_s_lokalizuemymi_resursami/obzor">Версия 7.18</option>
+                              <option value="/docs/7-17/developer/back_end_razrabotka/lokalizuemye_resursy/operacii_s_lokalizuemymi_resursami/obzor">Версия 7.17</option>
+                              <option value="/docs/7-16/developer/back_end_razrabotka/lokalizuemye_resursy/operacii_s_lokalizuemymi_resursami/obzor">Версия 7.16</option>
+          </select>
+  </div>
+
+  </div>
+
+    </div>
+  </div>
+  <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocknodedeveloper-documentationbody">
+  
+    
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><p><strong>Инструменты</strong>, которые позволяют выполнять операции с локализуемыми ресурсами:</p>
+
+<ul><li>Creatio IDE.</li>
+	<li>База данных.</li>
+	<li>Система контроля версий SVN.</li>
+	<li>Файловая система.</li>
+</ul><h2>Использовать Creatio IDE для выполнения операций с локализуемыми ресурсами<a class="title-anchor" href="#title-2174-1" id="title-2174-1"> </a></h2>
+
+<p>Использование Creatio IDE позволяет выполнять следующие <strong>операции с локализуемыми ресурсами</strong>:</p>
+
+<ul><li>Добавить локализуемую колонку.</li>
+	<li>Добавить локализуемую строку.</li>
+</ul><h3>Добавить локализуемую колонку<a class="title-anchor" href="#title-2174-2" id="title-2174-2"> </a></h3>
+
+<p><strong>Назначение</strong> локализуемой колонки — возможность отображения в интерфейсе приложения данных объекта на нескольких языках (т. н. мультиязычие). Значение локализуемой колонки зависит от выбранного в профиле пользователя языка. Локализуемая колонка настраивается в дизайнере объекта, а ее значение хранится в базе данных.</p>
+
+<p>Чтобы <strong>добавить локализуемую колонку</strong>:</p>
+
+<ol><li>
+	<p>Добавьте колонку, которую необходимо локализовать.</p>
+
+	<ol><li><a href="../../../../7-17/developer/instrumenty_razrabotki/creatio_ide/razrabotka_v_creatio_ide.html#title-2093-1">Перейдите в раздел <span class="key">Конфигурация</span></a> (<span class="key">Configuration</span>) и выберите пользовательский <a href="../../../instrumenty_razrabotki/pakety/obshchiye_printsipy_raboty_s_paketami/obzor.html">пакет</a>, в который будет добавлена схема.</li>
+		<li>
+		<p>На панели инструментов реестра раздела нажмите <span class="key">Добавить</span> (<span class="key">Add</span>) и выберите вид схемы (<span class="key">Объект</span> (<span class="key">Object</span>) или <span class="key">Замещающий объект</span> (<span class="key">Replacing object</span>)).</p>
+
+		<div class="media">
+		<div class="media__element"><img src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/ConfigurationLocalizableResources/7.18/scr_choose_schema.png" /></div>
+		</div>
+		</li>
+		<li>В дизайнере объектов заполните свойства схемы.</li>
+		<li>При необходимости добавьте колонки, которые требуется локализовать, или выберите существующую колонку объекта.</li>
+		<li>
+		<p>В блоке свойств <span class="key">Общие</span> (<span class="key">General</span>) соответствующей колонки установите признак <span class="key">Локализуемый текст</span> (<span class="key">Localizable text</span>).</p>
+
+		<div class="media">
+		<div class="media__element"><img src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/ConfigurationLocalizableResources/7.18/scr_localizable_text.png" /></div>
+		</div>
+
+		<div class="message">
+		<p><span class="message__bold">На заметку.</span> Типы колонок, которые можно локализовать:</p>
+
+		<ul><li><span class="key">Строка (50 символов)</span> (<span class="key">Text (50 characters)</span>).</li>
+			<li><span class="key">Строка (250 символов)</span> (<span class="key">Text (250 characters)</span>).</li>
+			<li><span class="key">Строка (500 символов)</span> (<span class="key">Text (500 characters)</span>).</li>
+			<li><span class="key">Строка неограниченной длины</span> (<span class="key">Unlimited length text</span>).</li>
+		</ul></div>
+		</li>
+		<li>На панели инструментов дизайнера объектов нажмите <span class="key">Сохранить</span> (<span class="key">Save</span>), а затем <span class="key">Опубликовать</span> (<span class="key">Publish</span>).</li>
+	</ol></li>
+	<li>Выполните перевод значения локализуемой колонки. Для этого воспользуйтесь инструкцией статьи <a href="../../../../user/kastomizacija_no_code/polzovatelskaja_lokalizacija/perevod_interfeisa/perevesti_elementy_interfeysa_v_razdele_perevody.html">Перевести элементы интерфейса в разделе <span class="key">Переводы</span></a>.</li>
+</ol><p>В результате колонка будет содержать значения на разных языках. В интерфейсе приложения будет использоваться значение, которое зависит от выбранного в профиле пользователя языка.</p>
+
+<h3>Добавить локализуемую строку<a class="title-anchor" href="#title-2174-3" id="title-2174-3"> </a></h3>
+
+<p><strong>Назначение</strong> локализуемой строки — возможность отображения в интерфейсе приложения данных модуля на нескольких языках (т. н. мультиязычие). Значение локализуемой строки зависит от выбранного в профиле пользователя языка. Локализуемая строка настраивается в дизайнере модуля и в дизайнере исходного кода, а ее значение хранится в базе данных.</p>
+
+<p>Чтобы <strong>добавить локализуемую строку</strong>:</p>
+
+<ol><li><a href="../../../../7-17/developer/instrumenty_razrabotki/creatio_ide/razrabotka_v_creatio_ide.html#title-2093-1">Перейдите в раздел <span class="key">Конфигурация</span></a> (<span class="key">Configuration</span>) и выберите пользовательский <a href="../../../instrumenty_razrabotki/pakety/obshchiye_printsipy_raboty_s_paketami/obzor.html">пакет</a>, в который будет добавлена схема.</li>
+	<li>
+	<p>На панели инструментов реестра раздела нажмите <span class="key">Добавить</span> (<span class="key">Add</span>) и выберите вид схемы.</p>
+
+	<ul><li>
+		<p>Если необходимо <strong>локализовать строку клиентского модуля</strong>, то выберите один из вариантов:</p>
+
+		<ul><li><span class="key">Модуль</span> (<span class="key">Module</span>).</li>
+			<li><span class="key">Модель представления страницы</span> (<span class="key">Page view model</span>).</li>
+			<li><span class="key">Модель представления раздела</span> (<span class="key">Section view model</span>).</li>
+			<li><span class="key">Модель представления детали с реестром</span> (<span class="key">Detail (list) view model</span>).</li>
+			<li><span class="key">Модель представления детали с полями</span> (<span class="key">Detail (fields) view model</span>).</li>
+			<li><span class="key">Замещающая модель представления</span> (<span class="key">Replacing view model</span>).</li>
+		</ul><div class="media">
+		<div class="media__element"><img src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/ConfigurationLocalizableResources/7.18/scr_choose_module_schema.png" /></div>
+		</div>
+		</li>
+		<li>
+		<p>Если необходимо <strong>локализовать строку исходного кода</strong>, то выберите <span class="key">Исходный код</span> (<span class="key">Source code</span>).</p>
+
+		<div class="media">
+		<div class="media__element"><img src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/ConfigurationLocalizableResources/7.18/scr_choose_code_schema.png" /></div>
+		</div>
+		</li>
+	</ul></li>
+	<li>В дизайнере заполните свойства схемы.</li>
+	<li>
+	<p>Добавьте строку, которую требуется локализовать.</p>
+
+	<ol><li>В контекстном меню узла <span class="key">Локализуемые строки</span> (<span class="key">Localizable strings</span>) нажмите кнопку <img alt="" border="0" src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/CreateClientSchema(7.17)/scr_add_button.png" />.</li>
+		<li>
+		<p>Заполните свойства локализуемой строки:</p>
+
+		<ul><li><span class="key">Код</span> (<span class="key">Code</span>) — название локализуемой строки (обязательное свойство). Должно содержать префикс (по умолчанию <span class="filled">Usr</span>), указанный в системной настройке <span class="key">Префикс названия объекта</span> (код <span class="key">SchemaNamePrefix</span>).</li>
+			<li><span class="key">Значение</span> (<span class="key">Value</span>) — значение локализуемой строки. По умолчанию введенное значение сохраняется для выбранного в профиле пользователя языка. Чтобы задать значения локализуемой строки на других языках, нажмите кнопку <img alt="" border="0" src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/ConfigurationLocalizableResources/7.18/scr_multilanguage_button.png" />.</li>
+		</ul><div class="media">
+		<div class="media__element"><img src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/ConfigurationLocalizableResources/7.18/scr_localizable_string.png" /></div>
+		</div>
+		</li>
+		<li>Для добавления локализуемой строки нажмите <span class="key">Добавить</span> (<span class="key">Add</span>).</li>
+	</ol></li>
+	<li>На панели инструментов дизайнера нажмите <span class="key">Сохранить</span> (<span class="key">Save</span>), а затем <span class="key">Опубликовать</span> (<span class="key">Publish</span>).</li>
+</ol><p>В результате строка будет содержать значения на разных языках. В интерфейсе приложения будет использоваться значение, которое зависит от выбранного в профиле пользователя языка.</p>
+
+<h2>Использовать базу данных для выполнения операций с локализуемыми ресурсами<a class="title-anchor" href="#title-2174-4" id="title-2174-4"> </a></h2>
+
+<p>Использование базы данных позволяет выполнять следующие <strong>операции с локализуемыми ресурсами</strong>:</p>
+
+<ul><li>Получить локализуемые ресурсы из базы данных.</li>
+	<li>Обновить локализуемые ресурсы в базе данных.</li>
+	<li>Сохранить локализуемые ресурсы в базе данных.</li>
+	<li>Отключить локализуемые ресурсы в базе данных.</li>
+</ul><h3>Получить локализуемые ресурсы из базы данных<a class="title-anchor" href="#title-2174-5" id="title-2174-5"> </a></h3>
+
+<p><strong>Классы</strong>, которые реализуют логику получения локализуемых ресурсов из базы данных:</p>
+
+<ul><li><span class="filled">Terrasoft.Core.Entities.EntitySchemaQuery</span> — получение данных из базы данных через ORM-модель. Класс по умолчанию поддерживает работу с мультиязычными данными.</li>
+	<li><span class="filled">Terrasoft.Core.Entities.Entity</span> — работа с сущностью базы данных.</li>
+</ul><p>Подробнее о получении данных из базы данных с помощью классов <span class="filled">Terrasoft.Core.Entities.EntitySchemaQuery</span> и <span class="filled">Terrasoft.Core.Entities.Entity</span> читайте в статье <a href="../../operatsii_s_dannymi_back_end/orm/obzor.html">Доступ к данным через ORM</a>.</p>
+
+<p><strong>Правила формирования выборки</strong> мультиязычных данных:</p>
+
+<ul><li>Если в профиле пользователя <strong>выбран основной язык</strong>, то выборка данных формируется из основной таблицы базы данных.</li>
+	<li>Если в профиле пользователя <strong>выбран дополнительный язык</strong> и в таблице <span class="filled">[SysLocalizableValue]</span> <strong>присутствует значение локализуемого ресурса</strong>, то выборка данных формируется из таблицы <span class="filled">[SysLocalizableValue]</span> базы данных.</li>
+	<li>Если в профиле пользователя <strong>выбран дополнительный язык</strong> и в таблице <span class="filled">[SysLocalizableValue]</span> <strong>отсутствует значение локализуемого ресурса</strong>, то выборка данных формируется из основной таблицы базы данных.</li>
+</ul><p>Для выборки данных можно использовать <strong>представления</strong> (<span class="filled">View</span>), которые позволяют получить данные из локализуемых колонок. Для формирования выборки локализуемых данных через представление необходимо настроить локализуемые представления.</p>
+
+<p>Чтобы <strong>настроить локализуемые представления</strong>:</p>
+
+<ol><li>
+	<p>Создайте схему объекта для представления. Шаблон названия схемы: <span class="filled">UsrVwИмяСхемыОбъекта</span>.</p>
+
+	<p>Обязательные составляющие названия схемы:</p>
+
+	<ul><li>Префикс (по умолчанию <span class="filled">Usr</span>), указанный в системной настройке <span class="key">Префикс названия объекта</span> (код <span class="key">SchemaNamePrefix</span>).</li>
+		<li>Префикс <span class="filled">Vw</span> (сокращение от <span class="filled">View</span>) который указывает, что схема является представлением в базе данных.</li>
+	</ul></li>
+	<li>Настройте локализуемую колонку. Настройка локализуемых колонок описана в пункте <a href="dobavit_lokalizuemuyu_kolonku.html#title-2174-2">Добавить локализуемую колонку</a>.</li>
+	<li>Добавьте новое представление локализации в базе данных.</li>
+</ol><h3>Обновить локализуемые ресурсы в базе данных<a class="title-anchor" href="#title-2174-6" id="title-2174-6"> </a></h3>
+
+<p>При изменении значения локализуемого ресурса в таблице <span class="filled">[SysLocalizableValue]</span> необходимо выполнить обновление локализуемых ресурсов в базе данных.</p>
+
+<p>Чтобы для соответствующей схемы <strong>обновить локализуемые ресурсы в базе данных</strong>, необходимо с помощью SQL-запроса изменить значение колонки <span class="filled">[IsChanged]</span> таблицы <span class="filled">[SysPackageResourceChecksum]</span>. В другом случае при обновлении пакета в приложении возникнет конфликт локализуемых ресурсов. Он не будет обнаружен, что приведен к потере значения локализуемого ресурса.</p>
+
+<div class="message message_warning">
+<p><span class="message__bold message__bold_warning">Важно.</span> Запрещено добавлять данные в таблицу <span class="filled">[SysLocalizableValue]</span> с использованием прямого SQL-запроса, поскольку в метаданных соответствующей схемы будет отсутствовать информация о добавленных локализуемых ресурсах. Чтобы <strong>добавить локализуемые ресурсы</strong>, необходимо использовать Creatio IDE, систему контроля версий SVN или файловую систему.</p>
+</div>
+
+<h3>Сохранить локализуемые ресурсы в базе данных<a class="title-anchor" href="#title-2174-7" id="title-2174-7"> </a></h3>
+
+<p>Чтобы <strong>сохранить локализуемые ресурсы</strong>, необходимо использовать метод <span class="filled">Entity.SetColumnValue()</span>, который может принимать параметры типа <span class="filled">string</span> и параметры типа <span class="filled">LocalizableString</span>.</p>
+
+<h4>Сохранить локализуемые ресурсы с использованием параметров типа <span class="filled">string</span><a class="title-anchor" href="#title-2174-8" id="title-2174-8"> </a></h4>
+
+<p><strong>Особенности сохранения локализуемых ресурсов</strong> при использовании параметров типа <span class="filled">string</span>:</p>
+
+<ul><li>Если <strong>запись добавляется</strong> пользователем с дополнительным языком, то данные сохраняются и в основную таблицу объекта <span class="filled">Entity</span>, и в таблицу локализации объекта <span class="filled">Entity</span>.</li>
+	<li>Если <strong>запись изменяется</strong> пользователем с дополнительным языком, то данные сохраняются в таблицу локализации объекта <span class="filled">Entity</span>.</li>
+	<li>Если <strong>запись добавляется или изменяется</strong> пользователем с основным языком, то данные сохраняются в основную таблицу объекта <span class="filled">Entity</span>.</li>
+</ul><p>Шаблон формирования имени таблицы локализации: <span class="filled">[SysИмяОсновнойТаблицыLcz]</span>.</p>
+
+<p>Ниже приведен пример сохранения локализуемых ресурсов с использованием параметра типа <span class="filled">string</span> для пользователя с основным языком (русский).</p>
+
+<div class="code">
+<div class="code__widgets">
+<div class="code__top">
+<div class="code__title">Пример сохранения локализуемых ресурсов с использованием параметра типа <span class="filled">string</span></div>
+</div>
+
+<div class="code__source">
+<pre class="prettyprint">
+var userConnection = (UserConnection)HttpContext.Current.Session["UserConnection"];
+EntitySchema schema = userConnection.EntitySchemaManager.FindInstanceByName("AccountType");
+Entity entity = schema.CreateEntity(userConnection);
+
+/* Установка для колонок значений по умолчанию. */
+entity.SetDefColumnValues();
+
+/* Установка значения для колонки [Название]. */
+entity.SetColumnValue("Name", "Новый клиент");
+
+/* Сохранение. */
+entity.Save();
+var name = String.Format("Name: {0}", entity.GetTypedColumnValue&lt;string&gt;("Name"));
+return name;
+</pre>
+</div>
+</div>
+</div>
+
+<p>При выполнении этого кода пользователем с основным языком (русский) будет выполнен SQL-запрос к основной таблице <span class="filled">[AccountType]</span> базы данных. В параметре <span class="filled">@P2</span> указано значение "<span class="consolas">Новый клиент</span>".</p>
+
+<div class="code">
+<div class="code__widgets">
+<div class="code__top">
+<div class="code__title">SQL-запрос</div>
+</div>
+
+<div class="code__source">
+<pre class="prettyprint">
+exec sp_executesql N'
+INSERT INTO [dbo].[AccountType]([Id], [Name], [CreatedOn], [CreatedById], [ModifiedOn], [ModifiedById], [ProcessListeners], [Description])
+VALUES(@P1, @P2, @P3, @P4, @P5, @P6, @P7, @P8)',N'@P1 uniqueidentifier,@P2 nvarchar(12),@P3 datetime2(7),@P4 uniqueidentifier,@P5 datetime2(7),@P6 uniqueidentifier,@P7 int,@P8 nvarchar(4000)',@P1='3A820BC8-006D-42B7-A472-E331FBD73E20',@P2=N'Новый клиент',@P3='2021-09-20 09:40:23.0909251',@P4='410006E1-CA4E-4502-A9EC-E54D922D2C00',@P5='2021-09-20 09:40:23.0929256',@P6='410006E1-CA4E-4502-A9EC-E54D922D2C00',@P7=0,@P8=N''	
+</pre>
+</div>
+</div>
+</div>
+
+<p>Ниже приведен пример сохранения локализуемых ресурсов с использованием параметра типа <span class="filled">string</span> для пользователя с дополнительным языком (например, английским).</p>
+
+<div class="code">
+<div class="code__widgets">
+<div class="code__top">
+<div class="code__title">Пример сохранения локализуемых ресурсов с использованием параметра типа <span class="filled">string</span></div>
+</div>
+
+<div class="code__source">
+<pre class="prettyprint">
+var userConnection = (UserConnection)HttpContext.Current.Session["UserConnection"];
+EntitySchema schema = userConnection.EntitySchemaManager.FindInstanceByName("AccountType");
+Entity entity = schema.CreateEntity(userConnection);
+entity.SetDefColumnValues();
+entity.SetColumnValue("Name", "New Customer");
+entity.Save();
+var name = String.Format("Name: {0}", entity.GetTypedColumnValue&lt;string&gt;("Name"));
+return name;
+</pre>
+</div>
+</div>
+</div>
+
+<p>При выполнении этого кода пользователем с дополнительным языком (например, английским) будут выполнены:</p>
+
+<ol><li>
+	<p>SQL-запрос к основной таблице <span class="filled">[AccountType]</span> базы данных. SQL-запрос такой же, как и для основной локализации, но в параметре <span class="filled">@P2</span> указано значение "<span class="consolas">New Customer</span>".</p>
+
+	<div class="code">
+	<div class="code__widgets">
+	<div class="code__top">
+	<div class="code__title">SQL-запрос</div>
+	</div>
+
+	<div class="code__source">
+	<pre class="prettyprint">
+exec sp_executesql N'
+INSERT INTO [dbo].[AccountType]([Id], [Name], [CreatedOn], [CreatedById], [ModifiedOn], [ModifiedById], [ProcessListeners], [Description])
+VALUES(@P1, @P2, @P3, @P4, @P5, @P6, @P7, @P8)',N'@P1 uniqueidentifier,@P2 nvarchar(12),@P3 datetime2(7),@P4 uniqueidentifier,@P5 datetime2(7),@P6 uniqueidentifier,@P7 int,@P8 nvarchar(4000)',@P1='94052A88-499D-4072-A28A-6771815446FD',@P2=N'New Customer',@P3='2021-09-20 10:07:00.3454424',@P4='410006E1-CA4E-4502-A9EC-E54D922D2C00',@P5='2021-09-20 10:07:00.3454424',@P6='410006E1-CA4E-4502-A9EC-E54D922D2C00',@P7=0,@P8=N''
+</pre>
+	</div>
+	</div>
+	</div>
+	</li>
+	<li>
+	<p>SQL-запрос в таблицу локализации <span class="filled">[SysAccountTypeLcz]</span>. В параметре <span class="filled">@P5</span> указано значение "<span class="consolas">New Customer</span>".</p>
+
+	<div class="code">
+	<div class="code__widgets">
+	<div class="code__top">
+	<div class="code__title">SQL-запрос</div>
+	</div>
+
+	<div class="code__source">
+	<pre class="prettyprint">
+exec sp_executesql N'
+INSERT INTO [dbo].[SysAccountTypeLcz]([Id], [ModifiedOn], [RecordId], [SysCultureId], [Name])
+VALUES(@P1, @P2, @P3, @P4, @P5)',N'@P1 uniqueidentifier,@P2 datetime2(7),@P3 uniqueidentifier,@P4 uniqueidentifier,@P5 nvarchar(12)',@P1='911A721A-0E5A-4CC3-B6D9-9E5FE85FEC64',@P2='2021-09-20 10:07:00.3664442',@P3='94052A88-499D-4072-A28A-6771815446FD',@P4='A5420246-0A8E-E111-84A3-00155D054C03',@P5=N'New Customer'
+</pre>
+	</div>
+	</div>
+	</div>
+	</li>
+</ol><p>Таким образом, в основную таблицу <span class="filled">[AccountType]</span> будет помещено значение, которое не соответствует основной локализации. Чтобы этого избежать, необходимо выполнять сохранение локализуемых ресурсов с использованием параметров типа <span class="filled">LocalizableString</span>.</p>
+
+<h4>Сохранить локализуемые ресурсы с использованием параметров типа <span class="filled">LocalizableString</span><a class="title-anchor" href="#title-2174-9" id="title-2174-9"> </a></h4>
+
+<p>Ниже приведен пример сохранения данных с использованием параметра типа <span class="filled">LocalizableString</span>.</p>
+
+<div class="code">
+<div class="code__widgets">
+<div class="code__top">
+<div class="code__title">Пример сохранения локализуемых ресурсов с использованием параметра типа <span class="filled">LocalizableString</span></div>
+</div>
+
+<div class="code__source">
+<pre class="prettyprint">
+var userConnection = (UserConnection)HttpContext.Current.Session["UserConnection"];
+EntitySchema schema = userConnection.EntitySchemaManager.FindInstanceByName("AccountType");
+Entity entity = schema.CreateEntity(userConnection);
+entity.SetDefColumnValues();
+
+/* Создание локализуемой строки с локализованными значениями для разных языковых культур. */
+var localizableString = new LocalizableString();
+localizableString.SetCultureValue(new CultureInfo("ru-RU"), "Новый клиент ru-RU");
+localizableString.SetCultureValue(new CultureInfo("en-US"), "New Customer en-US");
+
+/* Установка значения колонки с помощью локализуемой строки. */
+entity.SetColumnValue("Name", localizableString);
+entity.Save();
+
+/* Результат будет выведен в текущей языковой культуре пользователя. */
+var name = String.Format("Name: {0}", entity.GetTypedColumnValue&lt;string&gt;("Name"));
+return name;
+</pre>
+</div>
+</div>
+</div>
+
+<p>При выполнении этого кода, независимо от выбранного в профиле пользователя языка, будут выполнены:</p>
+
+<ol><li>
+	<p>SQL-запрос в основную таблицу <span class="filled">[AccountType]</span>. В параметре <span class="filled">@P2</span> указано значение "<span class="consolas">Новый клиент ru-RU</span>".</p>
+
+	<div class="code">
+	<div class="code__widgets">
+	<div class="code__top">
+	<div class="code__title">SQL-запрос</div>
+	</div>
+
+	<div class="code__source">
+	<pre class="prettyprint">
+exec sp_executesql N'
+INSERT INTO [dbo].[AccountType]([Id], [Name], [CreatedOn], [CreatedById], [ModifiedOn], [ModifiedById], [ProcessListeners], [Description])
+VALUES(@P1, @P2, @P3, @P4, @P5, @P6, @P7, @P8)',N'@P1 uniqueidentifier,@P2 nvarchar(18),@P3 datetime2(7),@P4 uniqueidentifier,@P5 datetime2(7),@P6 uniqueidentifier,@P7 int,@P8 nvarchar(4000)',@P1='5AC81E4A-FCB2-4019-AE5B-0C485A5F65BD',@P2=N'Новый клиент ru-RU',@P3='2021-09-20 10:47:21.7471581',@P4='410006E1-CA4E-4502-A9EC-E54D922D2C00',@P5='2021-09-20 10:47:21.7511578',@P6='410006E1-CA4E-4502-A9EC-E54D922D2C00',@P7=0,@P8=N''
+</pre>
+	</div>
+	</div>
+	</div>
+	</li>
+	<li>
+	<p>SQL-запрос в таблицу локализации <span class="filled">[SysAccountTypeLcz]</span>. В параметре <span class="filled">@P5</span> указано значение "<span class="consolas">New Customer en-US</span>".</p>
+
+	<div class="code">
+	<div class="code__widgets">
+	<div class="code__top">
+	<div class="code__title">SQL-запрос</div>
+	</div>
+
+	<div class="code__source">
+	<pre class="prettyprint">
+exec sp_executesql N'
+INSERT INTO [dbo].[SysAccountTypeLcz]([Id], [ModifiedOn], [RecordId], [SysCultureId], [Name])
+VALUES(@P1, @P2, @P3, @P4, @P5)',N'@P1 uniqueidentifier,@P2 datetime2(7),@P3 uniqueidentifier,@P4 uniqueidentifier,@P5 nvarchar(18)',@P1='6EC9C205-7F8B-455E-BC68-3D9AA6D7B7C0',@P2='2021-09-20 10:47:21.9272674',@P3='5AC81E4A-FCB2-4019-AE5B-0C485A5F65BD',@P4='A5420246-0A8E-E111-84A3-00155D054C03',@P5=N'New Customer en-US'
+</pre>
+	</div>
+	</div>
+	</div>
+	</li>
+</ol><p>При выполнении этого кода пользователем с дополнительным языком и отсутствии значения локализуемой строки на основном языке, в основную таблицу <span class="filled">[AccountType]</span> будет добавлена запись со значением для дополнительного языка.</p>
+
+<h3>Отключить локализуемые ресурсы в базе данных<a class="title-anchor" href="#title-2174-10" id="title-2174-10"> </a></h3>
+
+<p>Чтобы <strong>отключить локализуемые ресурсы</strong>, необходимо для свойства <span class="filled">UseLocalization</span> экземпляра класса <span class="filled">EntitySchemaQuery</span> установить значение <span class="filled">false</span>. Отключение локализуемых ресурсов не приводит к удалению локализуемых ресурсов из таблиц базы данных и не зависит от выбранного в профиле пользователя языка.</p>
+
+<div class="code">
+<div class="code__widgets">
+<div class="code__top">
+<div class="code__title">Пример отключения получения локализуемых ресурсов</div>
+</div>
+
+<div class="code__source">
+<pre class="prettyprint">
+/* Пользовательское подключение. */
+var userConnection = (UserConnection)HttpContext.Current.Session["UserConnection"];
+
+/* Формирование запроса. */
+var esqResult = new EntitySchemaQuery(userConnection.EntitySchemaManager, "City");
+
+/* Добавление колонки в запрос. */
+esqResult.AddColumn("Name");
+
+/* Отключение механизма выборки локализованных данных. */
+esqResult.UseLocalization = false;
+
+/* Выполнение запроса к базе данных и получение всей результирующей коллекции объектов. */
+var entities = esqResult.GetEntityCollection(userConnection);
+
+/* Получение текста запроса. */
+var s = esqResult.GetSelectQuery(userConnection).GetSqlText();
+
+/* Возврат результата. */
+return s;
+</pre>
+</div>
+</div>
+</div>
+
+<p>При выполнении этого кода, независимо от выбранного в профиле пользователя языка, будет выполнен SQL-запрос к основной таблице <span class="filled">[City]</span> базы данных.</p>
+
+<div class="code">
+<div class="code__widgets">
+<div class="code__top">
+<div class="code__title">SQL-запрос</div>
+</div>
+
+<div class="code__source">
+<pre class="prettyprint">
+SELECT
+    [City].[Name] [Name]
+FROM
+    [dbo].[City] [City] WITH(NOLOCK)
+</pre>
+</div>
+</div>
+</div>
+
+<h2>Использовать систему контроля версий SVN для выполнения операций с локализуемыми ресурсами<a class="title-anchor" href="#title-2174-11" id="title-2174-11"> </a></h2>
+
+<p>Использование системы контроля версий SVN позволяет выполнять следующие <strong>операции с локализуемыми ресурсами</strong>:</p>
+
+<ul><li>Обновить локализуемые ресурсы из хранилища SVN.</li>
+	<li>Фиксировать локализуемые ресурсы в хранилище SVN.</li>
+</ul><p>Описание работы с SVN содержится в статье <a href="../../../instrumenty_razrabotki/sistemy_kontrolya_versij/subversion/obzor.html">Контроль версий в Subversion</a>.</p>
+
+<h3>Обновить локализуемые ресурсы из хранилища SVN<a class="title-anchor" href="#title-2174-12" id="title-2174-12"> </a></h3>
+
+<p>Чтобы <strong>обновить локализуемые ресурсы из хранилища SVN</strong>, необходимо выполнить обновление пакета из хранилища SVN. Обновление пакета подробно описано в статье <a href="../../../instrumenty_razrabotki/sistemy_kontrolya_versij/creatio_ide/obzor.html#title-2109-3">Контроль версий в Creatio IDE</a>.</p>
+
+<div class="media">
+<div class="media__element"><img src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/ConfigurationLocalizableResources/7.18/pkg_update.png" /></div>
+</div>
+
+<p>Возможные <strong>состояния локализуемых ресурсов</strong>:</p>
+
+<ul><li><span class="key">Изменено</span> (<span class="key">Modified</span>) — локализуемый ресурс изменен.</li>
+	<li><span class="key">Добавлено</span> (<span class="key">Added</span>) — локализуемый ресурс добавлен.</li>
+	<li><span class="key">Удалено</span> (<span class="key">Deleted</span>) — локализуемый ресурс удален.</li>
+	<li><span class="key">Конфликт</span> (<span class="key">Conflicted</span>) — работа с локализуемым ресурсом выполнялась одновременно двумя разработчиками, один с которых зафиксировал изменения локализуемого ресурса в хранилище SVN.</li>
+</ul><h3>Фиксировать локализуемые ресурсы в хранилище SVN<a class="title-anchor" href="#title-2174-13" id="title-2174-13"> </a></h3>
+
+<p>Чтобы <strong>фиксировать локализуемые ресурсы в хранилище SVN</strong>, необходимо выполнить фиксацию пакета в хранилище SVN. Фиксация пакета подробно описана в статье <a href="../../../instrumenty_razrabotki/sistemy_kontrolya_versij/creatio_ide/obzor.html#title-2109-1">Контроль версий в Creatio IDE</a>.</p>
+
+<div class="media">
+<div class="media__element"><img src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/ConfigurationLocalizableResources/7.18/pkg_publish.png" /></div>
+</div>
+
+<p>Используя Creatio IDE, можно заблокировать пакет в хранилище SVN. Блокирование пакета позволяет избежать возникновения состояния <span class="key">Конфликт</span> (<span class="key">Conflicted</span>) локализуемого ресурса, поскольку отключена опция одновременной работы с пакетом. Например, один разработчик вносит изменения в локализуемые ресурсы пакета без его предварительной блокировки. При фиксации пакета в хранилище SVN может возникнуть ситуация, когда в текущем пакете другим разработчиком были изменены и зафиксированы в хранилище SVN эти же локализуемые ресурсы. В этом случае при обновлении пакета в Creatio IDE будет отображен перечень локализуемых ресурсов в состоянии <span class="key">Конфликт</span> (<span class="key">Conflicted</span>). Это означает, что версия и содержимое измененных локализуемых ресурсов не совпадают с версией и содержимым локализуемых ресурсов, зафиксированных в хранилище SVN. При выполнении фиксации изменений локализуемых ресурсов будут утеряны изменения, зафиксированные в хранилище SVN. Такие конфликтные ситуации необходимо решать вручную, используя SVN-клиенты, например, <a href="https://tortoisesvn.net/" target="_blank">TortoiseSVN</a>.</p>
+
+<div class="media">
+<div class="media__element"><img src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/ConfigurationLocalizableResources/7.18/pkg_update_conflict.png" /></div>
+</div>
+
+<h2>Использовать файловую систему для выполнения операций с локализуемыми ресурсами<a class="title-anchor" href="#title-2174-14" id="title-2174-14"> </a></h2>
+
+<p>Использование файловой системы позволяет редактировать локализуемые ресурсы.</p>
+
+<p>Чтобы <strong>редактировать локализуемые ресурсы из файловой системы</strong>:</p>
+
+<ol><li>Настройте Creatio для работы в файловой системе. Подробнее читайте в статье <a href="../../../instrumenty_razrabotki/vneshnie_ide/obzor.html#title-2098-4">Внешние IDE</a>.</li>
+	<li>Используя SVN-клиент, экспортируйте локализуемые ресурсы в файловую систему.</li>
+	<li>Измените локализуемые ресурсы.</li>
+	<li>Зафиксируйте изменения в хранилище SVN.</li>
+</ol><div class="message message_warning">
+<p><span class="message__bold message__bold_warning">Важно.</span> Значению локализуемого ресурса соответствует одна запись в таблице <span class="filled">[SysLocalizableValue]</span> базы данных. Эта запись содержит ссылки на соответствующие идентификаторы (<span class="filled">[SysPackageId]</span>, <span class="filled">[SysSchemaId]</span>, <span class="filled">[SysCultureId]</span>) и ключ (<span class="filled">[Key]</span>). Поэтому при фиксации ресурса с состоянием <span class="key">Конфликт</span> (<span class="key">Conflicted</span>) в таблицу будет записано последнее значение.</p>
+</div>
+</div>
+      
+  </div>
+<div class="block block-layout-builder block-field-blocknodedeveloper-documentationfield-linked">
+  
+    
+      
+  <div class="field field--name-field-linked field--type-entity-reference field--label-above">
+    <div class="field__label">Смотрите также</div>
+          <div class="field__items">
+              <div class="field__item"><a href="../../../../7-17/developer/instrumenty_razrabotki/creatio_ide/razrabotka_v_creatio_ide.html" hreflang="ru">Принципы разработки в Creatio IDE</a></div>
+          <div class="field__item"><a href="../../../instrumenty_razrabotki/pakety/obshchiye_printsipy_raboty_s_paketami/obzor.html" hreflang="ru">Общие принципы работы с пакетами</a></div>
+          <div class="field__item"><a href="../../../instrumenty_razrabotki/sistemy_kontrolya_versij/subversion/obzor.html" hreflang="ru">Контроль версий в Subversion</a></div>
+          <div class="field__item"><a href="../../../instrumenty_razrabotki/sistemy_kontrolya_versij/creatio_ide/obzor.html" hreflang="ru">Контроль версий в Creatio IDE</a></div>
+          <div class="field__item"><a href="../../../instrumenty_razrabotki/vneshnie_ide/obzor.html" hreflang="ru">Внешние IDE</a></div>
+          <div class="field__item"><a href="../../../../user/kastomizacija_no_code/polzovatelskaja_lokalizacija/perevod_interfeisa/perevesti_elementy_interfeysa_v_razdele_perevody.html" hreflang="ru">Перевести элементы интерфейса в разделе [Переводы]</a></div>
+          <div class="field__item"><a href="../../operatsii_s_dannymi_back_end/orm/obzor.html" hreflang="ru">Доступ к данным через ORM</a></div>
+              </div>
+      </div>
+
+  </div>
+<div class="block block-layout-builder block-field-blocknodedeveloper-documentationfield-resources">
+  
+    
+      
+  <div class="field field--name-field-resources field--type-link field--label-above">
+    <div class="field__label">Ресурсы</div>
+          <div class="field__items">
+              <div class="field__item"><a href="https://tortoisesvn.net/" target="_blank">Официальный сайт TortoiseSVN</a></div>
+              </div>
+      </div>
+
+  </div>
+
+    </div>
+  </div>
+
+  </div>
+
+</article>
+
+  </div>
+
+  </div>
+
+          </div>
+        </div>
+
+                  <aside class="creatio-sidebar creatio-sidebar_first" role="complementary">
+              <div class="region region-sidebar-first">
+    <div id="block-documentationnaviagtion" class="block block-ts-nav block-ts-nav-doc-nav">
+  
+    
+      <div class="ts-nav-block"><a href="../../../../index.html" class="ts-nav-block__link">Документация</a><div class="ts-nav-block__title">Для разработчика</div>
+</div>
+<div class="ts-nav-container"><ul class="ts-nav-menu"><li class="ts-nav-menu__item">
+  <a href="../../../s_chego_nachat.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">С чего начать&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../architecture.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Архитектура&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../instrumenty_razrabotki.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Инструменты разработки&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../back_end_razrabotka.html" class="ts-nav-menu__link ts-nav-menu__link_expanded ts-nav-menu__link_open" hreflang="zxx">Back-end разработка&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+      <ul class="ts-nav-menu__children">
+      <li class="ts-nav-menu__item">
+  <a href="../../fabrika_zameshchayushchikh_klassov.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Фабрика замещающих классов&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../back-end_development/operatsii_s_dannymi_back_end.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Операции с данными&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../veb_servisy.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Веб-сервисы&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../biznes_logika_obektov/obzor.html" class="ts-nav-menu__link" hreflang="ru">Бизнес-логика объектов</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../hranilishche_kehsha/obzor.html" class="ts-nav-menu__link" hreflang="ru">Хранилище кэша</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../lokalizuemye_resursy.html" class="ts-nav-menu__link ts-nav-menu__link_expanded ts-nav-menu__link_open" hreflang="zxx">Локализуемые ресурсы&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+      <ul class="ts-nav-menu__children">
+      <li class="ts-nav-menu__item">
+  <a href="../ponyatie_lokalizuemykh_resursov/obzor.html" class="ts-nav-menu__link" hreflang="ru">Обзор</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../back-end_development/localizable_resources/operacii_s_lokalizuemymi_resursami.html" class="ts-nav-menu__link ts-nav-menu__link_expanded ts-nav-menu__link_open" hreflang="ru">Операции с локализуемыми ресурсами&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+      <ul class="ts-nav-menu__children">
+      <li class="ts-nav-menu__item">
+  <a href="obzor.html" class="ts-nav-menu__link ts-nav-menu__link_guide ts-nav-menu__link_active" hreflang="ru">Обзор</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="poluchit_lokalizuemye_resursy_iz_bazy_dannykh.html" class="ts-nav-menu__link ts-nav-menu__link_case" hreflang="ru">Получить локализуемые ресурсы из базы данных</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="dobavit_lokalizuemuyu_kolonku.html" class="ts-nav-menu__link ts-nav-menu__link_case" hreflang="ru">Добавить локализуемую колонку</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="lokalizovat_predstavlenie_v_baze_dannykh.html" class="ts-nav-menu__link ts-nav-menu__link_case" hreflang="ru">Локализовать представление в базе данных</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="localizablevaluet.html" class="ts-nav-menu__link ts-nav-menu__link_reference" data-type="C#" hreflang="ru">LocalizableValue&lt;T&gt;</a>
+  </li>
+
+    </ul>
+  </li>
+
+    </ul>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../avtomaticheskaya_privyazka_dannykh/obzor.html" class="ts-nav-menu__link" hreflang="ru">Автоматическая привязка данных</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../api_dlya_raboty_s_fajlami.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">API для работы с файлами&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../../../api/netcoreapi/7.18.0/api/index.html" class="ts-nav-menu__link" hreflang="ru">Библиотека .NET классов</a>
+  </li>
+
+    </ul>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../front_end_razrabotka_freedom_ui.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Front-end разработка Freedom UI&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../front_end_razrabotka.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Front-end разработка&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../integratsiya_i_vneshnij_api.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Интеграция и внешний API&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../ehlementy_interfejsa.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Элементы интерфейса&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../komponenty_prilozheniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Компоненты приложения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../razrabotka_mobilnogo_prilozheniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Разработка мобильного приложения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../razrabotka_marketplace_prilozheniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Разработка Marketplace-приложения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+</ul>
+</div>
+
+  </div>
+
+  </div>
+
+            <div class="creatio-sidebar__toggle"></div>
+          </aside>
+        
+                  <aside class="creatio-sidebar creatio-sidebar_second" role="complementary">
+              <div class="region region-sidebar-second">
+    <div id="block-example" class="block block-ts-nav block-ts-nav-page-nav">
+  
+    
+      <div class="ts-nav-page">
+  </div>
+
+  </div>
+<div id="block-adminfeedbackblock" class="block block-admin-feedback block-admin-feedback-block">
+  
+    
+      <div id="feedback-message"><div id="upper-feedback-content"><h2>Был ли данный материал полезен?</h2>
+<input class="feedback-btn feedback-btn__yes button js-form-submit form-submit" data-node-id="2178" data-feedback="yes" type="submit" name="op" value="Да" />
+<input class="feedback-btn feedback-btn__no button js-form-submit form-submit" data-node-id="2178" data-feedback="no" type="submit" name="op" value="Нет" />
+</div>
+<form class="admin-feedback-form" data-drupal-selector="admin-feedback-form" action="https://academy.terrasoft.ua/docs/developer/back_end_razrabotka/lokalizuemye_resursy/operacii_s_lokalizuemymi_resursami/obzor" method="post" id="admin-feedback-form" accept-charset="UTF-8">
+  <div id="feedback-msg-result"></div><div class="js-form-item form-item js-form-type-textarea form-type-textarea js-form-item-feedback-message form-item-feedback-message form-no-label">
+        <div class="form-textarea-wrapper">
+  <textarea id="edit-feedback-msg" data-drupal-selector="edit-feedback-message" name="feedback_message" rows="5" cols="60" class="form-textarea resize-vertical"></textarea>
+</div>
+
+        </div>
+<input id="feedback-id" data-drupal-selector="edit-feedback-id" type="hidden" name="feedback_id" value="" />
+<input class="feedback-btn feedback-btn__send-comment button js-form-submit form-submit" data-drupal-selector="edit-feedback-send" type="submit" id="edit-feedback-send" name="op" value="Отправить" />
+<input autocomplete="off" data-drupal-selector="form-qn0ik7yg58llxgcmzt6ay8tsrk6s-ww4tf5wnqkh8zu" type="hidden" name="form_build_id" value="form-Qn0Ik7yg58LLXgcMZT6Ay8tSrk6S-WW4TF5wnqkH8zU" />
+<input data-drupal-selector="edit-admin-feedback-form" type="hidden" name="form_id" value="admin_feedback_form" />
+
+</form>
+</div>
+
+  </div>
+
+  </div>
+
+          </aside>
+              </main>
+    </div>
+  </div>
+
+  <footer role="contentinfo">
+    <div class="creatio-region creatio-region_footer">
+      <div class="creatio-container">
+          <div class="region region-footer">
+    <div id="block-footerua" class="block block-simple-block block-simple-blockfooter-ua">
+  
+    
+      <div class="footer">
+<div class="footer-left">
+<ul class="footer-socials"><li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_fb" href="https://www.facebook.com/terrasoft.ua" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_in" href="https://www.linkedin.com/company/terrasoft/" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_yt" href="https://www.youtube.com/c/TerrasoftUkraine" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_tg" href="https://t.me/Terrasoft_UA" target="_blank"> </a></li>
+</ul></div>
+
+<div class="footer-contact">
+<div class="footer-title">Будьте на связи!</div>
+
+<div class="footer-content">
+<div class="footer-items">
+<div class="footer-item"><a class="footer__link footer__link_phone" href="tel:+380443633133">+38 (044) 363-31-33</a></div>
+</div>
+
+<div class="footer-items">
+<div class="footer-item"><a class="footer__link footer__link_email" href="mailto:support@terrasoft.ua">support@terrasoft.ua</a></div>
+</div>
+</div>
+</div>
+</div>
+
+  </div>
+
+  </div>
+
+      </div>
+    </div>
+    <div class="creatio-region creatio-region_bottom">
+      <div class="creatio-container">
+          <div class="region region-bottom">
+    <div id="block-allrightsreservedua" class="block block-simple-block block-simple-blockfooter-bottom-ua">
+  
+    
+      <p>© 2002-2022 Terrasoft.  |  <a href="https://www.terrasoft.ua/privacy-policy" target="_blank">Конфиденциальность</a></p>
+
+  </div>
+
+  </div>
+
+      </div>
+    </div>
+  </footer>
+</div>
+<div class="creatio-bg"></div>
+
+
+  </div>
+
+    
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/docs\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/2178","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"ru"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"ajaxPageState":{"libraries":"admin_feedback\/admin_feedback_block,admin_feedback\/admin_feedback_css,classy\/base,classy\/messages,classy\/node,core\/drupal.ajax,core\/jquery.form,core\/normalize,creatio\/fancybox,creatio\/global,layout_discovery\/onecol,system\/base,ts_doc\/doc_version,ts_feedback\/ts_feedback,ts_nav\/breadcrumb,ts_nav\/doc_nav,ts_nav\/page_nav,ts_title_anchor\/ts_title_anchor","theme":"creatio","theme_token":null},"ajaxTrustedUrl":{"form_action_p_pvdeGsVG5zNF_XLGPTvYSKCf43t8qZYSwcfZl2uzM":true,"\/docs\/developer\/back_end_razrabotka\/lokalizuemye_resursy\/operacii_s_lokalizuemymi_resursami\/obzor?ajax_form=1":true},"admin_feedback":{"yes_response":"\u0421\u043f\u0430\u0441\u0438\u0431\u043e \u0437\u0430 \u043e\u0431\u0440\u0430\u0442\u043d\u0443\u044e \u0441\u0432\u044f\u0437\u044c!","no_response":"\u0421\u043f\u0430\u0441\u0438\u0431\u043e \u0437\u0430 \u043e\u0431\u0440\u0430\u0442\u043d\u0443\u044e \u0441\u0432\u044f\u0437\u044c!","custom_text_response_on_no":{"value":"","format":"full_html"},"feedback_prompt_on_yes":true,"feedback_prompt_on_no":true,"feedback_enable_predefined_answers":false,"feedback_prompt":"\u041a\u0430\u043a \u043c\u043e\u0436\u043d\u043e \u0443\u043b\u0443\u0447\u0448\u0438\u0442\u044c \u044d\u0442\u0443 \u0441\u0442\u0430\u0442\u044c\u044e?"},"ajax":{"edit-feedback-send":{"callback":"::validateFeedbackMsg","event":"mousedown","keypress":true,"prevent":"click","url":"\/docs\/developer\/back_end_razrabotka\/lokalizuemye_resursy\/operacii_s_lokalizuemymi_resursami\/obzor?ajax_form=1","dialogType":"ajax","submit":{"_triggering_element_name":"op","_triggering_element_value":"\u041e\u0442\u043f\u0440\u0430\u0432\u0438\u0442\u044c"}}},"user":{"uid":0,"permissionsHash":"9c2367dfcaba0fa15f0375f97aed64e146c908cee68508d13b79e3ee80e5162d"}}</script>
+<script src="../../../../sites/default/files/js/js_Rr-7TvYD7NposuRFJwUqThxM7yJmw8vs03PQwu5gWd8.js"></script>
+
+
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+      <g id="svg-copy" class="svg-icon svg-icon_copy">
+        <path d="M15.111,18H1.889A1.848,1.848,0,0,1,0,16.2V3.6A1.848,1.848,0,0,1,1.889,1.8H5.837a2.87,2.87,0,0,1,5.326,0h3.948A1.848,1.848,0,0,1,17,3.6V16.2A1.848,1.848,0,0,1,15.111,18ZM3.777,12.6v1.8h6.611V12.6Zm0-3.6v1.8h9.445V9Zm0-3.6V7.2h9.445V5.4ZM8.5,1.8a.924.924,0,0,0-.944.9.945.945,0,0,0,1.889,0A.924.924,0,0,0,8.5,1.8Z"/>
+      </g>
+
+      <g id="svg-prev" class="svg-icon svg-icon_arrow">
+        <path d="M5.488,12.779,0,6.39,5.488,0" transform="translate(1 0.652)"/>
+      </g>
+
+      <g id="svg-next" class="svg-icon svg-icon_arrow">
+        <path d="M0,12.779,5.488,6.39,0,0" transform="translate(0.759 0.652)"/>
+      </g>
+    </svg>
+  </body>
+
+<!-- Mirrored from academy.terrasoft.ua/docs/developer/back_end_razrabotka/lokalizuemye_resursy/operacii_s_lokalizuemymi_resursami/obzor by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Mar 2022 01:15:49 GMT -->
+</html>

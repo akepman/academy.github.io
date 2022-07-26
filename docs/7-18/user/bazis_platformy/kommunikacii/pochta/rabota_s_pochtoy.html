@@ -1,0 +1,1030 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# ">
+  
+<!-- Mirrored from academy.terrasoft.ua/docs/7-18/user/bazis_platformy/kommunikacii/pochta/rabota_s_pochtoy by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Mar 2022 00:21:19 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+          <!-- Google Tag Manager -->
+      <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          '../../../../../../../www.googletagmanager.com/gtm5445.html?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-KLLB8G');</script>
+      <!-- End Google Tag Manager -->
+        <meta charset="utf-8" />
+<link rel="canonical" href="rabota_s_pochtoy.html" />
+<meta name="description" content="Отслеживайте историю взаимодействия с вашими клиентами, загружая почту в Creatio. Полученные email-сообщения будут автоматически связаны с другими записями системы. Вы можете создавать и отправлять письма непосредственно из Creatio, запускать преднастроенные в системе бизнес-процессы по email-сообщениям." />
+<meta property="og:url" content="https://academy.terrasoft.ua/docs/7-18/user/bazis_platformy/kommunikacii/pochta/rabota_s_pochtoy" />
+<meta property="og:title" content="Работа с почтой" />
+<meta property="og:description" content="Отслеживайте историю взаимодействия с вашими клиентами, загружая почту в Creatio. Полученные email-сообщения будут автоматически связаны с другими записями системы. Вы можете создавать и отправлять письма непосредственно из Creatio, запускать преднастроенные в системе бизнес-процессы по email-сообщениям." />
+<meta name="Generator" content="Drupal 9 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="../../../../../themes/custom/creatio/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="revision" href="rabota_s_pochtoy.html" />
+
+    <title>Работа с почтой | Creatio Academy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&amp;family=Open+Sans:ital,wght@0,300;0,400;0,600;1,400&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" media="all" href="../../../../../sites/default/files/css/css_6lTP66__-yc6QXFp1zOwoeJ0HVigoYZP-SeoLLii000.css" />
+<link rel="stylesheet" media="all" href="../../../../../sites/default/files/css/css_XQJDNhkF3xH5SZCcY-PI89Zu4nYIzQ5oR3SnUKyfXJU.css" />
+<link rel="stylesheet" media="print" href="../../../../../sites/default/files/css/css_Zn4VHvcniOOtUwkIVwXzYr_0AI9gUVgZcPqaH4ViagU.css" />
+
+    
+  </head>
+  <body class="path-node page-node-type-user-documentation">
+          <!-- Google Tag Manager (noscript) -->
+      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KLLB8G"
+                        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+      <!-- End Google Tag Manager (noscript) -->
+    
+        
+      <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    <div class="creatio-page d-flex flex-column">
+        <div class="region region-informer">
+    <div id="block-terrasoftpidtrimueukrainu" class="block block-simple-block block-simple-blockterrasoft-pidtrimue-ukrainu">
+  
+    
+      <style type="text/css">
+<!--/*--><![CDATA[/* ><!--*/
+@import url(../../../../../../../www.terrasoft.ua/themes/custom/creatio/css/components/informer.css)
+
+/*--><!]]>*/
+</style><div class="ts-swu">
+<div class="creatio-container">
+<div class="ts-swu__cont">
+<div><a class="ts-swu__link" href="https://www.terrasoft.ua/terrasoft-stands-with-ukraine" target="_blank">Україна понад усе!</a> <span><a href="https://www.terrasoft.ua/terrasoft-stands-with-ukraine" target="_blank">Приєднуйтеся</a> до допомоги!</span></div>
+</div>
+</div></div>
+
+  </div>
+
+  </div>
+
+  
+  <header role="banner">
+          <div class="creatio-region creatio-region_top">
+        <div class="creatio-container">
+            <div class="region region-top">
+    <div id="block-menutoggle" class="block block-simple-block block-simple-blockmenu-toggle">
+  
+    
+      <div class="menu-toggle"><span> </span></div>
+
+  </div>
+<div id="block-logowhite-2" class="block block-simple-block block-simple-blocklogo-white">
+  
+    
+      <p><a class="site-logo" href="../../../../../../index.html" rel="home"><img src="../../../../../themes/custom/creatio/logo-white.svg" /></a></p>
+
+  </div>
+<div id="block-search" class="block block-simple-block block-simple-blocksearch">
+  
+    
+      <div class="search">
+<form action="https://academy.terrasoft.ua/search" class="search-form" method="get"><input class="search-form__input" name="search" placeholder="Поиск" type="search" /><input class="search-form__button" type="submit" value="Поиск" /> </form>
+
+<div class="search-toggle"> </div>
+</div>
+
+  </div>
+<nav role="navigation" aria-labelledby="block-sitesua-menu" id="block-sitesua" class="block block-menu navigation menu--sites-ua">
+            
+  <h2 class="visually-hidden" id="block-sitesua-menu">Sites UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="https://www.terrasoft.ua/" rel="nofollow" target="_blank">Terrasoft</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://community.terrasoft.ua/" rel="nofollow" target="_blank">Community</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://marketplace.terrasoft.ua/" rel="nofollow" target="_blank">Marketplace</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+<div id="block-usermenu" class="block block-ts-user block-ts-user-menu-block">
+  
+    
+      <ul class="user-menu">
+      <li class="user-menu__item">
+      <a class="user-menu__link" href="https://profile.terrasoft.ua/user/login?destination=academy/ua/docs/7-18/user/bazis_platformy/kommunikacii/pochta/rabota_s_pochtoy">Войти</a>
+    </li>
+  </ul>
+
+  </div>
+<div id="block-usermenumobile" class="block block-ts-user block-ts-user-menu-mobile-block">
+  
+    
+      <ul class="user-menu-mobile">
+      <li class="user-menu-mobile__item">
+      <div class="user-menu-mobile__user user-menu-mobile__user_icon"></div>
+      <ul class="user-menu-mobile__submenu">
+        <li class="user-menu-mobile__subitem">
+          <a class="user-menu-mobile__sublink" href="https://profile.terrasoft.ua/user/login?destination=academy/ua/docs/7-18/user/bazis_platformy/kommunikacii/pochta/rabota_s_pochtoy">Войти</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  </div>
+
+  </div>
+
+        </div>
+      </div>
+              <div class="creatio-region creatio-region_header">
+        <div class="creatio-container">
+            <div class="region region-header">
+    <div id="block-logo" class="block block-simple-block block-simple-blocklogo">
+  
+    
+      <p><a class="site-logo" href="../../../../../../index.html" rel="home"><img src="../../../../../themes/custom/creatio/logo.svg" /></a></p>
+
+  </div>
+<nav role="navigation" aria-labelledby="block-osnovnayanavigaciyaua-menu" id="block-osnovnayanavigaciyaua" class="block block-menu navigation menu--main-ua">
+            
+  <h2 class="visually-hidden" id="block-osnovnayanavigaciyaua-menu">Основная навигация UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="../../../../../index.html" data-drupal-link-system-path="&lt;front&gt;">Документация</a>
+              </li>
+                <li class="menu-item">
+        <a href="../../../../../../trainings.html">Тренинги</a>
+              </li>
+                <li class="menu-item">
+        <a href="../../../../../certification.html" data-drupal-link-system-path="node/3084">Сертификация и тестирование</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+<nav role="navigation" aria-labelledby="block-sitesua-2-menu" id="block-sitesua-2" class="block block-menu navigation menu--sites-ua">
+            
+  <h2 class="visually-hidden" id="block-sitesua-2-menu">Sites UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="https://www.terrasoft.ua/" rel="nofollow" target="_blank">Terrasoft</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://community.terrasoft.ua/" rel="nofollow" target="_blank">Community</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://marketplace.terrasoft.ua/" rel="nofollow" target="_blank">Marketplace</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+
+  </div>
+
+        </div>
+      </div>
+              <div class="creatio-region creatio-region_breadcrumb">
+        <div class="creatio-container">
+            <div class="region region-breadcrumb">
+    <div id="block-logowhite" class="block block-simple-block block-simple-blocklogo-white">
+  
+    
+      <p><a class="site-logo" href="../../../../../../index.html" rel="home"><img src="../../../../../themes/custom/creatio/logo-white.svg" /></a></p>
+
+  </div>
+<div id="block-breadcrumbnaviagtion" class="block block-ts-nav block-ts-nav-bread">
+  
+    
+      <nav class="breadcrumb"><ol class="ts-nav-breadcrumb__list"><li class="ts-nav-breadcrumb__item"><a href="../../../../../index.html" class="ts-nav-breadcrumb__link" title="Документация">Документация</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../../../indexd993.html?vid_1=1" class="ts-nav-breadcrumb__link" title="Для пользователя">Для пользователя</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../bazis_platformy.html" class="ts-nav-breadcrumb__link" title="Базис платформы" hreflang="zxx">Базис платформы</a></li>
+<li class="ts-nav-breadcrumb__item ts-nav-breadcrumb__item_mobile"><a href="../../kommunikacii.html" class="ts-nav-breadcrumb__link" title="Коммуникации" hreflang="zxx">Коммуникации</a></li>
+<li class="ts-nav-breadcrumb__item"><span class="ts-nav-breadcrumb__link ts-nav-breadcrumb__link_current" title="Работа с почтой">Работа с почтой</span></li>
+</ol>
+</nav>
+
+  </div>
+<div id="block-search-2" class="block block-simple-block block-simple-blocksearch">
+  
+    
+      <div class="search">
+<form action="https://academy.terrasoft.ua/search" class="search-form" method="get"><input class="search-form__input" name="search" placeholder="Поиск" type="search" /><input class="search-form__button" type="submit" value="Поиск" /> </form>
+
+<div class="search-toggle"> </div>
+</div>
+
+  </div>
+
+  </div>
+
+        </div>
+      </div>
+      </header>
+
+  <div class="creatio-region creatio-region_main">
+    <div class="creatio-container">
+                <div class="region region-breadcrumb-mobile">
+    <div id="block-breadcrumbnaviagtion-2" class="block block-ts-nav block-ts-nav-bread">
+  
+    
+      <nav class="breadcrumb"><ol class="ts-nav-breadcrumb__list"><li class="ts-nav-breadcrumb__item"><a href="../../../../../index.html" class="ts-nav-breadcrumb__link" title="Документация">Документация</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../../../indexd993.html?vid_1=1" class="ts-nav-breadcrumb__link" title="Для пользователя">Для пользователя</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../bazis_platformy.html" class="ts-nav-breadcrumb__link" title="Базис платформы" hreflang="zxx">Базис платформы</a></li>
+<li class="ts-nav-breadcrumb__item ts-nav-breadcrumb__item_mobile"><a href="../../kommunikacii.html" class="ts-nav-breadcrumb__link" title="Коммуникации" hreflang="zxx">Коммуникации</a></li>
+<li class="ts-nav-breadcrumb__item"><span class="ts-nav-breadcrumb__link ts-nav-breadcrumb__link_current" title="Работа с почтой">Работа с почтой</span></li>
+</ol>
+</nav>
+
+  </div>
+
+  </div>
+
+      
+      <main class="creatio-main" role="main">
+                                                    
+        <div class="creatio-content creatio-content_small">
+          <div class="creatio-content__inner creatio-content__inner_bg">
+                            <div class="region region-messages">
+    <div data-drupal-messages-fallback class="hidden"></div>
+
+  </div>
+
+            
+              <div class="region region-content">
+    <div id="block-creatio-page-title" class="block block-core block-page-title-block">
+  
+    
+      
+  <h1 class="page-title"><span class="field field--name-title field--type-string field--label-hidden">Работа с почтой</span>
+</h1>
+
+
+  </div>
+<div id="block-creatio-content" class="block block-system block-system-main-block">
+  
+    
+      
+<article data-history-node-id="2643" role="article" about="/docs/7-18/user/bazis_platformy/kommunikacii/pochta/rabota_s_pochtoy" class="node node--type-user-documentation node--view-mode-full">
+
+  
+    
+
+  
+  <div class="node__content">
+      <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-ts-doc block-ts-doc-downloads">
+  
+    
+      <a href="../../../../../sites/default/files/pdf/node/2643/Rabota_s_pochtoy_.pdf" target="_blank">PDF</a>
+  </div>
+<div class="block block-ts-doc block-ts-doc-versions">
+  
+    
+        <div class="ts-doc-versions">
+    <select class="ts-doc-versions__select">
+                              <option value="/docs/8-0/user/bazis_platformy/kommunikacii/pochta/rabota_s_pochtoy">Версия 8.0</option>
+                                                <option value="/docs/7-18/user/bazis_platformy/kommunikacii/pochta/rabota_s_pochtoy" selected>Версия 7.18</option>
+                              <option value="/docs/7-17/user/bazis_platformy/kommunikacii/pochta/rabota_s_pochtoy">Версия 7.17</option>
+          </select>
+  </div>
+
+  </div>
+
+    </div>
+  </div>
+  <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocknodeuser-documentationfield-product">
+  
+    
+      
+  <div class="field field--name-field-product field--type-entity-reference field--label-above">
+    <div class="field__label">Продукты</div>
+          <div class="field__items">
+              <div class="field__item">Все продукты</div>
+              </div>
+      </div>
+
+  </div>
+<div class="block block-layout-builder block-field-blocknodeuser-documentationbody">
+  
+    
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><p>Отслеживайте историю взаимодействия с вашими клиентами, загружая почту в Creatio. Полученные email-сообщения будут автоматически связаны с другими записями системы. Вы можете создавать и отправлять письма непосредственно из Creatio, запускать преднастроенные в системе бизнес-процессы по email-сообщениям.</p>
+
+<div class="message">
+<p><span class="message__bold">На заметку.</span> Чтобы в Creatio отправлять и получать email-сообщения, необходимо настроить параметры соединения с используемым почтовым провайдером, зарегистрировать учетную запись почты и настроить синхронизацию с почтовым ящиком. Подробнее читайте в блоке <a href="../../../../../user/ustanovka_i_administrirovanie/nastrojka_bazovyh_intgracij.html">Настройка базовых интеграций</a>.</p>
+</div>
+
+<p><strong>Область email-сообщений</strong> открывается по кнопке <img alt="" data-entity-type="" data-entity-uuid="" data-widget="image" height="30" src="../../../../../sites/default/files/images/2020-11/btn_com_email_tab.png" width="30" /> коммуникационной панели. Счетчик кнопки отображает количество новых email-сообщений.</p>
+
+<p>В верхней части вкладки <span class="key">Email</span> коммуникационной панели размещены фильтры, а также кнопки для управления почтой (Рис. 1). Вы можете:</p>
+
+<ul><li>
+	<p><a href="#title-749-1">Создать</a> новое email-сообщение.</p>
+	</li>
+	<li>
+	<p><a href="../../../../../user/ustanovka_i_administrirovanie/nastrojka_bazovyh_intgracij.html">Добавить</a> новую учетную запись и настроить почтовый ящик.</p>
+	</li>
+	<li>
+	<p><a href="#title-749-3">Загрузить</a> email-сообщения в Creatio.</p>
+	</li>
+	<li>
+	<p>Отфильтровать письма, например, отобразить только исходящие или только необработанные email-сообщения.</p>
+	</li>
+</ul><div class="media">
+<div class="media__caption">Рис. 1 — Фильтры и кнопки для управления почтой</div>
+
+<div class="media__element"><img alt="" data-entity-type="" data-entity-uuid="" data-widget="image" height="36" src="../../../../../sites/default/files/images/2020-12/chapter_emails_manage_emails_pane.png" width="344" /></div>
+</div>
+
+<p>Email-сообщения организованы в виде списка. В каждом письме отображаются данные отправителя, время отправки, тема письма и начальный фрагмент текста. В нижней части каждого письма отображаются значки всех связанных с письмом записей (Рис. 2).</p>
+
+<div class="media">
+<div class="media__caption">Рис. 2 — Отображение связанных записей на коммуникационной панели</div>
+
+<div class="media__element"><img alt="" data-entity-type="" data-entity-uuid="" data-widget="image" height="175" src="../../../../../sites/default/files/images/2020-12/chapter_emails_linked_objects_view.png" width="346" /></div>
+</div>
+
+<h2>Отправить письмо<a class="title-anchor" href="#title-749-1" id="title-749-1"> </a></h2>
+
+<ol><li>
+	<p>Нажмите кнопку <img alt="btn_com_email_tab00001.png" id="image3" src="../../../../../sites/en/files/documentation/user/en/base/BPMonlineHelp/chapter_emails/btn_com_email_tab00001.png" /> коммуникационной панели.</p>
+	</li>
+	<li>
+	<p>Чтобы создать новое email-сообщение, нажмите кнопку <img alt="btn_com_add_email.png" id="image4" src="../../../../../sites/en/files/documentation/user/en/base/BPMonlineHelp/chapter_emails/btn_com_add_email.png" />.</p>
+	</li>
+	<li>
+	<p>Заполните необходимые поля на странице email-сообщения:</p>
+
+	<ol><li>
+		<p>В поле <span class="key">От кого</span> выберите почтовый адрес, с которого будет отправлено письмо. Если для этой учетной записи настроена подпись, то она будет автоматически добавлена в окно ввода текста.</p>
+		</li>
+		<li>
+		<p>Укажите электронный адрес получателя в поле <span class="key">Кому</span>.</p>
+		</li>
+		<li>
+		<p>При необходимости заполните поля <span class="key">Копия</span> и <span class="key">Скрытая копия</span>, которые отобразятся по нажатию на кнопки <span class="key">CC</span> и <span class="key">BCC</span>.</p>
+		</li>
+		<li>
+		<p>Укажите тему электронного сообщения.</p>
+		</li>
+		<li>
+		<p>Введите текст письма.</p>
+		</li>
+		<li>
+		<p>Чтобы добавить в тело письма рисунок, вставьте его из буфера обмена или перетащите мышью (drag&amp;drop) в поле с текстом письма (Рис. 3).</p>
+
+		<div class="media">
+		<div class="media__caption">Рис. 3 — Добавление изображения при помощи drag&amp;drop</div>
+
+		<div class="media__element"><img alt="" data-entity-type="" data-entity-uuid="" data-widget="image" height="579" src="../../../../../sites/default/files/images/2020-12/add_picture_to_email.gif" width="622" /></div>
+		</div>
+		</li>
+	</ol></li>
+	<li>
+	<p>Перейдите на вкладку <span class="key">Основная информация</span>.</p>
+
+	<ol><li>
+		<p>Заполните поля <span class="key">Отображать в расписании</span>, <span class="key">Начало</span> и <span class="key">Завершение</span>, если необходимо отображать время, затраченное на подготовку электронного сообщения, в расписании.</p>
+		</li>
+		<li>
+		<p>Если email-сообщение связано с другими объектами системы, например, производится отправка документа по продаже, то укажите их в группе полей <span class="key">Связи</span>.</p>
+		</li>
+	</ol></li>
+	<li>
+	<p>Для добавления вложений перейдите на вкладку <span class="key">Вложения</span> страницы email-сообщения:</p>
+
+	<ol><li>
+		<p>Нажмите кнопку <span class="key">Добавить файл</span>.</p>
+		</li>
+		<li>
+		<p>В открывшемся окне выберите файл вложения.</p>
+
+		<div class="message">
+		<p><span class="message__bold">На заметку.</span> По умолчанию максимальный размер загружаемого файла составляет 10 МБ. Вы можете изменить данное значение в системной настройке “Максимальный размер загружаемого файла” (код “MaxFileSize”).</p>
+		</div>
+		</li>
+	</ol></li>
+	<li>
+	<p>Для отправки сообщения нажмите кнопку <span class="key">Отправить</span>.</p>
+
+	<p>В результате электронное сообщение будет отправлено из почтового ящика, который выбран в поле <span class="key">От кого</span>, по указанным в полях <span class="key">Кому</span>, <span class="key">Копия</span> и <span class="key">Скрытая копия</span> адресам. Состояние отправки email-сообщения будет изменено на “Завершена”.</p>
+	</li>
+</ol><h2>Отправить письмо по шаблону<a class="title-anchor" href="#title-749-2" id="title-749-2"> </a></h2>
+
+<p>Вы можете использовать шаблоны email-сообщений при ведении email-переписки с помощью кнопки <img alt="btn_com_workflow_card_email.png" id="image6" src="../../../../../sites/en/files/documentation/user/en/base/BPMonlineHelp/chapter_emails/btn_com_workflow_card_email.png" /> на панели действий. <a href="../../../../../7-17/user/bazis_platformy/interfejs/stranitsy_zapisey/stranicy_zapisej/index.html#title-759-5">Панель действий</a> доступна в некоторых разделах системы, например, <span class="key">Контакты</span>, <span class="key">Контрагенты</span>, <span class="key">Лиды</span> и т. п.</p>
+
+<p>Для создания сообщения по шаблону:</p>
+
+<ol><li>
+	<p>На странице записи, например, контакта, нажмите кнопку <img alt="btn_com_workflow_card_email00002.png" id="image7" src="../../../../../sites/en/files/documentation/user/en/base/BPMonlineHelp/chapter_emails/btn_com_workflow_card_email00002.png" /> на панели действий.</p>
+	</li>
+	<li>
+	<p>В области email-сообщения заполните поля <span class="key">От кого</span>, <span class="key">Кому</span>, <span class="key">Тема</span> и др.</p>
+	</li>
+	<li>
+	<p>Вместо ввода текста письма перейдите к выбору нужного шаблона из справочника по кнопке <span class="key">/...</span> (Рис. 4).</p>
+
+	<div class="media">
+	<div class="media__caption">Рис. 4 — Переход к выбору шаблона</div>
+
+	<div class="media__element"><img alt="" data-entity-type="" data-entity-uuid="" data-widget="image" height="293" src="../../../../../sites/default/files/images/2020-12/scr_emails_go_to_templates.png" width="551" /></div>
+	</div>
+	</li>
+	<li>
+	<p>Выберите шаблон из списка доступных.</p>
+
+	<p>В списке шаблонов отображаются записи справочника <span class="key">Шаблоны email-сообщений</span>. При отправке письма со страницы контакта в списке отображаются те шаблоны из справочника, в которых в качестве источника макросов указан “Контакт”, а также шаблоны, в которых источник макросов не указан. Аналогично для контрагентов, лидов и т. п.</p>
+
+	<p>В результате отобразится email-сообщение с подставленными значениями макросов, например, именем получателя в приветствии, именем отправителя в подписи и т. д.</p>
+	</li>
+	<li>
+	<p>Отредактируйте текст шаблона и нажмите кнопку <span class="key">Отправить</span>.</p>
+
+	<div class="message">
+	<p><span class="message__bold">На заметку.</span> Шаблоны email-сообщений доступны только при отправке сообщения с помощью панели действий. При создании сообщения через коммуникационную панель либо через деталь <span class="key">Средства связи</span> на страницах некоторых разделов системы шаблоны email-сообщений недоступны.</p>
+	</div>
+
+	<p>Шаблоны формируются в справочнике <span class="key">Шаблоны email-сообщений</span>. При формировании шаблонов используется <a href="../../../../../user/instrumenty_marketinga/email_marketing/shablon_pisma/sozdanie_shablona/sozdat_shablon_pisma.html?id=1974">дизайнер контента</a>.</p>
+	</li>
+</ol><h2>Загрузить письма<a class="title-anchor" href="#title-749-3" id="title-749-3"> </a></h2>
+
+<ol><li>
+	<p>Нажмите кнопку <img alt="btn_com_email_tab00003.png" id="image9" src="../../../../../sites/en/files/documentation/user/en/base/BPMonlineHelp/chapter_emails/btn_com_email_tab00003.png" /> коммуникационной панели.</p>
+	</li>
+	<li>
+	<p>В меню кнопки <img alt="btn_com_roles_actions_menu.png" id="image10" src="../../../../../sites/en/files/documentation/user/en/base/BPMonlineHelp/chapter_emails/btn_com_roles_actions_menu.png" /> выберите команду <span class="key">Синхронизировать почту</span> (Рис. 5).</p>
+
+	<div class="media">
+	<div class="media__caption">Рис. 5 — Синхронизация почты</div>
+
+	<div class="media__element"><img alt="" data-entity-type="" data-entity-uuid="" data-widget="image" height="221" src="../../../../../sites/default/files/images/2020-12/scr_emails_act_synchronize_mail.png" width="390" /></div>
+	</div>
+	</li>
+</ol><p>В результате в систему будут загружены email-сообщения из всех преднастроенных для синхронизации папок вашего почтового ящика. Если загруженное сообщение содержало вложения, то они автоматически добавятся на деталь <span class="key">Файлы</span> вкладки <span class="key">Вложения</span>.</p>
+
+<div class="message">
+<p><span class="message__bold">На заметку.</span> Вы можете настроить автоматическую загрузку почты через заданный промежуток времени, используя страницу <a href="../../../../../user/ustanovka_i_administrirovanie/nastrojka_bazovyh_intgracij.html">настройки синхронизации</a> с почтовым ящиком.</p>
+</div>
+
+<p>При загрузке почты в Creatio автоматически производится первичная обработка полученных email-сообщений:</p>
+
+<ol><li>
+	<p>Значение поля <span class="key">От кого</span> сопоставляется со средствами связи зарегистрированных в Creatio контрагентов и контактов. Если в системе будут найдены совпадения, то на странице такого email-сообщения будут автоматически заполнены поля <span class="key">Контрагент</span>, <span class="key">Контакт</span>.</p>
+	</li>
+	<li>
+	<p>Если в системе не найдено совпадений, то анализируются значения полей <span class="key">Кому</span>, <span class="key">Копия</span>, <span class="key">Скрытая копия</span>. Если по этим полям в системе будут найдены совпадения, то на странице такого email-сообщения также будут заполнены поля <span class="key">Контрагент</span>, <span class="key">Контакт</span>.</p>
+
+	<div class="message">
+	<p><span class="message__bold">На заметку.</span> При сопоставлении полей <span class="key">Кому</span>, <span class="key">Копия</span> и <span class="key">Скрытая копия</span> со средствами связи контакта не учитываются контакты, по которым существуют пользователи в Creatio.</p>
+	</div>
+	</li>
+	<li>
+	<p>Производится проверка преднастроенных в системе <strong>правил связывания писем с другими объектами системы</strong>. <a href="#title-749-9">Подробнее &gt;&gt;&gt;</a></p>
+	</li>
+</ol><p>В результате в качестве автора и ответвенного по записи, созданной в Creatio, будет указан пользователь, который загрузил письмо.</p>
+
+<h2>Обработать письмо<a class="title-anchor" href="#title-749-4" id="title-749-4"> </a></h2>
+
+<p>Email-сообщение считается <strong>обработанным</strong>, если у него заполнены поля <span class="key">Контрагент</span> или <span class="key">Контакт</span> и хотя бы одно из полей связи, например, <span class="key">Продажа</span> или <span class="key">Договор</span>.</p>
+
+<div class="message">
+<p><span class="message__bold">На заметку.</span> Письма, у которых автоматически заполняются поля <span class="key">Контрагент</span> или <span class="key">Контакт</span> и <span class="key">Обращение</span>, не являются обработанными.</p>
+</div>
+
+<p>При загрузке почты email-сообщения обрабатываются в системе <strong>автоматически</strong> по <a href="#title-749-9">правилам связывания писем</a> с другими объектами системы.</p>
+
+<div class="message">
+<p><span class="message__bold">На заметку.</span> Обработанным считается email-сообщение, у которого снят системный признак <span class="key">Нуждается в обработке</span>. Признак устанавливается и снимается в системе автоматически.</p>
+</div>
+
+<p>Те письма, которые не были обработаны автоматически, вы можете обработать <strong>вручную</strong>:</p>
+
+<ol><li>
+	<p>Выберите фильтр <span class="key">Необработанные</span> в области фильтров (Рис. 6).</p>
+
+	<div class="media">
+	<div class="media__caption">Рис. 6 — Выбор фильтра</div>
+
+	<div class="media__element"><img alt="" data-entity-type="" data-entity-uuid="" data-widget="image" height="115" src="../../../../../sites/default/files/images/2020-12/scr_emails_act_uncultivated_email.png" width="342" /></div>
+	</div>
+	</li>
+	<li>
+	<p>Выделите письмо, которое требует обработки (Рис. 7).</p>
+
+	<div class="media">
+	<div class="media__caption">Рис. 7 — Пример необработанного письма</div>
+
+	<div class="media__element"><img alt="" data-entity-type="" data-entity-uuid="" data-widget="image" height="297" src="../../../../../sites/default/files/images/2020-12/chapter_emails_connect_existing_2.png" width="329" /></div>
+	</div>
+	</li>
+	<li>
+	<p>Если необходимо, то свяжите email-сообщение с одним или несколькими из объектов системы. Как вручную связать письмо с другими записями, описано в блоке <a href="#title-749-8">Связать письмо с другими записями вручную</a>.</p>
+	</li>
+	<li>
+	<p>Нажмите кнопку <span class="key">Обработать</span>. Если письмо, которое вы обработали, является частью переписки, то Creatio предложит вам обработать сразу все письма цепочки.</p>
+
+	<p>В результате данное письмо или цепочка писем больше не будут отображаться в перечне необработанных email-сообщений. Системный признак <span class="key">Нуждается в обработке</span> у таких email-сообщений будет снят. Чтобы просмотреть перечень обработанных писем, выберите фильтр <span class="key">Обработанные</span> в области фильтров.</p>
+	</li>
+</ol><h2>Запустить бизнес-процесс по письму<a class="title-anchor" href="#title-749-5" id="title-749-5"> </a></h2>
+
+<p>В Creatio могут быть настроены бизнес-процессы, связанные с обработкой email-сообщений. Например, если клиент в письме интересуется продуктами вашей компании, то необходимо зарегистрировать лид, а если в его письме содержалось какое-либо пожелание или вопрос — создать обращение.</p>
+
+<div class="message">
+<p><span class="message__bold">На заметку.</span> Детальнее возможности автоматизации бизнес-процессов рассмотрены в документации по бизнес-процессам Creatio.</p>
+</div>
+
+<p>Для запуска бизнес-процесса по email-сообщению:</p>
+
+<ol><li>
+	<p>Нажмите кнопку <img alt="btn_com_email_tab00004.png" id="image14" src="../../../../../sites/en/files/documentation/user/en/base/BPMonlineHelp/chapter_emails/btn_com_email_tab00004.png" /> коммуникационной панели.</p>
+	</li>
+	<li>
+	<p>Выделите письмо, которое требует обработки.</p>
+	</li>
+	<li>
+	<p>В меню кнопки <img alt="btn_email_menu.png" id="image15" src="../../../../../sites/en/files/documentation/user/en/base/BPMonlineHelp/chapter_emails/btn_email_menu.png" /> выберите процесс, который необходимо запустить по данному email-сообщению (Рис. 8).</p>
+
+	<div class="media">
+	<div class="media__caption">Рис. 8 — Запуск процесса по email-сообщению</div>
+
+	<div class="media__element"><img alt="" data-entity-type="" data-entity-uuid="" data-widget="image" height="157" src="../../../../../sites/default/files/images/2020-12/scr_emails_act_start_process.png" width="377" /></div>
+	</div>
+	</li>
+</ol><p>В результате по выбранному email-сообщению будет запущен соответствующий бизнес-процесс.</p>
+
+<div class="message">
+<p><span class="message__bold">На заметку.</span> Чтобы настроенный в системе бизнес-процесс отображался в меню кнопки <img alt="btn_email_menu00005.png" id="image17" src="../../../../../sites/en/files/documentation/user/en/base/BPMonlineHelp/chapter_emails/btn_email_menu00005.png" /> email-сообщения, в параметрах бизнес-процесса необходимо указать тег “Email Process”, а также параметр с типом данных <span class="key">Уникальный идентификатор</span> и кодом “RecordId”.</p>
+
+<p>Название тега, по которому будет формироваться перечень доступных для выбора бизнес-процессов, указывается в системной настройке “Тег процессов email” (код “EmailProcessTag”).</p>
+</div>
+
+<h2>Создать запись из письма<a class="title-anchor" href="#title-749-7" id="title-749-7"> </a></h2>
+
+<p>Из email-сообщения в коммуникационной панели можно создать новую запись в любом разделе системы. Например, по письму от неизвестного отправителя может быть создан новый контакт. При этом на его странице автоматически заполнятся ФИО и email-адрес из сообщения. Если создается другая запись (например, продажа, счет или заказ), то на ее странице контактные данные из письма автоматически отобразятся в предусмотренных для них полях. Так при создании новой продажи в поле <span class="key">Клиент</span> страницы продажи будет указано название контрагента или ФИО контакта.</p>
+
+<p>Рассмотрим создание новой записи по email-сообщению на примере контакта.</p>
+
+<ol><li>
+	<p>Нажмите кнопку <img alt="btn_com_email_tab00006.png" id="image18" src="../../../../../sites/en/files/documentation/user/en/base/BPMonlineHelp/chapter_emails/btn_com_email_tab00006.png" /> коммуникационной панели.</p>
+	</li>
+	<li>
+	<p>Выделите нужное письмо.</p>
+	</li>
+	<li>
+	<p>По кнопке <img alt="btn_com_add_tab.png" id="image19" src="../../../../../sites/en/files/documentation/user/en/base/BPMonlineHelp/chapter_emails/btn_com_add_tab.png" /> в правом верхнем углу письма выберите команду <span class="key">Создать новый</span> (Рис. 9).</p>
+
+	<div class="media">
+	<div class="media__caption">Рис. 9 — Создание новой записи из email-сообщения на коммуникационной панели</div>
+
+	<div class="media__element"><img alt="" data-entity-type="" data-entity-uuid="" data-widget="image" height="197" src="../../../../../sites/default/files/images/2020-12/chapter_emails_create_new.png" width="344" /></div>
+	</div>
+	</li>
+	<li>
+	<p>В отобразившемся меню выберите необходимый объект, например, “Контакт” (Рис. 10).</p>
+
+	<div class="media">
+	<div class="media__caption">Рис. 10 — Выбор объекта</div>
+
+	<div class="media__element"><img alt="" data-entity-type="" data-entity-uuid="" data-widget="image" height="300" src="../../../../../sites/default/files/images/2020-12/chapter_emails_new_object_choice.png" width="540" /></div>
+	</div>
+	</li>
+	<li>
+	<p>Будет создана страница нового контакта, на которой поля <span class="key">ФИО</span> и <span class="key">Email</span> будут автоматически заполнены данными из письма. При наличии дополнительных данных о контактезаполните соответствующие поля на его странице и сохраните изменения (Рис. 11).</p>
+
+	<div class="media">
+	<div class="media__caption">Рис. 11 — Страница контакта, созданного по email-сообщению</div>
+
+	<div class="media__element"><img alt="" data-entity-type="" data-entity-uuid="" data-widget="image" height="549" src="../../../../../sites/default/files/images/2020-12/chapter_emails_new_contact_page.png" width="922" /></div>
+	</div>
+	</li>
+</ol><p>В результате выполненных действий в разделе <span class="key">Контакты</span> появится новая запись, созданная по данным из email-сообщения.</p>
+
+<h2>Связать письмо с другими записями вручную<a class="title-anchor" href="#title-749-8" id="title-749-8"> </a></h2>
+
+<p>Вручную связать письмо с другими записями системы можно несколькими способами:</p>
+
+<ul><li>
+	<p>С помощью специального поля связи с email-сообщением, указав в нем необходимый объект для связи (Рис. 12).</p>
+	</li>
+</ul><div class="media">
+<div class="media__caption">Рис. 12 — Привязка письма к другой записи с помощью поля связи</div>
+
+<div class="media__element"><img alt="" data-entity-type="" data-entity-uuid="" data-widget="image" height="297" src="../../../../../sites/default/files/images/2020-12/chapter_emails_connect_existing_2.png" width="329" /></div>
+</div>
+
+<ul><li>
+	<p>По кнопке <img alt="btn_com_add_tab00008.png" id="image24" src="../../../../../sites/en/files/documentation/user/en/base/BPMonlineHelp/chapter_emails/btn_com_add_tab00008.png" /> в правом верхнем углу письма (Рис. 13).</p>
+	</li>
+</ul><div class="media">
+<div class="media__caption">Рис. 13 — Привязка письма к другой записи по кнопке <img alt="btn_com_add_tab00009.png" id="image25" src="../../../../../sites/en/files/documentation/user/en/base/BPMonlineHelp/chapter_emails/btn_com_add_tab00009.png" /></div>
+
+<div class="media__element"><img alt="" data-entity-type="" data-entity-uuid="" data-widget="image" height="244" src="../../../../../sites/default/files/images/2020-12/chapter_emails_connect_existing.png" width="564" /></div>
+</div>
+
+<ul><li>
+	<p>На вкладке <span class="key">Основная информация</span> страницы email-сообщения. Для перехода на страницу email-сообщения кликните по заголовку письма.</p>
+	</li>
+</ul><p>В результате привязанное email-сообщение отобразится на вкладке <span class="key">История</span> страницы контрагента.</p>
+
+<h2>Связать письмо с другими записями автоматически<a class="title-anchor" href="#title-749-9" id="title-749-9"> </a></h2>
+
+<p>Чтобы входящее или исходящее email-сообщение автоматически связывалось с другими объектами системы, выполните настройку справочника <span class="key">Правила связывания писем с разделами системы</span>. Например, если в теме письма указан номер счета, то такое email-сообщение автоматически свяжется с зарегистрированным в Creatio счетом.</p>
+
+<p>Для настройки правил связывания:</p>
+
+<ol><li>
+	<p>Откройте дизайнер системы нажатием кнопки <img alt="btn_system_designer.png" id="image33" src="../../../../../sites/en/files/documentation/user/en/base/BPMonlineHelp/chapter_emails/btn_system_designer.png" /> в правом верхнем углу приложения.</p>
+	</li>
+	<li>
+	<p>В группе “Настройка системы” кликните по ссылке “Справочники”.</p>
+	</li>
+	<li>
+	<p>Откройте наполнение справочника <span class="key">Правила связывания писем с разделами системы</span>.</p>
+	</li>
+	<li>
+	<p>На странице справочника нажмите кнопку <span class="key">Добавить правило</span> или откройте ранее зарегистрированное правило, которое необходимо изменить.</p>
+	</li>
+	<li>
+	<p>На открывшейся странице заполните необходимые поля (Рис. 14):</p>
+
+	<div class="media">
+	<div class="media__caption">Рис. 14 — Пример настройки правила связывания писем</div>
+
+	<div class="media__element"><img alt="" data-entity-type="" data-entity-uuid="" data-widget="image" height="318" src="../../../../../sites/default/files/images/2020-12/scr_emails_lcp_rule.png" width="570" /></div>
+	</div>
+	</li>
+	<li>
+	<p>Укажите название правила, например “Тема email с номером счета”.</p>
+	</li>
+	<li>
+	<p>В поле <span class="key">Правило</span> напишите регулярное выражение, согласно которому необходимо определять фрагмент темы письма для связи со счетом.</p>
+
+	<p>Например, если у вас в системе настроена автонумерация счетов: Inv-1, Inv-2, Inv-3, ..., Inv-n, то вам необходимо написать регулярное выражение: Inv-<span class="key">0-9 </span>+. В результате при получении email-сообщения с темой “Дополнительная информация по счету Inv-53”, система автоматически проверит наличие в Creatio счета с указанным номером. Если такой счет зарегистрирован, то система заполнит соответствующим значением поле <span class="key">Счет</span> на странице email-сообщения.</p>
+
+	<div class="message">
+	<p><span class="message__bold">На заметку.</span> Для корректной работы правил связывания писем с другими объектами системы выполните настройки автонумерации записей так, чтобы в двух различных разделах не использовался одинаковый алгоритм автонумерации. Например, маска автонумерации счета — "Inv-{0}", заказа — "Ord-{0}", договора — "Cont-{0}" и т. д. Автонумерация записей в Creatio настраивается при помощи группы <a href="../../../../../user/ustanovka_i_administrirovanie/sistemnye_nastrojki_i_spravochniki/upravlenie_sistemnymi_nastrojkami/upravlenie_sistemnymi_nastroykami.html?id=269">системных настроек</a> “Автонумерация записей”.</p>
+	</div>
+
+	<ol><li>
+		<p>Заполните группу полей <span class="key">Объект, который связывается</span>. Для автоматического связывания email-сообщений с записями системы в поле <span class="key">Объект</span> выберите значение “Активность”. В поле <span class="key">Колонка</span> укажите поле, по которому необходимо определять связь. Поиск совпадений производится по теме письма, а тема письма указывается в колонке <span class="key">Заголовок</span>.</p>
+		</li>
+		<li>
+		<p>Заполните группу полей <span class="key">Объект, c которым связывается</span>. В поле <span class="key">Объект</span> выберите объект системы, для которого настраивается правило, например, “Счет”. В поле <span class="key">Колонка</span> укажите колонку, по которой необходимо производить поиск совпадений. В рассматриваемом примере это колонка <span class="key">Номер</span>.</p>
+		</li>
+	</ol></li>
+	<li>
+	<p>Сохраните правило.</p>
+	</li>
+	<li>
+	<p>По аналогии добавьте правила связи с другими разделами.</p>
+
+	<p>В результате при загрузке почты в Creatio и в момент отправки письма из Creatio будет выполняться проверка тем email-сообщений согласно настроенным правилам. Если совпадения будут найдены, то у таких сообщений автоматически заполнятся поля связи. Кроме того, такие email-сообщения будут отмечены в системе как обработанные.</p>
+	</li>
+</ol><h2>Часто задаваемые вопросы по работе с почтой в Creatio<a class="title-anchor" href="#title-749-14" id="title-749-14"> </a></h2>
+
+<h3>Почему при регистрации почтового ящика приходит сообщение, что логин/пароль некорректен?<a class="title-anchor" href="#title-749-15" id="title-749-15"> </a></h3>
+
+<p>Правила безопасности почтовых серверов иногда блокируют доступ к почтовым ящикам из внешних приложений. Если при регистрации учетной записи вы внесли все необходимые данные, но получили уведомление о некорректности имени пользователя или пароля, то выполните следующие действия:</p>
+
+<ol><li>
+	<p>В настройках почтового ящика включите доступ по протоколу IMAP. Обычно пересылка и работа с протоколами POP/IMAP вынесены в отдельную группу настроек.</p>
+	</li>
+	<li>
+	<p>В настройках безопасности почтового аккаунта откройте доступ к вашей учетной записи для внешних приложений.</p>
+	</li>
+	<li>
+	<p>В большинстве случаев почтовый сервер отправляет пользователю письмо о попытке внешнего подключения к почтовому ящику. Подтвердите подлинность подключения, перейдя по ссылке из этого письма.</p>
+	</li>
+	<li>
+	<p>Повторите регистрацию.</p>
+	</li>
+</ol><h3>Как настроить свой почтовый провайдер?<a class="title-anchor" href="#title-749-16" id="title-749-16"> </a></h3>
+
+<div class="message">
+<p><span class="message__bold">На заметку.</span> Перед тем, как перейти к настройке почтового провайдера, необходимо настроить сервис синхронизации <a href="../../../../../user/razvertyvanie_onsite/nastrojka_konteinernikh_komponentov/exchange_listener/nastroit_servis_sinkhronizacii_exchange_listener.html?id=2074">Exchange Listener</a>.</p>
+</div>
+
+<p>Для настройки интеграции с почтовым провайдером необходимо, чтобы на сервере приложения были открыты 25 и 587 порты. На странице выбора провайдера в Creatio нажмите кнопку <span class="key">Добавить провайдер</span>, выберите тип провайдера и заполните все настройки для получения и отправки сообщений. Больше информации о настройке почтовых провайдеров доступно в статье <a href="../../../../../user/ustanovka_i_administrirovanie/nastrojka_bazovyh_intgracij/imap_smtp/dobavit_pochtovyy_provayder_imap/smtp.html?id=1415">Добавить почтовый провайдер IMAP/SMTP</a> и блоке <a href="../../../../../user/ustanovka_i_administrirovanie/nastrojka_bazovyh_intgracij/pochta_kontakty_raspisanie_microsoft.html">Настройка почты, контактов, расписания MS Exchange / Microsoft 365 </a>.</p>
+
+<h3>Почему процесс синхронизации почты завершился успешно, а новых писем в системе нет?<a class="title-anchor" href="#title-749-17" id="title-749-17"> </a></h3>
+
+<p>Такая проблема может возникать в двух случаях:</p>
+
+<ol><li>
+	<p>В объект “Активность” было добавлено обязательное на уровне приложения поле.</p>
+
+	<p>Для того чтобы почта загружалась корректно, измените атрибуты поля, сделав его не обязательным в объекте, но обязательным на странице.</p>
+	</li>
+	<li>
+	<p>Письма, загружаемые с почтового сервера IMAP, ранее были загружены в систему и удалены, либо ранее были загружены в любое другое внешнее почтовое приложение.</p>
+
+	<p>Для того чтобы загрузить письма в систему, измените название справочника, созданного на основании объекта “EmailSynchronizedKey”, на произвольное.</p>
+	</li>
+</ol><h3>Как добавить общий почтовый ящик?<a class="title-anchor" href="#title-749-18" id="title-749-18"> </a></h3>
+
+<p>Общий почтовый ящик службы поддержки используется для обмена сообщениями между сотрудниками службы поддержки и клиентами. Настройка <a href="../../../../../user/ustanovka_i_administrirovanie/nastrojka_bazovyh_intgracij/nastrojka_pochtovogo_yashika/nastrojka_obshhego_jashhika/nastroit_obshij_pochtovyj_yashik.html?id=1867">общего почтового ящика</a> выполняется аналогично настройке индивидуального почтового ящика, но имеет некоторые особенности.</p>
+
+<h3>Почему не загружаются исходящие письма?<a class="title-anchor" href="#title-749-19" id="title-749-19"> </a></h3>
+
+<p>В Creatio можно настроить импорт всех писем из вашего почтового ящика или только из некоторых папок. Проверьте для вашей учетной записи настройки папок для загрузки почты.</p>
+
+<p>Если в настройках безопасности почтового ящика доступ к некоторым папкам закрыт для внешних приложений, то эти папки будут недоступны для загрузки в Creatio. Чтобы открыть доступ к папкам для внешних приложений, измените настройки безопасности вашего почтового ящика.</p>
+
+<p>Также в систему могут не загружаться исходящие письма, отправленные из MS Outlook, в связи с тем, что не все почтовые серверы поддерживают сохранение писем, отправленных из внешних приложений.</p>
+
+<h3>Почему при отправке письма возникает ошибка "Ошибка отправки письма, обратитесь к системному администратору"?<a class="title-anchor" href="#title-749-20" id="title-749-20"> </a></h3>
+
+<p>Данная ошибка может возникнуть в следующих случаях:</p>
+
+<ul><li>
+	<p>Запрещена отправка на уровне провайдера.</p>
+	</li>
+	<li>
+	<p>Нет связи с почтовым сервером SMTP.</p>
+	</li>
+	<li>
+	<p>На сервере SMTP закрыт один из портов: 25, 465, 587.</p>
+	</li>
+</ul><p>Обратитесь к системному администратору для определения причин и устранения ошибки.</p>
+
+<h3>Я не вижу деталь <span class="key">Email</span> в разделе <span class="key">Контакты</span>? Почему?<a class="title-anchor" href="#title-749-21" id="title-749-21"> </a></h3>
+
+<p>Согласно настроенной в Creatio логике, деталь <span class="key">Email</span> не отображается на страницах контактов, у которых в поле <span class="key">Тип</span> указано значение “Сотрудник” или в профиле контрагента указан тип “Наша компания”. Изменение данной логики реализуется средствами разработки.</p>
+</div>
+      
+  </div>
+<div class="block block-layout-builder block-field-blocknodeuser-documentationfield-linked-link">
+  
+    
+      
+  <div class="field field--name-field-linked-link field--type-link field--label-above">
+    <div class="field__label">Смотрите также</div>
+          <div class="field__items">
+              <div class="field__item"><a href="../../../../../user/ustanovka_i_administrirovanie/nastrojka_bazovyh_intgracij/imap_smtp/dobavit_pochtovyy_provayder_imap/smtp.html?id=1253">Добавить почтовый провайдер IMAP/SMTP</a></div>
+          <div class="field__item"><a href="../../../../../user/ustanovka_i_administrirovanie/nastrojka_bazovyh_intgracij/pochta_kontakty_raspisanie_microsoft/nastroika_microsoft_exchange_office_365/nastroit_microsoft_exchange_i_microsoft_365.1465.del?id=1254">Настроить Microsoft Exchange и Microsoft 365</a></div>
+          <div class="field__item"><a href="../../../../../user/bazis_platformy/kommunikacii/zvonki/rabota_so_zvonkami.html?id=1027">Работа со звонками</a></div>
+          <div class="field__item"><a href="../../../../../user/bazis_platformy/kommunikacii/chaty/rabota_s_chatami.html?id=2378">Работа с чатами</a></div>
+              </div>
+      </div>
+
+  </div>
+<div class="block block-layout-builder block-field-blocknodeuser-documentationfield-video">
+  
+    
+      
+  <div class="field field--name-field-video field--type-link field--label-above">
+    <div class="field__label">Онлайн-курсы</div>
+          <div class="field__items">
+              <div class="field__item"><a href="https://profile.terrasoft.ua/user/login?destination=academy/ua/course-redirect/677472">Обзор интерфейса Creatio</a></div>
+              </div>
+      </div>
+
+  </div>
+
+    </div>
+  </div>
+
+  </div>
+
+</article>
+
+  </div>
+
+  </div>
+
+          </div>
+        </div>
+
+                  <aside class="creatio-sidebar creatio-sidebar_first" role="complementary">
+              <div class="region region-sidebar-first">
+    <div id="block-documentationnaviagtion" class="block block-ts-nav block-ts-nav-doc-nav">
+  
+    
+      <div class="ts-nav-block"><a href="../../../../../index.html" class="ts-nav-block__link">Документация</a><div class="ts-nav-block__title">Для пользователя</div>
+</div>
+<div class="ts-nav-container"><ul class="ts-nav-menu"><li class="ts-nav-menu__item">
+  <a href="../../../nocode_platforma.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">No-сode платформа&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../bazis_platformy.html" class="ts-nav-menu__link ts-nav-menu__link_expanded ts-nav-menu__link_open" hreflang="zxx">Базис платформы&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+      <ul class="ts-nav-menu__children">
+      <li class="ts-nav-menu__item">
+  <a href="../../interfejs.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Интерфейс&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../dannye.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Данные&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../kommunikacii.html" class="ts-nav-menu__link ts-nav-menu__link_expanded ts-nav-menu__link_open" hreflang="zxx">Коммуникации&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+      <ul class="ts-nav-menu__children">
+      <li class="ts-nav-menu__item">
+  <a href="../uvedomleniya/rabota_s_uvedomleniami.html" class="ts-nav-menu__link" hreflang="ru">Уведомления</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../vizy/rabota_s_vizami.html" class="ts-nav-menu__link" hreflang="ru">Визы</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../zvonki/rabota_so_zvonkami.html" class="ts-nav-menu__link" hreflang="ru">Звонки</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../chasovie_poyasa/rabota_v_neskolkih_chasovyh_poyasah.html" class="ts-nav-menu__link" hreflang="ru">Часовые пояса</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="rabota_s_pochtoy.html" class="ts-nav-menu__link ts-nav-menu__link_active ts-nav-menu__link_open" hreflang="ru">Почта</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../chaty/rabota_s_chatami.html" class="ts-nav-menu__link" hreflang="ru">Чаты</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../shablony_email_i_chatov/rabota_s_shablonami_soobschenii.html" class="ts-nav-menu__link" hreflang="ru">Шаблоны email и чатов</a>
+  </li>
+
+    </ul>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../mobilnoe_prilozhenie.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Мобильное приложение&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../vypolnenie_biznes-processov.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Выполнение бизнес-процессов&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+
+    </ul>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../instrumenty_crm.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Инструменты CRM&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../instrumenty_kastomizacii.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Инструменты кастомизации&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../biznes_processy.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Бизнес-процессы&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../instrumenty_marketinga.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Инструменты маркетинга&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../instrumenty_prodazh.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Инструменты продаж&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../instrumenty_servisa.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Инструменты сервиса&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../ustanovka_i_administrirovanie.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Администрирование&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../razvertyvanie_onsite.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Развертывание on-site&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../banki_i_finansy.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Банки и финансы&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../drugie_reshenija.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Другие решения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+</ul>
+</div>
+
+  </div>
+
+  </div>
+
+            <div class="creatio-sidebar__toggle"></div>
+          </aside>
+        
+                  <aside class="creatio-sidebar creatio-sidebar_second" role="complementary">
+              <div class="region region-sidebar-second">
+    <div id="block-example" class="block block-ts-nav block-ts-nav-page-nav">
+  
+    
+        <div class="ts-nav-title">Почта</div>
+<div class="ts-nav-page">
+      <ul class="ts-nav-page__list">
+                                                <li class="ts-nav-page__item ts-nav-page__item_expanded ts-nav-page__item_open"><a href="rabota_s_pochtoy.html" class="ts-nav-page__link ts-nav-page__link_expanded ts-nav-page__link_active">Работа с почтой&nbsp;<span class="ts-nav-page__link-arrow"></span></a></li>
+          </ul>
+  </div>
+
+  </div>
+<div id="block-adminfeedbackblock" class="block block-admin-feedback block-admin-feedback-block">
+  
+    
+      <div id="feedback-message"><div id="upper-feedback-content"><h2>Был ли данный материал полезен?</h2>
+<input class="feedback-btn feedback-btn__yes button js-form-submit form-submit" data-node-id="2643" data-feedback="yes" type="submit" name="op" value="Да" />
+<input class="feedback-btn feedback-btn__no button js-form-submit form-submit" data-node-id="2643" data-feedback="no" type="submit" name="op" value="Нет" />
+</div>
+<form class="admin-feedback-form" data-drupal-selector="admin-feedback-form" action="https://academy.terrasoft.ua/docs/7-18/user/bazis_platformy/kommunikacii/pochta/rabota_s_pochtoy" method="post" id="admin-feedback-form" accept-charset="UTF-8">
+  <div id="feedback-msg-result"></div><div class="js-form-item form-item js-form-type-textarea form-type-textarea js-form-item-feedback-message form-item-feedback-message form-no-label">
+        <div class="form-textarea-wrapper">
+  <textarea id="edit-feedback-msg" data-drupal-selector="edit-feedback-message" name="feedback_message" rows="5" cols="60" class="form-textarea resize-vertical"></textarea>
+</div>
+
+        </div>
+<input id="feedback-id" data-drupal-selector="edit-feedback-id" type="hidden" name="feedback_id" value="" />
+<input class="feedback-btn feedback-btn__send-comment button js-form-submit form-submit" data-drupal-selector="edit-feedback-send" type="submit" id="edit-feedback-send" name="op" value="Отправить" />
+<input autocomplete="off" data-drupal-selector="form-748rvcg02uevis-in4nustm1lxoyvshphyqispserxy" type="hidden" name="form_build_id" value="form-748RVcG02uEvIS-In4NUstM1lXOyVshPHYqiSPsERxY" />
+<input data-drupal-selector="edit-admin-feedback-form" type="hidden" name="form_id" value="admin_feedback_form" />
+
+</form>
+</div>
+
+  </div>
+
+  </div>
+
+          </aside>
+              </main>
+    </div>
+  </div>
+
+  <footer role="contentinfo">
+    <div class="creatio-region creatio-region_footer">
+      <div class="creatio-container">
+          <div class="region region-footer">
+    <div id="block-footerua" class="block block-simple-block block-simple-blockfooter-ua">
+  
+    
+      <div class="footer">
+<div class="footer-left">
+<ul class="footer-socials"><li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_fb" href="https://www.facebook.com/terrasoft.ua" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_in" href="https://www.linkedin.com/company/terrasoft/" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_yt" href="https://www.youtube.com/c/TerrasoftUkraine" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_tg" href="https://t.me/Terrasoft_UA" target="_blank"> </a></li>
+</ul></div>
+
+<div class="footer-contact">
+<div class="footer-title">Будьте на связи!</div>
+
+<div class="footer-content">
+<div class="footer-items">
+<div class="footer-item"><a class="footer__link footer__link_phone" href="tel:+380443633133">+38 (044) 363-31-33</a></div>
+</div>
+
+<div class="footer-items">
+<div class="footer-item"><a class="footer__link footer__link_email" href="mailto:support@terrasoft.ua">support@terrasoft.ua</a></div>
+</div>
+</div>
+</div>
+</div>
+
+  </div>
+
+  </div>
+
+      </div>
+    </div>
+    <div class="creatio-region creatio-region_bottom">
+      <div class="creatio-container">
+          <div class="region region-bottom">
+    <div id="block-allrightsreservedua" class="block block-simple-block block-simple-blockfooter-bottom-ua">
+  
+    
+      <p>© 2002-2022 Terrasoft.  |  <a href="https://www.terrasoft.ua/privacy-policy" target="_blank">Конфиденциальность</a></p>
+
+  </div>
+
+  </div>
+
+      </div>
+    </div>
+  </footer>
+</div>
+<div class="creatio-bg"></div>
+
+
+  </div>
+
+    
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/docs\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/2643","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"ru"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"ajaxPageState":{"libraries":"admin_feedback\/admin_feedback_block,admin_feedback\/admin_feedback_css,classy\/base,classy\/messages,classy\/node,core\/drupal.ajax,core\/jquery.form,core\/normalize,creatio\/creatio.lists,creatio\/fancybox,creatio\/global,layout_discovery\/onecol,system\/base,ts_doc\/doc_version,ts_feedback\/ts_feedback,ts_nav\/breadcrumb,ts_nav\/doc_nav,ts_nav\/page_nav,ts_title_anchor\/ts_title_anchor","theme":"creatio","theme_token":null},"ajaxTrustedUrl":{"form_action_p_pvdeGsVG5zNF_XLGPTvYSKCf43t8qZYSwcfZl2uzM":true,"\/docs\/7-18\/user\/bazis_platformy\/kommunikacii\/pochta\/rabota_s_pochtoy?ajax_form=1":true},"admin_feedback":{"yes_response":"\u0421\u043f\u0430\u0441\u0438\u0431\u043e \u0437\u0430 \u043e\u0431\u0440\u0430\u0442\u043d\u0443\u044e \u0441\u0432\u044f\u0437\u044c!","no_response":"\u0421\u043f\u0430\u0441\u0438\u0431\u043e \u0437\u0430 \u043e\u0431\u0440\u0430\u0442\u043d\u0443\u044e \u0441\u0432\u044f\u0437\u044c!","custom_text_response_on_no":{"value":"","format":"full_html"},"feedback_prompt_on_yes":true,"feedback_prompt_on_no":true,"feedback_enable_predefined_answers":false,"feedback_prompt":"\u041a\u0430\u043a \u043c\u043e\u0436\u043d\u043e \u0443\u043b\u0443\u0447\u0448\u0438\u0442\u044c \u044d\u0442\u0443 \u0441\u0442\u0430\u0442\u044c\u044e?"},"ajax":{"edit-feedback-send":{"callback":"::validateFeedbackMsg","event":"mousedown","keypress":true,"prevent":"click","url":"\/docs\/7-18\/user\/bazis_platformy\/kommunikacii\/pochta\/rabota_s_pochtoy?ajax_form=1","dialogType":"ajax","submit":{"_triggering_element_name":"op","_triggering_element_value":"\u041e\u0442\u043f\u0440\u0430\u0432\u0438\u0442\u044c"}}},"user":{"uid":0,"permissionsHash":"9c2367dfcaba0fa15f0375f97aed64e146c908cee68508d13b79e3ee80e5162d"}}</script>
+<script src="../../../../../sites/default/files/js/js_F2-Y4EzgTnESr58XByoLYEnsbi7ysTfMIKN1RvsMSWY.js"></script>
+
+
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+      <g id="svg-copy" class="svg-icon svg-icon_copy">
+        <path d="M15.111,18H1.889A1.848,1.848,0,0,1,0,16.2V3.6A1.848,1.848,0,0,1,1.889,1.8H5.837a2.87,2.87,0,0,1,5.326,0h3.948A1.848,1.848,0,0,1,17,3.6V16.2A1.848,1.848,0,0,1,15.111,18ZM3.777,12.6v1.8h6.611V12.6Zm0-3.6v1.8h9.445V9Zm0-3.6V7.2h9.445V5.4ZM8.5,1.8a.924.924,0,0,0-.944.9.945.945,0,0,0,1.889,0A.924.924,0,0,0,8.5,1.8Z"/>
+      </g>
+
+      <g id="svg-prev" class="svg-icon svg-icon_arrow">
+        <path d="M5.488,12.779,0,6.39,5.488,0" transform="translate(1 0.652)"/>
+      </g>
+
+      <g id="svg-next" class="svg-icon svg-icon_arrow">
+        <path d="M0,12.779,5.488,6.39,0,0" transform="translate(0.759 0.652)"/>
+      </g>
+    </svg>
+  </body>
+
+<!-- Mirrored from academy.terrasoft.ua/docs/7-18/user/bazis_platformy/kommunikacii/pochta/rabota_s_pochtoy by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Mar 2022 00:21:24 GMT -->
+</html>

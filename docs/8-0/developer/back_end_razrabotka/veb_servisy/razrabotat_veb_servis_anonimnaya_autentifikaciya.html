@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# ">
+  
+<!-- Mirrored from academy.terrasoft.ua/docs/8-0/developer/back_end_razrabotka/veb_servisy/razrabotat_veb_servis_anonimnaya_autentifikaciya by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Mar 2022 06:19:46 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+          <!-- Google Tag Manager -->
+      <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          '../../../../../../www.googletagmanager.com/gtm5445.html?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-KLLB8G');</script>
+      <!-- End Google Tag Manager -->
+        <meta charset="utf-8" />
+<link rel="canonical" href="razrabotat_veb_servis_anonimnaya_autentifikaciya.html" />
+<meta name="description" content="Пример. Создать пользовательский веб-сервис с анонимной аутентификацией, который возвращает идентификатор контакта по указанному имени." />
+<meta property="og:url" content="https://academy.terrasoft.ua/docs/8-0/developer/back_end_razrabotka/veb_servisy/razrabotat_veb_servis_anonimnaya_autentifikaciya" />
+<meta property="og:title" content="Разработать пользовательский веб-сервис с анонимной аутентификацией" />
+<meta property="og:description" content="Пример. Создать пользовательский веб-сервис с анонимной аутентификацией, который возвращает идентификатор контакта по указанному имени." />
+<meta name="Generator" content="Drupal 9 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="../../../../themes/custom/creatio/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="revision" href="razrabotat_veb_servis_anonimnaya_autentifikaciya.html" />
+
+    <title>Разработать пользовательский веб-сервис с анонимной аутентификацией | Creatio Academy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&amp;family=Open+Sans:ital,wght@0,300;0,400;0,600;1,400&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" media="all" href="../../../../sites/default/files/css/css_6lTP66__-yc6QXFp1zOwoeJ0HVigoYZP-SeoLLii000.css" />
+<link rel="stylesheet" media="all" href="../../../../sites/default/files/css/css_XQJDNhkF3xH5SZCcY-PI89Zu4nYIzQ5oR3SnUKyfXJU.css" />
+<link rel="stylesheet" media="print" href="../../../../sites/default/files/css/css_Zn4VHvcniOOtUwkIVwXzYr_0AI9gUVgZcPqaH4ViagU.css" />
+
+    
+  </head>
+  <body class="path-node page-node-type-case">
+          <!-- Google Tag Manager (noscript) -->
+      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KLLB8G"
+                        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+      <!-- End Google Tag Manager (noscript) -->
+    
+        
+      <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    <div class="creatio-page d-flex flex-column">
+        <div class="region region-informer">
+    <div id="block-terrasoftpidtrimueukrainu" class="block block-simple-block block-simple-blockterrasoft-pidtrimue-ukrainu">
+  
+    
+      <style type="text/css">
+<!--/*--><![CDATA[/* ><!--*/
+@import url(../../../../../../www.terrasoft.ua/themes/custom/creatio/css/components/informer.css)
+
+/*--><!]]>*/
+</style><div class="ts-swu">
+<div class="creatio-container">
+<div class="ts-swu__cont">
+<div><a class="ts-swu__link" href="https://www.terrasoft.ua/terrasoft-stands-with-ukraine" target="_blank">Україна понад усе!</a> <span><a href="https://www.terrasoft.ua/terrasoft-stands-with-ukraine" target="_blank">Приєднуйтеся</a> до допомоги!</span></div>
+</div>
+</div></div>
+
+  </div>
+
+  </div>
+
+  
+  <header role="banner">
+          <div class="creatio-region creatio-region_top">
+        <div class="creatio-container">
+            <div class="region region-top">
+    <div id="block-menutoggle" class="block block-simple-block block-simple-blockmenu-toggle">
+  
+    
+      <div class="menu-toggle"><span> </span></div>
+
+  </div>
+<div id="block-logowhite-2" class="block block-simple-block block-simple-blocklogo-white">
+  
+    
+      <p><a class="site-logo" href="../../../../../index.html" rel="home"><img src="../../../../themes/custom/creatio/logo-white.svg" /></a></p>
+
+  </div>
+<div id="block-search" class="block block-simple-block block-simple-blocksearch">
+  
+    
+      <div class="search">
+<form action="https://academy.terrasoft.ua/search" class="search-form" method="get"><input class="search-form__input" name="search" placeholder="Поиск" type="search" /><input class="search-form__button" type="submit" value="Поиск" /> </form>
+
+<div class="search-toggle"> </div>
+</div>
+
+  </div>
+<nav role="navigation" aria-labelledby="block-sitesua-menu" id="block-sitesua" class="block block-menu navigation menu--sites-ua">
+            
+  <h2 class="visually-hidden" id="block-sitesua-menu">Sites UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="https://www.terrasoft.ua/" rel="nofollow" target="_blank">Terrasoft</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://community.terrasoft.ua/" rel="nofollow" target="_blank">Community</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://marketplace.terrasoft.ua/" rel="nofollow" target="_blank">Marketplace</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+<div id="block-usermenu" class="block block-ts-user block-ts-user-menu-block">
+  
+    
+      <ul class="user-menu">
+      <li class="user-menu__item">
+      <a class="user-menu__link" href="https://profile.terrasoft.ua/user/login?destination=academy/ua/docs/8-0/developer/back_end_razrabotka/veb_servisy/razrabotat_veb_servis_anonimnaya_autentifikaciya">Войти</a>
+    </li>
+  </ul>
+
+  </div>
+<div id="block-usermenumobile" class="block block-ts-user block-ts-user-menu-mobile-block">
+  
+    
+      <ul class="user-menu-mobile">
+      <li class="user-menu-mobile__item">
+      <div class="user-menu-mobile__user user-menu-mobile__user_icon"></div>
+      <ul class="user-menu-mobile__submenu">
+        <li class="user-menu-mobile__subitem">
+          <a class="user-menu-mobile__sublink" href="https://profile.terrasoft.ua/user/login?destination=academy/ua/docs/8-0/developer/back_end_razrabotka/veb_servisy/razrabotat_veb_servis_anonimnaya_autentifikaciya">Войти</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  </div>
+
+  </div>
+
+        </div>
+      </div>
+              <div class="creatio-region creatio-region_header">
+        <div class="creatio-container">
+            <div class="region region-header">
+    <div id="block-logo" class="block block-simple-block block-simple-blocklogo">
+  
+    
+      <p><a class="site-logo" href="../../../../../index.html" rel="home"><img src="../../../../themes/custom/creatio/logo.svg" /></a></p>
+
+  </div>
+<nav role="navigation" aria-labelledby="block-osnovnayanavigaciyaua-menu" id="block-osnovnayanavigaciyaua" class="block block-menu navigation menu--main-ua">
+            
+  <h2 class="visually-hidden" id="block-osnovnayanavigaciyaua-menu">Основная навигация UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="../../../../index.html" data-drupal-link-system-path="&lt;front&gt;">Документация</a>
+              </li>
+                <li class="menu-item">
+        <a href="../../../../../trainings.html">Тренинги</a>
+              </li>
+                <li class="menu-item">
+        <a href="../../../../certification.html" data-drupal-link-system-path="node/3084">Сертификация и тестирование</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+<nav role="navigation" aria-labelledby="block-sitesua-2-menu" id="block-sitesua-2" class="block block-menu navigation menu--sites-ua">
+            
+  <h2 class="visually-hidden" id="block-sitesua-2-menu">Sites UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="https://www.terrasoft.ua/" rel="nofollow" target="_blank">Terrasoft</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://community.terrasoft.ua/" rel="nofollow" target="_blank">Community</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://marketplace.terrasoft.ua/" rel="nofollow" target="_blank">Marketplace</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+
+  </div>
+
+        </div>
+      </div>
+              <div class="creatio-region creatio-region_breadcrumb">
+        <div class="creatio-container">
+            <div class="region region-breadcrumb">
+    <div id="block-logowhite" class="block block-simple-block block-simple-blocklogo-white">
+  
+    
+      <p><a class="site-logo" href="../../../../../index.html" rel="home"><img src="../../../../themes/custom/creatio/logo-white.svg" /></a></p>
+
+  </div>
+<div id="block-breadcrumbnaviagtion" class="block block-ts-nav block-ts-nav-bread">
+  
+    
+      <nav class="breadcrumb"><ol class="ts-nav-breadcrumb__list"><li class="ts-nav-breadcrumb__item"><a href="../../../../index.html" class="ts-nav-breadcrumb__link" title="Документация">Документация</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../../index2132.html?vid_1=2" class="ts-nav-breadcrumb__link" title="Для разработчика">Для разработчика</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../back_end_razrabotka.html" class="ts-nav-breadcrumb__link" title="Back-end разработка" hreflang="zxx">Back-end разработка</a></li>
+<li class="ts-nav-breadcrumb__item ts-nav-breadcrumb__item_mobile"><a href="../veb_servisy.html" class="ts-nav-breadcrumb__link" title="Веб-сервисы" hreflang="ru">Веб-сервисы</a></li>
+<li class="ts-nav-breadcrumb__item"><span class="ts-nav-breadcrumb__link ts-nav-breadcrumb__link_current" title="Разработать веб-сервис (анонимная аутентификация)">Разработать веб-сервис (анонимная аутентификация)</span></li>
+</ol>
+</nav>
+
+  </div>
+<div id="block-search-2" class="block block-simple-block block-simple-blocksearch">
+  
+    
+      <div class="search">
+<form action="https://academy.terrasoft.ua/search" class="search-form" method="get"><input class="search-form__input" name="search" placeholder="Поиск" type="search" /><input class="search-form__button" type="submit" value="Поиск" /> </form>
+
+<div class="search-toggle"> </div>
+</div>
+
+  </div>
+
+  </div>
+
+        </div>
+      </div>
+      </header>
+
+  <div class="creatio-region creatio-region_main">
+    <div class="creatio-container">
+                <div class="region region-breadcrumb-mobile">
+    <div id="block-breadcrumbnaviagtion-2" class="block block-ts-nav block-ts-nav-bread">
+  
+    
+      <nav class="breadcrumb"><ol class="ts-nav-breadcrumb__list"><li class="ts-nav-breadcrumb__item"><a href="../../../../index.html" class="ts-nav-breadcrumb__link" title="Документация">Документация</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../../index2132.html?vid_1=2" class="ts-nav-breadcrumb__link" title="Для разработчика">Для разработчика</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../back_end_razrabotka.html" class="ts-nav-breadcrumb__link" title="Back-end разработка" hreflang="zxx">Back-end разработка</a></li>
+<li class="ts-nav-breadcrumb__item ts-nav-breadcrumb__item_mobile"><a href="../veb_servisy.html" class="ts-nav-breadcrumb__link" title="Веб-сервисы" hreflang="ru">Веб-сервисы</a></li>
+<li class="ts-nav-breadcrumb__item"><span class="ts-nav-breadcrumb__link ts-nav-breadcrumb__link_current" title="Разработать веб-сервис (анонимная аутентификация)">Разработать веб-сервис (анонимная аутентификация)</span></li>
+</ol>
+</nav>
+
+  </div>
+
+  </div>
+
+      
+      <main class="creatio-main" role="main">
+                                                    
+        <div class="creatio-content creatio-content_small">
+          <div class="creatio-content__inner creatio-content__inner_bg">
+                            <div class="region region-messages">
+    <div data-drupal-messages-fallback class="hidden"></div>
+
+  </div>
+
+            
+              <div class="region region-content">
+    <div id="block-creatio-page-title" class="block block-core block-page-title-block">
+  
+    
+      
+  <h1 class="page-title"><span class="field field--name-title field--type-string field--label-hidden">Разработать пользовательский веб-сервис с анонимной аутентификацией</span>
+</h1>
+
+
+  </div>
+<div id="block-creatio-content" class="block block-system block-system-main-block">
+  
+    
+      
+<article data-history-node-id="2145" role="article" about="/docs/8-0/developer/back_end_razrabotka/veb_servisy/razrabotat_veb_servis_anonimnaya_autentifikaciya" class="node node--type-case node--view-mode-full">
+
+  
+    
+
+  
+  <div class="node__content">
+      <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocknodecasefield-difficulty">
+  
+    
+      
+            <div class="field field--name-field-difficulty field--type-entity-reference field--label-hidden field__item"><div about="/docs/8-0/taxonomy/term/123" id="taxonomy-term-123" class="taxonomy-term vocabulary-difficulty">
+  
+  
+  <div class="content">
+      <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocktaxonomy-termdifficultyfield-icon">
+  
+    
+      
+            <div class="field field--name-field-icon field--type-image field--label-hidden field__item">  <img src="../../../../sites/default/files/difficulty/medium.svg" alt="" loading="lazy" typeof="foaf:Image" />
+
+</div>
+      
+  </div>
+<div class="block block-layout-builder block-field-blocktaxonomy-termdifficultyname">
+  
+    
+      
+            <div class="field field--name-name field--type-string field--label-hidden field__item"><span style="color: #F57E20;">Средний</span></div>
+      
+  </div>
+
+    </div>
+  </div>
+
+  </div>
+</div>
+</div>
+      
+  </div>
+<div class="block block-ts-doc block-ts-doc-downloads">
+  
+    
+      <a href="../../../../sites/default/files/pdf/node/2145/Razrabotat_polzovatelskiy_veb_servis_s_anonimnoy_autentifikaciey_.pdf" target="_blank">PDF</a>
+  </div>
+<div class="block block-ts-doc block-ts-doc-versions">
+  
+    
+        <div class="ts-doc-versions">
+    <select class="ts-doc-versions__select">
+                                                <option value="/docs/8-0/developer/back_end_razrabotka/veb_servisy/razrabotat_veb_servis_anonimnaya_autentifikaciya" selected>Версия 8.0</option>
+                              <option value="/docs/7-18/developer/back_end_razrabotka/veb_servisy/razrabotat_veb_servis_anonimnaya_autentifikaciya">Версия 7.18</option>
+                              <option value="/docs/7-17/developer/back_end_razrabotka/veb_servisy/razrabotat_veb_servis_anonimnaya_autentifikaciya">Версия 7.17</option>
+                              <option value="/docs/7-16/developer/back_end_razrabotka/veb_servisy/razrabotat_veb_servis_anonimnaya_autentifikaciya">Версия 7.16</option>
+          </select>
+  </div>
+
+  </div>
+
+    </div>
+  </div>
+  <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocknodecasebody">
+  
+    
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><div class="message message_example">
+<p><span class="message__bold message__bold_example">Пример.</span> Создать пользовательский веб-сервис с анонимной аутентификацией, который возвращает идентификатор контакта по указанному имени.</p>
+
+<ul><li>Если контакт найден, то вернуть идентификатор контакта.</li>
+	<li>Если найденных контактов несколько, то вернуть идентификатор первого найденного контакта.</li>
+	<li>Если контакт найден, то вернуть пустую строку.</li>
+</ul></div>
+
+<h2>1. Создать схему <span class="key">Исходный код</span><a class="title-anchor" href="#title-2145-1" id="title-2145-1"> </a></h2>
+
+<ol><li><a data-auto-update-caption="true" href="../../../../7-18/developer/instrumenty_razrabotki/creatio_ide/principy_razrabotki_v_creatio_ide/obzor.html#title-2093-1">Перейдите в раздел <span class="key">Конфигурация</span></a> (<span class="key">Configuration</span>) и выберите пользовательский <a data-auto-update-caption="true" href="../../instrumenty_razrabotki/pakety/obshchiye_printsipy_raboty_s_paketami/obzor.html">пакет</a>, в который будет добавлена схема.</li>
+	<li>
+	<p>На панели инструментов реестра раздела нажмите <span class="key">Добавить</span> —&gt; <span class="key">Исходный код</span> (<span class="key">Add</span> —&gt; <span class="key">Source code</span>).</p>
+
+	<div class="media">
+	<div class="media__element"><img src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/CreateSourceCodeSchema(7.17)/scr_add_schema.png" /></div>
+	</div>
+	</li>
+	<li>
+	<p>В дизайнере схем заполните свойства схемы:</p>
+
+	<ul><li><span class="key">Код</span> (<span class="key">Code</span>) — "<span class="consolas">UsrAnonymousConfigurationService</span>".</li>
+		<li><span class="key">Заголовок</span> (<span class="key">Title</span>) — "<span class="consolas">AnonymousConfigurationService</span>".</li>
+	</ul><div class="media">
+	<div class="media__element"><img src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/CreateAnonymousWebService/7.18/scr_AnonymousWebService_Settings.png" /></div>
+	</div>
+
+	<p>Для применения заданных свойств нажмите <span class="key">Применить</span> (<span class="key">Apply</span>).</p>
+	</li>
+</ol><h2>2. Создать класс сервиса<a class="title-anchor" href="#title-2145-2" id="title-2145-2"> </a></h2>
+
+<ol><li>В дизайнере схем добавьте пространство имен, вложенное в <span class="filled">Terrasoft.Configuration</span>. Название может быть любым, например, <span class="filled">UsrAnonymousConfigurationServiceNamespace</span>.</li>
+	<li>C помощью директивы <span class="filled">using</span> добавьте пространства имен, типы данных которых будут задействованы в классе.</li>
+	<li>Добавьте название класса, которое соответствует названию схемы (свойство <span class="key">Код</span> (<span class="key">Code</span>)).</li>
+	<li>В качестве родительского класса укажите класс <span class="filled">Terrasoft.Nui.ServiceModel.WebService.BaseService</span>.</li>
+	<li>Для класса добавьте атрибуты <span class="filled">[ServiceContract]</span> и <span class="filled">[AspNetCompatibilityRequirements(RequirementsMode = AspNetCompatibilityRequirementsMode.Required)]</span>.</li>
+	<li>Для анонимного доступа к пользовательскому веб-сервису добавьте системное подключение <span class="filled">SystemUserConnection</span>.</li>
+</ol><h2>3. Реализовать метод класса<a class="title-anchor" href="#title-2145-3" id="title-2145-3"> </a></h2>
+
+<p>В дизайнере схем добавьте в класс метод <span class="filled">public string GetContactIdByName(string Name)</span>, который реализует конечную точку пользовательского веб-сервиса. С помощью <span class="filled">EntitySchemaQuery</span> метод отправит запрос к базе данных. В зависимости от значения параметра <span class="filled">Name</span>, отправленного в строке запроса, тело ответа на запрос будет содержать:</p>
+
+<ul><li>Идентификатор контакта (типа строка) — если контакт найден.</li>
+	<li>Идентификатор первого найденного контакта (типа строка) — если найдено несколько контактов.</li>
+	<li>Пустую строку — если контакт не найден.</li>
+</ul><p>Укажите пользователя, от имени которого будет выполняться обработка данного http-запроса. Для этого после получения <span class="filled">SystemUserConnection</span> вызовите метод <span class="filled">SessionHelper.SpecifyWebOperationIdentity</span> пространства имен <span class="filled">Terrasoft.Web.Common</span>. Этот метод обеспечивает работоспособность бизнес-процессов при работе с сущностью (<span class="filled">Entity</span>) базы данных из пользовательского веб-сервиса с анонимной аутентификацией.</p>
+
+<div class="code">
+<div class="code__widgets">
+<div class="code__source">
+<pre class="prettyprint">
+Terrasoft.Web.Common.SessionHelper.SpecifyWebOperationIdentity(HttpContextAccessor.GetInstance(), SystemUserConnection.CurrentUser);
+</pre>
+</div>
+</div>
+</div>
+
+<p>Исходный код пользовательского веб-сервиса <span class="filled">UsrAnonymousConfigurationService</span> представлен ниже.</p>
+
+<div class="code">
+<div class="code__widgets">
+<div class="code__top">
+<div class="code__title"><span class="filled">UsrAnonymousConfigurationService</span></div>
+</div>
+
+<div class="code__source">
+<pre class="prettyprint">
+/* Пользовательское пространство имен. */
+namespace Terrasoft.Configuration.UsrAnonymousConfigurationServiceNamespace
+{
+    using System;
+    using System.ServiceModel;
+    using System.ServiceModel.Web;
+    using System.ServiceModel.Activation;
+    using Terrasoft.Core;
+    using Terrasoft.Web.Common;
+    using Terrasoft.Core.Entities; 
+
+    [ServiceContract]
+    [AspNetCompatibilityRequirements(RequirementsMode = AspNetCompatibilityRequirementsMode.Required)]
+    public class UsrAnonymousConfigurationService: BaseService
+    {
+        /* Ссылка на экземпляр UserConnection, требуемый для обращения к базе данных. */
+        private SystemUserConnection _systemUserConnection;
+        private SystemUserConnection SystemUserConnection {
+            get {
+                return _systemUserConnection ?? (_systemUserConnection = (SystemUserConnection)AppConnection.SystemUserConnection);
+            }
+        }
+        
+        /* Метод, возвращающий идентификатор контакта по имени контакта. */
+        [OperationContract]
+        [WebInvoke(Method = "GET", RequestFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Wrapped,
+        ResponseFormat = WebMessageFormat.Json)]
+        public string GetContactIdByName(string Name){
+            /* Указывается пользователь, от имени которого выполняется обработка данного http-запроса. */
+            SessionHelper.SpecifyWebOperationIdentity(HttpContextAccessor.GetInstance(), SystemUserConnection.CurrentUser);
+            /* Результат по умолчанию. */
+            var result = "";
+            /* Экземпляр EntitySchemaQuery, обращающийся в таблицу Contact базы данных. */
+            var esq = new EntitySchemaQuery(SystemUserConnection.EntitySchemaManager, "Contact");
+            /* Добавление колонок в запрос. */
+            var colId = esq.AddColumn("Id");
+            var colName = esq.AddColumn("Name");
+            //* Фильтрация данных запроса. */
+            var esqFilter = esq.CreateFilterWithParameters(FilterComparisonType.Equal, "Name", Name);
+            esq.Filters.Add(esqFilter);
+            /* Получение результата запроса. */
+            var entities = esq.GetEntityCollection(SystemUserConnection);
+            /* Если данные получены. */
+            if (entities.Count &gt; 0)
+            {
+                /* Возвратить значение колонки "Id" первой записи результата запроса. */
+                result = entities[0].GetColumnValue(colId.Name).ToString();
+                /* Также можно использовать такой вариант:
+                result = entities[0].GetTypedColumnValue&lt;string&gt;(colId.Name); */
+            }
+            /* Возвратить результат. */
+            return result;
+        }
+    }
+}
+</pre>
+</div>
+</div>
+</div>
+
+<p>На панели инструментов дизайнера нажмите <span class="key">Сохранить</span> (<span class="key">Save</span>), а затем <span class="key">Опубликовать</span> (<span class="key">Publish</span>).</p>
+
+<h2>4. Зарегистрировать пользовательский веб-сервис с анонимной аутентификацией<a class="title-anchor" href="#title-2145-4" id="title-2145-4"> </a></h2>
+
+<ol><li>Перейдите в каталог <span class="filled">..\Terrasoft.WebApp\ServiceModel</span>.</li>
+	<li>
+	<p>Создайте файл <span class="filled">UsrAnonymousConfigurationService.svc</span> и добавьте в него запись.</p>
+
+	<div class="code">
+	<div class="code__widgets">
+	<div class="code__source">
+	<pre class="prettyprint">
+&lt;% @ServiceHost
+    Service = "Terrasoft.<wbr></wbr>Configuration.<wbr></wbr>UsrAnonymousConfigurationServiceNamespace.<wbr></wbr>UsrAnonymousConfigurationService"
+    Debug = "true"
+    Language = "C#"
+%&gt;
+</pre>
+	</div>
+	</div>
+	</div>
+
+	<p>Атрибут <span class="filled">Service</span> содержит полное имя класса веб-сервиса с указанием пространства имен.</p>
+	</li>
+</ol><h2>5. Настроить пользовательский веб-сервис с анонимной аутентификацией для работы по протоколам http и https<a class="title-anchor" href="#title-2145-5" id="title-2145-5"> </a></h2>
+
+<ol><li>
+	<p>Откройте файл <span class="filled">..\Terrasoft.WebApp\ServiceModel\http\services.config</span> и добавьте в него запись.</p>
+
+	<div class="code">
+	<div class="code__widgets">
+	<div class="code__top">
+	<div class="code__title">Файл <span class="filled">..\Terrasoft.WebApp\ServiceModel\http\services.config</span></div>
+	</div>
+
+	<div class="code__source">
+	<pre class="prettyprint">
+&lt;services&gt;
+    ...
+    &lt;service name="Terrasoft.<wbr></wbr>Configuration.<wbr></wbr>UsrAnonymousConfigurationServiceNamespace.<wbr></wbr>UsrAnonymousConfigurationService"&gt;
+        &lt;endpoint name="[Service name]EndPoint"
+            address=""
+            binding="webHttpBinding"
+            behaviorConfiguration="RestServiceBehavior"
+            bindingNamespace="http://Terrasoft.WebApp.ServiceModel"
+            contract="Terrasoft.<wbr></wbr>Configuration.<wbr></wbr>UsrAnonymousConfigurationServiceNamespace.<wbr></wbr>UsrAnonymousConfigurationService" /&gt;
+    &lt;/service&gt;
+&lt;/services&gt;
+</pre>
+	</div>
+	</div>
+	</div>
+	</li>
+	<li>Аналогичную запись добавьте в файл <span class="filled">..\Terrasoft.WebApp\ServiceModel\https\services.config</span>.</li>
+</ol><h2>6. Настроить доступ к пользовательскому веб-сервису с анонимной аутентификацией для всех пользователей<a class="title-anchor" href="#title-2145-6" id="title-2145-6"> </a></h2>
+
+<ol><li>Откройте файл <span class="filled">..\Terrasoft.WebApp\Web.config</span>.</li>
+	<li>
+	<p>Добавьте элемент <span class="filled">&lt;location&gt;</span>, определяющий относительный путь и права доступа к веб-сервису.</p>
+
+	<div class="code">
+	<div class="code__widgets">
+	<div class="code__top">
+	<div class="code__title">Файл <span class="filled">..\Terrasoft.WebApp\Web.config</span></div>
+	</div>
+
+	<div class="code__source">
+	<pre class="prettyprint">
+&lt;configuration&gt;
+    ...
+    &lt;location path="ServiceModel/UsrAnonymousConfigurationService.svc"&gt;
+        &lt;system.web&gt;
+            &lt;authorization&gt;
+                &lt;allow users="*" /&gt;
+            &lt;/authorization&gt;
+        &lt;/system.web&gt;
+    &lt;/location&gt;
+    ...
+&lt;/configuration&gt;
+</pre>
+	</div>
+	</div>
+	</div>
+	</li>
+	<li>
+	<p>В атрибут <span class="filled">value</span> ключа <span class="filled">AllowedLocations</span> элемента <span class="filled">&lt;appSettings&gt;</span> добавьте относительный путь к веб-сервису.</p>
+
+	<div class="code">
+	<div class="code__widgets">
+	<div class="code__top">
+	<div class="code__title">Файл <span class="filled">..\Terrasoft.WebApp\Web.config</span></div>
+	</div>
+
+	<div class="code__source">
+	<pre class="prettyprint">
+&lt;configuration&gt;
+    ...
+    &lt;appSettings&gt;
+    ...
+        &lt;add key="AllowedLocations" value="[Предыдущие значения];<wbr></wbr>ServiceModel/<wbr></wbr>UsrAnonymousConfigurationService.svc"  /&gt;
+    ...
+    &lt;/appSettings&gt;
+    ...
+&lt;/configuration&gt;
+</pre>
+	</div>
+	</div>
+	</div>
+	</li>
+</ol><h2>7. Перезапустить приложение в IIS<a class="title-anchor" href="#title-2145-6" id="title-2145-6"> </a></h2>
+
+<p>Для применения изменений перезапустите приложение в IIS.</p>
+
+<h2>Результат выполнения примера<a class="title-anchor" href="#title-2145-7" id="title-2145-7"> </a></h2>
+
+<p>В результате выполнения примера в Creatio появится пользовательский веб-сервис <span class="filled">UsrAnonymousConfigurationService</span> с конечной точкой <span class="filled">GetContactIdByName</span>. К веб-сервису можно обращаться из браузера, как с предварительным вводом логина и пароля, так и без их использования.</p>
+
+<p>Из браузера обратитесь к конечной точке <span class="filled">GetContactIdByName</span> веб-сервиса и в параметре <span class="filled">Name</span> передайте имя контакта.</p>
+
+<div class="code">
+<div class="code__widgets">
+<div class="code__top">
+<div class="code__title">Строка запроса с именем существующего контакта</div>
+</div>
+
+<div class="code__source">
+<pre class="prettyprint">
+http://myсreatio.com/0/ServiceModel/UsrAnonymousConfigurationService/GetContactIdByName?Name=Andrew%20Baker
+</pre>
+</div>
+</div>
+</div>
+
+<p>Если контакт, указанный в параметре <span class="filled">Name</span>, найден в базе данных, то в свойстве <span class="filled">GetContactIdByNameResult</span> будет возвращено значение идентификатора контакта.</p>
+
+<div class="media">
+<div class="media__element"><img src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/CreateAnonymousWebService/7.18/scr_result_01.png" /></div>
+</div>
+
+<p>Если контакт, указанный в параметре <span class="filled">Name</span>, не найден в базе данных, то в свойстве <span class="filled">GetContactIdByNameResult</span> будет возвращена пустая строка.</p>
+
+<div class="code">
+<div class="code__widgets">
+<div class="code__top">
+<div class="code__title">Строка запроса с именем несуществующего контакта</div>
+</div>
+
+<div class="code__source">
+<pre class="prettyprint">
+http://myсreatio.com/0/ServiceModel/UsrAnonymousConfigurationService/GetContactIdByName?Name=Andrew%20Bake
+</pre>
+</div>
+</div>
+</div>
+
+<div class="media">
+<div class="media__element"><img src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/CreateAnonymousWebService/7.18/scr_result_02.png" /></div>
+</div>
+</div>
+      
+  </div>
+<div class="block block-layout-builder block-field-blocknodecasefield-resources">
+  
+    
+      
+  <div class="field field--name-field-resources field--type-link field--label-above">
+    <div class="field__label">Ресурсы</div>
+          <div class="field__items">
+              <div class="field__item"><a href="../../../../../sites/default/files/documents/downloads/SDK/Packages/sdkAnonymousConfigurationServicePackage_2021-08-13_10.34.52.zip" target="_blank">Пакет с реализацией примера</a></div>
+              </div>
+      </div>
+
+  </div>
+
+    </div>
+  </div>
+
+  </div>
+
+</article>
+
+  </div>
+
+  </div>
+
+          </div>
+        </div>
+
+                  <aside class="creatio-sidebar creatio-sidebar_first" role="complementary">
+              <div class="region region-sidebar-first">
+    <div id="block-documentationnaviagtion" class="block block-ts-nav block-ts-nav-doc-nav">
+  
+    
+      <div class="ts-nav-block"><a href="../../../../index.html" class="ts-nav-block__link">Документация</a><div class="ts-nav-block__title">Для разработчика</div>
+</div>
+<div class="ts-nav-container"><ul class="ts-nav-menu"><li class="ts-nav-menu__item">
+  <a href="../../s_chego_nachat.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">С чего начать&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../architecture.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Архитектура&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../instrumenty_razrabotki.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Инструменты разработки&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../back_end_razrabotka.html" class="ts-nav-menu__link ts-nav-menu__link_expanded ts-nav-menu__link_open" hreflang="zxx">Back-end разработка&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+      <ul class="ts-nav-menu__children">
+      <li class="ts-nav-menu__item">
+  <a href="../fabrika_zameshchayushchikh_klassov.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Фабрика замещающих классов&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../back-end_development/operatsii_s_dannymi_back_end.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Операции с данными&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../veb_servisy.html" class="ts-nav-menu__link ts-nav-menu__link_expanded ts-nav-menu__link_open" hreflang="ru">Веб-сервисы&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+      <ul class="ts-nav-menu__children">
+      <li class="ts-nav-menu__item">
+  <a href="obzor.html" class="ts-nav-menu__link ts-nav-menu__link_guide" hreflang="ru">Обзор</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="razrabotat_veb_servis_cookies_autentifikaciya.html" class="ts-nav-menu__link ts-nav-menu__link_case" hreflang="ru">Разработать веб-сервис (cookies-аутентификация)</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="razrabotat_veb_servis_anonimnaya_autentifikaciya.html" class="ts-nav-menu__link ts-nav-menu__link_case ts-nav-menu__link_active" hreflang="ru">Разработать веб-сервис (анонимная аутентификация)</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="vyzvat_veb_servis_front_end.html" class="ts-nav-menu__link ts-nav-menu__link_case" hreflang="ru">Вызвать веб-сервис (front-end)</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="vyzvat_veb_servis_postman.html" class="ts-nav-menu__link ts-nav-menu__link_case" hreflang="ru">Вызвать веб-сервис (Postman)</a>
+  </li>
+
+    </ul>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../biznes_logika_obektov/obzor.html" class="ts-nav-menu__link" hreflang="ru">Бизнес-логика объектов</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../hranilishche_kehsha/obzor.html" class="ts-nav-menu__link" hreflang="ru">Хранилище кэша</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../lokalizuemye_resursy.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Локализуемые ресурсы&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../avtomaticheskaya_privyazka_dannykh/obzor.html" class="ts-nav-menu__link" hreflang="ru">Автоматическая привязка данных</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../api_dlya_raboty_s_fajlami.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">API для работы с файлами&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../../../api/netcoreapi/7.18.0/api/index.html" class="ts-nav-menu__link" hreflang="ru">Библиотека .NET классов</a>
+  </li>
+
+    </ul>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../front_end_razrabotka_freedom_ui.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Front-end разработка Freedom UI&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../front_end_razrabotka.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Front-end разработка&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../integratsiya_i_vneshnij_api.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Интеграция и внешний API&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../ehlementy_interfejsa.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Элементы интерфейса&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../komponenty_prilozheniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Компоненты приложения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../razrabotka_mobilnogo_prilozheniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Разработка мобильного приложения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../razrabotka_marketplace_prilozheniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Разработка Marketplace-приложения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+</ul>
+</div>
+
+  </div>
+
+  </div>
+
+            <div class="creatio-sidebar__toggle"></div>
+          </aside>
+        
+                  <aside class="creatio-sidebar creatio-sidebar_second" role="complementary">
+              <div class="region region-sidebar-second">
+    <div id="block-example" class="block block-ts-nav block-ts-nav-page-nav">
+  
+    
+      <div class="ts-nav-page">
+  </div>
+
+  </div>
+<div id="block-adminfeedbackblock" class="block block-admin-feedback block-admin-feedback-block">
+  
+    
+      <div id="feedback-message"><div id="upper-feedback-content"><h2>Был ли данный материал полезен?</h2>
+<input class="feedback-btn feedback-btn__yes button js-form-submit form-submit" data-node-id="2145" data-feedback="yes" type="submit" name="op" value="Да" />
+<input class="feedback-btn feedback-btn__no button js-form-submit form-submit" data-node-id="2145" data-feedback="no" type="submit" name="op" value="Нет" />
+</div>
+<form class="admin-feedback-form" data-drupal-selector="admin-feedback-form" action="https://academy.terrasoft.ua/docs/8-0/developer/back_end_razrabotka/veb_servisy/razrabotat_veb_servis_anonimnaya_autentifikaciya" method="post" id="admin-feedback-form" accept-charset="UTF-8">
+  <div id="feedback-msg-result"></div><div class="js-form-item form-item js-form-type-textarea form-type-textarea js-form-item-feedback-message form-item-feedback-message form-no-label">
+        <div class="form-textarea-wrapper">
+  <textarea id="edit-feedback-msg" data-drupal-selector="edit-feedback-message" name="feedback_message" rows="5" cols="60" class="form-textarea resize-vertical"></textarea>
+</div>
+
+        </div>
+<input id="feedback-id" data-drupal-selector="edit-feedback-id" type="hidden" name="feedback_id" value="" />
+<input class="feedback-btn feedback-btn__send-comment button js-form-submit form-submit" data-drupal-selector="edit-feedback-send" type="submit" id="edit-feedback-send" name="op" value="Отправить" />
+<input autocomplete="off" data-drupal-selector="form-enz-9eikuhtk0zmfamu5kytxdozn610hywkz9tlh9pk" type="hidden" name="form_build_id" value="form-ENZ-9eIKuHtK0zMfaMu5kYTXDOZN610hywKz9TLh9Pk" />
+<input data-drupal-selector="edit-admin-feedback-form" type="hidden" name="form_id" value="admin_feedback_form" />
+
+</form>
+</div>
+
+  </div>
+
+  </div>
+
+          </aside>
+              </main>
+    </div>
+  </div>
+
+  <footer role="contentinfo">
+    <div class="creatio-region creatio-region_footer">
+      <div class="creatio-container">
+          <div class="region region-footer">
+    <div id="block-footerua" class="block block-simple-block block-simple-blockfooter-ua">
+  
+    
+      <div class="footer">
+<div class="footer-left">
+<ul class="footer-socials"><li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_fb" href="https://www.facebook.com/terrasoft.ua" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_in" href="https://www.linkedin.com/company/terrasoft/" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_yt" href="https://www.youtube.com/c/TerrasoftUkraine" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_tg" href="https://t.me/Terrasoft_UA" target="_blank"> </a></li>
+</ul></div>
+
+<div class="footer-contact">
+<div class="footer-title">Будьте на связи!</div>
+
+<div class="footer-content">
+<div class="footer-items">
+<div class="footer-item"><a class="footer__link footer__link_phone" href="tel:+380443633133">+38 (044) 363-31-33</a></div>
+</div>
+
+<div class="footer-items">
+<div class="footer-item"><a class="footer__link footer__link_email" href="mailto:support@terrasoft.ua">support@terrasoft.ua</a></div>
+</div>
+</div>
+</div>
+</div>
+
+  </div>
+
+  </div>
+
+      </div>
+    </div>
+    <div class="creatio-region creatio-region_bottom">
+      <div class="creatio-container">
+          <div class="region region-bottom">
+    <div id="block-allrightsreservedua" class="block block-simple-block block-simple-blockfooter-bottom-ua">
+  
+    
+      <p>© 2002-2022 Terrasoft.  |  <a href="https://www.terrasoft.ua/privacy-policy" target="_blank">Конфиденциальность</a></p>
+
+  </div>
+
+  </div>
+
+      </div>
+    </div>
+  </footer>
+</div>
+<div class="creatio-bg"></div>
+
+
+  </div>
+
+    
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/docs\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/2145","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"ru"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"ajaxPageState":{"libraries":"admin_feedback\/admin_feedback_block,admin_feedback\/admin_feedback_css,classy\/base,classy\/messages,classy\/node,core\/drupal.ajax,core\/jquery.form,core\/normalize,creatio\/fancybox,creatio\/global,layout_discovery\/onecol,system\/base,ts_doc\/doc_version,ts_feedback\/ts_feedback,ts_nav\/breadcrumb,ts_nav\/doc_nav,ts_nav\/page_nav,ts_title_anchor\/ts_title_anchor","theme":"creatio","theme_token":null},"ajaxTrustedUrl":{"form_action_p_pvdeGsVG5zNF_XLGPTvYSKCf43t8qZYSwcfZl2uzM":true,"\/docs\/8-0\/developer\/back_end_razrabotka\/veb_servisy\/razrabotat_veb_servis_anonimnaya_autentifikaciya?ajax_form=1":true},"admin_feedback":{"yes_response":"\u0421\u043f\u0430\u0441\u0438\u0431\u043e \u0437\u0430 \u043e\u0431\u0440\u0430\u0442\u043d\u0443\u044e \u0441\u0432\u044f\u0437\u044c!","no_response":"\u0421\u043f\u0430\u0441\u0438\u0431\u043e \u0437\u0430 \u043e\u0431\u0440\u0430\u0442\u043d\u0443\u044e \u0441\u0432\u044f\u0437\u044c!","custom_text_response_on_no":{"value":"","format":"full_html"},"feedback_prompt_on_yes":true,"feedback_prompt_on_no":true,"feedback_enable_predefined_answers":false,"feedback_prompt":"\u041a\u0430\u043a \u043c\u043e\u0436\u043d\u043e \u0443\u043b\u0443\u0447\u0448\u0438\u0442\u044c \u044d\u0442\u0443 \u0441\u0442\u0430\u0442\u044c\u044e?"},"ajax":{"edit-feedback-send":{"callback":"::validateFeedbackMsg","event":"mousedown","keypress":true,"prevent":"click","url":"\/docs\/8-0\/developer\/back_end_razrabotka\/veb_servisy\/razrabotat_veb_servis_anonimnaya_autentifikaciya?ajax_form=1","dialogType":"ajax","submit":{"_triggering_element_name":"op","_triggering_element_value":"\u041e\u0442\u043f\u0440\u0430\u0432\u0438\u0442\u044c"}}},"user":{"uid":0,"permissionsHash":"9c2367dfcaba0fa15f0375f97aed64e146c908cee68508d13b79e3ee80e5162d"}}</script>
+<script src="../../../../sites/default/files/js/js_Rr-7TvYD7NposuRFJwUqThxM7yJmw8vs03PQwu5gWd8.js"></script>
+
+
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+      <g id="svg-copy" class="svg-icon svg-icon_copy">
+        <path d="M15.111,18H1.889A1.848,1.848,0,0,1,0,16.2V3.6A1.848,1.848,0,0,1,1.889,1.8H5.837a2.87,2.87,0,0,1,5.326,0h3.948A1.848,1.848,0,0,1,17,3.6V16.2A1.848,1.848,0,0,1,15.111,18ZM3.777,12.6v1.8h6.611V12.6Zm0-3.6v1.8h9.445V9Zm0-3.6V7.2h9.445V5.4ZM8.5,1.8a.924.924,0,0,0-.944.9.945.945,0,0,0,1.889,0A.924.924,0,0,0,8.5,1.8Z"/>
+      </g>
+
+      <g id="svg-prev" class="svg-icon svg-icon_arrow">
+        <path d="M5.488,12.779,0,6.39,5.488,0" transform="translate(1 0.652)"/>
+      </g>
+
+      <g id="svg-next" class="svg-icon svg-icon_arrow">
+        <path d="M0,12.779,5.488,6.39,0,0" transform="translate(0.759 0.652)"/>
+      </g>
+    </svg>
+  </body>
+
+<!-- Mirrored from academy.terrasoft.ua/docs/8-0/developer/back_end_razrabotka/veb_servisy/razrabotat_veb_servis_anonimnaya_autentifikaciya by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Mar 2022 06:19:47 GMT -->
+</html>

@@ -1,0 +1,1119 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# ">
+  
+<!-- Mirrored from academy.terrasoft.ua/docs/7-17/developer/ehlementy_interfejsa/modalnoe_okno/realizovat_modalnoe_okno by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Mar 2022 05:04:45 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+          <!-- Google Tag Manager -->
+      <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          '../../../../../../www.googletagmanager.com/gtm5445.html?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-KLLB8G');</script>
+      <!-- End Google Tag Manager -->
+        <meta charset="utf-8" />
+<link rel="canonical" href="realizovat_modalnoe_okno.html" />
+<meta name="description" content="Пример. Реализовать действие процесса для отображения модального окна в бизнес-процессе. Модальное окно содержит произвольный текст и кнопки Yes, No, Cancel.
+    
+    Логика работы кнопок:" />
+<meta property="og:url" content="https://academy.terrasoft.ua/docs/7-17/developer/ehlementy_interfejsa/modalnoe_okno/realizovat_modalnoe_okno" />
+<meta property="og:title" content="Реализовать модальное окно" />
+<meta property="og:description" content="Пример. Реализовать действие процесса для отображения модального окна в бизнес-процессе. Модальное окно содержит произвольный текст и кнопки Yes, No, Cancel.
+    
+    Логика работы кнопок:" />
+<meta name="Generator" content="Drupal 9 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="../../../../themes/custom/creatio/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="revision" href="realizovat_modalnoe_okno.html" />
+
+    <title>Реализовать модальное окно | Creatio Academy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&amp;family=Open+Sans:ital,wght@0,300;0,400;0,600;1,400&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" media="all" href="../../../../sites/default/files/css/css_6lTP66__-yc6QXFp1zOwoeJ0HVigoYZP-SeoLLii000.css" />
+<link rel="stylesheet" media="all" href="../../../../sites/default/files/css/css_XQJDNhkF3xH5SZCcY-PI89Zu4nYIzQ5oR3SnUKyfXJU.css" />
+<link rel="stylesheet" media="print" href="../../../../sites/default/files/css/css_Zn4VHvcniOOtUwkIVwXzYr_0AI9gUVgZcPqaH4ViagU.css" />
+
+    
+  </head>
+  <body class="path-node page-node-type-case">
+          <!-- Google Tag Manager (noscript) -->
+      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KLLB8G"
+                        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+      <!-- End Google Tag Manager (noscript) -->
+    
+        
+      <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    <div class="creatio-page d-flex flex-column">
+        <div class="region region-informer">
+    <div id="block-terrasoftpidtrimueukrainu" class="block block-simple-block block-simple-blockterrasoft-pidtrimue-ukrainu">
+  
+    
+      <style type="text/css">
+<!--/*--><![CDATA[/* ><!--*/
+@import url(../../../../../../www.terrasoft.ua/themes/custom/creatio/css/components/informer.css)
+
+/*--><!]]>*/
+</style><div class="ts-swu">
+<div class="creatio-container">
+<div class="ts-swu__cont">
+<div><a class="ts-swu__link" href="https://www.terrasoft.ua/terrasoft-stands-with-ukraine" target="_blank">Україна понад усе!</a> <span><a href="https://www.terrasoft.ua/terrasoft-stands-with-ukraine" target="_blank">Приєднуйтеся</a> до допомоги!</span></div>
+</div>
+</div></div>
+
+  </div>
+
+  </div>
+
+  
+  <header role="banner">
+          <div class="creatio-region creatio-region_top">
+        <div class="creatio-container">
+            <div class="region region-top">
+    <div id="block-menutoggle" class="block block-simple-block block-simple-blockmenu-toggle">
+  
+    
+      <div class="menu-toggle"><span> </span></div>
+
+  </div>
+<div id="block-logowhite-2" class="block block-simple-block block-simple-blocklogo-white">
+  
+    
+      <p><a class="site-logo" href="../../../../../index.html" rel="home"><img src="../../../../themes/custom/creatio/logo-white.svg" /></a></p>
+
+  </div>
+<div id="block-search" class="block block-simple-block block-simple-blocksearch">
+  
+    
+      <div class="search">
+<form action="https://academy.terrasoft.ua/search" class="search-form" method="get"><input class="search-form__input" name="search" placeholder="Поиск" type="search" /><input class="search-form__button" type="submit" value="Поиск" /> </form>
+
+<div class="search-toggle"> </div>
+</div>
+
+  </div>
+<nav role="navigation" aria-labelledby="block-sitesua-menu" id="block-sitesua" class="block block-menu navigation menu--sites-ua">
+            
+  <h2 class="visually-hidden" id="block-sitesua-menu">Sites UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="https://www.terrasoft.ua/" rel="nofollow" target="_blank">Terrasoft</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://community.terrasoft.ua/" rel="nofollow" target="_blank">Community</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://marketplace.terrasoft.ua/" rel="nofollow" target="_blank">Marketplace</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+<div id="block-usermenu" class="block block-ts-user block-ts-user-menu-block">
+  
+    
+      <ul class="user-menu">
+      <li class="user-menu__item">
+      <a class="user-menu__link" href="https://profile.terrasoft.ua/user/login?destination=academy/ua/docs/7-17/developer/ehlementy_interfejsa/modalnoe_okno/realizovat_modalnoe_okno">Войти</a>
+    </li>
+  </ul>
+
+  </div>
+<div id="block-usermenumobile" class="block block-ts-user block-ts-user-menu-mobile-block">
+  
+    
+      <ul class="user-menu-mobile">
+      <li class="user-menu-mobile__item">
+      <div class="user-menu-mobile__user user-menu-mobile__user_icon"></div>
+      <ul class="user-menu-mobile__submenu">
+        <li class="user-menu-mobile__subitem">
+          <a class="user-menu-mobile__sublink" href="https://profile.terrasoft.ua/user/login?destination=academy/ua/docs/7-17/developer/ehlementy_interfejsa/modalnoe_okno/realizovat_modalnoe_okno">Войти</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  </div>
+
+  </div>
+
+        </div>
+      </div>
+              <div class="creatio-region creatio-region_header">
+        <div class="creatio-container">
+            <div class="region region-header">
+    <div id="block-logo" class="block block-simple-block block-simple-blocklogo">
+  
+    
+      <p><a class="site-logo" href="../../../../../index.html" rel="home"><img src="../../../../themes/custom/creatio/logo.svg" /></a></p>
+
+  </div>
+<nav role="navigation" aria-labelledby="block-osnovnayanavigaciyaua-menu" id="block-osnovnayanavigaciyaua" class="block block-menu navigation menu--main-ua">
+            
+  <h2 class="visually-hidden" id="block-osnovnayanavigaciyaua-menu">Основная навигация UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="../../../../index.html" data-drupal-link-system-path="&lt;front&gt;">Документация</a>
+              </li>
+                <li class="menu-item">
+        <a href="../../../../../trainings.html">Тренинги</a>
+              </li>
+                <li class="menu-item">
+        <a href="../../../../certification.html" data-drupal-link-system-path="node/3084">Сертификация и тестирование</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+<nav role="navigation" aria-labelledby="block-sitesua-2-menu" id="block-sitesua-2" class="block block-menu navigation menu--sites-ua">
+            
+  <h2 class="visually-hidden" id="block-sitesua-2-menu">Sites UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="https://www.terrasoft.ua/" rel="nofollow" target="_blank">Terrasoft</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://community.terrasoft.ua/" rel="nofollow" target="_blank">Community</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://marketplace.terrasoft.ua/" rel="nofollow" target="_blank">Marketplace</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+
+  </div>
+
+        </div>
+      </div>
+              <div class="creatio-region creatio-region_breadcrumb">
+        <div class="creatio-container">
+            <div class="region region-breadcrumb">
+    <div id="block-logowhite" class="block block-simple-block block-simple-blocklogo-white">
+  
+    
+      <p><a class="site-logo" href="../../../../../index.html" rel="home"><img src="../../../../themes/custom/creatio/logo-white.svg" /></a></p>
+
+  </div>
+<div id="block-breadcrumbnaviagtion" class="block block-ts-nav block-ts-nav-bread">
+  
+    
+      <nav class="breadcrumb"><ol class="ts-nav-breadcrumb__list"><li class="ts-nav-breadcrumb__item"><a href="../../../../index.html" class="ts-nav-breadcrumb__link" title="Документация">Документация</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../../index2132.html?vid_1=2" class="ts-nav-breadcrumb__link" title="Для разработчика">Для разработчика</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../ehlementy_interfejsa.html" class="ts-nav-breadcrumb__link" title="Элементы интерфейса" hreflang="ru">Элементы интерфейса</a></li>
+<li class="ts-nav-breadcrumb__item ts-nav-breadcrumb__item_mobile"><a href="../modalnoe_okno.html" class="ts-nav-breadcrumb__link" title="Модальное окно" hreflang="ru">Модальное окно</a></li>
+<li class="ts-nav-breadcrumb__item"><span class="ts-nav-breadcrumb__link ts-nav-breadcrumb__link_current" title="Реализовать модальное окно">Реализовать модальное окно</span></li>
+</ol>
+</nav>
+
+  </div>
+<div id="block-search-2" class="block block-simple-block block-simple-blocksearch">
+  
+    
+      <div class="search">
+<form action="https://academy.terrasoft.ua/search" class="search-form" method="get"><input class="search-form__input" name="search" placeholder="Поиск" type="search" /><input class="search-form__button" type="submit" value="Поиск" /> </form>
+
+<div class="search-toggle"> </div>
+</div>
+
+  </div>
+
+  </div>
+
+        </div>
+      </div>
+      </header>
+
+  <div class="creatio-region creatio-region_main">
+    <div class="creatio-container">
+                <div class="region region-breadcrumb-mobile">
+    <div id="block-breadcrumbnaviagtion-2" class="block block-ts-nav block-ts-nav-bread">
+  
+    
+      <nav class="breadcrumb"><ol class="ts-nav-breadcrumb__list"><li class="ts-nav-breadcrumb__item"><a href="../../../../index.html" class="ts-nav-breadcrumb__link" title="Документация">Документация</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../../index2132.html?vid_1=2" class="ts-nav-breadcrumb__link" title="Для разработчика">Для разработчика</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../ehlementy_interfejsa.html" class="ts-nav-breadcrumb__link" title="Элементы интерфейса" hreflang="ru">Элементы интерфейса</a></li>
+<li class="ts-nav-breadcrumb__item ts-nav-breadcrumb__item_mobile"><a href="../modalnoe_okno.html" class="ts-nav-breadcrumb__link" title="Модальное окно" hreflang="ru">Модальное окно</a></li>
+<li class="ts-nav-breadcrumb__item"><span class="ts-nav-breadcrumb__link ts-nav-breadcrumb__link_current" title="Реализовать модальное окно">Реализовать модальное окно</span></li>
+</ol>
+</nav>
+
+  </div>
+
+  </div>
+
+      
+      <main class="creatio-main" role="main">
+                                                    
+        <div class="creatio-content creatio-content_small">
+          <div class="creatio-content__inner creatio-content__inner_bg">
+                            <div class="region region-messages">
+    <div data-drupal-messages-fallback class="hidden"></div>
+
+  </div>
+
+            
+              <div class="region region-content">
+    <div id="block-creatio-page-title" class="block block-core block-page-title-block">
+  
+    
+      
+  <h1 class="page-title"><span class="field field--name-title field--type-string field--label-hidden">Реализовать модальное окно</span>
+</h1>
+
+
+  </div>
+<div id="block-creatio-content" class="block block-system block-system-main-block">
+  
+    
+      
+<article data-history-node-id="3617" role="article" about="/docs/7-17/developer/ehlementy_interfejsa/modalnoe_okno/realizovat_modalnoe_okno" class="node node--type-case node--view-mode-full">
+
+  
+    
+
+  
+  <div class="node__content">
+      <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocknodecasefield-difficulty">
+  
+    
+      
+            <div class="field field--name-field-difficulty field--type-entity-reference field--label-hidden field__item"><div about="/docs/7-17/taxonomy/term/169" id="taxonomy-term-169" class="taxonomy-term vocabulary-difficulty">
+  
+  
+  <div class="content">
+      <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocktaxonomy-termdifficultyfield-icon">
+  
+    
+      
+            <div class="field field--name-field-icon field--type-image field--label-hidden field__item">  <img src="../../../../sites/default/files/difficulty/advanced.svg" alt="" loading="lazy" typeof="foaf:Image" />
+
+</div>
+      
+  </div>
+<div class="block block-layout-builder block-field-blocktaxonomy-termdifficultyname">
+  
+    
+      
+            <div class="field field--name-name field--type-string field--label-hidden field__item"><span style="color: #EF4524;">Сложный</span></div>
+      
+  </div>
+
+    </div>
+  </div>
+
+  </div>
+</div>
+</div>
+      
+  </div>
+<div class="block block-ts-doc block-ts-doc-downloads">
+  
+    
+      <a href="../../../../sites/default/files/pdf/node/3617/Realizovat_modalnoe_okno_.pdf" target="_blank">PDF</a>
+  </div>
+<div class="block block-ts-doc block-ts-doc-versions">
+  
+    
+        <div class="ts-doc-versions">
+    <select class="ts-doc-versions__select">
+                              <option value="/docs/8-0/developer/ehlementy_interfejsa/modalnoe_okno/realizovat_modalnoe_okno">Версия 8.0</option>
+                              <option value="/docs/7-18/developer/ehlementy_interfejsa/modalnoe_okno/realizovat_modalnoe_okno">Версия 7.18</option>
+                                                <option value="/docs/7-17/developer/ehlementy_interfejsa/modalnoe_okno/realizovat_modalnoe_okno" selected>Версия 7.17</option>
+                              <option value="/docs/7-16/developer/ehlementy_interfejsa/modalnoe_okno/realizovat_modalnoe_okno">Версия 7.16</option>
+          </select>
+  </div>
+
+  </div>
+
+    </div>
+  </div>
+  <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocknodecasebody">
+  
+    
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><div class="message message_example">
+    <p><span class="message__bold message__bold_example">Пример.</span> Реализовать действие процесса для отображения модального окна в бизнес-процессе. Модальное окно содержит произвольный текст и кнопки <span class="key">Yes</span>, <span class="key">No</span>, <span class="key">Cancel</span>.</p>
+    
+    <p>Логика работы кнопок:</p>
+    
+    <ul><li>По нажатию на кнопки <span class="key">Yes</span> и <span class="key">No</span> отображаются соответствующие автогенерируемые страницы.</li>
+        <li>По нажатию на кнопку <span class="key">Cancel</span> закрывается модальное окно.</li>
+    </ul><p>Для действия процесса настройте логирование.</p>
+</div>
+
+<h2>1. Создать действие процесса<a class="title-anchor" href="#title-3617-1" id="title-3617-1"> </a></h2>
+
+<ol><li><a href="../../../../developer/instrumenty_razrabotki/creatio_ide/principy_razrabotki_v_creatio_ide/obzor_creatio_ide%23title-2093-2.html?id=15101&amp;anchor=title-2093-2">Перейдите в раздел <span class="key">Конфигурация</span></a> (<span class="key">Configuration</span>) и выберите пользовательский <a href="../../../../developer/instrumenty_razrabotki/pakety/obshchiye_printsipy_raboty_s_paketami/obzor.html?id=15121">пакет</a>, в который будет добавлена схема.</li>
+    <li>
+    <p>На панели инструментов реестра раздела нажмите <span class="key">Добавить</span> —&gt; <span class="key">Действие процесса</span> (<span class="key">Add</span> —&gt; <span class="key">User task</span>).</p>
+
+    <div class="media">
+    <div class="media__element"><img src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/CreateClientSchema(7.17)/scr_add_user_task.png" /></div>
+    </div>
+    </li>
+    <li>
+    <p>Заполните <strong>свойства действия процесса</strong>.</p>
+
+    <ul><li><span class="key">Код</span> (<span class="key">Code</span>) — "<span class="consolas">UsrShowModalPageUserTask</span>".</li>
+        <li><span class="key">Заголовок</span> (<span class="key">Title</span>) — "<span class="consolas">Показать модальное окно (действие процесса)</span>" ("<span class="consolas">Show modal page (process user task)</span>").</li>
+    </ul><div class="media">
+    <div class="media__element"><img src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/ModalPageUserTask/7.18/scr_user_task_props.png" /></div>
+    </div>
+    </li>
+</ol><p>Для применения заданных свойств нажмите <span class="key">Применить</span> (<span class="key">Apply</span>).</p>
+
+<h2>2. Добавить параметры действия процесса<a class="title-anchor" href="#title-3617-2" id="title-3617-2"> </a></h2>
+
+<ol><li>
+    <p>Добавьте параметр, который выводит пользователю сообщение.</p>
+
+    <ol><li>В узле <span class="key">Параметры</span> (<span class="key">Parameters</span>) нажмите кнопку <img alt="" border="0" src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/CreateClientSchema(7.17)/scr_add_button.png" />.</li>
+        <li>
+        <p>Заполните <strong>свойства параметра</strong>.</p>
+
+        <ul><li><span class="key">Код</span> (<span class="key">Code</span>) — "<span class="consolas">UsrDialogText</span>".</li>
+            <li><span class="key">Название</span> (<span class="key">Title</span>) — "<span class="consolas">Текст в диалоговом окне</span>" ("<span class="consolas">Dialog message text</span>").</li>
+            <li><span class="key">Тип</span> (<span class="key">Type</span>) — выберите "<span class="consolas">Строка</span>" ("<span class="consolas">Text</span>").</li>
+            <li>Установите признак <span class="key">Обязательный для заполнения</span> (<span class="key">Required</span>).</li>
+        </ul><div class="media">
+        <div class="media__element"><img src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/ModalPageUserTask/7.18/scr_Add_UsrDialogText_Parameter.png" /></div>
+        </div>
+        </li>
+    </ol></li>
+    <li>
+    <p>Добавьте параметр, который из процесса в элемент передает названия кнопок, которые необходимо отобразить пользователю. Параметр в строке принимает коды кнопок, которые разделены запятой.</p>
+
+    <ol><li>В узле <span class="key">Параметры</span> (<span class="key">Parameters</span>) нажмите кнопку <img alt="" border="0" src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/CreateClientSchema(7.17)/scr_add_button.png" />.</li>
+        <li>
+        <p>Заполните <strong>свойства параметра</strong>.</p>
+
+        <ul><li><span class="key">Код</span> (<span class="key">Code</span>) — "<span class="consolas">UsrCommaSeparatedReturnCodes</span>".</li>
+            <li><span class="key">Название</span> (<span class="key">Title</span>) — "<span class="consolas">Коды возврата кнопок через запятую</span>" ("<span class="consolas">Button return codes separated with comma</span>").</li>
+            <li><span class="key">Тип</span> (<span class="key">Type</span>) — выберите "<span class="consolas">Строка</span>" ("<span class="consolas">Text</span>").</li>
+            <li>Установите признак <span class="key">Обязательный для заполнения</span> (<span class="key">Required</span>).</li>
+        </ul><div class="media">
+        <div class="media__element"><img src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/ModalPageUserTask/7.18/scr_Add_UsrCommaSeparatedReturnCodes_Parameter.png" /></div>
+        </div>
+        </li>
+    </ol></li>
+    <li>
+    <p>Добавьте параметр, который содержит код нажатой кнопки.</p>
+
+    <ol><li>В узле <span class="key">Параметры</span> (<span class="key">Parameters</span>) нажмите кнопку <img alt="" border="0" src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/CreateClientSchema(7.17)/scr_add_button.png" />.</li>
+        <li>
+        <p>Заполните <strong>свойства параметра</strong>.</p>
+
+        <ul><li><span class="key">Код</span> (<span class="key">Code</span>) — "<span class="consolas">UsrReturnCode</span>".</li>
+            <li><span class="key">Название</span> (<span class="key">Title</span>) — "<span class="consolas">Код нажатой кнопки</span>" ("<span class="consolas">Selected button code</span>").</li>
+            <li><span class="key">Тип</span> (<span class="key">Type</span>) — выберите "<span class="consolas">Строка</span>" ("<span class="consolas">Text</span>").</li>
+            <li>Установите признак <span class="key">Результирующий</span> (<span class="key">Resulting</span>).</li>
+        </ul><div class="media">
+        <div class="media__element"><img src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/ModalPageUserTask/7.18/scr_Add_UsrReturnCode_Parameter.png" /></div>
+        </div>
+        </li>
+    </ol></li>
+</ol><h2>3. Реализовать действие процесса на back-end стороне<a class="title-anchor" href="#title-3617-3" id="title-3617-3"> </a></h2>
+
+<ol><li>
+    <p>Настройте логирование процесса.</p>
+
+    <ol><li>
+        <p>C помощью директивы <span class="filled">using</span> добавьте необходимые пространства имен.</p>
+
+        <div class="code">
+        <div class="code__widgets">
+        <div class="code__source">
+        <pre class="prettyprint">
+using global::Common.Logging;
+using Terrasoft.Configuration;
+</pre>
+        </div>
+        </div>
+        </div>
+        </li>
+        <li>
+        <p>Реализуйте логику работы логирования и действия процесса.</p>
+
+        <div class="code">
+        <div class="code__widgets">
+        <div class="code__top">
+        <div class="code__title"><span class="filled">UsrShowModalPageUserTask</span></div>
+        </div>
+
+        <div class="code__source">
+        <pre class="prettyprint">
+namespace Terrasoft.Core.Process.Configuration
+{
+
+    using Newtonsoft.Json;
+    using Newtonsoft.Json.Linq;
+    using System;
+    using System.Collections.Generic;
+    using System.Collections.ObjectModel;
+    using System.Globalization;
+    using Terrasoft.Common;
+    using Terrasoft.Core;
+    using Terrasoft.Core.Configuration;
+    using Terrasoft.Core.DB;
+    using Terrasoft.Core.Entities;
+    using Terrasoft.Core.Process;
+    using Terrasoft.UI.WebControls.Controls;
+
+    /* Для работы логирования. */
+    using global::Common.Logging;
+
+    /* Для работы инструментов отправки сообщений. */
+    using Terrasoft.Configuration;
+
+    #region Class: UsrShowModalPageUserTask
+
+    /// &lt;exclude/&gt;
+    public partial class UsrShowModalPageUserTask
+    {
+        /* Настройка логирования.
+        Создание отдельного логгера. Результаты логирования записываются в файл Common.log. */
+        private static readonly ILog _log = LogManager.GetLogger("UsrShowModalPageUserTask");
+
+        /* Опредение отправителя со стороны back-end. */
+        private const string MessageSender = "UsrShowModalPageUserTask";
+
+        #region Methods: Protected
+
+        /* Бизнес-логика действия процесса. */
+        protected override bool InternalExecute(ProcessExecutingContext context) {
+
+            /* Вывод информационного сообщения в логи. */
+            _log.InfoFormat("UserTask works well. UsrDialogText = {0}, UsrCommaSeparatedReturnCodes = {1}", UsrDialogText, UsrCommaSeparatedReturnCodes);
+            /* Формирование сообщения. */
+            var messageData = new
+            {
+                /* Текст в диалоговом окне. */
+                UsrDialogText = UsrDialogText,
+                /* Коды возврата кнопок через запятую. */
+                UsrCommaSeparatedReturnCodes = UsrCommaSeparatedReturnCodes,
+                /* Служебный параметр. Уникальный идентификатор экземпляра элемента внутри экземпляра процесса. */
+                procElUId = UId
+            };
+            /* Сериализация объекта тела сообщения. */
+            string messageBody = JsonConvert.SerializeObject(messageData);
+            /* Тело сообщения, которое отправляется из back-end во front-end часть. */
+            MsgChannelUtilities.PostMessage(UserConnection, MessageSender, messageBody);
+            return false;
+        }
+
+        #endregion
+
+        #region Methods: Public
+
+        public override bool CompleteExecuting(params object[] parameters) {
+            return base.CompleteExecuting(parameters);
+        }
+
+        public override void CancelExecuting(params object[] parameters) {
+            base.CancelExecuting(parameters);
+        }
+
+        public override string GetExecutionData() {
+            return string.Empty;
+        }
+
+        public override ProcessElementNotification GetNotificationData() {
+            return base.GetNotificationData();
+        }
+
+        #endregion
+
+    }
+
+    #endregion
+
+}
+</pre>
+        </div>
+        </div>
+        </div>
+        </li>
+    </ol></li>
+    <li>На панели инструментов дизайнера нажмите <span class="key">Опубликовать</span> (<span class="key">Publish</span>).</li>
+</ol><h2>4. Реализовать обработку действия процесса на front-end стороне<a class="title-anchor" href="#title-3617-4" id="title-3617-4"> </a></h2>
+
+<ol><li><a href="../../../../developer/instrumenty_razrabotki/creatio_ide/principy_razrabotki_v_creatio_ide/obzor_creatio_ide%23title-2093-2.html?id=15101&amp;anchor=title-2093-2">Перейдите в раздел <span class="key">Конфигурация</span></a> (<span class="key">Configuration</span>) и выберите пользовательский <a href="../../../../developer/instrumenty_razrabotki/pakety/obshchiye_printsipy_raboty_s_paketami/obzor.html?id=15121">пакет</a>, в который будет добавлена схема.</li>
+    <li>На панели инструментов реестра раздела нажмите <span class="key">Добавить</span> —&gt; <span class="key">Модуль</span> (<span class="key">Add</span> —&gt; <span class="key">Module</span>).
+    <div class="media">
+    <div class="media__element"><img src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/CreateClientSchema(7.17)/scr_add_module.png" /></div>
+    </div>
+    </li>
+    <li>
+    <p>Заполните <strong>свойства модуля</strong>.</p>
+
+    <ul><li><span class="key">Код</span> (<span class="key">Code</span>) — "<span class="consolas">UsrShowModalPageUserTaskMixin</span>".</li>
+        <li><span class="key">Заголовок</span> (<span class="key">Title</span>) — "<span class="consolas">ShowModalPageUserTaskMixin</span>".</li>
+    </ul><div class="media">
+    <div class="media__element"><img src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/ModalPageUserTask/7.18/scr_UsrShowModalPageUserTaskMixin_Settings.png" /></div>
+    </div>
+    </li>
+    <li>
+    <p>В дизайнере модуля добавьте исходный код.</p>
+
+    <div class="code">
+    <div class="code__widgets">
+    <div class="code__top">
+    <div class="code__title"><span class="filled">UsrShowModalPageUserTaskMixin</span></div>
+    </div>
+
+    <div class="code__source">
+    <pre class="prettyprint">
+define("UsrShowModalPageUserTaskMixin", [],
+    function() {
+        Ext.define("Terrasoft.configuration.mixins.ShowModalPageUserTaskMixin", {
+            alternateClassName: "Terrasoft.ShowModalPageUserTaskMixin",
+            
+            /* Подписаться на сообщения канала WebSocket. */
+            UsrSubscribeForShowModalWindowServerChannelMessages: function() {
+                this.Terrasoft.ServerChannel.on(this.Terrasoft.EventName.ON_MESSAGE, this.UsrServerChannelMessageHandler, this);
+            },
+            /* Отписаться от сообщений канала WebSocket. */
+            UsrUnsubscribeForShowModalWindowServerChannelMessages: function() {
+                this.Terrasoft.ServerChannel.un(this.Terrasoft.EventName.ON_MESSAGE, this.UsrServerChannelMessageHandler, this);
+            },
+            
+            UsrShowModalPageUserTask_procElUId: "",
+            
+            /* Функция, которая обрабатывает WebSocket сообщения. */
+            UsrServerChannelMessageHandler: function(scope, message) {
+                if (!message) {
+                    return;
+                }
+                /* Определение сообщения от отправителя UsrShowModalPageUserTask. */
+                if (message.Header &amp;&amp; message.Header.Sender !== "UsrShowModalPageUserTask") {
+                    return;
+                }
+                if (message.Body) {
+                    var bodyData = this.Ext.decode(message.Body);
+                    var UsrDialogText = bodyData.UsrDialogText;
+                    var UsrCommaSeparatedReturnCodes = bodyData.UsrCommaSeparatedReturnCodes;
+                    
+                    /* Получение и сохранение кодов кнопок в виде массива. */
+                    var returnCodesArray = UsrCommaSeparatedReturnCodes.split(",");
+                    var procElUId = bodyData.procElUId;
+                    UsrShowModalPageUserTask_procElUId = procElUId;
+                    
+                    /* Отобразить диалоговое окно. */
+                    this.showConfirmationDialog(UsrDialogText, this.UsrGetConfirmationResult, returnCodesArray);
+                }
+            },
+            /* Обработка результата выбора кода кнопки. */
+            UsrGetConfirmationResult: function(returnCode) {
+                this.console.log("UsrGetConfirmationResult: returnCode = " + returnCode + " UsrShowModalPageUserTask_procElUId = " + UsrShowModalPageUserTask_procElUId);
+                
+                var procElUId = UsrShowModalPageUserTask_procElUId;
+                
+                /* Создание POST-запроса. */
+                this.Terrasoft.AjaxProvider.request({
+                    url: "../ServiceModel/ProcessEngineService.svc/" + procElUId + "/CompleteExecution" + "?UsrReturnCode=" + returnCode,
+                    method: "POST",
+                    scope: this,
+                    callback: function(request, suсcess, response) {	
+                    }
+                });
+            }
+        });
+    });
+</pre>
+    </div>
+    </div>
+    </div>
+    </li>
+    <li>На панели инструментов дизайнера нажмите <span class="key">Сохранить</span> (<span class="key">Save</span>).</li>
+</ol><h2>5. Создать замещающую модель представления контейнера<a class="title-anchor" href="#title-3617-5" id="title-3617-5"> </a></h2>
+
+<ol><li><a href="../../../../developer/instrumenty_razrabotki/creatio_ide/principy_razrabotki_v_creatio_ide/obzor_creatio_ide%23title-2093-2.html?id=15101&amp;anchor=title-2093-2">Перейдите в раздел <span class="key">Конфигурация</span></a> (<span class="key">Configuration</span>) и выберите пользовательский <a href="../../../../developer/instrumenty_razrabotki/pakety/obshchiye_printsipy_raboty_s_paketami/obzor.html?id=15121">пакет</a>, в который будет добавлена схема.</li>
+    <li>
+    <p>На панели инструментов реестра раздела нажмите <span class="key">Добавить</span> —&gt; <span class="key">Замещающая модель представления</span> (<span class="key">Add</span> —&gt; <span class="key">Replacing view model</span>).</p>
+
+    <div class="media">
+    <div class="media__element"><img src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/CreateClientSchema(7.17)/scr_add_replacing_module.png" /></div>
+    </div>
+    </li>
+    <li>
+    <p>Заполните <strong>свойства модуля</strong>.</p>
+
+    <ul><li><span class="key">Код</span> (<span class="key">Code</span>) — "<span class="consolas">MainHeaderSchema</span>".</li>
+        <li><span class="key">Заголовок</span> (<span class="key">Title</span>) — "<span class="consolas">MainHeaderSchema</span>".</li>
+        <li><span class="key">Родительский объект</span> (<span class="key">Parent object</span>) — выберите "<span class="consolas">MainHeaderSchema</span>".</li>
+    </ul><div class="media">
+    <div class="media__element"><img src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/ModalPageUserTask/7.18/scr_schema_props.png" /></div>
+    </div>
+    </li>
+    <li>
+    <p>В дизайнере модуля добавьте исходный код.</p>
+
+    <div class="code">
+    <div class="code__widgets">
+    <div class="code__top">
+    <div class="code__title"><span class="filled">MainHeaderSchema</span></div>
+    </div>
+
+    <div class="code__source">
+    <pre class="prettyprint">
+define("MainHeaderSchema", ["UsrShowModalPageUserTaskMixin"], function(){
+    return {
+        mixins: {
+            ShowModalPageUserTaskMixin: "Terrasoft.ShowModalPageUserTaskMixin"
+        },
+        methods: {
+            init: function() {
+                this.callParent(arguments);
+                this.UsrSubscribeForShowModalWindowServerChannelMessages();
+            },
+            destroy: function() {
+                this.callParent(arguments);
+                this.UsrUnsubscribeForShowModalWindowServerChannelMessages();
+            }	
+        }
+    };
+});
+</pre>
+    </div>
+    </div>
+    </div>
+    </li>
+    <li>На панели инструментов дизайнера нажмите <span class="key">Сохранить</span> (<span class="key">Save</span>).</li>
+</ol><h2>6. Создать бизнес-процесс отображения модального окна<a class="title-anchor" href="#title-3617-6" id="title-3617-6"> </a></h2>
+
+<ol><li><a href="../../../../developer/instrumenty_razrabotki/creatio_ide/principy_razrabotki_v_creatio_ide/obzor_creatio_ide%23title-2093-2.html?id=15101&amp;anchor=title-2093-2">Перейдите в раздел <span class="key">Конфигурация</span></a> (<span class="key">Configuration</span>) и выберите пользовательский <a href="../../../../developer/instrumenty_razrabotki/pakety/obshchiye_printsipy_raboty_s_paketami/obzor.html?id=15121">пакет</a>, в который будет добавлена схема.</li>
+    <li>
+    <p>На панели инструментов реестра раздела нажмите <span class="key">Добавить</span> —&gt; <span class="key">Бизнес процесс</span> (<span class="key">Add</span> —&gt; <span class="key">Business process</span>).</p>
+
+    <div class="media">
+    <div class="media__element"><img src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/CreateBusinessProcessSchema/scr_add_schema.png" /></div>
+    </div>
+    </li>
+    <li>
+    <p>Заполните <strong>свойства процесса</strong>.</p>
+
+    <ul><li>На панели настройки элементов заполните свойство <span class="key">Заголовок</span> (<span class="key">Title</span>) — "<span class="consolas">Show Modal Page Example Process</span>".</li>
+        <li>На вкладке <span class="key">Настройки</span> (<span class="key">Settings</span>) панели настройки элементов заполните свойство <span class="key">Имя</span> (<span class="key">Code</span>) — "<span class="consolas">UsrShowModalPageExampleProcess</span>".</li>
+    </ul><div class="media">
+    <div class="media__element"><img src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/ModalPageUserTask/7.18/scr_UsrShowModalPageExampleProcess_Settings.png" /></div>
+    </div>
+    </li>
+    <li>
+    <p>Реализуйте бизнес-процесс.</p>
+
+    <ol><li>
+        <p>Добавьте действие процесса.</p>
+
+        <ol><li>
+            <p>В области элементов дизайнера нажмите <span class="key">Действия системы</span> (<span class="key">System actions</span> и разместите элемент <span class="key">Выполнить действие процесса</span> (<span class="key">User task</span>) в рабочей области дизайнера процессов между начальным событием <span class="key">Простое</span> (<span class="key">Simple</span>) и завершающим событием <span class="key">Останов</span> (<span class="key">Terminate</span>).</p>
+
+            <div class="media">
+            <div class="media__element"><img src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/ModalPageUserTask/7.18/scr_add_UserTask.png" /></div>
+            </div>
+            </li>
+            <li>
+            <p>Заполните <strong>свойства действия процесса</strong>.</p>
+
+            <ul><li><span class="key">Какое пользовательское действие выполнить?</span> (<span class="key">Which user task to perform?</span>) — выберите "<span class="consolas">Показать модальное окно (действие процесса)</span>" ("<span class="consolas">Show modal page (process user task)</span>").</li>
+                <li>
+                <p>Заполните значения параметров действия процесса.</p>
+
+                <ul><li><span class="key">Текст в диалоговом окне</span> (<span class="key">Dialog message text</span>) — "<span class="consolas">Вам нравится новое окно?</span>" ("<span class="consolas">Do you like new window?</span>").</li>
+                    <li><span class="key">Коды возврата кнопок через запятую</span> (<span class="key">Button return codes separated with comma</span>) — "<span class="consolas">yes,no,cancel</span>".</li>
+                </ul><div class="media">
+                <div class="media__element"><img src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/ModalPageUserTask/7.18/scr_UserTask_Parameters.png" /></div>
+                </div>
+                </li>
+            </ul></li>
+        </ol></li>
+        <li>
+        <p>Добавьте автогенерируемую страницу.</p>
+
+        <ol><li>
+            <p>В области элементов дизайнера нажмите <span class="key">Действия пользователя</span> (<span class="key">User actions</span> и разместите элемент <span class="key">Автогенерируемая страница</span> (<span class="key">Auto-generated page</span>) в рабочей области дизайнера процессов.</p>
+
+            <div class="media">
+            <div class="media__element"><img src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/ModalPageUserTask/7.18/scr_add_AutoGeneratedPage.png" /></div>
+            </div>
+            </li>
+            <li>
+            <p>Заполните <strong>свойства автогенерируемой страницы</strong>.</p>
+
+            <ul><li><span class="key">Заголовок</span> (<span class="key">Title</span>) — "<span class="consolas">YES</span>".</li>
+                <li><span class="key">Название страницы</span> (<span class="key">Page title</span>) — "<span class="consolas">Нажато YES</span>" ("<span class="consolas">Pressed YES</span>").</li>
+            </ul></li>
+            <li>
+            <p>Добавьте кнопку.</p>
+
+            <ol><li>В блоке <span class="key">Кнопки</span> (<span class="key">Buttons</span>) нажмите кнопку <img src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/CreateClientSchema(7.17)/scr_add_button.png" />.</li>
+                <li>
+                <p>Заполните <strong>свойства кнопки</strong>.</p>
+
+                <ul><li><span class="key">Название</span> (<span class="key">Caption</span>) — "<span class="consolas">OK</span>".</li>
+                </ul><div class="media">
+                <div class="media__element"><img src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/ModalPageUserTask/7.18/scr_add_OKButton.png" /></div>
+                </div>
+                </li>
+                <li>Сохраните изменения.</li>
+            </ol></li>
+        </ol><p>Настройки автогенерируемой страницы представлены на рисунке ниже.</p>
+
+        <div class="media">
+        <div class="media__element"><img src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/ModalPageUserTask/7.18/scr_AutoGeneratedPage_Settings.png" /></div>
+        </div>
+        </li>
+        <li>
+        <p>Настройте условный поток.</p>
+
+        <ol><li>В меню действия процесса выберите <span class="key">Добавить поток</span> (<span class="key">Add flow</span>) и соедините действие процесса с автогенерируемой страницей.</li>
+            <li>
+            <p>Трансформируйте поток управления в условный поток. Для этого нажмите кнопку <img src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/ModalPageUserTask/7.18/scr_Settings_Button.png" /> и в меню потока выберите <span class="key">Условный поток</span> (<span class="key">Conditional flow</span>).</p>
+
+            <div class="media">
+            <div class="media__element"><img src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/ModalPageUserTask/7.18/scr_ConditionalFlow.png" /></div>
+            </div>
+            </li>
+            <li>
+            <p>Заполните <strong>свойства условного потока</strong>.</p>
+
+            <ul><li><span class="key">Заголовок</span> (<span class="key">Title</span>) — "<span class="consolas">yes</span>".</li>
+            </ul></li>
+            <li>
+            <p>Настройте условия перехода.</p>
+
+            <ol><li>На панели настройки элементов в свойстве <span class="key">Условие перехода</span> (<span class="key">Condition to move down the flow</span>) нажмите кнопку <img src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/ModalPageUserTask/7.18/scr_Condition_Button.png" />.</li>
+                <li>Выберите элемент процесса "<span class="consolas">Показать модальное окно (действие процесса)</span>" ("<span class="consolas">Show modal page (process user task)</span>").</li>
+                <li>Двойным кликом выберите параметр процесса "<span class="consolas">Код нажатой кнопки</span>" ("<span class="consolas">Selected button code</span>").</li>
+                <li>
+                <p>Задайте формулу для параметра.</p>
+
+                <div class="code">
+                <div class="code__widgets">
+                <div class="code__source">
+                <pre class="prettyprint">
+[#Show modal page (process user task).Selected button code#] == "yes"
+</pre>
+                </div>
+                </div>
+                </div>
+                </li>
+                <li>Сохраните изменения.</li>
+            </ol></li>
+        </ol></li>
+        <li>Аналогично добавьте автогенерируемую страницу <span class="filled">NO</span> с соответствующим условным потоком <span class="filled">no</span>.</li>
+        <li>
+        <p>Настройте поток по умолчанию.</p>
+
+        <ol><li>В меню действия процесса выберите <span class="key">Добавить поток</span> (<span class="key">Add flow</span>) и соедините действие процесса с завершающим событием <span class="key">Останов</span> (<span class="key">Terminate</span>).</li>
+            <li>
+            <p>Трансформируйте условный поток в поток по умолчанию. Для этого нажмите кнопку <img src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/ModalPageUserTask/7.18/scr_Settings_Button.png" /> и в меню потока выберите <span class="key">Поток по умолчанию</span> (<span class="key">Default flow</span>).</p>
+
+            <div class="media">
+            <div class="media__element"><img src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/ModalPageUserTask/7.18/scr_DefaultFlow.png" /></div>
+            </div>
+            </li>
+            <li>
+            <p>Заполните <strong>свойства потока по умолчанию</strong>.</p>
+
+            <ul><li><span class="key">Заголовок</span> (<span class="key">Title</span>) — "<span class="consolas">cancel</span>".</li>
+            </ul></li>
+        </ol></li>
+    </ol><p>Бизнес-процесс представлен на рисунке ниже.</p>
+
+    <div class="media">
+    <div class="media__element"><img src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/ModalPageUserTask/7.18/scr_BusinessProcess.png" /></div>
+    </div>
+    </li>
+    <li>На панели инструментов дизайнера процессов нажмите <span class="key">Сохранить</span> (<span class="key">Save</span>).</li>
+</ol><h2>Результат выполнения примера<a class="title-anchor" href="#title-3617-7" id="title-3617-7"> </a></h2>
+
+<p>Бизнес-процесс <span class="filled">Show Modal Page Example Process</span> доступен для запуска в любом разделе приложения Creatio. Например, запустим бизнес-процесс из раздела <span class="key">Контакты</span> (<span class="key">Contacts</span>).</p>
+
+<p>Чтобы <strong>запустить бизнес-процесс</strong> <span class="filled">Show Modal Page Example Process</span> из раздела <span class="key">Контакты</span> (<span class="key">Contacts</span>):</p>
+
+<ol><li>Перейдите в раздел <span class="key">Контакты</span> (<span class="key">Contacts</span>).</li>
+    <li>На панели разделов нажмите кнопку <img src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/ModalPageUserTask/7.18/scr_RunProcess_Button.png" />.</li>
+    <li>Выберите бизнес-процесс <span class="filled">Show Modal Page Example Process</span> и нажмите <span class="key">Запустить</span> (<span class="key">Run</span>).</li>
+</ol><p>В результате выполнения бизнес-процесса <span class="filled">Show Modal Page Example Process</span> в разделе <span class="key">Контакты</span> (<span class="key">Contacts</span>) отображается модальное окно.</p>
+
+<div class="media">
+<div class="media__element"><img src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/ModalPageUserTask/7.18/scr_ModalBox_result.png" /></div>
+</div>
+
+<ul><li>
+    <p>При нажатии на кнопку <span class="key">Yes</span> отображается страница <span class="key">Нажато YES</span> (<span class="key">Pressed YES</span>) c кнопкой <span class="key">OK</span>.</p>
+
+    <div class="media">
+    <div class="media__element"><img src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/ModalPageUserTask/7.18/scr_Pressed_Yes.png" /></div>
+    </div>
+    </li>
+    <li>
+    <p>При нажатии на кнопку <span class="key">No</span> отображается страница <span class="key">Нажато NO</span> (<span class="key">Pressed NO</span>) c кнопкой <span class="key">OK</span>.</p>
+
+    <div class="media">
+    <div class="media__element"><img src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/ModalPageUserTask/7.18/scr_Pressed_No.png" /></div>
+    </div>
+    </li>
+    <li>При нажатии на кнопку <span class="key">Cancel</span> модальное окно закрывается.</li>
+</ul><p>Результаты логирования запросов отображаются в файле <span class="filled">Common.log</span> корневой папки приложения. Используя инструменты разработчика в браузере, можно отследить WebSocket-сообщения, которые переданы из back-end части во front-end часть.</p>
+</div>
+      
+  </div>
+<div class="block block-layout-builder block-field-blocknodecasefield-resources">
+  
+    
+      
+  <div class="field field--name-field-resources field--type-link field--label-above">
+    <div class="field__label">Ресурсы</div>
+          <div class="field__items">
+              <div class="field__item"><a href="../../../../../sites/default/files/documents/downloads/SDK/Packages/sdkModalBoxPackage_2021-10-27_08.27.21.zip" target="_blank">Пакет с реализацией примера</a></div>
+              </div>
+      </div>
+
+  </div>
+
+    </div>
+  </div>
+
+  </div>
+
+</article>
+
+  </div>
+
+  </div>
+
+          </div>
+        </div>
+
+                  <aside class="creatio-sidebar creatio-sidebar_first" role="complementary">
+              <div class="region region-sidebar-first">
+    <div id="block-documentationnaviagtion" class="block block-ts-nav block-ts-nav-doc-nav">
+  
+    
+      <div class="ts-nav-block"><a href="../../../../index.html" class="ts-nav-block__link">Документация</a><div class="ts-nav-block__title">Для разработчика</div>
+</div>
+<div class="ts-nav-container"><ul class="ts-nav-menu"><li class="ts-nav-menu__item">
+  <a href="../../s_chego_nachat.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">С чего начать&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../architecture.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Архитектура&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../instrumenty_razrabotki.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Инструменты разработки&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../back_end_razrabotka.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Back-end разработка&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../front_end_razrabotka.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Front-end разработка&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../integratsiya_i_vneshnij_api.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Интеграция и внешний API&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../ehlementy_interfejsa.html" class="ts-nav-menu__link ts-nav-menu__link_expanded ts-nav-menu__link_open" hreflang="ru">Элементы интерфейса&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+      <ul class="ts-nav-menu__children">
+      <li class="ts-nav-menu__item">
+  <a href="../glavnoe_menyu/obzor.html" class="ts-nav-menu__link" hreflang="ru">Главное меню</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../razdel.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Раздел&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../stranica_zapisi.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Страница записи&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../1215/detail.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Деталь&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../mini_kartochka.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Мини-карточка&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../modalnoe_okno.html" class="ts-nav-menu__link ts-nav-menu__link_expanded ts-nav-menu__link_open" hreflang="ru">Модальное окно&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+      <ul class="ts-nav-menu__children">
+      <li class="ts-nav-menu__item">
+  <a href="obzor.html" class="ts-nav-menu__link ts-nav-menu__link_guide" hreflang="ru">Обзор</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="realizovat_modalnoe_okno.html" class="ts-nav-menu__link ts-nav-menu__link_case ts-nav-menu__link_active" hreflang="ru">Реализовать модальное окно</a>
+  </li>
+
+    </ul>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../kommunikacionnaya_panel.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Коммуникационная панель&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../komandnaya_stroka/obzor.html" class="ts-nav-menu__link" hreflang="ru">Командная строка</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../dashbordy.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Дашборды&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../chaty.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Чаты&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../upravlenie_ehlementami_interfejsa.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Управление элементами интерфейса&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+
+    </ul>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../komponenty_prilozheniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Компоненты приложения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../razrabotka_mobilnogo_prilozheniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Разработка мобильного приложения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../razrabotka_marketplace_prilozheniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Разработка Marketplace-приложения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+</ul>
+</div>
+
+  </div>
+
+  </div>
+
+            <div class="creatio-sidebar__toggle"></div>
+          </aside>
+        
+                  <aside class="creatio-sidebar creatio-sidebar_second" role="complementary">
+              <div class="region region-sidebar-second">
+    <div id="block-example" class="block block-ts-nav block-ts-nav-page-nav">
+  
+    
+      <div class="ts-nav-page">
+  </div>
+
+  </div>
+<div id="block-adminfeedbackblock" class="block block-admin-feedback block-admin-feedback-block">
+  
+    
+      <div id="feedback-message"><div id="upper-feedback-content"><h2>Был ли данный материал полезен?</h2>
+<input class="feedback-btn feedback-btn__yes button js-form-submit form-submit" data-node-id="3617" data-feedback="yes" type="submit" name="op" value="Да" />
+<input class="feedback-btn feedback-btn__no button js-form-submit form-submit" data-node-id="3617" data-feedback="no" type="submit" name="op" value="Нет" />
+</div>
+<form class="admin-feedback-form" data-drupal-selector="admin-feedback-form" action="https://academy.terrasoft.ua/docs/7-17/developer/ehlementy_interfejsa/modalnoe_okno/realizovat_modalnoe_okno" method="post" id="admin-feedback-form" accept-charset="UTF-8">
+  <div id="feedback-msg-result"></div><div class="js-form-item form-item js-form-type-textarea form-type-textarea js-form-item-feedback-message form-item-feedback-message form-no-label">
+        <div class="form-textarea-wrapper">
+  <textarea id="edit-feedback-msg" data-drupal-selector="edit-feedback-message" name="feedback_message" rows="5" cols="60" class="form-textarea resize-vertical"></textarea>
+</div>
+
+        </div>
+<input id="feedback-id" data-drupal-selector="edit-feedback-id" type="hidden" name="feedback_id" value="" />
+<input class="feedback-btn feedback-btn__send-comment button js-form-submit form-submit" data-drupal-selector="edit-feedback-send" type="submit" id="edit-feedback-send" name="op" value="Отправить" />
+<input autocomplete="off" data-drupal-selector="form-baro3yuvez25geyg5kxgk4dzxhtwkggjwpqut5ysjr8" type="hidden" name="form_build_id" value="form-bARO3yUvEz25gEyg5kxGK4DzxHTWkGGjwpQuT5ysjR8" />
+<input data-drupal-selector="edit-admin-feedback-form" type="hidden" name="form_id" value="admin_feedback_form" />
+
+</form>
+</div>
+
+  </div>
+
+  </div>
+
+          </aside>
+              </main>
+    </div>
+  </div>
+
+  <footer role="contentinfo">
+    <div class="creatio-region creatio-region_footer">
+      <div class="creatio-container">
+          <div class="region region-footer">
+    <div id="block-footerua" class="block block-simple-block block-simple-blockfooter-ua">
+  
+    
+      <div class="footer">
+<div class="footer-left">
+<ul class="footer-socials"><li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_fb" href="https://www.facebook.com/terrasoft.ua" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_in" href="https://www.linkedin.com/company/terrasoft/" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_yt" href="https://www.youtube.com/c/TerrasoftUkraine" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_tg" href="https://t.me/Terrasoft_UA" target="_blank"> </a></li>
+</ul></div>
+
+<div class="footer-contact">
+<div class="footer-title">Будьте на связи!</div>
+
+<div class="footer-content">
+<div class="footer-items">
+<div class="footer-item"><a class="footer__link footer__link_phone" href="tel:+380443633133">+38 (044) 363-31-33</a></div>
+</div>
+
+<div class="footer-items">
+<div class="footer-item"><a class="footer__link footer__link_email" href="mailto:support@terrasoft.ua">support@terrasoft.ua</a></div>
+</div>
+</div>
+</div>
+</div>
+
+  </div>
+
+  </div>
+
+      </div>
+    </div>
+    <div class="creatio-region creatio-region_bottom">
+      <div class="creatio-container">
+          <div class="region region-bottom">
+    <div id="block-allrightsreservedua" class="block block-simple-block block-simple-blockfooter-bottom-ua">
+  
+    
+      <p>© 2002-2022 Terrasoft.  |  <a href="https://www.terrasoft.ua/privacy-policy" target="_blank">Конфиденциальность</a></p>
+
+  </div>
+
+  </div>
+
+      </div>
+    </div>
+  </footer>
+</div>
+<div class="creatio-bg"></div>
+
+
+  </div>
+
+    
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/docs\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/3617","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"ru"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"ajaxPageState":{"libraries":"admin_feedback\/admin_feedback_block,admin_feedback\/admin_feedback_css,classy\/base,classy\/messages,classy\/node,core\/drupal.ajax,core\/jquery.form,core\/normalize,creatio\/fancybox,creatio\/global,layout_discovery\/onecol,system\/base,ts_doc\/doc_version,ts_feedback\/ts_feedback,ts_nav\/breadcrumb,ts_nav\/doc_nav,ts_nav\/page_nav,ts_title_anchor\/ts_title_anchor","theme":"creatio","theme_token":null},"ajaxTrustedUrl":{"form_action_p_pvdeGsVG5zNF_XLGPTvYSKCf43t8qZYSwcfZl2uzM":true,"\/docs\/7-17\/developer\/ehlementy_interfejsa\/modalnoe_okno\/realizovat_modalnoe_okno?ajax_form=1":true},"admin_feedback":{"yes_response":"\u0421\u043f\u0430\u0441\u0438\u0431\u043e \u0437\u0430 \u043e\u0431\u0440\u0430\u0442\u043d\u0443\u044e \u0441\u0432\u044f\u0437\u044c!","no_response":"\u0421\u043f\u0430\u0441\u0438\u0431\u043e \u0437\u0430 \u043e\u0431\u0440\u0430\u0442\u043d\u0443\u044e \u0441\u0432\u044f\u0437\u044c!","custom_text_response_on_no":{"value":"","format":"full_html"},"feedback_prompt_on_yes":true,"feedback_prompt_on_no":true,"feedback_enable_predefined_answers":false,"feedback_prompt":"\u041a\u0430\u043a \u043c\u043e\u0436\u043d\u043e \u0443\u043b\u0443\u0447\u0448\u0438\u0442\u044c \u044d\u0442\u0443 \u0441\u0442\u0430\u0442\u044c\u044e?"},"ajax":{"edit-feedback-send":{"callback":"::validateFeedbackMsg","event":"mousedown","keypress":true,"prevent":"click","url":"\/docs\/7-17\/developer\/ehlementy_interfejsa\/modalnoe_okno\/realizovat_modalnoe_okno?ajax_form=1","dialogType":"ajax","submit":{"_triggering_element_name":"op","_triggering_element_value":"\u041e\u0442\u043f\u0440\u0430\u0432\u0438\u0442\u044c"}}},"user":{"uid":0,"permissionsHash":"9c2367dfcaba0fa15f0375f97aed64e146c908cee68508d13b79e3ee80e5162d"}}</script>
+<script src="../../../../sites/default/files/js/js_Rr-7TvYD7NposuRFJwUqThxM7yJmw8vs03PQwu5gWd8.js"></script>
+
+
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+      <g id="svg-copy" class="svg-icon svg-icon_copy">
+        <path d="M15.111,18H1.889A1.848,1.848,0,0,1,0,16.2V3.6A1.848,1.848,0,0,1,1.889,1.8H5.837a2.87,2.87,0,0,1,5.326,0h3.948A1.848,1.848,0,0,1,17,3.6V16.2A1.848,1.848,0,0,1,15.111,18ZM3.777,12.6v1.8h6.611V12.6Zm0-3.6v1.8h9.445V9Zm0-3.6V7.2h9.445V5.4ZM8.5,1.8a.924.924,0,0,0-.944.9.945.945,0,0,0,1.889,0A.924.924,0,0,0,8.5,1.8Z"/>
+      </g>
+
+      <g id="svg-prev" class="svg-icon svg-icon_arrow">
+        <path d="M5.488,12.779,0,6.39,5.488,0" transform="translate(1 0.652)"/>
+      </g>
+
+      <g id="svg-next" class="svg-icon svg-icon_arrow">
+        <path d="M0,12.779,5.488,6.39,0,0" transform="translate(0.759 0.652)"/>
+      </g>
+    </svg>
+  </body>
+
+<!-- Mirrored from academy.terrasoft.ua/docs/7-17/developer/ehlementy_interfejsa/modalnoe_okno/realizovat_modalnoe_okno by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Mar 2022 05:04:46 GMT -->
+</html>

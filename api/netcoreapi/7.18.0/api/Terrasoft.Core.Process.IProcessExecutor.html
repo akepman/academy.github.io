@@ -1,0 +1,1122 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  
+<!-- Mirrored from academy.terrasoft.ua/api/netcoreapi/7.18.0/api/Terrasoft.Core.Process.IProcessExecutor.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Mar 2022 03:31:55 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Interface IProcessExecutor
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Interface IProcessExecutor
+   ">
+    <meta name="generator" content="docfx 2.58.0.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-default ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="https://academy.terrasoft.ru/docs/developer/back-end_development">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Terrasoft.Core.Process.IProcessExecutor">
+  
+  
+  <h1 id="Terrasoft_Core_Process_IProcessExecutor" data-uid="Terrasoft.Core.Process.IProcessExecutor" class="text-break">Interface IProcessExecutor
+  </h1>
+  <div class="markdown level0 summary"><p>Provides a set of methods for executing business processes.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Terrasoft.Core.Process.html">Terrasoft.Core.Process</a></h6>
+  <h6><strong>Assembly</strong>: Terrasoft.Core.dll</h6>
+  <h5 id="Terrasoft_Core_Process_IProcessExecutor_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public interface IProcessExecutor</code></pre>
+  </div>
+  <h3 id="methods">Methods
+  </h3>
+  
+  
+  <a id="Terrasoft_Core_Process_IProcessExecutor_CancelExecutionAsync_" data-uid="Terrasoft.Core.Process.IProcessExecutor.CancelExecutionAsync*"></a>
+  <h4 id="Terrasoft_Core_Process_IProcessExecutor_CancelExecutionAsync_System_Guid_" data-uid="Terrasoft.Core.Process.IProcessExecutor.CancelExecutionAsync(System.Guid)">CancelExecutionAsync(Guid)</h4>
+  <div class="markdown level1 summary"><p>Asynchronously cancels process execution.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void CancelExecutionAsync(Guid processId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Guid</span></td>
+        <td><span class="parametername">processId</span></td>
+        <td><p>Identifier of the process.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_Process_IProcessExecutor_Execute_" data-uid="Terrasoft.Core.Process.IProcessExecutor.Execute*"></a>
+  <h4 id="Terrasoft_Core_Process_IProcessExecutor_Execute_System_Guid_" data-uid="Terrasoft.Core.Process.IProcessExecutor.Execute(System.Guid)">Execute(Guid)</h4>
+  <div class="markdown level1 summary"><p>Executes process with corresponding schema UId.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ProcessDescriptor Execute(Guid processSchemaUId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Guid</span></td>
+        <td><span class="parametername">processSchemaUId</span></td>
+        <td><p>UId of process schema.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.Process.ProcessDescriptor.html">ProcessDescriptor</a></td>
+        <td><p>Process description data.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_Process_IProcessExecutor_Execute_" data-uid="Terrasoft.Core.Process.IProcessExecutor.Execute*"></a>
+  <h4 id="Terrasoft_Core_Process_IProcessExecutor_Execute_System_Guid_System_Collections_Generic_IEnumerable_System_String__" data-uid="Terrasoft.Core.Process.IProcessExecutor.Execute(System.Guid,System.Collections.Generic.IEnumerable{System.String})">Execute(Guid, IEnumerable&lt;String&gt;)</h4>
+  <div class="markdown level1 summary"><p>Executes process with corresponding schema UId.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ProcessDescriptor Execute(Guid processSchemaUId, IEnumerable&lt;string&gt; resultParameterNames)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Guid</span></td>
+        <td><span class="parametername">processSchemaUId</span></td>
+        <td><p>UId of process schema.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<span class="xref">System.String</span>&gt;</td>
+        <td><span class="parametername">resultParameterNames</span></td>
+        <td><p>Result parameter names to read.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.Process.ProcessDescriptor.html">ProcessDescriptor</a></td>
+        <td><p>Process description data.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_Process_IProcessExecutor_Execute_" data-uid="Terrasoft.Core.Process.IProcessExecutor.Execute*"></a>
+  <h4 id="Terrasoft_Core_Process_IProcessExecutor_Execute_System_Guid_System_Collections_Generic_IReadOnlyDictionary_System_String_System_String__" data-uid="Terrasoft.Core.Process.IProcessExecutor.Execute(System.Guid,System.Collections.Generic.IReadOnlyDictionary{System.String,System.String})">Execute(Guid, IReadOnlyDictionary&lt;String, String&gt;)</h4>
+  <div class="markdown level1 summary"><p>Executes process with corresponding schema UId.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ProcessDescriptor Execute(Guid processSchemaUId, IReadOnlyDictionary&lt;string, string&gt; parameterValues)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Guid</span></td>
+        <td><span class="parametername">processSchemaUId</span></td>
+        <td><p>UId of process schema.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IReadOnlyDictionary</span>&lt;<span class="xref">System.String</span>, <span class="xref">System.String</span>&gt;</td>
+        <td><span class="parametername">parameterValues</span></td>
+        <td><p>Initial parameter values, where key is process parameter name and value is
+serialized parameter value.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.Process.ProcessDescriptor.html">ProcessDescriptor</a></td>
+        <td><p>Process description data.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_Process_IProcessExecutor_Execute_" data-uid="Terrasoft.Core.Process.IProcessExecutor.Execute*"></a>
+  <h4 id="Terrasoft_Core_Process_IProcessExecutor_Execute_System_Guid_System_Collections_Generic_IReadOnlyDictionary_System_String_System_String__System_Collections_Generic_IEnumerable_System_String__" data-uid="Terrasoft.Core.Process.IProcessExecutor.Execute(System.Guid,System.Collections.Generic.IReadOnlyDictionary{System.String,System.String},System.Collections.Generic.IEnumerable{System.String})">Execute(Guid, IReadOnlyDictionary&lt;String, String&gt;, IEnumerable&lt;String&gt;)</h4>
+  <div class="markdown level1 summary"><p>Executes process with corresponding schema UId.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ProcessDescriptor Execute(Guid processSchemaUId, IReadOnlyDictionary&lt;string, string&gt; parameterValues, IEnumerable&lt;string&gt; resultParameterNames)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Guid</span></td>
+        <td><span class="parametername">processSchemaUId</span></td>
+        <td><p>UId of process schema.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IReadOnlyDictionary</span>&lt;<span class="xref">System.String</span>, <span class="xref">System.String</span>&gt;</td>
+        <td><span class="parametername">parameterValues</span></td>
+        <td><p>Initial parameter values, where key is process parameter name and value is
+serialized parameter value.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<span class="xref">System.String</span>&gt;</td>
+        <td><span class="parametername">resultParameterNames</span></td>
+        <td><p>Result parameter names to read.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.Process.ProcessDescriptor.html">ProcessDescriptor</a></td>
+        <td><p>Process description data.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_Process_IProcessExecutor_Execute_" data-uid="Terrasoft.Core.Process.IProcessExecutor.Execute*"></a>
+  <h4 id="Terrasoft_Core_Process_IProcessExecutor_Execute_System_String_" data-uid="Terrasoft.Core.Process.IProcessExecutor.Execute(System.String)">Execute(String)</h4>
+  <div class="markdown level1 summary"><p>Executes process with corresponding schema name.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ProcessDescriptor Execute(string processSchemaName)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">processSchemaName</span></td>
+        <td><p>Name of process schema.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.Process.ProcessDescriptor.html">ProcessDescriptor</a></td>
+        <td><p>Process description data.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_Process_IProcessExecutor_Execute_" data-uid="Terrasoft.Core.Process.IProcessExecutor.Execute*"></a>
+  <h4 id="Terrasoft_Core_Process_IProcessExecutor_Execute_System_String_System_Collections_Generic_IEnumerable_System_String__" data-uid="Terrasoft.Core.Process.IProcessExecutor.Execute(System.String,System.Collections.Generic.IEnumerable{System.String})">Execute(String, IEnumerable&lt;String&gt;)</h4>
+  <div class="markdown level1 summary"><p>Executes process with corresponding schema name.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ProcessDescriptor Execute(string processSchemaName, IEnumerable&lt;string&gt; resultParameterNames)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">processSchemaName</span></td>
+        <td><p>Name of process schema.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<span class="xref">System.String</span>&gt;</td>
+        <td><span class="parametername">resultParameterNames</span></td>
+        <td><p>Result parameter names to read.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.Process.ProcessDescriptor.html">ProcessDescriptor</a></td>
+        <td><p>Process description data.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_Process_IProcessExecutor_Execute_" data-uid="Terrasoft.Core.Process.IProcessExecutor.Execute*"></a>
+  <h4 id="Terrasoft_Core_Process_IProcessExecutor_Execute_System_String_System_Collections_Generic_IReadOnlyDictionary_System_String_System_String__" data-uid="Terrasoft.Core.Process.IProcessExecutor.Execute(System.String,System.Collections.Generic.IReadOnlyDictionary{System.String,System.String})">Execute(String, IReadOnlyDictionary&lt;String, String&gt;)</h4>
+  <div class="markdown level1 summary"><p>Executes process with corresponding schema name.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ProcessDescriptor Execute(string processSchemaName, IReadOnlyDictionary&lt;string, string&gt; parameterValues)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">processSchemaName</span></td>
+        <td><p>Name of process schema.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IReadOnlyDictionary</span>&lt;<span class="xref">System.String</span>, <span class="xref">System.String</span>&gt;</td>
+        <td><span class="parametername">parameterValues</span></td>
+        <td><p>Initial parameter values, where key is process parameter name and value is
+serialized parameter value.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.Process.ProcessDescriptor.html">ProcessDescriptor</a></td>
+        <td><p>Process description data.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_Process_IProcessExecutor_Execute_" data-uid="Terrasoft.Core.Process.IProcessExecutor.Execute*"></a>
+  <h4 id="Terrasoft_Core_Process_IProcessExecutor_Execute_System_String_System_Collections_Generic_IReadOnlyDictionary_System_String_System_String__System_Collections_Generic_IEnumerable_System_String__" data-uid="Terrasoft.Core.Process.IProcessExecutor.Execute(System.String,System.Collections.Generic.IReadOnlyDictionary{System.String,System.String},System.Collections.Generic.IEnumerable{System.String})">Execute(String, IReadOnlyDictionary&lt;String, String&gt;, IEnumerable&lt;String&gt;)</h4>
+  <div class="markdown level1 summary"><p>Executes process with corresponding schema name.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ProcessDescriptor Execute(string processSchemaName, IReadOnlyDictionary&lt;string, string&gt; parameterValues, IEnumerable&lt;string&gt; resultParameterNames)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">processSchemaName</span></td>
+        <td><p>Name of process schema.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IReadOnlyDictionary</span>&lt;<span class="xref">System.String</span>, <span class="xref">System.String</span>&gt;</td>
+        <td><span class="parametername">parameterValues</span></td>
+        <td><p>Initial parameter values, where key is process parameter name and value is
+serialized parameter value.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<span class="xref">System.String</span>&gt;</td>
+        <td><span class="parametername">resultParameterNames</span></td>
+        <td><p>Result parameter names to read.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.Process.ProcessDescriptor.html">ProcessDescriptor</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_Process_IProcessExecutor_Execute_" data-uid="Terrasoft.Core.Process.IProcessExecutor.Execute*"></a>
+  <h4 id="Terrasoft_Core_Process_IProcessExecutor_Execute__1_System_Guid_System_String_" data-uid="Terrasoft.Core.Process.IProcessExecutor.Execute``1(System.Guid,System.String)">Execute&lt;TResult&gt;(Guid, String)</h4>
+  <div class="markdown level1 summary"><p>Executes process with corresponding schema UId and returns process parameter value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">TResult Execute&lt;TResult&gt;(Guid processSchemaUId, string resultParameterName)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Guid</span></td>
+        <td><span class="parametername">processSchemaUId</span></td>
+        <td><p>UId of process schema.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">resultParameterName</span></td>
+        <td><p>Name of parameter to read result from.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TResult</span></td>
+        <td><p>Result parameter value.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TResult</span></td>
+        <td><p>Result parameter value type.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_Process_IProcessExecutor_Execute_" data-uid="Terrasoft.Core.Process.IProcessExecutor.Execute*"></a>
+  <h4 id="Terrasoft_Core_Process_IProcessExecutor_Execute__1_System_Guid_System_String_System_Collections_Generic_IReadOnlyDictionary_System_String_System_String__" data-uid="Terrasoft.Core.Process.IProcessExecutor.Execute``1(System.Guid,System.String,System.Collections.Generic.IReadOnlyDictionary{System.String,System.String})">Execute&lt;TResult&gt;(Guid, String, IReadOnlyDictionary&lt;String, String&gt;)</h4>
+  <div class="markdown level1 summary"><p>Executes process with corresponding schema UId and returns process parameter value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">TResult Execute&lt;TResult&gt;(Guid processSchemaUId, string resultParameterName, IReadOnlyDictionary&lt;string, string&gt; parameterValues)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Guid</span></td>
+        <td><span class="parametername">processSchemaUId</span></td>
+        <td><p>UId of process schema.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">resultParameterName</span></td>
+        <td><p>Name of parameter to read result from.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IReadOnlyDictionary</span>&lt;<span class="xref">System.String</span>, <span class="xref">System.String</span>&gt;</td>
+        <td><span class="parametername">parameterValues</span></td>
+        <td><p>Initial parameter values. Where Key is process parameter name and value is
+serialized parameter value.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TResult</span></td>
+        <td><p>Result parameter value.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TResult</span></td>
+        <td><p>Result parameter value type.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_Process_IProcessExecutor_Execute_" data-uid="Terrasoft.Core.Process.IProcessExecutor.Execute*"></a>
+  <h4 id="Terrasoft_Core_Process_IProcessExecutor_Execute__1_System_String_System_String_" data-uid="Terrasoft.Core.Process.IProcessExecutor.Execute``1(System.String,System.String)">Execute&lt;TResult&gt;(String, String)</h4>
+  <div class="markdown level1 summary"><p>Executes process with corresponding schema name and returns process parameter value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">TResult Execute&lt;TResult&gt;(string processSchemaName, string resultParameterName)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">processSchemaName</span></td>
+        <td><p>Name of process schema.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">resultParameterName</span></td>
+        <td><p>Name of parameter to read result from.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TResult</span></td>
+        <td><p>Result parameter value.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TResult</span></td>
+        <td><p>Result parameter value type.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_Process_IProcessExecutor_Execute_" data-uid="Terrasoft.Core.Process.IProcessExecutor.Execute*"></a>
+  <h4 id="Terrasoft_Core_Process_IProcessExecutor_Execute__1_System_String_System_String_System_Collections_Generic_IReadOnlyDictionary_System_String_System_String__" data-uid="Terrasoft.Core.Process.IProcessExecutor.Execute``1(System.String,System.String,System.Collections.Generic.IReadOnlyDictionary{System.String,System.String})">Execute&lt;TResult&gt;(String, String, IReadOnlyDictionary&lt;String, String&gt;)</h4>
+  <div class="markdown level1 summary"><p>Executes process with corresponding schema name and returns process parameter value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">TResult Execute&lt;TResult&gt;(string processSchemaName, string resultParameterName, IReadOnlyDictionary&lt;string, string&gt; parameterValues)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">processSchemaName</span></td>
+        <td><p>Name of process schema.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">resultParameterName</span></td>
+        <td><p>Name of parameter to read result from.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IReadOnlyDictionary</span>&lt;<span class="xref">System.String</span>, <span class="xref">System.String</span>&gt;</td>
+        <td><span class="parametername">parameterValues</span></td>
+        <td><p>Initial parameter values, where key is process parameter name and value is
+serialized parameter value.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TResult</span></td>
+        <td><p>Result parameter value.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TResult</span></td>
+        <td><p>Result parameter value type.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_Process_IProcessExecutor_ExecuteByCaption_" data-uid="Terrasoft.Core.Process.IProcessExecutor.ExecuteByCaption*"></a>
+  <h4 id="Terrasoft_Core_Process_IProcessExecutor_ExecuteByCaption_System_String_" data-uid="Terrasoft.Core.Process.IProcessExecutor.ExecuteByCaption(System.String)">ExecuteByCaption(String)</h4>
+  <div class="markdown level1 summary"><p>Executes process with corresponding schema caption.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ProcessDescriptor ExecuteByCaption(string processSchemaCaption)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">processSchemaCaption</span></td>
+        <td><p>Caption of process schema.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.Process.ProcessDescriptor.html">ProcessDescriptor</a></td>
+        <td><p>Process description data.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_Process_IProcessExecutor_ExecuteByCaption_" data-uid="Terrasoft.Core.Process.IProcessExecutor.ExecuteByCaption*"></a>
+  <h4 id="Terrasoft_Core_Process_IProcessExecutor_ExecuteByCaption_System_String_System_Collections_Generic_IReadOnlyDictionary_System_String_System_String__" data-uid="Terrasoft.Core.Process.IProcessExecutor.ExecuteByCaption(System.String,System.Collections.Generic.IReadOnlyDictionary{System.String,System.String})">ExecuteByCaption(String, IReadOnlyDictionary&lt;String, String&gt;)</h4>
+  <div class="markdown level1 summary"><p>Executes process with corresponding schema caption.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ProcessDescriptor ExecuteByCaption(string processSchemaCaption, IReadOnlyDictionary&lt;string, string&gt; parameterValues)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">processSchemaCaption</span></td>
+        <td><p>Caption of process schema.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IReadOnlyDictionary</span>&lt;<span class="xref">System.String</span>, <span class="xref">System.String</span>&gt;</td>
+        <td><span class="parametername">parameterValues</span></td>
+        <td><p>Initial parameter values, where key is process parameter name and value is
+serialized parameter value.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.Process.ProcessDescriptor.html">ProcessDescriptor</a></td>
+        <td><p>Process description data.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_Process_IProcessExecutor_ExecuteByCaption_" data-uid="Terrasoft.Core.Process.IProcessExecutor.ExecuteByCaption*"></a>
+  <h4 id="Terrasoft_Core_Process_IProcessExecutor_ExecuteByCaption__1_System_String_System_String_" data-uid="Terrasoft.Core.Process.IProcessExecutor.ExecuteByCaption``1(System.String,System.String)">ExecuteByCaption&lt;TResult&gt;(String, String)</h4>
+  <div class="markdown level1 summary"><p>Executes process with corresponding schema caption and returns process parameter value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">TResult ExecuteByCaption&lt;TResult&gt;(string processSchemaCaption, string resultParameterName)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">processSchemaCaption</span></td>
+        <td><p>Caption of process schema.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">resultParameterName</span></td>
+        <td><p>Name of parameter to read result from.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TResult</span></td>
+        <td><p>Result parameter value.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TResult</span></td>
+        <td><p>Result parameter value type.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_Process_IProcessExecutor_ExecuteByCaption_" data-uid="Terrasoft.Core.Process.IProcessExecutor.ExecuteByCaption*"></a>
+  <h4 id="Terrasoft_Core_Process_IProcessExecutor_ExecuteByCaption__1_System_String_System_String_System_Collections_Generic_IReadOnlyDictionary_System_String_System_String__" data-uid="Terrasoft.Core.Process.IProcessExecutor.ExecuteByCaption``1(System.String,System.String,System.Collections.Generic.IReadOnlyDictionary{System.String,System.String})">ExecuteByCaption&lt;TResult&gt;(String, String, IReadOnlyDictionary&lt;String, String&gt;)</h4>
+  <div class="markdown level1 summary"><p>Executes process with corresponding schema caption and returns process parameter value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">TResult ExecuteByCaption&lt;TResult&gt;(string processSchemaCaption, string resultParameterName, IReadOnlyDictionary&lt;string, string&gt; parameterValues)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">processSchemaCaption</span></td>
+        <td><p>Caption of process schema.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">resultParameterName</span></td>
+        <td><p>Name of parameter to read result from.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IReadOnlyDictionary</span>&lt;<span class="xref">System.String</span>, <span class="xref">System.String</span>&gt;</td>
+        <td><span class="parametername">parameterValues</span></td>
+        <td><p>Initial parameter values, where key is process parameter name and value is
+serialized parameter value.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TResult</span></td>
+        <td><p>Result parameter value.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TResult</span></td>
+        <td><p>Result parameter value type.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="Terrasoft.Common.ReflectionUtilities.html#Terrasoft_Common_ReflectionUtilities_GetPropertyValue_System_Object_System_String_">ReflectionUtilities.GetPropertyValue(Object, String)</a>
+  </div>
+  <div>
+      <a class="xref" href="Terrasoft.Common.ReflectionUtilities.html#Terrasoft_Common_ReflectionUtilities_GetPropertyDefValue_System_Object_System_String_System_Object_">ReflectionUtilities.GetPropertyDefValue(Object, String, Object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Terrasoft.Common.ReflectionUtilities.html#Terrasoft_Common_ReflectionUtilities_TryGetPropertyValue_System_Object_System_String_System_Object__">ReflectionUtilities.TryGetPropertyValue(Object, String, out Object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Terrasoft.Common.ReflectionUtilities.html#Terrasoft_Common_ReflectionUtilities_HasProperty_System_Object_System_String_">ReflectionUtilities.HasProperty(Object, String)</a>
+  </div>
+  <div>
+      <a class="xref" href="Terrasoft.Common.ReflectionUtilities.html#Terrasoft_Common_ReflectionUtilities_GetPropertyValue_System_Object_System_String_System_Reflection_BindingFlags_">ReflectionUtilities.GetPropertyValue(Object, String, BindingFlags)</a>
+  </div>
+  <div>
+      <a class="xref" href="Terrasoft.Common.ReflectionUtilities.html#Terrasoft_Common_ReflectionUtilities_GetPropertyValueByPath_System_Object_System_String_">ReflectionUtilities.GetPropertyValueByPath(Object, String)</a>
+  </div>
+  <div>
+      <a class="xref" href="Terrasoft.Common.ReflectionUtilities.html#Terrasoft_Common_ReflectionUtilities_SetPropertyValue_System_Object_System_String_System_Object_">ReflectionUtilities.SetPropertyValue(Object, String, Object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Terrasoft.Common.ReflectionUtilities.html#Terrasoft_Common_ReflectionUtilities_TrySetPropertyValue_System_Object_System_String_System_Object_">ReflectionUtilities.TrySetPropertyValue(Object, String, Object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Terrasoft.Common.ValidateUtilities.html#Terrasoft_Common_ValidateUtilities_CheckArgumentNull_System_Object_System_String_">ValidateUtilities.CheckArgumentNull(Object, String)</a>
+  </div>
+  <div>
+      <a class="xref" href="Terrasoft.Common.ValidateUtilities.html#Terrasoft_Common_ValidateUtilities_CheckDependencyNull_System_Object_System_String_">ValidateUtilities.CheckDependencyNull(Object, String)</a>
+  </div>
+  <div>
+      <a class="xref" href="Terrasoft.Common.ValidateUtilities.html#Terrasoft_Common_ValidateUtilities_EnsureDependencyNotNull__1___0_System_String_">ValidateUtilities.EnsureDependencyNotNull&lt;T&gt;(T, String)</a>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>© 2021 Creatio. All rights reserved.</span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+
+<!-- Mirrored from academy.terrasoft.ua/api/netcoreapi/7.18.0/api/Terrasoft.Core.Process.IProcessExecutor.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Mar 2022 03:31:55 GMT -->
+</html>

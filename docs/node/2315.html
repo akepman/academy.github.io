@@ -1,0 +1,1163 @@
+  <!DOCTYPE html>
+<html lang="ru" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# ">
+  
+<!-- Mirrored from academy.terrasoft.ua/docs/node/2315 by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Mar 2022 03:32:26 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+          <!-- Google Tag Manager -->
+      <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          '../../../www.googletagmanager.com/gtm5445.html?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-KLLB8G');</script>
+      <!-- End Google Tag Manager -->
+        <meta charset="utf-8" />
+<link rel="canonical" href="2315.html" />
+<meta name="description" content="Класс SelectQuery 
+
+Для чтения записей раздела используется контракт данных SelectQuery. Передача данных запроса в сервис работы с данными DataService осуществляется по HTTP протоколу при помощи POST-запроса по URL." />
+<meta property="og:url" content="https://academy.terrasoft.ua/docs/node/2315" />
+<meta property="og:title" content="Класс SelectQuery" />
+<meta property="og:description" content="Класс SelectQuery 
+
+Для чтения записей раздела используется контракт данных SelectQuery. Передача данных запроса в сервис работы с данными DataService осуществляется по HTTP протоколу при помощи POST-запроса по URL." />
+<meta name="Generator" content="Drupal 9 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="../themes/custom/creatio/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="revision" href="2315.html" />
+
+    <title>Класс SelectQuery | Creatio Academy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&amp;family=Open+Sans:ital,wght@0,300;0,400;0,600;1,400&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" media="all" href="../sites/default/files/css/css_6lTP66__-yc6QXFp1zOwoeJ0HVigoYZP-SeoLLii000.css" />
+<link rel="stylesheet" media="all" href="../sites/default/files/css/css_XQJDNhkF3xH5SZCcY-PI89Zu4nYIzQ5oR3SnUKyfXJU.css" />
+<link rel="stylesheet" media="print" href="../sites/default/files/css/css_Zn4VHvcniOOtUwkIVwXzYr_0AI9gUVgZcPqaH4ViagU.css" />
+
+    
+  </head>
+  <body class="path-node page-node-type-reference"data-type="C#">
+          <!-- Google Tag Manager (noscript) -->
+      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KLLB8G"
+                        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+      <!-- End Google Tag Manager (noscript) -->
+    
+        
+      <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    <div class="creatio-page d-flex flex-column">
+        <div class="region region-informer">
+    <div id="block-terrasoftpidtrimueukrainu" class="block block-simple-block block-simple-blockterrasoft-pidtrimue-ukrainu">
+  
+    
+      <style type="text/css">
+<!--/*--><![CDATA[/* ><!--*/
+@import url(../../../www.terrasoft.ua/themes/custom/creatio/css/components/informer.css)
+
+/*--><!]]>*/
+</style><div class="ts-swu">
+<div class="creatio-container">
+<div class="ts-swu__cont">
+<div><a class="ts-swu__link" href="https://www.terrasoft.ua/terrasoft-stands-with-ukraine" target="_blank">Україна понад усе!</a> <span><a href="https://www.terrasoft.ua/terrasoft-stands-with-ukraine" target="_blank">Приєднуйтеся</a> до допомоги!</span></div>
+</div>
+</div></div>
+
+  </div>
+
+  </div>
+
+  
+  <header role="banner">
+          <div class="creatio-region creatio-region_top">
+        <div class="creatio-container">
+            <div class="region region-top">
+    <div id="block-menutoggle" class="block block-simple-block block-simple-blockmenu-toggle">
+  
+    
+      <div class="menu-toggle"><span> </span></div>
+
+  </div>
+<div id="block-logowhite-2" class="block block-simple-block block-simple-blocklogo-white">
+  
+    
+      <p><a class="site-logo" href="../../index.html" rel="home"><img src="../themes/custom/creatio/logo-white.svg" /></a></p>
+
+  </div>
+<div id="block-search" class="block block-simple-block block-simple-blocksearch">
+  
+    
+      <div class="search">
+<form action="https://academy.terrasoft.ua/search" class="search-form" method="get"><input class="search-form__input" name="search" placeholder="Поиск" type="search" /><input class="search-form__button" type="submit" value="Поиск" /> </form>
+
+<div class="search-toggle"> </div>
+</div>
+
+  </div>
+<nav role="navigation" aria-labelledby="block-sitesua-menu" id="block-sitesua" class="block block-menu navigation menu--sites-ua">
+            
+  <h2 class="visually-hidden" id="block-sitesua-menu">Sites UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="https://www.terrasoft.ua/" rel="nofollow" target="_blank">Terrasoft</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://community.terrasoft.ua/" rel="nofollow" target="_blank">Community</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://marketplace.terrasoft.ua/" rel="nofollow" target="_blank">Marketplace</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+<div id="block-usermenu" class="block block-ts-user block-ts-user-menu-block">
+  
+    
+      <ul class="user-menu">
+      <li class="user-menu__item">
+      <a class="user-menu__link" href="https://profile.terrasoft.ua/user/login?destination=academy/ua/docs/node/2315">Войти</a>
+    </li>
+  </ul>
+
+  </div>
+<div id="block-usermenumobile" class="block block-ts-user block-ts-user-menu-mobile-block">
+  
+    
+      <ul class="user-menu-mobile">
+      <li class="user-menu-mobile__item">
+      <div class="user-menu-mobile__user user-menu-mobile__user_icon"></div>
+      <ul class="user-menu-mobile__submenu">
+        <li class="user-menu-mobile__subitem">
+          <a class="user-menu-mobile__sublink" href="https://profile.terrasoft.ua/user/login?destination=academy/ua/docs/node/2315">Войти</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  </div>
+
+  </div>
+
+        </div>
+      </div>
+              <div class="creatio-region creatio-region_header">
+        <div class="creatio-container">
+            <div class="region region-header">
+    <div id="block-logo" class="block block-simple-block block-simple-blocklogo">
+  
+    
+      <p><a class="site-logo" href="../../index.html" rel="home"><img src="../themes/custom/creatio/logo.svg" /></a></p>
+
+  </div>
+<nav role="navigation" aria-labelledby="block-osnovnayanavigaciyaua-menu" id="block-osnovnayanavigaciyaua" class="block block-menu navigation menu--main-ua">
+            
+  <h2 class="visually-hidden" id="block-osnovnayanavigaciyaua-menu">Основная навигация UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="../index.html" data-drupal-link-system-path="&lt;front&gt;">Документация</a>
+              </li>
+                <li class="menu-item">
+        <a href="../../trainings.html">Тренинги</a>
+              </li>
+                <li class="menu-item">
+        <a href="../certification.html" data-drupal-link-system-path="node/3084">Сертификация и тестирование</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+<nav role="navigation" aria-labelledby="block-sitesua-2-menu" id="block-sitesua-2" class="block block-menu navigation menu--sites-ua">
+            
+  <h2 class="visually-hidden" id="block-sitesua-2-menu">Sites UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="https://www.terrasoft.ua/" rel="nofollow" target="_blank">Terrasoft</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://community.terrasoft.ua/" rel="nofollow" target="_blank">Community</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://marketplace.terrasoft.ua/" rel="nofollow" target="_blank">Marketplace</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+
+  </div>
+
+        </div>
+      </div>
+              <div class="creatio-region creatio-region_breadcrumb">
+        <div class="creatio-container">
+            <div class="region region-breadcrumb">
+    <div id="block-logowhite" class="block block-simple-block block-simple-blocklogo-white">
+  
+    
+      <p><a class="site-logo" href="../../index.html" rel="home"><img src="../themes/custom/creatio/logo-white.svg" /></a></p>
+
+  </div>
+<div id="block-search-2" class="block block-simple-block block-simple-blocksearch">
+  
+    
+      <div class="search">
+<form action="https://academy.terrasoft.ua/search" class="search-form" method="get"><input class="search-form__input" name="search" placeholder="Поиск" type="search" /><input class="search-form__button" type="submit" value="Поиск" /> </form>
+
+<div class="search-toggle"> </div>
+</div>
+
+  </div>
+
+  </div>
+
+        </div>
+      </div>
+      </header>
+
+  <div class="creatio-region creatio-region_main">
+    <div class="creatio-container">
+              
+      
+      <main class="creatio-main" role="main">
+                                                    
+        <div class="creatio-content creatio-content_small">
+          <div class="creatio-content__inner creatio-content__inner_bg">
+                            <div class="region region-messages">
+    <div data-drupal-messages-fallback class="hidden"></div>
+
+  </div>
+
+            
+              <div class="region region-content">
+    <div id="block-creatio-page-title" class="block block-core block-page-title-block">
+  
+    
+      
+  <h1 class="page-title"><span class="field field--name-title field--type-string field--label-hidden">Класс SelectQuery</span>
+</h1>
+
+
+  </div>
+<div id="block-creatio-content" class="block block-system block-system-main-block">
+  
+    
+      
+<article data-history-node-id="2315" role="article" about="/docs/node/2315" class="node node--type-reference node--view-mode-full">
+
+  
+    
+
+  
+  <div class="node__content">
+      <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocknodereferencefield-difficulty">
+  
+    
+      
+            <div class="field field--name-field-difficulty field--type-entity-reference field--label-hidden field__item"><div about="/docs/taxonomy/term/169" id="taxonomy-term-169" class="taxonomy-term vocabulary-difficulty">
+  
+  
+  <div class="content">
+      <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocktaxonomy-termdifficultyfield-icon">
+  
+    
+      
+            <div class="field field--name-field-icon field--type-image field--label-hidden field__item">  <img src="../sites/default/files/difficulty/advanced.svg" alt="" loading="lazy" typeof="foaf:Image" />
+
+</div>
+      
+  </div>
+<div class="block block-layout-builder block-field-blocktaxonomy-termdifficultyname">
+  
+    
+      
+            <div class="field field--name-name field--type-string field--label-hidden field__item"><span style="color: #EF4524;">Сложный</span></div>
+      
+  </div>
+
+    </div>
+  </div>
+
+  </div>
+</div>
+</div>
+      
+  </div>
+<div class="block block-ts-doc block-ts-doc-downloads">
+  
+    
+      <a href="../sites/default/files/pdf/node/2315/Klass_SelectQuery_.pdf" target="_blank">PDF</a>
+  </div>
+<div class="block block-ts-doc block-ts-doc-versions">
+  
+    
+        <div class="ts-doc-versions">
+    <select class="ts-doc-versions__select">
+                              <option value="/docs/node/2315">Версия 7.16</option>
+          </select>
+  </div>
+
+  </div>
+
+    </div>
+  </div>
+  <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocknodereferencebody">
+  
+    
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><h2 data-type="C#">Класс SelectQuery<a class="title-anchor" href="#title-2315-1" id="title-2315-1"> </a></h2>
+
+<p>Для чтения записей раздела используется контракт данных <span class="filled">SelectQuery</span>. Передача данных запроса в сервис работы с данными DataService осуществляется по HTTP протоколу при помощи <span class="filled">POST</span>-запроса по URL.</p>
+
+<div class="SimpleTabContainer" data-itemid="JSON" data-title="JSON" id="Syntax_JSON">
+<div class="code">
+<div class="code__widgets">
+<div class="code__source" data-tab="Структура запроса на чтение данных">
+<pre class="prettyprint">
+// Формат URL для POST-запроса на чтение данных из DataService.
+http(s)://[Адрес приложения Creatio]/[Номер конфигурации]/dataservice/[Формат данных]/reply/SelectQuery
+</pre>
+</div>
+
+<div class="code__source" data-tab="Пример запроса на чтение данных">
+<pre class="prettyprint">
+// Пример URL для POST-запроса на чтение данных к DataService.
+http(s)://example.creatio.com/0/dataservice/json/reply/SelectQuery
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<p>Контракт данных <span class="filled">SelectQuery</span> имеет сложную иерархическую структуру с несколькими уровнями вложенности. В серверной части ядра приложения Creatio он представлен классом <span class="filled">SelectQuery</span> пространства имен <span class="filled">Terrasoft.Nui.ServiceModel.DataContract</span> библиотеки классов <span class="filled">Terrasoft.Nui.ServiceModel.dll</span>. Для простоты восприятия иерархическую структуру контракта данных <span class="filled">SelectQuery</span> удобно представить в формате объекта JSON.</p>
+
+<div class="code">
+<div class="code__widgets">
+<div class="code__top">
+<div class="code__title">Структура контракта данных <span class="filled">SelectQuery</span></div>
+</div>
+
+<div class="code__source">
+<pre class="prettyprint">
+{
+    <span>"RootSchemaName"</span>:<span>"[Имя корневой схемы объекта]"</span>,
+    <span>"OperationType"</span>:[Тип операции с записью],
+    <span>"Columns"</span>:{
+        <span>"Items"</span>:{
+            <span>"Name"</span>:{
+                <span>"OrderDirection"</span>:[Порядок сортировки],
+                <span>"OrderPosition"</span>:[Позиция колонки],
+                <span>"Caption"</span>:<span>"[Заголовок]"</span>,
+                <span>"Expression"</span>:{
+                    <span>"ExpressionType"</span>:[Тип выражения],
+                    <span>"ColumnPath"</span>:<span>"[Путь к колонке]"</span>,
+                    <span>"Parameter"</span>:[Параметр],
+                    <span>"FunctionType"</span>:[Тип функции],
+                    <span>"MacrosType"</span>:[Тип макроса],
+                    <span>"FunctionArgument"</span>:[Аргумент функции],
+                    <span>"DatePartType"</span>:[Тип части даты],
+                    <span>"AggregationType"</span>:[Тип агрегации],
+                    <span>"AggregationEvalType"</span>:[Область применения агрегации],
+                    <span>"SubFilters"</span>:[Вложенные фильтры]
+                }
+            }
+        }
+    },
+    <span>"AllColumns"</span>:[Признак выбора всех колонок],
+    <span>"ServerESQCacheParameters"</span>:{
+        <span>"CacheLevel"</span>:[Уровень кеширования],
+        <span>"CacheGroup"</span>:[Группа кеширования],
+        <span>"CacheItemName"</span>:[Ключ записи в хранилище]
+    },
+    <span>"IsPageable"</span>:[Признак разбиения на страницы],
+    <span>"IsDistinct"</span>:[Признак уникальности],
+    <span>"RowCount"</span>:[Количество выбираемых записей],
+    <span>"ConditionalValues"</span>:[Условия для построения постраничного запроса],
+    <span>"IsHierarchical"</span>:[Признак иерархической выборки данных],
+    <span>"HierarchicalMaxDepth"</span>:[Максимальный уровень вложенности иерархического запроса],
+    <span>"HierarchicalColumnName"</span>:[Имя колонки, использующейся для построения иерархического запроса],
+    <span>"HierarchicalColumnValue"</span>:[Начальное значение иерархической колонки],
+    <span>"Filters"</span>:[Фильтры]
+    }
+}
+</pre>
+</div>
+</div>
+</div>
+
+<div class="block-collapse">
+<h3 class="block-collapse__title">Свойства<a class="title-anchor" href="#title-2315-2" id="title-2315-2"> </a></h3>
+
+<div class="block-collapse__content">
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+RootSchemaName <span class="gray">string</span>
+</pre>
+</div>
+</div>
+</div>
+
+<p>Строка, содержащая название корневой схемы объекта добавляемой записи.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+OperationType <span class="gray">QueryOperationType</span>
+</pre>
+</div>
+</div>
+</div>
+
+<p>Тип операции с записью. Задается значением перечисления <span class="filled">QueryOperationType</span> пространства имен <span class="filled">Terrasoft.Nui.ServiceModel.DataContract</span>. Для <span class="filled">SelectQuery</span> устанавливается значение <span class="filled">QueryOperationType.Select</span>.</p>
+
+<div class="block-collapse">
+<div class="block-collapse__title block-collapse__title_mb-16">Значения перечисления <span class="filled">QueryOperationType</span></div>
+
+<div class="block-collapse__content">
+<div class="table">
+<table><tbody><tr><td><span class="consolas">Select</span></td>
+			<td>0</td>
+		</tr><tr><td><span class="consolas">Insert</span></td>
+			<td>1</td>
+		</tr><tr><td><span class="consolas">Update</span></td>
+			<td>2</td>
+		</tr><tr><td><span class="consolas">Delete</span></td>
+			<td>3</td>
+		</tr><tr><td><span class="consolas">Batch</span></td>
+			<td>4</td>
+		</tr></tbody></table></div>
+</div>
+</div>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+Columns <span class="gray">SelectQueryColumns</span>
+</pre>
+</div>
+</div>
+</div>
+
+<p>Содержит коллекцию колонок для считываемых записей. Имеет тип <span class="filled">SelectQueryColumns</span>, определенный в пространстве имен <span class="filled">Terrasoft.Nui.ServiceModel.DataContract</span>. Следует конфигурировать, если значение признака <span class="filled">AllColumns</span> установлено как <span class="filled">false</span> и нужен определенный набор колонок корневой схемы, не включающий колонку <span class="key">Id</span>.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+AllColumns <span class="gray">bool</span>
+</pre>
+</div>
+</div>
+</div>
+
+<p>Признак выбора всех колонок. Если значение установлено как <span class="filled">true</span>, в результате выполнения запроса будут выбраны все колонки корневой схемы.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+ServerESQCache <span class="gray">Parameters</span>
+</pre>
+</div>
+</div>
+</div>
+
+<p>Параметры кэширования <span class="filled">EntitySchemaQuery</span> на сервере. Тип <span class="filled">ServerESQCacheParameters</span> определен в пространстве имен <span class="filled">Terrasoft.Nui.ServiceModel.DataContract</span>.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+IsPageable <span class="gray">bool</span>
+</pre>
+</div>
+</div>
+</div>
+
+<p>Признак постраничной выборки данных.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+IsDistinct <span class="gray">bool</span>
+</pre>
+</div>
+</div>
+</div>
+
+<p>Признак, указывающий, убирать или нет дубли в результирующем наборе данных.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+RowCount <span class="gray">int</span>
+</pre>
+</div>
+</div>
+</div>
+
+<p>Количество выбираемых строк. По умолчанию содержит значение -1, т.е. выбираются все строки.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+ConditionalValues <span class="gray">ColumnValues</span>
+</pre>
+</div>
+</div>
+</div>
+
+<p>Условия для построения постраничного запроса. Тип <span class="filled">ColumnValues</span> определен в пространстве имен <span class="filled">Terrasoft.Nui.ServiceModel.DataContract</span>.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+IsHierarchical <span class="gray">bool</span>
+</pre>
+</div>
+</div>
+</div>
+
+<p>Признак иерархической выборки данных.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+HierarchicalMaxDepth <span class="gray">int</span>
+</pre>
+</div>
+</div>
+</div>
+
+<p>Максимальный уровень вложенности иерархического запроса.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+hierarchicalColumnName <span class="gray">string</span>
+</pre>
+</div>
+</div>
+</div>
+
+<p>Имя колонки, использующейся для построения иерархического запроса.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+hierarchicalColumnValue <span class="gray">string</span>
+</pre>
+</div>
+</div>
+</div>
+
+<p>Начальное значение иерархической колонки, от которого будет строиться иерархия.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+Filters <span class="gray">Filters</span>
+</pre>
+</div>
+</div>
+</div>
+
+<p>Коллекция фильтров запросов. Имеет тип <span class="filled">Filters</span>, определенный в пространстве имен <span class="filled">Terrasoft.Nui.ServiceModel.DataContract</span>.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+ColumnValues <span class="gray">ColumnValues</span>
+</pre>
+</div>
+</div>
+</div>
+
+<p>Содержит коллекцию значений колонок добавляемой записи. Имеет тип <span class="filled">ColumnValues</span>, определенный в пространстве имен <span class="filled">Terrasoft.Nui.ServiceModel.DataContract</span>.</p>
+</div>
+</div>
+
+<h2 data-type="C#">Класс SelectQueryColumns<a class="title-anchor" href="#title-2315-3" id="title-2315-3"> </a></h2>
+
+<p>Класс <span class="filled">SelectQueryColumns</span> имеет единственное свойство <span class="filled">Items</span>, которое определено как коллекция ключей и значений <span class="filled">Dictionary&lt;string, SelectQueryColumn&gt;</span>. Ключом является строка с названием добавляемой колонки, а значением — экземпляр класса <span class="filled">SelectQueryColumn</span>, который определен в пространстве имен <span class="filled">Terrasoft.Nui.ServiceModel.DataContract</span>.</p>
+
+<div class="block-collapse">
+<h3 class="block-collapse__title">Свойства<a class="title-anchor" href="#title-2315-2" id="title-2315-2"> </a></h3>
+
+<div class="block-collapse__content">
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+OrderDirection <span class="gray">OrderDirection</span>
+</pre>
+</div>
+</div>
+</div>
+
+<p>Направление сортировки. Задается значением перечисления <span class="filled"><a href="../../api/netcoreapi/7.15.0/index.html#Terrasoft.Common~Terrasoft.Common.OrderDirection.html" target="_blank">OrderDirection</a></span> пространства имен <span class="filled">Terrasoft.Common</span>, определенного в библиотеке классов <span class="filled"><a href="../../api/netcoreapi/7.15.0/index.html#Terrasoft.Common.html" target="_blank">Terrasoft.Common</a></span>.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+OrderPosition <span class="gray">int</span>
+</pre>
+</div>
+</div>
+</div>
+
+<p>Задает номер позиции в коллекции колонок запроса, по которой производится сортировка.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+Caption <span class="gray">string</span>
+</pre>
+</div>
+</div>
+</div>
+
+<p>Заголовок колонки.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+Expression <span class="gray">ColumnExpression</span>
+</pre>
+</div>
+</div>
+</div>
+
+<p>Свойство, определяющее выражение типа выбираемой колонки.</p>
+</div>
+</div>
+
+<h2 data-type="C#">Класс ColumnExpression<a class="title-anchor" href="#title-2315-5" id="title-2315-5"> </a></h2>
+
+<p>Класс <span class="filled">ColumnExpression</span> определяет выражение, задающее тип колонки схемы. Он определен в пространстве имен <span class="filled">Terrasoft.Nui.ServiceModel.DataContract</span> библиотеки <span class="filled">Terrasoft.Nui.ServiceModel</span>. Свойства экземпляра этого класса заполняются в зависимости от свойства <span class="filled">ExpressionType</span>, которое и задает тип выражения.</p>
+
+<div class="block-collapse">
+<h3 class="block-collapse__title">Свойства<a class="title-anchor" href="#title-2315-2" id="title-2315-2"> </a></h3>
+
+<div class="block-collapse__content">
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+ExpressionType <span class="gray">EntitySchemaQuery ExpressionType</span>
+</pre>
+</div>
+</div>
+</div>
+
+<p>Тип выражения, определяющий значение, которое будет содержаться в добавляемой колонке. Задается значением перечисления <span class="filled">ntitySchemaQueryExpressionType</span> пространства имен <span class="filled">Terrasoft.Core.Entities</span>, определенного в библиотеке классов <span class="filled">Terrasoft.Core</span>. Для <span class="filled">InsertQuery</span> устанавливается значение <span class="filled">EntitySchemaQueryExpressionType.Parameter</span>.</p>
+
+<div class="block-collapse">
+<div class="block-collapse__title block-collapse__title_mb-16">Значения перечисления <span class="filled">EntitySchemaQueryExpressionType</span></div>
+
+<div class="block-collapse__content">
+<div class="table">
+<table><tbody><tr><td><span class="consolas">SchemaColumn</span></td>
+			<td>0</td>
+			<td>Колонка схемы</td>
+		</tr><tr><td><span class="consolas">Function</span></td>
+			<td>1</td>
+			<td>Функция</td>
+		</tr><tr><td><span class="consolas">Parameter</span></td>
+			<td>2</td>
+			<td>Параметр</td>
+		</tr><tr><td><span class="consolas">SubQuery</span></td>
+			<td>3</td>
+			<td>Вложенный запрос</td>
+		</tr><tr><td><span class="consolas">ArithmeticOperation</span></td>
+			<td>4</td>
+			<td>Арифметическая операция</td>
+		</tr></tbody></table></div>
+</div>
+</div>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+ColumnPath <span class="gray">string</span>
+</pre>
+</div>
+</div>
+</div>
+
+<p>Путь к колонке относительно корневой схемы.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+Parameter <span class="gray">Parameter</span>
+</pre>
+</div>
+</div>
+</div>
+
+<p>Определяет значение, которое будет содержаться в добавляемой колонке. Имеет тип <span class="filled">Parameter</span>, определенный в пространстве имен <span class="filled">Terrasoft.Nui.ServiceModel.DataContract</span>.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+FunctionType <span class="gray">FunctionType</span>
+</pre>
+</div>
+</div>
+</div>
+
+<p>Тип функции. Задается значением из перечисления <span class="filled">FunctionType</span>, определенного в пространстве имен <span class="filled">Terrasoft.Nui.ServiceModel.DataContract</span>.</p>
+
+<div class="block-collapse">
+<div class="block-collapse__title block-collapse__title_mb-16">Значения перечисления <span class="filled">FunctionType</span></div>
+
+<div class="block-collapse__content">
+<div class="table">
+<table><tbody><tr><td><span class="consolas">None</span></td>
+			<td>0</td>
+			<td>Не определен</td>
+		</tr><tr><td><span class="consolas">Macros</span></td>
+			<td>1</td>
+			<td>Макрос</td>
+		</tr><tr><td><span class="consolas">Aggregation</span></td>
+			<td>2</td>
+			<td>Агрегирующая функция</td>
+		</tr><tr><td><span class="consolas">DatePart</span></td>
+			<td>3</td>
+			<td>Часть даты</td>
+		</tr><tr><td><span class="consolas">Length</span></td>
+			<td>4</td>
+			<td>Длина</td>
+		</tr></tbody></table></div>
+</div>
+</div>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+MacrosType <span class="gray">EntitySchemaQuery MacrosType</span>
+</pre>
+</div>
+</div>
+</div>
+
+<p>Тип макроса. Задается значением перечисления <span class="filled">EntitySchemaQueryMacrosType</span>, определенного в пространстве имен <span class="filled">Terrasoft.Core.Entities</span>.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+FunctionArgument <span class="gray">BaseExpression</span>
+</pre>
+</div>
+</div>
+</div>
+
+<p>Аргумент функции. Принимает значение, если функция определена с параметром. Класс <span class="filled">BaseExpression</span> определен в пространстве имен <span class="filled">Terrasoft.Nui.ServiceModel.DataContract</span>, является предком для класса <span class="filled">ColumnExpresion</span> и имеет такой же набор свойств.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+DatePartType <span class="gray">DatePart</span>
+</pre>
+</div>
+</div>
+</div>
+
+<p>Часть даты. Задается значением из перечисления <span class="filled">DatePart</span>, определенного в пространстве имен <span class="filled">Terrasoft.Nui.ServiceModel.DataContract</span>.</p>
+
+<div class="block-collapse">
+<div class="block-collapse__title block-collapse__title_mb-16">Значения перечисления <span class="filled">DatePart</span></div>
+
+<div class="block-collapse__content">
+<div class="table">
+<table><tbody><tr><td><span class="consolas">None</span></td>
+			<td>0</td>
+			<td>Не определен</td>
+		</tr><tr><td><span class="consolas">Day</span></td>
+			<td>1</td>
+			<td>День</td>
+		</tr><tr><td><span class="consolas">Week</span></td>
+			<td>2</td>
+			<td>Неделя</td>
+		</tr><tr><td><span class="consolas">Month</span></td>
+			<td>3</td>
+			<td>Месяц</td>
+		</tr><tr><td><span class="consolas">Year</span></td>
+			<td>4</td>
+			<td>Год</td>
+		</tr><tr><td><span class="consolas">Weekday</span></td>
+			<td>5</td>
+			<td>День недели</td>
+		</tr><tr><td><span class="consolas">Hour</span></td>
+			<td>6</td>
+			<td>Час</td>
+		</tr><tr><td><span class="consolas">HourMinute</span></td>
+			<td>7</td>
+			<td>Минута</td>
+		</tr></tbody></table></div>
+</div>
+</div>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+AggregationType <span class="gray">AggregationType</span>
+</pre>
+</div>
+</div>
+</div>
+
+<p>Тип агрегирующей функции. Задается значением из перечисления <span class="filled">AggregationType</span>, определенного в пространстве имен <span class="filled">Terrasoft.Common</span>, определенного в библиотеке классов <span class="filled">Terrasoft.Common</span>.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+AggregationEvalType <span class="gray">AggregationEvalType</span>
+</pre>
+</div>
+</div>
+</div>
+
+<p>Область применения агрегирующей функции. Задается значением из перечисления <span class="filled">AggregationEvalType</span>, определенного в пространстве имен <span class="filled">Terrasoft.Core.DB</span>, определенного в библиотеке классов <span class="filled">Terrasoft.Core</span>.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+SubFilters <span class="gray">Filters</span>
+</pre>
+</div>
+</div>
+</div>
+
+<p>Коллекция фильтров вложенных запросов. Имеет тип <span class="filled">Filters</span>, определенный в пространстве имен <span class="filled">Terrasoft.Nui.ServiceModel.DataContract</span>.</p>
+</div>
+</div>
+
+<h2 data-type="C#">Класс Parameter<a class="title-anchor" href="#title-2315-7" id="title-2315-7"> </a></h2>
+
+<p>Класс <span class="filled">Parameter</span> определен в пространстве имен <span class="filled">Terrasoft.Nui.ServiceModel.DataContract</span>.</p>
+
+<div class="block-collapse">
+<h3 class="block-collapse__title">Свойства<a class="title-anchor" href="#title-2315-2" id="title-2315-2"> </a></h3>
+
+<div class="block-collapse__content">
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+DataValueType <span class="gray">DataValueType</span>
+</pre>
+</div>
+</div>
+</div>
+
+<p>Тип данных значения, которое будет содержаться в добавляемой колонке. Задается значением перечисления <span class="filled">DataValueType</span> пространства имен <span class="filled">Terrasoft.Nui.ServiceModel.DataContract</span>.</p>
+
+<div class="block-collapse">
+<div class="block-collapse__title block-collapse__title_mb-16">Значения перечисления <span class="filled">DataValueType</span></div>
+
+<div class="block-collapse__content">
+<div class="table">
+<table><tbody><tr><td><span class="consolas">Guid</span></td>
+			<td>0</td>
+		</tr><tr><td><span class="consolas">Text</span></td>
+			<td>1</td>
+		</tr><tr><td><span class="consolas">Integer</span></td>
+			<td>4</td>
+		</tr><tr><td><span class="consolas">Float</span></td>
+			<td>5</td>
+		</tr><tr><td><span class="consolas">Money</span></td>
+			<td>6</td>
+		</tr><tr><td><span class="consolas">DateTime</span></td>
+			<td>7</td>
+		</tr><tr><td><span class="consolas">Date</span></td>
+			<td>8</td>
+		</tr><tr><td><span class="consolas">Time</span></td>
+			<td>9</td>
+		</tr><tr><td><span class="consolas">Lookup</span></td>
+			<td>10</td>
+		</tr><tr><td><span class="consolas">Enum</span></td>
+			<td>11</td>
+		</tr><tr><td><span class="consolas">Boolean</span></td>
+			<td>12</td>
+		</tr><tr><td><span class="consolas">Blob</span></td>
+			<td>13</td>
+		</tr><tr><td><span class="consolas">Image</span></td>
+			<td>14</td>
+		</tr><tr><td><span class="consolas">ImageLookup</span></td>
+			<td>16</td>
+		</tr><tr><td><span class="consolas">Mapping</span></td>
+			<td>18</td>
+		</tr></tbody></table></div>
+</div>
+</div>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+Value <span class="gray">object</span>
+</pre>
+</div>
+</div>
+</div>
+
+<p>Объект, содержащий значение добавляемой колонки.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+ArrayValue <span class="gray">string[]</span>
+</pre>
+</div>
+</div>
+</div>
+
+<p>Массив значений добавляемой колонки. Используется при сериализации массивов и BLOB данных.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+ShouldSkipConvertion <span class="gray">bool</span>
+</pre>
+</div>
+</div>
+</div>
+
+<p>Признак, отображающий необходимость пропустить процесс приведения типа для свойства <span class="filled">Value</span>.</p>
+</div>
+</div>
+
+<h2 data-type="C#">Класс ServerESQCacheParameters<a class="title-anchor" href="#title-2315-9" id="title-2315-9"> </a></h2>
+
+<p>Класс <span class="filled">ServerESQCacheParameters</span> определен в пространстве имен <span class="filled">Terrasoft.Nui.ServiceModel.DataContract</span>.</p>
+
+<div class="block-collapse">
+<h3 class="block-collapse__title">Свойства<a class="title-anchor" href="#title-2315-2" id="title-2315-2"> </a></h3>
+
+<div class="block-collapse__content">
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+CacheLevel <span class="gray">int</span>
+</pre>
+</div>
+</div>
+</div>
+
+<p>Уровень размещения данных в кэше <span class="filled">EntitySchemaQuery</span>.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+CacheGroup <span class="gray">string</span>
+</pre>
+</div>
+</div>
+</div>
+
+<p>Группа кэширования.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+CacheItemName <span class="gray">string</span>
+</pre>
+</div>
+</div>
+</div>
+
+<p>Ключ записи в хранилище.</p>
+
+<p>Класс <span class="filled">Filters</span> определен в пространстве имен <span class="filled">Terrasoft.Nui.ServiceModel.DataContract</span>.</p>
+</div>
+</div>
+</div>
+      
+  </div>
+
+    </div>
+  </div>
+
+  </div>
+
+</article>
+
+  </div>
+
+  </div>
+
+          </div>
+        </div>
+
+                  <aside class="creatio-sidebar creatio-sidebar_first" role="complementary">
+            
+            <div class="creatio-sidebar__toggle"></div>
+          </aside>
+        
+                  <aside class="creatio-sidebar creatio-sidebar_second" role="complementary">
+              <div class="region region-sidebar-second">
+    <div id="block-example" class="block block-ts-nav block-ts-nav-page-nav">
+  
+    
+      <div class="ts-nav-page">
+  </div>
+
+  </div>
+<div id="block-adminfeedbackblock" class="block block-admin-feedback block-admin-feedback-block">
+  
+    
+      <div id="feedback-message"><div id="upper-feedback-content"><h2>Был ли данный материал полезен?</h2>
+<input class="feedback-btn feedback-btn__yes button js-form-submit form-submit" data-node-id="2315" data-feedback="yes" type="submit" name="op" value="Да" />
+<input class="feedback-btn feedback-btn__no button js-form-submit form-submit" data-node-id="2315" data-feedback="no" type="submit" name="op" value="Нет" />
+</div>
+<form class="admin-feedback-form" data-drupal-selector="admin-feedback-form" action="https://academy.terrasoft.ua/docs/node/2315" method="post" id="admin-feedback-form" accept-charset="UTF-8">
+  <div id="feedback-msg-result"></div><div class="js-form-item form-item js-form-type-textarea form-type-textarea js-form-item-feedback-message form-item-feedback-message form-no-label">
+        <div class="form-textarea-wrapper">
+  <textarea id="edit-feedback-msg" data-drupal-selector="edit-feedback-message" name="feedback_message" rows="5" cols="60" class="form-textarea resize-vertical"></textarea>
+</div>
+
+        </div>
+<input id="feedback-id" data-drupal-selector="edit-feedback-id" type="hidden" name="feedback_id" value="" />
+<input class="feedback-btn feedback-btn__send-comment button js-form-submit form-submit" data-drupal-selector="edit-feedback-send" type="submit" id="edit-feedback-send" name="op" value="Отправить" />
+<input autocomplete="off" data-drupal-selector="form-0vtvzukla-mastnnho7mtqywush5thrbdcg9impz0jy" type="hidden" name="form_build_id" value="form-0VtvzuKLA_MAsTnnHO7MTqywuSh5thrBDCg9impz0jY" />
+<input data-drupal-selector="edit-admin-feedback-form" type="hidden" name="form_id" value="admin_feedback_form" />
+
+</form>
+</div>
+
+  </div>
+
+  </div>
+
+          </aside>
+              </main>
+    </div>
+  </div>
+
+  <footer role="contentinfo">
+    <div class="creatio-region creatio-region_footer">
+      <div class="creatio-container">
+          <div class="region region-footer">
+    <div id="block-footerua" class="block block-simple-block block-simple-blockfooter-ua">
+  
+    
+      <div class="footer">
+<div class="footer-left">
+<ul class="footer-socials"><li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_fb" href="https://www.facebook.com/terrasoft.ua" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_in" href="https://www.linkedin.com/company/terrasoft/" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_yt" href="https://www.youtube.com/c/TerrasoftUkraine" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_tg" href="https://t.me/Terrasoft_UA" target="_blank"> </a></li>
+</ul></div>
+
+<div class="footer-contact">
+<div class="footer-title">Будьте на связи!</div>
+
+<div class="footer-content">
+<div class="footer-items">
+<div class="footer-item"><a class="footer__link footer__link_phone" href="tel:+380443633133">+38 (044) 363-31-33</a></div>
+</div>
+
+<div class="footer-items">
+<div class="footer-item"><a class="footer__link footer__link_email" href="mailto:support@terrasoft.ua">support@terrasoft.ua</a></div>
+</div>
+</div>
+</div>
+</div>
+
+  </div>
+
+  </div>
+
+      </div>
+    </div>
+    <div class="creatio-region creatio-region_bottom">
+      <div class="creatio-container">
+          <div class="region region-bottom">
+    <div id="block-allrightsreservedua" class="block block-simple-block block-simple-blockfooter-bottom-ua">
+  
+    
+      <p>© 2002-2022 Terrasoft.  |  <a href="https://www.terrasoft.ua/privacy-policy" target="_blank">Конфиденциальность</a></p>
+
+  </div>
+
+  </div>
+
+      </div>
+    </div>
+  </footer>
+</div>
+<div class="creatio-bg"></div>
+
+
+  </div>
+
+    
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/docs\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/2315","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"ru"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"ajaxPageState":{"libraries":"admin_feedback\/admin_feedback_block,admin_feedback\/admin_feedback_css,classy\/base,classy\/messages,classy\/node,core\/drupal.ajax,core\/jquery.form,core\/normalize,creatio\/fancybox,creatio\/global,layout_discovery\/onecol,system\/base,ts_doc\/doc_version,ts_feedback\/ts_feedback,ts_nav\/page_nav,ts_title_anchor\/ts_title_anchor","theme":"creatio","theme_token":null},"ajaxTrustedUrl":{"form_action_p_pvdeGsVG5zNF_XLGPTvYSKCf43t8qZYSwcfZl2uzM":true,"\/docs\/node\/2315?ajax_form=1":true},"admin_feedback":{"yes_response":"\u0421\u043f\u0430\u0441\u0438\u0431\u043e \u0437\u0430 \u043e\u0431\u0440\u0430\u0442\u043d\u0443\u044e \u0441\u0432\u044f\u0437\u044c!","no_response":"\u0421\u043f\u0430\u0441\u0438\u0431\u043e \u0437\u0430 \u043e\u0431\u0440\u0430\u0442\u043d\u0443\u044e \u0441\u0432\u044f\u0437\u044c!","custom_text_response_on_no":{"value":"","format":"full_html"},"feedback_prompt_on_yes":true,"feedback_prompt_on_no":true,"feedback_enable_predefined_answers":false,"feedback_prompt":"\u041a\u0430\u043a \u043c\u043e\u0436\u043d\u043e \u0443\u043b\u0443\u0447\u0448\u0438\u0442\u044c \u044d\u0442\u0443 \u0441\u0442\u0430\u0442\u044c\u044e?"},"ajax":{"edit-feedback-send":{"callback":"::validateFeedbackMsg","event":"mousedown","keypress":true,"prevent":"click","url":"\/docs\/node\/2315?ajax_form=1","dialogType":"ajax","submit":{"_triggering_element_name":"op","_triggering_element_value":"\u041e\u0442\u043f\u0440\u0430\u0432\u0438\u0442\u044c"}}},"user":{"uid":0,"permissionsHash":"9c2367dfcaba0fa15f0375f97aed64e146c908cee68508d13b79e3ee80e5162d"}}</script>
+<script src="../sites/default/files/js/js_uuVxyDQItP1QpG6bICwllczfSTuVFKsbwmcVCoFCR88.js"></script>
+
+
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+      <g id="svg-copy" class="svg-icon svg-icon_copy">
+        <path d="M15.111,18H1.889A1.848,1.848,0,0,1,0,16.2V3.6A1.848,1.848,0,0,1,1.889,1.8H5.837a2.87,2.87,0,0,1,5.326,0h3.948A1.848,1.848,0,0,1,17,3.6V16.2A1.848,1.848,0,0,1,15.111,18ZM3.777,12.6v1.8h6.611V12.6Zm0-3.6v1.8h9.445V9Zm0-3.6V7.2h9.445V5.4ZM8.5,1.8a.924.924,0,0,0-.944.9.945.945,0,0,0,1.889,0A.924.924,0,0,0,8.5,1.8Z"/>
+      </g>
+
+      <g id="svg-prev" class="svg-icon svg-icon_arrow">
+        <path d="M5.488,12.779,0,6.39,5.488,0" transform="translate(1 0.652)"/>
+      </g>
+
+      <g id="svg-next" class="svg-icon svg-icon_arrow">
+        <path d="M0,12.779,5.488,6.39,0,0" transform="translate(0.759 0.652)"/>
+      </g>
+    </svg>
+  </body>
+
+<!-- Mirrored from academy.terrasoft.ua/docs/node/2315 by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Mar 2022 03:32:27 GMT -->
+</html>

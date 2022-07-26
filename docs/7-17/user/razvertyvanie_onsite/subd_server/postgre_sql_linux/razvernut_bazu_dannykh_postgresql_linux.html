@@ -1,0 +1,992 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# ">
+  
+<!-- Mirrored from academy.terrasoft.ua/docs/7-17/user/razvertyvanie_onsite/subd_server/postgre_sql_linux/razvernut_bazu_dannykh_postgresql_linux by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Mar 2022 04:18:29 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+          <!-- Google Tag Manager -->
+      <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          '../../../../../../../www.googletagmanager.com/gtm5445.html?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-KLLB8G');</script>
+      <!-- End Google Tag Manager -->
+        <meta charset="utf-8" />
+<link rel="canonical" href="razvernut_bazu_dannykh_postgresql_linux.html" />
+<meta name="description" content="Для установки Creatio вы можете использовать следующие конфигурации баз данных:
+
+
+	удаленная СУБД (рекомендуется);
+	
+	
+	локальный сервер PostgreSQL.
+	
+Если у вас уже настроен сервер PostgreSQL, то шаг I можно пропустить.
+
+Если у вас уже есть пользователь с правами администратора для авторизации, создания и изменения баз данных, то шаг II можно пропустить." />
+<meta property="og:url" content="https://academy.terrasoft.ua/docs/7-17/user/razvertyvanie_onsite/subd_server/postgre_sql_linux/razvernut_bazu_dannykh_postgresql_linux" />
+<meta property="og:title" content="Развернуть базу данных PostgreSQL (Linux)" />
+<meta property="og:description" content="Для установки Creatio вы можете использовать следующие конфигурации баз данных:
+
+
+	удаленная СУБД (рекомендуется);
+	
+	
+	локальный сервер PostgreSQL.
+	
+Если у вас уже настроен сервер PostgreSQL, то шаг I можно пропустить.
+
+Если у вас уже есть пользователь с правами администратора для авторизации, создания и изменения баз данных, то шаг II можно пропустить." />
+<meta name="Generator" content="Drupal 9 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="../../../../../themes/custom/creatio/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="revision" href="razvernut_bazu_dannykh_postgresql_linux.html" />
+
+    <title>Развернуть базу данных PostgreSQL (Linux) | Creatio Academy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&amp;family=Open+Sans:ital,wght@0,300;0,400;0,600;1,400&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" media="all" href="../../../../../sites/default/files/css/css_6lTP66__-yc6QXFp1zOwoeJ0HVigoYZP-SeoLLii000.css" />
+<link rel="stylesheet" media="all" href="../../../../../sites/default/files/css/css_XQJDNhkF3xH5SZCcY-PI89Zu4nYIzQ5oR3SnUKyfXJU.css" />
+<link rel="stylesheet" media="print" href="../../../../../sites/default/files/css/css_Zn4VHvcniOOtUwkIVwXzYr_0AI9gUVgZcPqaH4ViagU.css" />
+
+    
+  </head>
+  <body class="path-node page-node-type-user-documentation">
+          <!-- Google Tag Manager (noscript) -->
+      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KLLB8G"
+                        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+      <!-- End Google Tag Manager (noscript) -->
+    
+        
+      <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    <div class="creatio-page d-flex flex-column">
+        <div class="region region-informer">
+    <div id="block-terrasoftpidtrimueukrainu" class="block block-simple-block block-simple-blockterrasoft-pidtrimue-ukrainu">
+  
+    
+      <style type="text/css">
+<!--/*--><![CDATA[/* ><!--*/
+@import url(../../../../../../../www.terrasoft.ua/themes/custom/creatio/css/components/informer.css)
+
+/*--><!]]>*/
+</style><div class="ts-swu">
+<div class="creatio-container">
+<div class="ts-swu__cont">
+<div><a class="ts-swu__link" href="https://www.terrasoft.ua/terrasoft-stands-with-ukraine" target="_blank">Україна понад усе!</a> <span><a href="https://www.terrasoft.ua/terrasoft-stands-with-ukraine" target="_blank">Приєднуйтеся</a> до допомоги!</span></div>
+</div>
+</div></div>
+
+  </div>
+
+  </div>
+
+  
+  <header role="banner">
+          <div class="creatio-region creatio-region_top">
+        <div class="creatio-container">
+            <div class="region region-top">
+    <div id="block-menutoggle" class="block block-simple-block block-simple-blockmenu-toggle">
+  
+    
+      <div class="menu-toggle"><span> </span></div>
+
+  </div>
+<div id="block-logowhite-2" class="block block-simple-block block-simple-blocklogo-white">
+  
+    
+      <p><a class="site-logo" href="../../../../../../index.html" rel="home"><img src="../../../../../themes/custom/creatio/logo-white.svg" /></a></p>
+
+  </div>
+<div id="block-search" class="block block-simple-block block-simple-blocksearch">
+  
+    
+      <div class="search">
+<form action="https://academy.terrasoft.ua/search" class="search-form" method="get"><input class="search-form__input" name="search" placeholder="Поиск" type="search" /><input class="search-form__button" type="submit" value="Поиск" /> </form>
+
+<div class="search-toggle"> </div>
+</div>
+
+  </div>
+<nav role="navigation" aria-labelledby="block-sitesua-menu" id="block-sitesua" class="block block-menu navigation menu--sites-ua">
+            
+  <h2 class="visually-hidden" id="block-sitesua-menu">Sites UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="https://www.terrasoft.ua/" rel="nofollow" target="_blank">Terrasoft</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://community.terrasoft.ua/" rel="nofollow" target="_blank">Community</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://marketplace.terrasoft.ua/" rel="nofollow" target="_blank">Marketplace</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+<div id="block-usermenu" class="block block-ts-user block-ts-user-menu-block">
+  
+    
+      <ul class="user-menu">
+      <li class="user-menu__item">
+      <a class="user-menu__link" href="https://profile.terrasoft.ua/user/login?destination=academy/ua/docs/7-17/user/razvertyvanie_onsite/subd_server/postgre_sql_linux/razvernut_bazu_dannykh_postgresql_linux">Войти</a>
+    </li>
+  </ul>
+
+  </div>
+<div id="block-usermenumobile" class="block block-ts-user block-ts-user-menu-mobile-block">
+  
+    
+      <ul class="user-menu-mobile">
+      <li class="user-menu-mobile__item">
+      <div class="user-menu-mobile__user user-menu-mobile__user_icon"></div>
+      <ul class="user-menu-mobile__submenu">
+        <li class="user-menu-mobile__subitem">
+          <a class="user-menu-mobile__sublink" href="https://profile.terrasoft.ua/user/login?destination=academy/ua/docs/7-17/user/razvertyvanie_onsite/subd_server/postgre_sql_linux/razvernut_bazu_dannykh_postgresql_linux">Войти</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  </div>
+
+  </div>
+
+        </div>
+      </div>
+              <div class="creatio-region creatio-region_header">
+        <div class="creatio-container">
+            <div class="region region-header">
+    <div id="block-logo" class="block block-simple-block block-simple-blocklogo">
+  
+    
+      <p><a class="site-logo" href="../../../../../../index.html" rel="home"><img src="../../../../../themes/custom/creatio/logo.svg" /></a></p>
+
+  </div>
+<nav role="navigation" aria-labelledby="block-osnovnayanavigaciyaua-menu" id="block-osnovnayanavigaciyaua" class="block block-menu navigation menu--main-ua">
+            
+  <h2 class="visually-hidden" id="block-osnovnayanavigaciyaua-menu">Основная навигация UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="../../../../../index.html" data-drupal-link-system-path="&lt;front&gt;">Документация</a>
+              </li>
+                <li class="menu-item">
+        <a href="../../../../../../trainings.html">Тренинги</a>
+              </li>
+                <li class="menu-item">
+        <a href="../../../../../certification.html" data-drupal-link-system-path="node/3084">Сертификация и тестирование</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+<nav role="navigation" aria-labelledby="block-sitesua-2-menu" id="block-sitesua-2" class="block block-menu navigation menu--sites-ua">
+            
+  <h2 class="visually-hidden" id="block-sitesua-2-menu">Sites UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="https://www.terrasoft.ua/" rel="nofollow" target="_blank">Terrasoft</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://community.terrasoft.ua/" rel="nofollow" target="_blank">Community</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://marketplace.terrasoft.ua/" rel="nofollow" target="_blank">Marketplace</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+
+  </div>
+
+        </div>
+      </div>
+              <div class="creatio-region creatio-region_breadcrumb">
+        <div class="creatio-container">
+            <div class="region region-breadcrumb">
+    <div id="block-logowhite" class="block block-simple-block block-simple-blocklogo-white">
+  
+    
+      <p><a class="site-logo" href="../../../../../../index.html" rel="home"><img src="../../../../../themes/custom/creatio/logo-white.svg" /></a></p>
+
+  </div>
+<div id="block-breadcrumbnaviagtion" class="block block-ts-nav block-ts-nav-bread">
+  
+    
+      <nav class="breadcrumb"><ol class="ts-nav-breadcrumb__list"><li class="ts-nav-breadcrumb__item"><a href="../../../../../index.html" class="ts-nav-breadcrumb__link" title="Документация">Документация</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../../../indexd993.html?vid_1=1" class="ts-nav-breadcrumb__link" title="Для пользователя">Для пользователя</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../razvertyvanie_onsite.html" class="ts-nav-breadcrumb__link" title="Развертывание on-site" hreflang="ru">Развертывание on-site</a></li>
+<li class="ts-nav-breadcrumb__item ts-nav-breadcrumb__item_mobile"><a href="../../subd_server.html" class="ts-nav-breadcrumb__link" title="Сервер СУБД" hreflang="ru">Сервер СУБД</a></li>
+<li class="ts-nav-breadcrumb__item"><span class="ts-nav-breadcrumb__link ts-nav-breadcrumb__link_current" title="Развернуть базу данных PostgreSQL (Linux)">Развернуть базу данных PostgreSQL (Linux)</span></li>
+</ol>
+</nav>
+
+  </div>
+<div id="block-search-2" class="block block-simple-block block-simple-blocksearch">
+  
+    
+      <div class="search">
+<form action="https://academy.terrasoft.ua/search" class="search-form" method="get"><input class="search-form__input" name="search" placeholder="Поиск" type="search" /><input class="search-form__button" type="submit" value="Поиск" /> </form>
+
+<div class="search-toggle"> </div>
+</div>
+
+  </div>
+
+  </div>
+
+        </div>
+      </div>
+      </header>
+
+  <div class="creatio-region creatio-region_main">
+    <div class="creatio-container">
+                <div class="region region-breadcrumb-mobile">
+    <div id="block-breadcrumbnaviagtion-2" class="block block-ts-nav block-ts-nav-bread">
+  
+    
+      <nav class="breadcrumb"><ol class="ts-nav-breadcrumb__list"><li class="ts-nav-breadcrumb__item"><a href="../../../../../index.html" class="ts-nav-breadcrumb__link" title="Документация">Документация</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../../../indexd993.html?vid_1=1" class="ts-nav-breadcrumb__link" title="Для пользователя">Для пользователя</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../razvertyvanie_onsite.html" class="ts-nav-breadcrumb__link" title="Развертывание on-site" hreflang="ru">Развертывание on-site</a></li>
+<li class="ts-nav-breadcrumb__item ts-nav-breadcrumb__item_mobile"><a href="../../subd_server.html" class="ts-nav-breadcrumb__link" title="Сервер СУБД" hreflang="ru">Сервер СУБД</a></li>
+<li class="ts-nav-breadcrumb__item"><span class="ts-nav-breadcrumb__link ts-nav-breadcrumb__link_current" title="Развернуть базу данных PostgreSQL (Linux)">Развернуть базу данных PostgreSQL (Linux)</span></li>
+</ol>
+</nav>
+
+  </div>
+
+  </div>
+
+      
+      <main class="creatio-main" role="main">
+                                                    
+        <div class="creatio-content creatio-content_small">
+          <div class="creatio-content__inner creatio-content__inner_bg">
+                            <div class="region region-messages">
+    <div data-drupal-messages-fallback class="hidden"></div>
+
+  </div>
+
+            
+              <div class="region region-content">
+    <div id="block-creatio-page-title" class="block block-core block-page-title-block">
+  
+    
+      
+  <h1 class="page-title"><span class="field field--name-title field--type-string field--label-hidden">Развернуть базу данных PostgreSQL (Linux)</span>
+</h1>
+
+
+  </div>
+<div id="block-creatio-content" class="block block-system block-system-main-block">
+  
+    
+      
+<article data-history-node-id="2500" role="article" about="/docs/7-17/user/razvertyvanie_onsite/subd_server/postgre_sql_linux/razvernut_bazu_dannykh_postgresql_linux" class="node node--type-user-documentation node--view-mode-full">
+
+  
+    
+
+  
+  <div class="node__content">
+      <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-ts-doc block-ts-doc-downloads">
+  
+    
+      <a href="../../../../../sites/default/files/pdf/node/2500/Razvernut_bazu_dannykh_PostgreSQL_(Linux)_.pdf" target="_blank">PDF</a>
+  </div>
+<div class="block block-ts-doc block-ts-doc-versions">
+  
+    
+        <div class="ts-doc-versions">
+    <select class="ts-doc-versions__select">
+                              <option value="/docs/8-0/user/razvertyvanie_onsite/subd_server/postgre_sql_linux/razvernut_bazu_dannykh_postgresql_linux">Версия 8.0</option>
+                              <option value="/docs/7-18/user/razvertyvanie_onsite/subd_server/postgre_sql_linux/razvernut_bazu_dannykh_postgresql_linux">Версия 7.18</option>
+                                                <option value="/docs/7-17/user/razvertyvanie_onsite/subd_server/postgre_sql_linux/razvernut_bazu_dannykh_postgresql_linux" selected>Версия 7.17</option>
+          </select>
+  </div>
+
+  </div>
+
+    </div>
+  </div>
+  <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocknodeuser-documentationfield-product">
+  
+    
+      
+  <div class="field field--name-field-product field--type-entity-reference field--label-above">
+    <div class="field__label">Продукты</div>
+          <div class="field__items">
+              <div class="field__item">Все продукты</div>
+              </div>
+      </div>
+
+  </div>
+<div class="block block-layout-builder block-field-blocknodeuser-documentationbody">
+  
+    
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><p>Для установки Creatio вы можете использовать следующие конфигурации баз данных:</p>
+
+<ul type="disc"><li>
+	<p>удаленная СУБД (рекомендуется);</p>
+	</li>
+	<li>
+	<p>локальный сервер PostgreSQL.</p>
+	</li>
+</ul><p>Если у вас уже настроен сервер PostgreSQL, то шаг I можно пропустить.</p>
+
+<p>Если у вас уже есть пользователь с правами администратора для авторизации, создания и изменения баз данных, то шаг II можно пропустить.</p>
+
+<h2><a name="TOC_I_Установить_PostgreSQLbc-1" id="TOC_I_Установить_PostgreSQLbc-1"></a><a name="TOC_I_Установить_PostgreSQL" id="TOC_I_Установить_PostgreSQL"></a><a name="CSH_2" id="CSH_2"></a><a name="HT_chapter_setup_dotnet_deploy_postgre_install" id="HT_chapter_setup_dotnet_deploy_postgre_install"></a>I. Установить PostgreSQL<a class="title-anchor" href="#title-2500-1" id="title-2500-1"> </a></h2>
+
+<p>PostgreSQL недоступен в большинстве стандартных репозиториев. Чтобы установить PostgreSQL на Linux:</p>
+
+<ol class="start"><li>
+	<p>Войдите в систему как администратор (root):<br />
+	 </p>
+
+	<div class="code">
+	<div class="code__widgets code__widgets_no-highlight">
+	<div class="code__source">
+	<pre class="prettyprint">
+sudo su</pre>
+	</div>
+	</div>
+	</div>
+	</li>
+	<li>Добавьте репозиторий PostgreSQL:
+	<div class="code">
+	<div class="code__widgets code__widgets_no-highlight">
+	<div class="code__source">
+	<pre class="prettyprint">
+echo -e "deb http://apt.postgresql.org/pub/repos/apt/ $(lsb_release -sc)-pgdg main" &gt; /etc/apt/sources.list.d/pgdg.list
+</pre>
+	</div>
+	</div>
+	</div>
+	</li>
+	<li>Импортируйте ключ подписи к репозиторию PostgreSQL:
+	<div class="code">
+	<div class="code__widgets code__widgets_no-highlight">
+	<div class="code__source">
+	<pre class="prettyprint">
+wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | apt-key add -
+</pre>
+	</div>
+	</div>
+	</div>
+	</li>
+	<li>Обновите список пакетов:
+	<div class="code">
+	<div class="code__widgets code__widgets_no-highlight">
+	<div class="code__source">
+	<pre class="prettyprint">
+apt-get update
+</pre>
+	</div>
+	</div>
+	</div>
+	</li>
+	<li>Установите PostgreSQL
+	<div class="code">
+	<div class="code__widgets code__widgets_no-highlight">
+	<div class="code__source">
+	<pre class="prettyprint">
+apt-get install -y postgresql-12
+</pre>
+	</div>
+	</div>
+	</div>
+	</li>
+	<li>
+	<p>Выйдите из root-сессии:</p>
+
+	<div class="code">
+	<div class="code__widgets code__widgets_no-highlight">
+	<div class="code__source">
+	<pre class="prettyprint">
+exit</pre>
+	</div>
+	</div>
+	</div>
+	</li>
+</ol><div class="message">
+<p><span class="message__bold">На заметку.</span> Развертывание Creatio с отказоустойчивостью не тестировалось на PostgreSQL. Подробнее о возможности создания кластеров читайте в <span><a href="https://www.postgresql.org/docs/9.5/high-availability.html">документации PostgreSQL</a></span>.</p>
+</div>
+
+<h2><a name="TOC_II_Создать_пользователяbc-2" id="TOC_II_Создать_пользователяbc-2"></a><a name="TOC_II_Создать_пользователя" id="TOC_II_Создать_пользователя"></a><a name="CSH_3" id="CSH_3"></a><a name="HT_chapter_setup_dotnet_deploy_postgre_create_user" id="HT_chapter_setup_dotnet_deploy_postgre_create_user"></a>II. Создать пользователя PostgreSQL<a class="title-anchor" href="#title-2500-2" id="title-2500-2"> </a></h2>
+
+<p>Установленный PostgreSQL требует дополнительной настройки, прежде чем вы перейдете к развертыванию Creatio. После первичной установки PostgreSQL вам необходимо создать для него пользователя, который сможет подключаться к базе данных через логин и пароль и будет иметь права на создание и обновление баз данных. По умолчанию такого пользователя в PostgreSQL нет.</p>
+
+<p>Рекомендуется создать следующих пользователей PostgreSQL:</p>
+
+<ul><li>Пользователь с ролью ”<strong>admin</strong>” и неограниченными полномочиями на уровне сервера базы данных — нужен для восстановления базы данных и настройки доступа к ней.</li>
+	<li>Обычный пользователь с ограниченными правами на уровне сервера. используется для настройки безопасного подключения Creatio к базе данных через аутентификацию средствами PostgreSQL.</li>
+</ul><p>Если у вас в PostgreSQL уже есть администратор и пользователь с ограниченными правами на уровне сервера базы данных, то данный шаг можно пропустить.</p>
+
+<p>Чтобы создать пользователя PostgreSQL:</p>
+
+<ol class="start"><li>
+	<p>Войдите как <strong>postgres</strong>:</p>
+
+	<div class="code">
+	<div class="code__widgets code__widgets_no-highlight">
+	<div class="code__source">
+	<pre class="prettyprint">
+sudo su - postgres</pre>
+	</div>
+	</div>
+	</div>
+	</li>
+	<li>Откройте оболочку PostgreSQL:
+	<div class="code">
+	<div class="code__widgets code__widgets_no-highlight">
+	<div class="code__source">
+	<pre class="prettyprint">
+psql
+</pre>
+	</div>
+	</div>
+	</div>
+	</li>
+	<li>Создайте пользователя <strong>pg_sysadmin</strong>, которому на уровне сервера будут предоставлены права администратора либо набор наиболее важных привилегий:
+	<div class="code">
+	<div class="code__widgets code__widgets_no-highlight">
+	<div class="code__source">
+	<pre class="prettyprint">
+CREATE USER pg_sysadmin;</pre>
+	</div>
+	</div>
+	</div>
+	<strong>pg_sysadmin</strong> — псевдоним, который необходимо заменить актуальным именем пользователя с правами администратора на уровне сервера. Нужен для восстановления базы данных и настройки доступа к ней.</li>
+	<li>
+	<p>Настройте для пользователя pg_sysadmin <strong>права администратора</strong>:</p>
+
+	<div class="code">
+	<div class="code__widgets code__widgets_no-highlight">
+	<div class="code__source">
+	<pre class="prettyprint">
+ALTER ROLE pg_sysadmin WITH SUPERUSER;</pre>
+	</div>
+	</div>
+	</div>
+
+	<p>В качестве альтернативы вы также можете предоставить ему только наиболее важные привилегии вместо прав администратора.</p>
+
+	<div class="code">
+	<div class="code__widgets code__widgets_no-highlight">
+	<div class="code__source">
+	<pre class="prettyprint">
+GRANT CREATE DATABASE TO pg_sysadmin;
+GRANT ALTER DATABASE TO pg_sysadmin;</pre>
+	</div>
+	</div>
+	</div>
+
+	<div class="message message_warning">
+	<p><span class="message__bold message__bold_warning">Важно.</span> Если не предоставить пользователю pg_sysadmin прав администратора или необходимых привилегий на уровне сервера, это может привести к ошибкам в процессе восстановления базы данных.</p>
+	</div>
+	</li>
+	<li>Разрешите <strong>pg_sysadmin</strong> авторизацию:<br />
+	 
+	<div class="code">
+	<div class="code__widgets code__widgets_no-highlight">
+	<div class="code__source">
+	<pre class="prettyprint">
+ALTER ROLE pg_sysadmin WITH LOGIN;
+</pre>
+	</div>
+	</div>
+	</div>
+	</li>
+	<li>
+	<p>Настройте пароль для <strong>pg_sysadmin</strong>:</p>
+
+	<div class="code">
+	<div class="code__widgets code__widgets_no-highlight">
+	<div class="code__source">
+	<pre class="prettyprint">
+ALTER ROLE pg_sysadmin WITH PASSWORD 'pg_syspassword';</pre>
+	</div>
+	</div>
+	</div>
+
+	<p><strong>pg_password</strong>— укажите пароль пользователя pg_sysadmin для подключения к серверу PostgreSQL.</p>
+	</li>
+	<li>Создайте нового пользователя с ограниченными правами на уровне сервера базы данных:
+	<div class="code">
+	<div class="code__widgets code__widgets_no-highlight">
+	<div class="code__source">
+	<pre class="prettyprint">
+CREATE USER pg_user;</pre>
+	</div>
+	</div>
+	</div>
+	<strong>pg_user</strong> — псевдоним, который необходимо заменить именем пользователя с ограниченными правами на уровне сервера базы данных. Нужен для подключения к базе данных Creatio.</li>
+	<li>
+	<p>Разрешите <strong>pg_user</strong> авторизацию:</p>
+
+	<div class="code">
+	<div class="code__widgets code__widgets_no-highlight">
+	<div class="code__source">
+	<pre class="prettyprint">
+ALTER ROLE pg_user WITH LOGIN;
+</pre>
+	</div>
+	</div>
+	</div>
+	</li>
+	<li>
+	<p>Настройте пароль для <strong>pg_user</strong>:</p>
+
+	<div class="code">
+	<div class="code__widgets code__widgets_no-highlight">
+	<div class="code__source">
+	<pre class="prettyprint">
+ALTER ROLE pg_user WITH PASSWORD 'pg_password';</pre>
+	</div>
+	</div>
+	</div>
+
+	<p><strong>pg_password</strong> — пароль пользователя pg_user для подключения к серверу PostgreSQL.</p>
+	</li>
+	<li>
+	<p>Выйдите из оболочки PostgreSQL.</p>
+
+	<div class="code">
+	<div class="code__widgets code__widgets_no-highlight">
+	<div class="code__source">
+	<pre class="prettyprint">
+\q</pre>
+	</div>
+	</div>
+	</div>
+	</li>
+	<li>
+	<p>Выйдите из своей сессии:</p>
+
+	<div class="code">
+	<div class="code__widgets code__widgets_no-highlight">
+	<div class="code__source">
+	<pre class="prettyprint">
+exit</pre>
+	</div>
+	</div>
+	</div>
+	</li>
+</ol><h2><a name="TOC_III_Восстановить_изbc-3" id="TOC_III_Восстановить_изbc-3"></a><a name="TOC_III_Восстановить_из" id="TOC_III_Восстановить_из"></a><a name="CSH_4" id="CSH_4"></a><a name="HT_chapter_setup_dotnet_deploy_postgre_restore_db" id="HT_chapter_setup_dotnet_deploy_postgre_restore_db"></a>III. Восстановить из бэкапа базу данных PostgreSQL<a class="title-anchor" href="#title-2500-5" id="title-2500-5"> </a></h2>
+
+<p>Для восстановления базы данных из резервной копии необходимы утилиты <strong>psql</strong> и <strong>pg_restore</strong>. Они входят в пакет <strong>postgresql-client-common</strong>.</p>
+
+<p>Если вы устанавливаете локально <strong>postgresql-12</strong> с использованием <strong>apt-get</strong>, то APT установит <strong>postgresql-client-common</strong> как зависимость <strong>postgresql-12</strong>.</p>
+
+<p>Если вы планируете использовать удаленную базу данных PostgreSQL, не устанавливая СУБД PostgreSQL на вашем сервере, то установите пакет <strong>postgresql-client-common</strong> вручную:</p>
+
+<div class="code">
+<div class="code__widgets code__widgets_no-highlight">
+<div class="code__source">
+<pre class="prettyprint">
+sudo apt-get install postgresql-client-common</pre>
+</div>
+</div>
+</div>
+
+<p>Чтобы развернуть базу данных из бэкапа:</p>
+
+<ol class="start"><li>
+	<p>Установите пароль подключения к серверу БД в переменную окружения:</p>
+
+	<div class="code">
+	<div class="code__widgets code__widgets_no-highlight">
+	<div class="code__source">
+	<pre class="prettyprint">
+export PGPASSWORD=pg_syspassword</pre>
+	</div>
+	</div>
+	</div>
+
+	<p><strong>pg_syspassword</strong> — укажите пароль пользователя с правами администратора или привилегиями “CREATE DATABASE”.</p>
+	</li>
+	<li>Создайте базу данных, в которую будет выполнено восстановление резервной копии:
+	<div class="code">
+	<div class="code__widgets code__widgets_no-highlight">
+	<div class="code__source">
+	<pre class="prettyprint">
+psql --host pg_server_address --port pg_server_port --username=pg_sysadmin --dbname=pg_dbname -–command "CREATE DATABASE pg_dbname_ceatio WITH OWNER = pg_user ENCODING = 'UTF8' CONNECTION LIMIT = -1"</pre>
+	</div>
+	</div>
+	</div>
+	<strong>pg_server_address</strong> — укажите адрес сервера PostgreSQL.<br /><strong>pg_server_port</strong> — укажите порт сервера PostgreSQL.<br /><strong>pg_sysadmin</strong> — укажите имя пользователя postgres для подключения к серверу PostgreSQL. Пользователь должен являться системным администратором (Superuser) или иметь права на создание базы данных (команда "CREATE DATABASE").<br /><strong>pg_user</strong> — псевдоним, который необходимо заменить именем пользователя с ограниченными правами на уровне сервера базы данных. Нужен для подключения к базе данных Creatio. Вы можете использовать для этого любого пользователя, не имеющего прав администратора на уровне сервера. Чтобы изменить пользователя, от имени которого выполняется подключение, следуйте инструкциям, изложенным в шаге IV данного руководства.<br /><strong>pg_dbname</strong> — укажите имя базы данных PostgreSQL, к которой необходимо подключиться для выполнения команды. Для корректного выполнения команды необходимо указать имя существующей базы данных.
+
+	<div class="message">
+	<p><span class="message__bold">На заметку.</span> Если вы еще не создали базу данных или попытка подключения завершается ошибкой “FATAL: database "pg_dbname" does not exist”, то воспользуйтесь БД “template1”, которая создается в PostgreSQL по умолчанию.</p>
+	</div>
+	<strong>pg_dbname_creatio</strong> — укажите имя базы данных, которую будет использовать приложение Creatio. База данных будет создана после успешного выполнения команды.</li>
+	<li>
+	<p>Если вы используете AWS RDS:</p>
+
+	<ol class="inner"><li>
+		<p>Скачайте скрипт <span><a href="../../../../../../sites/default/files/documents/downloads/ChangeTypesOwner.sql">ChangeTypesOwner.sql</a></span>.</p>
+		</li>
+		<li>
+		<p>Замените в скрипте значение “postgres” на актуальное имя пользователя Postgres.</p>
+		</li>
+		<li>
+		<p>Выполните обновленный скрипт ChangeTypesOwner.sql.</p>
+		</li>
+	</ol></li>
+	<li>
+	<p>Перейдите в папку приложения:</p>
+
+	<div class="code">
+	<div class="code__widgets code__widgets_no-highlight">
+	<div class="code__source">
+	<pre class="prettyprint">
+cd /path/to/application/directory/</pre>
+	</div>
+	</div>
+	</div>
+
+	<p><strong>/path/to/application/directory/</strong> — путь к папке, в которую распакован архив с установочными файлами Creatio.</p>
+	</li>
+	<li>
+	<p>Перейдите в папку БД:</p>
+
+	<div class="code">
+	<div class="code__widgets code__widgets_no-highlight">
+	<div class="code__source">
+	<pre class="prettyprint">
+cd db</pre>
+	</div>
+	</div>
+	</div>
+	</li>
+	<li>
+	<p>Восстановите базу данных из бэкапа:</p>
+
+	<div class="code">
+	<div class="code__widgets code__widgets_no-highlight">
+	<div class="code__source">
+	<p><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="font-size:10.5pt"><span style="background:#fcffff"><span style="font-family:Consolas"><span style="color:black">pg_restore --host pg_server_address --port pg_server_port --username=pg_sysadmin --dbname=pg_dbname_creatio --no-owner --no-privileges /path/to/db.backup</span></span></span></span></span></span></p>
+	</div>
+	</div>
+	</div>
+
+	<p><strong>pg_server_address</strong> — укажите адрес сервера PostgreSQL.<br /><strong>pg_server_port</strong> — укажите порт сервера PostgreSQL.<br /><strong>pg_sysadmin</strong> — укажите имя пользователя postgres для подключения к серверу PostgreSQL. Пользователь должен являться системным администратором (Superuser) или иметь максимальные права на уровне базы данных pg_dbname_creatio.<br /><strong>pg_dbname_creatio</strong> — имя БД PostgreSQL, в которую будут добавлены таблицы резервной копии. Используйте имя базы данных, указанное в команде "CREATE DATABASE"  на шаге 2.<br /><strong>/path/to/db.backup</strong> — путь к файлу с базой данных Creatio db.backup.</p>
+	</li>
+	<li>Скачайте файл <span><a href="../../../../../../sites/default/files/documents/downloads/CreateTypeCastsPostgreSql.sql">CreateTypeCastsPostgreSql.sql</a></span>.</li>
+	<li>
+	<p>Выполните преобразование типов:</p>
+
+	<div class="code">
+	<div class="code__widgets code__widgets_no-highlight">
+	<div class="code__source">
+	<pre class="prettyprint">
+psql --host=pg_server_address --port=pg_server_port --username=pg_sysadmin --dbname=pg_dbname_creatio --file=/path/to/CreateTypeCastsPostgreSql.sql</pre>
+	</div>
+	</div>
+	</div>
+
+	<p><strong>pg_server_address </strong>— укажите адрес сервера PostgreSQL.<br /><strong>pg_server_port</strong> — укажите порт сервера PostgreSQL.<br /><strong>pg_sysadmin</strong> — укажите имя пользователя postgres для подключения к серверу PostgreSQL. Пользователь должен являться системным администратором (Superuser) или иметь максимальные права на уровне базы данных Сreatio.<br /><strong>pg_dbname_creatio</strong> — имя БД, в контексте которой происходит выполнение инструкций.<br /><strong>/path/to/CreateTypeCastsPostgreSql.sql</strong> — путь к сохраненному ранее файлу CreateTypeCastsPostgreSql.sql.</p>
+	</li>
+</ol><p>В результате база данных Creatio будет восстановлена из резервной копии. </p>
+
+<h2>IV. Изменить владельца базы данных (опционально)<a class="title-anchor" href="#title-2500-6" id="title-2500-6"> </a></h2>
+
+<p>В Creatio существует возможность при восстановлении из резервной копии заменить владельца БД и ее объектов на пользователя, не являющегося системным администратором (не Superuser). Вам потребуется скрипт ChangeDbObjectsOwner. Для  Postgres версии 10 и ниже: <a href="https://academy.creatio.com/sites/default/files/documents/downloads/ChangeDbObjectsOwner.sql">Скачать скрипт</a>. Для  Postgres 11 и выше: <a href="https://academy.creatio.com/sites/default/files/documents/downloads/ChangeDbObjectsOwner_Postgres11.v2.sql">Скачать скрипт</a>.</p>
+
+<p>Чтобы восстановить БД от имени пользователя, не являющегося администратором:</p>
+
+<ol><li>Замените владельца БД:
+	<div class="code">
+	<div class="code__widgets code__widgets_no-highlight">
+	<div class="code__source">
+	<pre class="prettyprint">
+psql --host pg_server_address --port pg_server_port --username=pg_sysadmin --dbname=pg_dbname –-command "ALTER DATABASE pg_dbname_creatio OWNER TO pg_user"</pre>
+	</div>
+	</div>
+	</div>
+	<strong>pg_server_address </strong>— укажите адрес сервера PostgreSQL.<br /><strong>pg_server_port</strong> — укажите порт сервера PostgreSQL.<br /><strong>pg_sysadmin</strong> — укажите имя пользователя postgres для подключения к серверу PostgreSQL. Пользователь должен являться администратором (Superuser) или иметь привилегии “ALTER DATABASE”.<br /><strong>pg_user</strong> — псевдоним, который необходимо заменить актуальным именем пользователя, который назначается новым владельцем БД. Под логином этого пользователя будет осуществляться подключение приложения к БД.<br /><strong>pg_dbname_creatio</strong> — имя БД, владелец которой заменяется.</li>
+	<li>Замените владельца объектов БД:
+	<div class="code">
+	<div class="code__widgets code__widgets_no-highlight">
+	<div class="code__source">
+	<pre class="prettyprint">
+psql --host pg_server_address --port pg_server_port --username=pg_sysadmin --dbname=pg_dbname_creatio --file=/path/to/ChangeDbObjectsOwner.sql --variable owner=pg_user --variable ON_ERROR_STOP=1</pre>
+	</div>
+	</div>
+	</div>
+	<strong>pg_server_address </strong>— укажите адрес сервера PostgreSQL.<br /><strong>pg_server_port </strong>— укажите порт сервера PostgreSQL.<br /><strong>pg_sysadmin</strong> — укажите имя пользователя postgres для подключения к серверу PostgreSQL. Пользователь должен являться системным администратором (Superuser) или владельцем базы данных Сreatio.<br /><strong>pg_user</strong> — псевдоним, который необходимо заменить актуальным именем пользователя, который назначен новым владельцем БД. Под логином этого пользователя будет осуществляться подключение приложения к БД.<br /><strong>pg_dbname_creatio</strong> — имя БД, владелец которой заменяется.<br /><strong>/path/to/ChangeDbObjectsOwner.sql</strong> — путь к сохраненному ранее файлу toChangeDbObjectsOwner.sql.</li>
+</ol><p>Вы можете пропустить этот шаг, и в таком случае владельцем БД и ее объектов останется пользователь, от имени которого запускалась команда pg_restore. Обычно это пользователь postgres.</p>
+</div>
+      
+  </div>
+<div class="block block-layout-builder block-field-blocknodeuser-documentationfield-linked-link">
+  
+    
+      
+  <div class="field field--name-field-linked-link field--type-link field--label-above">
+    <div class="field__label">Смотрите также</div>
+          <div class="field__items">
+              <div class="field__item"><a href="../../../../../index.html?product=administration&amp;ver=7&amp;id=2135">Настроить сервер кеширования данных Creatio</a></div>
+          <div class="field__item"><a href="../../../../../user/razvertyvanie_onsite/windows_net_framework/nastroika_iis/nastroit_server_prilozheniya_na_iis.html?product=administration&amp;ver=7&amp;id=2136">Настроить сервер приложения на IIS</a></div>
+          <div class="field__item"><a href="../../../../../user/razvertyvanie_onsite/voprosi_i_otvety_onsite/chasto_zadavaemye_voprosy_po_ustanovke_creatio.html?product=administration&amp;ver=7&amp;id=1634">Часто задаваемые вопросы по установке Creatio</a></div>
+          <div class="field__item"><a href="../../../../../requirements/calculator.html">Калькулятор системных требований</a></div>
+              </div>
+      </div>
+
+  </div>
+
+    </div>
+  </div>
+
+  </div>
+
+</article>
+
+  </div>
+
+  </div>
+
+          </div>
+        </div>
+
+                  <aside class="creatio-sidebar creatio-sidebar_first" role="complementary">
+              <div class="region region-sidebar-first">
+    <div id="block-documentationnaviagtion" class="block block-ts-nav block-ts-nav-doc-nav">
+  
+    
+      <div class="ts-nav-block"><a href="../../../../../index.html" class="ts-nav-block__link">Документация</a><div class="ts-nav-block__title">Для пользователя</div>
+</div>
+<div class="ts-nav-container"><ul class="ts-nav-menu"><li class="ts-nav-menu__item">
+  <a href="../../../bazis_platformy.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Базис платформы&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../instrumenty_crm.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Инструменты CRM&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../instrumenty_kastomizacii.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Инструменты кастомизации&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../biznes_processy.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Бизнес-процессы&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../instrumenty_marketinga.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Инструменты маркетинга&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../instrumenty_prodazh.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Инструменты продаж&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../instrumenty_servisa.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Инструменты сервиса&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../ustanovka_i_administrirovanie.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Администрирование&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../razvertyvanie_onsite.html" class="ts-nav-menu__link ts-nav-menu__link_expanded ts-nav-menu__link_open" hreflang="ru">Развертывание on-site&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+      <ul class="ts-nav-menu__children">
+      <li class="ts-nav-menu__item">
+  <a href="../../sistemnie_trebovania.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Системные требования&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../obshhij_porjadok_ustanovki/obcchij_poriadok_ustanovki.html" class="ts-nav-menu__link" hreflang="ru">Общий порядок установки</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../subd_server.html" class="ts-nav-menu__link ts-nav-menu__link_expanded ts-nav-menu__link_open" hreflang="ru">Сервер СУБД&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+      <ul class="ts-nav-menu__children">
+      <li class="ts-nav-menu__item">
+  <a href="../ms_sql/razvernut_bazu_dannykh_ms_sql.html" class="ts-nav-menu__link" hreflang="ru">MS SQL</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../oracle/razvernut_bazu_dannykh_oracle.html" class="ts-nav-menu__link" hreflang="ru">Oracle</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="razvernut_bazu_dannykh_postgresql_linux.html" class="ts-nav-menu__link ts-nav-menu__link_active ts-nav-menu__link_open" hreflang="ru">PostgreSQL (Linux)</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../postgresql_windows/razvernut_bazu_dannykh_postgresql_windows.html" class="ts-nav-menu__link" hreflang="ru">PostgreSQL (Windows)</a>
+  </li>
+
+    </ul>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../server_keshirovaniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Сервер кэширования&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../linux_net_core.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Сервер приложений .NET Core на Linux&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../windows_net_framework.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Сервер приложений .NET Framework на Windows&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../nastroika_dopolnitelnikh_parametrov_i_integraciy.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Настройка дополнительных параметров и интеграций&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../nastrojka_konteinernikh_komponentov.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Настройка контейнерных компонентов&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../voprosi_i_otvety_onsite/chasto_zadavaemye_voprosy_po_ustanovke_creatio.html" class="ts-nav-menu__link" hreflang="ru">Вопросы и ответы</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../produkti_na_net_core/produkti_creatio_na_platforme_net_core.html" class="ts-nav-menu__link" hreflang="ru">Продукты на .NET Core</a>
+  </li>
+
+    </ul>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../banki_i_finansy.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Банки и финансы&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../drugie_reshenija.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Другие решения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+</ul>
+</div>
+
+  </div>
+
+  </div>
+
+            <div class="creatio-sidebar__toggle"></div>
+          </aside>
+        
+                  <aside class="creatio-sidebar creatio-sidebar_second" role="complementary">
+              <div class="region region-sidebar-second">
+    <div id="block-example" class="block block-ts-nav block-ts-nav-page-nav">
+  
+    
+        <div class="ts-nav-title">PostgreSQL (Linux)</div>
+<div class="ts-nav-page">
+      <ul class="ts-nav-page__list">
+                                                <li class="ts-nav-page__item ts-nav-page__item_expanded ts-nav-page__item_open"><a href="razvernut_bazu_dannykh_postgresql_linux.html" class="ts-nav-page__link ts-nav-page__link_expanded ts-nav-page__link_active">Развернуть базу данных PostgreSQL (Linux)&nbsp;<span class="ts-nav-page__link-arrow"></span></a></li>
+          </ul>
+  </div>
+
+  </div>
+<div id="block-adminfeedbackblock" class="block block-admin-feedback block-admin-feedback-block">
+  
+    
+      <div id="feedback-message"><div id="upper-feedback-content"><h2>Был ли данный материал полезен?</h2>
+<input class="feedback-btn feedback-btn__yes button js-form-submit form-submit" data-node-id="2500" data-feedback="yes" type="submit" name="op" value="Да" />
+<input class="feedback-btn feedback-btn__no button js-form-submit form-submit" data-node-id="2500" data-feedback="no" type="submit" name="op" value="Нет" />
+</div>
+<form class="admin-feedback-form" data-drupal-selector="admin-feedback-form" action="https://academy.terrasoft.ua/docs/7-17/user/razvertyvanie_onsite/subd_server/postgre_sql_linux/razvernut_bazu_dannykh_postgresql_linux" method="post" id="admin-feedback-form" accept-charset="UTF-8">
+  <div id="feedback-msg-result"></div><div class="js-form-item form-item js-form-type-textarea form-type-textarea js-form-item-feedback-message form-item-feedback-message form-no-label">
+        <div class="form-textarea-wrapper">
+  <textarea id="edit-feedback-msg" data-drupal-selector="edit-feedback-message" name="feedback_message" rows="5" cols="60" class="form-textarea resize-vertical"></textarea>
+</div>
+
+        </div>
+<input id="feedback-id" data-drupal-selector="edit-feedback-id" type="hidden" name="feedback_id" value="" />
+<input class="feedback-btn feedback-btn__send-comment button js-form-submit form-submit" data-drupal-selector="edit-feedback-send" type="submit" id="edit-feedback-send" name="op" value="Отправить" />
+<input autocomplete="off" data-drupal-selector="form-56aelda0xb8ekyderrfhyu284nippktxh-swzw6kpb0" type="hidden" name="form_build_id" value="form-56aELdA0xb8EkyDerRfHYu284nIpPkTXh-SWZW6kpB0" />
+<input data-drupal-selector="edit-admin-feedback-form" type="hidden" name="form_id" value="admin_feedback_form" />
+
+</form>
+</div>
+
+  </div>
+
+  </div>
+
+          </aside>
+              </main>
+    </div>
+  </div>
+
+  <footer role="contentinfo">
+    <div class="creatio-region creatio-region_footer">
+      <div class="creatio-container">
+          <div class="region region-footer">
+    <div id="block-footerua" class="block block-simple-block block-simple-blockfooter-ua">
+  
+    
+      <div class="footer">
+<div class="footer-left">
+<ul class="footer-socials"><li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_fb" href="https://www.facebook.com/terrasoft.ua" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_in" href="https://www.linkedin.com/company/terrasoft/" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_yt" href="https://www.youtube.com/c/TerrasoftUkraine" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_tg" href="https://t.me/Terrasoft_UA" target="_blank"> </a></li>
+</ul></div>
+
+<div class="footer-contact">
+<div class="footer-title">Будьте на связи!</div>
+
+<div class="footer-content">
+<div class="footer-items">
+<div class="footer-item"><a class="footer__link footer__link_phone" href="tel:+380443633133">+38 (044) 363-31-33</a></div>
+</div>
+
+<div class="footer-items">
+<div class="footer-item"><a class="footer__link footer__link_email" href="mailto:support@terrasoft.ua">support@terrasoft.ua</a></div>
+</div>
+</div>
+</div>
+</div>
+
+  </div>
+
+  </div>
+
+      </div>
+    </div>
+    <div class="creatio-region creatio-region_bottom">
+      <div class="creatio-container">
+          <div class="region region-bottom">
+    <div id="block-allrightsreservedua" class="block block-simple-block block-simple-blockfooter-bottom-ua">
+  
+    
+      <p>© 2002-2022 Terrasoft.  |  <a href="https://www.terrasoft.ua/privacy-policy" target="_blank">Конфиденциальность</a></p>
+
+  </div>
+
+  </div>
+
+      </div>
+    </div>
+  </footer>
+</div>
+<div class="creatio-bg"></div>
+
+
+  </div>
+
+    
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/docs\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/2500","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"ru"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"ajaxPageState":{"libraries":"admin_feedback\/admin_feedback_block,admin_feedback\/admin_feedback_css,classy\/base,classy\/messages,classy\/node,core\/drupal.ajax,core\/jquery.form,core\/normalize,creatio\/creatio.lists,creatio\/fancybox,creatio\/global,layout_discovery\/onecol,system\/base,ts_doc\/doc_version,ts_feedback\/ts_feedback,ts_nav\/breadcrumb,ts_nav\/doc_nav,ts_nav\/page_nav,ts_title_anchor\/ts_title_anchor","theme":"creatio","theme_token":null},"ajaxTrustedUrl":{"form_action_p_pvdeGsVG5zNF_XLGPTvYSKCf43t8qZYSwcfZl2uzM":true,"\/docs\/7-17\/user\/razvertyvanie_onsite\/subd_server\/postgre_sql_linux\/razvernut_bazu_dannykh_postgresql_linux?ajax_form=1":true},"admin_feedback":{"yes_response":"\u0421\u043f\u0430\u0441\u0438\u0431\u043e \u0437\u0430 \u043e\u0431\u0440\u0430\u0442\u043d\u0443\u044e \u0441\u0432\u044f\u0437\u044c!","no_response":"\u0421\u043f\u0430\u0441\u0438\u0431\u043e \u0437\u0430 \u043e\u0431\u0440\u0430\u0442\u043d\u0443\u044e \u0441\u0432\u044f\u0437\u044c!","custom_text_response_on_no":{"value":"","format":"full_html"},"feedback_prompt_on_yes":true,"feedback_prompt_on_no":true,"feedback_enable_predefined_answers":false,"feedback_prompt":"\u041a\u0430\u043a \u043c\u043e\u0436\u043d\u043e \u0443\u043b\u0443\u0447\u0448\u0438\u0442\u044c \u044d\u0442\u0443 \u0441\u0442\u0430\u0442\u044c\u044e?"},"ajax":{"edit-feedback-send":{"callback":"::validateFeedbackMsg","event":"mousedown","keypress":true,"prevent":"click","url":"\/docs\/7-17\/user\/razvertyvanie_onsite\/subd_server\/postgre_sql_linux\/razvernut_bazu_dannykh_postgresql_linux?ajax_form=1","dialogType":"ajax","submit":{"_triggering_element_name":"op","_triggering_element_value":"\u041e\u0442\u043f\u0440\u0430\u0432\u0438\u0442\u044c"}}},"user":{"uid":0,"permissionsHash":"9c2367dfcaba0fa15f0375f97aed64e146c908cee68508d13b79e3ee80e5162d"}}</script>
+<script src="../../../../../sites/default/files/js/js_F2-Y4EzgTnESr58XByoLYEnsbi7ysTfMIKN1RvsMSWY.js"></script>
+
+
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+      <g id="svg-copy" class="svg-icon svg-icon_copy">
+        <path d="M15.111,18H1.889A1.848,1.848,0,0,1,0,16.2V3.6A1.848,1.848,0,0,1,1.889,1.8H5.837a2.87,2.87,0,0,1,5.326,0h3.948A1.848,1.848,0,0,1,17,3.6V16.2A1.848,1.848,0,0,1,15.111,18ZM3.777,12.6v1.8h6.611V12.6Zm0-3.6v1.8h9.445V9Zm0-3.6V7.2h9.445V5.4ZM8.5,1.8a.924.924,0,0,0-.944.9.945.945,0,0,0,1.889,0A.924.924,0,0,0,8.5,1.8Z"/>
+      </g>
+
+      <g id="svg-prev" class="svg-icon svg-icon_arrow">
+        <path d="M5.488,12.779,0,6.39,5.488,0" transform="translate(1 0.652)"/>
+      </g>
+
+      <g id="svg-next" class="svg-icon svg-icon_arrow">
+        <path d="M0,12.779,5.488,6.39,0,0" transform="translate(0.759 0.652)"/>
+      </g>
+    </svg>
+  </body>
+
+<!-- Mirrored from academy.terrasoft.ua/docs/7-17/user/razvertyvanie_onsite/subd_server/postgre_sql_linux/razvernut_bazu_dannykh_postgresql_linux by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Mar 2022 04:18:32 GMT -->
+</html>

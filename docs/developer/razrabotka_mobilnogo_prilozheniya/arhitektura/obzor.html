@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# ">
+  
+<!-- Mirrored from academy.terrasoft.ua/docs/developer/razrabotka_mobilnogo_prilozheniya/arhitektura/obzor by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Mar 2022 00:46:40 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+          <!-- Google Tag Manager -->
+      <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          '../../../../../www.googletagmanager.com/gtm5445.html?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-KLLB8G');</script>
+      <!-- End Google Tag Manager -->
+        <meta charset="utf-8" />
+<link rel="canonical" href="obzor.html" />
+<meta name="description" content="Типы мобильных приложений 
+
+Тип мобильного приложения определяется способом его реализации.
+
+Типы мобильных приложений:" />
+<meta property="og:url" content="https://academy.terrasoft.ua/docs/developer/razrabotka_mobilnogo_prilozheniya/arhitektura/obzor" />
+<meta property="og:title" content="Общие принципы работы мобильного приложения" />
+<meta property="og:description" content="Типы мобильных приложений 
+
+Тип мобильного приложения определяется способом его реализации.
+
+Типы мобильных приложений:" />
+<meta name="Generator" content="Drupal 9 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="../../../themes/custom/creatio/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="revision" href="obzor.html" />
+
+    <title>Общие принципы работы мобильного приложения | Creatio Academy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&amp;family=Open+Sans:ital,wght@0,300;0,400;0,600;1,400&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" media="all" href="../../../sites/default/files/css/css_6lTP66__-yc6QXFp1zOwoeJ0HVigoYZP-SeoLLii000.css" />
+<link rel="stylesheet" media="all" href="../../../sites/default/files/css/css_XQJDNhkF3xH5SZCcY-PI89Zu4nYIzQ5oR3SnUKyfXJU.css" />
+<link rel="stylesheet" media="print" href="../../../sites/default/files/css/css_Zn4VHvcniOOtUwkIVwXzYr_0AI9gUVgZcPqaH4ViagU.css" />
+
+    
+  </head>
+  <body class="path-node page-node-type-developer-documentation">
+          <!-- Google Tag Manager (noscript) -->
+      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KLLB8G"
+                        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+      <!-- End Google Tag Manager (noscript) -->
+    
+        
+      <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    <div class="creatio-page d-flex flex-column">
+        <div class="region region-informer">
+    <div id="block-terrasoftpidtrimueukrainu" class="block block-simple-block block-simple-blockterrasoft-pidtrimue-ukrainu">
+  
+    
+      <style type="text/css">
+<!--/*--><![CDATA[/* ><!--*/
+@import url(../../../../../www.terrasoft.ua/themes/custom/creatio/css/components/informer.css)
+
+/*--><!]]>*/
+</style><div class="ts-swu">
+<div class="creatio-container">
+<div class="ts-swu__cont">
+<div><a class="ts-swu__link" href="https://www.terrasoft.ua/terrasoft-stands-with-ukraine" target="_blank">Україна понад усе!</a> <span><a href="https://www.terrasoft.ua/terrasoft-stands-with-ukraine" target="_blank">Приєднуйтеся</a> до допомоги!</span></div>
+</div>
+</div></div>
+
+  </div>
+
+  </div>
+
+  
+  <header role="banner">
+          <div class="creatio-region creatio-region_top">
+        <div class="creatio-container">
+            <div class="region region-top">
+    <div id="block-menutoggle" class="block block-simple-block block-simple-blockmenu-toggle">
+  
+    
+      <div class="menu-toggle"><span> </span></div>
+
+  </div>
+<div id="block-logowhite-2" class="block block-simple-block block-simple-blocklogo-white">
+  
+    
+      <p><a class="site-logo" href="../../../../index.html" rel="home"><img src="../../../themes/custom/creatio/logo-white.svg" /></a></p>
+
+  </div>
+<div id="block-search" class="block block-simple-block block-simple-blocksearch">
+  
+    
+      <div class="search">
+<form action="https://academy.terrasoft.ua/search" class="search-form" method="get"><input class="search-form__input" name="search" placeholder="Поиск" type="search" /><input class="search-form__button" type="submit" value="Поиск" /> </form>
+
+<div class="search-toggle"> </div>
+</div>
+
+  </div>
+<nav role="navigation" aria-labelledby="block-sitesua-menu" id="block-sitesua" class="block block-menu navigation menu--sites-ua">
+            
+  <h2 class="visually-hidden" id="block-sitesua-menu">Sites UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="https://www.terrasoft.ua/" rel="nofollow" target="_blank">Terrasoft</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://community.terrasoft.ua/" rel="nofollow" target="_blank">Community</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://marketplace.terrasoft.ua/" rel="nofollow" target="_blank">Marketplace</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+<div id="block-usermenu" class="block block-ts-user block-ts-user-menu-block">
+  
+    
+      <ul class="user-menu">
+      <li class="user-menu__item">
+      <a class="user-menu__link" href="https://profile.terrasoft.ua/user/login?destination=academy/ua/docs/developer/razrabotka_mobilnogo_prilozheniya/arhitektura/obzor">Войти</a>
+    </li>
+  </ul>
+
+  </div>
+<div id="block-usermenumobile" class="block block-ts-user block-ts-user-menu-mobile-block">
+  
+    
+      <ul class="user-menu-mobile">
+      <li class="user-menu-mobile__item">
+      <div class="user-menu-mobile__user user-menu-mobile__user_icon"></div>
+      <ul class="user-menu-mobile__submenu">
+        <li class="user-menu-mobile__subitem">
+          <a class="user-menu-mobile__sublink" href="https://profile.terrasoft.ua/user/login?destination=academy/ua/docs/developer/razrabotka_mobilnogo_prilozheniya/arhitektura/obzor">Войти</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  </div>
+
+  </div>
+
+        </div>
+      </div>
+              <div class="creatio-region creatio-region_header">
+        <div class="creatio-container">
+            <div class="region region-header">
+    <div id="block-logo" class="block block-simple-block block-simple-blocklogo">
+  
+    
+      <p><a class="site-logo" href="../../../../index.html" rel="home"><img src="../../../themes/custom/creatio/logo.svg" /></a></p>
+
+  </div>
+<nav role="navigation" aria-labelledby="block-osnovnayanavigaciyaua-menu" id="block-osnovnayanavigaciyaua" class="block block-menu navigation menu--main-ua">
+            
+  <h2 class="visually-hidden" id="block-osnovnayanavigaciyaua-menu">Основная навигация UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="../../../index.html" data-drupal-link-system-path="&lt;front&gt;">Документация</a>
+              </li>
+                <li class="menu-item">
+        <a href="../../../../trainings.html">Тренинги</a>
+              </li>
+                <li class="menu-item">
+        <a href="../../../certification.html" data-drupal-link-system-path="node/3084">Сертификация и тестирование</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+<nav role="navigation" aria-labelledby="block-sitesua-2-menu" id="block-sitesua-2" class="block block-menu navigation menu--sites-ua">
+            
+  <h2 class="visually-hidden" id="block-sitesua-2-menu">Sites UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="https://www.terrasoft.ua/" rel="nofollow" target="_blank">Terrasoft</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://community.terrasoft.ua/" rel="nofollow" target="_blank">Community</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://marketplace.terrasoft.ua/" rel="nofollow" target="_blank">Marketplace</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+
+  </div>
+
+        </div>
+      </div>
+              <div class="creatio-region creatio-region_breadcrumb">
+        <div class="creatio-container">
+            <div class="region region-breadcrumb">
+    <div id="block-logowhite" class="block block-simple-block block-simple-blocklogo-white">
+  
+    
+      <p><a class="site-logo" href="../../../../index.html" rel="home"><img src="../../../themes/custom/creatio/logo-white.svg" /></a></p>
+
+  </div>
+<div id="block-breadcrumbnaviagtion" class="block block-ts-nav block-ts-nav-bread">
+  
+    
+      <nav class="breadcrumb"><ol class="ts-nav-breadcrumb__list"><li class="ts-nav-breadcrumb__item"><a href="../../../index.html" class="ts-nav-breadcrumb__link" title="Документация">Документация</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../index2132.html?vid_1=2" class="ts-nav-breadcrumb__link" title="Для разработчика">Для разработчика</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../razrabotka_mobilnogo_prilozheniya.html" class="ts-nav-breadcrumb__link" title="Разработка мобильного приложения" hreflang="zxx">Разработка мобильного приложения</a></li>
+<li class="ts-nav-breadcrumb__item ts-nav-breadcrumb__item_mobile"><a href="../arhitektura.html" class="ts-nav-breadcrumb__link" title="Архитектура" hreflang="ru">Архитектура</a></li>
+<li class="ts-nav-breadcrumb__item"><span class="ts-nav-breadcrumb__link ts-nav-breadcrumb__link_current" title="Обзор">Обзор</span></li>
+</ol>
+</nav>
+
+  </div>
+<div id="block-search-2" class="block block-simple-block block-simple-blocksearch">
+  
+    
+      <div class="search">
+<form action="https://academy.terrasoft.ua/search" class="search-form" method="get"><input class="search-form__input" name="search" placeholder="Поиск" type="search" /><input class="search-form__button" type="submit" value="Поиск" /> </form>
+
+<div class="search-toggle"> </div>
+</div>
+
+  </div>
+
+  </div>
+
+        </div>
+      </div>
+      </header>
+
+  <div class="creatio-region creatio-region_main">
+    <div class="creatio-container">
+                <div class="region region-breadcrumb-mobile">
+    <div id="block-breadcrumbnaviagtion-2" class="block block-ts-nav block-ts-nav-bread">
+  
+    
+      <nav class="breadcrumb"><ol class="ts-nav-breadcrumb__list"><li class="ts-nav-breadcrumb__item"><a href="../../../index.html" class="ts-nav-breadcrumb__link" title="Документация">Документация</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../index2132.html?vid_1=2" class="ts-nav-breadcrumb__link" title="Для разработчика">Для разработчика</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../razrabotka_mobilnogo_prilozheniya.html" class="ts-nav-breadcrumb__link" title="Разработка мобильного приложения" hreflang="zxx">Разработка мобильного приложения</a></li>
+<li class="ts-nav-breadcrumb__item ts-nav-breadcrumb__item_mobile"><a href="../arhitektura.html" class="ts-nav-breadcrumb__link" title="Архитектура" hreflang="ru">Архитектура</a></li>
+<li class="ts-nav-breadcrumb__item"><span class="ts-nav-breadcrumb__link ts-nav-breadcrumb__link_current" title="Обзор">Обзор</span></li>
+</ol>
+</nav>
+
+  </div>
+
+  </div>
+
+      
+      <main class="creatio-main" role="main">
+                                                    
+        <div class="creatio-content creatio-content_small">
+          <div class="creatio-content__inner creatio-content__inner_bg">
+                            <div class="region region-messages">
+    <div data-drupal-messages-fallback class="hidden"></div>
+
+  </div>
+
+            
+              <div class="region region-content">
+    <div id="block-creatio-page-title" class="block block-core block-page-title-block">
+  
+    
+      
+  <h1 class="page-title"><span class="field field--name-title field--type-string field--label-hidden">Общие принципы работы мобильного приложения</span>
+</h1>
+
+
+  </div>
+<div id="block-creatio-content" class="block block-system block-system-main-block">
+  
+    
+      
+<article data-history-node-id="3426" role="article" about="/docs/developer/razrabotka_mobilnogo_prilozheniya/arhitektura/obzor" class="node node--type-developer-documentation node--view-mode-full">
+
+  
+    
+
+  
+  <div class="node__content">
+      <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocknodedeveloper-documentationfield-difficulty">
+  
+    
+      
+            <div class="field field--name-field-difficulty field--type-entity-reference field--label-hidden field__item"><div about="/docs/taxonomy/term/122" id="taxonomy-term-122" class="taxonomy-term vocabulary-difficulty">
+  
+  
+  <div class="content">
+      <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocktaxonomy-termdifficultyfield-icon">
+  
+    
+      
+            <div class="field field--name-field-icon field--type-image field--label-hidden field__item">  <img src="../../../sites/default/files/difficulty/easy.svg" alt="" loading="lazy" typeof="foaf:Image" />
+
+</div>
+      
+  </div>
+<div class="block block-layout-builder block-field-blocktaxonomy-termdifficultyname">
+  
+    
+      
+            <div class="field field--name-name field--type-string field--label-hidden field__item"><span style="color: #FEB000;">Легкий</span></div>
+      
+  </div>
+
+    </div>
+  </div>
+
+  </div>
+</div>
+</div>
+      
+  </div>
+<div class="block block-ts-doc block-ts-doc-downloads">
+  
+    
+      <a href="../../../sites/default/files/pdf/node/3426/Obschie_principy_raboty_mobilnogo_prilozheniya_.pdf" target="_blank">PDF</a>
+  </div>
+<div class="block block-ts-doc block-ts-doc-versions">
+  
+    
+        <div class="ts-doc-versions">
+    <select class="ts-doc-versions__select">
+                                                <option value="/docs/8-0/developer/razrabotka_mobilnogo_prilozheniya/arhitektura/obzor" selected>Версия 8.0</option>
+                              <option value="/docs/7-18/developer/razrabotka_mobilnogo_prilozheniya/arhitektura/obzor">Версия 7.18</option>
+                              <option value="/docs/7-17/developer/razrabotka_mobilnogo_prilozheniya/arhitektura/obschie_principy_raboty_mobilnogo_prilozheniya">Версия 7.17</option>
+                              <option value="/docs/7-16/developer/razrabotka_mobilnogo_prilozheniya/arhitektura/obschie_principy_raboty_mobilnogo_prilozheniya">Версия 7.16</option>
+          </select>
+  </div>
+
+  </div>
+
+    </div>
+  </div>
+  <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocknodedeveloper-documentationbody">
+  
+    
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><h2>Типы мобильных приложений<a class="title-anchor" href="#title-2404-19" id="title-2404-19"> </a></h2>
+
+<p>Тип мобильного приложения определяется способом его реализации.</p>
+
+<p><strong>Типы</strong> мобильных приложений:</p>
+
+<ul><li>Мобильное native-приложение.</li>
+	<li>Мобильное веб-приложение.</li>
+	<li>Гибридное приложение.</li>
+</ul><p><strong>Мобильное native-приложение</strong> — это специально разработанное приложение под мобильную платформу (iOS, Android). Устанавливается из магазина приложений. Разрабатывается на языке высокого уровня и компилируется в т. н. native-код ОС, обеспечивающий максимальную производительность. <strong>Особенность</strong> — низкая переносимость между мобильными платформами.</p>
+
+<p><strong>Мобильное веб-приложение</strong> — специализированный веб-сайт, адаптированный для просмотра и функционирования на мобильном устройстве. Приложение не зависит от платформы. <strong>Особенность</strong> — требует постоянного подключения к сети, поскольку физически размещено не на мобильном устройстве, а на отдельном сервере.</p>
+
+<p><strong>Гибридное приложение</strong> — мобильное приложение, "упакованное" в native-оболочку. Устанавливается из магазина приложений. Разрабатывается с помощью языков HTML5, CSS и JavaScript. <strong>Особенность</strong> — легко переносится между мобильными платформами, однако несколько уступает в производительности.</p>
+
+<h2>Архитектура мобильного приложения Creatio<a class="title-anchor" href="#title-2404-1" id="title-2404-1"> </a></h2>
+
+<p><strong>Мобильное приложение Creatio</strong> — это удаленное рабочее место, которое предоставляет быстрый доступ к данным клиентов, рабочему календарю, мобильной рассылке и т. д. Мобильное приложение является инструментом для работы с данными приложения Creatio на мобильных устройствах.</p>
+
+<p>Мобильное приложение Creatio доступно для загрузки в <a href="https://apps.apple.com/ru/app/mobile-creatio/id708432450" target="_blank">App Store</a> и <a href="https://play.google.com/store/apps/details?id=com.creatio.mobileapp" target="_blank">Google Play</a> на мобильные устройства, которые соответствуют <a href="../../../user/bazis_platformy/mobilnoe_prilozhenie/nastroika/pervichnaya_nastroyka_mobilnogo_prilozheniya.html#title-773-1">требованиям</a>.</p>
+
+<h3>Реализация мобильного приложения Creatio<a class="title-anchor" href="#title-2404-2" id="title-2404-2"> </a></h3>
+
+<p>Схема архитектуры мобильного приложения представлена на рисунке ниже.</p>
+
+<div class="media">
+<div class="media__element"><img src="../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/MobileApplicationArchitecture/7.18/scr_mobile_app_architecture.png" /></div>
+</div>
+
+<p>Основной фреймворк мобильного приложения Creatio — <a href="https://ru.wikipedia.org/w/index.php?title=Flutter&amp;oldid=113908131" target="_blank">Flutter</a>.</p>
+
+<p><strong>Возможности</strong> фреймворка Flutter:</p>
+
+<ul><li>Разработка приложений, которые близки по производительности к нативным (native-like).</li>
+	<li>Разработанные мобильные приложения имеют преимущества гибридного приложения в части использования общего кода под мобильные платформы iOS и Android.</li>
+</ul><p><strong>Преимущества</strong> фреймворка Flutter:</p>
+
+<ul><li>Большое количество дашбордов для построения интерфейса.</li>
+	<li>Доступ к программному интерфейсу мобильного устройства (API) для взаимодействия с базой данных, файловой системой, датчиками мобильного устройства (например, камерой).</li>
+</ul><p>Работа с фреймворком Flutter подробно описана в официальной <a href="https://flutter.dev/docs" target="_blank">документации Flutter</a>.</p>
+
+<p>Ядро мобильного приложения Creatio представлено <strong>набором библиотек</strong> (Creatio libs). Связь между Flutter и ядром мобильного приложения реализована с помощью использования плагинов, разрабатываемых на Java (Android) или Objective C (iOS). Основная часть кода библиотек реализована на языке Java и является кроссплатформенной. Кроссплатформенность обеспечивается за счет использования утилиты <a href="https://developers.google.com/j2objc/" target="_blank">J2ObjC</a>, которая конвертирует Java-код в код на языке Objective C.</p>
+
+<p>Библиотеки позволяют:</p>
+
+<ul><li>Выполнять синхронизацию путем взаимодействия с сервером Creatio.</li>
+	<li>Работать с файловой системой.</li>
+	<li>Работать с метаданными, получаемыми при синхронизации и т. д.</li>
+</ul><p><strong>Метаданные</strong> — конфигурационные файлы, которые приложение получает в ходе синхронизации с сервером Creatio и локально хранит в файловой системе устройства.</p>
+
+<p>К метаданным относятся:</p>
+
+<ul><li>Манифест мобильного приложения Creatio.</li>
+	<li>Схемы, расширяющие возможности приложения.</li>
+	<li>Настройки разделов, которые создаются мастером мобильного приложения.</li>
+</ul><div class="message">
+<p><span class="message__bold">На заметку.</span> На период переноса функциональности на фреймворк Flutter в приложении также используется фреймворк <a href="https://ru.wikipedia.org/w/index.php?title=Cordova&amp;oldid=110630172" target="_blank">Apache Cordova</a>. Преимущества и особенности работы этого фреймворка описаны в статье <a href="../../../7-17/developer/razrabotka_mobilnogo_prilozheniya/arhitektura/obschie_principy_raboty_mobilnogo_prilozheniya.html" target="_blank">Общие принципы работы мобильного приложения</a>.</p>
+</div>
+
+<h3>Схема работы мобильного приложения Creatio<a class="title-anchor" href="#title-2404-3" id="title-2404-3"> </a></h3>
+
+<p>Опубликованное в магазине мобильное приложение Creatio представляет собой набор модулей, необходимых для синхронизации с сервером — основным приложением. Именно в основном приложении хранятся все необходимые настройки мобильного приложения и данные. Условно функционирование мобильного приложения можно представить в виде следующей схемы:</p>
+
+<div class="media">
+<div class="media__element"><img src="../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/MobileApplicationArchitecture/scr_mobile_app_working_scheme.png" /></div>
+</div>
+
+<p>После установки приложения на мобильное устройство пользователь, указав параметры соединения с сервером Creatio, получает метаданные (структура приложения, системные данные) и данные от сервера.</p>
+
+<p>Такая схема работы дает очевидное преимущество — мобильное приложение совместимо со всеми существующими продуктами Creatio. Каждый продукт, каждый отдельно взятый сайт клиента может содержать собственный набор настроек мобильного приложения, свою логику работы, даже свой визуальный интерфейс. Все что нужно сделать мобильному пользователю — установить мобильное приложение и выполнить синхронизацию с сайтом Creatio.</p>
+
+<h3>Режимы работы мобильного приложения Creatio<a class="title-anchor" href="#title-2404-4" id="title-2404-4"> </a></h3>
+
+<p>Мобильное приложение Creatio может работать в следующих режимах:</p>
+
+<ul><li><strong>Гибридный режим</strong>. Гибридный режим предназначен для работы с данными и автоматически включается при отсутствии стабильного соединения с сервером Creatio. Этот режим позволяет создавать новые записи и работать с расписанием. Также реализована возможность работы с недавними записями раздела (10 записей), с которыми взаимодействовал пользователь.</li>
+	<li><strong>Online</strong>. Для online-режима необходимо наличие интернет-соединения. При использовании этого режима пользователь работает напрямую с сервером Creatio, в качестве которого выступает основное приложение. Синхронизация конфигурационных изменений выполняется автоматически в режиме реального времени.</li>
+	<li><strong>Offline</strong>. Для offline-режима наличие интернет-соединения требуется только для первичного импорта и синхронизации. При использовании этого режима данные сохраняются локально на мобильном устройстве. Для получения конфигурационных изменений и актуализации данных необходимо вручную выполнять синхронизацию с сервером Creatio.</li>
+</ul><p>За режим работы мобильного приложения отвечает системная настройка <span class="key">Режим работы мобильного приложения</span> (<span class="key">Mobile application operation mode</span>) в Creatio. Если нужно изменить режим работы одновременно для всех пользователей мобильного приложения, необходимо установить нужное значение этой настройки без установленного свойства <span class="key">Персональная</span>. Если же необходимо для разных пользователей указать разные режимы, то нужно эти изменения делать непосредственно пользователям, устанавливая свойство <span class="key">Персональная</span>. У этих пользователей должны быть права на изменение системных настроек.</p>
+
+<div class="media">
+<div class="media__element"><img src="../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots.en/MobileApplicationArchitecture/scr_mobile_sys_setting.png" /></div>
+</div>
+
+<h3>Синхронизация мобильного приложения с Creatio<a class="title-anchor" href="#title-2404-5" id="title-2404-5"> </a></h3>
+
+<p>В зависимости от режима работы приложения, синхронизация с сервером Creatio выполняет разные задачи. В случае online-режима синхронизация нужна только для получения изменений в конфигурации. А в случае offline-режима синхронизация необходима как для получений обновлений, так и для передачи или получения измененных или новых данных. Общая схема синхронизации для offline-режима:</p>
+
+<div class="media">
+<div class="media__element"><img src="../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/MobileApplicationArchitecture/scr_mobile_app_synch_scheme.png" /></div>
+</div>
+
+<p>Сначала приложение выполняет аутентификацию. При этом, выполняя logout, на сервере уничтожается текущая активная сессия. Далее у сервера запрашиваются данные для формирования пакета разницы. Приложение анализирует эти данные и запрашивает измененные или новые конфигурационные схемы. После загрузки схем приложение получает системные данные, к которым относятся кэшируемые справочники (так называемые “простые” справочники), системные настройки и т. д. Затем идет обмен данными с сервером.</p>
+
+<p>Отличие синхронизации в online-режиме заключается в том, что у нее нет последних двух этапов — экспорта и импорта.</p>
+
+<div class="message">
+<p><span class="message__bold">На заметку.</span> В версии мобильного приложения 7.8.6 реализован еще один этап синхронизации — “Актуализация данных”. Если эта функциональность включена, то данный этап выполняется последним, после экспорта и импорта данных. Суть этапа в следующем: приложение сравнивает доступные на сервере данные с локальными и, в случае наличия разницы, загружает недостающие данные или удаляет неактуальные. Этот механизм предусматривает ситуацию, которая возможна в случае перераспределения прав доступа или удаления данных на сервере. Для его включения в манифесте в секции <span class="filled">SyncOptions,</span> в свойстве <span class="filled">ModelDataImportConfig</span> для нужного объекта-модели установить значение <span class="filled">true</span> для свойства <span class="filled">IsAdministratedByRights</span>.</p>
+</div>
+
+<h2>Экспорт данных в пакетном режиме<a class="title-anchor" href="#title-2404-6" id="title-2404-6"> </a></h2>
+
+<p>По умолчанию мобильное приложение отправляет каждое произведенное пользователем изменение данных поочередно. Таким образом одно изменение производит как минимум один запрос на сервер. При достаточно большом количестве изменений выполнение таких запросов может занять существенное время.</p>
+
+<p>В приложении реализована возможность отправлять данные в пакетном режиме (batch mode), что позволяет значительно ускорить отправку данных на сервер.</p>
+
+<p>Для включения пакетного режима отправки данных необходимо в манифесте мобильного приложения в секции <span class="filled">SyncOptions</span> установить для свойства <span class="filled">UseBatchExport</span> значение <span class="filled">true</span>. В результате все пользовательские изменения будут сгруппированы в несколько пакетных запросов согласно типу операции, выполняемой пользователем. Возможные типы операций — вставка, обновление и удаление.</p>
+
+<h2>Жизненный цикл страниц в мобильном приложении<a class="title-anchor" href="#title-2404-7" id="title-2404-7"> </a></h2>
+
+<p>Во время навигации по мобильному приложению для каждой страницы выполняется ряд этапов — открытие, закрытие, выгрузка, возврат к странице и т. п. Время, прошедшее от загрузки страницы в память мобильного устройства и до ее окончательной выгрузки из памяти, принято называть жизненным циклом страницы.</p>
+
+<p>Для каждого этапа жизненного цикла предусмотрены события страницы. Использование событий дает возможность расширять функциональность. К основным событиям относятся:</p>
+
+<ul><li>инициализация представления;</li>
+	<li>завершение инициализации класса;</li>
+	<li>загрузка страницы;</li>
+	<li>загрузка данных;</li>
+	<li>закрытие страницы.</li>
+</ul><p>Понимание этапов выполнения жизненного цикла страницы позволяет качественно и максимально эффективно расширять логику страниц.</p>
+
+<h3>Этапы жизненного цикла<a class="title-anchor" href="#title-2404-8" id="title-2404-8"> </a></h3>
+
+<div class="message message_warning">
+<p><span class="message__bold message__bold_warning">Важно.</span> На экране телефона может отображаться только одна страница. На экране планшета — одна страница в портретной ориентации и две в ландшафтной. В связи с этим жизненный цикл страниц имеет отличия для телефона и планшета.</p>
+</div>
+
+<h4>Открытие страницы<a class="title-anchor" href="#title-2404-9" id="title-2404-9"> </a></h4>
+
+<p>При первом открытии страницы выполняется загрузка скриптов, требуемых для ее работы. Далее инициализируется контроллер и создается представление.</p>
+
+<p>События открытия страницы генерируются в следующей последовательности:</p>
+
+<ol><li><span class="filled">initializeView</span> — инициализация представления.</li>
+	<li><span class="filled">pageLoadComplete</span> — событие завершения загрузки страницы.</li>
+	<li><span class="filled">launch</span> — инициирует загрузку данных.</li>
+</ol><h4>Закрытие страницы<a class="title-anchor" href="#title-2404-10" id="title-2404-10"> </a></h4>
+
+<p>Во время закрытия страницы ее представление удаляется из объектной модели документа (Document object model, DOM), а контроллер удаляется из памяти устройства.</p>
+
+<p>Закрытие страницы происходит в следующих случаях:</p>
+
+<ul><li>Нажата кнопка <span class="key">Назад</span>. В таком случае удаляется последняя страница.</li>
+	<li>Выполнен переход в другой раздел. В таком случае удаляются все страницы, которые были открыты ранее.</li>
+</ul><p>Событие завершения закрытия страницы — <span class="filled">pageUnloadComplete</span>.</p>
+
+<h4>Выгрузка страницы<a class="title-anchor" href="#title-2404-11" id="title-2404-11"> </a></h4>
+
+<p>Выгрузка страницы происходит в случае, когда выполняется переход к другой странице в том же разделе. При этом текущая страница становится неактивной. Она может оставаться видимой на экране устройства. Например, если на планшете открыть страницу просмотра из реестра, то страница реестра останется видимой. В такой же ситуации на телефоне страница реестра не будет отображаться, но будет оставаться в памяти. Это и отличает выгрузку от закрытия страницы.</p>
+
+<p>Событие выгрузки страницы — <span class="filled">pageUnloadComplete</span> (совпадает с событием закрытия страницы).</p>
+
+<h4>Возврат к странице<a class="title-anchor" href="#title-2404-12" id="title-2404-12"> </a></h4>
+
+<p>Возврат к выгруженной ранее странице происходит при нажатии на кнопку <span class="key">Назад</span>.</p>
+
+<p>Событие возврата к странице — <span class="filled">pageLoadComplete</span>.</p>
+
+<div class="message message_warning">
+<p><span class="message__bold message__bold_warning">Важно.</span> В приложении может использоваться только один экземпляр страницы. Поэтому, если последовательно открыть две одинаковые страницы, то при возврате к первой из них повторно выполняется обработчик события <span class="filled">launch</span>. Это следует учитывать при разработке.</p>
+</div>
+
+<h2>Фоновое обновление конфигурации в мобильном приложении<a class="title-anchor" href="#title-2404-13" id="title-2404-13"> </a></h2>
+
+<p>В мобильном приложении Creatio реализован механизм синхронизации структуры приложения, который может работать в автоматическом фоновом режиме. Для управления этим процессом необходимо использовать системную настройку <span class="key">Периодичность проверки обновлений</span> (<span class="key">Update checks frequency</span>).</p>
+
+<div class="media">
+<div class="media__element"><img src="../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/MobileBackgroundUpdate/scr_update_setting.png" /></div>
+</div>
+
+<p>Эта настройка указывает по истечении какого времени (в часах) мобильное приложение может запросить изменения конфигурации у Creatio. Если настройке установить значение 0, то приложение будет всегда загружать обновления конфигурации.</p>
+
+<h3>Условия работы<a class="title-anchor" href="#title-2404-14" id="title-2404-14"> </a></h3>
+
+<p>Приложение запускает синхронизацию структуры в фоновом режиме только при соблюдении следующих условий:</p>
+
+<ul><li>на мобильном устройстве используется платформа iOS или Android;</li>
+	<li>синхронизация ранее не была запущена;</li>
+	<li>с момента последней синхронизации структуры прошло больше времени, чем указано в системной настройке <span class="key">Периодичность проверки обновлений</span> (<span class="key">Update checks frequency</span>);</li>
+	<li>осуществляется запуск приложения, или приложение активируется (т. е. если оно было ранее свернуто или в него переходят из другого приложения).</li>
+</ul><p>Если в ходе обновления структуры изменения были получены, то для применения полученных изменений приложение автоматически перезапустится когда пользователь свернет его или перейдет в другое приложение.</p>
+
+<h3>Особенности работы на разных платформах<a class="title-anchor" href="#title-2404-15" id="title-2404-15"> </a></h3>
+
+<ol><li>
+	<p>На платформе Android фоновый режим реализован через параллельно запущенный сервис. Такой подход гарантирует, что запущенная синхронизация гарантировано завершится, даже если вручную выгрузить приложение из памяти устройства.</p>
+	</li>
+	<li>
+	<p>На платформе iOS для запуска синхронизации в фоновом режиме используется второй <span class="filled">webView</span>, в то время как само приложение работает в основном <span class="filled">webView</span>. Это гарантирует нормальную работу пользователя в приложении при одновременно запущенной синхронизации структуры.</p>
+
+	<p>В отличие от реализации на платформе Android это не гарантирует завершения синхронизации на 100%, поскольку синхронизация может быть прервана при выгрузке приложения вручную либо если это сделает платформа iOS.</p>
+	</li>
+</ol><p>В приложении под iOS вместо <span class="filled">UIWebView</span> используется <span class="filled">WKWebView</span>, что привело к использованию фреймворка Cordova версии 6.1.1, а также минимально поддерживаемой версия iOS 11.</p>
+
+<p><span class="filled">WKWebView</span> имеет следующие особенности:</p>
+
+<ul><li>Не допускается использовать абсолютные пути (для ресурсов, скриптов, iframe и т. п.).</li>
+	<li>Не допускается использовать кросс-доменные ссылки (для ресурсов, скриптов, iframe и т. п.).</li>
+	<li>Данные <span class="filled">localStorage</span> не сохранятся при переходе на <span class="filled">WKWebView</span>.</li>
+	<li>Не рекомендуется использование iframe.</li>
+</ul><p>Изменения в iOS WebView в Apache Cordova подробнее описаны в <a href="https://cordova.apache.org/news/2018/08/01/future-cordova-ios-webview.html" target="_blank">документации Cordova</a>.</p>
+
+<p>Если необходимо вставить на страницу ссылку на локальный файл, то необходимо конвертировать путь к нему через метод <span class="filled">Terrasoft.util.toUrlScheme</span>.</p>
+
+<div class="code">
+<div class="code__widgets">
+<div class="code__top">
+<div class="code__title">Вставка на страницу ссылки на локальный файл</div>
+</div>
+
+<div class="code__source">
+<pre class="prettyprint">
+this.element.setStyle('background-image', 'url("' + Terrasoft.util.toUrlScheme(value) +'")');
+</pre>
+</div>
+</div>
+</div>
+
+<p>Пример ссылок представлен ниже.</p>
+
+<div class="SimpleTabContainer" data-itemid="JSON" data-title="JSON" id="Syntax_JSON">
+<div class="code">
+<div class="code__widgets">
+<div class="code__source" data-tab="Недопустимая ссылка">
+<pre class="prettyprint">
+file:///var/mobile/Containers/Data/Application/DE283C57-94BE-4116-980A-020C271D9871/Documents/BPMonline700/Downloads/afc78721-ed5f-439e-9a24-69bf56d32610/afc78721-ed5f-439e-9a24-69bf56d32610
+</pre>
+</div>
+
+<div class="code__source" data-tab="Ссылка после конвертации">
+<pre class="prettyprint">
+app://localhost/_app_file_/var/mobile/Containers/Data/Application/DE283C57-94BE-4116-980A-020C271D9871/Documents/BPMonline700/Downloads/afc78721-ed5f-439e-9a24-69bf56d32610/afc78721-ed5f-439e-9a24-69bf56d32610
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<p>Использование плагина <span class="filled">inappbrowser</span> имеет следующие особенности:</p>
+
+<ul><li>
+	<p>Все пути должны быть относительными и находиться внутри корневой папки сайта.</p>
+
+	<div class="code">
+	<div class="code__widgets">
+	<div class="code__source">
+	<pre class="prettyprint">
+&lt;img src="images/2.jpg"&gt;
+</pre>
+	</div>
+	</div>
+	</div>
+	</li>
+	<li>
+	<p>Не допускается использовать кросс-доменные ссылки (для ресурсов, скриптов, iframe и т. п.).</p>
+
+	<div class="code">
+	<div class="code__widgets">
+	<div class="code__source">
+	<pre class="prettyprint">
+&lt;img src="https://www.worldometers.info/img/worldometers-logo.gif"&gt;
+&lt;img src="file:///var/mobile/Containers/Data/Application/DE283C57-94BE-4116-980A-020C271D9871/Documents/BPMonline700/Downloads/afc78721-ed5f-439e-9a24-69bf56d32610/pic.jpg"&gt;
+</pre>
+	</div>
+	</div>
+	</div>
+	</li>
+	<li>
+	<p>При открытии сайта необходимо указывать абсолютный путь.</p>
+
+	<div class="code">
+	<div class="code__widgets">
+	<div class="code__source">
+	<pre class="prettyprint">
+cordova.InAppBrowser.open("file:///var/mobile/Containers/Data/Application/DE..9871/Documents/BPMonline700/Downloads/afc78721-ed5f-439e-9a24-69bf56d32610/index.html", "_blank");
+</pre>
+	</div>
+	</div>
+	</div>
+	</li>
+</ul><p>Открытие сайта через плагин <span class="filled">inappbrowser</span> имеет особенности, аналогичные особенностям <span class="filled">WKWebView</span>.</p>
+
+<h2>Автоматическое разрешение конфликтов при синхронизации<a class="title-anchor" href="#title-2404-16" id="title-2404-16"> </a></h2>
+
+<p>В ходе синхронизации мобильного приложения, работающего в offline-режиме, могут возникать ситуации, когда переданные в Creatio данные не могут быть сохранены по ряду причин. К таким причинам могут относиться следующие:</p>
+
+<ul><li>Запись была слита в Creatio с другой дублирующейся записью, поэтому ее не существует.</li>
+	<li>Запись была удалена из Creatio.</li>
+</ul><p>Каждая из приведенных выше ситуаций обрабатывается мобильным приложением автоматически.</p>
+
+<h3>Слияние дублей<a class="title-anchor" href="#title-2404-17" id="title-2404-17"> </a></h3>
+
+<p>Алгоритм разрешения конфликта, возникающего по причине использования данных, которые в Creatio были удалены в ходе процедуры слияния дублей:</p>
+
+<div class="media">
+<div class="media__element"><img src="../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/ResolvingSyncConflicts/scr_duplicates_resolving_schema.png" /></div>
+</div>
+
+<p>Как видно на схеме, в ходе синхронизации приложение сначала забирает на сервере информацию о том, по каким записям с момента последней синхронизации производилось слияние дублей. А именно какие записи были удалены и какие записи их заменили. Если в ходе экспорта не было никаких ошибок, то далее выполняется импорт. Если же произошла ошибка, связанная с исключением внешнего ключа (<span class="filled">Foreign Key Exception</span>), или ошибка, связанная с тем, что на сервере не была найдена какая-то из записей (<span class="filled">Item Not Found Exception</span>), то выполняется процедура разрешения этого конфликта со следующими этапами:</p>
+
+<ul><li>В экспортируемых данных ищутся колонки, содержащие “старую” запись.</li>
+	<li>В найденных колонках “старая” запись заменяется новой, в которой данные объединялись.</li>
+</ul><p>После этого запись повторно отправляется в Creatio. Как только заканчивается импорт и появляется информация о слитых дублях, локально производится удаление “старых” записей.</p>
+
+<h3>Запись не найдена<a class="title-anchor" href="#title-2404-18" id="title-2404-18"> </a></h3>
+
+<p>В случае, когда сервер возвращает ошибку, свидетельствующую о том, что измененная пользователем запись в Creatio не найдена, приложение выполняет следующие действия:</p>
+
+<ol><li>Проверяет наличие записи в списке записей, удаленных в ходе слияния дублей.</li>
+	<li>Если в списке удаленных записи нет, то приложение удаляет ее локально.</li>
+	<li>Удаляет информацию по этой записи из лога синхронизации.</li>
+</ol><p>Таким образом, приложение считает этот конфликт разрешенным и продолжает экспорт данных.</p>
+</div>
+      
+  </div>
+<div class="block block-layout-builder block-field-blocknodedeveloper-documentationfield-resources">
+  
+    
+      
+  <div class="field field--name-field-resources field--type-link field--label-above">
+    <div class="field__label">Ресурсы</div>
+          <div class="field__items">
+              <div class="field__item"><a href="https://apps.apple.com/ru/app/mobile-creatio/id708432450" target="_blank">Мобильное приложение Creatio в App Store</a></div>
+          <div class="field__item"><a href="https://play.google.com/store/apps/details?id=com.creatio.mobileapp" target="_blank">Мобильное приложение Creatio в Google Play</a></div>
+          <div class="field__item"><a href="https://ru.wikipedia.org/w/index.php?title=Flutter&amp;oldid=113908131" target="_blank">Описание фреймворка Flutter</a></div>
+          <div class="field__item"><a href="https://flutter.dev/docs" target="_blank">Официальная документация фреймворка Flutter</a></div>
+          <div class="field__item"><a href="https://developers.google.com/j2objc/" target="_blank">Описание утилиты J2ObjC</a></div>
+          <div class="field__item"><a href="https://ru.wikipedia.org/w/index.php?title=Cordova&amp;oldid=110630172" target="_blank">Описание фреймворка Apache Cordova</a></div>
+              </div>
+      </div>
+
+  </div>
+
+    </div>
+  </div>
+
+  </div>
+
+</article>
+
+  </div>
+
+  </div>
+
+          </div>
+        </div>
+
+                  <aside class="creatio-sidebar creatio-sidebar_first" role="complementary">
+              <div class="region region-sidebar-first">
+    <div id="block-documentationnaviagtion" class="block block-ts-nav block-ts-nav-doc-nav">
+  
+    
+      <div class="ts-nav-block"><a href="../../../index.html" class="ts-nav-block__link">Документация</a><div class="ts-nav-block__title">Для разработчика</div>
+</div>
+<div class="ts-nav-container"><ul class="ts-nav-menu"><li class="ts-nav-menu__item">
+  <a href="../../s_chego_nachat.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">С чего начать&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../architecture.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Архитектура&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../instrumenty_razrabotki.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Инструменты разработки&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../back_end_razrabotka.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Back-end разработка&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../front_end_razrabotka_freedom_ui.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Front-end разработка Freedom UI&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../front_end_razrabotka.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Front-end разработка&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../integratsiya_i_vneshnij_api.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Интеграция и внешний API&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../ehlementy_interfejsa.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Элементы интерфейса&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../komponenty_prilozheniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Компоненты приложения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../razrabotka_mobilnogo_prilozheniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded ts-nav-menu__link_open" hreflang="zxx">Разработка мобильного приложения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+      <ul class="ts-nav-menu__children">
+      <li class="ts-nav-menu__item">
+  <a href="../arhitektura.html" class="ts-nav-menu__link ts-nav-menu__link_expanded ts-nav-menu__link_open" hreflang="ru">Архитектура&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+      <ul class="ts-nav-menu__children">
+      <li class="ts-nav-menu__item">
+  <a href="obzor.html" class="ts-nav-menu__link ts-nav-menu__link_guide ts-nav-menu__link_active" hreflang="ru">Обзор</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="baseconfigurationpage.html" class="ts-nav-menu__link ts-nav-menu__link_reference" data-type="JS" hreflang="ru">BaseConfigurationPage</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="pagenavigator.html" class="ts-nav-menu__link ts-nav-menu__link_reference" data-type="JS" hreflang="ru">PageNavigator</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="router.html" class="ts-nav-menu__link ts-nav-menu__link_reference" data-type="JS" hreflang="ru">Router</a>
+  </li>
+
+    </ul>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../kastomizaciya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Кастомизация&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../otladka/obzor.html" class="ts-nav-menu__link" hreflang="ru">Отладка</a>
+  </li>
+
+    </ul>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../razrabotka_marketplace_prilozheniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Разработка Marketplace-приложения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+</ul>
+</div>
+
+  </div>
+
+  </div>
+
+            <div class="creatio-sidebar__toggle"></div>
+          </aside>
+        
+                  <aside class="creatio-sidebar creatio-sidebar_second" role="complementary">
+              <div class="region region-sidebar-second">
+    <div id="block-example" class="block block-ts-nav block-ts-nav-page-nav">
+  
+    
+      <div class="ts-nav-page">
+  </div>
+
+  </div>
+<div id="block-adminfeedbackblock" class="block block-admin-feedback block-admin-feedback-block">
+  
+    
+      <div id="feedback-message"><div id="upper-feedback-content"><h2>Был ли данный материал полезен?</h2>
+<input class="feedback-btn feedback-btn__yes button js-form-submit form-submit" data-node-id="3426" data-feedback="yes" type="submit" name="op" value="Да" />
+<input class="feedback-btn feedback-btn__no button js-form-submit form-submit" data-node-id="3426" data-feedback="no" type="submit" name="op" value="Нет" />
+</div>
+<form class="admin-feedback-form" data-drupal-selector="admin-feedback-form" action="https://academy.terrasoft.ua/docs/developer/razrabotka_mobilnogo_prilozheniya/arhitektura/obzor" method="post" id="admin-feedback-form" accept-charset="UTF-8">
+  <div id="feedback-msg-result"></div><div class="js-form-item form-item js-form-type-textarea form-type-textarea js-form-item-feedback-message form-item-feedback-message form-no-label">
+        <div class="form-textarea-wrapper">
+  <textarea id="edit-feedback-msg" data-drupal-selector="edit-feedback-message" name="feedback_message" rows="5" cols="60" class="form-textarea resize-vertical"></textarea>
+</div>
+
+        </div>
+<input id="feedback-id" data-drupal-selector="edit-feedback-id" type="hidden" name="feedback_id" value="" />
+<input class="feedback-btn feedback-btn__send-comment button js-form-submit form-submit" data-drupal-selector="edit-feedback-send" type="submit" id="edit-feedback-send" name="op" value="Отправить" />
+<input autocomplete="off" data-drupal-selector="form-t2ghvgvqdlxkrgqtouqb0i8gfiqngqjjnyozpkeg5m" type="hidden" name="form_build_id" value="form-_T2ghVGVQdLXKRgqtOUQB0I8gFIqNGqJjnyozpKEg5M" />
+<input data-drupal-selector="edit-admin-feedback-form" type="hidden" name="form_id" value="admin_feedback_form" />
+
+</form>
+</div>
+
+  </div>
+
+  </div>
+
+          </aside>
+              </main>
+    </div>
+  </div>
+
+  <footer role="contentinfo">
+    <div class="creatio-region creatio-region_footer">
+      <div class="creatio-container">
+          <div class="region region-footer">
+    <div id="block-footerua" class="block block-simple-block block-simple-blockfooter-ua">
+  
+    
+      <div class="footer">
+<div class="footer-left">
+<ul class="footer-socials"><li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_fb" href="https://www.facebook.com/terrasoft.ua" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_in" href="https://www.linkedin.com/company/terrasoft/" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_yt" href="https://www.youtube.com/c/TerrasoftUkraine" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_tg" href="https://t.me/Terrasoft_UA" target="_blank"> </a></li>
+</ul></div>
+
+<div class="footer-contact">
+<div class="footer-title">Будьте на связи!</div>
+
+<div class="footer-content">
+<div class="footer-items">
+<div class="footer-item"><a class="footer__link footer__link_phone" href="tel:+380443633133">+38 (044) 363-31-33</a></div>
+</div>
+
+<div class="footer-items">
+<div class="footer-item"><a class="footer__link footer__link_email" href="mailto:support@terrasoft.ua">support@terrasoft.ua</a></div>
+</div>
+</div>
+</div>
+</div>
+
+  </div>
+
+  </div>
+
+      </div>
+    </div>
+    <div class="creatio-region creatio-region_bottom">
+      <div class="creatio-container">
+          <div class="region region-bottom">
+    <div id="block-allrightsreservedua" class="block block-simple-block block-simple-blockfooter-bottom-ua">
+  
+    
+      <p>© 2002-2022 Terrasoft.  |  <a href="https://www.terrasoft.ua/privacy-policy" target="_blank">Конфиденциальность</a></p>
+
+  </div>
+
+  </div>
+
+      </div>
+    </div>
+  </footer>
+</div>
+<div class="creatio-bg"></div>
+
+
+  </div>
+
+    
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/docs\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/3426","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"ru"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"ajaxPageState":{"libraries":"admin_feedback\/admin_feedback_block,admin_feedback\/admin_feedback_css,classy\/base,classy\/messages,classy\/node,core\/drupal.ajax,core\/jquery.form,core\/normalize,creatio\/fancybox,creatio\/global,layout_discovery\/onecol,system\/base,ts_doc\/doc_version,ts_feedback\/ts_feedback,ts_nav\/breadcrumb,ts_nav\/doc_nav,ts_nav\/page_nav,ts_title_anchor\/ts_title_anchor","theme":"creatio","theme_token":null},"ajaxTrustedUrl":{"form_action_p_pvdeGsVG5zNF_XLGPTvYSKCf43t8qZYSwcfZl2uzM":true,"\/docs\/developer\/razrabotka_mobilnogo_prilozheniya\/arhitektura\/obzor?ajax_form=1":true},"admin_feedback":{"yes_response":"\u0421\u043f\u0430\u0441\u0438\u0431\u043e \u0437\u0430 \u043e\u0431\u0440\u0430\u0442\u043d\u0443\u044e \u0441\u0432\u044f\u0437\u044c!","no_response":"\u0421\u043f\u0430\u0441\u0438\u0431\u043e \u0437\u0430 \u043e\u0431\u0440\u0430\u0442\u043d\u0443\u044e \u0441\u0432\u044f\u0437\u044c!","custom_text_response_on_no":{"value":"","format":"full_html"},"feedback_prompt_on_yes":true,"feedback_prompt_on_no":true,"feedback_enable_predefined_answers":false,"feedback_prompt":"\u041a\u0430\u043a \u043c\u043e\u0436\u043d\u043e \u0443\u043b\u0443\u0447\u0448\u0438\u0442\u044c \u044d\u0442\u0443 \u0441\u0442\u0430\u0442\u044c\u044e?"},"ajax":{"edit-feedback-send":{"callback":"::validateFeedbackMsg","event":"mousedown","keypress":true,"prevent":"click","url":"\/docs\/developer\/razrabotka_mobilnogo_prilozheniya\/arhitektura\/obzor?ajax_form=1","dialogType":"ajax","submit":{"_triggering_element_name":"op","_triggering_element_value":"\u041e\u0442\u043f\u0440\u0430\u0432\u0438\u0442\u044c"}}},"user":{"uid":0,"permissionsHash":"9c2367dfcaba0fa15f0375f97aed64e146c908cee68508d13b79e3ee80e5162d"}}</script>
+<script src="../../../sites/default/files/js/js_Rr-7TvYD7NposuRFJwUqThxM7yJmw8vs03PQwu5gWd8.js"></script>
+
+
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+      <g id="svg-copy" class="svg-icon svg-icon_copy">
+        <path d="M15.111,18H1.889A1.848,1.848,0,0,1,0,16.2V3.6A1.848,1.848,0,0,1,1.889,1.8H5.837a2.87,2.87,0,0,1,5.326,0h3.948A1.848,1.848,0,0,1,17,3.6V16.2A1.848,1.848,0,0,1,15.111,18ZM3.777,12.6v1.8h6.611V12.6Zm0-3.6v1.8h9.445V9Zm0-3.6V7.2h9.445V5.4ZM8.5,1.8a.924.924,0,0,0-.944.9.945.945,0,0,0,1.889,0A.924.924,0,0,0,8.5,1.8Z"/>
+      </g>
+
+      <g id="svg-prev" class="svg-icon svg-icon_arrow">
+        <path d="M5.488,12.779,0,6.39,5.488,0" transform="translate(1 0.652)"/>
+      </g>
+
+      <g id="svg-next" class="svg-icon svg-icon_arrow">
+        <path d="M0,12.779,5.488,6.39,0,0" transform="translate(0.759 0.652)"/>
+      </g>
+    </svg>
+  </body>
+
+<!-- Mirrored from academy.terrasoft.ua/docs/developer/razrabotka_mobilnogo_prilozheniya/arhitektura/obzor by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Mar 2022 00:46:45 GMT -->
+</html>

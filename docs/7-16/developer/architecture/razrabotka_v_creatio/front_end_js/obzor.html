@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# ">
+  
+<!-- Mirrored from academy.terrasoft.ua/docs/7-16/developer/architecture/razrabotka_v_creatio/front_end_js/obzor by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Mar 2022 05:07:12 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+          <!-- Google Tag Manager -->
+      <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          '../../../../../../../www.googletagmanager.com/gtm5445.html?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-KLLB8G');</script>
+      <!-- End Google Tag Manager -->
+        <meta charset="utf-8" />
+<link rel="canonical" href="obzor.html" />
+<meta name="description" content="Front-end платформы — это набор модулей, которые определяются и загружаются асинхронно по мере необходимости.
+
+Основой front-end Creatio является ядро.
+
+Уровень ядра предоставляет:" />
+<meta property="og:url" content="https://academy.terrasoft.ua/docs/7-16/developer/architecture/razrabotka_v_creatio/front_end_js/obzor" />
+<meta property="og:title" content="Front-end (JS)" />
+<meta property="og:description" content="Front-end платформы — это набор модулей, которые определяются и загружаются асинхронно по мере необходимости.
+
+Основой front-end Creatio является ядро.
+
+Уровень ядра предоставляет:" />
+<meta name="Generator" content="Drupal 9 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="../../../../../themes/custom/creatio/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="revision" href="obzor.html" />
+
+    <title>Front-end (JS) | Creatio Academy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&amp;family=Open+Sans:ital,wght@0,300;0,400;0,600;1,400&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" media="all" href="../../../../../sites/default/files/css/css_6lTP66__-yc6QXFp1zOwoeJ0HVigoYZP-SeoLLii000.css" />
+<link rel="stylesheet" media="all" href="../../../../../sites/default/files/css/css_XQJDNhkF3xH5SZCcY-PI89Zu4nYIzQ5oR3SnUKyfXJU.css" />
+<link rel="stylesheet" media="print" href="../../../../../sites/default/files/css/css_Zn4VHvcniOOtUwkIVwXzYr_0AI9gUVgZcPqaH4ViagU.css" />
+
+    
+  </head>
+  <body class="path-node page-node-type-developer-documentation">
+          <!-- Google Tag Manager (noscript) -->
+      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KLLB8G"
+                        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+      <!-- End Google Tag Manager (noscript) -->
+    
+        
+      <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    <div class="creatio-page d-flex flex-column">
+        <div class="region region-informer">
+    <div id="block-terrasoftpidtrimueukrainu" class="block block-simple-block block-simple-blockterrasoft-pidtrimue-ukrainu">
+  
+    
+      <style type="text/css">
+<!--/*--><![CDATA[/* ><!--*/
+@import url(../../../../../../../www.terrasoft.ua/themes/custom/creatio/css/components/informer.css)
+
+/*--><!]]>*/
+</style><div class="ts-swu">
+<div class="creatio-container">
+<div class="ts-swu__cont">
+<div><a class="ts-swu__link" href="https://www.terrasoft.ua/terrasoft-stands-with-ukraine" target="_blank">Україна понад усе!</a> <span><a href="https://www.terrasoft.ua/terrasoft-stands-with-ukraine" target="_blank">Приєднуйтеся</a> до допомоги!</span></div>
+</div>
+</div></div>
+
+  </div>
+
+  </div>
+
+  
+  <header role="banner">
+          <div class="creatio-region creatio-region_top">
+        <div class="creatio-container">
+            <div class="region region-top">
+    <div id="block-menutoggle" class="block block-simple-block block-simple-blockmenu-toggle">
+  
+    
+      <div class="menu-toggle"><span> </span></div>
+
+  </div>
+<div id="block-logowhite-2" class="block block-simple-block block-simple-blocklogo-white">
+  
+    
+      <p><a class="site-logo" href="../../../../../../index.html" rel="home"><img src="../../../../../themes/custom/creatio/logo-white.svg" /></a></p>
+
+  </div>
+<div id="block-search" class="block block-simple-block block-simple-blocksearch">
+  
+    
+      <div class="search">
+<form action="https://academy.terrasoft.ua/search" class="search-form" method="get"><input class="search-form__input" name="search" placeholder="Поиск" type="search" /><input class="search-form__button" type="submit" value="Поиск" /> </form>
+
+<div class="search-toggle"> </div>
+</div>
+
+  </div>
+<nav role="navigation" aria-labelledby="block-sitesua-menu" id="block-sitesua" class="block block-menu navigation menu--sites-ua">
+            
+  <h2 class="visually-hidden" id="block-sitesua-menu">Sites UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="https://www.terrasoft.ua/" rel="nofollow" target="_blank">Terrasoft</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://community.terrasoft.ua/" rel="nofollow" target="_blank">Community</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://marketplace.terrasoft.ua/" rel="nofollow" target="_blank">Marketplace</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+<div id="block-usermenu" class="block block-ts-user block-ts-user-menu-block">
+  
+    
+      <ul class="user-menu">
+      <li class="user-menu__item">
+      <a class="user-menu__link" href="https://profile.terrasoft.ua/user/login?destination=academy/ua/docs/7-16/developer/architecture/razrabotka_v_creatio/front_end_js/obzor">Войти</a>
+    </li>
+  </ul>
+
+  </div>
+<div id="block-usermenumobile" class="block block-ts-user block-ts-user-menu-mobile-block">
+  
+    
+      <ul class="user-menu-mobile">
+      <li class="user-menu-mobile__item">
+      <div class="user-menu-mobile__user user-menu-mobile__user_icon"></div>
+      <ul class="user-menu-mobile__submenu">
+        <li class="user-menu-mobile__subitem">
+          <a class="user-menu-mobile__sublink" href="https://profile.terrasoft.ua/user/login?destination=academy/ua/docs/7-16/developer/architecture/razrabotka_v_creatio/front_end_js/obzor">Войти</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  </div>
+
+  </div>
+
+        </div>
+      </div>
+              <div class="creatio-region creatio-region_header">
+        <div class="creatio-container">
+            <div class="region region-header">
+    <div id="block-logo" class="block block-simple-block block-simple-blocklogo">
+  
+    
+      <p><a class="site-logo" href="../../../../../../index.html" rel="home"><img src="../../../../../themes/custom/creatio/logo.svg" /></a></p>
+
+  </div>
+<nav role="navigation" aria-labelledby="block-osnovnayanavigaciyaua-menu" id="block-osnovnayanavigaciyaua" class="block block-menu navigation menu--main-ua">
+            
+  <h2 class="visually-hidden" id="block-osnovnayanavigaciyaua-menu">Основная навигация UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="../../../../../index.html" data-drupal-link-system-path="&lt;front&gt;">Документация</a>
+              </li>
+                <li class="menu-item">
+        <a href="../../../../../../trainings.html">Тренинги</a>
+              </li>
+                <li class="menu-item">
+        <a href="../../../../../certification.html" data-drupal-link-system-path="node/3084">Сертификация и тестирование</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+<nav role="navigation" aria-labelledby="block-sitesua-2-menu" id="block-sitesua-2" class="block block-menu navigation menu--sites-ua">
+            
+  <h2 class="visually-hidden" id="block-sitesua-2-menu">Sites UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="https://www.terrasoft.ua/" rel="nofollow" target="_blank">Terrasoft</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://community.terrasoft.ua/" rel="nofollow" target="_blank">Community</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://marketplace.terrasoft.ua/" rel="nofollow" target="_blank">Marketplace</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+
+  </div>
+
+        </div>
+      </div>
+              <div class="creatio-region creatio-region_breadcrumb">
+        <div class="creatio-container">
+            <div class="region region-breadcrumb">
+    <div id="block-logowhite" class="block block-simple-block block-simple-blocklogo-white">
+  
+    
+      <p><a class="site-logo" href="../../../../../../index.html" rel="home"><img src="../../../../../themes/custom/creatio/logo-white.svg" /></a></p>
+
+  </div>
+<div id="block-breadcrumbnaviagtion" class="block block-ts-nav block-ts-nav-bread">
+  
+    
+      <nav class="breadcrumb"><ol class="ts-nav-breadcrumb__list"><li class="ts-nav-breadcrumb__item"><a href="../../../../../index.html" class="ts-nav-breadcrumb__link" title="Документация">Документация</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../../../index2132.html?vid_1=2" class="ts-nav-breadcrumb__link" title="Для разработчика">Для разработчика</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../architecture.html" class="ts-nav-breadcrumb__link" title="Архитектура" hreflang="zxx">Архитектура</a></li>
+<li class="ts-nav-breadcrumb__item ts-nav-breadcrumb__item_mobile"><a href="../../razrabotka_v_creatio.html" class="ts-nav-breadcrumb__link" title="Разработка в Creatio" hreflang="zxx">Разработка в Creatio</a></li>
+<li class="ts-nav-breadcrumb__item"><span class="ts-nav-breadcrumb__link ts-nav-breadcrumb__link_current" title="Обзор">Обзор</span></li>
+</ol>
+</nav>
+
+  </div>
+<div id="block-search-2" class="block block-simple-block block-simple-blocksearch">
+  
+    
+      <div class="search">
+<form action="https://academy.terrasoft.ua/search" class="search-form" method="get"><input class="search-form__input" name="search" placeholder="Поиск" type="search" /><input class="search-form__button" type="submit" value="Поиск" /> </form>
+
+<div class="search-toggle"> </div>
+</div>
+
+  </div>
+
+  </div>
+
+        </div>
+      </div>
+      </header>
+
+  <div class="creatio-region creatio-region_main">
+    <div class="creatio-container">
+                <div class="region region-breadcrumb-mobile">
+    <div id="block-breadcrumbnaviagtion-2" class="block block-ts-nav block-ts-nav-bread">
+  
+    
+      <nav class="breadcrumb"><ol class="ts-nav-breadcrumb__list"><li class="ts-nav-breadcrumb__item"><a href="../../../../../index.html" class="ts-nav-breadcrumb__link" title="Документация">Документация</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../../../index2132.html?vid_1=2" class="ts-nav-breadcrumb__link" title="Для разработчика">Для разработчика</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../architecture.html" class="ts-nav-breadcrumb__link" title="Архитектура" hreflang="zxx">Архитектура</a></li>
+<li class="ts-nav-breadcrumb__item ts-nav-breadcrumb__item_mobile"><a href="../../razrabotka_v_creatio.html" class="ts-nav-breadcrumb__link" title="Разработка в Creatio" hreflang="zxx">Разработка в Creatio</a></li>
+<li class="ts-nav-breadcrumb__item"><span class="ts-nav-breadcrumb__link ts-nav-breadcrumb__link_current" title="Обзор">Обзор</span></li>
+</ol>
+</nav>
+
+  </div>
+
+  </div>
+
+      
+      <main class="creatio-main" role="main">
+                                                    
+        <div class="creatio-content creatio-content_small">
+          <div class="creatio-content__inner creatio-content__inner_bg">
+                            <div class="region region-messages">
+    <div data-drupal-messages-fallback class="hidden"></div>
+
+  </div>
+
+            
+              <div class="region region-content">
+    <div id="block-creatio-page-title" class="block block-core block-page-title-block">
+  
+    
+      
+  <h1 class="page-title"><span class="field field--name-title field--type-string field--label-hidden">Front-end (JS)</span>
+</h1>
+
+
+  </div>
+<div id="block-creatio-content" class="block block-system block-system-main-block">
+  
+    
+      
+<article data-history-node-id="2086" role="article" about="/docs/7-16/developer/architecture/razrabotka_v_creatio/front_end_js/obzor" class="node node--type-developer-documentation node--view-mode-full">
+
+  
+    
+
+  
+  <div class="node__content">
+      <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocknodedeveloper-documentationfield-difficulty">
+  
+    
+      
+            <div class="field field--name-field-difficulty field--type-entity-reference field--label-hidden field__item"><div about="/docs/7-16/taxonomy/term/121" id="taxonomy-term-121" class="taxonomy-term vocabulary-difficulty">
+  
+  
+  <div class="content">
+      <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocktaxonomy-termdifficultyfield-icon">
+  
+    
+      
+            <div class="field field--name-field-icon field--type-image field--label-hidden field__item">  <img src="../../../../../sites/default/files/difficulty/beginner.svg" alt="" loading="lazy" typeof="foaf:Image" />
+
+</div>
+      
+  </div>
+<div class="block block-layout-builder block-field-blocktaxonomy-termdifficultyname">
+  
+    
+      
+            <div class="field field--name-name field--type-string field--label-hidden field__item"><span style="color: #7FB441;">Основы</span></div>
+      
+  </div>
+
+    </div>
+  </div>
+
+  </div>
+</div>
+</div>
+      
+  </div>
+<div class="block block-ts-doc block-ts-doc-downloads">
+  
+    
+      <a href="../../../../../sites/default/files/pdf/node/2086/Front_end_(JS)_.pdf" target="_blank">PDF</a>
+  </div>
+<div class="block block-ts-doc block-ts-doc-versions">
+  
+    
+        <div class="ts-doc-versions">
+    <select class="ts-doc-versions__select">
+                              <option value="/docs/8-0/developer/architecture/razrabotka_v_creatio/front_end_js/obzor">Версия 8.0</option>
+                              <option value="/docs/7-18/developer/architecture/razrabotka_v_creatio/front_end_js/obzor">Версия 7.18</option>
+                              <option value="/docs/7-17/developer/architecture/razrabotka_v_creatio/front_end_js/obzor">Версия 7.17</option>
+                                                <option value="/docs/7-16/developer/architecture/razrabotka_v_creatio/front_end_js/obzor" selected>Версия 7.16</option>
+          </select>
+  </div>
+
+  </div>
+
+    </div>
+  </div>
+  <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocknodedeveloper-documentationbody">
+  
+    
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><p>Front-end платформы — это набор модулей, которые определяются и загружаются асинхронно по мере необходимости.</p>
+
+<p>Основой front-end Creatio является ядро.</p>
+
+<p>Уровень ядра предоставляет:</p>
+
+<ul><li>возможность использования объектно-ориентированного подхода и механизма наследования;</li>
+	<li>инструменты для определения и асинхронной загрузки модулей и их зависимостей;</li>
+	<li>функциональность базовых элементов системы;</li>
+	<li>механизм взаимодействия модулей.</li>
+</ul><p>Front-end разработка в Creatio осуществляется на уровне конфигурации и представляет собой создание новых и расширение базовых визуальных и невизуальных модулей, схем моделей представления. ​</p>
+
+<h2>Компоненты front-end ядра приложения<a class="title-anchor" href="#title-2086-1" id="title-2086-1"> </a></h2>
+
+<div class="media">
+<div class="media__element"><img alt="" border="0" src="../../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/Frontend/scr_frontend_core.png" /></div>
+</div>
+
+<h3>Внешние JS-библиотеки<a class="title-anchor" href="#title-2086-2" id="title-2086-2"> </a></h3>
+
+<p><b>ExtJS</b> — JavaScript-фреймворк для разработки веб-приложений и пользовательских интерфейсов. В Creatio ExtJS используется как механизм создания структуры классов клиентской части ядра. Позволяет реализовать объектно-ориентированный подход, который в чистом виде не реализован в JavaScript. Предоставляет возможность создавать классы, реализовывать иерархию наследования, группировать классы в пространства имен.</p>
+
+<p><b>RequireJS</b> — библиотека, которая реализует подход <a href="http://en.wikipedia.org/wiki/Asynchronous_module_definition" target="_blank">Asynchronous Module Definition (AMD)</a>. Подход AMD декларирует механизм определения и асинхронной загрузки модулей и их зависимостей.</p>
+
+<p><b>Angular</b> — JavaScript-фреймворк для разработки одностраничных приложений. Его цель — расширение браузерных приложений на основе MVC-шаблона, а также упрощение тестирования и разработки. В Creatio реализована возможность встраивания кастомных Angular-компонентов с использованием единого ядра Angular.</p>
+
+<h3>Базовые JS-классы<a class="title-anchor" href="#title-2086-3" id="title-2086-3"> </a></h3>
+
+<p>Неизменяемая часть системы. Эти классы:</p>
+
+<ul><li>Обеспечивают работу клиентских модулей конфигурации.</li>
+	<li>Определяют функциональность основных объектов системы, элементов управления, перечислений и констант.</li>
+	<li>Хранятся в виде исполняемых файлов на диске в составе папок приложения.</li>
+</ul><h3>Механизм сообщений<a class="title-anchor" href="#title-2086-4" id="title-2086-4"> </a></h3>
+
+<p><b>Sandbox</b> — компонент ядра, который служит диспетчером при взаимодействии модулей системы. Sandbox предоставляет механизм обмена сообщениями между модулями (методы <span class="filled">sandbox.publish()</span> и <span class="filled">sandbox.subscribe()</span>) и загрузки модулей по требованию в интерфейс приложения (метод <span class="filled">sandbox.load()</span>).</p>
+
+<h2>Асинхронное определение модулей<a class="title-anchor" href="#title-2086-5" id="title-2086-5"> </a></h2>
+
+<p>Front-end платформы имеет <strong>модульную структуру</strong>.</p>
+
+<p><b>Модуль</b> — инкапсулированный в обособленный блок набор функциональности, который в свою очередь может использовать другие модули в качестве зависимостей.</p>
+
+<p>Создание модулей в JavaScript декларируется паттерном программирования "Модуль". Классическим приемом реализации этого паттерна является использование анонимных функций, возвращающих определенное значение (объект, функцию и т. д.), которое ассоциируется с модулем. При этом значение модуля экспортируется в глобальный объект.</p>
+
+<p>Для управления большим количеством модулей в Creatio загрузка модулей и их зависимостей выполняется в соответствии с подходом <strong>Asynchronous Module Definition</strong> (AMD).</p>
+
+<p>Подход AMD декларирует механизм определения и асинхронной загрузки модулей и их зависимостей, который в процессе работы с системой позволяет подгружать только те данные, которые необходимы для работы в текущий момент. В Creatio для работы с модулями используется загрузчик <strong>RequireJS</strong>.</p>
+
+<p><strong>Принципы </strong>определения модулей в Creatio:</p>
+
+<ul><li>Объявление модуля выполняется в специальной функции <span class="filled">define()</span>, которая регистрирует функцию-фабрику для инстанцирования модуля, но при этом не загружает его немедленно в момент вызова.</li>
+	<li>Зависимости модуля передаются как массив строковых значений, а не через свойства глобального объекта.</li>
+	<li>Загрузчик выполняет загрузку всех модулей-зависимостей, переданных в качестве аргументов в <span class="filled">define()</span>. Модули загружаются асинхронно, при этом фактически порядок их загрузки определяется загрузчиком произвольно.</li>
+	<li>После того как загрузчиком будут загружены все указанные зависимости модуля, будет вызвана функция-фабрика, которая вернет значение модуля. При этом в функцию-фабрику в качестве аргументов будут переданы загруженные модули-зависимости.</li>
+</ul><h2>Модульная разработка в Creatio<a class="title-anchor" href="#title-2086-6" id="title-2086-6"> </a></h2>
+
+<p>Реализация всей пользовательской функциональности выполняется в <strong>клиентских модулях</strong>.</p>
+
+<div class="media">
+<div class="media__caption">Иерархия модулей в Creatio</div>
+
+<div class="media__element"><img alt="" border="0" src="../../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/Frontend/scr_modules.png" /></div>
+</div>
+
+<p>Несмотря на некоторые функциональные различия, все клиентские модули Creatio имеют одинаковую структуру описания, которая соответствует формату описания модулей AMD.</p>
+
+<div class="code">
+<div class="code__top">
+<div class="code__title">Общая структура описания клиентского модуля</div>
+</div>
+
+<div class="code__widgets">
+<div class="code__source">
+<pre class="prettyprint">
+define(
+    "ModuleName", 
+    "dependencies",
+    function(dependencies) {
+        // someMethods…
+        return { moduleObject };
+});
+</pre>
+</div>
+</div>
+</div>
+
+<ul><li><span class="filled">ModuleName</span> — имя модуля;</li>
+	<li><span class="filled">dependencies</span> — модули-зависимости, функциональность которых можно использовать в текущем модуле;</li>
+	<li><span class="filled">moduleObject</span> — конфигурационный объект созданного модуля.</li>
+</ul><p><strong>Виды </strong>клиентских модулей в Creatio:</p>
+
+<ul><li>Невизуальный модуль.</li>
+	<li>Визуальный модуль.</li>
+	<li>Схема модели представления.</li>
+</ul><h3>Невизуальный модуль<a class="title-anchor" href="#title-2086-7" id="title-2086-7"> </a></h3>
+
+<p>Содержит реализацию функциональности системы, которая не сопряжена с привязкой данных и отображением их в интерфейсе.</p>
+
+<div class="code">
+<div class="code__widgets">
+<div class="code__top">
+<div class="code__title">Структура описания невизуального модуля</div>
+</div>
+
+<div class="code__source">
+<pre class="prettyprint">
+define(
+    "ModuleName",
+    "dependencies",
+    function(dependencies) {
+        // Методы, реализующие необходимую бизнес-логику.
+        return;
+});
+</pre>
+</div>
+</div>
+</div>
+
+<p>Примерами невизуальных модулей являются утилитные модули, которые реализуют служебные функции.</p>
+
+<h3>Визуальный модуль<a class="title-anchor" href="#title-2086-8" id="title-2086-8"> </a></h3>
+
+<p>Используется для создания пользовательских визуальных элементов системы.</p>
+
+<p>Реализует модель представления (ViewModel) согласно шаблону MVVM. Инкапсулирует в себе данные, которые отображаются в элементах управлениях графического интерфейса, а также методы работы с этими данными.</p>
+
+<p>Визуальный модуль содержит <strong>методы</strong>:</p>
+
+<ul><li><span class="filled">init()</span> — метод инициализации модуля.
+
+	<p>Отвечает за инициализацию свойств объекта класса, а также за подписку на сообщения.</p>
+	</li>
+	<li><span class="filled">render(renderTo)</span> — метод отрисовки представления модуля в DOM.
+	<p>Должен возвращать представление.</p>
+
+	<p>Принимает единственный аргумент <span class="filled">renderTo</span> — элемент, в который будет вставлено представление объекта модуля.</p>
+	</li>
+	<li><span class="filled">destroy()</span> — метод, отвечающий за удаление представления модуля, удаление модели представления, отписку от ранее подписанных сообщений и уничтожение объекта класса модуля.</li>
+</ul><p>Для создания визуального модуля можно использовать базовые классы ядра. Например, создать в модуле класс-наследник <span class="filled">Terrasoft.configuration.BaseModule</span> или <span class="filled">Terrasoft.configuration.BaseSchemaModule</span>. Это базовые классы, в которых в необходимой степени уже реализованы необходимые методы визуального модуля — <span class="filled">init()</span>, <span class="filled">render(renderTo)</span> и <span class="filled">destroy().</span></p>
+
+<div class="code">
+<div class="code__widgets">
+<div class="code__top">
+<div class="code__title">Структура описания визуального модуля (наследника базового класса Terrasoft.BaseModule)</div>
+</div>
+
+<div class="code__source">
+<pre class="prettyprint">
+define("ModuleName", "dependencies", function(dependencies) {
+    // Определение класса модуля.
+    Ext.define("Terrasoft..configuration.className") {
+        alternateClassName: "Terrasoft.className"
+        extend: "Terrasoft.BaseModule",
+        …
+        // Свойства и методы.
+        …
+    };
+    // Создание объекта модуля.
+    return Ext.create(Terrasoft.className)
+});
+</pre>
+</div>
+</div>
+</div>
+
+<p>Примерами визуальных модулей являются модули, реализующие функциональность элементов управления на странице приложения.</p>
+
+<h3>Схема модели представления<a class="title-anchor" href="#title-2086-9" id="title-2086-9"> </a></h3>
+
+<p>Наиболее частыми задачами кастомизации приложения являются создание и доработка основных элементов интерфейса — разделов, страниц, деталей.</p>
+
+<p>Модули этих элементов имеют <strong>шаблонизированную структуру</strong> и называются схемами моделей представления.</p>
+
+<p>Схема модели представления является конфигурационным объектом для генерации представления и модели представления генераторами Creatio <span class="filled">ViewGenerator</span> и <span class="filled">ViewModelGenerator</span>.</p>
+
+<p>Для большинства задач кастомизации в Creatio используется механизм замещения базовых схем. К таким схемам относятся все схемы из предустановленных пакетов конфигурации.</p>
+
+<p>Основные базовые схемы моделей представления:</p>
+
+<ul><li><span class="filled">BasePageV2</span></li>
+	<li><span class="filled">BaseSectionV2</span></li>
+	<li><span class="filled">BaseDetailV2</span></li>
+</ul><div class="code">
+<div class="code__widgets">
+<div class="code__top">
+<div class="code__title">Структура схемы модели представления</div>
+</div>
+
+<div class="code__source">
+<pre class="prettyprint">
+define("SchemaName", "dependencies",
+    function(dependencies) {
+        return {
+            entitySchemaName: "ExampleEntity",
+            mixins: {},
+            attributes: {},
+            messages: {},
+            methods: {},
+            rules: {},
+            businessRules: {},
+            modules: {},
+            diff:
+        };
+});
+</pre>
+</div>
+</div>
+</div>
+
+<p>Примерами схем моделей представления являются схемы страниц, разделов и деталей.</p>
+</div>
+      
+  </div>
+<div class="block block-layout-builder block-field-blocknodedeveloper-documentationfield-linked">
+  
+    
+      
+  <div class="field field--name-field-linked field--type-entity-reference field--label-above">
+    <div class="field__label">Смотрите также</div>
+          <div class="field__items">
+              <div class="field__item"><a href="../back_end_c_sharp/obzor.html" hreflang="ru">Back-end (C#)</a></div>
+              </div>
+      </div>
+
+  </div>
+<div class="block block-layout-builder block-field-blocknodedeveloper-documentationfield-video">
+  
+    
+      
+  <div class="field field--name-field-video field--type-link field--label-above">
+    <div class="field__label">Онлайн-курсы</div>
+          <div class="field__items">
+              <div class="field__item"><a href="https://profile.terrasoft.ua/user/login?destination=academy/ua/online-courses/node/">Основы разработки на платформе Creatio</a></div>
+              </div>
+      </div>
+
+  </div>
+
+    </div>
+  </div>
+
+  </div>
+
+</article>
+
+  </div>
+
+  </div>
+
+          </div>
+        </div>
+
+                  <aside class="creatio-sidebar creatio-sidebar_first" role="complementary">
+              <div class="region region-sidebar-first">
+    <div id="block-documentationnaviagtion" class="block block-ts-nav block-ts-nav-doc-nav">
+  
+    
+      <div class="ts-nav-block"><a href="../../../../../index.html" class="ts-nav-block__link">Документация</a><div class="ts-nav-block__title">Для разработчика</div>
+</div>
+<div class="ts-nav-container"><ul class="ts-nav-menu"><li class="ts-nav-menu__item">
+  <a href="../../../s_chego_nachat.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">С чего начать&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../architecture.html" class="ts-nav-menu__link ts-nav-menu__link_expanded ts-nav-menu__link_open" hreflang="zxx">Архитектура&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+      <ul class="ts-nav-menu__children">
+      <li class="ts-nav-menu__item">
+  <a href="../../osnovnoe_prilozhenie/obzor.html" class="ts-nav-menu__link" hreflang="ru">Основное приложение</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../mikroservisy.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Микросервисы&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../razrabotka_v_creatio.html" class="ts-nav-menu__link ts-nav-menu__link_expanded ts-nav-menu__link_open" hreflang="zxx">Разработка в Creatio&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+      <ul class="ts-nav-menu__children">
+      <li class="ts-nav-menu__item">
+  <a href="../obzor/obzor.html" class="ts-nav-menu__link" hreflang="ru">Обзор</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../low_code_no_code/obzor.html" class="ts-nav-menu__link" hreflang="ru">Low-code/no-code</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../back_end_c_sharp/obzor.html" class="ts-nav-menu__link" hreflang="ru">Back-end (C#)</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="obzor.html" class="ts-nav-menu__link ts-nav-menu__link_open" hreflang="ru">Front-end (JS)</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../integratsii/obzor.html" class="ts-nav-menu__link" hreflang="ru">Интеграции</a>
+  </li>
+
+    </ul>
+  </li>
+
+    </ul>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../instrumenty_razrabotki.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Инструменты разработки&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../back_end_razrabotka.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Back-end разработка&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../front_end_razrabotka.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Front-end разработка&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../integratsiya_i_vneshnij_api.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Интеграция и внешний API&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../ehlementy_interfejsa.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Элементы интерфейса&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../komponenty_prilozheniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Компоненты приложения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../razrabotka_mobilnogo_prilozheniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Разработка мобильного приложения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../razrabotka_marketplace_prilozheniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Разработка Marketplace-приложения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+</ul>
+</div>
+
+  </div>
+
+  </div>
+
+            <div class="creatio-sidebar__toggle"></div>
+          </aside>
+        
+                  <aside class="creatio-sidebar creatio-sidebar_second" role="complementary">
+              <div class="region region-sidebar-second">
+    <div id="block-example" class="block block-ts-nav block-ts-nav-page-nav">
+  
+    
+      <div class="ts-nav-page">
+  </div>
+
+  </div>
+<div id="block-adminfeedbackblock" class="block block-admin-feedback block-admin-feedback-block">
+  
+    
+      <div id="feedback-message"><div id="upper-feedback-content"><h2>Был ли данный материал полезен?</h2>
+<input class="feedback-btn feedback-btn__yes button js-form-submit form-submit" data-node-id="2086" data-feedback="yes" type="submit" name="op" value="Да" />
+<input class="feedback-btn feedback-btn__no button js-form-submit form-submit" data-node-id="2086" data-feedback="no" type="submit" name="op" value="Нет" />
+</div>
+<form class="admin-feedback-form" data-drupal-selector="admin-feedback-form" action="https://academy.terrasoft.ua/docs/7-16/developer/architecture/razrabotka_v_creatio/front_end_js/obzor" method="post" id="admin-feedback-form" accept-charset="UTF-8">
+  <div id="feedback-msg-result"></div><div class="js-form-item form-item js-form-type-textarea form-type-textarea js-form-item-feedback-message form-item-feedback-message form-no-label">
+        <div class="form-textarea-wrapper">
+  <textarea id="edit-feedback-msg" data-drupal-selector="edit-feedback-message" name="feedback_message" rows="5" cols="60" class="form-textarea resize-vertical"></textarea>
+</div>
+
+        </div>
+<input id="feedback-id" data-drupal-selector="edit-feedback-id" type="hidden" name="feedback_id" value="" />
+<input class="feedback-btn feedback-btn__send-comment button js-form-submit form-submit" data-drupal-selector="edit-feedback-send" type="submit" id="edit-feedback-send" name="op" value="Отправить" />
+<input autocomplete="off" data-drupal-selector="form-tjx2zma4xnc-3fscita1tkf8farm2o84pirrpnm37dw" type="hidden" name="form_build_id" value="form-tjx2ZMa4XNC-3fscITA1tkf8FARm2O84piRRpNm37dw" />
+<input data-drupal-selector="edit-admin-feedback-form" type="hidden" name="form_id" value="admin_feedback_form" />
+
+</form>
+</div>
+
+  </div>
+
+  </div>
+
+          </aside>
+              </main>
+    </div>
+  </div>
+
+  <footer role="contentinfo">
+    <div class="creatio-region creatio-region_footer">
+      <div class="creatio-container">
+          <div class="region region-footer">
+    <div id="block-footerua" class="block block-simple-block block-simple-blockfooter-ua">
+  
+    
+      <div class="footer">
+<div class="footer-left">
+<ul class="footer-socials"><li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_fb" href="https://www.facebook.com/terrasoft.ua" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_in" href="https://www.linkedin.com/company/terrasoft/" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_yt" href="https://www.youtube.com/c/TerrasoftUkraine" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_tg" href="https://t.me/Terrasoft_UA" target="_blank"> </a></li>
+</ul></div>
+
+<div class="footer-contact">
+<div class="footer-title">Будьте на связи!</div>
+
+<div class="footer-content">
+<div class="footer-items">
+<div class="footer-item"><a class="footer__link footer__link_phone" href="tel:+380443633133">+38 (044) 363-31-33</a></div>
+</div>
+
+<div class="footer-items">
+<div class="footer-item"><a class="footer__link footer__link_email" href="mailto:support@terrasoft.ua">support@terrasoft.ua</a></div>
+</div>
+</div>
+</div>
+</div>
+
+  </div>
+
+  </div>
+
+      </div>
+    </div>
+    <div class="creatio-region creatio-region_bottom">
+      <div class="creatio-container">
+          <div class="region region-bottom">
+    <div id="block-allrightsreservedua" class="block block-simple-block block-simple-blockfooter-bottom-ua">
+  
+    
+      <p>© 2002-2022 Terrasoft.  |  <a href="https://www.terrasoft.ua/privacy-policy" target="_blank">Конфиденциальность</a></p>
+
+  </div>
+
+  </div>
+
+      </div>
+    </div>
+  </footer>
+</div>
+<div class="creatio-bg"></div>
+
+
+  </div>
+
+    
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/docs\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/2086","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"ru"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"ajaxPageState":{"libraries":"admin_feedback\/admin_feedback_block,admin_feedback\/admin_feedback_css,classy\/base,classy\/messages,classy\/node,core\/drupal.ajax,core\/jquery.form,core\/normalize,creatio\/fancybox,creatio\/global,layout_discovery\/onecol,system\/base,ts_doc\/doc_version,ts_feedback\/ts_feedback,ts_nav\/breadcrumb,ts_nav\/doc_nav,ts_nav\/page_nav,ts_title_anchor\/ts_title_anchor","theme":"creatio","theme_token":null},"ajaxTrustedUrl":{"form_action_p_pvdeGsVG5zNF_XLGPTvYSKCf43t8qZYSwcfZl2uzM":true,"\/docs\/7-16\/developer\/architecture\/razrabotka_v_creatio\/front_end_js\/obzor?ajax_form=1":true},"admin_feedback":{"yes_response":"\u0421\u043f\u0430\u0441\u0438\u0431\u043e \u0437\u0430 \u043e\u0431\u0440\u0430\u0442\u043d\u0443\u044e \u0441\u0432\u044f\u0437\u044c!","no_response":"\u0421\u043f\u0430\u0441\u0438\u0431\u043e \u0437\u0430 \u043e\u0431\u0440\u0430\u0442\u043d\u0443\u044e \u0441\u0432\u044f\u0437\u044c!","custom_text_response_on_no":{"value":"","format":"full_html"},"feedback_prompt_on_yes":true,"feedback_prompt_on_no":true,"feedback_enable_predefined_answers":false,"feedback_prompt":"\u041a\u0430\u043a \u043c\u043e\u0436\u043d\u043e \u0443\u043b\u0443\u0447\u0448\u0438\u0442\u044c \u044d\u0442\u0443 \u0441\u0442\u0430\u0442\u044c\u044e?"},"ajax":{"edit-feedback-send":{"callback":"::validateFeedbackMsg","event":"mousedown","keypress":true,"prevent":"click","url":"\/docs\/7-16\/developer\/architecture\/razrabotka_v_creatio\/front_end_js\/obzor?ajax_form=1","dialogType":"ajax","submit":{"_triggering_element_name":"op","_triggering_element_value":"\u041e\u0442\u043f\u0440\u0430\u0432\u0438\u0442\u044c"}}},"user":{"uid":0,"permissionsHash":"9c2367dfcaba0fa15f0375f97aed64e146c908cee68508d13b79e3ee80e5162d"}}</script>
+<script src="../../../../../sites/default/files/js/js_Rr-7TvYD7NposuRFJwUqThxM7yJmw8vs03PQwu5gWd8.js"></script>
+
+
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+      <g id="svg-copy" class="svg-icon svg-icon_copy">
+        <path d="M15.111,18H1.889A1.848,1.848,0,0,1,0,16.2V3.6A1.848,1.848,0,0,1,1.889,1.8H5.837a2.87,2.87,0,0,1,5.326,0h3.948A1.848,1.848,0,0,1,17,3.6V16.2A1.848,1.848,0,0,1,15.111,18ZM3.777,12.6v1.8h6.611V12.6Zm0-3.6v1.8h9.445V9Zm0-3.6V7.2h9.445V5.4ZM8.5,1.8a.924.924,0,0,0-.944.9.945.945,0,0,0,1.889,0A.924.924,0,0,0,8.5,1.8Z"/>
+      </g>
+
+      <g id="svg-prev" class="svg-icon svg-icon_arrow">
+        <path d="M5.488,12.779,0,6.39,5.488,0" transform="translate(1 0.652)"/>
+      </g>
+
+      <g id="svg-next" class="svg-icon svg-icon_arrow">
+        <path d="M0,12.779,5.488,6.39,0,0" transform="translate(0.759 0.652)"/>
+      </g>
+    </svg>
+  </body>
+
+<!-- Mirrored from academy.terrasoft.ua/docs/7-16/developer/architecture/razrabotka_v_creatio/front_end_js/obzor by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Mar 2022 05:07:13 GMT -->
+</html>

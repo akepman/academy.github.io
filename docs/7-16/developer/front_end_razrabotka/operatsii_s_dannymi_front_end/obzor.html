@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# ">
+  
+<!-- Mirrored from academy.terrasoft.ua/docs/7-16/developer/front_end_razrabotka/operatsii_s_dannymi_front_end/obzor by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Mar 2022 05:08:10 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+          <!-- Google Tag Manager -->
+      <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          '../../../../../../www.googletagmanager.com/gtm5445.html?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-KLLB8G');</script>
+      <!-- End Google Tag Manager -->
+        <meta charset="utf-8" />
+<link rel="canonical" href="obzor.html" />
+<meta name="description" content="Работа с данными во front-end модулях Creatio реализована с помощью высокоуровневого класса EntitySchemaQuery, который предназначен для построения запросов на выборку из базы данных.
+
+Особенности класса EntitySchemaQuery:" />
+<meta property="og:url" content="https://academy.terrasoft.ua/docs/7-16/developer/front_end_razrabotka/operatsii_s_dannymi_front_end/obzor" />
+<meta property="og:title" content="Операции с данными (front-end)" />
+<meta property="og:description" content="Работа с данными во front-end модулях Creatio реализована с помощью высокоуровневого класса EntitySchemaQuery, который предназначен для построения запросов на выборку из базы данных.
+
+Особенности класса EntitySchemaQuery:" />
+<meta name="Generator" content="Drupal 9 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="../../../../themes/custom/creatio/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="revision" href="obzor.html" />
+
+    <title>Операции с данными (front-end) | Creatio Academy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&amp;family=Open+Sans:ital,wght@0,300;0,400;0,600;1,400&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" media="all" href="../../../../sites/default/files/css/css_6lTP66__-yc6QXFp1zOwoeJ0HVigoYZP-SeoLLii000.css" />
+<link rel="stylesheet" media="all" href="../../../../sites/default/files/css/css_XQJDNhkF3xH5SZCcY-PI89Zu4nYIzQ5oR3SnUKyfXJU.css" />
+<link rel="stylesheet" media="print" href="../../../../sites/default/files/css/css_Zn4VHvcniOOtUwkIVwXzYr_0AI9gUVgZcPqaH4ViagU.css" />
+
+    
+  </head>
+  <body class="path-node page-node-type-developer-documentation">
+          <!-- Google Tag Manager (noscript) -->
+      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KLLB8G"
+                        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+      <!-- End Google Tag Manager (noscript) -->
+    
+        
+      <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    <div class="creatio-page d-flex flex-column">
+        <div class="region region-informer">
+    <div id="block-terrasoftpidtrimueukrainu" class="block block-simple-block block-simple-blockterrasoft-pidtrimue-ukrainu">
+  
+    
+      <style type="text/css">
+<!--/*--><![CDATA[/* ><!--*/
+@import url(../../../../../../www.terrasoft.ua/themes/custom/creatio/css/components/informer.css)
+
+/*--><!]]>*/
+</style><div class="ts-swu">
+<div class="creatio-container">
+<div class="ts-swu__cont">
+<div><a class="ts-swu__link" href="https://www.terrasoft.ua/terrasoft-stands-with-ukraine" target="_blank">Україна понад усе!</a> <span><a href="https://www.terrasoft.ua/terrasoft-stands-with-ukraine" target="_blank">Приєднуйтеся</a> до допомоги!</span></div>
+</div>
+</div></div>
+
+  </div>
+
+  </div>
+
+  
+  <header role="banner">
+          <div class="creatio-region creatio-region_top">
+        <div class="creatio-container">
+            <div class="region region-top">
+    <div id="block-menutoggle" class="block block-simple-block block-simple-blockmenu-toggle">
+  
+    
+      <div class="menu-toggle"><span> </span></div>
+
+  </div>
+<div id="block-logowhite-2" class="block block-simple-block block-simple-blocklogo-white">
+  
+    
+      <p><a class="site-logo" href="../../../../../index.html" rel="home"><img src="../../../../themes/custom/creatio/logo-white.svg" /></a></p>
+
+  </div>
+<div id="block-search" class="block block-simple-block block-simple-blocksearch">
+  
+    
+      <div class="search">
+<form action="https://academy.terrasoft.ua/search" class="search-form" method="get"><input class="search-form__input" name="search" placeholder="Поиск" type="search" /><input class="search-form__button" type="submit" value="Поиск" /> </form>
+
+<div class="search-toggle"> </div>
+</div>
+
+  </div>
+<nav role="navigation" aria-labelledby="block-sitesua-menu" id="block-sitesua" class="block block-menu navigation menu--sites-ua">
+            
+  <h2 class="visually-hidden" id="block-sitesua-menu">Sites UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="https://www.terrasoft.ua/" rel="nofollow" target="_blank">Terrasoft</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://community.terrasoft.ua/" rel="nofollow" target="_blank">Community</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://marketplace.terrasoft.ua/" rel="nofollow" target="_blank">Marketplace</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+<div id="block-usermenu" class="block block-ts-user block-ts-user-menu-block">
+  
+    
+      <ul class="user-menu">
+      <li class="user-menu__item">
+      <a class="user-menu__link" href="https://profile.terrasoft.ua/user/login?destination=academy/ua/docs/7-16/developer/front_end_razrabotka/operatsii_s_dannymi_front_end/obzor">Войти</a>
+    </li>
+  </ul>
+
+  </div>
+<div id="block-usermenumobile" class="block block-ts-user block-ts-user-menu-mobile-block">
+  
+    
+      <ul class="user-menu-mobile">
+      <li class="user-menu-mobile__item">
+      <div class="user-menu-mobile__user user-menu-mobile__user_icon"></div>
+      <ul class="user-menu-mobile__submenu">
+        <li class="user-menu-mobile__subitem">
+          <a class="user-menu-mobile__sublink" href="https://profile.terrasoft.ua/user/login?destination=academy/ua/docs/7-16/developer/front_end_razrabotka/operatsii_s_dannymi_front_end/obzor">Войти</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  </div>
+
+  </div>
+
+        </div>
+      </div>
+              <div class="creatio-region creatio-region_header">
+        <div class="creatio-container">
+            <div class="region region-header">
+    <div id="block-logo" class="block block-simple-block block-simple-blocklogo">
+  
+    
+      <p><a class="site-logo" href="../../../../../index.html" rel="home"><img src="../../../../themes/custom/creatio/logo.svg" /></a></p>
+
+  </div>
+<nav role="navigation" aria-labelledby="block-osnovnayanavigaciyaua-menu" id="block-osnovnayanavigaciyaua" class="block block-menu navigation menu--main-ua">
+            
+  <h2 class="visually-hidden" id="block-osnovnayanavigaciyaua-menu">Основная навигация UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="../../../../index.html" data-drupal-link-system-path="&lt;front&gt;">Документация</a>
+              </li>
+                <li class="menu-item">
+        <a href="../../../../../trainings.html">Тренинги</a>
+              </li>
+                <li class="menu-item">
+        <a href="../../../../certification.html" data-drupal-link-system-path="node/3084">Сертификация и тестирование</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+<nav role="navigation" aria-labelledby="block-sitesua-2-menu" id="block-sitesua-2" class="block block-menu navigation menu--sites-ua">
+            
+  <h2 class="visually-hidden" id="block-sitesua-2-menu">Sites UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="https://www.terrasoft.ua/" rel="nofollow" target="_blank">Terrasoft</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://community.terrasoft.ua/" rel="nofollow" target="_blank">Community</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://marketplace.terrasoft.ua/" rel="nofollow" target="_blank">Marketplace</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+
+  </div>
+
+        </div>
+      </div>
+              <div class="creatio-region creatio-region_breadcrumb">
+        <div class="creatio-container">
+            <div class="region region-breadcrumb">
+    <div id="block-logowhite" class="block block-simple-block block-simple-blocklogo-white">
+  
+    
+      <p><a class="site-logo" href="../../../../../index.html" rel="home"><img src="../../../../themes/custom/creatio/logo-white.svg" /></a></p>
+
+  </div>
+<div id="block-breadcrumbnaviagtion" class="block block-ts-nav block-ts-nav-bread">
+  
+    
+      <nav class="breadcrumb"><ol class="ts-nav-breadcrumb__list"><li class="ts-nav-breadcrumb__item"><a href="../../../../index.html" class="ts-nav-breadcrumb__link" title="Документация">Документация</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../../index2132.html?vid_1=2" class="ts-nav-breadcrumb__link" title="Для разработчика">Для разработчика</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../front_end_razrabotka.html" class="ts-nav-breadcrumb__link" title="Front-end разработка" hreflang="zxx">Front-end разработка</a></li>
+<li class="ts-nav-breadcrumb__item ts-nav-breadcrumb__item_mobile"><a href="../../front-end_development/operatsii_s_dannymi_front_end.html" class="ts-nav-breadcrumb__link" title="Операции с данными" hreflang="ru">Операции с данными</a></li>
+<li class="ts-nav-breadcrumb__item"><span class="ts-nav-breadcrumb__link ts-nav-breadcrumb__link_current" title="Обзор">Обзор</span></li>
+</ol>
+</nav>
+
+  </div>
+<div id="block-search-2" class="block block-simple-block block-simple-blocksearch">
+  
+    
+      <div class="search">
+<form action="https://academy.terrasoft.ua/search" class="search-form" method="get"><input class="search-form__input" name="search" placeholder="Поиск" type="search" /><input class="search-form__button" type="submit" value="Поиск" /> </form>
+
+<div class="search-toggle"> </div>
+</div>
+
+  </div>
+
+  </div>
+
+        </div>
+      </div>
+      </header>
+
+  <div class="creatio-region creatio-region_main">
+    <div class="creatio-container">
+                <div class="region region-breadcrumb-mobile">
+    <div id="block-breadcrumbnaviagtion-2" class="block block-ts-nav block-ts-nav-bread">
+  
+    
+      <nav class="breadcrumb"><ol class="ts-nav-breadcrumb__list"><li class="ts-nav-breadcrumb__item"><a href="../../../../index.html" class="ts-nav-breadcrumb__link" title="Документация">Документация</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../../index2132.html?vid_1=2" class="ts-nav-breadcrumb__link" title="Для разработчика">Для разработчика</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../front_end_razrabotka.html" class="ts-nav-breadcrumb__link" title="Front-end разработка" hreflang="zxx">Front-end разработка</a></li>
+<li class="ts-nav-breadcrumb__item ts-nav-breadcrumb__item_mobile"><a href="../../front-end_development/operatsii_s_dannymi_front_end.html" class="ts-nav-breadcrumb__link" title="Операции с данными" hreflang="ru">Операции с данными</a></li>
+<li class="ts-nav-breadcrumb__item"><span class="ts-nav-breadcrumb__link ts-nav-breadcrumb__link_current" title="Обзор">Обзор</span></li>
+</ol>
+</nav>
+
+  </div>
+
+  </div>
+
+      
+      <main class="creatio-main" role="main">
+                                                    
+        <div class="creatio-content creatio-content_small">
+          <div class="creatio-content__inner creatio-content__inner_bg">
+                            <div class="region region-messages">
+    <div data-drupal-messages-fallback class="hidden"></div>
+
+  </div>
+
+            
+              <div class="region region-content">
+    <div id="block-creatio-page-title" class="block block-core block-page-title-block">
+  
+    
+      
+  <h1 class="page-title"><span class="field field--name-title field--type-string field--label-hidden">Операции с данными (front-end)</span>
+</h1>
+
+
+  </div>
+<div id="block-creatio-content" class="block block-system block-system-main-block">
+  
+    
+      
+<article data-history-node-id="3073" role="article" about="/docs/7-16/developer/front_end_razrabotka/operatsii_s_dannymi_front_end/obzor" class="node node--type-developer-documentation node--view-mode-full">
+
+  
+    
+
+  
+  <div class="node__content">
+      <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocknodedeveloper-documentationfield-difficulty">
+  
+    
+      
+            <div class="field field--name-field-difficulty field--type-entity-reference field--label-hidden field__item"><div about="/docs/7-16/taxonomy/term/123" id="taxonomy-term-123" class="taxonomy-term vocabulary-difficulty">
+  
+  
+  <div class="content">
+      <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocktaxonomy-termdifficultyfield-icon">
+  
+    
+      
+            <div class="field field--name-field-icon field--type-image field--label-hidden field__item">  <img src="../../../../sites/default/files/difficulty/medium.svg" alt="" loading="lazy" typeof="foaf:Image" />
+
+</div>
+      
+  </div>
+<div class="block block-layout-builder block-field-blocktaxonomy-termdifficultyname">
+  
+    
+      
+            <div class="field field--name-name field--type-string field--label-hidden field__item"><span style="color: #F57E20;">Средний</span></div>
+      
+  </div>
+
+    </div>
+  </div>
+
+  </div>
+</div>
+</div>
+      
+  </div>
+<div class="block block-ts-doc block-ts-doc-downloads">
+  
+    
+      <a href="../../../../sites/default/files/pdf/node/3073/Operacii_s_dannymi_(front_end)_.pdf" target="_blank">PDF</a>
+  </div>
+<div class="block block-ts-doc block-ts-doc-versions">
+  
+    
+        <div class="ts-doc-versions">
+    <select class="ts-doc-versions__select">
+                              <option value="/docs/8-0/developer/front_end_razrabotka/operatsii_s_dannymi_front_end/obzor">Версия 8.0</option>
+                              <option value="/docs/7-18/developer/front_end_razrabotka/operatsii_s_dannymi_front_end/obzor">Версия 7.18</option>
+                              <option value="/docs/7-17/developer/front_end_razrabotka/operatsii_s_dannymi_front_end/obzor">Версия 7.17</option>
+                                                <option value="/docs/7-16/developer/front_end_razrabotka/operatsii_s_dannymi_front_end/obzor" selected>Версия 7.16</option>
+          </select>
+  </div>
+
+  </div>
+
+    </div>
+  </div>
+  <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocknodedeveloper-documentationbody">
+  
+    
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><p>Работа с данными во front-end модулях Creatio реализована с помощью высокоуровневого класса <span class="filled">EntitySchemaQuery</span>, который предназначен для построения запросов на выборку из базы данных.</p>
+
+<p><strong>Особенности</strong> класса <span class="filled">EntitySchemaQuery</span>:</p>
+
+<ul><li>Запрос на выборку данных <span class="filled">EntitySchemaQuery</span> строится c учетом прав доступа текущего пользователя.</li>
+	<li>Механизм кэширования позволяет оптимизировать выполнение операций за счет обращения к кэшированным результатам запроса без дополнительного обращения к базе данных.</li>
+</ul><p><strong>Алгоритм</strong> работы с данными во front-end модулях Creatio:</p>
+
+<ol><li>Cоздайте экземпляр класса <span class="filled">EntitySchemaQuery</span>.</li>
+	<li>Укажите корневую схему.</li>
+	<li>Сформируйте путь к колонке корневой схемы для добавления колонки в запрос.</li>
+	<li>Создайте экземпляры фильтров.</li>
+	<li>Добавьте фильтры в запрос.</li>
+	<li>Отфильтруйте результаты запроса.</li>
+</ol><h2>Сформировать пути к колонкам относительно корневой схемы<a class="title-anchor" href="#title-3073-1" id="title-3073-1"> </a></h2>
+
+<p>Основой механизма построения запроса <span class="filled">EntitySchemaQuery</span> является корневая схема. <strong>Корневая схема</strong> — таблица базы данных, относительно которой строятся пути к колонкам в запросе, в том числе к колонкам присоединяемых таблиц. Для использования в запросе колонки из произвольной таблицы необходимо корректно задать путь к этой колонке.</p>
+
+<h3>Сформировать путь к колонке по прямым связям<a class="title-anchor" href="#title-3073-2" id="title-3073-2"> </a></h3>
+
+<p>Шаблон формирования пути к колонке по <strong>прямым связям</strong> <span class="filled">ИмяСправочнойКолонки.<wbr></wbr>ИмяКолонкиСхемыИзСправочнойСхемы</span>.</p>
+
+<p>Например, есть корневая схема <span class="filled">[City]</span> из справочной колонкой <span class="filled">[Country]</span>, которая через колонку <span class="filled">Id</span> связана со справочной схемой <span class="filled">[Country]</span>.</p>
+
+<div class="media">
+<div class="media__element"><img alt="" border="0" src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/Client_ESQ/7.18/scr_direct_connections.png" /></div>
+</div>
+
+<p>Путь к колонке c наименованием страны, которой принадлежит город по прямым связям <span class="filled">Country.Name</span>. Здесь:</p>
+
+<ul><li><span class="filled">Country</span> — имя справочной колонки корневой схемы <span class="filled">[City]</span> (ссылается на схему <span class="filled">[Country]</span>).</li>
+	<li><span class="filled">Name</span> — имя колонки из справочной схемы <span class="filled">[Country]</span>.</li>
+</ul><h3>Сформировать путь к колонке по обратным связям<a class="title-anchor" href="#title-3073-3" id="title-3073-3"> </a></h3>
+
+<p>Шаблон формирования пути к колонке по <strong>обратным связям</strong> <span class="filled">[ИмяПрисоединяемойСхемы:<wbr></wbr>ИмяКолонкиДляСвязиПрисоединяемойСхемы:<wbr></wbr>ИмяКолонкиДляСвязиТекущейСхемы].<wbr></wbr>ИмяКолонкиПрисоединяемойСхемы</span>.</p>
+
+<p>Путь к колонке с именем контакта, который добавил город по обратным связям <span class="filled">[Contact:Id:CreatedBy].Name</span>. Здесь:</p>
+
+<ul><li><span class="filled">Contact</span> — имя присоединяемой схемы.</li>
+	<li><span class="filled">Id</span> — имя колонки схемы <span class="filled">[Contact]</span> для установки связи присоединяемой схемы.</li>
+	<li><span class="filled">CreatedBy</span> — имя справочной колонки схемы <span class="filled">[City]</span> для установки связи текущей схемы.</li>
+	<li><span class="filled">Name</span> — значение справочной колонки схемы <span class="filled">[City]</span>.</li>
+</ul><p>Если в качестве колонки для связи у текущей схемы выступает колонка <span class="filled">[Id]</span>, то ее можно не указывать: <span class="filled">[ИмяПрисоединяемойСхемы:<wbr></wbr>ИмяКолонкиДляСвязиПрисоединяемойСхемы].<wbr></wbr>ИмяКолонкиКорневойСхемы</span>. Например, <span class="filled">[Contact:City].Name</span>.</p>
+
+<h2>Добавить колонки в запрос<a class="title-anchor" href="#title-3073-4" id="title-3073-4"> </a></h2>
+
+<p>Колонка запроса <span class="filled">EntitySchemaQuery</span> представляет собой экземпляр класса <span class="filled">Terrasoft.EntityQueryColumn</span>. В свойствах экземпляра колонки необходимо указать основные <strong>характеристики</strong>:</p>
+
+<ul><li>Заголовок.</li>
+	<li>Значение для отображения.</li>
+	<li>Признаки использования.</li>
+	<li>Порядок и позицию сортировки.</li>
+</ul><p>Для добавления колонок в запрос предназначен метод <span class="filled">addColumn()</span>, который возвращает экземпляр добавленной в запрос колонки. Имя колонки относительно корневой схемы в методах <span class="filled">addColumn()</span> формируется согласно правилам, описанным в статье <a data-auto-update-caption="true" href="obzor.html#title-3073-1">Сформировать пути к колонкам корневой схемы</a>. Разновидности метода <span class="filled">addColumn()</span> позволяют добавлять в запрос колонки с различными параметрами и представлены в таблице ниже.</p>
+
+<div class="table">
+<div class="table__caption">Разновидности метода <span class="filled">addColumn()</span></div>
+
+<div class="table">
+<table border="1" cellpadding="1" cellspacing="1"><thead><tr><th scope="col">Тип колонки</th>
+			<th scope="col">Метод</th>
+		</tr></thead><tbody><tr><td>Колонка по заданному пути относительно корневой схемы</td>
+			<td rowspan="2"><span class="filled">addColumn(column, columnAlias)</span></td>
+		</tr><tr><td>Экземпляр класса колонки запроса</td>
+		</tr><tr><td>Колонка — параметр</td>
+			<td><span class="filled">addParameterColumn(paramValue, paramDataType, columnAlias)</span></td>
+		</tr><tr><td>Колонка — функция</td>
+			<td><span class="filled">addFunctionColumn(columnPath, functionType, columnAlias)</span></td>
+		</tr><tr><td>Колонка — агрегирующая функция</td>
+			<td><span class="filled">addAggregationSchemaColumnFunctionColumn(columnPath, aggregationType, columnAlias)</span></td>
+		</tr></tbody></table></div>
+</div>
+
+<h2>Получить результат запроса<a class="title-anchor" href="#title-3073-5" id="title-3073-5"> </a></h2>
+
+<p><strong>Результат выполнения запроса</strong> <span class="filled">EntitySchemaQuery</span> — коллекция сущностей Creatio. Каждый экземпляр коллекции — строка набора данных, возвращаемого запросом.</p>
+
+<p><strong>Способы получения результатов запроса</strong>:</p>
+
+<ul><li>Вызов метода <span class="filled">getEntity()</span> для получения конкретной строки набора данных по заданному первичному ключу.</li>
+	<li>Вызов метода <span class="filled">getEntityCollection()</span> для получения всего результирующего набора данных.</li>
+</ul><h2>Управлять фильтрами в запросе<a class="title-anchor" href="#title-3073-6" id="title-3073-6"> </a></h2>
+
+<p><strong>Фильтр</strong> — набор условий, применяемых при отображении данных запроса. В терминах SQL фильтр представляет собой отдельный предикат (условие) оператора <span class="filled">WHERE</span>.</p>
+
+<p>Для создания простого фильтра в <span class="filled">EntitySchemaQuery</span> используется метод <span class="filled">createFilter()</span>, который возвращает созданный объект фильтра <span class="filled">Terrasoft.CompareFilter</span>. В <span class="filled">EntitySchemaQuery</span> реализованы методы создания фильтров специального вида.</p>
+
+<p>Экземпляр <span class="filled">EntitySchemaQuery</span> имеет свойство <span class="filled">filters</span>, которое представляет собой коллекцию фильтров данного запроса (экземпляр класса <span class="filled">Terrasoft.FilterGroup</span>). Экземпляр класса <span class="filled">Terrasoft.FilterGroup</span> представляет собой коллекцию элементов <span class="filled">Terrasoft.BaseFilter</span>.</p>
+
+<p><strong>Алгоритм добавления фильтра в запрос</strong>:</p>
+
+<ul><li>Создайте экземпляр фильтра для данного запроса (метод <span class="filled">createFilter()</span>, методы создания фильтров специального вида).</li>
+	<li>Добавьте созданный экземпляр фильтра в коллекцию фильтров запроса (метод <span class="filled">add()</span> коллекции).</li>
+</ul><p>По умолчанию фильтры, добавляемые в коллекцию <span class="filled">filters</span>, объединяются между собой логической операцией <span class="filled">AND</span>. Свойство <span class="filled">logicalOperation</span> коллекции <span class="filled">filters</span> позволяет указать логическую операцию, которой необходимо объединять фильтры. Свойство <span class="filled">logicalOperation</span> принимает значения перечисления <span class="filled">Terrasoft.core.enums.LogicalOperatorType</span> (<span class="filled">AND</span> — И, <span class="filled">OR</span> — ИЛИ).</p>
+
+<p>В запросах <span class="filled">EntitySchemaQuery</span> реализована возможность управления фильтрами, участвующими в построении результирующего набора данных. Каждый элемент коллекции <span class="filled">filters</span> имеет свойство <span class="filled">isEnabled</span>, которое определяет, участвует ли данный элемент в построении результирующего запроса (<span class="filled">true</span> — участвует, <span class="filled">false</span> — не участвует). Аналогичное свойство <span class="filled">isEnabled</span> также определено для коллекции <span class="filled">filters</span>. Установив это свойство в <span class="filled">false</span>, можно отключить фильтрацию для запроса, при этом коллекция фильтров запроса останется неизменной. Таким образом, изначально сформировав коллекцию фильтров запроса, в дальнейшем можно использовать различные комбинации, не внося изменений в саму коллекцию.</p>
+
+<p>Формирование путей колонок в фильтрах <span class="filled">EntitySchemaQuery</span> осуществляется в соответствии с общими <a data-auto-update-caption="true" href="obzor.html#title-3073-1">правилами формирования путей</a> к колонкам относительно корневой схемы.</p>
+</div>
+      
+  </div>
+
+    </div>
+  </div>
+
+  </div>
+
+</article>
+
+  </div>
+
+  </div>
+
+          </div>
+        </div>
+
+                  <aside class="creatio-sidebar creatio-sidebar_first" role="complementary">
+              <div class="region region-sidebar-first">
+    <div id="block-documentationnaviagtion" class="block block-ts-nav block-ts-nav-doc-nav">
+  
+    
+      <div class="ts-nav-block"><a href="../../../../index.html" class="ts-nav-block__link">Документация</a><div class="ts-nav-block__title">Для разработчика</div>
+</div>
+<div class="ts-nav-container"><ul class="ts-nav-menu"><li class="ts-nav-menu__item">
+  <a href="../../s_chego_nachat.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">С чего начать&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../architecture.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Архитектура&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../instrumenty_razrabotki.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Инструменты разработки&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../back_end_razrabotka.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Back-end разработка&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../front_end_razrabotka.html" class="ts-nav-menu__link ts-nav-menu__link_expanded ts-nav-menu__link_open" hreflang="zxx">Front-end разработка&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+      <ul class="ts-nav-menu__children">
+      <li class="ts-nav-menu__item">
+  <a href="../moduli.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Модули&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../klientskaya_skhema.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Клиентская схема&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../komponenty/obzor.html" class="ts-nav-menu__link" hreflang="ru">Компоненты</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../sandbox.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Sandbox&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../websocket.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">WebSocket&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../front-end_development/operatsii_s_dannymi_front_end.html" class="ts-nav-menu__link ts-nav-menu__link_expanded ts-nav-menu__link_open" hreflang="ru">Операции с данными&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+      <ul class="ts-nav-menu__children">
+      <li class="ts-nav-menu__item">
+  <a href="obzor.html" class="ts-nav-menu__link ts-nav-menu__link_guide ts-nav-menu__link_active" hreflang="ru">Обзор</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="primery_formirovaniya_putej_k_kolonkam.html" class="ts-nav-menu__link ts-nav-menu__link_case" hreflang="ru">Примеры формирования путей к колонкам</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="primery_dobavleniya_kolonok_v_zapros.html" class="ts-nav-menu__link ts-nav-menu__link_case" hreflang="ru">Примеры добавления колонок в запрос</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="primery_polucheniya_rezultatov_zaprosa.html" class="ts-nav-menu__link ts-nav-menu__link_case" hreflang="ru">Примеры получения результатов запроса</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="primery_upravleniya_filtrami_v_zaprose.html" class="ts-nav-menu__link ts-nav-menu__link_case" hreflang="ru">Примеры управления фильтрами в запросе</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="entityschemaquery.html" class="ts-nav-menu__link ts-nav-menu__link_reference" data-type="JS" hreflang="ru">EntitySchemaQuery</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="datamanager.html" class="ts-nav-menu__link ts-nav-menu__link_reference" data-type="JS" hreflang="ru">DataManager</a>
+  </li>
+
+    </ul>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../front-end_development/biznes_logika_elementov_upravleniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Бизнес-логика элементов управления&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../../../api/jscoreapi/7.15.0/index.html" class="ts-nav-menu__link" hreflang="ru">Библиотека JS классов</a>
+  </li>
+
+    </ul>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../integratsiya_i_vneshnij_api.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Интеграция и внешний API&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../ehlementy_interfejsa.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Элементы интерфейса&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../komponenty_prilozheniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Компоненты приложения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../razrabotka_mobilnogo_prilozheniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Разработка мобильного приложения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../razrabotka_marketplace_prilozheniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Разработка Marketplace-приложения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+</ul>
+</div>
+
+  </div>
+
+  </div>
+
+            <div class="creatio-sidebar__toggle"></div>
+          </aside>
+        
+                  <aside class="creatio-sidebar creatio-sidebar_second" role="complementary">
+              <div class="region region-sidebar-second">
+    <div id="block-example" class="block block-ts-nav block-ts-nav-page-nav">
+  
+    
+      <div class="ts-nav-page">
+  </div>
+
+  </div>
+<div id="block-adminfeedbackblock" class="block block-admin-feedback block-admin-feedback-block">
+  
+    
+      <div id="feedback-message"><div id="upper-feedback-content"><h2>Был ли данный материал полезен?</h2>
+<input class="feedback-btn feedback-btn__yes button js-form-submit form-submit" data-node-id="3073" data-feedback="yes" type="submit" name="op" value="Да" />
+<input class="feedback-btn feedback-btn__no button js-form-submit form-submit" data-node-id="3073" data-feedback="no" type="submit" name="op" value="Нет" />
+</div>
+<form class="admin-feedback-form" data-drupal-selector="admin-feedback-form" action="https://academy.terrasoft.ua/docs/7-16/developer/front_end_razrabotka/operatsii_s_dannymi_front_end/obzor" method="post" id="admin-feedback-form" accept-charset="UTF-8">
+  <div id="feedback-msg-result"></div><div class="js-form-item form-item js-form-type-textarea form-type-textarea js-form-item-feedback-message form-item-feedback-message form-no-label">
+        <div class="form-textarea-wrapper">
+  <textarea id="edit-feedback-msg" data-drupal-selector="edit-feedback-message" name="feedback_message" rows="5" cols="60" class="form-textarea resize-vertical"></textarea>
+</div>
+
+        </div>
+<input id="feedback-id" data-drupal-selector="edit-feedback-id" type="hidden" name="feedback_id" value="" />
+<input class="feedback-btn feedback-btn__send-comment button js-form-submit form-submit" data-drupal-selector="edit-feedback-send" type="submit" id="edit-feedback-send" name="op" value="Отправить" />
+<input autocomplete="off" data-drupal-selector="form-pa4wbc8ydhb5wr-yaiwbx78p-khzm-4t55am1g6ca9c" type="hidden" name="form_build_id" value="form-Pa4wBC8yDhB5wR_yAiwBx78p_kHZm-4t55AM1G6Ca9c" />
+<input data-drupal-selector="edit-admin-feedback-form" type="hidden" name="form_id" value="admin_feedback_form" />
+
+</form>
+</div>
+
+  </div>
+
+  </div>
+
+          </aside>
+              </main>
+    </div>
+  </div>
+
+  <footer role="contentinfo">
+    <div class="creatio-region creatio-region_footer">
+      <div class="creatio-container">
+          <div class="region region-footer">
+    <div id="block-footerua" class="block block-simple-block block-simple-blockfooter-ua">
+  
+    
+      <div class="footer">
+<div class="footer-left">
+<ul class="footer-socials"><li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_fb" href="https://www.facebook.com/terrasoft.ua" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_in" href="https://www.linkedin.com/company/terrasoft/" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_yt" href="https://www.youtube.com/c/TerrasoftUkraine" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_tg" href="https://t.me/Terrasoft_UA" target="_blank"> </a></li>
+</ul></div>
+
+<div class="footer-contact">
+<div class="footer-title">Будьте на связи!</div>
+
+<div class="footer-content">
+<div class="footer-items">
+<div class="footer-item"><a class="footer__link footer__link_phone" href="tel:+380443633133">+38 (044) 363-31-33</a></div>
+</div>
+
+<div class="footer-items">
+<div class="footer-item"><a class="footer__link footer__link_email" href="mailto:support@terrasoft.ua">support@terrasoft.ua</a></div>
+</div>
+</div>
+</div>
+</div>
+
+  </div>
+
+  </div>
+
+      </div>
+    </div>
+    <div class="creatio-region creatio-region_bottom">
+      <div class="creatio-container">
+          <div class="region region-bottom">
+    <div id="block-allrightsreservedua" class="block block-simple-block block-simple-blockfooter-bottom-ua">
+  
+    
+      <p>© 2002-2022 Terrasoft.  |  <a href="https://www.terrasoft.ua/privacy-policy" target="_blank">Конфиденциальность</a></p>
+
+  </div>
+
+  </div>
+
+      </div>
+    </div>
+  </footer>
+</div>
+<div class="creatio-bg"></div>
+
+
+  </div>
+
+    
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/docs\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/3073","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"ru"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"ajaxPageState":{"libraries":"admin_feedback\/admin_feedback_block,admin_feedback\/admin_feedback_css,classy\/base,classy\/messages,classy\/node,core\/drupal.ajax,core\/jquery.form,core\/normalize,creatio\/fancybox,creatio\/global,layout_discovery\/onecol,system\/base,ts_doc\/doc_version,ts_feedback\/ts_feedback,ts_nav\/breadcrumb,ts_nav\/doc_nav,ts_nav\/page_nav,ts_title_anchor\/ts_title_anchor","theme":"creatio","theme_token":null},"ajaxTrustedUrl":{"form_action_p_pvdeGsVG5zNF_XLGPTvYSKCf43t8qZYSwcfZl2uzM":true,"\/docs\/7-16\/developer\/front_end_razrabotka\/operatsii_s_dannymi_front_end\/obzor?ajax_form=1":true},"admin_feedback":{"yes_response":"\u0421\u043f\u0430\u0441\u0438\u0431\u043e \u0437\u0430 \u043e\u0431\u0440\u0430\u0442\u043d\u0443\u044e \u0441\u0432\u044f\u0437\u044c!","no_response":"\u0421\u043f\u0430\u0441\u0438\u0431\u043e \u0437\u0430 \u043e\u0431\u0440\u0430\u0442\u043d\u0443\u044e \u0441\u0432\u044f\u0437\u044c!","custom_text_response_on_no":{"value":"","format":"full_html"},"feedback_prompt_on_yes":true,"feedback_prompt_on_no":true,"feedback_enable_predefined_answers":false,"feedback_prompt":"\u041a\u0430\u043a \u043c\u043e\u0436\u043d\u043e \u0443\u043b\u0443\u0447\u0448\u0438\u0442\u044c \u044d\u0442\u0443 \u0441\u0442\u0430\u0442\u044c\u044e?"},"ajax":{"edit-feedback-send":{"callback":"::validateFeedbackMsg","event":"mousedown","keypress":true,"prevent":"click","url":"\/docs\/7-16\/developer\/front_end_razrabotka\/operatsii_s_dannymi_front_end\/obzor?ajax_form=1","dialogType":"ajax","submit":{"_triggering_element_name":"op","_triggering_element_value":"\u041e\u0442\u043f\u0440\u0430\u0432\u0438\u0442\u044c"}}},"user":{"uid":0,"permissionsHash":"9c2367dfcaba0fa15f0375f97aed64e146c908cee68508d13b79e3ee80e5162d"}}</script>
+<script src="../../../../sites/default/files/js/js_Rr-7TvYD7NposuRFJwUqThxM7yJmw8vs03PQwu5gWd8.js"></script>
+
+
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+      <g id="svg-copy" class="svg-icon svg-icon_copy">
+        <path d="M15.111,18H1.889A1.848,1.848,0,0,1,0,16.2V3.6A1.848,1.848,0,0,1,1.889,1.8H5.837a2.87,2.87,0,0,1,5.326,0h3.948A1.848,1.848,0,0,1,17,3.6V16.2A1.848,1.848,0,0,1,15.111,18ZM3.777,12.6v1.8h6.611V12.6Zm0-3.6v1.8h9.445V9Zm0-3.6V7.2h9.445V5.4ZM8.5,1.8a.924.924,0,0,0-.944.9.945.945,0,0,0,1.889,0A.924.924,0,0,0,8.5,1.8Z"/>
+      </g>
+
+      <g id="svg-prev" class="svg-icon svg-icon_arrow">
+        <path d="M5.488,12.779,0,6.39,5.488,0" transform="translate(1 0.652)"/>
+      </g>
+
+      <g id="svg-next" class="svg-icon svg-icon_arrow">
+        <path d="M0,12.779,5.488,6.39,0,0" transform="translate(0.759 0.652)"/>
+      </g>
+    </svg>
+  </body>
+
+<!-- Mirrored from academy.terrasoft.ua/docs/7-16/developer/front_end_razrabotka/operatsii_s_dannymi_front_end/obzor by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Mar 2022 05:08:11 GMT -->
+</html>

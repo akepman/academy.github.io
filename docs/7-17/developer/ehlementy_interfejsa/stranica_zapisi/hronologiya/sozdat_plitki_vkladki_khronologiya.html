@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# ">
+  
+<!-- Mirrored from academy.terrasoft.ua/docs/7-17/developer/ehlementy_interfejsa/stranica_zapisi/hronologiya/sozdat_plitki_vkladki_khronologiya by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Mar 2022 05:49:42 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+          <!-- Google Tag Manager -->
+      <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          '../../../../../../../www.googletagmanager.com/gtm5445.html?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-KLLB8G');</script>
+      <!-- End Google Tag Manager -->
+        <meta charset="utf-8" />
+<link rel="canonical" href="sozdat_plitki_vkladki_khronologiya.html" />
+<meta name="description" content="Пример. На вкладке Хронология (Timeline) страницы контрагента отобразить плитки, связанные с пользовательским разделом Книги (Books). Плитки должны содержать:" />
+<meta property="og:url" content="https://academy.terrasoft.ua/docs/7-17/developer/ehlementy_interfejsa/stranica_zapisi/hronologiya/sozdat_plitki_vkladki_khronologiya" />
+<meta property="og:title" content="Создать хронологию, связанную с пользовательским разделом" />
+<meta property="og:description" content="Пример. На вкладке Хронология (Timeline) страницы контрагента отобразить плитки, связанные с пользовательским разделом Книги (Books). Плитки должны содержать:" />
+<meta name="Generator" content="Drupal 9 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="../../../../../themes/custom/creatio/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="revision" href="sozdat_plitki_vkladki_khronologiya.html" />
+
+    <title>Создать хронологию, связанную с пользовательским разделом | Creatio Academy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&amp;family=Open+Sans:ital,wght@0,300;0,400;0,600;1,400&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" media="all" href="../../../../../sites/default/files/css/css_6lTP66__-yc6QXFp1zOwoeJ0HVigoYZP-SeoLLii000.css" />
+<link rel="stylesheet" media="all" href="../../../../../sites/default/files/css/css_XQJDNhkF3xH5SZCcY-PI89Zu4nYIzQ5oR3SnUKyfXJU.css" />
+<link rel="stylesheet" media="print" href="../../../../../sites/default/files/css/css_Zn4VHvcniOOtUwkIVwXzYr_0AI9gUVgZcPqaH4ViagU.css" />
+
+    
+  </head>
+  <body class="path-node page-node-type-case">
+          <!-- Google Tag Manager (noscript) -->
+      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KLLB8G"
+                        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+      <!-- End Google Tag Manager (noscript) -->
+    
+        
+      <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    <div class="creatio-page d-flex flex-column">
+        <div class="region region-informer">
+    <div id="block-terrasoftpidtrimueukrainu" class="block block-simple-block block-simple-blockterrasoft-pidtrimue-ukrainu">
+  
+    
+      <style type="text/css">
+<!--/*--><![CDATA[/* ><!--*/
+@import url(../../../../../../../www.terrasoft.ua/themes/custom/creatio/css/components/informer.css)
+
+/*--><!]]>*/
+</style><div class="ts-swu">
+<div class="creatio-container">
+<div class="ts-swu__cont">
+<div><a class="ts-swu__link" href="https://www.terrasoft.ua/terrasoft-stands-with-ukraine" target="_blank">Україна понад усе!</a> <span><a href="https://www.terrasoft.ua/terrasoft-stands-with-ukraine" target="_blank">Приєднуйтеся</a> до допомоги!</span></div>
+</div>
+</div></div>
+
+  </div>
+
+  </div>
+
+  
+  <header role="banner">
+          <div class="creatio-region creatio-region_top">
+        <div class="creatio-container">
+            <div class="region region-top">
+    <div id="block-menutoggle" class="block block-simple-block block-simple-blockmenu-toggle">
+  
+    
+      <div class="menu-toggle"><span> </span></div>
+
+  </div>
+<div id="block-logowhite-2" class="block block-simple-block block-simple-blocklogo-white">
+  
+    
+      <p><a class="site-logo" href="../../../../../../index.html" rel="home"><img src="../../../../../themes/custom/creatio/logo-white.svg" /></a></p>
+
+  </div>
+<div id="block-search" class="block block-simple-block block-simple-blocksearch">
+  
+    
+      <div class="search">
+<form action="https://academy.terrasoft.ua/search" class="search-form" method="get"><input class="search-form__input" name="search" placeholder="Поиск" type="search" /><input class="search-form__button" type="submit" value="Поиск" /> </form>
+
+<div class="search-toggle"> </div>
+</div>
+
+  </div>
+<nav role="navigation" aria-labelledby="block-sitesua-menu" id="block-sitesua" class="block block-menu navigation menu--sites-ua">
+            
+  <h2 class="visually-hidden" id="block-sitesua-menu">Sites UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="https://www.terrasoft.ua/" rel="nofollow" target="_blank">Terrasoft</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://community.terrasoft.ua/" rel="nofollow" target="_blank">Community</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://marketplace.terrasoft.ua/" rel="nofollow" target="_blank">Marketplace</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+<div id="block-usermenu" class="block block-ts-user block-ts-user-menu-block">
+  
+    
+      <ul class="user-menu">
+      <li class="user-menu__item">
+      <a class="user-menu__link" href="https://profile.terrasoft.ua/user/login?destination=academy/ua/docs/7-17/developer/ehlementy_interfejsa/stranica_zapisi/hronologiya/sozdat_plitki_vkladki_khronologiya">Войти</a>
+    </li>
+  </ul>
+
+  </div>
+<div id="block-usermenumobile" class="block block-ts-user block-ts-user-menu-mobile-block">
+  
+    
+      <ul class="user-menu-mobile">
+      <li class="user-menu-mobile__item">
+      <div class="user-menu-mobile__user user-menu-mobile__user_icon"></div>
+      <ul class="user-menu-mobile__submenu">
+        <li class="user-menu-mobile__subitem">
+          <a class="user-menu-mobile__sublink" href="https://profile.terrasoft.ua/user/login?destination=academy/ua/docs/7-17/developer/ehlementy_interfejsa/stranica_zapisi/hronologiya/sozdat_plitki_vkladki_khronologiya">Войти</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  </div>
+
+  </div>
+
+        </div>
+      </div>
+              <div class="creatio-region creatio-region_header">
+        <div class="creatio-container">
+            <div class="region region-header">
+    <div id="block-logo" class="block block-simple-block block-simple-blocklogo">
+  
+    
+      <p><a class="site-logo" href="../../../../../../index.html" rel="home"><img src="../../../../../themes/custom/creatio/logo.svg" /></a></p>
+
+  </div>
+<nav role="navigation" aria-labelledby="block-osnovnayanavigaciyaua-menu" id="block-osnovnayanavigaciyaua" class="block block-menu navigation menu--main-ua">
+            
+  <h2 class="visually-hidden" id="block-osnovnayanavigaciyaua-menu">Основная навигация UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="../../../../../index.html" data-drupal-link-system-path="&lt;front&gt;">Документация</a>
+              </li>
+                <li class="menu-item">
+        <a href="../../../../../../trainings.html">Тренинги</a>
+              </li>
+                <li class="menu-item">
+        <a href="../../../../../certification.html" data-drupal-link-system-path="node/3084">Сертификация и тестирование</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+<nav role="navigation" aria-labelledby="block-sitesua-2-menu" id="block-sitesua-2" class="block block-menu navigation menu--sites-ua">
+            
+  <h2 class="visually-hidden" id="block-sitesua-2-menu">Sites UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="https://www.terrasoft.ua/" rel="nofollow" target="_blank">Terrasoft</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://community.terrasoft.ua/" rel="nofollow" target="_blank">Community</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://marketplace.terrasoft.ua/" rel="nofollow" target="_blank">Marketplace</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+
+  </div>
+
+        </div>
+      </div>
+              <div class="creatio-region creatio-region_breadcrumb">
+        <div class="creatio-container">
+            <div class="region region-breadcrumb">
+    <div id="block-logowhite" class="block block-simple-block block-simple-blocklogo-white">
+  
+    
+      <p><a class="site-logo" href="../../../../../../index.html" rel="home"><img src="../../../../../themes/custom/creatio/logo-white.svg" /></a></p>
+
+  </div>
+<div id="block-breadcrumbnaviagtion" class="block block-ts-nav block-ts-nav-bread">
+  
+    
+      <nav class="breadcrumb"><ol class="ts-nav-breadcrumb__list"><li class="ts-nav-breadcrumb__item"><a href="../../../../../index.html" class="ts-nav-breadcrumb__link" title="Документация">Документация</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../../../index2132.html?vid_1=2" class="ts-nav-breadcrumb__link" title="Для разработчика">Для разработчика</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../ehlementy_interfejsa.html" class="ts-nav-breadcrumb__link" title="Элементы интерфейса" hreflang="ru">Элементы интерфейса</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../stranica_zapisi.html" class="ts-nav-breadcrumb__link" title="Страница записи" hreflang="ru">Страница записи</a></li>
+<li class="ts-nav-breadcrumb__item ts-nav-breadcrumb__item_mobile"><a href="../../../interface_elements/page/hronologiya.html" class="ts-nav-breadcrumb__link" title="Хронология" hreflang="ru">Хронология</a></li>
+<li class="ts-nav-breadcrumb__item"><span class="ts-nav-breadcrumb__link ts-nav-breadcrumb__link_current" title="Создать хронологию">Создать хронологию</span></li>
+</ol>
+</nav>
+
+  </div>
+<div id="block-search-2" class="block block-simple-block block-simple-blocksearch">
+  
+    
+      <div class="search">
+<form action="https://academy.terrasoft.ua/search" class="search-form" method="get"><input class="search-form__input" name="search" placeholder="Поиск" type="search" /><input class="search-form__button" type="submit" value="Поиск" /> </form>
+
+<div class="search-toggle"> </div>
+</div>
+
+  </div>
+
+  </div>
+
+        </div>
+      </div>
+      </header>
+
+  <div class="creatio-region creatio-region_main">
+    <div class="creatio-container">
+                <div class="region region-breadcrumb-mobile">
+    <div id="block-breadcrumbnaviagtion-2" class="block block-ts-nav block-ts-nav-bread">
+  
+    
+      <nav class="breadcrumb"><ol class="ts-nav-breadcrumb__list"><li class="ts-nav-breadcrumb__item"><a href="../../../../../index.html" class="ts-nav-breadcrumb__link" title="Документация">Документация</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../../../index2132.html?vid_1=2" class="ts-nav-breadcrumb__link" title="Для разработчика">Для разработчика</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../ehlementy_interfejsa.html" class="ts-nav-breadcrumb__link" title="Элементы интерфейса" hreflang="ru">Элементы интерфейса</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../stranica_zapisi.html" class="ts-nav-breadcrumb__link" title="Страница записи" hreflang="ru">Страница записи</a></li>
+<li class="ts-nav-breadcrumb__item ts-nav-breadcrumb__item_mobile"><a href="../../../interface_elements/page/hronologiya.html" class="ts-nav-breadcrumb__link" title="Хронология" hreflang="ru">Хронология</a></li>
+<li class="ts-nav-breadcrumb__item"><span class="ts-nav-breadcrumb__link ts-nav-breadcrumb__link_current" title="Создать хронологию">Создать хронологию</span></li>
+</ol>
+</nav>
+
+  </div>
+
+  </div>
+
+      
+      <main class="creatio-main" role="main">
+                                                    
+        <div class="creatio-content creatio-content_small">
+          <div class="creatio-content__inner creatio-content__inner_bg">
+                            <div class="region region-messages">
+    <div data-drupal-messages-fallback class="hidden"></div>
+
+  </div>
+
+            
+              <div class="region region-content">
+    <div id="block-creatio-page-title" class="block block-core block-page-title-block">
+  
+    
+      
+  <h1 class="page-title"><span class="field field--name-title field--type-string field--label-hidden">Создать хронологию, связанную с пользовательским разделом</span>
+</h1>
+
+
+  </div>
+<div id="block-creatio-content" class="block block-system block-system-main-block">
+  
+    
+      
+<article data-history-node-id="2346" role="article" about="/docs/7-17/developer/ehlementy_interfejsa/stranica_zapisi/hronologiya/sozdat_plitki_vkladki_khronologiya" class="node node--type-case node--view-mode-full">
+
+  
+    
+
+  
+  <div class="node__content">
+      <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocknodecasefield-difficulty">
+  
+    
+      
+            <div class="field field--name-field-difficulty field--type-entity-reference field--label-hidden field__item"><div about="/docs/7-17/taxonomy/term/169" id="taxonomy-term-169" class="taxonomy-term vocabulary-difficulty">
+  
+  
+  <div class="content">
+      <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocktaxonomy-termdifficultyfield-icon">
+  
+    
+      
+            <div class="field field--name-field-icon field--type-image field--label-hidden field__item">  <img src="../../../../../sites/default/files/difficulty/advanced.svg" alt="" loading="lazy" typeof="foaf:Image" />
+
+</div>
+      
+  </div>
+<div class="block block-layout-builder block-field-blocktaxonomy-termdifficultyname">
+  
+    
+      
+            <div class="field field--name-name field--type-string field--label-hidden field__item"><span style="color: #EF4524;">Сложный</span></div>
+      
+  </div>
+
+    </div>
+  </div>
+
+  </div>
+</div>
+</div>
+      
+  </div>
+<div class="block block-ts-doc block-ts-doc-downloads">
+  
+    
+      <a href="../../../../../sites/default/files/pdf/node/2346/Sozdat_khronologiyu__svyazannuyu_s_polzovatelskim_razdelom_.pdf" target="_blank">PDF</a>
+  </div>
+<div class="block block-ts-doc block-ts-doc-versions">
+  
+    
+        <div class="ts-doc-versions">
+    <select class="ts-doc-versions__select">
+                              <option value="/docs/8-0/developer/ehlementy_interfejsa/stranica_zapisi/hronologiya/sozdat_plitki_vkladki_khronologiya">Версия 8.0</option>
+                              <option value="/docs/7-18/developer/ehlementy_interfejsa/stranica_zapisi/hronologiya/sozdat_plitki_vkladki_khronologiya">Версия 7.18</option>
+                                                <option value="/docs/7-17/developer/ehlementy_interfejsa/stranica_zapisi/hronologiya/sozdat_plitki_vkladki_khronologiya" selected>Версия 7.17</option>
+                              <option value="/docs/7-16/developer/ehlementy_interfejsa/stranica_zapisi/hronologiya/sozdat_plitki_vkladki_khronologiya">Версия 7.16</option>
+          </select>
+  </div>
+
+  </div>
+
+    </div>
+  </div>
+  <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocknodecasebody">
+  
+    
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><div class="message message_example">
+<p><span class="message__bold message__bold_example">Пример.</span> На вкладке <span class="key">Хронология</span> (<span class="key">Timeline</span>) страницы контрагента отобразить плитки, связанные с пользовательским разделом <span class="key">Книги</span> (<span class="key">Books</span>). Плитки должны содержать:</p>
+
+<ul><li>Иконка.</li>
+	<li>Название.</li>
+	<li>Автор.</li>
+	<li>Дата добавления записи о книге.</li>
+	<li>Стоимость.</li>
+	<li>ISBN номер.</li>
+	<li>Краткое описание книги.</li>
+</ul></div>
+
+<div class="message message_warning">
+<p><span class="message__bold message__bold_warning">Важно.</span> Для реализации примера используйте on-site приложение.</p>
+</div>
+
+<h2>1. Создать раздел <span class="key">Книги</span> (Books))<a class="title-anchor" href="#title-2346-6" id="title-2346-6"> </a></h2>
+
+<p>Чтобы <strong>создать раздел</strong> <span class="key">Книги</span> (<span class="key">Books</span>), установите пакет примера <a href="../../../../../7-16/developer/development_tools/transferring_solutions/perenos_resheniy__v_creatio_ide.html#title-2128-2">Привязать данные к пакету</a>.</p>
+
+<div class="message">
+<p><span class="message__bold">На заметку.</span> Вы можете создать раздел самостоятельно, используя мастер разделов.</p>
+</div>
+
+<p>После установки пакета в рабочем месте <span class="key">Продажи</span> (<span class="key">Sales</span>) доступен раздел <span class="key">Книги</span> (<span class="key">Books</span>).</p>
+
+<div class="media">
+<div class="media__element"><img alt="" border="0" src="../../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/TimelineExample/scr_SectionBooks.png" /></div>
+</div>
+
+<p>На вкладке <span class="key">Books</span> страницы контрагента появится деталь, которая отображает связанные записи раздела <span class="key">Книги</span> (<span class="key">Books</span>).</p>
+
+<div class="media">
+<div class="media__element"><img alt="" border="0" src="../../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/TimelineExample/scr_SectionAccount_detail.png" /></div>
+</div>
+
+<h2>2. Создать модуль представления плитки<a class="title-anchor" href="#title-2346-7" id="title-2346-7"> </a></h2>
+
+<ol><li><a href="../../../../../7-18/developer/instrumenty_razrabotki/creatio_ide/principy_razrabotki_v_creatio_ide/obzor.html#title-2093-1">Перейдите в раздел <span class="key">Конфигурация</span></a> (<span class="key">Configuration</span>) и выберите пользовательский <a href="../../../../../developer/instrumenty_razrabotki/pakety/obshchiye_printsipy_raboty_s_paketami/obzor.html">пакет</a>, в который будет добавлена схема. Установить зависимость от пакета <span class="filled">Timeline</span>.</li>
+	<li>
+	<p>На панели инструментов реестра раздела нажмите <span class="key">Добавить</span> —&gt; <span class="key">Модуль</span> (<span class="key">Add</span> —&gt; <span class="key">Module</span>).</p>
+
+	<div class="media">
+	<div class="media__element"><img src="../../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/TimelineExample/scr_add_module.png" /></div>
+	</div>
+	</li>
+	<li>
+	<p>Заполните <strong>свойства схемы</strong>.</p>
+
+	<ul><li><span class="key">Код</span> (<span class="key">Code</span>) — "<span class="consolas">UsrBookTimelineItemView</span>".</li>
+		<li><span class="key">Заголовок</span> (<span class="key">Title</span>) — "<span class="consolas">Представление элемента хронологии UsrBook</span>" ("<span class="consolas">UsrBook Timeline Item View</span>").</li>
+	</ul><div class="media">
+	<div class="media__element"><img src="../../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/TimelineExample/scr_view_props.png" /></div>
+	</div>
+	</li>
+	<li>
+	<p>Добавьте <strong>логику отображения плитки</strong>. Для этого реализуйте <strong>методы</strong>:</p>
+
+	<ul><li><span class="filled">getUsrISBNViewConfig</span> — возвращает конфигурацию дополнительного поля <span class="key">UsrISBN</span> плитки.</li>
+		<li><span class="filled">getUsrPriceViewConfig</span> — возвращает конфигурацию дополнительного поля <span class="key">UsrPrice</span> плитки.</li>
+		<li><span class="filled">getBodyViewConfig</span> — переопределенный метод, который возвращает общую конфигурацию плитки.</li>
+	</ul><p>Исходный код схемы модуля представления плитки представлен ниже.</p>
+
+	<div class="code">
+	<div class="code__widgets">
+	<div class="code__top">
+	<div class="code__title"><span class="filled">UsrBookTimelineItemView</span></div>
+	</div>
+
+	<div class="code__source">
+	<pre class="prettyprint">
+<span>/* Определение модуля и его зависимостей.*/
+</span>define(<span>"UsrBookTimelineItemView"</span>, [<span>"UsrBookTimelineItemViewResources"</span>, <span>"BaseTimelineItemView"</span>], <span>function</span>() {
+    <span>/* Определение класса представления плитки.*/
+</span>    Ext.define(<span>"Terrasoft.configuration.UsrBookTimelineItemView"</span>, {
+        extend: <span>"Terrasoft.BaseTimelineItemView"</span>,
+        alternateClassName: <span>"Terrasoft.UsrBookTimelineItemView"</span>,
+        <span>/* Метод, возвращающий конфигурацию дополнительного поля [UsrISBN] плитки.*/ 
+</span>        getUsrISBNViewConfig: <span>function</span>() {
+            <span>return</span> {
+                <span>/* Название поля.*/
+</span>                <span>"name"</span>: <span>"UsrISBN"</span>,
+                <span>/* Тип поля — метка.*/
+</span>                <span>"itemType"</span>: Terrasoft.ViewItemType.LABEL,
+                <span>/* Заголовок.*/
+</span>                <span>"caption"</span>: {
+                    <span>"bindTo"</span>: <span>"UsrISBN"</span>
+                },
+                <span>/* Видимость.*/
+</span>                <span>"visible"</span>: {
+                    <span>/* Привязка к колонке связанной с плиткой сущности.*/
+</span>                    <span>"bindTo"</span>: <span>"UsrISBN"</span>,
+                    <span>/* Настройка видимости.*/
+</span>                    <span>"bindConfig"</span>: {
+                        <span>/* Поле видимо, если значение в колонке не пустое.*/
+</span>                        <span>"converter"</span>: <span>"checkIsNotEmpty"</span>
+                    }
+                },
+                <span>/* CSS-стили поля.*/
+</span>                <span>"classes"</span>: {
+                    <span>"labelClass"</span>: [<span>"timeline-text-light"</span>]
+                }
+            };
+        },
+        <span>/* Метод, возвращающий конфигурацию дополнительного поля [UsrPrice] плитки.*/
+</span>        getUsrPriceViewConfig: <span>function</span>() {
+            <span>return</span> {
+                <span>"name"</span>: <span>"UsrPrice"</span>,
+                <span>"itemType"</span>: Terrasoft.ViewItemType.LABEL,
+                <span>"caption"</span>: {
+                    <span>"bindTo"</span>: <span>"UsrPrice"</span>
+                },
+                <span>"visible"</span>: {
+                    <span>"bindTo"</span>: <span>"UsrPrice"</span>,
+                    <span>"bindConfig"</span>: {
+                        <span>"converter"</span>: <span>"checkIsNotEmpty"</span>
+                    }
+                },
+                <span>"classes"</span>: {
+                    <span>"labelClass"</span>: [<span>"timeline-item-subject-label"</span>]
+                }
+            };
+        },
+        <span>/* Переопределенный метод, возвращающий общую конфигурацию плитки.*/
+</span>        getBodyViewConfig: <span>function</span>() {
+            <span>/* Получение стандартных настроек.*/
+</span>            <span>var</span> bodyConfig = <span>this</span>.callParent(arguments);
+            <span>/* Добавление конфигураций дополнительных полей.*/
+</span>            bodyConfig.items.unshift(<span>this</span>.getUsrISBNViewConfig());
+            bodyConfig.items.unshift(<span>this</span>.getUsrPriceViewConfig());
+            <span>return</span> bodyConfig;
+        }
+    });
+});
+</pre>
+	</div>
+	</div>
+	</div>
+
+	<p>Здесь определяется конфигурация дополнительно отображаемых на плитке полей <span class="key">UsrISBN</span> и <span class="key">UsrPrice</span>. Стандартная конфигурация определена в модуле <span class="filled">BaseTimelineItemView</span>.</p>
+	</li>
+	<li>На панели инструментов дизайнера нажмите <span class="key">Сохранить</span> (<span class="key">Save</span>).</li>
+</ol><h2>3. Создать модуль модели представления плитки<a class="title-anchor" href="#title-2346-8" id="title-2346-8"> </a></h2>
+
+<ol><li><a href="../../../../../7-18/developer/instrumenty_razrabotki/creatio_ide/principy_razrabotki_v_creatio_ide/obzor.html#title-2093-1">Перейдите в раздел <span class="key">Конфигурация</span></a> (<span class="key">Configuration</span>) и выберите пользовательский <a href="../../../../../developer/instrumenty_razrabotki/pakety/obshchiye_printsipy_raboty_s_paketami/obzor.html">пакет</a>, в который будет добавлена схема. Установить зависимость от пакета <span class="filled">Timeline</span>.</li>
+	<li>
+	<p>На панели инструментов реестра раздела нажмите <span class="key">Добавить</span> —&gt; <span class="key">Модуль</span> (<span class="key">Add</span> —&gt; <span class="key">Module</span>).</p>
+
+	<div class="media">
+	<div class="media__element"><img src="../../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/TimelineExample/scr_add_module.png" /></div>
+	</div>
+	</li>
+	<li>
+	<p>Заполните <strong>свойства схемы</strong>.</p>
+
+	<ul><li><span class="key">Код</span> (<span class="key">Code</span>) — "<span class="consolas">UsrBookTimelineItemViewModel</span>".</li>
+		<li><span class="key">Заголовок</span> (<span class="key">Title</span>) — "<span class="consolas">Модель представления элемента хронологии UsrBook</span>" ("<span class="consolas">UsrBook timeline item view model</span>").</li>
+	</ul><div class="media">
+	<div class="media__element"><img alt="" border="0" src="../../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/TimelineExample/scr_viewmodel_props.png" /></div>
+	</div>
+	</li>
+	<li>В объявлении класса модуля в качестве зависимостей добавьте модули <span class="filled">UsrBookTimelineItemViewModelResources</span> и <span class="filled">BaseTimelineItemViewModel</span>.
+	<p>Исходный код модуля модели представления плитки представлен ниже.</p>
+
+	<div class="code">
+	<div class="code__widgets">
+	<div class="code__top">
+	<div class="code__title"><span class="filled">UsrBookTimelineItemViewModel</span></div>
+	</div>
+
+	<div class="code__source">
+	<pre class="prettyprint">
+define(<span>"UsrBookTimelineItemViewModel"</span>, [<span>"UsrBookTimelineItemViewModelResources"</span>, <span>"BaseTimelineItemViewModel"</span>],
+    <span>function</span>() {
+        Ext.define(<span>"Terrasoft.configuration.UsrBookTimelineItemViewModel"</span>, {
+            alternateClassName: <span>"Terrasoft.UsrBookTimelineItemViewModel"</span>,
+            extend: <span>"Terrasoft.BaseTimelineItemViewModel"</span>
+        });
+    });
+</pre>
+	</div>
+	</div>
+	</div>
+
+	<p>Здесь определяется класс <span class="filled">Terrasoft.configuration.UsrBookTimelineItemViewModel</span>. Поскольку этот класс определен, как наследник  <span class="filled">Terrasoft.BaseTimelineItemViewModel</span>, то это позволяет использовать функциональность  базового класса.</p>
+	</li>
+	<li>На панели инструментов дизайнера нажмите <span class="key">Сохранить</span> (<span class="key">Save</span>).</li>
+</ol><h2>4. Настроить отображение плитки <a class="title-anchor" href="#title-2346-9" id="title-2346-9"> </a></h2>
+
+<p>Настройка <a data-auto-update-caption="true" href="obzor.html#title-2347-1">свойств плиток хронологии</a> выполняется в таблице [TimelineTileSetting] базы данных.</p>
+
+<p>Чтобы <strong>настроить отображение плитки</strong>:</p>
+
+<ol><li>
+	<p>Создайте новую запись в таблице <span class="filled">[TimelineTileSetting]</span>. <span style="font-size:10.5pt; font-variant:normal; white-space:pre-wrap"><span style="font-family:Arial"><span style="color:#0a0a0a"><span style="font-weight:400"><span style="font-style:normal"><span style="text-decoration:none">Для этого выполните SQL-запрос.</span></span></span></span></span></span> </p>
+
+	<div class="code">
+	<div class="code__widgets">
+	<div class="code__top">
+	<div class="code__title">SQL-запрос</div>
+	</div>
+
+	<div class="code__source">
+	<pre class="prettyprint">
+<span>INSERT</span> <span>INTO</span> TimelineTileSetting (CreatedOn, CreatedById, ModifiedOn, ModifiedById, Name, Data, <span>Image</span>)
+  <span>VALUES</span> (GETUTCDATE(), <span>NULL</span>, GETUTCDATE(), <span>NULL</span>, <span>'UsrBooks'</span>, <span>NULL</span>, <span>NULL</span>);
+</pre>
+	</div>
+	</div>
+	</div>
+	</li>
+	<li>
+	<p>Добавьте значение в колонки  <span class="filled">[Data]</span> и <span class="filled">[Image]</span>.</p>
+
+	<p>Поскольку данные в колонках <span class="filled">[Data] </span>и <span class="filled">[Image]</span> хранятся в формате <span class="filled">varbinary(max)</span>, то редактировать их удобнее всего с помощью специализированных редакторов, например, dbForge Studio Express for SQL Server.</p>
+
+	<p>Чтобы <strong>добавить значение в колонки</strong>  <span class="filled">[Data]</span> и <span class="filled">[Image]</span> с помощью dbForge Studio Express for SQL Server:</p>
+
+	<ol><li>Выберите необходимую таблицу (1).</li>
+		<li>Выберите необходимую колонку записи и кликните по кнопке редактирования (2).</li>
+		<li>В редакторе данных перейдите в режим текстового отображения данных(3).</li>
+		<li>Добавьте необходимые данные (4).</li>
+		<li>В редакторе данных нажмите на кнопку применения изменений (5).</li>
+		<li>Нажмите на кнопку обновления данных (6).</li>
+		<li>В появившемся диалоговом окне согласитесь с применением изменений (7).</li>
+	</ol><div class="media">
+	<div class="media__element"><img alt="" border="0" src="../../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/TimelineExample/scr_dbForge_01.png" /></div>
+	</div>
+
+	<div class="message message_warning">
+	<p><span class="message__bold message__bold_warning">Важно.</span> Это способ подходит только для сред разработки, которые развернуты on-site. Изменения вносятся непосредственно в базу данных, они не привязаны ни к одному пакету. При установке пакета со схемами представления и модели представления плитки в другое приложение изменения в базу данных внесены не будут. Для корректного переноса разработанной функциональности следует привязать SQL-скрипты, которые вносят соответствующие изменения в базу данных при установке пакета.</p>
+	</div>
+
+	<p>Добавьте в колонку <span class="key">Data</span> конфигурационный объект.</p>
+
+	<div class="code">
+	<div class="code__widgets">
+	<div class="code__top">
+	<div class="code__title">Данные колонки<span class="filled">[Data]</span></div>
+	</div>
+
+	<div class="code__source">
+	<pre class="prettyprint">
+{
+    <span>"entitySchemaName"</span>: <span>"UsrBook"</span>,
+    <span>"viewModelClassName"</span>: <span>"Terrasoft.UsrBookTimelineItemViewModel"</span>,
+    <span>"viewClassName"</span>: <span>"Terrasoft.UsrBookTimelineItemView"</span>,
+    <span>"orderColumnName"</span>: <span>"CreatedOn"</span>,
+    <span>"authorColumnName"</span>: <span>"UsrAuthor"</span>,
+    <span>"captionColumnName"</span>: <span>"UsrName"</span>,
+    <span>"messageColumnName"</span>: <span>"UsrDEscription"</span>,
+    <span>"columns"</span>: [
+        {
+            <span>"columnName"</span>: <span>"UsrISBN"</span>,
+            <span>"columnAlias"</span>: <span>"UsrISBN"</span>
+        },
+        {
+            <span>"columnName"</span>: <span>"UsrPrice"</span>,
+            <span>"columnAlias"</span>: <span>"UsrPrice"</span>
+        }
+    ]
+}
+</pre>
+	</div>
+	</div>
+	</div>
+
+	<p>Здесь, кроме основных полей, унаследованных от базовой плитки, указывается также массив дополнительных полей, отображение которых сконфигурировано в модуле представления <span class="filled">UsrBookTimelineItemView</span> .</p>
+
+	<p>Для отображения иконки, соответствующей иконке раздела, добавьте в колонку <span class="key">Image</span> данные в SVG-формате.</p>
+
+	<div class="code">
+	<div class="code__widgets">
+	<div class="code__top">
+	<div class="code__title">Данные колонки <span class="filled">[Image]</span></div>
+	</div>
+
+	<div class="code__source">
+	<pre class="prettyprint">
+&lt;svg xmlns=<span>"http://www.w3.org/2000/svg"</span> viewBox=<span>"0 0 52 52"</span> enable-background=<span>"new 0 0 52 52"</span>&gt;
+&lt;path d=<span>"M46.072,31.384c-0.011-0.026-0.025-0.048-0.039-0.073c-0.036-0.064-0.077-0.125-0.123-0.182
+</span>    c-0.018-0.022-0.034-0.044-0.053-0.064c-0.034-0.036-0.068-0.07-0.105-0.104c-0.062-0.055-0.431-0.3-0.819-0.559
+    c-1.958-1.307-7.465-4.978-9.424-6.284c-0.388-0.258-0.703-0.845-0.703-1.312V3.938c0-0.401-0.19-0.777-0.512-1.017
+    c-0.322-0.239-0.739-0.311-1.122-0.193L15.015,8.254c-0.446,0.136-1.154,0.097-1.583-0.086l-1.094-0.467
+    c-0.428-0.184-0.414-0.442,0.031-0.578l15.213-4.646c0.668-0.204,1.045-0.911,0.841-1.58s-0.912-1.047-1.58-0.841L7.507,5.961
+    C7.454,5.982,7.429,5.994,7.403,6.005C7.338,6.031,7.276,6.062,7.217,6.097C7.205,6.104,7.191,6.108,7.178,6.116
+    c-0.015,0.01-0.026,0.025-0.041,0.035C7.081,6.191,7.03,6.236,6.982,6.284c-0.02,0.021-0.041,0.039-0.06,0.062
+    C6.864,6.412,6.813,6.485,6.77,6.562C6.716,6.659,6.683,6.748,6.658,6.838C6.651,6.864,6.648,6.89,6.642,6.916
+    C6.628,6.985,6.619,7.054,6.616,7.125C6.615,7.142,6.61,7.156,6.61,7.173V29.85c0,0.466-0.036,0.86-0.081,0.88l-0.081,0.036
+    c-0.109,0.058-0.18,0.101-0.246,0.15c-0.025,0.018-0.046,0.037-0.069,0.058c-0.056,0.049-0.107,0.103-0.154,0.161
+    c-0.015,0.019-0.032,0.035-0.046,0.056c-0.057,0.079-0.105,0.164-0.142,0.257c-0.006,0.015-0.008,0.03-0.014,0.045
+    c-0.029,0.077-0.049,0.158-0.062,0.241c-0.002,0.015-0.009,0.027-0.01,0.042c-0.002,0.018,0.002,0.036,0.001,0.054
+    c-0.003,0.031-0.009,0.062-0.009,0.094v7.312c0,0.393,0.182,0.762,0.493,1.002l14.766,11.391c0.226,0.175,0.499,0.264,0.773,0.264
+    c0.212,0,0.424-0.053,0.616-0.16l23.203-12.938c0.401-0.224,0.649-0.646,0.649-1.105v-5.766c0-0.09-0.01-0.177-0.027-0.261
+    C46.145,31.555,46.113,31.468,46.072,31.384z M15.4,11.625c0-0.466,0.361-0.953,0.807-1.089l15.261-4.645
+    c0.446-0.136,0.807,0.132,0.807,0.598v14.63c0,0.467-0.314,0.635-0.702,0.376l-1.127-0.752c-0.361-0.24-0.819-0.278-1.216-0.104
+    l-13.059,5.805c-0.426,0.189-0.771-0.034-0.771-0.501C15.4,25.943,15.4,11.625,15.4,11.625z M28.851,23.579
+    c0.425-0.189,1.085-0.134,1.473,0.125l11.43,7.62c0.388,0.259,0.368,0.644-0.045,0.86l-18.404,9.662
+    c-0.412,0.216-1.047,0.163-1.418-0.121l-11.789-9.001c-0.371-0.283-0.326-0.665,0.1-0.854L28.851,23.579z M9.142,9.932
+    c0-0.466,0.348-0.695,0.776-0.512l2.174,0.929c0.429,0.183,0.776,0.708,0.776,1.175v2.158c-1.57-0.068-2.894-0.916-3.727-1.61
+    L9.142,9.932L9.142,9.932z M9.142,13.152c0.931,0.671,2.22,1.323,3.727,1.372v7.633c-1.57-0.066-2.894-0.915-3.727-1.609
+    C9.142,20.548,9.142,13.152,9.142,13.152z M9.142,21.627c0.931,0.671,2.22,1.323,3.727,1.372v3.992c0,0.466-0.35,0.985-0.782,1.16
+    l-2.163,0.876c-0.432,0.175-0.782-0.061-0.782-0.527V21.627z M43.666,36.101c0,0.467-0.33,1.027-0.737,1.255L22.578,48.702
+    c-0.407,0.228-1.036,0.18-1.405-0.104L8.897,39.127c-0.369-0.284-0.668-0.893-0.668-1.358v-2.444c0-0.466,0.3-0.614,0.671-0.332
+    l12.764,9.748c0.225,0.171,0.496,0.26,0.768,0.26c0.201,0,0.403-0.048,0.588-0.146l19.899-10.447
+    c0.413-0.217,0.747-0.015,0.747,0.452V36.101z<span>" style="</span>fill:#6c91de;<span>"/&gt;
+</span>&lt;path d=<span>"M33.81,34.064c0.072,0.049,0.155,0.073,0.239,0.073c0.072,0,0.145-0.018,0.209-0.055l4.505-2.575
+</span>    c0.126-0.072,0.207-0.204,0.212-0.349c0.006-0.146-0.063-0.283-0.183-0.365l-9.011-6.192c-0.118-0.08-0.268-0.097-0.399-0.042
+    l-5.157,2.123c-0.143,0.059-0.243,0.191-0.259,0.346c-0.017,0.154,0.053,0.304,0.181,0.392L33.81,34.064z M29.492,25.426
+    l8.269,5.682l-3.692,2.11l-8.803-6.052L29.492,25.426z<span>" style="</span>fill:#6c91de;<span>"/&gt;
+</span>&lt;/svg&gt;
+</pre>
+	</div>
+	</div>
+	</div>
+	</li>
+</ol><h2>5. Изменить привязку плитки<a class="title-anchor" href="#title-2346-10" id="title-2346-10"> </a></h2>
+
+<p>Для раздела <span class="key">Контрагенты</span> (<span class="key">Accounts</span>) в таблице <span class="filled">[TimelineTileSetting]</span> уже существует запись с настройкой плиток, связанных с другими разделами. Это запись, которая содержит значение "<span class="consolas">AccountPageV2</span>" в колонке <span class="key">Key</span>.</p>
+
+<div class="media">
+<div class="media__element"><img alt="" border="0" src="../../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/TimelineExample/scr_dbForge_03.png" /></div>
+</div>
+
+<div class="message message_warning">
+<p><span class="message__bold message__bold_warning">Важно.</span> Поскольку в хронологии страницы раздела <span class="key">Контрагенты</span> (<span class="key">Accounts</span>) используются несколько плиток, то в колонке <span class="filled">[Data]</span> хранится массив конфигурационных объектов, которые подключают соответствующую плитку.</p>
+</div>
+
+<p>Используя приведенную на шаге 4 последовательность, измените массив конфигурационных объектов, добавив в него новую запись.</p>
+
+<div class="code">
+<div class="code__widgets">
+<div class="code__top">
+<div class="code__title">Добавление нового объекта в массив <span class="filled">[Data]</span></div>
+</div>
+
+<div class="code__source">
+<pre class="prettyprint">
+[
+  {
+    <span>"entityConfigKey"</span>: <span>"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"</span>,
+    <span>"referenceColumnName"</span>: <span>"UsrPublisher"</span>,
+    <span>"entitySchemaName"</span>: <span>"UsrBook"</span>,
+    <span>"masterRecordColumnName"</span>: <span>"Id"</span>
+  },
+  ...
+]
+</pre>
+</div>
+</div>
+</div>
+
+<p>Значение свойства "<span class="filled">entityConfigKey</span>" —  идентификатор (колонка <span class="filled">[Id]</span>) записи таблицы <span class="filled">[TimelineTileSettings]</span>, которая создана на шаге 4.</p>
+
+<div class="message message_warning">
+<p><span class="message__bold message__bold_warning">Важно.</span> Будьте предельно осторожны при изменении значения в колонке <span class="key">Data</span>. Внесение некорректных изменений может нарушить работу существующих плиток хронологии в разделе.</p>
+</div>
+
+<h2>Результат выполнения примера<a id="title-2346-16" class="title-anchor" href="#title-2346-16"> </a></h2>
+
+<p>В результате выполнения примера на вкладке <span class="key">Хронология</span> (<span class="key">Timeline</span>) страницы контрагента отображаются  плитки, которые связаны с пользовательским разделом <span class="key">Книги</span> (<span class="key">Books</span>). Эти плитки содержат все поля, приведенные в условиях примера.</p>
+
+<div class="media">
+<div class="media__element"><img alt="" border="0" src="../../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/TimelineExample/scr_result.png" /></div>
+</div>
+</div>
+      
+  </div>
+<div class="block block-layout-builder block-field-blocknodecasefield-resources">
+  
+    
+      
+  <div class="field field--name-field-resources field--type-link field--label-above">
+    <div class="field__label">Ресурсы</div>
+          <div class="field__items">
+              <div class="field__item"><a href="../../../../../../sites/default/files/documents/downloads/SDK/Packages/sdkBookExample_18.04.25_10.55.21.zip" target="_blank">Пакет с реализацией раздела [Книги]</a></div>
+          <div class="field__item"><a href="../../../../../../sites/default/files/documents/downloads/SDK/Packages/sdkTimelineExample_18.04.25_10.55.37.zip" target="_blank">Пакет с реализацией схем модулей плиток</a></div>
+              </div>
+      </div>
+
+  </div>
+
+    </div>
+  </div>
+
+  </div>
+
+</article>
+
+  </div>
+
+  </div>
+
+          </div>
+        </div>
+
+                  <aside class="creatio-sidebar creatio-sidebar_first" role="complementary">
+              <div class="region region-sidebar-first">
+    <div id="block-documentationnaviagtion" class="block block-ts-nav block-ts-nav-doc-nav">
+  
+    
+      <div class="ts-nav-block"><a href="../../../../../index.html" class="ts-nav-block__link">Документация</a><div class="ts-nav-block__title">Для разработчика</div>
+</div>
+<div class="ts-nav-container"><ul class="ts-nav-menu"><li class="ts-nav-menu__item">
+  <a href="../../../s_chego_nachat.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">С чего начать&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../architecture.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Архитектура&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../instrumenty_razrabotki.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Инструменты разработки&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../back_end_razrabotka.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Back-end разработка&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../front_end_razrabotka.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Front-end разработка&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../integratsiya_i_vneshnij_api.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Интеграция и внешний API&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../ehlementy_interfejsa.html" class="ts-nav-menu__link ts-nav-menu__link_expanded ts-nav-menu__link_open" hreflang="ru">Элементы интерфейса&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+      <ul class="ts-nav-menu__children">
+      <li class="ts-nav-menu__item">
+  <a href="../../glavnoe_menyu/obzor.html" class="ts-nav-menu__link" hreflang="ru">Главное меню</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../razdel.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Раздел&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../stranica_zapisi.html" class="ts-nav-menu__link ts-nav-menu__link_expanded ts-nav-menu__link_open" hreflang="ru">Страница записи&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+      <ul class="ts-nav-menu__children">
+      <li class="ts-nav-menu__item">
+  <a href="../../../interface_elements/page/obzor.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Обзор&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../interface_elements/page/panel_dejstvij.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Панель действий&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../interface_elements/page/pole.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Поле&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../interface_elements/page/knopka.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Кнопка&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../interface_elements/page/hronologiya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded ts-nav-menu__link_open" hreflang="ru">Хронология&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+      <ul class="ts-nav-menu__children">
+      <li class="ts-nav-menu__item">
+  <a href="obzor.html" class="ts-nav-menu__link ts-nav-menu__link_guide" hreflang="ru">Обзор</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="primer_ispolzovaniya_bazovoj_plitki.html" class="ts-nav-menu__link ts-nav-menu__link_case" hreflang="ru">Добавить базовую хронологию в раздел</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="sozdat_plitki_vkladki_khronologiya.html" class="ts-nav-menu__link ts-nav-menu__link_case ts-nav-menu__link_active" hreflang="ru">Создать хронологию</a>
+  </li>
+
+    </ul>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../interface_elements/page/profil_svyazannoj_sushchnosti.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Профиль связанной сущности&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../interface_elements/page/html_ehlement_iframe.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">HTML-элемент iframe&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+
+    </ul>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../1215/detail.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Деталь&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../mini_kartochka.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Мини-карточка&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../modalnoe_okno.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Модальное окно&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../kommunikacionnaya_panel.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Коммуникационная панель&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../komandnaya_stroka/obzor.html" class="ts-nav-menu__link" hreflang="ru">Командная строка</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../dashbordy.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Дашборды&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../chaty.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Чаты&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../upravlenie_ehlementami_interfejsa.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Управление элементами интерфейса&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+
+    </ul>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../komponenty_prilozheniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Компоненты приложения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../razrabotka_mobilnogo_prilozheniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Разработка мобильного приложения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../razrabotka_marketplace_prilozheniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Разработка Marketplace-приложения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+</ul>
+</div>
+
+  </div>
+
+  </div>
+
+            <div class="creatio-sidebar__toggle"></div>
+          </aside>
+        
+                  <aside class="creatio-sidebar creatio-sidebar_second" role="complementary">
+              <div class="region region-sidebar-second">
+    <div id="block-example" class="block block-ts-nav block-ts-nav-page-nav">
+  
+    
+      <div class="ts-nav-page">
+  </div>
+
+  </div>
+<div id="block-adminfeedbackblock" class="block block-admin-feedback block-admin-feedback-block">
+  
+    
+      <div id="feedback-message"><div id="upper-feedback-content"><h2>Был ли данный материал полезен?</h2>
+<input class="feedback-btn feedback-btn__yes button js-form-submit form-submit" data-node-id="2346" data-feedback="yes" type="submit" name="op" value="Да" />
+<input class="feedback-btn feedback-btn__no button js-form-submit form-submit" data-node-id="2346" data-feedback="no" type="submit" name="op" value="Нет" />
+</div>
+<form class="admin-feedback-form" data-drupal-selector="admin-feedback-form" action="https://academy.terrasoft.ua/docs/7-17/developer/ehlementy_interfejsa/stranica_zapisi/hronologiya/sozdat_plitki_vkladki_khronologiya" method="post" id="admin-feedback-form" accept-charset="UTF-8">
+  <div id="feedback-msg-result"></div><div class="js-form-item form-item js-form-type-textarea form-type-textarea js-form-item-feedback-message form-item-feedback-message form-no-label">
+        <div class="form-textarea-wrapper">
+  <textarea id="edit-feedback-msg" data-drupal-selector="edit-feedback-message" name="feedback_message" rows="5" cols="60" class="form-textarea resize-vertical"></textarea>
+</div>
+
+        </div>
+<input id="feedback-id" data-drupal-selector="edit-feedback-id" type="hidden" name="feedback_id" value="" />
+<input class="feedback-btn feedback-btn__send-comment button js-form-submit form-submit" data-drupal-selector="edit-feedback-send" type="submit" id="edit-feedback-send" name="op" value="Отправить" />
+<input autocomplete="off" data-drupal-selector="form-ntht85o5zmdb5nzoias2-sfvhvlq5zynml9-3l24rie" type="hidden" name="form_build_id" value="form-nTht85o5zmdB5NzoIAS2-SFVhvLq5ZYnmL9-3L24riE" />
+<input data-drupal-selector="edit-admin-feedback-form" type="hidden" name="form_id" value="admin_feedback_form" />
+
+</form>
+</div>
+
+  </div>
+
+  </div>
+
+          </aside>
+              </main>
+    </div>
+  </div>
+
+  <footer role="contentinfo">
+    <div class="creatio-region creatio-region_footer">
+      <div class="creatio-container">
+          <div class="region region-footer">
+    <div id="block-footerua" class="block block-simple-block block-simple-blockfooter-ua">
+  
+    
+      <div class="footer">
+<div class="footer-left">
+<ul class="footer-socials"><li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_fb" href="https://www.facebook.com/terrasoft.ua" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_in" href="https://www.linkedin.com/company/terrasoft/" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_yt" href="https://www.youtube.com/c/TerrasoftUkraine" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_tg" href="https://t.me/Terrasoft_UA" target="_blank"> </a></li>
+</ul></div>
+
+<div class="footer-contact">
+<div class="footer-title">Будьте на связи!</div>
+
+<div class="footer-content">
+<div class="footer-items">
+<div class="footer-item"><a class="footer__link footer__link_phone" href="tel:+380443633133">+38 (044) 363-31-33</a></div>
+</div>
+
+<div class="footer-items">
+<div class="footer-item"><a class="footer__link footer__link_email" href="mailto:support@terrasoft.ua">support@terrasoft.ua</a></div>
+</div>
+</div>
+</div>
+</div>
+
+  </div>
+
+  </div>
+
+      </div>
+    </div>
+    <div class="creatio-region creatio-region_bottom">
+      <div class="creatio-container">
+          <div class="region region-bottom">
+    <div id="block-allrightsreservedua" class="block block-simple-block block-simple-blockfooter-bottom-ua">
+  
+    
+      <p>© 2002-2022 Terrasoft.  |  <a href="https://www.terrasoft.ua/privacy-policy" target="_blank">Конфиденциальность</a></p>
+
+  </div>
+
+  </div>
+
+      </div>
+    </div>
+  </footer>
+</div>
+<div class="creatio-bg"></div>
+
+
+  </div>
+
+    
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/docs\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/2346","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"ru"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"ajaxPageState":{"libraries":"admin_feedback\/admin_feedback_block,admin_feedback\/admin_feedback_css,classy\/base,classy\/messages,classy\/node,core\/drupal.ajax,core\/jquery.form,core\/normalize,creatio\/fancybox,creatio\/global,layout_discovery\/onecol,system\/base,ts_doc\/doc_version,ts_feedback\/ts_feedback,ts_nav\/breadcrumb,ts_nav\/doc_nav,ts_nav\/page_nav,ts_title_anchor\/ts_title_anchor","theme":"creatio","theme_token":null},"ajaxTrustedUrl":{"form_action_p_pvdeGsVG5zNF_XLGPTvYSKCf43t8qZYSwcfZl2uzM":true,"\/docs\/7-17\/developer\/ehlementy_interfejsa\/stranica_zapisi\/hronologiya\/sozdat_plitki_vkladki_khronologiya?ajax_form=1":true},"admin_feedback":{"yes_response":"\u0421\u043f\u0430\u0441\u0438\u0431\u043e \u0437\u0430 \u043e\u0431\u0440\u0430\u0442\u043d\u0443\u044e \u0441\u0432\u044f\u0437\u044c!","no_response":"\u0421\u043f\u0430\u0441\u0438\u0431\u043e \u0437\u0430 \u043e\u0431\u0440\u0430\u0442\u043d\u0443\u044e \u0441\u0432\u044f\u0437\u044c!","custom_text_response_on_no":{"value":"","format":"full_html"},"feedback_prompt_on_yes":true,"feedback_prompt_on_no":true,"feedback_enable_predefined_answers":false,"feedback_prompt":"\u041a\u0430\u043a \u043c\u043e\u0436\u043d\u043e \u0443\u043b\u0443\u0447\u0448\u0438\u0442\u044c \u044d\u0442\u0443 \u0441\u0442\u0430\u0442\u044c\u044e?"},"ajax":{"edit-feedback-send":{"callback":"::validateFeedbackMsg","event":"mousedown","keypress":true,"prevent":"click","url":"\/docs\/7-17\/developer\/ehlementy_interfejsa\/stranica_zapisi\/hronologiya\/sozdat_plitki_vkladki_khronologiya?ajax_form=1","dialogType":"ajax","submit":{"_triggering_element_name":"op","_triggering_element_value":"\u041e\u0442\u043f\u0440\u0430\u0432\u0438\u0442\u044c"}}},"user":{"uid":0,"permissionsHash":"9c2367dfcaba0fa15f0375f97aed64e146c908cee68508d13b79e3ee80e5162d"}}</script>
+<script src="../../../../../sites/default/files/js/js_Rr-7TvYD7NposuRFJwUqThxM7yJmw8vs03PQwu5gWd8.js"></script>
+
+
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+      <g id="svg-copy" class="svg-icon svg-icon_copy">
+        <path d="M15.111,18H1.889A1.848,1.848,0,0,1,0,16.2V3.6A1.848,1.848,0,0,1,1.889,1.8H5.837a2.87,2.87,0,0,1,5.326,0h3.948A1.848,1.848,0,0,1,17,3.6V16.2A1.848,1.848,0,0,1,15.111,18ZM3.777,12.6v1.8h6.611V12.6Zm0-3.6v1.8h9.445V9Zm0-3.6V7.2h9.445V5.4ZM8.5,1.8a.924.924,0,0,0-.944.9.945.945,0,0,0,1.889,0A.924.924,0,0,0,8.5,1.8Z"/>
+      </g>
+
+      <g id="svg-prev" class="svg-icon svg-icon_arrow">
+        <path d="M5.488,12.779,0,6.39,5.488,0" transform="translate(1 0.652)"/>
+      </g>
+
+      <g id="svg-next" class="svg-icon svg-icon_arrow">
+        <path d="M0,12.779,5.488,6.39,0,0" transform="translate(0.759 0.652)"/>
+      </g>
+    </svg>
+  </body>
+
+<!-- Mirrored from academy.terrasoft.ua/docs/7-17/developer/ehlementy_interfejsa/stranica_zapisi/hronologiya/sozdat_plitki_vkladki_khronologiya by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Mar 2022 05:49:42 GMT -->
+</html>

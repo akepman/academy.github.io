@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# ">
+  
+<!-- Mirrored from academy.terrasoft.ua/docs/release/opisanie-relizov/opisanie-reliza-7161 by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 22 Mar 2022 19:53:28 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+          <!-- Google Tag Manager -->
+      <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          '../../../../www.googletagmanager.com/gtm5445.html?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-KLLB8G');</script>
+      <!-- End Google Tag Manager -->
+        <meta charset="utf-8" />
+<link rel="canonical" href="opisanie-reliza-7161.html" />
+<meta name="description" content="Представляем обзор изменений и улучшений, реализованных в Creatio версии 7.16.1.
+
+Инструкция по обновлению для приложений on-site доступна в отдельной статье.
+
+Marketing Creatio 
+
+
+	Устранена ситуация, когда при создании задачи на детали Активности страницы мероприятия эта задача отображалась также на детали Email." />
+<meta property="og:url" content="https://academy.terrasoft.ua/docs/release/opisanie-relizov/opisanie-reliza-7161" />
+<meta property="og:title" content="Описание релиза 7.16.1" />
+<meta property="og:description" content="Представляем обзор изменений и улучшений, реализованных в Creatio версии 7.16.1.
+
+Инструкция по обновлению для приложений on-site доступна в отдельной статье.
+
+Marketing Creatio 
+
+
+	Устранена ситуация, когда при создании задачи на детали Активности страницы мероприятия эта задача отображалась также на детали Email." />
+<meta name="Generator" content="Drupal 9 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="../../themes/custom/creatio/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="revision" href="opisanie-reliza-7161.html" />
+
+    <title>Описание релиза 7.16.1 | Creatio Academy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&amp;family=Open+Sans:ital,wght@0,300;0,400;0,600;1,400&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" media="all" href="../../sites/default/files/css/css_1jCFiTcBV91qBcuP4N9bSf9AWOv9OjFpQpmULX2nX9Y.css" />
+<link rel="stylesheet" media="all" href="../../sites/default/files/css/css_hR9fpYyVh6oycbmxUgpQj0kvlDcehuOjLIV7mGrrJvI.css" />
+<link rel="stylesheet" media="print" href="../../sites/default/files/css/css_Zn4VHvcniOOtUwkIVwXzYr_0AI9gUVgZcPqaH4ViagU.css" />
+
+    
+  </head>
+  <body class="path-node page-node-type-release-note">
+          <!-- Google Tag Manager (noscript) -->
+      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KLLB8G"
+                        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+      <!-- End Google Tag Manager (noscript) -->
+    
+        
+      <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    <div class="creatio-page d-flex flex-column">
+        <div class="region region-informer">
+    <div id="block-terrasoftpidtrimueukrainu" class="block block-simple-block block-simple-blockterrasoft-pidtrimue-ukrainu">
+  
+    
+      <style type="text/css">
+<!--/*--><![CDATA[/* ><!--*/
+@import url(../../../../www.terrasoft.ua/themes/custom/creatio/css/components/informer.css)
+
+/*--><!]]>*/
+</style><div class="ts-swu">
+<div class="creatio-container">
+<div class="ts-swu__cont">
+<div><a class="ts-swu__link" href="https://www.terrasoft.ua/terrasoft-stands-with-ukraine" target="_blank">Україна понад усе!</a> <span><a href="https://www.terrasoft.ua/terrasoft-stands-with-ukraine" target="_blank">Приєднуйтеся</a> до допомоги!</span></div>
+</div>
+</div></div>
+
+  </div>
+
+  </div>
+
+  
+  <header role="banner">
+          <div class="creatio-region creatio-region_top">
+        <div class="creatio-container">
+            <div class="region region-top">
+    <div id="block-menutoggle" class="block block-simple-block block-simple-blockmenu-toggle">
+  
+    
+      <div class="menu-toggle"><span> </span></div>
+
+  </div>
+<div id="block-logowhite-2" class="block block-simple-block block-simple-blocklogo-white">
+  
+    
+      <p><a class="site-logo" href="../../../index.html" rel="home"><img src="../../themes/custom/creatio/logo-white.svg" /></a></p>
+
+  </div>
+<div id="block-search" class="block block-simple-block block-simple-blocksearch">
+  
+    
+      <div class="search">
+<form action="https://academy.terrasoft.ua/search" class="search-form" method="get"><input class="search-form__input" name="search" placeholder="Поиск" type="search" /><input class="search-form__button" type="submit" value="Поиск" /> </form>
+
+<div class="search-toggle"> </div>
+</div>
+
+  </div>
+<nav role="navigation" aria-labelledby="block-sitesua-menu" id="block-sitesua" class="block block-menu navigation menu--sites-ua">
+            
+  <h2 class="visually-hidden" id="block-sitesua-menu">Sites UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="https://www.terrasoft.ua/" rel="nofollow" target="_blank">Terrasoft</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://community.terrasoft.ua/" rel="nofollow" target="_blank">Community</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://marketplace.terrasoft.ua/" rel="nofollow" target="_blank">Marketplace</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+<div id="block-usermenu" class="block block-ts-user block-ts-user-menu-block">
+  
+    
+      <ul class="user-menu">
+      <li class="user-menu__item">
+      <a class="user-menu__link" href="https://profile.terrasoft.ua/user/login?destination=academy/ua/docs/release/opisanie-relizov/opisanie-reliza-7161">Войти</a>
+    </li>
+  </ul>
+
+  </div>
+<div id="block-usermenumobile" class="block block-ts-user block-ts-user-menu-mobile-block">
+  
+    
+      <ul class="user-menu-mobile">
+      <li class="user-menu-mobile__item">
+      <div class="user-menu-mobile__user user-menu-mobile__user_icon"></div>
+      <ul class="user-menu-mobile__submenu">
+        <li class="user-menu-mobile__subitem">
+          <a class="user-menu-mobile__sublink" href="https://profile.terrasoft.ua/user/login?destination=academy/ua/docs/release/opisanie-relizov/opisanie-reliza-7161">Войти</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  </div>
+
+  </div>
+
+        </div>
+      </div>
+              <div class="creatio-region creatio-region_header">
+        <div class="creatio-container">
+            <div class="region region-header">
+    <div id="block-logo" class="block block-simple-block block-simple-blocklogo">
+  
+    
+      <p><a class="site-logo" href="../../../index.html" rel="home"><img src="../../themes/custom/creatio/logo.svg" /></a></p>
+
+  </div>
+<nav role="navigation" aria-labelledby="block-osnovnayanavigaciyaua-menu" id="block-osnovnayanavigaciyaua" class="block block-menu navigation menu--main-ua">
+            
+  <h2 class="visually-hidden" id="block-osnovnayanavigaciyaua-menu">Основная навигация UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="../../index.html" data-drupal-link-system-path="&lt;front&gt;">Документация</a>
+              </li>
+                <li class="menu-item">
+        <a href="../../../trainings.html">Тренинги</a>
+              </li>
+                <li class="menu-item">
+        <a href="../../certification.html" data-drupal-link-system-path="node/3084">Сертификация и тестирование</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+<nav role="navigation" aria-labelledby="block-sitesua-2-menu" id="block-sitesua-2" class="block block-menu navigation menu--sites-ua">
+            
+  <h2 class="visually-hidden" id="block-sitesua-2-menu">Sites UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="https://www.terrasoft.ua/" rel="nofollow" target="_blank">Terrasoft</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://community.terrasoft.ua/" rel="nofollow" target="_blank">Community</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://marketplace.terrasoft.ua/" rel="nofollow" target="_blank">Marketplace</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+
+  </div>
+
+        </div>
+      </div>
+              <div class="creatio-region creatio-region_breadcrumb">
+        <div class="creatio-container">
+            <div class="region region-breadcrumb">
+    <div id="block-logowhite" class="block block-simple-block block-simple-blocklogo-white">
+  
+    
+      <p><a class="site-logo" href="../../../index.html" rel="home"><img src="../../themes/custom/creatio/logo-white.svg" /></a></p>
+
+  </div>
+<div id="block-breadcrumbnaviagtion" class="block block-ts-nav block-ts-nav-bread">
+  
+    
+      <nav class="breadcrumb"><ol class="ts-nav-breadcrumb__list"><li class="ts-nav-breadcrumb__item"><a href="../../index.html" class="ts-nav-breadcrumb__link" title="Документация">Документация</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../index11e8.html?vid_1=3" class="ts-nav-breadcrumb__link" title="Релизы">Релизы</a></li>
+<li class="ts-nav-breadcrumb__item ts-nav-breadcrumb__item_mobile"><a href="opisanie-reliza-80-atlas.html" class="ts-nav-breadcrumb__link" title="Описание релизов" hreflang="zxx">Описание релизов</a></li>
+<li class="ts-nav-breadcrumb__item"><span class="ts-nav-breadcrumb__link ts-nav-breadcrumb__link_current" title="Описание релиза 7.16.1">Описание релиза 7.16.1</span></li>
+</ol>
+</nav>
+
+  </div>
+<div id="block-search-2" class="block block-simple-block block-simple-blocksearch">
+  
+    
+      <div class="search">
+<form action="https://academy.terrasoft.ua/search" class="search-form" method="get"><input class="search-form__input" name="search" placeholder="Поиск" type="search" /><input class="search-form__button" type="submit" value="Поиск" /> </form>
+
+<div class="search-toggle"> </div>
+</div>
+
+  </div>
+
+  </div>
+
+        </div>
+      </div>
+      </header>
+
+  <div class="creatio-region creatio-region_main">
+    <div class="creatio-container">
+                <div class="region region-breadcrumb-mobile">
+    <div id="block-breadcrumbnaviagtion-2" class="block block-ts-nav block-ts-nav-bread">
+  
+    
+      <nav class="breadcrumb"><ol class="ts-nav-breadcrumb__list"><li class="ts-nav-breadcrumb__item"><a href="../../index.html" class="ts-nav-breadcrumb__link" title="Документация">Документация</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../index11e8.html?vid_1=3" class="ts-nav-breadcrumb__link" title="Релизы">Релизы</a></li>
+<li class="ts-nav-breadcrumb__item ts-nav-breadcrumb__item_mobile"><a href="opisanie-reliza-80-atlas.html" class="ts-nav-breadcrumb__link" title="Описание релизов" hreflang="zxx">Описание релизов</a></li>
+<li class="ts-nav-breadcrumb__item"><span class="ts-nav-breadcrumb__link ts-nav-breadcrumb__link_current" title="Описание релиза 7.16.1">Описание релиза 7.16.1</span></li>
+</ol>
+</nav>
+
+  </div>
+
+  </div>
+
+      
+      <main class="creatio-main" role="main">
+                                                    
+        <div class="creatio-content creatio-content_small">
+          <div class="creatio-content__inner creatio-content__inner_bg">
+                            <div class="region region-messages">
+    <div data-drupal-messages-fallback class="hidden"></div>
+
+  </div>
+
+            
+              <div class="region region-content">
+    <div id="block-creatio-page-title" class="block block-core block-page-title-block">
+  
+    
+      
+  <h1 class="page-title"><span class="field field--name-title field--type-string field--label-hidden">Описание релиза 7.16.1</span>
+</h1>
+
+
+  </div>
+<div id="block-creatio-content" class="block block-system block-system-main-block">
+  
+    
+      
+<article data-history-node-id="2438" role="article" about="/docs/release/opisanie-relizov/opisanie-reliza-7161" class="node node--type-release-note node--view-mode-full">
+
+  
+    
+
+  
+  <div class="node__content">
+      <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocknoderelease-notefield-data">
+  
+    
+      
+  <div class="field field--name-field-data field--type-datetime field--label-above">
+    <div class="field__label">Дата релиза</div>
+              <div class="field__item"><time datetime="2020-05-25T12:00:00Z" class="datetime">25.05.2020</time>
+</div>
+          </div>
+
+  </div>
+<div class="block block-ts-doc block-ts-doc-downloads">
+  
+    
+      <a href="../../sites/default/files/pdf/node/2438/Opisanie_reliza_7.16.1_.pdf" target="_blank">PDF</a>
+  </div>
+
+    </div>
+  </div>
+  <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocknoderelease-notebody">
+  
+    
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><p>Представляем <strong>обзор изменений и улучшений</strong>, реализованных в Creatio версии 7.16.1.</p>
+
+<p>Инструкция по обновлению для приложений on-site доступна в отдельной <span><a href="../../node/2443/index.html">статье</a></span>.</p>
+
+<h2 data-icon="marketing">Marketing Creatio<a class="title-anchor" href="#title-2438-1" id="title-2438-1"> </a></h2>
+
+<ul type="disc"><li>
+	<p class="FM_Listreleasenotesfixed">Устранена ситуация, когда при создании задачи на детали <span class="key">Активности</span> страницы мероприятия эта задача отображалась также на детали <span class="key">Email</span>.</p>
+	</li>
+</ul><h2 data-icon="sales">Sales Creatio<a class="title-anchor" href="#title-2438-2" id="title-2438-2"> </a></h2>
+
+<ul type="disc"><li>
+	<p class="FM_Listreleasenotesfeature">В приложениях Field sales и Field module for Creatio появилась возможность запланировать визит в реестре раздела или в расписании, без перехода в представление <span class="key">Планирование визитов</span>. Визит создается по кнопке <span class="key">Добавить</span>.</p>
+	</li>
+</ul><h3>Планирование<a class="title-anchor" href="#title-2438-3" id="title-2438-3"> </a></h3>
+
+<ul type="disc"><li>
+	<p class="FM_Listreleasenotesfeature">Появилась возможность массового добавления записей в план по действию <span class="key">Выбрать все</span>.</p>
+	</li>
+	<li>
+	<p class="FM_Listreleasenotesfeature">Для удобства работы с итоговыми показателями реализована возможность закрепить колонку <span class="key">Итого</span> в правой части плана. Для закрепления колонки нажмите <img alt="forecasts_pin_totals.png" id="image2" src="../../../sites/default/files/documents/docs/product/bpm%27online%20release%20notes/release%20notes/7.16.1/BPMonlineHelp/release_notes/forecasts_pin_totals.png" /> рядом с ее названием.</p>
+	</li>
+	<li>
+	<p class="FM_Listreleasenotesfeature">Реализована возможность удаления строк из плана.</p>
+	</li>
+	<li>
+	<p class="FM_Listreleasenotesfeature">Добавлена возможность редактировать название и иерархию плана после его сохранения.</p>
+	</li>
+</ul><div class="media">
+<div class="media__caption">Редактирование иерархии данных в плане</div>
+
+<div class="media__element"><img alt="modifying_forcast_hierarchy.gif" id="image3" src="../../../sites/default/files/documents/docs/product/bpm%27online%20release%20notes/release%20notes/7.16.1/BPMonlineHelp/release_notes/modifying_forcast_hierarchy.gif" /></div>
+</div>
+
+<h2 data-icon="services">Service Creatio<a class="title-anchor" href="#title-2438-4" id="title-2438-4"> </a></h2>
+
+<h3>Обращения<a class="title-anchor" href="#title-2438-5" id="title-2438-5"> </a></h3>
+
+<ul type="disc"><li>
+	<p class="FM_Listreleasenotesfeature">Добавлено визуальное разграничение внутренней и внешней переписки по обращению. Внутренняя переписка, например, сообщения ленты, письма между сотрудниками и сообщения, которые недоступны на портале, отображаются на голубом фоне. Сообщения, доступные для просмотра внешним пользователям, отображаются на белом фоне.</p>
+	</li>
+</ul><div class="media">
+<div class="media__caption">Визуальное разграничение внутренних сообщений и переписки с клиентом по обращению</div>
+
+<div class="media__element"><img alt="case_processing_messages_view.png" id="image5" src="../../../sites/default/files/documents/docs/product/bpm%27online%20release%20notes/release%20notes/7.16.1/BPMonlineHelp/release_notes/case_processing_messages_view.png" /></div>
+</div>
+
+<ul type="disc"><li>
+	<p class="FM_Listreleasenotesfeature">Добавлена возможность просмотра email-адресов отправителя и получателей письма по кнопке <span class="key">Детали</span> сообщения.</p>
+	</li>
+</ul><div class="media">
+<div class="media__caption">Просмотр email-адресов отправителя и получателей сообщения по обращению</div>
+
+<div class="media__element"><img alt="case_processing_email_addresses_view.gif" id="image6" src="../../../sites/default/files/documents/docs/product/bpm%27online%20release%20notes/release%20notes/7.16.1/BPMonlineHelp/release_notes/case_processing_email_addresses_view.gif" /></div>
+</div>
+
+<ul type="disc"><li>
+	<p class="FM_Listreleasenotesfeature">Стало удобнее работать с изображениями большого размера в тексте сообщения. По клику на изображение оно открывается для просмотра в полном размере.</p>
+	</li>
+	<li>
+	<p class="FM_Listreleasenotesfeature">Изменен внешний вид разделителей между сообщениями — границы сообщения обозначены пунктирной линией.</p>
+	</li>
+	<li>
+	<p class="FM_Listreleasenotesfeature">Если на странице контакта — отправителя письма по обращению нет фото, то в письме вместо фото отправителя отображаются его инициалы.</p>
+	</li>
+</ul><h2 data-icon="financial-services">Financial Services Creatio<a class="title-anchor" href="#title-2438-6" id="title-2438-6"> </a></h2>
+
+<ul type="disc"><li>
+	<p class="FM_Listreleasenotesfeature">Появилась возможность скопировать продукт с данными и условиями, указанными на вкладке <span class="key">Основная информация</span> его страницы. При этом в новую запись копируются все условия, указанные на детали <span class="key">Условия продукта</span> и актуальные на текущий момент. Условия, дата завершения которых меньше текущей даты, скопированы не будут. Это позволит ускорить создание продуктов с похожими параметрами.</p>
+	</li>
+	<li>
+	<p class="FM_Listreleasenotesfeature">Добавлена возможность скопировать в новую запись отдельные условия, указанные на детали <span class="key">Условия продукта</span>.</p>
+	</li>
+</ul><h2 data-icon="core-functions">Базовый интерфейс и возможности системы<a class="title-anchor" href="#title-2438-7" id="title-2438-7"> </a></h2>
+
+<ul type="disc"><li>
+	<p class="FM_Listreleasenotesfeature">Повышено удобство поиска значений в выпадающих списках на страницах записей, в быстрых фильтрах и др. При поиске нужного значения в списке в первую очередь отображаются значения, которые начинаются на искомое слово, а далее — значения, содержащие его.</p>
+	</li>
+	<li>
+	<p class="FM_Listreleasenotesfixed">Исправлена ошибка, при которой могли повреждаться файлы больших размеров при загрузке на деталь <span class="key">Файлы и ссылки</span> в продуктах на платформе .Net Core.</p>
+	</li>
+	<li>
+	<p class="FM_Listreleasenotesfeature">Обновлен интерфейс справочника <span class="key">Объекты очередей</span>, который используется для настройки списка объектов очередей и сортировки записей очереди. Справочник стал доступен в продуктах на платформе .Net Core.</p>
+	</li>
+	<li>
+	<p class="FM_Listreleasenotesfeature">Появилась возможность удалить черновик письма со страницы email-сообщения. Ранее такая возможность была доступна только на вкладке <span class="key">Email</span> коммуникационной панели. Удалить можно черновик, который не связан с бизнес-процессом.</p>
+	</li>
+	<li>
+	<p class="FM_Listreleasenotesfixed">Исправлена ситуация, когда при формировании письма не открывалась панель настройки свойств элемента <span class="key">HTML</span>.</p>
+	</li>
+</ul><h3>Предиктивный анализ данных<a class="title-anchor" href="#title-2438-8" id="title-2438-8"> </a></h3>
+
+<ul type="disc"><li>
+	<p class="FM_Listreleasenotesfeature">Реализован low-code инструмент для настройки рекомендательных моделей прогнозирования. Весь цикл настройки, включая параметры модели, сохранение результатов прогнозов и процессов прогнозирования, можно выполнить без привлечения разработчика. Настройка выполняется с помощью элемента бизнес-процесса <span class="key">Прогнозировать данные</span>.</p>
+	</li>
+</ul><div class="media">
+<div class="media__caption">Рекомендация продукта</div>
+
+<div class="media__element"><img alt="product_recommendation.png" id="image11" src="../../../sites/default/files/documents/docs/product/bpm%27online%20release%20notes/release%20notes/7.16.1/BPMonlineHelp/release_notes/product_recommendation.png" /></div>
+</div>
+
+<ul type="disc"><li>
+	<p class="FM_Listreleasenotesfeature">Для максимальной эффективности использования моделей машинного обучения появилась возможность выполнить ряд дополнительных настроек:</p>
+
+	<ul><li>
+		<p>задать максимальное и минимальное количество записей обучающей выборки;</p>
+		</li>
+		<li>
+		<p>определить алгоритм выбора значений для классификации;</p>
+		</li>
+		<li>
+		<p>указать возможные варианты подбора параметров для рекомендательных моделей прогнозирования.</p>
+		</li>
+	</ul></li>
+</ul><h3>Аналитика<a class="title-anchor" href="#title-2438-9" id="title-2438-9"> </a></h3>
+
+<ul type="disc"><li>
+	<p class="FM_Listreleasenotesfeature">Появилась возможность настраивать сводные таблицы в интерфейсе Creatio. Данные можно группировать и обобщать в удобном для анализа виде. В сводных таблицах можно применять новые функции подсчета — количество уникальных записей и медиана. Создание сводной таблицы выполняется в блоке итогов “Список”.</p>
+	</li>
+</ul><div class="media">
+<div class="media__caption">Пример сводной таблицы по продажам</div>
+
+<div class="media__element"><img alt="opportunities.png" id="image12" src="../../../sites/default/files/documents/docs/product/bpm%27online%20release%20notes/release%20notes/7.16.1/BPMonlineHelp/release_notes/opportunities.png" /></div>
+</div>
+
+<h2 data-icon="mobile-application">Мобильное приложение<a class="title-anchor" href="#title-2438-10" id="title-2438-10"> </a></h2>
+
+<ul type="disc"><li>
+	<p class="FM_Listreleasenotesfeature">Реализовано визирование записей в мобильном приложении. На странице записи можно установить или отклонить визу. Возможность визирования в разделе настраивается в мастере мобильного приложения. Функциональность доступна при наличии доступа к интернету.</p>
+	</li>
+</ul><div class="message message_warning">
+<p><span class="message__bold message__bold_warning">Важно.</span> В версии 7.16.1 функциональность визирования в мобильном приложении доступна в режиме бета-тестирования. Чтобы оценить новую возможность, запросите включение функциональности в службе технической поддержки. Будем благодарны за обратную связь. В открытом доступе функциональность появится уже в ближайших релизах.</p>
+</div>
+
+<div class="media">
+<div class="media__caption">Визирование счета в мобильном приложении</div>
+
+<div class="media__element"><img alt="mobile_application_approving.png" id="image16" src="../../../sites/default/files/documents/docs/product/bpm%27online%20release%20notes/release%20notes/7.16.1/BPMonlineHelp/release_notes/mobile_application_approving.png" /></div>
+</div>
+
+<h2 data-icon="integrations">Интеграции<a class="title-anchor" href="#title-2438-11" id="title-2438-11"> </a></h2>
+
+<ul type="disc"><li>
+	<p class="FM_Listreleasenotesfeature">Добавлена возможность включать автоматическую раздачу лицензий пользователям при синхронизации с LDAP. Для этого используется признак <span class="key">Раздавать лицензии</span> на странице настройки интеграции с LDAP.</p>
+	</li>
+</ul><div class="media">
+<div class="media__caption">Признак <span class="key">Раздавать лицензии</span> на странице настройки интеграции с LDAP</div>
+
+<div class="media__element"><img alt="licensing.png" id="image19" src="../../../sites/default/files/documents/docs/product/bpm%27online%20release%20notes/release%20notes/7.16.1/BPMonlineHelp/release_notes/licensing.png" /></div>
+</div>
+
+<ul type="disc"><li>
+	<p class="FM_Listreleasenotesfeature">Появилась возможность синхронизации пользователей с LDAP на уровне групп. Настройка позволяет автоматически деактивировать пользователей в Creatio, если они были исключены из синхронизируемых групп в каталоге LDAP.</p>
+	</li>
+	<li>
+	<p class="FM_Listreleasenotesfeature">Реализована возможность выполнять синхронизацию писем из общих почтовых ящиков MS Exchange с Creatio.</p>
+	</li>
+</ul><h2 data-icon="business-processes">Бизнес-процессы<a class="title-anchor" href="#title-2438-12" id="title-2438-12"> </a></h2>
+
+<ul type="disc"><li>
+	<p class="FM_Listreleasenotesfeature">Реализована возможность обработки коллекций данных в бизнес-процессах пользовательскими инструментами. Для этого реализовано многоэкземплярное выполнение элемента <span class="key">Подпроцесс</span>.</p>
+	</li>
+</ul><div class="message">
+<p><span class="message__bold">На заметку.</span> В версии 7.16.1 новая функциональность обработки коллекций данных доступна в режиме бета-тестирования. Будем благодарны за обратную связь. В ближайших релизах функциональность продолжит развиваться и станет доступна для использования.</p>
+</div>
+
+<ul type="disc"><li>
+	<p class="FM_Listreleasenotesfeature">Для параметров бизнес-процессов добавлено новое свойство — направление параметра: исходящий <img alt="icn_outgoing_process_parameter.png" id="image21" src="../../../sites/default/files/documents/docs/product/bpm%27online%20release%20notes/release%20notes/7.16.1/BPMonlineHelp/release_notes/icn_outgoing_process_parameter.png" />, входящий <img alt="icn_incoming_process_parameter.png" id="image22" src="../../../sites/default/files/documents/docs/product/bpm%27online%20release%20notes/release%20notes/7.16.1/BPMonlineHelp/release_notes/icn_incoming_process_parameter.png" />, двунаправленный <img alt="icn_bidirectional_process_parameter.png" id="image23" src="../../../sites/default/files/documents/docs/product/bpm%27online%20release%20notes/release%20notes/7.16.1/BPMonlineHelp/release_notes/icn_bidirectional_process_parameter.png" />. Отображение направления упрощает маппинг параметров в элементе <span class="key">Подпроцесс</span>, т. к. позволяет быстро сориентироваться, в какие параметры необходимо передать значения, а какие параметры должны быть заполнены в результате выполнения подпроцесса. Направление параметра отображается в виде стрелки на панели настройки свойств элемента.</p>
+	</li>
+</ul><div class="media">
+<div class="media__caption">Отображение направления параметров подпроцесса</div>
+
+<div class="media__element"><img alt="param_direction.png" id="image24" src="../../../sites/default/files/documents/docs/product/bpm%27online%20release%20notes/release%20notes/7.16.1/BPMonlineHelp/release_notes/param_direction.png" /></div>
+</div>
+
+<ul type="disc"><li>
+	<p class="FM_Listreleasenotesfeature">Стало удобнее работать с потоками на диаграмме процесса. Если захватить конечную точку потока мышью и соединить с любой гранью элемента на диаграмме процесса, то стрелка потока примет необходимую форму.</p>
+	</li>
+</ul><div class="media">
+<div class="media__caption">Настройка связей между элементами с помощью потоков</div>
+
+<div class="media__element"><img alt="flows_positioning.gif" id="image25" src="../../../sites/default/files/documents/docs/product/bpm%27online%20release%20notes/release%20notes/7.16.1/BPMonlineHelp/release_notes/flows_positioning.gif" /></div>
+</div>
+
+<ul type="disc"><li>
+	<p class="FM_Listreleasenotesfeature">При импорте описательного процесса из Studio free в основное приложение в импортированном процессе сохраняется ссылка на его описание из Studio free. Это позволяет быстро вернуться к описанию процесса в ходе его настройки. Также ссылку на описание процесса можно указать вручную на панели настроек процесса в дизайнере.</p>
+	</li>
+</ul><h2 data-icon="user-customization">Инструменты пользовательской настройки<a class="title-anchor" href="#title-2438-13" id="title-2438-13"> </a></h2>
+
+<ul type="disc"><li>
+	<p class="FM_Listreleasenotesfeature">В разделе <span class="key">Настройка отчетов</span> обновлен интерфейс настройки печатных форм. Перейти в раздел можно из дизайнера системы или из справочника <span class="key">Печатные формы</span>. Логика формирования отчетов не изменилась. В интерфейсе реализованы следующие дополнительные возможности:</p>
+
+	<ul><li>
+		<p>Появилась возможность быстро найти нужный шаблон отчета по названию.</p>
+		</li>
+		<li>
+		<p>Обновлен интерфейс скачивания шаблона для редактирования и его загрузки в систему после изменений. Импорт и экспорт шаблона выполняется по кнопкам <span class="key">Скачать файл</span> и <span class="key">Загрузить файл</span> на странице отчета.</p>
+		</li>
+		<li>
+		<p>Добавлены подсказки по заполнению полей и деталей, а также быстрый переход к инструкции “<span><a href="../../../documents/administration/7-16/nastroyka-otchetov-ms-word.html">Настройка печатных форм MS Word</a></span>”.</p>
+		</li>
+	</ul></li>
+</ul><h2 data-icon="administration">Администрирование<a class="title-anchor" href="#title-2438-14" id="title-2438-14"> </a></h2>
+
+<ul type="disc"><li>
+	<p class="FM_Listreleasenotesfeature">Реализована поддержка платформы .NET Core продуктом Marketing. Подробнее о поддержке продуктами Creatio платформы .NET Core можно узнать в статье “<span><a href="../../../documents/produkty-creatio-na-platforme-net-core.html">Продукты Creatio на платформе .NET Core</a></span>”.</p>
+	</li>
+	<li>
+	<p class="FM_Listreleasenotesfixed">Исправлена ошибка работы приложения с базой данных SQL Azure, развернутой на облачной платформе Microsoft Azure. Ошибка возникала в связи с изменением политики доступа Azure к системной информации СУБД.</p>
+	</li>
+	<li>
+	<p class="FM_Listreleasenotesfixed">Восстановлена возможность входа в приложение, если задана системная настройка “Срок действия пароля, дней” и аутентификация пользователей происходит через LDAP или с использованием технологии единого входа Single Sign-On.</p>
+	</li>
+</ul><h2 data-icon="development">Инструменты разработки<a class="title-anchor" href="#title-2438-15" id="title-2438-15"> </a></h2>
+
+<ul type="disc"><li>
+	<p class="FM_Listreleasenotesfeature">Для удобства пользователей добавлен пример отчета “Знаменательные события контакта”, который можно брать за основу при разработке собственных отчетов FastReport.</p>
+	</li>
+	<li>
+	<p class="FM_Listreleasenotesfeature">При синхронизации почты по протоколу IMAP/SMTP теперь используется библиотека MailKit.</p>
+	</li>
+</ul></div>
+      
+  </div>
+
+    </div>
+  </div>
+
+  </div>
+
+</article>
+
+  </div>
+
+  </div>
+
+          </div>
+        </div>
+
+                  <aside class="creatio-sidebar creatio-sidebar_first" role="complementary">
+              <div class="region region-sidebar-first">
+    <div id="block-documentationnaviagtion" class="block block-ts-nav block-ts-nav-doc-nav">
+  
+    
+      <div class="ts-nav-block"><a href="../../index.html" class="ts-nav-block__link">Документация</a><div class="ts-nav-block__title">Релизы</div>
+</div>
+<div class="ts-nav-container"><ul class="ts-nav-menu"><li class="ts-nav-menu__item">
+  <a href="opisanie-reliza-80-atlas.html" class="ts-nav-menu__link ts-nav-menu__link_expanded ts-nav-menu__link_open" hreflang="zxx">Описание релизов&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+      <ul class="ts-nav-menu__children">
+      <li class="ts-nav-menu__item">
+  <a href="opisanie-reliza-80-atlas.html" class="ts-nav-menu__link ts-nav-menu__link_release_note" hreflang="ru">Описание релиза 8.0 Atlas</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="opisanie-reliza-7185.html" class="ts-nav-menu__link ts-nav-menu__link_release_note" hreflang="ru">Описание релиза 7.18.5</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="opisanie-reliza-7184.html" class="ts-nav-menu__link ts-nav-menu__link_release_note" hreflang="ru">Описание релиза 7.18.4</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="opisanie-reliza-7183.html" class="ts-nav-menu__link ts-nav-menu__link_release_note" hreflang="ru">Описание релиза 7.18.3</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="opisanie-reliza-7182.html" class="ts-nav-menu__link ts-nav-menu__link_release_note" hreflang="ru">Описание релиза 7.18.2</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="opisanie-reliza-7181.html" class="ts-nav-menu__link ts-nav-menu__link_release_note" hreflang="ru">Описание релиза 7.18.1</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="opisanie-reliza-7180.html" class="ts-nav-menu__link ts-nav-menu__link_release_note" hreflang="ru">Описание релиза 7.18.0</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="opisanie-reliza-7174.html" class="ts-nav-menu__link ts-nav-menu__link_release_note" hreflang="ru">Описание релиза 7.17.4</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="opisanie-reliza-7173.html" class="ts-nav-menu__link ts-nav-menu__link_release_note" hreflang="ru">Описание релиза 7.17.3</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="opisanie-reliza-7172.html" class="ts-nav-menu__link ts-nav-menu__link_release_note" hreflang="ru">Описание релиза 7.17.2</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="opisanie-reliza-7171.html" class="ts-nav-menu__link ts-nav-menu__link_release_note" hreflang="ru">Описание релиза 7.17.1</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="opisanie-reliza-7170.html" class="ts-nav-menu__link ts-nav-menu__link_release_note" hreflang="ru">Описание релиза 7.17.0</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="opisanie-reliza-7164.html" class="ts-nav-menu__link ts-nav-menu__link_release_note" hreflang="ru">Описание релиза 7.16.4</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="opisanie-reliza-7163.html" class="ts-nav-menu__link ts-nav-menu__link_release_note" hreflang="ru">Описание релиза 7.16.3</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="opisanie-reliza-7162.html" class="ts-nav-menu__link ts-nav-menu__link_release_note" hreflang="ru">Описание релиза 7.16.2</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="opisanie-reliza-7161.html" class="ts-nav-menu__link ts-nav-menu__link_release_note ts-nav-menu__link_active" hreflang="ru">Описание релиза 7.16.1</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="opisanie-reliza-7160.html" class="ts-nav-menu__link ts-nav-menu__link_release_note" hreflang="ru">Описание релиза 7.16.0</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="https://academy.terrasoft.ru/documents/creatio-release-notes-7-15-4" class="ts-nav-menu__link ts-nav-menu__link_release_note" hreflang="ru">Описание релиза 7.15.4 и предыдущих версий</a>
+  </li>
+
+    </ul>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../instrukciya-po-obnovleniyu-site/instrukciya-po-obnovleniyu.html" class="ts-nav-menu__link" hreflang="zxx">Инструкция по обновлению on-site</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../kalendar_relizov.html" class="ts-nav-menu__link" hreflang="ru">Календарь релизов</a>
+  </li>
+</ul>
+</div>
+
+  </div>
+
+  </div>
+
+            <div class="creatio-sidebar__toggle"></div>
+          </aside>
+        
+                  <aside class="creatio-sidebar creatio-sidebar_second" role="complementary">
+              <div class="region region-sidebar-second">
+    <div id="block-example" class="block block-ts-nav block-ts-nav-page-nav">
+  
+    
+      <div class="ts-nav-page">
+  </div>
+
+  </div>
+
+  </div>
+
+          </aside>
+              </main>
+    </div>
+  </div>
+
+  <footer role="contentinfo">
+    <div class="creatio-region creatio-region_footer">
+      <div class="creatio-container">
+          <div class="region region-footer">
+    <div id="block-footerua" class="block block-simple-block block-simple-blockfooter-ua">
+  
+    
+      <div class="footer">
+<div class="footer-left">
+<ul class="footer-socials"><li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_fb" href="https://www.facebook.com/terrasoft.ua" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_in" href="https://www.linkedin.com/company/terrasoft/" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_yt" href="https://www.youtube.com/c/TerrasoftUkraine" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_tg" href="https://t.me/Terrasoft_UA" target="_blank"> </a></li>
+</ul></div>
+
+<div class="footer-contact">
+<div class="footer-title">Будьте на связи!</div>
+
+<div class="footer-content">
+<div class="footer-items">
+<div class="footer-item"><a class="footer__link footer__link_phone" href="tel:+380443633133">+38 (044) 363-31-33</a></div>
+</div>
+
+<div class="footer-items">
+<div class="footer-item"><a class="footer__link footer__link_email" href="mailto:support@terrasoft.ua">support@terrasoft.ua</a></div>
+</div>
+</div>
+</div>
+</div>
+
+  </div>
+
+  </div>
+
+      </div>
+    </div>
+    <div class="creatio-region creatio-region_bottom">
+      <div class="creatio-container">
+          <div class="region region-bottom">
+    <div id="block-allrightsreservedua" class="block block-simple-block block-simple-blockfooter-bottom-ua">
+  
+    
+      <p>© 2002-2022 Terrasoft.  |  <a href="https://www.terrasoft.ua/privacy-policy" target="_blank">Конфиденциальность</a></p>
+
+  </div>
+
+  </div>
+
+      </div>
+    </div>
+  </footer>
+</div>
+<div class="creatio-bg"></div>
+
+
+  </div>
+
+    
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/docs\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/2438","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"ru"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"user":{"uid":0,"permissionsHash":"9c2367dfcaba0fa15f0375f97aed64e146c908cee68508d13b79e3ee80e5162d"}}</script>
+<script src="../../sites/default/files/js/js_FonWNMi4BKsDmL0ZoTzpspjDTVOOmvH8kRVrhApn-uo.js"></script>
+
+
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+      <g id="svg-copy" class="svg-icon svg-icon_copy">
+        <path d="M15.111,18H1.889A1.848,1.848,0,0,1,0,16.2V3.6A1.848,1.848,0,0,1,1.889,1.8H5.837a2.87,2.87,0,0,1,5.326,0h3.948A1.848,1.848,0,0,1,17,3.6V16.2A1.848,1.848,0,0,1,15.111,18ZM3.777,12.6v1.8h6.611V12.6Zm0-3.6v1.8h9.445V9Zm0-3.6V7.2h9.445V5.4ZM8.5,1.8a.924.924,0,0,0-.944.9.945.945,0,0,0,1.889,0A.924.924,0,0,0,8.5,1.8Z"/>
+      </g>
+
+      <g id="svg-prev" class="svg-icon svg-icon_arrow">
+        <path d="M5.488,12.779,0,6.39,5.488,0" transform="translate(1 0.652)"/>
+      </g>
+
+      <g id="svg-next" class="svg-icon svg-icon_arrow">
+        <path d="M0,12.779,5.488,6.39,0,0" transform="translate(0.759 0.652)"/>
+      </g>
+    </svg>
+  </body>
+
+<!-- Mirrored from academy.terrasoft.ua/docs/release/opisanie-relizov/opisanie-reliza-7161 by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 22 Mar 2022 19:53:38 GMT -->
+</html>

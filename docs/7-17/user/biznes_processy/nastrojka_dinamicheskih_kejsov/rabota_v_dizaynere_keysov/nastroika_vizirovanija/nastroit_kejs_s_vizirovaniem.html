@@ -1,0 +1,978 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# ">
+  
+<!-- Mirrored from academy.terrasoft.ua/docs/7-17/user/biznes_processy/nastrojka_dinamicheskih_kejsov/rabota_v_dizaynere_keysov/nastroika_vizirovanija/nastroit_kejs_s_vizirovaniem by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Mar 2022 03:59:38 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+          <!-- Google Tag Manager -->
+      <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          '../../../../../../../../www.googletagmanager.com/gtm5445.html?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-KLLB8G');</script>
+      <!-- End Google Tag Manager -->
+        <meta charset="utf-8" />
+<link rel="canonical" href="nastroit_kejs_s_vizirovaniem.html" />
+<meta name="description" content="Настроим кейс, по которому будут обрабатываться заявки на отпуск, созданные в разделе Документы.
+
+Каждая запись с типом “Заявка” будет отправляться на визирование автоматически, сразу после внесения требуемой информации и сохранения записи.
+	
+	На первом шаге заявку визирует представитель отдела кадров.
+	
+	
+	После отдела кадров заявку согласовывает руководитель подразделения, в котором работает заполнивший заявку сотрудник (заявитель)." />
+<meta property="og:url" content="https://academy.terrasoft.ua/docs/7-17/user/biznes_processy/nastrojka_dinamicheskih_kejsov/rabota_v_dizaynere_keysov/nastroika_vizirovanija/nastroit_kejs_s_vizirovaniem" />
+<meta property="og:title" content="Настроить кейс с визированием" />
+<meta property="og:description" content="Настроим кейс, по которому будут обрабатываться заявки на отпуск, созданные в разделе Документы.
+
+Каждая запись с типом “Заявка” будет отправляться на визирование автоматически, сразу после внесения требуемой информации и сохранения записи.
+	
+	На первом шаге заявку визирует представитель отдела кадров.
+	
+	
+	После отдела кадров заявку согласовывает руководитель подразделения, в котором работает заполнивший заявку сотрудник (заявитель)." />
+<meta name="Generator" content="Drupal 9 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="../../../../../../themes/custom/creatio/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="revision" href="nastroit_kejs_s_vizirovaniem.html" />
+
+    <title>Настроить кейс с визированием | Creatio Academy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&amp;family=Open+Sans:ital,wght@0,300;0,400;0,600;1,400&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" media="all" href="../../../../../../sites/default/files/css/css_6lTP66__-yc6QXFp1zOwoeJ0HVigoYZP-SeoLLii000.css" />
+<link rel="stylesheet" media="all" href="../../../../../../sites/default/files/css/css_XQJDNhkF3xH5SZCcY-PI89Zu4nYIzQ5oR3SnUKyfXJU.css" />
+<link rel="stylesheet" media="print" href="../../../../../../sites/default/files/css/css_Zn4VHvcniOOtUwkIVwXzYr_0AI9gUVgZcPqaH4ViagU.css" />
+
+    
+  </head>
+  <body class="path-node page-node-type-user-documentation">
+          <!-- Google Tag Manager (noscript) -->
+      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KLLB8G"
+                        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+      <!-- End Google Tag Manager (noscript) -->
+    
+        
+      <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    <div class="creatio-page d-flex flex-column">
+        <div class="region region-informer">
+    <div id="block-terrasoftpidtrimueukrainu" class="block block-simple-block block-simple-blockterrasoft-pidtrimue-ukrainu">
+  
+    
+      <style type="text/css">
+<!--/*--><![CDATA[/* ><!--*/
+@import url(../../../../../../../../www.terrasoft.ua/themes/custom/creatio/css/components/informer.css)
+
+/*--><!]]>*/
+</style><div class="ts-swu">
+<div class="creatio-container">
+<div class="ts-swu__cont">
+<div><a class="ts-swu__link" href="https://www.terrasoft.ua/terrasoft-stands-with-ukraine" target="_blank">Україна понад усе!</a> <span><a href="https://www.terrasoft.ua/terrasoft-stands-with-ukraine" target="_blank">Приєднуйтеся</a> до допомоги!</span></div>
+</div>
+</div></div>
+
+  </div>
+
+  </div>
+
+  
+  <header role="banner">
+          <div class="creatio-region creatio-region_top">
+        <div class="creatio-container">
+            <div class="region region-top">
+    <div id="block-menutoggle" class="block block-simple-block block-simple-blockmenu-toggle">
+  
+    
+      <div class="menu-toggle"><span> </span></div>
+
+  </div>
+<div id="block-logowhite-2" class="block block-simple-block block-simple-blocklogo-white">
+  
+    
+      <p><a class="site-logo" href="../../../../../../../index.html" rel="home"><img src="../../../../../../themes/custom/creatio/logo-white.svg" /></a></p>
+
+  </div>
+<div id="block-search" class="block block-simple-block block-simple-blocksearch">
+  
+    
+      <div class="search">
+<form action="https://academy.terrasoft.ua/search" class="search-form" method="get"><input class="search-form__input" name="search" placeholder="Поиск" type="search" /><input class="search-form__button" type="submit" value="Поиск" /> </form>
+
+<div class="search-toggle"> </div>
+</div>
+
+  </div>
+<nav role="navigation" aria-labelledby="block-sitesua-menu" id="block-sitesua" class="block block-menu navigation menu--sites-ua">
+            
+  <h2 class="visually-hidden" id="block-sitesua-menu">Sites UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="https://www.terrasoft.ua/" rel="nofollow" target="_blank">Terrasoft</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://community.terrasoft.ua/" rel="nofollow" target="_blank">Community</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://marketplace.terrasoft.ua/" rel="nofollow" target="_blank">Marketplace</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+<div id="block-usermenu" class="block block-ts-user block-ts-user-menu-block">
+  
+    
+      <ul class="user-menu">
+      <li class="user-menu__item">
+      <a class="user-menu__link" href="https://profile.terrasoft.ua/user/login?destination=academy/ua/docs/7-17/user/biznes_processy/nastrojka_dinamicheskih_kejsov/rabota_v_dizaynere_keysov/nastroika_vizirovanija/nastroit_kejs_s_vizirovaniem">Войти</a>
+    </li>
+  </ul>
+
+  </div>
+<div id="block-usermenumobile" class="block block-ts-user block-ts-user-menu-mobile-block">
+  
+    
+      <ul class="user-menu-mobile">
+      <li class="user-menu-mobile__item">
+      <div class="user-menu-mobile__user user-menu-mobile__user_icon"></div>
+      <ul class="user-menu-mobile__submenu">
+        <li class="user-menu-mobile__subitem">
+          <a class="user-menu-mobile__sublink" href="https://profile.terrasoft.ua/user/login?destination=academy/ua/docs/7-17/user/biznes_processy/nastrojka_dinamicheskih_kejsov/rabota_v_dizaynere_keysov/nastroika_vizirovanija/nastroit_kejs_s_vizirovaniem">Войти</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  </div>
+
+  </div>
+
+        </div>
+      </div>
+              <div class="creatio-region creatio-region_header">
+        <div class="creatio-container">
+            <div class="region region-header">
+    <div id="block-logo" class="block block-simple-block block-simple-blocklogo">
+  
+    
+      <p><a class="site-logo" href="../../../../../../../index.html" rel="home"><img src="../../../../../../themes/custom/creatio/logo.svg" /></a></p>
+
+  </div>
+<nav role="navigation" aria-labelledby="block-osnovnayanavigaciyaua-menu" id="block-osnovnayanavigaciyaua" class="block block-menu navigation menu--main-ua">
+            
+  <h2 class="visually-hidden" id="block-osnovnayanavigaciyaua-menu">Основная навигация UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="../../../../../../index.html" data-drupal-link-system-path="&lt;front&gt;">Документация</a>
+              </li>
+                <li class="menu-item">
+        <a href="../../../../../../../trainings.html">Тренинги</a>
+              </li>
+                <li class="menu-item">
+        <a href="../../../../../../certification.html" data-drupal-link-system-path="node/3084">Сертификация и тестирование</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+<nav role="navigation" aria-labelledby="block-sitesua-2-menu" id="block-sitesua-2" class="block block-menu navigation menu--sites-ua">
+            
+  <h2 class="visually-hidden" id="block-sitesua-2-menu">Sites UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="https://www.terrasoft.ua/" rel="nofollow" target="_blank">Terrasoft</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://community.terrasoft.ua/" rel="nofollow" target="_blank">Community</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://marketplace.terrasoft.ua/" rel="nofollow" target="_blank">Marketplace</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+
+  </div>
+
+        </div>
+      </div>
+              <div class="creatio-region creatio-region_breadcrumb">
+        <div class="creatio-container">
+            <div class="region region-breadcrumb">
+    <div id="block-logowhite" class="block block-simple-block block-simple-blocklogo-white">
+  
+    
+      <p><a class="site-logo" href="../../../../../../../index.html" rel="home"><img src="../../../../../../themes/custom/creatio/logo-white.svg" /></a></p>
+
+  </div>
+<div id="block-breadcrumbnaviagtion" class="block block-ts-nav block-ts-nav-bread">
+  
+    
+      <nav class="breadcrumb"><ol class="ts-nav-breadcrumb__list"><li class="ts-nav-breadcrumb__item"><a href="../../../../../../index.html" class="ts-nav-breadcrumb__link" title="Документация">Документация</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../../../../indexd993.html?vid_1=1" class="ts-nav-breadcrumb__link" title="Для пользователя">Для пользователя</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../../biznes_processy.html" class="ts-nav-breadcrumb__link" title="Бизнес-процессы" hreflang="zxx">Бизнес-процессы</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../nastrojka_dinamicheskih_kejsov.html" class="ts-nav-breadcrumb__link" title="Настройка динамических кейсов (DCM)" hreflang="zxx">Настройка динамических кейсов (DCM)</a></li>
+<li class="ts-nav-breadcrumb__item ts-nav-breadcrumb__item_mobile"><a href="../../rabota_v_dizaynere_keysov.html" class="ts-nav-breadcrumb__link" title="Работа в дизайнере и примеры настройки кейсов" hreflang="ru">Работа в дизайнере и примеры настройки кейсов</a></li>
+<li class="ts-nav-breadcrumb__item"><span class="ts-nav-breadcrumb__link ts-nav-breadcrumb__link_current" title="Настроить кейс с визированием">Настроить кейс с визированием</span></li>
+</ol>
+</nav>
+
+  </div>
+<div id="block-search-2" class="block block-simple-block block-simple-blocksearch">
+  
+    
+      <div class="search">
+<form action="https://academy.terrasoft.ua/search" class="search-form" method="get"><input class="search-form__input" name="search" placeholder="Поиск" type="search" /><input class="search-form__button" type="submit" value="Поиск" /> </form>
+
+<div class="search-toggle"> </div>
+</div>
+
+  </div>
+
+  </div>
+
+        </div>
+      </div>
+      </header>
+
+  <div class="creatio-region creatio-region_main">
+    <div class="creatio-container">
+                <div class="region region-breadcrumb-mobile">
+    <div id="block-breadcrumbnaviagtion-2" class="block block-ts-nav block-ts-nav-bread">
+  
+    
+      <nav class="breadcrumb"><ol class="ts-nav-breadcrumb__list"><li class="ts-nav-breadcrumb__item"><a href="../../../../../../index.html" class="ts-nav-breadcrumb__link" title="Документация">Документация</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../../../../indexd993.html?vid_1=1" class="ts-nav-breadcrumb__link" title="Для пользователя">Для пользователя</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../../biznes_processy.html" class="ts-nav-breadcrumb__link" title="Бизнес-процессы" hreflang="zxx">Бизнес-процессы</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../nastrojka_dinamicheskih_kejsov.html" class="ts-nav-breadcrumb__link" title="Настройка динамических кейсов (DCM)" hreflang="zxx">Настройка динамических кейсов (DCM)</a></li>
+<li class="ts-nav-breadcrumb__item ts-nav-breadcrumb__item_mobile"><a href="../../rabota_v_dizaynere_keysov.html" class="ts-nav-breadcrumb__link" title="Работа в дизайнере и примеры настройки кейсов" hreflang="ru">Работа в дизайнере и примеры настройки кейсов</a></li>
+<li class="ts-nav-breadcrumb__item"><span class="ts-nav-breadcrumb__link ts-nav-breadcrumb__link_current" title="Настроить кейс с визированием">Настроить кейс с визированием</span></li>
+</ol>
+</nav>
+
+  </div>
+
+  </div>
+
+      
+      <main class="creatio-main" role="main">
+                                                    
+        <div class="creatio-content creatio-content_small">
+          <div class="creatio-content__inner creatio-content__inner_bg">
+                            <div class="region region-messages">
+    <div data-drupal-messages-fallback class="hidden"></div>
+
+  </div>
+
+            
+              <div class="region region-content">
+    <div id="block-creatio-page-title" class="block block-core block-page-title-block">
+  
+    
+      
+  <h1 class="page-title"><span class="field field--name-title field--type-string field--label-hidden">Настроить кейс с визированием</span>
+</h1>
+
+
+  </div>
+<div id="block-creatio-content" class="block block-system block-system-main-block">
+  
+    
+      
+<article data-history-node-id="3015" role="article" about="/docs/7-17/user/biznes_processy/nastrojka_dinamicheskih_kejsov/rabota_v_dizaynere_keysov/nastroika_vizirovanija/nastroit_kejs_s_vizirovaniem" class="node node--type-user-documentation node--view-mode-full">
+
+  
+    
+
+  
+  <div class="node__content">
+      <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-ts-doc block-ts-doc-downloads">
+  
+    
+      <a href="../../../../../../sites/default/files/pdf/node/3015/Nastroit_keys_s_vizirovaniem_.pdf" target="_blank">PDF</a>
+  </div>
+<div class="block block-ts-doc block-ts-doc-versions">
+  
+    
+        <div class="ts-doc-versions">
+    <select class="ts-doc-versions__select">
+                              <option value="/docs/8-0/user/biznes_processy/nastrojka_dinamicheskih_kejsov/rabota_v_dizaynere_keysov/nastroika_vizirovanija/nastroit_kejs_s_vizirovaniem">Версия 8.0</option>
+                              <option value="/docs/7-18/user/biznes_processy/nastrojka_dinamicheskih_kejsov/rabota_v_dizaynere_keysov/nastroika_vizirovanija/nastroit_kejs_s_vizirovaniem">Версия 7.18</option>
+                                                <option value="/docs/7-17/user/biznes_processy/nastrojka_dinamicheskih_kejsov/rabota_v_dizaynere_keysov/nastroika_vizirovanija/nastroit_kejs_s_vizirovaniem" selected>Версия 7.17</option>
+          </select>
+  </div>
+
+  </div>
+
+    </div>
+  </div>
+  <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocknodeuser-documentationfield-product">
+  
+    
+      
+  <div class="field field--name-field-product field--type-entity-reference field--label-above">
+    <div class="field__label">Продукты</div>
+          <div class="field__items">
+              <div class="field__item">Все продукты</div>
+              </div>
+      </div>
+
+  </div>
+<div class="block block-layout-builder block-field-blocknodeuser-documentationbody">
+  
+    
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><p>Настроим кейс, по которому будут обрабатываться заявки на отпуск, созданные в разделе <span class="key">Документы</span>.</p>
+
+<ol class="inner"><li>Каждая запись с типом “Заявка” будет отправляться на визирование автоматически, сразу после внесения требуемой информации и сохранения записи.</li>
+	<li>
+	<p>На первом шаге заявку визирует представитель отдела кадров.</p>
+	</li>
+	<li>
+	<p>После отдела кадров заявку согласовывает руководитель подразделения, в котором работает заполнивший заявку сотрудник (заявитель).</p>
+	</li>
+	<li>
+	<p>Ответственным за согласование заявки отправляется email-уведомление о том, что появилась новая запись для согласования, а заявителю — уведомление о результате визирования.</p>
+	</li>
+	<li>
+	<p>Если виза была отклонена отделом кадров, то кейс переходит на стадию <span class="key">Подготовка</span> для доработки заявки. Если виза была отклонена непосредственным руководителем, то кейс переходит на стадию <span class="key">Отменена</span>.</p>
+	</li>
+	<li>
+	<p>В случае утверждения визы кейс перейдет на стадию <span class="key">Выполнена</span>.</p>
+	</li>
+	<li>
+	<p>При переходе кейса на стадию <span class="key">Выполнена</span> начинается отсчет срока актуальности заявки, по истечении которого заявка переходит в состояние “Архивная”.<br />
+	Настроим кейс, приведенный на схеме (Рис. 1).</p>
+
+	<div class="message message_warning">
+	<p>Важно. Приведенный пример является пользовательским. Не все используемые в нем поля и значения представлены в базовой конфигурации Creatio. Нужные поля можно настроить в <a href="../../../../../../user/kastomizacija_no_code/nastrojka_biznes_logiki/razdel/dobavlenie_razdela/dobavit_novyy_razdel.html?product=studio&amp;ver=7&amp;id=1245">мастере раздела</a>.<br />
+	Приступать к настройке кейса необходимо только после того, как в мастере раздела будет включена функциональность визирования. <a href="../../../../bazis_platformy/kommunikacii/vizy/rabota_s_vizami/index.html">Подробнее&gt;&gt;&gt;</a></p>
+	</div>
+
+	<div class="media">
+	<div class="media__caption">Рис. 1 <a name="XREF_51444_226" id="XREF_51444_226"></a> — Кейс “Обработка заявки на отпуск”</div>
+
+	<div class="media__element"><img alt="chapter_case_designer_application_approving_case_diagram.png" id="image0" src="../../../../../../sites/default/files/documentation/user/ru/bpms/BPMonlineHelp/chapter_process_creation_end/chapter_case_designer_application_approving_case_diagram.png" /></div>
+	</div>
+	</li>
+</ol><p>Для настройки кейса “Обработка заявки на отпуск”:</p>
+
+<ol class="start"><li>
+	<p>В разделе <span class="key">Документы</span> нажмите кнопку <span class="key">Вид</span> —&gt; <span class="key">Настроить кейсы раздела</span>. Откроется дизайнер кейсов раздела (Рис. 2).</p>
+	</li>
+	<li>
+	<p>В левой части страницы в поле <span class="key">По какой колонке строятся стадии кейса?</span> выберите из списка “Состояние”. Так стадии кейса будут определяться по значению поля <span class="key">Состояние</span> заявки.</p>
+	</li>
+	<li>
+	<p>В поле <span class="key">По какой колонке настраивать условие запуска кейса?</span> укажите “Тип”, чтобы настроить запуск кейса только для документов с типом “Заявка”.</p>
+
+	<div class="media">
+	<div class="media__caption">Рис. 2 <a name="XREF_71630_246" id="XREF_71630_246"></a>— Страница кейсов раздела <span class="key">Документы</span></div>
+
+	<div class="media__element"><img alt="scr_chapter_case_designer_documents_section_cases_list.png" id="image1" src="../../../../../../sites/default/files/documentation/user/ru/bpms/BPMonlineHelp/chapter_process_creation_end/scr_chapter_case_designer_documents_section_cases_list.png" /></div>
+	</div>
+	</li>
+	<li>По кнопке <span class="key">Добавить кейс</span> перейдите в дизайнер кейсов. Здесь потребуется:
+	<ul><li>задать основные параметры кейса;</li>
+		<li>настроить последовательность перехода кейса по стадиям;</li>
+		<li>настроить действия, которые выполняются на каждой стадии.</li>
+	</ul></li>
+</ol><h2>Настроить основные параметры кейса<a class="title-anchor" href="#title-2782-3" id="title-2782-3"> </a></h2>
+
+<p>Зададим основные параметры кейса на панели его настроек (Рис. 3):</p>
+
+<ol class="start"><li>
+	<p>Откройте панель настроек кейса по кнопке <img alt="btn_system_designer.png" id="image2" src="../../../../../../sites/default/files/documentation/user/ru/bpms/BPMonlineHelp/chapter_process_creation_end/btn_system_designer.png" />.</p>
+	</li>
+	<li>
+	<p>В области <span class="key">Кейс</span> ведите название — “Обработка заявки”.</p>
+	</li>
+	<li>
+	<p>Поле <span class="key">Описание</span> предназначено для дополнительной информации о кейсе, например, здесь можно описать назначение кейса.</p>
+	</li>
+	<li>
+	<p>В поле <span class="key">Условие запуска кейса</span> нажмите <img alt="btn_case_designer_case_properties_initial_case_condition_choice.png" id="image3" src="../../../../../../sites/default/files/documentation/user/ru/bpms/BPMonlineHelp/chapter_process_creation_end/btn_case_designer_case_properties_initial_case_condition_choice.png" /> и выберите тип документа “Заявка”. Кейс будет запускаться после заполнения и сохранения записи с указанным типом в разделе <span class="key">Документы</span>.</p>
+
+	<div class="message message_warning">
+	<p>Важно. Приведенный пример является пользовательским. Не все используемые в нем поля и значения представлены в базовой конфигурации Creatio. Например, тип документа “Заявка” можно добавить в справочнике <span class="key">Типы документов</span>. Подробно работа со справочниками описана в статье “<a href="../../../../ustanovka_i_administrirovanie/sistemnye_nastrojki_i_spravochniki/znachenija_spravochnika/upravlenie_znacheniyami_spravochnika/index.html">Управление значениями справочника</a>”.</p>
+	</div>
+	</li>
+	<li>
+	<p>Поля <span class="key">Раздел</span>, <span class="key">Колонка стадии</span>, <span class="key">Имя</span>, <span class="key">Пакет</span>, а также признаки <span class="key">Активен</span> и <span class="key">Актуальная версия</span> будут заполнены автоматически.</p>
+
+	<div class="media">
+	<div class="media__caption">Рис. 3 <a name="XREF_58497_246" id="XREF_58497_246"></a>— Панель настроек кейса</div>
+
+	<div class="media__element"><img alt="chapter_case_designer_application_case_properties.png" id="image4" src="../../../../../../sites/default/files/documentation/user/ru/bpms/BPMonlineHelp/chapter_process_creation_end/chapter_case_designer_application_case_properties.png" /></div>
+	</div>
+	</li>
+</ol><h2>Настроить последовательность стадий кейса<a class="title-anchor" href="#title-2782-4" id="title-2782-4"> </a></h2>
+
+<p>На панели стадий настройте ход выполнения кейса. В нашем примере кейс будет проходить 5 стадий, которые соответствуют значениям поля <span class="key">Состояние</span> раздела <span class="key">Документы</span>. По кнопке <img alt="btn_case_designer_add_case.png" id="image5" src="../../../../../../sites/default/files/documentation/user/ru/bpms/BPMonlineHelp/chapter_process_creation_end/btn_case_designer_add_case.png" /> добавьте 5 новых стадий — “Подготовка”, “Визирование”, “Выполнена”, “Отменена”, “Архивная”. Далее потребуется настроить свойства каждой стадии и действия, которые будут выполняться. Рассмотрим настройку на примере первой стадии кейса:</p>
+
+<ol class="start"><li>
+	<p>Кликните по первой стадии — справа отобразится панель настроек (Рис. 4).</p>
+	</li>
+	<li>
+	<p>В верхней части панели укажите название стадии, например, “Подготовка”.</p>
+	</li>
+	<li>
+	<p>В поле <span class="key">Значение стадии в справочнике</span> по кнопке <img alt="btn_case_designer_choose_from_lookup.png" id="image6" src="../../../../../../sites/default/files/documentation/user/ru/bpms/BPMonlineHelp/chapter_process_creation_end/btn_case_designer_choose_from_lookup.png" /> выберите из справочника значение “Подготовка”. Значения в справочник <span class="key">Значение стадии в справочнике</span> добавляются непосредственно в дизайнере кейсов при введении названия новой стадии. Обязательно сохраняйте кейс каждый раз, как добавляете новое значение справочника таким способом.</p>
+	</li>
+	<li>
+	<p>В области <span class="key">На какие стадии можно переходить?</span> автоматически отобразятся названия всех стадий кейса. Оставьте доступными для перехода стадию <span class="key">Визирование</span>, на которую кейс должен переходить при сохранении записи с типом “Заявка”, а также стадию “Отменена” — на случай, если заявку будет необходимо отменить.</p>
+	</li>
+	<li>
+	<p>В области <span class="key">С каких стадий можно переходить?</span> по умолчанию отображаются названия всех стадий кейса. Удалите из списка все стадии, кроме стадии <span class="key">Визирование</span>. Если на стадии <span class="key">Визирование</span> виза будет отклонена, то кейс вернется на стадию <span class="key">Подготовка</span>.</p>
+	</li>
+	<li>
+	<p>В области <span class="key">Автоматический переход на следующую стадию</span> выберите вариант перехода “Если выполнены обязательные шаги стадии”.</p>
+	</li>
+	<li>
+	<p>В области <span class="key">Дополнительные настройки</span> выберите цвет, в который будет окрашен индикатор данной стадии на странице записи.</p>
+	</li>
+	<li>
+	<p>Признак <span class="key">Сгруппировать с другой стадией</span> позволяет объединить в одном шаге кейса стадии, которые являются взаимоисключающими. Сгруппированные стадии отображаются для пользователя как одна стадия. По клику на сгруппированную стадию открывается меню, в котором отображаются все стадии группы. В нашем примере установить этот признак нужно только для стадии <span class="key">Отменена</span>, чтобы сгруппировать ее со стадией <span class="key">Выполнена</span>.</p>
+
+	<div class="media">
+	<div class="media__caption">Рис. 4 <a name="XREF_25065_248" id="XREF_25065_248"></a>— Свойства стадии <span class="key">Подготовка</span></div>
+
+	<div class="media__element"><img alt="chapter_case_designer_application_approving_preparation_stage_properties.png" id="image7" src="../../../../../../sites/default/files/documentation/user/ru/bpms/BPMonlineHelp/chapter_process_creation_end/chapter_case_designer_application_approving_preparation_stage_properties.png" /></div>
+	</div>
+	</li>
+</ol><p>Настройте остальные свойства стадии аналогичным образом: “Визирование”, (Рис. 5), “Выполнена” (Рис. 6), “Отменена” (Рис.  7) и “Архивная” (Рис. 8).</p>
+
+<div class="media">
+<div class="media__caption">Рис. 5 <a name="XREF_41209_249" id="XREF_41209_249"></a>— Свойства стадии <span class="key">Визирование</span></div>
+
+<div class="media__element"><img alt="chapter_case_designer_application_approving_approving_stage_properties.png" id="image8" src="../../../../../../sites/default/files/documentation/user/ru/bpms/BPMonlineHelp/chapter_process_creation_end/chapter_case_designer_application_approving_approving_stage_properties.png" /></div>
+</div>
+
+<div class="media">
+<div class="media__caption">Рис. 6 <a name="XREF_73316_250" id="XREF_73316_250"></a>— Свойства стадии <span class="key">Выполнена</span></div>
+
+<div class="media__element"><img alt="chapter_case_designer_application_approving_completed_stage_properties.png" id="image9" src="../../../../../../sites/default/files/documentation/user/ru/bpms/BPMonlineHelp/chapter_process_creation_end/chapter_case_designer_application_approving_completed_stage_properties.png" /></div>
+</div>
+
+<div class="message">
+<p><span class="message__bold">На заметку.</span> Стадии “Выполнена” и “Отменена” являются взаимоисключающими, поэтому они сгруппированы на одном шаге кейса. Группировка настроена в свойствах стадии “Отменена”. Поэтому на панели настроек свойств стадии “Выполнена” рядом с признаком <span class="key">Сгруппировать с другой стадией</span> отображается значок <img alt="btn_com_information.png" id="image10" src="../../../../../../sites/default/files/documentation/user/ru/bpms/BPMonlineHelp/chapter_process_creation_end/btn_com_information.png" />. При наведении на него курсора мыши отображается подсказка, что стадия уже входит в группу.</p>
+</div>
+
+<div class="media">
+<div class="media__caption">Рис. 7 — Свойства стадии <span class="key">Отменена</span></div>
+
+<div class="media__element"><img alt="chapter_case_designer_application_approving_rejected_stage_properties.png" id="image11" src="../../../../../../sites/default/files/documentation/user/ru/bpms/BPMonlineHelp/chapter_process_creation_end/chapter_case_designer_application_approving_rejected_stage_properties.png" /></div>
+</div>
+
+<div class="media">
+<div class="media__caption">Рис. 8 <a name="XREF_85206_252" id="XREF_85206_252"></a>— Свойства стадии <span class="key">Архивная</span></div>
+
+<div class="media__element"><img alt="chapter_case_designer_application_approving_archived_stage_properties.png" id="image12" src="../../../../../../sites/default/files/documentation/user/ru/bpms/BPMonlineHelp/chapter_process_creation_end/chapter_case_designer_application_approving_archived_stage_properties.png" /></div>
+</div>
+
+<h2>Настроить шаги для каждой стадии кейса<a class="title-anchor" href="#title-2782-5" id="title-2782-5"> </a></h2>
+
+<p>Настроим действия, которые будут выполняться на стадии <span class="key">Подготовка</span>. Чтобы выполнить настройку:</p>
+
+<ol class="start"><li>
+	<p>Нажмите на значок <img alt="btn_case_designer_add_step_menu.png" id="image13" src="../../../../../../sites/default/files/documentation/user/ru/bpms/BPMonlineHelp/chapter_process_creation_end/btn_case_designer_add_step_menu.png" /> в рабочей области дизайнера кейсов на стадии <span class="key">Подготовка</span>. В открывшемся меню выберите элемент<strong> </strong><span class="key">Открыть страницу редактирования</span>. Так мы настроим, чтобы в ходе выполнения кейса открывалась страница записи раздела <span class="key">Документы</span>.</p>
+	</li>
+	<li>
+	<p>Введите название — “Заполнить заявку” и нажмите Enter на клавиатуре. При выделении добавленного элемента мышью справа отобразится панель его настроек.</p>
+	</li>
+	<li>
+	<p>В поле <span class="key">Какую страницу открыть?</span> по кнопке <img alt="btn_case_designer_choose_from_lookup00001.png" id="image14" src="../../../../../../sites/default/files/documentation/user/ru/bpms/BPMonlineHelp/chapter_process_creation_end/btn_case_designer_choose_from_lookup00001.png" /> выберите из списка “Документ”.</p>
+	</li>
+	<li>
+	<p>В поле <span class="key">Режим редактирования</span> выберите вариант “Редактировать существующую запись”. Ниже отобразится поле <span class="key">Идентификатор записи</span>.</p>
+	</li>
+	<li>
+	<p>В поле <span class="key">Идентификатор записи</span> по кнопке <img alt="chapter_case_designer_icon_parameter_menu.png" id="image15" src="../../../../../../sites/default/files/documentation/user/ru/bpms/BPMonlineHelp/chapter_process_creation_end/chapter_case_designer_icon_parameter_menu.png" /> выберите пункт “Колонка основной записи”. В открывшемся окне — колонку <span class="key">ID</span>. Так вы настроите, какая именно запись будет открываться для редактирования.</p>
+	</li>
+	<li>
+	<p>В поле <span class="key">Кто заполняет страницу?</span> по умолчанию указано значение "Контакт текущего пользователя". При необходимости значение в поле можно изменить по кнопке <img alt="chapter_case_designer_icon_parameter_menu00002.png" id="image16" src="../../../../../../sites/default/files/documentation/user/ru/bpms/BPMonlineHelp/chapter_process_creation_end/chapter_case_designer_icon_parameter_menu00002.png" />.</p>
+	</li>
+	<li>
+	<p>В поле <span class="key">Рекомендации по заполнению страницы</span> перечислите действия, которые необходимо выполнить при заполнении заявки, например: “Этот текст отобразится на странице записи при выполнении шага”.</p>
+	</li>
+	<li>
+	<p>В поле <span class="key">Подсказка пользователю</span> можно добавить все, что будет полезным при заполнении заявки. Например, здесь можно указать доступное количество дней отпуска или добавить напоминание о необходимости согласовать отпуск с руководителем департамента до создания заявки.</p>
+	</li>
+	<li>
+	<p><span class="key">Когда считать элемент выполненным?</span><strong> </strong>— выберите вариант “Если запись соответствует условию”, Если необходимо, чтобы шаг считался выполненным после наступления требуемых условий (например, после заполнения определенных полей и т. д.).</p>
+	</li>
+	<li>
+	<p>В области <span class="key">Действия</span> настройте условия фильтрации, чтобы элемент считался выполненным, только если на странице редактируемой записи заполнены поля <span class="key">Тип отпуска</span> и <span class="key">Количество дней отпуска</span> (Рис. 9). Для этого:</p>
+
+	<ol class="inner"><li>
+		<p>По кнопке <span class="key">Добавить условие</span> выберите колонку <span class="key">Тип отпуска</span> и установите условие, что колонка должна быть заполнена.</p>
+		</li>
+		<li>
+		<p>Добавьте еще одно условие, выберите колонку <span class="key">Количество дней отпуска</span> и также установите условие, что колонка должна быть заполнена.</p>
+
+		<div class="media">
+		<div class="media__caption">Рис. 9 <a name="XREF_95013_254" id="XREF_95013_254"></a>— Пример настройки условий фильтрации</div>
+
+		<div class="media__element"><img alt="chapter_case_designer_application_approving_preparation_stage_actions_2.png" id="image17" src="../../../../../../sites/default/files/documentation/user/ru/bpms/BPMonlineHelp/chapter_process_creation_end/chapter_case_designer_application_approving_preparation_stage_actions_2.png" /></div>
+		</div>
+		</li>
+	</ol></li>
+	<li>
+	<p>В поле <span class="key">Когда выполнять шаг?</span> автоматически отобразится вариант “Сразу после перехода на стадию”. Так сразу при переходе кейса на стадию <span class="key">Подготовка</span> в системе будет создана задача по заполнению заявки. Задача отобразится на странице заявки, обработка которой ведется по кейсу.</p>
+	</li>
+	<li>
+	<p>В поле <span class="key">Тип шага </span> установите “Обязательный шаг”.</p>
+
+	<p>В результате настройки шага будут выглядеть как на Рис. 10.</p>
+
+	<div class="media">
+	<div class="media__caption">Рис. 10 <a name="XREF_95178_253" id="XREF_95178_253"></a>— Свойства элемента “Заполнить заявку”</div>
+
+	<div class="media__element"><img alt="chapter_case_designer_application_approving_preparation_stage_actions.png" id="image18" src="../../../../../../sites/default/files/documentation/user/ru/bpms/BPMonlineHelp/chapter_process_creation_end/chapter_case_designer_application_approving_preparation_stage_actions.png" /></div>
+	</div>
+	</li>
+</ol><h2>Настроить последовательность выполнения шагов</h2>
+
+<p>Настроим последовательность действий на стадии “Визирование”.</p>
+
+<ol class="start"><li>
+	<p>В рабочей области дизайнера кейсов на стадии “Визирование” добавьте элемент<strong> </strong><span class="key">Визирование</span>. Введите название — “Виза HR” и нажмите Enter на клавиатуре. Cправа отобразится панель настроек элемента.</p>
+	</li>
+	<li>
+	<p>В поле <span class="key">Когда выполнять шаг?</span> автоматически отобразится значение “Сразу при переходе на стадию”.</p>
+	</li>
+	<li>
+	<p>В поле <span class="key">Тип шага</span><strong> </strong> установите “Обязательный шаг”.</p>
+	</li>
+	<li>
+	<p>В поле <span class="key">Цель визирования</span> автоматически отобразится “Требуется утверждение”. При необходимости цель визирования можно отредактировать.</p>
+	</li>
+	<li>
+	<p>В поле <span class="key">Объект визирования</span><strong> </strong>отобразится объект системы, для которого настраивается кейс. В нашем примере это “Документ”.</p>
+
+	<div class="message">
+	<p><strong>На заметку</strong>. Если поле не заполнено и объекта “Документ” нет в списке для выбора, то по данному объекту не включено визирование в мастере разделов. Подробнее о последовательности настройки визирования читайте в статье “<a href="../../../../bazis_platformy/kommunikacii/vizy/rabota_s_vizami/index.html">Настроить визирование в разделе</a>”.</p>
+	</div>
+	</li>
+	<li>
+	<p>В поле <span class="key">Идентификатор записи</span> автоматически подтянется значение колонки <span class="key">ID</span> записи, по которой запущен кейс.</p>
+	</li>
+	<li>
+	<p>В поле <span class="key">Кому отправить на визирование?</span> укажите “Роли” — отобразится поле <span class="key">Роль</span>.</p>
+	</li>
+	<li>
+	<p>В поле <span class="key">Роль</span> из справочника <span class="key">Роли (представление)</span> выберите “HR”. Так любой из сотрудников, входящих в эту роль, сможет завизировать заявку.</p>
+	</li>
+	<li>
+	<p>В области <span class="key">Отправить e-mail уведомление</span> настройте уведомление визирующих о необходимости установки визы, а ответственного за заявку — о факте визирования.</p>
+
+	<ol class="inner"><li>
+		<p>Установите признак <span class="key">О необходимости выполнить визирование</span>.</p>
+		</li>
+		<li>
+		<p>В появившемся поле по кнопке <img alt="btn_process_element_settings_lookup.png" id="image19" src="../../../../../../sites/default/files/documentation/user/ru/bpms/BPMonlineHelp/chapter_process_creation_end/btn_process_element_settings_lookup.png" /> выберите шаблон уведомления о необходимости визирования документа из справочника <span class="key">Шаблоны email-сообщений</span>.</p>
+		</li>
+		<li>
+		<p>Отметьте уведомление <span class="key">О результате выполнения визирования</span>.</p>
+		</li>
+		<li>
+		<p>В поле <span class="key">Получатель уведомления</span> по кнопке <img alt="btn_parametres_window.png" id="image20" src="../../../../../../sites/default/files/documentation/user/ru/bpms/BPMonlineHelp/chapter_process_creation_end/btn_parametres_window.png" /> выберите пункт “Колонка основной записи”. В открывшемся окне выбора колонки кликните <span class="key">+</span> и выберите колонку "Ответственный" - отобразится поле <span class="key">Колонка</span>. Выберите в этом поле колонку <span class="key">Email</span>, чтобы уведомление о результате визирования отправлялось на электронный адрес ответственному за заполнение заявки. После выполненных настроек значение в поле <span class="key">Получатель уведомления</span> должно выглядеть так “<span class="key">#Основная запись.Ответственный.Email#</span>”.</p>
+		</li>
+		<li>
+		<p>По кнопке <img alt="btn_process_element_settings_lookup00003.png" id="image21" src="../../../../../../sites/default/files/documentation/user/ru/bpms/BPMonlineHelp/chapter_process_creation_end/btn_process_element_settings_lookup00003.png" /> выберите шаблон уведомления о результате визирования из справочника <span class="key">Шаблоны email-сообщений</span>.</p>
+
+		<div class="message message_warning">
+		<p><span class="message__bold message__bold_warning">Важно.</span> Для отправки писем должна быть заполнена системная настройка <span class="key">Почтовый ящик для отправки письма информации о визе</span>. Перейти к настройке можно из информационного сообщения в области <span class="key">Отправить e-mail уведомление</span> по кнопке <img alt="btn_com_information00004.png" id="image22" src="../../../../../../sites/default/files/documentation/user/ru/bpms/BPMonlineHelp/chapter_process_creation_end/btn_com_information00004.png" />.</p>
+		</div>
+
+		<div class="message">
+		<p><span class="message__bold">На заметку.</span> Шаблоны уведомлений необходимо предварительно создать в дизайнере контента по объекту “Визы в разделе Документы”. Объекты визирования создаются автоматически, когда вы активируете опцию <span class="key">Доступно визирование в разделе</span>. Например, если вы активируете <span class="key">Доступно визирование в разделе</span> в разделе <span class="key">Документы</span>, будет создан новый объект “Визы в разделе Документы”. Перейти к его созданию можно по кнопке <img alt="btn_com_add_tab.png" id="image23" src="../../../../../../sites/default/files/documentation/user/ru/bpms/BPMonlineHelp/chapter_process_creation_end/btn_com_add_tab.png" /> в правой части поля <span class="key">Шаблон сообщения</span>. Подробно создание шаблона email-сообщения описано в отдельной “<a href="../../../../../../user/instrumenty_marketinga/email_marketing/shablon_pisma/sozdanie_shablona/sozdat_shablon_pisma.html?product=administration&amp;ver=7&amp;id=1404">С</a><a href="../../../../../../user/instrumenty_marketinga/email_marketing/shablon_pisma/sozdanie_shablona/sozdat_shablon_pisma.html?product=administration&amp;ver=7&amp;id=1404">оздать шаблон письма</a>”.</p>
+		</div>
+		</li>
+	</ol></li>
+	<li>
+	<p>Установите признак <span class="key">Игнорировать ошибки при отправке</span>, чтобы кейс продолжал выполняться даже в случае возникновения ошибок при отправке уведомлений.</p>
+	</li>
+	<li>
+	<p>В области <span class="key">Изменить стадию после выполнения визирования</span> настройте условие выполнения кейса для случая, если виза была отклонена и необходимо доработать заявку. Для этого в поле <span class="key">Если результат</span> выберите “Отрицательная”, а в поле <span class="key">Перейти на стадию</span> — “Подготовка”.</p>
+
+	<div class="message">
+	<p><span class="message__bold">На заметку.</span> Если виза утверждена, то кейс автоматически перейдет на следующий шаг стадии <span class="key">Визирование</span> — “Виза непосредственного руководителя”.</p>
+	</div>
+
+	<p>В результате настройки шага будут выглядеть как на Рис. 11.</p>
+
+	<div class="media">
+	<div class="media__caption">Рис. 11 <a name="XREF_97479_254_HR" id="XREF_97479_254_HR"></a> — Свойства элемента “Виза HR”</div>
+
+	<div class="media__element"><img alt="chapter_case_designer_application_approving_approving_stage_actions_1.png" id="image24" src="../../../../../../sites/default/files/documentation/user/ru/bpms/BPMonlineHelp/chapter_process_creation_end/chapter_case_designer_application_approving_approving_stage_actions_1.png" /></div>
+	</div>
+	</li>
+	<li>На этой же стадии добавьте еще один элемент<strong> </strong><span class="key">Визирование</span>. Введите название — “Виза непосредственного руководителя”. Свойства этого элемента будут отличаться от свойств элемента “Виза HR” только настройками в поле <span class="key">Когда выполнять шаг?</span> и областях <span class="key">Кому отправить на визирование</span> и <span class="key">Изменить стадию после выполнения визирования</span>.
+	<ol><li>
+		<p>В поле <span class="key">Когда выполнять шаг</span><strong>?</strong> выберите вариант “После выполнения предыдущего шага”.</p>
+		</li>
+		<li>
+		<p>В поле <span class="key">Выполнить после шага</span> выберите “Виза HR”.</p>
+		</li>
+		<li>
+		<p>В области <span class="key">Кому отправить на визирование?</span> выберите из списка “Руководителю сотрудника”.</p>
+		</li>
+		<li>
+		<p>В поле <span class="key">Идентификатор записи</span> по кнопке <img alt="chapter_case_designer_icon_parameter_menu00005.png" id="image25" src="../../../../../../sites/default/files/documentation/user/ru/bpms/BPMonlineHelp/chapter_process_creation_end/chapter_case_designer_icon_parameter_menu00005.png" /> выберите пункт “Колонка основной записи” и в открывшемся окне — колонку <span class="key">ID</span>. В открывшемся окне выберите нужную колонку из объекта системы, который был указан как источник макросов. Так вы настроите, чтобы заявка отправлялась на визирование руководителю заявителя.</p>
+
+		<div class="message message_warning">
+		<p>Важно. В приведенном примере используются не все поля и значения, которые представлены в базовой конфигурации Creatio. Нужные поля можно настроить в <a href="../../../../../../user/kastomizacija_no_code/nastrojka_biznes_logiki/razdel/dobavlenie_razdela/dobavit_novyy_razdel.html?product=studio&amp;ver=7&amp;id=1245">мастере раздела</a>.</p>
+		</div>
+		</li>
+		<li>
+		<p>В области <span class="key">Изменить стадию после выполнения визирования</span> настройте условия перехода кейса по стадиям.</p>
+
+		<ol class="inner"><li>
+			<p>В поле <span class="key">Если результат</span> укажите “Отрицательная”, а в поле <span class="key">Перейти на стадию</span> — “Отменена”. Так при отклонении визы кейс перейдет на стадию “Отменена”.</p>
+			</li>
+			<li>
+			<p>Кликните <img alt="btn_button_connections.png" id="image26" src="../../../../../../sites/default/files/documentation/user/ru/bpms/BPMonlineHelp/chapter_process_creation_end/btn_button_connections.png" /> и добавьте другое условие: В поле <span class="key">Если результат</span> укажите “Отрицательная”, а в поле <span class="key">Перейти на стадию</span> — “Отменена”. Так при утверждении визы кейс перейдет на стадию “Выполнена”.<br />
+			Настройки остальных свойств элемента “Виза непосредственного руководителя” совпадают с настройками свойств элемента “Виза HR”. В результате настройки шага будут выглядеть как на Рис. 12.</p>
+			</li>
+		</ol></li>
+	</ol></li>
+</ol><p class="media__caption">Рис. 12 <a name="XREF_56634_255" id="XREF_56634_255"></a> — Свойства элемента “Виза непосредственного руководителя”</p>
+
+<div class="media__element"><img alt="chapter_case_designer_application_approving_approving_stage_actions_2.png" id="image27" src="../../../../../../sites/default/files/documentation/user/ru/bpms/BPMonlineHelp/chapter_process_creation_end/chapter_case_designer_application_approving_approving_stage_actions_2.png" /></div>
+
+<p>В рамках стадии “Выполнена” настроим срок актуальности заявки, по истечении которого кейс перейдет на финальную стадию, а состояние заявки изменится на “Архивная”:</p>
+
+<ol class="start"><li>
+	<p>В рабочую область дизайнера кейсов на стадии “Выполнена”добавьте элемент<strong> </strong><span class="key">Подпроцесс</span>. Введите название — “Отсчет срока актуальности заявки” (Рис. 13).</p>
+	</li>
+	<li>
+	<p>В поле <span class="key">Какой процесс запустить?</span> по кнопке <img alt="btn_case_designer_choose_from_lookup00006.png" id="image28" src="../../../../../../sites/default/files/documentation/user/ru/bpms/BPMonlineHelp/chapter_process_creation_end/btn_case_designer_choose_from_lookup00006.png" /> выберите из списка бизнес-процесс перевода заявки в архив. Если нужного процесса нет в списке, то его можно добавить в библиотеку процессов по кнопке <img alt="btn_button_connections00007.png" id="image29" src="../../../../../../sites/default/files/documentation/user/ru/bpms/BPMonlineHelp/chapter_process_creation_end/btn_button_connections00007.png" />.</p>
+
+	<p>Общая схема бизнес-процесса перевода заявки в архив представлена на Рис. 11.</p>
+
+	<p>Элементы процесса <span class="key">Начальное простое событие</span> и <span class="key">Обработка таймера</span> — процесс будет стартовать через 15 секунд после перехода кейса “Обработка заявки” на стадию <span class="key">Выполнена</span>.</p>
+
+	<p>Элемент <span class="key">Изменить данные</span> будет менять состояние выполненной заявки на “Архивная”.</p>
+
+	<div class="media">
+	<div class="media__caption">Рис. 12<a name="XREF_86435_256" id="XREF_86435_256"></a> — Схема процесса перевода заявки в архив</div>
+
+	<div class="media__element"><img alt="chapter_case_designer_application_approving_subprocess_stage_bp_scheme.png" id="image30" src="../../../../../../sites/default/files/documentation/user/ru/bpms/BPMonlineHelp/chapter_process_creation_end/chapter_case_designer_application_approving_subprocess_stage_bp_scheme.png" /></div>
+	</div>
+
+	<p class="indent">Чтобы в архив переводилась та заявка, по которой выполняется кейс, должна быть настроена передача параметра основной записи из кейса в процесс. В нашем примере основной записью является документ, а параметром, получение которого должно быть настроено — ID документа. Если передача параметра не настроена, то потребуется выполнить настройки в дизайнере процесса. Для этого:</p>
+
+	<ol><li>Откройте дизайнер процесса перевода заявки в архив по кнопке <img alt="btn_chapter_designer_user_task_designer_task.png" id="image31" src="../../../../../../sites/default/files/documentation/user/ru/bpms/BPMonlineHelp/chapter_process_creation_end/btn_chapter_designer_user_task_designer_task.png" />, которая отображается рядом с названием процесса в поле <span class="key">Какой процесс запускать</span>.</li>
+		<li>Кликните дважды курсором мыши в рабочем пространстве дизайнера — отобразится страница настройки параметров процесса.</li>
+		<li>Нажмите кнопку <span class="key">Добавить параметр</span> на вкладке <span class="key">Параметры</span>.</li>
+		<li>В списке типов параметра выберите “Справочник”, а в поле <span class="key">Справочник</span> укажите “Документ”.</li>
+		<li>Сохраните изменения в дизайнере процессов.</li>
+	</ol></li>
+	<li>
+	<p>Вернитесь в дизайнер кейсов к настройке свойств элемента “Отсчет срока актуальности заявки. После того как вы укажете процесс в поле <span class="key">Какой процесс запускать</span>, в области <span class="key">Параметры процесса</span> подтянется параметр, добавление которого описано выше.</p>
+	</li>
+	<li>
+	<p>В поле <span class="key">Когда выполнять шаг?</span> автоматически отобразится вариант “Сразу при переходе на стадию”.</p>
+	</li>
+	<li>
+	<p>В поле <span class="key">Тип шага</span><strong> </strong>по умолчанию отображается “Опциональный шаг”. При необходимости вы можете сделать его обязательным.</p>
+
+	<div class="media">
+	<div class="media__caption">Рис. 13 <a name="XREF_34170_256" id="XREF_34170_256"></a> — Свойства элемента “Отсчет срока актуальности заявки”</div>
+
+	<div class="media__element"><img alt="chapter_case_designer_application_approving_subprocess_stage_actions.png" id="image32" src="../../../../../../sites/default/files/documentation/user/ru/bpms/BPMonlineHelp/chapter_process_creation_end/chapter_case_designer_application_approving_subprocess_stage_actions.png" /></div>
+	</div>
+	</li>
+	<li>
+	<p>Сохраните все изменения, выполненные в дизайнере кейсов.</p>
+	</li>
+</ol><h2>Результаты настройки<a class="title-anchor" href="#title-2782-6" id="title-2782-6"> </a></h2>
+
+<p>В результате выполненных настроек все документы с типом "Заявка" будут обрабатываться с использованием кейса "Согласование заявки на отпуск" (Рис. 14). Как только сотрудник, который создал заявку, кликнет на стадии <span class="key">Визирование</span>, документ передается на согласование в отдел кадров. Если отдел кадров отклоняет визу, то документ возвращается в состояние "Подготовка". Если отдел кадров визирует заявку, то она передается на визирование руководителю заявителя. Если руководитель отклоняет визу, то заявка переходит в состояние "Отменена". Если руководитель согласовывает визу, то заявка переходит в состояние "Выполнена".</p>
+
+<div class="media">
+<div class="media__caption">Рис. 14 <a name="XREF_95791_260" id="XREF_95791_260"></a> — Кейс “Обработка заявки на отпуск”</div>
+
+<div class="media__element"><img alt="chapter_case_designer_application_approving_case_illustration.png" id="image33" src="../../../../../../sites/default/files/documentation/user/ru/bpms/BPMonlineHelp/chapter_process_creation_end/chapter_case_designer_application_approving_case_illustration.png" /></div>
+</div>
+</div>
+      
+  </div>
+<div class="block block-layout-builder block-field-blocknodeuser-documentationfield-linked-link">
+  
+    
+      
+  <div class="field field--name-field-linked-link field--type-link field--label-above">
+    <div class="field__label">Смотрите также</div>
+          <div class="field__items">
+              <div class="field__item"><a href="../vypolnenie_keisa/vypolnit_keys.html">Выполнить кейс</a></div>
+              </div>
+      </div>
+
+  </div>
+
+    </div>
+  </div>
+
+  </div>
+
+</article>
+
+  </div>
+
+  </div>
+
+          </div>
+        </div>
+
+                  <aside class="creatio-sidebar creatio-sidebar_first" role="complementary">
+              <div class="region region-sidebar-first">
+    <div id="block-documentationnaviagtion" class="block block-ts-nav block-ts-nav-doc-nav">
+  
+    
+      <div class="ts-nav-block"><a href="../../../../../../index.html" class="ts-nav-block__link">Документация</a><div class="ts-nav-block__title">Для пользователя</div>
+</div>
+<div class="ts-nav-container"><ul class="ts-nav-menu"><li class="ts-nav-menu__item">
+  <a href="../../../../bazis_platformy.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Базис платформы&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../../instrumenty_crm.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Инструменты CRM&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../../instrumenty_kastomizacii.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Инструменты кастомизации&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../../biznes_processy.html" class="ts-nav-menu__link ts-nav-menu__link_expanded ts-nav-menu__link_open" hreflang="zxx">Бизнес-процессы&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+      <ul class="ts-nav-menu__children">
+      <li class="ts-nav-menu__item">
+  <a href="../../../nastrojka_processov.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Настройка процессов&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../spravka_po_elementam_processov.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Справка по элементам процессов&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../ispolzovanie_elementov_processa.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Использование элементов процесса&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../primery_nastrojki_processov.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Примеры настройки процессов&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../administrirovanie_biznes_processov.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Администрирование процессов&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../modelirovanie_processov_v_studio_free.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Моделирование процессов в Studio free&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../nastrojka_dinamicheskih_kejsov.html" class="ts-nav-menu__link ts-nav-menu__link_expanded ts-nav-menu__link_open" hreflang="zxx">Настройка динамических кейсов (DCM)&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+      <ul class="ts-nav-menu__children">
+      <li class="ts-nav-menu__item">
+  <a href="../../rabota_v_dizaynere_keysov.html" class="ts-nav-menu__link ts-nav-menu__link_expanded ts-nav-menu__link_open" hreflang="ru">Работа в дизайнере и примеры настройки кейсов&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+      <ul class="ts-nav-menu__children">
+      <li class="ts-nav-menu__item">
+  <a href="../obzor_dcm/dizayner_keysov.html" class="ts-nav-menu__link" hreflang="ru">Обзор</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../nastroika_keisa/nastroit_keysy_razdela.html" class="ts-nav-menu__link" hreflang="ru">Настройка кейса</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../nastroika_stadiy/nastroit_stadii_kejsa.html" class="ts-nav-menu__link" hreflang="ru">Настройка стадий</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../nastroika_elementov/dobavit_elementy_kejsa.html" class="ts-nav-menu__link" hreflang="ru">Настройка элементов</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../vypolnenie_keisa/vypolnit_keys.html" class="ts-nav-menu__link" hreflang="ru">Выполнение кейса</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../versionnost_keisa/versionnost_kejsov.html" class="ts-nav-menu__link" hreflang="ru">Версионность кейса</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="nastroit_kejs_s_vizirovaniem.html" class="ts-nav-menu__link ts-nav-menu__link_active ts-nav-menu__link_open" hreflang="ru">Настройка визирования</a>
+  </li>
+
+    </ul>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../elementy_dizaynera_keysov.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Справка по элементам дизайнера кейсов&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../keys_voprosy_i_otvety/case_faq.html" class="ts-nav-menu__link" hreflang="ru">Вопросы и ответы</a>
+  </li>
+
+    </ul>
+  </li>
+
+    </ul>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../../instrumenty_marketinga.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Инструменты маркетинга&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../../instrumenty_prodazh.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Инструменты продаж&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../../instrumenty_servisa.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Инструменты сервиса&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../../ustanovka_i_administrirovanie.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Администрирование&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../../razvertyvanie_onsite.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Развертывание on-site&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../../banki_i_finansy.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Банки и финансы&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../../drugie_reshenija.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Другие решения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+</ul>
+</div>
+
+  </div>
+
+  </div>
+
+            <div class="creatio-sidebar__toggle"></div>
+          </aside>
+        
+                  <aside class="creatio-sidebar creatio-sidebar_second" role="complementary">
+              <div class="region region-sidebar-second">
+    <div id="block-example" class="block block-ts-nav block-ts-nav-page-nav">
+  
+    
+        <div class="ts-nav-title">Настройка визирования</div>
+<div class="ts-nav-page">
+      <ul class="ts-nav-page__list">
+                                                <li class="ts-nav-page__item ts-nav-page__item_expanded ts-nav-page__item_open"><a href="nastroit_kejs_s_vizirovaniem.html" class="ts-nav-page__link ts-nav-page__link_expanded ts-nav-page__link_active">Настроить кейс с визированием&nbsp;<span class="ts-nav-page__link-arrow"></span></a></li>
+          </ul>
+  </div>
+
+  </div>
+<div id="block-adminfeedbackblock" class="block block-admin-feedback block-admin-feedback-block">
+  
+    
+      <div id="feedback-message"><div id="upper-feedback-content"><h2>Был ли данный материал полезен?</h2>
+<input class="feedback-btn feedback-btn__yes button js-form-submit form-submit" data-node-id="3015" data-feedback="yes" type="submit" name="op" value="Да" />
+<input class="feedback-btn feedback-btn__no button js-form-submit form-submit" data-node-id="3015" data-feedback="no" type="submit" name="op" value="Нет" />
+</div>
+<form class="admin-feedback-form" data-drupal-selector="admin-feedback-form" action="https://academy.terrasoft.ua/docs/7-17/user/biznes_processy/nastrojka_dinamicheskih_kejsov/rabota_v_dizaynere_keysov/nastroika_vizirovanija/nastroit_kejs_s_vizirovaniem" method="post" id="admin-feedback-form" accept-charset="UTF-8">
+  <div id="feedback-msg-result"></div><div class="js-form-item form-item js-form-type-textarea form-type-textarea js-form-item-feedback-message form-item-feedback-message form-no-label">
+        <div class="form-textarea-wrapper">
+  <textarea id="edit-feedback-msg" data-drupal-selector="edit-feedback-message" name="feedback_message" rows="5" cols="60" class="form-textarea resize-vertical"></textarea>
+</div>
+
+        </div>
+<input id="feedback-id" data-drupal-selector="edit-feedback-id" type="hidden" name="feedback_id" value="" />
+<input class="feedback-btn feedback-btn__send-comment button js-form-submit form-submit" data-drupal-selector="edit-feedback-send" type="submit" id="edit-feedback-send" name="op" value="Отправить" />
+<input autocomplete="off" data-drupal-selector="form-yctcs6g5p8yrlst1lcpfbjqvnmqu8d27bhzyjmnuoi8" type="hidden" name="form_build_id" value="form-yCTcS6g5P8yRlSt1lcPFbJQvnmqU8D27BHZYJmnUOI8" />
+<input data-drupal-selector="edit-admin-feedback-form" type="hidden" name="form_id" value="admin_feedback_form" />
+
+</form>
+</div>
+
+  </div>
+
+  </div>
+
+          </aside>
+              </main>
+    </div>
+  </div>
+
+  <footer role="contentinfo">
+    <div class="creatio-region creatio-region_footer">
+      <div class="creatio-container">
+          <div class="region region-footer">
+    <div id="block-footerua" class="block block-simple-block block-simple-blockfooter-ua">
+  
+    
+      <div class="footer">
+<div class="footer-left">
+<ul class="footer-socials"><li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_fb" href="https://www.facebook.com/terrasoft.ua" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_in" href="https://www.linkedin.com/company/terrasoft/" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_yt" href="https://www.youtube.com/c/TerrasoftUkraine" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_tg" href="https://t.me/Terrasoft_UA" target="_blank"> </a></li>
+</ul></div>
+
+<div class="footer-contact">
+<div class="footer-title">Будьте на связи!</div>
+
+<div class="footer-content">
+<div class="footer-items">
+<div class="footer-item"><a class="footer__link footer__link_phone" href="tel:+380443633133">+38 (044) 363-31-33</a></div>
+</div>
+
+<div class="footer-items">
+<div class="footer-item"><a class="footer__link footer__link_email" href="mailto:support@terrasoft.ua">support@terrasoft.ua</a></div>
+</div>
+</div>
+</div>
+</div>
+
+  </div>
+
+  </div>
+
+      </div>
+    </div>
+    <div class="creatio-region creatio-region_bottom">
+      <div class="creatio-container">
+          <div class="region region-bottom">
+    <div id="block-allrightsreservedua" class="block block-simple-block block-simple-blockfooter-bottom-ua">
+  
+    
+      <p>© 2002-2022 Terrasoft.  |  <a href="https://www.terrasoft.ua/privacy-policy" target="_blank">Конфиденциальность</a></p>
+
+  </div>
+
+  </div>
+
+      </div>
+    </div>
+  </footer>
+</div>
+<div class="creatio-bg"></div>
+
+
+  </div>
+
+    
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/docs\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/3015","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"ru"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"ajaxPageState":{"libraries":"admin_feedback\/admin_feedback_block,admin_feedback\/admin_feedback_css,classy\/base,classy\/messages,classy\/node,core\/drupal.ajax,core\/jquery.form,core\/normalize,creatio\/creatio.lists,creatio\/fancybox,creatio\/global,layout_discovery\/onecol,system\/base,ts_doc\/doc_version,ts_feedback\/ts_feedback,ts_nav\/breadcrumb,ts_nav\/doc_nav,ts_nav\/page_nav,ts_title_anchor\/ts_title_anchor","theme":"creatio","theme_token":null},"ajaxTrustedUrl":{"form_action_p_pvdeGsVG5zNF_XLGPTvYSKCf43t8qZYSwcfZl2uzM":true,"\/docs\/7-17\/user\/biznes_processy\/nastrojka_dinamicheskih_kejsov\/rabota_v_dizaynere_keysov\/nastroika_vizirovanija\/nastroit_kejs_s_vizirovaniem?ajax_form=1":true},"admin_feedback":{"yes_response":"\u0421\u043f\u0430\u0441\u0438\u0431\u043e \u0437\u0430 \u043e\u0431\u0440\u0430\u0442\u043d\u0443\u044e \u0441\u0432\u044f\u0437\u044c!","no_response":"\u0421\u043f\u0430\u0441\u0438\u0431\u043e \u0437\u0430 \u043e\u0431\u0440\u0430\u0442\u043d\u0443\u044e \u0441\u0432\u044f\u0437\u044c!","custom_text_response_on_no":{"value":"","format":"full_html"},"feedback_prompt_on_yes":true,"feedback_prompt_on_no":true,"feedback_enable_predefined_answers":false,"feedback_prompt":"\u041a\u0430\u043a \u043c\u043e\u0436\u043d\u043e \u0443\u043b\u0443\u0447\u0448\u0438\u0442\u044c \u044d\u0442\u0443 \u0441\u0442\u0430\u0442\u044c\u044e?"},"ajax":{"edit-feedback-send":{"callback":"::validateFeedbackMsg","event":"mousedown","keypress":true,"prevent":"click","url":"\/docs\/7-17\/user\/biznes_processy\/nastrojka_dinamicheskih_kejsov\/rabota_v_dizaynere_keysov\/nastroika_vizirovanija\/nastroit_kejs_s_vizirovaniem?ajax_form=1","dialogType":"ajax","submit":{"_triggering_element_name":"op","_triggering_element_value":"\u041e\u0442\u043f\u0440\u0430\u0432\u0438\u0442\u044c"}}},"user":{"uid":0,"permissionsHash":"9c2367dfcaba0fa15f0375f97aed64e146c908cee68508d13b79e3ee80e5162d"}}</script>
+<script src="../../../../../../sites/default/files/js/js_F2-Y4EzgTnESr58XByoLYEnsbi7ysTfMIKN1RvsMSWY.js"></script>
+
+
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+      <g id="svg-copy" class="svg-icon svg-icon_copy">
+        <path d="M15.111,18H1.889A1.848,1.848,0,0,1,0,16.2V3.6A1.848,1.848,0,0,1,1.889,1.8H5.837a2.87,2.87,0,0,1,5.326,0h3.948A1.848,1.848,0,0,1,17,3.6V16.2A1.848,1.848,0,0,1,15.111,18ZM3.777,12.6v1.8h6.611V12.6Zm0-3.6v1.8h9.445V9Zm0-3.6V7.2h9.445V5.4ZM8.5,1.8a.924.924,0,0,0-.944.9.945.945,0,0,0,1.889,0A.924.924,0,0,0,8.5,1.8Z"/>
+      </g>
+
+      <g id="svg-prev" class="svg-icon svg-icon_arrow">
+        <path d="M5.488,12.779,0,6.39,5.488,0" transform="translate(1 0.652)"/>
+      </g>
+
+      <g id="svg-next" class="svg-icon svg-icon_arrow">
+        <path d="M0,12.779,5.488,6.39,0,0" transform="translate(0.759 0.652)"/>
+      </g>
+    </svg>
+  </body>
+
+<!-- Mirrored from academy.terrasoft.ua/docs/7-17/user/biznes_processy/nastrojka_dinamicheskih_kejsov/rabota_v_dizaynere_keysov/nastroika_vizirovanija/nastroit_kejs_s_vizirovaniem by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Mar 2022 03:59:43 GMT -->
+</html>

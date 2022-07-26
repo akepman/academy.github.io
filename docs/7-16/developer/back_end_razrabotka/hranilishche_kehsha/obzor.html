@@ -1,0 +1,1047 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# ">
+  
+<!-- Mirrored from academy.terrasoft.ua/docs/7-16/developer/back_end_razrabotka/hranilishche_kehsha/obzor by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Mar 2022 03:21:03 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+          <!-- Google Tag Manager -->
+      <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          '../../../../../../www.googletagmanager.com/gtm5445.html?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-KLLB8G');</script>
+      <!-- End Google Tag Manager -->
+        <meta charset="utf-8" />
+<link rel="canonical" href="obzor.html" />
+<meta name="description" content="В Creatio реализована поддержка двух видов хранилищ — данные и кэш.
+
+Назначение разделения хранилищ — логическое разделение помещаемой в хранилище информации и упрощение ее дальнейшего использования в программном коде.
+
+Разделение хранилищ позволяет:" />
+<meta property="og:url" content="https://academy.terrasoft.ua/docs/7-16/developer/back_end_razrabotka/hranilishche_kehsha/obzor" />
+<meta property="og:title" content="Хранилища данных и кэш" />
+<meta property="og:description" content="В Creatio реализована поддержка двух видов хранилищ — данные и кэш.
+
+Назначение разделения хранилищ — логическое разделение помещаемой в хранилище информации и упрощение ее дальнейшего использования в программном коде.
+
+Разделение хранилищ позволяет:" />
+<meta name="Generator" content="Drupal 9 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="../../../../themes/custom/creatio/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="revision" href="obzor.html" />
+
+    <title>Хранилища данных и кэш | Creatio Academy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&amp;family=Open+Sans:ital,wght@0,300;0,400;0,600;1,400&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" media="all" href="../../../../sites/default/files/css/css_6lTP66__-yc6QXFp1zOwoeJ0HVigoYZP-SeoLLii000.css" />
+<link rel="stylesheet" media="all" href="../../../../sites/default/files/css/css_XQJDNhkF3xH5SZCcY-PI89Zu4nYIzQ5oR3SnUKyfXJU.css" />
+<link rel="stylesheet" media="print" href="../../../../sites/default/files/css/css_Zn4VHvcniOOtUwkIVwXzYr_0AI9gUVgZcPqaH4ViagU.css" />
+
+    
+  </head>
+  <body class="path-node page-node-type-developer-documentation">
+          <!-- Google Tag Manager (noscript) -->
+      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KLLB8G"
+                        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+      <!-- End Google Tag Manager (noscript) -->
+    
+        
+      <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    <div class="creatio-page d-flex flex-column">
+        <div class="region region-informer">
+    <div id="block-terrasoftpidtrimueukrainu" class="block block-simple-block block-simple-blockterrasoft-pidtrimue-ukrainu">
+  
+    
+      <style type="text/css">
+<!--/*--><![CDATA[/* ><!--*/
+@import url(../../../../../../www.terrasoft.ua/themes/custom/creatio/css/components/informer.css)
+
+/*--><!]]>*/
+</style><div class="ts-swu">
+<div class="creatio-container">
+<div class="ts-swu__cont">
+<div><a class="ts-swu__link" href="https://www.terrasoft.ua/terrasoft-stands-with-ukraine" target="_blank">Україна понад усе!</a> <span><a href="https://www.terrasoft.ua/terrasoft-stands-with-ukraine" target="_blank">Приєднуйтеся</a> до допомоги!</span></div>
+</div>
+</div></div>
+
+  </div>
+
+  </div>
+
+  
+  <header role="banner">
+          <div class="creatio-region creatio-region_top">
+        <div class="creatio-container">
+            <div class="region region-top">
+    <div id="block-menutoggle" class="block block-simple-block block-simple-blockmenu-toggle">
+  
+    
+      <div class="menu-toggle"><span> </span></div>
+
+  </div>
+<div id="block-logowhite-2" class="block block-simple-block block-simple-blocklogo-white">
+  
+    
+      <p><a class="site-logo" href="../../../../../index.html" rel="home"><img src="../../../../themes/custom/creatio/logo-white.svg" /></a></p>
+
+  </div>
+<div id="block-search" class="block block-simple-block block-simple-blocksearch">
+  
+    
+      <div class="search">
+<form action="https://academy.terrasoft.ua/search" class="search-form" method="get"><input class="search-form__input" name="search" placeholder="Поиск" type="search" /><input class="search-form__button" type="submit" value="Поиск" /> </form>
+
+<div class="search-toggle"> </div>
+</div>
+
+  </div>
+<nav role="navigation" aria-labelledby="block-sitesua-menu" id="block-sitesua" class="block block-menu navigation menu--sites-ua">
+            
+  <h2 class="visually-hidden" id="block-sitesua-menu">Sites UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="https://www.terrasoft.ua/" rel="nofollow" target="_blank">Terrasoft</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://community.terrasoft.ua/" rel="nofollow" target="_blank">Community</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://marketplace.terrasoft.ua/" rel="nofollow" target="_blank">Marketplace</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+<div id="block-usermenu" class="block block-ts-user block-ts-user-menu-block">
+  
+    
+      <ul class="user-menu">
+      <li class="user-menu__item">
+      <a class="user-menu__link" href="https://profile.terrasoft.ua/user/login?destination=academy/ua/docs/7-16/developer/back_end_razrabotka/hranilishche_kehsha/obzor">Войти</a>
+    </li>
+  </ul>
+
+  </div>
+<div id="block-usermenumobile" class="block block-ts-user block-ts-user-menu-mobile-block">
+  
+    
+      <ul class="user-menu-mobile">
+      <li class="user-menu-mobile__item">
+      <div class="user-menu-mobile__user user-menu-mobile__user_icon"></div>
+      <ul class="user-menu-mobile__submenu">
+        <li class="user-menu-mobile__subitem">
+          <a class="user-menu-mobile__sublink" href="https://profile.terrasoft.ua/user/login?destination=academy/ua/docs/7-16/developer/back_end_razrabotka/hranilishche_kehsha/obzor">Войти</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  </div>
+
+  </div>
+
+        </div>
+      </div>
+              <div class="creatio-region creatio-region_header">
+        <div class="creatio-container">
+            <div class="region region-header">
+    <div id="block-logo" class="block block-simple-block block-simple-blocklogo">
+  
+    
+      <p><a class="site-logo" href="../../../../../index.html" rel="home"><img src="../../../../themes/custom/creatio/logo.svg" /></a></p>
+
+  </div>
+<nav role="navigation" aria-labelledby="block-osnovnayanavigaciyaua-menu" id="block-osnovnayanavigaciyaua" class="block block-menu navigation menu--main-ua">
+            
+  <h2 class="visually-hidden" id="block-osnovnayanavigaciyaua-menu">Основная навигация UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="../../../../index.html" data-drupal-link-system-path="&lt;front&gt;">Документация</a>
+              </li>
+                <li class="menu-item">
+        <a href="../../../../../trainings.html">Тренинги</a>
+              </li>
+                <li class="menu-item">
+        <a href="../../../../certification.html" data-drupal-link-system-path="node/3084">Сертификация и тестирование</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+<nav role="navigation" aria-labelledby="block-sitesua-2-menu" id="block-sitesua-2" class="block block-menu navigation menu--sites-ua">
+            
+  <h2 class="visually-hidden" id="block-sitesua-2-menu">Sites UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="https://www.terrasoft.ua/" rel="nofollow" target="_blank">Terrasoft</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://community.terrasoft.ua/" rel="nofollow" target="_blank">Community</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://marketplace.terrasoft.ua/" rel="nofollow" target="_blank">Marketplace</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+
+  </div>
+
+        </div>
+      </div>
+              <div class="creatio-region creatio-region_breadcrumb">
+        <div class="creatio-container">
+            <div class="region region-breadcrumb">
+    <div id="block-logowhite" class="block block-simple-block block-simple-blocklogo-white">
+  
+    
+      <p><a class="site-logo" href="../../../../../index.html" rel="home"><img src="../../../../themes/custom/creatio/logo-white.svg" /></a></p>
+
+  </div>
+<div id="block-breadcrumbnaviagtion" class="block block-ts-nav block-ts-nav-bread">
+  
+    
+      <nav class="breadcrumb"><ol class="ts-nav-breadcrumb__list"><li class="ts-nav-breadcrumb__item"><a href="../../../../index.html" class="ts-nav-breadcrumb__link" title="Документация">Документация</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../../index2132.html?vid_1=2" class="ts-nav-breadcrumb__link" title="Для разработчика">Для разработчика</a></li>
+<li class="ts-nav-breadcrumb__item ts-nav-breadcrumb__item_mobile"><a href="../../back_end_razrabotka.html" class="ts-nav-breadcrumb__link" title="Back-end разработка" hreflang="zxx">Back-end разработка</a></li>
+<li class="ts-nav-breadcrumb__item"><span class="ts-nav-breadcrumb__link ts-nav-breadcrumb__link_current" title="Обзор">Обзор</span></li>
+</ol>
+</nav>
+
+  </div>
+<div id="block-search-2" class="block block-simple-block block-simple-blocksearch">
+  
+    
+      <div class="search">
+<form action="https://academy.terrasoft.ua/search" class="search-form" method="get"><input class="search-form__input" name="search" placeholder="Поиск" type="search" /><input class="search-form__button" type="submit" value="Поиск" /> </form>
+
+<div class="search-toggle"> </div>
+</div>
+
+  </div>
+
+  </div>
+
+        </div>
+      </div>
+      </header>
+
+  <div class="creatio-region creatio-region_main">
+    <div class="creatio-container">
+                <div class="region region-breadcrumb-mobile">
+    <div id="block-breadcrumbnaviagtion-2" class="block block-ts-nav block-ts-nav-bread">
+  
+    
+      <nav class="breadcrumb"><ol class="ts-nav-breadcrumb__list"><li class="ts-nav-breadcrumb__item"><a href="../../../../index.html" class="ts-nav-breadcrumb__link" title="Документация">Документация</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../../index2132.html?vid_1=2" class="ts-nav-breadcrumb__link" title="Для разработчика">Для разработчика</a></li>
+<li class="ts-nav-breadcrumb__item ts-nav-breadcrumb__item_mobile"><a href="../../back_end_razrabotka.html" class="ts-nav-breadcrumb__link" title="Back-end разработка" hreflang="zxx">Back-end разработка</a></li>
+<li class="ts-nav-breadcrumb__item"><span class="ts-nav-breadcrumb__link ts-nav-breadcrumb__link_current" title="Обзор">Обзор</span></li>
+</ol>
+</nav>
+
+  </div>
+
+  </div>
+
+      
+      <main class="creatio-main" role="main">
+                                                    
+        <div class="creatio-content creatio-content_small">
+          <div class="creatio-content__inner creatio-content__inner_bg">
+                            <div class="region region-messages">
+    <div data-drupal-messages-fallback class="hidden"></div>
+
+  </div>
+
+            
+              <div class="region region-content">
+    <div id="block-creatio-page-title" class="block block-core block-page-title-block">
+  
+    
+      
+  <h1 class="page-title"><span class="field field--name-title field--type-string field--label-hidden">Хранилища данных и кэш</span>
+</h1>
+
+
+  </div>
+<div id="block-creatio-content" class="block block-system block-system-main-block">
+  
+    
+      
+<article data-history-node-id="3577" role="article" about="/docs/7-16/developer/back_end_razrabotka/hranilishche_kehsha/obzor" class="node node--type-developer-documentation node--view-mode-full">
+
+  
+    
+
+  
+  <div class="node__content">
+      <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocknodedeveloper-documentationfield-difficulty">
+  
+    
+      
+            <div class="field field--name-field-difficulty field--type-entity-reference field--label-hidden field__item"><div about="/docs/7-16/taxonomy/term/169" id="taxonomy-term-169" class="taxonomy-term vocabulary-difficulty">
+  
+  
+  <div class="content">
+      <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocktaxonomy-termdifficultyfield-icon">
+  
+    
+      
+            <div class="field field--name-field-icon field--type-image field--label-hidden field__item">  <img src="../../../../sites/default/files/difficulty/advanced.svg" alt="" loading="lazy" typeof="foaf:Image" />
+
+</div>
+      
+  </div>
+<div class="block block-layout-builder block-field-blocktaxonomy-termdifficultyname">
+  
+    
+      
+            <div class="field field--name-name field--type-string field--label-hidden field__item"><span style="color: #EF4524;">Сложный</span></div>
+      
+  </div>
+
+    </div>
+  </div>
+
+  </div>
+</div>
+</div>
+      
+  </div>
+<div class="block block-ts-doc block-ts-doc-downloads">
+  
+    
+      <a href="../../../../sites/default/files/pdf/node/3577/KHranilischa_dannykh_i_kesh_.pdf" target="_blank">PDF</a>
+  </div>
+<div class="block block-ts-doc block-ts-doc-versions">
+  
+    
+        <div class="ts-doc-versions">
+    <select class="ts-doc-versions__select">
+                              <option value="/docs/8-0/developer/back_end_razrabotka/hranilishche_kehsha/obzor">Версия 8.0</option>
+                              <option value="/docs/7-18/developer/back_end_razrabotka/hranilishche_kehsha/obzor">Версия 7.18</option>
+                              <option value="/docs/7-17/developer/back_end_razrabotka/hranilishche_kehsha/obzor">Версия 7.17</option>
+                                                <option value="/docs/7-16/developer/back_end_razrabotka/hranilishche_kehsha/obzor" selected>Версия 7.16</option>
+          </select>
+  </div>
+
+  </div>
+
+    </div>
+  </div>
+  <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocknodedeveloper-documentationbody">
+  
+    
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><p>В Creatio реализована поддержка двух видов хранилищ — данные и кэш.</p>
+
+<p><strong>Назначение</strong> разделения хранилищ — логическое разделение помещаемой в хранилище информации и упрощение ее дальнейшего использования в программном коде.</p>
+
+<p>Разделение хранилищ позволяет:</p>
+
+<ul><li>Изолировать данные между рабочими пространствами и между сессиями пользователей.</li>
+	<li>Условно классифицировать данные.</li>
+	<li>Управлять временем жизни данных.</li>
+</ul><p>Физически все хранилища данных и кэша могут располагаться на абстрактном сервере хранения данных. Исключение составляют данные уровня <span class="filled">Request</span>, которые хранятся непосредственно в памяти.</p>
+
+<p>Сервером хранилищ Creatio является Redis. В общем случае это может быть произвольное хранилище, доступ к которому осуществляется через унифицированные интерфейсы. Необходимо учитывать, что операции обращения к хранилищу являются ресурсоемкими, поскольку связаны с сериализацией / десериализацией данных и сетевым обменом.</p>
+
+<p><strong>Возможности работы с данными</strong>, которые предоставляют хранилища Creatio:</p>
+
+<ul><li>Доступ к данным по ключу для чтения/записи.</li>
+	<li>Удаление данных из хранилища по ключу.</li>
+</ul><h2>Хранилище данных</h2>
+
+<p><strong>Назначение</strong> хранилища данных — промежуточное хранение редко изменяемых (т. н. "долгосрочных") данных.</p>
+
+<div class="table">
+<div class="table__caption">Уровни хранилища данных</div>
+
+<table><tbody><tr><th>Уровень</th>
+			<th>Описание</th>
+		</tr><tr><td><span class="filled">Request</span></td>
+			<td><strong>Уровень запроса</strong>. Данные доступны в течение времени обработки текущего запроса. Соответствует значению перечисления <span class="filled">Terrasoft.Core.Store.DataLevel.Request</span>.</td>
+		</tr><tr><td><span class="filled">Session</span></td>
+			<td><strong>Уровень сессии</strong>. Данные доступны в сессии текущего пользователя. Соответствует значению перечисления <span class="filled">Terrasoft.Core.Store.DataLevel.Session</span>.</td>
+		</tr><tr><td><span class="filled">Application</span></td>
+			<td><strong>Уровень приложения</strong>. Данные доступны для всего приложения. Соответствует значению перечисления <span class="filled">Terrasoft.Core.Store.DataLevel.Application</span>.</td>
+		</tr></tbody></table></div>
+
+<p>Данные, помещаемые в хранилище, будут содержаться в нем до момента их явного удаления. </p>
+
+<p><strong>Ограничения времени жизни объектов</strong>:</p>
+
+<ul><li>Для данных хранилища уровня <span class="filled">Request</span> время жизни объектов ограничено <strong>временем выполнения запроса</strong>.</li>
+	<li>Для данных хранилища уровня <span class="filled">Session</span> время жизни объектов ограничено <strong>временем существования сессии</strong>.</li>
+	<li>Данные хранилища уровня <span class="filled">Application</span> сохраняются на протяжении всего периода существования приложения и могут быть удалены из него только путем непосредственной <strong>очистки внешнего хранилища</strong>.</li>
+</ul><h2>Хранилище кэша</h2>
+
+<p><strong>Назначение</strong> хранилища кэша — хранение оперативной информации.</p>
+
+<div class="table">
+<div class="table__caption">Уровни хранилища кэша</div>
+
+<table><tbody><tr><th>Уровень</th>
+			<th>Описание</th>
+		</tr><tr><td><span class="filled">Session</span></td>
+			<td><strong>Уровень сессии</strong>. Данные доступны в сессии текущего пользователя. Соответствует значению перечисления <span class="filled">Terrasoft.Core.Store.CacheLevel.Session</span>.</td>
+		</tr><tr><td><span class="filled">Workspace</span></td>
+			<td><strong>Уровень рабочего пространства</strong>. Данные доступны для всех пользователей одного и того же рабочего пространства. Соответствует значению перечисления <span class="filled">Terrasoft.Core.Store.CacheLevel.Workspace</span>.</td>
+		</tr><tr><td><span class="filled">Application</span></td>
+			<td><strong>Уровень приложения</strong>. Данные доступны всем пользователям приложения вне зависимости от рабочего пространства. Соответствует значению перечисления <span class="filled">Terrasoft.Core.Store.CacheLevel.Application</span>.</td>
+		</tr></tbody></table></div>
+
+<p>Для данных, хранящихся в кэше, существует <strong>время устаревания</strong> — граничный срок актуальности конкретного элемента кэша. Независимо от времени устаревания, все элементы удаляются из кэша при завершении времени их жизни.</p>
+
+<p><strong>Ограничения времени жизни объектов</strong>:</p>
+
+<ul><li>Для данных уровня <span class="filled">Session</span> объекты удаляются при завершении сессии.</li>
+	<li>Для данных уровня уровня <span class="filled">Workspace</span> объекты удаляются при явном удалении <strong>рабочего пространства</strong>.</li>
+	<li>Для данных уровня уровня <span class="filled">Application</span> объекты сохраняются на протяжении всего периода существования приложения и могут быть удалены из него только путем непосредственной <strong>очистки внешнего хранилища</strong>.</li>
+</ul><p>Данные могут быть удалены из кэша в произвольный момент времени. В связи с этим могут возникать ситуации, когда программный код пытается получить закэшированные данные, которые на момент обращения уже удалены из кэша. В этом случае вызывающему коду необходимо просто получить эти данные из постоянного хранилища и поместить их в кэш.</p>
+
+<h2>Объектная модель хранилищ</h2>
+
+<p>Для работы с хранилищем данных и кэшем в Creatio реализован ряд <a href="../../../../../api/netcoreapi/7.18.0/api/Terrasoft.Core.Store.html">классов и интерфейсов</a> пространства имен <span class="filled">Terrasoft.Core.Store</span>. </p>
+
+<h3>Интерфейс <span class="filled">IBaseStore</span><a class="title-anchor" href="#title-2171-2" id="title-2171-2"> </a></h3>
+
+<p>Интерфейс определяет <strong>базовые возможности</strong> всех типов хранилищ и позволяет реализовать:</p>
+
+<ul><li>Доступ к данным по ключу для чтения/записи (индексатор <span class="filled">this[string key]</span>).</li>
+	<li>Удаление данных из хранилища по заданному ключу (метод <span class="filled">Remove(string key)</span>).</li>
+	<li>Инициализация хранилища заданным перечнем параметров (метод <span class="filled">Initialize(IDictionary parameters)</span>). Параметры для инициализации хранилищ Creatio вычитываются из конфигурационного файла. Перечни параметров задаются в секциях <span class="filled">storeDataAdapter</span> (для хранилища данных) и <span class="filled">storeCacheAdapter</span> (для кэша). В общем случае параметры могут задаваться произвольным образом.</li>
+</ul><h3>Интерфейс <span class="filled">IDataStore</span><a class="title-anchor" href="#title-2171-3" id="title-2171-3"> </a></h3>
+
+<p>Интерфейс определяет специфику работы с <strong>хранилищами данных</strong>. Является наследником базового интерфейса хранилищ <span class="filled">IBaseStore</span>. Дополнительно в интерфейсе определена возможность получения списка всех ключей хранилища (свойство <span class="filled">Keys</span>).</p>
+
+<div class="message message_warning">
+<p><span class="message__bold message__bold_warning">Важно.</span> Свойство <span class="filled">Keys</span> при работе с хранилищами данных рекомендуется использовать только в исключительных случаях, когда решение задачи альтернативными способами невозможно.</p>
+</div>
+
+<h3>Интерфейс <span class="filled">ICacheStore</span><a class="title-anchor" href="#title-2171-4" id="title-2171-4"> </a></h3>
+
+<p>Интерфейс определяет специфику<strong> работы с кэшем</strong>. Является наследником базового интерфейса хранилищ <span class="filled">IBaseStore</span>. Дополнительно в интерфейсе определен метод <span class="filled">GetValues(IEnumerable keys)</span>, который возвращает словарь объектов кэша с заданными ключами. Метод позволяет оптимизировать работу с хранилищем при одновременном получении набора данных.</p>
+
+<h3>Класс <span class="filled">Store</span><a class="title-anchor" href="#title-2171-5" id="title-2171-5"> </a></h3>
+
+<p>Статический класс для доступа к кэшу и хранилищам данных различных уровней. Уровни хранилища данных и кэша определены в перечислениях <span class="filled">Terrasoft.Core.Store.DataLevel</span> и <span class="filled">Terrasoft.Core.Store.CacheLevel</span> соответственно.</p>
+
+<p><strong>Статические свойства</strong> класса <span class="filled">Store</span>:</p>
+
+<ul><li><span class="filled">Data</span> — возвращает экземпляр провайдера хранилища данных.</li>
+	<li><span class="filled">Cache</span> — возвращает экземпляр провайдера кэша.</li>
+</ul><div class="message message_warning">
+<p><span class="message__bold message__bold_warning">Важно.</span> Для корректной работы хранилищ в .Net Core, необходимо заменить использование статических свойств на работу через <span class="filled">UserConnection</span> (см. ниже).</p>
+</div>
+
+<h2>Доступ к хранилищам данных и кэшам из <span class="filled">UserConnection</span><a class="title-anchor" href="#title-2171-7" id="title-2171-7"> </a></h2>
+
+<p>Доступ к хранилищам данных и кэшам приложения из конфигурационного кода предоставляют свойства статического класса <span class="filled">Store</span> пространства имен <span class="filled">Terrasoft.Core.Store</span>. Альтернативным вариантом доступа к хранилищу данных и кэшу в конфигурационной логике, является доступ через экземпляр класса <span class="filled">UserConnection</span>.<br />
+Этот вариант позволяет избежать использования длинных имен свойств и подключения дополнительных сборок. Для обеспечения миграции от фреймворка .NET Framework к .Net Core необходимо заменить использование статических свойств на работу через <span class="filled">UserConnection</span>.</p>
+
+<p>В классе <span class="filled">UserConnection</span> реализован ряд вспомогательных свойств, позволяющих получить быстрый доступ к хранилищам данных и кэшу различных уровней:</p>
+
+<ul><li><span class="filled">ApplicationCache</span> возвращает ссылку на кэш уровня приложения.</li>
+	<li><span class="filled">WorkspaceCache</span> возвращает ссылку на кэш уровня рабочего пространства.</li>
+	<li><span class="filled">SessionCache</span> возвращает ссылку на кэш уровня сессии.</li>
+	<li><span class="filled">RequestData</span> возвращает ссылку на хранилище данных уровня запроса.</li>
+	<li><span class="filled">SessionData</span> возвращает ссылку на хранилище данных уровня сессии.</li>
+	<li><span class="filled">ApplicationData</span> возвращает ссылку на хранилище данных уровня приложения.</li>
+</ul><div class="code">
+<div class="code__top">
+<div class="code__title">Пример работы с кэшем через класс <span class="filled">UserConnection</span></div>
+</div>
+
+<div class="code__widgets">
+<div class="code__source">
+<pre class="prettyprint">
+<span>// Ключ, с которым в кэш будет помещаться значение.
+</span><span>string</span> cacheKey = <span>"SomeKey"</span>;
+
+<span>// Помещение значения в кэш уровня сессии через свойство UserConnection.
+</span>UserConnection.SessionCache[cacheKey] = <span>"SomeValue"</span>;
+
+<span>// Получение значения из кэша через свойство класса Store.
+// В результате переменная valueFromCache будет содержать значение "SomeValue".
+</span><span>string</span> valueFromCache = UserConnection.SessionCache[cacheKey] <span>as</span> String;
+</pre>
+</div>
+</div>
+</div>
+
+<h2>Использование кэша в <span class="filled">EntitySchemaQuery</span><a class="title-anchor" href="#title-2171-9" id="title-2171-9"> </a></h2>
+
+<p>В<a href="../../../../developer/back_end_razrabotka/operatsii_s_dannymi_back_end/orm/obzor.html#reference-2158"> классе <span class="filled">EntitySchemaQuery</span></a> реализован механизм работы с хранилищем (кэшем Creatio либо произвольным хранилищем, определенным пользователем). Работа с кэшем позволяет оптимизировать эффективность выполнения операций за счет обращения к закэшированным результатам запроса без дополнительного обращения к базе данных. При выполнении запроса <span class="filled">EntitySchemaQuery</span> данные, полученные из базы данных, помещаются в кэш, который определяется свойством <span class="filled">Cache</span> с ключом, который задается свойством <span class="filled">CacheItemName</span>. По умолчанию в качестве кэша запроса <span class="filled">EntitySchemaQuery</span> выступает кэш Creatio <strong>уровня сессии</strong> с локальным хранением данных. В общем случае в качестве кэша запроса может выступать произвольное хранилище, которое реализует интерфейс <span class="filled">ICacheStore</span>.</p>
+
+<div class="code">
+<div class="code__top">
+<div class="code__title">Пример работы с кэшем приложения при выполнении запроса <span class="filled">EntitySchemaQuery</span></div>
+</div>
+
+<div class="code__widgets">
+<div class="code__source">
+<pre class="prettyprint">
+<span>// Создание экземпляра запроса EntitySchemaQuery с корневой схемой City.
+</span><span>var</span> esqResult = <span>new</span> EntitySchemaQuery(UserConnection.EntitySchemaManager, <span>"City"</span>);
+
+<span>// Добавление в запрос колонки с наименованием города.
+</span>esqResult.AddColumn(<span>"Name"</span>);
+
+<span>// Определение ключа, под которым в кэше будут храниться результаты выполнения запроса.
+// В качестве кэша выступает кэш уровня сессии с локальным кэшированием данных (так как не 
+// переопределяется свойство Cache объекта).
+</span>esqResult.CacheItemName = <span>"EsqResultItem"</span>;
+
+<span>// Выполнение запроса к базе данных для получения результирующей коллекции объектов.
+// После выполнения этой операции результаты запроса будут помещены в кэш. При дальнейшем обращении к 
+// esqResult для получения коллекции объектов запроса (если сам запрос не был изменен) эти объекты будут 
+// браться из сессионного кэша.
+</span>esqResult.GetEntityCollection(UserConnection);  
+</pre>
+</div>
+</div>
+</div>
+
+<h2>Прокси-классы хранилища данных и кэша<a class="title-anchor" href="#title-2171-11" id="title-2171-11"> </a></h2>
+
+<p>Доступ к хранилищам и кэшам в Creatio может быть осуществлен как напрямую (через свойства класса <span class="filled">Store</span>), так и через прокси-классы.</p>
+
+<p><strong>Прокси-классы</strong> — это специальные объекты, которые представляют собой промежуточное звено между хранилищами и вызывающим кодом. <strong>Назначение</strong> прокси-классов — выполнение промежуточных действий над данными перед их чтением/записью в хранилище.</p>
+
+<p><strong>Особенность </strong>прокси-классов — каждый из них является хранилищем.</p>
+
+<p><strong>Области применения</strong> прокси-классов:</p>
+
+<ul><li>
+	<p><strong>Первоначальная настройка и конфигурирование приложения</strong>.</p>
+
+	<p>В конфигурационном файле <span class="filled">Web.config</span>, который находится в корневом каталоге приложения, можно настроить использование прокси-классов для хранилищ данных и кэшей. Настройка прокси-классов для соответствующего хранилища данных или кэша осуществляется в секциях <span class="filled">storeDataAdapters</span> и <span class="filled">storeCacheAdapters</span> соответственно. В них добавляется секция <span class="filled">proxies</span>, в которой перечисляются все прокси-классы, применяемые к хранилищу.</p>
+
+	<p>При загрузке приложения настройки считываются из конфигурационного файла и применяются к соответствующему виду хранилища. Таким образом можно выстраивать <strong>цепочки прокси-классов</strong>, которые будут последовательно выполняться. Порядок прокси-классов в цепочке выполнения соответствует их порядку в конфигурационном файле. При этом первым в цепочке выполнения выступает прокси-класс, перечисленный последним в секции <span class="filled">proxies</span>, то есть выполнение осуществляется "снизу вверх".</p>
+
+	<p><strong>Особенности</strong> настройки цепочки прокси-классов:</p>
+
+	<ul><li>Конечной точкой применения цепочки прокси-классов является конкретный кэш или хранилище данных, для которого эта цепочка определяется.</li>
+		<li>Каждый прокси-класс работает или с хранилищем данных, или с хранилищем кэша. Вид хранилища определяется с помощью свойств <span class="filled">ICacheStoreProxy.CacheStore</span> или <span class="filled">IDataStoreProxy.DataStore</span>. Однако, на что именно ссылается это свойство (на другой прокси-класс, на конечное хранилище или кэш), для прокси-класса неизвестно. При этом сам прокси-класс может выступать в качестве хранилища, с которым будут работать другие прокси-классы.</li>
+	</ul><div class="code">
+	<div class="code__top">
+	<div class="code__title">Пример настройки прокси-классов</div>
+	</div>
+
+	<div class="code__widgets">
+	<div class="code__source">
+	<pre class="prettyprint">
+<span>&lt;</span><span>storeDataAdapters</span><span>&gt;</span>
+    <span>&lt;</span><span>storeAdapter </span><span>levelName</span><span>="Request"</span><span> type</span><span>="RequestDataAdapterClassName"</span><span>&gt;</span>
+        <span>&lt;</span><span>proxies</span><span>&gt;</span>
+            <span>&lt;</span><span>proxy </span><span>name</span><span>="RequestDataProxyName1"</span><span> type</span><span>="RequestDataProxyClassName1"</span><span> </span><span>/&gt;</span>
+            <span>&lt;</span><span>proxy </span><span>name</span><span>="RequestDataProxyName2"</span><span> type</span><span>="RequestDataProxyClassName2"</span><span> </span><span>/&gt;</span>
+            <span>&lt;</span><span>proxy </span><span>name</span><span>="RequestDataProxyName3"</span><span> type</span><span>="RequestDataProxyClassName3"</span><span> </span><span>/&gt;</span>
+        <span>&lt;/</span><span>proxies</span><span>&gt;</span>
+    <span>&lt;/</span><span>storeAdapter</span><span>&gt;</span>
+<span>&lt;/</span><span>storeDataAdapters</span><span>&gt;</span>
+
+<span>&lt;</span><span>storeCacheAdapters</span><span>&gt;</span>
+    <span>&lt;</span><span>storeAdapter </span><span>levelName</span><span>="Session"</span><span> type</span><span>="SessionCacheAdapterClassName"</span><span>&gt;</span>
+        <span>&lt;</span><span>proxies</span><span>&gt;</span>
+            <span>&lt;</span><span>proxy </span><span>name</span><span>="SessionCacheProxyName1"</span><span> type</span><span>="SessionCacheProxyClassName1"</span><span> </span><span>/&gt;</span>
+            <span>&lt;</span><span>proxy </span><span>name</span><span>="SessionCacheProxyName2"</span><span> type</span><span>="SessionCacheProxyClassName2"</span><span> </span><span>/&gt;</span>
+        <span>&lt;/</span><span>proxies</span><span>&gt;</span>
+    <span>&lt;/</span><span>storeAdapter</span><span>&gt;</span>
+<span>&lt;/</span><span>storeCacheAdapters</span><span>&gt;</span> 
+</pre>
+	</div>
+	</div>
+	</div>
+
+	<p>В соответствии с настройками, приведенными в примере, цепочка выполнения прокси-классов, например, хранилища данных, будет следующей: <span class="filled">RequestDataProxyName3 —&gt; RequestDataProxyName2 —&gt; RequestDataProxyName1 —&gt; RequestDataAdapterClassName</span> (конечное хранилище данных уровня запроса).</p>
+	</li>
+	<li>
+	<p><strong>Разграничение данных различных пользователей приложения</strong>.</p>
+
+	<p>С помощью прокси-классов решается задача <strong>изоляции данных</strong> между пользователями. Наиболее простым решением этой задачи является трансформация ключей значений перед помещением их в хранилище (например, путем добавления к ключу дополнительного префикса, специфичного для конкретного пользователя). Использование таких прокси-классов обеспечивает уникальность ключей хранилища. Это позволяет избежать потери и искажения данных при одновременной попытке разных пользователей записать в хранилище различные значения с одинаковым ключом. Пример работы с прокси-классами трансформации ключей <a href="#title-2171-19">приведен ниже</a>. В общем случае с помощью прокси-классов можно реализовать сложную логику.</p>
+	</li>
+	<li>
+	<p><strong>Выполнение других промежуточных действий с данными перед помещением их в хранилище</strong>.</p>
+
+	<p>В прокси-классах можно реализовывать логику выполнения любых произвольных действий с данными перед помещением их в хранилище или получения их из него. Вынесение логики обработки данных в прокси-класс позволяет избежать дублирования кода, что, в свою очередь, облегчает его модификацию и сопровождение.</p>
+	</li>
+</ul><h3>Базовые интерфейсы прокси-классов<a class="title-anchor" href="#title-2171-18" id="title-2171-18"> </a></h3>
+
+<p>Чтобы класс можно было<strong> использовать в качестве прокси-класса</strong> для работы с хранилищами, он должен реализовывать один или оба интерфейса пространства имен <span class="filled">Terrasoft.Core.Store</span>:</p>
+
+<ul><li><span class="filled">IDataStoreProxy</span> — интерфейс прокси-классов хранилища данных.</li>
+	<li><span class="filled">ICacheStoreProxy</span> — интерфейс прокси-классов кэша.</li>
+</ul><p>Каждый из этих интерфейсов имеет одно свойство — ссылку на то хранилище (или кэш), с которым работает данный прокси-класс. Для интерфейса <span class="filled">IDataStoreProxy</span> это свойство <span class="filled">DataStore</span>, а для интерфейса <span class="filled">ICacheStoreProxy</span> — свойство <span class="filled">CacheStore</span>.</p>
+
+<h3>Прокси-классы трансформации ключей<a class="title-anchor" href="#title-2171-19" id="title-2171-19"> </a></h3>
+
+<p>Прокси-классы, которые <strong>реализуют логику трансформации ключей значений</strong>, помещаемых в хранилища.</p>
+
+<ul><li>Класс <span class="filled">KeyTransformerProxy</span> — абстрактный класс, который является базовым классом для всех прокси-классов, преобразующих ключи кэша. Реализует методы и свойства интерфейса <span class="filled">ICacheStoreProxy</span>. Чтобы избежать дублирования логики, при создании пользовательских прокси-классов для трансформации ключей рекомендуется наследоваться от этого класса.</li>
+	<li>
+	<p>Класс <span class="filled">PrefixKeyTransformerProxy</span> — прокси-класс, преобразующий ключи кэша путем добавления к ним заданного префикса.</p>
+
+	<div class="code">
+	<div class="code__top">
+	<div class="code__title">Пример работы с кэшем уровня сессии через прокси-класс <span class="filled">PrefixKeyTransformerProxy</span></div>
+	</div>
+
+	<div class="code__widgets">
+	<div class="code__source">
+	<pre class="prettyprint">
+<span>// Ключ, с которым значение будет помещаться в кэш через прокси.
+</span><span>string</span> key = <span>"Key"</span>;
+
+<span>// Префикс, который будет добавляться к ключу значения прокси-классом.
+</span><span>string</span> prefix = <span>"customPrefix"</span>;
+
+<span>// Создание прокси-класса, который будет использоваться для записи значений в кэш уровня сессии.
+</span>ICacheStore proxyCache = <span>new</span> PrefixKeyTransformerProxy(prefix, Store.Cache[CacheLevel.Session]);
+
+<span>// Запись значения с ключом key в кэш через прокси-класс. 
+// Фактически это значение записывается в глобальный кэш уровня сессии с ключом prefix + key. 
+</span>proxyCache[key] = <span>"CachedValue"</span>;
+
+<span>// Получение значения по ключу key через прокси.
+</span><span>var</span> valueFromProxyCache = (<span>string</span>)proxyCache[key];
+
+<span>// Получение значения по ключу prefix + key непосредственно из кэша уровня сессии.
+</span><span>var</span> valueFromGlobalCache = (<span>string</span>)UserConnection.SessionCache[prefix + key]; 
+</pre>
+	</div>
+	</div>
+	</div>
+
+	<p>В итоге переменные <span class="filled">valueFromProxyCache</span> и <span class="filled">valueFromGlobalCache</span> будут содержать одинаковое значение <span class="filled"><span class="consolas">CachedValue</span></span>.</p>
+	</li>
+	<li>
+	<p>Класс <span class="filled">DataStoreKeyTransformerProxy</span> — прокси-класс, преобразующий ключи хранилища данных путем добавления к ним заданного префикса.</p>
+
+	<div class="code">
+	<div class="code__top">
+	<div class="code__title">Пример работы с хранилищем данных через прокси-класс <span class="filled">DataStoreKeyTransformerProxy</span></div>
+	</div>
+
+	<div class="code__widgets">
+	<div class="code__source">
+	<pre class="prettyprint">
+<span>// Ключ, с которым значение будет помещаться в хранилище через прокси.
+</span><span>string</span> key = <span>"Key"</span>;
+
+<span>// Префикс, который будет добавляться к ключу значения прокси-классом.
+</span><span>string</span> prefix = <span>"customPrefix"</span>;
+
+<span>// Создание прокси-класса, который будет использоваться для записи значений в хранилище уровня сессии.
+</span>IDataStore proxyStorage = <span>new</span> DataStoreKeyTransformerProxy(prefix) { DataStore = Store.Data[DataLevel.Session] };
+
+<span>// Запись значения с ключом key в хранилище через прокси-класс. 
+// Фактически это значение записывается в глобальное хранилище уровня сессии с ключом prefix + key.
+</span>proxyStorage[key] = <span>"StoredValue"</span>;
+
+<span>// Получение значения по ключу key через прокси.
+</span><span>var</span> valueFromProxyStorage = (<span>string</span>)proxyStorage[key];
+
+<span>// Получение значения по ключу prefix + key непосредственно из хранилища уровня сессии.
+</span><span>var</span> valueFromGlobalStorage = (<span>string</span>)UserConnection.SessionData[prefix + key]; 
+</pre>
+	</div>
+	</div>
+	</div>
+
+	<p>В итоге переменные <span class="filled">valueFromProxyStorage</span> и <span class="filled">valueFromGlobalStorage</span> будут содержать одинаковое значение <span class="filled">StoredValue</span>.</p>
+	</li>
+</ul><h3>Локальное кэширование данных<a class="title-anchor" href="#title-2171-25" id="title-2171-25"> </a></h3>
+
+<p>На базе прокси-классов в Creatio реализован механизм <strong>локального кэширования данных</strong>.</p>
+
+<p><strong>Основная цель кэширования данных</strong> — снижение нагрузки на сервер хранения данных и времени выполнения запросов при работе с редко изменяемыми данными.</p>
+
+<p>Логику механизма локального кэширования реализует внутренний прокси-класс <span class="filled">LocalCachingProxy</span>. Этот прокси-класс выполняет кэширование данных на текущем узле веб-фермы. Класс выполняет мониторинг времени жизни кэшированных объектов и получает данные из глобального кэша только в том случае, если кэшированные данные не актуальны.</p>
+
+<p>Для применения механизма локального кэширования на практике используются <strong>методы расширения </strong>для интерфейса <span class="filled">ICacheStore</span> из статического класса <span class="filled">CacheStoreUtilities</span>:</p>
+
+<ul><li><span class="filled">WithLocalCaching()</span> — переопределенный метод, который возвращает экземпляр класса <span class="filled">LocalCachingProxy</span>, выполняющего локальное кэширование.</li>
+	<li><span class="filled">WithLocalCachingOnly(string)</span> — метод, выполняющий локальное кэширование данных заданной группы элементов с мониторингом их актуальности.</li>
+	<li><span class="filled">ExpireGroup(string)</span> — метод устанавливает признак устаревания для заданной группы элементов. При вызове этого метода все элементы заданной группы становятся неактуальными и не возвращаются при запросе данных.</li>
+</ul><div class="code">
+<div class="code__top">
+<div class="code__title">Пример работы с кэшем рабочего пространства с использованием локального кэширования</div>
+</div>
+
+<div class="code__widgets">
+<div class="code__source">
+<pre class="prettyprint">
+<span>// Создание первого прокси-класса, который выполняет локальное кэширование данных. Все элементы, 
+// записываемые в кэш через этот прокси, принадлежат к группе контроля актуальности Group1. 
+</span>ICacheStore cacheStore1 = Store.Cache[CacheLevel.Workspace].WithLocalCaching(<span>"Group1"</span>);
+
+<span>// Добавление элемента в кэш через прокси-класс.
+</span>cacheStore1[<span>"Key1"</span>] = <span>"Value1"</span>;
+
+<span>// Создание второго прокси-класса, который выполняет локальное кэширование данных. Все элементы, 
+// записываемые в кэш через этот прокси, также принадлежат к группе контроля актуальности Group1. 
+</span>ICacheStore cacheStore2 = Store.Cache[CacheLevel.Workspace].WithLocalCaching(<span>"Group1"</span>);
+cacheStore2[<span>"Key2"</span>] = <span>"Value2"</span>;
+
+<span>// Для всех элементов группы Group1 устанавливается признак устаревания. Устаревшими считаются элементы 
+// с ключами Key1 и Key2, так как они принадлежат к одной группе контроля актуальности Group1, несмотря на 
+// то, что добавлены в кэш через разные прокси.
+</span>cacheStore2.ExpireGroup(<span>"Group1"</span>);
+
+<span>// Попытка получения значений из кэша по ключам Key1 и Key2 после того, как эти элементы были помечены как 
+// устаревшие. В результате переменные cachedValue1 и cachedValue2 будут содержать значение null. 
+</span><span>var</span> cachedValue1 = cacheStore1[<span>"Key1"</span>]; 
+<span>var</span> cachedValue2 = cacheStore1[<span>"Key2"</span>];
+</pre>
+</div>
+</div>
+</div>
+
+<h2>Особенности использования хранилищ данных и кэша</h2>
+
+<p>Для повышения эффективности работы с хранилищами данных и кэшами в конфигурационной логике и в логике реализации бизнес-процессов необходимо учитывать особенности их использования.</p>
+
+<ul><li>Все объекты, помещаемые в хранилища, должны быть <strong>сериализуемыми</strong>. Это обусловлено спецификой работы с хранилищами ядра приложения. При сохранении данных в хранилища (за исключением хранилища данных уровня <span class="filled">Request</span>) объект предварительно <strong>сериализуется</strong>, а при получении — <strong>десериализуется</strong>.</li>
+	<li>
+	<p>Обращение к хранилищу является относительно ресурсоемкой операцией. В связи с этим в коде необходимо избегать излишних обращений к хранилищу. В примерах 1 и 2 приводятся корректные и некорректные варианты работы с кэшем.</p>
+
+	<p><strong>Пример 1</strong></p>
+
+	<div class="code">
+	<div class="code__top code__top_col">
+	<div class="code__tabs">
+	<div class="code__tab code__tab_active">Неоптимальный код</div>
+
+	<div class="code__tab">Оптимальный код (вариант 1)</div>
+
+	<div class="code__tab">Оптимальный код (вариант 2)</div>
+	</div>
+	</div>
+
+	<div class="code__widgets">
+	<div class="code__source code__source_active" data-insert="false" data-tab="Неоптимальный код">
+	<pre class="prettyprint">
+// Выполняется сетевое обращение и десериализация данных.
+if (UserConnection.SessionData["SomeKey"] != null)
+{
+    // Повторно выполняется сетевое обращение и десериализация данных.
+    return (string)UserConnection.SessionData["SomeKey"];
+}</pre>
+	</div>
+
+	<div class="code__source" data-insert="false" data-tab="Оптимальный код (вариант 1)">
+	<pre class="prettyprint">
+<span>// Получение объекта из хранилища в промежуточную переменную.
+</span><span>object</span> value = UserConnection.SessionData[<span>"SomeKey"</span>];
+
+<span>// Проверка значения промежуточной переменной.
+</span><span>if</span> (value != <span>null</span>)
+{
+    <span>// Возврат значения.
+</span>    <span>return</span> (<span>string</span>)value;
+}
+</pre>
+	</div>
+
+	<div class="code__source" data-insert="false" data-tab="Оптимальный код (вариант 2)">
+	<pre class="prettyprint">
+<span>// Использование расширяющего метода GetValue().
+</span><span>return</span> UserConnection.SessionData.GetValue&lt;<span>string</span>&gt;(<span>"SomeKey"</span>);
+</pre>
+	</div>
+	</div>
+	</div>
+
+	<p><strong>Пример 2</strong></p>
+
+	<div class="code">
+	<div class="code__top code__top_col">
+	<div class="code__tabs">
+	<div class="code__tab code__tab_active">Неоптимальный код</div>
+
+	<div class="code__tab">Оптимальный код</div>
+	</div>
+	</div>
+
+	<div class="code__widgets">
+	<div class="code__source code__source_active" data-insert="false" data-tab="Неоптимальный код">
+	<pre class="prettyprint">
+<span>// Выполняется сетевое обращение и десериализация данных.
+</span><span>if</span> (UserConnection.SessionData[<span>"SomeKey"</span>] != <span>null</span>)
+{
+    <span>// Повторно выполняется сетевое обращение и десериализация данных.
+</span>    UserConnection.SessionData.Remove(<span>"SomeKey"</span>);
+}
+</pre>
+	</div>
+
+	<div class="code__source" data-insert="false" data-tab="Оптимальный код">
+	<pre class="prettyprint">
+<span>// Удаление выполняется сразу, без предварительной проверки.
+</span>UserConnection.SessionData.Remove(<span>"SomeKey"</span>);
+</pre>
+	</div>
+	</div>
+	</div>
+	</li>
+	<li>
+	<p>Любые изменения состояния объекта, полученного из хранилища данных или кэша, происходят локально в памяти и не фиксируются в хранилище автоматически. Поэтому, чтобы эти изменения отобразились в хранилище, измененный объект необходимо явно в него записать.</p>
+
+	<div class="code">
+	<div class="code__top">
+	<div class="code__title">Пример записи данных в хранилище</div>
+	</div>
+
+	<div class="code__widgets">
+	<div class="code__source">
+	<pre class="prettyprint">
+<span>// Получение словаря значений из хранилища данных сессии по ключу "SomeDictionary".
+</span>Dictionary&lt;<span>string</span>, <span>string</span>&gt; dic = (Dictionary&lt;<span>string</span>, <span>string</span>&gt;)UserConnection.SessionData[<span>"SomeDictionary"</span>];
+
+<span>// Изменение значения элемента словаря. Изменения в хранилище не зафиксировались.
+</span>dic[<span>"Key"</span>] = <span>"ChangedValue"</span>;
+
+<span>// Добавление нового элемента в словарь. Изменения в хранилище не зафиксировались.
+</span>dic.Add(<span>"NewKey"</span>, <span>"NewValue"</span>);
+
+<span>// В хранилище данных по ключу "SomeDictionary" записывается словарь. Теперь все внесенные изменения 
+// зафиксированы в хранилище.
+</span>UserConnection.SessionData[<span>"SomeDictionary"</span>] = dic;
+</pre>
+	</div>
+	</div>
+	</div>
+	</li>
+</ul></div>
+      
+  </div>
+
+    </div>
+  </div>
+
+  </div>
+
+</article>
+
+  </div>
+
+  </div>
+
+          </div>
+        </div>
+
+                  <aside class="creatio-sidebar creatio-sidebar_first" role="complementary">
+              <div class="region region-sidebar-first">
+    <div id="block-documentationnaviagtion" class="block block-ts-nav block-ts-nav-doc-nav">
+  
+    
+      <div class="ts-nav-block"><a href="../../../../index.html" class="ts-nav-block__link">Документация</a><div class="ts-nav-block__title">Для разработчика</div>
+</div>
+<div class="ts-nav-container"><ul class="ts-nav-menu"><li class="ts-nav-menu__item">
+  <a href="../../s_chego_nachat.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">С чего начать&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../architecture.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Архитектура&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../instrumenty_razrabotki.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Инструменты разработки&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../back_end_razrabotka.html" class="ts-nav-menu__link ts-nav-menu__link_expanded ts-nav-menu__link_open" hreflang="zxx">Back-end разработка&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+      <ul class="ts-nav-menu__children">
+      <li class="ts-nav-menu__item">
+  <a href="../fabrika_zameshchayushchikh_klassov.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Фабрика замещающих классов&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../back-end_development/operatsii_s_dannymi_back_end.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Операции с данными&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../veb_servisy.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Веб-сервисы&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../biznes_logika_obektov/obzor.html" class="ts-nav-menu__link" hreflang="ru">Бизнес-логика объектов</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="obzor.html" class="ts-nav-menu__link ts-nav-menu__link_open" hreflang="ru">Хранилище кэша</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../lokalizuemye_resursy.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Локализуемые ресурсы&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../avtomaticheskaya_privyazka_dannykh/obzor.html" class="ts-nav-menu__link" hreflang="ru">Автоматическая привязка данных</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../../../api/netcoreapi/7.18.0/api/index.html" class="ts-nav-menu__link" hreflang="ru">Библиотека .NET классов</a>
+  </li>
+
+    </ul>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../front_end_razrabotka.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Front-end разработка&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../integratsiya_i_vneshnij_api.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Интеграция и внешний API&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../ehlementy_interfejsa.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Элементы интерфейса&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../komponenty_prilozheniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Компоненты приложения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../razrabotka_mobilnogo_prilozheniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Разработка мобильного приложения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../razrabotka_marketplace_prilozheniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Разработка Marketplace-приложения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+</ul>
+</div>
+
+  </div>
+
+  </div>
+
+            <div class="creatio-sidebar__toggle"></div>
+          </aside>
+        
+                  <aside class="creatio-sidebar creatio-sidebar_second" role="complementary">
+              <div class="region region-sidebar-second">
+    <div id="block-example" class="block block-ts-nav block-ts-nav-page-nav">
+  
+    
+      <div class="ts-nav-page">
+  </div>
+
+  </div>
+<div id="block-adminfeedbackblock" class="block block-admin-feedback block-admin-feedback-block">
+  
+    
+      <div id="feedback-message"><div id="upper-feedback-content"><h2>Был ли данный материал полезен?</h2>
+<input class="feedback-btn feedback-btn__yes button js-form-submit form-submit" data-node-id="3577" data-feedback="yes" type="submit" name="op" value="Да" />
+<input class="feedback-btn feedback-btn__no button js-form-submit form-submit" data-node-id="3577" data-feedback="no" type="submit" name="op" value="Нет" />
+</div>
+<form class="admin-feedback-form" data-drupal-selector="admin-feedback-form" action="https://academy.terrasoft.ua/docs/7-16/developer/back_end_razrabotka/hranilishche_kehsha/obzor" method="post" id="admin-feedback-form" accept-charset="UTF-8">
+  <div id="feedback-msg-result"></div><div class="js-form-item form-item js-form-type-textarea form-type-textarea js-form-item-feedback-message form-item-feedback-message form-no-label">
+        <div class="form-textarea-wrapper">
+  <textarea id="edit-feedback-msg" data-drupal-selector="edit-feedback-message" name="feedback_message" rows="5" cols="60" class="form-textarea resize-vertical"></textarea>
+</div>
+
+        </div>
+<input id="feedback-id" data-drupal-selector="edit-feedback-id" type="hidden" name="feedback_id" value="" />
+<input class="feedback-btn feedback-btn__send-comment button js-form-submit form-submit" data-drupal-selector="edit-feedback-send" type="submit" id="edit-feedback-send" name="op" value="Отправить" />
+<input autocomplete="off" data-drupal-selector="form-obp7gp-bcnr95ajy94inm9svigxd9rloplag6hmzuzq" type="hidden" name="form_build_id" value="form-oBP7Gp-bcnr95aJY94Inm9sViGxD9rLopLAG6HmZUzQ" />
+<input data-drupal-selector="edit-admin-feedback-form" type="hidden" name="form_id" value="admin_feedback_form" />
+
+</form>
+</div>
+
+  </div>
+
+  </div>
+
+          </aside>
+              </main>
+    </div>
+  </div>
+
+  <footer role="contentinfo">
+    <div class="creatio-region creatio-region_footer">
+      <div class="creatio-container">
+          <div class="region region-footer">
+    <div id="block-footerua" class="block block-simple-block block-simple-blockfooter-ua">
+  
+    
+      <div class="footer">
+<div class="footer-left">
+<ul class="footer-socials"><li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_fb" href="https://www.facebook.com/terrasoft.ua" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_in" href="https://www.linkedin.com/company/terrasoft/" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_yt" href="https://www.youtube.com/c/TerrasoftUkraine" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_tg" href="https://t.me/Terrasoft_UA" target="_blank"> </a></li>
+</ul></div>
+
+<div class="footer-contact">
+<div class="footer-title">Будьте на связи!</div>
+
+<div class="footer-content">
+<div class="footer-items">
+<div class="footer-item"><a class="footer__link footer__link_phone" href="tel:+380443633133">+38 (044) 363-31-33</a></div>
+</div>
+
+<div class="footer-items">
+<div class="footer-item"><a class="footer__link footer__link_email" href="mailto:support@terrasoft.ua">support@terrasoft.ua</a></div>
+</div>
+</div>
+</div>
+</div>
+
+  </div>
+
+  </div>
+
+      </div>
+    </div>
+    <div class="creatio-region creatio-region_bottom">
+      <div class="creatio-container">
+          <div class="region region-bottom">
+    <div id="block-allrightsreservedua" class="block block-simple-block block-simple-blockfooter-bottom-ua">
+  
+    
+      <p>© 2002-2022 Terrasoft.  |  <a href="https://www.terrasoft.ua/privacy-policy" target="_blank">Конфиденциальность</a></p>
+
+  </div>
+
+  </div>
+
+      </div>
+    </div>
+  </footer>
+</div>
+<div class="creatio-bg"></div>
+
+
+  </div>
+
+    
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/docs\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/3577","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"ru"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"ajaxPageState":{"libraries":"admin_feedback\/admin_feedback_block,admin_feedback\/admin_feedback_css,classy\/base,classy\/messages,classy\/node,core\/drupal.ajax,core\/jquery.form,core\/normalize,creatio\/fancybox,creatio\/global,layout_discovery\/onecol,system\/base,ts_doc\/doc_version,ts_feedback\/ts_feedback,ts_nav\/breadcrumb,ts_nav\/doc_nav,ts_nav\/page_nav,ts_title_anchor\/ts_title_anchor","theme":"creatio","theme_token":null},"ajaxTrustedUrl":{"form_action_p_pvdeGsVG5zNF_XLGPTvYSKCf43t8qZYSwcfZl2uzM":true,"\/docs\/7-16\/developer\/back_end_razrabotka\/hranilishche_kehsha\/obzor?ajax_form=1":true},"admin_feedback":{"yes_response":"\u0421\u043f\u0430\u0441\u0438\u0431\u043e \u0437\u0430 \u043e\u0431\u0440\u0430\u0442\u043d\u0443\u044e \u0441\u0432\u044f\u0437\u044c!","no_response":"\u0421\u043f\u0430\u0441\u0438\u0431\u043e \u0437\u0430 \u043e\u0431\u0440\u0430\u0442\u043d\u0443\u044e \u0441\u0432\u044f\u0437\u044c!","custom_text_response_on_no":{"value":"","format":"full_html"},"feedback_prompt_on_yes":true,"feedback_prompt_on_no":true,"feedback_enable_predefined_answers":false,"feedback_prompt":"\u041a\u0430\u043a \u043c\u043e\u0436\u043d\u043e \u0443\u043b\u0443\u0447\u0448\u0438\u0442\u044c \u044d\u0442\u0443 \u0441\u0442\u0430\u0442\u044c\u044e?"},"ajax":{"edit-feedback-send":{"callback":"::validateFeedbackMsg","event":"mousedown","keypress":true,"prevent":"click","url":"\/docs\/7-16\/developer\/back_end_razrabotka\/hranilishche_kehsha\/obzor?ajax_form=1","dialogType":"ajax","submit":{"_triggering_element_name":"op","_triggering_element_value":"\u041e\u0442\u043f\u0440\u0430\u0432\u0438\u0442\u044c"}}},"user":{"uid":0,"permissionsHash":"9c2367dfcaba0fa15f0375f97aed64e146c908cee68508d13b79e3ee80e5162d"}}</script>
+<script src="../../../../sites/default/files/js/js_Rr-7TvYD7NposuRFJwUqThxM7yJmw8vs03PQwu5gWd8.js"></script>
+
+
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+      <g id="svg-copy" class="svg-icon svg-icon_copy">
+        <path d="M15.111,18H1.889A1.848,1.848,0,0,1,0,16.2V3.6A1.848,1.848,0,0,1,1.889,1.8H5.837a2.87,2.87,0,0,1,5.326,0h3.948A1.848,1.848,0,0,1,17,3.6V16.2A1.848,1.848,0,0,1,15.111,18ZM3.777,12.6v1.8h6.611V12.6Zm0-3.6v1.8h9.445V9Zm0-3.6V7.2h9.445V5.4ZM8.5,1.8a.924.924,0,0,0-.944.9.945.945,0,0,0,1.889,0A.924.924,0,0,0,8.5,1.8Z"/>
+      </g>
+
+      <g id="svg-prev" class="svg-icon svg-icon_arrow">
+        <path d="M5.488,12.779,0,6.39,5.488,0" transform="translate(1 0.652)"/>
+      </g>
+
+      <g id="svg-next" class="svg-icon svg-icon_arrow">
+        <path d="M0,12.779,5.488,6.39,0,0" transform="translate(0.759 0.652)"/>
+      </g>
+    </svg>
+  </body>
+
+<!-- Mirrored from academy.terrasoft.ua/docs/7-16/developer/back_end_razrabotka/hranilishche_kehsha/obzor by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Mar 2022 03:21:04 GMT -->
+</html>

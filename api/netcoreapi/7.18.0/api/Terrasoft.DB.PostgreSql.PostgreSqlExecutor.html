@@ -1,0 +1,1306 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  
+<!-- Mirrored from academy.terrasoft.ua/api/netcoreapi/7.18.0/api/Terrasoft.DB.PostgreSql.PostgreSqlExecutor.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Mar 2022 03:32:04 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class PostgreSqlExecutor
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class PostgreSqlExecutor
+   ">
+    <meta name="generator" content="docfx 2.58.0.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-default ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="https://academy.terrasoft.ru/docs/developer/back-end_development">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Terrasoft.DB.PostgreSql.PostgreSqlExecutor">
+  
+  
+  <h1 id="Terrasoft_DB_PostgreSql_PostgreSqlExecutor" data-uid="Terrasoft.DB.PostgreSql.PostgreSqlExecutor" class="text-break">Class PostgreSqlExecutor
+  </h1>
+  <div class="markdown level0 summary"><p>Provides methods for queries execution.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><a class="xref" href="Terrasoft.Core.DB.DBExecutor.html">DBExecutor</a></div>
+    <div class="level2"><span class="xref">PostgreSqlExecutor</span></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><span class="xref">System.IDisposable</span></div>
+    <div><a class="xref" href="Terrasoft.Core.DB.INonMarsDbExecutor.html">INonMarsDbExecutor</a></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBExecutor.html#Terrasoft_Core_DB_DBExecutor_DBConnection">DBExecutor.DBConnection</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBExecutor.html#Terrasoft_Core_DB_DBExecutor_QueryKind">DBExecutor.QueryKind</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBExecutor.html#Terrasoft_Core_DB_DBExecutor_Logger">DBExecutor.Logger</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBExecutor.html#Terrasoft_Core_DB_DBExecutor_ServerVersion">DBExecutor.ServerVersion</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBExecutor.html#Terrasoft_Core_DB_DBExecutor_ConnectionString">DBExecutor.ConnectionString</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBExecutor.html#Terrasoft_Core_DB_DBExecutor_BinaryPackageSize">DBExecutor.BinaryPackageSize</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBExecutor.html#Terrasoft_Core_DB_DBExecutor_CurrentSchemaName">DBExecutor.CurrentSchemaName</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBExecutor.html#Terrasoft_Core_DB_DBExecutor_EnableSqlLog">DBExecutor.EnableSqlLog</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBExecutor.html#Terrasoft_Core_DB_DBExecutor_DBSessionSettings">DBExecutor.DBSessionSettings</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBExecutor.html#Terrasoft_Core_DB_DBExecutor_DBCommandSettings">DBExecutor.DBCommandSettings</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBExecutor.html#Terrasoft_Core_DB_DBExecutor_CommandTimeout">DBExecutor.CommandTimeout</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBExecutor.html#Terrasoft_Core_DB_DBExecutor_TransactionDepth">DBExecutor.TransactionDepth</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBExecutor.html#Terrasoft_Core_DB_DBExecutor_ConnetionDepth">DBExecutor.ConnetionDepth</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBExecutor.html#Terrasoft_Core_DB_DBExecutor_UserConnection">DBExecutor.UserConnection</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBExecutor.html#Terrasoft_Core_DB_DBExecutor_BeginTransaction_System_Data_IsolationLevel_">DBExecutor.BeginTransaction(IsolationLevel)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBExecutor.html#Terrasoft_Core_DB_DBExecutor_GetConnectionString_QueryKind_">DBExecutor.GetConnectionString(QueryKind)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBExecutor.html#Terrasoft_Core_DB_DBExecutor_Dispose_System_Boolean_">DBExecutor.Dispose(Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBExecutor.html#Terrasoft_Core_DB_DBExecutor_FailoverExecute__1_System_Data_Common_DbCommand_System_Func___0__">DBExecutor.FailoverExecute&lt;TResult&gt;(DbCommand, Func&lt;TResult&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBExecutor.html#Terrasoft_Core_DB_DBExecutor_FailoverExecuteAsync__1_System_Data_Common_DbCommand_System_Func_System_Threading_Tasks_Task___0___">DBExecutor.FailoverExecuteAsync&lt;TResult&gt;(DbCommand, Func&lt;Task&lt;TResult&gt;&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBExecutor.html#Terrasoft_Core_DB_DBExecutor_FailoverExecute__1_System_Data_Common_DbCommand_System_Func_System_Data_CommandBehavior___0__System_Data_CommandBehavior_">DBExecutor.FailoverExecute&lt;TResult&gt;(DbCommand, Func&lt;CommandBehavior, TResult&gt;, CommandBehavior)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBExecutor.html#Terrasoft_Core_DB_DBExecutor_FailoverExecuteReader_System_Data_Common_DbCommand_System_Func_System_Data_IDataReader__">DBExecutor.FailoverExecuteReader(DbCommand, Func&lt;IDataReader&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBExecutor.html#Terrasoft_Core_DB_DBExecutor_FailoverExecuteReaderAsync_System_Data_Common_DbCommand_System_Func_System_Threading_Tasks_Task_System_Data_IDataReader___">DBExecutor.FailoverExecuteReaderAsync(DbCommand, Func&lt;Task&lt;IDataReader&gt;&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBExecutor.html#Terrasoft_Core_DB_DBExecutor_FailoverExecuteReader_System_Data_Common_DbCommand_System_Func_System_Data_CommandBehavior_System_Data_IDataReader__System_Data_CommandBehavior_">DBExecutor.FailoverExecuteReader(DbCommand, Func&lt;CommandBehavior, IDataReader&gt;, CommandBehavior)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBExecutor.html#Terrasoft_Core_DB_DBExecutor_GetDataReader_System_Data_IDataReader_System_Data_Common_DbCommand_">DBExecutor.GetDataReader(IDataReader, DbCommand)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBExecutor.html#Terrasoft_Core_DB_DBExecutor_ExecuteCommand__1_System_Func_System_Data_Common_DbCommand___0__System_String_Terrasoft_Core_DB_QueryParameterCollection_">DBExecutor.ExecuteCommand&lt;TResult&gt;(Func&lt;DbCommand, TResult&gt;, String, QueryParameterCollection)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBExecutor.html#Terrasoft_Core_DB_DBExecutor_ExecuteCommandAsync__1_System_Func_System_Data_Common_DbCommand_System_Threading_Tasks_Task___0___System_String_Terrasoft_Core_DB_QueryParameterCollection_">DBExecutor.ExecuteCommandAsync&lt;TResult&gt;(Func&lt;DbCommand, Task&lt;TResult&gt;&gt;, String, QueryParameterCollection)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBExecutor.html#Terrasoft_Core_DB_DBExecutor_ExecuteCommand__1_System_Func_System_Data_Common_DbCommand___0__System_String_Terrasoft_Core_DB_QueryParameterCollection_System_Threading_CancellationToken_">DBExecutor.ExecuteCommand&lt;TResult&gt;(Func&lt;DbCommand, TResult&gt;, String, QueryParameterCollection, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBExecutor.html#Terrasoft_Core_DB_DBExecutor_ExecuteCommandAsync__1_System_Func_System_Data_Common_DbCommand_System_Threading_Tasks_Task___0___System_String_Terrasoft_Core_DB_QueryParameterCollection_System_Threading_CancellationToken_">DBExecutor.ExecuteCommandAsync&lt;TResult&gt;(Func&lt;DbCommand, Task&lt;TResult&gt;&gt;, String, QueryParameterCollection, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBExecutor.html#Terrasoft_Core_DB_DBExecutor_InternalExecuteReader_System_String_">DBExecutor.InternalExecuteReader(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBExecutor.html#Terrasoft_Core_DB_DBExecutor_InternalExecuteReaderAsync_System_String_">DBExecutor.InternalExecuteReaderAsync(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBExecutor.html#Terrasoft_Core_DB_DBExecutor_InternalExecuteReader_System_String_System_Threading_CancellationToken_">DBExecutor.InternalExecuteReader(String, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBExecutor.html#Terrasoft_Core_DB_DBExecutor_InternalExecuteReaderAsync_System_String_System_Threading_CancellationToken_">DBExecutor.InternalExecuteReaderAsync(String, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBExecutor.html#Terrasoft_Core_DB_DBExecutor_InternalExecuteReader_System_String_Terrasoft_Core_DB_QueryParameterCollection_">DBExecutor.InternalExecuteReader(String, QueryParameterCollection)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBExecutor.html#Terrasoft_Core_DB_DBExecutor_InternalExecuteReaderAsync_System_String_Terrasoft_Core_DB_QueryParameterCollection_">DBExecutor.InternalExecuteReaderAsync(String, QueryParameterCollection)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBExecutor.html#Terrasoft_Core_DB_DBExecutor_InternalExecuteReader_System_String_Terrasoft_Core_DB_QueryParameterCollection_System_Threading_CancellationToken_">DBExecutor.InternalExecuteReader(String, QueryParameterCollection, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBExecutor.html#Terrasoft_Core_DB_DBExecutor_InternalExecuteReaderAsync_System_String_Terrasoft_Core_DB_QueryParameterCollection_System_Threading_CancellationToken_">DBExecutor.InternalExecuteReaderAsync(String, QueryParameterCollection, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBExecutor.html#Terrasoft_Core_DB_DBExecutor_InternalExecuteReader_System_String_Terrasoft_Core_DB_QueryParameterCollection_System_Data_CommandBehavior_">DBExecutor.InternalExecuteReader(String, QueryParameterCollection, CommandBehavior)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBExecutor.html#Terrasoft_Core_DB_DBExecutor_InternalExecuteReaderAsync_System_String_Terrasoft_Core_DB_QueryParameterCollection_System_Data_CommandBehavior_">DBExecutor.InternalExecuteReaderAsync(String, QueryParameterCollection, CommandBehavior)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBExecutor.html#Terrasoft_Core_DB_DBExecutor_InternalExecuteScalar__1_System_String_">DBExecutor.InternalExecuteScalar&lt;TResult&gt;(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBExecutor.html#Terrasoft_Core_DB_DBExecutor_InternalExecuteScalarAsync__1_System_String_">DBExecutor.InternalExecuteScalarAsync&lt;TResult&gt;(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBExecutor.html#Terrasoft_Core_DB_DBExecutor_InternalExecute_System_String_">DBExecutor.InternalExecute(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBExecutor.html#Terrasoft_Core_DB_DBExecutor_InternalExecuteAsync_System_String_">DBExecutor.InternalExecuteAsync(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBExecutor.html#Terrasoft_Core_DB_DBExecutor_PingDB_Terrasoft_Core_UserConnection_">DBExecutor.PingDB(UserConnection)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBExecutor.html#Terrasoft_Core_DB_DBExecutor_PingDB_Terrasoft_Core_UserConnection_System_String_System_String_">DBExecutor.PingDB(UserConnection, String, String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBExecutor.html#Terrasoft_Core_DB_DBExecutor_StartTransaction">DBExecutor.StartTransaction()</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBExecutor.html#Terrasoft_Core_DB_DBExecutor_StartTransaction_System_Data_IsolationLevel_">DBExecutor.StartTransaction(IsolationLevel)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBExecutor.html#Terrasoft_Core_DB_DBExecutor_CommitTransaction">DBExecutor.CommitTransaction()</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBExecutor.html#Terrasoft_Core_DB_DBExecutor_RollbackTransaction">DBExecutor.RollbackTransaction()</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBExecutor.html#Terrasoft_Core_DB_DBExecutor_ExecuteReader_System_String_Terrasoft_Core_DB_QueryParameterCollection_System_Data_CommandBehavior_System_Threading_CancellationToken_">DBExecutor.ExecuteReader(String, QueryParameterCollection, CommandBehavior, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBExecutor.html#Terrasoft_Core_DB_DBExecutor_ExecuteReader_System_String_">DBExecutor.ExecuteReader(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBExecutor.html#Terrasoft_Core_DB_DBExecutor_ExecuteReader_System_String_System_Threading_CancellationToken_">DBExecutor.ExecuteReader(String, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBExecutor.html#Terrasoft_Core_DB_DBExecutor_ExecuteReader_System_String_Terrasoft_Core_DB_QueryParameterCollection_">DBExecutor.ExecuteReader(String, QueryParameterCollection)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBExecutor.html#Terrasoft_Core_DB_DBExecutor_ExecuteReader_System_String_Terrasoft_Core_DB_QueryParameterCollection_System_Threading_CancellationToken_">DBExecutor.ExecuteReader(String, QueryParameterCollection, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBExecutor.html#Terrasoft_Core_DB_DBExecutor_ExecuteReader_System_String_Terrasoft_Core_DB_QueryParameterCollection_System_Data_CommandBehavior_">DBExecutor.ExecuteReader(String, QueryParameterCollection, CommandBehavior)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBExecutor.html#Terrasoft_Core_DB_DBExecutor_ExecuteScalar__1_System_String_Terrasoft_Core_DB_QueryParameterCollection_">DBExecutor.ExecuteScalar&lt;TResult&gt;(String, QueryParameterCollection)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBExecutor.html#Terrasoft_Core_DB_DBExecutor_ExecuteScalar__1_System_String_">DBExecutor.ExecuteScalar&lt;TResult&gt;(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBExecutor.html#Terrasoft_Core_DB_DBExecutor_Execute_System_String_Terrasoft_Core_DB_QueryParameterCollection_">DBExecutor.Execute(String, QueryParameterCollection)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBExecutor.html#Terrasoft_Core_DB_DBExecutor_Execute_System_String_">DBExecutor.Execute(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBExecutor.html#Terrasoft_Core_DB_DBExecutor_ExecuteBatches_System_String_">DBExecutor.ExecuteBatches(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBExecutor.html#Terrasoft_Core_DB_DBExecutor_ValidateBatches_System_String_System_String__">DBExecutor.ValidateBatches(String, String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBExecutor.html#Terrasoft_Core_DB_DBExecutor_RefreshMaterializedView_System_String_">DBExecutor.RefreshMaterializedView(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBExecutor.html#Terrasoft_Core_DB_DBExecutor_Close">DBExecutor.Close()</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBExecutor.html#Terrasoft_Core_DB_DBExecutor_Dispose">DBExecutor.Dispose()</a>
+    </div>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Terrasoft.DB.PostgreSql.html">Terrasoft.DB.PostgreSql</a></h6>
+  <h6><strong>Assembly</strong>: Terrasoft.DB.PostgreSql.dll</h6>
+  <h5 id="Terrasoft_DB_PostgreSql_PostgreSqlExecutor_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class PostgreSqlExecutor : DBExecutor, IDisposable, INonMarsDbExecutor</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+  </h3>
+  
+  
+  <a id="Terrasoft_DB_PostgreSql_PostgreSqlExecutor__ctor_" data-uid="Terrasoft.DB.PostgreSql.PostgreSqlExecutor.#ctor*"></a>
+  <h4 id="Terrasoft_DB_PostgreSql_PostgreSqlExecutor__ctor_Terrasoft_Core_UserConnection_" data-uid="Terrasoft.DB.PostgreSql.PostgreSqlExecutor.#ctor(Terrasoft.Core.UserConnection)">PostgreSqlExecutor(UserConnection)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public PostgreSqlExecutor(UserConnection userConnection)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.UserConnection.html">UserConnection</a></td>
+        <td><span class="parametername">userConnection</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_DB_PostgreSql_PostgreSqlExecutor__ctor_" data-uid="Terrasoft.DB.PostgreSql.PostgreSqlExecutor.#ctor*"></a>
+  <h4 id="Terrasoft_DB_PostgreSql_PostgreSqlExecutor__ctor_Terrasoft_Core_UserConnection_QueryKind_" data-uid="Terrasoft.DB.PostgreSql.PostgreSqlExecutor.#ctor(Terrasoft.Core.UserConnection,QueryKind)">PostgreSqlExecutor(UserConnection, QueryKind)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public PostgreSqlExecutor(UserConnection userConnection, QueryKind queryKind)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.UserConnection.html">UserConnection</a></td>
+        <td><span class="parametername">userConnection</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">QueryKind</span></td>
+        <td><span class="parametername">queryKind</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  
+  
+  <a id="Terrasoft_DB_PostgreSql_PostgreSqlExecutor_CurrentOpenedReader_" data-uid="Terrasoft.DB.PostgreSql.PostgreSqlExecutor.CurrentOpenedReader*"></a>
+  <h4 id="Terrasoft_DB_PostgreSql_PostgreSqlExecutor_CurrentOpenedReader" data-uid="Terrasoft.DB.PostgreSql.PostgreSqlExecutor.CurrentOpenedReader">CurrentOpenedReader</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IBufferingDataReader CurrentOpenedReader { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.IBufferingDataReader.html">IBufferingDataReader</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_DB_PostgreSql_PostgreSqlExecutor_IsOffsetPagingFeatureEnabled_" data-uid="Terrasoft.DB.PostgreSql.PostgreSqlExecutor.IsOffsetPagingFeatureEnabled*"></a>
+  <h4 id="Terrasoft_DB_PostgreSql_PostgreSqlExecutor_IsOffsetPagingFeatureEnabled" data-uid="Terrasoft.DB.PostgreSql.PostgreSqlExecutor.IsOffsetPagingFeatureEnabled">IsOffsetPagingFeatureEnabled</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override bool IsOffsetPagingFeatureEnabled { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Terrasoft.Core.DB.DBExecutor.html#Terrasoft_Core_DB_DBExecutor_IsOffsetPagingFeatureEnabled">DBExecutor.IsOffsetPagingFeatureEnabled</a></div>
+  
+  
+  <a id="Terrasoft_DB_PostgreSql_PostgreSqlExecutor_UseDaylightSavingTimeSupport_" data-uid="Terrasoft.DB.PostgreSql.PostgreSqlExecutor.UseDaylightSavingTimeSupport*"></a>
+  <h4 id="Terrasoft_DB_PostgreSql_PostgreSqlExecutor_UseDaylightSavingTimeSupport" data-uid="Terrasoft.DB.PostgreSql.PostgreSqlExecutor.UseDaylightSavingTimeSupport">UseDaylightSavingTimeSupport</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override bool UseDaylightSavingTimeSupport { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Terrasoft.Core.DB.DBExecutor.html#Terrasoft_Core_DB_DBExecutor_UseDaylightSavingTimeSupport">DBExecutor.UseDaylightSavingTimeSupport</a></div>
+  <h3 id="methods">Methods
+  </h3>
+  
+  
+  <a id="Terrasoft_DB_PostgreSql_PostgreSqlExecutor_AddQueryParameterToSqlParameters_" data-uid="Terrasoft.DB.PostgreSql.PostgreSqlExecutor.AddQueryParameterToSqlParameters*"></a>
+  <h4 id="Terrasoft_DB_PostgreSql_PostgreSqlExecutor_AddQueryParameterToSqlParameters_NpgsqlParameterCollection_Terrasoft_Core_DB_QueryParameter_" data-uid="Terrasoft.DB.PostgreSql.PostgreSqlExecutor.AddQueryParameterToSqlParameters(NpgsqlParameterCollection,Terrasoft.Core.DB.QueryParameter)">AddQueryParameterToSqlParameters(NpgsqlParameterCollection, QueryParameter)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected void AddQueryParameterToSqlParameters(NpgsqlParameterCollection parameters, QueryParameter queryParameter)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">NpgsqlParameterCollection</span></td>
+        <td><span class="parametername">parameters</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.QueryParameter.html">QueryParameter</a></td>
+        <td><span class="parametername">queryParameter</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_DB_PostgreSql_PostgreSqlExecutor_BuildConnectionString_" data-uid="Terrasoft.DB.PostgreSql.PostgreSqlExecutor.BuildConnectionString*"></a>
+  <h4 id="Terrasoft_DB_PostgreSql_PostgreSqlExecutor_BuildConnectionString_System_String_System_String_" data-uid="Terrasoft.DB.PostgreSql.PostgreSqlExecutor.BuildConnectionString(System.String,System.String)">BuildConnectionString(String, String)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override string BuildConnectionString(string userName, string password)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">userName</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">password</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Terrasoft.Core.DB.DBExecutor.html#Terrasoft_Core_DB_DBExecutor_BuildConnectionString_System_String_System_String_">DBExecutor.BuildConnectionString(String, String)</a></div>
+  
+  
+  <a id="Terrasoft_DB_PostgreSql_PostgreSqlExecutor_DBParametersToQueryParameters_" data-uid="Terrasoft.DB.PostgreSql.PostgreSqlExecutor.DBParametersToQueryParameters*"></a>
+  <h4 id="Terrasoft_DB_PostgreSql_PostgreSqlExecutor_DBParametersToQueryParameters_System_Data_Common_DbParameterCollection_Terrasoft_Core_DB_QueryParameterCollection_" data-uid="Terrasoft.DB.PostgreSql.PostgreSqlExecutor.DBParametersToQueryParameters(System.Data.Common.DbParameterCollection,Terrasoft.Core.DB.QueryParameterCollection)">DBParametersToQueryParameters(DbParameterCollection, QueryParameterCollection)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void DBParametersToQueryParameters(DbParameterCollection dbParameters, QueryParameterCollection queryParameters)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Data.Common.DbParameterCollection</span></td>
+        <td><span class="parametername">dbParameters</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.QueryParameterCollection.html">QueryParameterCollection</a></td>
+        <td><span class="parametername">queryParameters</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Terrasoft.Core.DB.DBExecutor.html#Terrasoft_Core_DB_DBExecutor_DBParametersToQueryParameters_System_Data_Common_DbParameterCollection_Terrasoft_Core_DB_QueryParameterCollection_">DBExecutor.DBParametersToQueryParameters(DbParameterCollection, QueryParameterCollection)</a></div>
+  
+  
+  <a id="Terrasoft_DB_PostgreSql_PostgreSqlExecutor_InitilizeConnectionAfterOpen_" data-uid="Terrasoft.DB.PostgreSql.PostgreSqlExecutor.InitilizeConnectionAfterOpen*"></a>
+  <h4 id="Terrasoft_DB_PostgreSql_PostgreSqlExecutor_InitilizeConnectionAfterOpen_System_Data_Common_DbConnection_" data-uid="Terrasoft.DB.PostgreSql.PostgreSqlExecutor.InitilizeConnectionAfterOpen(System.Data.Common.DbConnection)">InitilizeConnectionAfterOpen(DbConnection)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void InitilizeConnectionAfterOpen(DbConnection dbConnection)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Data.Common.DbConnection</span></td>
+        <td><span class="parametername">dbConnection</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Terrasoft.Core.DB.DBExecutor.html#Terrasoft_Core_DB_DBExecutor_InitilizeConnectionAfterOpen_System_Data_Common_DbConnection_">DBExecutor.InitilizeConnectionAfterOpen(DbConnection)</a></div>
+  
+  
+  <a id="Terrasoft_DB_PostgreSql_PostgreSqlExecutor_InternalExecute_" data-uid="Terrasoft.DB.PostgreSql.PostgreSqlExecutor.InternalExecute*"></a>
+  <h4 id="Terrasoft_DB_PostgreSql_PostgreSqlExecutor_InternalExecute_System_String_Terrasoft_Core_DB_QueryParameterCollection_" data-uid="Terrasoft.DB.PostgreSql.PostgreSqlExecutor.InternalExecute(System.String,Terrasoft.Core.DB.QueryParameterCollection)">InternalExecute(String, QueryParameterCollection)</h4>
+  <div class="markdown level1 summary"><p>Executes a SQL statement with parameters, if any, against a connection object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override int InternalExecute(string sqlText, QueryParameterCollection queryParameters)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">sqlText</span></td>
+        <td><p>SQL command text.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.QueryParameterCollection.html">QueryParameterCollection</a></td>
+        <td><span class="parametername">queryParameters</span></td>
+        <td><p>Query parameters that will be converted into
+<span class="xref">System.Data.Common.DbParameterCollection</span></p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><p>The number of rows affected.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Terrasoft.Core.DB.DBExecutor.html#Terrasoft_Core_DB_DBExecutor_InternalExecute_System_String_Terrasoft_Core_DB_QueryParameterCollection_">DBExecutor.InternalExecute(String, QueryParameterCollection)</a></div>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.DB.PostgreSql.PostgreSqlExecutorException.html">PostgreSqlExecutorException</a></td>
+        <td><p>Executor was created in another thread.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_DB_PostgreSql_PostgreSqlExecutor_InternalExecuteAsync_" data-uid="Terrasoft.DB.PostgreSql.PostgreSqlExecutor.InternalExecuteAsync*"></a>
+  <h4 id="Terrasoft_DB_PostgreSql_PostgreSqlExecutor_InternalExecuteAsync_System_String_Terrasoft_Core_DB_QueryParameterCollection_" data-uid="Terrasoft.DB.PostgreSql.PostgreSqlExecutor.InternalExecuteAsync(System.String,Terrasoft.Core.DB.QueryParameterCollection)">InternalExecuteAsync(String, QueryParameterCollection)</h4>
+  <div class="markdown level1 summary"><p>An asynchronous version of InternalExecute, which executes a SQL statement with parameters, if any,
+against a connection object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override async Task&lt;int&gt; InternalExecuteAsync(string sqlText, QueryParameterCollection queryParameters)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">sqlText</span></td>
+        <td><p>SQL command text.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.QueryParameterCollection.html">QueryParameterCollection</a></td>
+        <td><span class="parametername">queryParameters</span></td>
+        <td><p>Query parameters that will be converted into
+<span class="xref">System.Data.Common.DbParameterCollection</span></p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<span class="xref">System.Int32</span>&gt;</td>
+        <td><p>The number of rows affected.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Terrasoft.Core.DB.DBExecutor.html#Terrasoft_Core_DB_DBExecutor_InternalExecuteAsync_System_String_Terrasoft_Core_DB_QueryParameterCollection_">DBExecutor.InternalExecuteAsync(String, QueryParameterCollection)</a></div>
+  
+  
+  <a id="Terrasoft_DB_PostgreSql_PostgreSqlExecutor_InternalExecuteReader_" data-uid="Terrasoft.DB.PostgreSql.PostgreSqlExecutor.InternalExecuteReader*"></a>
+  <h4 id="Terrasoft_DB_PostgreSql_PostgreSqlExecutor_InternalExecuteReader_System_String_Terrasoft_Core_DB_QueryParameterCollection_System_Data_CommandBehavior_System_Threading_CancellationToken_" data-uid="Terrasoft.DB.PostgreSql.PostgreSqlExecutor.InternalExecuteReader(System.String,Terrasoft.Core.DB.QueryParameterCollection,System.Data.CommandBehavior,System.Threading.CancellationToken)">InternalExecuteReader(String, QueryParameterCollection, CommandBehavior, CancellationToken)</h4>
+  <div class="markdown level1 summary"><p>Sends SQL command text and its parameters to the connection, and builds a DataReader
+using one of the CommandBehavior values.
+Command execution can be cancelled with the token.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override IDataReader InternalExecuteReader(string sqlText, QueryParameterCollection queryParameters, CommandBehavior behavior, CancellationToken cancellationToken)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">sqlText</span></td>
+        <td><p>SQL command text.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.QueryParameterCollection.html">QueryParameterCollection</a></td>
+        <td><span class="parametername">queryParameters</span></td>
+        <td><p>Query parameters that will be converted into
+<span class="xref">System.Data.Common.DbParameterCollection</span>.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Data.CommandBehavior</span></td>
+        <td><span class="parametername">behavior</span></td>
+        <td><p>Provides a description of the results of the query
+and its effect on the database.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Threading.CancellationToken</span></td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td><p>The token to monitor for cancellation requests.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Data.IDataReader</span></td>
+        <td><p>Instance implementing <span class="xref">System.Data.IDataReader</span>
+for the resulting set of records.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Terrasoft.Core.DB.DBExecutor.html#Terrasoft_Core_DB_DBExecutor_InternalExecuteReader_System_String_Terrasoft_Core_DB_QueryParameterCollection_System_Data_CommandBehavior_System_Threading_CancellationToken_">DBExecutor.InternalExecuteReader(String, QueryParameterCollection, CommandBehavior, CancellationToken)</a></div>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.DB.PostgreSql.PostgreSqlExecutorException.html">PostgreSqlExecutorException</a></td>
+        <td><p>Executor was created in another thread.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_DB_PostgreSql_PostgreSqlExecutor_InternalExecuteReaderAsync_" data-uid="Terrasoft.DB.PostgreSql.PostgreSqlExecutor.InternalExecuteReaderAsync*"></a>
+  <h4 id="Terrasoft_DB_PostgreSql_PostgreSqlExecutor_InternalExecuteReaderAsync_System_String_Terrasoft_Core_DB_QueryParameterCollection_System_Data_CommandBehavior_System_Threading_CancellationToken_" data-uid="Terrasoft.DB.PostgreSql.PostgreSqlExecutor.InternalExecuteReaderAsync(System.String,Terrasoft.Core.DB.QueryParameterCollection,System.Data.CommandBehavior,System.Threading.CancellationToken)">InternalExecuteReaderAsync(String, QueryParameterCollection, CommandBehavior, CancellationToken)</h4>
+  <div class="markdown level1 summary"><p>An asynchronous version of InternalExecuteReader, which sends SQL command text and its parameters to the
+connection, and builds a DataReader using one of the CommandBehavior values.
+Command execution can be cancelled with the token.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override async Task&lt;IDataReader&gt; InternalExecuteReaderAsync(string sqlText, QueryParameterCollection queryParameters, CommandBehavior behavior, CancellationToken cancellationToken)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">sqlText</span></td>
+        <td><p>SQL command text.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.QueryParameterCollection.html">QueryParameterCollection</a></td>
+        <td><span class="parametername">queryParameters</span></td>
+        <td><p>Query parameters that will be converted into
+<span class="xref">System.Data.Common.DbParameterCollection</span>.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Data.CommandBehavior</span></td>
+        <td><span class="parametername">behavior</span></td>
+        <td><p>Provides a description of the results of the query
+and its effect on the database.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Threading.CancellationToken</span></td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td><p>The token to monitor for cancellation requests.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<span class="xref">System.Data.IDataReader</span>&gt;</td>
+        <td><p>Instance implementing <span class="xref">System.Data.IDataReader</span>
+for the resulting set of records.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Terrasoft.Core.DB.DBExecutor.html#Terrasoft_Core_DB_DBExecutor_InternalExecuteReaderAsync_System_String_Terrasoft_Core_DB_QueryParameterCollection_System_Data_CommandBehavior_System_Threading_CancellationToken_">DBExecutor.InternalExecuteReaderAsync(String, QueryParameterCollection, CommandBehavior, CancellationToken)</a></div>
+  
+  
+  <a id="Terrasoft_DB_PostgreSql_PostgreSqlExecutor_InternalExecuteScalar_" data-uid="Terrasoft.DB.PostgreSql.PostgreSqlExecutor.InternalExecuteScalar*"></a>
+  <h4 id="Terrasoft_DB_PostgreSql_PostgreSqlExecutor_InternalExecuteScalar__1_System_String_Terrasoft_Core_DB_QueryParameterCollection_" data-uid="Terrasoft.DB.PostgreSql.PostgreSqlExecutor.InternalExecuteScalar``1(System.String,Terrasoft.Core.DB.QueryParameterCollection)">InternalExecuteScalar&lt;TResult&gt;(String, QueryParameterCollection)</h4>
+  <div class="markdown level1 summary"><p>Executes a SQL statement with parameters, and returns the first column of the first row
+in the result set returned by the query. Additional columns or rows are ignored.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override TResult InternalExecuteScalar&lt;TResult&gt;(string sqlText, QueryParameterCollection queryParameters)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">sqlText</span></td>
+        <td><p>SQL command text.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.QueryParameterCollection.html">QueryParameterCollection</a></td>
+        <td><span class="parametername">queryParameters</span></td>
+        <td><p>Query parameters that will be converted into
+<span class="xref">System.Data.Common.DbParameterCollection</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TResult</span></td>
+        <td><p>Scalar value of the given result type.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TResult</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Terrasoft.Core.DB.DBExecutor.html#Terrasoft_Core_DB_DBExecutor_InternalExecuteScalar__1_System_String_Terrasoft_Core_DB_QueryParameterCollection_">DBExecutor.InternalExecuteScalar&lt;TResult&gt;(String, QueryParameterCollection)</a></div>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.DB.PostgreSql.PostgreSqlExecutorException.html">PostgreSqlExecutorException</a></td>
+        <td><p>Executor was created in another thread.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_DB_PostgreSql_PostgreSqlExecutor_InternalExecuteScalarAsync_" data-uid="Terrasoft.DB.PostgreSql.PostgreSqlExecutor.InternalExecuteScalarAsync*"></a>
+  <h4 id="Terrasoft_DB_PostgreSql_PostgreSqlExecutor_InternalExecuteScalarAsync__1_System_String_Terrasoft_Core_DB_QueryParameterCollection_" data-uid="Terrasoft.DB.PostgreSql.PostgreSqlExecutor.InternalExecuteScalarAsync``1(System.String,Terrasoft.Core.DB.QueryParameterCollection)">InternalExecuteScalarAsync&lt;TResult&gt;(String, QueryParameterCollection)</h4>
+  <div class="markdown level1 summary"><p>An asynchronous version of InternalExecuteScalar, which executes a SQL statement with parameters.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override async Task&lt;TResult&gt; InternalExecuteScalarAsync&lt;TResult&gt;(string sqlText, QueryParameterCollection queryParameters)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">sqlText</span></td>
+        <td><p>SQL command text.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.QueryParameterCollection.html">QueryParameterCollection</a></td>
+        <td><span class="parametername">queryParameters</span></td>
+        <td><p>Query parameters that will be converted into
+<span class="xref">System.Data.Common.DbParameterCollection</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;TResult&gt;</td>
+        <td><p>Scalar value of the given result type.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TResult</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Terrasoft.Core.DB.DBExecutor.html#Terrasoft_Core_DB_DBExecutor_InternalExecuteScalarAsync__1_System_String_Terrasoft_Core_DB_QueryParameterCollection_">DBExecutor.InternalExecuteScalarAsync&lt;TResult&gt;(String, QueryParameterCollection)</a></div>
+  
+  
+  <a id="Terrasoft_DB_PostgreSql_PostgreSqlExecutor_NewCommand_" data-uid="Terrasoft.DB.PostgreSql.PostgreSqlExecutor.NewCommand*"></a>
+  <h4 id="Terrasoft_DB_PostgreSql_PostgreSqlExecutor_NewCommand" data-uid="Terrasoft.DB.PostgreSql.PostgreSqlExecutor.NewCommand">NewCommand()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override DbCommand NewCommand()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Data.Common.DbCommand</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Terrasoft.Core.DB.DBExecutor.html#Terrasoft_Core_DB_DBExecutor_NewCommand">DBExecutor.NewCommand()</a></div>
+  
+  
+  <a id="Terrasoft_DB_PostgreSql_PostgreSqlExecutor_NewConnection_" data-uid="Terrasoft.DB.PostgreSql.PostgreSqlExecutor.NewConnection*"></a>
+  <h4 id="Terrasoft_DB_PostgreSql_PostgreSqlExecutor_NewConnection" data-uid="Terrasoft.DB.PostgreSql.PostgreSqlExecutor.NewConnection">NewConnection()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override DbConnection NewConnection()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Data.Common.DbConnection</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Terrasoft.Core.DB.DBExecutor.html#Terrasoft_Core_DB_DBExecutor_NewConnection">DBExecutor.NewConnection()</a></div>
+  
+  
+  <a id="Terrasoft_DB_PostgreSql_PostgreSqlExecutor_QueryParametersToDBParameters_" data-uid="Terrasoft.DB.PostgreSql.PostgreSqlExecutor.QueryParametersToDBParameters*"></a>
+  <h4 id="Terrasoft_DB_PostgreSql_PostgreSqlExecutor_QueryParametersToDBParameters_Terrasoft_Core_DB_QueryParameterCollection_System_Data_Common_DbParameterCollection_" data-uid="Terrasoft.DB.PostgreSql.PostgreSqlExecutor.QueryParametersToDBParameters(Terrasoft.Core.DB.QueryParameterCollection,System.Data.Common.DbParameterCollection)">QueryParametersToDBParameters(QueryParameterCollection, DbParameterCollection)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void QueryParametersToDBParameters(QueryParameterCollection queryParameters, DbParameterCollection dbParameters)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.QueryParameterCollection.html">QueryParameterCollection</a></td>
+        <td><span class="parametername">queryParameters</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Data.Common.DbParameterCollection</span></td>
+        <td><span class="parametername">dbParameters</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Terrasoft.Core.DB.DBExecutor.html#Terrasoft_Core_DB_DBExecutor_QueryParametersToDBParameters_Terrasoft_Core_DB_QueryParameterCollection_System_Data_Common_DbParameterCollection_">DBExecutor.QueryParametersToDBParameters(QueryParameterCollection, DbParameterCollection)</a></div>
+  
+  
+  <a id="Terrasoft_DB_PostgreSql_PostgreSqlExecutor_SplitBatches_" data-uid="Terrasoft.DB.PostgreSql.PostgreSqlExecutor.SplitBatches*"></a>
+  <h4 id="Terrasoft_DB_PostgreSql_PostgreSqlExecutor_SplitBatches_System_String_" data-uid="Terrasoft.DB.PostgreSql.PostgreSqlExecutor.SplitBatches(System.String)">SplitBatches(String)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override IEnumerable&lt;string&gt; SplitBatches(string sqlText)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">sqlText</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<span class="xref">System.String</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Terrasoft.Core.DB.DBExecutor.html#Terrasoft_Core_DB_DBExecutor_SplitBatches_System_String_">DBExecutor.SplitBatches(String)</a></div>
+  
+  
+  <a id="Terrasoft_DB_PostgreSql_PostgreSqlExecutor_ValidateBatches_" data-uid="Terrasoft.DB.PostgreSql.PostgreSqlExecutor.ValidateBatches*"></a>
+  <h4 id="Terrasoft_DB_PostgreSql_PostgreSqlExecutor_ValidateBatches_System_Data_Common_DbCommand_System_String_System_String__" data-uid="Terrasoft.DB.PostgreSql.PostgreSqlExecutor.ValidateBatches(System.Data.Common.DbCommand,System.String,System.String@)">ValidateBatches(DbCommand, String, out String)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override bool ValidateBatches(DbCommand command, string sqlText, out string message)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Data.Common.DbCommand</span></td>
+        <td><span class="parametername">command</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">sqlText</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">message</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Terrasoft.Core.DB.DBExecutor.html#Terrasoft_Core_DB_DBExecutor_ValidateBatches_System_Data_Common_DbCommand_System_String_System_String__">DBExecutor.ValidateBatches(DbCommand, String, out String)</a></div>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <span class="xref">System.IDisposable</span>
+  </div>
+  <div>
+      <a class="xref" href="Terrasoft.Core.DB.INonMarsDbExecutor.html">INonMarsDbExecutor</a>
+  </div>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="Terrasoft.Common.ReflectionUtilities.html#Terrasoft_Common_ReflectionUtilities_GetPropertyValue_System_Object_System_String_">ReflectionUtilities.GetPropertyValue(Object, String)</a>
+  </div>
+  <div>
+      <a class="xref" href="Terrasoft.Common.ReflectionUtilities.html#Terrasoft_Common_ReflectionUtilities_GetPropertyDefValue_System_Object_System_String_System_Object_">ReflectionUtilities.GetPropertyDefValue(Object, String, Object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Terrasoft.Common.ReflectionUtilities.html#Terrasoft_Common_ReflectionUtilities_TryGetPropertyValue_System_Object_System_String_System_Object__">ReflectionUtilities.TryGetPropertyValue(Object, String, out Object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Terrasoft.Common.ReflectionUtilities.html#Terrasoft_Common_ReflectionUtilities_HasProperty_System_Object_System_String_">ReflectionUtilities.HasProperty(Object, String)</a>
+  </div>
+  <div>
+      <a class="xref" href="Terrasoft.Common.ReflectionUtilities.html#Terrasoft_Common_ReflectionUtilities_GetPropertyValue_System_Object_System_String_System_Reflection_BindingFlags_">ReflectionUtilities.GetPropertyValue(Object, String, BindingFlags)</a>
+  </div>
+  <div>
+      <a class="xref" href="Terrasoft.Common.ReflectionUtilities.html#Terrasoft_Common_ReflectionUtilities_GetPropertyValueByPath_System_Object_System_String_">ReflectionUtilities.GetPropertyValueByPath(Object, String)</a>
+  </div>
+  <div>
+      <a class="xref" href="Terrasoft.Common.ReflectionUtilities.html#Terrasoft_Common_ReflectionUtilities_SetPropertyValue_System_Object_System_String_System_Object_">ReflectionUtilities.SetPropertyValue(Object, String, Object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Terrasoft.Common.ReflectionUtilities.html#Terrasoft_Common_ReflectionUtilities_TrySetPropertyValue_System_Object_System_String_System_Object_">ReflectionUtilities.TrySetPropertyValue(Object, String, Object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Terrasoft.Common.ValidateUtilities.html#Terrasoft_Common_ValidateUtilities_CheckArgumentNull_System_Object_System_String_">ValidateUtilities.CheckArgumentNull(Object, String)</a>
+  </div>
+  <div>
+      <a class="xref" href="Terrasoft.Common.ValidateUtilities.html#Terrasoft_Common_ValidateUtilities_CheckDependencyNull_System_Object_System_String_">ValidateUtilities.CheckDependencyNull(Object, String)</a>
+  </div>
+  <div>
+      <a class="xref" href="Terrasoft.Common.ValidateUtilities.html#Terrasoft_Common_ValidateUtilities_EnsureDependencyNotNull__1___0_System_String_">ValidateUtilities.EnsureDependencyNotNull&lt;T&gt;(T, String)</a>
+  </div>
+  <h3 id="seealso">See Also</h3>
+  <div class="seealso">
+      <div><a class="xref" href="Terrasoft.Core.DB.DBExecutor.html">DBExecutor</a></div>
+      <div><a class="xref" href="Terrasoft.Core.DB.INonMarsDbExecutor.html">INonMarsDbExecutor</a></div>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>© 2021 Creatio. All rights reserved.</span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+
+<!-- Mirrored from academy.terrasoft.ua/api/netcoreapi/7.18.0/api/Terrasoft.DB.PostgreSql.PostgreSqlExecutor.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Mar 2022 03:32:04 GMT -->
+</html>

@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# ">
+  
+<!-- Mirrored from academy.terrasoft.ua/docs/7-18/user/bazis_platformy/dannye/gryppy/gruppy by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Mar 2022 00:53:57 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+          <!-- Google Tag Manager -->
+      <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          '../../../../../../../www.googletagmanager.com/gtm5445.html?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-KLLB8G');</script>
+      <!-- End Google Tag Manager -->
+        <meta charset="utf-8" />
+<link rel="canonical" href="gruppy.html" />
+<meta name="description" content="Используйте функциональность групп для сегментации записей по заданным условиям фильтрации. Настроив группы, вы сможете с легкостью найти необходимые записи среди множества данных. Например, в разделе Контакты можно создать группу “Новые клиенты”, в которой будет настроен фильтр по типу контакта (“Клиент”) и дате создания записи (“Текущий месяц”). При выборе группы в разделе будут отображены только те записи, которые отвечают условиям фильтрации группы. Наиболее часто используемые группы вы можете добавить в избранные." />
+<meta property="og:url" content="https://academy.terrasoft.ua/docs/7-18/user/bazis_platformy/dannye/gryppy/gruppy" />
+<meta property="og:title" content="Группы" />
+<meta property="og:description" content="Используйте функциональность групп для сегментации записей по заданным условиям фильтрации. Настроив группы, вы сможете с легкостью найти необходимые записи среди множества данных. Например, в разделе Контакты можно создать группу “Новые клиенты”, в которой будет настроен фильтр по типу контакта (“Клиент”) и дате создания записи (“Текущий месяц”). При выборе группы в разделе будут отображены только те записи, которые отвечают условиям фильтрации группы. Наиболее часто используемые группы вы можете добавить в избранные." />
+<meta name="Generator" content="Drupal 9 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="../../../../../themes/custom/creatio/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="revision" href="gruppy.html" />
+
+    <title>Группы | Creatio Academy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&amp;family=Open+Sans:ital,wght@0,300;0,400;0,600;1,400&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" media="all" href="../../../../../sites/default/files/css/css_6lTP66__-yc6QXFp1zOwoeJ0HVigoYZP-SeoLLii000.css" />
+<link rel="stylesheet" media="all" href="../../../../../sites/default/files/css/css_XQJDNhkF3xH5SZCcY-PI89Zu4nYIzQ5oR3SnUKyfXJU.css" />
+<link rel="stylesheet" media="print" href="../../../../../sites/default/files/css/css_Zn4VHvcniOOtUwkIVwXzYr_0AI9gUVgZcPqaH4ViagU.css" />
+
+    
+  </head>
+  <body class="path-node page-node-type-user-documentation">
+          <!-- Google Tag Manager (noscript) -->
+      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KLLB8G"
+                        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+      <!-- End Google Tag Manager (noscript) -->
+    
+        
+      <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    <div class="creatio-page d-flex flex-column">
+        <div class="region region-informer">
+    <div id="block-terrasoftpidtrimueukrainu" class="block block-simple-block block-simple-blockterrasoft-pidtrimue-ukrainu">
+  
+    
+      <style type="text/css">
+<!--/*--><![CDATA[/* ><!--*/
+@import url(../../../../../../../www.terrasoft.ua/themes/custom/creatio/css/components/informer.css)
+
+/*--><!]]>*/
+</style><div class="ts-swu">
+<div class="creatio-container">
+<div class="ts-swu__cont">
+<div><a class="ts-swu__link" href="https://www.terrasoft.ua/terrasoft-stands-with-ukraine" target="_blank">Україна понад усе!</a> <span><a href="https://www.terrasoft.ua/terrasoft-stands-with-ukraine" target="_blank">Приєднуйтеся</a> до допомоги!</span></div>
+</div>
+</div></div>
+
+  </div>
+
+  </div>
+
+  
+  <header role="banner">
+          <div class="creatio-region creatio-region_top">
+        <div class="creatio-container">
+            <div class="region region-top">
+    <div id="block-menutoggle" class="block block-simple-block block-simple-blockmenu-toggle">
+  
+    
+      <div class="menu-toggle"><span> </span></div>
+
+  </div>
+<div id="block-logowhite-2" class="block block-simple-block block-simple-blocklogo-white">
+  
+    
+      <p><a class="site-logo" href="../../../../../../index.html" rel="home"><img src="../../../../../themes/custom/creatio/logo-white.svg" /></a></p>
+
+  </div>
+<div id="block-search" class="block block-simple-block block-simple-blocksearch">
+  
+    
+      <div class="search">
+<form action="https://academy.terrasoft.ua/search" class="search-form" method="get"><input class="search-form__input" name="search" placeholder="Поиск" type="search" /><input class="search-form__button" type="submit" value="Поиск" /> </form>
+
+<div class="search-toggle"> </div>
+</div>
+
+  </div>
+<nav role="navigation" aria-labelledby="block-sitesua-menu" id="block-sitesua" class="block block-menu navigation menu--sites-ua">
+            
+  <h2 class="visually-hidden" id="block-sitesua-menu">Sites UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="https://www.terrasoft.ua/" rel="nofollow" target="_blank">Terrasoft</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://community.terrasoft.ua/" rel="nofollow" target="_blank">Community</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://marketplace.terrasoft.ua/" rel="nofollow" target="_blank">Marketplace</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+<div id="block-usermenu" class="block block-ts-user block-ts-user-menu-block">
+  
+    
+      <ul class="user-menu">
+      <li class="user-menu__item">
+      <a class="user-menu__link" href="https://profile.terrasoft.ua/user/login?destination=academy/ua/docs/7-18/user/bazis_platformy/dannye/gryppy/gruppy">Войти</a>
+    </li>
+  </ul>
+
+  </div>
+<div id="block-usermenumobile" class="block block-ts-user block-ts-user-menu-mobile-block">
+  
+    
+      <ul class="user-menu-mobile">
+      <li class="user-menu-mobile__item">
+      <div class="user-menu-mobile__user user-menu-mobile__user_icon"></div>
+      <ul class="user-menu-mobile__submenu">
+        <li class="user-menu-mobile__subitem">
+          <a class="user-menu-mobile__sublink" href="https://profile.terrasoft.ua/user/login?destination=academy/ua/docs/7-18/user/bazis_platformy/dannye/gryppy/gruppy">Войти</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  </div>
+
+  </div>
+
+        </div>
+      </div>
+              <div class="creatio-region creatio-region_header">
+        <div class="creatio-container">
+            <div class="region region-header">
+    <div id="block-logo" class="block block-simple-block block-simple-blocklogo">
+  
+    
+      <p><a class="site-logo" href="../../../../../../index.html" rel="home"><img src="../../../../../themes/custom/creatio/logo.svg" /></a></p>
+
+  </div>
+<nav role="navigation" aria-labelledby="block-osnovnayanavigaciyaua-menu" id="block-osnovnayanavigaciyaua" class="block block-menu navigation menu--main-ua">
+            
+  <h2 class="visually-hidden" id="block-osnovnayanavigaciyaua-menu">Основная навигация UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="../../../../../index.html" data-drupal-link-system-path="&lt;front&gt;">Документация</a>
+              </li>
+                <li class="menu-item">
+        <a href="../../../../../../trainings.html">Тренинги</a>
+              </li>
+                <li class="menu-item">
+        <a href="../../../../../certification.html" data-drupal-link-system-path="node/3084">Сертификация и тестирование</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+<nav role="navigation" aria-labelledby="block-sitesua-2-menu" id="block-sitesua-2" class="block block-menu navigation menu--sites-ua">
+            
+  <h2 class="visually-hidden" id="block-sitesua-2-menu">Sites UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="https://www.terrasoft.ua/" rel="nofollow" target="_blank">Terrasoft</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://community.terrasoft.ua/" rel="nofollow" target="_blank">Community</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://marketplace.terrasoft.ua/" rel="nofollow" target="_blank">Marketplace</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+
+  </div>
+
+        </div>
+      </div>
+              <div class="creatio-region creatio-region_breadcrumb">
+        <div class="creatio-container">
+            <div class="region region-breadcrumb">
+    <div id="block-logowhite" class="block block-simple-block block-simple-blocklogo-white">
+  
+    
+      <p><a class="site-logo" href="../../../../../../index.html" rel="home"><img src="../../../../../themes/custom/creatio/logo-white.svg" /></a></p>
+
+  </div>
+<div id="block-breadcrumbnaviagtion" class="block block-ts-nav block-ts-nav-bread">
+  
+    
+      <nav class="breadcrumb"><ol class="ts-nav-breadcrumb__list"><li class="ts-nav-breadcrumb__item"><a href="../../../../../index.html" class="ts-nav-breadcrumb__link" title="Документация">Документация</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../../../indexd993.html?vid_1=1" class="ts-nav-breadcrumb__link" title="Для пользователя">Для пользователя</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../bazis_platformy.html" class="ts-nav-breadcrumb__link" title="Базис платформы" hreflang="zxx">Базис платформы</a></li>
+<li class="ts-nav-breadcrumb__item ts-nav-breadcrumb__item_mobile"><a href="../../dannye.html" class="ts-nav-breadcrumb__link" title="Данные" hreflang="zxx">Данные</a></li>
+<li class="ts-nav-breadcrumb__item"><span class="ts-nav-breadcrumb__link ts-nav-breadcrumb__link_current" title="Группы">Группы</span></li>
+</ol>
+</nav>
+
+  </div>
+<div id="block-search-2" class="block block-simple-block block-simple-blocksearch">
+  
+    
+      <div class="search">
+<form action="https://academy.terrasoft.ua/search" class="search-form" method="get"><input class="search-form__input" name="search" placeholder="Поиск" type="search" /><input class="search-form__button" type="submit" value="Поиск" /> </form>
+
+<div class="search-toggle"> </div>
+</div>
+
+  </div>
+
+  </div>
+
+        </div>
+      </div>
+      </header>
+
+  <div class="creatio-region creatio-region_main">
+    <div class="creatio-container">
+                <div class="region region-breadcrumb-mobile">
+    <div id="block-breadcrumbnaviagtion-2" class="block block-ts-nav block-ts-nav-bread">
+  
+    
+      <nav class="breadcrumb"><ol class="ts-nav-breadcrumb__list"><li class="ts-nav-breadcrumb__item"><a href="../../../../../index.html" class="ts-nav-breadcrumb__link" title="Документация">Документация</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../../../indexd993.html?vid_1=1" class="ts-nav-breadcrumb__link" title="Для пользователя">Для пользователя</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../bazis_platformy.html" class="ts-nav-breadcrumb__link" title="Базис платформы" hreflang="zxx">Базис платформы</a></li>
+<li class="ts-nav-breadcrumb__item ts-nav-breadcrumb__item_mobile"><a href="../../dannye.html" class="ts-nav-breadcrumb__link" title="Данные" hreflang="zxx">Данные</a></li>
+<li class="ts-nav-breadcrumb__item"><span class="ts-nav-breadcrumb__link ts-nav-breadcrumb__link_current" title="Группы">Группы</span></li>
+</ol>
+</nav>
+
+  </div>
+
+  </div>
+
+      
+      <main class="creatio-main" role="main">
+                                                    
+        <div class="creatio-content creatio-content_small">
+          <div class="creatio-content__inner creatio-content__inner_bg">
+                            <div class="region region-messages">
+    <div data-drupal-messages-fallback class="hidden"></div>
+
+  </div>
+
+            
+              <div class="region region-content">
+    <div id="block-creatio-page-title" class="block block-core block-page-title-block">
+  
+    
+      
+  <h1 class="page-title"><span class="field field--name-title field--type-string field--label-hidden">Группы</span>
+</h1>
+
+
+  </div>
+<div id="block-creatio-content" class="block block-system block-system-main-block">
+  
+    
+      
+<article data-history-node-id="2647" role="article" about="/docs/7-18/user/bazis_platformy/dannye/gryppy/gruppy" class="node node--type-user-documentation node--view-mode-full">
+
+  
+    
+
+  
+  <div class="node__content">
+      <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-ts-doc block-ts-doc-downloads">
+  
+    
+      <a href="../../../../../sites/default/files/pdf/node/2647/Gruppy_.pdf" target="_blank">PDF</a>
+  </div>
+<div class="block block-ts-doc block-ts-doc-versions">
+  
+    
+        <div class="ts-doc-versions">
+    <select class="ts-doc-versions__select">
+                              <option value="/docs/8-0/user/bazis_platformy/dannye/gryppy/gruppy">Версия 8.0</option>
+                                                <option value="/docs/7-18/user/bazis_platformy/dannye/gryppy/gruppy" selected>Версия 7.18</option>
+                              <option value="/docs/7-17/user/bazis_platformy/dannye/gryppy/gruppy">Версия 7.17</option>
+          </select>
+  </div>
+
+  </div>
+
+    </div>
+  </div>
+  <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocknodeuser-documentationfield-product">
+  
+    
+      
+  <div class="field field--name-field-product field--type-entity-reference field--label-above">
+    <div class="field__label">Продукты</div>
+          <div class="field__items">
+              <div class="field__item">Все продукты</div>
+              </div>
+      </div>
+
+  </div>
+<div class="block block-layout-builder block-field-blocknodeuser-documentationbody">
+  
+    
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><p>Используйте функциональность групп для сегментации записей по заданным условиям фильтрации. Настроив группы, вы сможете с легкостью найти необходимые записи среди множества данных. Например, в разделе <span class="key">Контакты</span> можно создать группу “Новые клиенты”, в которой будет настроен фильтр по типу контакта (“Клиент”) и дате создания записи (“Текущий месяц”). При выборе группы в разделе будут отображены только те записи, которые отвечают условиям фильтрации группы. Наиболее часто используемые группы вы можете добавить в избранные.</p>
+
+<p>Одна и та же запись раздела может входить в несколько групп одновременно.</p>
+
+<p>Структура групп может быть произвольной и содержать как подчиненные, так и родительские группы. При этом отсутствует какая-либо зависимость между правилами включения записей в родительские и подчиненные группы. Например, если запись входит в одну из подчиненных групп, она может не входить в родительскую группу.</p>
+
+<p>Вы можете создать нужную структуру групп и определить правила наполнения групп самостоятельно. Порядок создания статических и динамических групп отличается. Удаление группы не приводит к удалению записей, которые в нее входят.</p>
+
+<h2>Статические группы<a class="title-anchor" href="#title-2647-7" id="title-2647-7"> </a></h2>
+
+<p><strong>Статическая группа</strong> (значок <img alt="" data-entity-type="file" data-entity-uuid="199cb453-d4d2-4efe-aeed-5c253a1160d6" height="15" src="../../../../../sites/default/files/images/2020-12/icn_basis_static_group.png" width="17" loading="lazy" />) содержит только те записи раздела, которые были добавлены в нее пользователем (вручную или при конвертации из динамической группы). Например, статическими могут быть группы “VIP-клиенты” и “В черном списке”, т.к. решение о включении клиента в такие группы принимается менеджером или руководителем лично. Статические группы могут быть использованы для объединения других групп.</p>
+
+<div class="message message_warning">
+<p><span class="message__bold message__bold_warning">Важно.</span> Статические группы доступны только в некоторых разделах Creatio.</p>
+</div>
+
+<h3><a name="TOC_Как_создать_статическуюbc-2" id="TOC_Как_создать_статическуюbc-2"></a><a name="TOC_Как_создать_статическую" id="TOC_Как_создать_статическую"></a><a name="CSH_3" id="CSH_3"></a><a name="HT_chapter_groups_working_with_static_folders" id="HT_chapter_groups_working_with_static_folders"></a><a name="XREF_23940" id="XREF_23940"></a>Создать статическую группу<a class="title-anchor" href="#title-2647-2" id="title-2647-2"> </a></h3>
+
+<p>Создать статическую группу можно несколькими способами:</p>
+
+<ul><li>
+	<p>Добавить и наполнить группу вручную.</p>
+	</li>
+	<li>
+	<p>Cкопировать наполнение из динамической группы.</p>
+	</li>
+</ul><p>Чтобы создать статическую группу вручную:</p>
+
+<ol class="start"><li>
+	<p>В меню <span class="key">Фильтр</span> раздела выберите команду <span class="key">Показать группы</span>. Отобразится дерево групп.</p>
+	</li>
+	<li>
+	<p>В меню кнопки <span class="key">Добавить группу</span> выберите команду <span class="key">Статическую</span> (<a href="#XREF_22934_99"><span>Рис. 1</span></a>).</p>
+
+	<div class="media">
+	<div class="media__caption"><span class="FM_Picturecaptionnumber">Рис. 1</span><a name="XREF_22934_99" id="XREF_22934_99"></a> — Добавление статической группы</div>
+
+	<div class="media__element"><img alt="scr_folders_act_add_static_folder.png" id="image2" src="../../../../../sites/default/files/documentation/user/ru/base/BPMonlineHelp/chapter_groups/scr_folders_act_add_static_folder.png" /></div>
+	</div>
+	</li>
+	<li>
+	<p>В открывшемся окне введите название группы и нажмите кнопку <span class="key">ОК</span>.</p>
+
+	<p>В результате на странице групп раздела будет добавлена новая статическая группа. Наполнение в такую группу необходимо добавлять вручную, выбрав нужные записи и применив действие <span class="key">Поместить в группу</span>. Подробнее читайте в блоке “<a href="#title-2647-3">Добавить запись в статическую группу</a>”.</p>
+	</li>
+</ol><p>Чтобы создать статическую группу из динамической:</p>
+
+<ol><li>В меню <span class="key">Фильтр</span> раздела выберите команду <span class="key">Показать группы</span>.</li>
+	<li>В отобразившемся дереве групп выберите динамическую группу, наполнение которой необходимо включить в статическую группу.</li>
+	<li>В меню кнопки <img alt="btn_lookups_add_type.png" id="image3" src="../../../../../sites/default/files/documentation/user/ru/base/BPMonlineHelp/chapter_groups/btn_lookups_add_type.png" /> выберите команду <span class="key">Конвертировать группу</span> (<a href="#XREF_72242_71"><span>Рис. 2</span></a>).
+	<div class="media">
+	<div class="media__caption"><span class="FM_Picturecaptionnumber">Рис. 2</span><a name="XREF_72242_71" id="XREF_72242_71"></a> — Создание статической группы из динамической</div>
+
+	<div class="media__element"><img alt="scr_folders_convert_to_static.png" id="image4" src="../../../../../sites/default/files/documentation/user/ru/base/BPMonlineHelp/chapter_groups/scr_folders_convert_to_static.png" /></div>
+	</div>
+	</li>
+	<li>
+	<p>В открывшемся окне введите название новой группы и нажмите кнопку <span class="key">ОК</span>.</p>
+
+	<p>В результате у выбранной динамической группы появится подчиненная статическая, наполнение которой соответствует наполнению динамической группы на момент конвертации. В дальнейшем вы сможете вручную включать записи в группу или исключать из нее.</p>
+
+	<div class="message">
+	<p><span class="message__bold">На заметку.</span> Выполнение действия <span class="key">Конвертировать группу</span> не влияет на наполнение исходной динамической группы.</p>
+	</div>
+	</li>
+</ol><h3><a name="TOC_Включение_записей_вbc-3" id="TOC_Включение_записей_вbc-3"></a><a name="TOC_Включение_записей_в" id="TOC_Включение_записей_в"></a><a name="HT_chapter_groups_working_with_static_folders_add_content" id="HT_chapter_groups_working_with_static_folders_add_content"></a>Добавить запись в статическую группу<a class="title-anchor" href="#title-2647-3" id="title-2647-3"> </a></h3>
+
+<ol class="start"><li>
+	<p>В меню кнопки <span class="key">Действия</span> раздела выберите команду <span class="key">Выбрать несколько записей</span> (<a href="#XREF_64388_100"><span>Рис. 3</span></a>).</p>
+
+	<div class="media">
+	<div class="media__caption"><span class="FM_Picturecaptionnumber">Рис. 3</span> — Переход в режим выбора нескольких записей</div>
+
+	<div class="media__element"><img alt="scr_folders_select_multiple_records.png" id="image5" src="../../../../../sites/default/files/documentation/user/ru/base/BPMonlineHelp/chapter_groups/scr_folders_select_multiple_records.png" /></div>
+	</div>
+
+	<div class="message">
+	<p><span class="message__bold">На заметку.</span> Чтобы включить только одну запись в статическую группу, переходить в режим выбора нескольких записей не нужно.</p>
+	</div>
+	</li>
+	<li>
+	<p>Установите флажки напротив тех записей, которые необходимо включить в статическую группу.</p>
+	</li>
+	<li>
+	<p>В меню кнопки <span class="key">Действия</span> выберите команду <span class="key">Поместить в группу</span> (<a href="#XREF_93955_101"><span>Рис. 4</span></a>).</p>
+
+	<div class="media">
+	<div class="media__caption"><span class="FM_Picturecaptionnumber">Рис. 4</span> — Выбор действия для включения записи в статическую группу</div>
+
+	<div class="media__element"><img alt="scr_folders_include_in_folder.png" id="image6" src="../../../../../sites/default/files/documentation/user/ru/base/BPMonlineHelp/chapter_groups/scr_folders_include_in_folder.png" /></div>
+	</div>
+
+	<p class="FM_Picture">В открывшемся окне выберите необходимую группу и нажмите кнопку <span class="key">Выбрать</span> (либо дважды кликните по необходимой группе).</p>
+	</li>
+	<li>
+	<p>В результате выбранные в разделе записи будут включены в данную статическую группу.</p>
+	</li>
+</ol><h3><a name="TOC_Исключение_записей_изbc-4" id="TOC_Исключение_записей_изbc-4"></a><a name="TOC_Исключение_записей_из" id="TOC_Исключение_записей_из"></a>Исключить запись из статической группы<a class="title-anchor" href="#title-2647-4" id="title-2647-4"> </a></h3>
+
+<ol><li>В меню <span class="key">Фильтр</span> раздела выберите команду <span class="key">Показать группы</span>.</li>
+	<li>Выберите статическую группу, из которой необходимо исключить записи.</li>
+	<li>В меню кнопки <span class="key">Действия</span> выберите команду <span class="key">Выбрать несколько записей</span>.</li>
+	<li>Отметьте флажками те записи, которые необходимо исключить из выбранной группы.</li>
+	<li>В меню кнопки <span class="key">Действия</span> выберите команду <span class="key">Исключить из группы</span> (<a href="#XREF_37598_102"><span>Рис. 5</span></a>).
+	<div class="media">
+	<div class="media__caption"><span class="FM_Picturecaptionnumber">Рис. 5</span> — Исключение записей из выбранной статической группы</div>
+
+	<div class="media__element"><img alt="scr_folders_remove_from_folder.png" id="image7" src="../../../../../sites/default/files/documentation/user/ru/base/BPMonlineHelp/chapter_groups/scr_folders_remove_from_folder.png" /></div>
+	</div>
+
+	<p class="FM_Picture">В результате отмеченные записи будут исключены из выбранной статической группы.</p>
+	</li>
+</ol><h2 class="FM_Picture">Динамические группы<a class="title-anchor" href="#title-2647-11" id="title-2647-11"> </a></h2>
+
+<p class="FM_Picture"><strong>Динамическая группа</strong> (значок <img alt="" data-entity-type="file" data-entity-uuid="7a5a72b9-1a67-4c61-a0e3-39d2b8bf1383" height="15" src="../../../../../sites/default/files/images/2020-12/icn_basis_dynamic_group.png" width="17" loading="lazy" />) содержит только те записи раздела, которые соответствуют заданным условиям фильтрации. Например, динамической может быть группа “Новые клиенты”, т.к. отобрать записи в такую группу можно, используя фильтр по дате создания записи в системе.</p>
+
+<p>Включение записи в группу вручную, как и исключение из нее, возможно только для статических групп. В динамической группе запись будет отображена автоматически, если она соответствует условиям фильтрации группы. Если запись более не соответствует настроенным условиям фильтра группы, то она исключается из группы автоматически.</p>
+
+<p>Например, в группе “Конкуренты” настроен фильтр по типу контрагента. Таким образом, в группу будут автоматически включены компании, в поле <span class="key">Тип</span> которых указано значение “Конкурент”. Если тип компании изменится на другой, то запись будет автоматически исключена из группы.</p>
+
+<h3><a name="TOC_Как_создать_динамическуюbc-5" id="TOC_Как_создать_динамическуюbc-5"></a><a name="TOC_Как_создать_динамическую" id="TOC_Как_создать_динамическую"></a><a name="CSH_4" id="CSH_4"></a><a name="HT_chapter_groups_creating_dynamic_folders" id="HT_chapter_groups_creating_dynamic_folders"></a><a name="XREF_27794" id="XREF_27794"></a>Создать динамическую группу<a class="title-anchor" href="#title-2647-5" id="title-2647-5"> </a></h3>
+
+<p>Для создания динамической группы и условий фильтрации записей для нее:</p>
+
+<ol><li>В меню <span class="key">Фильтр</span> раздела выберите команду <span class="key">Показать группы</span> (<a href="#XREF_96891_114"><span>Рис. 6</span></a>).
+
+	<div class="media">
+	<div class="media__caption"><span class="FM_Picturecaptionnumber">Рис. 6</span> — Команда <span class="key">Показать группы</span></div>
+
+	<div class="media__element"><img alt="scr_folders_act_show_folders.png" id="image8" src="../../../../../sites/default/files/documentation/user/ru/base/BPMonlineHelp/chapter_groups/scr_folders_act_show_folders.png" /></div>
+	</div>
+	</li>
+	<li>
+	<p>Нажмите кнопку <span class="key">Добавить группу</span>. В тех разделах, где доступны статические группы, в меню кнопки выберите команду <span class="key">Динамическую</span>.</p>
+	</li>
+	<li>
+	<p>В открывшемся окне введите название группы и нажмите кнопку <span class="key">OK</span> — отобразится область настройки условий фильтрации (<span><a href="#XREF_51951_136">Рис. 7</a></span>).</p>
+
+	<div class="media">
+	<div class="media__caption"><span class="FM_Picturecaptionnumber">Рис. 7</span> — Область настройки фильтра группы</div>
+
+	<div class="media__element"><img alt="scr_folders_mnu_setup_filter.png" id="image9" src="../../../../../sites/default/files/documentation/user/ru/base/BPMonlineHelp/chapter_groups/scr_folders_mnu_setup_filter.png" /></div>
+	</div>
+
+	<p class="FM_Picture">Выполните настройку необходимых условий фильтрации и нажмите кнопку <span class="key">Сохранить</span> (<a href="#XREF_51095_1_19"><span>Рис. 8</span></a>).</p>
+	</li>
+	<li>
+	<div class="media">
+	<div class="media__caption"><span class="FM_Picturecaptionnumber">Рис. 8</span> — Сохранение фильтра для группы</div>
+
+	<div class="media__element"><img alt="scr_folders_dynamic_folder_filtering_conditions.png" id="image10" src="../../../../../sites/default/files/documentation/user/ru/base/BPMonlineHelp/chapter_groups/scr_folders_dynamic_folder_filtering_conditions.png" /></div>
+	</div>
+
+	<p class="FM_Picture"><span class="message__bold">На заметку.</span> Настройка условий фильтрации аналогична настройке <a href="../filtry/filtry/index.html#title-2646-10">расширенного фильтра</a>.</p>
+	</li>
+</ol><p>В результате при выборе группы в реестре раздела автоматически отобразятся все записи, которые соответствуют настроенным условиям фильтрации.</p>
+
+<div class="message">
+<p><span class="message__bold">На заметку.</span> Также группу можно создать из расширенного фильтра. Для этого после настройки условий фильтрации нажмите кнопку <span class="key">Сохранить как</span>.</p>
+</div>
+
+<p>Если необходимо создать группу, условия фильтрации которой частично совпадают с одной из существующих групп, то нужную группу можно скопировать. При необходимости могут быть также скопированы права доступа исходной группы. Копирование выполняется по команде <span class="key">Копировать группу</span> в меню кнопки <img alt="btn_com_folder_filter.png" id="image11" src="../../../../../sites/default/files/documentation/user/ru/base/BPMonlineHelp/chapter_groups/btn_com_folder_filter.png" /> нужной группы.</p>
+
+<h2><a name="TOC_Как_работать_сbc-6" id="TOC_Как_работать_сbc-6"></a>Добавить группу в избранные<a class="title-anchor" href="#title-2647-6" id="title-2647-6"> </a></h2>
+
+<p>Вы можете добавить наиболее часто используемые группы в список избранных. Избранными могут быть как статические, так и динамические группы.</p>
+
+<p>Чтобы добавить группу в избранные, выберите ее и кликните по кнопке <img alt="btn_com_folder_favorite.png" id="image12" src="../../../../../sites/default/files/documentation/user/ru/base/BPMonlineHelp/chapter_groups/btn_com_folder_favorite.png" /> (<a href="#XREF_51148_129">Рис. 9</a>).</p>
+
+<div class="media">
+<div class="media__caption"><span class="FM_Picturecaptionnumber">Рис. 9</span> — Добавление группы в избранные</div>
+
+<div class="media__element"><img alt="scr_folders_mark_as_favorite.png" id="image13" src="../../../../../sites/default/files/documentation/user/ru/base/BPMonlineHelp/chapter_groups/scr_folders_mark_as_favorite.png" /></div>
+</div>
+
+<p>Избранные группы отображаются в дереве как вложенные в группу “Избранные”. Кроме того, избранные группы становятся доступными в меню <span class="key">Фильтр</span> (<a href="#XREF_88241_130"><span>Рис. 10</span></a>).</p>
+
+<div class="media">
+<div class="media__caption"><span class="FM_Picturecaptionnumber">Рис. 10</span> — Выбор избранной группы в меню <span class="key">Фильтр</span></div>
+
+<div class="media__element"><img alt="scr_folders_menu_favorite.png" id="image14" src="../../../../../sites/default/files/documentation/user/ru/base/BPMonlineHelp/chapter_groups/scr_folders_menu_favorite.png" /></div>
+</div>
+</div>
+      
+  </div>
+<div class="block block-layout-builder block-field-blocknodeuser-documentationfield-linked-link">
+  
+    
+      
+  <div class="field field--name-field-linked-link field--type-link field--label-above">
+    <div class="field__label">Смотрите также</div>
+          <div class="field__items">
+              <div class="field__item"><a href="../tegi/tegi.html">Теги</a></div>
+          <div class="field__item"><a href="../filtry/filtry.html">Фильтры</a></div>
+          <div class="field__item"><a href="../excel_import/import_iz_excel.html">Импорт данных из Excel</a></div>
+          <div class="field__item"><a href="../../../../../7-17/user/bazis_platformy/dannye/excel_export/eksport_v_excel.html">Экспорт данных в Excel</a></div>
+          <div class="field__item"><a href="../../../../../7-17/user/bazis_platformy/dannye/dubli/poisk_i_obedinenie_dubley.html">Поиск и объединение дублей</a></div>
+              </div>
+      </div>
+
+  </div>
+<div class="block block-layout-builder block-field-blocknodeuser-documentationfield-video">
+  
+    
+      
+  <div class="field field--name-field-video field--type-link field--label-above">
+    <div class="field__label">Онлайн-курсы</div>
+          <div class="field__items">
+              <div class="field__item"><a href="https://profile.terrasoft.ua/user/login?destination=academy/ua/course-redirect/677474">Данные в системе. Настройка фильтров и групп</a></div>
+              </div>
+      </div>
+
+  </div>
+
+    </div>
+  </div>
+
+  </div>
+
+</article>
+
+  </div>
+
+  </div>
+
+          </div>
+        </div>
+
+                  <aside class="creatio-sidebar creatio-sidebar_first" role="complementary">
+              <div class="region region-sidebar-first">
+    <div id="block-documentationnaviagtion" class="block block-ts-nav block-ts-nav-doc-nav">
+  
+    
+      <div class="ts-nav-block"><a href="../../../../../index.html" class="ts-nav-block__link">Документация</a><div class="ts-nav-block__title">Для пользователя</div>
+</div>
+<div class="ts-nav-container"><ul class="ts-nav-menu"><li class="ts-nav-menu__item">
+  <a href="../../../nocode_platforma.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">No-сode платформа&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../bazis_platformy.html" class="ts-nav-menu__link ts-nav-menu__link_expanded ts-nav-menu__link_open" hreflang="zxx">Базис платформы&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+      <ul class="ts-nav-menu__children">
+      <li class="ts-nav-menu__item">
+  <a href="../../interfejs.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Интерфейс&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../dannye.html" class="ts-nav-menu__link ts-nav-menu__link_expanded ts-nav-menu__link_open" hreflang="zxx">Данные&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+      <ul class="ts-nav-menu__children">
+      <li class="ts-nav-menu__item">
+  <a href="../filtry/filtry.html" class="ts-nav-menu__link" hreflang="ru">Фильтры</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="gruppy.html" class="ts-nav-menu__link ts-nav-menu__link_active ts-nav-menu__link_open" hreflang="ru">Группы</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../tegi/tegi.html" class="ts-nav-menu__link" hreflang="ru">Теги</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../excel_import/import_iz_excel.html" class="ts-nav-menu__link" hreflang="ru">Excel импорт</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../excel_export/export_v_excel.html" class="ts-nav-menu__link" hreflang="ru">Excel экспорт</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../dubli/poisk_i_obedinenie_dubly.html" class="ts-nav-menu__link" hreflang="ru">Дубли</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../dostup_na_zapis/nastroit_prava_dostupa_na_zapis.html" class="ts-nav-menu__link" hreflang="ru">Доступ на запись</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../udalenie_zapisey/udalit_zapisi.html" class="ts-nav-menu__link" hreflang="ru">Удаление записей</a>
+  </li>
+
+    </ul>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../kommunikacii.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Коммуникации&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../mobilnoe_prilozhenie.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Мобильное приложение&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../vypolnenie_biznes-processov.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Выполнение бизнес-процессов&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+
+    </ul>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../instrumenty_crm.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Инструменты CRM&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../instrumenty_kastomizacii.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Инструменты кастомизации&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../biznes_processy.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Бизнес-процессы&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../instrumenty_marketinga.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Инструменты маркетинга&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../instrumenty_prodazh.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Инструменты продаж&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../instrumenty_servisa.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Инструменты сервиса&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../ustanovka_i_administrirovanie.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Администрирование&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../razvertyvanie_onsite.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Развертывание on-site&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../banki_i_finansy.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Банки и финансы&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../drugie_reshenija.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Другие решения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+</ul>
+</div>
+
+  </div>
+
+  </div>
+
+            <div class="creatio-sidebar__toggle"></div>
+          </aside>
+        
+                  <aside class="creatio-sidebar creatio-sidebar_second" role="complementary">
+              <div class="region region-sidebar-second">
+    <div id="block-example" class="block block-ts-nav block-ts-nav-page-nav">
+  
+    
+        <div class="ts-nav-title">Группы</div>
+<div class="ts-nav-page">
+      <ul class="ts-nav-page__list">
+                                                <li class="ts-nav-page__item ts-nav-page__item_expanded ts-nav-page__item_open"><a href="gruppy.html" class="ts-nav-page__link ts-nav-page__link_expanded ts-nav-page__link_active">Группы&nbsp;<span class="ts-nav-page__link-arrow"></span></a></li>
+          </ul>
+  </div>
+
+  </div>
+<div id="block-adminfeedbackblock" class="block block-admin-feedback block-admin-feedback-block">
+  
+    
+      <div id="feedback-message"><div id="upper-feedback-content"><h2>Был ли данный материал полезен?</h2>
+<input class="feedback-btn feedback-btn__yes button js-form-submit form-submit" data-node-id="2647" data-feedback="yes" type="submit" name="op" value="Да" />
+<input class="feedback-btn feedback-btn__no button js-form-submit form-submit" data-node-id="2647" data-feedback="no" type="submit" name="op" value="Нет" />
+</div>
+<form class="admin-feedback-form" data-drupal-selector="admin-feedback-form" action="https://academy.terrasoft.ua/docs/7-18/user/bazis_platformy/dannye/gryppy/gruppy" method="post" id="admin-feedback-form" accept-charset="UTF-8">
+  <div id="feedback-msg-result"></div><div class="js-form-item form-item js-form-type-textarea form-type-textarea js-form-item-feedback-message form-item-feedback-message form-no-label">
+        <div class="form-textarea-wrapper">
+  <textarea id="edit-feedback-msg" data-drupal-selector="edit-feedback-message" name="feedback_message" rows="5" cols="60" class="form-textarea resize-vertical"></textarea>
+</div>
+
+        </div>
+<input id="feedback-id" data-drupal-selector="edit-feedback-id" type="hidden" name="feedback_id" value="" />
+<input class="feedback-btn feedback-btn__send-comment button js-form-submit form-submit" data-drupal-selector="edit-feedback-send" type="submit" id="edit-feedback-send" name="op" value="Отправить" />
+<input autocomplete="off" data-drupal-selector="form-wcxn7lov1q09v6enirowqf30mmhje2waxk5yojex9ms" type="hidden" name="form_build_id" value="form-WcXN7lOV1Q09V6ENIrOwqf30MMHJe2wAxk5yoJex9ms" />
+<input data-drupal-selector="edit-admin-feedback-form" type="hidden" name="form_id" value="admin_feedback_form" />
+
+</form>
+</div>
+
+  </div>
+
+  </div>
+
+          </aside>
+              </main>
+    </div>
+  </div>
+
+  <footer role="contentinfo">
+    <div class="creatio-region creatio-region_footer">
+      <div class="creatio-container">
+          <div class="region region-footer">
+    <div id="block-footerua" class="block block-simple-block block-simple-blockfooter-ua">
+  
+    
+      <div class="footer">
+<div class="footer-left">
+<ul class="footer-socials"><li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_fb" href="https://www.facebook.com/terrasoft.ua" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_in" href="https://www.linkedin.com/company/terrasoft/" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_yt" href="https://www.youtube.com/c/TerrasoftUkraine" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_tg" href="https://t.me/Terrasoft_UA" target="_blank"> </a></li>
+</ul></div>
+
+<div class="footer-contact">
+<div class="footer-title">Будьте на связи!</div>
+
+<div class="footer-content">
+<div class="footer-items">
+<div class="footer-item"><a class="footer__link footer__link_phone" href="tel:+380443633133">+38 (044) 363-31-33</a></div>
+</div>
+
+<div class="footer-items">
+<div class="footer-item"><a class="footer__link footer__link_email" href="mailto:support@terrasoft.ua">support@terrasoft.ua</a></div>
+</div>
+</div>
+</div>
+</div>
+
+  </div>
+
+  </div>
+
+      </div>
+    </div>
+    <div class="creatio-region creatio-region_bottom">
+      <div class="creatio-container">
+          <div class="region region-bottom">
+    <div id="block-allrightsreservedua" class="block block-simple-block block-simple-blockfooter-bottom-ua">
+  
+    
+      <p>© 2002-2022 Terrasoft.  |  <a href="https://www.terrasoft.ua/privacy-policy" target="_blank">Конфиденциальность</a></p>
+
+  </div>
+
+  </div>
+
+      </div>
+    </div>
+  </footer>
+</div>
+<div class="creatio-bg"></div>
+
+
+  </div>
+
+    
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/docs\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/2647","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"ru"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"ajaxPageState":{"libraries":"admin_feedback\/admin_feedback_block,admin_feedback\/admin_feedback_css,classy\/base,classy\/messages,classy\/node,core\/drupal.ajax,core\/jquery.form,core\/normalize,creatio\/creatio.lists,creatio\/fancybox,creatio\/global,layout_discovery\/onecol,system\/base,ts_doc\/doc_version,ts_feedback\/ts_feedback,ts_nav\/breadcrumb,ts_nav\/doc_nav,ts_nav\/page_nav,ts_title_anchor\/ts_title_anchor","theme":"creatio","theme_token":null},"ajaxTrustedUrl":{"form_action_p_pvdeGsVG5zNF_XLGPTvYSKCf43t8qZYSwcfZl2uzM":true,"\/docs\/7-18\/user\/bazis_platformy\/dannye\/gryppy\/gruppy?ajax_form=1":true},"admin_feedback":{"yes_response":"\u0421\u043f\u0430\u0441\u0438\u0431\u043e \u0437\u0430 \u043e\u0431\u0440\u0430\u0442\u043d\u0443\u044e \u0441\u0432\u044f\u0437\u044c!","no_response":"\u0421\u043f\u0430\u0441\u0438\u0431\u043e \u0437\u0430 \u043e\u0431\u0440\u0430\u0442\u043d\u0443\u044e \u0441\u0432\u044f\u0437\u044c!","custom_text_response_on_no":{"value":"","format":"full_html"},"feedback_prompt_on_yes":true,"feedback_prompt_on_no":true,"feedback_enable_predefined_answers":false,"feedback_prompt":"\u041a\u0430\u043a \u043c\u043e\u0436\u043d\u043e \u0443\u043b\u0443\u0447\u0448\u0438\u0442\u044c \u044d\u0442\u0443 \u0441\u0442\u0430\u0442\u044c\u044e?"},"ajax":{"edit-feedback-send":{"callback":"::validateFeedbackMsg","event":"mousedown","keypress":true,"prevent":"click","url":"\/docs\/7-18\/user\/bazis_platformy\/dannye\/gryppy\/gruppy?ajax_form=1","dialogType":"ajax","submit":{"_triggering_element_name":"op","_triggering_element_value":"\u041e\u0442\u043f\u0440\u0430\u0432\u0438\u0442\u044c"}}},"user":{"uid":0,"permissionsHash":"9c2367dfcaba0fa15f0375f97aed64e146c908cee68508d13b79e3ee80e5162d"}}</script>
+<script src="../../../../../sites/default/files/js/js_F2-Y4EzgTnESr58XByoLYEnsbi7ysTfMIKN1RvsMSWY.js"></script>
+
+
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+      <g id="svg-copy" class="svg-icon svg-icon_copy">
+        <path d="M15.111,18H1.889A1.848,1.848,0,0,1,0,16.2V3.6A1.848,1.848,0,0,1,1.889,1.8H5.837a2.87,2.87,0,0,1,5.326,0h3.948A1.848,1.848,0,0,1,17,3.6V16.2A1.848,1.848,0,0,1,15.111,18ZM3.777,12.6v1.8h6.611V12.6Zm0-3.6v1.8h9.445V9Zm0-3.6V7.2h9.445V5.4ZM8.5,1.8a.924.924,0,0,0-.944.9.945.945,0,0,0,1.889,0A.924.924,0,0,0,8.5,1.8Z"/>
+      </g>
+
+      <g id="svg-prev" class="svg-icon svg-icon_arrow">
+        <path d="M5.488,12.779,0,6.39,5.488,0" transform="translate(1 0.652)"/>
+      </g>
+
+      <g id="svg-next" class="svg-icon svg-icon_arrow">
+        <path d="M0,12.779,5.488,6.39,0,0" transform="translate(0.759 0.652)"/>
+      </g>
+    </svg>
+  </body>
+
+<!-- Mirrored from academy.terrasoft.ua/docs/7-18/user/bazis_platformy/dannye/gryppy/gruppy by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Mar 2022 00:53:58 GMT -->
+</html>

@@ -1,0 +1,1198 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# ">
+  
+<!-- Mirrored from academy.terrasoft.ua/docs/7-18/user/ustanovka_i_administrirovanie/upravlenie_polzovateljami_i_dostupom/autentifikaciya_v_prilojenii/nastrojka_sso_cherez_adfs/nastroit_single_sign_on_cherez_adfs by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Mar 2022 03:23:47 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+          <!-- Google Tag Manager -->
+      <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          '../../../../../../../../www.googletagmanager.com/gtm5445.html?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-KLLB8G');</script>
+      <!-- End Google Tag Manager -->
+        <meta charset="utf-8" />
+<link rel="canonical" href="nastroit_single_sign_on_cherez_adfs.html" />
+<meta name="description" content="Вы можете настроить интеграцию Creatio c Active Directory Federation Services (ADFS), чтобы с ее помощью управлять возможностью единого входа для всех пользователей системы. Для этого нужно выполнить ряд настроек как на стороне ADFS, так и на стороне Creatio.
+
+
+Важно. В примере использован адрес сайта Creatio https://site01.creatio.com/Demo_161215/ и адрес сайта сервиса ADFS http://adfs01.mysite.com/adfs/. При выполнении настройки замените адреса на соответствующие адреса ваших сайтов." />
+<meta property="og:url" content="https://academy.terrasoft.ua/docs/7-18/user/ustanovka_i_administrirovanie/upravlenie_polzovateljami_i_dostupom/autentifikaciya_v_prilojenii/nastrojka_sso_cherez_adfs/nastroit_single_sign_on_cherez_adfs" />
+<meta property="og:title" content="Настроить Single Sign-On через ADFS" />
+<meta property="og:description" content="Вы можете настроить интеграцию Creatio c Active Directory Federation Services (ADFS), чтобы с ее помощью управлять возможностью единого входа для всех пользователей системы. Для этого нужно выполнить ряд настроек как на стороне ADFS, так и на стороне Creatio.
+
+
+Важно. В примере использован адрес сайта Creatio https://site01.creatio.com/Demo_161215/ и адрес сайта сервиса ADFS http://adfs01.mysite.com/adfs/. При выполнении настройки замените адреса на соответствующие адреса ваших сайтов." />
+<meta name="Generator" content="Drupal 9 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="../../../../../../themes/custom/creatio/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="revision" href="nastroit_single_sign_on_cherez_adfs.html" />
+
+    <title>Настроить Single Sign-On через ADFS | Creatio Academy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&amp;family=Open+Sans:ital,wght@0,300;0,400;0,600;1,400&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" media="all" href="../../../../../../sites/default/files/css/css_6lTP66__-yc6QXFp1zOwoeJ0HVigoYZP-SeoLLii000.css" />
+<link rel="stylesheet" media="all" href="../../../../../../sites/default/files/css/css_XQJDNhkF3xH5SZCcY-PI89Zu4nYIzQ5oR3SnUKyfXJU.css" />
+<link rel="stylesheet" media="print" href="../../../../../../sites/default/files/css/css_Zn4VHvcniOOtUwkIVwXzYr_0AI9gUVgZcPqaH4ViagU.css" />
+
+    
+  </head>
+  <body class="path-node page-node-type-user-documentation">
+          <!-- Google Tag Manager (noscript) -->
+      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KLLB8G"
+                        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+      <!-- End Google Tag Manager (noscript) -->
+    
+        
+      <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    <div class="creatio-page d-flex flex-column">
+        <div class="region region-informer">
+    <div id="block-terrasoftpidtrimueukrainu" class="block block-simple-block block-simple-blockterrasoft-pidtrimue-ukrainu">
+  
+    
+      <style type="text/css">
+<!--/*--><![CDATA[/* ><!--*/
+@import url(../../../../../../../../www.terrasoft.ua/themes/custom/creatio/css/components/informer.css)
+
+/*--><!]]>*/
+</style><div class="ts-swu">
+<div class="creatio-container">
+<div class="ts-swu__cont">
+<div><a class="ts-swu__link" href="https://www.terrasoft.ua/terrasoft-stands-with-ukraine" target="_blank">Україна понад усе!</a> <span><a href="https://www.terrasoft.ua/terrasoft-stands-with-ukraine" target="_blank">Приєднуйтеся</a> до допомоги!</span></div>
+</div>
+</div></div>
+
+  </div>
+
+  </div>
+
+  
+  <header role="banner">
+          <div class="creatio-region creatio-region_top">
+        <div class="creatio-container">
+            <div class="region region-top">
+    <div id="block-menutoggle" class="block block-simple-block block-simple-blockmenu-toggle">
+  
+    
+      <div class="menu-toggle"><span> </span></div>
+
+  </div>
+<div id="block-logowhite-2" class="block block-simple-block block-simple-blocklogo-white">
+  
+    
+      <p><a class="site-logo" href="../../../../../../../index.html" rel="home"><img src="../../../../../../themes/custom/creatio/logo-white.svg" /></a></p>
+
+  </div>
+<div id="block-search" class="block block-simple-block block-simple-blocksearch">
+  
+    
+      <div class="search">
+<form action="https://academy.terrasoft.ua/search" class="search-form" method="get"><input class="search-form__input" name="search" placeholder="Поиск" type="search" /><input class="search-form__button" type="submit" value="Поиск" /> </form>
+
+<div class="search-toggle"> </div>
+</div>
+
+  </div>
+<nav role="navigation" aria-labelledby="block-sitesua-menu" id="block-sitesua" class="block block-menu navigation menu--sites-ua">
+            
+  <h2 class="visually-hidden" id="block-sitesua-menu">Sites UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="https://www.terrasoft.ua/" rel="nofollow" target="_blank">Terrasoft</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://community.terrasoft.ua/" rel="nofollow" target="_blank">Community</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://marketplace.terrasoft.ua/" rel="nofollow" target="_blank">Marketplace</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+<div id="block-usermenu" class="block block-ts-user block-ts-user-menu-block">
+  
+    
+      <ul class="user-menu">
+      <li class="user-menu__item">
+      <a class="user-menu__link" href="https://profile.terrasoft.ua/user/login?destination=academy/ua/docs/7-18/user/ustanovka_i_administrirovanie/upravlenie_polzovateljami_i_dostupom/autentifikaciya_v_prilojenii/nastrojka_sso_cherez_adfs/nastroit_single_sign_on_cherez_adfs">Войти</a>
+    </li>
+  </ul>
+
+  </div>
+<div id="block-usermenumobile" class="block block-ts-user block-ts-user-menu-mobile-block">
+  
+    
+      <ul class="user-menu-mobile">
+      <li class="user-menu-mobile__item">
+      <div class="user-menu-mobile__user user-menu-mobile__user_icon"></div>
+      <ul class="user-menu-mobile__submenu">
+        <li class="user-menu-mobile__subitem">
+          <a class="user-menu-mobile__sublink" href="https://profile.terrasoft.ua/user/login?destination=academy/ua/docs/7-18/user/ustanovka_i_administrirovanie/upravlenie_polzovateljami_i_dostupom/autentifikaciya_v_prilojenii/nastrojka_sso_cherez_adfs/nastroit_single_sign_on_cherez_adfs">Войти</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  </div>
+
+  </div>
+
+        </div>
+      </div>
+              <div class="creatio-region creatio-region_header">
+        <div class="creatio-container">
+            <div class="region region-header">
+    <div id="block-logo" class="block block-simple-block block-simple-blocklogo">
+  
+    
+      <p><a class="site-logo" href="../../../../../../../index.html" rel="home"><img src="../../../../../../themes/custom/creatio/logo.svg" /></a></p>
+
+  </div>
+<nav role="navigation" aria-labelledby="block-osnovnayanavigaciyaua-menu" id="block-osnovnayanavigaciyaua" class="block block-menu navigation menu--main-ua">
+            
+  <h2 class="visually-hidden" id="block-osnovnayanavigaciyaua-menu">Основная навигация UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="../../../../../../index.html" data-drupal-link-system-path="&lt;front&gt;">Документация</a>
+              </li>
+                <li class="menu-item">
+        <a href="../../../../../../../trainings.html">Тренинги</a>
+              </li>
+                <li class="menu-item">
+        <a href="../../../../../../certification.html" data-drupal-link-system-path="node/3084">Сертификация и тестирование</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+<nav role="navigation" aria-labelledby="block-sitesua-2-menu" id="block-sitesua-2" class="block block-menu navigation menu--sites-ua">
+            
+  <h2 class="visually-hidden" id="block-sitesua-2-menu">Sites UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="https://www.terrasoft.ua/" rel="nofollow" target="_blank">Terrasoft</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://community.terrasoft.ua/" rel="nofollow" target="_blank">Community</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://marketplace.terrasoft.ua/" rel="nofollow" target="_blank">Marketplace</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+
+  </div>
+
+        </div>
+      </div>
+              <div class="creatio-region creatio-region_breadcrumb">
+        <div class="creatio-container">
+            <div class="region region-breadcrumb">
+    <div id="block-logowhite" class="block block-simple-block block-simple-blocklogo-white">
+  
+    
+      <p><a class="site-logo" href="../../../../../../../index.html" rel="home"><img src="../../../../../../themes/custom/creatio/logo-white.svg" /></a></p>
+
+  </div>
+<div id="block-breadcrumbnaviagtion" class="block block-ts-nav block-ts-nav-bread">
+  
+    
+      <nav class="breadcrumb"><ol class="ts-nav-breadcrumb__list"><li class="ts-nav-breadcrumb__item"><a href="../../../../../../index.html" class="ts-nav-breadcrumb__link" title="Документация">Документация</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../../../../indexd993.html?vid_1=1" class="ts-nav-breadcrumb__link" title="Для пользователя">Для пользователя</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../../ustanovka_i_administrirovanie.html" class="ts-nav-breadcrumb__link" title="Администрирование" hreflang="zxx">Администрирование</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../upravlenie_polzovateljami_i_dostupom.html" class="ts-nav-breadcrumb__link" title="Пользователи и доступ" hreflang="zxx">Пользователи и доступ</a></li>
+<li class="ts-nav-breadcrumb__item ts-nav-breadcrumb__item_mobile"><a href="../../autentifikaciya_v_prilojenii.html" class="ts-nav-breadcrumb__link" title="Аутентификация в приложении" hreflang="ru">Аутентификация в приложении</a></li>
+<li class="ts-nav-breadcrumb__item"><span class="ts-nav-breadcrumb__link ts-nav-breadcrumb__link_current" title="Настроить Single Sign-On через ADFS">Настроить Single Sign-On через ADFS</span></li>
+</ol>
+</nav>
+
+  </div>
+<div id="block-search-2" class="block block-simple-block block-simple-blocksearch">
+  
+    
+      <div class="search">
+<form action="https://academy.terrasoft.ua/search" class="search-form" method="get"><input class="search-form__input" name="search" placeholder="Поиск" type="search" /><input class="search-form__button" type="submit" value="Поиск" /> </form>
+
+<div class="search-toggle"> </div>
+</div>
+
+  </div>
+
+  </div>
+
+        </div>
+      </div>
+      </header>
+
+  <div class="creatio-region creatio-region_main">
+    <div class="creatio-container">
+                <div class="region region-breadcrumb-mobile">
+    <div id="block-breadcrumbnaviagtion-2" class="block block-ts-nav block-ts-nav-bread">
+  
+    
+      <nav class="breadcrumb"><ol class="ts-nav-breadcrumb__list"><li class="ts-nav-breadcrumb__item"><a href="../../../../../../index.html" class="ts-nav-breadcrumb__link" title="Документация">Документация</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../../../../indexd993.html?vid_1=1" class="ts-nav-breadcrumb__link" title="Для пользователя">Для пользователя</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../../ustanovka_i_administrirovanie.html" class="ts-nav-breadcrumb__link" title="Администрирование" hreflang="zxx">Администрирование</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../upravlenie_polzovateljami_i_dostupom.html" class="ts-nav-breadcrumb__link" title="Пользователи и доступ" hreflang="zxx">Пользователи и доступ</a></li>
+<li class="ts-nav-breadcrumb__item ts-nav-breadcrumb__item_mobile"><a href="../../autentifikaciya_v_prilojenii.html" class="ts-nav-breadcrumb__link" title="Аутентификация в приложении" hreflang="ru">Аутентификация в приложении</a></li>
+<li class="ts-nav-breadcrumb__item"><span class="ts-nav-breadcrumb__link ts-nav-breadcrumb__link_current" title="Настроить Single Sign-On через ADFS">Настроить Single Sign-On через ADFS</span></li>
+</ol>
+</nav>
+
+  </div>
+
+  </div>
+
+      
+      <main class="creatio-main" role="main">
+                                                    
+        <div class="creatio-content creatio-content_small">
+          <div class="creatio-content__inner creatio-content__inner_bg">
+                            <div class="region region-messages">
+    <div data-drupal-messages-fallback class="hidden"></div>
+
+  </div>
+
+            
+              <div class="region region-content">
+    <div id="block-creatio-page-title" class="block block-core block-page-title-block">
+  
+    
+      
+  <h1 class="page-title"><span class="field field--name-title field--type-string field--label-hidden">Настроить Single Sign-On через ADFS</span>
+</h1>
+
+
+  </div>
+<div id="block-creatio-content" class="block block-system block-system-main-block">
+  
+    
+      
+<article data-history-node-id="2449" role="article" about="/docs/7-18/user/ustanovka_i_administrirovanie/upravlenie_polzovateljami_i_dostupom/autentifikaciya_v_prilojenii/nastrojka_sso_cherez_adfs/nastroit_single_sign_on_cherez_adfs" class="node node--type-user-documentation node--view-mode-full">
+
+  
+    
+
+  
+  <div class="node__content">
+      <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-ts-doc block-ts-doc-downloads">
+  
+    
+      <a href="../../../../../../sites/default/files/pdf/node/2449/Nastroit_Single_Sign_On_cherez_ADFS_.pdf" target="_blank">PDF</a>
+  </div>
+<div class="block block-ts-doc block-ts-doc-versions">
+  
+    
+        <div class="ts-doc-versions">
+    <select class="ts-doc-versions__select">
+                              <option value="/docs/8-0/user/ustanovka_i_administrirovanie/upravlenie_polzovateljami_i_dostupom/autentifikaciya_v_prilojenii/nastrojka_sso_cherez_adfs/nastroit_single_sign_on_cherez_adfs">Версия 8.0</option>
+                                                <option value="/docs/7-18/user/ustanovka_i_administrirovanie/upravlenie_polzovateljami_i_dostupom/autentifikaciya_v_prilojenii/nastrojka_sso_cherez_adfs/nastroit_single_sign_on_cherez_adfs" selected>Версия 7.18</option>
+                              <option value="/docs/7-17/user/ustanovka_i_administrirovanie/upravlenie_polzovateljami_i_dostupom/autentifikaciya_v_prilojenii/nastrojka_sso_cherez_adfs/nastroit_single_sign_on_cherez_adfs">Версия 7.17</option>
+          </select>
+  </div>
+
+  </div>
+
+    </div>
+  </div>
+  <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocknodeuser-documentationfield-product">
+  
+    
+      
+  <div class="field field--name-field-product field--type-entity-reference field--label-above">
+    <div class="field__label">Продукты</div>
+          <div class="field__items">
+              <div class="field__item">Все продукты</div>
+              </div>
+      </div>
+
+  </div>
+<div class="block block-layout-builder block-field-blocknodeuser-documentationbody">
+  
+    
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><p>Вы можете настроить интеграцию Creatio c Active Directory Federation Services (ADFS), чтобы с ее помощью управлять возможностью единого входа для всех пользователей системы. Для этого нужно выполнить ряд настроек как на стороне ADFS, так и на стороне Creatio.</p>
+
+<div class="message message_warning">
+<p><span class="message__bold message__bold_warning">Важно.</span> В примере использован адрес сайта Creatio https://site01.creatio.com/Demo_161215/ и адрес сайта сервиса ADFS http://adfs01.mysite.com/adfs/. При выполнении настройки замените адреса на соответствующие адреса ваших сайтов.</p>
+</div>
+
+<h2>Выполнить настройки на стороне ADFS<a class="title-anchor" href="#title-2449-1" id="title-2449-1"> </a></h2>
+
+<ol><li>
+	<p>Добавьте в ADFS нового поставщика ресурсов (Relying Party Trusts) (Рис. 1).</p>
+
+	<div class="media">
+	<div class="media__caption">Рис. 1 — Добавление нового поставщика ресурсов</div>
+
+	<div class="media__element"><img alt="" data-entity-type="file" data-entity-uuid="" height="416" src="../../../../../../sites/default/files/images/Setup_and_Administration/adfs_integration/scr_chapter_single_sign_on_adfs_step1_add_party.png" width="850" /></div>
+	</div>
+	</li>
+	<li>
+	<p>Выберите опцию ручного ввода данных (“Enter data about the relying party manually”), как показано на Рис. 2.</p>
+
+	<div class="media">
+	<div class="media__caption">Рис. 2 — Выбор опции ручного ввода данных о поставщике ресусов</div>
+
+	<div class="media__element"><img alt="" data-entity-type="file" data-entity-uuid="" height="586" src="../../../../../../sites/default/files/images/Setup_and_Administration/adfs_integration/scr_chapter_single_sign_on_adfs_step2_enter_data_manually.png" width="728" /></div>
+	</div>
+	</li>
+	<li>
+	<p>В поле <span class="key">Отображаемое имя</span> (“Display name”) введите название Relying Party. Имя необходимо только для упорядоченного ведения списка доверенных приложений в ADFS.</p>
+	</li>
+	<li>
+	<p>Оставьте профиль “AD FS Profile”, выбранный по умолчанию. Нажмите кнопку <span class="key">Далее</span> (“Next”).</p>
+	</li>
+	<li>
+	<p>На шаге выбора сертификата нажмите кнопку <span class="key">Далее</span> (“Next”).</p>
+	</li>
+	<li>
+	<p>Включите поддержку протокола SAML 2.0. Укажите адрес сайта, добавьте к нему “/ServiceModel/AuthService.svc/SsoLogin” (Рис. 3).</p>
+
+	<div class="media">
+	<div class="media__caption">Рис. 3 — Включение поддержки протокола SAML 2.0</div>
+
+	<div class="media__element"><img alt="" data-entity-type="file" data-entity-uuid="" height="589" src="../../../../../../sites/default/files/images/Setup_and_Administration/adfs_integration/scr_chapter_single_sign_on_adfs_step6_enable_saml.png" width="729" /></div>
+	</div>
+	</li>
+	<li>
+	<p>В настройках идентификаторов укажите полный адрес сайта и нажмите кнопку <span class="key">Добавить</span> (“Add”) как показано на Рис. 4.</p>
+
+	<div class="media">
+	<div class="media__caption">Рис. 4 — Указание идентификатора</div>
+
+	<div class="media__element"><img alt="" data-entity-type="file" data-entity-uuid="" height="586" src="../../../../../../sites/default/files/images/Setup_and_Administration/adfs_integration/scr_chapter_single_sign_on_adfs_step7_set_identifier.png" width="727" /></div>
+	</div>
+
+	<div class="message message_warning">
+	<p><span class="message__bold message__bold_warning">Важно.</span> Идентификатор используется при проверке подлинности источника, который запрашивает выполнение аутентификации. URL должен совпадать полностью, включая “/” в конце.</p>
+	</div>
+	</li>
+	<li>
+	<p>Значения остальных параметров настройте в соответствии с требованиями безопасности вашей организации. Для тестового использования эти настройки можно оставить по умолчанию.</p>
+	</li>
+	<li>
+	<p>Нажмите <span class="key">Завершить</span> (“Finish”). В открывшемся окне по кнопке <span class="key">Добавить правило</span> (“Add Rule”) добавьте новое правило формирования SAML Assertion в SAML Response (Рис. 5).</p>
+
+	<div class="media">
+	<div class="media__caption">Рис. 5 — Добавление правила</div>
+	</div>
+
+	<div class="media__element"><img alt="" data-entity-type="file" data-entity-uuid="" height="554" src="../../../../../../sites/default/files/images/Setup_and_Administration/adfs_integration/scr_chapter_single_sign_on_adfs_step9_add_rule.png" width="506" /></div>
+
+	<div class="message">
+	<p><span class="message__bold">На заметку.</span> Данные, которые формируются новым правилом, будут использоваться приложением Creatio для поиска пользователя, актуализации его профиля и ролей.</p>
+	</div>
+	</li>
+	<li>
+	<p>На первом шаге добавления правила оставьте настройку, выбранную по умолчанию, и нажмите кнопку <span class="key">Далее</span> (“Next”). Установите набор параметров, которые будут получены из данных пользователя (Рис. 6). В указанном примере в SAML Assertion будет передаваться имя (“Name”) пользователя и список групп домена, в которые он входит.</p>
+
+	<div class="media">
+	<div class="media__caption">Рис. 6 — Установка параметров правила</div>
+
+	<div class="media__element"><img alt="" data-entity-type="file" data-entity-uuid="" height="586" src="../../../../../../sites/default/files/images/Setup_and_Administration/adfs_integration/scr_chapter_single_sign_on_adfs_step10_rule_parameters.png" width="728" /></div>
+	</div>
+	</li>
+	<li>
+	<p>Нажмите кнопку <span class="key">Сохранить</span> (“Save”).</p>
+	</li>
+	<li>
+	<p>Откройте настройки созданного поставщика ресурсов “Trusted Relay” и на вкладке с расширенными настройками (“Advanced”) укажите шифрование SHA-1 согласно алгоритму сертификата сайта.</p>
+	</li>
+	<li>
+	<p>Для настройки шифрования SAML-пакета на вкладке с настройками шифрования (“Encryption”) добавьте публичный ключ сертификата (Рис. 7).</p>
+
+	<div class="message">
+	<p><span class="message__bold">На заметку.</span> Если вы используете Creatio cloud, то публичный ключ сертификата будет предоставлен службой поддержки.</p>
+	</div>
+
+	<div class="media">
+	<div class="media__caption">Рис. 7 — Добавление публичного ключа</div>
+
+	<div class="media__element"><img alt="" data-entity-type="file" data-entity-uuid="" height="470" src="../../../../../../sites/default/files/images/Setup_and_Administration/adfs_integration/scr_chapter_single_sign_on_adfs_step13_add_public_key.png" width="405" /></div>
+	</div>
+	</li>
+	<li>
+	<p>На вкладке <span class="key">Конечные точки</span> (“Endpoints”) добавьте конечную точку (“Logout endpoint”), и установите такие параметры (Рис. 8):</p>
+
+	<ul><li>
+		<p><strong>Endpoint type</strong>: SAML Logout.</p>
+		</li>
+		<li>
+		<p><strong>Binding</strong>: Redirect.</p>
+		</li>
+		<li>
+		<p><strong>Trusted URL</strong>: https://site01.creatio.com/Demo_161215/ServiceModel/AuthService.svc/SsoLogout.</p>
+
+		<div class="media">
+		<div class="media__caption">Рис. 8 — Установка параметров конечной точки</div>
+
+		<div class="media__element"><img alt="" data-entity-type="file" data-entity-uuid="" height="400" src="../../../../../../sites/default/files/images/Setup_and_Administration/adfs_integration/scr_chapter_single_sign_on_adfs_step13_add_endpoint.png" width="394" /></div>
+		</div>
+		</li>
+	</ul></li>
+	<li>
+	<p>На вкладке <span class="key">Подпись</span> (“Signature”) добавьте сертификат для подписывания (“Logout Request”) как показано на Рис. 9.</p>
+
+	<div class="media">
+	<div class="media__caption">Рис. 9 — Добавление сертификата</div>
+
+	<div class="media__element"><img alt="" data-entity-type="file" data-entity-uuid="" height="474" src="../../../../../../sites/default/files/images/Setup_and_Administration/adfs_integration/scr_chapter_single_sign_on_adfs_step14_add_certificate.png" width="409" /></div>
+	</div>
+	</li>
+</ol><div class="message message_warning">
+<p><span class="message__bold message__bold_warning">Важно.</span> Без сертификата не будет работать выход из приложений.</p>
+</div>
+
+<h2>Выполнить настройки на стороне Creatio<a class="title-anchor" href="#title-2449-2" id="title-2449-2"> </a></h2>
+
+<p>Если вы используете <strong>Creatio cloud</strong>, то подготовьте информацию для настройки по инструкции ниже и обратитесь в <a href="mailto: support@bpmonline.com">службу поддержки Creatio</a> для применения настроек на сайте.</p>
+
+<p>Ниже приведена инструкция по настройке единого входа для пользователей <strong>Creatio on-site</strong>. Настоятельно рекомендуем предоставить службе поддержки временный доступ к конфигурации Creatio, либо производить эту настройку под руководством службы технической поддержки.</p>
+
+<p>Чтобы выполнить настройку на стороне Creatio, необходимо выполнить следующие настройки в конфигурационных файлах:</p>
+
+<ol><li>Внести настройки SAML-провайдера.</li>
+	<li>Настроить параметры SSO-аутентификации в Creatio.</li>
+	<li>Проверить базовые сценарии SSO.</li>
+	<li>Настроить Just-In-Time User Provisioning (JIT).</li>
+	<li>Включить использование SSO по умолчанию.</li>
+</ol><p>Настройки для приложения на .NET Framework и приложения на .NET Core имеют ряд различий, которые ниже будут рассмотрены подробнее.</p>
+
+<div class="block-collapse">
+<h3 class="block-collapse__title">.NET Framework<a class="title-anchor" href="#title-2449-4" id="title-2449-4"> </a></h3>
+
+<div class="block-collapse__content">
+<ol><li><strong>Заполните настройки SAML-провайдера</strong>, указав данные SAML-провайдера идентификации в <strong>saml.config</strong>.
+
+	<ol><li>
+		<p>В параметре Name укажите FQDN вашего сайта.</p>
+
+		<div class="message message_warning">
+		<p><span class="message__bold message__bold_warning">Важно.</span> Значение параметра ServiceProvider Name должно быть идентично значению Identifier, указанному на стороне провайдера идентификации ADFS. Таким образом выполняется проверка, что SAML Assertion выдан именно для вашего приложения. Для этого удобнее использовать FQDN вашего сайта, например, https://site01.creatio.com/Demo_161215/. Обратите внимание, URL должен совпадать полностью, включая “/” в конце.</p>
+		</div>
+		</li>
+		<li>В секции Partner Identity Provider укажите настройки со стороны IdP. Эти настройки можно посмотреть в файле метаданных.
+		<ul><li><strong>WantAssertionSigned="false"</strong> — если не будет использоваться сертификат шифрования при обмене SALM Assertion.</li>
+			<li><strong>SingleSignOnServiceUrl</strong> — URL сервиса единого входа провайдера. Для ADFS, как правило, это: https://adfs01.mysite.com/adfs/ls.</li>
+			<li><strong>SingleLogoutServiceUrl</strong> — URL сервиса единого входа провайдера. Для ADFS, как правило, это: https://adfs01.mysite.com/adfs/ls.</li>
+			<li><strong>PartnerCertificateFile</strong> — путь к сертификату безопасности в формате .*cer в файловой системе сервера относительно корня приложения Creatio. Нужно задавать, если WantAssertionSigned="true".</li>
+			<li><strong>SignLogoutRequest="true"</strong> — важно указывать для ADFS, поскольку подписывание LogoutRequest обязательно. Если установлено значение “true”, то необходимо указать сертификат для формирования подписи в параметре LocalCertificateFile.</li>
+			<li><strong>SignLogoutResponse="true"</strong> — важно указывать для ADFS, поскольку подписывание LogoutResponse обязательно. Если установлено значение “true”, то необходимо указать сертификат для формирования подписи в параметре LocalCertificateFile.</li>
+			<li><strong>OverridePendingAuthnRequest="true"</strong> — опция, при включении которой не будет выполняться валидация на соответствие ответа IdP ранее созданным Auth Request.
+			<p><strong>Пример saml.config для ADFS:</strong></p>
+
+			<div class="code">
+			<div class="code__widgets">
+			<div class="code__source">
+			<pre class="prettyprint">
+    &lt;ServiceProvider Name="https://site01.creatio.com/Demo_161215/"
+             
+                Description="Example Creatio Service Provider"
+                AssertionConsumerServiceUrl="~/ServiceModel/AuthService.svc/SsoLogin"
+                LocalCertificateFile="sp.pfx"
+                LocalCertificatePassword="password"
+            /&gt;
+    &lt;PartnerIdentityProviders&gt;
+         
+&lt;!-- ADFS Creatio --&gt;
+        &lt;PartnerIdentityProvider Name="http://adfs01.mysite.com/adfs/services/trust"
+                            OverridePendingAuthnRequest="true"
+                                 Description="MVC Example Identity Provider"
+                                 SignAuthnRequest="false"
+                                 SignLogoutRequest="true"
+                                 SignLogoutResponse="true"
+                                 WantSAMLResponseSigned="false"
+                                 WantAssertionSigned="false"
+                                 WantAssertionEncrypted="false"
+                                 SingleSignOnServiceUrl="https://adfs01.mysite.com/adfs/ls"
+                                 SingleLogoutServiceUrl="https://adfs01.mysite.com/adfs/ls"
+                                 PartnerCertificateFile="Certificates\idp.cer"/&gt;
+
+</pre>
+			</div>
+			</div>
+			</div>
+			</li>
+		</ul><p>Если включен флаг SignLogoutRequest или SignLogoutResponse, то добавьте в файловую систему, в которой находится приложение Creatio, приватный ключ сертификата шифрования в формате .*pfx. Укажите путь к файлу, а также пароль в файлах конфигурации saml.config и убедитесь, что пользователь, под которым запущено приложение, имеет права на чтение файла. Важно, чтобы сертификат был физически добавлен в корневую папку сайта и в папку Terrasoft.WebApp.</p>
+
+		<div class="code">
+		<div class="code__widgets">
+		<div class="code__source">
+		<pre class="prettyprint">
+LocalCertificateFile="sp.pfx"
+LocalCertificatePassword="password"
+</pre>
+		</div>
+		</div>
+		</div>
+
+		<div class="media">
+		<div class="media__caption">Рис. 10 — Настройка шифрования SAML-пакета</div>
+
+		<div class="media__element"><img alt="" data-entity-type="file" data-entity-uuid="" height="481" src="../../../../../../sites/default/files/images/Setup_and_Administration/adfs_integration/scr_chapter_single_sign_on_adfs_add_private_key.png" width="1354" /></div>
+		</div>
+		</li>
+	</ol></li>
+	<li><strong>Включите использование SSO-провайдера в Creatio</strong>. После указания настроек SAML-провайдера необходимо включить использование SAML SSO в Creatio. Для этого внесите необходимые настройки в <strong>web.config</strong> в корневой папке сайта:
+	<ol><li>Включите использование SSO Auth-провайдеров при выполнении авторизации в Creatio:
+		<ul><li><strong>SsoAuthProvider</strong> — провайдер входа в основное приложение.</li>
+			<li><strong>SSPSsoAuthProvider</strong> — провайдер входа на портал.
+			<p>Указывать можно оба провайдера или только один, который нужен в конкретном случае.</p>
+
+			<div class="code">
+			<div class="code__widgets">
+			<div class="code__source">
+			<pre class="prettyprint">
+&lt;terrasoft&gt; &lt;authproviderNames="InternalUserPassword,SSPUserPassword,SsoAuthProvider,SSPSsoAuthProvider" autoLoginProviderNames="" defLanguage="en-US" defWorkspaceName="Default" useIPRestriction="false" loginTimeout="30000"&gt; &lt;providers&gt;
+</pre>
+			</div>
+			</div>
+			</div>
+			</li>
+		</ul></li>
+		<li>
+		<p>Укажите, какой из провайдеров идентификации, указанных в saml.config, нужно использовать по умолчанию в Service Provider initiated SSO-сценариях. В web.config App Loader задайте параметр PartnerIdP значением из строки Issuer URL в saml.config, например:</p>
+
+		<div class="code">
+		<div class="code__widgets">
+		<div class="code__source">
+		<pre class="prettyprint">
+&lt;appSettings&gt;  
+
+... 
+
+&lt;add key="PartnerIdP" value="http://adfs01.mysite.com/adfs/services/trust"/&gt;  
+
+...  
+
+&lt;/appSettings&gt;
+</pre>
+		</div>
+		</div>
+		</div>
+		</li>
+	</ol></li>
+	<li>
+	<p><strong>Проверьте базовый сценарий </strong>Identity Provider (IdP) initiated SSO, чтобы убедиться в корректности настроек:</p>
+
+	<ul><li>
+		<p>Переход на страницу доверенных приложений IdP (ссылка по умолчанию: https://sts.contoso.com/adfs/ls/idpinitiatedsignon.aspx).</p>
+		</li>
+		<li>
+		<p>Выполнение авторизации.</p>
+		</li>
+		<li>
+		<p>Переход на Creatio c результатом авторизации на IdP.</p>
+
+		<p>До включения провайдера SSO на стороне Creatio по умолчанию используйте для проверки корректности настроек IdP initiated сценарий. До выполнения проверки убедитесь, что в Creatio содержится активная учетная запись, логин которой совпадает с NameId, передаваемым Identity Provider. В противном случае процесс SSO настройки не будет успешно завершен, поскольку не удастся сопоставить пользователя из домена с пользователем в Creatio. Как только вход через SSO будет выполнен успешно, перейдите к дальнейшим настройкам.</p>
+		</li>
+	</ul></li>
+	<li><strong>Настройте Just-In-Time User Provisioning (JIT)</strong>. Функциональность Just-In-Time User Provisioning дополняет технологию единого входа. Она позволяет не только создать пользователя при первом входе в приложение, но и при каждом входе обновлять данные на странице контакта данными, полученными от провайдера идентификации. Подробнее читайте в статье <a href="../nastrojka_jit_provisioning/nastroit_just_in_time_user_provisioning.html">Настроить Just-In-Time User Provisioning</a>.
+	<ol><li>В web.config в корневой папке приложения добавьте настройки для JIT.
+		<div class="code">
+		<div class="code__widgets">
+		<div class="code__source">
+		<pre class="prettyprint">
+&lt;add name="UseJit" value="true" /&gt;
+</pre>
+		</div>
+		</div>
+		</div>
+
+		<p>Тип пользователя определяется страницей, с которой им был выполнен вход в систему. Если для входа используется сценарий Identity Provider initiated, то необходимо явно указать значение DefUserType:</p>
+
+		<ul><li>
+			<p><strong>General</strong> — обычный пользователь.</p>
+			</li>
+			<li>
+			<p><strong>SSP</strong> — пользователь портала.</p>
+			</li>
+		</ul></li>
+		<li>Настройте сопоставление полей из SAML Assertion с колонками в Creatio в справочнике <span class="key">Преобразователь SAML атрибута в название поля контакта</span>. Это необходимо для корректного заполнения полей контакта при создании нового пользователя с помощью Just-In-Time User Provisioning. Если поле пусто или отсутствует в данных провайдера идентификации, оно может быть заполнено значением, указанным в поле <span class="key">Значение по умолчанию</span> справочника. При следующем входе пользователя поля контакта, указанные в справочнике, будут заполнены значением, полученным из провайдера, или актуальным значением по умолчанию.
+		<div class="message">
+		<p><span class="message__bold">На заметку.</span> Если справочника нет в списке справочников, то его необходимо зарегистрировать.</p>
+		</div>
+		</li>
+	</ol></li>
+	<li>
+	<p><strong>Включите использование SSO-провайдера по умолчанию</strong> при входе на сайт. Рекомендуем выполнять действие только в случае успешного выполнения предыдущих шагов и проверки корректности работы. После успешного выполнения этого шага будет доступен для использования Service Provider (SP) initiated SSO.</p>
+
+	<p>Стандартный сценарий Service Provider (SP) initiated:</p>
+
+	<ul><li>Переход на Creatio, у пользователя нет активной сессии на сайте.</li>
+		<li>Переадресация на IdP, выполнение авторизации.</li>
+		<li>Переход на Creatio c результатом авторизации из IdP.</li>
+	</ul><p>Для включения провайдера SSO по умолчанию:</p>
+
+	<ol><li>Укажите в корневом web.config ресурс по умолчанию NuiLogin.aspx?use_sso=true.
+		<div class="message">
+		<p><span class="message__bold">На заметку.</span> Для возможности входа с использованием логина/пароля остается доступной прямая ссылка https://site01.creatio.com/Login/NuiLogin.aspx?</p>
+
+		<p>Для тестирования работы SSO до включения по умолчанию можно использовать ссылку https://site01.creatio.com/NuiLogin.aspx?use_sso=true\</p>
+		</div>
+		</li>
+		<li>Установите отправку к провайдеру идентификации при переходе в корень сайта в корневом web.config:
+		<div class="code">
+		<div class="code__widgets">
+		<div class="code__source">
+		<pre class="prettyprint">
+&lt;defaultDocument&gt; &lt;files&gt; &lt;add value="Login/NuiLogin.aspx?use_sso=true" /&gt; &lt;/files&gt; &lt;/defaultDocument&gt; 
+
+&lt;authentication mode="Forms"&gt;
+        &lt;forms loginUrl="~/Login/NuiLogin.aspx?use_sso=true ...
+&lt;/authentication&gt;</pre>
+		</div>
+		</div>
+		</div>
+		</li>
+		<li>Включите Single Log Out в web.config в папке Terrasoft.WebApp:
+		<div class="code">
+		<div class="code__widgets">
+		<div class="code__source">
+		<pre class="prettyprint">
+&lt;add key="UseSlo" value="true" /&gt;</pre>
+		</div>
+		</div>
+		</div>
+		</li>
+		<li>Укажите в web.config в папке Terrasoft.WebApp ресурс для перенаправления при истечении активной сессии:
+		<div class="code">
+		<div class="code__widgets">
+		<div class="code__source">
+		<pre class="prettyprint">
+&lt;authentication mode="Forms"&gt;
+        &lt;forms loginUrl="~/../Login/NuiLogin.aspx?use_sso=true...
+&lt;/authentication&gt;</pre>
+		</div>
+		</div>
+		</div>
+		</li>
+		<li>Для использования технологии единого входа в мобильном приложении установите признак <span class="key">Значение по умолчанию</span> в системной настройке “Использовать SSO в мобильном приложении” (код “MobileUseSSO”).</li>
+	</ol></li>
+</ol></div>
+</div>
+
+<div class="block-collapse">
+<h3 class="block-collapse__title">.Net Core<a class="title-anchor" href="#title-2449-5" id="title-2449-5"> </a></h3>
+
+<div class="block-collapse__content">
+<ol><li><strong>Заполните настройки SAML-провайдера</strong>, указав данные SAML-провайдера идентификации в <strong>saml.json</strong>.
+
+	<ol><li>
+		<p>В параметре Name укажите FQDN вашего сайта.</p>
+
+		<div class="message message_warning">
+		<p><span class="message__bold message__bold_warning">Важно.</span> Значение параметра ServiceProvider Name должно быть идентично значению Identifier, указанному на стороне провайдера идентификации ADFS. Таким образом выполняется проверка, что SAML Assertion выдан именно для вашего приложения. Для этого удобнее использовать FQDN вашего сайта, например, https://site01.creatio.com/Demo_161215/. Обратите внимание, URL должен совпадать полностью, включая “/” в конце.</p>
+		</div>
+		</li>
+		<li>В секции Partner Identity Provider укажите настройки со стороны IdP. Эти настройки можно посмотреть в файле метаданных.
+		<ul><li><strong>WantAssertionSigned</strong> — укажите “false”, если не будет использоваться сертификат шифрования при обмене SALM Assertion.
+			<div class="code">
+			<div class="code__widgets">
+			<div class="code__source">
+			<pre class="prettyprint">
+"WantLogoutRequestSigned":false</pre>
+			</div>
+			</div>
+			</div>
+			</li>
+			<li><strong>SingleSignOnServiceUrl</strong> — URL сервиса единого входа провайдера. Для ADFS, как правило, это: https://adfs01.mysite.com/adfs/ls.
+			<div class="code">
+			<div class="code__widgets">
+			<div class="code__source">
+			<pre class="prettyprint">
+"SingleSignOnServiceUrl":"https://adfs01.mysite.com/adfs/ls"</pre>
+			</div>
+			</div>
+			</div>
+			</li>
+			<li><strong>SingleLogoutServiceUrl</strong> — URL сервиса единого входа провайдера. Для ADFS, как правило, это: https://adfs01.mysite.com/adfs/ls.
+			<div class="code">
+			<div class="code__widgets">
+			<div class="code__source">
+			<pre class="prettyprint">
+"SingleLogoutServiceUrl":"https://adfs01.mysite.com/adfs/ls"</pre>
+			</div>
+			</div>
+			</div>
+			</li>
+			<li><strong>PartnerCertificates</strong> — путь к сертификату безопасности в формате .*cer в файловой системе сервера относительно корня приложения Creatio. Нужно задавать, если WantAssertionSigned="true".
+			<div class="code">
+			<div class="code__widgets">
+			<div class="code__source">
+			<pre class="prettyprint">
+"PartnerCertificates":[
+   {
+      "FileName":"adfs_sandbox.cer"
+   }
+</pre>
+			</div>
+			</div>
+			</div>
+			</li>
+			<li><strong>SignLogoutRequest</strong> – укажите “true” для ADFS, поскольку подписывание LogoutRequest обязательно. Если установлено значение “true”, то необходимо указать сертификат для формирования подписи в параметре LocalCertificateFile.
+			<div class="code">
+			<div class="code__widgets">
+			<div class="code__source">
+			<pre class="prettyprint">
+"SignLogoutRequest":true</pre>
+			</div>
+			</div>
+			</div>
+			</li>
+			<li><strong>SignLogoutResponse</strong> — укажите “true” для ADFS, поскольку подписывание LogoutResponse обязательно. Если установлено значение “true”, то необходимо указать сертификат для формирования подписи в параметре LocalCertificateFile.
+			<div class="code">
+			<div class="code__widgets">
+			<div class="code__source">
+			<pre class="prettyprint">
+"SignLogoutResponse":true</pre>
+			</div>
+			</div>
+			</div>
+			</li>
+		</ul></li>
+	</ol></li>
+	<li>Если включен флаг SignLogoutRequest или SignLogoutResponse, то добавьте в файловую систему, в которой находится приложение Creatio, приватный ключ сертификата шифрования в формате .*pfx. Укажите путь к файлу, а также пароль в файле конфигурации saml.json, и убедитесь, что пользователь, под которым запущено приложение, имеет права на чтение файла. Важно, чтобы сертификат был физически добавлен в корневую папку сайта и в папку Terrasoft.WebApp.
+	<div class="code">
+	<div class="code__widgets">
+	<div class="code__source">
+	<pre class="prettyprint">
+"...""LocalCertificates":[
+   {
+"FileName":"sp.pfx",
+"Password":"password"}
+]"..."</pre>
+	</div>
+	</div>
+	</div>
+	</li>
+	<li><strong>Включите использование SSO-провайдера в Creatio</strong>. После указания настроек SAML-провайдера необходимо включить использование SAML SSO в Creatio. Для этого внесите необходимые настройки в <strong>Terrasoft.WebHost.dll.config</strong> в корневой папке сайта:
+	<ol><li>Включите использование SSO Auth-провайдеров при выполнении авторизации в Creatio:
+		<ul><li><strong>SsoAuthProvider</strong> — провайдер входа в основное приложение.</li>
+			<li><strong>SSPSsoAuthProvider</strong> — провайдер входа на портал.
+			<p>Указывать можно оба провайдера или только один, который нужен в конкретном случае.</p>
+
+			<div class="code">
+			<div class="code__widgets">
+			<div class="code__source">
+			<pre class="prettyprint">
+"...
+
+&lt;auth providerNames=""LdapProvider,InternalUserPassword,SSPUserPassword,SsoAuthProvider,SSPSsoAuthProvider""autoLoginProviderNames=""""defLanguage=""en-US""defWorkspaceName=""Default""useIPRestriction=""false""loginTimeout=""30000""&gt;
+
+..."</pre>
+			</div>
+			</div>
+			</div>
+			</li>
+		</ul></li>
+		<li>
+		<p>Укажите, какой из провайдеров идентификации, указанных в saml.json, нужно использовать по умолчанию в Service Provider initiated SSO-сценариях. В <strong>Terrasoft.WebHost.dll.config</strong> задайте параметр PartnerIdP значением из строки Issuer URL в saml.json, например:</p>
+
+		<div class="code">
+		<div class="code__widgets">
+		<div class="code__source">
+		<pre class="prettyprint">
+"...""PartnerName":"http://adfs.sandbox.local/adfs/services/trust",
+"..."</pre>
+		</div>
+		</div>
+		</div>
+		</li>
+	</ol></li>
+	<li>
+	<p><strong>Проверьте базовый сценарий</strong> Identity Provider (IdP) initiated SSO, чтобы убедиться в корректности настроек:</p>
+
+	<ul><li>
+		<p>Переход на страницу доверенных приложений IdP (ссылка по умолчанию: https://sts.contoso.com/adfs/ls/idpinitiatedsignon.aspx).</p>
+		</li>
+		<li>
+		<p>Выполнение авторизации.</p>
+		</li>
+		<li>
+		<p>Переход на Creatio c результатом авторизации на IdP.</p>
+
+		<p>До включения провайдера SSO на стороне Creatio по умолчанию используйте для проверки корректности настроек IdP initiated сценарий. До выполнения проверки убедитесь, что в Creatio содержится активная учетная запись, логин которой совпадает с NameId, передаваемым Identity Provider. В противном случае процесс SSO настройки не будет успешно завершен, поскольку не удастся сопоставить пользователя из домена с пользователем в Creatio. Как только вход через SSO будет выполнен успешно, перейдите к дальнейшим настройкам.</p>
+		</li>
+	</ul></li>
+	<li><strong>Настройте Just-In-Time User Provisioning (JIT)</strong>. Функциональность Just-In-Time User Provisioning дополняет технологию единого входа. Она позволяет не только создать пользователя при первом входе в приложение, но и при каждом входе обновлять данные на странице контакта данными, полученными от провайдера идентификации. Подробнее читайте в статье <a href="../nastrojka_jit_provisioning/nastroit_just_in_time_user_provisioning.html">Настроить Just-In-Time User Provisioning</a>.
+	<ol><li>В <strong>Terrasoft.WebHost.dll.config</strong> в корневой папке приложения добавьте настройки для JIT (включается для пользователей системы в настройках SsoAuthProvider и для пользователей портала в настройках SSPSsoAuthProvider):
+		<div class="code">
+		<div class="code__widgets">
+		<div class="code__source">
+		<p>...</p>
+
+		<p>&lt;provider name="<strong>SsoAuthProvider</strong>" type="Terrasoft.Authentication.Core.SSO.BaseSsoAuthProvider, Terrasoft.Authentication"&gt;<br />
+		&lt;parameters&gt;<br />
+		&lt;add name="UserType" value="General" /&gt;<br />
+		&lt;add name="<strong>UseJit</strong>" value="<strong>true</strong>" /&gt;<br />
+		&lt;/parameters&gt;<br />
+		&lt;/provider&gt;<br />
+		&lt;provider name="<strong>SSPSsoAuthProvider</strong>" type="Terrasoft.Authentication.Core.SSO.BaseSsoAuthProvider, Terrasoft.Authentication"&gt;<br />
+		&lt;parameters&gt;<br />
+		&lt;add name="UserType" value="SSP" /&gt;<br />
+		&lt;add name="<strong>UseJit</strong>" value="<strong>true</strong>" /&gt;<br />
+		&lt;/parameters&gt;</p>
+
+		<p>...</p>
+		</div>
+		</div>
+		</div>
+
+		<p>Тип пользователя определяется страницей, с которой им был выполнен вход в систему. Если для входа используется сценарий Identity Provider initiated, то необходимо явно указать значение DefUserType:</p>
+
+		<ul><li>
+			<p><strong>General</strong> — обычный пользователь.</p>
+			</li>
+			<li>
+			<p><strong>SSP</strong> — пользователь портала.</p>
+			</li>
+		</ul></li>
+		<li>Настройте сопоставление полей из SAML Assertion с колонками в Creatio в справочнике <span class="key">Преобразователь SAML атрибута в название поля контакта</span>. Это необходимо для корректного заполнения полей контакта при создании нового пользователя с помощью Just-In-Time User Provisioning. Если поле пусто или отсутствует в данных провайдера идентификации, оно может быть заполнено значением, указанным в поле <span class="key">Значение по умолчанию</span> справочника. При следующем входе пользователя поля контакта, указанные в справочнике, будут заполнены значением, полученным из провайдера, или актуальным значением по умолчанию.
+		<div class="message">
+		<p><span class="message__bold">На заметку.</span> Если справочника нет в списке справочников, то его необходимо зарегистрировать.</p>
+		</div>
+		</li>
+	</ol></li>
+	<li>
+	<p><strong>Включите использование SSO-провайдера по умолчанию</strong> при входе на сайт. Рекомендуем выполнять действие только в случае успешного выполнения предыдущих шагов и проверки корректности работы. После успешного выполнения этого шага будет доступен для использования Service Provider (SP) initiated SSO.</p>
+
+	<p>Стандартный сценарий Service Provider (SP) initiated:</p>
+
+	<ul><li>Переход на Creatio, у пользователя нет активной сессии на сайте.</li>
+		<li>Переадресация на IdP, выполнение авторизации.</li>
+		<li>Переход на Creatio c результатом авторизации из IdP.</li>
+	</ul><p>Для включения провайдера SSO по умолчанию:</p>
+
+	<ol><li>Укажите в файле saml.json UseSsoByDefault": "true".
+		<div class="message">
+		<p><span class="message__bold">На заметку.</span> Для возможности входа с использованием логина/пароля остается доступной прямая ссылка https://site01.creatio.com/Login/NuiLogin.aspx?</p>
+
+		<p>Для тестирования работы SSO до включения по умолчанию можно использовать ссылку https://site01.creatio.com/NuiLogin.aspx?use_sso=true\</p>
+		</div>
+		</li>
+		<li>Установите отправку к провайдеру идентификации при переходе в корень сайта в <strong>Terrasoft.WebHost.dll.config</strong>:
+		<div class="code">
+		<div class="code__widgets">
+		<div class="code__source">
+		<pre class="prettyprint">
+&lt;defaultDocument&gt; &lt;files&gt; &lt;add value="Login/NuiLogin.aspx?use_sso=true" /&gt; &lt;/files&gt; &lt;/defaultDocument&gt; 
+
+	&lt;authentication mode="Forms"&gt;
+        &lt;forms loginUrl="~/Login/NuiLogin.aspx?use_sso=true ...
+	&lt;/authentication&gt;</pre>
+		</div>
+		</div>
+		</div>
+		</li>
+		<li>Включите Single Log Out в <strong>Terrasoft.WebHost.dll.config</strong>:
+		<div class="code">
+		<div class="code__widgets">
+		<div class="code__source">
+		<pre class="prettyprint">
+&lt;add key="UseSlo" value="true" /&gt;</pre>
+		</div>
+		</div>
+		</div>
+		</li>
+		<li>Укажите в <strong>Terrasoft.WebHost.dll.config</strong> ресурс для перенаправления при истечении активной сессии:
+		<div class="code">
+		<div class="code__widgets">
+		<div class="code__source">
+		<pre class="prettyprint">
+&lt;authentication mode="Forms"&gt;
+	&lt;forms loginUrl="~/../Login/NuiLogin.aspx?use_sso=true...
+&lt;/authentication&gt;</pre>
+		</div>
+		</div>
+		</div>
+		</li>
+		<li>Для использования технологии единого входа в мобильном приложении установите признак <span class="key">Значение по умолчанию</span> в системной настройке “Использовать SSO в мобильном приложении” (код “MobileUseSSO”).</li>
+	</ol></li>
+</ol></div>
+</div>
+</div>
+      
+  </div>
+<div class="block block-layout-builder block-field-blocknodeuser-documentationfield-linked-link">
+  
+    
+      
+  <div class="field field--name-field-linked-link field--type-link field--label-above">
+    <div class="field__label">Смотрите также</div>
+          <div class="field__items">
+              <div class="field__item"><a href="../nastrojka_sso_cherez_onelogin/nastroit_single_sign_on_cherez_onelogin.html">Настроить Single Sign-On через OneLogin</a></div>
+          <div class="field__item"><a href="../nastrojka_jit_provisioning/nastroit_just_in_time_user_provisioning.html">Настроить Just-In-Time User Provisioning</a></div>
+              </div>
+      </div>
+
+  </div>
+
+    </div>
+  </div>
+
+  </div>
+
+</article>
+
+  </div>
+
+  </div>
+
+          </div>
+        </div>
+
+                  <aside class="creatio-sidebar creatio-sidebar_first" role="complementary">
+              <div class="region region-sidebar-first">
+    <div id="block-documentationnaviagtion" class="block block-ts-nav block-ts-nav-doc-nav">
+  
+    
+      <div class="ts-nav-block"><a href="../../../../../../index.html" class="ts-nav-block__link">Документация</a><div class="ts-nav-block__title">Для пользователя</div>
+</div>
+<div class="ts-nav-container"><ul class="ts-nav-menu"><li class="ts-nav-menu__item">
+  <a href="../../../../nocode_platforma.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">No-сode платформа&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../../bazis_platformy.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Базис платформы&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../../instrumenty_crm.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Инструменты CRM&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../../instrumenty_kastomizacii.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Инструменты кастомизации&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../../biznes_processy.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Бизнес-процессы&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../../instrumenty_marketinga.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Инструменты маркетинга&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../../instrumenty_prodazh.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Инструменты продаж&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../../instrumenty_servisa.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Инструменты сервиса&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../../ustanovka_i_administrirovanie.html" class="ts-nav-menu__link ts-nav-menu__link_expanded ts-nav-menu__link_open" hreflang="zxx">Администрирование&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+      <ul class="ts-nav-menu__children">
+      <li class="ts-nav-menu__item">
+  <a href="../../../upravlenie_polzovateljami_i_dostupom.html" class="ts-nav-menu__link ts-nav-menu__link_expanded ts-nav-menu__link_open" hreflang="zxx">Пользователи и доступ&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+      <ul class="ts-nav-menu__children">
+      <li class="ts-nav-menu__item">
+  <a href="../../autentifikaciya_v_prilojenii.html" class="ts-nav-menu__link ts-nav-menu__link_expanded ts-nav-menu__link_open" hreflang="ru">Аутентификация в приложении&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+      <ul class="ts-nav-menu__children">
+      <li class="ts-nav-menu__item">
+  <a href="nastroit_single_sign_on_cherez_adfs.html" class="ts-nav-menu__link ts-nav-menu__link_active ts-nav-menu__link_open" hreflang="ru">Настройка SSO через ADFS</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../nastrojka_sso_cherez_onelogin/nastroit_single_sign_on_cherez_onelogin.html" class="ts-nav-menu__link" hreflang="ru">Настройка SSO через OneLogin</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../nastrojka_jit_provisioning/nastroit_just_in_time_user_provisioning.html" class="ts-nav-menu__link" hreflang="ru">Настройка JIT Provisioning</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../autentifikacija_windows/autentifikaciya_windows.html" class="ts-nav-menu__link" hreflang="ru">Аутентификация Windows</a>
+  </li>
+
+    </ul>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../sinhronizaciya_polzovatelej_s_ldap.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Синхронизация пользователей с LDAP&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../upravleniye_polzovateliami.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Управление пользователями&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../upravleniye_dostupom.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Управление доступом&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+
+    </ul>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../sistemnye_nastrojki_i_spravochniki.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Системные настройки и справочники&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../instrumenty_logirovanija.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Инструменты логирования&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../licenzirovanie.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Лицензирование&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../nastrojka_bazovyh_intgracij.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Настройка базовых интеграций&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../nactrojka_domena_email_rassylok.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Настройка домена для рассылок&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../nastrojki_bezopasnosti.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Настройки безопасности&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../obsluzhivanie_prilozhenija.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Обслуживание приложения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+
+    </ul>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../../razvertyvanie_onsite.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Развертывание on-site&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../../banki_i_finansy.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Банки и финансы&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../../drugie_reshenija.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Другие решения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+</ul>
+</div>
+
+  </div>
+
+  </div>
+
+            <div class="creatio-sidebar__toggle"></div>
+          </aside>
+        
+                  <aside class="creatio-sidebar creatio-sidebar_second" role="complementary">
+              <div class="region region-sidebar-second">
+    <div id="block-example" class="block block-ts-nav block-ts-nav-page-nav">
+  
+    
+        <div class="ts-nav-title">Настройка SSO через ADFS</div>
+<div class="ts-nav-page">
+      <ul class="ts-nav-page__list">
+                                                <li class="ts-nav-page__item ts-nav-page__item_expanded ts-nav-page__item_open"><a href="nastroit_single_sign_on_cherez_adfs.html" class="ts-nav-page__link ts-nav-page__link_expanded ts-nav-page__link_active">Настроить Single Sign-On через ADFS&nbsp;<span class="ts-nav-page__link-arrow"></span></a></li>
+          </ul>
+  </div>
+
+  </div>
+<div id="block-adminfeedbackblock" class="block block-admin-feedback block-admin-feedback-block">
+  
+    
+      <div id="feedback-message"><div id="upper-feedback-content"><h2>Был ли данный материал полезен?</h2>
+<input class="feedback-btn feedback-btn__yes button js-form-submit form-submit" data-node-id="2449" data-feedback="yes" type="submit" name="op" value="Да" />
+<input class="feedback-btn feedback-btn__no button js-form-submit form-submit" data-node-id="2449" data-feedback="no" type="submit" name="op" value="Нет" />
+</div>
+<form class="admin-feedback-form" data-drupal-selector="admin-feedback-form" action="https://academy.terrasoft.ua/docs/7-18/user/ustanovka_i_administrirovanie/upravlenie_polzovateljami_i_dostupom/autentifikaciya_v_prilojenii/nastrojka_sso_cherez_adfs/nastroit_single_sign_on_cherez_adfs" method="post" id="admin-feedback-form" accept-charset="UTF-8">
+  <div id="feedback-msg-result"></div><div class="js-form-item form-item js-form-type-textarea form-type-textarea js-form-item-feedback-message form-item-feedback-message form-no-label">
+        <div class="form-textarea-wrapper">
+  <textarea id="edit-feedback-msg" data-drupal-selector="edit-feedback-message" name="feedback_message" rows="5" cols="60" class="form-textarea resize-vertical"></textarea>
+</div>
+
+        </div>
+<input id="feedback-id" data-drupal-selector="edit-feedback-id" type="hidden" name="feedback_id" value="" />
+<input class="feedback-btn feedback-btn__send-comment button js-form-submit form-submit" data-drupal-selector="edit-feedback-send" type="submit" id="edit-feedback-send" name="op" value="Отправить" />
+<input autocomplete="off" data-drupal-selector="form-5bb5qgobk-8g6ffl9gvoegsocapwkktiyg-tmkqchpo" type="hidden" name="form_build_id" value="form-5bB5QGobk-8g6FFL9gvOegSocaPwKkTiyG_TMkqcHPo" />
+<input data-drupal-selector="edit-admin-feedback-form" type="hidden" name="form_id" value="admin_feedback_form" />
+
+</form>
+</div>
+
+  </div>
+
+  </div>
+
+          </aside>
+              </main>
+    </div>
+  </div>
+
+  <footer role="contentinfo">
+    <div class="creatio-region creatio-region_footer">
+      <div class="creatio-container">
+          <div class="region region-footer">
+    <div id="block-footerua" class="block block-simple-block block-simple-blockfooter-ua">
+  
+    
+      <div class="footer">
+<div class="footer-left">
+<ul class="footer-socials"><li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_fb" href="https://www.facebook.com/terrasoft.ua" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_in" href="https://www.linkedin.com/company/terrasoft/" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_yt" href="https://www.youtube.com/c/TerrasoftUkraine" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_tg" href="https://t.me/Terrasoft_UA" target="_blank"> </a></li>
+</ul></div>
+
+<div class="footer-contact">
+<div class="footer-title">Будьте на связи!</div>
+
+<div class="footer-content">
+<div class="footer-items">
+<div class="footer-item"><a class="footer__link footer__link_phone" href="tel:+380443633133">+38 (044) 363-31-33</a></div>
+</div>
+
+<div class="footer-items">
+<div class="footer-item"><a class="footer__link footer__link_email" href="mailto:support@terrasoft.ua">support@terrasoft.ua</a></div>
+</div>
+</div>
+</div>
+</div>
+
+  </div>
+
+  </div>
+
+      </div>
+    </div>
+    <div class="creatio-region creatio-region_bottom">
+      <div class="creatio-container">
+          <div class="region region-bottom">
+    <div id="block-allrightsreservedua" class="block block-simple-block block-simple-blockfooter-bottom-ua">
+  
+    
+      <p>© 2002-2022 Terrasoft.  |  <a href="https://www.terrasoft.ua/privacy-policy" target="_blank">Конфиденциальность</a></p>
+
+  </div>
+
+  </div>
+
+      </div>
+    </div>
+  </footer>
+</div>
+<div class="creatio-bg"></div>
+
+
+  </div>
+
+    
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/docs\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/2449","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"ru"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"ajaxPageState":{"libraries":"admin_feedback\/admin_feedback_block,admin_feedback\/admin_feedback_css,classy\/base,classy\/messages,classy\/node,core\/drupal.ajax,core\/jquery.form,core\/normalize,creatio\/creatio.lists,creatio\/fancybox,creatio\/global,layout_discovery\/onecol,system\/base,ts_doc\/doc_version,ts_feedback\/ts_feedback,ts_nav\/breadcrumb,ts_nav\/doc_nav,ts_nav\/page_nav,ts_title_anchor\/ts_title_anchor","theme":"creatio","theme_token":null},"ajaxTrustedUrl":{"form_action_p_pvdeGsVG5zNF_XLGPTvYSKCf43t8qZYSwcfZl2uzM":true,"\/docs\/7-18\/user\/ustanovka_i_administrirovanie\/upravlenie_polzovateljami_i_dostupom\/autentifikaciya_v_prilojenii\/nastrojka_sso_cherez_adfs\/nastroit_single_sign_on_cherez_adfs?ajax_form=1":true},"admin_feedback":{"yes_response":"\u0421\u043f\u0430\u0441\u0438\u0431\u043e \u0437\u0430 \u043e\u0431\u0440\u0430\u0442\u043d\u0443\u044e \u0441\u0432\u044f\u0437\u044c!","no_response":"\u0421\u043f\u0430\u0441\u0438\u0431\u043e \u0437\u0430 \u043e\u0431\u0440\u0430\u0442\u043d\u0443\u044e \u0441\u0432\u044f\u0437\u044c!","custom_text_response_on_no":{"value":"","format":"full_html"},"feedback_prompt_on_yes":true,"feedback_prompt_on_no":true,"feedback_enable_predefined_answers":false,"feedback_prompt":"\u041a\u0430\u043a \u043c\u043e\u0436\u043d\u043e \u0443\u043b\u0443\u0447\u0448\u0438\u0442\u044c \u044d\u0442\u0443 \u0441\u0442\u0430\u0442\u044c\u044e?"},"ajax":{"edit-feedback-send":{"callback":"::validateFeedbackMsg","event":"mousedown","keypress":true,"prevent":"click","url":"\/docs\/7-18\/user\/ustanovka_i_administrirovanie\/upravlenie_polzovateljami_i_dostupom\/autentifikaciya_v_prilojenii\/nastrojka_sso_cherez_adfs\/nastroit_single_sign_on_cherez_adfs?ajax_form=1","dialogType":"ajax","submit":{"_triggering_element_name":"op","_triggering_element_value":"\u041e\u0442\u043f\u0440\u0430\u0432\u0438\u0442\u044c"}}},"user":{"uid":0,"permissionsHash":"9c2367dfcaba0fa15f0375f97aed64e146c908cee68508d13b79e3ee80e5162d"}}</script>
+<script src="../../../../../../sites/default/files/js/js_F2-Y4EzgTnESr58XByoLYEnsbi7ysTfMIKN1RvsMSWY.js"></script>
+
+
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+      <g id="svg-copy" class="svg-icon svg-icon_copy">
+        <path d="M15.111,18H1.889A1.848,1.848,0,0,1,0,16.2V3.6A1.848,1.848,0,0,1,1.889,1.8H5.837a2.87,2.87,0,0,1,5.326,0h3.948A1.848,1.848,0,0,1,17,3.6V16.2A1.848,1.848,0,0,1,15.111,18ZM3.777,12.6v1.8h6.611V12.6Zm0-3.6v1.8h9.445V9Zm0-3.6V7.2h9.445V5.4ZM8.5,1.8a.924.924,0,0,0-.944.9.945.945,0,0,0,1.889,0A.924.924,0,0,0,8.5,1.8Z"/>
+      </g>
+
+      <g id="svg-prev" class="svg-icon svg-icon_arrow">
+        <path d="M5.488,12.779,0,6.39,5.488,0" transform="translate(1 0.652)"/>
+      </g>
+
+      <g id="svg-next" class="svg-icon svg-icon_arrow">
+        <path d="M0,12.779,5.488,6.39,0,0" transform="translate(0.759 0.652)"/>
+      </g>
+    </svg>
+  </body>
+
+<!-- Mirrored from academy.terrasoft.ua/docs/7-18/user/ustanovka_i_administrirovanie/upravlenie_polzovateljami_i_dostupom/autentifikaciya_v_prilojenii/nastrojka_sso_cherez_adfs/nastroit_single_sign_on_cherez_adfs by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Mar 2022 03:23:47 GMT -->
+</html>

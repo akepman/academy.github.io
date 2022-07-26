@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# ">
+  
+<!-- Mirrored from academy.terrasoft.ua/docs/7-16/developer/back_end_razrabotka/avtomaticheskaya_privyazka_dannykh/obzor by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Mar 2022 03:21:07 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+          <!-- Google Tag Manager -->
+      <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          '../../../../../../www.googletagmanager.com/gtm5445.html?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-KLLB8G');</script>
+      <!-- End Google Tag Manager -->
+        <meta charset="utf-8" />
+<link rel="canonical" href="obzor.html" />
+<meta name="description" content="Автоматическая привязка данных позволяет в автоматическом режиме создать привязки данных объектов со сложной объектной моделью. В Creatio автоматическая привязка данных доступна к использованию для каталога продуктов в продуктах линейки Financial Services Creatio." />
+<meta property="og:url" content="https://academy.terrasoft.ua/docs/7-16/developer/back_end_razrabotka/avtomaticheskaya_privyazka_dannykh/obzor" />
+<meta property="og:title" content="Автоматическая привязка данных" />
+<meta property="og:description" content="Автоматическая привязка данных позволяет в автоматическом режиме создать привязки данных объектов со сложной объектной моделью. В Creatio автоматическая привязка данных доступна к использованию для каталога продуктов в продуктах линейки Financial Services Creatio." />
+<meta name="Generator" content="Drupal 9 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="../../../../themes/custom/creatio/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="revision" href="obzor.html" />
+
+    <title>Автоматическая привязка данных | Creatio Academy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&amp;family=Open+Sans:ital,wght@0,300;0,400;0,600;1,400&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" media="all" href="../../../../sites/default/files/css/css_6lTP66__-yc6QXFp1zOwoeJ0HVigoYZP-SeoLLii000.css" />
+<link rel="stylesheet" media="all" href="../../../../sites/default/files/css/css_XQJDNhkF3xH5SZCcY-PI89Zu4nYIzQ5oR3SnUKyfXJU.css" />
+<link rel="stylesheet" media="print" href="../../../../sites/default/files/css/css_Zn4VHvcniOOtUwkIVwXzYr_0AI9gUVgZcPqaH4ViagU.css" />
+
+    
+  </head>
+  <body class="path-node page-node-type-developer-documentation">
+          <!-- Google Tag Manager (noscript) -->
+      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KLLB8G"
+                        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+      <!-- End Google Tag Manager (noscript) -->
+    
+        
+      <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    <div class="creatio-page d-flex flex-column">
+        <div class="region region-informer">
+    <div id="block-terrasoftpidtrimueukrainu" class="block block-simple-block block-simple-blockterrasoft-pidtrimue-ukrainu">
+  
+    
+      <style type="text/css">
+<!--/*--><![CDATA[/* ><!--*/
+@import url(../../../../../../www.terrasoft.ua/themes/custom/creatio/css/components/informer.css)
+
+/*--><!]]>*/
+</style><div class="ts-swu">
+<div class="creatio-container">
+<div class="ts-swu__cont">
+<div><a class="ts-swu__link" href="https://www.terrasoft.ua/terrasoft-stands-with-ukraine" target="_blank">Україна понад усе!</a> <span><a href="https://www.terrasoft.ua/terrasoft-stands-with-ukraine" target="_blank">Приєднуйтеся</a> до допомоги!</span></div>
+</div>
+</div></div>
+
+  </div>
+
+  </div>
+
+  
+  <header role="banner">
+          <div class="creatio-region creatio-region_top">
+        <div class="creatio-container">
+            <div class="region region-top">
+    <div id="block-menutoggle" class="block block-simple-block block-simple-blockmenu-toggle">
+  
+    
+      <div class="menu-toggle"><span> </span></div>
+
+  </div>
+<div id="block-logowhite-2" class="block block-simple-block block-simple-blocklogo-white">
+  
+    
+      <p><a class="site-logo" href="../../../../../index.html" rel="home"><img src="../../../../themes/custom/creatio/logo-white.svg" /></a></p>
+
+  </div>
+<div id="block-search" class="block block-simple-block block-simple-blocksearch">
+  
+    
+      <div class="search">
+<form action="https://academy.terrasoft.ua/search" class="search-form" method="get"><input class="search-form__input" name="search" placeholder="Поиск" type="search" /><input class="search-form__button" type="submit" value="Поиск" /> </form>
+
+<div class="search-toggle"> </div>
+</div>
+
+  </div>
+<nav role="navigation" aria-labelledby="block-sitesua-menu" id="block-sitesua" class="block block-menu navigation menu--sites-ua">
+            
+  <h2 class="visually-hidden" id="block-sitesua-menu">Sites UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="https://www.terrasoft.ua/" rel="nofollow" target="_blank">Terrasoft</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://community.terrasoft.ua/" rel="nofollow" target="_blank">Community</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://marketplace.terrasoft.ua/" rel="nofollow" target="_blank">Marketplace</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+<div id="block-usermenu" class="block block-ts-user block-ts-user-menu-block">
+  
+    
+      <ul class="user-menu">
+      <li class="user-menu__item">
+      <a class="user-menu__link" href="https://profile.terrasoft.ua/user/login?destination=academy/ua/docs/7-16/developer/back_end_razrabotka/avtomaticheskaya_privyazka_dannykh/obzor">Войти</a>
+    </li>
+  </ul>
+
+  </div>
+<div id="block-usermenumobile" class="block block-ts-user block-ts-user-menu-mobile-block">
+  
+    
+      <ul class="user-menu-mobile">
+      <li class="user-menu-mobile__item">
+      <div class="user-menu-mobile__user user-menu-mobile__user_icon"></div>
+      <ul class="user-menu-mobile__submenu">
+        <li class="user-menu-mobile__subitem">
+          <a class="user-menu-mobile__sublink" href="https://profile.terrasoft.ua/user/login?destination=academy/ua/docs/7-16/developer/back_end_razrabotka/avtomaticheskaya_privyazka_dannykh/obzor">Войти</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  </div>
+
+  </div>
+
+        </div>
+      </div>
+              <div class="creatio-region creatio-region_header">
+        <div class="creatio-container">
+            <div class="region region-header">
+    <div id="block-logo" class="block block-simple-block block-simple-blocklogo">
+  
+    
+      <p><a class="site-logo" href="../../../../../index.html" rel="home"><img src="../../../../themes/custom/creatio/logo.svg" /></a></p>
+
+  </div>
+<nav role="navigation" aria-labelledby="block-osnovnayanavigaciyaua-menu" id="block-osnovnayanavigaciyaua" class="block block-menu navigation menu--main-ua">
+            
+  <h2 class="visually-hidden" id="block-osnovnayanavigaciyaua-menu">Основная навигация UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="../../../../index.html" data-drupal-link-system-path="&lt;front&gt;">Документация</a>
+              </li>
+                <li class="menu-item">
+        <a href="../../../../../trainings.html">Тренинги</a>
+              </li>
+                <li class="menu-item">
+        <a href="../../../../certification.html" data-drupal-link-system-path="node/3084">Сертификация и тестирование</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+<nav role="navigation" aria-labelledby="block-sitesua-2-menu" id="block-sitesua-2" class="block block-menu navigation menu--sites-ua">
+            
+  <h2 class="visually-hidden" id="block-sitesua-2-menu">Sites UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="https://www.terrasoft.ua/" rel="nofollow" target="_blank">Terrasoft</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://community.terrasoft.ua/" rel="nofollow" target="_blank">Community</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://marketplace.terrasoft.ua/" rel="nofollow" target="_blank">Marketplace</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+
+  </div>
+
+        </div>
+      </div>
+              <div class="creatio-region creatio-region_breadcrumb">
+        <div class="creatio-container">
+            <div class="region region-breadcrumb">
+    <div id="block-logowhite" class="block block-simple-block block-simple-blocklogo-white">
+  
+    
+      <p><a class="site-logo" href="../../../../../index.html" rel="home"><img src="../../../../themes/custom/creatio/logo-white.svg" /></a></p>
+
+  </div>
+<div id="block-breadcrumbnaviagtion" class="block block-ts-nav block-ts-nav-bread">
+  
+    
+      <nav class="breadcrumb"><ol class="ts-nav-breadcrumb__list"><li class="ts-nav-breadcrumb__item"><a href="../../../../index.html" class="ts-nav-breadcrumb__link" title="Документация">Документация</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../../index2132.html?vid_1=2" class="ts-nav-breadcrumb__link" title="Для разработчика">Для разработчика</a></li>
+<li class="ts-nav-breadcrumb__item ts-nav-breadcrumb__item_mobile"><a href="../../back_end_razrabotka.html" class="ts-nav-breadcrumb__link" title="Back-end разработка" hreflang="zxx">Back-end разработка</a></li>
+<li class="ts-nav-breadcrumb__item"><span class="ts-nav-breadcrumb__link ts-nav-breadcrumb__link_current" title="Обзор">Обзор</span></li>
+</ol>
+</nav>
+
+  </div>
+<div id="block-search-2" class="block block-simple-block block-simple-blocksearch">
+  
+    
+      <div class="search">
+<form action="https://academy.terrasoft.ua/search" class="search-form" method="get"><input class="search-form__input" name="search" placeholder="Поиск" type="search" /><input class="search-form__button" type="submit" value="Поиск" /> </form>
+
+<div class="search-toggle"> </div>
+</div>
+
+  </div>
+
+  </div>
+
+        </div>
+      </div>
+      </header>
+
+  <div class="creatio-region creatio-region_main">
+    <div class="creatio-container">
+                <div class="region region-breadcrumb-mobile">
+    <div id="block-breadcrumbnaviagtion-2" class="block block-ts-nav block-ts-nav-bread">
+  
+    
+      <nav class="breadcrumb"><ol class="ts-nav-breadcrumb__list"><li class="ts-nav-breadcrumb__item"><a href="../../../../index.html" class="ts-nav-breadcrumb__link" title="Документация">Документация</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../../index2132.html?vid_1=2" class="ts-nav-breadcrumb__link" title="Для разработчика">Для разработчика</a></li>
+<li class="ts-nav-breadcrumb__item ts-nav-breadcrumb__item_mobile"><a href="../../back_end_razrabotka.html" class="ts-nav-breadcrumb__link" title="Back-end разработка" hreflang="zxx">Back-end разработка</a></li>
+<li class="ts-nav-breadcrumb__item"><span class="ts-nav-breadcrumb__link ts-nav-breadcrumb__link_current" title="Обзор">Обзор</span></li>
+</ol>
+</nav>
+
+  </div>
+
+  </div>
+
+      
+      <main class="creatio-main" role="main">
+                                                    
+        <div class="creatio-content creatio-content_small">
+          <div class="creatio-content__inner creatio-content__inner_bg">
+                            <div class="region region-messages">
+    <div data-drupal-messages-fallback class="hidden"></div>
+
+  </div>
+
+            
+              <div class="region region-content">
+    <div id="block-creatio-page-title" class="block block-core block-page-title-block">
+  
+    
+      
+  <h1 class="page-title"><span class="field field--name-title field--type-string field--label-hidden">Автоматическая привязка данных</span>
+</h1>
+
+
+  </div>
+<div id="block-creatio-content" class="block block-system block-system-main-block">
+  
+    
+      
+<article data-history-node-id="2962" role="article" about="/docs/7-16/developer/back_end_razrabotka/avtomaticheskaya_privyazka_dannykh/obzor" class="node node--type-developer-documentation node--view-mode-full">
+
+  
+    
+
+  
+  <div class="node__content">
+      <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocknodedeveloper-documentationfield-difficulty">
+  
+    
+      
+            <div class="field field--name-field-difficulty field--type-entity-reference field--label-hidden field__item"><div about="/docs/7-16/taxonomy/term/169" id="taxonomy-term-169" class="taxonomy-term vocabulary-difficulty">
+  
+  
+  <div class="content">
+      <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocktaxonomy-termdifficultyfield-icon">
+  
+    
+      
+            <div class="field field--name-field-icon field--type-image field--label-hidden field__item">  <img src="../../../../sites/default/files/difficulty/advanced.svg" alt="" loading="lazy" typeof="foaf:Image" />
+
+</div>
+      
+  </div>
+<div class="block block-layout-builder block-field-blocktaxonomy-termdifficultyname">
+  
+    
+      
+            <div class="field field--name-name field--type-string field--label-hidden field__item"><span style="color: #EF4524;">Сложный</span></div>
+      
+  </div>
+
+    </div>
+  </div>
+
+  </div>
+</div>
+</div>
+      
+  </div>
+<div class="block block-ts-doc block-ts-doc-downloads">
+  
+    
+      <a href="../../../../sites/default/files/pdf/node/2962/Avtomaticheskaya_privyazka_dannykh_.pdf" target="_blank">PDF</a>
+  </div>
+<div class="block block-ts-doc block-ts-doc-versions">
+  
+    
+        <div class="ts-doc-versions">
+    <select class="ts-doc-versions__select">
+                              <option value="/docs/8-0/developer/back_end_razrabotka/avtomaticheskaya_privyazka_dannykh/obzor">Версия 8.0</option>
+                              <option value="/docs/7-18/developer/back_end_razrabotka/avtomaticheskaya_privyazka_dannykh/obzor">Версия 7.18</option>
+                              <option value="/docs/7-17/developer/back_end_razrabotka/avtomaticheskaya_privyazka_dannykh/obzor">Версия 7.17</option>
+                                                <option value="/docs/7-16/developer/back_end_razrabotka/avtomaticheskaya_privyazka_dannykh/obzor" selected>Версия 7.16</option>
+          </select>
+  </div>
+
+  </div>
+
+    </div>
+  </div>
+  <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocknodedeveloper-documentationbody">
+  
+    
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><p><strong>Автоматическая привязка данных</strong> позволяет в автоматическом режиме создать привязки данных объектов со сложной объектной моделью. В Creatio автоматическая привязка данных доступна к использованию для <a href="../../../../user/banki_i_finansy/finansovye_produkty/katalog_bankovskih_produktov.html">каталога продуктов</a> в продуктах линейки Financial Services Creatio.</p>
+
+<h2>Структура автоматической привязки данных <a class="title-anchor" href="#title-2962-1" id="title-2962-1"> </a></h2>
+
+<p><strong>Составляющие</strong> автоматической привязки данных представлены в таблице.</p>
+
+<div class="table">
+<div class="table__caption">Составляющие автоматической привязки данных</div>
+
+<table><thead><tr><th>Название</th>
+			<th>Назначение</th>
+			<th>Классы и интерфейсы</th>
+		</tr></thead><tbody><tr><th>Сервис</th>
+			<td>По заданной структуре запускает генерацию привязок данных. Генерация выполняется в <a href="../operatsii_s_dannymi_back_end/fonovoe_vypolnenie_operacij/obzor.html">фоновом режиме</a>.</td>
+			<td><span class="filled">Service</span> — интерфейс для вызова автоматической привязки данных из front-end части.</td>
+		</tr><tr><th>Контроллер</th>
+			<td>Обращение к классам <span class="filled">Obtainer</span> (получение структуры связанных записей) и <span class="filled">Manufacturer</span> (генерация привязок данных).</td>
+			<td><span class="filled">Controller</span> — класс для управления созданием привязок данных.</td>
+		</tr><tr><th>Генератор привязок</th>
+			<td>Является оберткой ядрового класса <span class="filled">PackageElementUtilities</span>, представляет собой удобный интерфейс для выполнения CRUD-операций с привязками данных. Операции с данными описаны в статьях <a href="../../../../developer/back_end_razrabotka/operatsii_s_dannymi_back_end/orm/obzor.html">Доступ к данным через ORM</a> и <a href="../../../../developer/back_end_razrabotka/operatsii_s_dannymi_back_end/pryamoj_dostup/obzor.html">Прямой доступ к данным</a>.</td>
+			<td><span class="filled">Manufacturer</span> — промежуточный класс для взаимодействия между контроллером, классом <span class="filled">PackageElementUtilities</span> и классом <span class="filled">PackageValidator</span>.</td>
+		</tr><tr><th>Получатель структуры</th>
+			<td>Возвращает в контроллер структуру связанных записей для основной сущности.</td>
+			<td><span class="filled">Obtainer</span> — при формировании привязок данных позволяет гибко изменять структуру связанных объектов для основной сущности. Для определения требуемой реализации использует шаблон <span class="filled">Strategy</span>.</td>
+		</tr></tbody></table></div>
+
+<p>В системе реализована <strong>базовая структура</strong>, в которой возвращается только текущая сущность со всеми своими колонками, кроме системных. Свойства базовой структуры представлены в таблице ниже.</p>
+
+<div class="table">
+<div class="table__caption">Свойства базовой структуры связанных сущностей</div>
+
+<table><tbody><tr><th>Свойство</th>
+			<th>Описание</th>
+		</tr><tr><td><span class="filled">EntitySchemaName</span></td>
+			<td>Название сущности.</td>
+		</tr><tr><td><span class="filled">FilterColumnPathes</span></td>
+			<td>Массив путей к первичной колонке основной сущности (при использовании фильтрации выполняется объединение через логический оператор <span class="filled">OR</span>).</td>
+		</tr><tr><td><span class="filled">IsBundle</span></td>
+			<td>
+			<p>Способ сохранения записей.</p>
+
+			<p><strong>Способы</strong> сохранения записей:</p>
+
+			<ul><li>Сохранение записей в одну привязку.</li>
+				<li>Создание по одной привязке на каждую запись, связанную по фильтру с одной записью основной сущности.</li>
+			</ul></td>
+		</tr><tr><td><span class="filled">Columns</span></td>
+			<td>Перечень колонок для привязки.</td>
+		</tr><tr><td><span class="filled">InnerStructures</span></td>
+			<td>Перечень структур вложенных объектов (например, детали, которые относятся к основной сущности).</td>
+		</tr><tr><td><span class="filled">DependsStructures</span></td>
+			<td>Перечень структур, от которых зависит текущая структура (например, справочники, на которые через справочные поля ссылается запись в текущей структуре).</td>
+		</tr></tbody></table></div>
+
+<h2>Алгоритм работы автоматической привязки данных<a class="title-anchor" href="#title-2962-2" id="title-2962-2"> </a></h2>
+
+<p><strong>Алгоритм работы</strong> автоматической привязки данных представлен на рисунке ниже.</p>
+
+<div class="media">
+<div class="media__element"><img src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/AutoBind/7.18/src_AutoBind_diagram.png" /></div>
+</div>
+
+<p>Обработка структуры начинается с основной сущности и выполняется для каждого экземпляра класса структуры <span class="filled">SchemaDataBindingStructure</span>.</p>
+
+<p><strong>Алгоритм обработки структуры</strong>:</p>
+
+<ol><li>Рекурсивно обрабатывается каждая структура перечня структур, которые содержатся в свойстве <span class="filled">DependsStructures</span>. Это выполняется, чтобы при привязке основной сущности все объекты, на которые ссылается текущий, уже были привязаны.</li>
+	<li>По фильтру, который содержится в свойстве <span class="filled">FilterColumnPathes</span>, создается привязка к записи основной сущности.</li>
+	<li>Рекурсивно обрабатывается каждая структура из перечня структур, которые содержатся в свойстве <span class="filled">InnerStructures</span>. Поскольку структуры ссылаются на основную сущность, то их необходимо привязывать после основной сущности.</li>
+</ol><p><strong>Способы именования</strong> автоматических привязок данных:</p>
+
+<ul><li><span class="filled">agb_EntitySchemaName</span>, если свойство <span class="filled">IsBundle</span> установлено в значение <span class="filled">true</span>. <span class="filled">EntitySchemaName</span> — наименование сущности текущей привязки.</li>
+	<li><span class="filled">agb_EntitySchemaName_PrimaryEntityId</span>, если свойство <span class="filled">IsBundle</span> установлено в значение <span class="filled">false</span>. <span class="filled">PrimaryEntityId</span> — идентификатор записи основной сущности, с которой связаны записи в текущей привязке.</li>
+</ul><div class="message message_warning">
+<p><span class="message__bold message__bold_warning">Важно.</span> Не рекомендуется переименовывать автоматически созданные привязки, поскольку автоматически обновляются только привязки, имена которых соответствуют указанному шаблону.</p>
+</div>
+
+<h2>Добавить пользовательскую структуру для привязки объекта<a class="title-anchor" href="#title-2962-3" id="title-2962-3"> </a></h2>
+
+<ol><li>Создайте схему <span class="key">Исходный код</span> (<span class="key">Source code</span>). Для создания схемы воспользуйтесь статьей <a href="../../../../7-17/developer/instrumenty_razrabotki/creatio_ide/razrabotka_konfiguratsionnykh_elementov.html#title-3028-8">Разработка конфигурационных элементов</a>.</li>
+	<li>
+	<p>Создайте класс сервиса.</p>
+
+	<ol><li>В дизайнере схем добавьте пространство имен <span class="filled">Terrasoft.Configuration</span>.</li>
+		<li>Создайте класс. Шаблон названия класса: <span class="filled">[НазваниеСущности]SchemaDataBindingStructureObtainer</span> (например, <span class="filled">ProductSchemaDataBindingStructureObtainer</span>). По указанному шаблону будет выполняться поиск классов при определении используемой реализации получателя (компонент <span class="filled">Obtainer</span>).</li>
+		<li>В качестве родительского класса укажите класс <span class="filled">BaseSchemaDataBindingStructureObtainer</span>.</li>
+		<li>
+		<p>Добавьте пользовательскую реализацию метода интерфейса <span class="filled">ObtainStructure()</span>. В этом методе сформируйте и верните необходимую структуру сущностей.</p>
+
+		<div class="code">
+		<div class="code__widgets">
+		<div class="code__top">
+		<div class="code__title">Метод <span class="filled">ObtainStructure()</span></div>
+		</div>
+
+		<div class="code__source">
+		<pre class="prettyprint">
+public override SchemaDataBindingStructure ObtainStructure(UserConnection userConnection)
+</pre>
+		</div>
+		</div>
+		</div>
+
+		<div class="message message_warning">
+		<p><span class="message__bold message__bold_warning">Важно.</span> При необходимости модификации реализации структуры, которая содержится в недоступных для редактирования пакетах, в пользовательском пакете создайте класс и используйте атрибут <span class="filled">[Override]</span>. Описание атрибута содержится в статье <a href="../fabrika_zameshchayushchikh_klassov/obzor.html#title-2143-6">Атрибут <span class="filled">[Override]</span></a>.</p>
+		</div>
+		</li>
+	</ol></li>
+	<li>Опубликуйте схему исходного кода.</li>
+</ol><h2>Вызвать автоматическую привязку данных<a class="title-anchor" href="#title-2962-6" id="title-2962-6"> </a></h2>
+
+<p>Автоматическую привязку данных можно вызвать из front-end или из back-end части.</p>
+
+<h3>Вызвать автоматическую привязку данных из front-end части<a class="title-anchor" href="#title-2962-7" id="title-2962-7"> </a></h3>
+
+<ol><li>Вызовите сервис генерации привязок.</li>
+	<li>
+	<p>Установите настройки для выполнения генерации привязок.</p>
+
+	<p><strong>Способы</strong> установки настроек для генерации привязок:</p>
+
+	<ul><li>
+		<p>Передайте параметры.</p>
+
+		<ul><li>Пакет для генерации привязки.</li>
+			<li>Название сущности.</li>
+			<li>Перечень идентификаторов для привязки.</li>
+		</ul></li>
+		<li>Передайте фильтр.</li>
+	</ul></li>
+</ol><p>Ниже представлен пример вызова автоматической привязки данных из front-end части с помощью параметров.</p>
+
+<div class="code">
+<div class="code__widgets">
+<div class="code__top">
+<div class="code__title">Пример вызова автоматической привязки данных из front-end части с помощью параметров</div>
+</div>
+
+<div class="code__source">
+<pre class="prettyprint">
+ServiceHelper.callService("SchemaDataBindingService",
+    "GenerateBindings",
+    callback,
+    {
+        "schemaName": this.entitySchemaName,
+        "sysPackageUId": sysPackageUId
+        "recordIds": ["...", "..."]
+    },
+    this
+);
+</pre>
+</div>
+</div>
+</div>
+
+<p>Ниже представлен пример вызова автоматической привязки данных из front-end части с помощью фильтра.</p>
+
+<div class="code">
+<div class="code__widgets">
+<div class="code__top">
+<div class="code__title">Пример вызова автоматической привязки данных из front-end части с помощью фильтра</div>
+</div>
+
+<div class="code__source">
+<pre class="prettyprint">
+ServiceHelper.callService("SchemaDataBindingService",
+    "GenerateBindingsByFilter",
+    callback,
+    {
+        "schemaName": this.entitySchemaName,
+        "sysPackageUId": sysPackageUId
+        "filterConfig": ...
+    },
+    this
+);
+</pre>
+</div>
+</div>
+</div>
+
+<div class="message message_warning">
+<p><span class="message__bold message__bold_warning">Важно.</span> Автоматическая привязка данных, вызванная из front-end части, запускается в фоновом режиме. По выполнению привязки данных на коммуникационной панели отобразится уведомление, которое будет содержать информацию о количестве успешно и неуспешно привязанных записях продуктов.</p>
+</div>
+
+<h3>Вызвать автоматическую привязку данных из back-end части<a class="title-anchor" href="#title-2962-8" id="title-2962-8"> </a></h3>
+
+<ol><li>Создайте экземпляр класса <span class="filled">SchemaDataBindingController</span>.</li>
+	<li>
+	<p>Вызовите метод <span class="filled">GenerateBindings</span>, в который передайте:</p>
+
+	<ul><li>Идентификатор пакета.</li>
+		<li>Название сущности.</li>
+		<li>Перечень идентификаторов для привязки.</li>
+	</ul></li>
+</ol><p>Ниже представлен пример вызова автоматической привязки данных из back-end части.</p>
+
+<div class="code">
+<div class="code__widgets">
+<div class="code__top">
+<div class="code__title">Пример вызова автоматической привязки данных из back-end части</div>
+</div>
+
+<div class="code__source">
+<pre class="prettyprint">
+var dataBindingController = ClassFactory.Get&lt;IDataBindingController&gt;(
+    new ConstructorArgument("userConnection", UserConnection));
+var result = dataBindingController.GenerateBindings(schemaName, recordIds, sysPackageUId);
+</pre>
+</div>
+</div>
+</div>
+</div>
+      
+  </div>
+<div class="block block-layout-builder block-field-blocknodedeveloper-documentationfield-linked">
+  
+    
+      
+  <div class="field field--name-field-linked field--type-entity-reference field--label-above">
+    <div class="field__label">Смотрите также</div>
+          <div class="field__items">
+              <div class="field__item"><a href="../../../../developer/back_end_razrabotka/operatsii_s_dannymi_back_end/orm/obzor.html" hreflang="ru">Доступ к данным через ORM</a></div>
+          <div class="field__item"><a href="../../../../developer/back_end_razrabotka/operatsii_s_dannymi_back_end/pryamoj_dostup/obzor.html" hreflang="ru">Прямой доступ к данным</a></div>
+          <div class="field__item"><a href="../../../../7-17/developer/instrumenty_razrabotki/creatio_ide/razrabotka_konfiguratsionnykh_elementov.html" hreflang="ru">Разработка конфигурационных элементов</a></div>
+          <div class="field__item"><a href="../fabrika_zameshchayushchikh_klassov/obzor.html" hreflang="ru">Фабрика замещающих классов</a></div>
+          <div class="field__item"><a href="../operatsii_s_dannymi_back_end/fonovoe_vypolnenie_operacij/obzor.html" hreflang="ru">Фоновое выполнение операций</a></div>
+              </div>
+      </div>
+
+  </div>
+<div class="block block-layout-builder block-field-blocknodedeveloper-documentationfield-resources">
+  
+    
+      
+  <div class="field field--name-field-resources field--type-link field--label-above">
+    <div class="field__label">Ресурсы</div>
+          <div class="field__items">
+              <div class="field__item"><a href="../../../../user/banki_i_finansy/finansovye_produkty/katalog_bankovskih_produktov.html" target="_blank">Описание каталога продуктов в продуктах линейки Financial Services Creatio</a></div>
+              </div>
+      </div>
+
+  </div>
+
+    </div>
+  </div>
+
+  </div>
+
+</article>
+
+  </div>
+
+  </div>
+
+          </div>
+        </div>
+
+                  <aside class="creatio-sidebar creatio-sidebar_first" role="complementary">
+              <div class="region region-sidebar-first">
+    <div id="block-documentationnaviagtion" class="block block-ts-nav block-ts-nav-doc-nav">
+  
+    
+      <div class="ts-nav-block"><a href="../../../../index.html" class="ts-nav-block__link">Документация</a><div class="ts-nav-block__title">Для разработчика</div>
+</div>
+<div class="ts-nav-container"><ul class="ts-nav-menu"><li class="ts-nav-menu__item">
+  <a href="../../s_chego_nachat.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">С чего начать&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../architecture.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Архитектура&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../instrumenty_razrabotki.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Инструменты разработки&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../back_end_razrabotka.html" class="ts-nav-menu__link ts-nav-menu__link_expanded ts-nav-menu__link_open" hreflang="zxx">Back-end разработка&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+      <ul class="ts-nav-menu__children">
+      <li class="ts-nav-menu__item">
+  <a href="../fabrika_zameshchayushchikh_klassov.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Фабрика замещающих классов&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../back-end_development/operatsii_s_dannymi_back_end.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Операции с данными&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../veb_servisy.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Веб-сервисы&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../biznes_logika_obektov/obzor.html" class="ts-nav-menu__link" hreflang="ru">Бизнес-логика объектов</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../hranilishche_kehsha/obzor.html" class="ts-nav-menu__link" hreflang="ru">Хранилище кэша</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../lokalizuemye_resursy.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Локализуемые ресурсы&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="obzor.html" class="ts-nav-menu__link ts-nav-menu__link_open" hreflang="ru">Автоматическая привязка данных</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../../../api/netcoreapi/7.18.0/api/index.html" class="ts-nav-menu__link" hreflang="ru">Библиотека .NET классов</a>
+  </li>
+
+    </ul>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../front_end_razrabotka.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Front-end разработка&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../integratsiya_i_vneshnij_api.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Интеграция и внешний API&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../ehlementy_interfejsa.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Элементы интерфейса&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../komponenty_prilozheniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Компоненты приложения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../razrabotka_mobilnogo_prilozheniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Разработка мобильного приложения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../razrabotka_marketplace_prilozheniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Разработка Marketplace-приложения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+</ul>
+</div>
+
+  </div>
+
+  </div>
+
+            <div class="creatio-sidebar__toggle"></div>
+          </aside>
+        
+                  <aside class="creatio-sidebar creatio-sidebar_second" role="complementary">
+              <div class="region region-sidebar-second">
+    <div id="block-example" class="block block-ts-nav block-ts-nav-page-nav">
+  
+    
+      <div class="ts-nav-page">
+  </div>
+
+  </div>
+<div id="block-adminfeedbackblock" class="block block-admin-feedback block-admin-feedback-block">
+  
+    
+      <div id="feedback-message"><div id="upper-feedback-content"><h2>Был ли данный материал полезен?</h2>
+<input class="feedback-btn feedback-btn__yes button js-form-submit form-submit" data-node-id="2962" data-feedback="yes" type="submit" name="op" value="Да" />
+<input class="feedback-btn feedback-btn__no button js-form-submit form-submit" data-node-id="2962" data-feedback="no" type="submit" name="op" value="Нет" />
+</div>
+<form class="admin-feedback-form" data-drupal-selector="admin-feedback-form" action="https://academy.terrasoft.ua/docs/7-16/developer/back_end_razrabotka/avtomaticheskaya_privyazka_dannykh/obzor" method="post" id="admin-feedback-form" accept-charset="UTF-8">
+  <div id="feedback-msg-result"></div><div class="js-form-item form-item js-form-type-textarea form-type-textarea js-form-item-feedback-message form-item-feedback-message form-no-label">
+        <div class="form-textarea-wrapper">
+  <textarea id="edit-feedback-msg" data-drupal-selector="edit-feedback-message" name="feedback_message" rows="5" cols="60" class="form-textarea resize-vertical"></textarea>
+</div>
+
+        </div>
+<input id="feedback-id" data-drupal-selector="edit-feedback-id" type="hidden" name="feedback_id" value="" />
+<input class="feedback-btn feedback-btn__send-comment button js-form-submit form-submit" data-drupal-selector="edit-feedback-send" type="submit" id="edit-feedback-send" name="op" value="Отправить" />
+<input autocomplete="off" data-drupal-selector="form-xlprzkhuqkmzgpsrc4oozxkjky6kv8knnkw1fqa-yfe" type="hidden" name="form_build_id" value="form-XLpRZKHUQkMZgPSrc4ooZxKjKy6kv8KNnkW1FQa-YFE" />
+<input data-drupal-selector="edit-admin-feedback-form" type="hidden" name="form_id" value="admin_feedback_form" />
+
+</form>
+</div>
+
+  </div>
+
+  </div>
+
+          </aside>
+              </main>
+    </div>
+  </div>
+
+  <footer role="contentinfo">
+    <div class="creatio-region creatio-region_footer">
+      <div class="creatio-container">
+          <div class="region region-footer">
+    <div id="block-footerua" class="block block-simple-block block-simple-blockfooter-ua">
+  
+    
+      <div class="footer">
+<div class="footer-left">
+<ul class="footer-socials"><li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_fb" href="https://www.facebook.com/terrasoft.ua" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_in" href="https://www.linkedin.com/company/terrasoft/" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_yt" href="https://www.youtube.com/c/TerrasoftUkraine" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_tg" href="https://t.me/Terrasoft_UA" target="_blank"> </a></li>
+</ul></div>
+
+<div class="footer-contact">
+<div class="footer-title">Будьте на связи!</div>
+
+<div class="footer-content">
+<div class="footer-items">
+<div class="footer-item"><a class="footer__link footer__link_phone" href="tel:+380443633133">+38 (044) 363-31-33</a></div>
+</div>
+
+<div class="footer-items">
+<div class="footer-item"><a class="footer__link footer__link_email" href="mailto:support@terrasoft.ua">support@terrasoft.ua</a></div>
+</div>
+</div>
+</div>
+</div>
+
+  </div>
+
+  </div>
+
+      </div>
+    </div>
+    <div class="creatio-region creatio-region_bottom">
+      <div class="creatio-container">
+          <div class="region region-bottom">
+    <div id="block-allrightsreservedua" class="block block-simple-block block-simple-blockfooter-bottom-ua">
+  
+    
+      <p>© 2002-2022 Terrasoft.  |  <a href="https://www.terrasoft.ua/privacy-policy" target="_blank">Конфиденциальность</a></p>
+
+  </div>
+
+  </div>
+
+      </div>
+    </div>
+  </footer>
+</div>
+<div class="creatio-bg"></div>
+
+
+  </div>
+
+    
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/docs\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/2962","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"ru"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"ajaxPageState":{"libraries":"admin_feedback\/admin_feedback_block,admin_feedback\/admin_feedback_css,classy\/base,classy\/messages,classy\/node,core\/drupal.ajax,core\/jquery.form,core\/normalize,creatio\/fancybox,creatio\/global,layout_discovery\/onecol,system\/base,ts_doc\/doc_version,ts_feedback\/ts_feedback,ts_nav\/breadcrumb,ts_nav\/doc_nav,ts_nav\/page_nav,ts_title_anchor\/ts_title_anchor","theme":"creatio","theme_token":null},"ajaxTrustedUrl":{"form_action_p_pvdeGsVG5zNF_XLGPTvYSKCf43t8qZYSwcfZl2uzM":true,"\/docs\/7-16\/developer\/back_end_razrabotka\/avtomaticheskaya_privyazka_dannykh\/obzor?ajax_form=1":true},"admin_feedback":{"yes_response":"\u0421\u043f\u0430\u0441\u0438\u0431\u043e \u0437\u0430 \u043e\u0431\u0440\u0430\u0442\u043d\u0443\u044e \u0441\u0432\u044f\u0437\u044c!","no_response":"\u0421\u043f\u0430\u0441\u0438\u0431\u043e \u0437\u0430 \u043e\u0431\u0440\u0430\u0442\u043d\u0443\u044e \u0441\u0432\u044f\u0437\u044c!","custom_text_response_on_no":{"value":"","format":"full_html"},"feedback_prompt_on_yes":true,"feedback_prompt_on_no":true,"feedback_enable_predefined_answers":false,"feedback_prompt":"\u041a\u0430\u043a \u043c\u043e\u0436\u043d\u043e \u0443\u043b\u0443\u0447\u0448\u0438\u0442\u044c \u044d\u0442\u0443 \u0441\u0442\u0430\u0442\u044c\u044e?"},"ajax":{"edit-feedback-send":{"callback":"::validateFeedbackMsg","event":"mousedown","keypress":true,"prevent":"click","url":"\/docs\/7-16\/developer\/back_end_razrabotka\/avtomaticheskaya_privyazka_dannykh\/obzor?ajax_form=1","dialogType":"ajax","submit":{"_triggering_element_name":"op","_triggering_element_value":"\u041e\u0442\u043f\u0440\u0430\u0432\u0438\u0442\u044c"}}},"user":{"uid":0,"permissionsHash":"9c2367dfcaba0fa15f0375f97aed64e146c908cee68508d13b79e3ee80e5162d"}}</script>
+<script src="../../../../sites/default/files/js/js_Rr-7TvYD7NposuRFJwUqThxM7yJmw8vs03PQwu5gWd8.js"></script>
+
+
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+      <g id="svg-copy" class="svg-icon svg-icon_copy">
+        <path d="M15.111,18H1.889A1.848,1.848,0,0,1,0,16.2V3.6A1.848,1.848,0,0,1,1.889,1.8H5.837a2.87,2.87,0,0,1,5.326,0h3.948A1.848,1.848,0,0,1,17,3.6V16.2A1.848,1.848,0,0,1,15.111,18ZM3.777,12.6v1.8h6.611V12.6Zm0-3.6v1.8h9.445V9Zm0-3.6V7.2h9.445V5.4ZM8.5,1.8a.924.924,0,0,0-.944.9.945.945,0,0,0,1.889,0A.924.924,0,0,0,8.5,1.8Z"/>
+      </g>
+
+      <g id="svg-prev" class="svg-icon svg-icon_arrow">
+        <path d="M5.488,12.779,0,6.39,5.488,0" transform="translate(1 0.652)"/>
+      </g>
+
+      <g id="svg-next" class="svg-icon svg-icon_arrow">
+        <path d="M0,12.779,5.488,6.39,0,0" transform="translate(0.759 0.652)"/>
+      </g>
+    </svg>
+  </body>
+
+<!-- Mirrored from academy.terrasoft.ua/docs/7-16/developer/back_end_razrabotka/avtomaticheskaya_privyazka_dannykh/obzor by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Mar 2022 03:21:09 GMT -->
+</html>

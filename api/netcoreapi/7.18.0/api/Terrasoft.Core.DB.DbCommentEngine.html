@@ -1,0 +1,1676 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  
+<!-- Mirrored from academy.terrasoft.ua/api/netcoreapi/7.18.0/api/Terrasoft.Core.DB.DbCommentEngine.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Mar 2022 03:31:43 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class DbCommentEngine
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class DbCommentEngine
+   ">
+    <meta name="generator" content="docfx 2.58.0.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-default ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="https://academy.terrasoft.ru/docs/developer/back-end_development">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Terrasoft.Core.DB.DbCommentEngine">
+  
+  
+  <h1 id="Terrasoft_Core_DB_DbCommentEngine" data-uid="Terrasoft.Core.DB.DbCommentEngine" class="text-break">Class DbCommentEngine
+  </h1>
+  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><a class="xref" href="Terrasoft.Core.DB.DBEngine.html">DBEngine</a></div>
+    <div class="level2"><span class="xref">DbCommentEngine</span></div>
+      <div class="level3"><a class="xref" href="Terrasoft.DB.Oracle.OracleEngine.html">OracleEngine</a></div>
+      <div class="level3"><a class="xref" href="Terrasoft.DB.PostgreSql.PostgreSqlEngine.html">PostgreSqlEngine</a></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="Terrasoft.Core.DB.DbStructureReader.IDbStructureEngine.html">IDbStructureEngine</a></div>
+    <div><a class="xref" href="Terrasoft.Core.DB.IDbCommentEngine.html">IDbCommentEngine</a></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_TriggerStartBodyDefinitionKeyword">DBEngine.TriggerStartBodyDefinitionKeyword</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_TriggerEndBodyDefinitionKeyword">DBEngine.TriggerEndBodyDefinitionKeyword</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_IntegrityCheckDefinitionKeyword">DBEngine.IntegrityCheckDefinitionKeyword</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_TriggerBeginDefinitionKeyword">DBEngine.TriggerBeginDefinitionKeyword</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_StartCommentKeyword">DBEngine.StartCommentKeyword</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_EndCommentKeyword">DBEngine.EndCommentKeyword</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_SysImageSchemaName">DBEngine.SysImageSchemaName</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_SysImageSchemaPrimaryColumnName">DBEngine.SysImageSchemaPrimaryColumnName</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_NewLineKeyword">DBEngine.NewLineKeyword</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_TabKeyword">DBEngine.TabKeyword</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_StartMultilineCommentKeyword">DBEngine.StartMultilineCommentKeyword</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_EndMultilineCommentKeyword">DBEngine.EndMultilineCommentKeyword</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_DanglingChildSchemaAlias">DBEngine.DanglingChildSchemaAlias</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_DanglingReferenceSchemaAlias">DBEngine.DanglingReferenceSchemaAlias</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine__bitwiseAnd">DBEngine._bitwiseAnd</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine__bitwiseOr">DBEngine._bitwiseOr</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine__bitwiseXor">DBEngine._bitwiseXor</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine__bitwiseNot">DBEngine._bitwiseNot</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine__builderConcatOperation">DBEngine._builderConcatOperation</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine__lengthFunctionName">DBEngine._lengthFunctionName</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine__subStrFunctionName">DBEngine._subStrFunctionName</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine__forceSeekHint">DBEngine._forceSeekHint</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine__rowLockHint">DBEngine._rowLockHint</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine__triggerActions">DBEngine._triggerActions</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_DBMetaScript">DBEngine.DBMetaScript</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine__useOrderNullsPosition">DBEngine._useOrderNullsPosition</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine__useUpperExpressions">DBEngine._useUpperExpressions</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_DBEngineType">DBEngine.DBEngineType</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_NeedWrapInUpperFunction">DBEngine.NeedWrapInUpperFunction</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_CanOrderByMaxSizeTextColumn">DBEngine.CanOrderByMaxSizeTextColumn</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_AllowsMars">DBEngine.AllowsMars</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_IsClusteredIndexAlias">DBEngine.IsClusteredIndexAlias</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_IsConstraintClusteredAlias">DBEngine.IsConstraintClusteredAlias</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_IsCharLengthSemanticsAlias">DBEngine.IsCharLengthSemanticsAlias</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_IndexNameAlias">DBEngine.IndexNameAlias</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_ColumnNameAlias">DBEngine.ColumnNameAlias</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_IsUniqueIndexAlias">DBEngine.IsUniqueIndexAlias</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_ConstraintNameAlias">DBEngine.ConstraintNameAlias</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_IsDescendingIndexAlias">DBEngine.IsDescendingIndexAlias</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_ParentColumnNameAlias">DBEngine.ParentColumnNameAlias</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_ReferencedTableNameAlias">DBEngine.ReferencedTableNameAlias</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_IsCascadeKeyAlias">DBEngine.IsCascadeKeyAlias</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_DataDefaultValueAlias">DBEngine.DataDefaultValueAlias</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_IsNullableColumnAlias">DBEngine.IsNullableColumnAlias</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_DataTypeAlias">DBEngine.DataTypeAlias</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_CharactersMaximumLengthAlias">DBEngine.CharactersMaximumLengthAlias</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_NumericPrecisionAlias">DBEngine.NumericPrecisionAlias</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_NumericScaleAlias">DBEngine.NumericScaleAlias</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_ConstraintTypeAlias">DBEngine.ConstraintTypeAlias</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine__systemPackageName">DBEngine._systemPackageName</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_SystemPackageName">DBEngine.SystemPackageName</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine__coreUtilitiesPackageName">DBEngine._coreUtilitiesPackageName</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_CoreUtilitiesPackageName">DBEngine.CoreUtilitiesPackageName</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_UserConnection">DBEngine.UserConnection</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine__startDelimiter">DBEngine._startDelimiter</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_StartDelimiter">DBEngine.StartDelimiter</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine__endDelimiter">DBEngine._endDelimiter</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_EndDelimiter">DBEngine.EndDelimiter</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine__parameterMarker">DBEngine._parameterMarker</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_ParameterMarker">DBEngine.ParameterMarker</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine__anyStringPatternSymbol">DBEngine._anyStringPatternSymbol</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_AnyStringPatternSymbol">DBEngine.AnyStringPatternSymbol</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine__concatOperation">DBEngine._concatOperation</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_ConcatOperation">DBEngine.ConcatOperation</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine__topStatement">DBEngine._topStatement</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_TopStatement">DBEngine.TopStatement</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine__unicodeDataPrefix">DBEngine._unicodeDataPrefix</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_UnicodeDataPrefix">DBEngine.UnicodeDataPrefix</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_CurrentSchemaName">DBEngine.CurrentSchemaName</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_IsCaseInsensitive">DBEngine.IsCaseInsensitive</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine__isEmptyStringEqualNull">DBEngine._isEmptyStringEqualNull</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_IsEmptyStringEqualNull">DBEngine.IsEmptyStringEqualNull</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine__canDeleteHierarchyCascaded">DBEngine._canDeleteHierarchyCascaded</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_CanDeleteHierarchyCascaded">DBEngine.CanDeleteHierarchyCascaded</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_GetStartCheckIntegrityBlock_System_String_">DBEngine.GetStartCheckIntegrityBlock(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildDateTimeValueSqlText_System_Text_StringBuilder_System_DateTime_">DBEngine.BuildDateTimeValueSqlText(StringBuilder, DateTime)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildDateValueSqlText_System_Text_StringBuilder_System_DateTime_">DBEngine.BuildDateValueSqlText(StringBuilder, DateTime)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildTimeValueSqlText_System_Text_StringBuilder_System_DateTime_">DBEngine.BuildTimeValueSqlText(StringBuilder, DateTime)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildTimeValueSqlText_System_Text_StringBuilder_System_TimeSpan_">DBEngine.BuildTimeValueSqlText(StringBuilder, TimeSpan)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildFloatValueSqlText_System_Text_StringBuilder_System_Double_">DBEngine.BuildFloatValueSqlText(StringBuilder, Double)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildBooleanValueSqlText_System_Text_StringBuilder_System_Boolean_">DBEngine.BuildBooleanValueSqlText(StringBuilder, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildTemporaryTableSourceExpressionSqlText_System_String_">DBEngine.BuildTemporaryTableSourceExpressionSqlText(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildHierarchicalSelectSqlText_System_Text_StringBuilder_Terrasoft_Core_DB_Select_Terrasoft_Core_DB_HierarchicalSelectOptions_">DBEngine.BuildHierarchicalSelectSqlText(StringBuilder, Select, HierarchicalSelectOptions)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildFirstPageWithHierarchySelectSqlText_System_Text_StringBuilder_Terrasoft_Core_DB_Select_Terrasoft_Core_DB_Select_Terrasoft_Core_DB_PageableSelectOptions_Terrasoft_Core_DB_HierarchicalSelectOptions_">DBEngine.BuildFirstPageWithHierarchySelectSqlText(StringBuilder, Select, Select, PageableSelectOptions, HierarchicalSelectOptions)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_GetTriggerTypeName_Terrasoft_Core_DB_TriggerType_">DBEngine.GetTriggerTypeName(TriggerType)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildEditColumnDefinitionSqlText_System_Text_StringBuilder_Terrasoft_Core_Entities_EntitySchema_Terrasoft_Core_Entities_EntitySchemaColumn_">DBEngine.BuildEditColumnDefinitionSqlText(StringBuilder, EntitySchema, EntitySchemaColumn)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_GetLogicalOperationSqlText_LogicalOperation_">DBEngine.GetLogicalOperationSqlText(LogicalOperation)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildCastToTimeSqlText_System_Text_StringBuilder_System_Action_System_Text_StringBuilder__">DBEngine.BuildCastToTimeSqlText(StringBuilder, Action&lt;StringBuilder&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildDateTimeColumnValueToLocalTimeSqlText_System_Text_StringBuilder_System_TimeSpan_Terrasoft_Core_DB_QueryColumnExpression_">DBEngine.BuildDateTimeColumnValueToLocalTimeSqlText(StringBuilder, TimeSpan, QueryColumnExpression)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildDateTimeColumnValueToLocalTimeSqlText_System_Text_StringBuilder_System_String_Terrasoft_Core_DB_QueryColumnExpression_">DBEngine.BuildDateTimeColumnValueToLocalTimeSqlText(StringBuilder, String, QueryColumnExpression)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildJoinsSqlText_System_Text_StringBuilder_Terrasoft_Core_DB_JoinCollection_">DBEngine.BuildJoinsSqlText(StringBuilder, JoinCollection)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildQueryExpressionFullSqlText_System_Text_StringBuilder_Terrasoft_Core_DB_QuerySourceExpression_">DBEngine.BuildQueryExpressionFullSqlText(StringBuilder, QuerySourceExpression)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildConstantGuidValueSqlText_System_Text_StringBuilder_System_Guid_">DBEngine.BuildConstantGuidValueSqlText(StringBuilder, Guid)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildQueryExpressionFullSqlText_System_Text_StringBuilder_Terrasoft_Core_DB_QueryColumnExpression_">DBEngine.BuildQueryExpressionFullSqlText(StringBuilder, QueryColumnExpression)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildQueryHourMinuteFunctionSqlText_System_Text_StringBuilder_Terrasoft_Core_DB_DatePartQueryFunction_">DBEngine.BuildQueryHourMinuteFunctionSqlText(StringBuilder, DatePartQueryFunction)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_PrepareDateTimeColumnValue_System_Text_StringBuilder_Terrasoft_Core_DB_DatePartQueryFunction_">DBEngine.PrepareDateTimeColumnValue(StringBuilder, DatePartQueryFunction)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_PrepareDateTimeColumnValueByTimeZone_System_Text_StringBuilder_Terrasoft_Core_DB_QueryColumnExpression_">DBEngine.PrepareDateTimeColumnValueByTimeZone(StringBuilder, QueryColumnExpression)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildParameterValueSqlText_System_Text_StringBuilder_System_Guid_">DBEngine.BuildParameterValueSqlText(StringBuilder, Guid)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildSequenceArgumentSqlText__1_System_Text_StringBuilder_System_String___0_">DBEngine.BuildSequenceArgumentSqlText&lt;T&gt;(StringBuilder, String, T)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildSequenceArgumentsSqlText_System_Text_StringBuilder_Terrasoft_Core_DB_Sequence_">DBEngine.BuildSequenceArgumentsSqlText(StringBuilder, Sequence)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildIntegrityCheckTriggerInsertNullMetaTagHeder_System_Text_StringBuilder_System_String_">DBEngine.BuildIntegrityCheckTriggerInsertNullMetaTagHeder(StringBuilder, String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildIntegrityCheckTriggerInsertNullMetaTagFooter_System_Text_StringBuilder_System_String_">DBEngine.BuildIntegrityCheckTriggerInsertNullMetaTagFooter(StringBuilder, String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_CheckIsArgumentNull_System_Object_System_String_">DBEngine.CheckIsArgumentNull(Object, String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_CheckIsArgumentNullOrEmpty_System_String_System_String_">DBEngine.CheckIsArgumentNullOrEmpty(String, String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildSelectColumnsSqlText_System_Text_StringBuilder_Terrasoft_Core_DB_QueryColumnExpressionCollection_">DBEngine.BuildSelectColumnsSqlText(StringBuilder, QueryColumnExpressionCollection)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildSchemaColumnNameSqlText_System_Text_StringBuilder_System_String_">DBEngine.BuildSchemaColumnNameSqlText(StringBuilder, String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildQueryExpressionSqlText_System_Text_StringBuilder_Terrasoft_Core_DB_QuerySourceExpression_">DBEngine.BuildQueryExpressionSqlText(StringBuilder, QuerySourceExpression)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildQueryExpressionSqlText_System_Text_StringBuilder_Terrasoft_Core_DB_QueryColumnExpression_">DBEngine.BuildQueryExpressionSqlText(StringBuilder, QueryColumnExpression)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildQueryExpressionSqlText_System_Text_StringBuilder_Terrasoft_Core_DB_QueryColumnExpression_System_Boolean_">DBEngine.BuildQueryExpressionSqlText(StringBuilder, QueryColumnExpression, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildConditionSqlText_System_Text_StringBuilder_Terrasoft_Core_DB_UpdateSelect_">DBEngine.BuildConditionSqlText(StringBuilder, UpdateSelect)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildConditionSqlText_System_Text_StringBuilder_Terrasoft_Core_DB_QueryCondition_System_String_">DBEngine.BuildConditionSqlText(StringBuilder, QueryCondition, String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildQualifyBaseStoredProcedureNameSqlText_System_Text_StringBuilder_System_String_System_String_">DBEngine.BuildQualifyBaseStoredProcedureNameSqlText(StringBuilder, String, String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildQueryColumnNameSqlText_System_Text_StringBuilder_System_String_System_String_">DBEngine.BuildQueryColumnNameSqlText(StringBuilder, String, String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildParameterNameSqlText_System_Text_StringBuilder_System_String_">DBEngine.BuildParameterNameSqlText(StringBuilder, String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildOrderNullsPosition_System_Text_StringBuilder_Terrasoft_Core_DB_OrderByItem_">DBEngine.BuildOrderNullsPosition(StringBuilder, OrderByItem)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildOrderNullsPositionSqlText_System_Text_StringBuilder_OrderDirectionStrict_">DBEngine.BuildOrderNullsPositionSqlText(StringBuilder, OrderDirectionStrict)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildOrderByItemsSqlText_System_Text_StringBuilder_Terrasoft_Core_DB_OrderByItemCollection_">DBEngine.BuildOrderByItemsSqlText(StringBuilder, OrderByItemCollection)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildOrderByItemsSqlText_System_Text_StringBuilder_Terrasoft_Core_DB_Select_">DBEngine.BuildOrderByItemsSqlText(StringBuilder, Select)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildOffsetFetchSqlText_System_Text_StringBuilder_System_Int32_System_Int32_">DBEngine.BuildOffsetFetchSqlText(StringBuilder, Int32, Int32)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildSelectColumnAliasesSqlText_System_Text_StringBuilder_Terrasoft_Core_DB_QueryColumnExpressionCollection_">DBEngine.BuildSelectColumnAliasesSqlText(StringBuilder, QueryColumnExpressionCollection)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildSelectColumnAliasesSqlText_System_Text_StringBuilder_System_String_Terrasoft_Core_DB_QueryColumnExpressionCollection_">DBEngine.BuildSelectColumnAliasesSqlText(StringBuilder, String, QueryColumnExpressionCollection)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildLevelColumnSqlText_System_Text_StringBuilder_System_String_Terrasoft_Core_DB_HierarchicalSelectOptions_">DBEngine.BuildLevelColumnSqlText(StringBuilder, String, HierarchicalSelectOptions)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildQueryExpressionsSqlText_System_Text_StringBuilder_Terrasoft_Core_DB_QueryColumnExpressionCollection_">DBEngine.BuildQueryExpressionsSqlText(StringBuilder, QueryColumnExpressionCollection)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildQueryExpressionsSqlText_System_Text_StringBuilder_Terrasoft_Core_DB_QueryColumnExpressionCollection_System_Boolean_">DBEngine.BuildQueryExpressionsSqlText(StringBuilder, QueryColumnExpressionCollection, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildHintsBeforeColumnsSqlText_System_Text_StringBuilder_Terrasoft_Core_DB_HintCollection_">DBEngine.BuildHintsBeforeColumnsSqlText(StringBuilder, HintCollection)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildBeforeColumnsSqlText_System_Text_StringBuilder_Terrasoft_Core_DB_Select_">DBEngine.BuildBeforeColumnsSqlText(StringBuilder, Select)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildAfterColumnsSqlText_System_Text_StringBuilder_Terrasoft_Core_DB_Select_">DBEngine.BuildAfterColumnsSqlText(StringBuilder, Select)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildBeforeConditionSqlText_System_Text_StringBuilder_Terrasoft_Core_DB_Select_">DBEngine.BuildBeforeConditionSqlText(StringBuilder, Select)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildAfterConditionSqlText_System_Text_StringBuilder_Terrasoft_Core_DB_Select_">DBEngine.BuildAfterConditionSqlText(StringBuilder, Select)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildAdditionalConditionSqlText_System_Text_StringBuilder_Terrasoft_Core_DB_Select_">DBEngine.BuildAdditionalConditionSqlText(StringBuilder, Select)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildTemporaryTableSqlText_System_Text_StringBuilder_Terrasoft_Core_DB_Select_">DBEngine.BuildTemporaryTableSqlText(StringBuilder, Select)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildAfterQuerySqlText_System_Text_StringBuilder_Terrasoft_Core_DB_Select_">DBEngine.BuildAfterQuerySqlText(StringBuilder, Select)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildSelectQuerySqlText_System_Text_StringBuilder_Terrasoft_Core_DB_Select_">DBEngine.BuildSelectQuerySqlText(StringBuilder, Select)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_AddAdditionalSqlInfo_System_Text_StringBuilder_">DBEngine.AddAdditionalSqlInfo(StringBuilder)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildInsertColumnsBlock_System_Text_StringBuilder_Terrasoft_Core_DB_Insert_">DBEngine.BuildInsertColumnsBlock(StringBuilder, Insert)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildInsertColumnValuesSqlText_System_Text_StringBuilder_Terrasoft_Core_DB_Insert_">DBEngine.BuildInsertColumnValuesSqlText(StringBuilder, Insert)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildInsertQuerySqlText_System_Text_StringBuilder_Terrasoft_Core_DB_Insert_">DBEngine.BuildInsertQuerySqlText(StringBuilder, Insert)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildSingleRowInsertContent_System_Text_StringBuilder_Terrasoft_Core_DB_ModifyQueryColumnValueCollection_">DBEngine.BuildSingleRowInsertContent(StringBuilder, ModifyQueryColumnValueCollection)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildInsertQueryValuesSqlText_System_Text_StringBuilder_Terrasoft_Core_DB_ModifyQueryColumnValueCollection_">DBEngine.BuildInsertQueryValuesSqlText(StringBuilder, ModifyQueryColumnValueCollection)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_GetBitwiseNotOperationSqlText_System_Text_StringBuilder_Terrasoft_Core_DB_QueryColumnExpression_">DBEngine.GetBitwiseNotOperationSqlText(StringBuilder, QueryColumnExpression)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_GetBitwiseOperationSqlText_System_Text_StringBuilder_Terrasoft_Core_DB_QueryColumnExpression_">DBEngine.GetBitwiseOperationSqlText(StringBuilder, QueryColumnExpression)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildMultiRowInsertContent_System_Text_StringBuilder_System_Collections_Generic_List_Terrasoft_Core_DB_ModifyQueryColumnValueCollection__">DBEngine.BuildMultiRowInsertContent(StringBuilder, List&lt;ModifyQueryColumnValueCollection&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildInsertValuesBlock_System_Text_StringBuilder_">DBEngine.BuildInsertValuesBlock(StringBuilder)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildInsertHeaderBlock_System_Text_StringBuilder_Terrasoft_Core_DB_Insert_">DBEngine.BuildInsertHeaderBlock(StringBuilder, Insert)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildInsertSelectQuerySqlText_System_Text_StringBuilder_Terrasoft_Core_DB_InsertSelect_">DBEngine.BuildInsertSelectQuerySqlText(StringBuilder, InsertSelect)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildUpdateQuerySqlText_System_Text_StringBuilder_Terrasoft_Core_DB_Update_">DBEngine.BuildUpdateQuerySqlText(StringBuilder, Update)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildUpdateSelectQuerySqlText_System_Text_StringBuilder_Terrasoft_Core_DB_UpdateSelect_">DBEngine.BuildUpdateSelectQuerySqlText(StringBuilder, UpdateSelect)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildModifyQuerySourceSqlText_System_Text_StringBuilder_Terrasoft_Core_DB_ModifyQuerySource_">DBEngine.BuildModifyQuerySourceSqlText(StringBuilder, ModifyQuerySource)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildUpdateSelectTargetSqlText_System_Text_StringBuilder_Terrasoft_Core_DB_ModifyQuerySource_System_String_">DBEngine.BuildUpdateSelectTargetSqlText(StringBuilder, ModifyQuerySource, String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildDeleteQuerySqlText_System_Text_StringBuilder_Terrasoft_Core_DB_Delete_">DBEngine.BuildDeleteQuerySqlText(StringBuilder, Delete)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildCreateColumnDefinitionSqlText_System_Text_StringBuilder_Terrasoft_Core_Entities_EntitySchema_System_String_Terrasoft_Core_Entities_EntitySchemaColumn_System_String_">DBEngine.BuildCreateColumnDefinitionSqlText(StringBuilder, EntitySchema, String, EntitySchemaColumn, String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildCreateNullableColumnDefinitionSqlText_System_Text_StringBuilder_Terrasoft_Core_Entities_EntitySchema_Terrasoft_Core_Entities_EntitySchemaColumn_">DBEngine.BuildCreateNullableColumnDefinitionSqlText(StringBuilder, EntitySchema, EntitySchemaColumn)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildEditNullableColumnDefinitionSqlText_System_Text_StringBuilder_Terrasoft_Core_DB_ColumnAction_">DBEngine.BuildEditNullableColumnDefinitionSqlText(StringBuilder, ColumnAction)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildEditWeakNullableColumnDefinitionSqlText_System_Text_StringBuilder_Terrasoft_Core_Entities_EntitySchema_Terrasoft_Core_Entities_EntitySchemaColumn_System_String_">DBEngine.BuildEditWeakNullableColumnDefinitionSqlText(StringBuilder, EntitySchema, EntitySchemaColumn, String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildDeleteNotNullDefinitionSqlText_System_Text_StringBuilder_System_String_Terrasoft_Core_Entities_EntitySchemaColumn_System_String_">DBEngine.BuildDeleteNotNullDefinitionSqlText(StringBuilder, String, EntitySchemaColumn, String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildCreateColumnsSqlText_System_Text_StringBuilder_Terrasoft_Core_Entities_EntitySchema_System_Collections_Generic_ICollection_Terrasoft_Core_Entities_EntitySchemaColumn__">DBEngine.BuildCreateColumnsSqlText(StringBuilder, EntitySchema, ICollection&lt;EntitySchemaColumn&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildEditColumnsSqlText_System_Text_StringBuilder_Terrasoft_Core_Entities_EntitySchema_System_Collections_Generic_ICollection_Terrasoft_Core_Entities_EntitySchemaColumn__">DBEngine.BuildEditColumnsSqlText(StringBuilder, EntitySchema, ICollection&lt;EntitySchemaColumn&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildIndexColumn_System_Text_StringBuilder_Terrasoft_Core_Entities_EntitySchemaIndexColumn_Terrasoft_Core_DB_IndexAction_">DBEngine.BuildIndexColumn(StringBuilder, EntitySchemaIndexColumn, IndexAction)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildIndexColumns_System_Text_StringBuilder_Terrasoft_Core_DB_IndexAction_">DBEngine.BuildIndexColumns(StringBuilder, IndexAction)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_GetTriggerSuffixName_Terrasoft_Core_DB_TriggerType_">DBEngine.GetTriggerSuffixName(TriggerType)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildDropConstraintSqlText_System_Text_StringBuilder_Terrasoft_Core_DB_ConstraintAction_">DBEngine.BuildDropConstraintSqlText(StringBuilder, ConstraintAction)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_AppendLikeKeyword_System_Text_StringBuilder_">DBEngine.AppendLikeKeyword(StringBuilder)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_IsMaxSizeTextType_Terrasoft_Core_DataValueType_">DBEngine.IsMaxSizeTextType(DataValueType)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_IsLongTextType_Terrasoft_Core_DataValueType_">DBEngine.IsLongTextType(DataValueType)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_CreateCastToShortTextExpression_System_String_">DBEngine.CreateCastToShortTextExpression(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_GetRefreshMaterializedViewSqlText_System_String_">DBEngine.GetRefreshMaterializedViewSqlText(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_CreateUpperTextExpression_Terrasoft_Core_DB_QueryColumnExpression_">DBEngine.CreateUpperTextExpression(QueryColumnExpression)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_InternalBuildDropSequenceQuerySqlText_System_Text_StringBuilder_Terrasoft_Core_DB_Sequence_">DBEngine.InternalBuildDropSequenceQuerySqlText(StringBuilder, Sequence)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildOrderDirectionSqlText_System_Text_StringBuilder_OrderDirection_">DBEngine.BuildOrderDirectionSqlText(StringBuilder, OrderDirection)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildOrderDirectionSqlText_System_Text_StringBuilder_OrderDirectionStrict_">DBEngine.BuildOrderDirectionSqlText(StringBuilder, OrderDirectionStrict)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_NeedCastOrderedTextColumn_Terrasoft_Core_DataValueType_">DBEngine.NeedCastOrderedTextColumn(DataValueType)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_GetBitwiseOperationSqlText_System_String_BitwiseOperation_System_String_">DBEngine.GetBitwiseOperationSqlText(String, BitwiseOperation, String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_GetIsOnlyLikeComparison_Terrasoft_Core_DataValueType_">DBEngine.GetIsOnlyLikeComparison(DataValueType)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildSysSettingsIntegrityCheckModifyTriggerBody_System_Text_StringBuilder_Terrasoft_Core_Entities_EntitySchema_">DBEngine.BuildSysSettingsIntegrityCheckModifyTriggerBody(StringBuilder, EntitySchema)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildNoLockHintSqlText_System_Text_StringBuilder_Terrasoft_Core_DB_NoLockHint_">DBEngine.BuildNoLockHintSqlText(StringBuilder, NoLockHint)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildIndexHintSqlText_System_Text_StringBuilder_Terrasoft_Core_DB_IndexHint_">DBEngine.BuildIndexHintSqlText(StringBuilder, IndexHint)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildQueryFunctionSqlText_System_Text_StringBuilder_Terrasoft_Core_DB_IsNullQueryFunction_">DBEngine.BuildQueryFunctionSqlText(StringBuilder, IsNullQueryFunction)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildQueryFunctionSqlText_System_Text_StringBuilder_Terrasoft_Core_DB_DatePartQueryFunction_">DBEngine.BuildQueryFunctionSqlText(StringBuilder, DatePartQueryFunction)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildQueryFunctionSqlText_System_Text_StringBuilder_Terrasoft_Core_DB_DateAddQueryFunction_">DBEngine.BuildQueryFunctionSqlText(StringBuilder, DateAddQueryFunction)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildQueryFunctionSqlText_System_Text_StringBuilder_Terrasoft_Core_DB_DateDiffQueryFunction_">DBEngine.BuildQueryFunctionSqlText(StringBuilder, DateDiffQueryFunction)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildQueryFunctionSqlText_System_Text_StringBuilder_Terrasoft_Core_DB_CreateGuidQueryFunction_">DBEngine.BuildQueryFunctionSqlText(StringBuilder, CreateGuidQueryFunction)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildQueryFunctionSqlText_System_Text_StringBuilder_Terrasoft_Core_DB_CurrentDateTimeQueryFunction_">DBEngine.BuildQueryFunctionSqlText(StringBuilder, CurrentDateTimeQueryFunction)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildQueryFunctionSqlText_System_Text_StringBuilder_Terrasoft_Core_DB_DataLengthQueryFunction_">DBEngine.BuildQueryFunctionSqlText(StringBuilder, DataLengthQueryFunction)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildQueryFunctionSqlText_System_Text_StringBuilder_Terrasoft_Core_DB_TrimQueryFunction_">DBEngine.BuildQueryFunctionSqlText(StringBuilder, TrimQueryFunction)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildQuerySqlText_System_Text_StringBuilder_Terrasoft_Core_DB_StoredProcedure_">DBEngine.BuildQuerySqlText(StringBuilder, StoredProcedure)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildNextValueSequenceQuerySqlText_System_Text_StringBuilder_Terrasoft_Core_DB_Sequence_">DBEngine.BuildNextValueSequenceQuerySqlText(StringBuilder, Sequence)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildCurrentValueSequenceQuerySqlText_System_Text_StringBuilder_Terrasoft_Core_DB_Sequence_">DBEngine.BuildCurrentValueSequenceQuerySqlText(StringBuilder, Sequence)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildReCreateSequenceQuerySqlText_System_Text_StringBuilder_Terrasoft_Core_DB_Sequence_">DBEngine.BuildReCreateSequenceQuerySqlText(StringBuilder, Sequence)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildExistSequenceQuerySqlText_System_Text_StringBuilder_Terrasoft_Core_DB_Sequence_">DBEngine.BuildExistSequenceQuerySqlText(StringBuilder, Sequence)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildDropSequenceQuerySqlText_System_Text_StringBuilder_Terrasoft_Core_DB_Sequence_">DBEngine.BuildDropSequenceQuerySqlText(StringBuilder, Sequence)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildQuerySqlText_System_Text_StringBuilder_Terrasoft_Core_DB_UserDefinedFunction_">DBEngine.BuildQuerySqlText(StringBuilder, UserDefinedFunction)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildIntegrityCheckDeleteTriggerHeaderBody_System_Text_StringBuilder_">DBEngine.BuildIntegrityCheckDeleteTriggerHeaderBody(StringBuilder)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildIntegrityCheckDeleteTriggerFooterBody_System_Text_StringBuilder_">DBEngine.BuildIntegrityCheckDeleteTriggerFooterBody(StringBuilder)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildIntegrityCheckModifyTriggerHeaderBody_System_Text_StringBuilder_">DBEngine.BuildIntegrityCheckModifyTriggerHeaderBody(StringBuilder)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildIntegrityCheckModifyTriggerModifyBodyCheckForNullColumn_System_Text_StringBuilder_System_String_Terrasoft_Core_Entities_EntitySchemaColumnRequirementType_">DBEngine.BuildIntegrityCheckModifyTriggerModifyBodyCheckForNullColumn(StringBuilder, String, EntitySchemaColumnRequirementType)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildIntegrityCheckModifyTriggerCheckModifyBody_System_Text_StringBuilder_System_String_System_String_System_String_">DBEngine.BuildIntegrityCheckModifyTriggerCheckModifyBody(StringBuilder, String, String, String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildIntegrityCheckModifyTriggerFooterBody_System_Text_StringBuilder_System_String_">DBEngine.BuildIntegrityCheckModifyTriggerFooterBody(StringBuilder, String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildEditIntegrityCheckModifyTriggerCheckModifyBody_System_Text_StringBuilder_System_String_System_String_">DBEngine.BuildEditIntegrityCheckModifyTriggerCheckModifyBody(StringBuilder, String, String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildSysSettingsIntegrityCheckModifyTriggerHeaderBody_System_Text_StringBuilder_">DBEngine.BuildSysSettingsIntegrityCheckModifyTriggerHeaderBody(StringBuilder)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildSysSettingsIntegrityCheckModifyTriggerBody_System_Text_StringBuilder_System_Guid_Terrasoft_Core_Configuration_SysSettingsReferenceSchemaCollection_">DBEngine.BuildSysSettingsIntegrityCheckModifyTriggerBody(StringBuilder, Guid, SysSettingsReferenceSchemaCollection)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildSysSettingsIntegrityCheckDeleteTriggerBody_System_Text_StringBuilder_System_String_System_String_System_Guid_">DBEngine.BuildSysSettingsIntegrityCheckDeleteTriggerBody(StringBuilder, String, String, Guid)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_GetImageLookupAfterInsertUpdateTriggerBody_System_String_">DBEngine.GetImageLookupAfterInsertUpdateTriggerBody(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_GetImageLookupAfterDeleteTriggerBody_System_String_">DBEngine.GetImageLookupAfterDeleteTriggerBody(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_TriggerBodyHasIntegrityCheckBlocks_System_Text_StringBuilder_">DBEngine.TriggerBodyHasIntegrityCheckBlocks(StringBuilder)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_GetIsBinaryDataType_System_String_">DBEngine.GetIsBinaryDataType(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_GetIsEntitySchemaExistSqlText">DBEngine.GetIsEntitySchemaExistSqlText()</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_GetIsNotNullColumnSqlText">DBEngine.GetIsNotNullColumnSqlText()</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_GetColumnQuerySqlText">DBEngine.GetColumnQuerySqlText()</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_GetColumnsQuerySqlText_System_Boolean_">DBEngine.GetColumnsQuerySqlText(Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_GetColumnListQuerySqlText">DBEngine.GetColumnListQuerySqlText()</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_GetConstraintsQuerySqlText">DBEngine.GetConstraintsQuerySqlText()</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_GetConstraintQuerySqlText">DBEngine.GetConstraintQuerySqlText()</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_GetIndexesQuerySqlText">DBEngine.GetIndexesQuerySqlText()</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_GetIndexQuerySqlText">DBEngine.GetIndexQuerySqlText()</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_GetColumnIndexesQuerySqlText">DBEngine.GetColumnIndexesQuerySqlText()</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildNullableColumnDefinitionSqlText_System_Text_StringBuilder_Terrasoft_Core_Entities_EntitySchema_System_String_Terrasoft_Core_Entities_EntitySchemaColumn_System_String_">DBEngine.BuildNullableColumnDefinitionSqlText(StringBuilder, EntitySchema, String, EntitySchemaColumn, String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildCreateWeakNullableSqlText_System_Text_StringBuilder_Terrasoft_Core_Entities_EntitySchema_Terrasoft_Core_Entities_EntitySchemaColumn_System_String_">DBEngine.BuildCreateWeakNullableSqlText(StringBuilder, EntitySchema, EntitySchemaColumn, String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildCreateDefValueSqlText_System_Text_StringBuilder_Terrasoft_Core_Entities_EntitySchema_Terrasoft_Core_Entities_EntitySchemaColumn_">DBEngine.BuildCreateDefValueSqlText(StringBuilder, EntitySchema, EntitySchemaColumn)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_GetEditPrimaryColumnDefinitionSqlText_System_Data_IDataReader_Terrasoft_Core_Entities_EntitySchema_Terrasoft_Core_Entities_EntitySchemaColumn_">DBEngine.GetEditPrimaryColumnDefinitionSqlText(IDataReader, EntitySchema, EntitySchemaColumn)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_GetPrimaryKeyQuerySqlText">DBEngine.GetPrimaryKeyQuerySqlText()</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_GetForeignKeysQuerySqlText">DBEngine.GetForeignKeysQuerySqlText()</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_GetForeignKeyQuerySqlText">DBEngine.GetForeignKeyQuerySqlText()</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_GetTriggerQuerySqlText">DBEngine.GetTriggerQuerySqlText()</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_GetColumnForeignKeyQuerySqlText">DBEngine.GetColumnForeignKeyQuerySqlText()</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_GetPrimaryKeyParameterValue">DBEngine.GetPrimaryKeyParameterValue()</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_GetForeignKeyParameterValue">DBEngine.GetForeignKeyParameterValue()</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_GetIsTextColumnContainGuidQuerySqlText_System_String_System_String_">DBEngine.GetIsTextColumnContainGuidQuerySqlText(String, String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_GetDanglingReferenceQuerySqlText_System_String_System_String_System_String_System_String_System_Boolean_">DBEngine.GetDanglingReferenceQuerySqlText(String, String, String, String, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_GetColumnDefValue_Terrasoft_Core_Entities_EntitySchemaColumn_">DBEngine.GetColumnDefValue(EntitySchemaColumn)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_GetColumnDefValue_Terrasoft_Core_Entities_EntitySchemaColumn_System_Boolean_">DBEngine.GetColumnDefValue(EntitySchemaColumn, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_GetColumnDefValue_Terrasoft_Core_Entities_EntitySchemaColumn_System_String_">DBEngine.GetColumnDefValue(EntitySchemaColumn, String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_GetUpdateSysSolutionRightAfterUnitDeleteSqlText">DBEngine.GetUpdateSysSolutionRightAfterUnitDeleteSqlText()</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_FormatException_System_Data_Common_DbException_">DBEngine.FormatException(DbException)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_GetSysSettingsIntegrityCheckBlockName_System_Guid_">DBEngine.GetSysSettingsIntegrityCheckBlockName(Guid)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_GetSystemValueSqlText_Terrasoft_Core_SystemValue_">DBEngine.GetSystemValueSqlText(SystemValue)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_GetSysSchemaParentsInPackageHierarchySelectSqlText_System_Boolean_">DBEngine.GetSysSchemaParentsInPackageHierarchySelectSqlText(Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_GetDaysOfWeekSqlText">DBEngine.GetDaysOfWeekSqlText()</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_GetWorkspaceIdByNumberSelectSqlText">DBEngine.GetWorkspaceIdByNumberSelectSqlText()</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_GetAppendBlobSqlText_System_String_System_String_">DBEngine.GetAppendBlobSqlText(String, String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_NeedWrapFilterTextInUpperFunction_Terrasoft_Core_Entities_EntitySchemaQueryFilter_">DBEngine.NeedWrapFilterTextInUpperFunction(EntitySchemaQueryFilter)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildDBObjectNameDataValueTypeSqlText_System_Text_StringBuilder_Terrasoft_Core_DBObjectNameDataValueType_">DBEngine.BuildDBObjectNameDataValueTypeSqlText(StringBuilder, DBObjectNameDataValueType)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildTextDataValueTypeSqlText_System_Text_StringBuilder_Terrasoft_Core_TextDataValueType_">DBEngine.BuildTextDataValueTypeSqlText(StringBuilder, TextDataValueType)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildFloatDataValueTypeSqlText_System_Text_StringBuilder_Terrasoft_Core_FloatDataValueType_">DBEngine.BuildFloatDataValueTypeSqlText(StringBuilder, FloatDataValueType)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildBooleanDataValueTypeSqlText_System_Text_StringBuilder_Terrasoft_Core_BooleanDataValueType_">DBEngine.BuildBooleanDataValueTypeSqlText(StringBuilder, BooleanDataValueType)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildDateTimeDataValueTypeSqlText_System_Text_StringBuilder_Terrasoft_Core_DateTimeDataValueType_">DBEngine.BuildDateTimeDataValueTypeSqlText(StringBuilder, DateTimeDataValueType)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildGuidDataValueTypeSqlText_System_Text_StringBuilder_Terrasoft_Core_GuidDataValueType_">DBEngine.BuildGuidDataValueTypeSqlText(StringBuilder, GuidDataValueType)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildBinaryDataValueTypeSqlText_System_Text_StringBuilder_Terrasoft_Core_BinaryDataValueType_">DBEngine.BuildBinaryDataValueTypeSqlText(StringBuilder, BinaryDataValueType)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_IsTextDataValueType_Terrasoft_Core_DB_DbStructureReader_DbColumnDto_">DBEngine.IsTextDataValueType(DbColumnDto)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_IsDbObjectNameDataValueType_Terrasoft_Core_DB_DbStructureReader_DbColumnDto_">DBEngine.IsDbObjectNameDataValueType(DbColumnDto)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_IsIntegerDataValueType_Terrasoft_Core_DB_DbStructureReader_DbColumnDto_">DBEngine.IsIntegerDataValueType(DbColumnDto)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_IsFloatDataValueType_Terrasoft_Core_DB_DbStructureReader_DbColumnDto_">DBEngine.IsFloatDataValueType(DbColumnDto)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_IsBooleanDataValueType_Terrasoft_Core_DB_DbStructureReader_DbColumnDto_">DBEngine.IsBooleanDataValueType(DbColumnDto)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_IsDateTimeDataValueType_Terrasoft_Core_DB_DbStructureReader_DbColumnDto_">DBEngine.IsDateTimeDataValueType(DbColumnDto)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_IsGuidDataValueType_Terrasoft_Core_DB_DbStructureReader_DbColumnDto_">DBEngine.IsGuidDataValueType(DbColumnDto)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_IsMaxSizeText_Terrasoft_Core_DB_DbStructureReader_DbColumnDto_">DBEngine.IsMaxSizeText(DbColumnDto)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_IsUnicodeText_Terrasoft_Core_DB_DbStructureReader_DbColumnDto_">DBEngine.IsUnicodeText(DbColumnDto)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_GetDateTimeValueKind_Terrasoft_Core_DB_DbStructureReader_DbColumnDto_">DBEngine.GetDateTimeValueKind(DbColumnDto)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_InitializeDataValueDbData_Terrasoft_Core_DBObjectNameDataValueType_">DBEngine.InitializeDataValueDbData(DBObjectNameDataValueType)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_InitializeDataValueDbData_Terrasoft_Core_TextDataValueType_">DBEngine.InitializeDataValueDbData(TextDataValueType)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_InitializeDataValueDbData_Terrasoft_Core_IntegerDataValueType_">DBEngine.InitializeDataValueDbData(IntegerDataValueType)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_InitializeDataValueDbData_Terrasoft_Core_FloatDataValueType_">DBEngine.InitializeDataValueDbData(FloatDataValueType)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_InitializeDataValueDbData_Terrasoft_Core_BooleanDataValueType_">DBEngine.InitializeDataValueDbData(BooleanDataValueType)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_InitializeDataValueDbData_Terrasoft_Core_DateTimeDataValueType_">DBEngine.InitializeDataValueDbData(DateTimeDataValueType)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_InitializeDataValueDbData_Terrasoft_Core_TimeDataValueType_">DBEngine.InitializeDataValueDbData(TimeDataValueType)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_InitializeDataValueDbData_Terrasoft_Core_DateDataValueType_">DBEngine.InitializeDataValueDbData(DateDataValueType)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_InitializeDataValueDbData_Terrasoft_Core_GuidDataValueType_">DBEngine.InitializeDataValueDbData(GuidDataValueType)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_InitializeDataValueDbData_Terrasoft_Core_BinaryDataValueType_">DBEngine.InitializeDataValueDbData(BinaryDataValueType)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_Initialize_Terrasoft_Core_UserConnection_Terrasoft_Core_DB_DBConfigurationSectionGroup_">DBEngine.Initialize(UserConnection, DBConfigurationSectionGroup)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_GetContactCounters_System_Guid_">DBEngine.GetContactCounters(Guid)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_IsBinaryDataValueType_Terrasoft_Core_DB_DbStructureReader_DbColumnDto_">DBEngine.IsBinaryDataValueType(DbColumnDto)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_GetColumnsQuerySqlText">DBEngine.GetColumnsQuerySqlText()</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildQueryFunctionSqlText_System_Text_StringBuilder_Terrasoft_Core_DB_ConcatQueryFunction_">DBEngine.BuildQueryFunctionSqlText(StringBuilder, ConcatQueryFunction)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildQueryFunctionSqlText_System_Text_StringBuilder_Terrasoft_Core_DB_SubstringQueryFunction_">DBEngine.BuildQueryFunctionSqlText(StringBuilder, SubstringQueryFunction)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildEditNullableColumnSqlText_System_Text_StringBuilder_System_String_System_String_">DBEngine.BuildEditNullableColumnSqlText(StringBuilder, String, String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildCreateSequenceQuerySqlText_System_Text_StringBuilder_Terrasoft_Core_DB_Sequence_">DBEngine.BuildCreateSequenceQuerySqlText(StringBuilder, Sequence)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildCreateEntitySchemaSqlText_System_Text_StringBuilder_Terrasoft_Core_Entities_EntitySchema_">DBEngine.BuildCreateEntitySchemaSqlText(StringBuilder, EntitySchema)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_GetAdminUnitListQuery_System_Guid_">DBEngine.GetAdminUnitListQuery(Guid)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_GetAdminUnitListWithoutUserTypesQuery_System_Guid_">DBEngine.GetAdminUnitListWithoutUserTypesQuery(Guid)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildEditEntitySchemaSqlText_System_Text_StringBuilder_Terrasoft_Core_DB_EntitySchemaAction_">DBEngine.BuildEditEntitySchemaSqlText(StringBuilder, EntitySchemaAction)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildRenameEntitySchemaSqlText_System_Text_StringBuilder_Terrasoft_Core_DB_EntitySchemaAction_">DBEngine.BuildRenameEntitySchemaSqlText(StringBuilder, EntitySchemaAction)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildDeleteEntitySchemaSqlText_System_Text_StringBuilder_Terrasoft_Core_Entities_EntitySchema_">DBEngine.BuildDeleteEntitySchemaSqlText(StringBuilder, EntitySchema)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildCreateEntitySchemaColumnSqlText_System_Text_StringBuilder_Terrasoft_Core_DB_ColumnAction_">DBEngine.BuildCreateEntitySchemaColumnSqlText(StringBuilder, ColumnAction)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildCreateNullableColumnSqlText_System_Text_StringBuilder_Terrasoft_Core_DB_ColumnAction_">DBEngine.BuildCreateNullableColumnSqlText(StringBuilder, ColumnAction)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildEditEntitySchemaColumnSqlText_System_Text_StringBuilder_Terrasoft_Core_DB_ColumnAction_">DBEngine.BuildEditEntitySchemaColumnSqlText(StringBuilder, ColumnAction)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildEditNullableColumnSqlText_System_Text_StringBuilder_Terrasoft_Core_DB_ColumnAction_">DBEngine.BuildEditNullableColumnSqlText(StringBuilder, ColumnAction)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildRenameEntitySchemaColumnSqlText_System_Text_StringBuilder_Terrasoft_Core_DB_ColumnAction_">DBEngine.BuildRenameEntitySchemaColumnSqlText(StringBuilder, ColumnAction)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildDeleteEntitySchemaColumnSqlText_System_Text_StringBuilder_Terrasoft_Core_DB_ColumnAction_">DBEngine.BuildDeleteEntitySchemaColumnSqlText(StringBuilder, ColumnAction)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildCreateIndexSqlText_System_Text_StringBuilder_Terrasoft_Core_DB_IndexAction_">DBEngine.BuildCreateIndexSqlText(StringBuilder, IndexAction)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildRenameIndexSqlText_System_Text_StringBuilder_Terrasoft_Core_DB_IndexAction_">DBEngine.BuildRenameIndexSqlText(StringBuilder, IndexAction)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildDeleteIndexSqlText_System_Text_StringBuilder_Terrasoft_Core_DB_IndexAction_">DBEngine.BuildDeleteIndexSqlText(StringBuilder, IndexAction)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildCreatePrimaryKeySqlText_System_Text_StringBuilder_Terrasoft_Core_DB_PrimaryKeyAction_">DBEngine.BuildCreatePrimaryKeySqlText(StringBuilder, PrimaryKeyAction)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildCreateForeignKeySqlText_System_Text_StringBuilder_Terrasoft_Core_DB_ForeignKeyAction_">DBEngine.BuildCreateForeignKeySqlText(StringBuilder, ForeignKeyAction)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildCreateDefValueSqlText_System_Text_StringBuilder_Terrasoft_Core_DB_DefValueAction_">DBEngine.BuildCreateDefValueSqlText(StringBuilder, DefValueAction)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildRenameConstraintSqlText_System_Text_StringBuilder_Terrasoft_Core_DB_ConstraintAction_">DBEngine.BuildRenameConstraintSqlText(StringBuilder, ConstraintAction)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildDeleteConstraintSqlText_System_Text_StringBuilder_Terrasoft_Core_DB_ConstraintAction_">DBEngine.BuildDeleteConstraintSqlText(StringBuilder, ConstraintAction)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildDeleteEntitySchemaNotNullConstraintSqlText_System_Text_StringBuilder_Terrasoft_Core_DB_ColumnAction_">DBEngine.BuildDeleteEntitySchemaNotNullConstraintSqlText(StringBuilder, ColumnAction)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildCreateTriggerSqlText_System_Text_StringBuilder_Terrasoft_Core_DB_TriggerAction_">DBEngine.BuildCreateTriggerSqlText(StringBuilder, TriggerAction)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildDeleteTriggerSqlText_System_Text_StringBuilder_Terrasoft_Core_DB_TriggerAction_">DBEngine.BuildDeleteTriggerSqlText(StringBuilder, TriggerAction)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildQueryFunctionSqlText_System_Text_StringBuilder_Terrasoft_Core_DB_LengthQueryFunction_">DBEngine.BuildQueryFunctionSqlText(StringBuilder, LengthQueryFunction)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildQueryFunctionSqlText_System_Text_StringBuilder_Terrasoft_Core_DB_CastQueryFunction_">DBEngine.BuildQueryFunctionSqlText(StringBuilder, CastQueryFunction)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildQueryFunctionSqlText_System_Text_StringBuilder_Terrasoft_Core_DB_CustomQueryFunction_">DBEngine.BuildQueryFunctionSqlText(StringBuilder, CustomQueryFunction)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildQueryFunctionSqlText_System_Text_StringBuilder_Terrasoft_Core_DB_UpperQueryFunction_">DBEngine.BuildQueryFunctionSqlText(StringBuilder, UpperQueryFunction)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_DeleteTriggerCreationKeywords_System_Text_StringBuilder_System_String_System_String_">DBEngine.DeleteTriggerCreationKeywords(StringBuilder, String, String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildEditSysSettingsIntegrityCheckModifyTriggerBody_System_Text_StringBuilder_System_String_System_Guid_Terrasoft_Core_Configuration_SysSettingsReferenceSchemaCollection_">DBEngine.BuildEditSysSettingsIntegrityCheckModifyTriggerBody(StringBuilder, String, Guid, SysSettingsReferenceSchemaCollection)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildEditSysSettingsIntegrityCheckDeleteTriggerBody_System_Text_StringBuilder_System_String_System_String_System_String_System_Guid_">DBEngine.BuildEditSysSettingsIntegrityCheckDeleteTriggerBody(StringBuilder, String, String, String, Guid)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_DeleteSysSettingsIntegrityCheckDeleteTriggerBody_System_Text_StringBuilder_System_String_System_String_">DBEngine.DeleteSysSettingsIntegrityCheckDeleteTriggerBody(StringBuilder, String, String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildParameterValueSqlText_System_Text_StringBuilder_Terrasoft_Core_DataValueType_System_Object_">DBEngine.BuildParameterValueSqlText(StringBuilder, DataValueType, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildParameterNameSqlText_System_Text_StringBuilder_Terrasoft_Core_DB_QueryParameter_">DBEngine.BuildParameterNameSqlText(StringBuilder, QueryParameter)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildSchemaColumnNameSqlText_System_Text_StringBuilder_Terrasoft_Core_Entities_EntitySchemaColumn_">DBEngine.BuildSchemaColumnNameSqlText(StringBuilder, EntitySchemaColumn)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildDataValueTypeSqlText_System_Text_StringBuilder_Terrasoft_Core_Entities_EntitySchemaColumn_">DBEngine.BuildDataValueTypeSqlText(StringBuilder, EntitySchemaColumn)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildQualifySchemaNameSqlText_System_Text_StringBuilder_System_String_System_Boolean_">DBEngine.BuildQualifySchemaNameSqlText(StringBuilder, String, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_GetQualifySchemaObjectNameSqlText_System_String_System_String_">DBEngine.GetQualifySchemaObjectNameSqlText(String, String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildQualifySchemaObjectNameSqlText_System_Text_StringBuilder_System_String_System_String_System_Boolean_">DBEngine.BuildQualifySchemaObjectNameSqlText(StringBuilder, String, String, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildQualifyNameSqlText_System_Text_StringBuilder_System_String_">DBEngine.BuildQualifyNameSqlText(StringBuilder, String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_GetQuerySqlText_Terrasoft_Core_DB_Sequence_System_Action_System_Text_StringBuilder_Terrasoft_Core_DB_Sequence__">DBEngine.GetQuerySqlText(Sequence, Action&lt;StringBuilder, Sequence&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_GetQuerySqlText_Terrasoft_Core_DB_StoredProcedure_">DBEngine.GetQuerySqlText(StoredProcedure)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_GetQuerySqlText_Terrasoft_Core_DB_UserDefinedFunction_">DBEngine.GetQuerySqlText(UserDefinedFunction)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_GetQuerySqlText_Terrasoft_Core_DB_Select_">DBEngine.GetQuerySqlText(Select)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildQuerySqlText_System_Text_StringBuilder_Terrasoft_Core_DB_Select_">DBEngine.BuildQuerySqlText(StringBuilder, Select)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_GetQuerySqlText_Terrasoft_Core_DB_Insert_">DBEngine.GetQuerySqlText(Insert)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildQuerySqlText_System_Text_StringBuilder_Terrasoft_Core_DB_Insert_">DBEngine.BuildQuerySqlText(StringBuilder, Insert)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_GetQuerySqlText_Terrasoft_Core_DB_InsertSelect_">DBEngine.GetQuerySqlText(InsertSelect)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildQuerySqlText_System_Text_StringBuilder_Terrasoft_Core_DB_InsertSelect_">DBEngine.BuildQuerySqlText(StringBuilder, InsertSelect)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_GetQuerySqlText_Terrasoft_Core_DB_Update_">DBEngine.GetQuerySqlText(Update)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildQuerySqlText_System_Text_StringBuilder_Terrasoft_Core_DB_Update_">DBEngine.BuildQuerySqlText(StringBuilder, Update)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_GetQuerySqlText_Terrasoft_Core_DB_UpdateSelect_">DBEngine.GetQuerySqlText(UpdateSelect)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildQuerySqlText_System_Text_StringBuilder_Terrasoft_Core_DB_UpdateSelect_">DBEngine.BuildQuerySqlText(StringBuilder, UpdateSelect)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_GetQuerySqlText_Terrasoft_Core_DB_Delete_">DBEngine.GetQuerySqlText(Delete)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildQuerySqlText_System_Text_StringBuilder_Terrasoft_Core_DB_Delete_">DBEngine.BuildQuerySqlText(StringBuilder, Delete)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_GetQuerySqlText_Terrasoft_Core_DB_Select_Terrasoft_Core_DB_HierarchicalSelectOptions_">DBEngine.GetQuerySqlText(Select, HierarchicalSelectOptions)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_GetQuerySqlText_Terrasoft_Core_DB_Select_Terrasoft_Core_DB_Select_Terrasoft_Core_DB_PageableSelectOptions_Terrasoft_Core_DB_HierarchicalSelectOptions_">DBEngine.GetQuerySqlText(Select, Select, PageableSelectOptions, HierarchicalSelectOptions)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildQueryFunctionSqlText_System_Text_StringBuilder_Terrasoft_Core_DB_AggregationQueryFunction_">DBEngine.BuildQueryFunctionSqlText(StringBuilder, AggregationQueryFunction)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildWindowQueryFunctionSqlText_System_Text_StringBuilder_Terrasoft_Core_DB_WindowQueryFunction_">DBEngine.BuildWindowQueryFunctionSqlText(StringBuilder, WindowQueryFunction)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildQueryFunctionSqlText_System_Text_StringBuilder_Terrasoft_Core_DB_CoalesceQueryFunction_">DBEngine.BuildQueryFunctionSqlText(StringBuilder, CoalesceQueryFunction)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildQueryFunctionSqlText_System_Text_StringBuilder_Terrasoft_Core_DB_RowNumberQueryFunction_">DBEngine.BuildQueryFunctionSqlText(StringBuilder, RowNumberQueryFunction)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildIntegerDataValueTypeSqlText_System_Text_StringBuilder_Terrasoft_Core_IntegerDataValueType_">DBEngine.BuildIntegerDataValueTypeSqlText(StringBuilder, IntegerDataValueType)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildForceSeekHintSqlText_System_Text_StringBuilder_">DBEngine.BuildForceSeekHintSqlText(StringBuilder)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_BuildRowLockHintSqlText_System_Text_StringBuilder_">DBEngine.BuildRowLockHintSqlText(StringBuilder)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_CreateExplicitCastExpression_Terrasoft_Core_DB_QueryColumnExpression_Terrasoft_Core_DBDataValueType_">DBEngine.CreateExplicitCastExpression(QueryColumnExpression, DBDataValueType)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.DBEngine.html#Terrasoft_Core_DB_DBEngine_EqualsDataValueType_Terrasoft_Core_DataValueType_Terrasoft_Core_DataValueType_">DBEngine.EqualsDataValueType(DataValueType, DataValueType)</a>
+    </div>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Terrasoft.Core.DB.html">Terrasoft.Core.DB</a></h6>
+  <h6><strong>Assembly</strong>: Terrasoft.Core.dll</h6>
+  <h5 id="Terrasoft_Core_DB_DbCommentEngine_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract class DbCommentEngine : DBEngine, IDbStructureEngine, IDbDataValueTypeEngine, IDbDefaultValueEngine, IDbDataValueTypeComparer, IDbCommentEngine</code></pre>
+  </div>
+  <h3 id="methods">Methods
+  </h3>
+  
+  
+  <a id="Terrasoft_Core_DB_DbCommentEngine_AddEntitySchemaFilterForReadMetaPropertiesSqlText_" data-uid="Terrasoft.Core.DB.DbCommentEngine.AddEntitySchemaFilterForReadMetaPropertiesSqlText*"></a>
+  <h4 id="Terrasoft_Core_DB_DbCommentEngine_AddEntitySchemaFilterForReadMetaPropertiesSqlText_System_Text_StringBuilder_" data-uid="Terrasoft.Core.DB.DbCommentEngine.AddEntitySchemaFilterForReadMetaPropertiesSqlText(System.Text.StringBuilder)">AddEntitySchemaFilterForReadMetaPropertiesSqlText(StringBuilder)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void AddEntitySchemaFilterForReadMetaPropertiesSqlText(StringBuilder sb)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Text.StringBuilder</span></td>
+        <td><span class="parametername">sb</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_DB_DbCommentEngine_BuildReadMetaDescriptionByIdSqlText_" data-uid="Terrasoft.Core.DB.DbCommentEngine.BuildReadMetaDescriptionByIdSqlText*"></a>
+  <h4 id="Terrasoft_Core_DB_DbCommentEngine_BuildReadMetaDescriptionByIdSqlText_System_Text_StringBuilder_Terrasoft_Core_DB_ColumnAction_" data-uid="Terrasoft.Core.DB.DbCommentEngine.BuildReadMetaDescriptionByIdSqlText(System.Text.StringBuilder,Terrasoft.Core.DB.ColumnAction)">BuildReadMetaDescriptionByIdSqlText(StringBuilder, ColumnAction)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract void BuildReadMetaDescriptionByIdSqlText(StringBuilder sb, ColumnAction action)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Text.StringBuilder</span></td>
+        <td><span class="parametername">sb</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.ColumnAction.html">ColumnAction</a></td>
+        <td><span class="parametername">action</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_DB_DbCommentEngine_BuildReadMetaDescriptionByIdSqlText_" data-uid="Terrasoft.Core.DB.DbCommentEngine.BuildReadMetaDescriptionByIdSqlText*"></a>
+  <h4 id="Terrasoft_Core_DB_DbCommentEngine_BuildReadMetaDescriptionByIdSqlText_System_Text_StringBuilder_Terrasoft_Core_DB_ConstraintAction_" data-uid="Terrasoft.Core.DB.DbCommentEngine.BuildReadMetaDescriptionByIdSqlText(System.Text.StringBuilder,Terrasoft.Core.DB.ConstraintAction)">BuildReadMetaDescriptionByIdSqlText(StringBuilder, ConstraintAction)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract void BuildReadMetaDescriptionByIdSqlText(StringBuilder sb, ConstraintAction action)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Text.StringBuilder</span></td>
+        <td><span class="parametername">sb</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.ConstraintAction.html">ConstraintAction</a></td>
+        <td><span class="parametername">action</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_DB_DbCommentEngine_BuildReadMetaDescriptionByIdSqlText_" data-uid="Terrasoft.Core.DB.DbCommentEngine.BuildReadMetaDescriptionByIdSqlText*"></a>
+  <h4 id="Terrasoft_Core_DB_DbCommentEngine_BuildReadMetaDescriptionByIdSqlText_System_Text_StringBuilder_Terrasoft_Core_DB_EntitySchemaAction_" data-uid="Terrasoft.Core.DB.DbCommentEngine.BuildReadMetaDescriptionByIdSqlText(System.Text.StringBuilder,Terrasoft.Core.DB.EntitySchemaAction)">BuildReadMetaDescriptionByIdSqlText(StringBuilder, EntitySchemaAction)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void BuildReadMetaDescriptionByIdSqlText(StringBuilder sb, EntitySchemaAction action)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Text.StringBuilder</span></td>
+        <td><span class="parametername">sb</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.EntitySchemaAction.html">EntitySchemaAction</a></td>
+        <td><span class="parametername">action</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_DB_DbCommentEngine_BuildReadMetaDescriptionByIdSqlText_" data-uid="Terrasoft.Core.DB.DbCommentEngine.BuildReadMetaDescriptionByIdSqlText*"></a>
+  <h4 id="Terrasoft_Core_DB_DbCommentEngine_BuildReadMetaDescriptionByIdSqlText_System_Text_StringBuilder_Terrasoft_Core_DB_IndexAction_" data-uid="Terrasoft.Core.DB.DbCommentEngine.BuildReadMetaDescriptionByIdSqlText(System.Text.StringBuilder,Terrasoft.Core.DB.IndexAction)">BuildReadMetaDescriptionByIdSqlText(StringBuilder, IndexAction)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void BuildReadMetaDescriptionByIdSqlText(StringBuilder sb, IndexAction action)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Text.StringBuilder</span></td>
+        <td><span class="parametername">sb</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.IndexAction.html">IndexAction</a></td>
+        <td><span class="parametername">action</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_DB_DbCommentEngine_BuildReadMetaDescriptionByNameSqlText_" data-uid="Terrasoft.Core.DB.DbCommentEngine.BuildReadMetaDescriptionByNameSqlText*"></a>
+  <h4 id="Terrasoft_Core_DB_DbCommentEngine_BuildReadMetaDescriptionByNameSqlText_System_Text_StringBuilder_Terrasoft_Core_DB_ColumnAction_" data-uid="Terrasoft.Core.DB.DbCommentEngine.BuildReadMetaDescriptionByNameSqlText(System.Text.StringBuilder,Terrasoft.Core.DB.ColumnAction)">BuildReadMetaDescriptionByNameSqlText(StringBuilder, ColumnAction)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract void BuildReadMetaDescriptionByNameSqlText(StringBuilder sb, ColumnAction action)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Text.StringBuilder</span></td>
+        <td><span class="parametername">sb</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.ColumnAction.html">ColumnAction</a></td>
+        <td><span class="parametername">action</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_DB_DbCommentEngine_BuildReadMetaDescriptionByNameSqlText_" data-uid="Terrasoft.Core.DB.DbCommentEngine.BuildReadMetaDescriptionByNameSqlText*"></a>
+  <h4 id="Terrasoft_Core_DB_DbCommentEngine_BuildReadMetaDescriptionByNameSqlText_System_Text_StringBuilder_Terrasoft_Core_DB_ConstraintAction_" data-uid="Terrasoft.Core.DB.DbCommentEngine.BuildReadMetaDescriptionByNameSqlText(System.Text.StringBuilder,Terrasoft.Core.DB.ConstraintAction)">BuildReadMetaDescriptionByNameSqlText(StringBuilder, ConstraintAction)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract void BuildReadMetaDescriptionByNameSqlText(StringBuilder sb, ConstraintAction action)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Text.StringBuilder</span></td>
+        <td><span class="parametername">sb</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.ConstraintAction.html">ConstraintAction</a></td>
+        <td><span class="parametername">action</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_DB_DbCommentEngine_BuildReadMetaDescriptionByNameSqlText_" data-uid="Terrasoft.Core.DB.DbCommentEngine.BuildReadMetaDescriptionByNameSqlText*"></a>
+  <h4 id="Terrasoft_Core_DB_DbCommentEngine_BuildReadMetaDescriptionByNameSqlText_System_Text_StringBuilder_Terrasoft_Core_DB_EntitySchemaAction_" data-uid="Terrasoft.Core.DB.DbCommentEngine.BuildReadMetaDescriptionByNameSqlText(System.Text.StringBuilder,Terrasoft.Core.DB.EntitySchemaAction)">BuildReadMetaDescriptionByNameSqlText(StringBuilder, EntitySchemaAction)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract void BuildReadMetaDescriptionByNameSqlText(StringBuilder sb, EntitySchemaAction action)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Text.StringBuilder</span></td>
+        <td><span class="parametername">sb</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.EntitySchemaAction.html">EntitySchemaAction</a></td>
+        <td><span class="parametername">action</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_DB_DbCommentEngine_BuildReadMetaDescriptionByNameSqlText_" data-uid="Terrasoft.Core.DB.DbCommentEngine.BuildReadMetaDescriptionByNameSqlText*"></a>
+  <h4 id="Terrasoft_Core_DB_DbCommentEngine_BuildReadMetaDescriptionByNameSqlText_System_Text_StringBuilder_Terrasoft_Core_DB_IndexAction_" data-uid="Terrasoft.Core.DB.DbCommentEngine.BuildReadMetaDescriptionByNameSqlText(System.Text.StringBuilder,Terrasoft.Core.DB.IndexAction)">BuildReadMetaDescriptionByNameSqlText(StringBuilder, IndexAction)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract void BuildReadMetaDescriptionByNameSqlText(StringBuilder sb, IndexAction action)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Text.StringBuilder</span></td>
+        <td><span class="parametername">sb</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.IndexAction.html">IndexAction</a></td>
+        <td><span class="parametername">action</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_DB_DbCommentEngine_BuildReadMetaPropertyDescriptionSqlText_" data-uid="Terrasoft.Core.DB.DbCommentEngine.BuildReadMetaPropertyDescriptionSqlText*"></a>
+  <h4 id="Terrasoft_Core_DB_DbCommentEngine_BuildReadMetaPropertyDescriptionSqlText_System_Text_StringBuilder_Terrasoft_Core_DB_DBMetaInfoItemDestinationType_" data-uid="Terrasoft.Core.DB.DbCommentEngine.BuildReadMetaPropertyDescriptionSqlText(System.Text.StringBuilder,Terrasoft.Core.DB.DBMetaInfoItemDestinationType)">BuildReadMetaPropertyDescriptionSqlText(StringBuilder, DBMetaInfoItemDestinationType)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected void BuildReadMetaPropertyDescriptionSqlText(StringBuilder sb, DBMetaInfoItemDestinationType destinationType)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Text.StringBuilder</span></td>
+        <td><span class="parametername">sb</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.DBMetaInfoItemDestinationType.html">DBMetaInfoItemDestinationType</a></td>
+        <td><span class="parametername">destinationType</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_DB_DbCommentEngine_BuildReadMetaPropertyDescriptionSqlText_" data-uid="Terrasoft.Core.DB.DbCommentEngine.BuildReadMetaPropertyDescriptionSqlText*"></a>
+  <h4 id="Terrasoft_Core_DB_DbCommentEngine_BuildReadMetaPropertyDescriptionSqlText_System_Text_StringBuilder_Terrasoft_Core_DB_DBMetaInfoItemDestinationType_System_Boolean_" data-uid="Terrasoft.Core.DB.DbCommentEngine.BuildReadMetaPropertyDescriptionSqlText(System.Text.StringBuilder,Terrasoft.Core.DB.DBMetaInfoItemDestinationType,System.Boolean)">BuildReadMetaPropertyDescriptionSqlText(StringBuilder, DBMetaInfoItemDestinationType, Boolean)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected abstract void BuildReadMetaPropertyDescriptionSqlText(StringBuilder sb, DBMetaInfoItemDestinationType destinationType, bool usePropertyName)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Text.StringBuilder</span></td>
+        <td><span class="parametername">sb</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.DBMetaInfoItemDestinationType.html">DBMetaInfoItemDestinationType</a></td>
+        <td><span class="parametername">destinationType</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">usePropertyName</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_DB_DbCommentEngine_GetSaveColumnMetaPropertiesSqlText_" data-uid="Terrasoft.Core.DB.DbCommentEngine.GetSaveColumnMetaPropertiesSqlText*"></a>
+  <h4 id="Terrasoft_Core_DB_DbCommentEngine_GetSaveColumnMetaPropertiesSqlText_System_String_System_String_System_String_" data-uid="Terrasoft.Core.DB.DbCommentEngine.GetSaveColumnMetaPropertiesSqlText(System.String,System.String,System.String)">GetSaveColumnMetaPropertiesSqlText(String, String, String)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract string GetSaveColumnMetaPropertiesSqlText(string entitySchemaName, string columnName, string description)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">entitySchemaName</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">columnName</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">description</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_DB_DbCommentEngine_GetSaveTableMetaPropertiesSqlText_" data-uid="Terrasoft.Core.DB.DbCommentEngine.GetSaveTableMetaPropertiesSqlText*"></a>
+  <h4 id="Terrasoft_Core_DB_DbCommentEngine_GetSaveTableMetaPropertiesSqlText_System_String_System_String_" data-uid="Terrasoft.Core.DB.DbCommentEngine.GetSaveTableMetaPropertiesSqlText(System.String,System.String)">GetSaveTableMetaPropertiesSqlText(String, String)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract string GetSaveTableMetaPropertiesSqlText(string entitySchemaName, string description)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">entitySchemaName</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">description</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="Terrasoft.Core.DB.DbStructureReader.IDbStructureEngine.html">IDbStructureEngine</a>
+  </div>
+  <div>
+      <a class="xref" href="Terrasoft.Core.DB.IDbCommentEngine.html">IDbCommentEngine</a>
+  </div>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="Terrasoft.Common.ReflectionUtilities.html#Terrasoft_Common_ReflectionUtilities_GetPropertyValue_System_Object_System_String_">ReflectionUtilities.GetPropertyValue(Object, String)</a>
+  </div>
+  <div>
+      <a class="xref" href="Terrasoft.Common.ReflectionUtilities.html#Terrasoft_Common_ReflectionUtilities_GetPropertyDefValue_System_Object_System_String_System_Object_">ReflectionUtilities.GetPropertyDefValue(Object, String, Object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Terrasoft.Common.ReflectionUtilities.html#Terrasoft_Common_ReflectionUtilities_TryGetPropertyValue_System_Object_System_String_System_Object__">ReflectionUtilities.TryGetPropertyValue(Object, String, out Object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Terrasoft.Common.ReflectionUtilities.html#Terrasoft_Common_ReflectionUtilities_HasProperty_System_Object_System_String_">ReflectionUtilities.HasProperty(Object, String)</a>
+  </div>
+  <div>
+      <a class="xref" href="Terrasoft.Common.ReflectionUtilities.html#Terrasoft_Common_ReflectionUtilities_GetPropertyValue_System_Object_System_String_System_Reflection_BindingFlags_">ReflectionUtilities.GetPropertyValue(Object, String, BindingFlags)</a>
+  </div>
+  <div>
+      <a class="xref" href="Terrasoft.Common.ReflectionUtilities.html#Terrasoft_Common_ReflectionUtilities_GetPropertyValueByPath_System_Object_System_String_">ReflectionUtilities.GetPropertyValueByPath(Object, String)</a>
+  </div>
+  <div>
+      <a class="xref" href="Terrasoft.Common.ReflectionUtilities.html#Terrasoft_Common_ReflectionUtilities_SetPropertyValue_System_Object_System_String_System_Object_">ReflectionUtilities.SetPropertyValue(Object, String, Object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Terrasoft.Common.ReflectionUtilities.html#Terrasoft_Common_ReflectionUtilities_TrySetPropertyValue_System_Object_System_String_System_Object_">ReflectionUtilities.TrySetPropertyValue(Object, String, Object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Terrasoft.Common.ValidateUtilities.html#Terrasoft_Common_ValidateUtilities_CheckArgumentNull_System_Object_System_String_">ValidateUtilities.CheckArgumentNull(Object, String)</a>
+  </div>
+  <div>
+      <a class="xref" href="Terrasoft.Common.ValidateUtilities.html#Terrasoft_Common_ValidateUtilities_CheckDependencyNull_System_Object_System_String_">ValidateUtilities.CheckDependencyNull(Object, String)</a>
+  </div>
+  <div>
+      <a class="xref" href="Terrasoft.Common.ValidateUtilities.html#Terrasoft_Common_ValidateUtilities_EnsureDependencyNotNull__1___0_System_String_">ValidateUtilities.EnsureDependencyNotNull&lt;T&gt;(T, String)</a>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>© 2021 Creatio. All rights reserved.</span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+
+<!-- Mirrored from academy.terrasoft.ua/api/netcoreapi/7.18.0/api/Terrasoft.Core.DB.DbCommentEngine.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Mar 2022 03:31:43 GMT -->
+</html>

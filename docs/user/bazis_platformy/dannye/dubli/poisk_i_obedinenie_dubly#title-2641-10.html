@@ -1,0 +1,1095 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# ">
+  
+<!-- Mirrored from academy.terrasoft.ua/docs/user/bazis_platformy/dannye/dubli/poisk_i_obedinenie_dubly#title-2641-10 by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 22 Mar 2022 21:59:15 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+          <!-- Google Tag Manager -->
+      <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          '../../../../../../www.googletagmanager.com/gtm5445.html?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-KLLB8G');</script>
+      <!-- End Google Tag Manager -->
+        <meta charset="utf-8" />
+<link rel="canonical" href="poisk_i_obedinenie_dubly.html" />
+<meta name="description" content="При добавлении данных в разделы системы существует вероятность появления дублирующихся записей (дублей). Для поддержания целостности и актуальности данных в системе используется функциональность поиска и объединения дублей.
+
+
+	Массовый поиск дублей выполняется по всей базе. Запускается вручную либо автоматически согласно созданному расписанию." />
+<meta property="og:url" content="https://academy.terrasoft.ua/docs/user/bazis_platformy/dannye/dubli/poisk_i_obedinenie_dubly" />
+<meta property="og:title" content="Поиск и объединение дублей" />
+<meta property="og:description" content="При добавлении данных в разделы системы существует вероятность появления дублирующихся записей (дублей). Для поддержания целостности и актуальности данных в системе используется функциональность поиска и объединения дублей.
+
+
+	Массовый поиск дублей выполняется по всей базе. Запускается вручную либо автоматически согласно созданному расписанию." />
+<meta name="Generator" content="Drupal 9 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="../../../../themes/custom/creatio/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="revision" href="poisk_i_obedinenie_dubly.html" />
+
+    <title>Поиск и объединение дублей | Creatio Academy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&amp;family=Open+Sans:ital,wght@0,300;0,400;0,600;1,400&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" media="all" href="../../../../sites/default/files/css/css_6lTP66__-yc6QXFp1zOwoeJ0HVigoYZP-SeoLLii000.css" />
+<link rel="stylesheet" media="all" href="../../../../sites/default/files/css/css_XQJDNhkF3xH5SZCcY-PI89Zu4nYIzQ5oR3SnUKyfXJU.css" />
+<link rel="stylesheet" media="print" href="../../../../sites/default/files/css/css_Zn4VHvcniOOtUwkIVwXzYr_0AI9gUVgZcPqaH4ViagU.css" />
+
+    
+  </head>
+  <body class="path-node page-node-type-user-documentation">
+          <!-- Google Tag Manager (noscript) -->
+      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KLLB8G"
+                        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+      <!-- End Google Tag Manager (noscript) -->
+    
+        
+      <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    <div class="creatio-page d-flex flex-column">
+        <div class="region region-informer">
+    <div id="block-terrasoftpidtrimueukrainu" class="block block-simple-block block-simple-blockterrasoft-pidtrimue-ukrainu">
+  
+    
+      <style type="text/css">
+<!--/*--><![CDATA[/* ><!--*/
+@import url(../../../../../../www.terrasoft.ua/themes/custom/creatio/css/components/informer.css)
+
+/*--><!]]>*/
+</style><div class="ts-swu">
+<div class="creatio-container">
+<div class="ts-swu__cont">
+<div><a class="ts-swu__link" href="https://www.terrasoft.ua/terrasoft-stands-with-ukraine" target="_blank">Україна понад усе!</a> <span><a href="https://www.terrasoft.ua/terrasoft-stands-with-ukraine" target="_blank">Приєднуйтеся</a> до допомоги!</span></div>
+</div>
+</div></div>
+
+  </div>
+
+  </div>
+
+  
+  <header role="banner">
+          <div class="creatio-region creatio-region_top">
+        <div class="creatio-container">
+            <div class="region region-top">
+    <div id="block-menutoggle" class="block block-simple-block block-simple-blockmenu-toggle">
+  
+    
+      <div class="menu-toggle"><span> </span></div>
+
+  </div>
+<div id="block-logowhite-2" class="block block-simple-block block-simple-blocklogo-white">
+  
+    
+      <p><a class="site-logo" href="../../../../../index.html" rel="home"><img src="../../../../themes/custom/creatio/logo-white.svg" /></a></p>
+
+  </div>
+<div id="block-search" class="block block-simple-block block-simple-blocksearch">
+  
+    
+      <div class="search">
+<form action="https://academy.terrasoft.ua/search" class="search-form" method="get"><input class="search-form__input" name="search" placeholder="Поиск" type="search" /><input class="search-form__button" type="submit" value="Поиск" /> </form>
+
+<div class="search-toggle"> </div>
+</div>
+
+  </div>
+<nav role="navigation" aria-labelledby="block-sitesua-menu" id="block-sitesua" class="block block-menu navigation menu--sites-ua">
+            
+  <h2 class="visually-hidden" id="block-sitesua-menu">Sites UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="https://www.terrasoft.ua/" rel="nofollow" target="_blank">Terrasoft</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://community.terrasoft.ua/" rel="nofollow" target="_blank">Community</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://marketplace.terrasoft.ua/" rel="nofollow" target="_blank">Marketplace</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+<div id="block-usermenu" class="block block-ts-user block-ts-user-menu-block">
+  
+    
+      <ul class="user-menu">
+      <li class="user-menu__item">
+      <a class="user-menu__link" href="https://profile.terrasoft.ua/user/login?destination=academy/ua/docs/user/bazis_platformy/dannye/dubli/poisk_i_obedinenie_dubly">Войти</a>
+    </li>
+  </ul>
+
+  </div>
+<div id="block-usermenumobile" class="block block-ts-user block-ts-user-menu-mobile-block">
+  
+    
+      <ul class="user-menu-mobile">
+      <li class="user-menu-mobile__item">
+      <div class="user-menu-mobile__user user-menu-mobile__user_icon"></div>
+      <ul class="user-menu-mobile__submenu">
+        <li class="user-menu-mobile__subitem">
+          <a class="user-menu-mobile__sublink" href="https://profile.terrasoft.ua/user/login?destination=academy/ua/docs/user/bazis_platformy/dannye/dubli/poisk_i_obedinenie_dubly">Войти</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  </div>
+
+  </div>
+
+        </div>
+      </div>
+              <div class="creatio-region creatio-region_header">
+        <div class="creatio-container">
+            <div class="region region-header">
+    <div id="block-logo" class="block block-simple-block block-simple-blocklogo">
+  
+    
+      <p><a class="site-logo" href="../../../../../index.html" rel="home"><img src="../../../../themes/custom/creatio/logo.svg" /></a></p>
+
+  </div>
+<nav role="navigation" aria-labelledby="block-osnovnayanavigaciyaua-menu" id="block-osnovnayanavigaciyaua" class="block block-menu navigation menu--main-ua">
+            
+  <h2 class="visually-hidden" id="block-osnovnayanavigaciyaua-menu">Основная навигация UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="../../../../index.html" data-drupal-link-system-path="&lt;front&gt;">Документация</a>
+              </li>
+                <li class="menu-item">
+        <a href="../../../../../trainings.html">Тренинги</a>
+              </li>
+                <li class="menu-item">
+        <a href="../../../../certification.html" data-drupal-link-system-path="node/3084">Сертификация и тестирование</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+<nav role="navigation" aria-labelledby="block-sitesua-2-menu" id="block-sitesua-2" class="block block-menu navigation menu--sites-ua">
+            
+  <h2 class="visually-hidden" id="block-sitesua-2-menu">Sites UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="https://www.terrasoft.ua/" rel="nofollow" target="_blank">Terrasoft</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://community.terrasoft.ua/" rel="nofollow" target="_blank">Community</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://marketplace.terrasoft.ua/" rel="nofollow" target="_blank">Marketplace</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+
+  </div>
+
+        </div>
+      </div>
+              <div class="creatio-region creatio-region_breadcrumb">
+        <div class="creatio-container">
+            <div class="region region-breadcrumb">
+    <div id="block-logowhite" class="block block-simple-block block-simple-blocklogo-white">
+  
+    
+      <p><a class="site-logo" href="../../../../../index.html" rel="home"><img src="../../../../themes/custom/creatio/logo-white.svg" /></a></p>
+
+  </div>
+<div id="block-breadcrumbnaviagtion" class="block block-ts-nav block-ts-nav-bread">
+  
+    
+      <nav class="breadcrumb"><ol class="ts-nav-breadcrumb__list"><li class="ts-nav-breadcrumb__item"><a href="../../../../index.html" class="ts-nav-breadcrumb__link" title="Документация">Документация</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../../indexd993.html?vid_1=1" class="ts-nav-breadcrumb__link" title="Для пользователя">Для пользователя</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../bazis_platformy.html" class="ts-nav-breadcrumb__link" title="Базис платформы" hreflang="zxx">Базис платформы</a></li>
+<li class="ts-nav-breadcrumb__item ts-nav-breadcrumb__item_mobile"><a href="../../dannye.html" class="ts-nav-breadcrumb__link" title="Данные" hreflang="zxx">Данные</a></li>
+<li class="ts-nav-breadcrumb__item"><span class="ts-nav-breadcrumb__link ts-nav-breadcrumb__link_current" title="Поиск и объединение дублей">Поиск и объединение дублей</span></li>
+</ol>
+</nav>
+
+  </div>
+<div id="block-search-2" class="block block-simple-block block-simple-blocksearch">
+  
+    
+      <div class="search">
+<form action="https://academy.terrasoft.ua/search" class="search-form" method="get"><input class="search-form__input" name="search" placeholder="Поиск" type="search" /><input class="search-form__button" type="submit" value="Поиск" /> </form>
+
+<div class="search-toggle"> </div>
+</div>
+
+  </div>
+
+  </div>
+
+        </div>
+      </div>
+      </header>
+
+  <div class="creatio-region creatio-region_main">
+    <div class="creatio-container">
+                <div class="region region-breadcrumb-mobile">
+    <div id="block-breadcrumbnaviagtion-2" class="block block-ts-nav block-ts-nav-bread">
+  
+    
+      <nav class="breadcrumb"><ol class="ts-nav-breadcrumb__list"><li class="ts-nav-breadcrumb__item"><a href="../../../../index.html" class="ts-nav-breadcrumb__link" title="Документация">Документация</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../../indexd993.html?vid_1=1" class="ts-nav-breadcrumb__link" title="Для пользователя">Для пользователя</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../bazis_platformy.html" class="ts-nav-breadcrumb__link" title="Базис платформы" hreflang="zxx">Базис платформы</a></li>
+<li class="ts-nav-breadcrumb__item ts-nav-breadcrumb__item_mobile"><a href="../../dannye.html" class="ts-nav-breadcrumb__link" title="Данные" hreflang="zxx">Данные</a></li>
+<li class="ts-nav-breadcrumb__item"><span class="ts-nav-breadcrumb__link ts-nav-breadcrumb__link_current" title="Поиск и объединение дублей">Поиск и объединение дублей</span></li>
+</ol>
+</nav>
+
+  </div>
+
+  </div>
+
+      
+      <main class="creatio-main" role="main">
+                                                    
+        <div class="creatio-content creatio-content_small">
+          <div class="creatio-content__inner creatio-content__inner_bg">
+                            <div class="region region-messages">
+    <div data-drupal-messages-fallback class="hidden"></div>
+
+  </div>
+
+            
+              <div class="region region-content">
+    <div id="block-creatio-page-title" class="block block-core block-page-title-block">
+  
+    
+      
+  <h1 class="page-title"><span class="field field--name-title field--type-string field--label-hidden">Поиск и объединение дублей</span>
+</h1>
+
+
+  </div>
+<div id="block-creatio-content" class="block block-system block-system-main-block">
+  
+    
+      
+<article data-history-node-id="3631" role="article" about="/docs/user/bazis_platformy/dannye/dubli/poisk_i_obedinenie_dubly" class="node node--type-user-documentation node--view-mode-full">
+
+  
+    
+
+  
+  <div class="node__content">
+      <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-ts-doc block-ts-doc-downloads">
+  
+    
+      <a href="../../../../sites/default/files/pdf/node/3631/Poisk_i_obedinenie_dubley_.pdf" target="_blank">PDF</a>
+  </div>
+<div class="block block-ts-doc block-ts-doc-versions">
+  
+    
+        <div class="ts-doc-versions">
+    <select class="ts-doc-versions__select">
+                                                <option value="/docs/8-0/user/bazis_platformy/dannye/dubli/poisk_i_obedinenie_dubly" selected>Версия 8.0</option>
+                              <option value="/docs/7-18/user/bazis_platformy/dannye/dubli/poisk_i_obedinenie_dubly">Версия 7.18</option>
+                              <option value="/docs/7-17/user/bazis_platformy/dannye/dubli/poisk_i_obedinenie_dubley">Версия 7.17</option>
+          </select>
+  </div>
+
+  </div>
+
+    </div>
+  </div>
+  <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocknodeuser-documentationfield-product">
+  
+    
+      
+  <div class="field field--name-field-product field--type-entity-reference field--label-above">
+    <div class="field__label">Продукты</div>
+          <div class="field__items">
+              <div class="field__item">Все продукты</div>
+              </div>
+      </div>
+
+  </div>
+<div class="block block-layout-builder block-field-blocknodeuser-documentationbody">
+  
+    
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><p>При добавлении данных в разделы системы существует вероятность появления дублирующихся записей (<strong>дублей</strong>). Для поддержания целостности и актуальности данных в системе используется функциональность поиска и объединения дублей.</p>
+
+<ul><li>
+	<p><a href="#title-2641-18"><span>Массовый поиск дублей</span></a> выполняется по всей базе. Запускается вручную либо <a href="#title-2641-14">автоматически</a> согласно созданному расписанию.</p>
+	</li>
+	<li>
+	<p><span><a href="#title-2641-5">Локальный поиск дублей</a></span> предусматривает проверку существования дублей для конкретной записи. Запускается при создании новой записи в момент ее сохранения.</p>
+	</li>
+</ul><p>Вы также можете, не запуская поиск, в ручном режиме выбрать записи, которые являются дублями, и выполнить их <a href="#title-2641-6">слияние</a>. Эта возможность доступна во всех разделах приложения.</p>
+
+<p>По умолчанию поиск дублей доступен в разделах <span class="key">Контрагенты</span>, <span class="key">Контакты</span> и <span class="key">Лиды</span>. Для этого система использует ряд преднастроенных <a href="#title-2641-12">правил</a>, например, дубль может определяться по номеру мобильного телефона или по email-адресу. При этом система предоставляет гибкие возможности для кастомизации:</p>
+
+<ul><li>
+	<p>Вы можете настроить под свои потребности список правил поиска дублей <strong>контактов, контрагентов и лидов</strong>.</p>
+	</li>
+	<li>
+	<p>Вы также можете создать свои правила поиска для <strong>любого раздела системы</strong>, в том числе пользовательского.</p>
+	</li>
+</ul><p>Ручной поиск дублирующихся записей можно выполнить при помощи действий разделов, для которых создано хотя бы одно правило поиска дублей. Например, в разделе <span class="key">Контакты</span> доступно действие <span class="key">Перейти к дублям контактов</span>. По завершении поиска система отобразит список потенциальных дублей.</p>
+
+<div class="message message_warning">
+<p><span class="message__bold message__bold_warning">Важно.</span> Пользователям системы on-site для поиска дублей правилам предварительно необходимо установить ряд компонентов и выполнить шаги настройки. Подробнее: <span><a href="../../../razvertyvanie_onsite/nastrojka_konteinernikh_komponentov/massovyj_poisk_dublej/nastroit_massovyy_poisk_dubley.html?product=administration&amp;ver=7&amp;id=1959">Настроить массовый поиск дублей</a></span>.</p>
+</div>
+
+<h2>Найти и обработать дубли<a class="title-anchor" href="#title-2641-15" id="title-2641-15"> </a></h2>
+
+<p>Для перехода к дублям пользователи должны иметь права на чтение и изменение записей разделов, в которых они смогут выполнять поиск дублей, а также на системную операцию “Поиск дублей” (код “CanSearchDuplicates”). Подробнее: <span><a href="../../../ustanovka_i_administrirovanie/upravlenie_polzovateljami_i_dostupom/upravleniye_dostupom/dostup_po_sistemnym_operacijam/nastroit_prava_dostupa_na_sistemnye_operacii.html?product=administration&amp;ver=7&amp;id=258">Настроить права доступа на системные операции</a></span>.</p>
+
+<h3>Массовый поиск дублей<a class="title-anchor" href="#title-2641-18" id="title-2641-18"> </a></h3>
+
+<p>Результаты поиска дублей обрабатываются на странице найденных дублей (<span>Рис. 1</span>). При необходимости вы можете настроить колонки, которые выводятся в реестр дублей, по кнопке <span class="key">Вид</span> —&gt; <span class="key">Настройка списка</span> в правой верхней части экрана.</p>
+
+<div class="media">
+<div class="media__caption"><span>Рис. 1</span><a name="XREF_80528_170" id="XREF_80528_170"></a> — Пример результатов поиска дублирующихся записей в разделе <span class="key">Контакты</span></div>
+
+<div class="media__element"><img alt="scr_chapter_deduplication_wnd_results.png" id="image0" src="../../../../sites/default/files/documentation/user/ru/base/BPMonlineHelp/chapter_deduplication/scr_chapter_deduplication_wnd_results.png" /></div>
+</div>
+
+<h4>Переход к странице<a class="title-anchor" href="#title-2641-28" id="title-2641-28"> </a></h4>
+
+<p>Открыть данную страницу можно несколькими способами:</p>
+
+<ul><li>
+	<p>Перейдите в меню <span class="key">Действия</span> раздела выберите команду <span class="key">Перейти к дублям раздела</span> (<span>Рис. 2</span>).</p>
+
+	<div class="message">
+	<p><span class="message__bold">На заметку.</span> Действие <span class="key">Перейти к дублям раздела</span> доступно при наличии хотя бы одного правила поиска для раздела.</p>
+	</div>
+
+	<div class="media">
+	<div class="media__caption"><span>Рис. 2</span><a name="XREF_64096_171" id="XREF_64096_171"></a> — Переход на страницу найденных дублей при помощи действий раздела</div>
+
+	<div class="media__element"><img alt="scr_chapter_deduplication_duplicates_page.png" id="image1" src="../../../../sites/default/files/documentation/user/ru/base/BPMonlineHelp/chapter_deduplication/scr_chapter_deduplication_duplicates_page.png" /></div>
+	</div>
+	</li>
+	<li>
+	<p>Откройте дизайнер системы, например, по кнопке <img alt="btn_system_designer.png" id="image2" src="../../../../sites/default/files/documentation/user/ru/base/BPMonlineHelp/chapter_deduplication/btn_system_designer.png" /> и перейдите по ссылке <span class="key">Правила поиска дублей</span>. На открывшейся странице в меню <span class="key">Действия</span> выберите команду <span class="key">Перейти к дублям контактов</span> или <span class="key">Перейти к дублям контрагентов</span> (<span>Рис. 3</span>). Опция доступна только для разделов <span class="key">Контакты</span> и <span class="key">Контрагенты</span>.</p>
+
+	<div class="media">
+	<div class="media__caption"><span>Рис. 3</span><a name="XREF_29611_172" id="XREF_29611_172"></a> — Переход на страницу найденных дублей через <span class="key">Правила поиска дублей</span></div>
+
+	<div class="media__element"><img alt="scr_chapter_deduplication_contacts_duplicates_page.png" id="image3" src="../../../../sites/default/files/documentation/user/ru/base/BPMonlineHelp/chapter_deduplication/scr_chapter_deduplication_contacts_duplicates_page.png" /></div>
+	</div>
+	</li>
+</ul><h4><a name="TOC_Как_найти_и_обработатьbc-4" id="TOC_Как_найти_и_обработатьbc-4"></a>Поиск и объединение дублей<a class="title-anchor" href="#title-2641-38" id="title-2641-38"> </a></h4>
+
+<p>Для поиска дублей:</p>
+
+<ol><li>Откройте раздел, в котором необходимо найти дублирующиеся записи. Например, раздел <span class="key">Контакты</span>.</li>
+	<li>В меню <span class="key">Действия</span> выберите команду <span class="key">Перейти к дублям раздела “Контакты”</span> (<span>Рис. 2</span>).</li>
+	<li>В результате отобразится страница найденных дублей. Если массовый поиск дублей уже выполнялся ранее, например, автоматически, то на странице отобразятся его результаты. При необходимости вы можете их обработать, прежде чем запустить новый поиск дублей.</li>
+	<li>В меню <span class="key">Действия</span> открывшейся страницы выберите команду <span class="key">Запустить поиск дублей</span>.</li>
+	<li>В результате поиск дублей будет запущен в фоновом режиме. В это время можно продолжить работу в системе.</li>
+	<li>После того как поиск дублирующихся записей завершится, в центре уведомлений на вкладке <img alt="btn_com_notification_center_system_notifications.png" id="image4" src="../../../../sites/default/files/documentation/user/ru/base/BPMonlineHelp/chapter_deduplication/btn_com_notification_center_system_notifications.png" /> вы получите уведомление (<span>Рис. 4</span>).
+	<div class="media">
+	<div class="media__caption"><span>Рис. 4</span><a name="XREF_89529_173" id="XREF_89529_173"></a> — Уведомление о завершении поиска дублей</div>
+
+	<div class="media__element"><img alt="scr_chapter_deduplication_notification.png" id="image5" src="../../../../sites/default/files/documentation/user/ru/base/BPMonlineHelp/chapter_deduplication/scr_chapter_deduplication_notification.png" /></div>
+	</div>
+	</li>
+	<li>
+	<p>Перейдите по ссылке в уведомлении, чтобы открыть страницу с результатами поиска дублей. Вы также можете перейти на эту страницу другими способами (<span>Рис. 2</span>, <span>Рис. 3</span>).</p>
+
+	<p>В открывшемся списке отобразятся сгруппированные по схожести дублирующиеся записи (<span>Рис. 5</span>), которые были найдены по активным правилам поиска дублей.</p>
+
+	<p>Каждую группу записей вы можете объединить в одну запись либо указать, что записи в группе не являются дублями. В этом случае они будут добавлены в список исключений для последующих проверок.</p>
+
+	<div class="media">
+	<div class="media__caption"><span>Рис. 5</span> — Выбор дублей для объединения</div>
+
+	<div class="media__element"><img alt="scr_chapter_deduplication_wnd_merge_btn.png" id="image6" src="../../../../sites/default/files/documentation/user/ru/base/BPMonlineHelp/chapter_deduplication/scr_chapter_deduplication_wnd_merge_btn.png" /></div>
+	</div>
+	</li>
+	<li>
+	<p>Чтобы объединить дубли, отметьте те записи, которые вы считаете дублями, и нажмите кнопку <span class="key">Объединить</span>.<br />
+	В результате все отмеченные записи в группе будут объединены в одну, которая будет содержать все уникальные данные объединенных записей. Если одно и то же поле в объединяемых записях содержит разные данные, то система предложит вам выбрать, какие данные следует сохранить.</p>
+	</li>
+	<li>
+	<p>Чтобы добавить записи, которые не являются дубликатами, в список исключений, нажмите кнопку <span class="key">Не считать дублями</span> для группы, в которой остались только уникальные записи (<span>Рис. 6</span>).<br />
+	В результате система не будет рассматривать записи группы как потенциальные дубли при последующих проверках на дубли.</p>
+
+	<div class="media">
+	<div class="media__caption"><span>Рис. 6</span> — Пример записей, которые не являются дублями</div>
+
+	<div class="media__element"><img alt="scr_chapter_deduplication_wnd_skip_btn.png" id="image7" src="../../../../sites/default/files/documentation/user/ru/base/BPMonlineHelp/chapter_deduplication/scr_chapter_deduplication_wnd_skip_btn.png" /></div>
+	</div>
+	</li>
+</ol><h3><a name="TOC_Локальный_поиск_дублейbc-5" id="TOC_Локальный_поиск_дублейbc-5"></a><a name="TOC_Локальный_поиск_дублей" id="TOC_Локальный_поиск_дублей"></a><a name="CSH_4" id="CSH_4"></a><a name="HT_deduplication_local" id="HT_deduplication_local"></a><a name="XREF_75644" id="XREF_75644"></a>Локальный поиск дублей<a class="title-anchor" href="#title-2641-5" id="title-2641-5"> </a></h3>
+
+<h4>Поиск дублей новой записи<a class="title-anchor" href="#title-2641-48" id="title-2641-48"> </a></h4>
+
+<p>Локальный поиск дублей выполняется при сохранении новой записи в системе. Если после сохранения записи (через мини-карточку или страницу редактирования) открывается страница поиска дублей, то создаваемая вами запись, вероятнее всего, уже существует в системе.</p>
+
+<div class="message">
+<p><span class="message__bold">На заметку.</span> На открывшейся странице пользователь увидит все похожие записи, даже если у него нет на них прав доступа. Но будут отображаться только те колонки, в которых обнаружены соответствия по настроенным правилам поиска дублей.</p>
+</div>
+
+<p>Вы можете вернуться к редактированию записи или сохранить создаваемую запись. Если выполнить сохранение, то в дальнейшем при поиске дублей в разделе эта запись будет отображена в результатах поиска.</p>
+
+<h4>Поиск дублей существующей записи<a class="title-anchor" href="#title-2641-58" id="title-2641-58"> </a></h4>
+
+<p>В разделах <span class="key">Контакты</span> и <span class="key">Контрагенты</span> вы можете перейти к просмотру и слиянию дублей непосредственно со страницы записи при помощи <strong>виджета наличия дублей</strong> (<span>Рис. 7</span>).</p>
+
+<p>Этот виджет отображается, если в разделе есть активные правила поиска дублей и настроен <a href="../../../razvertyvanie_onsite/nastrojka_konteinernikh_komponentov/massovyj_poisk_dublej/nastroit_massovyy_poisk_dubley.html?id=1959">массовый</a> и <a href="../../../razvertyvanie_onsite/nastrojka_konteinernikh_komponentov/globalnyj_poisk/nastroit_globalnyy_poisk.html?id=1712">глобальный</a> поиск дублей.</p>
+
+<div class="message">
+<p><span class="message__bold">На заметку.</span> В версии Creatio 7.18.4 функциональность виджета доступна в режиме бета-тестирования. Чтобы оценить новые возможности поиска дублей, запросите включение функциональности в службе технической поддержки. Будем благодарны за обратную связь. В открытом доступе функциональность появится в ближайших релизах.</p>
+</div>
+
+<div class="media">
+<div class="media__caption">Рис. 7 — Виджет наличия дублей записи на странице контакта</div>
+
+<div class="media__element"><img alt="" data-entity-type="file" data-entity-uuid="96518792-fc9d-4855-8dca-f8c9f7b9fb4f" height="881" src="../../../../sites/default/files/images/Platform_basics/deduplication/contact_current_duplicate.png" width="1280" loading="lazy" /></div>
+</div>
+
+<p>При наличии вероятных дублей записи виджет показывает их количество и позволяет по клику перейти на страницу обработки дублей. Запись, из которой выполнен переход, будет отмечена меткой “Текущий” (<span>Рис. 8</span>).</p>
+
+<div class="media">
+<div class="media__caption">Рис. 8 — Страница обработки дублей</div>
+
+<div class="media__element"><span contenteditable="false" tabindex="-1"><span contenteditable="false" tabindex="-1"><sp contenteditable="false" tabindex="-1"><span contenteditable="false" tabindex="-1"><img alt="" data-entity-type="" data-entity-uuid="" data-widget="image" height="541" src="../../../../sites/default/files/images/Platform_basics/deduplication/current_duplicate.png" width="1277" /></span></sp><an></an></span></span></div>
+
+<p>Дальнейшая работа с найденными дублями осуществляется так же, как для <a href="#title-2641-38">массового поиска</a>.</p>
+
+<p>Для уникальных записей виджет отображает информацию об отсутствии в приложении вероятных дублей (<span>Рис. 9</span>). Переход к странице обработки дублей в таком случае не выполняется.</p>
+
+<div class="media">
+<div class="media__caption">Рис. 9 — Информирование об отсутствии дублей текущей записи</div>
+
+<div class="media__element"><span contenteditable="false" tabindex="-1"><span contenteditable="false" tabindex="-1"><img alt="" data-entity-type="" data-entity-uuid="" data-widget="image" height="55" src="../../../../sites/default/files/images/Platform_basics/deduplication/no_duplicates.png" width="282" /></span></span></div>
+</div>
+
+<h3>Объединить дубли<a class="title-anchor" href="#title-2641-7" id="title-2641-7"> </a></h3>
+
+<h4>Объединить записи<a class="title-anchor" href="#title-2641-6" id="title-2641-6"> </a></h4>
+
+<p>Вы можете объединять несколько записей как после массового поиска дублей, так и произвольно без запуска общего поиска. Объединение доступно как <strong>для записей в реестре</strong> любого раздела, так и для <strong>значений в справочниках</strong>.</p>
+
+<p>Для этого:</p>
+
+<ol><li>
+	<p>В реестре раздела или в справочнике, в котором нужно объединить записи, перейдите в режим множественного выбора по действию <span class="key">Выбрать несколько записей</span>.</p>
+
+	<div class="message">
+	<p><span class="message__bold">На заметку.</span> В реестре раздела также можно выбрать несколько записей с помощью клавиши Ctrl или Shift. Удерживая клавишу Ctrl, выделите мышью те записи, которые нужно объединить. Или, удерживая клавишу Shift, выделите мышью сразу диапазон записей для объединения.</p>
+	</div>
+	</li>
+	<li>
+	<p>Отметьте записи, которые необходимо объединить.</p>
+	</li>
+	<li>
+	<p>В меню кнопки <span class="key">Действия</span> выберите <span class="key">Объединить записи</span> (<span>Рис. 10</span>).</p>
+
+	<div class="media">
+	<div class="media__caption"><span>Рис. 10</span> — Выбор команды объединения записей на примере значений справочника</div>
+
+	<div class="media__element"><img alt="scr_chapter_deduplication_act_merge_records.png" id="image8" src="../../../../sites/default/files/documentation/user/ru/base/BPMonlineHelp/chapter_deduplication/scr_chapter_deduplication_act_merge_records.png" /></div>
+	</div>
+	</li>
+</ol><div class="message">
+<p><span class="message__bold">На заметку.</span> По умолчанию действие объединения записей доступно только пользователю с ролью “Системный администратор”, другим пользователям нужно настроить права на выполнение данной операции. Для этого в разделе <span class="key">Доступ к операциям</span> откройте системную операцию “Обработка дублей” (код “CanMergeDuplicates”) и на детали <span class="key">Доступ к операции</span> раздайте права необходимым пользователям/ролям, которые смогут выполнять слияние записей.</p>
+</div>
+
+<p>Далее система автоматически объединит записи. Если в записях указаны разные значения в одних и тех же полях, то откроется окно объединения дублей. Выберите значения, которые сохранятся для результирующей записи, и нажмите кнопку <span class="key">Объединить</span>.</p>
+
+<p>Выполнив объединение записей, система отправит уведомление. Чтобы увидеть изменения в реестре, обновите страницу веб-браузера. После объединения в системе останется только одна запись с объединенными и выбранными значениями полей.</p>
+
+<p>При нажатии кнопки <span class="key">Объединить</span> на странице поиска дублей уникальные данные из всех объединенных записей сохраняются в результирующей записи. При этом:</p>
+
+<ul><li>
+	<p>В качестве результирующей записи будет использована запись с самой ранней датой создания.</p>
+	</li>
+	<li>
+	<p>В результирующей записи сохраняются значения всех заполненных полей и значения на деталях дублирующихся записей. То есть, на деталях результирующей записи будут присутствовать все активности, звонки и т. д., которые были связаны с объединенными записями.</p>
+	</li>
+	<li>
+	<p>Одинаковые номера телефонов не дублируются, даже если в разных записях для них указаны разные типы (например, один и тот же номер указан как рабочий телефон у одной записи и как мобильный — у другой).</p>
+	</li>
+	<li>
+	<p>Одинаковые средства связи, адреса и знаменательные события сохраняются без дублирования.</p>
+	</li>
+	<li>
+	<p>При различных значениях полей (например, ФИО, номеров телефонов и т. д.) есть возможность выбрать, какое из значений нужно сохранить в результирующей записи. Также есть возможность выбрать, какое из текстовых примечаний оставить при слиянии.</p>
+	</li>
+	<li>
+	<p>Все внешние ссылки на объединяемые дубли заменяются ссылками на результирующую запись.</p>
+	</li>
+	<li>
+	<p>В результирующей записи сохраняются сообщения ленты всех записей, данные которых объединялись.</p>
+	</li>
+	<li>
+	<p>Если любая из объединенных записей была указана в записях других разделов, например, в полях <span class="key">Основной контакт</span> или на детали <span class="key">Контакты контрагента</span> раздела <span class="key">Контрагенты</span>, то после объединения вместо них везде будет указана результирующая запись.</p>
+	</li>
+</ul><h4>Пример сохранения данных при объединении дублей<a class="title-anchor" href="#title-2641-8" id="title-2641-8"> </a></h4>
+
+<p>Если значения в одном и том же поле у объединенных записей заполнены и отличаются, то при объединении дублей необходимо будет указать, какие данные должны быть сохранены в результирующей записи.</p>
+
+<p>Например, в системе существуют дубли контактов с такими данными:</p>
+
+<div class="table">
+<table cellspacing="0"><tbody><tr><th>
+			<p>Поле</p>
+			</th>
+			<th>
+			<p>Дубль 1</p>
+			</th>
+			<th>
+			<p>Дубль 2</p>
+			</th>
+			<th>
+			<p>Дубль 3</p>
+			</th>
+			<th>
+			<p>Результирующая запись</p>
+			</th>
+		</tr><tr><td>
+			<p><span class="key">ФИО</span></p>
+			</td>
+			<td>
+			<p>Сергей Авдоров</p>
+			</td>
+			<td>
+			<p>Авдоров Сергей</p>
+			</td>
+			<td>
+			<p>С. Авдоров</p>
+			</td>
+			<td>
+			<p>По выбору пользователя</p>
+			</td>
+		</tr><tr><td>
+			<p><span class="key">Тип</span></p>
+			</td>
+			<td>
+			<p>—</p>
+			</td>
+			<td>
+			<p>Клиент</p>
+			</td>
+			<td>
+			<p>Контактное лицо</p>
+			</td>
+			<td>
+			<p>По выбору пользователя</p>
+			</td>
+		</tr><tr><td>
+			<p><span class="key">Контрагент</span></p>
+			</td>
+			<td>
+			<p>—</p>
+			</td>
+			<td>
+			<p>Альфабизнес</p>
+			</td>
+			<td>
+			<p>—</p>
+			</td>
+			<td>
+			<p>Альфабизнес</p>
+			</td>
+		</tr><tr><td>
+			<p><span class="key">Мобильный телефон</span></p>
+			</td>
+			<td>
+			<p>—</p>
+			</td>
+			<td>
+			<p>+7(495)2132181</p>
+			</td>
+			<td>
+			<p>+7(495)213-21-81</p>
+			</td>
+			<td>
+			<p>По выбору пользователя</p>
+			</td>
+		</tr><tr><td>
+			<p><span class="key">Рабочий телефон</span></p>
+			</td>
+			<td>
+			<p>+7(495) 523-6199</p>
+			</td>
+			<td>
+			<p>—</p>
+			</td>
+			<td>
+			<p>+7(495) 523-6169</p>
+			</td>
+			<td>
+			<p>По выбору пользователя</p>
+			</td>
+		</tr><tr><td>
+			<p><span class="key">Email</span></p>
+			</td>
+			<td>
+			<p>s_avdorov1981@gmail.com</p>
+			</td>
+			<td>
+			<p>s.avdorov1981@gmail.com</p>
+			</td>
+			<td>
+			<p>—</p>
+			</td>
+			<td>
+			<p>По выбору пользователя</p>
+			</td>
+		</tr><tr><td>
+			<p><span class="key">Skype</span></p>
+			</td>
+			<td>
+			<p>avdorov</p>
+			</td>
+			<td>
+			<p>—</p>
+			</td>
+			<td>
+			<p>—</p>
+			</td>
+			<td>
+			<p>avdorov</p>
+			</td>
+		</tr></tbody></table></div>
+
+<p>При объединении таких записей откроется окно объединения дублей (<span>Рис. 11</span>).</p>
+
+<div class="media">
+<div class="media__caption"><span>Рис. 11 </span>— Разрешение конфликтов при объединении дублей</div>
+
+<div class="media__element"><img alt="scr_chapter_deduplication_wnd_merge.png" id="image9" src="../../../../sites/default/files/documentation/user/ru/base/BPMonlineHelp/chapter_deduplication/scr_chapter_deduplication_wnd_merge.png" /></div>
+</div>
+
+<p>Установите переключатель <img alt="btn_radiobutton.png" id="image10" src="../../../../sites/default/files/documentation/user/ru/base/BPMonlineHelp/chapter_deduplication/btn_radiobutton.png" /> напротив значений, которыми должны быть заполнены поля результирующей записи, и нажмите кнопку <span class="key">Объединить</span>.</p>
+
+<p>В результате в системе останется одна запись, к которой будут автоматически привязаны все связанные с объединенными записями объекты. Например, если переключатели установлены, как показано на <span>Рис. 9</span>, то результирующая запись будет содержать следующие данные:</p>
+
+<ul><li>
+	<p><span class="key">ФИО</span>: “Авдоров Сергей”;</p>
+	</li>
+	<li>
+	<p><span class="key">Тип</span>: “Клиент”;</p>
+	</li>
+	<li>
+	<p><span class="key">Рабочий телефон</span>: “+7(495)213-6199”;</p>
+	</li>
+	<li>
+	<p><span class="key">Мобильный телефон</span>: “+7(495)213-21-81”;</p>
+	</li>
+	<li>
+	<p><span class="key">Email</span>: “s_avdorov1981@gmail.com”.</p>
+	</li>
+</ul><h3><a name="TOC_Как_работает_поиск_дублейbc-9" id="TOC_Как_работает_поиск_дублейbc-9"></a>Алгоритм поиска дублей<a class="title-anchor" href="#title-2641-9" id="title-2641-9"> </a></h3>
+
+<p>Для поиска дублей используется та же технология, что и для глобального поиска.</p>
+
+<p>В системе происходит индексирование данных: все специальные символы удаляются, оставшиеся буквы и цифры разбиваются по два или три символа и записываются в индекс, по которому в дальнейшем происходит поиск.</p>
+
+<p>Записи разделов в ходе индексирования не изменяются.</p>
+
+<p>Алгоритм <strong>локального поиска</strong> дублей в системе при сохранении записи:</p>
+
+<ol><li>Пользователь создает и сохраняет новую запись.</li>
+	<li>Система обрабатывает новые данные (убирает специальные символы, разбивает данные по 2–3 символа) и делает запрос в Elasticsearch на поиск записей, содержащих введенные пользователем символы.</li>
+	<li>Система отображает все совпадения, согласно хотя бы одному активному правилу поиска дублей, для которого дополнительно установлен признак <span class="key">Использовать правило при сохранении</span>. Совпадения с перестановкой слов также будут найдены.</li>
+</ol><p><strong>Массовый поиск</strong> дублей после запуска (вручную или автоматически) выполняется аналогично, с учетом активных правил поиска дублей.</p>
+
+<p>При поиске дублей по полям, в которых указан номер телефона, сравниваются все типы телефонов: <span class="key">Рабочий телефон</span>, <span class="key">Мобильный телефон</span>, <span class="key">Домашний телефон</span> и т. д.</p>
+
+<div class="message">
+<p><span class="message__bold">На заметку.</span> Обратите внимание, что в списке дублей раздела не будут отображаться те записи, которые ранее были добавлены в список исключений по кнопке <span class="key">Не считать дублями</span>.</p>
+</div>
+
+<p>Если поиск выполняется по полю, которое содержит значения, состоящие из нескольких слов, то Creatio определит как дубли не только полностью совпадающие значения, но и те, которые совпадают частично, по одному или двум словам. Например, при поиске по условию “Дубли контактов. ФИО контакта” дублями будут считаться контакты “Иванов Кирилл” и “Кирилл”.</p>
+
+<p>Если условия поиска пересекаются, то система будет искать дубли по более строгому правилу. Например, если в системе настроены следующие правила поиска дублей: “Дубли контактов. ФИО контакта” и “Дубли контактов. ФИО контакта, Телефон”, то Creatio будет считать дублями только те записи, которые совпадают по ФИО, поскольку это правило является более строгим.</p>
+
+<h2><a name="TOC_Настройки_поиска_дублейbc-10" id="TOC_Настройки_поиска_дублейbc-10"></a><a name="TOC_Настройки_поиска_дублей" id="TOC_Настройки_поиска_дублей"></a><a name="CSH_8" id="CSH_8"></a><a name="HT_deduplication_setup" id="HT_deduplication_setup"></a><a name="XREF_63329" id="XREF_63329"></a>Настроить поиск дублей<a class="title-anchor" href="#title-2641-10" id="title-2641-10"> </a></h2>
+
+<p>Проверка на дубли выполняется по существующим в системе правилам. По умолчанию в системе есть преднастроенные правила для поиска дублей в разделах <span class="key">Контрагенты</span>, <span class="key">Контакты</span> и <span class="key">Лиды</span>.</p>
+
+<p>В системе можно выполнить следующие действия:</p>
+
+<ul><li>
+	<p>Создать новые правила поиска дублей по текстовому или справочному полю в любом разделе.</p>
+	</li>
+	<li>
+	<p>Включить или отключить действие отдельных правил.</p>
+	</li>
+	<li>
+	<p>Определить, какие правила будут использоваться при сохранении записи.</p>
+	</li>
+	<li>
+	<p>Удалить правила, которые более не используются.</p>
+
+	<div class="message">
+	<p><span class="message__bold">На заметку.</span> Преднастроенные правила поиска дублей, которые ищут похожие контакты или контрагенты в лиде, удалить невозможно, о чем система оповестит при попытке удаления. Вы можете <a href="#title-2641-13">отключить</a> эти правила.</p>
+	</div>
+	</li>
+</ul><h3><a name="TOC_Как_создать_новоеbc-12" id="TOC_Как_создать_новоеbc-12"></a><a name="TOC_Как_создать_новое" id="TOC_Как_создать_новое"></a><a name="XREF_17954" id="XREF_17954"></a>Создать правило поиска дублей<a class="title-anchor" href="#title-2641-12" id="title-2641-12"> </a></h3>
+
+<div class="message">
+<p><span class="message__bold">Важно.</span> Подробнее о настройке сервиса для приложений, развернутых on-site, читайте в статье <a href="../../../razvertyvanie_onsite/nastrojka_konteinernikh_komponentov/massovyj_poisk_dublej/nastroit_massovyy_poisk_dubley.html?product=administration&amp;ver=7&amp;id=1959">Настроить массовый поиск дублей</a>.</p>
+</div>
+
+<ol><li>Откройте дизайнер системы, например, по кнопке <img alt="btn_system_designer00001.png" id="image11" src="../../../../sites/default/files/documentation/user/ru/base/BPMonlineHelp/chapter_deduplication/btn_system_designer00001.png" /> в правом верхнем углу приложения.</li>
+	<li>В блоке “Настройка системы” перейдите по ссылке “Правила поиска дублей”.</li>
+	<li>Нажмите кнопку <span class="key">Добавить правило</span>.</li>
+	<li>На странице настройки правила (<span>Рис. 12</span>) заполните поля:
+	<ol><li>
+		<p>В поле <span class="key">Тип</span> выберите из выпадающего списка раздел, для которого будет работать правило, например, “Продукт”. Создать правило возможно только для раздела, у которого в мастере раздела отмечен признак <span class="key">Индексировать для полнотекстового поиска</span>.</p>
+		</li>
+		<li>
+		<p>На детали <span class="key">Атрибуты</span> нажмите кнопку <img alt="btn_chapter_mobile_wizard_new_role.png" id="image12" src="../../../../sites/default/files/documentation/user/ru/base/BPMonlineHelp/chapter_deduplication/btn_chapter_mobile_wizard_new_role.png" /> и добавьте колонку или несколько колонок, по которым будет происходить поиск. Обратите внимание, на деталь <span class="key">Атрибуты</span> можно добавить только текстовые и справочные поля.<br />
+		При выборе нескольких атрибутов, например “Код” и “Название”, поиск дублей будет работать через оператор “И”, т. е. будет искать записи, в которых повторяются и коды, и названия. При создании нескольких правил только с одним атрибутом, например, если первое правило содержит только атрибут “Код”, а второе — атрибут “Название”, то поиск осуществляется через оператор “ИЛИ”, т. е. отобразит записи, в которых повторяются или коды, или названия.</p>
+
+		<div class="media">
+		<div class="media__caption"><span>Рис. 12 </span>— Страница настройки нового правила поиска дублей</div>
+
+		<div class="media__element"><img alt="scr_chapter_deduplication_create_new_rule.png" id="image13" src="../../../../sites/default/files/documentation/user/ru/base/BPMonlineHelp/chapter_deduplication/scr_chapter_deduplication_create_new_rule.png" /></div>
+		</div>
+		</li>
+	</ol></li>
+	<li>
+	<p>Установите для правила признак <span class="key">Активен</span>.</p>
+	</li>
+	<li>
+	<p>Установите признак <span class="key">Использовать правило при сохранении</span> в том случае, если правило будет использоваться для поиска дублей при сохранении мини-карточки или страницы записи.</p>
+	</li>
+	<li>
+	<p>Нажмите кнопку <span class="key">Сохранить</span>.</p>
+
+	<p>После сохранения система отобразит сообщение о том, что изменения вступят в силу при следующем входе в систему. После повторного входа поиск дублей будет выполняться по созданному правилу, а также в соответствующем разделе появится действие <span class="key">Перейти к дублям раздела</span>.</p>
+	</li>
+</ol><h3><a name="TOC_Как_отключить_правилоbc-13" id="TOC_Как_отключить_правилоbc-13"></a><a name="TOC_Как_отключить_правило" id="TOC_Как_отключить_правило"></a><a name="XREF_14838" id="XREF_14838"></a>Отключить правило поиска дублей<a class="title-anchor" href="#title-2641-13" id="title-2641-13"> </a></h3>
+
+<p>Если необходимо, чтобы какое-либо правило не использовалось при поиске дублей (постоянно или временно), то вы можете его деактивировать. Для этого:</p>
+
+<div class="message">
+<p><span class="message__bold">На заметку.</span> Если вы деактивируете правило, которое используется в бизнес-процессах, то при срабатывании элемент <span class="key">Поиск и объединение дублей</span> не будет его учитывать. При отключении всех правил поиска дублей, указанных в элементе, бизнес-процесс, который содержит данный элемент, не сможет завершиться.</p>
+</div>
+
+<p>При деактивации правила поиска дублей отобразится предупреждение, что данное правило может использоваться в бизнес-процессах. Однако Creatio не проверяет, использует ли его какой-либо элемент <span class="key">Поиск и объединение дублей</span>.</p>
+
+<ol><li>Откройте дизайнер системы, например, по кнопке <img alt="btn_system_designer00001.png" id="image11" src="../../../../sites/default/files/documentation/user/ru/base/BPMonlineHelp/chapter_deduplication/btn_system_designer00001.png" /> в правом верхнем углу приложения.</li>
+	<li>Перейдите по ссылке “Правила поиска дублей”.</li>
+	<li>Выберите в списке правило, которое не должно использоваться, и нажмите кнопку <span class="key">Открыть</span>.</li>
+	<li>На открывшейся странице настройки правила снимите признак <span class="key">Активен</span>.</li>
+	<li>Нажмите кнопку <span class="key">Сохранить</span>.<br />
+	В результате выбранное правило не будет использоваться при поиске дублей. В будущем вы сможете его вновь активировать.</li>
+</ol><h3><a name="TOC_Настройка_расписанияbc-14" id="TOC_Настройка_расписанияbc-14"></a><a name="TOC_Настройка_расписания" id="TOC_Настройка_расписания"></a><a name="CSH_10" id="CSH_10"></a><a name="HT_deduplication_schedule" id="HT_deduplication_schedule"></a><a name="XREF_50415" id="XREF_50415"></a>Настроить расписание автоматического поиска дублей<a class="title-anchor" href="#title-2641-14" id="title-2641-14"> </a></h3>
+
+<p>В системе можно настроить автоматическое выполнение поиска дублирующихся записей по расписанию, например, три раза в неделю. Для этого:</p>
+
+<ol><li>Откройте дизайнер системы, например, по кнопке <img alt="btn_system_designer00001.png" id="image11" src="../../../../sites/default/files/documentation/user/ru/base/BPMonlineHelp/chapter_deduplication/btn_system_designer00001.png" /> в правом верхнем углу приложения.</li>
+	<li>Перейдите по ссылке “Правила поиска дублей”.</li>
+	<li>В меню <span class="key">Действия</span> страницы правил поиска дублей выберите <span class="key">Настроить автоматический поиск дублей</span> (<span>Рис. 13</span>).
+	<div class="media">
+	<div class="media__caption"><span>Рис. 13</span> — Переход к настройке автоматического поиска дублей</div>
+
+	<div class="media__element"><img alt="scr_chapter_deduplication_setting_schedule.png" id="image16" src="../../../../sites/default/files/documentation/user/ru/base/BPMonlineHelp/chapter_deduplication/scr_chapter_deduplication_setting_schedule.png" /></div>
+	</div>
+	</li>
+	<li>
+	<p>На странице <span class="key">Настройка поиска дублей по расписанию</span> (<span>Рис. 14</span>) настройте параметры автоматического запуска общего поиска дублей:</p>
+
+	<div class="media">
+	<div class="media__caption"><span>Рис. 14 </span>— Настройка поиска дублей по расписанию</div>
+
+	<div class="media__element"><img alt="scr_chapter_deduplication_wnd_schedule.png" id="image17" src="../../../../sites/default/files/documentation/user/ru/base/BPMonlineHelp/chapter_deduplication/scr_chapter_deduplication_wnd_schedule.png" /></div>
+	</div>
+
+	<ol><li>
+		<p>Выберите раздел, для которого будет настроено расписание. В списке отображаются только те разделы, для которых существует хотя бы одно правило поиска дублей.</p>
+		</li>
+		<li>
+		<p>Выберите время суток, в которое будет запущен поиск.</p>
+		</li>
+		<li>
+		<p>Отметьте те дни недели, в которые следует выполнять поиск.</p>
+		</li>
+		<li>
+		<p>Нажмите кнопку <span class="key">Применить настройки</span>.</p>
+
+		<p>В результате поиск дублей будет автоматически выполняться с использованием всех активных правил по выбранным дням недели в установленное время. Обратите внимание, что слияние записей в автоматическом режиме не выполняется — найденные дубли нужно будет обработать вручную.</p>
+
+		<p>Чтобы отключить автоматический поиск дублей, достаточно очистить значение в поле, в котором указывается время поиска, либо снять признаки напротив всех дней недели и нажать кнопку <span class="key">Применить настройки</span>. В любом из указанных случаев автоматический поиск дублей будет отключен.</p>
+		</li>
+	</ol></li>
+</ol></div>
+</div>
+      
+  </div>
+<div class="block block-layout-builder block-field-blocknodeuser-documentationfield-linked-link">
+  
+    
+      
+  <div class="field field--name-field-linked-link field--type-link field--label-above">
+    <div class="field__label">Смотрите также</div>
+          <div class="field__items">
+              <div class="field__item"><a href="../filtry/filtry.html">Фильтры</a></div>
+          <div class="field__item"><a href="../gryppy/gruppy.html">Группы</a></div>
+          <div class="field__item"><a href="../tegi/tegi.html">Теги</a></div>
+          <div class="field__item"><a href="../excel_import/import_iz_excel.html">Импорт из Excel</a></div>
+          <div class="field__item"><a href="../../../../7-17/user/bazis_platformy/dannye/excel_export/eksport_v_excel.html">Экспорт в Excel </a></div>
+          <div class="field__item"><a href="../dostup_na_zapis/nastroit_prava_dostupa_na_zapis.html">Настроить права доступа на запись </a></div>
+          <div class="field__item"><a href="../../../razvertyvanie_onsite/nastrojka_konteinernikh_komponentov/globalnyj_poisk/nastroit_globalnyy_poisk.html">Настроить глобальный поиск</a></div>
+              </div>
+      </div>
+
+  </div>
+
+    </div>
+  </div>
+
+  </div>
+
+</article>
+
+  </div>
+
+  </div>
+
+          </div>
+        </div>
+
+                  <aside class="creatio-sidebar creatio-sidebar_first" role="complementary">
+              <div class="region region-sidebar-first">
+    <div id="block-documentationnaviagtion" class="block block-ts-nav block-ts-nav-doc-nav">
+  
+    
+      <div class="ts-nav-block"><a href="../../../../index.html" class="ts-nav-block__link">Документация</a><div class="ts-nav-block__title">Для пользователя</div>
+</div>
+<div class="ts-nav-container"><ul class="ts-nav-menu"><li class="ts-nav-menu__item">
+  <a href="../../../nocode_platforma.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">No-сode платформа&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../bazis_platformy.html" class="ts-nav-menu__link ts-nav-menu__link_expanded ts-nav-menu__link_open" hreflang="zxx">Базис платформы&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+      <ul class="ts-nav-menu__children">
+      <li class="ts-nav-menu__item">
+  <a href="../../interfejs.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Интерфейс&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../dannye.html" class="ts-nav-menu__link ts-nav-menu__link_expanded ts-nav-menu__link_open" hreflang="zxx">Данные&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+      <ul class="ts-nav-menu__children">
+      <li class="ts-nav-menu__item">
+  <a href="../filtry/filtry.html" class="ts-nav-menu__link" hreflang="ru">Фильтры</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../gryppy/gruppy.html" class="ts-nav-menu__link" hreflang="ru">Группы</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../tegi/tegi.html" class="ts-nav-menu__link" hreflang="ru">Теги</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../excel_import/import_iz_excel.html" class="ts-nav-menu__link" hreflang="ru">Excel импорт</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../excel_export/export_v_excel.html" class="ts-nav-menu__link" hreflang="ru">Excel экспорт</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="poisk_i_obedinenie_dubly.html" class="ts-nav-menu__link ts-nav-menu__link_active ts-nav-menu__link_open" hreflang="ru">Дубли</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../dostup_na_zapis/nastroit_prava_dostupa_na_zapis.html" class="ts-nav-menu__link" hreflang="ru">Доступ на запись</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../udalenie_zapisey/udalit_zapisi.html" class="ts-nav-menu__link" hreflang="ru">Удаление записей</a>
+  </li>
+
+    </ul>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../kommunikacii.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Коммуникации&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../mobilnoe_prilozhenie.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Мобильное приложение&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../vypolnenie_biznes-processov.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Выполнение бизнес-процессов&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+
+    </ul>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../instrumenty_crm.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Инструменты CRM&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../instrumenty_kastomizacii.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Инструменты кастомизации&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../biznes_processy.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Бизнес-процессы&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../instrumenty_marketinga.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Инструменты маркетинга&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../instrumenty_prodazh.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Инструменты продаж&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../instrumenty_servisa.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Инструменты сервиса&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../ustanovka_i_administrirovanie.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Администрирование&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../razvertyvanie_onsite.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Развертывание on-site&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../banki_i_finansy.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Банки и финансы&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../drugie_reshenija.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Другие решения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+</ul>
+</div>
+
+  </div>
+
+  </div>
+
+            <div class="creatio-sidebar__toggle"></div>
+          </aside>
+        
+                  <aside class="creatio-sidebar creatio-sidebar_second" role="complementary">
+              <div class="region region-sidebar-second">
+    <div id="block-example" class="block block-ts-nav block-ts-nav-page-nav">
+  
+    
+        <div class="ts-nav-title">Дубли</div>
+<div class="ts-nav-page">
+      <ul class="ts-nav-page__list">
+                                                <li class="ts-nav-page__item ts-nav-page__item_expanded ts-nav-page__item_open"><a href="poisk_i_obedinenie_dubly.html" class="ts-nav-page__link ts-nav-page__link_expanded ts-nav-page__link_active">Поиск и объединение дублей&nbsp;<span class="ts-nav-page__link-arrow"></span></a></li>
+          </ul>
+  </div>
+
+  </div>
+<div id="block-adminfeedbackblock" class="block block-admin-feedback block-admin-feedback-block">
+  
+    
+      <div id="feedback-message"><div id="upper-feedback-content"><h2>Был ли данный материал полезен?</h2>
+<input class="feedback-btn feedback-btn__yes button js-form-submit form-submit" data-node-id="3631" data-feedback="yes" type="submit" name="op" value="Да" />
+<input class="feedback-btn feedback-btn__no button js-form-submit form-submit" data-node-id="3631" data-feedback="no" type="submit" name="op" value="Нет" />
+</div>
+<form class="admin-feedback-form" data-drupal-selector="admin-feedback-form" action="https://academy.terrasoft.ua/docs/user/bazis_platformy/dannye/dubli/poisk_i_obedinenie_dubly" method="post" id="admin-feedback-form" accept-charset="UTF-8">
+  <div id="feedback-msg-result"></div><div class="js-form-item form-item js-form-type-textarea form-type-textarea js-form-item-feedback-message form-item-feedback-message form-no-label">
+        <div class="form-textarea-wrapper">
+  <textarea id="edit-feedback-msg" data-drupal-selector="edit-feedback-message" name="feedback_message" rows="5" cols="60" class="form-textarea resize-vertical"></textarea>
+</div>
+
+        </div>
+<input id="feedback-id" data-drupal-selector="edit-feedback-id" type="hidden" name="feedback_id" value="" />
+<input class="feedback-btn feedback-btn__send-comment button js-form-submit form-submit" data-drupal-selector="edit-feedback-send" type="submit" id="edit-feedback-send" name="op" value="Отправить" />
+<input autocomplete="off" data-drupal-selector="form-vdygjsksnodfqqed94rj-mc1khmi-dslkacmiadoyw0" type="hidden" name="form_build_id" value="form-vDYGJsKsNoDFQqed94rj-Mc1KhMi-dSlkacMiADOyw0" />
+<input data-drupal-selector="edit-admin-feedback-form" type="hidden" name="form_id" value="admin_feedback_form" />
+
+</form>
+</div>
+
+  </div>
+
+  </div>
+
+          </aside>
+              </main>
+    </div>
+  </div>
+
+  <footer role="contentinfo">
+    <div class="creatio-region creatio-region_footer">
+      <div class="creatio-container">
+          <div class="region region-footer">
+    <div id="block-footerua" class="block block-simple-block block-simple-blockfooter-ua">
+  
+    
+      <div class="footer">
+<div class="footer-left">
+<ul class="footer-socials"><li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_fb" href="https://www.facebook.com/terrasoft.ua" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_in" href="https://www.linkedin.com/company/terrasoft/" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_yt" href="https://www.youtube.com/c/TerrasoftUkraine" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_tg" href="https://t.me/Terrasoft_UA" target="_blank"> </a></li>
+</ul></div>
+
+<div class="footer-contact">
+<div class="footer-title">Будьте на связи!</div>
+
+<div class="footer-content">
+<div class="footer-items">
+<div class="footer-item"><a class="footer__link footer__link_phone" href="tel:+380443633133">+38 (044) 363-31-33</a></div>
+</div>
+
+<div class="footer-items">
+<div class="footer-item"><a class="footer__link footer__link_email" href="mailto:support@terrasoft.ua">support@terrasoft.ua</a></div>
+</div>
+</div>
+</div>
+</div>
+
+  </div>
+
+  </div>
+
+      </div>
+    </div>
+    <div class="creatio-region creatio-region_bottom">
+      <div class="creatio-container">
+          <div class="region region-bottom">
+    <div id="block-allrightsreservedua" class="block block-simple-block block-simple-blockfooter-bottom-ua">
+  
+    
+      <p>© 2002-2022 Terrasoft.  |  <a href="https://www.terrasoft.ua/privacy-policy" target="_blank">Конфиденциальность</a></p>
+
+  </div>
+
+  </div>
+
+      </div>
+    </div>
+  </footer>
+</div>
+<div class="creatio-bg"></div>
+
+
+  </div>
+
+    
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/docs\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/3631","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"ru"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"ajaxPageState":{"libraries":"admin_feedback\/admin_feedback_block,admin_feedback\/admin_feedback_css,classy\/base,classy\/messages,classy\/node,core\/drupal.ajax,core\/jquery.form,core\/normalize,creatio\/creatio.lists,creatio\/fancybox,creatio\/global,layout_discovery\/onecol,system\/base,ts_doc\/doc_version,ts_feedback\/ts_feedback,ts_nav\/breadcrumb,ts_nav\/doc_nav,ts_nav\/page_nav,ts_title_anchor\/ts_title_anchor","theme":"creatio","theme_token":null},"ajaxTrustedUrl":{"form_action_p_pvdeGsVG5zNF_XLGPTvYSKCf43t8qZYSwcfZl2uzM":true,"\/docs\/user\/bazis_platformy\/dannye\/dubli\/poisk_i_obedinenie_dubly?ajax_form=1":true},"admin_feedback":{"yes_response":"\u0421\u043f\u0430\u0441\u0438\u0431\u043e \u0437\u0430 \u043e\u0431\u0440\u0430\u0442\u043d\u0443\u044e \u0441\u0432\u044f\u0437\u044c!","no_response":"\u0421\u043f\u0430\u0441\u0438\u0431\u043e \u0437\u0430 \u043e\u0431\u0440\u0430\u0442\u043d\u0443\u044e \u0441\u0432\u044f\u0437\u044c!","custom_text_response_on_no":{"value":"","format":"full_html"},"feedback_prompt_on_yes":true,"feedback_prompt_on_no":true,"feedback_enable_predefined_answers":false,"feedback_prompt":"\u041a\u0430\u043a \u043c\u043e\u0436\u043d\u043e \u0443\u043b\u0443\u0447\u0448\u0438\u0442\u044c \u044d\u0442\u0443 \u0441\u0442\u0430\u0442\u044c\u044e?"},"ajax":{"edit-feedback-send":{"callback":"::validateFeedbackMsg","event":"mousedown","keypress":true,"prevent":"click","url":"\/docs\/user\/bazis_platformy\/dannye\/dubli\/poisk_i_obedinenie_dubly?ajax_form=1","dialogType":"ajax","submit":{"_triggering_element_name":"op","_triggering_element_value":"\u041e\u0442\u043f\u0440\u0430\u0432\u0438\u0442\u044c"}}},"user":{"uid":0,"permissionsHash":"9c2367dfcaba0fa15f0375f97aed64e146c908cee68508d13b79e3ee80e5162d"}}</script>
+<script src="../../../../sites/default/files/js/js_F2-Y4EzgTnESr58XByoLYEnsbi7ysTfMIKN1RvsMSWY.js"></script>
+
+
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+      <g id="svg-copy" class="svg-icon svg-icon_copy">
+        <path d="M15.111,18H1.889A1.848,1.848,0,0,1,0,16.2V3.6A1.848,1.848,0,0,1,1.889,1.8H5.837a2.87,2.87,0,0,1,5.326,0h3.948A1.848,1.848,0,0,1,17,3.6V16.2A1.848,1.848,0,0,1,15.111,18ZM3.777,12.6v1.8h6.611V12.6Zm0-3.6v1.8h9.445V9Zm0-3.6V7.2h9.445V5.4ZM8.5,1.8a.924.924,0,0,0-.944.9.945.945,0,0,0,1.889,0A.924.924,0,0,0,8.5,1.8Z"/>
+      </g>
+
+      <g id="svg-prev" class="svg-icon svg-icon_arrow">
+        <path d="M5.488,12.779,0,6.39,5.488,0" transform="translate(1 0.652)"/>
+      </g>
+
+      <g id="svg-next" class="svg-icon svg-icon_arrow">
+        <path d="M0,12.779,5.488,6.39,0,0" transform="translate(0.759 0.652)"/>
+      </g>
+    </svg>
+  </body>
+
+<!-- Mirrored from academy.terrasoft.ua/docs/user/bazis_platformy/dannye/dubli/poisk_i_obedinenie_dubly#title-2641-10 by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 22 Mar 2022 21:59:18 GMT -->
+</html>

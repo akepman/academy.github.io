@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# ">
+  
+<!-- Mirrored from academy.terrasoft.ua/docs/developer/razrabotka_marketplace_prilozheniya/razrabotka_prilozheniya/obshchie_principy_razrabotki_prilozheniya_marketplace/primer_razrabotki_prilozheniya by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Mar 2022 01:01:57 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+          <!-- Google Tag Manager -->
+      <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          '../../../../../../www.googletagmanager.com/gtm5445.html?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-KLLB8G');</script>
+      <!-- End Google Tag Manager -->
+        <meta charset="utf-8" />
+<link rel="canonical" href="primer_razrabotki_prilozheniya.html" />
+<meta name="description" content="Разработка функциональности пользовательского решения является одним из шагов общей последовательности разработки приложений для Marketplace.
+
+Приложение для Creatio Marketplace является проектным решением, расширяющим возможности базовых продуктов Creatio и имеющее дополнительную бизнес-ценность. Поэтому разработка приложения для Marketplace практически ничем не отличается от разработки обычного проектного решения." />
+<meta property="og:url" content="https://academy.terrasoft.ua/docs/developer/razrabotka_marketplace_prilozheniya/razrabotka_prilozheniya/obshchie_principy_razrabotki_prilozheniya_marketplace/primer_razrabotki_prilozheniya" />
+<meta property="og:title" content="Пример разработки приложения для Marketplace" />
+<meta property="og:description" content="Разработка функциональности пользовательского решения является одним из шагов общей последовательности разработки приложений для Marketplace.
+
+Приложение для Creatio Marketplace является проектным решением, расширяющим возможности базовых продуктов Creatio и имеющее дополнительную бизнес-ценность. Поэтому разработка приложения для Marketplace практически ничем не отличается от разработки обычного проектного решения." />
+<meta name="Generator" content="Drupal 9 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="../../../../themes/custom/creatio/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="revision" href="primer_razrabotki_prilozheniya.html" />
+
+    <title>Пример разработки приложения для Marketplace | Creatio Academy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&amp;family=Open+Sans:ital,wght@0,300;0,400;0,600;1,400&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" media="all" href="../../../../sites/default/files/css/css_6lTP66__-yc6QXFp1zOwoeJ0HVigoYZP-SeoLLii000.css" />
+<link rel="stylesheet" media="all" href="../../../../sites/default/files/css/css_XQJDNhkF3xH5SZCcY-PI89Zu4nYIzQ5oR3SnUKyfXJU.css" />
+<link rel="stylesheet" media="print" href="../../../../sites/default/files/css/css_Zn4VHvcniOOtUwkIVwXzYr_0AI9gUVgZcPqaH4ViagU.css" />
+
+    
+  </head>
+  <body class="path-node page-node-type-case">
+          <!-- Google Tag Manager (noscript) -->
+      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KLLB8G"
+                        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+      <!-- End Google Tag Manager (noscript) -->
+    
+        
+      <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    <div class="creatio-page d-flex flex-column">
+        <div class="region region-informer">
+    <div id="block-terrasoftpidtrimueukrainu" class="block block-simple-block block-simple-blockterrasoft-pidtrimue-ukrainu">
+  
+    
+      <style type="text/css">
+<!--/*--><![CDATA[/* ><!--*/
+@import url(../../../../../../www.terrasoft.ua/themes/custom/creatio/css/components/informer.css)
+
+/*--><!]]>*/
+</style><div class="ts-swu">
+<div class="creatio-container">
+<div class="ts-swu__cont">
+<div><a class="ts-swu__link" href="https://www.terrasoft.ua/terrasoft-stands-with-ukraine" target="_blank">Україна понад усе!</a> <span><a href="https://www.terrasoft.ua/terrasoft-stands-with-ukraine" target="_blank">Приєднуйтеся</a> до допомоги!</span></div>
+</div>
+</div></div>
+
+  </div>
+
+  </div>
+
+  
+  <header role="banner">
+          <div class="creatio-region creatio-region_top">
+        <div class="creatio-container">
+            <div class="region region-top">
+    <div id="block-menutoggle" class="block block-simple-block block-simple-blockmenu-toggle">
+  
+    
+      <div class="menu-toggle"><span> </span></div>
+
+  </div>
+<div id="block-logowhite-2" class="block block-simple-block block-simple-blocklogo-white">
+  
+    
+      <p><a class="site-logo" href="../../../../../index.html" rel="home"><img src="../../../../themes/custom/creatio/logo-white.svg" /></a></p>
+
+  </div>
+<div id="block-search" class="block block-simple-block block-simple-blocksearch">
+  
+    
+      <div class="search">
+<form action="https://academy.terrasoft.ua/search" class="search-form" method="get"><input class="search-form__input" name="search" placeholder="Поиск" type="search" /><input class="search-form__button" type="submit" value="Поиск" /> </form>
+
+<div class="search-toggle"> </div>
+</div>
+
+  </div>
+<nav role="navigation" aria-labelledby="block-sitesua-menu" id="block-sitesua" class="block block-menu navigation menu--sites-ua">
+            
+  <h2 class="visually-hidden" id="block-sitesua-menu">Sites UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="https://www.terrasoft.ua/" rel="nofollow" target="_blank">Terrasoft</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://community.terrasoft.ua/" rel="nofollow" target="_blank">Community</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://marketplace.terrasoft.ua/" rel="nofollow" target="_blank">Marketplace</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+<div id="block-usermenu" class="block block-ts-user block-ts-user-menu-block">
+  
+    
+      <ul class="user-menu">
+      <li class="user-menu__item">
+      <a class="user-menu__link" href="https://profile.terrasoft.ua/user/login?destination=academy/ua/docs/developer/razrabotka_marketplace_prilozheniya/razrabotka_prilozheniya/obshchie_principy_razrabotki_prilozheniya_marketplace/primer_razrabotki_prilozheniya">Войти</a>
+    </li>
+  </ul>
+
+  </div>
+<div id="block-usermenumobile" class="block block-ts-user block-ts-user-menu-mobile-block">
+  
+    
+      <ul class="user-menu-mobile">
+      <li class="user-menu-mobile__item">
+      <div class="user-menu-mobile__user user-menu-mobile__user_icon"></div>
+      <ul class="user-menu-mobile__submenu">
+        <li class="user-menu-mobile__subitem">
+          <a class="user-menu-mobile__sublink" href="https://profile.terrasoft.ua/user/login?destination=academy/ua/docs/developer/razrabotka_marketplace_prilozheniya/razrabotka_prilozheniya/obshchie_principy_razrabotki_prilozheniya_marketplace/primer_razrabotki_prilozheniya">Войти</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  </div>
+
+  </div>
+
+        </div>
+      </div>
+              <div class="creatio-region creatio-region_header">
+        <div class="creatio-container">
+            <div class="region region-header">
+    <div id="block-logo" class="block block-simple-block block-simple-blocklogo">
+  
+    
+      <p><a class="site-logo" href="../../../../../index.html" rel="home"><img src="../../../../themes/custom/creatio/logo.svg" /></a></p>
+
+  </div>
+<nav role="navigation" aria-labelledby="block-osnovnayanavigaciyaua-menu" id="block-osnovnayanavigaciyaua" class="block block-menu navigation menu--main-ua">
+            
+  <h2 class="visually-hidden" id="block-osnovnayanavigaciyaua-menu">Основная навигация UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="../../../../index.html" data-drupal-link-system-path="&lt;front&gt;">Документация</a>
+              </li>
+                <li class="menu-item">
+        <a href="../../../../../trainings.html">Тренинги</a>
+              </li>
+                <li class="menu-item">
+        <a href="../../../../certification.html" data-drupal-link-system-path="node/3084">Сертификация и тестирование</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+<nav role="navigation" aria-labelledby="block-sitesua-2-menu" id="block-sitesua-2" class="block block-menu navigation menu--sites-ua">
+            
+  <h2 class="visually-hidden" id="block-sitesua-2-menu">Sites UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="https://www.terrasoft.ua/" rel="nofollow" target="_blank">Terrasoft</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://community.terrasoft.ua/" rel="nofollow" target="_blank">Community</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://marketplace.terrasoft.ua/" rel="nofollow" target="_blank">Marketplace</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+
+  </div>
+
+        </div>
+      </div>
+              <div class="creatio-region creatio-region_breadcrumb">
+        <div class="creatio-container">
+            <div class="region region-breadcrumb">
+    <div id="block-logowhite" class="block block-simple-block block-simple-blocklogo-white">
+  
+    
+      <p><a class="site-logo" href="../../../../../index.html" rel="home"><img src="../../../../themes/custom/creatio/logo-white.svg" /></a></p>
+
+  </div>
+<div id="block-breadcrumbnaviagtion" class="block block-ts-nav block-ts-nav-bread">
+  
+    
+      <nav class="breadcrumb"><ol class="ts-nav-breadcrumb__list"><li class="ts-nav-breadcrumb__item"><a href="../../../../index.html" class="ts-nav-breadcrumb__link" title="Документация">Документация</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../../index2132.html?vid_1=2" class="ts-nav-breadcrumb__link" title="Для разработчика">Для разработчика</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../razrabotka_marketplace_prilozheniya.html" class="ts-nav-breadcrumb__link" title="Разработка Marketplace-приложения" hreflang="zxx">Разработка Marketplace-приложения</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../razrabotka_prilozheniya.html" class="ts-nav-breadcrumb__link" title="Разработка приложения" hreflang="ru">Разработка приложения</a></li>
+<li class="ts-nav-breadcrumb__item ts-nav-breadcrumb__item_mobile"><a href="../obshchie_principy_razrabotki_prilozheniya_marketplace.html" class="ts-nav-breadcrumb__link" title="Обзор" hreflang="ru">Обзор</a></li>
+<li class="ts-nav-breadcrumb__item"><span class="ts-nav-breadcrumb__link ts-nav-breadcrumb__link_current" title="Пример разработки приложения">Пример разработки приложения</span></li>
+</ol>
+</nav>
+
+  </div>
+<div id="block-search-2" class="block block-simple-block block-simple-blocksearch">
+  
+    
+      <div class="search">
+<form action="https://academy.terrasoft.ua/search" class="search-form" method="get"><input class="search-form__input" name="search" placeholder="Поиск" type="search" /><input class="search-form__button" type="submit" value="Поиск" /> </form>
+
+<div class="search-toggle"> </div>
+</div>
+
+  </div>
+
+  </div>
+
+        </div>
+      </div>
+      </header>
+
+  <div class="creatio-region creatio-region_main">
+    <div class="creatio-container">
+                <div class="region region-breadcrumb-mobile">
+    <div id="block-breadcrumbnaviagtion-2" class="block block-ts-nav block-ts-nav-bread">
+  
+    
+      <nav class="breadcrumb"><ol class="ts-nav-breadcrumb__list"><li class="ts-nav-breadcrumb__item"><a href="../../../../index.html" class="ts-nav-breadcrumb__link" title="Документация">Документация</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../../index2132.html?vid_1=2" class="ts-nav-breadcrumb__link" title="Для разработчика">Для разработчика</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../razrabotka_marketplace_prilozheniya.html" class="ts-nav-breadcrumb__link" title="Разработка Marketplace-приложения" hreflang="zxx">Разработка Marketplace-приложения</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../razrabotka_prilozheniya.html" class="ts-nav-breadcrumb__link" title="Разработка приложения" hreflang="ru">Разработка приложения</a></li>
+<li class="ts-nav-breadcrumb__item ts-nav-breadcrumb__item_mobile"><a href="../obshchie_principy_razrabotki_prilozheniya_marketplace.html" class="ts-nav-breadcrumb__link" title="Обзор" hreflang="ru">Обзор</a></li>
+<li class="ts-nav-breadcrumb__item"><span class="ts-nav-breadcrumb__link ts-nav-breadcrumb__link_current" title="Пример разработки приложения">Пример разработки приложения</span></li>
+</ol>
+</nav>
+
+  </div>
+
+  </div>
+
+      
+      <main class="creatio-main" role="main">
+                                                    
+        <div class="creatio-content creatio-content_small">
+          <div class="creatio-content__inner creatio-content__inner_bg">
+                            <div class="region region-messages">
+    <div data-drupal-messages-fallback class="hidden"></div>
+
+  </div>
+
+            
+              <div class="region region-content">
+    <div id="block-creatio-page-title" class="block block-core block-page-title-block">
+  
+    
+      
+  <h1 class="page-title"><span class="field field--name-title field--type-string field--label-hidden">Пример разработки приложения для Marketplace</span>
+</h1>
+
+
+  </div>
+<div id="block-creatio-content" class="block block-system block-system-main-block">
+  
+    
+      
+<article data-history-node-id="2395" role="article" about="/docs/developer/razrabotka_marketplace_prilozheniya/razrabotka_prilozheniya/obshchie_principy_razrabotki_prilozheniya_marketplace/primer_razrabotki_prilozheniya" class="node node--type-case node--view-mode-full">
+
+  
+    
+
+  
+  <div class="node__content">
+      <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocknodecasefield-difficulty">
+  
+    
+      
+            <div class="field field--name-field-difficulty field--type-entity-reference field--label-hidden field__item"><div about="/docs/taxonomy/term/123" id="taxonomy-term-123" class="taxonomy-term vocabulary-difficulty">
+  
+  
+  <div class="content">
+      <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocktaxonomy-termdifficultyfield-icon">
+  
+    
+      
+            <div class="field field--name-field-icon field--type-image field--label-hidden field__item">  <img src="../../../../sites/default/files/difficulty/medium.svg" alt="" loading="lazy" typeof="foaf:Image" />
+
+</div>
+      
+  </div>
+<div class="block block-layout-builder block-field-blocktaxonomy-termdifficultyname">
+  
+    
+      
+            <div class="field field--name-name field--type-string field--label-hidden field__item"><span style="color: #F57E20;">Средний</span></div>
+      
+  </div>
+
+    </div>
+  </div>
+
+  </div>
+</div>
+</div>
+      
+  </div>
+<div class="block block-ts-doc block-ts-doc-downloads">
+  
+    
+      <a href="../../../../sites/default/files/pdf/node/2395/Primer_razrabotki_prilozheniya_dlya_Marketplace_.pdf" target="_blank">PDF</a>
+  </div>
+<div class="block block-ts-doc block-ts-doc-versions">
+  
+    
+        <div class="ts-doc-versions">
+    <select class="ts-doc-versions__select">
+                                                <option value="/docs/8-0/developer/razrabotka_marketplace_prilozheniya/razrabotka_prilozheniya/obshchie_principy_razrabotki_prilozheniya_marketplace/primer_razrabotki_prilozheniya" selected>Версия 8.0</option>
+                              <option value="/docs/7-18/developer/razrabotka_marketplace_prilozheniya/razrabotka_prilozheniya/obshchie_principy_razrabotki_prilozheniya_marketplace/primer_razrabotki_prilozheniya">Версия 7.18</option>
+                              <option value="/docs/7-17/developer/razrabotka_marketplace_prilozheniya/razrabotka_prilozheniya/obshchie_principy_razrabotki_prilozheniya_marketplace/primer_razrabotki_prilozheniya">Версия 7.17</option>
+                              <option value="/docs/7-16/developer/razrabotka_marketplace_prilozheniya/razrabotka_prilozheniya/obshchie_principy_razrabotki_prilozheniya_marketplace/primer_razrabotki_prilozheniya">Версия 7.16</option>
+          </select>
+  </div>
+
+  </div>
+
+    </div>
+  </div>
+  <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocknodecasebody">
+  
+    
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><p>Разработка функциональности пользовательского решения является одним из шагов общей последовательности разработки приложений для Marketplace.</p>
+
+<p>Приложение для Creatio Marketplace является проектным решением, расширяющим возможности базовых продуктов Creatio и имеющее дополнительную бизнес-ценность. Поэтому разработка приложения для Marketplace практически ничем не отличается от <a data-auto-update-caption="dlue" href="../../../architecture/razrabotka_v_creatio/obzor/obzor.html">разработки обычного проектного решения</a>.</p>
+
+<p>Поскольку приложение для Creatio Marketplace является проектным решением, предоставляемым сторонним пользователям, то необходим механизм установки этого решения в пользовательские приложения. В Creatio этот механизм реализован с помощью пакетов. <strong><a data-auto-update-caption="dlue" href="../../../../7-17/developer/development_tools/packages/pakety.html">Пакет Creatio</a></strong> — это совокупность конфигурационных элементов, которые реализуют определенный блок функциональности.</p>
+
+<p>Количество и состав пакетов, реализующих приложение для Creatio Marketplace зависит от сложности функциональности, заложенной в приложение. Например, для вызова стороннего сервиса с существующей страницы записи достаточно заместить одну или несколько схем, сгруппировав их в одном пользовательском пакете. А для создания нового раздела Creatio, реализующего сложную функциональность, необходимо разработать уже несколько десятков новых схем и модулей.</p>
+
+<div class="message message_example">
+<p><span class="message__bold message__bold_example">Пример.</span> Создать проектное решение, реализующее на странице главного меню приложения Creatio для продукта sales enterprise вызов стороннего Web-сервиса, предоставляющего строку приветствия. Вызов Web-сервиса реализовать при помощи HTTP-запроса методом <span class="filled">POST</span>, передав в качестве параметра имя текущего пользователя. Результат отобразить под секцией ссылок на страницы социальных сетей.</p>
+</div>
+
+<h2>1. Реализовать веб-сервис<a class="title-anchor" href="#title-2395-3" id="title-2395-3"> </a></h2>
+
+<p>В зависимости от назначения, веб-сервис может быть реализован разными способами, с помощью различных языков программирования и на разных платформах.</p>
+
+<p>Исходя из условий кейса, необходим простейший, так называемый, <a href="https://en.wikipedia.org/w/index.php?title=Microservices&amp;oldid=976142263" target="_blank">микросервис</a>. Для его реализации можно использовать одну из площадок, предоставляющую возможность создания микросервисов, например, open-source проект <a href="https://hook.io/">https://hook.io</a>.</p>
+
+<p>После регистрации пользователя площадки и входа в систему отобразится страница управления микросервисами, на которой можно создать новый Web-сервис (1).</p>
+
+<div class="media">
+<div class="media__element"><img alt="" border="0" src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/SimpleMarketPlaceApplication/scr_hook_services.png" /></div>
+</div>
+
+<p>После создания нового сервиса необходимо на странице свойств задать имя конечной точки доступа к сервису, выбрать язык программирования, на котором будет написан исходный код сервиса (1), и добавить исходный код сервиса (2).</p>
+
+<div class="media">
+<div class="media__element"><img alt="" border="0" src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/SimpleMarketPlaceApplication/scr_hook_endpoint.png" /></div>
+</div>
+
+<div class="media">
+<div class="media__element"><img alt="" border="0" src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/SimpleMarketPlaceApplication/scr_hook_sourcecode.png" /></div>
+</div>
+
+<p>После сохранения исходного кода (3) сервис становится сразу же доступен для использования. Адрес конечной точки <a href="https://hook.io/academy-creatio-com/creatiohello" target="_blank">https://hook.io/academy-creatio-com/creatiohello</a>.</p>
+
+<p>Исходный код сервиса представляет собой функцию, которая на основе параметра <span class="filled">name</span> HTTP-запроса формирует строку приветствия и отправляет ее в качестве ответа клиентскому приложению. Полностью исходный код микросервиса представлен ниже.</p>
+
+<div class="code">
+<div class="code__widgets">
+<div class="code__top">
+<div class="code__title">Код микросервиса</div>
+</div>
+
+<div class="code__source">
+<pre class="prettyprint">
+module[<span>"exports"</span>] = <span>function</span> helloWorld (hook) {
+  <span>// Формирование строки ответа.
+</span>  <span>var</span> result = <span>"Добро пожаловать в микросервис creatiohello, "</span> + hook.params.name + <span>"!"</span>;
+  <span>// Отправка ответа клиенту.
+</span>  hook.res.end(result);
+};
+</pre>
+</div>
+</div>
+</div>
+
+<div class="message">
+<p><span class="message__bold">На заметку.</span> Приведенный исходный код микросервиса работает как с методом <span class="filled">POST</span>, так и с методом <span class="filled">GET</span> принимаемого HTTP-запроса. Например, если в адресной строке браузера ввести <a href="https://hook.io/academy-creatio-com/creatiohello?name=User" target="_blank">https://hook.io/academy-creatio-com/creatiohello?name=User</a>, то сервис отработает корректно.</p>
+</div>
+
+<h2>2. Создать пользовательский пакет<a class="title-anchor" href="#title-2395-4" id="title-2395-4"> </a></h2>
+
+<ol><li>Перейдите в дизайнер системы по кнопке <img src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/TryIt/scr_system_designer.png" />.</li>
+	<li>В блоке <span class="key">Конфигурирование разработчиком</span> (<span class="key">Admin area</span>) перейдите по ссылке <span class="key">Управление конфигурацией</span> (<span class="key">Advanced settings</span>).</li>
+	<li>В области работы с пакетами нажмите кнопку <img src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/CreateNewPackage/scr_pkg_create_button.png" />.</li>
+	<li>Заполните <strong>свойства пакета</strong>:
+	<ul><li><span class="key">Название</span> (<span class="key">Name</span>) — название пакета (обязательное свойство). Не может совпадать с названием существующих пакетов.</li>
+		<li><span class="key">Описание</span> (<span class="key">Description</span>) — описание пакета, например, расширенная информация о функциональности, которая будет реализована в пакете.</li>
+		<li>
+		<p><span class="key">Хранилище системы контроля версий</span> (<span class="key">Version control system repository</span>) — название хранилища системы контроля версий, в котором будут фиксироваться изменения пакета (обязательное свойство). Хранилища, которые находятся в перечне хранилищ конфигурации, но не помечены как активные, не попадут в выпадающий список доступных хранилищ.</p>
+
+		<div class="message message_warning">
+		<p><span class="message__bold message__bold_warning">Важно.</span> Поле Хранилище системы контроля версий (Version control system repository) заполняется при создании нового пакета и в дальнейшем недоступно для редактирования.</p>
+		</div>
+		</li>
+		<li><span class="key">Версия</span> (<span class="key">Version</span>) — версия пакета (обязательное свойство). Версия пакета может содержать цифры, символы латинского алфавита и знаки "<span class="consolas">.</span>" и "<span class="consolas">_</span>". Добавляемое значение должно начинаться с цифры или буквы. Все элементы пакета имеют ту же версию, что и сам пакет. Указываемая версия пакета не обязательно должна совпадать с фактической версией приложения.</li>
+	</ul><div class="media">
+	<div class="media__element"><img src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/CreateNewPackage/7.17/scr_pkg_new_card.png" /></div>
+	</div>
+	</li>
+	<li>
+	<p>Определите зависимости пакета<a class="title-anchor" href="#title-2103-4" id="title-2103-4"> </a></p>
+
+	<p>Чтобы текущий пакет наследовал функциональность приложения, необходимо определить <strong>зависимости пакета</strong>.</p>
+
+	<p>Чтобы <strong>добавить зависимости</strong> пакета:</p>
+
+	<ol><li>В карточке пакета нажмите кнопку <span class="key">Создать и добавить зависимости</span> (<span class="key">Create and add dependencies</span>).</li>
+		<li>На вкладке <span class="key">Зависимости</span> (<span class="key">Dependencies</span>) в детали <span class="key">Зависит от пакетов</span> (<span class="key">Depends on packages</span>) установите необходимые зависимости. Чтобы текущий пакет наследовал всю <strong>функциональность приложения</strong>, в качестве родительского пакета необходимо выбрать пакет, который в иерархии находится следующим после пакета <span class="key">Custom</span>.</li>
+	</ol><div class="media">
+	<div class="media__element"><img alt="" border="0" src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/CreateNewPackage/scr_pkg_create_dependencies.png" /></div>
+	</div>
+	</li>
+</ol><h2>3. Создать замещающую схему<a class="title-anchor" href="#title-2395-5" id="title-2395-5"> </a></h2>
+
+<p>Главное меню приложения Creatio формируется в нескольких схемах модели представления, образующих иерархию наследования:</p>
+
+<ul><li><strong>Базовая схема главной страницы</strong> (<span class="filled">BaseIntroPageSchema</span>, пакет <span class="filled">UIv2</span>) — родительская схема модели представления, в которой формируются основные контейнеры главной страницы. Добавляет в модель представления разделение на левую и правую части, панели отображения видео и панель ссылок на страницы социальных сетей.</li>
+	<li><strong>Схема главного меню для базового продукта</strong> (<span class="filled">SimpleIntro</span>, пакет <span class="filled">UIv2</span>) — наследуется от <span class="filled">BaseIntroPageSchema</span>. Добавляет на главную страницу ссылки блоков <span class="key">Базис</span>, <span class="key">Аналитика</span> и <span class="key">Настройка</span>.</li>
+	<li><strong>Схема главного меню для продукта Enterprise</strong> (<span class="filled">EnterpriseIntro</span>, пакет <span class="filled">SalesEnterprise</span>) — наследуется от <span class="filled">SimpleIntro</span>. Добавляет в левую часть меню дополнительные ссылки секции <span class="key">Базис</span>, а также ссылки секции <span class="key">Продажи</span>. Дополнительно переопределяет ссылку на видеоролик.</li>
+</ul><p>Для внесения пользовательских изменений в главное меню продукта Sales Enterprise необходимо <a data-auto-update-caption="dlue" href="../../../development_tools/development_in_creatio_ide/razrabotka_konfiguratsionnykh_elementov.html">заместить схему</a> <span class="filled">EnterpriseIntro</span> и реализовать в ней дополнительную функциональность.</p>
+
+<p>Чтобы создать <strong>замещающую схему</strong>:</p>
+
+<ol><li><a data-auto-update-caption="true" href="../../../../7-16/developer/instrumenty_razrabotki/creatio_ide/razrabotka_v_creatio_ide.html#title-2093-1">Перейдите в раздел <span class="key">Конфигурация</span></a> (<span class="key">Configuration</span>) и выберите пользовательский <a data-auto-update-caption="true" href="../../../../7-17/developer/development_tools/packages/pakety.html">пакет</a>, в который будет добавлена схема.</li>
+	<li>На панели инструментов реестра раздела нажмите <span class="key">Добавить</span> —&gt; <span class="key">Замещающая модель представления</span> (<span class="key">Add</span> —&gt; <span class="key">Replacing view model</span>).
+	<div class="media">
+	<div class="media__element"><img alt="" border="0" src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/CreateClientSchema(7.17)/scr_add_replacing_module.png" /></div>
+	</div>
+	</li>
+	<li>
+	<p>В дизайнере схем выберите родительский объект.</p>
+
+	<p>Чтобы модуль замещал раздел или страницу, в обязательном свойстве <span class="key">Родительский объект</span> (<span class="key">Parent object</span>) схемы укажите заголовок той базовой схемы модели представления, которую необходимо заместить. Для этого в поле <span class="key">Родительский объект</span> (<span class="key">Parent object</span>) свойств замещающей схемы необходимо начать вводить заголовок "<span class="consolas">Схема главного меню для продукта Enterprise</span>" ("<span class="consolas">Enterprise - Product main page schema (EnterpriseIntro)</span>") и выбрать нужное значение из выпадающего списка.</p>
+
+	<div class="media">
+	<div class="media__element"><img alt="" border="0" src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/SimpleMarketPlaceApplication/scr_replacing_schema_choose.png" /></div>
+	</div>
+
+	<p>После подтверждения выбранного родительского объекта остальные свойства будут заполнены автоматически.</p>
+
+	<div class="media">
+	<div class="media__element"><img alt="" border="0" src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/SimpleMarketPlaceApplication/scr_replacing_schema_props.png" /></div>
+	</div>
+
+	<p>Для применения заданных свойств нажмите <span class="key">Применить</span> (<span class="key">Apply</span>).</p>
+	</li>
+</ol><h2>4. Реализовать функциональность<a class="title-anchor" href="#title-2395-6" id="title-2395-6"> </a></h2>
+
+<p>Для реализации пользовательской функциональности в <a data-auto-update-caption="dlue" href="../../../../7-17/developer/instrumenty_razrabotki/creatio_ide/razrabotka_v_creatio_ide.html#case-2909">созданную схему</a> необходимо добавить исходный код.</p>
+
+<p>Чтобы отобразить результат вызова пользовательского микросервиса на странице главного меню, в схему модели представления в массив модификаций <span class="filled">diff</span> необходимо добавить конфигурационные объекты для контейнера и содержащейся в контейнере надписи.</p>
+
+<p>Для реализации необходимой пользовательской логики необходимо разработать метод вызова микросервиса <span class="filled">SetHelloAttribute()</span>, в котором будет использован JavaScript-объект <span class="filled">XMLHttpRequest</span>. Этот метод необходимо вызвать при загрузке страницы. Для этого необходимо переопределить метод родительской схемы <span class="filled">Init()</span>, в котором вызвать <span class="filled">SetHelloAttribute()</span>. Результат вызова запроса к микросервису можно получить в Callback-функции, присвоенной свойству <span class="filled">onreadystatechange</span> объекта <span class="filled">XMLHttpRequest</span>. Однако вследствие асинхронности выполнения запроса, результат необходимо сохранить в атрибуте <span class="filled">HelloAttribute</span> схемы. Сам же атрибут необходимо связать со свойством caption надписи, отображающей запрос.</p>
+
+<p>Исходный код схемы модели представления главного меню представлен ниже.</p>
+
+<div class="code">
+<div class="code__widgets">
+<div class="code__top">
+<div class="code__title"><span class="filled">EnterpriseIntro</span></div>
+</div>
+
+<div class="code__source">
+<pre class="prettyprint">
+define(<span>"EnterpriseIntro"</span>, [], <span>function</span>() {
+    <span>return</span> {
+        attributes: {
+            <span>// Атрибут, содержащий сообщение от пользовательского сервиса.
+</span>            <span>"HelloAttribute"</span>: {
+                <span>// Тип данных атрибута.
+</span>                <span>"dataValueType"</span>: Terrasoft.DataValueType.TEXT,
+                <span>// Тип атрибута — виртуальная колонка.
+</span>                <span>"type"</span>: Terrasoft.ViewModelColumnType.VIRTUAL_COLUMN,
+                <span>// Значение по умолчанию.
+</span>                <span>"value"</span>: <span>""</span>
+            }
+        },
+        methods: {
+            <span>// Метод инициализации схемы.
+</span>            init: <span>function</span>() {
+                <span>// Вызов базовой функциональности.
+</span>                <span>this</span>.callParent(arguments);
+                <span>// Вызов пользовательского сервиса.
+</span>                <span>this</span>.SetHelloAttribute();
+            },
+            <span>// Метод вызова пользовательского сервиса.
+</span>            SetHelloAttribute: <span>function</span>() {
+                <span>// Создание HTTP-запроса.
+</span>                <span>var</span> xhr = <span>new</span> XMLHttpRequest();
+                <span>// URL вызова пользовательского сервиса.
+</span>                <span>var</span> url = <span>"https://hook.io/academy-creatio-com/creatiohello"</span>;
+                <span>// Определение имени текущего пользователя.
+</span>                <span>var</span> currUser = Terrasoft.SysValue.CURRENT_USER_CONTACT.displayValue;
+                <span>// Формирование параметров HTTP-запроса.
+</span>                <span>var</span> params = <span>"name="</span> + currUser;
+                xhr.open(<span>"POST"</span>, url, <span>true</span>);
+                xhr.setRequestHeader(<span>"Content-type"</span>, <span>"application/x-www-form-urlencoded"</span>);
+                <span>// Сохранение контекста.
+</span>                <span>var</span> self = <span>this</span>;
+                <span>// Callback-функция, вызываемая при получении ответа.
+</span>                xhr.onreadystatechange = <span>function</span>() {
+                    <span>// Если получен ответ с необходимым статусом.
+</span>                    <span>if</span> (xhr.readyState === 4 &amp;&amp; xhr.status === 200) {
+                        <span>// Установка значения атрибута.
+</span>                        self.set(<span>"HelloAttribute"</span>, xhr.responseText);
+                    }
+                    <span>else</span> {
+                        self.set(<span>"HelloAttribute"</span>, <span>"Микросервис creatiohello недоступен!"</span>);
+                    }
+                };
+                <span>// Отправка HTTP-запроса.
+</span>                xhr.send(params);
+            }
+        },
+        diff: [
+            <span>// Пользовательский контейнер, в котором будет содержаться приветствие.
+</span>            {
+                <span>// Операция добавления.
+</span>                <span>"operation"</span>: <span>"insert"</span>,
+                <span>// Имя элемента.
+</span>                <span>"name"</span>: <span>"HelloContainer"</span>,
+                <span>// Имя родительского элемента-контейнера.
+</span>                <span>"parentName"</span>: <span>"RightContainer"</span>,
+                <span>// Имя свойства родительского элемента для вложенных элементов.
+</span>                <span>"propertyName"</span>: <span>"items"</span>,
+                <span>// Конфигурационный объект свойств элемента.
+</span>                <span>"values"</span>: {
+                    <span>// Тип элемента — контейнер.
+</span>                    <span>"itemType"</span>: Terrasoft.ViewItemType.CONTAINER,
+                    <span>// Массив вложенных элементов.
+</span>                    <span>"items"</span>: []
+                }
+            },
+            <span>// Надпись для отображения приветствия.
+</span>            {
+                <span>"operation"</span>: <span>"insert"</span>,
+                <span>"name"</span>: <span>"HelloLabel"</span>,
+                <span>"parentName"</span>: <span>"HelloContainer"</span>,
+                <span>"propertyName"</span>: <span>"items"</span>,
+                <span>"values"</span>: {
+                    <span>// Тип элемента — надпись.
+</span>                    <span>"itemType"</span>: <span>this</span>.Terrasoft.ViewItemType.LABEL,
+                    <span>// Ссылка на атрибут с текстом надписи.
+</span>                    <span>"caption"</span>: { <span>"bindTo"</span>: <span>"HelloAttribute"</span> }
+                }
+            }
+        ]
+    };
+});
+</pre>
+</div>
+</div>
+</div>
+
+<p>После сохранения схемы необходимо обновить в браузере страницу главного меню приложения. На ней отобразится результат запроса к микросервису <span class="filled">creatiohello</span>.</p>
+
+<div class="media">
+<div class="media__element"><img alt="" border="0" src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/SimpleMarketPlaceApplication/scr_result.png" /></div>
+</div>
+</div>
+      
+  </div>
+
+    </div>
+  </div>
+
+  </div>
+
+</article>
+
+  </div>
+
+  </div>
+
+          </div>
+        </div>
+
+                  <aside class="creatio-sidebar creatio-sidebar_first" role="complementary">
+              <div class="region region-sidebar-first">
+    <div id="block-documentationnaviagtion" class="block block-ts-nav block-ts-nav-doc-nav">
+  
+    
+      <div class="ts-nav-block"><a href="../../../../index.html" class="ts-nav-block__link">Документация</a><div class="ts-nav-block__title">Для разработчика</div>
+</div>
+<div class="ts-nav-container"><ul class="ts-nav-menu"><li class="ts-nav-menu__item">
+  <a href="../../../s_chego_nachat.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">С чего начать&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../architecture.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Архитектура&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../instrumenty_razrabotki.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Инструменты разработки&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../back_end_razrabotka.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Back-end разработка&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../front_end_razrabotka_freedom_ui.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Front-end разработка Freedom UI&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../front_end_razrabotka.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Front-end разработка&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../integratsiya_i_vneshnij_api.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Интеграция и внешний API&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../ehlementy_interfejsa.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Элементы интерфейса&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../komponenty_prilozheniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Компоненты приложения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../razrabotka_mobilnogo_prilozheniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Разработка мобильного приложения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../razrabotka_marketplace_prilozheniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded ts-nav-menu__link_open" hreflang="zxx">Разработка Marketplace-приложения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+      <ul class="ts-nav-menu__children">
+      <li class="ts-nav-menu__item">
+  <a href="../../podgotovka_k_razrabotke_prilozheniya/obzor.html" class="ts-nav-menu__link" hreflang="ru">Подготовка к разработке приложения</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../razrabotka_prilozheniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded ts-nav-menu__link_open" hreflang="ru">Разработка приложения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+      <ul class="ts-nav-menu__children">
+      <li class="ts-nav-menu__item">
+  <a href="../obshchie_principy_razrabotki_prilozheniya_marketplace.html" class="ts-nav-menu__link ts-nav-menu__link_expanded ts-nav-menu__link_open" hreflang="ru">Обзор&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+      <ul class="ts-nav-menu__children">
+      <li class="ts-nav-menu__item">
+  <a href="obzor.html" class="ts-nav-menu__link ts-nav-menu__link_guide" hreflang="ru">Обзор</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="primer_razrabotki_prilozheniya.html" class="ts-nav-menu__link ts-nav-menu__link_case ts-nav-menu__link_active" hreflang="ru">Пример разработки приложения</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="primer_razrabotki_prilozheniya_s_razdelom.html" class="ts-nav-menu__link ts-nav-menu__link_case" hreflang="ru">Пример разработки приложения с разделом</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="lichelper.html" class="ts-nav-menu__link ts-nav-menu__link_reference" data-type="C#" hreflang="ru">LicHelper</a>
+  </li>
+
+    </ul>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../zashchita_koda_ot_plagiata/obzor.html" class="ts-nav-menu__link" hreflang="ru">Защита кода от плагиата</a>
+  </li>
+
+    </ul>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../publikaciya_prilozheniya/obzor.html" class="ts-nav-menu__link" hreflang="ru">Публикация приложения</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../sertifikaciya_prilozheniya/obzor.html" class="ts-nav-menu__link" hreflang="ru">Сертификация приложения</a>
+  </li>
+
+    </ul>
+  </li>
+</ul>
+</div>
+
+  </div>
+
+  </div>
+
+            <div class="creatio-sidebar__toggle"></div>
+          </aside>
+        
+                  <aside class="creatio-sidebar creatio-sidebar_second" role="complementary">
+              <div class="region region-sidebar-second">
+    <div id="block-example" class="block block-ts-nav block-ts-nav-page-nav">
+  
+    
+      <div class="ts-nav-page">
+  </div>
+
+  </div>
+<div id="block-adminfeedbackblock" class="block block-admin-feedback block-admin-feedback-block">
+  
+    
+      <div id="feedback-message"><div id="upper-feedback-content"><h2>Был ли данный материал полезен?</h2>
+<input class="feedback-btn feedback-btn__yes button js-form-submit form-submit" data-node-id="2395" data-feedback="yes" type="submit" name="op" value="Да" />
+<input class="feedback-btn feedback-btn__no button js-form-submit form-submit" data-node-id="2395" data-feedback="no" type="submit" name="op" value="Нет" />
+</div>
+<form class="admin-feedback-form" data-drupal-selector="admin-feedback-form" action="https://academy.terrasoft.ua/docs/developer/razrabotka_marketplace_prilozheniya/razrabotka_prilozheniya/obshchie_principy_razrabotki_prilozheniya_marketplace/primer_razrabotki_prilozheniya" method="post" id="admin-feedback-form" accept-charset="UTF-8">
+  <div id="feedback-msg-result"></div><div class="js-form-item form-item js-form-type-textarea form-type-textarea js-form-item-feedback-message form-item-feedback-message form-no-label">
+        <div class="form-textarea-wrapper">
+  <textarea id="edit-feedback-msg" data-drupal-selector="edit-feedback-message" name="feedback_message" rows="5" cols="60" class="form-textarea resize-vertical"></textarea>
+</div>
+
+        </div>
+<input id="feedback-id" data-drupal-selector="edit-feedback-id" type="hidden" name="feedback_id" value="" />
+<input class="feedback-btn feedback-btn__send-comment button js-form-submit form-submit" data-drupal-selector="edit-feedback-send" type="submit" id="edit-feedback-send" name="op" value="Отправить" />
+<input autocomplete="off" data-drupal-selector="form-mi-nu9vmp2pnm069qxxsatcc1v-imfg-o9hznaunjw4" type="hidden" name="form_build_id" value="form-mI-nU9VMP2Pnm069qxXSAtCc1v_iMfG-O9hznaUnjW4" />
+<input data-drupal-selector="edit-admin-feedback-form" type="hidden" name="form_id" value="admin_feedback_form" />
+
+</form>
+</div>
+
+  </div>
+
+  </div>
+
+          </aside>
+              </main>
+    </div>
+  </div>
+
+  <footer role="contentinfo">
+    <div class="creatio-region creatio-region_footer">
+      <div class="creatio-container">
+          <div class="region region-footer">
+    <div id="block-footerua" class="block block-simple-block block-simple-blockfooter-ua">
+  
+    
+      <div class="footer">
+<div class="footer-left">
+<ul class="footer-socials"><li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_fb" href="https://www.facebook.com/terrasoft.ua" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_in" href="https://www.linkedin.com/company/terrasoft/" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_yt" href="https://www.youtube.com/c/TerrasoftUkraine" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_tg" href="https://t.me/Terrasoft_UA" target="_blank"> </a></li>
+</ul></div>
+
+<div class="footer-contact">
+<div class="footer-title">Будьте на связи!</div>
+
+<div class="footer-content">
+<div class="footer-items">
+<div class="footer-item"><a class="footer__link footer__link_phone" href="tel:+380443633133">+38 (044) 363-31-33</a></div>
+</div>
+
+<div class="footer-items">
+<div class="footer-item"><a class="footer__link footer__link_email" href="mailto:support@terrasoft.ua">support@terrasoft.ua</a></div>
+</div>
+</div>
+</div>
+</div>
+
+  </div>
+
+  </div>
+
+      </div>
+    </div>
+    <div class="creatio-region creatio-region_bottom">
+      <div class="creatio-container">
+          <div class="region region-bottom">
+    <div id="block-allrightsreservedua" class="block block-simple-block block-simple-blockfooter-bottom-ua">
+  
+    
+      <p>© 2002-2022 Terrasoft.  |  <a href="https://www.terrasoft.ua/privacy-policy" target="_blank">Конфиденциальность</a></p>
+
+  </div>
+
+  </div>
+
+      </div>
+    </div>
+  </footer>
+</div>
+<div class="creatio-bg"></div>
+
+
+  </div>
+
+    
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/docs\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/2395","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"ru"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"ajaxPageState":{"libraries":"admin_feedback\/admin_feedback_block,admin_feedback\/admin_feedback_css,classy\/base,classy\/messages,classy\/node,core\/drupal.ajax,core\/jquery.form,core\/normalize,creatio\/fancybox,creatio\/global,layout_discovery\/onecol,system\/base,ts_doc\/doc_version,ts_feedback\/ts_feedback,ts_nav\/breadcrumb,ts_nav\/doc_nav,ts_nav\/page_nav,ts_title_anchor\/ts_title_anchor","theme":"creatio","theme_token":null},"ajaxTrustedUrl":{"form_action_p_pvdeGsVG5zNF_XLGPTvYSKCf43t8qZYSwcfZl2uzM":true,"\/docs\/developer\/razrabotka_marketplace_prilozheniya\/razrabotka_prilozheniya\/obshchie_principy_razrabotki_prilozheniya_marketplace\/primer_razrabotki_prilozheniya?ajax_form=1":true},"admin_feedback":{"yes_response":"\u0421\u043f\u0430\u0441\u0438\u0431\u043e \u0437\u0430 \u043e\u0431\u0440\u0430\u0442\u043d\u0443\u044e \u0441\u0432\u044f\u0437\u044c!","no_response":"\u0421\u043f\u0430\u0441\u0438\u0431\u043e \u0437\u0430 \u043e\u0431\u0440\u0430\u0442\u043d\u0443\u044e \u0441\u0432\u044f\u0437\u044c!","custom_text_response_on_no":{"value":"","format":"full_html"},"feedback_prompt_on_yes":true,"feedback_prompt_on_no":true,"feedback_enable_predefined_answers":false,"feedback_prompt":"\u041a\u0430\u043a \u043c\u043e\u0436\u043d\u043e \u0443\u043b\u0443\u0447\u0448\u0438\u0442\u044c \u044d\u0442\u0443 \u0441\u0442\u0430\u0442\u044c\u044e?"},"ajax":{"edit-feedback-send":{"callback":"::validateFeedbackMsg","event":"mousedown","keypress":true,"prevent":"click","url":"\/docs\/developer\/razrabotka_marketplace_prilozheniya\/razrabotka_prilozheniya\/obshchie_principy_razrabotki_prilozheniya_marketplace\/primer_razrabotki_prilozheniya?ajax_form=1","dialogType":"ajax","submit":{"_triggering_element_name":"op","_triggering_element_value":"\u041e\u0442\u043f\u0440\u0430\u0432\u0438\u0442\u044c"}}},"user":{"uid":0,"permissionsHash":"9c2367dfcaba0fa15f0375f97aed64e146c908cee68508d13b79e3ee80e5162d"}}</script>
+<script src="../../../../sites/default/files/js/js_Rr-7TvYD7NposuRFJwUqThxM7yJmw8vs03PQwu5gWd8.js"></script>
+
+
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+      <g id="svg-copy" class="svg-icon svg-icon_copy">
+        <path d="M15.111,18H1.889A1.848,1.848,0,0,1,0,16.2V3.6A1.848,1.848,0,0,1,1.889,1.8H5.837a2.87,2.87,0,0,1,5.326,0h3.948A1.848,1.848,0,0,1,17,3.6V16.2A1.848,1.848,0,0,1,15.111,18ZM3.777,12.6v1.8h6.611V12.6Zm0-3.6v1.8h9.445V9Zm0-3.6V7.2h9.445V5.4ZM8.5,1.8a.924.924,0,0,0-.944.9.945.945,0,0,0,1.889,0A.924.924,0,0,0,8.5,1.8Z"/>
+      </g>
+
+      <g id="svg-prev" class="svg-icon svg-icon_arrow">
+        <path d="M5.488,12.779,0,6.39,5.488,0" transform="translate(1 0.652)"/>
+      </g>
+
+      <g id="svg-next" class="svg-icon svg-icon_arrow">
+        <path d="M0,12.779,5.488,6.39,0,0" transform="translate(0.759 0.652)"/>
+      </g>
+    </svg>
+  </body>
+
+<!-- Mirrored from academy.terrasoft.ua/docs/developer/razrabotka_marketplace_prilozheniya/razrabotka_prilozheniya/obshchie_principy_razrabotki_prilozheniya_marketplace/primer_razrabotki_prilozheniya by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Mar 2022 01:02:00 GMT -->
+</html>

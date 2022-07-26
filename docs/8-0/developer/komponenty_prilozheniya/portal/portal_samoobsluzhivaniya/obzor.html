@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# ">
+  
+<!-- Mirrored from academy.terrasoft.ua/docs/8-0/developer/komponenty_prilozheniya/portal/portal_samoobsluzhivaniya/obzor by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Mar 2022 08:20:38 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+          <!-- Google Tag Manager -->
+      <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          '../../../../../../../www.googletagmanager.com/gtm5445.html?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-KLLB8G');</script>
+      <!-- End Google Tag Manager -->
+        <meta charset="utf-8" />
+<link rel="canonical" href="obzor.html" />
+<meta name="description" content="Портал самообслуживания (Self Service Portal, SSP) является неотъемлемой функциональной частью продуктов Service Creatio, enterprise edition, Service Creatio, customer center edition, а также всех производных пакетов (bundle) продуктов, в которые они входят." />
+<meta property="og:url" content="https://academy.terrasoft.ua/docs/8-0/developer/komponenty_prilozheniya/portal/portal_samoobsluzhivaniya/obzor" />
+<meta property="og:title" content="Портал самообслуживания" />
+<meta property="og:description" content="Портал самообслуживания (Self Service Portal, SSP) является неотъемлемой функциональной частью продуктов Service Creatio, enterprise edition, Service Creatio, customer center edition, а также всех производных пакетов (bundle) продуктов, в которые они входят." />
+<meta name="Generator" content="Drupal 9 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="../../../../../themes/custom/creatio/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="revision" href="obzor.html" />
+
+    <title>Портал самообслуживания | Creatio Academy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&amp;family=Open+Sans:ital,wght@0,300;0,400;0,600;1,400&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" media="all" href="../../../../../sites/default/files/css/css_6lTP66__-yc6QXFp1zOwoeJ0HVigoYZP-SeoLLii000.css" />
+<link rel="stylesheet" media="all" href="../../../../../sites/default/files/css/css_XQJDNhkF3xH5SZCcY-PI89Zu4nYIzQ5oR3SnUKyfXJU.css" />
+<link rel="stylesheet" media="print" href="../../../../../sites/default/files/css/css_Zn4VHvcniOOtUwkIVwXzYr_0AI9gUVgZcPqaH4ViagU.css" />
+
+    
+  </head>
+  <body class="path-node page-node-type-developer-documentation">
+          <!-- Google Tag Manager (noscript) -->
+      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KLLB8G"
+                        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+      <!-- End Google Tag Manager (noscript) -->
+    
+        
+      <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    <div class="creatio-page d-flex flex-column">
+        <div class="region region-informer">
+    <div id="block-terrasoftpidtrimueukrainu" class="block block-simple-block block-simple-blockterrasoft-pidtrimue-ukrainu">
+  
+    
+      <style type="text/css">
+<!--/*--><![CDATA[/* ><!--*/
+@import url(../../../../../../../www.terrasoft.ua/themes/custom/creatio/css/components/informer.css)
+
+/*--><!]]>*/
+</style><div class="ts-swu">
+<div class="creatio-container">
+<div class="ts-swu__cont">
+<div><a class="ts-swu__link" href="https://www.terrasoft.ua/terrasoft-stands-with-ukraine" target="_blank">Україна понад усе!</a> <span><a href="https://www.terrasoft.ua/terrasoft-stands-with-ukraine" target="_blank">Приєднуйтеся</a> до допомоги!</span></div>
+</div>
+</div></div>
+
+  </div>
+
+  </div>
+
+  
+  <header role="banner">
+          <div class="creatio-region creatio-region_top">
+        <div class="creatio-container">
+            <div class="region region-top">
+    <div id="block-menutoggle" class="block block-simple-block block-simple-blockmenu-toggle">
+  
+    
+      <div class="menu-toggle"><span> </span></div>
+
+  </div>
+<div id="block-logowhite-2" class="block block-simple-block block-simple-blocklogo-white">
+  
+    
+      <p><a class="site-logo" href="../../../../../../index.html" rel="home"><img src="../../../../../themes/custom/creatio/logo-white.svg" /></a></p>
+
+  </div>
+<div id="block-search" class="block block-simple-block block-simple-blocksearch">
+  
+    
+      <div class="search">
+<form action="https://academy.terrasoft.ua/search" class="search-form" method="get"><input class="search-form__input" name="search" placeholder="Поиск" type="search" /><input class="search-form__button" type="submit" value="Поиск" /> </form>
+
+<div class="search-toggle"> </div>
+</div>
+
+  </div>
+<nav role="navigation" aria-labelledby="block-sitesua-menu" id="block-sitesua" class="block block-menu navigation menu--sites-ua">
+            
+  <h2 class="visually-hidden" id="block-sitesua-menu">Sites UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="https://www.terrasoft.ua/" rel="nofollow" target="_blank">Terrasoft</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://community.terrasoft.ua/" rel="nofollow" target="_blank">Community</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://marketplace.terrasoft.ua/" rel="nofollow" target="_blank">Marketplace</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+<div id="block-usermenu" class="block block-ts-user block-ts-user-menu-block">
+  
+    
+      <ul class="user-menu">
+      <li class="user-menu__item">
+      <a class="user-menu__link" href="https://profile.terrasoft.ua/user/login?destination=academy/ua/docs/8-0/developer/komponenty_prilozheniya/portal/portal_samoobsluzhivaniya/obzor">Войти</a>
+    </li>
+  </ul>
+
+  </div>
+<div id="block-usermenumobile" class="block block-ts-user block-ts-user-menu-mobile-block">
+  
+    
+      <ul class="user-menu-mobile">
+      <li class="user-menu-mobile__item">
+      <div class="user-menu-mobile__user user-menu-mobile__user_icon"></div>
+      <ul class="user-menu-mobile__submenu">
+        <li class="user-menu-mobile__subitem">
+          <a class="user-menu-mobile__sublink" href="https://profile.terrasoft.ua/user/login?destination=academy/ua/docs/8-0/developer/komponenty_prilozheniya/portal/portal_samoobsluzhivaniya/obzor">Войти</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  </div>
+
+  </div>
+
+        </div>
+      </div>
+              <div class="creatio-region creatio-region_header">
+        <div class="creatio-container">
+            <div class="region region-header">
+    <div id="block-logo" class="block block-simple-block block-simple-blocklogo">
+  
+    
+      <p><a class="site-logo" href="../../../../../../index.html" rel="home"><img src="../../../../../themes/custom/creatio/logo.svg" /></a></p>
+
+  </div>
+<nav role="navigation" aria-labelledby="block-osnovnayanavigaciyaua-menu" id="block-osnovnayanavigaciyaua" class="block block-menu navigation menu--main-ua">
+            
+  <h2 class="visually-hidden" id="block-osnovnayanavigaciyaua-menu">Основная навигация UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="../../../../../index.html" data-drupal-link-system-path="&lt;front&gt;">Документация</a>
+              </li>
+                <li class="menu-item">
+        <a href="../../../../../../trainings.html">Тренинги</a>
+              </li>
+                <li class="menu-item">
+        <a href="../../../../../certification.html" data-drupal-link-system-path="node/3084">Сертификация и тестирование</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+<nav role="navigation" aria-labelledby="block-sitesua-2-menu" id="block-sitesua-2" class="block block-menu navigation menu--sites-ua">
+            
+  <h2 class="visually-hidden" id="block-sitesua-2-menu">Sites UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="https://www.terrasoft.ua/" rel="nofollow" target="_blank">Terrasoft</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://community.terrasoft.ua/" rel="nofollow" target="_blank">Community</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://marketplace.terrasoft.ua/" rel="nofollow" target="_blank">Marketplace</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+
+  </div>
+
+        </div>
+      </div>
+              <div class="creatio-region creatio-region_breadcrumb">
+        <div class="creatio-container">
+            <div class="region region-breadcrumb">
+    <div id="block-logowhite" class="block block-simple-block block-simple-blocklogo-white">
+  
+    
+      <p><a class="site-logo" href="../../../../../../index.html" rel="home"><img src="../../../../../themes/custom/creatio/logo-white.svg" /></a></p>
+
+  </div>
+<div id="block-breadcrumbnaviagtion" class="block block-ts-nav block-ts-nav-bread">
+  
+    
+      <nav class="breadcrumb"><ol class="ts-nav-breadcrumb__list"><li class="ts-nav-breadcrumb__item"><a href="../../../../../index.html" class="ts-nav-breadcrumb__link" title="Документация">Документация</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../../../index2132.html?vid_1=2" class="ts-nav-breadcrumb__link" title="Для разработчика">Для разработчика</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../komponenty_prilozheniya.html" class="ts-nav-breadcrumb__link" title="Компоненты приложения" hreflang="zxx">Компоненты приложения</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../portal.html" class="ts-nav-breadcrumb__link" title="Портал" hreflang="ru">Портал</a></li>
+<li class="ts-nav-breadcrumb__item ts-nav-breadcrumb__item_mobile"><a href="../../../elements_and_components/self-service_portal/portal_samoobsluzhivaniya.html" class="ts-nav-breadcrumb__link" title="Портал самообслуживания" hreflang="ru">Портал самообслуживания</a></li>
+<li class="ts-nav-breadcrumb__item"><span class="ts-nav-breadcrumb__link ts-nav-breadcrumb__link_current" title="Обзор">Обзор</span></li>
+</ol>
+</nav>
+
+  </div>
+<div id="block-search-2" class="block block-simple-block block-simple-blocksearch">
+  
+    
+      <div class="search">
+<form action="https://academy.terrasoft.ua/search" class="search-form" method="get"><input class="search-form__input" name="search" placeholder="Поиск" type="search" /><input class="search-form__button" type="submit" value="Поиск" /> </form>
+
+<div class="search-toggle"> </div>
+</div>
+
+  </div>
+
+  </div>
+
+        </div>
+      </div>
+      </header>
+
+  <div class="creatio-region creatio-region_main">
+    <div class="creatio-container">
+                <div class="region region-breadcrumb-mobile">
+    <div id="block-breadcrumbnaviagtion-2" class="block block-ts-nav block-ts-nav-bread">
+  
+    
+      <nav class="breadcrumb"><ol class="ts-nav-breadcrumb__list"><li class="ts-nav-breadcrumb__item"><a href="../../../../../index.html" class="ts-nav-breadcrumb__link" title="Документация">Документация</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../../../index2132.html?vid_1=2" class="ts-nav-breadcrumb__link" title="Для разработчика">Для разработчика</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../komponenty_prilozheniya.html" class="ts-nav-breadcrumb__link" title="Компоненты приложения" hreflang="zxx">Компоненты приложения</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../portal.html" class="ts-nav-breadcrumb__link" title="Портал" hreflang="ru">Портал</a></li>
+<li class="ts-nav-breadcrumb__item ts-nav-breadcrumb__item_mobile"><a href="../../../elements_and_components/self-service_portal/portal_samoobsluzhivaniya.html" class="ts-nav-breadcrumb__link" title="Портал самообслуживания" hreflang="ru">Портал самообслуживания</a></li>
+<li class="ts-nav-breadcrumb__item"><span class="ts-nav-breadcrumb__link ts-nav-breadcrumb__link_current" title="Обзор">Обзор</span></li>
+</ol>
+</nav>
+
+  </div>
+
+  </div>
+
+      
+      <main class="creatio-main" role="main">
+                                                    
+        <div class="creatio-content creatio-content_small">
+          <div class="creatio-content__inner creatio-content__inner_bg">
+                            <div class="region region-messages">
+    <div data-drupal-messages-fallback class="hidden"></div>
+
+  </div>
+
+            
+              <div class="region region-content">
+    <div id="block-creatio-page-title" class="block block-core block-page-title-block">
+  
+    
+      
+  <h1 class="page-title"><span class="field field--name-title field--type-string field--label-hidden">Портал самообслуживания</span>
+</h1>
+
+
+  </div>
+<div id="block-creatio-content" class="block block-system block-system-main-block">
+  
+    
+      
+<article data-history-node-id="2357" role="article" about="/docs/8-0/developer/komponenty_prilozheniya/portal/portal_samoobsluzhivaniya/obzor" class="node node--type-developer-documentation node--view-mode-full">
+
+  
+    
+
+  
+  <div class="node__content">
+      <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocknodedeveloper-documentationfield-difficulty">
+  
+    
+      
+            <div class="field field--name-field-difficulty field--type-entity-reference field--label-hidden field__item"><div about="/docs/8-0/taxonomy/term/169" id="taxonomy-term-169" class="taxonomy-term vocabulary-difficulty">
+  
+  
+  <div class="content">
+      <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocktaxonomy-termdifficultyfield-icon">
+  
+    
+      
+            <div class="field field--name-field-icon field--type-image field--label-hidden field__item">  <img src="../../../../../sites/default/files/difficulty/advanced.svg" alt="" loading="lazy" typeof="foaf:Image" />
+
+</div>
+      
+  </div>
+<div class="block block-layout-builder block-field-blocktaxonomy-termdifficultyname">
+  
+    
+      
+            <div class="field field--name-name field--type-string field--label-hidden field__item"><span style="color: #EF4524;">Сложный</span></div>
+      
+  </div>
+
+    </div>
+  </div>
+
+  </div>
+</div>
+</div>
+      
+  </div>
+<div class="block block-ts-doc block-ts-doc-downloads">
+  
+    
+      <a href="../../../../../sites/default/files/pdf/node/2357/Portal_samoobsluzhivaniya_.pdf" target="_blank">PDF</a>
+  </div>
+<div class="block block-ts-doc block-ts-doc-versions">
+  
+    
+        <div class="ts-doc-versions">
+    <select class="ts-doc-versions__select">
+                                                <option value="/docs/8-0/developer/komponenty_prilozheniya/portal/portal_samoobsluzhivaniya/obzor" selected>Версия 8.0</option>
+                              <option value="/docs/7-18/developer/komponenty_prilozheniya/portal/portal_samoobsluzhivaniya/obzor">Версия 7.18</option>
+                              <option value="/docs/7-17/developer/komponenty_prilozheniya/portal/portal_samoobsluzhivaniya/obzor">Версия 7.17</option>
+                              <option value="/docs/7-16/developer/komponenty_prilozheniya/portal/portal_samoobsluzhivaniya/obzor">Версия 7.16</option>
+          </select>
+  </div>
+
+  </div>
+
+    </div>
+  </div>
+  <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocknodedeveloper-documentationbody">
+  
+    
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><p>Портал самообслуживания (Self Service Portal, SSP) является неотъемлемой функциональной частью продуктов <a href="../../../../../../documents/service-enterprise/7-15/introduction.html" target="_blank">Service Creatio, enterprise edition</a>, <a href="../../../../../../documents/customer-center/7-15/introduction.html" target="_blank">Service Creatio, customer center edition</a>, а также всех производных пакетов (bundle) продуктов, в которые они входят.</p>
+
+<p>Портал представляет собой отдельное рабочее место (Workplace), в которое автоматически попадает пользователь портала при входе через стандартное окно авторизации приложения.</p>
+
+<p>По умолчанию в поставляемом продукте портальному пользователю доступно два раздела — <span class="key">Обращения портала</span> и <span class="key">База знаний</span>, а также <span class="key">Главная страница портала</span>, которая содержит общую сводную информацию и выполняет роль единого рабочего места пользователя портала.</p>
+
+<p>Раздел <span class="key">Обращения портала</span> служит для самостоятельной регистрации обращений пользователем, просмотра статуса своих обращений, внесения дополнительной информации по обращению, а также для получения информации по решению своего обращения. По умолчанию портальный пользователь имеет доступ только к тем обращениям, в которых он указан в качестве контакта. На странице обращения пользователь может внести дополнительную информацию, публиковать сообщения, вести переписку по своему обращению с сотрудниками службы поддержки. История переписки по обращению отображается на странице обращения на вкладке <span class="key">Обработка</span>.</p>
+
+<p>Раздел <span class="key">База знаний</span> служит для самостоятельного поиска пользователем справочной информации или решения по своему вопросу. Данный раздел по умолчанию может наполняться только сотрудниками поддержки из основного интерфейса системы.</p>
+
+<h2>Устройство портала<a class="title-anchor" href="#title-2357-1" id="title-2357-1"> </a></h2>
+
+<p>С точки зрения разработки, портал является преднастроенным отдельным рабочим местом. Это рабочее место по умолчанию недоступно обычным пользователям приложения. Пользователь системы с типом "Пользователь портала" при авторизации автоматически попадает в данное рабочее место, а именно на Главную страницу портала.</p>
+
+<p>Разделы и страницы портала — это обыкновенные <a href="../../../ehlementy_interfejsa/razdel/obzor.html">разделы</a> и <a href="../../../ehlementy_interfejsa/stranica_zapisi/obzor/stranica_zapisi.html">страницы записи</a>, и работают с теми же сущностями (<span class="filled">Entity</span>), что и страницы, доступные в основном интерфейсе системы. В частности, страница обращения на портале имеет более простой вид, и не содержит большинства полей. В конфигурации это две разные страницы записи — <span class="filled">CasePage</span> и <span class="filled">PortalCasePage</span>.</p>
+
+<p>Система прав доступа на портале имеет только одно небольшое отличие. Чтобы дать портальным пользователям доступ к определенным сущностям (EntitySchema), необходимо дополнительно указать эти сущности в справочнике <span class="key">Список объектов доступных портальному пользователю</span>. Лицензии портала самообслуживания ограничивают количество записей, которое может быть добавлено в данный справочник. По умолчанию это 70 записей.</p>
+
+<h2>Работа с мастером страниц на портале<a class="title-anchor" href="#title-2357-2" id="title-2357-2"> </a></h2>
+
+<p>Портальному пользователю недоступна функциональность мастеров страниц, деталей и разделов. Эта функциональность может быть вызвана пользователем с правами администратора из основного интерфейса системы следующим образом:</p>
+
+<ol><li>Перейти в раздел <span class="key">Настройка рабочих мест</span> дизайнера системы.</li>
+	<li>Выбрать рабочее место <span class="key">Портал</span> и нажать <span class="key">Открыть</span>.</li>
+	<li>Выбрать требуемый раздел и нажать кнопку <span class="key">Настройка раздела</span>.</li>
+</ol><p>После этого откроется стандартный мастер разделов.</p>
+
+<h2>Настройка портала и портальных пользователей<a class="title-anchor" href="#title-2357-3" id="title-2357-3"> </a></h2>
+
+<p>Для того чтобы начать пользоваться порталом, необходимо выполнить следующие действия:</p>
+
+<ol><li>Убедиться, что в файле <span class="filled">web.config</span> загрузчика приложения (т. н. "внешний" <span class="filled">web.config</span>) опция <span class="filled">/configuration/terrasoft/auth</span> имеет следующий вид.
+
+	<div class="code">
+	<div class="code__widgets">
+	<div class="code__top">
+	<div class="code__title">Опция <span class="filled">/configuration/terrasoft/auth</span> файла <span class="filled">web.config</span></div>
+	</div>
+
+	<div class="code__source">
+	<pre class="prettyprint">
+<span>&lt;</span><span>terrasoft</span><span>&gt;</span>
+   <span>&lt;</span><span>auth </span><span>providerNames</span><span>="InternalUserPassword,SSPUserPassword"</span><span> …</span><span>&gt;</span>
+...
+<span>&lt;/</span><span>terrasoft</span><span>&gt;</span>
+</pre>
+	</div>
+	</div>
+	</div>
+	Данная настройка отвечает за возможность авторизации в системе портальных пользователей.</li>
+	<li>Создать контакт для пользователя.</li>
+	<li>Создать пользователя с типом "Пользователь портала". Заполнить необходимые поля.</li>
+	<li>Раздать необходимые лицензии пользователю.</li>
+</ol><p>У портального пользователя в профиле должен быть указан корректный часовой пояс. По умолчанию у нового пользователя он не указан. Настройка выполняется самим пользователем портала в его профиле. Отталкиваясь от этого значения, в системе будут отображаться все даты и время.</p>
+
+<h2>Ограничение доступа к веб-сервисам для пользователей портала<a class="title-anchor" href="#title-2357-4" id="title-2357-4"> </a></h2>
+
+<p>Основной сценарий использования портала — предоставить доступ большому количеству внешних по отношению к организации пользователей к ограниченному количеству данных из системы. Для решения таких задач возникает потребность управлять тем, какие пользователи (портальные или пользователи компании) имеют доступ к <a href="../../../back_end_razrabotka/veb_servisy/obzor.html">веб-сервисам приложения</a>.</p>
+
+<div class="message message_warning">
+<p><span class="message__bold message__bold_warning">Важно.</span> Данная статья актуальна для версии системы 7.13.2 и новее.</p>
+</div>
+
+<h3>Префиксы маршрутов конфигурационных веб-сервисов<a class="title-anchor" href="#title-2357-5" id="title-2357-5"> </a></h3>
+
+<p>Для управления доступом к веб-сервисам приложения в Creatio реализован механизм префиксов маршрута. Используя определеннные <span class="filled">ServiceRoute</span> атрибуты класса сервиса, можно задать необходимый префикс маршрута.</p>
+
+<div class="table">
+<div class="table__caption">Префиксы маршрутов конфигурационных веб-сервисов</div>
+
+<table><tbody><tr><th>Доступ</th>
+			<th>Атрибут</th>
+			<th>Префикс маршрута</th>
+			<th>Пример кода</th>
+		</tr><tr><td>Только для пользователей Портала самообслуживания</td>
+			<td><span class="filled">SspServiceRoute</span></td>
+			<td><span class="filled">/ssp</span></td>
+			<td>
+			<div class="code">
+			<div class="code__widgets">
+			<div class="code__source">
+			<pre class="prettyprint">
+[ServiceContract]
+[SspServiceRoute]
+<span>public</span> <span>class</span> SspOnlyService : BaseService
+{
+}
+</pre>
+			</div>
+			</div>
+			</div>
+
+			<div class="code">
+			<div class="code__widgets">
+			<div class="code__top">
+			<div class="code__title">Пример вызова</div>
+			</div>
+
+			<div class="code__source">
+			<pre class="prettyprint">
+~/ssp/rest/SspOnlyService
+~/ssp/soap/SspOnlyService
+</pre>
+			</div>
+			</div>
+			</div>
+			</td>
+		</tr><tr><td>Только для внутренних пользователей</td>
+			<td>
+			<p><span class="filled">DefaultServiceRoute</span></p>
+
+			<p>или</p>
+
+			<p>не указывать ни один <span class="filled">ServiceRoute</span> атрибут</p>
+			</td>
+			<td>отсутствует</td>
+			<td>
+			<div class="code">
+			<div class="code__widgets">
+			<div class="code__source">
+			<pre class="prettyprint">
+[ServiceContract]
+<span>public</span> <span>class</span> InternalService : BaseService
+{
+}
+</pre>
+			</div>
+			</div>
+			</div>
+
+			<p>или</p>
+
+			<div class="code">
+			<div class="code__widgets">
+			<div class="code__source">
+			<pre class="prettyprint">
+[ServiceContract]
+[DefaultServiceRoute]
+<span>public</span> <span>class</span> InternalService : BaseService
+{
+}
+</pre>
+			</div>
+			</div>
+			</div>
+
+			<div class="code">
+			<div class="code__widgets">
+			<div class="code__top">
+			<div class="code__title">Пример вызова</div>
+			</div>
+
+			<div class="code__source">
+			<pre class="prettyprint">
+~/rest/InternalService
+~/soap/InternalService
+</pre>
+			</div>
+			</div>
+			</div>
+			</td>
+		</tr><tr><td>И для внутренних пользователей, и для Портала</td>
+			<td>
+			<p>одновременно атрибуты</p>
+
+			<p><span class="filled">DefaultServiceRoute</span></p>
+
+			<p>и</p>
+
+			<p><span class="filled">SspServiceRoute</span></p>
+			</td>
+			<td>
+			<p><span class="filled">/ssp</span></p>
+
+			<p>или</p>
+
+			<p>отсутствует</p>
+			</td>
+			<td>
+			<div class="code">
+			<div class="code__widgets">
+			<div class="code__source">
+			<pre class="prettyprint">
+[ServiceContract]
+[DefaultServiceRoute]
+[SspServiceRoute]
+<span>public</span> <span>class</span> CommonService : BaseService
+{
+}
+</pre>
+			</div>
+			</div>
+			</div>
+
+			<div class="code">
+			<div class="code__widgets">
+			<div class="code__top">
+			<div class="code__title">Пример вызова</div>
+			</div>
+
+			<div class="code__source">
+			<pre class="prettyprint">
+~/rest/CommonService
+~/soap/CommonService
+~/ssp/rest/CommonService
+~/ssp/soap/CommonService
+</pre>
+			</div>
+			</div>
+			</div>
+			</td>
+		</tr><tr><td> </td>
+			<td>
+			<p>атрибут <span class="filled">ServiceRoute</span> с указанием префикса (например, "<span class="filled">custom</span>")</p>
+
+			<p><span class="filled">ServiceRoute("custom")</span></p>
+			</td>
+			<td>произвольный префикс маршрута сервиса</td>
+			<td>
+			<div class="code">
+			<div class="code__widgets">
+			<div class="code__source">
+			<pre class="prettyprint">
+[ServiceContract]
+[ServiceRoute(<span>"custom"</span>)]
+<span>public</span> <span>class</span> CustomPrefixService : BaseService
+{
+}
+</pre>
+			</div>
+			</div>
+			</div>
+
+			<div class="code">
+			<div class="code__widgets">
+			<div class="code__top">
+			<div class="code__title">Пример вызова</div>
+			</div>
+
+			<div class="code__source">
+			<pre class="prettyprint">
+~/custom/rest/CustomPrefixService
+~/custom/soap/CustomPrefixService
+</pre>
+			</div>
+			</div>
+			</div>
+			</td>
+		</tr></tbody></table></div>
+
+<div class="message">
+<p><span class="message__bold">На заметку.</span> Допустимо использовать одновременно несколько атрибутов <span class="filled">ServiceRoute</span>, <span class="filled">SspServiceRoute</span> и <span class="filled">DefaultServiceRoute</span>. В результате будут созданы маршруты для сервиса со всеми вариантами префиксов.</p>
+</div>
+
+<h3>Ограничение доступа портальных пользователей к внутреннему API<a class="title-anchor" href="#title-2357-6" id="title-2357-6"> </a></h3>
+
+<p>Если пользователь портала (<span class="filled">SspUserConnection</span>) обратится к сервису по маршруту без префикса “<span class="filled">/ssp</span>”, сервис вернет в ответ страницу с кодом 403 (<span class="filled">Forbidden</span>).</p>
+
+<h3>Ограничение доступа внутренних пользователей к портальному API<a class="title-anchor" href="#title-2357-7" id="title-2357-7"> </a></h3>
+
+<p>Если внутренний пользователь приложения (<span class="filled">UserConnection</span>) обратится к сервису по маршруту с префиксом “/ssp”, сервис вернет в ответ страницу с кодом <span class="status-code status-code_red">403 Forbidden</span>.</p>
+
+<h3>ServiceStack сервисы ядра<a class="title-anchor" href="#title-2357-8" id="title-2357-8"> </a></h3>
+
+<p>Методы сервисов <span class="filled">ServiceStack</span> ядра (<span class="filled">DataService</span>, <span class="filled">ManagerService</span> и другие) по умолчанию доступны только для внутренних пользователей.</p>
+
+<p>Для того, чтобы какой-то из методов был доступен также и на Портале, необходимо пометить такой метод атрибутом <span class="filled">SspServiceAccess</span> - в этом случае метод будет иметь дополнительный маршрут с префиксом вида <span class="filled">~/DataService/ssp/…</span></p>
+
+<p>Если нужно, чтобы логика метода отличалась для Портала, необходимо создать новый сервис, указав для него атрибут <span class="filled">SspServiceAccess</span>, в конструктор которого передать имя оригинального метода. Например:</p>
+
+<div class="code">
+<div class="code__widgets">
+<div class="code__source">
+<pre class="prettyprint">
+[SspServiceAccess(nameof(SelectQuery))]
+<span>public</span> <span>class</span> SspSelectQuery : SelectQuery
+{
+}
+</pre>
+</div>
+</div>
+</div>
+
+<p>создает контракт, метод которого будет зарегистрирован по пути <span class="filled">~/DataService/ssp/SelectQuery</span>.</p>
+
+<p>Доступ к методам <span class="filled">ServiceStack</span> с префиксом “<span class="filled">ssp</span>” запрещен внутренним пользователям, а к методам <span class="filled">ServiceStack</span> без префикса “<span class="filled">ssp</span>” - пользователям портала.</p>
+</div>
+      
+  </div>
+<div class="block block-layout-builder block-field-blocknodedeveloper-documentationfield-video">
+  
+    
+      
+  <div class="field field--name-field-video field--type-link field--label-above">
+    <div class="field__label">Онлайн-курсы</div>
+          <div class="field__items">
+              <div class="field__item"><a href="https://www.youtube.com/watch?v=HnVEUfs85gI">Tech Hour: Настраиваем портал в Creatio</a></div>
+              </div>
+      </div>
+
+  </div>
+
+    </div>
+  </div>
+
+  </div>
+
+</article>
+
+  </div>
+
+  </div>
+
+          </div>
+        </div>
+
+                  <aside class="creatio-sidebar creatio-sidebar_first" role="complementary">
+              <div class="region region-sidebar-first">
+    <div id="block-documentationnaviagtion" class="block block-ts-nav block-ts-nav-doc-nav">
+  
+    
+      <div class="ts-nav-block"><a href="../../../../../index.html" class="ts-nav-block__link">Документация</a><div class="ts-nav-block__title">Для разработчика</div>
+</div>
+<div class="ts-nav-container"><ul class="ts-nav-menu"><li class="ts-nav-menu__item">
+  <a href="../../../s_chego_nachat.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">С чего начать&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../architecture.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Архитектура&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../instrumenty_razrabotki.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Инструменты разработки&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../back_end_razrabotka.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Back-end разработка&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../front_end_razrabotka_freedom_ui.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Front-end разработка Freedom UI&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../front_end_razrabotka.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Front-end разработка&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../integratsiya_i_vneshnij_api.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Интеграция и внешний API&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../ehlementy_interfejsa.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Элементы интерфейса&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../komponenty_prilozheniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded ts-nav-menu__link_open" hreflang="zxx">Компоненты приложения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+      <ul class="ts-nav-menu__children">
+      <li class="ts-nav-menu__item">
+  <a href="../../otchety.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Отчеты&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../komponenty_marketing.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Компоненты Marketing&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../komponenty_sales.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Компоненты Sales&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../komponenty_service.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Компоненты Service&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../portal.html" class="ts-nav-menu__link ts-nav-menu__link_expanded ts-nav-menu__link_open" hreflang="ru">Портал&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+      <ul class="ts-nav-menu__children">
+      <li class="ts-nav-menu__item">
+  <a href="../obshchie_principy_raboty_portala/obzor.html" class="ts-nav-menu__link" hreflang="ru">Обзор</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../elements_and_components/self-service_portal/portal_samoobsluzhivaniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded ts-nav-menu__link_open" hreflang="ru">Портал самообслуживания&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+      <ul class="ts-nav-menu__children">
+      <li class="ts-nav-menu__item">
+  <a href="obzor.html" class="ts-nav-menu__link ts-nav-menu__link_guide ts-nav-menu__link_active" hreflang="ru">Обзор</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="primer_ispolzovaniya_miksina_portalmessagepublisherextensions.html" class="ts-nav-menu__link ts-nav-menu__link_case" hreflang="ru">Пример использования миксина PortalMessagePublisherExtensions</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="izmenit_dostup_dlya_polzovatelej_portala.html" class="ts-nav-menu__link ts-nav-menu__link_case" hreflang="ru">Изменить доступ для пользователей портала</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="portalmessagepublisherextensions.html" class="ts-nav-menu__link ts-nav-menu__link_reference" data-type="JS" hreflang="ru">PortalMessagePublisherExtensions</a>
+  </li>
+
+    </ul>
+  </li>
+
+    </ul>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../lendingi.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Лендинги&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../telefoniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Телефония&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../mashinnoe_obuchenie.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Машинное обучение&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../elements_and_components/email_soobshcheniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Email-сообщения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../obogashchenie_kontaktov_iz_email/obzor.html" class="ts-nav-menu__link" hreflang="ru">Обогащение контактов из email</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../sinkhronizaciya_sync_engine.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Синхронизация Sync Engine&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../planirovshchik_zadanij/obzor.html" class="ts-nav-menu__link" hreflang="ru">Планировщик заданий</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../bandlirovanie_staticheskogo_kontenta.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Бандлирование статического контента&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+
+    </ul>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../razrabotka_mobilnogo_prilozheniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Разработка мобильного приложения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../razrabotka_marketplace_prilozheniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Разработка Marketplace-приложения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+</ul>
+</div>
+
+  </div>
+
+  </div>
+
+            <div class="creatio-sidebar__toggle"></div>
+          </aside>
+        
+                  <aside class="creatio-sidebar creatio-sidebar_second" role="complementary">
+              <div class="region region-sidebar-second">
+    <div id="block-example" class="block block-ts-nav block-ts-nav-page-nav">
+  
+    
+      <div class="ts-nav-page">
+  </div>
+
+  </div>
+<div id="block-adminfeedbackblock" class="block block-admin-feedback block-admin-feedback-block">
+  
+    
+      <div id="feedback-message"><div id="upper-feedback-content"><h2>Был ли данный материал полезен?</h2>
+<input class="feedback-btn feedback-btn__yes button js-form-submit form-submit" data-node-id="2357" data-feedback="yes" type="submit" name="op" value="Да" />
+<input class="feedback-btn feedback-btn__no button js-form-submit form-submit" data-node-id="2357" data-feedback="no" type="submit" name="op" value="Нет" />
+</div>
+<form class="admin-feedback-form" data-drupal-selector="admin-feedback-form" action="https://academy.terrasoft.ua/docs/8-0/developer/komponenty_prilozheniya/portal/portal_samoobsluzhivaniya/obzor" method="post" id="admin-feedback-form" accept-charset="UTF-8">
+  <div id="feedback-msg-result"></div><div class="js-form-item form-item js-form-type-textarea form-type-textarea js-form-item-feedback-message form-item-feedback-message form-no-label">
+        <div class="form-textarea-wrapper">
+  <textarea id="edit-feedback-msg" data-drupal-selector="edit-feedback-message" name="feedback_message" rows="5" cols="60" class="form-textarea resize-vertical"></textarea>
+</div>
+
+        </div>
+<input id="feedback-id" data-drupal-selector="edit-feedback-id" type="hidden" name="feedback_id" value="" />
+<input class="feedback-btn feedback-btn__send-comment button js-form-submit form-submit" data-drupal-selector="edit-feedback-send" type="submit" id="edit-feedback-send" name="op" value="Отправить" />
+<input autocomplete="off" data-drupal-selector="form-jauiisxny3hpih4km08hewhaf-tc8xajoyxgrqk21li" type="hidden" name="form_build_id" value="form-jauiIsXnY3hPiH4Km08HewhaF-Tc8XaJoYXGrQK21lI" />
+<input data-drupal-selector="edit-admin-feedback-form" type="hidden" name="form_id" value="admin_feedback_form" />
+
+</form>
+</div>
+
+  </div>
+
+  </div>
+
+          </aside>
+              </main>
+    </div>
+  </div>
+
+  <footer role="contentinfo">
+    <div class="creatio-region creatio-region_footer">
+      <div class="creatio-container">
+          <div class="region region-footer">
+    <div id="block-footerua" class="block block-simple-block block-simple-blockfooter-ua">
+  
+    
+      <div class="footer">
+<div class="footer-left">
+<ul class="footer-socials"><li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_fb" href="https://www.facebook.com/terrasoft.ua" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_in" href="https://www.linkedin.com/company/terrasoft/" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_yt" href="https://www.youtube.com/c/TerrasoftUkraine" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_tg" href="https://t.me/Terrasoft_UA" target="_blank"> </a></li>
+</ul></div>
+
+<div class="footer-contact">
+<div class="footer-title">Будьте на связи!</div>
+
+<div class="footer-content">
+<div class="footer-items">
+<div class="footer-item"><a class="footer__link footer__link_phone" href="tel:+380443633133">+38 (044) 363-31-33</a></div>
+</div>
+
+<div class="footer-items">
+<div class="footer-item"><a class="footer__link footer__link_email" href="mailto:support@terrasoft.ua">support@terrasoft.ua</a></div>
+</div>
+</div>
+</div>
+</div>
+
+  </div>
+
+  </div>
+
+      </div>
+    </div>
+    <div class="creatio-region creatio-region_bottom">
+      <div class="creatio-container">
+          <div class="region region-bottom">
+    <div id="block-allrightsreservedua" class="block block-simple-block block-simple-blockfooter-bottom-ua">
+  
+    
+      <p>© 2002-2022 Terrasoft.  |  <a href="https://www.terrasoft.ua/privacy-policy" target="_blank">Конфиденциальность</a></p>
+
+  </div>
+
+  </div>
+
+      </div>
+    </div>
+  </footer>
+</div>
+<div class="creatio-bg"></div>
+
+
+  </div>
+
+    
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/docs\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/2357","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"ru"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"ajaxPageState":{"libraries":"admin_feedback\/admin_feedback_block,admin_feedback\/admin_feedback_css,classy\/base,classy\/messages,classy\/node,core\/drupal.ajax,core\/jquery.form,core\/normalize,creatio\/fancybox,creatio\/global,layout_discovery\/onecol,system\/base,ts_doc\/doc_version,ts_feedback\/ts_feedback,ts_nav\/breadcrumb,ts_nav\/doc_nav,ts_nav\/page_nav,ts_title_anchor\/ts_title_anchor","theme":"creatio","theme_token":null},"ajaxTrustedUrl":{"form_action_p_pvdeGsVG5zNF_XLGPTvYSKCf43t8qZYSwcfZl2uzM":true,"\/docs\/8-0\/developer\/komponenty_prilozheniya\/portal\/portal_samoobsluzhivaniya\/obzor?ajax_form=1":true},"admin_feedback":{"yes_response":"\u0421\u043f\u0430\u0441\u0438\u0431\u043e \u0437\u0430 \u043e\u0431\u0440\u0430\u0442\u043d\u0443\u044e \u0441\u0432\u044f\u0437\u044c!","no_response":"\u0421\u043f\u0430\u0441\u0438\u0431\u043e \u0437\u0430 \u043e\u0431\u0440\u0430\u0442\u043d\u0443\u044e \u0441\u0432\u044f\u0437\u044c!","custom_text_response_on_no":{"value":"","format":"full_html"},"feedback_prompt_on_yes":true,"feedback_prompt_on_no":true,"feedback_enable_predefined_answers":false,"feedback_prompt":"\u041a\u0430\u043a \u043c\u043e\u0436\u043d\u043e \u0443\u043b\u0443\u0447\u0448\u0438\u0442\u044c \u044d\u0442\u0443 \u0441\u0442\u0430\u0442\u044c\u044e?"},"ajax":{"edit-feedback-send":{"callback":"::validateFeedbackMsg","event":"mousedown","keypress":true,"prevent":"click","url":"\/docs\/8-0\/developer\/komponenty_prilozheniya\/portal\/portal_samoobsluzhivaniya\/obzor?ajax_form=1","dialogType":"ajax","submit":{"_triggering_element_name":"op","_triggering_element_value":"\u041e\u0442\u043f\u0440\u0430\u0432\u0438\u0442\u044c"}}},"user":{"uid":0,"permissionsHash":"9c2367dfcaba0fa15f0375f97aed64e146c908cee68508d13b79e3ee80e5162d"}}</script>
+<script src="../../../../../sites/default/files/js/js_Rr-7TvYD7NposuRFJwUqThxM7yJmw8vs03PQwu5gWd8.js"></script>
+
+
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+      <g id="svg-copy" class="svg-icon svg-icon_copy">
+        <path d="M15.111,18H1.889A1.848,1.848,0,0,1,0,16.2V3.6A1.848,1.848,0,0,1,1.889,1.8H5.837a2.87,2.87,0,0,1,5.326,0h3.948A1.848,1.848,0,0,1,17,3.6V16.2A1.848,1.848,0,0,1,15.111,18ZM3.777,12.6v1.8h6.611V12.6Zm0-3.6v1.8h9.445V9Zm0-3.6V7.2h9.445V5.4ZM8.5,1.8a.924.924,0,0,0-.944.9.945.945,0,0,0,1.889,0A.924.924,0,0,0,8.5,1.8Z"/>
+      </g>
+
+      <g id="svg-prev" class="svg-icon svg-icon_arrow">
+        <path d="M5.488,12.779,0,6.39,5.488,0" transform="translate(1 0.652)"/>
+      </g>
+
+      <g id="svg-next" class="svg-icon svg-icon_arrow">
+        <path d="M0,12.779,5.488,6.39,0,0" transform="translate(0.759 0.652)"/>
+      </g>
+    </svg>
+  </body>
+
+<!-- Mirrored from academy.terrasoft.ua/docs/8-0/developer/komponenty_prilozheniya/portal/portal_samoobsluzhivaniya/obzor by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Mar 2022 08:20:39 GMT -->
+</html>

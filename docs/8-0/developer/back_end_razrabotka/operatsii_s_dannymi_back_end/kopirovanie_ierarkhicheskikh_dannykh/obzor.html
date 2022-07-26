@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# ">
+  
+<!-- Mirrored from academy.terrasoft.ua/docs/8-0/developer/back_end_razrabotka/operatsii_s_dannymi_back_end/kopirovanie_ierarkhicheskikh_dannykh/obzor by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Mar 2022 06:19:21 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+          <!-- Google Tag Manager -->
+      <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          '../../../../../../../www.googletagmanager.com/gtm5445.html?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-KLLB8G');</script>
+      <!-- End Google Tag Manager -->
+        <meta charset="utf-8" />
+<link rel="canonical" href="obzor.html" />
+<meta name="description" content="Для копирования записей таблицы базы данных и записей связанных таблиц используется копирование иерархических данных. В Creatio иерархическое копирование данных доступно к использованию для копирования таблиц [ProductHierarchyDataStructureObtainer] и [ProductConditionHierarchyDataStructureObtainer]. Чтобы скопировать данные с других таблиц, необходимо выполнить кастомизацию иерархического копирования данных." />
+<meta property="og:url" content="https://academy.terrasoft.ua/docs/8-0/developer/back_end_razrabotka/operatsii_s_dannymi_back_end/kopirovanie_ierarkhicheskikh_dannykh/obzor" />
+<meta property="og:title" content="Копирование иерархических данных" />
+<meta property="og:description" content="Для копирования записей таблицы базы данных и записей связанных таблиц используется копирование иерархических данных. В Creatio иерархическое копирование данных доступно к использованию для копирования таблиц [ProductHierarchyDataStructureObtainer] и [ProductConditionHierarchyDataStructureObtainer]. Чтобы скопировать данные с других таблиц, необходимо выполнить кастомизацию иерархического копирования данных." />
+<meta name="Generator" content="Drupal 9 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="../../../../../themes/custom/creatio/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="revision" href="obzor.html" />
+
+    <title>Копирование иерархических данных | Creatio Academy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&amp;family=Open+Sans:ital,wght@0,300;0,400;0,600;1,400&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" media="all" href="../../../../../sites/default/files/css/css_6lTP66__-yc6QXFp1zOwoeJ0HVigoYZP-SeoLLii000.css" />
+<link rel="stylesheet" media="all" href="../../../../../sites/default/files/css/css_XQJDNhkF3xH5SZCcY-PI89Zu4nYIzQ5oR3SnUKyfXJU.css" />
+<link rel="stylesheet" media="print" href="../../../../../sites/default/files/css/css_Zn4VHvcniOOtUwkIVwXzYr_0AI9gUVgZcPqaH4ViagU.css" />
+
+    
+  </head>
+  <body class="path-node page-node-type-developer-documentation">
+          <!-- Google Tag Manager (noscript) -->
+      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KLLB8G"
+                        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+      <!-- End Google Tag Manager (noscript) -->
+    
+        
+      <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    <div class="creatio-page d-flex flex-column">
+        <div class="region region-informer">
+    <div id="block-terrasoftpidtrimueukrainu" class="block block-simple-block block-simple-blockterrasoft-pidtrimue-ukrainu">
+  
+    
+      <style type="text/css">
+<!--/*--><![CDATA[/* ><!--*/
+@import url(../../../../../../../www.terrasoft.ua/themes/custom/creatio/css/components/informer.css)
+
+/*--><!]]>*/
+</style><div class="ts-swu">
+<div class="creatio-container">
+<div class="ts-swu__cont">
+<div><a class="ts-swu__link" href="https://www.terrasoft.ua/terrasoft-stands-with-ukraine" target="_blank">Україна понад усе!</a> <span><a href="https://www.terrasoft.ua/terrasoft-stands-with-ukraine" target="_blank">Приєднуйтеся</a> до допомоги!</span></div>
+</div>
+</div></div>
+
+  </div>
+
+  </div>
+
+  
+  <header role="banner">
+          <div class="creatio-region creatio-region_top">
+        <div class="creatio-container">
+            <div class="region region-top">
+    <div id="block-menutoggle" class="block block-simple-block block-simple-blockmenu-toggle">
+  
+    
+      <div class="menu-toggle"><span> </span></div>
+
+  </div>
+<div id="block-logowhite-2" class="block block-simple-block block-simple-blocklogo-white">
+  
+    
+      <p><a class="site-logo" href="../../../../../../index.html" rel="home"><img src="../../../../../themes/custom/creatio/logo-white.svg" /></a></p>
+
+  </div>
+<div id="block-search" class="block block-simple-block block-simple-blocksearch">
+  
+    
+      <div class="search">
+<form action="https://academy.terrasoft.ua/search" class="search-form" method="get"><input class="search-form__input" name="search" placeholder="Поиск" type="search" /><input class="search-form__button" type="submit" value="Поиск" /> </form>
+
+<div class="search-toggle"> </div>
+</div>
+
+  </div>
+<nav role="navigation" aria-labelledby="block-sitesua-menu" id="block-sitesua" class="block block-menu navigation menu--sites-ua">
+            
+  <h2 class="visually-hidden" id="block-sitesua-menu">Sites UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="https://www.terrasoft.ua/" rel="nofollow" target="_blank">Terrasoft</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://community.terrasoft.ua/" rel="nofollow" target="_blank">Community</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://marketplace.terrasoft.ua/" rel="nofollow" target="_blank">Marketplace</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+<div id="block-usermenu" class="block block-ts-user block-ts-user-menu-block">
+  
+    
+      <ul class="user-menu">
+      <li class="user-menu__item">
+      <a class="user-menu__link" href="https://profile.terrasoft.ua/user/login?destination=academy/ua/docs/8-0/developer/back_end_razrabotka/operatsii_s_dannymi_back_end/kopirovanie_ierarkhicheskikh_dannykh/obzor">Войти</a>
+    </li>
+  </ul>
+
+  </div>
+<div id="block-usermenumobile" class="block block-ts-user block-ts-user-menu-mobile-block">
+  
+    
+      <ul class="user-menu-mobile">
+      <li class="user-menu-mobile__item">
+      <div class="user-menu-mobile__user user-menu-mobile__user_icon"></div>
+      <ul class="user-menu-mobile__submenu">
+        <li class="user-menu-mobile__subitem">
+          <a class="user-menu-mobile__sublink" href="https://profile.terrasoft.ua/user/login?destination=academy/ua/docs/8-0/developer/back_end_razrabotka/operatsii_s_dannymi_back_end/kopirovanie_ierarkhicheskikh_dannykh/obzor">Войти</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  </div>
+
+  </div>
+
+        </div>
+      </div>
+              <div class="creatio-region creatio-region_header">
+        <div class="creatio-container">
+            <div class="region region-header">
+    <div id="block-logo" class="block block-simple-block block-simple-blocklogo">
+  
+    
+      <p><a class="site-logo" href="../../../../../../index.html" rel="home"><img src="../../../../../themes/custom/creatio/logo.svg" /></a></p>
+
+  </div>
+<nav role="navigation" aria-labelledby="block-osnovnayanavigaciyaua-menu" id="block-osnovnayanavigaciyaua" class="block block-menu navigation menu--main-ua">
+            
+  <h2 class="visually-hidden" id="block-osnovnayanavigaciyaua-menu">Основная навигация UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="../../../../../index.html" data-drupal-link-system-path="&lt;front&gt;">Документация</a>
+              </li>
+                <li class="menu-item">
+        <a href="../../../../../../trainings.html">Тренинги</a>
+              </li>
+                <li class="menu-item">
+        <a href="../../../../../certification.html" data-drupal-link-system-path="node/3084">Сертификация и тестирование</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+<nav role="navigation" aria-labelledby="block-sitesua-2-menu" id="block-sitesua-2" class="block block-menu navigation menu--sites-ua">
+            
+  <h2 class="visually-hidden" id="block-sitesua-2-menu">Sites UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="https://www.terrasoft.ua/" rel="nofollow" target="_blank">Terrasoft</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://community.terrasoft.ua/" rel="nofollow" target="_blank">Community</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://marketplace.terrasoft.ua/" rel="nofollow" target="_blank">Marketplace</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+
+  </div>
+
+        </div>
+      </div>
+              <div class="creatio-region creatio-region_breadcrumb">
+        <div class="creatio-container">
+            <div class="region region-breadcrumb">
+    <div id="block-logowhite" class="block block-simple-block block-simple-blocklogo-white">
+  
+    
+      <p><a class="site-logo" href="../../../../../../index.html" rel="home"><img src="../../../../../themes/custom/creatio/logo-white.svg" /></a></p>
+
+  </div>
+<div id="block-breadcrumbnaviagtion" class="block block-ts-nav block-ts-nav-bread">
+  
+    
+      <nav class="breadcrumb"><ol class="ts-nav-breadcrumb__list"><li class="ts-nav-breadcrumb__item"><a href="../../../../../index.html" class="ts-nav-breadcrumb__link" title="Документация">Документация</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../../../index2132.html?vid_1=2" class="ts-nav-breadcrumb__link" title="Для разработчика">Для разработчика</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../back_end_razrabotka.html" class="ts-nav-breadcrumb__link" title="Back-end разработка" hreflang="zxx">Back-end разработка</a></li>
+<li class="ts-nav-breadcrumb__item ts-nav-breadcrumb__item_mobile"><a href="../../../back-end_development/operatsii_s_dannymi_back_end.html" class="ts-nav-breadcrumb__link" title="Операции с данными" hreflang="ru">Операции с данными</a></li>
+<li class="ts-nav-breadcrumb__item"><span class="ts-nav-breadcrumb__link ts-nav-breadcrumb__link_current" title="Обзор">Обзор</span></li>
+</ol>
+</nav>
+
+  </div>
+<div id="block-search-2" class="block block-simple-block block-simple-blocksearch">
+  
+    
+      <div class="search">
+<form action="https://academy.terrasoft.ua/search" class="search-form" method="get"><input class="search-form__input" name="search" placeholder="Поиск" type="search" /><input class="search-form__button" type="submit" value="Поиск" /> </form>
+
+<div class="search-toggle"> </div>
+</div>
+
+  </div>
+
+  </div>
+
+        </div>
+      </div>
+      </header>
+
+  <div class="creatio-region creatio-region_main">
+    <div class="creatio-container">
+                <div class="region region-breadcrumb-mobile">
+    <div id="block-breadcrumbnaviagtion-2" class="block block-ts-nav block-ts-nav-bread">
+  
+    
+      <nav class="breadcrumb"><ol class="ts-nav-breadcrumb__list"><li class="ts-nav-breadcrumb__item"><a href="../../../../../index.html" class="ts-nav-breadcrumb__link" title="Документация">Документация</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../../../index2132.html?vid_1=2" class="ts-nav-breadcrumb__link" title="Для разработчика">Для разработчика</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../back_end_razrabotka.html" class="ts-nav-breadcrumb__link" title="Back-end разработка" hreflang="zxx">Back-end разработка</a></li>
+<li class="ts-nav-breadcrumb__item ts-nav-breadcrumb__item_mobile"><a href="../../../back-end_development/operatsii_s_dannymi_back_end.html" class="ts-nav-breadcrumb__link" title="Операции с данными" hreflang="ru">Операции с данными</a></li>
+<li class="ts-nav-breadcrumb__item"><span class="ts-nav-breadcrumb__link ts-nav-breadcrumb__link_current" title="Обзор">Обзор</span></li>
+</ol>
+</nav>
+
+  </div>
+
+  </div>
+
+      
+      <main class="creatio-main" role="main">
+                                                    
+        <div class="creatio-content creatio-content_small">
+          <div class="creatio-content__inner creatio-content__inner_bg">
+                            <div class="region region-messages">
+    <div data-drupal-messages-fallback class="hidden"></div>
+
+  </div>
+
+            
+              <div class="region region-content">
+    <div id="block-creatio-page-title" class="block block-core block-page-title-block">
+  
+    
+      
+  <h1 class="page-title"><span class="field field--name-title field--type-string field--label-hidden">Копирование иерархических данных</span>
+</h1>
+
+
+  </div>
+<div id="block-creatio-content" class="block block-system block-system-main-block">
+  
+    
+      
+<article data-history-node-id="3560" role="article" about="/docs/8-0/developer/back_end_razrabotka/operatsii_s_dannymi_back_end/kopirovanie_ierarkhicheskikh_dannykh/obzor" class="node node--type-developer-documentation node--view-mode-full">
+
+  
+    
+
+  
+  <div class="node__content">
+      <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocknodedeveloper-documentationfield-difficulty">
+  
+    
+      
+            <div class="field field--name-field-difficulty field--type-entity-reference field--label-hidden field__item"><div about="/docs/8-0/taxonomy/term/169" id="taxonomy-term-169" class="taxonomy-term vocabulary-difficulty">
+  
+  
+  <div class="content">
+      <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocktaxonomy-termdifficultyfield-icon">
+  
+    
+      
+            <div class="field field--name-field-icon field--type-image field--label-hidden field__item">  <img src="../../../../../sites/default/files/difficulty/advanced.svg" alt="" loading="lazy" typeof="foaf:Image" />
+
+</div>
+      
+  </div>
+<div class="block block-layout-builder block-field-blocktaxonomy-termdifficultyname">
+  
+    
+      
+            <div class="field field--name-name field--type-string field--label-hidden field__item"><span style="color: #EF4524;">Сложный</span></div>
+      
+  </div>
+
+    </div>
+  </div>
+
+  </div>
+</div>
+</div>
+      
+  </div>
+<div class="block block-ts-doc block-ts-doc-downloads">
+  
+    
+      <a href="../../../../../sites/default/files/pdf/node/3560/Kopirovanie_ierarkhicheskikh_dannykh_.pdf" target="_blank">PDF</a>
+  </div>
+<div class="block block-ts-doc block-ts-doc-versions">
+  
+    
+        <div class="ts-doc-versions">
+    <select class="ts-doc-versions__select">
+                                                <option value="/docs/8-0/developer/back_end_razrabotka/operatsii_s_dannymi_back_end/kopirovanie_ierarkhicheskikh_dannykh/obzor" selected>Версия 8.0</option>
+                              <option value="/docs/7-18/developer/back_end_razrabotka/operatsii_s_dannymi_back_end/kopirovanie_ierarkhicheskikh_dannykh/obzor">Версия 7.18</option>
+                              <option value="/docs/7-17/developer/back_end_razrabotka/operatsii_s_dannymi_back_end/kopirovanie_ierarkhicheskikh_dannykh/obzor">Версия 7.17</option>
+                              <option value="/docs/7-16/developer/back_end_razrabotka/operatsii_s_dannymi_back_end/kopirovanie_ierarkhicheskikh_dannykh/obzor">Версия 7.16</option>
+          </select>
+  </div>
+
+  </div>
+
+    </div>
+  </div>
+  <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocknodedeveloper-documentationbody">
+  
+    
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><p>Для копирования записей таблицы базы данных и записей связанных таблиц используется <strong>копирование иерархических данных</strong>. В Creatio иерархическое копирование данных доступно к использованию для копирования таблиц <span class="filled">[ProductHierarchyDataStructureObtainer]</span> и <span class="filled">[ProductConditionHierarchyDataStructureObtainer]</span>. Чтобы скопировать данные с других таблиц, необходимо выполнить кастомизацию иерархического копирования данных.</p>
+
+<p>Иерархическое копирование можно использовать в <a href="../../veb_servisy/obzor.html">пользовательском веб-сервисе</a>, например, при копировании данных из внешнего сервиса в приложение Creatio или при подключении к внешней базе данных.</p>
+
+<p>Например, есть раздел <span class="key">Продукты</span> (<span class="key">Products</span>), который сформирован на основе таблицы <span class="filled">[Product]</span> базы данных. Страница продукта содержит пользовательские детали. При иерархическом копировании записи раздела будут скопированы и данные записи, и данные связанных деталей.</p>
+
+<p>При копировании учитываются <a href="../../../../../7-17/user/ustanovka_i_administrirovanie/upravlenie_polzovateljami_i_dostupom/upravleniye_dostupom/dostup_po_operacijam/nastroit_dostup_po_operaciyam.html" target="_blank">права доступа</a> к таблицам. Например, пользователь не имеет прав на чтение и добавление записей в таблицу <span class="filled">[Contact]</span>. При вызове копирования иерархических данных запись не будет скопирована и приложение вернет сообщение о невозможности выполнения данной операции.</p>
+
+<h2>Структура и алгоритм работы копирования иерархических данных<a class="title-anchor" href="#title-3560-9" id="title-3560-9"> </a></h2>
+
+<p><strong>Составляющие</strong> копирования иерархических данных представлены в таблице.</p>
+
+<div class="table">
+<div class="table__caption">Составляющие копирования иерархических данных</div>
+
+<table><thead><tr><th>Название</th>
+			<th>Описание</th>
+			<th>Классы и интерфейсы</th>
+		</tr></thead><tbody><tr><th>Контроллер</th>
+			<td>Контролирует процесс копирования</td>
+			<td>
+			<p><span class="filled">IHierarchyDataCopyingController</span></p>
+
+			<p><span class="filled">HierarchyDataCopyingController</span> — контроль создания копии записи таблицы и связанных данных из базы данных.</p>
+			</td>
+		</tr><tr><th>Получатель</th>
+			<td>Получает из базы данных структуру текущей таблицы и связанных таблиц</td>
+			<td>
+			<p><span class="filled">HierarchyDataStructureObtainerContext</span> — выбор алгоритма для получения иерархической структуры таблицы и связанных таблиц.</p>
+
+			<p><span class="filled">IHierarchyDataStructureObtainer</span></p>
+
+			<p><span class="filled">HierarchyDataStructureObtainer</span> — получение иерархической структуры таблицы и связанных таблиц.</p>
+
+			<p><span class="filled">BaseHierarchyDataStructureObtainer</span></p>
+
+			<p><span class="filled">ProductHierarchyDataStructureObtainer</span> — получение иерархической структуры таблицы <span class="filled">[Product]</span> и связанных таблиц.</p>
+			</td>
+		</tr><tr><th>Контейнер</th>
+			<td>Сохраняет структуру текущей таблицы и связанных таблиц</td>
+			<td>
+			<p><span class="filled">HierarchyDataStructure</span> — контейнер для сохранения информации о структуре иерархических данных.</p>
+			</td>
+		</tr><tr><th>Мапер</th>
+			<td>Работает со структурой</td>
+			<td>
+			<p><span class="filled">IEntityCollectionMappingProcessor</span></p>
+
+			<p><span class="filled">EntityCollectionMappingProcessor</span> — получение структуры из базы данных, копирование.</p>
+			</td>
+		</tr></tbody></table></div>
+
+<p><strong>Диаграмма классов</strong> копирования иерархических данных представлено на рисунке ниже.</p>
+
+<div class="media">
+<div class="media__element"><img src="../../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/HierarchyData/scr_class_diagram.png" /></div>
+</div>
+
+<p><strong>Алгоритм работы</strong> копирования иерархических данных:</p>
+
+<ol><li>Класс сервиса вызывает контроллер процесса копирования и передает в него название таблицы и идентификатор записи, данные которой будут копироваться.</li>
+	<li>
+	<p>Контроллер начинает поэтапное создание копии:</p>
+
+	<ol><li>Получает структуру таблицы и связанных таблиц в унифицированной форме.</li>
+		<li>Cохраняет полученную структуру таблицы в унифицированной форме.</li>
+	</ol></li>
+	<li>Контроллер копирует записи в соответствии со структурой, полученной на этапе сохранения.</li>
+</ol><p><strong>Унифицированная форма</strong> — это cохранение полученной структуры таблицы в объект с типом <span class="filled">HierarchyDataStructure</span>. Если таблица имеет связанные таблицы (колонка по внешнему ключу ссылается на запись другой таблицы), то они помещаются в созданный объект (в коллекцию из объектов аналогичного типа). При необходимости расширения или обновления механизма получения структуры использование унифицированной формы позволяет обработать новую структуру без дополнительных изменений кода в контроллере.</p>
+
+<p>Шаблон унифицированной формы, которая используется при сохранении полученной структуры таблицы, приведен ниже.</p>
+
+<div class="code">
+<div class="code__widgets">
+<div class="code__top">
+<div class="code__title">Шаблон унифицированной формы структуры таблицы</div>
+</div>
+
+<div class="code__source">
+<pre class="prettyprint">
+/* Class holds structure of hierarchical data. */
+public class HierarchyDataStructure
+{
+    public string SchemaName;
+    public List&lt;string&gt; Columns;
+
+    /* If current structure object does not have a parent foreign table name than here need to be putted null. */
+    public string ParentColumnName;
+
+    /* List of child structures. */
+    public List&lt;HierarchyDataStructure&gt; Structures;
+
+    /* List filters. */
+    public HierarchyDataStructureFilterGroup Filters;
+}
+</pre>
+</div>
+</div>
+</div>
+
+<h2>Кастомизировать копирование иерархических данных<a class="title-anchor" href="#title-3560-4" id="title-3560-4"> </a></h2>
+
+<p>Кастомизация копирования иерархических данных позволяет:</p>
+
+<ul><li>Добавить пользовательскую реализацию получателя данных (класс <span class="filled">HierarchyDataStructureObtainer</span>).</li>
+	<li>Изменить реализацию получателя данных (класс <span class="filled">HierarchyDataStructureObtainer</span>).</li>
+	<li>Изменить реализацию контроллера (класс <span class="filled">HierarchyDataCopyingController</span>).</li>
+	<li>Добавить пользовательскую реализацию копирования иерархических данных.</li>
+</ul><h3>Добавить пользовательскую реализацию получателя данных<a class="title-anchor" href="#title-3560-5" id="title-3560-5"> </a></h3>
+
+<p><strong>Способы</strong> добавления пользовательской реализации получателя данных (класс <span class="filled">HierarchyDataStructureObtainer</span>):</p>
+
+<ul><li>Через базовый интерфейс.</li>
+	<li>Через наследование базового класса.</li>
+</ul><h4>Добавить пользовательскую реализацию получателя данных через базовый интерфейс<a class="title-anchor" href="#title-3560-10" id="title-3560-10"> </a></h4>
+
+<ol><li>Создайте класс, который реализует интерфейс <span class="filled">IHierarchyDataStructureObtainer</span>. Шаблон названия класса: <span class="filled">[НазваниеОбъектаКопирования]HierarchyDataStructureObtainer</span>.</li>
+	<li>Добавьте пользовательскую реализацию метода интерфейса <span class="filled">ObtainStructure()</span>. Обязательно укажите модификатор <span class="filled">virtual</span>.</li>
+</ol><p>Пример реализации получателя данных через базовый интерфейс содержится в пакете <span class="key">ProductBankCustomerJourney</span> —&gt; классы <span class="filled">ProductHierarchyDataStructureObtainer</span> и <span class="filled">ProductConditionHierarchyDataStructureObtainer</span>.</p>
+
+<h4>Добавить пользовательскую реализацию получателя данных через наследование базового класса<a class="title-anchor" href="#title-3560-11" id="title-3560-11"> </a></h4>
+
+<p>Под базовой реализацией необходимо понимать стандартное копирование записи без связанных записей. Получатель реализован в классе <span class="filled">BaseHierarchyDataStructureObtainer</span> базового пакета <span class="key">NUI</span>.</p>
+
+<ol><li>Создайте класс, который реализует интерфейс <span class="filled">BaseHierarchyDataStructureObtainer</span> (пакет <span class="key">NUI</span> —&gt; класс <span class="filled">BaseHierarchyDataStructureObtainer</span>). Шаблон названия класса: <span class="filled">[НазваниеОбъектаКопирования]HierarchyDataStructureObtainer</span>.</li>
+	<li>Расширьте базовую реализацию получателя.</li>
+</ol><p>Пример реализации получателя данных через наследование базового класса содержится в пакете <span class="key">ProductBankCustomerJourney</span> —&gt; класс <span class="filled">ProductHierarchyDataStructureObtainer</span>).</p>
+
+<h3>Изменить реализацию получателя данных<a class="title-anchor" href="#title-3560-6" id="title-3560-6"> </a></h3>
+
+<ol><li>Создайте класс, который <a href="../../fabrika_zameshchayushchikh_klassov/obzor.html">замещает</a> один из классов <span class="filled">BaseHierarchyDataStructureObtainer</span> (пакет <span class="key">NUI</span>), <span class="filled">ProductConditionHierarchyDataStructureObtainer</span> (пакет <span class="key">ProductBankCustomerJourney</span>), <span class="filled">ProductHierarchyDataStructureObtainer</span> (пакет <span class="key">ProductBankCustomerJourney</span>).</li>
+	<li>В замещающий класс добавьте пользовательскую реализацию замещающего метода <span class="filled">ObtainStructure()</span> базового класса.</li>
+</ol><h3>Изменить реализацию контроллера<a class="title-anchor" href="#title-3560-7" id="title-3560-7"> </a></h3>
+
+<ol><li>Создайте класс, который реализует интерфейс <span class="filled">IHierarchyDataCopyingController</span>. Шаблон названия класса: <span class="filled">[НазваниеОбъекта]HierarchyDataController</span>.</li>
+	<li>
+	<p>В метод интерфейса <span class="filled">CopyRecord</span> добавьте пользовательский алгоритм копирования.</p>
+
+	<p>Один шаг алгоритма должен содержать вызов одного метода другого класса. Шаг алгоритма также должен включать в себя создание объекта класса, который необходимо вызвать, или минимальную подготовку данных, которые будут передаваться в метод.</p>
+	</li>
+</ol><h3>Добавить пользовательскую реализацию копирования иерархических данных<a class="title-anchor" href="#title-3560-8" id="title-3560-8"> </a></h3>
+
+<ol><li>Добавьте реализацию <a href="#title-3560-7">контроллера процесса копирования</a> (класс <span class="filled">HierarchyDataCopyingController</span>). Контроллер должен поэтапно вызывать получателя структуры (класс <span class="filled">HierarchyDataStructureObtainer</span>), обработчика структуры (класс <span class="filled">EntityCollectionMappingProcessor</span>), контейнера структуры (класс <span class="filled">HierarchyDataStructure</span>).</li>
+	<li>Добавьте реализацию <a href="#title-3560-6">получателя иерархической структуры данных</a> (класс <span class="filled">HierarchyDataStructureObtainer</span>).</li>
+	<li>
+	<p>Создайте класс, который реализует интерфейс. Шаблон названия класса: <span class="filled">[НазваниеОбъекта]HierarchyDataProcessor</span>.</p>
+
+	<p>Рекомендуется добавить интерфейс для класса обработчика. Это позволяет добавить другую реализацию и заменить существующую, а также используется для унификации всех обработчиков.</p>
+	</li>
+	<li>Создайте класс, реализующий интерфейс <span class="filled">IEntityCollectionMappingHandler</span>.</li>
+	<li>В метод контроллера <span class="filled">CopyRecord</span> добавьте вызовы методов получателя структуры (класс <span class="filled">HierarchyDataStructureObtainer</span>), обработчика структуры (класс <span class="filled">EntityCollectionMappingProcessor</span>), контейнера структуры (класс <span class="filled">HierarchyDataStructure</span>).</li>
+	<li>
+	<p>Создайте в пользовательском классе объект класса <span class="filled">HierarchyDataCopyingController</span>.</p>
+
+	<div class="code">
+	<div class="code__top">
+	<div class="code__title">Пример создания объекта контроллера</div>
+	</div>
+
+	<div class="code__widgets">
+	<div class="code__source">
+	<pre class="prettyprint">
+var copyController = ClassFactory.Get&lt;HierarchyDataCopyingController&gt;(new ConstructorArgument("UserConnection", UserConnection));
+</pre>
+	</div>
+	</div>
+	</div>
+	</li>
+	<li>
+	<p>Вызовите метод копирования <span class="filled">copyController</span>.</p>
+
+	<div class="code">
+	<div class="code__top">
+	<div class="code__title">Пример вызова метода копирования</div>
+	</div>
+
+	<div class="code__widgets">
+	<div class="code__source">
+	<pre class="prettyprint">
+copyController.CopyRecord(schemaName, recordId);
+</pre>
+	</div>
+	</div>
+	</div>
+	</li>
+</ol><h2>Вызвать копирование иерархических данных<a class="title-anchor" href="#title-3560-2" id="title-3560-2"> </a></h2>
+
+<p>Копирование иерархических данных можно вызвать из front-end и из back-end части.</p>
+
+<h3>Вызвать иерархическое копирование из front-end части<a class="title-anchor" href="#title-3560-11" id="title-3560-11"> </a></h3>
+
+<p>Чтобы <strong>вызвать копирование иерархических данных из front-end части</strong>, используйте метод <span class="filled">callService()</span>.</p>
+
+<p>Пример вызова содержится в пакете <span class="key">ProductBankCustomerJourney</span> —&gt; схема <span class="filled">ProductConditionDetailV2</span> —&gt; метод <span class="filled">callCopyRecordService()</span>.</p>
+
+<div class="code">
+<div class="code__top">
+<div class="code__title">Пример вызова сервиса копирования из front-end части</div>
+</div>
+
+<div class="code__widgets">
+<div class="code__source">
+<pre class="prettyprint">
+/**
+* Call service that creates records copy.
+* @protected
+*/
+callCopyRecordService: function() {
+    this.showBodyMask();
+    var config = this.getCopyRecordConfig();
+    this.callService(config, this.copyRecordServiceCallback, this);
+}
+</pre>
+</div>
+</div>
+</div>
+
+<h3>Вызвать иерархическое копирование из back-end части<a class="title-anchor" href="#title-3560-12" id="title-3560-12"> </a></h3>
+
+<p>Чтобы <strong>вызвать копирование иерархических данных из back-end части</strong>, в пользовательском классе создайте объект класса <span class="filled">HierarchyDataCopyingController</span>.</p>
+
+<div class="code">
+<div class="code__top">
+<div class="code__title">Пример вызова сервиса копирования из back-end части</div>
+</div>
+
+<div class="code__widgets">
+<div class="code__source">
+<pre class="prettyprint">
+var copyController = ClassFactory.Get&lt;HierarchyDataCopyingController&gt;(new ConstructorArgument("UserConnection", UserConnection);</pre>
+</div>
+</div>
+</div>
+
+<p>Чтобы <strong>работать с данными таблиц по маппингу колонок</strong>:</p>
+
+<ol><li>
+	<p>В пользовательском классе создайте объект класса маппера, который реализует интерфейс <span class="filled">IEntityCollectionMappingHandler</span>.</p>
+
+	<div class="code">
+	<div class="code__top">
+	<div class="code__title">Пример создания объекта класса маппера</div>
+	</div>
+
+	<div class="code__widgets">
+	<div class="code__source">
+	<pre class="prettyprint">
+var entityCollectionMappingHandler = ClassFactory.Get&lt;IEntityCollectionMappingHandler&gt;(new ConstructorArgument("userConnection", UserConnection));</pre>
+	</div>
+	</div>
+	</div>
+	</li>
+	<li>
+	<p>Вызовите методы маппера через объект.</p>
+
+	<div class="code">
+	<div class="code__top">
+	<div class="code__title">Пример вызова метода копирования</div>
+	</div>
+
+	<div class="code__widgets">
+	<div class="code__source">
+	<pre class="prettyprint">
+entityCollectionMappingHandler.CopyItems(data.SchemaName, columns, filterGroup, relatedColumnValues);</pre>
+	</div>
+	</div>
+	</div>
+
+	<div class="message message_notice">
+	<p><span class="message__bold message__bold_notice">На заметку.</span> Создание объекта по названию интерфейса позволяет разработчику заменить существующую реализацию маппера на пользовательскую. При изменении реализации существующего маппера будет перекомпилирован только класс маппера. Все классы, которые используют данную реализацию, не требуют перекомпиляции. Подробнее о создании объектов с использованием механизма внедрения зависимостей описано в статье <a href="../../fabrika_zameshchayushchikh_klassov/obzor.html">Замещение конфигурационных элементов</a>.</p>
+	</div>
+	</li>
+</ol><p>Чтобы <strong>получить структуру определенной таблицы</strong> в виде объекта с типом <span class="filled">HierarchyDataStructure</span>:</p>
+
+<ol><li>
+	<p>В пользовательском классе создайте объект класса <span class="filled">HierarchyDataStructureObtainerContext</span>.</p>
+
+	<div class="code">
+	<div class="code__top">
+	<div class="code__title">Пример создания получателя структуры таблицы</div>
+	</div>
+
+	<div class="code__widgets">
+	<div class="code__source">
+	<pre class="prettyprint">
+var _hierarchyDataStructureObtainer = ClassFactory.Get&lt;HierarchyDataStructureObtainerContext&gt;(new ConstructorArgument("userConnection", UserConnection));</pre>
+	</div>
+	</div>
+	</div>
+	</li>
+	<li>
+	<p>Получите структуру определенной таблицы.</p>
+
+	<p><strong>Способы</strong> получения структуры:</p>
+
+	<ul><li>Вызовите метод <span class="filled">ObtainStructureByObtainerStrategy</span> и передайте ему параметр <span class="filled">schemaName</span> — название таблицы, запись которой необходимо скопировать.</li>
+		<li>Вызовите реализацию существующего получателя структуры — <span class="filled">ProductHierarchyDataStructureObtainer</span> или <span class="filled">ProductConditionHierarchyDataStructureObtainer</span>.</li>
+	</ul></li>
+</ol></div>
+      
+  </div>
+<div class="block block-layout-builder block-field-blocknodedeveloper-documentationfield-linked">
+  
+    
+      
+  <div class="field field--name-field-linked field--type-entity-reference field--label-above">
+    <div class="field__label">Смотрите также</div>
+          <div class="field__items">
+              <div class="field__item"><a href="../../veb_servisy/obzor.html" hreflang="ru">Пользовательские веб-сервисы</a></div>
+          <div class="field__item"><a href="../../../../../7-17/user/ustanovka_i_administrirovanie/upravlenie_polzovateljami_i_dostupom/upravleniye_dostupom/dostup_po_operacijam/nastroit_dostup_po_operaciyam.html" hreflang="ru">Настроить доступ по операциям</a></div>
+          <div class="field__item"><a href="../../fabrika_zameshchayushchikh_klassov/obzor.html" hreflang="ru">Фабрика замещающих классов</a></div>
+              </div>
+      </div>
+
+  </div>
+
+    </div>
+  </div>
+
+  </div>
+
+</article>
+
+  </div>
+
+  </div>
+
+          </div>
+        </div>
+
+                  <aside class="creatio-sidebar creatio-sidebar_first" role="complementary">
+              <div class="region region-sidebar-first">
+    <div id="block-documentationnaviagtion" class="block block-ts-nav block-ts-nav-doc-nav">
+  
+    
+      <div class="ts-nav-block"><a href="../../../../../index.html" class="ts-nav-block__link">Документация</a><div class="ts-nav-block__title">Для разработчика</div>
+</div>
+<div class="ts-nav-container"><ul class="ts-nav-menu"><li class="ts-nav-menu__item">
+  <a href="../../../s_chego_nachat.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">С чего начать&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../architecture.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Архитектура&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../instrumenty_razrabotki.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Инструменты разработки&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../back_end_razrabotka.html" class="ts-nav-menu__link ts-nav-menu__link_expanded ts-nav-menu__link_open" hreflang="zxx">Back-end разработка&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+      <ul class="ts-nav-menu__children">
+      <li class="ts-nav-menu__item">
+  <a href="../../fabrika_zameshchayushchikh_klassov.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Фабрика замещающих классов&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../back-end_development/operatsii_s_dannymi_back_end.html" class="ts-nav-menu__link ts-nav-menu__link_expanded ts-nav-menu__link_open" hreflang="ru">Операции с данными&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+      <ul class="ts-nav-menu__children">
+      <li class="ts-nav-menu__item">
+  <a href="../../../back-end_development/operatsii_s_dannymi_back_end/fonovoe_vypolnenie_operacij.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Фоновое выполнение операций&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../back-end_development/operatsii_s_dannymi_back_end/pryamoj_dostup.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Прямой доступ&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../back-end_development/operatsii_s_dannymi_back_end/orm.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">ORM&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../slozhnye_select_zaprosy/obzor.html" class="ts-nav-menu__link" hreflang="ru">Сложные Select-запросы</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="obzor.html" class="ts-nav-menu__link ts-nav-menu__link_open" hreflang="ru">Копирование иерархических данных</a>
+  </li>
+
+    </ul>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../veb_servisy.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Веб-сервисы&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../biznes_logika_obektov/obzor.html" class="ts-nav-menu__link" hreflang="ru">Бизнес-логика объектов</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../hranilishche_kehsha/obzor.html" class="ts-nav-menu__link" hreflang="ru">Хранилище кэша</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../lokalizuemye_resursy.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Локализуемые ресурсы&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../avtomaticheskaya_privyazka_dannykh/obzor.html" class="ts-nav-menu__link" hreflang="ru">Автоматическая привязка данных</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../api_dlya_raboty_s_fajlami.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">API для работы с файлами&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../../../../api/netcoreapi/7.18.0/api/index.html" class="ts-nav-menu__link" hreflang="ru">Библиотека .NET классов</a>
+  </li>
+
+    </ul>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../front_end_razrabotka_freedom_ui.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Front-end разработка Freedom UI&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../front_end_razrabotka.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Front-end разработка&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../integratsiya_i_vneshnij_api.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Интеграция и внешний API&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../ehlementy_interfejsa.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Элементы интерфейса&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../komponenty_prilozheniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Компоненты приложения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../razrabotka_mobilnogo_prilozheniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Разработка мобильного приложения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../razrabotka_marketplace_prilozheniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Разработка Marketplace-приложения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+</ul>
+</div>
+
+  </div>
+
+  </div>
+
+            <div class="creatio-sidebar__toggle"></div>
+          </aside>
+        
+                  <aside class="creatio-sidebar creatio-sidebar_second" role="complementary">
+              <div class="region region-sidebar-second">
+    <div id="block-example" class="block block-ts-nav block-ts-nav-page-nav">
+  
+    
+      <div class="ts-nav-page">
+  </div>
+
+  </div>
+<div id="block-adminfeedbackblock" class="block block-admin-feedback block-admin-feedback-block">
+  
+    
+      <div id="feedback-message"><div id="upper-feedback-content"><h2>Был ли данный материал полезен?</h2>
+<input class="feedback-btn feedback-btn__yes button js-form-submit form-submit" data-node-id="3560" data-feedback="yes" type="submit" name="op" value="Да" />
+<input class="feedback-btn feedback-btn__no button js-form-submit form-submit" data-node-id="3560" data-feedback="no" type="submit" name="op" value="Нет" />
+</div>
+<form class="admin-feedback-form" data-drupal-selector="admin-feedback-form" action="https://academy.terrasoft.ua/docs/8-0/developer/back_end_razrabotka/operatsii_s_dannymi_back_end/kopirovanie_ierarkhicheskikh_dannykh/obzor" method="post" id="admin-feedback-form" accept-charset="UTF-8">
+  <div id="feedback-msg-result"></div><div class="js-form-item form-item js-form-type-textarea form-type-textarea js-form-item-feedback-message form-item-feedback-message form-no-label">
+        <div class="form-textarea-wrapper">
+  <textarea id="edit-feedback-msg" data-drupal-selector="edit-feedback-message" name="feedback_message" rows="5" cols="60" class="form-textarea resize-vertical"></textarea>
+</div>
+
+        </div>
+<input id="feedback-id" data-drupal-selector="edit-feedback-id" type="hidden" name="feedback_id" value="" />
+<input class="feedback-btn feedback-btn__send-comment button js-form-submit form-submit" data-drupal-selector="edit-feedback-send" type="submit" id="edit-feedback-send" name="op" value="Отправить" />
+<input autocomplete="off" data-drupal-selector="form-dspysniy-zedf89cgdgbmtvwszfryp-qdfzqfnpukeq" type="hidden" name="form_build_id" value="form-dspysnIy-ZEDF89cgdgBMTvwSZFRyp-qDFzQFNPUkeQ" />
+<input data-drupal-selector="edit-admin-feedback-form" type="hidden" name="form_id" value="admin_feedback_form" />
+
+</form>
+</div>
+
+  </div>
+
+  </div>
+
+          </aside>
+              </main>
+    </div>
+  </div>
+
+  <footer role="contentinfo">
+    <div class="creatio-region creatio-region_footer">
+      <div class="creatio-container">
+          <div class="region region-footer">
+    <div id="block-footerua" class="block block-simple-block block-simple-blockfooter-ua">
+  
+    
+      <div class="footer">
+<div class="footer-left">
+<ul class="footer-socials"><li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_fb" href="https://www.facebook.com/terrasoft.ua" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_in" href="https://www.linkedin.com/company/terrasoft/" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_yt" href="https://www.youtube.com/c/TerrasoftUkraine" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_tg" href="https://t.me/Terrasoft_UA" target="_blank"> </a></li>
+</ul></div>
+
+<div class="footer-contact">
+<div class="footer-title">Будьте на связи!</div>
+
+<div class="footer-content">
+<div class="footer-items">
+<div class="footer-item"><a class="footer__link footer__link_phone" href="tel:+380443633133">+38 (044) 363-31-33</a></div>
+</div>
+
+<div class="footer-items">
+<div class="footer-item"><a class="footer__link footer__link_email" href="mailto:support@terrasoft.ua">support@terrasoft.ua</a></div>
+</div>
+</div>
+</div>
+</div>
+
+  </div>
+
+  </div>
+
+      </div>
+    </div>
+    <div class="creatio-region creatio-region_bottom">
+      <div class="creatio-container">
+          <div class="region region-bottom">
+    <div id="block-allrightsreservedua" class="block block-simple-block block-simple-blockfooter-bottom-ua">
+  
+    
+      <p>© 2002-2022 Terrasoft.  |  <a href="https://www.terrasoft.ua/privacy-policy" target="_blank">Конфиденциальность</a></p>
+
+  </div>
+
+  </div>
+
+      </div>
+    </div>
+  </footer>
+</div>
+<div class="creatio-bg"></div>
+
+
+  </div>
+
+    
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/docs\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/3560","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"ru"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"ajaxPageState":{"libraries":"admin_feedback\/admin_feedback_block,admin_feedback\/admin_feedback_css,classy\/base,classy\/messages,classy\/node,core\/drupal.ajax,core\/jquery.form,core\/normalize,creatio\/fancybox,creatio\/global,layout_discovery\/onecol,system\/base,ts_doc\/doc_version,ts_feedback\/ts_feedback,ts_nav\/breadcrumb,ts_nav\/doc_nav,ts_nav\/page_nav,ts_title_anchor\/ts_title_anchor","theme":"creatio","theme_token":null},"ajaxTrustedUrl":{"form_action_p_pvdeGsVG5zNF_XLGPTvYSKCf43t8qZYSwcfZl2uzM":true,"\/docs\/8-0\/developer\/back_end_razrabotka\/operatsii_s_dannymi_back_end\/kopirovanie_ierarkhicheskikh_dannykh\/obzor?ajax_form=1":true},"admin_feedback":{"yes_response":"\u0421\u043f\u0430\u0441\u0438\u0431\u043e \u0437\u0430 \u043e\u0431\u0440\u0430\u0442\u043d\u0443\u044e \u0441\u0432\u044f\u0437\u044c!","no_response":"\u0421\u043f\u0430\u0441\u0438\u0431\u043e \u0437\u0430 \u043e\u0431\u0440\u0430\u0442\u043d\u0443\u044e \u0441\u0432\u044f\u0437\u044c!","custom_text_response_on_no":{"value":"","format":"full_html"},"feedback_prompt_on_yes":true,"feedback_prompt_on_no":true,"feedback_enable_predefined_answers":false,"feedback_prompt":"\u041a\u0430\u043a \u043c\u043e\u0436\u043d\u043e \u0443\u043b\u0443\u0447\u0448\u0438\u0442\u044c \u044d\u0442\u0443 \u0441\u0442\u0430\u0442\u044c\u044e?"},"ajax":{"edit-feedback-send":{"callback":"::validateFeedbackMsg","event":"mousedown","keypress":true,"prevent":"click","url":"\/docs\/8-0\/developer\/back_end_razrabotka\/operatsii_s_dannymi_back_end\/kopirovanie_ierarkhicheskikh_dannykh\/obzor?ajax_form=1","dialogType":"ajax","submit":{"_triggering_element_name":"op","_triggering_element_value":"\u041e\u0442\u043f\u0440\u0430\u0432\u0438\u0442\u044c"}}},"user":{"uid":0,"permissionsHash":"9c2367dfcaba0fa15f0375f97aed64e146c908cee68508d13b79e3ee80e5162d"}}</script>
+<script src="../../../../../sites/default/files/js/js_Rr-7TvYD7NposuRFJwUqThxM7yJmw8vs03PQwu5gWd8.js"></script>
+
+
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+      <g id="svg-copy" class="svg-icon svg-icon_copy">
+        <path d="M15.111,18H1.889A1.848,1.848,0,0,1,0,16.2V3.6A1.848,1.848,0,0,1,1.889,1.8H5.837a2.87,2.87,0,0,1,5.326,0h3.948A1.848,1.848,0,0,1,17,3.6V16.2A1.848,1.848,0,0,1,15.111,18ZM3.777,12.6v1.8h6.611V12.6Zm0-3.6v1.8h9.445V9Zm0-3.6V7.2h9.445V5.4ZM8.5,1.8a.924.924,0,0,0-.944.9.945.945,0,0,0,1.889,0A.924.924,0,0,0,8.5,1.8Z"/>
+      </g>
+
+      <g id="svg-prev" class="svg-icon svg-icon_arrow">
+        <path d="M5.488,12.779,0,6.39,5.488,0" transform="translate(1 0.652)"/>
+      </g>
+
+      <g id="svg-next" class="svg-icon svg-icon_arrow">
+        <path d="M0,12.779,5.488,6.39,0,0" transform="translate(0.759 0.652)"/>
+      </g>
+    </svg>
+  </body>
+
+<!-- Mirrored from academy.terrasoft.ua/docs/8-0/developer/back_end_razrabotka/operatsii_s_dannymi_back_end/kopirovanie_ierarkhicheskikh_dannykh/obzor by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Mar 2022 06:19:23 GMT -->
+</html>

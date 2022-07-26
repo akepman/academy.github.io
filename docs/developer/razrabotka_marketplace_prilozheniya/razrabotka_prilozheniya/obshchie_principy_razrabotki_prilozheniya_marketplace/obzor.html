@@ -1,0 +1,1050 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# ">
+  
+<!-- Mirrored from academy.terrasoft.ua/docs/developer/razrabotka_marketplace_prilozheniya/razrabotka_prilozheniya/obshchie_principy_razrabotki_prilozheniya_marketplace/obzor by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Mar 2022 00:46:49 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+          <!-- Google Tag Manager -->
+      <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          '../../../../../../www.googletagmanager.com/gtm5445.html?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-KLLB8G');</script>
+      <!-- End Google Tag Manager -->
+        <meta charset="utf-8" />
+<link rel="canonical" href="obzor.html" />
+<meta name="description" content="Формирование пакетов приложения 
+
+Любое приложение Marketplace представляет собой определенный набор пакетов. С их помощью выполняются все конфигурационные изменения.
+
+Пакет Creatio — это совокупность конфигурационных элементов, которые реализуют определенный блок функциональности.
+
+Принцип разделения функциональности приложения по пакетам реализован с помощью зависимостей." />
+<meta property="og:url" content="https://academy.terrasoft.ua/docs/developer/razrabotka_marketplace_prilozheniya/razrabotka_prilozheniya/obshchie_principy_razrabotki_prilozheniya_marketplace/obzor" />
+<meta property="og:title" content="Разработка приложения Marketplace" />
+<meta property="og:description" content="Формирование пакетов приложения 
+
+Любое приложение Marketplace представляет собой определенный набор пакетов. С их помощью выполняются все конфигурационные изменения.
+
+Пакет Creatio — это совокупность конфигурационных элементов, которые реализуют определенный блок функциональности.
+
+Принцип разделения функциональности приложения по пакетам реализован с помощью зависимостей." />
+<meta name="Generator" content="Drupal 9 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="../../../../themes/custom/creatio/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="revision" href="obzor.html" />
+
+    <title>Разработка приложения Marketplace | Creatio Academy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&amp;family=Open+Sans:ital,wght@0,300;0,400;0,600;1,400&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" media="all" href="../../../../sites/default/files/css/css_6lTP66__-yc6QXFp1zOwoeJ0HVigoYZP-SeoLLii000.css" />
+<link rel="stylesheet" media="all" href="../../../../sites/default/files/css/css_XQJDNhkF3xH5SZCcY-PI89Zu4nYIzQ5oR3SnUKyfXJU.css" />
+<link rel="stylesheet" media="print" href="../../../../sites/default/files/css/css_Zn4VHvcniOOtUwkIVwXzYr_0AI9gUVgZcPqaH4ViagU.css" />
+
+    
+  </head>
+  <body class="path-node page-node-type-developer-documentation">
+          <!-- Google Tag Manager (noscript) -->
+      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KLLB8G"
+                        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+      <!-- End Google Tag Manager (noscript) -->
+    
+        
+      <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    <div class="creatio-page d-flex flex-column">
+        <div class="region region-informer">
+    <div id="block-terrasoftpidtrimueukrainu" class="block block-simple-block block-simple-blockterrasoft-pidtrimue-ukrainu">
+  
+    
+      <style type="text/css">
+<!--/*--><![CDATA[/* ><!--*/
+@import url(../../../../../../www.terrasoft.ua/themes/custom/creatio/css/components/informer.css)
+
+/*--><!]]>*/
+</style><div class="ts-swu">
+<div class="creatio-container">
+<div class="ts-swu__cont">
+<div><a class="ts-swu__link" href="https://www.terrasoft.ua/terrasoft-stands-with-ukraine" target="_blank">Україна понад усе!</a> <span><a href="https://www.terrasoft.ua/terrasoft-stands-with-ukraine" target="_blank">Приєднуйтеся</a> до допомоги!</span></div>
+</div>
+</div></div>
+
+  </div>
+
+  </div>
+
+  
+  <header role="banner">
+          <div class="creatio-region creatio-region_top">
+        <div class="creatio-container">
+            <div class="region region-top">
+    <div id="block-menutoggle" class="block block-simple-block block-simple-blockmenu-toggle">
+  
+    
+      <div class="menu-toggle"><span> </span></div>
+
+  </div>
+<div id="block-logowhite-2" class="block block-simple-block block-simple-blocklogo-white">
+  
+    
+      <p><a class="site-logo" href="../../../../../index.html" rel="home"><img src="../../../../themes/custom/creatio/logo-white.svg" /></a></p>
+
+  </div>
+<div id="block-search" class="block block-simple-block block-simple-blocksearch">
+  
+    
+      <div class="search">
+<form action="https://academy.terrasoft.ua/search" class="search-form" method="get"><input class="search-form__input" name="search" placeholder="Поиск" type="search" /><input class="search-form__button" type="submit" value="Поиск" /> </form>
+
+<div class="search-toggle"> </div>
+</div>
+
+  </div>
+<nav role="navigation" aria-labelledby="block-sitesua-menu" id="block-sitesua" class="block block-menu navigation menu--sites-ua">
+            
+  <h2 class="visually-hidden" id="block-sitesua-menu">Sites UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="https://www.terrasoft.ua/" rel="nofollow" target="_blank">Terrasoft</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://community.terrasoft.ua/" rel="nofollow" target="_blank">Community</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://marketplace.terrasoft.ua/" rel="nofollow" target="_blank">Marketplace</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+<div id="block-usermenu" class="block block-ts-user block-ts-user-menu-block">
+  
+    
+      <ul class="user-menu">
+      <li class="user-menu__item">
+      <a class="user-menu__link" href="https://profile.terrasoft.ua/user/login?destination=academy/ua/docs/developer/razrabotka_marketplace_prilozheniya/razrabotka_prilozheniya/obshchie_principy_razrabotki_prilozheniya_marketplace/obzor">Войти</a>
+    </li>
+  </ul>
+
+  </div>
+<div id="block-usermenumobile" class="block block-ts-user block-ts-user-menu-mobile-block">
+  
+    
+      <ul class="user-menu-mobile">
+      <li class="user-menu-mobile__item">
+      <div class="user-menu-mobile__user user-menu-mobile__user_icon"></div>
+      <ul class="user-menu-mobile__submenu">
+        <li class="user-menu-mobile__subitem">
+          <a class="user-menu-mobile__sublink" href="https://profile.terrasoft.ua/user/login?destination=academy/ua/docs/developer/razrabotka_marketplace_prilozheniya/razrabotka_prilozheniya/obshchie_principy_razrabotki_prilozheniya_marketplace/obzor">Войти</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  </div>
+
+  </div>
+
+        </div>
+      </div>
+              <div class="creatio-region creatio-region_header">
+        <div class="creatio-container">
+            <div class="region region-header">
+    <div id="block-logo" class="block block-simple-block block-simple-blocklogo">
+  
+    
+      <p><a class="site-logo" href="../../../../../index.html" rel="home"><img src="../../../../themes/custom/creatio/logo.svg" /></a></p>
+
+  </div>
+<nav role="navigation" aria-labelledby="block-osnovnayanavigaciyaua-menu" id="block-osnovnayanavigaciyaua" class="block block-menu navigation menu--main-ua">
+            
+  <h2 class="visually-hidden" id="block-osnovnayanavigaciyaua-menu">Основная навигация UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="../../../../index.html" data-drupal-link-system-path="&lt;front&gt;">Документация</a>
+              </li>
+                <li class="menu-item">
+        <a href="../../../../../trainings.html">Тренинги</a>
+              </li>
+                <li class="menu-item">
+        <a href="../../../../certification.html" data-drupal-link-system-path="node/3084">Сертификация и тестирование</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+<nav role="navigation" aria-labelledby="block-sitesua-2-menu" id="block-sitesua-2" class="block block-menu navigation menu--sites-ua">
+            
+  <h2 class="visually-hidden" id="block-sitesua-2-menu">Sites UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="https://www.terrasoft.ua/" rel="nofollow" target="_blank">Terrasoft</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://community.terrasoft.ua/" rel="nofollow" target="_blank">Community</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://marketplace.terrasoft.ua/" rel="nofollow" target="_blank">Marketplace</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+
+  </div>
+
+        </div>
+      </div>
+              <div class="creatio-region creatio-region_breadcrumb">
+        <div class="creatio-container">
+            <div class="region region-breadcrumb">
+    <div id="block-logowhite" class="block block-simple-block block-simple-blocklogo-white">
+  
+    
+      <p><a class="site-logo" href="../../../../../index.html" rel="home"><img src="../../../../themes/custom/creatio/logo-white.svg" /></a></p>
+
+  </div>
+<div id="block-breadcrumbnaviagtion" class="block block-ts-nav block-ts-nav-bread">
+  
+    
+      <nav class="breadcrumb"><ol class="ts-nav-breadcrumb__list"><li class="ts-nav-breadcrumb__item"><a href="../../../../index.html" class="ts-nav-breadcrumb__link" title="Документация">Документация</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../../index2132.html?vid_1=2" class="ts-nav-breadcrumb__link" title="Для разработчика">Для разработчика</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../razrabotka_marketplace_prilozheniya.html" class="ts-nav-breadcrumb__link" title="Разработка Marketplace-приложения" hreflang="zxx">Разработка Marketplace-приложения</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../razrabotka_prilozheniya.html" class="ts-nav-breadcrumb__link" title="Разработка приложения" hreflang="ru">Разработка приложения</a></li>
+<li class="ts-nav-breadcrumb__item ts-nav-breadcrumb__item_mobile"><a href="../obshchie_principy_razrabotki_prilozheniya_marketplace.html" class="ts-nav-breadcrumb__link" title="Обзор" hreflang="ru">Обзор</a></li>
+<li class="ts-nav-breadcrumb__item"><span class="ts-nav-breadcrumb__link ts-nav-breadcrumb__link_current" title="Обзор">Обзор</span></li>
+</ol>
+</nav>
+
+  </div>
+<div id="block-search-2" class="block block-simple-block block-simple-blocksearch">
+  
+    
+      <div class="search">
+<form action="https://academy.terrasoft.ua/search" class="search-form" method="get"><input class="search-form__input" name="search" placeholder="Поиск" type="search" /><input class="search-form__button" type="submit" value="Поиск" /> </form>
+
+<div class="search-toggle"> </div>
+</div>
+
+  </div>
+
+  </div>
+
+        </div>
+      </div>
+      </header>
+
+  <div class="creatio-region creatio-region_main">
+    <div class="creatio-container">
+                <div class="region region-breadcrumb-mobile">
+    <div id="block-breadcrumbnaviagtion-2" class="block block-ts-nav block-ts-nav-bread">
+  
+    
+      <nav class="breadcrumb"><ol class="ts-nav-breadcrumb__list"><li class="ts-nav-breadcrumb__item"><a href="../../../../index.html" class="ts-nav-breadcrumb__link" title="Документация">Документация</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../../index2132.html?vid_1=2" class="ts-nav-breadcrumb__link" title="Для разработчика">Для разработчика</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../razrabotka_marketplace_prilozheniya.html" class="ts-nav-breadcrumb__link" title="Разработка Marketplace-приложения" hreflang="zxx">Разработка Marketplace-приложения</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../razrabotka_prilozheniya.html" class="ts-nav-breadcrumb__link" title="Разработка приложения" hreflang="ru">Разработка приложения</a></li>
+<li class="ts-nav-breadcrumb__item ts-nav-breadcrumb__item_mobile"><a href="../obshchie_principy_razrabotki_prilozheniya_marketplace.html" class="ts-nav-breadcrumb__link" title="Обзор" hreflang="ru">Обзор</a></li>
+<li class="ts-nav-breadcrumb__item"><span class="ts-nav-breadcrumb__link ts-nav-breadcrumb__link_current" title="Обзор">Обзор</span></li>
+</ol>
+</nav>
+
+  </div>
+
+  </div>
+
+      
+      <main class="creatio-main" role="main">
+                                                    
+        <div class="creatio-content creatio-content_small">
+          <div class="creatio-content__inner creatio-content__inner_bg">
+                            <div class="region region-messages">
+    <div data-drupal-messages-fallback class="hidden"></div>
+
+  </div>
+
+            
+              <div class="region region-content">
+    <div id="block-creatio-page-title" class="block block-core block-page-title-block">
+  
+    
+      
+  <h1 class="page-title"><span class="field field--name-title field--type-string field--label-hidden">Разработка приложения Marketplace</span>
+</h1>
+
+
+  </div>
+<div id="block-creatio-content" class="block block-system block-system-main-block">
+  
+    
+      
+<article data-history-node-id="2398" role="article" about="/docs/developer/razrabotka_marketplace_prilozheniya/razrabotka_prilozheniya/obshchie_principy_razrabotki_prilozheniya_marketplace/obzor" class="node node--type-developer-documentation node--view-mode-full">
+
+  
+    
+
+  
+  <div class="node__content">
+      <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocknodedeveloper-documentationfield-difficulty">
+  
+    
+      
+            <div class="field field--name-field-difficulty field--type-entity-reference field--label-hidden field__item"><div about="/docs/taxonomy/term/122" id="taxonomy-term-122" class="taxonomy-term vocabulary-difficulty">
+  
+  
+  <div class="content">
+      <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocktaxonomy-termdifficultyfield-icon">
+  
+    
+      
+            <div class="field field--name-field-icon field--type-image field--label-hidden field__item">  <img src="../../../../sites/default/files/difficulty/easy.svg" alt="" loading="lazy" typeof="foaf:Image" />
+
+</div>
+      
+  </div>
+<div class="block block-layout-builder block-field-blocktaxonomy-termdifficultyname">
+  
+    
+      
+            <div class="field field--name-name field--type-string field--label-hidden field__item"><span style="color: #FEB000;">Легкий</span></div>
+      
+  </div>
+
+    </div>
+  </div>
+
+  </div>
+</div>
+</div>
+      
+  </div>
+<div class="block block-ts-doc block-ts-doc-downloads">
+  
+    
+      <a href="../../../../sites/default/files/pdf/node/2398/Razrabotka_prilozheniya_Marketplace_.pdf" target="_blank">PDF</a>
+  </div>
+<div class="block block-ts-doc block-ts-doc-versions">
+  
+    
+        <div class="ts-doc-versions">
+    <select class="ts-doc-versions__select">
+                                                <option value="/docs/8-0/developer/razrabotka_marketplace_prilozheniya/razrabotka_prilozheniya/obshchie_principy_razrabotki_prilozheniya_marketplace/obzor" selected>Версия 8.0</option>
+                              <option value="/docs/7-18/developer/razrabotka_marketplace_prilozheniya/razrabotka_prilozheniya/obshchie_principy_razrabotki_prilozheniya_marketplace/obzor">Версия 7.18</option>
+                              <option value="/docs/7-17/developer/razrabotka_marketplace_prilozheniya/razrabotka_prilozheniya/obshchie_principy_razrabotki_prilozheniya_marketplace/obzor">Версия 7.17</option>
+                              <option value="/docs/7-16/developer/razrabotka_marketplace_prilozheniya/razrabotka_prilozheniya/obshchie_principy_razrabotki_prilozheniya_marketplace/obzor">Версия 7.16</option>
+          </select>
+  </div>
+
+  </div>
+
+    </div>
+  </div>
+  <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocknodedeveloper-documentationbody">
+  
+    
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><h2>Формирование пакетов приложения<a class="title-anchor" href="#title-2398-1" id="title-2398-1"> </a></h2>
+
+<p>Любое приложение Marketplace представляет собой определенный набор пакетов. С их помощью выполняются все конфигурационные изменения.</p>
+
+<p><b><a href="../../../../7-17/developer/development_tools/packages/pakety.html#title-2105-2">Пакет Creatio</a></b> — это совокупность конфигурационных элементов, которые реализуют определенный блок функциональности.</p>
+
+<p>Принцип разделения функциональности приложения по пакетам реализован с помощью <a href="../../../../7-17/developer/development_tools/packages/pakety.html#title-2105-3">зависимостей</a>.</p>
+
+<p>Активная пользовательская <a href="../../../development_tools.html">разработка новой функциональности</a> предполагает создание новых пакетов и использование системы контроля версий (SVN). Основным содержимым пакетов являются <a href="../../../../7-17/developer/instrumenty_razrabotki/creatio_ide/razrabotka_v_creatio_ide.html">схемы</a>.</p>
+
+<h2>Рекомендации по проектированию UX продукта<a class="title-anchor" href="#title-2398-2" id="title-2398-2"> </a></h2>
+
+<p>Одним из основных факторов, которые существенно снижают вероятность приобретения продукта после тестового использования, является негативный опыт пользователя при установке, настройке и начале работы с продуктом. Часто бывает, что качественный и полезный продукт, требующий сложной и трудоемкой настройки, воспринимается потенциальными клиентами негативно.</p>
+
+<p>Ниже приведены рекомендации для разработчиков продуктов на платформе Creatio, выполнение которых позволит избежать типовых проблем и ошибок, связанных c UX установки и первого использования продукта.</p>
+
+<h3>Организация навигации в системе<a class="title-anchor" href="#title-2398-3" id="title-2398-3"> </a></h3>
+
+<p>Удобная, логично организованная навигация поможет новому пользователю легко сориентироваться в том, как найти приложение, как перейти к необходимой функциональности и воспользоваться ею. Проектируя навигацию, следует учитывать описанные ниже нюансы.</p>
+
+<h4>1. Отображение раздела в рабочем месте<a class="title-anchor" href="#title-2398-4" id="title-2398-4"> </a></h4>
+
+<p>Если функциональность приложения включает в себя новый раздел Creatio, то его необходимо отобразить в рабочем месте системы. Рабочим местом называется набор разделов системы, к которому имеет доступ и использует в своей работе определенная группа пользователей. При добавлении нового раздела следует учитывать, что рабочие места в Creatio формируются по функциональным и организационным ролям пользователей.</p>
+
+<div class="media">
+<div class="media__caption">Кейс: "Добавление нового раздела <span class="key">Чаты</span>"</div>
+</div>
+
+<div class="table">
+<table border="1" cellpadding="1" cellspacing="1"><tbody><tr><td><img alt="" border="0" src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/Common/Wrong.png" /> Неверно</td>
+			<td>Создать отдельное рабочее место и включить в него новый раздел <span class="key">Чаты</span></td>
+		</tr><tr><td><img alt="" border="0" src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/Common/Wrong.png" /> Неверно</td>
+			<td>Не включать раздел в рабочие места</td>
+		</tr><tr><td><img alt="" border="0" src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/Common/right.png" /> Верно</td>
+			<td>Включить раздел <span class="key">Чаты</span> в рабочее место <span class="key">Продажи</span> и/или <span class="key">Маркетинг</span></td>
+		</tr></tbody></table></div>
+
+<h4>2. Переход к настройкам из дизайнера системы<a class="title-anchor" href="#title-2398-5" id="title-2398-5"> </a></h4>
+
+<p>Все разделы и блоки, используемые для настройки системы, должны быть собраны в дизайнере системы. Переход в дизайнер выполняется из любого места системы по кнопке <img alt="" border="0" src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/Common/SystemDesigner.png" /> в правом верхнем углу приложения. Блоки настроек дизайнера системы и кейсы их использования приведены в таблице.</p>
+
+<div class="media">
+<div class="media__caption">Блоки настроек дизайнера системы</div>
+</div>
+
+<div class="table">
+<table border="1" cellpadding="1" cellspacing="1"><thead><tr><th scope="col">Блок настроек</th>
+			<th scope="col">Использование</th>
+		</tr></thead><tbody><tr><td>Импорт и интеграции</td>
+			<td>Из блока выполняется переход на страницу настройки любой интеграции, а также импорта записей. Может использоваться для коннекторов</td>
+		</tr><tr><td>Настройка системы</td>
+			<td>Из блока выполняется переход к странице, настройки поведения системы. Например, отсюда можно перейти в мастер, который управляет поведением дополнения или специальной логики в вертикальном решении.</td>
+		</tr></tbody></table></div>
+
+<p>Из дизайнера системы можно реализовать переход к любому интерфейсу, где выполняется настройка, например:</p>
+
+<ul><li>к пользовательской странице настроек;</li>
+	<li>к странице раздела, посвященного настройкам;</li>
+	<li>к странице справочника (если настройка состоит в заполнении справочника).</li>
+</ul><h4>3. Переход к настройкам из меню действий раздела<a class="title-anchor" href="#title-2398-6" id="title-2398-6"> </a></h4>
+
+<p>Часто user experience (восприятие продукта пользователем) формируется так: пользователь переходит к разделу с функциональностью приложения, начинает ее изучать, и только после этого понимает, что дальнейшая работа требует настроек.</p>
+
+<p>Стандартное решение, которое поможет пользователю сразу сориентироваться и выполнить нужные настройки — добавление необходимого действия в меню кнопки <span class="key">Действия</span> в разделе. Важно понимать, что раздел (реестр записей) и страница конкретной записи — это разные страницы. Для каждой из них набор действий может отличаться, поэтому кнопка <span class="key">Действия</span> настраивается отдельно для реестра записей и для страницы записи. То есть, действие, добавленное в меню действий раздела, не продублируется в меню действий на странице записи.</p>
+
+<div class="media">
+<div class="media__caption">Кейс: “Реализация перехода к пользовательской странице настройки авторизации во внешней системе Х (логин/пароль), с которой работает реализованный в приложении раздел <span class="key">Интеграция</span></div>
+</div>
+
+<div class="table">
+<table border="1" cellpadding="1" cellspacing="1"><tbody><tr><td><img alt="" border="0" src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/Common/Wrong.png" /> Неверно</td>
+			<td>Реализовать отдельную страницу настроек, доступную только по прямому URL-адресу</td>
+		</tr><tr><td><img alt="" border="0" src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/Common/right.png" /> Верно</td>
+			<td>В меню кнопки <span class="key">Действия</span> раздела <span class="key">Интеграция</span> добавить пункт "<span class="consolas">Настройки подключения к внешней системе Х</span>"</td>
+		</tr></tbody></table></div>
+
+<h3>Настройки: простота и удобство нахождения<a class="title-anchor" href="#title-2398-7" id="title-2398-7"> </a></h3>
+
+<p>Многие приложения Marketplace требуют начальной настройки пользователем. Для этого в Creatio есть ряд пользовательских инструментов.</p>
+
+<h4>1. Настройки в разделе <span class="key">Системные настройки</span><a class="title-anchor" href="#title-2398-8" id="title-2398-8"> </a></h4>
+
+<p>Раздел <span class="key">Системные настройки</span> используется для дополнительной настройки разделов системы. Например, здесь можно задать цвет для просроченных активностей, параметры отправки email-сообщений, параметры подключения к внешнему сервису и т. д.</p>
+
+<div class="media">
+<div class="media__caption">Кейс: "Добавление новой системной настройки</div>
+</div>
+
+<div class="table">
+<table border="1" cellpadding="1" cellspacing="1"><tbody><tr><td>Следует использовать лаконичные и понятные названия системных настроек. Название настройки должно отражать ее суть и указывать на функциональность, к которой она относится.</td>
+			<td>
+			<p><img alt="" border="0" src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/Common/Wrong.png" /> Неверно (не лаконичное название): "<span class="consolas">Валюта, которая используется в системе по умолчанию</span>".</p>
+
+			<p><img alt="" border="0" src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/Common/right.png" /> Верно: "<span class="consolas">Базовая валюта</span>".</p>
+
+			<p><img alt="" border="0" src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/Common/Wrong.png" /> Неверно (название не отражает суть) "<span class="consolas">Состояние заказа</span>".</p>
+
+			<p><img alt="" border="0" src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/Common/right.png" /> Верно "<span class="consolas">Состояние заказа по умолчанию</span>".</p>
+
+			<p><img alt="" border="0" src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/Common/Wrong.png" /> Неверно (название не дает информации о связанной с настройкой функциональности) "<span class="consolas">Автоматический запуск процесса</span>".</p>
+
+			<p><img alt="" border="0" src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/Common/right.png" /> Верно "<span class="consolas">Автоматический запуск процесса управления инцидентами</span>".</p>
+			</td>
+		</tr><tr><td>Настройки необходимо группировать.</td>
+			<td>
+			<p>У пользователя очень мало шансов найти нужную настройку в общем списке, не зная ее точного названия. Группировка настроек — это простой и действенный способ упростить настройку приложения.</p>
+
+			<div class="media">
+			<div class="media__element"><img alt="" border="0" src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/UxDesignRecommendations/scr_SysSettingsGroups.png" /></div>
+			</div>
+			</td>
+		</tr><tr><td>Необходимо добавить описание</td>
+			<td>Описание поведения системы, которым управляет настройка, ответит на массу вопросов пользователя, которые у него обязательно возникнут.</td>
+		</tr></tbody></table></div>
+
+<h4>2. Настройки в разделе <span class="key">Справочники</span><a class="title-anchor" href="#title-2398-9" id="title-2398-9"> </a></h4>
+
+<p>Раздел <span class="key">Справочники</span> используется для управления любыми данными (в т. ч. настройками и системными данными), которые можно представить в виде простого списка.</p>
+
+<p>В таблице приведены примеры использования раздела <span class="key">Справочники</span> для выполнения разных задач в системе. Рекомендуется использовать справочники для решения подобных кейсов.</p>
+
+<div class="media">
+<div class="media__caption">Примеры использования справочников</div>
+</div>
+
+<div class="table">
+<table border="1" cellpadding="1" cellspacing="1"><thead><tr><th scope="col">Задача</th>
+			<th scope="col">Пример используемого справочника</th>
+		</tr></thead><tbody><tr><td>Список данных для выбора пользователем</td>
+			<td>
+			<p><span class="key">Состояния документа</span></p>
+
+			<p>В справочнике содержится список всех состояний, в которые переводится документ в ходе рабочего процесса (например, "<span class="consolas">Актуальный</span>", "<span class="consolas">Архивный</span>", "<span class="consolas">В процессе подготовки</span>").</p>
+			</td>
+		</tr><tr><td>Автозаполнение поля при интеграции</td>
+			<td>
+			<p><span class="key">Каналы лида</span></p>
+
+			<p>В справочнике содержится список всех типов ресурсов, по которым получен лид (например, "<span class="consolas">Социальные сети</span>", "<span class="consolas">Поисковая реклама</span>", "<span class="consolas">Email</span>").</p>
+			</td>
+		</tr><tr><td>Настраиваемая бизнес-логика</td>
+			<td>
+			<p><span class="key">Правила уведомления контакта по обращению</span></p>
+
+			<p>Справочник содержит список правил, по которым происходит отправка уведомлений контакту о ходе работы над его обращением (например, "<span class="consolas">Отправляется сразу</span>", "<span class="consolas">Отправляется с задержкой</span>", "<span class="consolas">Не используется</span>").</p>
+			</td>
+		</tr><tr><td>Системный список</td>
+			<td><span class="key">Пользователи Webitel</span></td>
+		</tr><tr><td>Настройка отображения функциональности в разных разделах</td>
+			<td><span class="key">Настройки диаграммы Гантта</span></td>
+		</tr></tbody></table></div>
+
+<h4>3. Настройки в профиле пользователя<a class="title-anchor" href="#title-2398-10" id="title-2398-10"> </a></h4>
+
+<p>Если речь идет об индивидуальных настройках конкретного пользователя (например, индивидуальный логин/пароль для авторизации во внешней системе или настройки предпочтений по использованию определенной функциональности продукта), то целесообразно расположить их в профиле пользователя.</p>
+
+<p>Ниже приведены примеры использования настроек в профиле пользователя:</p>
+
+<ol><li>Настройки подключения при интеграции:
+	<ul><li>Id оператора телефонии / номер телефона, под которым пользователь работает с коннектором к телефонии.</li>
+		<li>Настройки подключения пользователя к почтовому сервису.</li>
+	</ul></li>
+	<li>Настройки поведения системы для пользователя:
+	<ul><li>Настройки уведомлений.</li>
+		<li>Настройки языка по умолчанию, который используется данным пользователем в сканере визиток.</li>
+	</ul></li>
+</ol><h4>4. Отдельная страница настроек<a class="title-anchor" href="#title-2398-11" id="title-2398-11"> </a></h4>
+
+<p>Вынесение всех настроек на отдельную страницу — самый удобный для пользователя вариант управления настройками приложения, хоть и более сложный в реализации.</p>
+
+<div class="media">
+<div class="media__element"><img alt="" border="0" src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/UxDesignRecommendations/scr_SysSettingsPage.png" /></div>
+</div>
+
+<p>Переход к странице настроек может выполняться из соответствующего раздела и/или из дизайнера системы.</p>
+
+<p>Рекомендуется выносить все настройки приложения на отдельную страницу в любом из следующих кейсов:</p>
+
+<ul><li>Если настройки необходимо выполнять в определенной последовательности.</li>
+	<li>Если процесс настройки продукта требует и изменений в настройках и заполнения справочников.</li>
+	<li>Если в ходе настройки, помимо заполнения настроек и справочников, нужно выполнять какие-то дополнительные действия.</li>
+	<li>Если пользователю придется возвращаться к настройкам по ходу работы с приложением, а не выполнить их однократно после его установки.</li>
+</ul><h3>Разработка с учетом базовой логики Creatio<a class="title-anchor" href="#title-2398-12" id="title-2398-12"> </a></h3>
+
+<h4>Корректное заполнение полей при создании лидов<a class="title-anchor" href="#title-2398-13" id="title-2398-13"> </a></h4>
+
+<p>Создание лидов при интеграции Creatio с мессенджерами, чатами, посадочными страницами, социальными сетями — одна из типовых задач интеграции. При автоматическом создании лида важно сохранить корректную логику заполнения полей страницы лида, включая информацию о каналах привлечения потенциального клиента.</p>
+
+<p>При разработке своего приложения следует позаботиться о том, чтобы пользователи Creatio соотносили название поля с его назначением и смогли пользоваться сквозной аналитикой по лидам. Пример названий полей лидов приведен в таблице.</p>
+
+<div class="media">
+<div class="media__caption">Примеры названий полей лидов</div>
+</div>
+
+<div class="table">
+<table border="1" cellpadding="1" cellspacing="1"><thead><tr><th scope="col">Название</th>
+			<th scope="col">Использование</th>
+		</tr></thead><tbody><tr><td><span class="key">Как зарегистрирован</span></td>
+			<td>
+			<p>Способ регистрации лида:</p>
+
+			<ul><li>создан автоматически;</li>
+				<li>добавлен вручную;</li>
+				<li>входящий звонок/email;</li>
+				<li>лендинг;</li>
+				<li>обращение.</li>
+			</ul></td>
+		</tr><tr><td><span class="key">Канал</span></td>
+			<td>
+			<p>Тип ресурса, с которого получен лид, например:</p>
+
+			<ul><li>веб;</li>
+				<li>социальные сети;</li>
+				<li>реклама оффлайн;</li>
+				<li>мероприятие;</li>
+				<li>рекомендация/личный контакт.</li>
+			</ul></td>
+		</tr><tr><td><span class="key">Источник</span></td>
+			<td>Название конкретного ресурса, с которого получен лид, например, Twitter, Google и т. д.</td>
+		</tr><tr><td><span class="key">Сайт перехода</span></td>
+			<td>Сайт, с которого пользователь перешел на посадочную страницу, в результате чего в системе был зарегистрирован лид. Поле недоступно для редактирования и заполняется автоматически при получении лида с посадочной страницы.</td>
+		</tr></tbody></table></div>
+
+<h3>UI-минимум<a class="title-anchor" href="#title-2398-14" id="title-2398-14"> </a></h3>
+
+<h4>Иконка раздела<a class="title-anchor" href="#title-2398-15" id="title-2398-15"> </a></h4>
+
+<p>Для каждого нового раздела должна быть добавлена иконка. Иконка раздела должна соответствовать таким требованиям:</p>
+
+<ul><li>формат — <span class="filled">*.png</span> или <span class="filled">*.svg</span>.</li>
+	<li>размер — не более 38 х 38px.</li>
+	<li>стиль — плоское изображение белого цвета без мелких элементов/линий, фон без заливки.</li>
+</ul><p>Подобрать подходящие иконки можно в шаблонной <a href="https://marketplace.terrasoft.ua/template/biblioteka-ikonok-razdelov" target="_blank">библиотеке иконок Marketplace</a>. Также можно воспользоваться бесплатным сервисом для поиска и преобразования плоских иконок.</p>
+
+<h2>Интеграция с Creatio<a class="title-anchor" href="#title-2398-16" id="title-2398-16"> </a></h2>
+
+<p>Creatio предлагает широкие <a href="../../../integratsiya_i_vneshnij_api/vozmozhnosti_integratsii/obzor.html">возможности интеграции</a> с программными продуктами пользователей.</p>
+
+<p>Для доступа в систему извне, сначала нужно произвести <a href="../../../integratsiya_i_vneshnij_api/autentifikatsiya/obzor.html">аутентификацию</a>. Начиная с версии 7.10 аутентификация выполняется с использованием механизма защиты от CSRF-атак.</p>
+
+<p>Широкий спектр возможностей Creatio доступен для использования внешними системами посредством программного интерфейса (API), предоставляемого сервисом работы с данными <a href="../../../../7-16/developer/integrations_and_api/data_services/dataservice.html">DataService</a>. Если внешняя система для обмена данными использует протокол <a href="../../../integratsiya_i_vneshnij_api/servisy_raboty_s_dannymi/odata/obzor.html">OData</a>, то возможен вариант интеграции с Creatio посредством этого протокола. Также можно использовать интеграцию с помощью HTML-элемента <a href="../../../ehlementy_interfejsa/stranica_zapisi/html_ehlement_iframe/obzor.html"><span class="filled">&lt;iframe&gt;</span></a>.</p>
+
+<p>Простые интеграции можно выполнять с помощью механизма <a href="../../../komponenty_prilozheniya/lendingi/web_to_object/obzor.html">Web-To-Object</a>.</p>
+
+<h2>Привязка данных к пакету<a class="title-anchor" href="#title-2398-17" id="title-2398-17"> </a></h2>
+
+<p>При создании раздела с помощью мастера к пакету автоматически привязываются данные, необходимые для регистрации и корректной работы раздела. Привязанные данные можно добавлять, изменять и удалять. Чтобы после установки приложения раздел отображался в определенном рабочем месте с некоторым демо-наполнением, необходимо к пользовательскому пакету привязать дополнительные данные.</p>
+
+<p>Привязать данные к пакету, содержащему разработанную функциональность, можно в разделе <span class="key">Конфигурация</span> (<span class="key">Configuration</span>).</p>
+
+<div class="media">
+<div class="media__element"><img src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/PackageDataBindinig/scr_bound_master_717.png" /></div>
+</div>
+
+<p>Приведенные ниже примеры привязки данных выполнены на основе раздела <span class="key">Web-данные</span>, создание которого описано в статье <a href="obzor.html#case-2396">Пример разработки приложения с пользовательским разделом для Marketplace</a>.</p>
+
+<h3>Привязка раздела к рабочему месту<a class="title-anchor" href="#title-2398-18" id="title-2398-18"> </a></h3>
+
+<p>Для отображения раздела в рабочем месте <span class="key">Маркетинг</span> нужно привязать данные схемы <span class="key">Раздел в рабочем месте</span>.</p>
+
+<p>Для <strong>привязки данных</strong>:</p>
+
+<ol><li>Перейдите в <a href="../../../development_tools/development_in_creatio_ide/razrabotka_konfiguratsionnykh_elementov.html#title-3028-2">раздел <span class="key">Конфигурация</span> (<span class="key">Configuration</span>)</a> и выберите пользовательский пакет.</li>
+	<li>На панели инструментов рабочей области нажмите кнопку <span class="key">Добавить</span> (<span class="key">Add</span>) и выберите в списке вид конфигурационного элемента <span class="key">Данные</span> (<span class="key">Data</span>).
+	<div class="media">
+	<div class="media__element"><img src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/BindData/scr_Create_Data.png" /></div>
+	</div>
+	</li>
+	<li>Заполните <strong>свойства</strong> страницы привязки данных:
+	<ol><li><span class="key">Название</span> (<span class="key">Name</span>) — "<span class="consolas">SysModuleInWorkplace</span>".</li>
+		<li><span class="key">Объект</span> (<span class="key">Object</span>) — "<font face="Consolas">Раздел в рабочем месте</font>" ("<span class="consolas">SysModuleInWorkplace</span>").</li>
+		<li><span class="key">Тип установки</span> (<span class="key">Installation type</span>) — "<span class="consolas">Установка</span>" ("<span class="consolas">Installation</span>").</li>
+		<li>На вкладке <span class="key">Настройка колонок</span> (<span class="key">Column setting</span>) выберите <strong>колонки</strong>, по которым следует выполнить привязку:
+		<ul><li><span class="key">Позиция</span> (<span class="key">Position</span>).</li>
+			<li><span class="key">Раздел</span> (<span class="key">Section</span>).</li>
+			<li><span class="key">Рабочее место</span> (<span class="key">Workplace</span>).</li>
+		</ul><div class="media">
+		<div class="media__element"><img src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/BindData/scr_marketplace_bound_workplace.png" /></div>
+		</div>
+		</li>
+		<li>На вкладке <span class="key">Прикрепленные данные</span> (<span class="key">Bound data</span>) выберите раздел <span class="key">Web-данные</span>.</li>
+		<li>Сохраните данные.</li>
+	</ol></li>
+</ol><h3>Привязка данных наполнения раздела<a class="title-anchor" href="#title-2398-19" id="title-2398-19"> </a></h3>
+
+<p>Чтобы привязать данные раздела, необходимо сначала определить заголовок схемы основного объекта раздела.</p>
+
+<div class="media">
+<div class="media__element"><img alt="" border="0" src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/BindData/scr_demo_data.png" /></div>
+</div>
+
+<p>Эта схема создается автоматически мастером раздела и ее заголовок должен совпадать с заголовком раздела.</p>
+
+<div class="media">
+<div class="media__element"><img alt="" border="0" src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/BindData/scr_marketplace_webdata.png" /></div>
+</div>
+
+<p>Для <strong>привязки наполнения </strong>раздела:</p>
+
+<ol><li>Перейдите в раздел <span class="key">Конфигурация</span> (<span class="key">Configuration</span>) и выберите пользовательский пакет.</li>
+	<li>На панели инструментов рабочей области нажмите кнопку <span class="key">Добавить</span> (<span class="key">Add</span>) и выберите в списке вид конфигурационного элемента <span class="key">Данные</span> (<span class="key">Data</span>).</li>
+	<li>Заполните <strong>свойства</strong> страницы привязки данных:
+	<ol><li><span class="key">Название</span> (<span class="key">Name</span>) — "<span class="consolas">Web Data</span>".</li>
+		<li><span class="key">Объект</span> (<span class="key">Object</span>) — "<font face="Consolas">tsaWebData</font>".</li>
+		<li><span class="key">Тип установки</span> (<span class="key">Installation type</span>) — "<span class="consolas">Установка</span>" ("<span class="consolas">Installation</span>").</li>
+		<li>На вкладке <span class="key">Настройка колонок</span> (<span class="key">Column setting</span>) выберите <strong>колонки</strong>, по которым следует выполнить привязку:
+		<ul><li><span class="key">Название</span> (<span class="key">Name</span>).</li>
+			<li><span class="key">URL</span>.</li>
+		</ul><div class="media">
+		<div class="media__element"><img src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/BindData/scr_marketplace_webdata_bind.png" /></div>
+		</div>
+		</li>
+		<li>На вкладке <span class="key">Прикрепленные данные</span> (<span class="key">Bound data</span>) выберите все данные раздела.</li>
+		<li>Сохраните данные.</li>
+	</ol></li>
+</ol><h2>Лицензирование приложений Marketplace<a class="title-anchor" href="#title-2398-20" id="title-2398-20"> </a></h2>
+
+<p>Платные приложения Marketplace должны быть лицензированы для контроля их использования. Основные типы лицензий:</p>
+
+<ul><li><b>Именные лицензии</b> — предоставляют доступ к приложению для конкретных пользователей. Эти лицензии привязываются к учетным записям и не могут быть использованы другими пользователями. Администратор системы может в любой момент <a href="../../../../user/ustanovka_i_administrirovanie/licenzirovanie/upravlenie_litsenzijami/upravlyat_licenziyami_polzovateley.html">перераспределить именные лицензии</a>.</li>
+	<li><b>Серверные лицензии</b> — не предусматривают необходимости лицензирования отдельных пользователей. Все пользователи Creatio, обладающие соответствующими правами, будут иметь доступ к функциональности, которая лицензируется.</li>
+</ul><p>Независимо от типа лицензии в нее могут входить:</p>
+
+<ul><li><b>Объекты лицензирования</b> — названия пользовательских объектов, добавленных в приложение Marketplace. В этот список могут входить любые пользовательские объекты, например, объект раздела, детали или справочника.</li>
+	<li><b>Операции лицензирования</b> — названия операций, добавленных в логику приложения для проверки наличия лицензии на использование определенной функциональности. Например, в один из базовых разделов системы было добавлено дополнительное действие, с которым нужно связать операцию лицензирования. При вызове этого действия в программной логике приложения сначала должна выполняться проверка наличия лицензии, а затем, в зависимости от результата, работа функциональности должна быть либо продолжена, либо прервана.</li>
+</ul><p>Количество оплаченных и предоставленных пользователям лицензий разработчик приложения Marketplace может узнать, обратившись в службу поддержки Marketplace (<a href="marketplace%40terrasoft.html">marketplace@terrasoft.ua</a>).</p>
+
+<h3>Способы лицензирования<a class="title-anchor" href="#title-2398-21" id="title-2398-21"> </a></h3>
+
+<p>Возможные способы лицензирования зависят от типа лицензии и предмета лицензирования.</p>
+
+<div class="media">
+<div class="media__caption">Возможные способы лицензирования</div>
+</div>
+
+<div class="table">
+<table border="1" cellpadding="1" cellspacing="1"><thead><tr><th scope="col">Тип лицензии</th>
+			<th scope="col">Предмет лицензирования</th>
+			<th scope="col">Бизнес-кейсы</th>
+		</tr></thead><tbody><tr><td>Именная</td>
+			<td>Объекты</td>
+			<td>Приложение Marketplace представляет собой новый раздел в Creatio. Разработчик хочет получить плату за каждого пользователя, работающего с разделом.</td>
+		</tr><tr><td>Именная</td>
+			<td>Операции</td>
+			<td>
+			<p>Приложение Marketplace представляет собой коннектор к внешнему сервису. Разработчик хочет получить плату за каждого пользователя, которому предоставляется доступ к сервису.</p>
+
+			<p>Например, коннектор к системе телефонии, доступ к использованию которого оплачивается для отдельных пользователей.</p>
+			</td>
+		</tr><tr><td>Серверная</td>
+			<td>Объекты</td>
+			<td>Приложение Marketplace представляет собой новый раздел в Creatio. Разработчик хочет получить фиксированную плату, независимо от того, сколько пользователей будет работать с разделом.</td>
+		</tr><tr><td>Серверная</td>
+			<td>Операции</td>
+			<td>
+			<p>Приложение Marketplace представляет собой коннектор к внешнему сервису. Разработчик хочет получить фиксированную плату за коннектор, независимо от того, скольким пользователям будет предоставляется доступ к сервису.</p>
+
+			<p>Например, коннектор к Web-чату, в ходе работы которого регистрируются лиды/обращения в Creatio. Клиент оплачивает лицензию независимо от количества пользователей.</p>
+			</td>
+		</tr><tr><td>Именная</td>
+			<td>Объекты и/или операции</td>
+			<td>
+			<p>Приложение Marketplace представляет собой раздел, в котором созданы записи, использующие коннекторы к разным внешним сервисам. Разработчик хочет получить плату за каждого пользователя, которому предоставляется доступ к разделу. Также разработчик хочет получить плату за каждый коннектор к сервису.</p>
+
+			<p>Например, в рамках вертикального решения доработан раздел <span class="key">Заявки</span>. В нем реализована интеграция с внешней системой, в которой регистрируются заявки. Клиент оплачивает доступ к функциональности раздела для каждого пользователя.</p>
+			</td>
+		</tr></tbody></table></div>
+
+<div class="message message_warning">
+<p><span class="message__bold message__bold_warning">Важно.</span> Запрещается одновременное использование именных и серверных лицензий, лицензирующих одинаковые объекты и операции.</p>
+</div>
+
+<h3>Срок действия лицензии<a class="title-anchor" href="#title-2398-22" id="title-2398-22"> </a></h3>
+
+<p>В лицензии указывается срок ее действия. Платформа Creatio следит контролирует сроки действия лицензий. Если срок действия истек, работа лицензируемого объекта или операции будет заблокирована.</p>
+
+<p>В зависимости от срока действия, лицензии могут быть двух типов:</p>
+
+<ul><li><b>Годовая</b> — предназначена для приложений Marketplace, распространяемых с годовой подпиской. Срок действия лицензии — один год. После завершения срока действия лицензии клиент должен снова оплатить годовую подписку и получить новую лицензию.</li>
+	<li><b>Бессрочная</b> — предназначена для приложений Marketplace, которые необходимо оплатить один раз. Срок действия лицензии не ограничен.</li>
+</ul><h3>Процесс выпуска лицензии для нового продукта<a class="title-anchor" href="#title-2398-23" id="title-2398-23"> </a></h3>
+
+<ol><li>Во время создания приложения Marketplace разработчик должен решить:
+	<ul><li>Что будет входить в лицензию — объекты лицензирования или операции (возможны оба варианта). Также он должен сформировать список лицензируемых объектов и/или операций.</li>
+		<li><a href="../../../../user/ustanovka_i_administrirovanie/licenzirovanie/obzor_litsenzirovanie/licenzirovat_creatio.html">Определить тип лицензии</a> — именная или серверная.</li>
+		<li>Определить срок действия лицензии — лицензия годовая или бессрочная.
+		<div class="message">
+		<p><span class="message__bold">На заметку.</span> Если в лицензию будут входить операции лицензирования, то в программном коде приложения необходимо реализовать проверку наличия лицензии. Для объектов лицензирования логика проверки уже реализована в базовой версии Creatio.</p>
+		</div>
+
+		<div class="message message_warning">
+		<p><span class="message__bold message__bold_warning">Важно.</span> Имена лицензируемых объектов должны содержать префикс, указанный при <a href="../../podgotovka_k_razrabotke_prilozheniya/obzor.html#title-2394-3">настройке профиля разработчика</a>. Префикс разработчика — это уникальный префикс, который устанавливается в названиях пользовательских схем, пакетов, а также в названиях пользовательских колонок в объектах-наследниках системных объектов и позволяет определить функциональность, созданную разработчиком. Префикс должен содержать цифры или буквы латинского алфавита. Длина префикса — от трех до пятнадцати символов. После регистрации префикс не может быть изменен.</p>
+		</div>
+		</li>
+	</ul></li>
+	<li>После успешной проверки приложения сотрудниками Marketplace разработчик должен предоставить список лицензируемых объектов и операций, а также информацию о типе и сроке действия лицензии команде поддержки Marketplace (<a href="marketplace%40terrasoft.html">marketplace@terrasoft.ua</a>).</li>
+	<li>На основании предоставленного списка служба поддержки Marketplace генерирует лицензии для этого приложения.</li>
+	<li>В дальнейшем, после заказа и оплаты приложения Marketplace, пользователю будут установлены необходимые лицензии службой поддержки Marketplace.</li>
+</ol><h3>Реализация проверки лицензий в продукте<a class="title-anchor" href="#title-2398-24" id="title-2398-24"> </a></h3>
+
+<h4>Проверка объектов лицензирования<a class="title-anchor" href="#title-2398-25" id="title-2398-25"> </a></h4>
+
+<p>Если в лицензию приложения входят только объекты лицензирования, то никаких доработок в приложении Marketplace не требуется. Проверка наличия лицензии для объектов лицензирования выполняется базовыми средствами Creatio.</p>
+
+<h4>Проверка операций лицензирования<a class="title-anchor" href="#title-2398-26" id="title-2398-26"> </a></h4>
+
+<p>Если в лицензию приложения входит операция лицензирования, то в нужных местах исходного кода приложения необходимо предусмотреть проверку наличия лицензии на выполнение этой операции.</p>
+
+<div class="message message_warning">
+<p><span class="message__bold message__bold_warning">Важно.</span> Проверку наличия лицензии на операцию можно выполнить только на серверной стороне приложения. Если приложение Marketplace работает только с клиентской частью Creatio, то необходимо:</p>
+
+<ul><li>создать пользовательский конфигурационный сервис, в котором реализовать проверку наличия лицензии;</li>
+	<li>добавить в приложение программную логику обращения к созданному сервису.</li>
+</ul></div>
+
+<div class="message message_warning">
+<p><span class="message__bold message__bold_warning">Важно.</span> Проверка наличия лицензии на операцию непосредственно в пользовательских схемах является небезопасной, поскольку исходный код пользовательских схем конфигурационных пакетов доступен для чтения и замещения. Поэтому рекомендуется использовать объекты лицензирования.</p>
+</div>
+
+<h3>Демонстрационный режим работы приложения<a class="title-anchor" href="#title-2398-27" id="title-2398-27"> </a></h3>
+
+<p>Если в приложении Creatio нет загруженных лицензий ни для одного из продуктов, то по умолчанию включается демонстрационный режим работы приложения. В демонстрационном режиме пользователю доступна вся функциональность Creatio, но в каждую таблицу базы данных можно добавить не более 1000 записей.</p>
+
+<h2>Перенос приложения на тестовый сайт<a class="title-anchor" href="#title-2398-28" id="title-2398-28"> </a></h2>
+
+<p>Разработка сложной функциональности требует правильной <a href="../../../instrumenty_razrabotki/upravlenie_postavkami/process_upravleniya_postavkami/obzor.html">организации процесса разработки</a>.</p>
+
+<p>Для тестирования разработанной функциональности рекомендуется использовать бесплатную 14-дневную версию Creatio.</p>
+
+<h3>Регистрация тестового сайта<a class="title-anchor" href="#title-2398-29" id="title-2398-29"> </a></h3>
+
+<p>Заказать бесплатную 14-дневную версию Creatio для использования в качестве тестовой среды можно непосредственно из Личного кабинета. Для этого необходимо в разделе <span class="key">Приложения</span> перейти на вкладку <span class="key">Тестовая среда</span> и воспользоваться ссылкой на страницу заказа пробной версии Creatio.</p>
+
+<div class="media">
+<div class="media__element"><img alt="" border="0" src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/TestingMarketplaceApplication/scr_order_trial.png" /></div>
+</div>
+
+<p>После перехода по ссылке на странице заказа необходимо заполнить форму и нажать на кнопку <span class="key">Приступить к работе</span>.</p>
+
+<div class="media">
+<div class="media__element"><img alt="" border="0" src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/TestingMarketplaceApplication/scr_form_trial.png" /></div>
+</div>
+
+<p>Тестовое приложение Creatio сразу же готово к использованию, а ссылка на него с датами активации и деактивации доступна на вкладке <span class="key">Тестовая среда</span>.</p>
+
+<div class="message">
+<p><span class="message__bold">На заметку.</span> Подтверждение о готовности к использованию тестового приложения придет на адрес электронной почты, указанный при регистрации.</p>
+</div>
+
+<div class="media">
+<div class="media__element"><img alt="" border="0" src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/TestingMarketplaceApplication/scr_link_trial.png" /></div>
+</div>
+
+<h3>Перенос решения в тестовую среду<a class="title-anchor" href="#title-2398-30" id="title-2398-30"> </a></h3>
+
+<p>Прежде чем публиковать разработанное приложение в Creatio Marketplace, необходимо удостовериться в его работоспособности на тестовом сайте. Для этого необходимо:</p>
+
+<ol><li><a href="../../../../7-16/developer/development_tools/transferring_solutions/perenos_resheniy__v_creatio_ide.html">Экспортировать пакеты</a> с разрабатываемой функциональностью из среды разработки.</li>
+	<li>Из экспортированных <span class="filled">*.gz</span>-архивов пакетов сформировать <span class="filled">*.zip</span>-архив. Если выгружен только один пакет, то <span class="filled">*.zip</span>-архив можно не создавать.</li>
+	<li><a href="../../../../7-16/developer/development_tools/transferring_solutions/perenos_resheniy__v_creatio_ide.html">Импортировать</a> <span class="filled">*.zip</span>-архив или единичный <span class="filled">*.gz</span>-архив пакета приложения Marketplace в тестовое приложение Creatio.</li>
+</ol><p>После установки приложения в тестовую среду необходимо проверить работоспособность разработанной функциональности. В случае обнаружения ошибок в работе, их необходимо устранить в среде разработки и повторить процедуру установки приложения.</p>
+</div>
+      
+  </div>
+
+    </div>
+  </div>
+
+  </div>
+
+</article>
+
+  </div>
+
+  </div>
+
+          </div>
+        </div>
+
+                  <aside class="creatio-sidebar creatio-sidebar_first" role="complementary">
+              <div class="region region-sidebar-first">
+    <div id="block-documentationnaviagtion" class="block block-ts-nav block-ts-nav-doc-nav">
+  
+    
+      <div class="ts-nav-block"><a href="../../../../index.html" class="ts-nav-block__link">Документация</a><div class="ts-nav-block__title">Для разработчика</div>
+</div>
+<div class="ts-nav-container"><ul class="ts-nav-menu"><li class="ts-nav-menu__item">
+  <a href="../../../s_chego_nachat.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">С чего начать&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../architecture.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Архитектура&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../instrumenty_razrabotki.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Инструменты разработки&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../back_end_razrabotka.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Back-end разработка&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../front_end_razrabotka_freedom_ui.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Front-end разработка Freedom UI&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../front_end_razrabotka.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Front-end разработка&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../integratsiya_i_vneshnij_api.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Интеграция и внешний API&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../ehlementy_interfejsa.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Элементы интерфейса&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../komponenty_prilozheniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Компоненты приложения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../razrabotka_mobilnogo_prilozheniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Разработка мобильного приложения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../razrabotka_marketplace_prilozheniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded ts-nav-menu__link_open" hreflang="zxx">Разработка Marketplace-приложения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+      <ul class="ts-nav-menu__children">
+      <li class="ts-nav-menu__item">
+  <a href="../../podgotovka_k_razrabotke_prilozheniya/obzor.html" class="ts-nav-menu__link" hreflang="ru">Подготовка к разработке приложения</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../razrabotka_prilozheniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded ts-nav-menu__link_open" hreflang="ru">Разработка приложения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+      <ul class="ts-nav-menu__children">
+      <li class="ts-nav-menu__item">
+  <a href="../obshchie_principy_razrabotki_prilozheniya_marketplace.html" class="ts-nav-menu__link ts-nav-menu__link_expanded ts-nav-menu__link_open" hreflang="ru">Обзор&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+      <ul class="ts-nav-menu__children">
+      <li class="ts-nav-menu__item">
+  <a href="obzor.html" class="ts-nav-menu__link ts-nav-menu__link_guide ts-nav-menu__link_active" hreflang="ru">Обзор</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="primer_razrabotki_prilozheniya.html" class="ts-nav-menu__link ts-nav-menu__link_case" hreflang="ru">Пример разработки приложения</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="primer_razrabotki_prilozheniya_s_razdelom.html" class="ts-nav-menu__link ts-nav-menu__link_case" hreflang="ru">Пример разработки приложения с разделом</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="lichelper.html" class="ts-nav-menu__link ts-nav-menu__link_reference" data-type="C#" hreflang="ru">LicHelper</a>
+  </li>
+
+    </ul>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../zashchita_koda_ot_plagiata/obzor.html" class="ts-nav-menu__link" hreflang="ru">Защита кода от плагиата</a>
+  </li>
+
+    </ul>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../publikaciya_prilozheniya/obzor.html" class="ts-nav-menu__link" hreflang="ru">Публикация приложения</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../sertifikaciya_prilozheniya/obzor.html" class="ts-nav-menu__link" hreflang="ru">Сертификация приложения</a>
+  </li>
+
+    </ul>
+  </li>
+</ul>
+</div>
+
+  </div>
+
+  </div>
+
+            <div class="creatio-sidebar__toggle"></div>
+          </aside>
+        
+                  <aside class="creatio-sidebar creatio-sidebar_second" role="complementary">
+              <div class="region region-sidebar-second">
+    <div id="block-example" class="block block-ts-nav block-ts-nav-page-nav">
+  
+    
+      <div class="ts-nav-page">
+  </div>
+
+  </div>
+<div id="block-adminfeedbackblock" class="block block-admin-feedback block-admin-feedback-block">
+  
+    
+      <div id="feedback-message"><div id="upper-feedback-content"><h2>Был ли данный материал полезен?</h2>
+<input class="feedback-btn feedback-btn__yes button js-form-submit form-submit" data-node-id="2398" data-feedback="yes" type="submit" name="op" value="Да" />
+<input class="feedback-btn feedback-btn__no button js-form-submit form-submit" data-node-id="2398" data-feedback="no" type="submit" name="op" value="Нет" />
+</div>
+<form class="admin-feedback-form" data-drupal-selector="admin-feedback-form" action="https://academy.terrasoft.ua/docs/developer/razrabotka_marketplace_prilozheniya/razrabotka_prilozheniya/obshchie_principy_razrabotki_prilozheniya_marketplace/obzor" method="post" id="admin-feedback-form" accept-charset="UTF-8">
+  <div id="feedback-msg-result"></div><div class="js-form-item form-item js-form-type-textarea form-type-textarea js-form-item-feedback-message form-item-feedback-message form-no-label">
+        <div class="form-textarea-wrapper">
+  <textarea id="edit-feedback-msg" data-drupal-selector="edit-feedback-message" name="feedback_message" rows="5" cols="60" class="form-textarea resize-vertical"></textarea>
+</div>
+
+        </div>
+<input id="feedback-id" data-drupal-selector="edit-feedback-id" type="hidden" name="feedback_id" value="" />
+<input class="feedback-btn feedback-btn__send-comment button js-form-submit form-submit" data-drupal-selector="edit-feedback-send" type="submit" id="edit-feedback-send" name="op" value="Отправить" />
+<input autocomplete="off" data-drupal-selector="form-x8a7a5nht-fkhcmdcmv7pgi3db50f8adpegclo0i-te" type="hidden" name="form_build_id" value="form-x8a7A5nHt-fKhcmdCMv7Pgi3dB50F8AdPEGCLo0i-TE" />
+<input data-drupal-selector="edit-admin-feedback-form" type="hidden" name="form_id" value="admin_feedback_form" />
+
+</form>
+</div>
+
+  </div>
+
+  </div>
+
+          </aside>
+              </main>
+    </div>
+  </div>
+
+  <footer role="contentinfo">
+    <div class="creatio-region creatio-region_footer">
+      <div class="creatio-container">
+          <div class="region region-footer">
+    <div id="block-footerua" class="block block-simple-block block-simple-blockfooter-ua">
+  
+    
+      <div class="footer">
+<div class="footer-left">
+<ul class="footer-socials"><li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_fb" href="https://www.facebook.com/terrasoft.ua" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_in" href="https://www.linkedin.com/company/terrasoft/" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_yt" href="https://www.youtube.com/c/TerrasoftUkraine" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_tg" href="https://t.me/Terrasoft_UA" target="_blank"> </a></li>
+</ul></div>
+
+<div class="footer-contact">
+<div class="footer-title">Будьте на связи!</div>
+
+<div class="footer-content">
+<div class="footer-items">
+<div class="footer-item"><a class="footer__link footer__link_phone" href="tel:+380443633133">+38 (044) 363-31-33</a></div>
+</div>
+
+<div class="footer-items">
+<div class="footer-item"><a class="footer__link footer__link_email" href="mailto:support@terrasoft.ua">support@terrasoft.ua</a></div>
+</div>
+</div>
+</div>
+</div>
+
+  </div>
+
+  </div>
+
+      </div>
+    </div>
+    <div class="creatio-region creatio-region_bottom">
+      <div class="creatio-container">
+          <div class="region region-bottom">
+    <div id="block-allrightsreservedua" class="block block-simple-block block-simple-blockfooter-bottom-ua">
+  
+    
+      <p>© 2002-2022 Terrasoft.  |  <a href="https://www.terrasoft.ua/privacy-policy" target="_blank">Конфиденциальность</a></p>
+
+  </div>
+
+  </div>
+
+      </div>
+    </div>
+  </footer>
+</div>
+<div class="creatio-bg"></div>
+
+
+  </div>
+
+    
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/docs\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/2398","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"ru"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"ajaxPageState":{"libraries":"admin_feedback\/admin_feedback_block,admin_feedback\/admin_feedback_css,classy\/base,classy\/messages,classy\/node,core\/drupal.ajax,core\/jquery.form,core\/normalize,creatio\/fancybox,creatio\/global,layout_discovery\/onecol,system\/base,ts_doc\/doc_version,ts_feedback\/ts_feedback,ts_nav\/breadcrumb,ts_nav\/doc_nav,ts_nav\/page_nav,ts_title_anchor\/ts_title_anchor","theme":"creatio","theme_token":null},"ajaxTrustedUrl":{"form_action_p_pvdeGsVG5zNF_XLGPTvYSKCf43t8qZYSwcfZl2uzM":true,"\/docs\/developer\/razrabotka_marketplace_prilozheniya\/razrabotka_prilozheniya\/obshchie_principy_razrabotki_prilozheniya_marketplace\/obzor?ajax_form=1":true},"admin_feedback":{"yes_response":"\u0421\u043f\u0430\u0441\u0438\u0431\u043e \u0437\u0430 \u043e\u0431\u0440\u0430\u0442\u043d\u0443\u044e \u0441\u0432\u044f\u0437\u044c!","no_response":"\u0421\u043f\u0430\u0441\u0438\u0431\u043e \u0437\u0430 \u043e\u0431\u0440\u0430\u0442\u043d\u0443\u044e \u0441\u0432\u044f\u0437\u044c!","custom_text_response_on_no":{"value":"","format":"full_html"},"feedback_prompt_on_yes":true,"feedback_prompt_on_no":true,"feedback_enable_predefined_answers":false,"feedback_prompt":"\u041a\u0430\u043a \u043c\u043e\u0436\u043d\u043e \u0443\u043b\u0443\u0447\u0448\u0438\u0442\u044c \u044d\u0442\u0443 \u0441\u0442\u0430\u0442\u044c\u044e?"},"ajax":{"edit-feedback-send":{"callback":"::validateFeedbackMsg","event":"mousedown","keypress":true,"prevent":"click","url":"\/docs\/developer\/razrabotka_marketplace_prilozheniya\/razrabotka_prilozheniya\/obshchie_principy_razrabotki_prilozheniya_marketplace\/obzor?ajax_form=1","dialogType":"ajax","submit":{"_triggering_element_name":"op","_triggering_element_value":"\u041e\u0442\u043f\u0440\u0430\u0432\u0438\u0442\u044c"}}},"user":{"uid":0,"permissionsHash":"9c2367dfcaba0fa15f0375f97aed64e146c908cee68508d13b79e3ee80e5162d"}}</script>
+<script src="../../../../sites/default/files/js/js_Rr-7TvYD7NposuRFJwUqThxM7yJmw8vs03PQwu5gWd8.js"></script>
+
+
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+      <g id="svg-copy" class="svg-icon svg-icon_copy">
+        <path d="M15.111,18H1.889A1.848,1.848,0,0,1,0,16.2V3.6A1.848,1.848,0,0,1,1.889,1.8H5.837a2.87,2.87,0,0,1,5.326,0h3.948A1.848,1.848,0,0,1,17,3.6V16.2A1.848,1.848,0,0,1,15.111,18ZM3.777,12.6v1.8h6.611V12.6Zm0-3.6v1.8h9.445V9Zm0-3.6V7.2h9.445V5.4ZM8.5,1.8a.924.924,0,0,0-.944.9.945.945,0,0,0,1.889,0A.924.924,0,0,0,8.5,1.8Z"/>
+      </g>
+
+      <g id="svg-prev" class="svg-icon svg-icon_arrow">
+        <path d="M5.488,12.779,0,6.39,5.488,0" transform="translate(1 0.652)"/>
+      </g>
+
+      <g id="svg-next" class="svg-icon svg-icon_arrow">
+        <path d="M0,12.779,5.488,6.39,0,0" transform="translate(0.759 0.652)"/>
+      </g>
+    </svg>
+  </body>
+
+<!-- Mirrored from academy.terrasoft.ua/docs/developer/razrabotka_marketplace_prilozheniya/razrabotka_prilozheniya/obshchie_principy_razrabotki_prilozheniya_marketplace/obzor by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Mar 2022 00:46:57 GMT -->
+</html>

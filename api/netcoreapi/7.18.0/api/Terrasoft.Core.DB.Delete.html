@@ -1,0 +1,850 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  
+<!-- Mirrored from academy.terrasoft.ua/api/netcoreapi/7.18.0/api/Terrasoft.Core.DB.Delete.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Mar 2022 03:31:46 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class Delete
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class Delete
+   ">
+    <meta name="generator" content="docfx 2.58.0.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-default ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="https://academy.terrasoft.ru/docs/developer/back-end_development">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Terrasoft.Core.DB.Delete">
+  
+  
+  <h1 id="Terrasoft_Core_DB_Delete" data-uid="Terrasoft.Core.DB.Delete" class="text-break">Class Delete
+  </h1>
+  <div class="markdown level0 summary"><p>Запрос на удаление данных.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><a class="xref" href="Terrasoft.Core.DB.Query.html">Query</a></div>
+    <div class="level2"><span class="xref">Delete</span></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="Terrasoft.Core.DB.IParametrizedQuery.html">IParametrizedQuery</a></div>
+    <div><a class="xref" href="Terrasoft.Core.DB.ISqlGenerating.html">ISqlGenerating</a></div>
+    <div><a class="xref" href="Terrasoft.Core.DB.ICacheableQuery.html">ICacheableQuery</a></div>
+    <div><span class="xref">System.ICloneable</span></div>
+    <div><a class="xref" href="Terrasoft.Core.DB.IDBCommand.html">IDBCommand</a></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_DBEngine">Query.DBEngine</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_UserConnection">Query.UserConnection</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_RowCount">Query.RowCount</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_Parameters">Query.Parameters</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_HasParameters">Query.HasParameters</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_BuildParametersAsValue">Query.BuildParametersAsValue</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_Joins">Query.Joins</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_HasJoins">Query.HasJoins</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_Condition">Query.Condition</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_HasCondition">Query.HasCondition</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_HavingCondition">Query.HavingCondition</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_HasHavingCondition">Query.HasHavingCondition</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_OrderByItems">Query.OrderByItems</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_HasOrderByItems">Query.HasOrderByItems</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_GroupByItems">Query.GroupByItems</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_HasGroupByItems">Query.HasGroupByItems</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_UnionQueries">Query.UnionQueries</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_HasUnionQueries">Query.HasUnionQueries</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_IsUnionTypeAll">Query.IsUnionTypeAll</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_IsCacheEnabled">Query.IsCacheEnabled</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_CachedSqlText">Query.CachedSqlText</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_Execute">Query.Execute()</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_Execute_Terrasoft_Core_DB_DBExecutor_">Query.Execute(DBExecutor)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_GetUsingParameters">Query.GetUsingParameters()</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_ResetParameters">Query.ResetParameters()</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_InitializeParameters">Query.InitializeParameters()</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_Terrasoft_Core_DB_IParametrizedQuery_InitializeParameters">Query.IParametrizedQuery.InitializeParameters()</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_Join_Terrasoft_Core_DB_JoinType_System_String_">Query.Join(JoinType, String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_Join_Terrasoft_Core_DB_JoinType_Terrasoft_Core_DB_Select_">Query.Join(JoinType, Select)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_Join_Terrasoft_Core_DB_JoinType_Terrasoft_Core_DB_Query_">Query.Join(JoinType, Query)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_Join_Terrasoft_Core_DB_JoinType_Terrasoft_Core_DB_QuerySourceExpression_">Query.Join(JoinType, QuerySourceExpression)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_InnerJoin_System_String_">Query.InnerJoin(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_InnerJoin_Terrasoft_Core_DB_Select_">Query.InnerJoin(Select)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_InnerJoin_Terrasoft_Core_DB_Query_">Query.InnerJoin(Query)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_InnerJoin_Terrasoft_Core_DB_QuerySourceExpression_">Query.InnerJoin(QuerySourceExpression)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_LeftOuterJoin_System_String_">Query.LeftOuterJoin(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_LeftOuterJoin_Terrasoft_Core_DB_Select_">Query.LeftOuterJoin(Select)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_LeftOuterJoin_Terrasoft_Core_DB_Query_">Query.LeftOuterJoin(Query)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_LeftOuterJoin_Terrasoft_Core_DB_QuerySourceExpression_">Query.LeftOuterJoin(QuerySourceExpression)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_RightOuterJoin_System_String_">Query.RightOuterJoin(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_RightOuterJoin_Terrasoft_Core_DB_Select_">Query.RightOuterJoin(Select)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_RightOuterJoin_Terrasoft_Core_DB_Query_">Query.RightOuterJoin(Query)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_RightOuterJoin_Terrasoft_Core_DB_QuerySourceExpression_">Query.RightOuterJoin(QuerySourceExpression)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_FullOuterJoin_System_String_">Query.FullOuterJoin(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_FullOuterJoin_Terrasoft_Core_DB_Select_">Query.FullOuterJoin(Select)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_FullOuterJoin_Terrasoft_Core_DB_Query_">Query.FullOuterJoin(Query)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_FullOuterJoin_Terrasoft_Core_DB_QuerySourceExpression_">Query.FullOuterJoin(QuerySourceExpression)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_Where">Query.Where()</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_Where_System_String_">Query.Where(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_Where_System_String_System_String_">Query.Where(String, String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_Where_Terrasoft_Core_DB_Select_">Query.Where(Select)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_Where_Terrasoft_Core_DB_Query_">Query.Where(Query)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_Where_Terrasoft_Core_DB_QueryParameter_">Query.Where(QueryParameter)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_Where_Terrasoft_Core_DB_QueryColumnExpression_">Query.Where(QueryColumnExpression)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_Where_Terrasoft_Core_DB_IQueryColumnExpressionConvertible_">Query.Where(IQueryColumnExpressionConvertible)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_Where_Terrasoft_Core_DB_QueryCondition_">Query.Where(QueryCondition)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_And">Query.And()</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_And_System_String_">Query.And(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_And_System_String_System_String_">Query.And(String, String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_And_Terrasoft_Core_DB_Select_">Query.And(Select)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_And_Terrasoft_Core_DB_Query_">Query.And(Query)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_And_Terrasoft_Core_DB_QueryParameter_">Query.And(QueryParameter)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_And_Terrasoft_Core_DB_QueryColumnExpression_">Query.And(QueryColumnExpression)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_And_Terrasoft_Core_DB_IQueryColumnExpressionConvertible_">Query.And(IQueryColumnExpressionConvertible)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_And_Terrasoft_Core_DB_QueryCondition_">Query.And(QueryCondition)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_Or">Query.Or()</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_Or_System_String_">Query.Or(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_Or_System_String_System_String_">Query.Or(String, String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_Or_Terrasoft_Core_DB_Select_">Query.Or(Select)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_Or_Terrasoft_Core_DB_Query_">Query.Or(Query)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_Or_Terrasoft_Core_DB_QueryParameter_">Query.Or(QueryParameter)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_Or_Terrasoft_Core_DB_QueryColumnExpression_">Query.Or(QueryColumnExpression)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_Or_Terrasoft_Core_DB_IQueryColumnExpressionConvertible_">Query.Or(IQueryColumnExpressionConvertible)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_Or_Terrasoft_Core_DB_QueryCondition_">Query.Or(QueryCondition)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_AddCondition_LogicalOperation_">Query.AddCondition(LogicalOperation)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_AddCondition_System_String_LogicalOperation_">Query.AddCondition(String, LogicalOperation)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_AddCondition_System_String_System_String_LogicalOperation_">Query.AddCondition(String, String, LogicalOperation)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_AddCondition_Terrasoft_Core_DB_Select_LogicalOperation_">Query.AddCondition(Select, LogicalOperation)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_AddCondition_Terrasoft_Core_DB_Query_LogicalOperation_">Query.AddCondition(Query, LogicalOperation)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_AddCondition_Terrasoft_Core_DB_QueryParameter_LogicalOperation_">Query.AddCondition(QueryParameter, LogicalOperation)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_AddCondition_Terrasoft_Core_DB_QueryColumnExpression_LogicalOperation_">Query.AddCondition(QueryColumnExpression, LogicalOperation)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_AddCondition_Terrasoft_Core_DB_IQueryColumnExpressionConvertible_LogicalOperation_">Query.AddCondition(IQueryColumnExpressionConvertible, LogicalOperation)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_AddCondition_Terrasoft_Core_DB_QueryCondition_LogicalOperation_">Query.AddCondition(QueryCondition, LogicalOperation)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_CloseBlock">Query.CloseBlock()</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_OrderBy_OrderDirectionStrict_System_String_">Query.OrderBy(OrderDirectionStrict, String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_OrderBy_OrderDirectionStrict_System_String_System_String_">Query.OrderBy(OrderDirectionStrict, String, String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_OrderBy_OrderDirectionStrict_Terrasoft_Core_DB_QueryFunction_">Query.OrderBy(OrderDirectionStrict, QueryFunction)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_OrderBy_OrderDirectionStrict_Terrasoft_Core_DB_Select_">Query.OrderBy(OrderDirectionStrict, Select)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_OrderBy_OrderDirectionStrict_Terrasoft_Core_DB_Query_">Query.OrderBy(OrderDirectionStrict, Query)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_OrderBy_OrderDirectionStrict_Terrasoft_Core_DB_QueryColumnExpression_">Query.OrderBy(OrderDirectionStrict, QueryColumnExpression)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_OrderBy_OrderDirectionStrict_Terrasoft_Core_DB_IQueryColumnExpressionConvertible_">Query.OrderBy(OrderDirectionStrict, IQueryColumnExpressionConvertible)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_OrderByAsc_System_String_">Query.OrderByAsc(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_OrderByAsc_System_String_System_String_">Query.OrderByAsc(String, String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_OrderByAsc_Terrasoft_Core_DB_Select_">Query.OrderByAsc(Select)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_OrderByAsc_Terrasoft_Core_DB_Query_">Query.OrderByAsc(Query)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_OrderByAsc_Terrasoft_Core_DB_QueryColumnExpression_">Query.OrderByAsc(QueryColumnExpression)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_OrderByAsc_Terrasoft_Core_DB_IQueryColumnExpressionConvertible_">Query.OrderByAsc(IQueryColumnExpressionConvertible)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_OrderByDesc_System_String_">Query.OrderByDesc(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_OrderByDesc_System_String_System_String_">Query.OrderByDesc(String, String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_OrderByDesc_Terrasoft_Core_DB_Select_">Query.OrderByDesc(Select)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_OrderByDesc_Terrasoft_Core_DB_Query_">Query.OrderByDesc(Query)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_OrderByDesc_Terrasoft_Core_DB_QueryColumnExpression_">Query.OrderByDesc(QueryColumnExpression)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_OrderByDesc_Terrasoft_Core_DB_IQueryColumnExpressionConvertible_">Query.OrderByDesc(IQueryColumnExpressionConvertible)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_GroupBy_System_String_">Query.GroupBy(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_GroupBy_System_String_System_String_">Query.GroupBy(String, String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_GroupBy_Terrasoft_Core_DB_QueryColumnExpression_">Query.GroupBy(QueryColumnExpression)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_GroupBy_Terrasoft_Core_DB_IQueryColumnExpressionConvertible_">Query.GroupBy(IQueryColumnExpressionConvertible)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_Having">Query.Having()</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_Having_System_String_">Query.Having(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_Having_System_String_System_String_">Query.Having(String, String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_Having_Terrasoft_Core_DB_Select_">Query.Having(Select)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_Having_Terrasoft_Core_DB_Query_">Query.Having(Query)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_Having_Terrasoft_Core_DB_IQueryColumnExpressionConvertible_">Query.Having(IQueryColumnExpressionConvertible)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_Having_Terrasoft_Core_DB_QueryParameter_">Query.Having(QueryParameter)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_Having_Terrasoft_Core_DB_QueryColumnExpression_">Query.Having(QueryColumnExpression)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_Union_Terrasoft_Core_DB_Select_">Query.Union(Select)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_Union_Terrasoft_Core_DB_Query_">Query.Union(Query)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_UnionAll_Terrasoft_Core_DB_Select_">Query.UnionAll(Select)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_UnionAll_Terrasoft_Core_DB_Query_">Query.UnionAll(Query)</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_ResetCachedSqlText">Query.ResetCachedSqlText()</a>
+    </div>
+    <div>
+      <a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_SetParameterValue_System_String_System_Object_">Query.SetParameterValue(String, Object)</a>
+    </div>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Terrasoft.Core.DB.html">Terrasoft.Core.DB</a></h6>
+  <h6><strong>Assembly</strong>: Terrasoft.Core.dll</h6>
+  <h5 id="Terrasoft_Core_DB_Delete_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class Delete : Query, IParametrizedQuery, ISqlGenerating, ICacheableQuery, ICloneable, IDBCommand</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+  </h3>
+  
+  
+  <a id="Terrasoft_Core_DB_Delete__ctor_" data-uid="Terrasoft.Core.DB.Delete.#ctor*"></a>
+  <h4 id="Terrasoft_Core_DB_Delete__ctor_Terrasoft_Core_DB_Delete_" data-uid="Terrasoft.Core.DB.Delete.#ctor(Terrasoft.Core.DB.Delete)">Delete(Delete)</h4>
+  <div class="markdown level1 summary"><p>Инициализирует новый экземпляр <a class="xref" href="Terrasoft.Core.DB.Delete.html">Delete</a>, являющийся клоном переданного запроса.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Delete(Delete source)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.Delete.html">Delete</a></td>
+        <td><span class="parametername">source</span></td>
+        <td><p>Запрос на удаление, клон которого создается.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_DB_Delete__ctor_" data-uid="Terrasoft.Core.DB.Delete.#ctor*"></a>
+  <h4 id="Terrasoft_Core_DB_Delete__ctor_Terrasoft_Core_UserConnection_" data-uid="Terrasoft.Core.DB.Delete.#ctor(Terrasoft.Core.UserConnection)">Delete(UserConnection)</h4>
+  <div class="markdown level1 summary"><p>Инициализирует новый экземпляр <a class="xref" href="Terrasoft.Core.DB.Delete.html">Delete</a>, используя заданное пользовательское подключение.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Delete(UserConnection userConnection)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.UserConnection.html">UserConnection</a></td>
+        <td><span class="parametername">userConnection</span></td>
+        <td><p>Пользовательское подключение.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  
+  
+  <a id="Terrasoft_Core_DB_Delete_Source_" data-uid="Terrasoft.Core.DB.Delete.Source*"></a>
+  <h4 id="Terrasoft_Core_DB_Delete_Source" data-uid="Terrasoft.Core.DB.Delete.Source">Source</h4>
+  <div class="markdown level1 summary"><p>Источник данных запроса.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ModifyQuerySource Source { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.ModifyQuerySource.html">ModifyQuerySource</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  
+  
+  <a id="Terrasoft_Core_DB_Delete_BuildSqlText_" data-uid="Terrasoft.Core.DB.Delete.BuildSqlText*"></a>
+  <h4 id="Terrasoft_Core_DB_Delete_BuildSqlText_System_Text_StringBuilder_" data-uid="Terrasoft.Core.DB.Delete.BuildSqlText(System.Text.StringBuilder)">BuildSqlText(StringBuilder)</h4>
+  <div class="markdown level1 summary"><p>Формирует текст запроса с использование заданного экземпляра <span class="xref">System.Text.StringBuilder</span>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void BuildSqlText(StringBuilder sb)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Text.StringBuilder</span></td>
+        <td><span class="parametername">sb</span></td>
+        <td><p>Экземпляр <span class="xref">System.Text.StringBuilder</span>, с помощью которого формируется текст
+запроса.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_BuildSqlText_System_Text_StringBuilder_">Query.BuildSqlText(StringBuilder)</a></div>
+  
+  
+  <a id="Terrasoft_Core_DB_Delete_Clone_" data-uid="Terrasoft.Core.DB.Delete.Clone*"></a>
+  <h4 id="Terrasoft_Core_DB_Delete_Clone" data-uid="Terrasoft.Core.DB.Delete.Clone">Clone()</h4>
+  <div class="markdown level1 summary"><p>Создает клон текущего экземпляра <a class="xref" href="Terrasoft.Core.DB.Delete.html">Delete</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override object Clone()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><p>Новый экземпляр <a class="xref" href="Terrasoft.Core.DB.Delete.html">Delete</a>, являющийся клоном текущего экземпляра.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_Clone">Query.Clone()</a></div>
+  
+  
+  <a id="Terrasoft_Core_DB_Delete_From_" data-uid="Terrasoft.Core.DB.Delete.From*"></a>
+  <h4 id="Terrasoft_Core_DB_Delete_From_System_String_" data-uid="Terrasoft.Core.DB.Delete.From(System.String)">From(String)</h4>
+  <div class="markdown level1 summary"><p>К текущему запросу добавляет в качестве источника данных схему с заданным именем.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Delete From(string schemaName)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">schemaName</span></td>
+        <td><p>Имя схемы.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.Delete.html">Delete</a></td>
+        <td><p>Текущий экземпляр <a class="xref" href="Terrasoft.Core.DB.Delete.html">Delete</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_DB_Delete_From_" data-uid="Terrasoft.Core.DB.Delete.From*"></a>
+  <h4 id="Terrasoft_Core_DB_Delete_From_Terrasoft_Core_DB_ModifyQuerySource_" data-uid="Terrasoft.Core.DB.Delete.From(Terrasoft.Core.DB.ModifyQuerySource)">From(ModifyQuerySource)</h4>
+  <div class="markdown level1 summary"><p>К текущему запросу добавляет в качестве источника данных заданный источник.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Delete From(ModifyQuerySource source)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.ModifyQuerySource.html">ModifyQuerySource</a></td>
+        <td><span class="parametername">source</span></td>
+        <td><p>Источник данных.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terrasoft.Core.DB.Delete.html">Delete</a></td>
+        <td><p>Текущий экземпляр <a class="xref" href="Terrasoft.Core.DB.Delete.html">Delete</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Terrasoft_Core_DB_Delete_GetSqlText_" data-uid="Terrasoft.Core.DB.Delete.GetSqlText*"></a>
+  <h4 id="Terrasoft_Core_DB_Delete_GetSqlText" data-uid="Terrasoft.Core.DB.Delete.GetSqlText">GetSqlText()</h4>
+  <div class="markdown level1 summary"><p>Возвращает sql-текст текущего запроса.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override string GetSqlText()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><p>Sql-текст текущего запроса.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Terrasoft.Core.DB.Query.html#Terrasoft_Core_DB_Query_GetSqlText">Query.GetSqlText()</a></div>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="Terrasoft.Core.DB.IParametrizedQuery.html">IParametrizedQuery</a>
+  </div>
+  <div>
+      <a class="xref" href="Terrasoft.Core.DB.ISqlGenerating.html">ISqlGenerating</a>
+  </div>
+  <div>
+      <a class="xref" href="Terrasoft.Core.DB.ICacheableQuery.html">ICacheableQuery</a>
+  </div>
+  <div>
+      <span class="xref">System.ICloneable</span>
+  </div>
+  <div>
+      <a class="xref" href="Terrasoft.Core.DB.IDBCommand.html">IDBCommand</a>
+  </div>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="Terrasoft.Common.ReflectionUtilities.html#Terrasoft_Common_ReflectionUtilities_GetPropertyValue_System_Object_System_String_">ReflectionUtilities.GetPropertyValue(Object, String)</a>
+  </div>
+  <div>
+      <a class="xref" href="Terrasoft.Common.ReflectionUtilities.html#Terrasoft_Common_ReflectionUtilities_GetPropertyDefValue_System_Object_System_String_System_Object_">ReflectionUtilities.GetPropertyDefValue(Object, String, Object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Terrasoft.Common.ReflectionUtilities.html#Terrasoft_Common_ReflectionUtilities_TryGetPropertyValue_System_Object_System_String_System_Object__">ReflectionUtilities.TryGetPropertyValue(Object, String, out Object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Terrasoft.Common.ReflectionUtilities.html#Terrasoft_Common_ReflectionUtilities_HasProperty_System_Object_System_String_">ReflectionUtilities.HasProperty(Object, String)</a>
+  </div>
+  <div>
+      <a class="xref" href="Terrasoft.Common.ReflectionUtilities.html#Terrasoft_Common_ReflectionUtilities_GetPropertyValue_System_Object_System_String_System_Reflection_BindingFlags_">ReflectionUtilities.GetPropertyValue(Object, String, BindingFlags)</a>
+  </div>
+  <div>
+      <a class="xref" href="Terrasoft.Common.ReflectionUtilities.html#Terrasoft_Common_ReflectionUtilities_GetPropertyValueByPath_System_Object_System_String_">ReflectionUtilities.GetPropertyValueByPath(Object, String)</a>
+  </div>
+  <div>
+      <a class="xref" href="Terrasoft.Common.ReflectionUtilities.html#Terrasoft_Common_ReflectionUtilities_SetPropertyValue_System_Object_System_String_System_Object_">ReflectionUtilities.SetPropertyValue(Object, String, Object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Terrasoft.Common.ReflectionUtilities.html#Terrasoft_Common_ReflectionUtilities_TrySetPropertyValue_System_Object_System_String_System_Object_">ReflectionUtilities.TrySetPropertyValue(Object, String, Object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Terrasoft.Common.ValidateUtilities.html#Terrasoft_Common_ValidateUtilities_CheckArgumentNull_System_Object_System_String_">ValidateUtilities.CheckArgumentNull(Object, String)</a>
+  </div>
+  <div>
+      <a class="xref" href="Terrasoft.Common.ValidateUtilities.html#Terrasoft_Common_ValidateUtilities_CheckDependencyNull_System_Object_System_String_">ValidateUtilities.CheckDependencyNull(Object, String)</a>
+  </div>
+  <div>
+      <a class="xref" href="Terrasoft.Common.ValidateUtilities.html#Terrasoft_Common_ValidateUtilities_EnsureDependencyNotNull__1___0_System_String_">ValidateUtilities.EnsureDependencyNotNull&lt;T&gt;(T, String)</a>
+  </div>
+  <div>
+      <a class="xref" href="Terrasoft.Core.DB.HintsHelper.html#Terrasoft_Core_DB_HintsHelper_WithHints_Terrasoft_Core_DB_Delete_Terrasoft_Core_DB_BaseHint___">HintsHelper.WithHints(Delete, BaseHint[])</a>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>© 2021 Creatio. All rights reserved.</span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+
+<!-- Mirrored from academy.terrasoft.ua/api/netcoreapi/7.18.0/api/Terrasoft.Core.DB.Delete.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Mar 2022 03:31:46 GMT -->
+</html>

@@ -1,0 +1,1649 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# ">
+  
+<!-- Mirrored from academy.terrasoft.ua/docs/user/razvertyvanie_onsite/nastrojka_konteinernikh_komponentov/globalnyj_poisk/nastroit_globalnyy_poisk by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 22 Mar 2022 20:26:09 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+          <!-- Google Tag Manager -->
+      <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          '../../../../../../www.googletagmanager.com/gtm5445.html?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-KLLB8G');</script>
+      <!-- End Google Tag Manager -->
+        <meta charset="utf-8" />
+<link rel="canonical" href="nastroit_globalnyy_poisk.html" />
+<meta name="description" content="Сервис глобального поиска (Global Search Service) создан для интеграции ElasticSearch c Creatio и выполняет следующие функции:
+
+Регистрирующую:
+
+	
+		Подписывает клиента, создавая индекс в ElasticSearch и сохраняет связь индекс-приложение.
+		
+		
+		Отключает клиента, по требованию удаляя индекс в ElasticSearch.
+		
+	
+	Транспортную:
+	
+		Участвует в процессе индексации — забирает данные из базы данных." />
+<meta property="og:url" content="https://academy.terrasoft.ua/docs/user/razvertyvanie_onsite/nastrojka_konteinernikh_komponentov/globalnyj_poisk/nastroit_globalnyy_poisk" />
+<meta property="og:title" content="Настроить глобальный поиск" />
+<meta property="og:description" content="Сервис глобального поиска (Global Search Service) создан для интеграции ElasticSearch c Creatio и выполняет следующие функции:
+
+Регистрирующую:
+
+	
+		Подписывает клиента, создавая индекс в ElasticSearch и сохраняет связь индекс-приложение.
+		
+		
+		Отключает клиента, по требованию удаляя индекс в ElasticSearch.
+		
+	
+	Транспортную:
+	
+		Участвует в процессе индексации — забирает данные из базы данных." />
+<meta name="Generator" content="Drupal 9 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="../../../../themes/custom/creatio/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="revision" href="nastroit_globalnyy_poisk.html" />
+
+    <title>Настроить глобальный поиск | Creatio Academy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&amp;family=Open+Sans:ital,wght@0,300;0,400;0,600;1,400&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" media="all" href="../../../../sites/default/files/css/css_6lTP66__-yc6QXFp1zOwoeJ0HVigoYZP-SeoLLii000.css" />
+<link rel="stylesheet" media="all" href="../../../../sites/default/files/css/css_XQJDNhkF3xH5SZCcY-PI89Zu4nYIzQ5oR3SnUKyfXJU.css" />
+<link rel="stylesheet" media="print" href="../../../../sites/default/files/css/css_Zn4VHvcniOOtUwkIVwXzYr_0AI9gUVgZcPqaH4ViagU.css" />
+
+    
+  </head>
+  <body class="path-node page-node-type-user-documentation">
+          <!-- Google Tag Manager (noscript) -->
+      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KLLB8G"
+                        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+      <!-- End Google Tag Manager (noscript) -->
+    
+        
+      <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    <div class="creatio-page d-flex flex-column">
+        <div class="region region-informer">
+    <div id="block-terrasoftpidtrimueukrainu" class="block block-simple-block block-simple-blockterrasoft-pidtrimue-ukrainu">
+  
+    
+      <style type="text/css">
+<!--/*--><![CDATA[/* ><!--*/
+@import url(../../../../../../www.terrasoft.ua/themes/custom/creatio/css/components/informer.css)
+
+/*--><!]]>*/
+</style><div class="ts-swu">
+<div class="creatio-container">
+<div class="ts-swu__cont">
+<div><a class="ts-swu__link" href="https://www.terrasoft.ua/terrasoft-stands-with-ukraine" target="_blank">Україна понад усе!</a> <span><a href="https://www.terrasoft.ua/terrasoft-stands-with-ukraine" target="_blank">Приєднуйтеся</a> до допомоги!</span></div>
+</div>
+</div></div>
+
+  </div>
+
+  </div>
+
+  
+  <header role="banner">
+          <div class="creatio-region creatio-region_top">
+        <div class="creatio-container">
+            <div class="region region-top">
+    <div id="block-menutoggle" class="block block-simple-block block-simple-blockmenu-toggle">
+  
+    
+      <div class="menu-toggle"><span> </span></div>
+
+  </div>
+<div id="block-logowhite-2" class="block block-simple-block block-simple-blocklogo-white">
+  
+    
+      <p><a class="site-logo" href="../../../../../index.html" rel="home"><img src="../../../../themes/custom/creatio/logo-white.svg" /></a></p>
+
+  </div>
+<div id="block-search" class="block block-simple-block block-simple-blocksearch">
+  
+    
+      <div class="search">
+<form action="https://academy.terrasoft.ua/search" class="search-form" method="get"><input class="search-form__input" name="search" placeholder="Поиск" type="search" /><input class="search-form__button" type="submit" value="Поиск" /> </form>
+
+<div class="search-toggle"> </div>
+</div>
+
+  </div>
+<nav role="navigation" aria-labelledby="block-sitesua-menu" id="block-sitesua" class="block block-menu navigation menu--sites-ua">
+            
+  <h2 class="visually-hidden" id="block-sitesua-menu">Sites UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="https://www.terrasoft.ua/" rel="nofollow" target="_blank">Terrasoft</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://community.terrasoft.ua/" rel="nofollow" target="_blank">Community</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://marketplace.terrasoft.ua/" rel="nofollow" target="_blank">Marketplace</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+<div id="block-usermenu" class="block block-ts-user block-ts-user-menu-block">
+  
+    
+      <ul class="user-menu">
+      <li class="user-menu__item">
+      <a class="user-menu__link" href="https://profile.terrasoft.ua/user/login?destination=academy/ua/docs/user/razvertyvanie_onsite/nastrojka_konteinernikh_komponentov/globalnyj_poisk/nastroit_globalnyy_poisk">Войти</a>
+    </li>
+  </ul>
+
+  </div>
+<div id="block-usermenumobile" class="block block-ts-user block-ts-user-menu-mobile-block">
+  
+    
+      <ul class="user-menu-mobile">
+      <li class="user-menu-mobile__item">
+      <div class="user-menu-mobile__user user-menu-mobile__user_icon"></div>
+      <ul class="user-menu-mobile__submenu">
+        <li class="user-menu-mobile__subitem">
+          <a class="user-menu-mobile__sublink" href="https://profile.terrasoft.ua/user/login?destination=academy/ua/docs/user/razvertyvanie_onsite/nastrojka_konteinernikh_komponentov/globalnyj_poisk/nastroit_globalnyy_poisk">Войти</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  </div>
+
+  </div>
+
+        </div>
+      </div>
+              <div class="creatio-region creatio-region_header">
+        <div class="creatio-container">
+            <div class="region region-header">
+    <div id="block-logo" class="block block-simple-block block-simple-blocklogo">
+  
+    
+      <p><a class="site-logo" href="../../../../../index.html" rel="home"><img src="../../../../themes/custom/creatio/logo.svg" /></a></p>
+
+  </div>
+<nav role="navigation" aria-labelledby="block-osnovnayanavigaciyaua-menu" id="block-osnovnayanavigaciyaua" class="block block-menu navigation menu--main-ua">
+            
+  <h2 class="visually-hidden" id="block-osnovnayanavigaciyaua-menu">Основная навигация UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="../../../../index.html" data-drupal-link-system-path="&lt;front&gt;">Документация</a>
+              </li>
+                <li class="menu-item">
+        <a href="../../../../../trainings.html">Тренинги</a>
+              </li>
+                <li class="menu-item">
+        <a href="../../../../certification.html" data-drupal-link-system-path="node/3084">Сертификация и тестирование</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+<nav role="navigation" aria-labelledby="block-sitesua-2-menu" id="block-sitesua-2" class="block block-menu navigation menu--sites-ua">
+            
+  <h2 class="visually-hidden" id="block-sitesua-2-menu">Sites UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="https://www.terrasoft.ua/" rel="nofollow" target="_blank">Terrasoft</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://community.terrasoft.ua/" rel="nofollow" target="_blank">Community</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://marketplace.terrasoft.ua/" rel="nofollow" target="_blank">Marketplace</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+
+  </div>
+
+        </div>
+      </div>
+              <div class="creatio-region creatio-region_breadcrumb">
+        <div class="creatio-container">
+            <div class="region region-breadcrumb">
+    <div id="block-logowhite" class="block block-simple-block block-simple-blocklogo-white">
+  
+    
+      <p><a class="site-logo" href="../../../../../index.html" rel="home"><img src="../../../../themes/custom/creatio/logo-white.svg" /></a></p>
+
+  </div>
+<div id="block-breadcrumbnaviagtion" class="block block-ts-nav block-ts-nav-bread">
+  
+    
+      <nav class="breadcrumb"><ol class="ts-nav-breadcrumb__list"><li class="ts-nav-breadcrumb__item"><a href="../../../../index.html" class="ts-nav-breadcrumb__link" title="Документация">Документация</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../../indexd993.html?vid_1=1" class="ts-nav-breadcrumb__link" title="Для пользователя">Для пользователя</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../razvertyvanie_onsite.html" class="ts-nav-breadcrumb__link" title="Развертывание on-site" hreflang="ru">Развертывание on-site</a></li>
+<li class="ts-nav-breadcrumb__item ts-nav-breadcrumb__item_mobile"><a href="../../nastrojka_konteinernikh_komponentov.html" class="ts-nav-breadcrumb__link" title="Настройка контейнерных компонентов" hreflang="ru">Настройка контейнерных компонентов</a></li>
+<li class="ts-nav-breadcrumb__item"><span class="ts-nav-breadcrumb__link ts-nav-breadcrumb__link_current" title="Настроить глобальный поиск">Настроить глобальный поиск</span></li>
+</ol>
+</nav>
+
+  </div>
+<div id="block-search-2" class="block block-simple-block block-simple-blocksearch">
+  
+    
+      <div class="search">
+<form action="https://academy.terrasoft.ua/search" class="search-form" method="get"><input class="search-form__input" name="search" placeholder="Поиск" type="search" /><input class="search-form__button" type="submit" value="Поиск" /> </form>
+
+<div class="search-toggle"> </div>
+</div>
+
+  </div>
+
+  </div>
+
+        </div>
+      </div>
+      </header>
+
+  <div class="creatio-region creatio-region_main">
+    <div class="creatio-container">
+                <div class="region region-breadcrumb-mobile">
+    <div id="block-breadcrumbnaviagtion-2" class="block block-ts-nav block-ts-nav-bread">
+  
+    
+      <nav class="breadcrumb"><ol class="ts-nav-breadcrumb__list"><li class="ts-nav-breadcrumb__item"><a href="../../../../index.html" class="ts-nav-breadcrumb__link" title="Документация">Документация</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../../indexd993.html?vid_1=1" class="ts-nav-breadcrumb__link" title="Для пользователя">Для пользователя</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../razvertyvanie_onsite.html" class="ts-nav-breadcrumb__link" title="Развертывание on-site" hreflang="ru">Развертывание on-site</a></li>
+<li class="ts-nav-breadcrumb__item ts-nav-breadcrumb__item_mobile"><a href="../../nastrojka_konteinernikh_komponentov.html" class="ts-nav-breadcrumb__link" title="Настройка контейнерных компонентов" hreflang="ru">Настройка контейнерных компонентов</a></li>
+<li class="ts-nav-breadcrumb__item"><span class="ts-nav-breadcrumb__link ts-nav-breadcrumb__link_current" title="Настроить глобальный поиск">Настроить глобальный поиск</span></li>
+</ol>
+</nav>
+
+  </div>
+
+  </div>
+
+      
+      <main class="creatio-main" role="main">
+                                                    
+        <div class="creatio-content creatio-content_small">
+          <div class="creatio-content__inner creatio-content__inner_bg">
+                            <div class="region region-messages">
+    <div data-drupal-messages-fallback class="hidden"></div>
+
+  </div>
+
+            
+              <div class="region region-content">
+    <div id="block-creatio-page-title" class="block block-core block-page-title-block">
+  
+    
+      
+  <h1 class="page-title"><span class="field field--name-title field--type-string field--label-hidden">Настроить глобальный поиск</span>
+</h1>
+
+
+  </div>
+<div id="block-creatio-content" class="block block-system block-system-main-block">
+  
+    
+      
+<article data-history-node-id="2504" role="article" about="/docs/user/razvertyvanie_onsite/nastrojka_konteinernikh_komponentov/globalnyj_poisk/nastroit_globalnyy_poisk" class="node node--type-user-documentation node--view-mode-full">
+
+  
+    
+
+  
+  <div class="node__content">
+      <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-ts-doc block-ts-doc-downloads">
+  
+    
+      <a href="../../../../sites/default/files/pdf/node/2504/Nastroit_globalnyy_poisk_.pdf" target="_blank">PDF</a>
+  </div>
+<div class="block block-ts-doc block-ts-doc-versions">
+  
+    
+        <div class="ts-doc-versions">
+    <select class="ts-doc-versions__select">
+                                                <option value="/docs/8-0/user/razvertyvanie_onsite/nastrojka_konteinernikh_komponentov/globalnyj_poisk/nastroit_globalnyy_poisk" selected>Версия 8.0</option>
+                              <option value="/docs/7-18/user/razvertyvanie_onsite/nastrojka_konteinernikh_komponentov/globalnyj_poisk/nastroit_globalnyy_poisk">Версия 7.18</option>
+                              <option value="/docs/7-17/user/razvertyvanie_onsite/nastrojka_konteinernikh_komponentov/globalnyj_poisk/nastroit_globalnyy_poisk">Версия 7.17</option>
+          </select>
+  </div>
+
+  </div>
+
+    </div>
+  </div>
+  <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocknodeuser-documentationfield-product">
+  
+    
+      
+  <div class="field field--name-field-product field--type-entity-reference field--label-above">
+    <div class="field__label">Продукты</div>
+          <div class="field__items">
+              <div class="field__item">Все продукты</div>
+              </div>
+      </div>
+
+  </div>
+<div class="block block-layout-builder block-field-blocknodeuser-documentationbody">
+  
+    
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><p>Сервис глобального поиска (Global Search Service) создан для интеграции ElasticSearch c Creatio и выполняет следующие функции:</p>
+
+<ul><li><strong>Регистрирующую</strong>:
+
+	<ul><li>
+		<p>Подписывает клиента, создавая индекс в ElasticSearch и сохраняет связь индекс-приложение.</p>
+		</li>
+		<li>
+		<p>Отключает клиента, по требованию удаляя индекс в ElasticSearch.</p>
+		</li>
+	</ul></li>
+	<li><strong>Транспортную</strong>:
+	<ul><li>
+		<p>Участвует в процессе индексации — забирает данные из базы данных.</p>
+		</li>
+	</ul></li>
+</ul><p>Для настройки глобального поиска необходимы два отдельных физических или виртуальных сервера (“сервер 1” и “сервер 2”) с установленной ОС Linux. Для расчета требований к серверам воспользуйтесь <a href="../../../../requirements/calculator.html">калькулятором системных требований</a>.</p>
+
+<p>Развертывание компонентов глобального поиска выполняется на ПО Docker. С перечнем поддерживаемых ОС вы можете ознакомиться в <a href="https://docs.docker.com/install/">документации Docker</a>.</p>
+
+<div class="message">
+<p><span class="message__bold">На заметку.</span> В зависимости от потребностей вашей компании можно использовать Docker Community Edition (CE) или Enterprise Edition (EE). Подробную информацию вы найдете в <a href="https://docs.docker.com/install/overview/">документации Docker</a>.</p>
+</div>
+
+<div class="message message_warning">
+<p><span class="message__bold message__bold_warning">Важно.</span> Для настройки глобального поиска необходимы базовые знания администрирования ПО Docker и ОС Linux.</p>
+</div>
+
+<p>Последовательность действий при настройке глобального поиска зависит от того, какую версию сервиса вы будете использовать. Для последней версии Creatio рекомендуется всегда использовать новейшую версию сервиса глобального поиска.</p>
+
+<p>Для поддержания работоспособности сервиса и возможности быстрого восстановления данных после отказа, например, в случае перебоев с электроэнергией, рекомендуется раз в сутки выполнять резервное копирование Elasticsearch.</p>
+
+<p>Если у вас возникнут вопросы в ходе настройки, то рекомендуем ознакомиться со статьей <a href="../../../../7-17/user/razvertyvanie_onsite/nastrojka_konteinernikh_komponentov/voprosi_i_otvety_po_poisku/chasto_zadavaemye_voprosy_po_globalnomu_poisku_i_deduplikacii/index.html">Часто задаваемые вопросы по глобальному поиску и дедупликации</a>.</p>
+
+<h2>Настроить сервис глобального поиска (версия 3.0)<a class="title-anchor" href="#title-2504-19" id="title-2504-19"> </a></h2>
+
+<div class="message">
+<p><span class="message__bold">На заметку.</span> Настройки ниже актуальны для сервиса глобального поиска версии 3.0. Если вам необходимо настроить сервис глобального поиска более ранней версии, то ознакомьтесь с описанием настроек в <a href="../../../../../documents/administration/7-16/nastroyka-globalnogo-poiska.html">документации Creatio версии 7.16</a>.</p>
+
+<p>Чтобы <strong>обновить</strong> глобальный поиск с версии 2.0 на версию 3.0, необходимо удалить все docker volume версии 2.0 на серверах 1 и 2 при помощи команды <a href="https://docs.docker.com/compose/reference/down/">docker-compose down -v</a> и повторно выполнить установку и настройку всех сервисов.</p>
+</div>
+
+<h3>Компоненты глобального поиска<a class="title-anchor" href="#title-2504-20" id="title-2504-20"> </a></h3>
+
+<p>Развертывается на сервере 1:</p>
+
+<ul><li>
+	<p><a href="https://hub.docker.com/_/elasticsearch/">elasticsearch</a> — поисковый движок.</p>
+	</li>
+</ul><p>Развертываются на сервере 2:</p>
+
+<ul><li>
+	<p><a href="https://hub.docker.com/_/postgres/">postgres</a> — база данных конфигурирования компонентов глобального поиска.</p>
+	</li>
+	<li>
+	<p><a href="https://hub.docker.com/_/rabbitmq/">rabbitmq</a> — брокер сообщений.</p>
+	</li>
+	<li>
+	<p><a href="https://hub.docker.com/_/redis/">redis</a> — хранилище данных, используемое для кеширования и быстродействия.</p>
+	</li>
+	<li>
+	<p><a href="https://hub.docker.com/r/bpmonline/gs-web-api/">gs-web-api</a> — web-сервис конфигурирования компонентов глобального поиска.</p>
+	</li>
+	<li>
+	<p><a href="https://hub.docker.com/r/bpmonline/gs-web-indexing-service">gs-web-indexing-service</a> — web-сервис для обработки запросов точечного индексирования данных из системы.</p>
+	</li>
+	<li>
+	<p><a href="https://hub.docker.com/r/bpmonline/gs-search-service">gs-search-service</a> — web-сервис поиска данных, proxy для elasticsearch.</p>
+	</li>
+	<li>
+	<p><a href="https://hub.docker.com/r/bpmonline/gs-scheduler/">gs-scheduler</a> — планировщик задач индексации данных из Creatio в ElasticSearch.</p>
+	</li>
+	<li>
+	<p><a href="https://hub.docker.com/r/bpmonline/gs-worker/">gs-worker</a> — компонент индексирования данных из Creatio в ElasticSearch по задачам планировщика.</p>
+	</li>
+	<li>
+	<p><a href="https://hub.docker.com/r/bpmonline/gs-worker-replay/">gs-worker-replay</a> — компонент, обрабатывающий результаты индексации (результаты работы gs-worker-а).</p>
+	</li>
+	<li>
+	<p><a href="https://hub.docker.com/r/bpmonline/gs-worker-single/">gs-worker-single</a> — компонент точечной индексации данных бизнес-процессов в ElasticSearch по запросу из бизнес-процесса.</p>
+	</li>
+	<li>
+	<p><a href="https://hub.docker.com/r/bpmonline/gs-worker-single-replay/">gs-worker-single-replay</a> — компонент, обрабатывающий исключения в процессе точечной индексации (результаты работы gs-worker-single).</p>
+	</li>
+	<li>
+	<p><a href="https://hub.docker.com/r/bpmonline/gs-worker-single-task/">gs-worker-single-task</a> — компонент для постановки задач компоненту gs-worker-single.</p>
+	</li>
+	<li>
+	<p><a href="https://hub.docker.com/r/bpmonline/gs-worker-queried-single-task">gs-worker-querried-single-task</a> — компонент для формирования задач компоненту gs-worker-single.</p>
+	</li>
+</ul><p>Для настройки компонентов скачайте исходные файлы. <a href="https://github.com/Advance-Technologies-Foundation/gs-docker-compose/archive/refs/tags/v3.0.5.zip">Скачать файлы</a>.</p>
+
+<p>Список портов, используемых компонентами глобального поиска:</p>
+
+<div class="message message_warning">
+<p><span class="message__bold message__bold_warning">Важно.</span> Если вы используете FireWall, убедитесь, что все перечисленные порты доступны и открыты.</p>
+</div>
+
+<div class="table">
+<table cellspacing="0"><tbody><tr><th>
+			<p>Название компонента</p>
+			</th>
+			<th>
+			<p>Исходящий порт</p>
+			</th>
+			<th>
+			<p>Входящий порт</p>
+			</th>
+			<th>
+			<p>Примечание</p>
+			</th>
+		</tr><tr><td>
+			<p>gs-web-api</p>
+			</td>
+			<td>
+			<p> </p>
+			</td>
+			<td>
+			<p>81</p>
+			</td>
+			<td>
+			<p>Входящий порт настраивается переменной WEB_API_PORT</p>
+			</td>
+		</tr><tr><td>
+			<p>gs-web-indexing-service</p>
+			</td>
+			<td>
+			<p> </p>
+			</td>
+			<td>
+			<p>82</p>
+			</td>
+			<td>
+			<p>Входящий порт настраивается переменной WEB_INDEXING_SERVICE_PORT</p>
+			</td>
+		</tr><tr><td>
+			<p>gs-search-service</p>
+			</td>
+			<td>
+			<p>9200</p>
+			</td>
+			<td>
+			<p>83</p>
+			</td>
+			<td>
+			<p>Входящий порт настраивается переменной SEARCH_SERVICE_PORT</p>
+			</td>
+		</tr><tr><td>
+			<p>gs-worker</p>
+			</td>
+			<td>
+			<p>9200</p>
+			</td>
+			<td>
+			<p> </p>
+			</td>
+			<td>
+			<p>Необходимо соединение с сервером, на котором расположен elasticsearch</p>
+			</td>
+		</tr><tr><td>
+			<p>gs-worker-single</p>
+			</td>
+			<td>
+			<p>9200</p>
+			</td>
+			<td>
+			<p> </p>
+			</td>
+			<td>
+			<p>Необходимо соединение с сервером, на котором расположен elasticsearch</p>
+			</td>
+		</tr><tr><td>
+			<p>elasticsearch</p>
+			</td>
+			<td>
+			<p> </p>
+			</td>
+			<td>
+			<p>9200</p>
+			</td>
+			<td>
+			<p> </p>
+			</td>
+		</tr></tbody></table></div>
+
+<h3>Последовательность действий для настройки глобального поиска<a class="title-anchor" href="#title-2504-21" id="title-2504-21"> </a></h3>
+
+<ol><li>
+	<p>Установить Docker на физическую или виртуальную машину с операционной системой Linux.</p>
+	</li>
+	<li>
+	<p>Установить Docker-Compose.</p>
+	</li>
+	<li>
+	<p>Установить ElasticSearch.</p>
+	</li>
+	<li>
+	<p>Настроить переменные контейнеров.</p>
+	</li>
+	<li>
+	<p>Установить и запустить компоненты Global Search Service.</p>
+	</li>
+	<li>
+	<p>Подключить функциональность глобального поиска в Creatio.</p>
+	</li>
+</ol><h4>Установить Docker<a class="title-anchor" href="#title-2504-22" id="title-2504-22"> </a></h4>
+
+<p>Для развертывания компонентов глобального поиска необходимо установить Docker на операционную систему Linux. Для установки воспользуйтесь инструкцией в <a href="https://docs.docker.com/install/linux/docker-ce/debian/">документации Docker</a>.</p>
+
+<p>Для проверки установленной версии Docker запустите команду <strong>docker --version</strong> на linux-машине.</p>
+
+<h4>Установить Docker-Compose<a class="title-anchor" href="#title-2504-23" id="title-2504-23"> </a></h4>
+
+<p>Для установки Docker-Compose воспользуйтесь инструкцией в <a href="https://docs.docker.com/compose/install/">документации Docker </a>.</p>
+
+<h4>Установить ElasticSearch<a class="title-anchor" href="#title-2504-24" id="title-2504-24"> </a></h4>
+
+<div class="message">
+<p><span class="message__bold">На заметку.</span> В данной инструкции описано развертывание ElasticSearch в Docker-Compose. Вы также можете развернуть его как daemon OS, что позволит обойтись без предварительной установки Docker и Docker-Compose. Для этого воспользуйтесь инструкцией в <a href="https://www.elastic.co/guide/en/elasticsearch/reference/5.6/docker.html">документации ElasticSearch</a>.</p>
+</div>
+
+<p>Для установки ElasticSearch:</p>
+
+<ol><li>
+	<p>На сервере, выделенном для установки ElasticSearch (сервер 1), зайдите в папку /opt.</p>
+	</li>
+	<li>
+	<p>Распакуйте в открытую папку архив с установочными файлами. <a href="https://github.com/Advance-Technologies-Foundation/gs-docker-compose/archive/refs/tags/v3.0.5.zip">Скачать архив</a></p>
+	</li>
+	<li>
+	<p>Перейдите в папку с компонентами /opt/compose/elasticsearch и выполните команду:</p>
+
+	<div class="code">
+	<div class="code__widgets">
+	<div class="code__source">
+	<pre class="prettyprint">
+docker-compose up -d</pre>
+	</div>
+	</div>
+	</div>
+
+	<p>Команда может выполняться несколько минут.</p>
+	</li>
+	<li>
+	<p>После выполнения команды проверьте, что в логах нет ошибок. Для этого выполните команду</p>
+
+	<div class="code">
+	<div class="code__widgets">
+	<div class="code__source">
+	<pre class="prettyprint">
+docker logs es-01</pre>
+	</div>
+	</div>
+	</div>
+	</li>
+</ol><h4>Настроить переменные контейнеров<a class="title-anchor" href="#title-2504-25" id="title-2504-25"> </a></h4>
+
+<p>Все контейнеры компонентов глобального поиска конфигурируются из файла с переменными среды (environment variables). Переменные содержатся в файле /opt/compose/services/.env. Установите значения переменных, отредактировав этот файл.</p>
+
+<div class="table">
+<table cellspacing="0"><tbody><tr><th>
+			<p>Название переменной</p>
+			</th>
+			<th>
+			<p>Описание</p>
+			</th>
+			<th>
+			<p>Значение по умолчанию</p>
+			</th>
+		</tr><tr><td>
+			<p>GS_ES_URL</p>
+			</td>
+			<td>
+			<p>Внешний хост ElasticSearch, который используется для доступа из Creatio. Необходимо указать ip-адрес сервера, на котором развернут ElasticSearch.</p>
+			</td>
+			<td>
+			<p>http://elasticsearch-publicip:9200</p>
+			</td>
+		</tr><tr><td>
+			<p>CURRENT_SERVER_IP</p>
+			</td>
+			<td>
+			<p>Внешний ip-адрес сервера, на котором развернуты сервисы глобального поиска (сервер 2).</p>
+			</td>
+			<td>
+			<p>10.0.0.1</p>
+			</td>
+		</tr></tbody></table></div>
+
+<div class="message">
+<p><span class="message__bold">На заметку.</span> Чтобы проверить внешний ip-адрес сервера, выполните команду <span class="filled">hostname -I | awk '{ print $1 }'</span></p>
+</div>
+
+<p>Дополнительные переменные, которые управляют параметрами индексации данных в ElasticSearch</p>
+
+<div class="table">
+<table cellspacing="0"><tbody><tr><th>
+			<p>Название переменной</p>
+			</th>
+			<th>
+			<p>Описание</p>
+			</th>
+			<th>
+			<p>Значение по умолчанию</p>
+			</th>
+		</tr><tr><td>
+			<p>GS_DB_INCREMENT_DAYS</p>
+			</td>
+			<td>
+			<p>Количество дней, которое необходимо проиндексировать за одну итерацию планировщика. Для сравнения используются данные колонки ModifiedOn записей системы.</p>
+			</td>
+			<td>
+			<p>500 дней</p>
+			</td>
+		</tr><tr><td>
+			<p>GS_DB_FILL_QUEUE_INTERVAL</p>
+			</td>
+			<td>
+			<p>Интервал сбора данных из БД Creatio регулярным планировщиком. Чем меньше этот параметр, тем выше нагрузка на БД Creatio, но быстрее происходит первичная индексация.</p>
+			</td>
+			<td>
+			<p>30000 (указывается в миллисекундах)</p>
+			</td>
+		</tr></tbody></table></div>
+
+<h3>Запустить контейнеры с компонентами Global Search Service<a class="title-anchor" href="#title-2504-26" id="title-2504-26"> </a></h3>
+
+<div class="message message_warning">
+<p><span class="message__bold message__bold_warning">Важно.</span> Для корректной работы контейнеров необходимо, чтобы UTC-время на linux-машине, на которой установлен Docker, соответствовало UTC-времени на сервере БД Creatio. Допустимое отклонение — до пяти минут. Иначе глобальный поиск может индексировать не все записи.</p>
+</div>
+
+<ol><li>
+	<p>На сервере, выделенном для установки компонентов глобального поиска (сервер 2), зайдите в папку opt.</p>
+	</li>
+	<li>
+	<p>Распакуйте в открытую папку архив с установочными файлами. <a href="https://github.com/Advance-Technologies-Foundation/gs-docker-compose/archive/refs/tags/v3.0.5.zip">Скачать архив</a></p>
+	</li>
+	<li>
+	<p>Перейдите в папку с компонентами /opt/compose/services и выполните команду:</p>
+
+	<div class="code">
+	<div class="code__widgets">
+	<div class="code__source">
+	<pre class="prettyprint">
+docker-compose up -d</pre>
+	</div>
+	</div>
+	</div>
+	</li>
+</ol><h4>Проверить успешность запуска контейнеров<a class="title-anchor" href="#title-2504-27" id="title-2504-27"> </a></h4>
+
+<p>Для просмотра всех запущенных контейнеров глобального поиска введите в консоли команду:</p>
+
+<div class="code">
+<div class="code__widgets">
+<div class="code__source">
+<pre class="prettyprint">
+docker ps --filter "label=service=gs" -a --format "table {{.Names}}\t{{.Ports}}\t{{.Status}}\t{{.RunningFor}}"</pre>
+</div>
+</div>
+</div>
+
+<p>Все запущенные контейнеры должны быть со статусом <strong>Up</strong>.</p>
+
+<h4>Логирование<a class="title-anchor" href="#title-2504-12" id="title-2504-12"> </a></h4>
+
+<p>По умолчанию в контейнере логирование происходит в stdout и stderr.</p>
+
+<div class="message">
+<p><span class="message__bold">На заметку.</span> docker logs --tail 100 gs-worker-01 выводит 100 последних строк логов из контейнера gs-worker.</p>
+</div>
+
+<div class="message">
+<p><span class="message__bold">На заметку.</span> При старте возможны ситуации, когда контейнер mysql или rabbitmq временно недоступны, так как они запускаются позже остальных компонентов. В этом случае дождитесь, пока в логах не отобразится сообщение об удачном подключении и запуске контейнера, например: “Now listening on: http://<span class="key">::</span>:80 Application started. Press Ctrl+C to shut down”.</p>
+</div>
+
+<h3>Подключить сервис глобального поиска в Creatio<a class="title-anchor" href="#title-2504-29" id="title-2504-29"> </a></h3>
+
+<h4>Действия на сервере<a class="title-anchor" href="#title-2504-14" id="title-2504-14"> </a></h4>
+
+<p>Для подключения глобального поиска к Creatio выполните следующие действия на сервере 2, где находятся компоненты глобального поиска:</p>
+
+<ol><li>
+	<p>Для http-запросов установите утилиту api-get install curl или yum install curl.</p>
+
+	<div class="code">
+	<div class="code__widgets">
+	<div class="code__source">
+	<pre class="prettyprint">
+apt-get install curl</pre>
+	</div>
+	</div>
+	</div>
+	</li>
+	<li>
+	<p>Выполните http-запрос на регистрацию сайта в глобальном поиске, указав:</p>
+
+	<ol><li>
+		<p><span class="key">DATABASE_TYPE</span> — тип базы данных Creatio (mssql, postgresql или oracle).</p>
+		</li>
+		<li>
+		<p><span class="key">DATABASE_CONNECTION_STRING</span> — строка подключения к БД Creatio.</p>
+		</li>
+		<li>
+		<p><span class="key">SITE_NAME</span> — название сайта Creatio, например, my-test-site.</p>
+		</li>
+		<li>
+		<p><span class="key">SERVER2_IP_ADDRESS</span> — IP-адрес Linux сервера, на котором развернуты компоненты глобального поиска.</p>
+
+		<div class="code">
+		<div class="code__widgets">
+		<div class="code__source">
+		<pre class="prettyprint">
+curl -v -X POST -d '{"databaseType": "[DATABASE_TYPE]", "databaseConnectionString": "[DATABASE_CONNECTION_STRING]"}' -H "Content-Type: application/json" http://[SERVER2_IP_ADDRESS]:81/sites/[SITE_NAME]*
+</pre>
+		</div>
+		</div>
+		</div>
+
+		<div class="message message_example">
+		<p><span class="message__bold message__bold_example">Пример для MS SQL.</span> curl -v -X POST -d '{"databaseType": "mssql", "databaseConnectionString": "Server=myserver\\mssql2016; Database=my-test-site; User Id=my-login; Password='my-password'; Connection Timeout=10"}' -H "Content-Type: application/json" http://[SERVER2_IP_ADDRESS]:81/sites/my-test-site</p>
+		</div>
+
+		<div class="message">
+		<p><span class="message__bold">Пример для PostgreSQL.</span> server=[SERVER_IP];port=5432;database=[DB_NAME];user id=[USER_NAME];password=[PASSWORD];timeout=10;commandtimeout=400;maxpoolsize=1024</p>
+		</div>
+		</li>
+	</ol></li>
+	<li>
+	<p>Выполните http-запрос на подключение поиска к ранее добавленному сайту, указав:</p>
+
+	<ol><li>
+		<p><span class="key">SITE_NAME</span> — название сайта Creatio, например, my-test-site.</p>
+		</li>
+		<li>
+		<p><span class="key">TEMPLATE_NAME</span> — название шаблона поиска, который используется в ElasticSearch. Перечень доступных к использованию шаблонов приведен в таблице ниже.</p>
+		</li>
+		<li>
+		<p><span class="key">SERVER2_IP_ADDRESS</span> — IP-адрес Linux сервера, на котором развернуты компоненты глобального поиска.</p>
+
+		<div class="code">
+		<div class="code__widgets">
+		<div class="code__source">
+		<pre class="prettyprint">
+curl -v -X POST -d '{"templateName": "[TEMPLATE_NAME]"}' -H "Content-Type: application/json" http://[SERVER2_IP_ADDRESS]:81/sites/[SITE_NAME]/search</pre>
+		</div>
+		</div>
+		</div>
+
+		<div class="message message_example">
+		<p><span class="message__bold">Пример.</span> curl -v -X POST -d '{"templateName": "default.json"}' -H "Content-Type: application/json" http://[SERVER2_IP_ADDRESS]:81/sites/my-test-site/search</p>
+		</div>
+		</li>
+	</ol><div class="message">
+	<p><span class="message__bold">На заметку.</span> Приведенный запрос вернет URL к созданному индексу в ElasticSearch. URL нужно сохранить и использовать в приведенном ниже sql-скрипте установки системных настроек.</p>
+	</div>
+	</li>
+</ol><div class="message message_warning">
+<p><span class="message__bold message__bold_warning">Важно.</span> Чтобы изменить шаблон поиска, выполните DELETE запрос на /sites/{siteName}/search и http-запрос на подключение поиска, описанный выше, после чего будет выполнена полная переиндексация сайта.</p>
+</div>
+
+<p>Все доступные шаблоны поиска и их характеристики приведены в таблице ниже:</p>
+
+<div class="table">
+<table cellspacing="0"><tbody><tr><th>
+			<p> </p>
+			</th>
+			<th>
+			<p>Старый шаблон (версия 1.6)</p>
+			</th>
+			<th>
+			<p>default.json</p>
+			</th>
+			<th>
+			<p>ngram_2.json</p>
+			</th>
+			<th>
+			<p>ngram_3.json</p>
+			</th>
+			<th>
+			<p>without_ngram.json</p>
+			</th>
+		</tr><tr><td>
+			<p>Поиск по части слова</p>
+			</td>
+			<td>
+			<p>+</p>
+			</td>
+			<td>
+			<p>–</p>
+			</td>
+			<td>
+			<p>+</p>
+			</td>
+			<td>
+			<p>+</p>
+			</td>
+			<td>
+			<p>–</p>
+			</td>
+		</tr><tr><td>
+			<p>Поиск по слову с опечатками</p>
+			</td>
+			<td>
+			<p>+</p>
+			</td>
+			<td>
+			<p>–</p>
+			</td>
+			<td>
+			<p>+</p>
+			</td>
+			<td>
+			<p>+</p>
+			</td>
+			<td>
+			<p>–</p>
+			</td>
+		</tr><tr><td>
+			<p>Поиск по части номера телефона в средствах связи</p>
+			</td>
+			<td>
+			<p>+</p>
+			</td>
+			<td>
+			<p>+</p>
+			</td>
+			<td>
+			<p>+</p>
+			</td>
+			<td>
+			<p>+</p>
+			</td>
+			<td>
+			<p>–</p>
+			</td>
+		</tr><tr><td>
+			<p>Нечеткий поиск по средствам связи</p>
+			</td>
+			<td>
+			<p>+</p>
+			</td>
+			<td>
+			<p>+</p>
+			</td>
+			<td>
+			<p>+</p>
+			</td>
+			<td>
+			<p>+</p>
+			</td>
+			<td>
+			<p>–</p>
+			</td>
+		</tr><tr><td>
+			<p>Поиск с перестановкой слов</p>
+			</td>
+			<td>
+			<p>+</p>
+			</td>
+			<td>
+			<p>+</p>
+			</td>
+			<td>
+			<p>+</p>
+			</td>
+			<td>
+			<p>+</p>
+			</td>
+			<td>
+			<p>+</p>
+			</td>
+		</tr><tr><td>
+			<p>Поиск по точному совпадению</p>
+			</td>
+			<td>
+			<p>+</p>
+			</td>
+			<td>
+			<p>+</p>
+			</td>
+			<td>
+			<p>+</p>
+			</td>
+			<td>
+			<p>+</p>
+			</td>
+			<td>
+			<p>+</p>
+			</td>
+		</tr><tr><td>
+			<p>Поиск по двум символам</p>
+			</td>
+			<td>
+			<p>–</p>
+			</td>
+			<td>
+			<p>–</p>
+			</td>
+			<td>
+			<p>+</p>
+			</td>
+			<td>
+			<p>–</p>
+			</td>
+			<td>
+			<p>–</p>
+			</td>
+		</tr><tr><td>
+			<p>Примерная скорость поиска (чем меньше, тем лучше)</p>
+			</td>
+			<td>
+			<p> </p>
+			</td>
+			<td>
+			<p>1х</p>
+			</td>
+			<td>
+			<p>13х</p>
+			</td>
+			<td>
+			<p>7х</p>
+			</td>
+			<td>
+			<p>&lt;1х</p>
+			</td>
+		</tr><tr><td>
+			<p>Размер индекса на elasticsearch (чем меньше, тем лучше)</p>
+			</td>
+			<td>
+			<p> </p>
+			</td>
+			<td>
+			<p>1х</p>
+			</td>
+			<td>
+			<p>4х</p>
+			</td>
+			<td>
+			<p>2,5х</p>
+			</td>
+			<td>
+			<p>&lt;1х</p>
+			</td>
+		</tr><tr><td>
+			<p>Время полной первичной индексации (чем меньше, тем лучше)</p>
+			</td>
+			<td>
+			<p> </p>
+			</td>
+			<td>
+			<p>1х</p>
+			</td>
+			<td>
+			<p>1,8х</p>
+			</td>
+			<td>
+			<p>1,4х</p>
+			</td>
+			<td>
+			<p>&lt;1х</p>
+			</td>
+		</tr></tbody></table></div>
+
+<h4>Действия на стороне Creatio для СУБД MS SQL<a class="title-anchor" href="#title-2504-15" id="title-2504-15"> </a></h4>
+
+<ol><li>
+	<p>Включите в Creatio функциональность (Feature Toggle) глобального поиска (GlobalSearch, GlobalSearch_V2 GlobalSearchRelatedEntityIndexing), выполнив sql-скрипт:</p>
+
+	<div class="code">
+	<div class="code__widgets">
+	<div class="code__source">
+	<pre class="prettyprint">
+DECLARE @GS_REIndexingFeature NVARCHAR(50) = 'GlobalSearchRelatedEntityIndexing';
+DECLARE @GS_REIndexingFeatureId UNIQUEIDENTIFIER = (SELECT TOP 1 Id FROM Feature WHERE
+Code = @GS_REIndexingFeature);
+
+DECLARE @GlobalSearchFeature NVARCHAR(50) = 'GlobalSearch';
+DECLARE @GlobalSearchFeatureId UNIQUEIDENTIFIER = (SELECT TOP 1 Id FROM Feature WHERE Code = @GlobalSearchFeature);
+
+DECLARE @GlobalSearchV2Feature NVARCHAR(50) = 'GlobalSearch_V2';
+DECLARE @GlobalSearchV2FeatureId UNIQUEIDENTIFIER = (SELECT TOP 1 Id FROM Feature WHERE Code = @GlobalSearchV2Feature);
+DECLARE @allEmployeesId UNIQUEIDENTIFIER = 'A29A3BA5-4B0D-DE11-9A51-005056C00008';
+
+IF (@GlobalSearchFeatureId IS NOT NULL)
+ BEGIN
+   IF EXISTS (SELECT * FROM AdminUnitFeatureState WHERE FeatureId = @GlobalSearchFeatureId)
+     UPDATE AdminUnitFeatureState SET FeatureState = 1 WHERE FeatureId = @GlobalSearchFeatureId
+    ELSE
+     INSERT INTO AdminUnitFeatureState (SysAdminUnitId, FeatureState, FeatureId) VALUES (@allEmployeesId, '1', @GlobalSearchFeatureId)
+ END;
+ELSE
+ BEGIN
+   SET @GlobalSearchFeatureId = NEWID()
+   INSERT INTO Feature (Id, Name, Code) VALUES (@GlobalSearchFeatureId, @GlobalSearchFeature, @GlobalSearchFeature)
+   INSERT INTO AdminUnitFeatureState (SysAdminUnitId, FeatureState, FeatureId) VALUES (@allEmployeesId, '1', @GlobalSearchFeatureId)
+ END;
+
+IF (@GlobalSearchV2FeatureId IS NOT NULL)
+ BEGIN
+   IF EXISTS (SELECT * FROM AdminUnitFeatureState WHERE FeatureId = @GlobalSearchV2FeatureId)
+     UPDATE AdminUnitFeatureState SET FeatureState = 1 WHERE FeatureId = @GlobalSearchV2FeatureId
+    ELSE
+     INSERT INTO AdminUnitFeatureState (SysAdminUnitId, FeatureState, FeatureId) VALUES (@allEmployeesId, '1',@GlobalSearchV2FeatureId)
+ END;
+ELSE
+ BEGIN
+   SET @GlobalSearchV2FeatureId = NEWID()
+   INSERT INTO Feature (Id, Name, Code) VALUES (@GlobalSearchV2FeatureId, @GlobalSearchV2Feature, @GlobalSearchV2Feature)
+   INSERT INTO AdminUnitFeatureState (SysAdminUnitId, FeatureState, FeatureId) VALUES (@allEmployeesId, '1',@GlobalSearchV2FeatureId)
+ END;
+
+IF (@GS_REIndexingFeatureId IS NOT NULL)
+BEGIN
+ IF EXISTS (SELECT * FROM AdminUnitFeatureState WHERE FeatureId = @GS_REIndexingFeatureId)
+  UPDATE AdminUnitFeatureState SET FeatureState = 1 WHERE FeatureId = @GS_REIndexingFeatureId
+  ELSE
+  INSERT INTO AdminUnitFeatureState (SysAdminUnitId, FeatureState, FeatureId) VALUES (@allEmployeesId, '1', @GS_REIndexingFeatureId)
+END;
+ELSE
+BEGIN
+ SET @GS_REIndexingFeatureId = NEWID()
+ INSERT INTO Feature (Id, Name, Code) VALUES (@GS_REIndexingFeatureId, @GS_REIndexingFeature, @GS_REIndexingFeature)
+ INSERT INTO AdminUnitFeatureState (SysAdminUnitId, FeatureState, FeatureId) VALUES (@allEmployeesId, '1', @GS_REIndexingFeatureId)
+END;
+</pre>
+	</div>
+	</div>
+	</div>
+	</li>
+	<li>
+	<p>Установите значения системных настроек:</p>
+
+	<ol><li>
+		<p>“GlobalSearchUrl” — полный путь в elasticsearch с учетом индекса. Значение настройки возвращается при выполнении запроса на web-api для добавления поиска для сайта. Пример строки: http://[SERVER2_IP_ADDRESS]:83/indexname.</p>
+		</li>
+		<li>
+		<p>GlobalSearchConfigServiceURL” — ссылка на API глобального поиска. Значение по умолчанию: http://[SERVER2_IP_ADDRESS]:81.</p>
+		</li>
+		<li>
+		<p>“GlobalSearchIndexingApiUrl” — ссылка на сервис моментальной индексации. Значение по умолчанию: http://[SERVER2_IP_ADDRESS]:82.</p>
+
+		<div class="code">
+		<div class="code__widgets">
+		<div class="code__source">
+		<pre class="prettyprint">
+UPDATE SysSettingsValue
+SET TextValue = [укажите URL к индексу ElasticSearch, строка типа: http://[SERVER2_IP_ADDRESS]:83/indexname]
+WHERE SysSettingsId = (SELECT TOP 1 Id FROM SysSettings WHERE Code ='GlobalSearchUrl')
+
+UPDATE SysSettingsValue
+SET TextValue = [укажите URL к Global Search Service, строка типа: http://SERVER2_IP_ADDRESS:81]
+WHERE SysSettingsId = (SELECT TOP 1 Id FROM SysSettings WHERE Code ='GlobalSearchConfigServiceUrl')
+
+UPDATE SysSettingsValue
+SET TextValue = [укажите URL к Global Search Indexing Service, строка типа: http://SERVER2_IP_ADDRESS:82]
+WHERE SysSettingsId = (SELECT TOP 1 Id FROM SysSettings WHERE Code ='GlobalSearchIndexingApiUrl')</pre>
+		</div>
+		</div>
+		</div>
+		</li>
+	</ol></li>
+	<li>
+	<p>Перезапустите приложение Creatio, очистите redis и выполните вход в приложение.</p>
+	</li>
+</ol><h4>Действия на стороне Creatio для СУБД Oracle<a class="title-anchor" href="#title-2504-16" id="title-2504-16"> </a></h4>
+
+<ol><li>
+	<p>Включите в Creatio функциональность (Feature Toggle) глобального поиска (GlobalSearch, GlobalSearch_V2 GlobalSearchRelatedEntityIndexing), выполнив sql-скрипт:</p>
+
+	<div class="code">
+	<div class="code__widgets">
+	<div class="code__source">
+	<pre class="prettyprint">
+CREATE OR REPLACE FUNCTION
+generate_uuid return varchar2 is
+    v_uuid varchar2(38);
+    v_guid varchar2(32);
+BEGIN
+    v_guid := sys_guid();
+    v_uuid := lower(
+                '{' ||
+                substr(v_guid, 1,8) || '-' ||
+                substr(v_guid, 9,4) || '-' ||
+                substr(v_guid, 13,4) || '-' ||
+                substr(v_guid, 17,4) || '-' ||
+                substr(v_guid, 21) ||
+                '}'
+                );
+    RETURN v_uuid;
+END;
+/
+
+DECLARE
+ GS_REIndexingFeature VARCHAR(50) := 'GlobalSearchRelatedEntityIndexing';
+ GS_REIndexingFeatureId VARCHAR(38) := NULL;
+ GS_REIndexingFeatureId_GUID VARCHAR(38) := generate_uuid();
+
+GlobalSearchFeature VARCHAR(50) := 'GlobalSearch';
+  GlobalSearchFeatureId VARCHAR(38) := NULL;
+  GlobalSearchFeatureId_GUID VARCHAR(38) := generate_uuid();
+  GlobalSearchV2Feature VARCHAR(50) := 'GlobalSearch_V2';
+  GlobalSearchV2FeatureId VARCHAR(38) := NULL;
+  GlobalSearchV2FeatureId_GUID VARCHAR(38) := generate_uuid();
+  allEmployeesId VARCHAR(38) := '{7F3B869F-34F3-4F20-AB4D-7480A5FDF647}';
+  State_GlobalSearch VARCHAR(1) := NULL;
+  State_GlobalSearchV2 VARCHAR(1) := NULL;
+  State_GS_REI VARCHAR(1) := NULL;
+
+BEGIN
+  SELECT MAX("Id") INTO GlobalSearchFeatureId FROM "Feature" WHERE "Code" = GlobalSearchFeature AND rownum = 1;
+  SELECT MAX("Id") INTO GlobalSearchV2FeatureId FROM "Feature" WHERE "Code" = GlobalSearchV2Feature AND rownum = 1;
+SELECT MAX("Id") INTO GS_REIndexingFeatureId FROM "Feature" WHERE "Code" = GS_REIndexingFeature AND rownum = 1;
+
+  SELECT MAX("FeatureState") INTO State_GlobalSearch FROM "AdminUnitFeatureState" WHERE "FeatureId" = GlobalSearchFeatureId AND rownum = 1;
+  SELECT MAX("FeatureState") INTO State_GlobalSearchV2 FROM "AdminUnitFeatureState" WHERE "FeatureId" = GlobalSearchV2FeatureId AND rownum = 1;
+  SELECT MAX("FeatureState") INTO State_GS_REI FROM "AdminUnitFeatureState" WHERE FeatureId" = GS_REIndexingFeatureId AND rownum = 1;
+
+  IF (GlobalSearchFeatureId IS NULL) THEN
+      INSERT INTO "Feature" ("Id", "Name", "Code") VALUES (GlobalSearchFeatureId_GUID, GlobalSearchFeature, GlobalSearchFeature);
+      INSERT INTO "AdminUnitFeatureState" ("SysAdminUnitId", "FeatureState", "FeatureId") VALUES (allEmployeesId, '1', GlobalSearchFeatureId_GUID);
+    ELSE
+      IF (State_GlobalSearch IS NOT NULL) THEN
+          UPDATE "AdminUnitFeatureState" SET "FeatureState" = 1 WHERE "FeatureId" = GlobalSearchFeatureId;
+        ELSE
+          INSERT INTO "AdminUnitFeatureState" ("SysAdminUnitId", "FeatureState", "FeatureId") VALUES (allEmployeesId, '1', GlobalSearchV2FeatureId_GUID);
+      END IF;
+  END IF;
+
+  IF (GlobalSearchV2FeatureId IS NULL) THEN
+      INSERT INTO "Feature" ("Id", "Name", "Code") VALUES (GlobalSearchV2FeatureId_GUID, GlobalSearchV2Feature, GlobalSearchV2Feature);
+      INSERT INTO "AdminUnitFeatureState" ("SysAdminUnitId", "FeatureState", "FeatureId") VALUES (allEmployeesId, '1', GlobalSearchV2FeatureId_GUID);
+    ELSE
+      IF (State_GlobalSearchV2 IS NOT NULL) THEN
+          UPDATE "AdminUnitFeatureState" SET "FeatureState" = 1 WHERE "FeatureId" = GlobalSearchV2FeatureId;
+        ELSE
+          INSERT INTO "AdminUnitFeatureState" ("SysAdminUnitId", "FeatureState", "FeatureId") VALUES (allEmployeesId, '1', GlobalSearchV2FeatureId_GUID);
+      END IF;
+  END IF;
+
+ IF (GS_REIndexingFeatureId IS NULL) THEN
+  INSERT INTO "Feature" ("Id", "Name", "Code") VALUES (GS_REIndexingFeatureId_GUID,GS_REIndexingFeature, GS_REIndexingFeature);
+  INSERT INTO "AdminUnitFeatureState" ("SysAdminUnitId", "FeatureState","FeatureId") VALUES (allEmployeesId, '1', GS_REIndexingFeatureId_GUID);
+  ELSE
+  IF (State_GS_REI IS NOT NULL) THEN
+  UPDATE "AdminUnitFeatureState" SET "FeatureState" = 1 WHERE "FeatureId" =GS_REIndexingFeatureId;
+  ELSE
+  INSERT INTO "AdminUnitFeatureState" ("SysAdminUnitId", "FeatureState","FeatureId") VALUES (allEmployeesId, '1', GS_REIndexingFeatureId_GUID);
+  END IF;
+ END IF;
+
+END;</pre>
+	</div>
+	</div>
+	</div>
+	</li>
+	<li>
+	<p>Установите значения системных настроек:</p>
+
+	<ol><li>
+		<p>“GlobalSearchUrl” — полный путь в elasticsearch с учетом индекса. Значение настройки возвращается при выполнении запроса на web-api для добавления поиска для сайта. Пример строки: http://[SERVER2_IP_ADDRESS]:83/indexname.</p>
+		</li>
+		<li>
+		<p>GlobalSearchConfigServiceURL” — ссылка на API глобального поиска. Значение по умолчанию: http://[SERVER2_IP_ADDRESS]:81.</p>
+		</li>
+		<li>
+		<p>“GlobalSearchIndexingApiUrl” — ссылка на сервис моментальной индексации. Значение по умолчанию: http://[SERVER2_IP_ADDRESS]:82.<br />
+		Для этого выполните следующий скрипт:</p>
+		</li>
+	</ol><div class="code">
+	<div class="code__widgets">
+	<div class="code__source">
+	<pre class="prettyprint">
+DECLARE
+  URL_SETTING_ID VARCHAR(38) := NULL;
+  CONFIG_URL_SETTING_ID VARCHAR(38) := NULL;
+  IND_API_SETTING_ID VARCHAR(38) := NULL;
+
+  URL_VAL_ID VARCHAR(38) := NULL;
+  CONFIG_URL_VAL_ID VARCHAR(38) := NULL;
+  IND_API_VAL_ID VARCHAR(38) := NULL;
+
+  SYS_ADMIN_UID VARCHAR(38) := '{A29A3BA5-4B0D-DE11-9A51-005056C00008}';
+
+  ES_IND VARCHAR(500) := '[укажите URL к индексу ElasticSearch, строка, сл. типа - http://[SERVER2_IP_ADDRESS]:83/indexname]';
+  CONFIG_URL VARCHAR(500) := '[укажите URL к Global Search Service, строка следующего типа: http://SERVER2_IP_ADDRESS:81]';
+  IND_API_URL VARCHAR(500) := '[укажите URL к Global Search Indexing Service, строка следующего типа: http://SERVER2_IP_ADDRESS:82]';
+BEGIN
+  SELECT "Id" INTO URL_SETTING_ID FROM "SysSettings" WHERE "Code" = 'GlobalSearchUrl';
+  SELECT "Id" INTO CONFIG_URL_SETTING_ID FROM "SysSettings" WHERE "Code" = 'GlobalSearchConfigServiceUrl';
+  SELECT "Id" INTO IND_API_SETTING_ID FROM "SysSettings" WHERE "Code" = 'GlobalSearchIndexingApiUrl';
+
+  SELECT MAX("Id") INTO URL_VAL_ID  FROM "SysSettingsValue" WHERE "SysSettingsId" = URL_SETTING_ID;
+  SELECT MAX("Id") INTO CONFIG_URL_VAL_ID  FROM "SysSettingsValue" WHERE "SysSettingsId" = CONFIG_URL_SETTING_ID;
+  SELECT MAX("Id") INTO IND_API_VAL_ID  FROM "SysSettingsValue" WHERE "SysSettingsId" = IND_API_SETTING_ID;
+
+  IF (URL_VAL_ID IS NULL)
+    THEN
+      INSERT INTO "SysSettingsValue"
+        ("SysSettingsId", "SysAdminUnitId", "IsDef", "TextValue")
+        VALUES
+        (URL_SETTING_ID, SYS_ADMIN_UID, '1', ES_IND);
+    ELSE
+      UPDATE "SysSettingsValue" SET "TextValue" = ES_IND WHERE "SysSettingsId" = URL_SETTING_ID;
+  END IF;
+
+  IF (CONFIG_URL_VAL_ID IS NULL)
+    THEN
+      INSERT INTO "SysSettingsValue"
+        ("SysSettingsId", "SysAdminUnitId", "IsDef", "TextValue")
+        VALUES
+        (CONFIG_URL_SETTING_ID, SYS_ADMIN_UID, '1', CONFIG_URL);
+    ELSE
+      UPDATE "SysSettingsValue" SET "TextValue" = CONFIG_URL WHERE "SysSettingsId" = CONFIG_URL_SETTING_ID;
+  END IF;
+
+  IF (IND_API_VAL_ID IS NULL)
+    THEN
+      INSERT INTO "SysSettingsValue"
+        ("SysSettingsId", "SysAdminUnitId", "IsDef", "TextValue")
+        VALUES
+        (IND_API_SETTING_ID, SYS_ADMIN_UID, '1', IND_API_URL);
+    ELSE
+      UPDATE "SysSettingsValue" SET "TextValue" = IND_API_URL WHERE "SysSettingsId" = IND_API_SETTING_ID;
+  END IF;
+END;</pre>
+	</div>
+	</div>
+	</div>
+	</li>
+	<li>
+	<p>Перезапустите приложение Creatio, очистите redis и выполните вход в приложение.</p>
+	</li>
+</ol><h4>Действия на стороне Creatio для СУБД PostgreSQL<a class="title-anchor" href="#title-2504-33" id="title-2504-33"> </a></h4>
+
+<ol><li>
+	<p>Включите в Creatio функциональность (Feature Toggle) глобального поиска (GlobalSearch, GlobalSearch_V2 GlobalSearchRelatedEntityIndexing), выполнив sql-скрипт:</p>
+
+	<div class="code">
+	<div class="code__widgets">
+	<div class="code__source">
+	<pre class="prettyprint">
+DO $$
+
+DECLARE 
+    GlobalSearchFeature VARCHAR(50) := 'GlobalSearch';
+    GlobalSearchFeatureId uuid;
+    GlobalSearchV2Feature VARCHAR(50) := 'GlobalSearch_V2';
+    GlobalSearchV2FeatureId uuid;
+    GS_RelatedEntityIndexingFeature VARCHAR(50) :=   'GlobalSearchRelatedEntityIndexing';
+    GS_RelatedEntityIndexingFeatureId uuid;
+    allEmployeesId uuid := 'A29A3BA5-4B0D-DE11-9A51-005056C00008';
+
+BEGIN
+
+   SELECT "Id" INTO GlobalSearchFeatureId FROM "Feature"
+   WHERE "Code" = GlobalSearchFeature
+   LIMIT 1;
+   IF (GlobalSearchFeatureId IS NOT NULL)
+      THEN
+          IF EXISTS (SELECT * FROM "AdminUnitFeatureState" WHERE "FeatureId" = GlobalSearchFeatureId) THEN
+             UPDATE "AdminUnitFeatureState" SET "FeatureState" = 1 WHERE "FeatureId" = GlobalSearchFeatureId;
+          ELSE
+              INSERT INTO "AdminUnitFeatureState" ("SysAdminUnitId", "FeatureState", "FeatureId") VALUES (allEmployeesId, '1', GlobalSearchFeatureId);
+          END IF;
+   ELSE
+       GlobalSearchFeatureId := uuid_generate_v4();
+       INSERT INTO "Feature" ("Id", "Name", "Code") VALUES (GlobalSearchFeatureId, GlobalSearchFeature, GlobalSearchFeature);
+       INSERT INTO "AdminUnitFeatureState" ("SysAdminUnitId", "FeatureState", "FeatureId") VALUES (allEmployeesId, '1', GlobalSearchFeatureId);
+   END IF;
+
+   SELECT "Id" INTO GlobalSearchV2FeatureId FROM "Feature"
+   WHERE "Code" = GlobalSearchV2Feature
+   LIMIT 1;
+   IF (GlobalSearchV2FeatureId IS NOT NULL)
+    THEN
+        IF EXISTS (SELECT * FROM "AdminUnitFeatureState" WHERE "FeatureId" = GlobalSearchV2FeatureId) THEN
+            UPDATE "AdminUnitFeatureState" SET "FeatureState" = 1 WHERE "FeatureId" = GlobalSearchV2FeatureId;
+        ELSE
+           INSERT INTO "AdminUnitFeatureState" ("SysAdminUnitId", "FeatureState", "FeatureId") VALUES (allEmployeesId, '1', GlobalSearchV2FeatureId);
+        END IF;
+   ELSE
+       GlobalSearchV2FeatureId := uuid_generate_v4();
+       INSERT INTO "Feature" ("Id", "Name", "Code") VALUES (GlobalSearchV2FeatureId, GlobalSearchV2Feature, GlobalSearchV2Feature);
+       INSERT INTO "AdminUnitFeatureState" ("SysAdminUnitId", "FeatureState", "FeatureId") VALUES (allEmployeesId, '1', GlobalSearchV2FeatureId);
+   END IF;
+
+  SELECT "Id" INTO GS_RelatedEntityIndexingFeatureId FROM "Feature" WHERE "Code" =GS_RelatedEntityIndexingFeature LIMIT 1;
+  IF (GS_RelatedEntityIndexingFeatureId IS NOT NULL)
+  THEN
+  IF EXISTS (SELECT * FROM "AdminUnitFeatureState" WHERE "FeatureId" = Bulk_ES_DD_FeatureId) THEN
+UPDATE "AdminUnitFeatureState" SET "FeatureState" = 1 WHERE "FeatureId" = GS_RelatedEntityIndexingFeatureId;
+  ELSE
+  INSERT INTO "AdminUnitFeatureState" ("SysAdminUnitId", "FeatureState","FeatureId") VALUES (allEmployeesId, '1', GS_RelatedEntityIndexingFeatureId);
+  END IF;
+  ELSE
+  GS_RelatedEntityIndexingFeatureId := uuid_generate_v4();
+  INSERT INTO "Feature" ("Id", "Name", "Code") VALUES (GS_RelatedEntityIndexingFeatureId, GS_RelatedEntityIndexingFeature, GS_RelatedEntityIndexingFeature);
+  INSERT INTO "AdminUnitFeatureState" ("SysAdminUnitId", "FeatureState","FeatureId") VALUES (allEmployeesId, '1', GS_RelatedEntityIndexingFeatureId);
+  END IF;
+END $$;</pre>
+	</div>
+	</div>
+	</div>
+	</li>
+	<li>
+	<p>Установите значения системных настроек:</p>
+
+	<ol><li>
+		<p>“GlobalSearchUrl” — полный путь в elasticsearch с учетом индекса. Значение настройки возвращается при выполнении запроса на web-api для добавления поиска для сайта. Пример строки: http://[SERVER2_IP_ADDRESS]:83/indexname.</p>
+		</li>
+		<li>
+		<p>GlobalSearchConfigServiceURL” — ссылка на API глобального поиска. Значение по умолчанию: http://[SERVER2_IP_ADDRESS]:81.</p>
+		</li>
+		<li>
+		<p>“GlobalSearchIndexingApiUrl” — ссылка на сервис моментальной индексации. Значение по умолчанию: http://[SERVER2_IP_ADDRESS]:82.<br />
+		Для этого выполните следующий скрипт:</p>
+		</li>
+	</ol><div class="code">
+	<div class="code__widgets">
+	<div class="code__source">
+	<pre class="prettyprint">
+UPDATE "SysSettingsValue"
+SET "TextValue" = [укажите URL к индексу ElasticSearch, строка следующего типа: http://[SERVER2_IP_ADDRESS]:83/indexname]
+WHERE "SysSettingsId" = (SELECT "Id" FROM "SysSettings" WHERE "Code" = 'GlobalSearchUrl' LIMIT 1 );
+
+UPDATE "SysSettingsValue"
+SET "TextValue" = [укажите URL к Global Search Service, строка следующего типа: http://SERVER2_IP_ADDRESS:81]
+WHERE "SysSettingsId" = (SELECT "Id" FROM "SysSettings" WHERE "Code" = 'GlobalSearchConfigServiceUrl' LIMIT 1 );
+
+UPDATE "SysSettingsValue"
+SET "TextValue" = [укажите URL к Global Search Indexing Service, строка, сл. типа - http://SERVER2_IP_ADDRESS:82]
+WHERE "SysSettingsId" = (SELECT "Id" FROM "SysSettings" WHERE "Code" = 'GlobalSearchIndexingApiUrl' LIMIT 1 );</pre>
+	</div>
+	</div>
+	</div>
+	</li>
+	<li>
+	<p>Перезапустите приложение Creatio, очистите redis и выполните вход в приложение.</p>
+	</li>
+</ol></div>
+      
+  </div>
+<div class="block block-layout-builder block-field-blocknodeuser-documentationfield-linked-link">
+  
+    
+      
+  <div class="field field--name-field-linked-link field--type-link field--label-above">
+    <div class="field__label">Смотрите также</div>
+          <div class="field__items">
+              <div class="field__item"><a href="../../../../7-17/user/razvertyvanie_onsite/nastrojka_konteinernikh_komponentov/voprosi_i_otvety_po_poisku/chasto_zadavaemye_voprosy_po_globalnomu_poisku_i_deduplikacii.html">Часто задаваемые вопросы по глобальному поиску и дедупликации</a></div>
+          <div class="field__item"><a href="../../../../requirements/calculator.html">Калькулятор системных требований</a></div>
+              </div>
+      </div>
+
+  </div>
+
+    </div>
+  </div>
+
+  </div>
+
+</article>
+
+  </div>
+
+  </div>
+
+          </div>
+        </div>
+
+                  <aside class="creatio-sidebar creatio-sidebar_first" role="complementary">
+              <div class="region region-sidebar-first">
+    <div id="block-documentationnaviagtion" class="block block-ts-nav block-ts-nav-doc-nav">
+  
+    
+      <div class="ts-nav-block"><a href="../../../../index.html" class="ts-nav-block__link">Документация</a><div class="ts-nav-block__title">Для пользователя</div>
+</div>
+<div class="ts-nav-container"><ul class="ts-nav-menu"><li class="ts-nav-menu__item">
+  <a href="../../../nocode_platforma.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">No-сode платформа&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../bazis_platformy.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Базис платформы&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../instrumenty_crm.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Инструменты CRM&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../instrumenty_kastomizacii.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Инструменты кастомизации&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../biznes_processy.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Бизнес-процессы&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../instrumenty_marketinga.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Инструменты маркетинга&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../instrumenty_prodazh.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Инструменты продаж&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../instrumenty_servisa.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Инструменты сервиса&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../ustanovka_i_administrirovanie.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Администрирование&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../razvertyvanie_onsite.html" class="ts-nav-menu__link ts-nav-menu__link_expanded ts-nav-menu__link_open" hreflang="ru">Развертывание on-site&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+      <ul class="ts-nav-menu__children">
+      <li class="ts-nav-menu__item">
+  <a href="../../sistemnie_trebovania.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Системные требования&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../obshhij_porjadok_ustanovki/obcchij_poriadok_ustanovki.html" class="ts-nav-menu__link" hreflang="ru">Общий порядок установки</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../subd_server.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Сервер СУБД&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../server_keshirovaniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Сервер кэширования&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../linux_net_core.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Сервер приложений .NET Core на Linux&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../windows_net_framework.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Сервер приложений .NET Framework на Windows&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../nastroika_dopolnitelnikh_parametrov_i_integraciy.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Настройка дополнительных параметров и интеграций&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../nastrojka_konteinernikh_komponentov.html" class="ts-nav-menu__link ts-nav-menu__link_expanded ts-nav-menu__link_open" hreflang="ru">Настройка контейнерных компонентов&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+      <ul class="ts-nav-menu__children">
+      <li class="ts-nav-menu__item">
+  <a href="nastroit_globalnyy_poisk.html" class="ts-nav-menu__link ts-nav-menu__link_active ts-nav-menu__link_open" hreflang="ru">Глобальный поиск</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../massovyj_poisk_dublej/nastroit_massovyy_poisk_dubley.html" class="ts-nav-menu__link" hreflang="ru">Массовый поиск дублей</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../voprosi_i_otvety_po_poisku/chasto_zadavaemye_voprosy_po_globalnomu_poisku_i_deduplikacii.html" class="ts-nav-menu__link" hreflang="ru">Вопросы и ответы по поиску</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../servis_mashinnogo_obuchenija/servis_mashinnogo_obucheniya.html" class="ts-nav-menu__link" hreflang="ru">Сервис машинного обучения</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../exchange_listener/nastroit_servis_sinkhronizacii_exchange_listener.html" class="ts-nav-menu__link" hreflang="ru">Exchange Listener</a>
+  </li>
+
+    </ul>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../voprosi_i_otvety_onsite/chasto_zadavaemye_voprosy_po_ustanovke_creatio.html" class="ts-nav-menu__link" hreflang="ru">Вопросы и ответы</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../produkti_na_net_core/produkti_creatio_na_platforme_net_core.html" class="ts-nav-menu__link" hreflang="ru">Продукты на .NET Core</a>
+  </li>
+
+    </ul>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../banki_i_finansy.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Банки и финансы&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../drugie_reshenija.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Другие решения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+</ul>
+</div>
+
+  </div>
+
+  </div>
+
+            <div class="creatio-sidebar__toggle"></div>
+          </aside>
+        
+                  <aside class="creatio-sidebar creatio-sidebar_second" role="complementary">
+              <div class="region region-sidebar-second">
+    <div id="block-example" class="block block-ts-nav block-ts-nav-page-nav">
+  
+    
+        <div class="ts-nav-title">Глобальный поиск</div>
+<div class="ts-nav-page">
+      <ul class="ts-nav-page__list">
+                                                <li class="ts-nav-page__item ts-nav-page__item_expanded ts-nav-page__item_open"><a href="nastroit_globalnyy_poisk.html" class="ts-nav-page__link ts-nav-page__link_expanded ts-nav-page__link_active">Настроить глобальный поиск&nbsp;<span class="ts-nav-page__link-arrow"></span></a></li>
+          </ul>
+  </div>
+
+  </div>
+<div id="block-adminfeedbackblock" class="block block-admin-feedback block-admin-feedback-block">
+  
+    
+      <div id="feedback-message"><div id="upper-feedback-content"><h2>Был ли данный материал полезен?</h2>
+<input class="feedback-btn feedback-btn__yes button js-form-submit form-submit" data-node-id="2504" data-feedback="yes" type="submit" name="op" value="Да" />
+<input class="feedback-btn feedback-btn__no button js-form-submit form-submit" data-node-id="2504" data-feedback="no" type="submit" name="op" value="Нет" />
+</div>
+<form class="admin-feedback-form" data-drupal-selector="admin-feedback-form" action="https://academy.terrasoft.ua/docs/user/razvertyvanie_onsite/nastrojka_konteinernikh_komponentov/globalnyj_poisk/nastroit_globalnyy_poisk" method="post" id="admin-feedback-form" accept-charset="UTF-8">
+  <div id="feedback-msg-result"></div><div class="js-form-item form-item js-form-type-textarea form-type-textarea js-form-item-feedback-message form-item-feedback-message form-no-label">
+        <div class="form-textarea-wrapper">
+  <textarea id="edit-feedback-msg" data-drupal-selector="edit-feedback-message" name="feedback_message" rows="5" cols="60" class="form-textarea resize-vertical"></textarea>
+</div>
+
+        </div>
+<input id="feedback-id" data-drupal-selector="edit-feedback-id" type="hidden" name="feedback_id" value="" />
+<input class="feedback-btn feedback-btn__send-comment button js-form-submit form-submit" data-drupal-selector="edit-feedback-send" type="submit" id="edit-feedback-send" name="op" value="Отправить" />
+<input autocomplete="off" data-drupal-selector="form-yedqj9mf-ei1alqfhbfx5-szr9ufo-gdch-7jgglmhy" type="hidden" name="form_build_id" value="form-YedqJ9MF_ei1alQfhbFX5_sZR9Ufo_gDch_7JGGlmHY" />
+<input data-drupal-selector="edit-admin-feedback-form" type="hidden" name="form_id" value="admin_feedback_form" />
+
+</form>
+</div>
+
+  </div>
+
+  </div>
+
+          </aside>
+              </main>
+    </div>
+  </div>
+
+  <footer role="contentinfo">
+    <div class="creatio-region creatio-region_footer">
+      <div class="creatio-container">
+          <div class="region region-footer">
+    <div id="block-footerua" class="block block-simple-block block-simple-blockfooter-ua">
+  
+    
+      <div class="footer">
+<div class="footer-left">
+<ul class="footer-socials"><li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_fb" href="https://www.facebook.com/terrasoft.ua" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_in" href="https://www.linkedin.com/company/terrasoft/" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_yt" href="https://www.youtube.com/c/TerrasoftUkraine" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_tg" href="https://t.me/Terrasoft_UA" target="_blank"> </a></li>
+</ul></div>
+
+<div class="footer-contact">
+<div class="footer-title">Будьте на связи!</div>
+
+<div class="footer-content">
+<div class="footer-items">
+<div class="footer-item"><a class="footer__link footer__link_phone" href="tel:+380443633133">+38 (044) 363-31-33</a></div>
+</div>
+
+<div class="footer-items">
+<div class="footer-item"><a class="footer__link footer__link_email" href="mailto:support@terrasoft.ua">support@terrasoft.ua</a></div>
+</div>
+</div>
+</div>
+</div>
+
+  </div>
+
+  </div>
+
+      </div>
+    </div>
+    <div class="creatio-region creatio-region_bottom">
+      <div class="creatio-container">
+          <div class="region region-bottom">
+    <div id="block-allrightsreservedua" class="block block-simple-block block-simple-blockfooter-bottom-ua">
+  
+    
+      <p>© 2002-2022 Terrasoft.  |  <a href="https://www.terrasoft.ua/privacy-policy" target="_blank">Конфиденциальность</a></p>
+
+  </div>
+
+  </div>
+
+      </div>
+    </div>
+  </footer>
+</div>
+<div class="creatio-bg"></div>
+
+
+  </div>
+
+    
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/docs\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/2504","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"ru"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"ajaxPageState":{"libraries":"admin_feedback\/admin_feedback_block,admin_feedback\/admin_feedback_css,classy\/base,classy\/messages,classy\/node,core\/drupal.ajax,core\/jquery.form,core\/normalize,creatio\/creatio.lists,creatio\/fancybox,creatio\/global,layout_discovery\/onecol,system\/base,ts_doc\/doc_version,ts_feedback\/ts_feedback,ts_nav\/breadcrumb,ts_nav\/doc_nav,ts_nav\/page_nav,ts_title_anchor\/ts_title_anchor","theme":"creatio","theme_token":null},"ajaxTrustedUrl":{"form_action_p_pvdeGsVG5zNF_XLGPTvYSKCf43t8qZYSwcfZl2uzM":true,"\/docs\/user\/razvertyvanie_onsite\/nastrojka_konteinernikh_komponentov\/globalnyj_poisk\/nastroit_globalnyy_poisk?ajax_form=1":true},"admin_feedback":{"yes_response":"\u0421\u043f\u0430\u0441\u0438\u0431\u043e \u0437\u0430 \u043e\u0431\u0440\u0430\u0442\u043d\u0443\u044e \u0441\u0432\u044f\u0437\u044c!","no_response":"\u0421\u043f\u0430\u0441\u0438\u0431\u043e \u0437\u0430 \u043e\u0431\u0440\u0430\u0442\u043d\u0443\u044e \u0441\u0432\u044f\u0437\u044c!","custom_text_response_on_no":{"value":"","format":"full_html"},"feedback_prompt_on_yes":true,"feedback_prompt_on_no":true,"feedback_enable_predefined_answers":false,"feedback_prompt":"\u041a\u0430\u043a \u043c\u043e\u0436\u043d\u043e \u0443\u043b\u0443\u0447\u0448\u0438\u0442\u044c \u044d\u0442\u0443 \u0441\u0442\u0430\u0442\u044c\u044e?"},"ajax":{"edit-feedback-send":{"callback":"::validateFeedbackMsg","event":"mousedown","keypress":true,"prevent":"click","url":"\/docs\/user\/razvertyvanie_onsite\/nastrojka_konteinernikh_komponentov\/globalnyj_poisk\/nastroit_globalnyy_poisk?ajax_form=1","dialogType":"ajax","submit":{"_triggering_element_name":"op","_triggering_element_value":"\u041e\u0442\u043f\u0440\u0430\u0432\u0438\u0442\u044c"}}},"user":{"uid":0,"permissionsHash":"9c2367dfcaba0fa15f0375f97aed64e146c908cee68508d13b79e3ee80e5162d"}}</script>
+<script src="../../../../sites/default/files/js/js_F2-Y4EzgTnESr58XByoLYEnsbi7ysTfMIKN1RvsMSWY.js"></script>
+
+
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+      <g id="svg-copy" class="svg-icon svg-icon_copy">
+        <path d="M15.111,18H1.889A1.848,1.848,0,0,1,0,16.2V3.6A1.848,1.848,0,0,1,1.889,1.8H5.837a2.87,2.87,0,0,1,5.326,0h3.948A1.848,1.848,0,0,1,17,3.6V16.2A1.848,1.848,0,0,1,15.111,18ZM3.777,12.6v1.8h6.611V12.6Zm0-3.6v1.8h9.445V9Zm0-3.6V7.2h9.445V5.4ZM8.5,1.8a.924.924,0,0,0-.944.9.945.945,0,0,0,1.889,0A.924.924,0,0,0,8.5,1.8Z"/>
+      </g>
+
+      <g id="svg-prev" class="svg-icon svg-icon_arrow">
+        <path d="M5.488,12.779,0,6.39,5.488,0" transform="translate(1 0.652)"/>
+      </g>
+
+      <g id="svg-next" class="svg-icon svg-icon_arrow">
+        <path d="M0,12.779,5.488,6.39,0,0" transform="translate(0.759 0.652)"/>
+      </g>
+    </svg>
+  </body>
+
+<!-- Mirrored from academy.terrasoft.ua/docs/user/razvertyvanie_onsite/nastrojka_konteinernikh_komponentov/globalnyj_poisk/nastroit_globalnyy_poisk by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 22 Mar 2022 20:26:15 GMT -->
+</html>

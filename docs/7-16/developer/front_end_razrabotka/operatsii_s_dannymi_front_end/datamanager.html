@@ -1,0 +1,1296 @@
+  <!DOCTYPE html>
+<html lang="ru" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# ">
+  
+<!-- Mirrored from academy.terrasoft.ua/docs/7-16/developer/front_end_razrabotka/operatsii_s_dannymi_front_end/datamanager by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Mar 2022 05:08:15 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+          <!-- Google Tag Manager -->
+      <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          '../../../../../../www.googletagmanager.com/gtm5445.html?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-KLLB8G');</script>
+      <!-- End Google Tag Manager -->
+        <meta charset="utf-8" />
+<link rel="canonical" href="datamanager.html" />
+<meta name="description" content="Класс DataManager 
+
+Класс DataManager — синглтон, который доступен через глобальный объект Terrasoft. Данный класс предоставляет хранилище dataStore. В хранилище может быть загружено содержимое одной или нескольких таблиц базы данных." />
+<meta property="og:url" content="https://academy.terrasoft.ua/docs/7-16/developer/front_end_razrabotka/operatsii_s_dannymi_front_end/datamanager" />
+<meta property="og:title" content="Класс DataManager" />
+<meta property="og:description" content="Класс DataManager 
+
+Класс DataManager — синглтон, который доступен через глобальный объект Terrasoft. Данный класс предоставляет хранилище dataStore. В хранилище может быть загружено содержимое одной или нескольких таблиц базы данных." />
+<meta name="Generator" content="Drupal 9 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="../../../../themes/custom/creatio/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="revision" href="datamanager.html" />
+
+    <title>Класс DataManager | Creatio Academy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&amp;family=Open+Sans:ital,wght@0,300;0,400;0,600;1,400&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" media="all" href="../../../../sites/default/files/css/css_6lTP66__-yc6QXFp1zOwoeJ0HVigoYZP-SeoLLii000.css" />
+<link rel="stylesheet" media="all" href="../../../../sites/default/files/css/css_XQJDNhkF3xH5SZCcY-PI89Zu4nYIzQ5oR3SnUKyfXJU.css" />
+<link rel="stylesheet" media="print" href="../../../../sites/default/files/css/css_Zn4VHvcniOOtUwkIVwXzYr_0AI9gUVgZcPqaH4ViagU.css" />
+
+    
+  </head>
+  <body class="path-node page-node-type-reference"data-type="JS">
+          <!-- Google Tag Manager (noscript) -->
+      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KLLB8G"
+                        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+      <!-- End Google Tag Manager (noscript) -->
+    
+        
+      <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    <div class="creatio-page d-flex flex-column">
+        <div class="region region-informer">
+    <div id="block-terrasoftpidtrimueukrainu" class="block block-simple-block block-simple-blockterrasoft-pidtrimue-ukrainu">
+  
+    
+      <style type="text/css">
+<!--/*--><![CDATA[/* ><!--*/
+@import url(../../../../../../www.terrasoft.ua/themes/custom/creatio/css/components/informer.css)
+
+/*--><!]]>*/
+</style><div class="ts-swu">
+<div class="creatio-container">
+<div class="ts-swu__cont">
+<div><a class="ts-swu__link" href="https://www.terrasoft.ua/terrasoft-stands-with-ukraine" target="_blank">Україна понад усе!</a> <span><a href="https://www.terrasoft.ua/terrasoft-stands-with-ukraine" target="_blank">Приєднуйтеся</a> до допомоги!</span></div>
+</div>
+</div></div>
+
+  </div>
+
+  </div>
+
+  
+  <header role="banner">
+          <div class="creatio-region creatio-region_top">
+        <div class="creatio-container">
+            <div class="region region-top">
+    <div id="block-menutoggle" class="block block-simple-block block-simple-blockmenu-toggle">
+  
+    
+      <div class="menu-toggle"><span> </span></div>
+
+  </div>
+<div id="block-logowhite-2" class="block block-simple-block block-simple-blocklogo-white">
+  
+    
+      <p><a class="site-logo" href="../../../../../index.html" rel="home"><img src="../../../../themes/custom/creatio/logo-white.svg" /></a></p>
+
+  </div>
+<div id="block-search" class="block block-simple-block block-simple-blocksearch">
+  
+    
+      <div class="search">
+<form action="https://academy.terrasoft.ua/search" class="search-form" method="get"><input class="search-form__input" name="search" placeholder="Поиск" type="search" /><input class="search-form__button" type="submit" value="Поиск" /> </form>
+
+<div class="search-toggle"> </div>
+</div>
+
+  </div>
+<nav role="navigation" aria-labelledby="block-sitesua-menu" id="block-sitesua" class="block block-menu navigation menu--sites-ua">
+            
+  <h2 class="visually-hidden" id="block-sitesua-menu">Sites UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="https://www.terrasoft.ua/" rel="nofollow" target="_blank">Terrasoft</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://community.terrasoft.ua/" rel="nofollow" target="_blank">Community</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://marketplace.terrasoft.ua/" rel="nofollow" target="_blank">Marketplace</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+<div id="block-usermenu" class="block block-ts-user block-ts-user-menu-block">
+  
+    
+      <ul class="user-menu">
+      <li class="user-menu__item">
+      <a class="user-menu__link" href="https://profile.terrasoft.ua/user/login?destination=academy/ua/docs/7-16/developer/front_end_razrabotka/operatsii_s_dannymi_front_end/datamanager">Войти</a>
+    </li>
+  </ul>
+
+  </div>
+<div id="block-usermenumobile" class="block block-ts-user block-ts-user-menu-mobile-block">
+  
+    
+      <ul class="user-menu-mobile">
+      <li class="user-menu-mobile__item">
+      <div class="user-menu-mobile__user user-menu-mobile__user_icon"></div>
+      <ul class="user-menu-mobile__submenu">
+        <li class="user-menu-mobile__subitem">
+          <a class="user-menu-mobile__sublink" href="https://profile.terrasoft.ua/user/login?destination=academy/ua/docs/7-16/developer/front_end_razrabotka/operatsii_s_dannymi_front_end/datamanager">Войти</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  </div>
+
+  </div>
+
+        </div>
+      </div>
+              <div class="creatio-region creatio-region_header">
+        <div class="creatio-container">
+            <div class="region region-header">
+    <div id="block-logo" class="block block-simple-block block-simple-blocklogo">
+  
+    
+      <p><a class="site-logo" href="../../../../../index.html" rel="home"><img src="../../../../themes/custom/creatio/logo.svg" /></a></p>
+
+  </div>
+<nav role="navigation" aria-labelledby="block-osnovnayanavigaciyaua-menu" id="block-osnovnayanavigaciyaua" class="block block-menu navigation menu--main-ua">
+            
+  <h2 class="visually-hidden" id="block-osnovnayanavigaciyaua-menu">Основная навигация UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="../../../../index.html" data-drupal-link-system-path="&lt;front&gt;">Документация</a>
+              </li>
+                <li class="menu-item">
+        <a href="../../../../../trainings.html">Тренинги</a>
+              </li>
+                <li class="menu-item">
+        <a href="../../../../certification.html" data-drupal-link-system-path="node/3084">Сертификация и тестирование</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+<nav role="navigation" aria-labelledby="block-sitesua-2-menu" id="block-sitesua-2" class="block block-menu navigation menu--sites-ua">
+            
+  <h2 class="visually-hidden" id="block-sitesua-2-menu">Sites UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="https://www.terrasoft.ua/" rel="nofollow" target="_blank">Terrasoft</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://community.terrasoft.ua/" rel="nofollow" target="_blank">Community</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://marketplace.terrasoft.ua/" rel="nofollow" target="_blank">Marketplace</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+
+  </div>
+
+        </div>
+      </div>
+              <div class="creatio-region creatio-region_breadcrumb">
+        <div class="creatio-container">
+            <div class="region region-breadcrumb">
+    <div id="block-logowhite" class="block block-simple-block block-simple-blocklogo-white">
+  
+    
+      <p><a class="site-logo" href="../../../../../index.html" rel="home"><img src="../../../../themes/custom/creatio/logo-white.svg" /></a></p>
+
+  </div>
+<div id="block-breadcrumbnaviagtion" class="block block-ts-nav block-ts-nav-bread">
+  
+    
+      <nav class="breadcrumb"><ol class="ts-nav-breadcrumb__list"><li class="ts-nav-breadcrumb__item"><a href="../../../../index.html" class="ts-nav-breadcrumb__link" title="Документация">Документация</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../../index2132.html?vid_1=2" class="ts-nav-breadcrumb__link" title="Для разработчика">Для разработчика</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../front_end_razrabotka.html" class="ts-nav-breadcrumb__link" title="Front-end разработка" hreflang="zxx">Front-end разработка</a></li>
+<li class="ts-nav-breadcrumb__item ts-nav-breadcrumb__item_mobile"><a href="../../front-end_development/operatsii_s_dannymi_front_end.html" class="ts-nav-breadcrumb__link" title="Операции с данными" hreflang="ru">Операции с данными</a></li>
+<li class="ts-nav-breadcrumb__item"><span class="ts-nav-breadcrumb__link ts-nav-breadcrumb__link_current" title="DataManager">DataManager</span></li>
+</ol>
+</nav>
+
+  </div>
+<div id="block-search-2" class="block block-simple-block block-simple-blocksearch">
+  
+    
+      <div class="search">
+<form action="https://academy.terrasoft.ua/search" class="search-form" method="get"><input class="search-form__input" name="search" placeholder="Поиск" type="search" /><input class="search-form__button" type="submit" value="Поиск" /> </form>
+
+<div class="search-toggle"> </div>
+</div>
+
+  </div>
+
+  </div>
+
+        </div>
+      </div>
+      </header>
+
+  <div class="creatio-region creatio-region_main">
+    <div class="creatio-container">
+                <div class="region region-breadcrumb-mobile">
+    <div id="block-breadcrumbnaviagtion-2" class="block block-ts-nav block-ts-nav-bread">
+  
+    
+      <nav class="breadcrumb"><ol class="ts-nav-breadcrumb__list"><li class="ts-nav-breadcrumb__item"><a href="../../../../index.html" class="ts-nav-breadcrumb__link" title="Документация">Документация</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../../index2132.html?vid_1=2" class="ts-nav-breadcrumb__link" title="Для разработчика">Для разработчика</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../front_end_razrabotka.html" class="ts-nav-breadcrumb__link" title="Front-end разработка" hreflang="zxx">Front-end разработка</a></li>
+<li class="ts-nav-breadcrumb__item ts-nav-breadcrumb__item_mobile"><a href="../../front-end_development/operatsii_s_dannymi_front_end.html" class="ts-nav-breadcrumb__link" title="Операции с данными" hreflang="ru">Операции с данными</a></li>
+<li class="ts-nav-breadcrumb__item"><span class="ts-nav-breadcrumb__link ts-nav-breadcrumb__link_current" title="DataManager">DataManager</span></li>
+</ol>
+</nav>
+
+  </div>
+
+  </div>
+
+      
+      <main class="creatio-main" role="main">
+                                                    
+        <div class="creatio-content creatio-content_small">
+          <div class="creatio-content__inner creatio-content__inner_bg">
+                            <div class="region region-messages">
+    <div data-drupal-messages-fallback class="hidden"></div>
+
+  </div>
+
+            
+              <div class="region region-content">
+    <div id="block-creatio-page-title" class="block block-core block-page-title-block">
+  
+    
+      
+  <h1 class="page-title"><span class="field field--name-title field--type-string field--label-hidden">Класс DataManager</span>
+</h1>
+
+
+  </div>
+<div id="block-creatio-content" class="block block-system block-system-main-block">
+  
+    
+      
+<article data-history-node-id="3221" role="article" about="/docs/7-16/developer/front_end_razrabotka/operatsii_s_dannymi_front_end/datamanager" class="node node--type-reference node--view-mode-full">
+
+  
+    
+
+  
+  <div class="node__content">
+      <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocknodereferencefield-difficulty">
+  
+    
+      
+            <div class="field field--name-field-difficulty field--type-entity-reference field--label-hidden field__item"><div about="/docs/7-16/taxonomy/term/123" id="taxonomy-term-123" class="taxonomy-term vocabulary-difficulty">
+  
+  
+  <div class="content">
+      <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocktaxonomy-termdifficultyfield-icon">
+  
+    
+      
+            <div class="field field--name-field-icon field--type-image field--label-hidden field__item">  <img src="../../../../sites/default/files/difficulty/medium.svg" alt="" loading="lazy" typeof="foaf:Image" />
+
+</div>
+      
+  </div>
+<div class="block block-layout-builder block-field-blocktaxonomy-termdifficultyname">
+  
+    
+      
+            <div class="field field--name-name field--type-string field--label-hidden field__item"><span style="color: #F57E20;">Средний</span></div>
+      
+  </div>
+
+    </div>
+  </div>
+
+  </div>
+</div>
+</div>
+      
+  </div>
+<div class="block block-ts-doc block-ts-doc-downloads">
+  
+    
+      <a href="../../../../sites/default/files/pdf/node/3221/Klass_DataManager_.pdf" target="_blank">PDF</a>
+  </div>
+<div class="block block-ts-doc block-ts-doc-versions">
+  
+    
+        <div class="ts-doc-versions">
+    <select class="ts-doc-versions__select">
+                              <option value="/docs/8-0/developer/front_end_razrabotka/operatsii_s_dannymi_front_end/datamanager">Версия 8.0</option>
+                              <option value="/docs/7-18/developer/front_end_razrabotka/operatsii_s_dannymi_front_end/datamanager">Версия 7.18</option>
+                              <option value="/docs/7-17/developer/front_end_razrabotka/operatsii_s_dannymi_front_end/datamanager">Версия 7.17</option>
+                                                <option value="/docs/7-16/developer/front_end_razrabotka/operatsii_s_dannymi_front_end/datamanager" selected>Версия 7.16</option>
+          </select>
+  </div>
+
+  </div>
+
+    </div>
+  </div>
+  <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocknodereferencebody">
+  
+    
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><h2 data-type="JS">Класс DataManager<a class="title-anchor" href="#title-3221-1" id="title-3221-1"> </a></h2>
+
+<p>Класс <span class="filled">DataManager</span> — синглтон, который доступен через глобальный объект <span class="filled">Terrasoft</span>. Данный класс предоставляет хранилище <span class="filled">dataStore</span>. В хранилище может быть загружено содержимое одной или нескольких таблиц базы данных.</p>
+
+<div class="code">
+<div class="code__widgets">
+<div class="code__source">
+<pre class="prettyprint">
+dataStore: {
+    /* Коллекция данных типа DataManagerItem схемы SysModule. */
+    SysModule: sysModuleCollection,
+	/* Коллекция данных типа DataManagerItem схемы SysModuleEntity. */
+    SysModuleEntity: sysModuleEntityCollection
+}
+</pre>
+</div>
+</div>
+</div>
+
+<p>Каждая запись коллекции представляет запись из соответствующей таблицы в базе данных.</p>
+
+<div class="block-collapse">
+<h3 class="block-collapse__title">Свойства<a class="title-anchor" href="#title-3221-2" id="title-3221-2"> </a></h3>
+
+<div class="block-collapse__content">
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+{Object} dataStore
+</pre>
+</div>
+</div>
+</div>
+
+<p>Хранилище коллекций данных.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+{String} itemClassName
+</pre>
+</div>
+</div>
+</div>
+
+<p>Имя класса записи. Содержит значение <span class="filled">Terrasoft.DataManagerItem</span>.</p>
+</div>
+</div>
+
+<div class="block-collapse">
+<h3 class="block-collapse__title">Методы<a class="title-anchor" href="#title-3221-3" id="title-3221-3"> </a></h3>
+
+<div class="block-collapse__content">
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+{Terrasoft.Collection} select(config, callback, scope)
+</pre>
+</div>
+</div>
+</div>
+
+<p>Если <span class="filled">dataStore</span> не содержит коллекцию данных с именем <span class="filled">config.entitySchemaName</span>, то метод формирует и выполняет запрос в базу данных, затем возвращает полученные данные, иначе возвращает коллекцию данных из <span class="filled">dataStore</span>.</p>
+
+<div class="block-collapse">
+<div class="block-collapse__title block-collapse__title_mb-16">Параметры</div>
+
+<div class="block-collapse__content">
+<div class="table">
+<table><tbody><tr><td width="30%"><span class="consolas">{Object} config</span></td>
+			<td>
+			<p>Конфигурационный объект.</p>
+
+			<div class="block-collapse">
+			<div class="block-collapse__title block-collapse__title_mb-16">Свойства конфигурационного объекта</div>
+
+			<div class="block-collapse__content">
+			<div class="code code_mb-small">
+			<div class="code__widgets code__widgets_no-bg">
+			<div class="code__source" data-copy="false">
+			<pre class="prettyprint">
+{String} entitySchemaName
+</pre>
+			</div>
+			</div>
+			</div>
+
+			<p>Имя схемы.</p>
+
+			<div class="code code_mb-small">
+			<div class="code__widgets code__widgets_no-bg">
+			<div class="code__source" data-copy="false">
+			<pre class="prettyprint">
+{Terrasoft.FilterGroup} filters
+</pre>
+			</div>
+			</div>
+			</div>
+
+			<p>Условия.</p>
+			</div>
+			</div>
+			</td>
+		</tr><tr><td><span class="consolas">{Function} callback</span></td>
+			<td>Функция обратного вызова.</td>
+		</tr><tr><td><span class="consolas">{Object} scope</span></td>
+			<td>Контекст выполнения функции обратного вызова.</td>
+		</tr></tbody></table></div>
+</div>
+</div>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+{Terrasoft.DataManagerItem} createItem(config, callback, scope)
+</pre>
+</div>
+</div>
+</div>
+
+<p>Создает новую запись типа <span class="filled">config.entitySchemaName</span> со значениями колонок <span class="filled">config.columnValues</span>.</p>
+
+<div class="block-collapse">
+<div class="block-collapse__title block-collapse__title_mb-16">Параметры</div>
+
+<div class="block-collapse__content">
+<div class="table">
+<table><tbody><tr><td width="30%"><span class="consolas">{Object} config</span></td>
+			<td>
+			<p>Конфигурационный объект.</p>
+
+			<div class="block-collapse">
+			<div class="block-collapse__title block-collapse__title_mb-16">Свойства конфигурационного объекта</div>
+
+			<div class="block-collapse__content">
+			<div class="code code_mb-small">
+			<div class="code__widgets code__widgets_no-bg">
+			<div class="code__source" data-copy="false">
+			<pre class="prettyprint">
+{String} entitySchemaName
+</pre>
+			</div>
+			</div>
+			</div>
+
+			<p>Имя схемы.</p>
+
+			<div class="code code_mb-small">
+			<div class="code__widgets code__widgets_no-bg">
+			<div class="code__source" data-copy="false">
+			<pre class="prettyprint">
+{Object} columnValues
+</pre>
+			</div>
+			</div>
+			</div>
+
+			<p>Значения колонок записи.</p>
+			</div>
+			</div>
+			</td>
+		</tr><tr><td><span class="consolas">{Function} callback</span></td>
+			<td>Функция обратного вызова.</td>
+		</tr><tr><td><span class="consolas">{Object} scope</span></td>
+			<td>Контекст выполнения функции обратного вызова.</td>
+		</tr></tbody></table></div>
+</div>
+</div>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+{Terrasoft.DataManagerItem} addItem(item)
+</pre>
+</div>
+</div>
+</div>
+
+<p>Добавляет запись <span class="filled">item</span> в коллекцию данных схемы.</p>
+
+<div class="block-collapse">
+<div class="block-collapse__title block-collapse__title_mb-16">Параметры</div>
+
+<div class="block-collapse__content">
+<div class="table">
+<table><tbody><tr><td width="30%"><span class="consolas">{Terrasoft.<wbr></wbr>Data<wbr></wbr>Manager<wbr></wbr>Item} item</span></td>
+			<td>Добавляемая запись.</td>
+		</tr></tbody></table></div>
+</div>
+</div>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+{Terrasoft.DataManagerItem} findItem(entitySchemaName, id)
+</pre>
+</div>
+</div>
+</div>
+
+<p>Возвращает запись из коллекции данных схемы с именем <span class="filled">entitySchemaName</span> и с идентификатором <span class="filled">id</span>.</p>
+
+<div class="block-collapse">
+<div class="block-collapse__title block-collapse__title_mb-16">Параметры</div>
+
+<div class="block-collapse__content">
+<div class="table">
+<table><tbody><tr><td width="30%"><span class="consolas">{String} entity<wbr></wbr>Schema<wbr></wbr>Name</span></td>
+			<td>Название коллекции данных.</td>
+		</tr><tr><td><span class="consolas">{String} id</span></td>
+			<td>Идентификатор записи.</td>
+		</tr></tbody></table></div>
+</div>
+</div>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+{Terrasoft.DataManagerItem} remove(item)
+</pre>
+</div>
+</div>
+</div>
+
+<p>Устанавливает признак <span class="filled">isDeleted</span> для записи <span class="filled">item</span>, при фиксации изменений запись будет удалена из базы данных.</p>
+
+<div class="block-collapse">
+<div class="block-collapse__title block-collapse__title_mb-16">Параметры</div>
+
+<div class="block-collapse__content">
+<div class="table">
+<table><tbody><tr><td width="30%"><span class="consolas">{Terrasoft.<wbr></wbr>Data<wbr></wbr>Manager<wbr></wbr>Item} item</span></td>
+			<td>Удаляемая запись.</td>
+		</tr></tbody></table></div>
+</div>
+</div>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+removeItem(item)
+</pre>
+</div>
+</div>
+</div>
+
+<p>Удаляет запись из коллекции данных схемы.</p>
+
+<div class="block-collapse">
+<div class="block-collapse__title block-collapse__title_mb-16">Параметры</div>
+
+<div class="block-collapse__content">
+<div class="table">
+<table><tbody><tr><td width="30%"><span class="consolas">{Terrasoft.<wbr></wbr>Data<wbr></wbr>Manager<wbr></wbr>Item} item</span></td>
+			<td>Удаляемая запись.</td>
+		</tr></tbody></table></div>
+</div>
+</div>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+{Terrasoft.DataManagerItem} update(config, callback, scope)
+</pre>
+</div>
+</div>
+</div>
+
+<p>Обновляет запись со значением первичной колонки <span class="filled">config.primaryColumnValue</span> значениями из <span class="filled">config.columnValues</span>.</p>
+
+<div class="block-collapse">
+<div class="block-collapse__title block-collapse__title_mb-16">Параметры</div>
+
+<div class="block-collapse__content">
+<div class="table">
+<table><tbody><tr><td width="30%"><span class="consolas">{Object} config</span></td>
+			<td>
+			<p>Конфигурационный объект.</p>
+
+			<div class="block-collapse">
+			<div class="block-collapse__title block-collapse__title_mb-16">Свойства конфигурационного объекта</div>
+
+			<div class="block-collapse__content">
+			<div class="code code_mb-small">
+			<div class="code__widgets code__widgets_no-bg">
+			<div class="code__source" data-copy="false">
+			<pre class="prettyprint">
+{String} entitySchemaName
+</pre>
+			</div>
+			</div>
+			</div>
+
+			<p>Имя схемы.</p>
+
+			<div class="code code_mb-small">
+			<div class="code__widgets code__widgets_no-bg">
+			<div class="code__source" data-copy="false">
+			<pre class="prettyprint">
+{String} primaryColumnValue
+</pre>
+			</div>
+			</div>
+			</div>
+
+			<p>Значение первичной колонки.</p>
+
+			<div class="code code_mb-small">
+			<div class="code__widgets code__widgets_no-bg">
+			<div class="code__source" data-copy="false">
+			<pre class="prettyprint">
+{Mixed} columnValues
+</pre>
+			</div>
+			</div>
+			</div>
+
+			<p>Значения колонок.</p>
+			</div>
+			</div>
+			</td>
+		</tr><tr><td><span class="consolas">{Function} callback</span></td>
+			<td>Функция обратного вызова.</td>
+		</tr><tr><td><span class="consolas">{Object} scope</span></td>
+			<td>Контекст выполнения функции обратного вызова.</td>
+		</tr></tbody></table></div>
+</div>
+</div>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+{Terrasoft.DataManagerItem} discardItem(item)
+</pre>
+</div>
+</div>
+</div>
+
+<p>Отменяет изменения для записи <span class="filled">item</span>, сделанные в текущей сессии работы с <span class="filled">DataManager</span>.</p>
+
+<div class="block-collapse">
+<div class="block-collapse__title block-collapse__title_mb-16">Параметры</div>
+
+<div class="block-collapse__content">
+<div class="table">
+<table><tbody><tr><td width="30%"><span class="consolas">{Terrasoft.<wbr></wbr>Data<wbr></wbr>Manager<wbr></wbr>Item} item</span></td>
+			<td>Запись, по которой будут отменены изменения.</td>
+		</tr></tbody></table></div>
+</div>
+</div>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+{Object} save(config, callback, scope)
+</pre>
+</div>
+</div>
+</div>
+
+<p>Выполняет сохранение в базу данных коллекций данных схем, указанных в <span class="filled">config.entitySchemaNames</span>.</p>
+
+<div class="block-collapse">
+<div class="block-collapse__title block-collapse__title_mb-16">Параметры</div>
+
+<div class="block-collapse__content">
+<div class="table">
+<table><tbody><tr><td width="30%"><span class="consolas">{Object} config</span></td>
+			<td>
+			<p>Конфигурационный объект.</p>
+
+			<div class="block-collapse">
+			<div class="block-collapse__title block-collapse__title_mb-16">Свойства конфигурационного объекта</div>
+
+			<div class="block-collapse__content">
+			<div class="code code_mb-small">
+			<div class="code__widgets code__widgets_no-bg">
+			<div class="code__source" data-copy="false">
+			<pre class="prettyprint">
+{String[]} entitySchemaName
+</pre>
+			</div>
+			</div>
+			</div>
+
+			<p>Имя схемы, сохранение которой необходимо выполнить. Если свойство не заполнено, сохранение выполняется для всех схем.</p>
+			</div>
+			</div>
+			</td>
+		</tr><tr><td><span class="consolas">{Function} callback</span></td>
+			<td>Функция обратного вызова.</td>
+		</tr><tr><td><span class="consolas">{Object} scope</span></td>
+			<td>Контекст выполнения функции обратного вызова.</td>
+		</tr></tbody></table></div>
+</div>
+</div>
+</div>
+</div>
+
+<h2 data-type="JS">Класс DataManagerItem<a class="title-anchor" href="#title-3221-4" id="title-3221-4"> </a></h2>
+
+<div class="block-collapse">
+<h3 class="block-collapse__title">Свойства<a class="title-anchor" href="#title-3221-5" id="title-3221-5"> </a></h3>
+
+<div class="block-collapse__content">
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+{Terrasoft.BaseViewMode} viewModel
+</pre>
+</div>
+</div>
+</div>
+
+<p>Объектная проекция записи в базе данных.</p>
+</div>
+</div>
+
+<div class="block-collapse">
+<h3 class="block-collapse__title">Методы<a class="title-anchor" href="#title-3221-6" id="title-3221-6"> </a></h3>
+
+<div class="block-collapse__content">
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+setColumnValue(columnName, columnValue)
+</pre>
+</div>
+</div>
+</div>
+
+<p>Устанавливает новое значение <span class="filled">columnValue</span> для колонки с именем <span class="filled">columnName</span>.</p>
+
+<div class="block-collapse">
+<div class="block-collapse__title block-collapse__title_mb-16">Параметры</div>
+
+<div class="block-collapse__content">
+<div class="table">
+<table><tbody><tr><td width="30%"><span class="consolas">{String} column<wbr></wbr>Name</span></td>
+			<td>Название колонки.</td>
+		</tr><tr><td><span class="consolas">{String} column<wbr></wbr>Value</span></td>
+			<td>Значение колонки.</td>
+		</tr></tbody></table></div>
+</div>
+</div>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+{Mixed} getColumnValue(columnName)
+</pre>
+</div>
+</div>
+</div>
+
+<p>Возвращает значение колонки с именем <span class="filled">columnName</span>.</p>
+
+<div class="block-collapse">
+<div class="block-collapse__title block-collapse__title_mb-16">Параметры</div>
+
+<div class="block-collapse__content">
+<div class="table">
+<table><tbody><tr><td width="30%"><span class="consolas">{String} column<wbr></wbr>Name</span></td>
+			<td>Название колонки.</td>
+		</tr></tbody></table></div>
+</div>
+</div>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+{Object} getValues()
+</pre>
+</div>
+</div>
+</div>
+
+<p>Возвращает значения всех колонок записи.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+remove()
+</pre>
+</div>
+</div>
+</div>
+
+<p>Устанавливает признак <span class="filled">isDeleted</span> для записи.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+discard()
+</pre>
+</div>
+</div>
+</div>
+
+<p>Отменяет изменения для записи, сделанные в текущей сессии работы с <span class="filled">DataManager</span>.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+{Object} save(callback, scope)
+</pre>
+</div>
+</div>
+</div>
+
+<p>Фиксирует изменения в базе данных.</p>
+
+<div class="block-collapse">
+<div class="block-collapse__title block-collapse__title_mb-16">Параметры</div>
+
+<div class="block-collapse__content">
+<div class="table">
+<table><tbody><tr><td width="30%"><span class="consolas">{Function} callback</span></td>
+			<td>Функция обратного вызова.</td>
+		</tr><tr><td><span class="consolas">{Object} scope</span></td>
+			<td>Контекст выполнения функции обратного вызова.</td>
+		</tr></tbody></table></div>
+</div>
+</div>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+{Boolean} getIsNew()
+</pre>
+</div>
+</div>
+</div>
+
+<p>Возвращает признак того, что запись новая.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+{Boolean} getIsChanged()
+</pre>
+</div>
+</div>
+</div>
+
+<p>Возвращает признак того, что запись была изменена.</p>
+
+<div class="block-collapse">
+<div class="block-collapse__title block-collapse__title_mb-16">Примеры использования</div>
+
+<div class="block-collapse__content">
+<div class="code">
+<div class="code__widgets">
+<div class="code__top">
+<div class="code__title">Получение записей из таблицы <span class="key">Contact</span></div>
+</div>
+
+<div class="code__source">
+<pre class="prettyprint">
+/* Определение конфигурационного объекта. */
+var config = {
+    /* Название схемы сущности. */
+    entitySchemaName: "Contact",
+    /* Убирать дубли в результирующем наборе данных. */
+    isDistinct: true
+};
+/* Получение данных. */
+Terrasoft.DataManager.select(config, function (collection) {
+    /* Сохранение полученных записей в локальное хранилище. */
+    collection.each(function (item) {
+        Terrasoft.DataManager.addItem(item);
+    });
+}, this);
+</pre>
+</div>
+</div>
+</div>
+
+<div class="code">
+<div class="code__widgets">
+<div class="code__top">
+<div class="code__title">Добавление новой записи в объект <span class="filled">DataManager</span></div>
+</div>
+
+<div class="code__source">
+<pre class="prettyprint">
+/* Определение конфигурационного объекта. */
+var config = {
+    /* Название схемы сущности. */
+    entitySchemaName: "Contact",
+    /* Значения колонок. */
+    columnValues: {
+        Id: "00000000-0000-0000-0000-000000000001",
+        Name: "Name1"
+    }
+};
+/* Создание новой записи. */
+Terrasoft.DataManager.createItem(config, function (item) {
+    Terrasoft.DataManager.addItem(item);
+}, this);
+</pre>
+</div>
+</div>
+</div>
+
+<div class="code">
+<div class="code__widgets">
+<div class="code__top">
+<div class="code__title">Получение записи и изменение значения колонки</div>
+</div>
+
+<div class="code__source">
+<pre class="prettyprint">
+/* Получение записи. */
+var item = Terrasoft.DataManager.findItem("Contact",
+     "00000000-0000-0000-0000-000000000001");
+/* Установка нового значения "Name2" колонке Name. */
+item.setColumnValue("Name", "Name2");
+</pre>
+</div>
+</div>
+</div>
+
+<div class="code">
+<div class="code__widgets">
+<div class="code__top">
+<div class="code__title">Удаление записи из <span class="filled">DataManager</span></div>
+</div>
+
+<div class="code__source">
+<pre class="prettyprint">
+/* Определение конфигурационного объекта. */
+var config = {
+    /* Название схемы сущности. */     
+    entitySchemaName: "Contact",
+    /* Значение первичной колонки. */
+    primaryColumnValue: "00000000-0000-0000-0000-000000000001"
+};
+/* Устанавливает признак isDeleted для записи item. */
+Terrasoft.DataManager.remove(config, function () {
+}, this);
+</pre>
+</div>
+</div>
+</div>
+
+<div class="code">
+<div class="code__widgets">
+<div class="code__top">
+<div class="code__title">Отмена изменений, сделанных в текущей сессии работы с <span class="filled">DataManager</span></div>
+</div>
+
+<div class="code__source">
+<pre class="prettyprint">
+/* Получение записи. */
+var item = Terrasoft.DataManager.findItem("Contact",
+     "00000000-0000-0000-0000-000000000001");
+/* Отмена изменений для записи. */      
+Terrasoft.DataManager.discardItem(item);
+</pre>
+</div>
+</div>
+</div>
+
+<div class="code">
+<div class="code__widgets">
+<div class="code__top">
+<div class="code__title">Фиксация изменений в базе данных</div>
+</div>
+
+<div class="code__source">
+<pre class="prettyprint">
+/* Определение конфигурационного объекта. */
+var config = {
+    /* Название схемы сущности. */    
+    entitySchemaNames: ["Contact"]
+};
+/* Сохранение изменений в базу данных. */
+Terrasoft.DataManager.save(config, function () {
+}, this);
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+      
+  </div>
+
+    </div>
+  </div>
+
+  </div>
+
+</article>
+
+  </div>
+
+  </div>
+
+          </div>
+        </div>
+
+                  <aside class="creatio-sidebar creatio-sidebar_first" role="complementary">
+              <div class="region region-sidebar-first">
+    <div id="block-documentationnaviagtion" class="block block-ts-nav block-ts-nav-doc-nav">
+  
+    
+      <div class="ts-nav-block"><a href="../../../../index.html" class="ts-nav-block__link">Документация</a><div class="ts-nav-block__title">Для разработчика</div>
+</div>
+<div class="ts-nav-container"><ul class="ts-nav-menu"><li class="ts-nav-menu__item">
+  <a href="../../s_chego_nachat.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">С чего начать&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../architecture.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Архитектура&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../instrumenty_razrabotki.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Инструменты разработки&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../back_end_razrabotka.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Back-end разработка&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../front_end_razrabotka.html" class="ts-nav-menu__link ts-nav-menu__link_expanded ts-nav-menu__link_open" hreflang="zxx">Front-end разработка&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+      <ul class="ts-nav-menu__children">
+      <li class="ts-nav-menu__item">
+  <a href="../moduli.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Модули&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../klientskaya_skhema.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Клиентская схема&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../komponenty/obzor.html" class="ts-nav-menu__link" hreflang="ru">Компоненты</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../sandbox.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Sandbox&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../websocket.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">WebSocket&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../front-end_development/operatsii_s_dannymi_front_end.html" class="ts-nav-menu__link ts-nav-menu__link_expanded ts-nav-menu__link_open" hreflang="ru">Операции с данными&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+      <ul class="ts-nav-menu__children">
+      <li class="ts-nav-menu__item">
+  <a href="obzor.html" class="ts-nav-menu__link ts-nav-menu__link_guide" hreflang="ru">Обзор</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="primery_formirovaniya_putej_k_kolonkam.html" class="ts-nav-menu__link ts-nav-menu__link_case" hreflang="ru">Примеры формирования путей к колонкам</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="primery_dobavleniya_kolonok_v_zapros.html" class="ts-nav-menu__link ts-nav-menu__link_case" hreflang="ru">Примеры добавления колонок в запрос</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="primery_polucheniya_rezultatov_zaprosa.html" class="ts-nav-menu__link ts-nav-menu__link_case" hreflang="ru">Примеры получения результатов запроса</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="primery_upravleniya_filtrami_v_zaprose.html" class="ts-nav-menu__link ts-nav-menu__link_case" hreflang="ru">Примеры управления фильтрами в запросе</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="entityschemaquery.html" class="ts-nav-menu__link ts-nav-menu__link_reference" data-type="JS" hreflang="ru">EntitySchemaQuery</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="datamanager.html" class="ts-nav-menu__link ts-nav-menu__link_reference ts-nav-menu__link_active" data-type="JS" hreflang="ru">DataManager</a>
+  </li>
+
+    </ul>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../front-end_development/biznes_logika_elementov_upravleniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Бизнес-логика элементов управления&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../../../api/jscoreapi/7.15.0/index.html" class="ts-nav-menu__link" hreflang="ru">Библиотека JS классов</a>
+  </li>
+
+    </ul>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../integratsiya_i_vneshnij_api.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Интеграция и внешний API&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../ehlementy_interfejsa.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Элементы интерфейса&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../komponenty_prilozheniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Компоненты приложения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../razrabotka_mobilnogo_prilozheniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Разработка мобильного приложения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../razrabotka_marketplace_prilozheniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Разработка Marketplace-приложения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+</ul>
+</div>
+
+  </div>
+
+  </div>
+
+            <div class="creatio-sidebar__toggle"></div>
+          </aside>
+        
+                  <aside class="creatio-sidebar creatio-sidebar_second" role="complementary">
+              <div class="region region-sidebar-second">
+    <div id="block-example" class="block block-ts-nav block-ts-nav-page-nav">
+  
+    
+      <div class="ts-nav-page">
+  </div>
+
+  </div>
+<div id="block-adminfeedbackblock" class="block block-admin-feedback block-admin-feedback-block">
+  
+    
+      <div id="feedback-message"><div id="upper-feedback-content"><h2>Был ли данный материал полезен?</h2>
+<input class="feedback-btn feedback-btn__yes button js-form-submit form-submit" data-node-id="3221" data-feedback="yes" type="submit" name="op" value="Да" />
+<input class="feedback-btn feedback-btn__no button js-form-submit form-submit" data-node-id="3221" data-feedback="no" type="submit" name="op" value="Нет" />
+</div>
+<form class="admin-feedback-form" data-drupal-selector="admin-feedback-form" action="https://academy.terrasoft.ua/docs/7-16/developer/front_end_razrabotka/operatsii_s_dannymi_front_end/datamanager" method="post" id="admin-feedback-form" accept-charset="UTF-8">
+  <div id="feedback-msg-result"></div><div class="js-form-item form-item js-form-type-textarea form-type-textarea js-form-item-feedback-message form-item-feedback-message form-no-label">
+        <div class="form-textarea-wrapper">
+  <textarea id="edit-feedback-msg" data-drupal-selector="edit-feedback-message" name="feedback_message" rows="5" cols="60" class="form-textarea resize-vertical"></textarea>
+</div>
+
+        </div>
+<input id="feedback-id" data-drupal-selector="edit-feedback-id" type="hidden" name="feedback_id" value="" />
+<input class="feedback-btn feedback-btn__send-comment button js-form-submit form-submit" data-drupal-selector="edit-feedback-send" type="submit" id="edit-feedback-send" name="op" value="Отправить" />
+<input autocomplete="off" data-drupal-selector="form-ng0ollosbkshwko-lvtr3ppoxcs2jpdewctunt8xcyg" type="hidden" name="form_build_id" value="form-NG0OlloSbkSHwkO_lvTr3PPOXcs2JpdewCTunt8XCyg" />
+<input data-drupal-selector="edit-admin-feedback-form" type="hidden" name="form_id" value="admin_feedback_form" />
+
+</form>
+</div>
+
+  </div>
+
+  </div>
+
+          </aside>
+              </main>
+    </div>
+  </div>
+
+  <footer role="contentinfo">
+    <div class="creatio-region creatio-region_footer">
+      <div class="creatio-container">
+          <div class="region region-footer">
+    <div id="block-footerua" class="block block-simple-block block-simple-blockfooter-ua">
+  
+    
+      <div class="footer">
+<div class="footer-left">
+<ul class="footer-socials"><li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_fb" href="https://www.facebook.com/terrasoft.ua" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_in" href="https://www.linkedin.com/company/terrasoft/" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_yt" href="https://www.youtube.com/c/TerrasoftUkraine" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_tg" href="https://t.me/Terrasoft_UA" target="_blank"> </a></li>
+</ul></div>
+
+<div class="footer-contact">
+<div class="footer-title">Будьте на связи!</div>
+
+<div class="footer-content">
+<div class="footer-items">
+<div class="footer-item"><a class="footer__link footer__link_phone" href="tel:+380443633133">+38 (044) 363-31-33</a></div>
+</div>
+
+<div class="footer-items">
+<div class="footer-item"><a class="footer__link footer__link_email" href="mailto:support@terrasoft.ua">support@terrasoft.ua</a></div>
+</div>
+</div>
+</div>
+</div>
+
+  </div>
+
+  </div>
+
+      </div>
+    </div>
+    <div class="creatio-region creatio-region_bottom">
+      <div class="creatio-container">
+          <div class="region region-bottom">
+    <div id="block-allrightsreservedua" class="block block-simple-block block-simple-blockfooter-bottom-ua">
+  
+    
+      <p>© 2002-2022 Terrasoft.  |  <a href="https://www.terrasoft.ua/privacy-policy" target="_blank">Конфиденциальность</a></p>
+
+  </div>
+
+  </div>
+
+      </div>
+    </div>
+  </footer>
+</div>
+<div class="creatio-bg"></div>
+
+
+  </div>
+
+    
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/docs\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/3221","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"ru"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"ajaxPageState":{"libraries":"admin_feedback\/admin_feedback_block,admin_feedback\/admin_feedback_css,classy\/base,classy\/messages,classy\/node,core\/drupal.ajax,core\/jquery.form,core\/normalize,creatio\/fancybox,creatio\/global,layout_discovery\/onecol,system\/base,ts_doc\/doc_version,ts_feedback\/ts_feedback,ts_nav\/breadcrumb,ts_nav\/doc_nav,ts_nav\/page_nav,ts_title_anchor\/ts_title_anchor","theme":"creatio","theme_token":null},"ajaxTrustedUrl":{"form_action_p_pvdeGsVG5zNF_XLGPTvYSKCf43t8qZYSwcfZl2uzM":true,"\/docs\/7-16\/developer\/front_end_razrabotka\/operatsii_s_dannymi_front_end\/datamanager?ajax_form=1":true},"admin_feedback":{"yes_response":"\u0421\u043f\u0430\u0441\u0438\u0431\u043e \u0437\u0430 \u043e\u0431\u0440\u0430\u0442\u043d\u0443\u044e \u0441\u0432\u044f\u0437\u044c!","no_response":"\u0421\u043f\u0430\u0441\u0438\u0431\u043e \u0437\u0430 \u043e\u0431\u0440\u0430\u0442\u043d\u0443\u044e \u0441\u0432\u044f\u0437\u044c!","custom_text_response_on_no":{"value":"","format":"full_html"},"feedback_prompt_on_yes":true,"feedback_prompt_on_no":true,"feedback_enable_predefined_answers":false,"feedback_prompt":"\u041a\u0430\u043a \u043c\u043e\u0436\u043d\u043e \u0443\u043b\u0443\u0447\u0448\u0438\u0442\u044c \u044d\u0442\u0443 \u0441\u0442\u0430\u0442\u044c\u044e?"},"ajax":{"edit-feedback-send":{"callback":"::validateFeedbackMsg","event":"mousedown","keypress":true,"prevent":"click","url":"\/docs\/7-16\/developer\/front_end_razrabotka\/operatsii_s_dannymi_front_end\/datamanager?ajax_form=1","dialogType":"ajax","submit":{"_triggering_element_name":"op","_triggering_element_value":"\u041e\u0442\u043f\u0440\u0430\u0432\u0438\u0442\u044c"}}},"user":{"uid":0,"permissionsHash":"9c2367dfcaba0fa15f0375f97aed64e146c908cee68508d13b79e3ee80e5162d"}}</script>
+<script src="../../../../sites/default/files/js/js_Rr-7TvYD7NposuRFJwUqThxM7yJmw8vs03PQwu5gWd8.js"></script>
+
+
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+      <g id="svg-copy" class="svg-icon svg-icon_copy">
+        <path d="M15.111,18H1.889A1.848,1.848,0,0,1,0,16.2V3.6A1.848,1.848,0,0,1,1.889,1.8H5.837a2.87,2.87,0,0,1,5.326,0h3.948A1.848,1.848,0,0,1,17,3.6V16.2A1.848,1.848,0,0,1,15.111,18ZM3.777,12.6v1.8h6.611V12.6Zm0-3.6v1.8h9.445V9Zm0-3.6V7.2h9.445V5.4ZM8.5,1.8a.924.924,0,0,0-.944.9.945.945,0,0,0,1.889,0A.924.924,0,0,0,8.5,1.8Z"/>
+      </g>
+
+      <g id="svg-prev" class="svg-icon svg-icon_arrow">
+        <path d="M5.488,12.779,0,6.39,5.488,0" transform="translate(1 0.652)"/>
+      </g>
+
+      <g id="svg-next" class="svg-icon svg-icon_arrow">
+        <path d="M0,12.779,5.488,6.39,0,0" transform="translate(0.759 0.652)"/>
+      </g>
+    </svg>
+  </body>
+
+<!-- Mirrored from academy.terrasoft.ua/docs/7-16/developer/front_end_razrabotka/operatsii_s_dannymi_front_end/datamanager by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Mar 2022 05:08:16 GMT -->
+</html>

@@ -1,0 +1,3891 @@
+  <!DOCTYPE html>
+<html lang="ru" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# ">
+  
+<!-- Mirrored from academy.terrasoft.ua/docs/7-17/developer/back_end_razrabotka/operatsii_s_dannymi_back_end/queryfunction by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Mar 2022 03:44:32 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+          <!-- Google Tag Manager -->
+      <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          '../../../../../../www.googletagmanager.com/gtm5445.html?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-KLLB8G');</script>
+      <!-- End Google Tag Manager -->
+        <meta charset="utf-8" />
+<link rel="canonical" href="queryfunction.html" />
+<meta name="description" content="Класс Terrasoft.Core.DB.QueryFunction реализует функцию выражения.
+
+Функция выражения реализована в следующих классах:" />
+<meta property="og:url" content="https://academy.terrasoft.ua/docs/7-17/developer/back_end_razrabotka/operatsii_s_dannymi_back_end/queryfunction" />
+<meta property="og:title" content="Класс QueryFunction" />
+<meta property="og:description" content="Класс Terrasoft.Core.DB.QueryFunction реализует функцию выражения.
+
+Функция выражения реализована в следующих классах:" />
+<meta name="Generator" content="Drupal 9 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="../../../../themes/custom/creatio/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="revision" href="queryfunction.html" />
+
+    <title>Класс QueryFunction  | Creatio Academy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&amp;family=Open+Sans:ital,wght@0,300;0,400;0,600;1,400&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" media="all" href="../../../../sites/default/files/css/css_6lTP66__-yc6QXFp1zOwoeJ0HVigoYZP-SeoLLii000.css" />
+<link rel="stylesheet" media="all" href="../../../../sites/default/files/css/css_XQJDNhkF3xH5SZCcY-PI89Zu4nYIzQ5oR3SnUKyfXJU.css" />
+<link rel="stylesheet" media="print" href="../../../../sites/default/files/css/css_Zn4VHvcniOOtUwkIVwXzYr_0AI9gUVgZcPqaH4ViagU.css" />
+
+    
+  </head>
+  <body class="path-node page-node-type-reference"data-type="C#">
+          <!-- Google Tag Manager (noscript) -->
+      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KLLB8G"
+                        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+      <!-- End Google Tag Manager (noscript) -->
+    
+        
+      <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    <div class="creatio-page d-flex flex-column">
+        <div class="region region-informer">
+    <div id="block-terrasoftpidtrimueukrainu" class="block block-simple-block block-simple-blockterrasoft-pidtrimue-ukrainu">
+  
+    
+      <style type="text/css">
+<!--/*--><![CDATA[/* ><!--*/
+@import url(../../../../../../www.terrasoft.ua/themes/custom/creatio/css/components/informer.css)
+
+/*--><!]]>*/
+</style><div class="ts-swu">
+<div class="creatio-container">
+<div class="ts-swu__cont">
+<div><a class="ts-swu__link" href="https://www.terrasoft.ua/terrasoft-stands-with-ukraine" target="_blank">Україна понад усе!</a> <span><a href="https://www.terrasoft.ua/terrasoft-stands-with-ukraine" target="_blank">Приєднуйтеся</a> до допомоги!</span></div>
+</div>
+</div></div>
+
+  </div>
+
+  </div>
+
+  
+  <header role="banner">
+          <div class="creatio-region creatio-region_top">
+        <div class="creatio-container">
+            <div class="region region-top">
+    <div id="block-menutoggle" class="block block-simple-block block-simple-blockmenu-toggle">
+  
+    
+      <div class="menu-toggle"><span> </span></div>
+
+  </div>
+<div id="block-logowhite-2" class="block block-simple-block block-simple-blocklogo-white">
+  
+    
+      <p><a class="site-logo" href="../../../../../index.html" rel="home"><img src="../../../../themes/custom/creatio/logo-white.svg" /></a></p>
+
+  </div>
+<div id="block-search" class="block block-simple-block block-simple-blocksearch">
+  
+    
+      <div class="search">
+<form action="https://academy.terrasoft.ua/search" class="search-form" method="get"><input class="search-form__input" name="search" placeholder="Поиск" type="search" /><input class="search-form__button" type="submit" value="Поиск" /> </form>
+
+<div class="search-toggle"> </div>
+</div>
+
+  </div>
+<nav role="navigation" aria-labelledby="block-sitesua-menu" id="block-sitesua" class="block block-menu navigation menu--sites-ua">
+            
+  <h2 class="visually-hidden" id="block-sitesua-menu">Sites UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="https://www.terrasoft.ua/" rel="nofollow" target="_blank">Terrasoft</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://community.terrasoft.ua/" rel="nofollow" target="_blank">Community</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://marketplace.terrasoft.ua/" rel="nofollow" target="_blank">Marketplace</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+<div id="block-usermenu" class="block block-ts-user block-ts-user-menu-block">
+  
+    
+      <ul class="user-menu">
+      <li class="user-menu__item">
+      <a class="user-menu__link" href="https://profile.terrasoft.ua/user/login?destination=academy/ua/docs/7-17/developer/back_end_razrabotka/operatsii_s_dannymi_back_end/queryfunction">Войти</a>
+    </li>
+  </ul>
+
+  </div>
+<div id="block-usermenumobile" class="block block-ts-user block-ts-user-menu-mobile-block">
+  
+    
+      <ul class="user-menu-mobile">
+      <li class="user-menu-mobile__item">
+      <div class="user-menu-mobile__user user-menu-mobile__user_icon"></div>
+      <ul class="user-menu-mobile__submenu">
+        <li class="user-menu-mobile__subitem">
+          <a class="user-menu-mobile__sublink" href="https://profile.terrasoft.ua/user/login?destination=academy/ua/docs/7-17/developer/back_end_razrabotka/operatsii_s_dannymi_back_end/queryfunction">Войти</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  </div>
+
+  </div>
+
+        </div>
+      </div>
+              <div class="creatio-region creatio-region_header">
+        <div class="creatio-container">
+            <div class="region region-header">
+    <div id="block-logo" class="block block-simple-block block-simple-blocklogo">
+  
+    
+      <p><a class="site-logo" href="../../../../../index.html" rel="home"><img src="../../../../themes/custom/creatio/logo.svg" /></a></p>
+
+  </div>
+<nav role="navigation" aria-labelledby="block-osnovnayanavigaciyaua-menu" id="block-osnovnayanavigaciyaua" class="block block-menu navigation menu--main-ua">
+            
+  <h2 class="visually-hidden" id="block-osnovnayanavigaciyaua-menu">Основная навигация UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="../../../../index.html" data-drupal-link-system-path="&lt;front&gt;">Документация</a>
+              </li>
+                <li class="menu-item">
+        <a href="../../../../../trainings.html">Тренинги</a>
+              </li>
+                <li class="menu-item">
+        <a href="../../../../certification.html" data-drupal-link-system-path="node/3084">Сертификация и тестирование</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+<nav role="navigation" aria-labelledby="block-sitesua-2-menu" id="block-sitesua-2" class="block block-menu navigation menu--sites-ua">
+            
+  <h2 class="visually-hidden" id="block-sitesua-2-menu">Sites UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="https://www.terrasoft.ua/" rel="nofollow" target="_blank">Terrasoft</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://community.terrasoft.ua/" rel="nofollow" target="_blank">Community</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://marketplace.terrasoft.ua/" rel="nofollow" target="_blank">Marketplace</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+
+  </div>
+
+        </div>
+      </div>
+              <div class="creatio-region creatio-region_breadcrumb">
+        <div class="creatio-container">
+            <div class="region region-breadcrumb">
+    <div id="block-logowhite" class="block block-simple-block block-simple-blocklogo-white">
+  
+    
+      <p><a class="site-logo" href="../../../../../index.html" rel="home"><img src="../../../../themes/custom/creatio/logo-white.svg" /></a></p>
+
+  </div>
+<div id="block-breadcrumbnaviagtion" class="block block-ts-nav block-ts-nav-bread">
+  
+    
+      <nav class="breadcrumb"><ol class="ts-nav-breadcrumb__list"><li class="ts-nav-breadcrumb__item"><a href="../../../../index.html" class="ts-nav-breadcrumb__link" title="Документация">Документация</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../../index2132.html?vid_1=2" class="ts-nav-breadcrumb__link" title="Для разработчика">Для разработчика</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../back_end_razrabotka.html" class="ts-nav-breadcrumb__link" title="Back-end разработка" hreflang="zxx">Back-end разработка</a></li>
+<li class="ts-nav-breadcrumb__item ts-nav-breadcrumb__item_mobile"><a href="../../back-end_development/operatsii_s_dannymi_back_end.html" class="ts-nav-breadcrumb__link" title="Операции с данными" hreflang="ru">Операции с данными</a></li>
+<li class="ts-nav-breadcrumb__item"><span class="ts-nav-breadcrumb__link ts-nav-breadcrumb__link_current" title="QueryFunction">QueryFunction</span></li>
+</ol>
+</nav>
+
+  </div>
+<div id="block-search-2" class="block block-simple-block block-simple-blocksearch">
+  
+    
+      <div class="search">
+<form action="https://academy.terrasoft.ua/search" class="search-form" method="get"><input class="search-form__input" name="search" placeholder="Поиск" type="search" /><input class="search-form__button" type="submit" value="Поиск" /> </form>
+
+<div class="search-toggle"> </div>
+</div>
+
+  </div>
+
+  </div>
+
+        </div>
+      </div>
+      </header>
+
+  <div class="creatio-region creatio-region_main">
+    <div class="creatio-container">
+                <div class="region region-breadcrumb-mobile">
+    <div id="block-breadcrumbnaviagtion-2" class="block block-ts-nav block-ts-nav-bread">
+  
+    
+      <nav class="breadcrumb"><ol class="ts-nav-breadcrumb__list"><li class="ts-nav-breadcrumb__item"><a href="../../../../index.html" class="ts-nav-breadcrumb__link" title="Документация">Документация</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../../index2132.html?vid_1=2" class="ts-nav-breadcrumb__link" title="Для разработчика">Для разработчика</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../back_end_razrabotka.html" class="ts-nav-breadcrumb__link" title="Back-end разработка" hreflang="zxx">Back-end разработка</a></li>
+<li class="ts-nav-breadcrumb__item ts-nav-breadcrumb__item_mobile"><a href="../../back-end_development/operatsii_s_dannymi_back_end.html" class="ts-nav-breadcrumb__link" title="Операции с данными" hreflang="ru">Операции с данными</a></li>
+<li class="ts-nav-breadcrumb__item"><span class="ts-nav-breadcrumb__link ts-nav-breadcrumb__link_current" title="QueryFunction">QueryFunction</span></li>
+</ol>
+</nav>
+
+  </div>
+
+  </div>
+
+      
+      <main class="creatio-main" role="main">
+                                                    
+        <div class="creatio-content creatio-content_small">
+          <div class="creatio-content__inner creatio-content__inner_bg">
+                            <div class="region region-messages">
+    <div data-drupal-messages-fallback class="hidden"></div>
+
+  </div>
+
+            
+              <div class="region region-content">
+    <div id="block-creatio-page-title" class="block block-core block-page-title-block">
+  
+    
+      
+  <h1 class="page-title"><span class="field field--name-title field--type-string field--label-hidden">Класс QueryFunction </span>
+</h1>
+
+
+  </div>
+<div id="block-creatio-content" class="block block-system block-system-main-block">
+  
+    
+      
+<article data-history-node-id="2164" role="article" about="/docs/7-17/developer/back_end_razrabotka/operatsii_s_dannymi_back_end/queryfunction" class="node node--type-reference node--view-mode-full">
+
+  
+    
+
+  
+  <div class="node__content">
+      <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocknodereferencefield-difficulty">
+  
+    
+      
+            <div class="field field--name-field-difficulty field--type-entity-reference field--label-hidden field__item"><div about="/docs/7-17/taxonomy/term/169" id="taxonomy-term-169" class="taxonomy-term vocabulary-difficulty">
+  
+  
+  <div class="content">
+      <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocktaxonomy-termdifficultyfield-icon">
+  
+    
+      
+            <div class="field field--name-field-icon field--type-image field--label-hidden field__item">  <img src="../../../../sites/default/files/difficulty/advanced.svg" alt="" loading="lazy" typeof="foaf:Image" />
+
+</div>
+      
+  </div>
+<div class="block block-layout-builder block-field-blocktaxonomy-termdifficultyname">
+  
+    
+      
+            <div class="field field--name-name field--type-string field--label-hidden field__item"><span style="color: #EF4524;">Сложный</span></div>
+      
+  </div>
+
+    </div>
+  </div>
+
+  </div>
+</div>
+</div>
+      
+  </div>
+<div class="block block-ts-doc block-ts-doc-downloads">
+  
+    
+      <a href="../../../../sites/default/files/pdf/node/2164/Klass_QueryFunction__.pdf" target="_blank">PDF</a>
+  </div>
+<div class="block block-ts-doc block-ts-doc-versions">
+  
+    
+        <div class="ts-doc-versions">
+    <select class="ts-doc-versions__select">
+                              <option value="/docs/8-0/developer/back_end_razrabotka/operatsii_s_dannymi_back_end/queryfunction">Версия 8.0</option>
+                              <option value="/docs/7-18/developer/back_end_razrabotka/operatsii_s_dannymi_back_end/queryfunction">Версия 7.18</option>
+                                                <option value="/docs/7-17/developer/back_end_razrabotka/operatsii_s_dannymi_back_end/queryfunction" selected>Версия 7.17</option>
+                              <option value="/docs/7-16/developer/back_end_razrabotka/operatsii_s_dannymi_back_end/queryfunction">Версия 7.16</option>
+          </select>
+  </div>
+
+  </div>
+
+    </div>
+  </div>
+  <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocknodereferencebody">
+  
+    
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><p>Класс <span class="filled">Terrasoft.Core.DB.QueryFunction</span> реализует функцию выражения.</p>
+
+<p>Функция выражения реализована в следующих классах:</p>
+
+<ul><li><span class="filled">QueryFunction</span> — базовый класс функции выражения.</li>
+	<li><span class="filled">AggregationQueryFunction</span> — реализует агрегирующую функцию выражения.</li>
+	<li><span class="filled">IsNullQueryFunction</span> — заменяет значения <span class="filled">null</span> замещающим выражением.</li>
+	<li><span class="filled">CreateGuidQueryFunction</span> — реализует функцию выражения нового идентификатора.</li>
+	<li><span class="filled">CurrentDateTimeQueryFunction</span> — реализует функцию выражения текущей даты и времени.</li>
+	<li><span class="filled">CoalesceQueryFunction</span> — возвращает первое выражение из списка аргументов, не равное <span class="filled">null</span>.</li>
+	<li><span class="filled">DatePartQueryFunction</span> — реализует функцию выражения части значения типа <span class="filled">Дата/Время</span>.</li>
+	<li><span class="filled">DateAddQueryFunction</span> — реализует функцию выражения даты, полученной путем добавления указанного промежутка времени к заданной дате.</li>
+	<li><span class="filled">DateDiffQueryFunction</span> — реализует функцию выражения разницы дат, полученного путем вычитания заданных дат.</li>
+	<li><span class="filled">CastQueryFunction</span> — приводит выражение аргумента к заданному типу данных.</li>
+	<li><span class="filled">UpperQueryFunction</span> — преобразовывает символы выражения аргумента в верхний регистр.</li>
+	<li><span class="filled">CustomQueryFunction</span> — реализует пользовательскую функцию.</li>
+	<li><span class="filled">DataLengthQueryFunction</span> — определяет число байтов, использованных для представления выражения.</li>
+	<li><span class="filled">TrimQueryFunction</span> — удаляет начальные и конечные пробелы из выражения.</li>
+	<li><span class="filled">LengthQueryFunction</span> — возвращает длину выражения.</li>
+	<li><span class="filled">SubstringQueryFunction</span> — получает часть строки.</li>
+	<li><span class="filled">ConcatQueryFunction</span> — формирует строку, которая является результатом объединения строковых значений аргументов функции.</li>
+	<li><span class="filled">WindowQueryFunction</span> — реализует функцию SQL окна.</li>
+</ul><h2 data-type="С#">Класс QueryFunction<a class="title-anchor" href="#title-2164-1" id="title-2164-1"> </a></h2>
+
+<p>Пространство имен <span class="filled">Terrasoft.Core.DB</span>.</p>
+
+<p>Базовый класс функции выражения.</p>
+
+<div class="message">
+<p><span class="message__bold">На заметку.</span> Полный перечень методов класса <span class="filled">QueryFunction</span>, его родительских классов, а также реализуемых им интерфейсов можно найти в <a href="../../../../../api/netcoreapi/7.18.0/api/Terrasoft.Core.DB.QueryFunction.html">Библиотеке .NET классов</a>.</p>
+</div>
+
+<div class="block-collapse">
+<h3 class="block-collapse__title">Методы<a class="title-anchor" href="#title-2164-2" id="title-2164-2"> </a></h3>
+
+<div class="block-collapse__content">
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+static QueryColumnExpression Negate(QueryFunction operand)
+</pre>
+</div>
+</div>
+</div>
+
+<p>Возвращает выражение отрицания значения переданной функции.</p>
+
+<div class="block-collapse">
+<div class="block-collapse__title block-collapse__title_mb-16">Параметры</div>
+
+<div class="block-collapse__content">
+<div class="table">
+<table><tbody><tr><td width="30%"><span class="consolas">operand</span></td>
+			<td>Функция выражения.</td>
+		</tr></tbody></table></div>
+</div>
+</div>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+static QueryColumnExpression operator -(QueryFunction operand)
+</pre>
+</div>
+</div>
+</div>
+
+<p>Перегрузка оператора отрицания переданной функции выражения.</p>
+
+<div class="block-collapse">
+<div class="block-collapse__title block-collapse__title_mb-16">Параметры</div>
+
+<div class="block-collapse__content">
+<div class="table">
+<table><tbody><tr><td width="30%"><span class="consolas">operand</span></td>
+			<td>Функция выражения.</td>
+		</tr></tbody></table></div>
+</div>
+</div>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+static QueryColumnExpression Add(QueryFunction leftOperand, QueryFunction rightOperand)
+</pre>
+</div>
+</div>
+</div>
+
+<p>Возвращает выражение арифметического сложения переданных функций выражения.</p>
+
+<div class="block-collapse">
+<div class="block-collapse__title block-collapse__title_mb-16">Параметры</div>
+
+<div class="block-collapse__content">
+<div class="table">
+<table><tbody><tr><td width="30%"><span class="consolas">leftOperand</span></td>
+			<td>Левый операнд в операции сложения.</td>
+		</tr><tr><td><span class="consolas">rightOperand</span></td>
+			<td>Правый операнд в операции сложения.</td>
+		</tr></tbody></table></div>
+</div>
+</div>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+static QueryColumnExpression operator +(QueryFunction leftOperand, QueryFunction rightOperand)
+</pre>
+</div>
+</div>
+</div>
+
+<p>Перегрузка оператора сложения двух функций выражений.</p>
+
+<div class="block-collapse">
+<div class="block-collapse__title block-collapse__title_mb-16">Параметры</div>
+
+<div class="block-collapse__content">
+<div class="table">
+<table><tbody><tr><td width="30%"><span class="consolas">leftOperand</span></td>
+			<td>Левый операнд в операции сложения.</td>
+		</tr><tr><td><span class="consolas">rightOperand</span></td>
+			<td>Правый операнд в операции сложения.</td>
+		</tr></tbody></table></div>
+</div>
+</div>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+static QueryColumnExpression Subtract(QueryFunction leftOperand, QueryFunction rightOperand)
+</pre>
+</div>
+</div>
+</div>
+
+<p>Возвращает выражение вычитания правой функции выражения из левой.</p>
+
+<div class="block-collapse">
+<div class="block-collapse__title block-collapse__title_mb-16">Параметры</div>
+
+<div class="block-collapse__content">
+<div class="table">
+<table><tbody><tr><td width="30%"><span class="consolas">leftOperand</span></td>
+			<td>Левый операнд в операции вычитания.</td>
+		</tr><tr><td><span class="consolas">rightOperand</span></td>
+			<td>Правый операнд в операции вычитания.</td>
+		</tr></tbody></table></div>
+</div>
+</div>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+static QueryColumnExpression operator -(QueryFunction leftOperand, QueryFunction rightOperand)
+</pre>
+</div>
+</div>
+</div>
+
+<p>Перегрузка оператора вычитания правой функции выражения из левой.</p>
+
+<div class="block-collapse">
+<div class="block-collapse__title block-collapse__title_mb-16">Параметры</div>
+
+<div class="block-collapse__content">
+<div class="table">
+<table><tbody><tr><td width="30%"><span class="consolas">leftOperand</span></td>
+			<td>Левый операнд в операции вычитания.</td>
+		</tr><tr><td><span class="consolas">rightOperand</span></td>
+			<td>Правый операнд в операции вычитания.</td>
+		</tr></tbody></table></div>
+</div>
+</div>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+static QueryColumnExpression Multiply(QueryFunction leftOperand, QueryFunction rightOperand)
+</pre>
+</div>
+</div>
+</div>
+
+<p>Возвращает выражение умножения переданных функций выражений.</p>
+
+<div class="block-collapse">
+<div class="block-collapse__title block-collapse__title_mb-16">Параметры</div>
+
+<div class="block-collapse__content">
+<div class="table">
+<table><tbody><tr><td width="30%"><span class="consolas">leftOperand</span></td>
+			<td>Левый операнд в операции умножения.</td>
+		</tr><tr><td><span class="consolas">rightOperand</span></td>
+			<td>Правый операнд в операции умножения.</td>
+		</tr></tbody></table></div>
+</div>
+</div>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+static QueryColumnExpression operator *(QueryFunction leftOperand, QueryFunction rightOperand)
+</pre>
+</div>
+</div>
+</div>
+
+<p>Перегрузка оператора умножения двух функций выражений.</p>
+
+<div class="block-collapse">
+<div class="block-collapse__title block-collapse__title_mb-16">Параметры</div>
+
+<div class="block-collapse__content">
+<div class="table">
+<table><tbody><tr><td width="30%"><span class="consolas">leftOperand</span></td>
+			<td>Левый операнд в операции умножения.</td>
+		</tr><tr><td><span class="consolas">rightOperand</span></td>
+			<td>Правый операнд в операции умножения.</td>
+		</tr></tbody></table></div>
+</div>
+</div>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+static QueryColumnExpression Divide(QueryFunction leftOperand, QueryFunction rightOperand)
+</pre>
+</div>
+</div>
+</div>
+
+<p>Возвращает выражение деления левой функции выражения на правую.</p>
+
+<div class="block-collapse">
+<div class="block-collapse__title block-collapse__title_mb-16">Параметры</div>
+
+<div class="block-collapse__content">
+<div class="table">
+<table><tbody><tr><td width="30%"><span class="consolas">leftOperand</span></td>
+			<td>Левый операнд в операции деления.</td>
+		</tr><tr><td><span class="consolas">rightOperand</span></td>
+			<td>Правый операнд в операции деления.</td>
+		</tr></tbody></table></div>
+</div>
+</div>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+static QueryColumnExpression operator /(QueryFunction leftOperand, QueryFunction rightOperand)
+</pre>
+</div>
+</div>
+</div>
+
+<p>Перегрузка оператора деления функций выражений.</p>
+
+<div class="block-collapse">
+<div class="block-collapse__title block-collapse__title_mb-16">Параметры</div>
+
+<div class="block-collapse__content">
+<div class="table">
+<table><tbody><tr><td width="30%"><span class="consolas">leftOperand</span></td>
+			<td>Левый операнд в операции деления.</td>
+		</tr><tr><td><span class="consolas">rightOperand</span></td>
+			<td>Правый операнд в операции деления.</td>
+		</tr></tbody></table></div>
+</div>
+</div>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+abstract object Clone()
+</pre>
+</div>
+</div>
+</div>
+
+<p>Создает копию текущего экземпляра <span class="filled">QueryFunction</span>.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+abstract void BuildSqlText(StringBuilder sb, DBEngine dbEngine)
+</pre>
+</div>
+</div>
+</div>
+
+<p>Формирует текст запроса с использованием переданных экземпляра <span class="filled">StringBuilder</span> и построителя запросов <span class="filled">DBEngine</span>.</p>
+
+<div class="block-collapse">
+<div class="block-collapse__title block-collapse__title_mb-16">Параметры</div>
+
+<div class="block-collapse__content">
+<div class="table">
+<table><tbody><tr><td width="30%"><span class="consolas">sb</span></td>
+			<td>Экземпляр <span class="filled">StringBuilder</span>, с помощью которого формируется текст запроса.</td>
+		</tr><tr><td><span class="consolas">dbEngine</span></td>
+			<td>Экземпляр построителя запросов к базе данных.</td>
+		</tr></tbody></table></div>
+</div>
+</div>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+virtual void AddUsingParameters(QueryParameterCollection resultParameters)
+</pre>
+</div>
+</div>
+</div>
+
+<p>Добавляет переданную коллекцию параметров в аргументы функции.</p>
+
+<div class="block-collapse">
+<div class="block-collapse__title block-collapse__title_mb-16">Параметры</div>
+
+<div class="block-collapse__content">
+<div class="table">
+<table><tbody><tr><td width="30%"><span class="consolas">resultParameters</span></td>
+			<td>Коллекция параметров запроса, которые добавляются в аргументы функции.</td>
+		</tr></tbody></table></div>
+</div>
+</div>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+QueryColumnExpressionCollection GetQueryColumnExpressions()
+</pre>
+</div>
+</div>
+</div>
+
+<p>Возвращает коллекцию выражений колонки запроса для текущей функции запроса.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+QueryColumnExpression GetQueryColumnExpression()
+</pre>
+</div>
+</div>
+</div>
+
+<p>Возвращает выражение колонки запроса для текущей функции запроса.</p>
+</div>
+</div>
+
+<h2 data-type="С#">Класс AggregationQueryFunction<a class="title-anchor" href="#title-2164-3" id="title-2164-3"> </a></h2>
+
+<p>Пространство имен <span class="filled">Terrasoft.Core.DB</span>.</p>
+
+<p>Класс реализует агрегирующую функцию выражения.</p>
+
+<div class="message">
+<p><span class="message__bold">На заметку.</span> Полный перечень методов и свойств класса <span class="filled">AggregationQueryFunction</span>, его родительских классов, а также реализуемых им интерфейсов можно найти в <a href="../../../../../api/netcoreapi/7.18.0/api/Terrasoft.Core.DB.AggregationQueryFunction.html">Библиотеке .NET классов</a>.</p>
+</div>
+
+<div class="block-collapse">
+<h3 class="block-collapse__title">Конструкторы<a class="title-anchor" href="#title-2164-4" id="title-2164-4"> </a></h3>
+
+<div class="block-collapse__content">
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+AggregationQueryFunction()
+</pre>
+</div>
+</div>
+</div>
+
+<p>Инициализирует новый экземпляр <span class="filled">AggregationQueryFunction</span>.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+AggregationQueryFunction(AggregationTypeStrict aggregationType, QueryColumnExpression expression)
+</pre>
+</div>
+</div>
+</div>
+
+<p>Инициализирует новый экземпляр <span class="filled">AggregationQueryFunction</span> с заданным типом агрегирующей функции для указанного выражения колонки.</p>
+
+<div class="block-collapse">
+<div class="block-collapse__title block-collapse__title_mb-16">Параметры</div>
+
+<div class="block-collapse__content">
+<div class="table">
+<table><tbody><tr><td width="30%"><span class="consolas">aggregationType</span></td>
+			<td>Тип агрегирующей функции.</td>
+		</tr><tr><td><span class="consolas">expression</span></td>
+			<td>Выражение колонки, к которому применяется агрегирующая функция.</td>
+		</tr></tbody></table></div>
+</div>
+</div>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+AggregationQueryFunction(AggregationTypeStrict aggregationType, IQueryColumnExpressionConvertible expression)
+</pre>
+</div>
+</div>
+</div>
+
+<p>Инициализирует новый экземпляр <span class="filled">AggregationQueryFunction</span> с заданным типом агрегирующей функции для указанного выражения колонки.</p>
+
+<div class="block-collapse">
+<div class="block-collapse__title block-collapse__title_mb-16">Параметры</div>
+
+<div class="block-collapse__content">
+<div class="table">
+<table><tbody><tr><td width="30%"><span class="consolas">aggregationType</span></td>
+			<td>Тип агрегирующей функции.</td>
+		</tr><tr><td><span class="consolas">expression</span></td>
+			<td>Выражение колонки, к которому применяется агрегирующая функция.</td>
+		</tr></tbody></table></div>
+</div>
+</div>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+AggregationQueryFunction(AggregationQueryFunction source)
+</pre>
+</div>
+</div>
+</div>
+
+<p>Инициализирует новый экземпляр <span class="filled">AggregationQueryFunction</span>, являющийся клоном переданной агрегирующей функции выражения.</p>
+
+<div class="block-collapse">
+<div class="block-collapse__title block-collapse__title_mb-16">Параметры</div>
+
+<div class="block-collapse__content">
+<div class="table">
+<table><tbody><tr><td width="30%"><span class="consolas">source</span></td>
+			<td>Агрегирующая функция выражения <span class="filled">AggregationQueryFunction</span>, клон которой создается.</td>
+		</tr></tbody></table></div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="block-collapse">
+<h3 class="block-collapse__title">Свойства<a class="title-anchor" href="#title-2164-5" id="title-2164-5"> </a></h3>
+
+<div class="block-collapse__content">
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+AggregationType <span class="gray">AggregationTypeStrict</span>
+</pre>
+</div>
+</div>
+</div>
+
+<p>Тип агрегирующей функции.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+AggregationEvalType <span class="gray">AggregationEvalType</span>
+</pre>
+</div>
+</div>
+</div>
+
+<p>Область применения агрегирующей функции.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+Expression <span class="gray">QueryColumnExpression</span>
+</pre>
+</div>
+</div>
+</div>
+
+<p>Выражение аргумента функции.</p>
+</div>
+</div>
+
+<div class="block-collapse">
+<h3 class="block-collapse__title">Методы<a class="title-anchor" href="#title-2164-6" id="title-2164-6"> </a></h3>
+
+<div class="block-collapse__content">
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+override void BuildSqlText(StringBuilder sb, DBEngine dbEngine)
+</pre>
+</div>
+</div>
+</div>
+
+<p>Формирует текст запроса с использованием заданных экземпляров <span class="filled">StringBuilder</span> и построителя запроса <span class="filled">DBEngine</span>.</p>
+
+<div class="block-collapse">
+<div class="block-collapse__title block-collapse__title_mb-16">Параметры</div>
+
+<div class="block-collapse__content">
+<div class="table">
+<table><tbody><tr><td width="30%"><span class="consolas">sb</span></td>
+			<td>Экземпляр <span class="filled">StringBuilder</span>, с помощью которого формируется текст запроса.</td>
+		</tr><tr><td><span class="consolas">dbEngine</span></td>
+			<td>Экземпляр построителя запросов к базе данных.</td>
+		</tr></tbody></table></div>
+</div>
+</div>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+override void AddUsingParameters(QueryParameterCollection resultParameters)
+</pre>
+</div>
+</div>
+</div>
+
+<p>Добавляет переданную коллекцию параметров в аргументы функции.</p>
+
+<div class="block-collapse">
+<div class="block-collapse__title block-collapse__title_mb-16">Параметры</div>
+
+<div class="block-collapse__content">
+<div class="table">
+<table><tbody><tr><td width="30%"><span class="consolas">resultParameters</span></td>
+			<td>Коллекция параметров запроса, которые добавляются в аргументы функции.</td>
+		</tr></tbody></table></div>
+</div>
+</div>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+override object Clone()
+</pre>
+</div>
+</div>
+</div>
+
+<p>Создает клон текущего экземпляра <span class="filled">AggregationQueryFunction</span>.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+AggregationQueryFunction All()
+</pre>
+</div>
+</div>
+</div>
+
+<p>Устанавливает для текущей агрегирующей функции область применения <span class="key">Ко всем значениям</span>.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+AggregationQueryFunction Distinct()
+</pre>
+</div>
+</div>
+</div>
+
+<p>Устанавливает для текущей агрегирующей функции область применения <span class="key">К уникальным значениям</span>.</p>
+</div>
+</div>
+
+<h2 data-type="С#">Класс IsNullQueryFunction<a class="title-anchor" href="#title-2164-7" id="title-2164-7"> </a></h2>
+
+<p>Пространство имен <span class="filled">Terrasoft.Core.DB</span>.</p>
+
+<p>Класс заменяет значения <span class="filled">null</span> замещающим выражением.</p>
+
+<p> </p>
+
+<div class="message">
+<p><span class="message__bold">На заметку.</span> Полный перечень методов и свойств класса <span class="filled">IsNullQueryFunction</span>, его родительских классов, а также реализуемых им интерфейсов можно найти в <a href="../../../../../api/netcoreapi/7.18.0/api/Terrasoft.Core.DB.IsNullQueryFunction.html">Библиотеке .NET классов</a>.</p>
+</div>
+
+<div class="block-collapse">
+<h3 class="block-collapse__title">Конструкторы<a class="title-anchor" href="#title-2164-8" id="title-2164-8"> </a></h3>
+
+<div class="block-collapse__content">
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+IsNullQueryFunction()
+</pre>
+</div>
+</div>
+</div>
+
+<p>Инициализирует новый экземпляр <span class="filled">IsNullQueryFunction</span>.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+IsNullQueryFunction(QueryColumnExpression checkExpression, QueryColumnExpression replacementExpression)
+IsNullQueryFunction(IQueryColumnExpressionConvertible checkExpression, IQueryColumnExpressionConvertible replacementExpression)
+</pre>
+</div>
+</div>
+</div>
+
+<p>Инициализирует новый экземпляр <span class="filled">IsNullQueryFunction</span> для заданных проверяемого выражения и замещающего выражения.</p>
+
+<div class="block-collapse">
+<div class="block-collapse__title block-collapse__title_mb-16">Параметры</div>
+
+<div class="block-collapse__content">
+<div class="table">
+<table><tbody><tr><td width="30%"><span class="consolas">checkExpression</span></td>
+			<td>Выражение, которое проверяется на равенство <span class="filled">null</span>.</td>
+		</tr><tr><td><span class="consolas">replacementExpression</span></td>
+			<td>Выражение, которое возвращается функцией, если <span class="filled">checkExpression</span> равно <span class="filled">null</span>.</td>
+		</tr></tbody></table></div>
+</div>
+</div>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+IsNullQueryFunction(IsNullQueryFunction source)
+</pre>
+</div>
+</div>
+</div>
+
+<p>Инициализирует новый экземпляр <span class="filled">IsNullQueryFunction</span>, являющийся клоном переданной функции выражения.</p>
+
+<div class="block-collapse">
+<div class="block-collapse__title block-collapse__title_mb-16">Параметры</div>
+
+<div class="block-collapse__content">
+<div class="table">
+<table><tbody><tr><td width="30%"><span class="consolas">source</span></td>
+			<td>Агрегирующая функция выражения <span class="filled">IsNullQueryFunction</span>, клон которой создается.</td>
+		</tr></tbody></table></div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="block-collapse">
+<h3 class="block-collapse__title">Свойства<a class="title-anchor" href="#title-2164-9" id="title-2164-9"> </a></h3>
+
+<div class="block-collapse__content">
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+CheckExpression <span class="gray">QueryColumnExpression</span>
+</pre>
+</div>
+</div>
+</div>
+
+<p>Выражение аргумента функции, которое проверяется на равенство значению <span class="filled">null</span>.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+ReplacementExpression <span class="gray">QueryColumnExpression</span>
+</pre>
+</div>
+</div>
+</div>
+
+<p>Выражение аргумента функции, которое возвращается, если проверяемое выражение равно <span class="filled">null</span>.</p>
+</div>
+</div>
+
+<div class="block-collapse">
+<h3 class="block-collapse__title">Методы<a class="title-anchor" href="#title-2164-10" id="title-2164-10"> </a></h3>
+
+<div class="block-collapse__content">
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+override void BuildSqlText(StringBuilder sb, DBEngine dbEngine)
+</pre>
+</div>
+</div>
+</div>
+
+<p>Формирует текст запроса с использованием заданных экземпляров <span class="filled">StringBuilder</span> и построителя запросов <span class="filled">DBEngine</span>.</p>
+
+<div class="block-collapse">
+<div class="block-collapse__title block-collapse__title_mb-16">Параметры</div>
+
+<div class="block-collapse__content">
+<div class="table">
+<table><tbody><tr><td width="30%"><span class="consolas">sb</span></td>
+			<td>Экземпляр <span class="filled">StringBuilder</span>, с помощью которого формируется текст запроса.</td>
+		</tr><tr><td><span class="consolas">dbEngine</span></td>
+			<td>Экземпляр построителя запросов к базе данных.</td>
+		</tr></tbody></table></div>
+</div>
+</div>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+override void AddUsingParameters(QueryParameterCollection resultParameters)
+</pre>
+</div>
+</div>
+</div>
+
+<p>Добавляет переданную коллекцию параметров в аргументы функции.</p>
+
+<div class="block-collapse">
+<div class="block-collapse__title block-collapse__title_mb-16">Параметры</div>
+
+<div class="block-collapse__content">
+<div class="table">
+<table><tbody><tr><td width="30%"><span class="consolas">resultParameters</span></td>
+			<td>Коллекция параметров запроса, которые добавляются в аргументы функции.</td>
+		</tr></tbody></table></div>
+</div>
+</div>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+override object Clone()
+</pre>
+</div>
+</div>
+</div>
+
+<p>Создает клон текущего экземпляра <span class="filled">IsNullQueryFunction</span>.</p>
+</div>
+</div>
+
+<h2 data-type="С#">Класс CreateGuidQueryFunction<a class="title-anchor" href="#title-2164-11" id="title-2164-11"> </a></h2>
+
+<p>Пространство имен <span class="filled">Terrasoft.Core.DB</span>.</p>
+
+<p>Класс реализует функцию выражения нового идентификатора.</p>
+
+<div class="message">
+<p><span class="message__bold">На заметку.</span> Полный перечень методов класса <span class="filled">CreateGuidQueryFunction</span>, его родительских классов, а также реализуемых им интерфейсов можно найти в <a href="../../../../../api/netcoreapi/7.18.0/api/Terrasoft.Core.DB.CreateGuidQueryFunction.html">Библиотеке .NET классов</a>.</p>
+</div>
+
+<div class="block-collapse">
+<h3 class="block-collapse__title">Конструкторы<a class="title-anchor" href="#title-2164-12" id="title-2164-12"> </a></h3>
+
+<div class="block-collapse__content">
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+CreateGuidQueryFunction()
+</pre>
+</div>
+</div>
+</div>
+
+<p>Инициализирует новый экземпляр <span class="filled">CreateGuidQueryFunction</span>.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+CreateGuidQueryFunction(CreateGuidQueryFunction source)
+</pre>
+</div>
+</div>
+</div>
+
+<p>Инициализирует новый экземпляр <span class="filled">CreateGuidQueryFunction</span>, являющийся клоном переданной функции.</p>
+
+<div class="block-collapse">
+<div class="block-collapse__title block-collapse__title_mb-16">Параметры</div>
+
+<div class="block-collapse__content">
+<div class="table">
+<table><tbody><tr><td width="30%"><span class="consolas">source</span></td>
+			<td>Функция <span class="filled">CreateGuidQueryFunction</span>, клон которой создается.</td>
+		</tr></tbody></table></div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="block-collapse">
+<h3 class="block-collapse__title">Методы<a class="title-anchor" href="#title-2164-13" id="title-2164-13"> </a></h3>
+
+<div class="block-collapse__content">
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+override void BuildSqlText(StringBuilder sb, DBEngine dbEngine)
+</pre>
+</div>
+</div>
+</div>
+
+<p>Формирует текст запроса с использованием заданных экземпляров <span class="filled">StringBuilder</span> и построителя запросов <span class="filled">DBEngine</span>.</p>
+
+<div class="block-collapse">
+<div class="block-collapse__title block-collapse__title_mb-16">Параметры</div>
+
+<div class="block-collapse__content">
+<div class="table">
+<table><tbody><tr><td width="30%"><span class="consolas">sb</span></td>
+			<td>Экземпляр <span class="filled">StringBuilder</span>, с помощью которого формируется текст запроса.</td>
+		</tr><tr><td><span class="consolas">dbEngine</span></td>
+			<td>Экземпляр построителя запроса к базе данных.</td>
+		</tr></tbody></table></div>
+</div>
+</div>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+override object Clone()
+</pre>
+</div>
+</div>
+</div>
+
+<p>Создает клон текущего экземпляра <span class="filled">CreateGuidQueryFunction</span>.</p>
+</div>
+</div>
+
+<h2 data-type="С#">Класс CurrentDateTimeQueryFunction<a class="title-anchor" href="#title-2164-14" id="title-2164-14"> </a></h2>
+
+<p>Пространство имен <span class="filled">Terrasoft.Core.DB</span>.</p>
+
+<p>Класс реализует функцию выражения текущей даты и времени.</p>
+
+<div class="message">
+<p><span class="message__bold">На заметку.</span> Полный перечень методов класса <span class="filled">CurrentDateTimeQueryFunction</span>, его родительских классов, а также реализуемых им интерфейсов можно найти в <a href="../../../../../api/netcoreapi/7.18.0/api/Terrasoft.Core.DB.CurrentDateTimeQueryFunction.html">Библиотеке .NET классов</a>.</p>
+</div>
+
+<div class="block-collapse">
+<h3 class="block-collapse__title">Конструкторы<a class="title-anchor" href="#title-2164-15" id="title-2164-15"> </a></h3>
+
+<div class="block-collapse__content">
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+CurrentDateTimeQueryFunction()
+</pre>
+</div>
+</div>
+</div>
+
+<p>Инициализирует новый экземпляр <span class="filled">CurrentDateTimeQueryFunction</span>.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+CurrentDateTimeQueryFunction(CurrentDateTimeQueryFunction source)
+</pre>
+</div>
+</div>
+</div>
+
+<p>Инициализирует новый экземпляр <span class="filled">CurrentDateTimeQueryFunction</span>, являющийся клоном переданной функции.</p>
+
+<div class="block-collapse">
+<div class="block-collapse__title block-collapse__title_mb-16">Параметры</div>
+
+<div class="block-collapse__content">
+<div class="table">
+<table><tbody><tr><td width="30%"><span class="consolas">source</span></td>
+			<td>Функция <span class="filled">CurrentDateTimeQueryFunction</span>, клон которой создается.</td>
+		</tr></tbody></table></div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="block-collapse">
+<h3 class="block-collapse__title">Методы<a class="title-anchor" href="#title-2164-16" id="title-2164-16"> </a></h3>
+
+<div class="block-collapse__content">
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+override void BuildSqlText(StringBuilder sb, DBEngine dbEngine)
+</pre>
+</div>
+</div>
+</div>
+
+<p>Формирует текст запроса с использованием заданных экземпляров <span class="filled">StringBuilder</span> и построителя запросов <span class="filled">DBEngine</span>.</p>
+
+<div class="block-collapse">
+<div class="block-collapse__title block-collapse__title_mb-16">Параметры</div>
+
+<div class="block-collapse__content">
+<div class="table">
+<table><tbody><tr><td width="30%"><span class="consolas">sb</span></td>
+			<td>Экземпляр <span class="filled">StringBuilder</span>, с помощью которого формируется текст запроса.</td>
+		</tr><tr><td><span class="consolas">dbEngine</span></td>
+			<td>Экземпляр построителя запроса к базе данных.</td>
+		</tr></tbody></table></div>
+</div>
+</div>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+override object Clone()
+</pre>
+</div>
+</div>
+</div>
+
+<p>Создает клон текущего экземпляра <span class="filled">CurrentDateTimeQueryFunction</span>.</p>
+</div>
+</div>
+
+<h2 data-type="С#">Класс CoalesceQueryFunction<a class="title-anchor" href="#title-2164-17" id="title-2164-17"> </a></h2>
+
+<p>Пространство имен <span class="filled">Terrasoft.Core.DB</span>.</p>
+
+<p>Класс возвращает первое выражение из списка аргументов, не равное <span class="filled">null</span>.</p>
+
+<div class="message">
+<p><span class="message__bold">На заметку.</span> Полный перечень методов и свойств класса <span class="filled">CoalesceQueryFunction</span>, его родительских классов, а также реализуемых им интерфейсов можно найти в <a href="../../../../../api/netcoreapi/7.18.0/api/Terrasoft.Core.DB.CoalesceQueryFunction.html">Библиотеке .NET классов</a>.</p>
+</div>
+
+<div class="block-collapse">
+<h3 class="block-collapse__title">Конструкторы<a class="title-anchor" href="#title-2164-18" id="title-2164-18"> </a></h3>
+
+<div class="block-collapse__content">
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+CoalesceQueryFunction()
+</pre>
+</div>
+</div>
+</div>
+
+<p>Инициализирует новый экземпляр <span class="filled">CoalesceQueryFunction</span>.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+CoalesceQueryFunction(CoalesceQueryFunction source)
+</pre>
+</div>
+</div>
+</div>
+
+<p>Инициализирует новый экземпляр <span class="filled">CoalesceQueryFunction</span>, являющийся клоном переданной функции.</p>
+
+<div class="block-collapse">
+<div class="block-collapse__title block-collapse__title_mb-16">Параметры</div>
+
+<div class="block-collapse__content">
+<div class="table">
+<table><tbody><tr><td width="30%"><span class="consolas">source</span></td>
+			<td>Функция <span class="filled">CoalesceQueryFunction</span>, клон которой создается.</td>
+		</tr></tbody></table></div>
+</div>
+</div>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+CoalesceQueryFunction(QueryColumnExpressionCollection expressions)
+</pre>
+</div>
+</div>
+</div>
+
+<p>Инициализирует новый экземпляр <span class="filled">CoalesceQueryFunction</span> для переданной коллекции выражений колонок.</p>
+
+<div class="block-collapse">
+<div class="block-collapse__title block-collapse__title_mb-16">Параметры</div>
+
+<div class="block-collapse__content">
+<div class="table">
+<table><tbody><tr><td width="30%"><span class="consolas">expressions</span></td>
+			<td>Коллекция выражений колонок запроса.</td>
+		</tr></tbody></table></div>
+</div>
+</div>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+CoalesceQueryFunction(QueryColumnExpression[] expressions)
+CoalesceQueryFunction(IQueryColumnExpressionConvertible[] expressions)
+</pre>
+</div>
+</div>
+</div>
+
+<p>Инициализирует новый экземпляр <span class="filled">CoalesceQueryFunction</span> для переданного массива выражений колонок.</p>
+
+<div class="block-collapse">
+<div class="block-collapse__title block-collapse__title_mb-16">Параметры</div>
+
+<div class="block-collapse__content">
+<div class="table">
+<table><tbody><tr><td width="30%"><span class="consolas">expressions</span></td>
+			<td>Массив выражений колонок запроса.</td>
+		</tr></tbody></table></div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="block-collapse">
+<h3 class="block-collapse__title">Свойства<a class="title-anchor" href="#title-2164-19" id="title-2164-19"> </a></h3>
+
+<div class="block-collapse__content">
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+Expressions <span class="gray">QueryColumnExpressionCollection</span>
+</pre>
+</div>
+</div>
+</div>
+
+<p>Коллекция выражений аргументов функции.</p>
+</div>
+</div>
+
+<div class="block-collapse">
+<h3 class="block-collapse__title">Методы<a class="title-anchor" href="#title-2164-20" id="title-2164-20"> </a></h3>
+
+<div class="block-collapse__content">
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+override void BuildSqlText(StringBuilder sb, DBEngine dbEngine)
+</pre>
+</div>
+</div>
+</div>
+
+<p>Формирует текст запроса с использованием заданных экземпляров <span class="filled">StringBuilder</span> и построителя запросов <span class="filled">DBEngine</span>.</p>
+
+<div class="block-collapse">
+<div class="block-collapse__title block-collapse__title_mb-16">Параметры</div>
+
+<div class="block-collapse__content">
+<div class="table">
+<table><tbody><tr><td width="30%"><span class="consolas">sb</span></td>
+			<td>Экземпляр <span class="filled">StringBuilder</span>, с помощью которого формируется текст запроса.</td>
+		</tr><tr><td><span class="consolas">dbEngine</span></td>
+			<td>Экземпляр построителя запроса к базе данных.</td>
+		</tr></tbody></table></div>
+</div>
+</div>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+override object Clone()
+</pre>
+</div>
+</div>
+</div>
+
+<p>Создает клон текущего экземпляра <span class="filled">CoalesceQueryFunction</span>.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+override void AddUsingParameters(QueryParameterCollection resultParameters)
+</pre>
+</div>
+</div>
+</div>
+
+<p>Добавляет заданные параметры в коллекцию.</p>
+
+<div class="block-collapse">
+<div class="block-collapse__title block-collapse__title_mb-16">Параметры</div>
+
+<div class="block-collapse__content">
+<div class="table">
+<table><tbody><tr><td width="30%"><span class="consolas">resultParameters</span></td>
+			<td>Коллекция параметров запроса, которые добавляются в аргументы функции.</td>
+		</tr></tbody></table></div>
+</div>
+</div>
+</div>
+</div>
+
+<h2 data-type="С#">Класс DatePartQueryFunction<a class="title-anchor" href="#title-2164-21" id="title-2164-21"> </a></h2>
+
+<p>Пространство имен <span class="filled">Terrasoft.Core.DB</span>.</p>
+
+<p>Класс реализует функцию выражения части значения типа <span class="filled">Дата/Время</span>.</p>
+
+<div class="message">
+<p><span class="message__bold">На заметку.</span> Полный перечень методов и свойств класса <span class="filled">DatePartQueryFunction</span>, его родительских классов, а также реализуемых им интерфейсов можно найти в <a href="../../../../../api/netcoreapi/7.18.0/api/Terrasoft.Core.DB.DatePartQueryFunction.html">Библиотеке .NET классов</a>.</p>
+</div>
+
+<div class="block-collapse">
+<h3 class="block-collapse__title">Конструкторы<a class="title-anchor" href="#title-2164-22" id="title-2164-22"> </a></h3>
+
+<div class="block-collapse__content">
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+DatePartQueryFunction()
+</pre>
+</div>
+</div>
+</div>
+
+<p>Инициализирует новый экземпляр <span class="filled">DatePartQueryFunction</span>.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+DatePartQueryFunction(DatePartQueryFunctionInterval interval, QueryColumnExpression expression)
+DatePartQueryFunction(DatePartQueryFunctionInterval interval, IQueryColumnExpressionConvertible expression)
+</pre>
+</div>
+</div>
+</div>
+
+<p>Инициализирует новый экземпляр <span class="filled">DatePartQueryFunction</span> с заданным выражением колонки типа <span class="filled">Дата/Время</span> и указанной частью даты.</p>
+
+<div class="block-collapse">
+<div class="block-collapse__title block-collapse__title_mb-16">Параметры</div>
+
+<div class="block-collapse__content">
+<div class="table">
+<table><tbody><tr><td width="30%"><span class="consolas">interval</span></td>
+			<td>Часть даты.</td>
+		</tr><tr><td><span class="consolas">expression</span></td>
+			<td>Выражение колонки типа <span class="filled">Дата/Время</span>.</td>
+		</tr></tbody></table></div>
+</div>
+</div>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+DatePartQueryFunction(DatePartQueryFunction source)
+</pre>
+</div>
+</div>
+</div>
+
+<p>Инициализирует новый экземпляр <span class="filled">DatePartQueryFunction</span>, являющийся клоном переданной функции.</p>
+
+<div class="block-collapse">
+<div class="block-collapse__title block-collapse__title_mb-16">Параметры</div>
+
+<div class="block-collapse__content">
+<div class="table">
+<table><tbody><tr><td width="30%"><span class="consolas">source</span></td>
+			<td>Функция <span class="filled">DatePartQueryFunction</span>, клон которой создается.</td>
+		</tr></tbody></table></div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="block-collapse">
+<h3 class="block-collapse__title">Свойства<a class="title-anchor" href="#title-2164-23" id="title-2164-23"> </a></h3>
+
+<div class="block-collapse__content">
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+Expression <span class="gray">QueryColumnExpression</span>
+</pre>
+</div>
+</div>
+</div>
+
+<p>Выражение аргумента функции.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+Interval <span class="gray">DatePartQueryFunctionInterval</span>
+</pre>
+</div>
+</div>
+</div>
+
+<p>Часть даты, возвращаемая функцией.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+UseUtcOffset <span class="gray">bool</span>
+</pre>
+</div>
+</div>
+</div>
+
+<p>Использование смещения всеобщего скоординированного времени (UTC) относительно заданного местного времени.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+UtcOffset <span class="gray">int?</span>
+</pre>
+</div>
+</div>
+</div>
+
+<p>Смещение всеобщего скоординированного времени (UTC).</p>
+</div>
+</div>
+
+<div class="block-collapse">
+<h3 class="block-collapse__title">Методы<a class="title-anchor" href="#title-2164-24" id="title-2164-24"> </a></h3>
+
+<div class="block-collapse__content">
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+override void BuildSqlText(StringBuilder sb, DBEngine dbEngine)
+</pre>
+</div>
+</div>
+</div>
+
+<p>Формирует текст запроса с использованием заданных экземпляров <span class="filled">StringBuilder</span> и построителя запросов <span class="filled">DBEngine</span>.</p>
+
+<div class="block-collapse">
+<div class="block-collapse__title block-collapse__title_mb-16">Параметры</div>
+
+<div class="block-collapse__content">
+<div class="table">
+<table><tbody><tr><td width="30%"><span class="consolas">sb</span></td>
+			<td>Экземпляр <span class="filled">StringBuilder</span>, с помощью которого формируется текст запроса.</td>
+		</tr><tr><td><span class="consolas">dbEngine</span></td>
+			<td>Экземпляр построителя запроса к базе данных.</td>
+		</tr></tbody></table></div>
+</div>
+</div>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+override void AddUsingParameters(QueryParameterCollection resultParameters)
+</pre>
+</div>
+</div>
+</div>
+
+<p>Добавляет заданные параметры в коллекцию.</p>
+
+<div class="block-collapse">
+<div class="block-collapse__title block-collapse__title_mb-16">Параметры</div>
+
+<div class="block-collapse__content">
+<div class="table">
+<table><tbody><tr><td width="30%"><span class="consolas">resultParameters</span></td>
+			<td>Коллекция параметров запроса, которые добавляются в аргументы функции.</td>
+		</tr></tbody></table></div>
+</div>
+</div>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+override object Clone()
+</pre>
+</div>
+</div>
+</div>
+
+<p>Создает клон текущего экземпляра <span class="filled">DatePartQueryFunction</span>.</p>
+</div>
+</div>
+
+<h2 data-type="С#">Класс DateAddQueryFunction<a class="title-anchor" href="#title-2164-25" id="title-2164-25"> </a></h2>
+
+<p>Пространство имен <span class="filled">Terrasoft.Core.DB</span>.</p>
+
+<p>Класс реализует функцию выражения даты, полученной путем добавления указанного промежутка времени к заданной дате.</p>
+
+<div class="message">
+<p><span class="message__bold">На заметку.</span> Полный перечень методов и свойств класса <span class="filled">DateAddQueryFunction</span>, его родительских классов, а также реализуемых им интерфейсов можно найти в <a href="../../../../../api/netcoreapi/7.18.0/api/Terrasoft.Core.DB.DateAddQueryFunction.html">Библиотеке .NET классов</a>.</p>
+</div>
+
+<div class="block-collapse">
+<h3 class="block-collapse__title">Конструкторы<a class="title-anchor" href="#title-2164-26" id="title-2164-26"> </a></h3>
+
+<div class="block-collapse__content">
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+DateAddQueryFunction()
+</pre>
+</div>
+</div>
+</div>
+
+<p>Инициализирует новый экземпляр <span class="filled">DateAddQueryFunction</span>.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+DateAddQueryFunction(DatePartQueryFunctionInterval interval, int number, QueryColumnExpression expression)
+DateAddQueryFunction(DatePartQueryFunctionInterval interval, IQueryColumnExpressionConvertible numberExpression, IQueryColumnExpressionConvertible expression)
+DateAddQueryFunction(DatePartQueryFunctionInterval interval, int number, IQueryColumnExpressionConvertible expression)
+</pre>
+</div>
+</div>
+</div>
+
+<p>Инициализирует экземпляр <span class="filled">DateAddQueryFunction</span> с заданными параметрами.</p>
+
+<div class="block-collapse">
+<div class="block-collapse__title block-collapse__title_mb-16">Параметры</div>
+
+<div class="block-collapse__content">
+<div class="table">
+<table><tbody><tr><td width="30%"><span class="consolas">interval</span></td>
+			<td>Часть даты, к которой добавляется временной промежуток.</td>
+		</tr><tr><td><span class="consolas">number</span></td>
+			<td>Значение, которое добавляется к <span class="filled">interval</span>.</td>
+		</tr><tr><td><span class="consolas">expression</span></td>
+			<td>Выражение колонки, содержащей исходную дату.</td>
+		</tr></tbody></table></div>
+</div>
+</div>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+DateAddQueryFunction(DateAddQueryFunction source)
+</pre>
+</div>
+</div>
+</div>
+
+<p>Инициализирует экземпляр <span class="filled">DateAddQueryFunction</span>, являющийся клоном переданной функции.</p>
+
+<div class="block-collapse">
+<div class="block-collapse__title block-collapse__title_mb-16">Параметры</div>
+
+<div class="block-collapse__content">
+<div class="table">
+<table><tbody><tr><td width="30%"><span class="consolas">source</span></td>
+			<td>Экземпляр функции <span class="filled">DateAddQueryFunction</span>, клон которой создается.</td>
+		</tr></tbody></table></div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="block-collapse">
+<h3 class="block-collapse__title">Свойства<a class="title-anchor" href="#title-2164-27" id="title-2164-27"> </a></h3>
+
+<div class="block-collapse__content">
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+Expression <span class="gray">QueryColumnExpression</span>
+</pre>
+</div>
+</div>
+</div>
+
+<p>Выражение колонки, содержащей исходную дату.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+Interval <span class="gray">DatePartQueryFunctionInterval</span>
+</pre>
+</div>
+</div>
+</div>
+
+<p>Часть даты, к которой добавляется временной промежуток.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+Number <span class="gray">int</span>
+</pre>
+</div>
+</div>
+</div>
+
+<p>Добавляемый временной промежуток.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+NumberExpression <span class="gray">QueryColumnExpression</span>
+</pre>
+</div>
+</div>
+</div>
+
+<p>Выражение, содержащие добавляемый временной промежуток.</p>
+</div>
+</div>
+
+<div class="block-collapse">
+<h3 class="block-collapse__title">Методы<a class="title-anchor" href="#title-2164-28" id="title-2164-28"> </a></h3>
+
+<div class="block-collapse__content">
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+override void BuildSqlText(StringBuilder sb, DBEngine dbEngine)
+</pre>
+</div>
+</div>
+</div>
+
+<p>Формирует текст запроса с использованием заданных экземпляров <span class="filled">StringBuilder</span> и построителя запросов <span class="filled">DBEngine</span>.</p>
+
+<div class="block-collapse">
+<div class="block-collapse__title block-collapse__title_mb-16">Параметры</div>
+
+<div class="block-collapse__content">
+<div class="table">
+<table><tbody><tr><td width="30%"><span class="consolas">sb</span></td>
+			<td>Экземпляр <span class="filled">StringBuilder</span>, с помощью которого формируется текст запроса.</td>
+		</tr><tr><td><span class="consolas">dbEngine</span></td>
+			<td>Экземпляр построителя запроса к базе данных.</td>
+		</tr></tbody></table></div>
+</div>
+</div>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+override void AddUsingParameters(QueryParameterCollection resultParameters)
+</pre>
+</div>
+</div>
+</div>
+
+<p>Добавляет заданные параметры в коллекцию.</p>
+
+<div class="block-collapse">
+<div class="block-collapse__title block-collapse__title_mb-16">Параметры</div>
+
+<div class="block-collapse__content">
+<div class="table">
+<table><tbody><tr><td width="30%"><span class="consolas">resultParameters</span></td>
+			<td>Коллекция параметров запроса, которые добавляются в аргументы функции.</td>
+		</tr></tbody></table></div>
+</div>
+</div>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+override object Clone()
+</pre>
+</div>
+</div>
+</div>
+
+<p>Создает клон текущего экземпляра <span class="filled">DateAddQueryFunction</span>.</p>
+</div>
+</div>
+
+<h2 data-type="С#">Класс DateDiffQueryFunction<a class="title-anchor" href="#title-2164-29" id="title-2164-29"> </a></h2>
+
+<p>Пространство имен <span class="filled">Terrasoft.Core.DB</span>.</p>
+
+<p>Класс реализует функцию выражения разницы дат, полученного путем вычитания заданных дат.</p>
+
+<div class="message">
+<p><span class="message__bold">На заметку.</span> Полный перечень методов и свойств класса <span class="filled">DateDiffQueryFunction</span>, его родительских классов, а также реализуемых им интерфейсов можно найти в <a href="../../../../../api/netcoreapi/7.18.0/api/Terrasoft.Core.DB.DateDiffQueryFunction.html">Библиотеке .NET классов</a>.</p>
+</div>
+
+<div class="block-collapse">
+<h3 class="block-collapse__title">Конструкторы<a class="title-anchor" href="#title-2164-30" id="title-2164-30"> </a></h3>
+
+<div class="block-collapse__content">
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+DateDiffQueryFunction(DateDiffQueryFunctionInterval interval, QueryColumnExpression startDateExpression, QueryColumnExpression endDateExpression)
+DateDiffQueryFunction(DateDiffQueryFunctionInterval interval, IQueryColumnExpressionConvertible startDateExpression, IQueryColumnExpressionConvertible endDateExpression)
+</pre>
+</div>
+</div>
+</div>
+
+<p>Инициализирует экземпляр <span class="filled">DateDiffQueryFunction</span> с заданными параметрами.</p>
+
+<div class="block-collapse">
+<div class="block-collapse__title block-collapse__title_mb-16">Параметры</div>
+
+<div class="block-collapse__content">
+<div class="table">
+<table><tbody><tr><td width="30%"><span class="consolas">interval</span></td>
+			<td>Единица измерения разницы дат.</td>
+		</tr><tr><td><span class="consolas">startDateExpression</span></td>
+			<td>Выражение колонки, содержащей начальную дату.</td>
+		</tr><tr><td><span class="consolas">endDateExpression</span></td>
+			<td>Выражение колонки, содержащей конечную дату.</td>
+		</tr></tbody></table></div>
+</div>
+</div>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+DateDiffQueryFunction(DateDiffQueryFunction source)
+</pre>
+</div>
+</div>
+</div>
+
+<p>Инициализирует экземпляр <span class="filled">DateDiffQueryFunction</span>, являющийся клоном переданной функции.</p>
+
+<div class="block-collapse">
+<div class="block-collapse__title block-collapse__title_mb-16">Параметры</div>
+
+<div class="block-collapse__content">
+<div class="table">
+<table><tbody><tr><td width="30%"><span class="consolas">source</span></td>
+			<td>Экземпляр функции <span class="filled">DateDiffQueryFunction</span>, клон которой создается.</td>
+		</tr></tbody></table></div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="block-collapse">
+<h3 class="block-collapse__title">Свойства<a class="title-anchor" href="#title-2164-31" id="title-2164-31"> </a></h3>
+
+<div class="block-collapse__content">
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+StartDateExpression <span class="gray">QueryColumnExpression</span>
+</pre>
+</div>
+</div>
+</div>
+
+<p>Выражение колонки, содержащей начальную дату.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+EndDateExpression <span class="gray">QueryColumnExpression</span>
+</pre>
+</div>
+</div>
+</div>
+
+<p>Выражение колонки, содержащей конечную дату.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+Interval <span class="gray">DateDiffQueryFunctionInterval</span>
+</pre>
+</div>
+</div>
+</div>
+
+<p>Единица измерения разницы дат, возвращаемая функцией.</p>
+</div>
+</div>
+
+<div class="block-collapse">
+<h3 class="block-collapse__title">Методы<a class="title-anchor" href="#title-2164-32" id="title-2164-32"> </a></h3>
+
+<div class="block-collapse__content">
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+override void BuildSqlText(StringBuilder sb, DBEngine dbEngine)
+</pre>
+</div>
+</div>
+</div>
+
+<p>Формирует текст запроса с использованием заданных экземпляров <span class="filled">StringBuilder</span> и построителя запросов <span class="filled">DBEngine</span>.</p>
+
+<div class="block-collapse">
+<div class="block-collapse__title block-collapse__title_mb-16">Параметры</div>
+
+<div class="block-collapse__content">
+<div class="table">
+<table><tbody><tr><td width="30%"><span class="consolas">sb</span></td>
+			<td>Экземпляр <span class="filled">StringBuilder</span>, с помощью которого формируется текст запроса.</td>
+		</tr><tr><td><span class="consolas">dbEngine</span></td>
+			<td>Экземпляр построителя запроса к базе данных.</td>
+		</tr></tbody></table></div>
+</div>
+</div>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+override void AddUsingParameters(QueryParameterCollection resultParameters)
+</pre>
+</div>
+</div>
+</div>
+
+<p>Добавляет заданные параметры в коллекцию.</p>
+
+<div class="block-collapse">
+<div class="block-collapse__title block-collapse__title_mb-16">Параметры</div>
+
+<div class="block-collapse__content">
+<div class="table">
+<table><tbody><tr><td width="30%"><span class="consolas">resultParameters</span></td>
+			<td>Коллекция параметров запроса, которые добавляются в аргументы функции.</td>
+		</tr></tbody></table></div>
+</div>
+</div>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+override object Clone()
+</pre>
+</div>
+</div>
+</div>
+
+<p>Создает клон текущего экземпляра <span class="filled">DateDiffQueryFunction</span>.</p>
+</div>
+</div>
+
+<h2 data-type="С#">Класс CastQueryFunction<a class="title-anchor" href="#title-2164-33" id="title-2164-33"> </a></h2>
+
+<p>Пространство имен <span class="filled">Terrasoft.Core.DB</span>.</p>
+
+<p>Класс приводит выражение аргумента к заданному типу данных.</p>
+
+<div class="message">
+<p><span class="message__bold">На заметку.</span> Полный перечень методов и свойств класса <span class="filled">CastQueryFunction</span>, его родительских классов, а также реализуемых им интерфейсов можно найти в <a href="../../../../../api/netcoreapi/7.18.0/api/Terrasoft.Core.DB.CastQueryFunction.html">Библиотеке .NET классов</a>.</p>
+</div>
+
+<div class="block-collapse">
+<h3 class="block-collapse__title">Конструкторы<a class="title-anchor" href="#title-2164-34" id="title-2164-34"> </a></h3>
+
+<div class="block-collapse__content">
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+CastQueryFunction(QueryColumnExpression expression, DBDataValueType castType)
+CastQueryFunction(IQueryColumnExpressionConvertible expression, DBDataValueType castType)
+</pre>
+</div>
+</div>
+</div>
+
+<p>Инициализирует новый экземпляр <span class="filled">CastQueryFunction</span> с заданными выражением колонки и целевым типом данных.</p>
+
+<div class="block-collapse">
+<div class="block-collapse__title block-collapse__title_mb-16">Параметры</div>
+
+<div class="block-collapse__content">
+<div class="table">
+<table><tbody><tr><td width="30%"><span class="consolas">expression</span></td>
+			<td>Выражение колонки запроса.</td>
+		</tr><tr><td><span class="consolas">castType</span></td>
+			<td>Целевой тип данных.</td>
+		</tr></tbody></table></div>
+</div>
+</div>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+CastQueryFunction(CastQueryFunction source)
+</pre>
+</div>
+</div>
+</div>
+
+<p>Инициализирует новый экземпляр <span class="filled">CastQueryFunction</span>, являющийся клоном переданной функции.</p>
+
+<div class="block-collapse">
+<div class="block-collapse__title block-collapse__title_mb-16">Параметры</div>
+
+<div class="block-collapse__content">
+<div class="table">
+<table><tbody><tr><td width="30%"><span class="consolas">source</span></td>
+			<td>Функция <span class="filled">CastQueryFunction</span>, клон которой создается.</td>
+		</tr></tbody></table></div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="block-collapse">
+<h3 class="block-collapse__title">Свойства<a class="title-anchor" href="#title-2164-35" id="title-2164-35"> </a></h3>
+
+<div class="block-collapse__content">
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+Expression <span class="gray">QueryColumnExpression</span>
+</pre>
+</div>
+</div>
+</div>
+
+<p>Выражение аргумента функции.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+CastType <span class="gray">DBDataValueType</span>
+</pre>
+</div>
+</div>
+</div>
+
+<p>Целевой тип данных.</p>
+</div>
+</div>
+
+<div class="block-collapse">
+<h3 class="block-collapse__title">Методы<a class="title-anchor" href="#title-2164-36" id="title-2164-36"> </a></h3>
+
+<div class="block-collapse__content">
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+override void BuildSqlText(StringBuilder sb, DBEngine dbEngine)
+</pre>
+</div>
+</div>
+</div>
+
+<p>Формирует текст запроса с использованием заданных экземпляров <span class="filled">StringBuilder</span> и построителя запросов <span class="filled">DBEngine</span>.</p>
+
+<div class="block-collapse">
+<div class="block-collapse__title block-collapse__title_mb-16">Параметры</div>
+
+<div class="block-collapse__content">
+<div class="table">
+<table><tbody><tr><td width="30%"><span class="consolas">sb</span></td>
+			<td>Экземпляр <span class="filled">StringBuilder</span>, с помощью которого формируется текст запроса.</td>
+		</tr><tr><td><span class="consolas">dbEngine</span></td>
+			<td>Экземпляр построителя запроса к базе данных.</td>
+		</tr></tbody></table></div>
+</div>
+</div>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+override void AddUsingParameters(QueryParameterCollection resultParameters)
+</pre>
+</div>
+</div>
+</div>
+
+<p>Добавляет заданные параметры в коллекцию.</p>
+
+<div class="block-collapse">
+<div class="block-collapse__title block-collapse__title_mb-16">Параметры</div>
+
+<div class="block-collapse__content">
+<div class="table">
+<table><tbody><tr><td width="30%"><span class="consolas">resultParameters</span></td>
+			<td>Коллекция параметров запроса, которые добавляются в аргументы функции.</td>
+		</tr></tbody></table></div>
+</div>
+</div>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+override object Clone()
+</pre>
+</div>
+</div>
+</div>
+
+<p>Создает клон текущего экземпляра <span class="filled">CastQueryFunction</span>.</p>
+</div>
+</div>
+
+<h2 data-type="С#">Класс UpperQueryFunction<a class="title-anchor" href="#title-2164-37" id="title-2164-37"> </a></h2>
+
+<p>Пространство имен <span class="filled">Terrasoft.Core.DB</span>.</p>
+
+<p>Класс преобразовывает символы выражения аргумента в верхний регистр.</p>
+
+<div class="message">
+<p><span class="message__bold">На заметку.</span> Полный перечень методов и свойств класса <span class="filled">UpperQueryFunction</span>, его родительских классов, а также реализуемых им интерфейсов можно найти в <a href="../../../../../api/netcoreapi/7.18.0/api/Terrasoft.Core.DB.UpperQueryFunction.html">Библиотеке .NET классов</a>.</p>
+</div>
+
+<div class="block-collapse">
+<h3 class="block-collapse__title">Конструкторы<a class="title-anchor" href="#title-2164-38" id="title-2164-38"> </a></h3>
+
+<div class="block-collapse__content">
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+UpperQueryFunction()
+</pre>
+</div>
+</div>
+</div>
+
+<p>Инициализирует новый экземпляр <span class="filled">UpperQueryFunction</span>.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+UpperQueryFunction(QueryColumnExpression expression)
+UpperQueryFunction(IQueryColumnExpressionConvertible expression)
+</pre>
+</div>
+</div>
+</div>
+
+<p>Инициализирует новый экземпляр <span class="filled">UpperQueryFunction</span> для заданного выражения колонки.</p>
+
+<div class="block-collapse">
+<div class="block-collapse__title block-collapse__title_mb-16">Параметры</div>
+
+<div class="block-collapse__content">
+<div class="table">
+<table><tbody><tr><td width="30%"><span class="consolas">expression</span></td>
+			<td>Выражение колонки запроса.</td>
+		</tr></tbody></table></div>
+</div>
+</div>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+UpperQueryFunction(UpperQueryFunction source)
+</pre>
+</div>
+</div>
+</div>
+
+<p>Инициализирует новый экземпляр <span class="filled">UpperQueryFunction</span>, являющийся клоном переданной функции.</p>
+
+<div class="block-collapse">
+<div class="block-collapse__title block-collapse__title_mb-16">Параметры</div>
+
+<div class="block-collapse__content">
+<div class="table">
+<table><tbody><tr><td width="30%"><span class="consolas">source</span></td>
+			<td>Функция <span class="filled">UpperQueryFunction</span>, клон которой создается.</td>
+		</tr></tbody></table></div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="block-collapse">
+<h3 class="block-collapse__title">Свойства<a class="title-anchor" href="#title-2164-39" id="title-216439"> </a></h3>
+
+<div class="block-collapse__content">
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+Expression
+</pre>
+</div>
+</div>
+</div>
+
+<p>Выражение аргумента функции.</p>
+</div>
+</div>
+
+<div class="block-collapse">
+<h3 class="block-collapse__title">Методы<a class="title-anchor" href="#title-2164-40" id="title-2164-40"> </a></h3>
+
+<div class="block-collapse__content">
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+override void BuildSqlText(StringBuilder sb, DBEngine dbEngine)
+</pre>
+</div>
+</div>
+</div>
+
+<p>Формирует текст запроса с использованием заданных экземпляров <span class="filled">StringBuilder</span> и построителя запросов <span class="filled">DBEngine</span>.</p>
+
+<div class="block-collapse">
+<div class="block-collapse__title block-collapse__title_mb-16">Параметры</div>
+
+<div class="block-collapse__content">
+<div class="table">
+<table><tbody><tr><td width="30%"><span class="consolas">sb</span></td>
+			<td>Экземпляр <span class="filled">StringBuilder</span>, с помощью которого формируется текст запроса.</td>
+		</tr><tr><td><span class="consolas">dbEngine</span></td>
+			<td>Экземпляр построителя запроса к базе данных.</td>
+		</tr></tbody></table></div>
+</div>
+</div>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+override void AddUsingParameters(QueryParameterCollection resultParameters)
+</pre>
+</div>
+</div>
+</div>
+
+<p>Добавляет заданные параметры в коллекцию.</p>
+
+<div class="block-collapse">
+<div class="block-collapse__title block-collapse__title_mb-16">Параметры</div>
+
+<div class="block-collapse__content">
+<div class="table">
+<table><tbody><tr><td width="30%"><span class="consolas">resultParameters</span></td>
+			<td>Коллекция параметров запроса, которые добавляются в аргументы функции.</td>
+		</tr></tbody></table></div>
+</div>
+</div>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+override object Clone()
+</pre>
+</div>
+</div>
+</div>
+
+<p>Создает клон текущего экземпляра <span class="filled">UpperQueryFunction</span>.</p>
+</div>
+</div>
+
+<h2 data-type="С#">Класс CustomQueryFunction<a class="title-anchor" href="#title-2164-41" id="title-2164-41"> </a></h2>
+
+<p>Пространство имен <span class="filled">Terrasoft.Core.DB</span>.</p>
+
+<p>Класс реализует пользовательскую функцию.</p>
+
+<div class="message">
+<p><span class="message__bold">На заметку.</span> Полный перечень методов и свойств класса <span class="filled">CustomQueryFunction</span>, его родительских классов, а также реализуемых им интерфейсов можно найти в <a href="../../../../../api/netcoreapi/7.18.0/api/Terrasoft.Core.DB.CustomQueryFunction.html">Библиотеке .NET классов</a>.</p>
+</div>
+
+<div class="block-collapse">
+<h3 class="block-collapse__title">Конструкторы<a class="title-anchor" href="#title-2164-42" id="title-2164-42"> </a></h3>
+
+<div class="block-collapse__content">
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+CustomQueryFunction()
+</pre>
+</div>
+</div>
+</div>
+
+<p>Инициализирует новый экземпляр <span class="filled">CustomQueryFunction</span>.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+CustomQueryFunction(string functionName, QueryColumnExpressionCollection expressions)
+</pre>
+</div>
+</div>
+</div>
+
+<p>Инициализирует новый экземпляр <span class="filled">CustomQueryFunction</span> для заданной функции и переданной коллекции выражений колонок.</p>
+
+<div class="block-collapse">
+<div class="block-collapse__title block-collapse__title_mb-16">Параметры</div>
+
+<div class="block-collapse__content">
+<div class="table">
+<table><tbody><tr><td width="30%"><span class="consolas">functionName</span></td>
+			<td>Имя функции.</td>
+		</tr><tr><td><span class="consolas">expressions</span></td>
+			<td>Коллекция выражений колонок запроса.</td>
+		</tr></tbody></table></div>
+</div>
+</div>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+CustomQueryFunction(string functionName, QueryColumnExpression[] expressions)
+CustomQueryFunction(string functionName, IQueryColumnExpressionConvertible[] expressions)
+</pre>
+</div>
+</div>
+</div>
+
+<p>Инициализирует новый экземпляр <span class="filled">CustomQueryFunction</span> для заданной функции и переданного массива выражений колонок.</p>
+
+<div class="block-collapse">
+<div class="block-collapse__title block-collapse__title_mb-16">Параметры</div>
+
+<div class="block-collapse__content">
+<div class="table">
+<table><tbody><tr><td width="30%"><span class="consolas">functionName</span></td>
+			<td>Имя функции.</td>
+		</tr><tr><td><span class="consolas">expressions</span></td>
+			<td>Массив выражений колонок запроса.</td>
+		</tr></tbody></table></div>
+</div>
+</div>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+CustomQueryFunction(CustomQueryFunction source)
+</pre>
+</div>
+</div>
+</div>
+
+<p>Инициализирует новый экземпляр <span class="filled">CustomQueryFunction</span>, являющийся клоном переданной функции.</p>
+
+<div class="block-collapse">
+<div class="block-collapse__title block-collapse__title_mb-16">Параметры</div>
+
+<div class="block-collapse__content">
+<div class="table">
+<table><tbody><tr><td width="30%"><span class="consolas">source</span></td>
+			<td>Функция <span class="filled">CustomQueryFunction</span>, клон которой создается.</td>
+		</tr></tbody></table></div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="block-collapse">
+<h3 class="block-collapse__title">Свойства<a class="title-anchor" href="#title-2164-43" id="title-2164-43"> </a></h3>
+
+<div class="block-collapse__content">
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+Expressions <span class="gray">QueryColumnExpressionCollection</span>
+</pre>
+</div>
+</div>
+</div>
+
+<p>Коллекция выражений аргументов функции.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+FunctionName <span class="gray">string</span>
+</pre>
+</div>
+</div>
+</div>
+
+<p>Имя функции.</p>
+</div>
+</div>
+
+<div class="block-collapse">
+<h3 class="block-collapse__title">Методы<a class="title-anchor" href="#title-2164-44" id="title-2164-44"> </a></h3>
+
+<div class="block-collapse__content">
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+override void BuildSqlText(StringBuilder sb, DBEngine dbEngine)
+</pre>
+</div>
+</div>
+</div>
+
+<p>Формирует текст запроса с использованием заданных экземпляров <span class="filled">StringBuilder</span> и построителя запросов <span class="filled">DBEngine</span>.</p>
+
+<div class="block-collapse">
+<div class="block-collapse__title block-collapse__title_mb-16">Параметры</div>
+
+<div class="block-collapse__content">
+<div class="table">
+<table><tbody><tr><td width="30%"><span class="consolas">sb</span></td>
+			<td>Экземпляр <span class="filled">StringBuilder</span>, с помощью которого формируется текст запроса.</td>
+		</tr><tr><td><span class="consolas">dbEngine</span></td>
+			<td>Экземпляр построителя запроса к базе данных.</td>
+		</tr></tbody></table></div>
+</div>
+</div>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+override void AddUsingParameters(QueryParameterCollection resultParameters)
+</pre>
+</div>
+</div>
+</div>
+
+<p>Добавляет заданные параметры в коллекцию.</p>
+
+<div class="block-collapse">
+<div class="block-collapse__title block-collapse__title_mb-16">Параметры</div>
+
+<div class="block-collapse__content">
+<div class="table">
+<table><tbody><tr><td width="30%"><span class="consolas">resultParameters</span></td>
+			<td>Коллекция параметров запроса, которые добавляются в аргументы функции.</td>
+		</tr></tbody></table></div>
+</div>
+</div>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+override object Clone()
+</pre>
+</div>
+</div>
+</div>
+
+<p>Создает клон текущего экземпляра <span class="filled">CustomQueryFunction</span>.</p>
+</div>
+</div>
+
+<h2 data-type="С#">Класс DataLengthQueryFunction<a class="title-anchor" href="#title-2164-45" id="title-2164-45"> </a></h2>
+
+<p>Пространство имен <span class="filled">Terrasoft.Core.DB</span>.</p>
+
+<p>Класс определяет число байтов, использованных для представления выражения.</p>
+
+<div class="message">
+<p><span class="message__bold">На заметку.</span> Полный перечень методов и свойств класса <span class="filled">DataLengthQueryFunction</span>, его родительских классов, а также реализуемых им интерфейсов можно найти в <a href="../../../../../api/netcoreapi/7.18.0/api/Terrasoft.Core.DB.DataLengthQueryFunction.html">Библиотеке .NET классов</a>.</p>
+</div>
+
+<div class="block-collapse">
+<h3 class="block-collapse__title">Конструкторы<a class="title-anchor" href="#title-2164-46" id="title-2164-46"> </a></h3>
+
+<div class="block-collapse__content">
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+DataLengthQueryFunction()
+</pre>
+</div>
+</div>
+</div>
+
+<p>Инициализирует новый экземпляр <span class="filled">DataLengthQueryFunction</span>.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+DataLengthQueryFunction(QueryColumnExpression expression)
+</pre>
+</div>
+</div>
+</div>
+
+<p>Инициализирует новый экземпляр <span class="filled">DataLengthQueryFunction</span> для заданного выражения колонки.</p>
+
+<div class="block-collapse">
+<div class="block-collapse__title block-collapse__title_mb-16">Параметры</div>
+
+<div class="block-collapse__content">
+<div class="table">
+<table><tbody><tr><td width="30%"><span class="consolas">expression</span></td>
+			<td>Выражение колонки запроса.</td>
+		</tr></tbody></table></div>
+</div>
+</div>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+DataLengthQueryFunction(IQueryColumnExpressionConvertible columnNameExpression)
+</pre>
+</div>
+</div>
+</div>
+
+<p>Инициализирует новый экземпляр <span class="filled">DataLengthQueryFunction</span> для заданного выражения колонки.</p>
+
+<div class="block-collapse">
+<div class="block-collapse__title block-collapse__title_mb-16">Параметры</div>
+
+<div class="block-collapse__content">
+<div class="table">
+<table><tbody><tr><td width="30%"><span class="consolas">columnNameExpression</span></td>
+			<td>Выражение колонки запроса.</td>
+		</tr></tbody></table></div>
+</div>
+</div>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+DataLengthQueryFunction(DataLengthQueryFunction source)
+</pre>
+</div>
+</div>
+</div>
+
+<p>Инициализирует новый экземпляр <span class="filled">DataLengthQueryFunction</span>, являющийся клоном переданной функции.</p>
+
+<div class="block-collapse">
+<div class="block-collapse__title block-collapse__title_mb-16">Параметры</div>
+
+<div class="block-collapse__content">
+<div class="table">
+<table><tbody><tr><td width="30%"><span class="consolas">source</span></td>
+			<td>Функция <span class="filled">DataLengthQueryFunction</span>, клон которой создается.</td>
+		</tr></tbody></table></div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="block-collapse">
+<h3 class="block-collapse__title">Свойства<a class="title-anchor" href="#title-2164-47" id="title-2164-47"> </a></h3>
+
+<div class="block-collapse__content">
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+Expression <span class="gray">QueryColumnExpression</span>
+</pre>
+</div>
+</div>
+</div>
+
+<p>Выражение аргумента функции.</p>
+</div>
+</div>
+
+<div class="block-collapse">
+<h3 class="block-collapse__title">Методы<a class="title-anchor" href="#title-2164-48" id="title-2164-48"> </a></h3>
+
+<div class="block-collapse__content">
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+override void BuildSqlText(StringBuilder sb, DBEngine dbEngine)
+</pre>
+</div>
+</div>
+</div>
+
+<p>Формирует текст запроса с использованием заданных экземпляров <span class="filled">StringBuilder</span> и построителя запросов <span class="filled">DBEngine</span>.</p>
+
+<div class="block-collapse">
+<div class="block-collapse__title block-collapse__title_mb-16">Параметры</div>
+
+<div class="block-collapse__content">
+<div class="table">
+<table><tbody><tr><td width="30%"><span class="consolas">sb</span></td>
+			<td>Экземпляр <span class="filled">StringBuilder</span>, с помощью которого формируется текст запроса.</td>
+		</tr><tr><td><span class="consolas">dbEngine</span></td>
+			<td>Экземпляр построителя запроса к базе данных.</td>
+		</tr></tbody></table></div>
+</div>
+</div>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+override void AddUsingParameters(QueryParameterCollection resultParameters)
+</pre>
+</div>
+</div>
+</div>
+
+<p>Добавляет в аргументы функции переданную коллекцию параметров.</p>
+
+<div class="block-collapse">
+<div class="block-collapse__title block-collapse__title_mb-16">Параметры</div>
+
+<div class="block-collapse__content">
+<div class="table">
+<table><tbody><tr><td width="30%"><span class="consolas">resultParameters</span></td>
+			<td>Коллекция параметров запроса, которые добавляются в аргументы функции.</td>
+		</tr></tbody></table></div>
+</div>
+</div>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+override object Clone()
+</pre>
+</div>
+</div>
+</div>
+
+<p>Создает клон текущего экземпляра <span class="filled">DataLengthQueryFunction</span>.</p>
+</div>
+</div>
+
+<h2 data-type="С#">Класс TrimQueryFunction<a class="title-anchor" href="#title-2164-49" id="title-2164-49"> </a></h2>
+
+<p>Пространство имен <span class="filled">Terrasoft.Core.DB</span>.</p>
+
+<p>Класс удаляет начальные и конечные пробелы из выражения.</p>
+
+<div class="message">
+<p><span class="message__bold">На заметку.</span> Полный перечень методов и свойств класса <span class="filled">TrimQueryFunction</span>, его родительских классов, а также реализуемых им интерфейсов можно найти в <a href="../../../../../api/netcoreapi/7.18.0/api/Terrasoft.Core.DB.TrimQueryFunction.html">Библиотеке .NET классов</a>.</p>
+</div>
+
+<div class="block-collapse">
+<h3 class="block-collapse__title">Конструкторы<a class="title-anchor" href="#title-2164-50" id="title-2164-50"> </a></h3>
+
+<div class="block-collapse__content">
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+TrimQueryFunction(QueryColumnExpression expression)
+TrimQueryFunction(IQueryColumnExpressionConvertible expression)
+</pre>
+</div>
+</div>
+</div>
+
+<p>Инициализирует новый экземпляр <span class="filled">TrimQueryFunction</span> для заданного выражения колонки.</p>
+
+<div class="block-collapse">
+<div class="block-collapse__title block-collapse__title_mb-16">Параметры</div>
+
+<div class="block-collapse__content">
+<div class="table">
+<table><tbody><tr><td width="30%"><span class="consolas">expression</span></td>
+			<td>Выражение колонки запроса.</td>
+		</tr></tbody></table></div>
+</div>
+</div>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+TrimQueryFunction(TrimQueryFunction source)
+</pre>
+</div>
+</div>
+</div>
+
+<p>Инициализирует новый экземпляр <span class="filled">TrimQueryFunction</span>, являющийся клоном переданной функции.</p>
+
+<div class="block-collapse">
+<div class="block-collapse__title block-collapse__title_mb-16">Параметры</div>
+
+<div class="block-collapse__content">
+<div class="table">
+<table><tbody><tr><td width="30%"><span class="consolas">source</span></td>
+			<td>Функция <span class="filled">TrimQueryFunction</span>, клон которой создается.</td>
+		</tr></tbody></table></div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="block-collapse">
+<h3 class="block-collapse__title">Свойства<a class="title-anchor" href="#title-2164-51" id="title-2164-51"> </a></h3>
+
+<div class="block-collapse__content">
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+Expression <span class="gray">QueryColumnExpression</span>
+</pre>
+</div>
+</div>
+</div>
+
+<p>Выражение аргумента функции.</p>
+</div>
+</div>
+
+<div class="block-collapse">
+<h3 class="block-collapse__title">Методы<a class="title-anchor" href="#title-2164-52" id="title-2164-52"> </a></h3>
+
+<div class="block-collapse__content">
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+override void BuildSqlText(StringBuilder sb, DBEngine dbEngine)
+</pre>
+</div>
+</div>
+</div>
+
+<p>Формирует текст запроса с использованием заданных экземпляров <span class="filled">StringBuilder</span> и построителя запросов <span class="filled">DBEngine</span>.</p>
+
+<div class="block-collapse">
+<div class="block-collapse__title block-collapse__title_mb-16">Параметры</div>
+
+<div class="block-collapse__content">
+<div class="table">
+<table><tbody><tr><td width="30%"><span class="consolas">sb</span></td>
+			<td>Экземпляр <span class="filled">StringBuilder</span>, с помощью которого формируется текст запроса.</td>
+		</tr><tr><td><span class="consolas">dbEngine</span></td>
+			<td>Экземпляр построителя запроса к базе данных.</td>
+		</tr></tbody></table></div>
+</div>
+</div>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+override void AddUsingParameters(QueryParameterCollection resultParameters)
+</pre>
+</div>
+</div>
+</div>
+
+<p>Добавляет в аргументы функции переданную коллекцию параметров.</p>
+
+<div class="block-collapse">
+<div class="block-collapse__title block-collapse__title_mb-16">Параметры</div>
+
+<div class="block-collapse__content">
+<div class="table">
+<table><tbody><tr><td width="30%"><span class="consolas">resultParameters</span></td>
+			<td>Коллекция параметров запроса, которые добавляются в аргументы функции.</td>
+		</tr></tbody></table></div>
+</div>
+</div>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+override object Clone()
+</pre>
+</div>
+</div>
+</div>
+
+<p>Создает клон текущего экземпляра <span class="filled">TrimQueryFunction</span>.</p>
+</div>
+</div>
+
+<h2 data-type="С#">Класс LengthQueryFunction<a class="title-anchor" href="#title-2164-53" id="title-2164-53"> </a></h2>
+
+<p>Пространство имен <span class="filled">Terrasoft.Core.DB</span>.</p>
+
+<p>Класс возвращает длину выражения.</p>
+
+<div class="message">
+<p><span class="message__bold">На заметку.</span> Полный перечень методов и свойств класса <span class="filled">LengthQueryFunction</span>, его родительских классов, а также реализуемых им интерфейсов можно найти в <a href="../../../../../api/netcoreapi/7.18.0/api/Terrasoft.Core.DB.LengthQueryFunction.html">Библиотеке .NET классов</a>.</p>
+</div>
+
+<div class="block-collapse">
+<h3 class="block-collapse__title">Конструкторы<a class="title-anchor" href="#title-2164-54" id="title-2164-54"> </a></h3>
+
+<div class="block-collapse__content">
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+LengthQueryFunction()
+</pre>
+</div>
+</div>
+</div>
+
+<p>Инициализирует новый экземпляр <span class="filled">LengthQueryFunction</span>.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+LengthQueryFunction(QueryColumnExpression expression)
+LengthQueryFunction(IQueryColumnExpressionConvertible expression)
+</pre>
+</div>
+</div>
+</div>
+
+<p>Инициализирует новый экземпляр <span class="filled">LengthQueryFunction</span> для заданного выражения колонки.</p>
+
+<div class="block-collapse">
+<div class="block-collapse__title block-collapse__title_mb-16">Параметры</div>
+
+<div class="block-collapse__content">
+<div class="table">
+<table><tbody><tr><td width="30%"><span class="consolas">expression</span></td>
+			<td>Выражение колонки запроса.</td>
+		</tr></tbody></table></div>
+</div>
+</div>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+LengthQueryFunction(LengthQueryFunction source)
+</pre>
+</div>
+</div>
+</div>
+
+<p>Инициализирует новый экземпляр <span class="filled">LengthQueryFunction</span>, являющийся клоном переданной функции.</p>
+
+<div class="block-collapse">
+<div class="block-collapse__title block-collapse__title_mb-16">Параметры</div>
+
+<div class="block-collapse__content">
+<div class="table">
+<table><tbody><tr><td width="30%"><span class="consolas">source</span></td>
+			<td>Функция <span class="filled">LengthQueryFunction</span>, клон которой создается.</td>
+		</tr></tbody></table></div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="block-collapse">
+<h3 class="block-collapse__title">Свойства<a class="title-anchor" href="#title-2164-55" id="title-2164-55"> </a></h3>
+
+<div class="block-collapse__content">
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+Expression <span class="gray">QueryColumnExpression</span>
+</pre>
+</div>
+</div>
+</div>
+
+<p>Выражение аргумента функции.</p>
+</div>
+</div>
+
+<div class="block-collapse">
+<h3 class="block-collapse__title">Методы<a class="title-anchor" href="#title-2164-56" id="title-2164-56"> </a></h3>
+
+<div class="block-collapse__content">
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+override void BuildSqlText(StringBuilder sb, DBEngine dbEngine)
+</pre>
+</div>
+</div>
+</div>
+
+<p>Формирует текст запроса с использованием заданных экземпляров <span class="filled">StringBuilder</span> и построителя запросов <span class="filled">DBEngine</span>.</p>
+
+<div class="block-collapse">
+<div class="block-collapse__title block-collapse__title_mb-16">Параметры</div>
+
+<div class="block-collapse__content">
+<div class="table">
+<table><tbody><tr><td width="30%"><span class="consolas">sb</span></td>
+			<td>Экземпляр <span class="filled">StringBuilder</span>, с помощью которого формируется текст запроса.</td>
+		</tr><tr><td><span class="consolas">dbEngine</span></td>
+			<td>Экземпляр построителя запроса к базе данных.</td>
+		</tr></tbody></table></div>
+</div>
+</div>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+override void AddUsingParameters(QueryParameterCollection resultParameters)
+</pre>
+</div>
+</div>
+</div>
+
+<p>Добавляет в аргументы функции переданную коллекцию параметров.</p>
+
+<div class="block-collapse">
+<div class="block-collapse__title block-collapse__title_mb-16">Параметры</div>
+
+<div class="block-collapse__content">
+<div class="table">
+<table><tbody><tr><td width="30%"><span class="consolas">resultParameters</span></td>
+			<td>Коллекция параметров запроса, которые добавляются в аргументы функции.</td>
+		</tr></tbody></table></div>
+</div>
+</div>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+override object Clone()
+</pre>
+</div>
+</div>
+</div>
+
+<p>Создает клон текущего экземпляра <span class="filled">LengthQueryFunction</span>.</p>
+</div>
+</div>
+
+<h2 data-type="С#">Класс SubstringQueryFunction<a class="title-anchor" href="#title-2164-57" id="title-2164-57"> </a></h2>
+
+<p>Пространство имен <span class="filled">Terrasoft.Core.DB</span>.</p>
+
+<p>Класс получает часть строки.</p>
+
+<div class="message">
+<p><span class="message__bold">На заметку.</span> Полный перечень методов и свойств класса <span class="filled">SubstringQueryFunction</span>, его родительских классов, а также реализуемых им интерфейсов можно найти в <a href="../../../../../api/netcoreapi/7.18.0/api/Terrasoft.Core.DB.SubstringQueryFunction.html">Библиотеке .NET классов</a>.</p>
+</div>
+
+<div class="block-collapse">
+<h3 class="block-collapse__title">Конструкторы<a class="title-anchor" href="#title-2164-58" id="title-2164-58"> </a></h3>
+
+<div class="block-collapse__content">
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+SubstringQueryFunction(QueryColumnExpression expression, int start, int length)
+SubstringQueryFunction(IQueryColumnExpressionConvertible expression, int start, int length)
+</pre>
+</div>
+</div>
+</div>
+
+<p>Инициализирует новый экземпляр <span class="filled">SubstringQueryFunction</span> для заданного выражения колонки, начальной позиции и длины подстроки.</p>
+
+<div class="block-collapse">
+<div class="block-collapse__title block-collapse__title_mb-16">Параметры</div>
+
+<div class="block-collapse__content">
+<div class="table">
+<table><tbody><tr><td width="30%"><span class="consolas">expression</span></td>
+			<td>Выражение колонки запроса.</td>
+		</tr><tr><td><span class="consolas">start</span></td>
+			<td>Начальная позиция подстроки.</td>
+		</tr><tr><td><span class="consolas">length</span></td>
+			<td>Длина подстроки.</td>
+		</tr></tbody></table></div>
+</div>
+</div>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+SubstringQueryFunction(SubstringQueryFunction source)
+</pre>
+</div>
+</div>
+</div>
+
+<p>Инициализирует новый экземпляр <span class="filled">SubstringQueryFunction</span>, являющийся клоном переданной функции.</p>
+
+<div class="block-collapse">
+<div class="block-collapse__title block-collapse__title_mb-16">Параметры</div>
+
+<div class="block-collapse__content">
+<div class="table">
+<table><tbody><tr><td width="30%"><span class="consolas">source</span></td>
+			<td>Функция <span class="filled">SubstringQueryFunction</span>, клон которой создается.</td>
+		</tr></tbody></table></div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="block-collapse">
+<h3 class="block-collapse__title">Свойства<a class="title-anchor" href="#title-2164-59" id="title-2164-59"> </a></h3>
+
+<div class="block-collapse__content">
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+Expression <span class="gray">QueryColumnExpression</span>
+</pre>
+</div>
+</div>
+</div>
+
+<p>Выражение аргумента функции.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+StartExpression <span class="gray">QueryColumnExpression</span>
+</pre>
+</div>
+</div>
+</div>
+
+<p>Начальная позиция подстроки.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+LengthExpression <span class="gray">QueryColumnExpression</span>
+</pre>
+</div>
+</div>
+</div>
+
+<p>Длина подстроки.</p>
+</div>
+</div>
+
+<div class="block-collapse">
+<h3 class="block-collapse__title">Методы<a class="title-anchor" href="#title-2164-60" id="title-2164-60"> </a></h3>
+
+<div class="block-collapse__content">
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+override void BuildSqlText(StringBuilder sb, DBEngine dbEngine)
+</pre>
+</div>
+</div>
+</div>
+
+<p>Формирует текст запроса с использованием заданных экземпляров <span class="filled">StringBuilder</span> и построителя запросов <span class="filled">DBEngine</span>.</p>
+
+<div class="block-collapse">
+<div class="block-collapse__title block-collapse__title_mb-16">Параметры</div>
+
+<div class="block-collapse__content">
+<div class="table">
+<table><tbody><tr><td width="30%"><span class="consolas">sb</span></td>
+			<td>Экземпляр <span class="filled">StringBuilder</span>, с помощью которого формируется текст запроса.</td>
+		</tr><tr><td><span class="consolas">dbEngine</span></td>
+			<td>Экземпляр построителя запроса к базе данных.</td>
+		</tr></tbody></table></div>
+</div>
+</div>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+override void AddUsingParameters(QueryParameterCollection resultParameters)
+</pre>
+</div>
+</div>
+</div>
+
+<p>Добавляет в аргументы функции переданную коллекцию параметров.</p>
+
+<div class="block-collapse">
+<div class="block-collapse__title block-collapse__title_mb-16">Параметры</div>
+
+<div class="block-collapse__content">
+<div class="table">
+<table><tbody><tr><td width="30%"><span class="consolas">resultParameters</span></td>
+			<td>Коллекция параметров запроса, которые добавляются в аргументы функции.</td>
+		</tr></tbody></table></div>
+</div>
+</div>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+override object Clone()
+</pre>
+</div>
+</div>
+</div>
+
+<p>Создает клон текущего экземпляра <span class="filled">SubstringQueryFunction</span>.</p>
+</div>
+</div>
+
+<h2 data-type="С#">Класс ConcatQueryFunction<a class="title-anchor" href="#title-2164-61" id="title-2164-61"> </a></h2>
+
+<p>Пространство имен <span class="filled">Terrasoft.Core.DB</span>.</p>
+
+<p>Класс формирует строку, которая является результатом объединения строковых значений аргументов функции.</p>
+
+<div class="message">
+<p><span class="message__bold">На заметку.</span> Полный перечень методов и свойств класса <span class="filled">ConcatQueryFunction</span>, его родительских классов, а также реализуемых им интерфейсов можно найти в <a href="../../../../../api/netcoreapi/7.18.0/api/Terrasoft.Core.DB.ConcatQueryFunction.html">Библиотеке .NET классов</a>.</p>
+</div>
+
+<div class="block-collapse">
+<h3 class="block-collapse__title">Конструкторы<a class="title-anchor" href="#title-2164-62" id="title-2164-62"> </a></h3>
+
+<div class="block-collapse__content">
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+ConcatQueryFunction(QueryColumnExpressionCollection expressions)
+</pre>
+</div>
+</div>
+</div>
+
+<p>Инициализирует новый экземпляр <span class="filled">ConcatQueryFunction</span> для переданной коллекции выражений.</p>
+
+<div class="block-collapse">
+<div class="block-collapse__title block-collapse__title_mb-16">Параметры</div>
+
+<div class="block-collapse__content">
+<div class="table">
+<table><tbody><tr><td width="30%"><span class="consolas">expressions</span></td>
+			<td>Коллекция выражений колонок запроса.</td>
+		</tr></tbody></table></div>
+</div>
+</div>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+ConcatQueryFunction(ConcatQueryFunction source)
+</pre>
+</div>
+</div>
+</div>
+
+<p>Инициализирует новый экземпляр <span class="filled">ConcatQueryFunction</span>, являющийся клоном переданной функции.</p>
+
+<div class="block-collapse">
+<div class="block-collapse__title block-collapse__title_mb-16">Параметры</div>
+
+<div class="block-collapse__content">
+<div class="table">
+<table><tbody><tr><td width="30%"><span class="consolas">source</span></td>
+			<td>Функция <span class="filled">ConcatQueryFunction</span>, клон которой создается.</td>
+		</tr></tbody></table></div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="block-collapse">
+<h3 class="block-collapse__title">Свойства<a class="title-anchor" href="#title-2164-63" id="title-2164-63"> </a></h3>
+
+<div class="block-collapse__content">
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+Expressions <span class="gray">QueryColumnExpressionCollection</span>
+</pre>
+</div>
+</div>
+</div>
+
+<p>Коллекция выражений аргументов функции.</p>
+</div>
+</div>
+
+<div class="block-collapse">
+<h3 class="block-collapse__title">Методы<a class="title-anchor" href="#title-2164-64" id="title-2164-64"> </a></h3>
+
+<div class="block-collapse__content">
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+override void BuildSqlText(StringBuilder sb, DBEngine dbEngine)
+</pre>
+</div>
+</div>
+</div>
+
+<p>Формирует текст запроса с использованием заданных экземпляров <span class="filled">StringBuilder</span> и построителя запросов <span class="filled">DBEngine</span>.</p>
+
+<div class="block-collapse">
+<div class="block-collapse__title block-collapse__title_mb-16">Параметры</div>
+
+<div class="block-collapse__content">
+<div class="table">
+<table><tbody><tr><td width="30%"><span class="consolas">sb</span></td>
+			<td>Экземпляр <span class="filled">StringBuilder</span>, с помощью которого формируется текст запроса.</td>
+		</tr><tr><td><span class="consolas">dbEngine</span></td>
+			<td>Экземпляр построителя запроса к базе данных.</td>
+		</tr></tbody></table></div>
+</div>
+</div>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+override void AddUsingParameters(QueryParameterCollection resultParameters)
+</pre>
+</div>
+</div>
+</div>
+
+<p>Добавляет в аргументы функции переданную коллекцию параметров.</p>
+
+<div class="block-collapse">
+<div class="block-collapse__title block-collapse__title_mb-16">Параметры</div>
+
+<div class="block-collapse__content">
+<div class="table">
+<table><tbody><tr><td width="30%"><span class="consolas">resultParameters</span></td>
+			<td>Коллекция параметров запроса, которые добавляются в аргументы функции.</td>
+		</tr></tbody></table></div>
+</div>
+</div>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+override object Clone()
+</pre>
+</div>
+</div>
+</div>
+
+<p>Создает клон текущего экземпляра <span class="filled">ConcatQueryFunction</span>.</p>
+</div>
+</div>
+
+<h2 data-type="С#">Класс WindowQueryFunction<a class="title-anchor" href="#title-2164-65" id="title-2164-65"> </a></h2>
+
+<p>Пространство имен <span class="filled">Terrasoft.Core.DB</span>.</p>
+
+<p>Класс реализует функцию SQL окна.</p>
+
+<div class="message">
+<p><span class="message__bold">На заметку.</span> Полный перечень методов и свойств класса <span class="filled">WindowQueryFunction</span>, его родительских классов, а также реализуемых им интерфейсов можно найти в <a href="../../../../../api/netcoreapi/7.18.0/api/Terrasoft.Core.DB.WindowQueryFunction.html">Библиотеке .NET классов</a>.</p>
+</div>
+
+<div class="block-collapse">
+<h3 class="block-collapse__title">Конструкторы<a class="title-anchor" href="#title-2164-66" id="title-2164-66"> </a></h3>
+
+<div class="block-collapse__content">
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+WindowQueryFunction(QueryFunction innerFunction)
+</pre>
+</div>
+</div>
+</div>
+
+<p>Реализует функцию SQL окна.</p>
+
+<div class="block-collapse">
+<div class="block-collapse__title block-collapse__title_mb-16">Параметры</div>
+
+<div class="block-collapse__content">
+<div class="table">
+<table><tbody><tr><td width="30%"><span class="consolas">innerFunction</span></td>
+			<td>Вложенная функция.</td>
+		</tr></tbody></table></div>
+</div>
+</div>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+WindowQueryFunction(QueryFunction innerFunction, QueryColumnExpression partitionByExpression = null, QueryColumnExpression orderByExpression = null) : this(innerFunction)
+</pre>
+</div>
+</div>
+</div>
+
+<p>Реализует функцию SQL окна.</p>
+
+<div class="block-collapse">
+<div class="block-collapse__title block-collapse__title_mb-16">Параметры</div>
+
+<div class="block-collapse__content">
+<div class="table">
+<table><tbody><tr><td width="30%"><span class="consolas">innerFunction</span></td>
+			<td>Вложенная функция.</td>
+		</tr><tr><td><span class="consolas">partitionByExpression</span></td>
+			<td>Выражение для разделения запроса.</td>
+		</tr><tr><td><span class="consolas">orderByExpression</span></td>
+			<td>Выражение для сортировки запроса.</td>
+		</tr></tbody></table></div>
+</div>
+</div>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+WindowQueryFunction(WindowQueryFunction source) : this( source.InnerFunction, source.PartitionByExpression, source.OrderByExpression)
+</pre>
+</div>
+</div>
+</div>
+
+<p>Инициализирует новый экземпляр <span class="filled">WindowQueryFunction</span>, являющийся клоном переданной функции.</p>
+
+<div class="block-collapse">
+<div class="block-collapse__title block-collapse__title_mb-16">Параметры</div>
+
+<div class="block-collapse__content">
+<div class="table">
+<table><tbody><tr><td width="30%"><span class="consolas">source</span></td>
+			<td>Функция <span class="filled">WindowQueryFunction</span>, клон которой создается.</td>
+		</tr></tbody></table></div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="block-collapse">
+<h3 class="block-collapse__title">Свойства<a class="title-anchor" href="#title-2164-67" id="title-2164-67"> </a></h3>
+
+<div class="block-collapse__content">
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+InnerFunction <span class="gray">QueryFunction</span>
+</pre>
+</div>
+</div>
+</div>
+
+<p>Функция для применения.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+PartitionByExpression <span class="gray">QueryColumnExpression</span>
+</pre>
+</div>
+</div>
+</div>
+
+<p>Разделение по пунктам.</p>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+OrderByExpression <span class="gray">QueryColumnExpression</span>
+</pre>
+</div>
+</div>
+</div>
+
+<p>Сортировать по пункту.</p>
+</div>
+</div>
+
+<div class="block-collapse">
+<h3 class="block-collapse__title">Методы<a class="title-anchor" href="#title-2164-68" id="title-2164-68"> </a></h3>
+
+<div class="block-collapse__content">
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+override void BuildSqlText(StringBuilder sb, DBEngine dbEngine)
+</pre>
+</div>
+</div>
+</div>
+
+<p>Формирует текст запроса с использованием заданных экземпляров <span class="filled">StringBuilder</span> и построителя запросов <span class="filled">DBEngine</span>.</p>
+
+<div class="block-collapse">
+<div class="block-collapse__title block-collapse__title_mb-16">Параметры</div>
+
+<div class="block-collapse__content">
+<div class="table">
+<table><tbody><tr><td width="30%"><span class="consolas">sb</span></td>
+			<td>Экземпляр <span class="filled">StringBuilder</span>, с помощью которого формируется текст запроса.</td>
+		</tr><tr><td><span class="consolas">dbEngine</span></td>
+			<td>Экземпляр построителя запроса к базе данных.</td>
+		</tr></tbody></table></div>
+</div>
+</div>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+override void AddUsingParameters(QueryParameterCollection resultParameters)
+</pre>
+</div>
+</div>
+</div>
+
+<p>Добавляет в аргументы функции переданную коллекцию параметров.</p>
+
+<div class="block-collapse">
+<div class="block-collapse__title block-collapse__title_mb-16">Параметры</div>
+
+<div class="block-collapse__content">
+<div class="table">
+<table><tbody><tr><td width="30%"><span class="consolas">resultParameters</span></td>
+			<td>Коллекция параметров запроса, которые добавляются в аргументы функции.</td>
+		</tr></tbody></table></div>
+</div>
+</div>
+
+<div class="code code_mb-small">
+<div class="code__widgets code__widgets_no-bg">
+<div class="code__source" data-copy="false">
+<pre class="prettyprint">
+override object Clone()
+</pre>
+</div>
+</div>
+</div>
+
+<p>Создает клон текущего экземпляра <span class="filled">WindowQueryFunction</span>.</p>
+</div>
+</div>
+</div>
+      
+  </div>
+
+    </div>
+  </div>
+
+  </div>
+
+</article>
+
+  </div>
+
+  </div>
+
+          </div>
+        </div>
+
+                  <aside class="creatio-sidebar creatio-sidebar_first" role="complementary">
+              <div class="region region-sidebar-first">
+    <div id="block-documentationnaviagtion" class="block block-ts-nav block-ts-nav-doc-nav">
+  
+    
+      <div class="ts-nav-block"><a href="../../../../index.html" class="ts-nav-block__link">Документация</a><div class="ts-nav-block__title">Для разработчика</div>
+</div>
+<div class="ts-nav-container"><ul class="ts-nav-menu"><li class="ts-nav-menu__item">
+  <a href="../../s_chego_nachat.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">С чего начать&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../architecture.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Архитектура&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../instrumenty_razrabotki.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Инструменты разработки&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../back_end_razrabotka.html" class="ts-nav-menu__link ts-nav-menu__link_expanded ts-nav-menu__link_open" hreflang="zxx">Back-end разработка&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+      <ul class="ts-nav-menu__children">
+      <li class="ts-nav-menu__item">
+  <a href="../fabrika_zameshchayushchikh_klassov.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Фабрика замещающих классов&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../back-end_development/operatsii_s_dannymi_back_end.html" class="ts-nav-menu__link ts-nav-menu__link_expanded ts-nav-menu__link_open" hreflang="ru">Операции с данными&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+      <ul class="ts-nav-menu__children">
+      <li class="ts-nav-menu__item">
+  <a href="../../back-end_development/operatsii_s_dannymi_back_end/fonovoe_vypolnenie_operacij.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Фоновое выполнение операций&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../back-end_development/operatsii_s_dannymi_back_end/pryamoj_dostup.html" class="ts-nav-menu__link" hreflang="ru">Прямой доступ</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../back-end_development/operatsii_s_dannymi_back_end/orm.html" class="ts-nav-menu__link" hreflang="ru">ORM</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../back-end_development/otdelnyy_pul_zaprosov/nastroyka_otdelnogo_pula_zaprosov.html" class="ts-nav-menu__link" hreflang="ru">Сложные Select-запросы</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="kopirovanie_ierarkhicheskikh_dannykh/obzor.html" class="ts-nav-menu__link" hreflang="ru">Копирование иерархических данных</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../back-end_development/operatsii_s_dannymi_back_end/dostup_k_dannym_cherez_orm.html" class="ts-nav-menu__link ts-nav-menu__link_guide" hreflang="ru">Доступ к данным через ORM</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="upravlyat_sushchnostyami_bazy_dannykh.html" class="ts-nav-menu__link ts-nav-menu__link_case" hreflang="ru">Управлять сущностями базы данных </a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="poluchit_dannye.html" class="ts-nav-menu__link ts-nav-menu__link_case" hreflang="ru">Получить данные</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../../node/2157.html" class="ts-nav-menu__link ts-nav-menu__link_case" hreflang="ru">Примеры построения путей к колонкам</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="poluchit_dannye_s_uchetom_prav_polzovatelya.html" class="ts-nav-menu__link ts-nav-menu__link_case" hreflang="ru">Получить данные с учетом прав пользователя</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="dobavit_dannye.html" class="ts-nav-menu__link ts-nav-menu__link_case" hreflang="ru">Добавить данные</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../../node/2155.html" class="ts-nav-menu__link ts-nav-menu__link_case" hreflang="ru">Функциональность многострочного добавления данных</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="dobavit_dannye_podzaprosy.html" class="ts-nav-menu__link ts-nav-menu__link_case" hreflang="ru">Добавить данные (подзапросы)</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="izmenit_dannye.html" class="ts-nav-menu__link ts-nav-menu__link_case" hreflang="ru">Изменить данные</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="udalit_dannye.html" class="ts-nav-menu__link ts-nav-menu__link_case" hreflang="ru">Удалить данные</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../../node/3254.html" class="ts-nav-menu__link ts-nav-menu__link_case" hreflang="ru">Реализовать механизм сопоставления данных</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../../node/2139.html" class="ts-nav-menu__link ts-nav-menu__link_case" hreflang="ru">Примеры скриптов для MS SQL и PostgreSQL</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="entity.html" class="ts-nav-menu__link ts-nav-menu__link_reference" data-type="C#" hreflang="ru">Entity</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="select.html" class="ts-nav-menu__link ts-nav-menu__link_reference" data-type="C#" hreflang="ru">Select</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="entityschemaquery.html" class="ts-nav-menu__link ts-nav-menu__link_reference" data-type="C#" hreflang="ru">EntitySchemaQuery</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="insert.html" class="ts-nav-menu__link ts-nav-menu__link_reference" data-type="C#" hreflang="ru">Insert</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="insertselect.html" class="ts-nav-menu__link ts-nav-menu__link_reference" data-type="C#" hreflang="ru">InsertSelect</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="update.html" class="ts-nav-menu__link ts-nav-menu__link_reference" data-type="C#" hreflang="ru">Update</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="delete.html" class="ts-nav-menu__link ts-nav-menu__link_reference" data-type="C#" hreflang="ru">Delete</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="entitymapper.html" class="ts-nav-menu__link ts-nav-menu__link_reference" data-type="C#" hreflang="ru">EntityMapper</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="queryfunction.html" class="ts-nav-menu__link ts-nav-menu__link_reference ts-nav-menu__link_active" data-type="C#" hreflang="ru">QueryFunction</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="entityschemaqueryfunction.html" class="ts-nav-menu__link ts-nav-menu__link_reference" data-type="C#" hreflang="ru">EntitySchemaQueryFunction</a>
+  </li>
+
+    </ul>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../veb_servisy.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Веб-сервисы&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../biznes_logika_obektov/obzor.html" class="ts-nav-menu__link" hreflang="ru">Бизнес-логика объектов</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../hranilishche_kehsha/obzor.html" class="ts-nav-menu__link" hreflang="ru">Хранилище кэша</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../lokalizuemye_resursy.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Локализуемые ресурсы&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../avtomaticheskaya_privyazka_dannykh/obzor.html" class="ts-nav-menu__link" hreflang="ru">Автоматическая привязка данных</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../api_dlya_raboty_s_fajlami.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">API для работы с файлами&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../../../api/netcoreapi/7.18.0/api/index.html" class="ts-nav-menu__link" hreflang="ru">Библиотека .NET классов</a>
+  </li>
+
+    </ul>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../front_end_razrabotka.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Front-end разработка&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../integratsiya_i_vneshnij_api.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Интеграция и внешний API&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../ehlementy_interfejsa.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Элементы интерфейса&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../komponenty_prilozheniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Компоненты приложения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../razrabotka_mobilnogo_prilozheniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Разработка мобильного приложения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../razrabotka_marketplace_prilozheniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Разработка Marketplace-приложения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+</ul>
+</div>
+
+  </div>
+
+  </div>
+
+            <div class="creatio-sidebar__toggle"></div>
+          </aside>
+        
+                  <aside class="creatio-sidebar creatio-sidebar_second" role="complementary">
+              <div class="region region-sidebar-second">
+    <div id="block-example" class="block block-ts-nav block-ts-nav-page-nav">
+  
+    
+      <div class="ts-nav-page">
+  </div>
+
+  </div>
+<div id="block-adminfeedbackblock" class="block block-admin-feedback block-admin-feedback-block">
+  
+    
+      <div id="feedback-message"><div id="upper-feedback-content"><h2>Был ли данный материал полезен?</h2>
+<input class="feedback-btn feedback-btn__yes button js-form-submit form-submit" data-node-id="2164" data-feedback="yes" type="submit" name="op" value="Да" />
+<input class="feedback-btn feedback-btn__no button js-form-submit form-submit" data-node-id="2164" data-feedback="no" type="submit" name="op" value="Нет" />
+</div>
+<form class="admin-feedback-form" data-drupal-selector="admin-feedback-form" action="https://academy.terrasoft.ua/docs/7-17/developer/back_end_razrabotka/operatsii_s_dannymi_back_end/queryfunction" method="post" id="admin-feedback-form" accept-charset="UTF-8">
+  <div id="feedback-msg-result"></div><div class="js-form-item form-item js-form-type-textarea form-type-textarea js-form-item-feedback-message form-item-feedback-message form-no-label">
+        <div class="form-textarea-wrapper">
+  <textarea id="edit-feedback-msg" data-drupal-selector="edit-feedback-message" name="feedback_message" rows="5" cols="60" class="form-textarea resize-vertical"></textarea>
+</div>
+
+        </div>
+<input id="feedback-id" data-drupal-selector="edit-feedback-id" type="hidden" name="feedback_id" value="" />
+<input class="feedback-btn feedback-btn__send-comment button js-form-submit form-submit" data-drupal-selector="edit-feedback-send" type="submit" id="edit-feedback-send" name="op" value="Отправить" />
+<input autocomplete="off" data-drupal-selector="form-5gi5qdtebds-hdm1dlrupqgyo6097f-od6yjgv-gnc" type="hidden" name="form_build_id" value="form-5Gi5QDTEbdS_hdM1dLruPQgyO6097F--od6YjGV-gNc" />
+<input data-drupal-selector="edit-admin-feedback-form" type="hidden" name="form_id" value="admin_feedback_form" />
+
+</form>
+</div>
+
+  </div>
+
+  </div>
+
+          </aside>
+              </main>
+    </div>
+  </div>
+
+  <footer role="contentinfo">
+    <div class="creatio-region creatio-region_footer">
+      <div class="creatio-container">
+          <div class="region region-footer">
+    <div id="block-footerua" class="block block-simple-block block-simple-blockfooter-ua">
+  
+    
+      <div class="footer">
+<div class="footer-left">
+<ul class="footer-socials"><li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_fb" href="https://www.facebook.com/terrasoft.ua" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_in" href="https://www.linkedin.com/company/terrasoft/" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_yt" href="https://www.youtube.com/c/TerrasoftUkraine" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_tg" href="https://t.me/Terrasoft_UA" target="_blank"> </a></li>
+</ul></div>
+
+<div class="footer-contact">
+<div class="footer-title">Будьте на связи!</div>
+
+<div class="footer-content">
+<div class="footer-items">
+<div class="footer-item"><a class="footer__link footer__link_phone" href="tel:+380443633133">+38 (044) 363-31-33</a></div>
+</div>
+
+<div class="footer-items">
+<div class="footer-item"><a class="footer__link footer__link_email" href="mailto:support@terrasoft.ua">support@terrasoft.ua</a></div>
+</div>
+</div>
+</div>
+</div>
+
+  </div>
+
+  </div>
+
+      </div>
+    </div>
+    <div class="creatio-region creatio-region_bottom">
+      <div class="creatio-container">
+          <div class="region region-bottom">
+    <div id="block-allrightsreservedua" class="block block-simple-block block-simple-blockfooter-bottom-ua">
+  
+    
+      <p>© 2002-2022 Terrasoft.  |  <a href="https://www.terrasoft.ua/privacy-policy" target="_blank">Конфиденциальность</a></p>
+
+  </div>
+
+  </div>
+
+      </div>
+    </div>
+  </footer>
+</div>
+<div class="creatio-bg"></div>
+
+
+  </div>
+
+    
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/docs\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/2164","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"ru"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"ajaxPageState":{"libraries":"admin_feedback\/admin_feedback_block,admin_feedback\/admin_feedback_css,classy\/base,classy\/messages,classy\/node,core\/drupal.ajax,core\/jquery.form,core\/normalize,creatio\/fancybox,creatio\/global,layout_discovery\/onecol,system\/base,ts_doc\/doc_version,ts_feedback\/ts_feedback,ts_nav\/breadcrumb,ts_nav\/doc_nav,ts_nav\/page_nav,ts_title_anchor\/ts_title_anchor","theme":"creatio","theme_token":null},"ajaxTrustedUrl":{"form_action_p_pvdeGsVG5zNF_XLGPTvYSKCf43t8qZYSwcfZl2uzM":true,"\/docs\/7-17\/developer\/back_end_razrabotka\/operatsii_s_dannymi_back_end\/queryfunction?ajax_form=1":true},"admin_feedback":{"yes_response":"\u0421\u043f\u0430\u0441\u0438\u0431\u043e \u0437\u0430 \u043e\u0431\u0440\u0430\u0442\u043d\u0443\u044e \u0441\u0432\u044f\u0437\u044c!","no_response":"\u0421\u043f\u0430\u0441\u0438\u0431\u043e \u0437\u0430 \u043e\u0431\u0440\u0430\u0442\u043d\u0443\u044e \u0441\u0432\u044f\u0437\u044c!","custom_text_response_on_no":{"value":"","format":"full_html"},"feedback_prompt_on_yes":true,"feedback_prompt_on_no":true,"feedback_enable_predefined_answers":false,"feedback_prompt":"\u041a\u0430\u043a \u043c\u043e\u0436\u043d\u043e \u0443\u043b\u0443\u0447\u0448\u0438\u0442\u044c \u044d\u0442\u0443 \u0441\u0442\u0430\u0442\u044c\u044e?"},"ajax":{"edit-feedback-send":{"callback":"::validateFeedbackMsg","event":"mousedown","keypress":true,"prevent":"click","url":"\/docs\/7-17\/developer\/back_end_razrabotka\/operatsii_s_dannymi_back_end\/queryfunction?ajax_form=1","dialogType":"ajax","submit":{"_triggering_element_name":"op","_triggering_element_value":"\u041e\u0442\u043f\u0440\u0430\u0432\u0438\u0442\u044c"}}},"user":{"uid":0,"permissionsHash":"9c2367dfcaba0fa15f0375f97aed64e146c908cee68508d13b79e3ee80e5162d"}}</script>
+<script src="../../../../sites/default/files/js/js_Rr-7TvYD7NposuRFJwUqThxM7yJmw8vs03PQwu5gWd8.js"></script>
+
+
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+      <g id="svg-copy" class="svg-icon svg-icon_copy">
+        <path d="M15.111,18H1.889A1.848,1.848,0,0,1,0,16.2V3.6A1.848,1.848,0,0,1,1.889,1.8H5.837a2.87,2.87,0,0,1,5.326,0h3.948A1.848,1.848,0,0,1,17,3.6V16.2A1.848,1.848,0,0,1,15.111,18ZM3.777,12.6v1.8h6.611V12.6Zm0-3.6v1.8h9.445V9Zm0-3.6V7.2h9.445V5.4ZM8.5,1.8a.924.924,0,0,0-.944.9.945.945,0,0,0,1.889,0A.924.924,0,0,0,8.5,1.8Z"/>
+      </g>
+
+      <g id="svg-prev" class="svg-icon svg-icon_arrow">
+        <path d="M5.488,12.779,0,6.39,5.488,0" transform="translate(1 0.652)"/>
+      </g>
+
+      <g id="svg-next" class="svg-icon svg-icon_arrow">
+        <path d="M0,12.779,5.488,6.39,0,0" transform="translate(0.759 0.652)"/>
+      </g>
+    </svg>
+  </body>
+
+<!-- Mirrored from academy.terrasoft.ua/docs/7-17/developer/back_end_razrabotka/operatsii_s_dannymi_back_end/queryfunction by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Mar 2022 03:44:33 GMT -->
+</html>

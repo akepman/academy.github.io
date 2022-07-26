@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# ">
+  
+<!-- Mirrored from academy.terrasoft.ua/docs/8-0/user/bazis_platformy/kommunikacii/zvonki/rabota_so_zvonkami by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Mar 2022 04:02:33 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+          <!-- Google Tag Manager -->
+      <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          '../../../../../../../www.googletagmanager.com/gtm5445.html?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-KLLB8G');</script>
+      <!-- End Google Tag Manager -->
+        <meta charset="utf-8" />
+<link rel="canonical" href="rabota_so_zvonkami.html" />
+<meta name="description" content="Все основные операции со звонками в Creatio (прием входящих и совершение исходящих звонков, перевод звонков в режим удержания, на другой номер и т. д.) выполняются при помощи коммуникационной панели. Для этого используется вкладка Звонки, которая отображается по кнопке ." />
+<meta property="og:url" content="https://academy.terrasoft.ua/docs/8-0/user/bazis_platformy/kommunikacii/zvonki/rabota_so_zvonkami" />
+<meta property="og:title" content="Работа со звонками" />
+<meta property="og:description" content="Все основные операции со звонками в Creatio (прием входящих и совершение исходящих звонков, перевод звонков в режим удержания, на другой номер и т. д.) выполняются при помощи коммуникационной панели. Для этого используется вкладка Звонки, которая отображается по кнопке ." />
+<meta name="Generator" content="Drupal 9 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="../../../../../themes/custom/creatio/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="revision" href="rabota_so_zvonkami.html" />
+
+    <title>Работа со звонками | Creatio Academy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&amp;family=Open+Sans:ital,wght@0,300;0,400;0,600;1,400&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" media="all" href="../../../../../sites/default/files/css/css_6lTP66__-yc6QXFp1zOwoeJ0HVigoYZP-SeoLLii000.css" />
+<link rel="stylesheet" media="all" href="../../../../../sites/default/files/css/css_XQJDNhkF3xH5SZCcY-PI89Zu4nYIzQ5oR3SnUKyfXJU.css" />
+<link rel="stylesheet" media="print" href="../../../../../sites/default/files/css/css_Zn4VHvcniOOtUwkIVwXzYr_0AI9gUVgZcPqaH4ViagU.css" />
+
+    
+  </head>
+  <body class="path-node page-node-type-user-documentation">
+          <!-- Google Tag Manager (noscript) -->
+      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KLLB8G"
+                        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+      <!-- End Google Tag Manager (noscript) -->
+    
+        
+      <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    <div class="creatio-page d-flex flex-column">
+        <div class="region region-informer">
+    <div id="block-terrasoftpidtrimueukrainu" class="block block-simple-block block-simple-blockterrasoft-pidtrimue-ukrainu">
+  
+    
+      <style type="text/css">
+<!--/*--><![CDATA[/* ><!--*/
+@import url(../../../../../../../www.terrasoft.ua/themes/custom/creatio/css/components/informer.css)
+
+/*--><!]]>*/
+</style><div class="ts-swu">
+<div class="creatio-container">
+<div class="ts-swu__cont">
+<div><a class="ts-swu__link" href="https://www.terrasoft.ua/terrasoft-stands-with-ukraine" target="_blank">Україна понад усе!</a> <span><a href="https://www.terrasoft.ua/terrasoft-stands-with-ukraine" target="_blank">Приєднуйтеся</a> до допомоги!</span></div>
+</div>
+</div></div>
+
+  </div>
+
+  </div>
+
+  
+  <header role="banner">
+          <div class="creatio-region creatio-region_top">
+        <div class="creatio-container">
+            <div class="region region-top">
+    <div id="block-menutoggle" class="block block-simple-block block-simple-blockmenu-toggle">
+  
+    
+      <div class="menu-toggle"><span> </span></div>
+
+  </div>
+<div id="block-logowhite-2" class="block block-simple-block block-simple-blocklogo-white">
+  
+    
+      <p><a class="site-logo" href="../../../../../../index.html" rel="home"><img src="../../../../../themes/custom/creatio/logo-white.svg" /></a></p>
+
+  </div>
+<div id="block-search" class="block block-simple-block block-simple-blocksearch">
+  
+    
+      <div class="search">
+<form action="https://academy.terrasoft.ua/search" class="search-form" method="get"><input class="search-form__input" name="search" placeholder="Поиск" type="search" /><input class="search-form__button" type="submit" value="Поиск" /> </form>
+
+<div class="search-toggle"> </div>
+</div>
+
+  </div>
+<nav role="navigation" aria-labelledby="block-sitesua-menu" id="block-sitesua" class="block block-menu navigation menu--sites-ua">
+            
+  <h2 class="visually-hidden" id="block-sitesua-menu">Sites UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="https://www.terrasoft.ua/" rel="nofollow" target="_blank">Terrasoft</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://community.terrasoft.ua/" rel="nofollow" target="_blank">Community</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://marketplace.terrasoft.ua/" rel="nofollow" target="_blank">Marketplace</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+<div id="block-usermenu" class="block block-ts-user block-ts-user-menu-block">
+  
+    
+      <ul class="user-menu">
+      <li class="user-menu__item">
+      <a class="user-menu__link" href="https://profile.terrasoft.ua/user/login?destination=academy/ua/docs/8-0/user/bazis_platformy/kommunikacii/zvonki/rabota_so_zvonkami">Войти</a>
+    </li>
+  </ul>
+
+  </div>
+<div id="block-usermenumobile" class="block block-ts-user block-ts-user-menu-mobile-block">
+  
+    
+      <ul class="user-menu-mobile">
+      <li class="user-menu-mobile__item">
+      <div class="user-menu-mobile__user user-menu-mobile__user_icon"></div>
+      <ul class="user-menu-mobile__submenu">
+        <li class="user-menu-mobile__subitem">
+          <a class="user-menu-mobile__sublink" href="https://profile.terrasoft.ua/user/login?destination=academy/ua/docs/8-0/user/bazis_platformy/kommunikacii/zvonki/rabota_so_zvonkami">Войти</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  </div>
+
+  </div>
+
+        </div>
+      </div>
+              <div class="creatio-region creatio-region_header">
+        <div class="creatio-container">
+            <div class="region region-header">
+    <div id="block-logo" class="block block-simple-block block-simple-blocklogo">
+  
+    
+      <p><a class="site-logo" href="../../../../../../index.html" rel="home"><img src="../../../../../themes/custom/creatio/logo.svg" /></a></p>
+
+  </div>
+<nav role="navigation" aria-labelledby="block-osnovnayanavigaciyaua-menu" id="block-osnovnayanavigaciyaua" class="block block-menu navigation menu--main-ua">
+            
+  <h2 class="visually-hidden" id="block-osnovnayanavigaciyaua-menu">Основная навигация UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="../../../../../index.html" data-drupal-link-system-path="&lt;front&gt;">Документация</a>
+              </li>
+                <li class="menu-item">
+        <a href="../../../../../../trainings.html">Тренинги</a>
+              </li>
+                <li class="menu-item">
+        <a href="../../../../../certification.html" data-drupal-link-system-path="node/3084">Сертификация и тестирование</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+<nav role="navigation" aria-labelledby="block-sitesua-2-menu" id="block-sitesua-2" class="block block-menu navigation menu--sites-ua">
+            
+  <h2 class="visually-hidden" id="block-sitesua-2-menu">Sites UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="https://www.terrasoft.ua/" rel="nofollow" target="_blank">Terrasoft</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://community.terrasoft.ua/" rel="nofollow" target="_blank">Community</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://marketplace.terrasoft.ua/" rel="nofollow" target="_blank">Marketplace</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+
+  </div>
+
+        </div>
+      </div>
+              <div class="creatio-region creatio-region_breadcrumb">
+        <div class="creatio-container">
+            <div class="region region-breadcrumb">
+    <div id="block-logowhite" class="block block-simple-block block-simple-blocklogo-white">
+  
+    
+      <p><a class="site-logo" href="../../../../../../index.html" rel="home"><img src="../../../../../themes/custom/creatio/logo-white.svg" /></a></p>
+
+  </div>
+<div id="block-breadcrumbnaviagtion" class="block block-ts-nav block-ts-nav-bread">
+  
+    
+      <nav class="breadcrumb"><ol class="ts-nav-breadcrumb__list"><li class="ts-nav-breadcrumb__item"><a href="../../../../../index.html" class="ts-nav-breadcrumb__link" title="Документация">Документация</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../../../indexd993.html?vid_1=1" class="ts-nav-breadcrumb__link" title="Для пользователя">Для пользователя</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../bazis_platformy.html" class="ts-nav-breadcrumb__link" title="Базис платформы" hreflang="zxx">Базис платформы</a></li>
+<li class="ts-nav-breadcrumb__item ts-nav-breadcrumb__item_mobile"><a href="../../kommunikacii.html" class="ts-nav-breadcrumb__link" title="Коммуникации" hreflang="zxx">Коммуникации</a></li>
+<li class="ts-nav-breadcrumb__item"><span class="ts-nav-breadcrumb__link ts-nav-breadcrumb__link_current" title="Работа со звонками">Работа со звонками</span></li>
+</ol>
+</nav>
+
+  </div>
+<div id="block-search-2" class="block block-simple-block block-simple-blocksearch">
+  
+    
+      <div class="search">
+<form action="https://academy.terrasoft.ua/search" class="search-form" method="get"><input class="search-form__input" name="search" placeholder="Поиск" type="search" /><input class="search-form__button" type="submit" value="Поиск" /> </form>
+
+<div class="search-toggle"> </div>
+</div>
+
+  </div>
+
+  </div>
+
+        </div>
+      </div>
+      </header>
+
+  <div class="creatio-region creatio-region_main">
+    <div class="creatio-container">
+                <div class="region region-breadcrumb-mobile">
+    <div id="block-breadcrumbnaviagtion-2" class="block block-ts-nav block-ts-nav-bread">
+  
+    
+      <nav class="breadcrumb"><ol class="ts-nav-breadcrumb__list"><li class="ts-nav-breadcrumb__item"><a href="../../../../../index.html" class="ts-nav-breadcrumb__link" title="Документация">Документация</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../../../indexd993.html?vid_1=1" class="ts-nav-breadcrumb__link" title="Для пользователя">Для пользователя</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../bazis_platformy.html" class="ts-nav-breadcrumb__link" title="Базис платформы" hreflang="zxx">Базис платформы</a></li>
+<li class="ts-nav-breadcrumb__item ts-nav-breadcrumb__item_mobile"><a href="../../kommunikacii.html" class="ts-nav-breadcrumb__link" title="Коммуникации" hreflang="zxx">Коммуникации</a></li>
+<li class="ts-nav-breadcrumb__item"><span class="ts-nav-breadcrumb__link ts-nav-breadcrumb__link_current" title="Работа со звонками">Работа со звонками</span></li>
+</ol>
+</nav>
+
+  </div>
+
+  </div>
+
+      
+      <main class="creatio-main" role="main">
+                                                    
+        <div class="creatio-content creatio-content_small">
+          <div class="creatio-content__inner creatio-content__inner_bg">
+                            <div class="region region-messages">
+    <div data-drupal-messages-fallback class="hidden"></div>
+
+  </div>
+
+            
+              <div class="region region-content">
+    <div id="block-creatio-page-title" class="block block-core block-page-title-block">
+  
+    
+      
+  <h1 class="page-title"><span class="field field--name-title field--type-string field--label-hidden">Работа со звонками</span>
+</h1>
+
+
+  </div>
+<div id="block-creatio-content" class="block block-system block-system-main-block">
+  
+    
+      
+<article data-history-node-id="2655" role="article" about="/docs/8-0/user/bazis_platformy/kommunikacii/zvonki/rabota_so_zvonkami" class="node node--type-user-documentation node--view-mode-full">
+
+  
+    
+
+  
+  <div class="node__content">
+      <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-ts-doc block-ts-doc-downloads">
+  
+    
+      <a href="../../../../../sites/default/files/pdf/node/2655/Rabota_so_zvonkami_.pdf" target="_blank">PDF</a>
+  </div>
+<div class="block block-ts-doc block-ts-doc-versions">
+  
+    
+        <div class="ts-doc-versions">
+    <select class="ts-doc-versions__select">
+                                                <option value="/docs/8-0/user/bazis_platformy/kommunikacii/zvonki/rabota_so_zvonkami" selected>Версия 8.0</option>
+                              <option value="/docs/7-18/user/bazis_platformy/kommunikacii/zvonki/rabota_so_zvonkami">Версия 7.18</option>
+                              <option value="/docs/7-17/user/bazis_platformy/kommunikacii/zvonki/rabota_so_zvonkami">Версия 7.17</option>
+          </select>
+  </div>
+
+  </div>
+
+    </div>
+  </div>
+  <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocknodeuser-documentationfield-product">
+  
+    
+      
+  <div class="field field--name-field-product field--type-entity-reference field--label-above">
+    <div class="field__label">Продукты</div>
+          <div class="field__items">
+              <div class="field__item">Все продукты</div>
+              </div>
+      </div>
+
+  </div>
+<div class="block block-layout-builder block-field-blocknodeuser-documentationbody">
+  
+    
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><p>Все основные операции со звонками в Creatio (прием входящих и совершение исходящих звонков, перевод звонков в режим удержания, на другой номер и т. д.) выполняются при помощи коммуникационной панели. Для этого используется вкладка <span class="key">Звонки</span>, которая отображается по кнопке <img alt="" data-entity-type="file" data-entity-uuid="959cef70-8c00-4108-80f0-c6f3b6beb2ab" height="30" src="../../../../../sites/default/files/images/2020-11/btn_com_open_cti_panel.png" width="30" loading="lazy" />.</p>
+
+<p>Для работы со звонками в приложении необходимо выполнить настройку <a href="../../../../../user/drugie_reshenija/konnektory_telefonii.html">интеграции с телефонией</a>. Для совершения и приема звонков вам понадобится исправная гарнитура.</p>
+
+<h2><a name="TOC_Outgoing_callbc-1" id="TOC_Outgoing_callbc-1"></a><a name="TOC_Outgoing_call" id="TOC_Outgoing_call"></a><a name="CSH_2" id="CSH_2"></a><a name="HT_chapter_telephony_cases_outgoing_call" id="HT_chapter_telephony_cases_outgoing_call"></a><a name="XREF_33089" id="XREF_33089"></a>Выполнить исходящий вызов<a class="title-anchor" href="#title-761-1" id="title-761-1"> </a></h2>
+
+<p>Исходящий звонок может быть выполнен различными способами. Вы можете набрать номер вручную на коммуникационной панели, совершить звонок из истории последних звонков или нажать кнопку вызова на странице контакта.</p>
+
+<h3><a name="TOC_Manual_dialbc-2" id="TOC_Manual_dialbc-2"></a><a name="TOC_Manual_dial" id="TOC_Manual_dial"></a>Набрать номер вручную<a class="title-anchor" href="#title-761-2" id="title-761-2"> </a></h3>
+
+<p>Если вам известен номер телефона, на который вы хотели бы позвонить:</p>
+
+<ol class="start"><li>
+	<p>Введите номер в поле вкладки <span class="key">Звонки</span> и нажмите кнопку вызова или клавишу Enter клавиатуры (<a href="#XREF_49063_110"><span>Рис. 1</span></a>).</p>
+
+	<div class="media">
+	<div class="media__caption"><span class="FM_Picturecaptionnumber">Рис. 1 </span><a name="XREF_49063_110" id="XREF_49063_110"></a> — Ручной набор номера</div>
+
+	<div class="media__element"><img alt="" data-entity-type="file" data-entity-uuid="30f24963-f73b-4f9a-aec3-7e5c39cc2050" height="132" src="../../../../../sites/default/files/images/2020-12/scr_cti_outcome_call.png" width="388" loading="lazy" /></div>
+	</div>
+
+	<p class="indent">Также вы можете набрать номер, нажав кнопку вызова напротив необходимого абонента в <span><a href="#title-761-11">истории звонков</a></span> (<a href="#XREF_68067_104"><span>Рис. 2</span></a>).</p>
+
+	<div class="media">
+	<div class="media__caption"><span class="FM_Picturecaptionnumber">Рис. 2</span><a name="XREF_68067_104" id="XREF_68067_104"></a> — Набор номера из истории звонков</div>
+
+	<div class="media__element"><img alt="" data-entity-type="file" data-entity-uuid="5da99fa8-1c20-482c-9887-3526f95d9620" height="87" src="../../../../../sites/default/files/images/2020-12/scr_cti_outcome_call_from_history.png" width="333" loading="lazy" /></div>
+	</div>
+	</li>
+	<li>
+	<p>Ожидайте соединения с абонентом (<a href="#XREF_93787_111"><span>Рис. 3</span></a>). При успешном соединении звонок перейдет в режим разговора.</p>
+
+	<div class="media">
+	<div class="media__caption"><span class="FM_Picturecaptionnumber">Рис. 3 </span><a name="XREF_93787_111" id="XREF_93787_111"></a> — Исходящий вызов</div>
+
+	<div class="media__element"><img alt="" data-entity-type="file" data-entity-uuid="eedb2219-7e55-490f-a9ee-19721c37dcab" height="120" src="../../../../../sites/default/files/images/2020-12/scr_cti_outcome_call_unknown.png" width="389" loading="lazy" /></div>
+	</div>
+	</li>
+	<li>
+	<p>Для прекращения вызова нажмите кнопку завершения разговора.</p>
+	</li>
+</ol><h3><a name="TOC_Searching_a_subscriberbc-3" id="TOC_Searching_a_subscriberbc-3"></a><a name="TOC_Searching_a_subscriber" id="TOC_Searching_a_subscriber"></a>Найти абонента по имени<a class="title-anchor" href="#title-761-3" id="title-761-3"> </a></h3>
+
+<p>Если вам известно имя контакта, которому вы хотели бы позвонить:</p>
+
+<ol class="start"><li>
+	<p>Введите ФИО или его фрагмент в поле вкладки <span class="key">Звонки</span>. Система выполнит поиск контактов, содержащих введенный фрагмент, и отобразит их на вкладке.</p>
+
+	<div class="message">
+	<p><span class="message__bold">На заметку.</span> Для начала поиска введите три или более символов.</p>
+	</div>
+	</li>
+	<li>
+	<p>Найдите в списке нужного абонента и кликните по кнопке вызова напротив номера телефона, по которому вы хотели бы позвонить (<a href="#XREF_15162_112"><span>Рис. 4</span></a>).</p>
+
+	<div class="media">
+	<div class="media__caption"><span class="FM_Picturecaptionnumber">Рис. 4</span><a name="XREF_15162_112" id="XREF_15162_112"></a> — Поиск абонента по имени</div>
+
+	<div class="media__element"><img alt="" data-entity-type="file" data-entity-uuid="580c52f2-96c7-4a5a-bbfd-e884616f546e" height="282" src="../../../../../sites/default/files/images/2020-12/scr_cti_outcome_call_several_abonents.png" width="396" loading="lazy" /></div>
+	</div>
+	</li>
+	<li>
+	<p>Ожидайте соединения с абонентом.</p>
+	</li>
+</ol><h3><a name="TOC_Quick_dial_from_recordbc-4" id="TOC_Quick_dial_from_recordbc-4"></a><a name="TOC_Quick_dial_from_record" id="TOC_Quick_dial_from_record"></a><a name="HT_chapter_telephony_cases_quick_outgoing_call" id="HT_chapter_telephony_cases_quick_outgoing_call"></a>Позвонить со страницы записи или реестра<a class="title-anchor" href="#title-761-4" id="title-761-4"> </a></h3>
+
+<p>Вы можете позвонить контакту (контрагенту), находясь на странице записи этого контакта (контрагента) или в реестре записей раздела.</p>
+
+<p>Чтобы инициировать звонок со страницы контакта:</p>
+
+<ol class="inner"><li>
+	<p>В блоке <span class="key"><span class="FM_BlockName">Средства связи</span></span> кликните по номеру телефона либо по кнопке вызова напротив номера, по которому вы хотели бы позвонить (<a href="#XREF_67697_113"><span>Рис. 5</span></a>).</p>
+	</li>
+	<li>
+	<p>Ожидайте соединения с абонентом.</p>
+
+	<div class="media">
+	<div class="media__caption"><span class="FM_Picturecaptionnumber">Рис. 5</span><a name="XREF_67697_113" id="XREF_67697_113"></a> — Быстрый набор номера на странице записи</div>
+
+	<div class="media__element"><img alt="" data-entity-type="file" data-entity-uuid="7a72a0df-4f69-4368-8054-6d9e40147ffd" height="141" src="../../../../../sites/default/files/images/2020-12/scr_cti_quick_dial.png" width="606" loading="lazy" /></div>
+	</div>
+	</li>
+</ol><p>Чтобы позвонить из реестра раздела, кликните по номеру телефона, который является ссылкой (<a href="#XREF_89843_114"><span>Рис. 6</span></a>).</p>
+
+<div class="media">
+<div class="media__caption"><span class="FM_Picturecaptionnumber">Рис. 6</span><a name="XREF_89843_114" id="XREF_89843_114"></a> — Быстрый набор номера в реестре</div>
+
+<div class="media__element"><img alt="" data-entity-type="file" data-entity-uuid="137d0136-78a9-48ab-9965-11548ad6f165" height="111" src="../../../../../sites/default/files/images/2020-12/scr_cti_quick_dial_from_list.png" width="538" loading="lazy" /></div>
+</div>
+
+<h2><a name="TOC_Incoming_callbc-5" id="TOC_Incoming_callbc-5"></a>Принять входящий вызов<a class="title-anchor" href="#title-761-5" id="title-761-5"> </a></h2>
+
+<p>Свернутая по умолчанию, при поступлении входящего вызова панель звонков разворачивается и отображается в правой части экрана (<a href="#XREF_16738_114"><span>Рис. 7</span></a>).</p>
+
+<div class="media">
+<div class="media__caption"><span class="FM_Picturecaptionnumber">Рис. 7</span><a name="XREF_16738_114" id="XREF_16738_114"></a> — Входящий вызов</div>
+
+<div class="media__element"><img alt="" data-entity-type="file" data-entity-uuid="d7a5d081-25c4-4116-82ce-b2862c536e25" height="121" src="../../../../../sites/default/files/images/2020-12/scr_cti_income_call_unknown.png" width="387" loading="lazy" /></div>
+</div>
+
+<ol class="start"><li>
+	<p>Чтобы начать разговор, нажмите кнопку ответа на звонок либо снимите трубку, если данная кнопка недоступна.</p>
+	</li>
+	<li>
+	<p>Чтобы отклонить вызов, нажмите кнопку завершения звонка.</p>
+
+	<div class="message">
+	<p><span class="message__bold">На заметку.</span> Возможность использования кнопки ответа при входящем звонке в Creatio зависит от используемой АТС. Например, кнопка ответа доступна при работе с Oktell и недоступна при работе с Asterisk. Если ваша АТС поддерживает эту возможность и вы хотели бы ее использовать, то перейдите на страницу настройки параметров Call Centre и установите признак <span class="key">Разрешить подъем трубки из приложения</span>. Страницу настройки вы можете открыть из <span>профиля пользователя</span>.</p>
+	</div>
+	</li>
+</ol><h2><a name="TOC_Subscriber_identificationbc-6" id="TOC_Subscriber_identificationbc-6"></a><a name="TOC_Subscriber_identification" id="TOC_Subscriber_identification"></a><a name="CSH_4" id="CSH_4"></a><a name="HT_chapter_telephony_cases_contact_identification" id="HT_chapter_telephony_cases_contact_identification"></a><a name="XREF_47042" id="XREF_47042"></a>Идентифицировать абонента<a class="title-anchor" href="#title-761-6" id="title-761-6"> </a></h2>
+
+<p>В Creatio при входящем или исходящем вызове абонент идентифицируется по совпадению номера телефона.</p>
+
+<ol class="start"><li>
+	<p>Если при входящем или исходящем звонке абонент (контакт, контрагент) идентифицирован по номеру телефона, то информация о нем отобразится на панели звонков (<a href="#XREF_81762_114"><span>Рис. 8</span></a>).</p>
+
+	<div class="media">
+	<div class="media__caption"><span class="FM_Picturecaptionnumber">Рис. 8</span><a name="XREF_81762_114" id="XREF_81762_114"></a> — Идентификация абонента</div>
+
+	<div class="media__element"><img alt="" data-entity-type="file" data-entity-uuid="b1578ee0-4dbc-409c-94c1-40dca08b14ed" height="168" src="../../../../../sites/default/files/images/2020-12/scr_cti_income_call_one_abonent.png" width="391" loading="lazy" /></div>
+	</div>
+	</li>
+	<li>
+	<p>Если в системе зарегистрировано более одного контакта или контрагента с данным номером телефона, то на панели звонков отобразится список найденных абонентов. Для выбора абонента кликните по нужной записи в списке (<a href="#XREF_95308_116"><span>Рис. 9</span></a>).</p>
+
+	<div class="media">
+	<div class="media__caption"><span class="FM_Picturecaptionnumber">Рис. 9</span><a name="XREF_95308_116" id="XREF_95308_116"></a> — Выбор одного контакта из нескольких, найденных по номеру телефона</div>
+
+	<div class="media__element"><img alt="" data-entity-type="file" data-entity-uuid="f8182502-ce0f-49c4-82e3-b306c49ec11a" height="396" src="../../../../../sites/default/files/images/2020-12/scr_cti_income_call_several_abonent.png" width="405" loading="lazy" /></div>
+	</div>
+	</li>
+	<li>
+	<p>Если необходимо изменить выбранного абонента, то откройте дополнительное меню напротив имени абонента и кликните по пункту <span class="key">Выбрать другую запись</span> (<a href="#XREF_13831_117"><span>Рис. 10</span></a>).</p>
+
+	<div class="media">
+	<div class="media__caption"><span class="FM_Picturecaptionnumber">Рис. 10</span><a name="XREF_13831_117" id="XREF_13831_117"></a> — Выбор другого абонента</div>
+
+	<div class="media__element"><img alt="" data-entity-type="file" data-entity-uuid="f0a81381-ec78-4fe6-b927-ca3510c8454e" height="107" src="../../../../../sites/default/files/images/2020-12/scr_cti_income_call_other_abonent.png" width="387" loading="lazy" /></div>
+	</div>
+	</li>
+</ol><div class="message">
+<p><span class="message__bold">На заметку.</span> Информация о выбранном абоненте будет сохранена в истории звонков в разделе <span class="key">Звонки</span>.</p>
+</div>
+
+<p>Если при входящем или исходящем звонке абонент не идентифицирован по номеру телефона, то после завершения разговора вы можете создать контакт или контрагента, а также связать звонок с уже существующим контактом или контрагентом в <span><a href="#title-761-11">истории звонков</a></span>.</p>
+
+<h2><a name="TOC_Conversation_modebc-7" id="TOC_Conversation_modebc-7"></a><a name="TOC_Conversation_mode" id="TOC_Conversation_mode"></a><a name="CSH_5" id="CSH_5"></a><a name="HT_chapter_telephony_cases_talking" id="HT_chapter_telephony_cases_talking"></a><a name="XREF_18132" id="XREF_18132"></a><a name="TOC_Put_calls_on_holdbc-8" id="TOC_Put_calls_on_holdbc-8"></a><a name="TOC_Put_calls_on_hold" id="TOC_Put_calls_on_hold"></a><a name="CSH_6" id="CSH_6"></a><a name="HT_chapter_telephony_cases_hold" id="HT_chapter_telephony_cases_hold"></a><a name="XREF_58553" id="XREF_58553"></a>Перевести звонок в режим удержания<a class="title-anchor" href="#title-761-8" id="title-761-8"> </a></h2>
+
+<p>Во время разговора вы можете перевести звонок в режим удержания, при этом абонент остается на линии, но не сможет слышать вас.</p>
+
+<p>Для перевода звонка в режим удержания нажмите кнопку <img alt="btn_cti_pause_new.png" id="image12" src="../../../../../sites/en/files/documentation/user/en/base/BPMonlineHelp/chapter_telephony_cases/btn_cti_pause_new.png" /> панели звонков. Чтобы возобновить разговор, повторно нажмите кнопку <img alt="btn_cti_pause_on_new.png" id="image13" src="../../../../../sites/en/files/documentation/user/en/base/BPMonlineHelp/chapter_telephony_cases/btn_cti_pause_on_new.png" />.</p>
+
+<div class="message">
+<p><span class="message__bold">На заметку.</span> Звонок, находящийся в режиме удержания, не может быть переведен или завершен.</p>
+</div>
+
+<h2><a name="TOC_Transfer_calls_tobc-9" id="TOC_Transfer_calls_tobc-9"></a><a name="TOC_Transfer_calls_to" id="TOC_Transfer_calls_to"></a><a name="CSH_7" id="CSH_7"></a><a name="HT_chapter_telephony_cases_transfer" id="HT_chapter_telephony_cases_transfer"></a><a name="XREF_17020" id="XREF_17020"></a>Перевести звонок на другой номер<a class="title-anchor" href="#title-761-9" id="title-761-9"> </a></h2>
+
+<p>Во время разговора вы можете перевести звонок на другой номер. При использовании коннекторов Avaya, Webitel, Oktell, Finesse, TAPI, Infinity и Asterisk есть возможность включить безусловную (слепую) переадресацию всех звонков.</p>
+
+<div class="message">
+<p><span class="message__bold">На заметку.</span> Для включения безусловной переадресации всех звонков необходимо установить признак <span class="key">Использовать безусловный перевод</span> в профиле пользователя.</p>
+</div>
+
+<p>Для перевода звонка на другой номер во время разговора:</p>
+
+<ol class="start"><li>
+	<p>Нажмите кнопку <img alt="btn_cti_transfer_new.png" id="image14" src="../../../../../sites/en/files/documentation/user/en/base/BPMonlineHelp/chapter_telephony_cases/btn_cti_transfer_new.png" /> панели. Отобразится дополнительное поле для ввода номера, на который нужно перевести звонок. Также на вкладке станет доступна <span><a href="#title-761-11">история последних звонков</a></span>, если вам необходимо перевести звонок на номер абонента, с которым вы связывались недавно.</p>
+	</li>
+	<li>
+	<p>Введите в поле номер телефона или выберите необходимого абонента из истории последних звонков и нажмите кнопку вызова (<a href="#XREF_63790_119"><span>Рис. 11</span></a>). Вы также можете найти нужного абонента по имени.</p>
+
+	<div class="media">
+	<div class="media__caption"><span class="FM_Picturecaptionnumber">Рис. 11</span><a name="XREF_63790_119" id="XREF_63790_119"></a> — Ввод номера при переводе звонка</div>
+
+	<div class="media__element"><img alt="" data-entity-type="file" data-entity-uuid="fc317650-ae4c-4406-9f90-92b850cb0b76" height="222" src="../../../../../sites/default/files/images/2020-12/scr_cti_call_transfer_input_number.png" width="393" loading="lazy" /></div>
+	</div>
+	</li>
+	<li>
+	<p>Звонок будет переведен в режим удержания, начнется соединение с абонентом, на которого переводится звонок. Информация об абонентах отобразится на панели звонков (<a href="#XREF_53466_120"><span>Рис. 12</span></a>).</p>
+
+	<div class="media">
+	<div class="media__caption"><span class="FM_Picturecaptionnumber">Рис. 12</span><a name="XREF_53466_120" id="XREF_53466_120"></a> — Ожидание соединения с абонентом при переводе звонка</div>
+
+	<div class="media__element"><img alt="" data-entity-type="file" data-entity-uuid="b54317e8-3470-4702-bfd3-b314f0d79dc5" height="291" src="../../../../../sites/default/files/images/2020-12/scr_cti_call_transfer_transfering.png" width="393" loading="lazy" /></div>
+	</div>
+	</li>
+	<li>
+	<p>Для быстрого перевода звонка положите трубку — оба абонента будут соединены, а вы отключены от разговора.</p>
+	</li>
+	<li>
+	<p>Для консультационного перевода звонка ожидайте соединения с абонентом, на которого переводится звонок. В случае успешного соединения панель звонков отобразит дополнительные кнопки для завершения перевода либо его отмены (<a href="#XREF_65441_121"><span>Рис. 13</span></a>).</p>
+
+	<div class="media">
+	<div class="media__caption"><span class="FM_Picturecaptionnumber">Рис. 13</span><a name="XREF_65441_121" id="XREF_65441_121"></a> — Разговор с абонентом при переводе звонка</div>
+
+	<div class="media__element"><img alt="" data-entity-type="file" data-entity-uuid="9025229a-c9a2-44be-bd29-cc8a466e2c7e" height="290" src="../../../../../sites/default/files/images/2020-12/scr_cti_call_transfer_answer_0.png" width="388" loading="lazy" /></div>
+	</div>
+	</li>
+</ol><h2>Выполнить и принять видеозвонок<a class="title-anchor" href="#title-761-10" id="title-761-10"> </a></h2>
+
+<p>В Creatio существует возможность совершать видеозвонки, если в приложении настроена интеграция с телефонией Webitel. Видеосвязь во время вызова доступна только при наборе внутренних номеров.</p>
+
+<p>Вы можете включить или отключить возможность совершать видеозвонки в Creatio. Для управления настройкой видеозвонков:</p>
+
+<ol class="start"><li>
+	<p>Откройте страницу профиля пользователя, например, кликнув по ссылке <span class="key">Профиль</span> на главной странице приложения.</p>
+	</li>
+	<li>
+	<p>Нажмите кнопку <span class="key">Настройки параметров Call Centre</span>.</p>
+	</li>
+	<li>
+	<p>На открывшейся странице установите или снимите признак <span class="key">Использовать видео</span> для активации и деактивации видеозвонков соответственно.</p>
+
+	<p>При включенной опции совершения видеозвонков во время вызова вы сможете наблюдать видеоизображение сотрудника, с которым установлена телефонная связь, и транслировать собственное.</p>
+	</li>
+</ol><p>В режиме видеозвонка на коммуникационной панели дополнительно отображается область воспроизведения видео, доступны кнопки управления видео, строка перемотки и индикатор времени, которое прошло с начала вызова.</p>
+
+<h2><a name="TOC_Calls_historybc-11" id="TOC_Calls_historybc-11"></a><a name="TOC_Calls_history" id="TOC_Calls_history"></a><a name="CSH_9" id="CSH_9"></a><a name="HT_chapter_telephony_cases_history" id="HT_chapter_telephony_cases_history"></a><a name="XREF_52374" id="XREF_52374"></a>Просмотреть историю звонков<a class="title-anchor" href="#title-761-11" id="title-761-11"> </a></h2>
+
+<p>Вы можете просмотреть историю последних вызовов на коммуникационной панели. История доступна, если в данный момент не совершается звонок или поиск абонента, а также при <span><a href="#title-761-9">переводе звонка на другой номер</a></span>.</p>
+
+<p>История звонков отображает в хронологическом порядке последние исходящие, входящие или пропущенные звонки, а также краткую информацию о контакте или контрагенте, с которым устанавливалось соединение (<a href="#XREF_25740_116"><span>Рис. 14</span></a>).</p>
+
+<div class="media">
+<div class="media__caption"><span class="FM_Picturecaptionnumber">Рис. 14</span> — История звонков</div>
+
+<div class="media__element"><img alt="" data-entity-type="file" data-entity-uuid="8e342448-2ce3-40b7-836a-1827235fc030" height="312" src="../../../../../sites/default/files/images/2020-12/scr_cti_call_history_example.png" width="328" loading="lazy" /></div>
+</div>
+
+<div class="message">
+<p><span class="message__bold">На заметку.</span> Количество звонков, которое отображается в истории, вы можете указать в системной настройке “Количество записей на вкладке “История звонков“ (код “CommunicationHistoryRowCount“).</p>
+</div>
+
+<div class="message">
+<p><span class="message__bold">На заметку.</span> Для сохранения корректной истории звонков важно не закрывать окно браузера при совершении вызовов через интерфейс Creatio. Если во время разговора окно было закрыто, то информация о завершении вызова и его длительности не сохранится.</p>
+</div>
+
+<p>В истории звонков доступна информация только о последнем соединении с определенным абонентом (контактом или контрагентом). Например, если вы позвонили одному и тому же контакту, но по разным номерам, указанным в блоке <span class="key">Средства связи</span> на странице данного контакта, то в истории звонков отобразится одна запись по данному абоненту с указанием номера, по которому вы связывались с ним в последний раз.</p>
+
+<p>Если вы совершили звонок некоторому абоненту и вам нужно перезвонить ему, но по другому номеру, то вы можете перейти на страницу необходимого контакта или контрагента из истории звонков и совершить звонок из страницы абонента.</p>
+
+<p>Для этого в истории звонков нажмите на имя контакта или название контрагента, которое является ссылкой (<a href="#XREF_53645_118"><span>Рис. 15</span></a>). Откроется страница абонента. Выберите на странице необходимый номер из доступных на детали <span class="key">Средства связи</span>. Вы можете совершить звонок непосредственно со страницы контакта или контрагента, кликнув по номеру телефона или по кнопке вызова напротив номера в блоке <span class="key">Средства связи</span>.</p>
+
+<div class="media">
+<div class="media__caption"><span class="FM_Picturecaptionnumber">Рис. 15</span><a name="XREF_53645_118" id="XREF_53645_118"></a> — Переход на страницу контакта из истории звонков</div>
+
+<div class="media__element"><img alt="" data-entity-type="file" data-entity-uuid="6b22b7c0-adde-4ece-ab0e-b04284de48af" height="91" src="../../../../../sites/default/files/images/2020-12/scr_cti_call_history_go_to_page.png" width="328" loading="lazy" /></div>
+</div>
+
+<p>Если один и тот же телефонный номер зарегистрирован в системе для нескольких абонентов (контактов и/или контрагентов) и выполнялось соединение по данному номеру с <span><a href="#title-761-6">идентификацией</a></span> разных абонентов, то в истории звонков отобразятся записи по каждому контакту и/или контрагенту отдельно (<a href="#XREF_28254_117"><span>Рис. 16</span></a>).</p>
+
+<div class="media">
+<div class="media__caption"><span class="FM_Picturecaptionnumber">Рис. 16 </span>— История звонков по одному номеру, зарегистрированному для разных абонентов</div>
+
+<div class="media__element"><img alt="" data-entity-type="file" data-entity-uuid="dfa00333-3ff5-4154-adbf-5910c65f0b1b" height="223" src="../../../../../sites/default/files/images/2020-12/scr_cti_call_history_same_number.png" width="331" loading="lazy" /></div>
+</div>
+
+<p>Вы можете не только просматривать выполненные входящие и исходящие звонки, но и создать контакт или контрагента, связать их с уже существующим контактом, а также отобразить связи звонка с действиями, в рамках которых данный звонок был выполнен. Для выполнения данных действий используется меню, которое появляется при нажатии кнопки <img alt="scr_cti_button.png" id="image27" src="../../../../../sites/en/files/documentation/user/en/base/BPMonlineHelp/chapter_telephony_cases/scr_cti_button.png" /> (<a href="#XREF_59005_184"><span>Рис. 17</span></a>).</p>
+
+<div class="media">
+<div class="media__caption"><span class="FM_Picturecaptionnumber">Рис. 17</span> — Меню выбора действия</div>
+
+<div class="media__element"><img alt="" data-entity-type="file" data-entity-uuid="e8efad40-0811-4ddf-a46d-44716adf3af6" height="167" src="../../../../../sites/default/files/images/2020-12/scr_cti_add_smt.png" width="312" loading="lazy" /></div>
+</div>
+
+<p>Для <strong>создания контакта</strong>, от которого поступил звонок, выберите команду <span class="key">Создать контакт</span>. Откроется страница нового контакта. После сохранения контакта номер телефона будет сохранен на детали <span class="key">Средства связи</span>. При этом для сохраненного номера будет автоматически указан тип “Мобильный телефон”.</p>
+
+<p>Аналогично вы можете <strong>создать контрагента </strong>по звонку. Для этого используйте команду <span class="key">Создать контрагента</span>. После сохранения контрагента номер телефона будет сохранен на детали <span class="key">Средства связи</span>. Автоматически будет указан тип “Основной телефон”.</p>
+
+<p>Для <strong>связи с существующим контактом или контрагентом</strong> выберите команду <span class="key">Связать с существующим контактом</span>. После связи звонка с контактом или контрагентом номер отобразится на детали <span class="key">Средства связи</span>.</p>
+
+<p>Для отображения связей звонка с контактом, контрагентом, а также действиями, в рамках которых был выполнен звонок, выберите команду<span class="key">Показать все связи</span> (<a href="#XREF_90009_185"><span>Рис. 18</span></a>).</p>
+
+<div class="media">
+<div class="media__caption"><span class="FM_Picturecaptionnumber">Рис. 18</span> — Отображение связей выполненного звонка</div>
+
+<div class="media__element"><img alt="" data-entity-type="file" data-entity-uuid="353694ae-9083-4286-a27e-12fe4706f442" height="163" src="../../../../../sites/default/files/images/2020-12/scr_cti_history.png" width="333" loading="lazy" /></div>
+</div>
+
+<p>Для привязывания звонка к контакту, контрагенту и к действиям, в рамках которых был выполнен звонок, в окне просмотра связей выберите необходимый параметр из меню и нажмите <img alt="scr_cti_button_choose.png" id="image30" src="../../../../../sites/en/files/documentation/user/en/base/BPMonlineHelp/chapter_telephony_cases/scr_cti_button_choose.png" /> (<a href="#XREF_27899_186"><span>Рис. 19</span></a>).</p>
+
+<div class="media">
+<div class="media__caption"><span class="FM_Picturecaptionnumber">Рис. 19</span> — Привязывание выполненного звонка</div>
+
+<div class="media__element"><img alt="" data-entity-type="file" data-entity-uuid="8fcb68df-5af3-474c-9edf-9a94e6e3c9ef" height="273" src="../../../../../sites/default/files/images/2020-12/scr_cti_add_activity.png" width="327" loading="lazy" /></div>
+</div>
+
+<h2><a name="TOC_Call_recording_andbc-12" id="TOC_Call_recording_andbc-12"></a><a name="TOC_Call_recording_and" id="TOC_Call_recording_and"></a><a name="CSH_10" id="CSH_10"></a><a name="HT_chapter_telephony_cases_recording" id="HT_chapter_telephony_cases_recording"></a><a name="XREF_37902" id="XREF_37902"></a>Запись звонков<a class="title-anchor" href="#title-761-12" id="title-761-12"> </a></h2>
+
+<p>Возможность настройки записи и прослушивания звонков в Creatio зависит от используемой АТС. Например, правила записи звонков можно настроить в офисных АТС Oktell и Webitell.</p>
+
+<div class="message">
+<p><span class="message__bold">На заметку.</span> Возможность прослушать аудиозапись звонка будет доступна при выполнении персональных настроек.</p>
+</div>
+
+<p>Для прослушивания аудиозаписи звонка перейдите на вкладку <span class="key">История]</span> страницы необходимого контакта или контрагента. Далее выделите запись на детали <span class="key">Звонки</span> и нажмите кнопку <span class="key">Прослушать</span> (<a href="#XREF_87440_118"><span>Рис. 20</span></a>).</p>
+
+<div class="media">
+<div class="media__caption"><span class="FM_Picturecaptionnumber">Рис. 20</span> — Переход к прослушиванию звонков</div>
+
+<div class="media__element"><img alt="" data-entity-type="file" data-entity-uuid="62a3d7a6-5820-4c64-af02-e7e5f3b5915a" height="147" src="../../../../../sites/default/files/images/2020-12/scr_cti_start.png" width="339" loading="lazy" /></div>
+</div>
+
+<p>Проигрывание звонка будет происходить в специальном плеере. Во время прослушивания вы можете перематывать запись вперед или назад (<a href="#XREF_20253_119"><span>Рис. 21</span></a>).</p>
+
+<div class="media">
+<div class="media__caption"><span class="FM_Picturecaptionnumber">Рис. 21</span> — Прослушивание звонка</div>
+
+<div class="media__element"><img alt="" data-entity-type="file" data-entity-uuid="6bada806-2f83-40e8-af3c-53828774b2e5" height="101" src="../../../../../sites/default/files/images/2020-12/scr_cti_listen.png" width="326" loading="lazy" /></div>
+</div>
+
+<p>Также вы можете скачать аудиофайл звонка. Для этого в меню детали выберите <span class="key">Скачать аудиофайл</span> (<a href="#XREF_48791_186"><span>Рис. 22</span></a>).</p>
+
+<div class="media">
+<div class="media__caption"><span class="FM_Picturecaptionnumber">Рис. 22 </span><a name="XREF_48791_186" id="XREF_48791_186"></a>— Скачивание записи звонка</div>
+
+<div class="media__element"><img alt="" data-entity-type="file" data-entity-uuid="c50d8266-15a4-4eb1-9de1-307c81f6cc21" height="363" src="../../../../../sites/default/files/images/2020-12/scr_cti_down.png" width="359" loading="lazy" /></div>
+</div>
+
+<h2><a name="TOC_Agent_status_menubc-13" id="TOC_Agent_status_menubc-13"></a><a name="TOC_Agent_status_menu" id="TOC_Agent_status_menu"></a><a name="CSH_11" id="CSH_11"></a><a name="HT_chapter_telephony_cases_agent_status" id="HT_chapter_telephony_cases_agent_status"></a><a name="XREF_35949" id="XREF_35949"></a>Изменить состояние оператора<a class="title-anchor" href="#title-761-13" id="title-761-13"> </a></h2>
+
+<p>Меню состояния оператора доступно при нажатии на фотографию пользователя, расположенную в правом верхнем углу экрана (<a href="#XREF_20742_122"><span>Рис. 23</span></a>).</p>
+
+<div class="media">
+<div class="media__caption"><span class="FM_Picturecaptionnumber">Рис. 23 </span><a name="XREF_20742_122" id="XREF_20742_122"></a>— Меню состояния оператора</div>
+
+<div class="media__element"><img alt="" data-entity-type="file" data-entity-uuid="942dd657-6a2d-446d-b095-6beff7361a1f" height="193" src="../../../../../sites/default/files/images/2020-12/scr_cti_operator_status.png" width="180" loading="lazy" /></div>
+</div>
+
+<p>Перечень доступных состояний оператора зависит от используемой АТС и настраивается в справочнике <span class="key">Состояния пользователя при обмене сообщениями</span>.</p>
+</div>
+      
+  </div>
+<div class="block block-layout-builder block-field-blocknodeuser-documentationfield-linked-link">
+  
+    
+      
+  <div class="field field--name-field-linked-link field--type-link field--label-above">
+    <div class="field__label">Смотрите также</div>
+          <div class="field__items">
+              <div class="field__item"><a href="../../../../../user/drugie_reshenija/konnektory_telefonii.html">Коннекторы к телефонии</a></div>
+          <div class="field__item"><a href="../../../../../7-17/user/bazis_platformy/kommunikacii/uvedomleniya/rabota_s_uvedomleniyami.html">Работа с уведомлениями</a></div>
+          <div class="field__item"><a href="../vizy/rabota_s_vizami.html">Работа с визами </a></div>
+          <div class="field__item"><a href="../pochta/rabota_s_pochtoy.html">Работа с почтой</a></div>
+          <div class="field__item"><a href="../../../../../7-17/user/bazis_platformy/kommunikacii/chaty/rabota_s_chatami.html">Работа с чатами</a></div>
+          <div class="field__item"><a href="../chasovie_poyasa/rabota_v_neskolkih_chasovyh_poyasah.html">Работа в нескольких часовых поясах</a></div>
+              </div>
+      </div>
+
+  </div>
+
+    </div>
+  </div>
+
+  </div>
+
+</article>
+
+  </div>
+
+  </div>
+
+          </div>
+        </div>
+
+                  <aside class="creatio-sidebar creatio-sidebar_first" role="complementary">
+              <div class="region region-sidebar-first">
+    <div id="block-documentationnaviagtion" class="block block-ts-nav block-ts-nav-doc-nav">
+  
+    
+      <div class="ts-nav-block"><a href="../../../../../index.html" class="ts-nav-block__link">Документация</a><div class="ts-nav-block__title">Для пользователя</div>
+</div>
+<div class="ts-nav-container"><ul class="ts-nav-menu"><li class="ts-nav-menu__item">
+  <a href="../../../nocode_platforma.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">No-сode платформа&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../bazis_platformy.html" class="ts-nav-menu__link ts-nav-menu__link_expanded ts-nav-menu__link_open" hreflang="zxx">Базис платформы&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+      <ul class="ts-nav-menu__children">
+      <li class="ts-nav-menu__item">
+  <a href="../../interfejs.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Интерфейс&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../dannye.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Данные&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../kommunikacii.html" class="ts-nav-menu__link ts-nav-menu__link_expanded ts-nav-menu__link_open" hreflang="zxx">Коммуникации&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+      <ul class="ts-nav-menu__children">
+      <li class="ts-nav-menu__item">
+  <a href="../uvedomleniya/rabota_s_uvedomleniami.html" class="ts-nav-menu__link" hreflang="ru">Уведомления</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../vizy/rabota_s_vizami.html" class="ts-nav-menu__link" hreflang="ru">Визы</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="rabota_so_zvonkami.html" class="ts-nav-menu__link ts-nav-menu__link_active ts-nav-menu__link_open" hreflang="ru">Звонки</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../chasovie_poyasa/rabota_v_neskolkih_chasovyh_poyasah.html" class="ts-nav-menu__link" hreflang="ru">Часовые пояса</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../pochta/rabota_s_pochtoy.html" class="ts-nav-menu__link" hreflang="ru">Почта</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../chaty/rabota_s_chatami.html" class="ts-nav-menu__link" hreflang="ru">Чаты</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../shablony_email_i_chatov/rabota_s_shablonami_soobschenii.html" class="ts-nav-menu__link" hreflang="ru">Шаблоны email и чатов</a>
+  </li>
+
+    </ul>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../mobilnoe_prilozhenie.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Мобильное приложение&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../vypolnenie_biznes-processov.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Выполнение бизнес-процессов&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+
+    </ul>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../instrumenty_crm.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Инструменты CRM&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../instrumenty_kastomizacii.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Инструменты кастомизации&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../biznes_processy.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Бизнес-процессы&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../instrumenty_marketinga.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Инструменты маркетинга&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../instrumenty_prodazh.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Инструменты продаж&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../instrumenty_servisa.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Инструменты сервиса&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../ustanovka_i_administrirovanie.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Администрирование&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../razvertyvanie_onsite.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Развертывание on-site&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../banki_i_finansy.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Банки и финансы&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../drugie_reshenija.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Другие решения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+</ul>
+</div>
+
+  </div>
+
+  </div>
+
+            <div class="creatio-sidebar__toggle"></div>
+          </aside>
+        
+                  <aside class="creatio-sidebar creatio-sidebar_second" role="complementary">
+              <div class="region region-sidebar-second">
+    <div id="block-example" class="block block-ts-nav block-ts-nav-page-nav">
+  
+    
+        <div class="ts-nav-title">Звонки</div>
+<div class="ts-nav-page">
+      <ul class="ts-nav-page__list">
+                                                <li class="ts-nav-page__item ts-nav-page__item_expanded ts-nav-page__item_open"><a href="rabota_so_zvonkami.html" class="ts-nav-page__link ts-nav-page__link_expanded ts-nav-page__link_active">Работа со звонками&nbsp;<span class="ts-nav-page__link-arrow"></span></a></li>
+          </ul>
+  </div>
+
+  </div>
+<div id="block-adminfeedbackblock" class="block block-admin-feedback block-admin-feedback-block">
+  
+    
+      <div id="feedback-message"><div id="upper-feedback-content"><h2>Был ли данный материал полезен?</h2>
+<input class="feedback-btn feedback-btn__yes button js-form-submit form-submit" data-node-id="2655" data-feedback="yes" type="submit" name="op" value="Да" />
+<input class="feedback-btn feedback-btn__no button js-form-submit form-submit" data-node-id="2655" data-feedback="no" type="submit" name="op" value="Нет" />
+</div>
+<form class="admin-feedback-form" data-drupal-selector="admin-feedback-form" action="https://academy.terrasoft.ua/docs/8-0/user/bazis_platformy/kommunikacii/zvonki/rabota_so_zvonkami" method="post" id="admin-feedback-form" accept-charset="UTF-8">
+  <div id="feedback-msg-result"></div><div class="js-form-item form-item js-form-type-textarea form-type-textarea js-form-item-feedback-message form-item-feedback-message form-no-label">
+        <div class="form-textarea-wrapper">
+  <textarea id="edit-feedback-msg" data-drupal-selector="edit-feedback-message" name="feedback_message" rows="5" cols="60" class="form-textarea resize-vertical"></textarea>
+</div>
+
+        </div>
+<input id="feedback-id" data-drupal-selector="edit-feedback-id" type="hidden" name="feedback_id" value="" />
+<input class="feedback-btn feedback-btn__send-comment button js-form-submit form-submit" data-drupal-selector="edit-feedback-send" type="submit" id="edit-feedback-send" name="op" value="Отправить" />
+<input autocomplete="off" data-drupal-selector="form-oim87virqwpcqldnmjiqd5-w00oc2ru12fnh80wpdkg" type="hidden" name="form_build_id" value="form-OiM87viRQwPcQLdNMjIQD5-w00Oc2Ru12FNh80wpDkg" />
+<input data-drupal-selector="edit-admin-feedback-form" type="hidden" name="form_id" value="admin_feedback_form" />
+
+</form>
+</div>
+
+  </div>
+
+  </div>
+
+          </aside>
+              </main>
+    </div>
+  </div>
+
+  <footer role="contentinfo">
+    <div class="creatio-region creatio-region_footer">
+      <div class="creatio-container">
+          <div class="region region-footer">
+    <div id="block-footerua" class="block block-simple-block block-simple-blockfooter-ua">
+  
+    
+      <div class="footer">
+<div class="footer-left">
+<ul class="footer-socials"><li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_fb" href="https://www.facebook.com/terrasoft.ua" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_in" href="https://www.linkedin.com/company/terrasoft/" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_yt" href="https://www.youtube.com/c/TerrasoftUkraine" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_tg" href="https://t.me/Terrasoft_UA" target="_blank"> </a></li>
+</ul></div>
+
+<div class="footer-contact">
+<div class="footer-title">Будьте на связи!</div>
+
+<div class="footer-content">
+<div class="footer-items">
+<div class="footer-item"><a class="footer__link footer__link_phone" href="tel:+380443633133">+38 (044) 363-31-33</a></div>
+</div>
+
+<div class="footer-items">
+<div class="footer-item"><a class="footer__link footer__link_email" href="mailto:support@terrasoft.ua">support@terrasoft.ua</a></div>
+</div>
+</div>
+</div>
+</div>
+
+  </div>
+
+  </div>
+
+      </div>
+    </div>
+    <div class="creatio-region creatio-region_bottom">
+      <div class="creatio-container">
+          <div class="region region-bottom">
+    <div id="block-allrightsreservedua" class="block block-simple-block block-simple-blockfooter-bottom-ua">
+  
+    
+      <p>© 2002-2022 Terrasoft.  |  <a href="https://www.terrasoft.ua/privacy-policy" target="_blank">Конфиденциальность</a></p>
+
+  </div>
+
+  </div>
+
+      </div>
+    </div>
+  </footer>
+</div>
+<div class="creatio-bg"></div>
+
+
+  </div>
+
+    
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/docs\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/2655","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"ru"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"ajaxPageState":{"libraries":"admin_feedback\/admin_feedback_block,admin_feedback\/admin_feedback_css,classy\/base,classy\/messages,classy\/node,core\/drupal.ajax,core\/jquery.form,core\/normalize,creatio\/creatio.lists,creatio\/fancybox,creatio\/global,layout_discovery\/onecol,system\/base,ts_doc\/doc_version,ts_feedback\/ts_feedback,ts_nav\/breadcrumb,ts_nav\/doc_nav,ts_nav\/page_nav,ts_title_anchor\/ts_title_anchor","theme":"creatio","theme_token":null},"ajaxTrustedUrl":{"form_action_p_pvdeGsVG5zNF_XLGPTvYSKCf43t8qZYSwcfZl2uzM":true,"\/docs\/8-0\/user\/bazis_platformy\/kommunikacii\/zvonki\/rabota_so_zvonkami?ajax_form=1":true},"admin_feedback":{"yes_response":"\u0421\u043f\u0430\u0441\u0438\u0431\u043e \u0437\u0430 \u043e\u0431\u0440\u0430\u0442\u043d\u0443\u044e \u0441\u0432\u044f\u0437\u044c!","no_response":"\u0421\u043f\u0430\u0441\u0438\u0431\u043e \u0437\u0430 \u043e\u0431\u0440\u0430\u0442\u043d\u0443\u044e \u0441\u0432\u044f\u0437\u044c!","custom_text_response_on_no":{"value":"","format":"full_html"},"feedback_prompt_on_yes":true,"feedback_prompt_on_no":true,"feedback_enable_predefined_answers":false,"feedback_prompt":"\u041a\u0430\u043a \u043c\u043e\u0436\u043d\u043e \u0443\u043b\u0443\u0447\u0448\u0438\u0442\u044c \u044d\u0442\u0443 \u0441\u0442\u0430\u0442\u044c\u044e?"},"ajax":{"edit-feedback-send":{"callback":"::validateFeedbackMsg","event":"mousedown","keypress":true,"prevent":"click","url":"\/docs\/8-0\/user\/bazis_platformy\/kommunikacii\/zvonki\/rabota_so_zvonkami?ajax_form=1","dialogType":"ajax","submit":{"_triggering_element_name":"op","_triggering_element_value":"\u041e\u0442\u043f\u0440\u0430\u0432\u0438\u0442\u044c"}}},"user":{"uid":0,"permissionsHash":"9c2367dfcaba0fa15f0375f97aed64e146c908cee68508d13b79e3ee80e5162d"}}</script>
+<script src="../../../../../sites/default/files/js/js_F2-Y4EzgTnESr58XByoLYEnsbi7ysTfMIKN1RvsMSWY.js"></script>
+
+
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+      <g id="svg-copy" class="svg-icon svg-icon_copy">
+        <path d="M15.111,18H1.889A1.848,1.848,0,0,1,0,16.2V3.6A1.848,1.848,0,0,1,1.889,1.8H5.837a2.87,2.87,0,0,1,5.326,0h3.948A1.848,1.848,0,0,1,17,3.6V16.2A1.848,1.848,0,0,1,15.111,18ZM3.777,12.6v1.8h6.611V12.6Zm0-3.6v1.8h9.445V9Zm0-3.6V7.2h9.445V5.4ZM8.5,1.8a.924.924,0,0,0-.944.9.945.945,0,0,0,1.889,0A.924.924,0,0,0,8.5,1.8Z"/>
+      </g>
+
+      <g id="svg-prev" class="svg-icon svg-icon_arrow">
+        <path d="M5.488,12.779,0,6.39,5.488,0" transform="translate(1 0.652)"/>
+      </g>
+
+      <g id="svg-next" class="svg-icon svg-icon_arrow">
+        <path d="M0,12.779,5.488,6.39,0,0" transform="translate(0.759 0.652)"/>
+      </g>
+    </svg>
+  </body>
+
+<!-- Mirrored from academy.terrasoft.ua/docs/8-0/user/bazis_platformy/kommunikacii/zvonki/rabota_so_zvonkami by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Mar 2022 04:02:34 GMT -->
+</html>

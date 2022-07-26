@@ -1,0 +1,1158 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# ">
+  
+<!-- Mirrored from academy.terrasoft.ua/docs/8-0/developer/razrabotka_marketplace_prilozheniya/razrabotka_prilozheniya/zashchita_koda_ot_plagiata/obzor by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Mar 2022 08:20:06 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+          <!-- Google Tag Manager -->
+      <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          '../../../../../../../www.googletagmanager.com/gtm5445.html?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-KLLB8G');</script>
+      <!-- End Google Tag Manager -->
+        <meta charset="utf-8" />
+<link rel="canonical" href="obzor.html" />
+<meta name="description" content="Открытый исходный код приложения Marketplace содержится в пакете, который заблокирован для изменения. При этом код доступен к просмотру пользователям с соответствующим уровнем доступа и не защищен от плагиата. Реализация защиты от плагиата выполняется отдельно для back-end и для front-end кода.
+
+Защита C#-кода от плагиата 
+
+Использование пакета-проекта позволяет защитить C#-код приложения Marketplace от плагиата." />
+<meta property="og:url" content="https://academy.terrasoft.ua/docs/8-0/developer/razrabotka_marketplace_prilozheniya/razrabotka_prilozheniya/zashchita_koda_ot_plagiata/obzor" />
+<meta property="og:title" content="Защита исходного кода приложения Marketplace от плагиата" />
+<meta property="og:description" content="Открытый исходный код приложения Marketplace содержится в пакете, который заблокирован для изменения. При этом код доступен к просмотру пользователям с соответствующим уровнем доступа и не защищен от плагиата. Реализация защиты от плагиата выполняется отдельно для back-end и для front-end кода.
+
+Защита C#-кода от плагиата 
+
+Использование пакета-проекта позволяет защитить C#-код приложения Marketplace от плагиата." />
+<meta name="Generator" content="Drupal 9 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="../../../../../themes/custom/creatio/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="revision" href="obzor.html" />
+
+    <title>Защита исходного кода приложения Marketplace от плагиата | Creatio Academy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&amp;family=Open+Sans:ital,wght@0,300;0,400;0,600;1,400&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" media="all" href="../../../../../sites/default/files/css/css_6lTP66__-yc6QXFp1zOwoeJ0HVigoYZP-SeoLLii000.css" />
+<link rel="stylesheet" media="all" href="../../../../../sites/default/files/css/css_XQJDNhkF3xH5SZCcY-PI89Zu4nYIzQ5oR3SnUKyfXJU.css" />
+<link rel="stylesheet" media="print" href="../../../../../sites/default/files/css/css_Zn4VHvcniOOtUwkIVwXzYr_0AI9gUVgZcPqaH4ViagU.css" />
+
+    
+  </head>
+  <body class="path-node page-node-type-developer-documentation">
+          <!-- Google Tag Manager (noscript) -->
+      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KLLB8G"
+                        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+      <!-- End Google Tag Manager (noscript) -->
+    
+        
+      <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    <div class="creatio-page d-flex flex-column">
+        <div class="region region-informer">
+    <div id="block-terrasoftpidtrimueukrainu" class="block block-simple-block block-simple-blockterrasoft-pidtrimue-ukrainu">
+  
+    
+      <style type="text/css">
+<!--/*--><![CDATA[/* ><!--*/
+@import url(../../../../../../../www.terrasoft.ua/themes/custom/creatio/css/components/informer.css)
+
+/*--><!]]>*/
+</style><div class="ts-swu">
+<div class="creatio-container">
+<div class="ts-swu__cont">
+<div><a class="ts-swu__link" href="https://www.terrasoft.ua/terrasoft-stands-with-ukraine" target="_blank">Україна понад усе!</a> <span><a href="https://www.terrasoft.ua/terrasoft-stands-with-ukraine" target="_blank">Приєднуйтеся</a> до допомоги!</span></div>
+</div>
+</div></div>
+
+  </div>
+
+  </div>
+
+  
+  <header role="banner">
+          <div class="creatio-region creatio-region_top">
+        <div class="creatio-container">
+            <div class="region region-top">
+    <div id="block-menutoggle" class="block block-simple-block block-simple-blockmenu-toggle">
+  
+    
+      <div class="menu-toggle"><span> </span></div>
+
+  </div>
+<div id="block-logowhite-2" class="block block-simple-block block-simple-blocklogo-white">
+  
+    
+      <p><a class="site-logo" href="../../../../../../index.html" rel="home"><img src="../../../../../themes/custom/creatio/logo-white.svg" /></a></p>
+
+  </div>
+<div id="block-search" class="block block-simple-block block-simple-blocksearch">
+  
+    
+      <div class="search">
+<form action="https://academy.terrasoft.ua/search" class="search-form" method="get"><input class="search-form__input" name="search" placeholder="Поиск" type="search" /><input class="search-form__button" type="submit" value="Поиск" /> </form>
+
+<div class="search-toggle"> </div>
+</div>
+
+  </div>
+<nav role="navigation" aria-labelledby="block-sitesua-menu" id="block-sitesua" class="block block-menu navigation menu--sites-ua">
+            
+  <h2 class="visually-hidden" id="block-sitesua-menu">Sites UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="https://www.terrasoft.ua/" rel="nofollow" target="_blank">Terrasoft</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://community.terrasoft.ua/" rel="nofollow" target="_blank">Community</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://marketplace.terrasoft.ua/" rel="nofollow" target="_blank">Marketplace</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+<div id="block-usermenu" class="block block-ts-user block-ts-user-menu-block">
+  
+    
+      <ul class="user-menu">
+      <li class="user-menu__item">
+      <a class="user-menu__link" href="https://profile.terrasoft.ua/user/login?destination=academy/ua/docs/8-0/developer/razrabotka_marketplace_prilozheniya/razrabotka_prilozheniya/zashchita_koda_ot_plagiata/obzor">Войти</a>
+    </li>
+  </ul>
+
+  </div>
+<div id="block-usermenumobile" class="block block-ts-user block-ts-user-menu-mobile-block">
+  
+    
+      <ul class="user-menu-mobile">
+      <li class="user-menu-mobile__item">
+      <div class="user-menu-mobile__user user-menu-mobile__user_icon"></div>
+      <ul class="user-menu-mobile__submenu">
+        <li class="user-menu-mobile__subitem">
+          <a class="user-menu-mobile__sublink" href="https://profile.terrasoft.ua/user/login?destination=academy/ua/docs/8-0/developer/razrabotka_marketplace_prilozheniya/razrabotka_prilozheniya/zashchita_koda_ot_plagiata/obzor">Войти</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  </div>
+
+  </div>
+
+        </div>
+      </div>
+              <div class="creatio-region creatio-region_header">
+        <div class="creatio-container">
+            <div class="region region-header">
+    <div id="block-logo" class="block block-simple-block block-simple-blocklogo">
+  
+    
+      <p><a class="site-logo" href="../../../../../../index.html" rel="home"><img src="../../../../../themes/custom/creatio/logo.svg" /></a></p>
+
+  </div>
+<nav role="navigation" aria-labelledby="block-osnovnayanavigaciyaua-menu" id="block-osnovnayanavigaciyaua" class="block block-menu navigation menu--main-ua">
+            
+  <h2 class="visually-hidden" id="block-osnovnayanavigaciyaua-menu">Основная навигация UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="../../../../../index.html" data-drupal-link-system-path="&lt;front&gt;">Документация</a>
+              </li>
+                <li class="menu-item">
+        <a href="../../../../../../trainings.html">Тренинги</a>
+              </li>
+                <li class="menu-item">
+        <a href="../../../../../certification.html" data-drupal-link-system-path="node/3084">Сертификация и тестирование</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+<nav role="navigation" aria-labelledby="block-sitesua-2-menu" id="block-sitesua-2" class="block block-menu navigation menu--sites-ua">
+            
+  <h2 class="visually-hidden" id="block-sitesua-2-menu">Sites UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="https://www.terrasoft.ua/" rel="nofollow" target="_blank">Terrasoft</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://community.terrasoft.ua/" rel="nofollow" target="_blank">Community</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://marketplace.terrasoft.ua/" rel="nofollow" target="_blank">Marketplace</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+
+  </div>
+
+        </div>
+      </div>
+              <div class="creatio-region creatio-region_breadcrumb">
+        <div class="creatio-container">
+            <div class="region region-breadcrumb">
+    <div id="block-logowhite" class="block block-simple-block block-simple-blocklogo-white">
+  
+    
+      <p><a class="site-logo" href="../../../../../../index.html" rel="home"><img src="../../../../../themes/custom/creatio/logo-white.svg" /></a></p>
+
+  </div>
+<div id="block-breadcrumbnaviagtion" class="block block-ts-nav block-ts-nav-bread">
+  
+    
+      <nav class="breadcrumb"><ol class="ts-nav-breadcrumb__list"><li class="ts-nav-breadcrumb__item"><a href="../../../../../index.html" class="ts-nav-breadcrumb__link" title="Документация">Документация</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../../../index2132.html?vid_1=2" class="ts-nav-breadcrumb__link" title="Для разработчика">Для разработчика</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../razrabotka_marketplace_prilozheniya.html" class="ts-nav-breadcrumb__link" title="Разработка Marketplace-приложения" hreflang="zxx">Разработка Marketplace-приложения</a></li>
+<li class="ts-nav-breadcrumb__item ts-nav-breadcrumb__item_mobile"><a href="../../razrabotka_prilozheniya.html" class="ts-nav-breadcrumb__link" title="Разработка приложения" hreflang="ru">Разработка приложения</a></li>
+<li class="ts-nav-breadcrumb__item"><span class="ts-nav-breadcrumb__link ts-nav-breadcrumb__link_current" title="Обзор">Обзор</span></li>
+</ol>
+</nav>
+
+  </div>
+<div id="block-search-2" class="block block-simple-block block-simple-blocksearch">
+  
+    
+      <div class="search">
+<form action="https://academy.terrasoft.ua/search" class="search-form" method="get"><input class="search-form__input" name="search" placeholder="Поиск" type="search" /><input class="search-form__button" type="submit" value="Поиск" /> </form>
+
+<div class="search-toggle"> </div>
+</div>
+
+  </div>
+
+  </div>
+
+        </div>
+      </div>
+      </header>
+
+  <div class="creatio-region creatio-region_main">
+    <div class="creatio-container">
+                <div class="region region-breadcrumb-mobile">
+    <div id="block-breadcrumbnaviagtion-2" class="block block-ts-nav block-ts-nav-bread">
+  
+    
+      <nav class="breadcrumb"><ol class="ts-nav-breadcrumb__list"><li class="ts-nav-breadcrumb__item"><a href="../../../../../index.html" class="ts-nav-breadcrumb__link" title="Документация">Документация</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../../../index2132.html?vid_1=2" class="ts-nav-breadcrumb__link" title="Для разработчика">Для разработчика</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../razrabotka_marketplace_prilozheniya.html" class="ts-nav-breadcrumb__link" title="Разработка Marketplace-приложения" hreflang="zxx">Разработка Marketplace-приложения</a></li>
+<li class="ts-nav-breadcrumb__item ts-nav-breadcrumb__item_mobile"><a href="../../razrabotka_prilozheniya.html" class="ts-nav-breadcrumb__link" title="Разработка приложения" hreflang="ru">Разработка приложения</a></li>
+<li class="ts-nav-breadcrumb__item"><span class="ts-nav-breadcrumb__link ts-nav-breadcrumb__link_current" title="Обзор">Обзор</span></li>
+</ol>
+</nav>
+
+  </div>
+
+  </div>
+
+      
+      <main class="creatio-main" role="main">
+                                                    
+        <div class="creatio-content creatio-content_small">
+          <div class="creatio-content__inner creatio-content__inner_bg">
+                            <div class="region region-messages">
+    <div data-drupal-messages-fallback class="hidden"></div>
+
+  </div>
+
+            
+              <div class="region region-content">
+    <div id="block-creatio-page-title" class="block block-core block-page-title-block">
+  
+    
+      
+  <h1 class="page-title"><span class="field field--name-title field--type-string field--label-hidden">Защита исходного кода приложения Marketplace от плагиата</span>
+</h1>
+
+
+  </div>
+<div id="block-creatio-content" class="block block-system block-system-main-block">
+  
+    
+      
+<article data-history-node-id="3603" role="article" about="/docs/8-0/developer/razrabotka_marketplace_prilozheniya/razrabotka_prilozheniya/zashchita_koda_ot_plagiata/obzor" class="node node--type-developer-documentation node--view-mode-full">
+
+  
+    
+
+  
+  <div class="node__content">
+      <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocknodedeveloper-documentationfield-difficulty">
+  
+    
+      
+            <div class="field field--name-field-difficulty field--type-entity-reference field--label-hidden field__item"><div about="/docs/8-0/taxonomy/term/169" id="taxonomy-term-169" class="taxonomy-term vocabulary-difficulty">
+  
+  
+  <div class="content">
+      <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocktaxonomy-termdifficultyfield-icon">
+  
+    
+      
+            <div class="field field--name-field-icon field--type-image field--label-hidden field__item">  <img src="../../../../../sites/default/files/difficulty/advanced.svg" alt="" loading="lazy" typeof="foaf:Image" />
+
+</div>
+      
+  </div>
+<div class="block block-layout-builder block-field-blocktaxonomy-termdifficultyname">
+  
+    
+      
+            <div class="field field--name-name field--type-string field--label-hidden field__item"><span style="color: #EF4524;">Сложный</span></div>
+      
+  </div>
+
+    </div>
+  </div>
+
+  </div>
+</div>
+</div>
+      
+  </div>
+<div class="block block-ts-doc block-ts-doc-downloads">
+  
+    
+      <a href="../../../../../sites/default/files/pdf/node/3603/Zaschita_iskhodnogo_koda_prilozheniya_Marketplace_ot_plagiata_.pdf" target="_blank">PDF</a>
+  </div>
+<div class="block block-ts-doc block-ts-doc-versions">
+  
+    
+        <div class="ts-doc-versions">
+    <select class="ts-doc-versions__select">
+                                                <option value="/docs/8-0/developer/razrabotka_marketplace_prilozheniya/razrabotka_prilozheniya/zashchita_koda_ot_plagiata/obzor" selected>Версия 8.0</option>
+                              <option value="/docs/7-18/developer/razrabotka_marketplace_prilozheniya/razrabotka_prilozheniya/zashchita_koda_ot_plagiata/obzor">Версия 7.18</option>
+                              <option value="/docs/7-17/developer/razrabotka_marketplace_prilozheniya/razrabotka_prilozheniya/zashchita_koda_ot_plagiata/obzor">Версия 7.17</option>
+                              <option value="/docs/7-16/developer/razrabotka_marketplace_prilozheniya/razrabotka_prilozheniya/zashchita_koda_ot_plagiata/obzor">Версия 7.16</option>
+          </select>
+  </div>
+
+  </div>
+
+    </div>
+  </div>
+  <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocknodedeveloper-documentationbody">
+  
+    
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><p>Открытый исходный код приложения Marketplace содержится в <a href="../../../instrumenty_razrabotki/pakety/obshchiye_printsipy_raboty_s_paketami/obzor.html">пакете</a>, который заблокирован для изменения. При этом код доступен к просмотру пользователям с соответствующим уровнем доступа и не защищен от плагиата. Реализация защиты от плагиата выполняется отдельно для back-end и для front-end кода.</p>
+
+<h2>Защита C#-кода от плагиата<a class="title-anchor" href="#title-3603-1" id="title-3603-1"> </a></h2>
+
+<p>Использование <a href="../../../instrumenty_razrabotki/pakety/paket_proekt/obzor.html">пакета-проекта</a> позволяет защитить C#-код приложения Marketplace от плагиата.</p>
+
+<div class="message message_warning">
+<p><span class="message__bold message__bold_warning">Важно.</span> Настройку защиты исходного кода приложения Marketplace от плагиата разрешено выполнять только для исходного C#-кода собственной разработки.</p>
+</div>
+
+<p><strong>Способы</strong> защиты C#-кода приложения Marketplace от плагиата:</p>
+
+<ul><li>Для <strong>нового приложения Marketplace</strong> выполните разработку в пакете-проекте.</li>
+	<li>Для <strong>существующего приложения Marketplace</strong> выполните конвертацию пакета в пакет-проект.</li>
+</ul><p>Разработка приложения Marketplace, как и других приложений, выполняется на уровне конфигурации, который содержит предустановленные пакеты приложения. В процессе публикации исходный C#-код пакетов компилируется в библиотеку <span class="filled">Terrasoft.Configuration.dll</span> и может взаимодействовать с ядром. Описание уровней кастомизации приложения Creatio содержится в статье <a href="../../../architecture/razrabotka_v_creatio/obzor/obzor.html#title-2084-1">Разработка приложений на платформе Creatio</a>. Детализированная схема уровней кастомизации приложения Creatio представлена на рисунке ниже.</p>
+
+<div class="media">
+<div class="media__element"><img src="../../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/MarketplacePlagiarism/7.18/scr_ConfigurationLayerSchema.png" /></div>
+</div>
+
+<ul><li><span class="filled">Base</span>, <span class="filled">NUI</span> — базовые пакеты приложения Creatio.</li>
+	<li><span class="filled">OurPackage</span> — пакет-проект с приложением Marketplace.</li>
+	<li><span class="filled">Custom</span> — специальный пакет приложения Creatio.</li>
+</ul><p><strong>Возможности</strong>, которые предоставляет использование пакета-проекта с приложением Marketplace:</p>
+
+<ul><li>Исключение C#-кода пользовательского приложения Marketplace из библиотеки <span class="filled">Terrasoft.Configuration.dll</span>.</li>
+	<li>Выполнение установки приложения Marketplace, как отдельной *.dll-библиотеки.</li>
+</ul><p>Схема уровней кастомизации приложения Creatio при наличии пакета-проекта, который содержит приложение Marketplace, представлена на рисунке ниже.</p>
+
+<div class="media">
+<div class="media__element"><img src="../../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/MarketplacePlagiarism/7.18/scr_PackageProject.png" /></div>
+</div>
+
+<h3>Разработать приложение Marketplace в пакете-проекте<a class="title-anchor" href="#title-3603-2" id="title-3603-2"> </a></h3>
+
+<p>Разработку нового приложения Marketplace рекомендуется выполнять в пакете-проекте.</p>
+
+<p>Чтобы <strong>разработать приложение Marketplace в пакете-проекте</strong>:</p>
+
+<ol><li>Настройте Creatio для работы в файловой системе.</li>
+	<li>Создайте пользовательский пакет.</li>
+	<li>Разработайте пользовательскую функциональность.</li>
+	<li>Выполните сборку пакета-проекта.</li>
+</ol><h4>1. Настроить Creatio для работы в файловой системе<a class="title-anchor" href="#title-3603-3" id="title-3603-3"> </a></h4>
+
+<p>Для настройки Creatio для работы в файловой системе воспользуйтесь инструкцией, которая приведена в статье <a href="../../../instrumenty_razrabotki/vneshnie_ide/obzor.html#title-2098-4">Внешние IDE</a>.</p>
+
+<h4>2. Создать пользовательский пакет<a class="title-anchor" href="#title-3603-4" id="title-3603-4"> </a></h4>
+
+<p><strong>Инструменты</strong>, который позволяют создать пользовательский пакет:</p>
+
+<ul><li>Creatio IDE. Создание пользовательского пакета с использованием Creatio IDE описано в статье <a href="../../../instrumenty_razrabotki/pakety/obshchiye_printsipy_raboty_s_paketami/obzor.html#case-2920">Создать пользовательский пакет</a>.</li>
+	<li>Утилита <a href="https://github.com/Advance-Technologies-Foundation/clio" target="_blank">Creatio command-line interface utility (clio)</a>.</li>
+</ul><p>Чтобы <strong>создать пользовательский пакет с использованием утилиты clio</strong>:</p>
+
+<ol><li>
+	<p>Выполните установку clio (при необходимости).</p>
+
+	<div class="code">
+	<div class="code__widgets">
+	<div class="code__top">
+	<div class="code__title">Команда для установки clio</div>
+	</div>
+
+	<div class="code__source">
+	<pre class="prettyprint">
+dotnet tool install clio -g
+</pre>
+	</div>
+	</div>
+	</div>
+
+	<p>Установка clio подробно описана в официальной <a href="https://github.com/Advance-Technologies-Foundation/clio#register-and-unregister" target="_blank">документации утилиты на GitHub</a>.</p>
+	</li>
+	<li>
+	<p>Перейдите в каталог <span class="filled">Pkg</span> приложения.</p>
+
+	<div class="code">
+	<div class="code__widgets">
+	<div class="code__top">
+	<div class="code__title">Команда для перехода в каталог <span class="filled">Pkg</span></div>
+	</div>
+
+	<div class="code__source">
+	<pre class="prettyprint">
+cd C:\inetpub\wwwroot\creatio\Terrasoft.WebApp\Terrasoft.Configuration\Pkg;
+</pre>
+	</div>
+	</div>
+	</div>
+	</li>
+	<li>
+	<p>Создайте новый пакет.</p>
+
+	<div class="code">
+	<div class="code__widgets">
+	<div class="code__top">
+	<div class="code__title">Команда для создания нового пакета</div>
+	</div>
+
+	<div class="code__source">
+	<pre class="prettyprint">
+clio init OurPackage;
+</pre>
+	</div>
+	</div>
+	</div>
+	</li>
+	<li>
+	<p>Установите зависимости пакета. Для этого отредактируйте файл <span class="filled">descriptor.json</span>.</p>
+
+	<p>Ниже приведен пример установки зависимостей (свойство <span class="filled">DependsOn</span>) пакета <span class="filled">OurPackage</span> от пакета <span class="filled">ProductCore</span> и добавления описания (свойство <span class="filled">Descriptor</span>) пакета.</p>
+
+	<div class="code">
+	<div class="code__widgets">
+	<div class="code__top">
+	<div class="code__title">Пример установки зависимостей и добавления описания пакета</div>
+	</div>
+
+	<div class="code__source">
+	<pre class="prettyprint">
+{
+    "Descriptor": {
+        "UId": "45cc06b2-6448-4d9e-9f51-bee31a6dbc25",
+        "PackageVersion": "7.8.0",
+        "Name": "OurPackage",
+        "ModifiedOnUtc": "/Date(1633420586000)/",
+        "Maintainer": "Customer",
+        "Description": "Payment calculator",
+        "DependsOn": [
+            {
+                "UId": "2fabaf6c-0f92-4530-aef8-40345c021da2",
+                "PackageVersion": "7.8.0",
+                "Name": "ProductCore"
+            }
+        ]
+    }
+}
+</pre>
+	</div>
+	</div>
+	</div>
+	</li>
+</ol><p>В результате создан пользовательский пакет <span class="filled">OurPackage</span>, который зависит от пакета <span class="filled">ProductCore</span>.</p>
+
+<h4>3. Разработать пользовательскую функциональность<a class="title-anchor" href="#title-3603-5" id="title-3603-5"> </a></h4>
+
+<p>Для разработки пользовательской функциональности можно использовать любую <a href="../../../instrumenty_razrabotki/vneshnie_ide/obzor.html">внешнюю IDE</a>. В нашем примере разработка выполняется в Microsoft Visual Studio Code.</p>
+
+<p>Чтобы <strong>разработать пользовательскую функциональность</strong>:</p>
+
+<ol><li>
+	<p>Откройте проект <span class="filled">OurPackage.sln</span>.</p>
+
+	<div class="media">
+	<div class="media__element"><img src="../../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/MarketplacePlagiarism/7.18/scr_OurPackage_sln.png" /></div>
+	</div>
+	</li>
+	<li>Установите NuGet-пакет CreatioSDK из репозитория, который доступен на официальном <a href="https://www.nuget.org/packages/CreatioSDK/">сайте nuget</a>. Выберите версию CreatioSDK, которая подходит для ваших целей.</li>
+	<li>
+	<p>Реализуйте пользовательскую функциональность в каталоге <span class="filled">Files\cs</span> приложения.</p>
+
+	<p>При разработке C#-кода можно создать приложение с помощью IDE. Для этого в Visual Studio нажмите комбинацию <span class="filled">Ctrl+Shift+B</span>.</p>
+	</li>
+	<li>
+	<p>Выполните сборку приложения.</p>
+
+	<p>Если сборка приложения выполнится успешно, то *.dll, *.pdb и другие вспомогательные файлы помещаются в каталог <span class="filled">Files\Bin</span> приложения.</p>
+
+	<div class="media">
+	<div class="media__element"><img src="../../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/MarketplacePlagiarism/7.18/scr_FilesBin_folder.png" /></div>
+	</div>
+	</li>
+	<li>
+	<p>Загрузите пакет <span class="filled">OurPackage</span> из каталога <span class="filled">[Путь к приложению]\Terrasoft.WebApp\Terrasoft.Configuration\Pkg</span> в базу данных.</p>
+
+	<ol><li>Перейдите в дизайнер системы по кнопке <img src="../../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/TryIt/scr_system_designer.png" />.</li>
+		<li>В блоке <span class="key">Конфигурирование разработчиком</span> (<span class="key">Admin area</span>) перейдите по ссылке <span class="key">Управление конфигурацией</span> (<span class="key">Advanced settings</span>).</li>
+		<li>
+		<p>В группе <span class="key">Разработка в файловой системе</span> (<span class="key">File system development mode</span>) выпадающего списка <span class="key">Действия</span> (<span class="key">Actions</span>) панели инструментов нажмите <span class="key">Обновить пакеты из файловой системы</span> (<span class="key">Update packages from file system</span>).</p>
+
+		<div class="media">
+		<div class="media__element"><img src="../../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/MarketplacePlagiarism/7.18/scr_UpdatePackage.png" /></div>
+		</div>
+		</li>
+	</ol><p>В результате пакет <span class="filled">OurPackage</span> загружен в Creatio IDE.</p>
+
+	<div class="media">
+	<div class="media__element"><img src="../../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/MarketplacePlagiarism/7.18/scr_ImportPackage.png" /></div>
+	</div>
+	</li>
+	<li>
+	<p>Перезапустите приложение.</p>
+
+	<div class="code">
+	<div class="code__widgets">
+	<div class="code__top">
+	<div class="code__title">Команда для перезапуска приложения</div>
+	</div>
+
+	<div class="code__source">
+	<pre class="prettyprint">
+clio restart
+</pre>
+	</div>
+	</div>
+	</div>
+	</li>
+</ol><h4>4. Выполните сборку пакета-проекта<a class="title-anchor" href="#title-3603-6" id="title-3603-6"> </a></h4>
+
+<p><strong>Назначение</strong> выполнения сборки пакета-проекта — подготовка приложения Marketplace к публикации на онлайн-площадке Creatio Marketplace.</p>
+
+<div class="message message_warning">
+<p><span class="message__bold message__bold_warning">Важно.</span> Если вы не хотите, чтобы исходный C#-код собственной разработки был включен в пакет-проект, то обязательно удалите его перед выполнением экспорта пакета.</p>
+</div>
+
+<p>Чтобы <strong>выполнить сборку пакета-проекта</strong>:</p>
+
+<ol><li>Удалите исходный C#-код собственной разработки из пакета-проекта (при необходимости). Выполнить, если вы не хотите, чтобы исходный C#-код был включен в пакет-проект.</li>
+	<li>Для автоматизации процесса выполнения сборки пакета-проекта создайте файл <span class="filled">PackagePublish.target</span>.</li>
+	<li>
+	<p>В файл <span class="filled">PackagePublish.target</span> добавьте код.</p>
+
+	<div class="code">
+	<div class="code__widgets">
+	<div class="code__top">
+	<div class="code__title">Файл <span class="filled">PackagePublish.target</span></div>
+	</div>
+
+	<div class="code__source">
+	<pre class="prettyprint">
+&lt;?xml version="1.0" encoding="utf-8" ?&gt;
+&lt;Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003"&gt;
+    &lt;PropertyGroup&gt;
+        &lt;DestinationFolder&gt;C:\PkgRelease\$(AssemblyName)&lt;/DestinationFolder&gt;
+        &lt;/PropertyGroup&gt;
+
+    &lt;ItemGroup&gt;
+        &lt;PkgAssemblies Include="Assemblies\**"/&gt;
+    &lt;/ItemGroup&gt;
+    &lt;ItemGroup&gt;
+        &lt;PkgData Include="Data\**"/&gt;
+    &lt;/ItemGroup&gt;
+    &lt;ItemGroup&gt;
+        &lt;PkgFiles Include="Files\Bin\**"/&gt;
+    &lt;/ItemGroup&gt;
+    &lt;ItemGroup&gt;
+        &lt;PkgProperties Include="Properties\**"/&gt;
+    &lt;/ItemGroup&gt;
+    &lt;ItemGroup&gt;
+        &lt;PkgResources Include="Resources\**"/&gt;
+    &lt;/ItemGroup&gt;
+    &lt;ItemGroup&gt;
+        &lt;PkgSchemas Include="Schemas\**"/&gt;
+    &lt;/ItemGroup&gt;
+    &lt;ItemGroup&gt;
+        &lt;PkgSqlScripts Include="SqlScripts\**"/&gt;
+    &lt;/ItemGroup&gt;
+    &lt;ItemGroup&gt;
+        &lt;PkgDescriptor Include="descriptor.json"/&gt;
+    &lt;/ItemGroup&gt;
+
+    &lt;Target Name="CopyFiles"&gt;
+        &lt;Copy
+            SourceFiles="@(PkgAssemblies)"
+            DestinationFiles="@(PkgAssemblies-&gt;'$(DestinationFolder)\Assemblies\%(RecursiveDir)%(Filename)%(Extension)')"
+        /&gt;
+        &lt;Copy
+            SourceFiles="@(PkgData)"
+            DestinationFiles="@(PkgData-&gt;'$(DestinationFolder)\Data\%(RecursiveDir)%(Filename)%(Extension)')"
+        /&gt;
+        &lt;Copy
+            SourceFiles="@(PkgFiles)"
+            DestinationFiles="@(PkgFiles-&gt;'$(DestinationFolder)\Files\Bin\%(RecursiveDir)%(Filename)%(Extension)')"
+        /&gt;
+        &lt;Copy
+            SourceFiles="@(PkgProperties)"
+            DestinationFiles="@(PkgProperties-&gt;'$(DestinationFolder)\Properties\%(RecursiveDir)%(Filename)%(Extension)')"
+        /&gt;
+        &lt;Copy
+            SourceFiles="@(PkgResources)"
+            DestinationFiles="@(PkgResources-&gt;'$(DestinationFolder)\Resources\%(RecursiveDir)%(Filename)%(Extension)')"
+        /&gt;
+        &lt;Copy
+            SourceFiles="@(PkgSchemas)"
+            DestinationFiles="@(PkgSchemas-&gt;'$(DestinationFolder)\Schemas\%(RecursiveDir)%(Filename)%(Extension)')"
+        /&gt;
+        &lt;Copy
+            SourceFiles="@(PkgSqlScripts)"
+            DestinationFiles="@(PkgSqlScripts-&gt;'$(DestinationFolder)\SqlScripts\%(RecursiveDir)%(Filename)%(Extension)')"
+        /&gt;
+        &lt;Copy
+            SourceFiles="@(PkgDescriptor)"
+            DestinationFiles="@(PkgDescriptor-&gt;'$(DestinationFolder)\%(RecursiveDir)%(Filename)%(Extension)')"
+        /&gt;
+    &lt;/Target&gt;
+
+    &lt;Target Name="CreateRelease" AfterTargets="CopyFiles"&gt;
+        &lt;Exec Command="clio generate-pkg-zip  $(DestinationFolder) -d C:\PkgRelease\$(AssemblyName).gz" /&gt;
+    &lt;/Target&gt;
+&lt;/Project&gt;
+</pre>
+	</div>
+	</div>
+	</div>
+	</li>
+	<li>
+	<p>В файл <span class="filled">OurPackage.csproj</span> добавьте строку.</p>
+
+	<div class="code">
+	<div class="code__widgets">
+	<div class="code__top">
+	<div class="code__title">Файл <span class="filled">OurPackage.csproj</span></div>
+	</div>
+
+	<div class="code__source">
+	<pre class="prettyprint">
+&lt;Import Project="PackagePublish.target" /&gt;
+</pre>
+	</div>
+	</div>
+	</div>
+	</li>
+	<li>
+	<p>Откройте командную строку и выполните команду.</p>
+
+	<div class="code">
+	<div class="code__widgets">
+	<div class="code__source">
+	<pre class="prettyprint">
+msbuild /t:CreateRelease
+</pre>
+	</div>
+	</div>
+	</div>
+	</li>
+</ol><p>В результате пакет-проект будет выгружен в каталог <span class="filled">C:\PkgRelease</span>, который содержит вложенный каталог <span class="filled">OurPackage</span> и *.gz-архив <span class="filled">OurPackage.gz</span>. Этот архив содержит подготовленное к публикации на онлайн-площадке Creatio Marketplace приложение Marketplace.</p>
+
+<h3>Конвертировать пакет с приложением Marketplace в пакет-проект<a class="title-anchor" href="#title-3603-7" id="title-3603-7"> </a></h3>
+
+<p>Подготовка ранее разработанного приложения Marketplace к конвертации в пакет-проект может потребовать значительных модификаций.</p>
+
+<p>Конвертация разработанного приложения Marketplace в пакет-проект выполняется с помощью команды <span class="filled">clio convert</span>, которая описана в официальной документации утилиты <a href="https://github.com/Advance-Technologies-Foundation/clio#convert-existing-package-to-project" target="_blank">на GitHub</a>.</p>
+
+<p>Невозможно корректно выполнить конвертацию некоторых файлов и схем, например, элемента <span class="key">Действие процесса</span> (<span class="key">User task</span>) бизнес-процесса. Независимо от значения признака <span class="key">Partial</span>, элемент <span class="key">Действие процесса</span> (<span class="key">User task</span>) является частичным классом и должен находиться в библиотеке <span class="filled">Terrasoft.Configuration.dll</span>. При выполнении конвертации код элемента <span class="key">Действие процесса</span> (<span class="key">User task</span>) по умолчанию сохраняется в каталог <span class="filled">AutoGenerated</span> пакета-проекта, а не в библиотеку <span class="filled">Terrasoft.Configuration.dll</span>.</p>
+
+<p>Чтобы <strong>конвертировать разработанное приложение Marketplace в пакет-проект</strong>, выполните одну из команд:</p>
+
+<ul><li><span class="filled">clio convert .\OurPackage_Conf\ -c false</span>.</li>
+	<li><span class="filled">clio convert .\OurPackage_Conf\</span>.</li>
+</ul><p>Результат выполнения команд идентичен, поскольку для ключа <span class="filled">-c</span> (ConvertSourceCode) значение <span class="filled">false</span> установлено по умолчанию.</p>
+
+<p><strong>Содержимое</strong> C#-проекта после выполнения конвертации:</p>
+
+<ul><li>Пакет-проект с конвертированным приложением Marketplace. Структура пакета-проекта описана в статье <a href="../../../instrumenty_razrabotki/pakety/paket_proekt/obzor.html#title-2169-2">Пакет-проект</a>.</li>
+	<li>*.zip-архив с неконвертированным приложением Marketplace.</li>
+</ul><p>Структура C#-проекта после выполнения конвертации представлена на рисунке ниже.</p>
+
+<div class="media">
+<div class="media__element"><img src="../../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/MarketplacePlagiarism/7.18/scr_CsProject.png" /></div>
+</div>
+
+<p>В результате разработанное приложение Marketplace конвертировано в пакет-проект, который можно устанавливать в приложение Creatio.</p>
+
+<div class="message">
+<p><span class="message__bold">На заметку.</span> Формирование пакета-проекта является обязательным звеном CI/CD-конвейера. В репозитории рекомендуется хранить незащищенный от плагиата исходный C#-код приложения Marketplace.</p>
+</div>
+
+<h2>Защита JavaScript-кода от плагиата<a class="title-anchor" href="#title-3603-8" id="title-3603-8"> </a></h2>
+
+<p><strong>Способы</strong> защиты JavaScript-кода приложения Marketplace от плагиата:</p>
+
+<ul><li>Минификация.</li>
+	<li>Обфускация.</li>
+</ul><div class="message message_warning">
+<p><span class="message__bold message__bold_warning">Важно.</span> Запрещено изменять структуру схемы клиентского модуля, поскольку дизайнеры приложения настроены на работу с определенной структурой схемы.</p>
+</div>
+
+<p>Лучшей практикой защиты JavaScript-кода от плагиата является использование миксинов для реализации логики, которую необходимо защитить. Не рекомендуется обфусцировать схемы клиентских модулей, которые используются мастерами (разделов, страниц, деталей) приложения.</p>
+
+<p>Существует большое количество решений с открытым исходным кодом для обфускации JavaScript-кода. В нашем примере мы используем обфускатор JavaScript Obfuscator. Официальная документация обфускатора доступна <a href="https://github.com/javascript-obfuscator/javascript-obfuscator" target="_blank">на GitHub</a>.</p>
+
+<p>Чтобы <strong>защитить JavaScript-код от плагиата с использованием JavaScript Obfuscator</strong>:</p>
+
+<ol><li>
+	<p>Выполните установку JavaScript Obfuscator.</p>
+
+	<div class="code">
+	<div class="code__widgets">
+	<div class="code__top">
+	<div class="code__title">Команда для установки JavaScript Obfuscator</div>
+	</div>
+
+	<div class="code__source">
+	<pre class="prettyprint">
+npm install javascript-obfuscator -g
+</pre>
+	</div>
+	</div>
+	</div>
+
+	<p>Установка JavaScript Obfuscator подробно описана в официальной <a href="https://github.com/javascript-obfuscator/javascript-obfuscator#installation" target="_blank">документации обфускатора на GitHub</a>.</p>
+	</li>
+	<li>
+	<p>Подготовьте JavaScript-код к обфускации.</p>
+
+	<ol><li>Создайте миксин. В нашем примере это <span class="filled">MRKT_DemoMixin</span>. Миксины подробно описаны в статье <a href="../../../front_end_razrabotka/klientskaya_skhema/obzor.html#title-3051-4">Клиентская схема</a>.</li>
+		<li>
+		<p>В миксине реализуйте JavaScript-код, который планируется обфусцировать.</p>
+
+		<div class="code">
+		<div class="code__widgets">
+		<div class="code__top">
+		<div class="code__title"><span class="filled">MRKT_DemoMixin</span></div>
+		</div>
+
+		<div class="code__source">
+		<pre class="prettyprint">
+define("MRKT_DemoMixin", [], function() {
+    Ext.define("Terrasoft.configuration.mixins.MRKT_DemoMixin", {
+        alternateClassName: "Terrasoft.MRKT_DemoMixin",
+
+        secretMethod: function(){
+            console.log("MRKT_DemoMixin");
+        },
+    });
+});
+</pre>
+		</div>
+		</div>
+		</div>
+		</li>
+	</ol></li>
+	<li>
+	<p>Укажите миксин <span class="filled">MRKT_DemoMixin</span> в свойстве <span class="filled">mixins</span> клиентской схемы (например, <span class="filled">ContactPageV2</span>).</p>
+
+	<div class="code">
+	<div class="code__widgets">
+	<div class="code__top">
+	<div class="code__title"><span class="filled">ContactPageV2</span></div>
+	</div>
+
+	<div class="code__source">
+	<pre class="prettyprint">
+define("ContactPageV2", ["MRKT_DemoMixin"], 
+    function() {
+        return {
+            entitySchemaName: "Contact",
+            mixins: {
+                "MRKT_DemoMixin": "Terrasoft.MRKT_DemoMixin"
+            },
+            attributes: {},
+            modules: /**SCHEMA_MODULES*/{}/**SCHEMA_MODULES*/,
+            details: /**SCHEMA_DETAILS*/{}/**SCHEMA_DETAILS*/,
+            businessRules: /**SCHEMA_BUSINESS_RULES*/{}/**SCHEMA_BUSINESS_RULES*/,
+            methods: {
+                onEntityInitialized: function() {
+                    this.callParent(arguments);
+                    
+                    /* Consume MRKT_DemoMixin. */
+                    this.secretMethod();
+                },
+            },
+            dataModels: /**SCHEMA_DATA_MODELS*/{}/**SCHEMA_DATA_MODELS*/,
+            diff: /**SCHEMA_DIFF*/[]/**SCHEMA_DIFF*/
+        };
+    });
+</pre>
+	</div>
+	</div>
+	</div>
+	</li>
+	<li>Скопируйте JavaScript-код, который планируется обфусцировать. Возможно, будет необходимость редактировать код в будущем.</li>
+	<li>
+	<p>Выполните обфускацию JavaScript-кода.</p>
+
+	<div class="code">
+	<div class="code__widgets">
+	<div class="code__top">
+	<div class="code__title">Команда для обфускации JavaScript-кода</div>
+	</div>
+
+	<div class="code__source">
+	<pre class="prettyprint">
+javascript-obfuscator MRKT_DemoMixin.js --output MRKT_DemoMixin.obfuscated.js
+</pre>
+	</div>
+	</div>
+	</div>
+
+	<p>Выполнение обфускации в JavaScript Obfuscator подробно описана в официальной <a href="https://github.com/javascript-obfuscator/javascript-obfuscator#cli-usage" target="_blank">документации обфускатора на GitHub</a>.</p>
+	</li>
+</ol><p>В результате получим обфусцированный файл. Пример обфусцированного файла приведен ниже.</p>
+
+<div class="code">
+<div class="code__widgets">
+<div class="code__top">
+<div class="code__title">Пример обфусцированного файла</div>
+</div>
+
+<div class="code__source">
+<pre class="prettyprint">
+function a0_0x2c69() {
+    var _0x272852 = ['Terrasoft.MRKT_DemoMixin', 'Ok\x20-\x20MRKT_DemoMixin', '636527SjITzq', '47544MWcgAk', '1503XwngZr', '1735980OhnVnL', '7cyzbFA', '1795796hIfdLG', '655476qGUaEY', '22085740BJZJXi', '3038716Shuabr', 'MRKT_DemoMixin', '5iENPSJ'];
+    a0_0x2c69 = function() {
+        return _0x272852;
+    };
+    return a0_0x2c69();
+}
+var a0_0x31e3ab = a0_0x3f9a;
+
+function a0_0x3f9a(_0x104961, _0x4f9883) {
+    var _0x2c694d = a0_0x2c69();
+    return a0_0x3f9a = function(_0x3f9a09, _0x1d247d) {
+        _0x3f9a09 = _0x3f9a09 - 0xa7;
+        var _0x481962 = _0x2c694d[_0x3f9a09];
+        return _0x481962;
+    }, a0_0x3f9a(_0x104961, _0x4f9883);
+}(function(_0x479332, _0x464f89) {
+    var _0x279ddd = a0_0x3f9a,
+        _0x3c692e = _0x479332();
+    while (!![]) {
+        try {
+            var _0xae3ae0 = -parseInt(_0x279ddd(0xac)) / 0x1 + parseInt(_0x279ddd(0xa7)) / 0x2 + parseInt(_0x279ddd(0xaf)) / 0x3 + -parseInt(_0x279ddd(0xb1)) / 0x4 * (-parseInt(_0x279ddd(0xa9)) / 0x5) + -parseInt(_0x279ddd(0xb2)) / 0x6 * (-parseInt(_0x279ddd(0xb0)) / 0x7) + -parseInt(_0x279ddd(0xad)) / 0x8 * (-parseInt(_0x279ddd(0xae)) / 0x9) + -parseInt(_0x279ddd(0xb3)) / 0xa;
+            if (_0xae3ae0 === _0x464f89) break;
+            else _0x3c692e['push'](_0x3c692e['shift']());
+        } catch (_0x44cb38) {
+            _0x3c692e['push'](_0x3c692e['shift']());
+        }
+    }
+}(a0_0x2c69, 0xc4309), define(a0_0x31e3ab(0xa8), [], function() {
+    var _0x3dbe12 = a0_0x31e3ab;
+    Ext['define']('Terrasoft.configuration.mixins.MRKT_DemoMixin', {
+        'alternateClassName': _0x3dbe12(0xaa),
+        'secretMethod': function() {
+            var _0x3b8302 = _0x3dbe12;
+            return _0x3b8302(0xab);
+        }
+    });
+}));
+</pre>
+</div>
+</div>
+</div>
+
+<p>Чтобы <strong>посмотреть отображение JavaScript-кода на странице браузера</strong>:</p>
+
+<ol><li>Очистите кэш браузера.</li>
+	<li>Обновите страницу.</li>
+	<li>Запустите <a href="../../../instrumenty_razrabotki/otladka/front_end_otladka/obzor.html">инструменты отладки</a>.</li>
+</ol><p>Пример отображения JavaScript-кода на странице браузера приведен на рисунке ниже.</p>
+
+<div class="media">
+<div class="media__element"><img src="../../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/MarketplacePlagiarism/7.18/scr_CodeInBrowser.png" /></div>
+</div>
+
+<div class="message">
+<p><span class="message__bold">На заметку.</span> Обфусцирование JavaScript-кода является обязательным звеном CI/CD-конвейера. В репозитории рекомендуется хранить незащищенный от плагиата исходный JavaScript-код приложения Marketplace.</p>
+</div>
+</div>
+      
+  </div>
+<div class="block block-layout-builder block-field-blocknodedeveloper-documentationfield-linked">
+  
+    
+      
+  <div class="field field--name-field-linked field--type-entity-reference field--label-above">
+    <div class="field__label">Смотрите также</div>
+          <div class="field__items">
+              <div class="field__item"><a href="../../../instrumenty_razrabotki/pakety/obshchiye_printsipy_raboty_s_paketami/obzor.html" hreflang="ru">Общие принципы работы с пакетами</a></div>
+          <div class="field__item"><a href="../../../instrumenty_razrabotki/pakety/paket_proekt/obzor.html" hreflang="ru">Пакет-проект</a></div>
+          <div class="field__item"><a href="../../../architecture/razrabotka_v_creatio/obzor/obzor.html" hreflang="ru">Разработка приложений на платформе Creatio</a></div>
+          <div class="field__item"><a href="../../../instrumenty_razrabotki/vneshnie_ide/obzor.html" hreflang="ru">Внешние IDE</a></div>
+          <div class="field__item"><a href="../../../front_end_razrabotka/klientskaya_skhema/obzor.html" hreflang="ru">Клиентская схема</a></div>
+              </div>
+      </div>
+
+  </div>
+<div class="block block-layout-builder block-field-blocknodedeveloper-documentationfield-resources">
+  
+    
+      
+  <div class="field field--name-field-resources field--type-link field--label-above">
+    <div class="field__label">Ресурсы</div>
+          <div class="field__items">
+              <div class="field__item"><a href="../../../../../developer/development_tools.html" target="_blank">Документация Creatio по инструментам разработки</a></div>
+          <div class="field__item"><a href="https://github.com/Advance-Technologies-Foundation/clio" target="_blank">Официальная документация утилиты Creatio command-line interface utility (clio)</a></div>
+          <div class="field__item"><a href="https://www.nuget.org/packages/CreatioSDK/" target="_blank">NuGet-пакет CreatioSDK</a></div>
+          <div class="field__item"><a href="https://github.com/javascript-obfuscator/javascript-obfuscator" target="_blank">Официальная документация обфускатора JavaScript Obfuscator</a></div>
+              </div>
+      </div>
+
+  </div>
+
+    </div>
+  </div>
+
+  </div>
+
+</article>
+
+  </div>
+
+  </div>
+
+          </div>
+        </div>
+
+                  <aside class="creatio-sidebar creatio-sidebar_first" role="complementary">
+              <div class="region region-sidebar-first">
+    <div id="block-documentationnaviagtion" class="block block-ts-nav block-ts-nav-doc-nav">
+  
+    
+      <div class="ts-nav-block"><a href="../../../../../index.html" class="ts-nav-block__link">Документация</a><div class="ts-nav-block__title">Для разработчика</div>
+</div>
+<div class="ts-nav-container"><ul class="ts-nav-menu"><li class="ts-nav-menu__item">
+  <a href="../../../s_chego_nachat.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">С чего начать&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../architecture.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Архитектура&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../instrumenty_razrabotki.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Инструменты разработки&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../back_end_razrabotka.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Back-end разработка&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../front_end_razrabotka_freedom_ui.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Front-end разработка Freedom UI&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../front_end_razrabotka.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Front-end разработка&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../integratsiya_i_vneshnij_api.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Интеграция и внешний API&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../ehlementy_interfejsa.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Элементы интерфейса&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../komponenty_prilozheniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Компоненты приложения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../razrabotka_mobilnogo_prilozheniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Разработка мобильного приложения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../razrabotka_marketplace_prilozheniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded ts-nav-menu__link_open" hreflang="zxx">Разработка Marketplace-приложения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+      <ul class="ts-nav-menu__children">
+      <li class="ts-nav-menu__item">
+  <a href="../../podgotovka_k_razrabotke_prilozheniya/obzor.html" class="ts-nav-menu__link" hreflang="ru">Подготовка к разработке приложения</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../razrabotka_prilozheniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded ts-nav-menu__link_open" hreflang="ru">Разработка приложения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+      <ul class="ts-nav-menu__children">
+      <li class="ts-nav-menu__item">
+  <a href="../obshchie_principy_razrabotki_prilozheniya_marketplace.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Обзор&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="obzor.html" class="ts-nav-menu__link ts-nav-menu__link_open" hreflang="ru">Защита кода от плагиата</a>
+  </li>
+
+    </ul>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../publikaciya_prilozheniya/obzor.html" class="ts-nav-menu__link" hreflang="ru">Публикация приложения</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../sertifikaciya_prilozheniya/obzor.html" class="ts-nav-menu__link" hreflang="ru">Сертификация приложения</a>
+  </li>
+
+    </ul>
+  </li>
+</ul>
+</div>
+
+  </div>
+
+  </div>
+
+            <div class="creatio-sidebar__toggle"></div>
+          </aside>
+        
+                  <aside class="creatio-sidebar creatio-sidebar_second" role="complementary">
+              <div class="region region-sidebar-second">
+    <div id="block-example" class="block block-ts-nav block-ts-nav-page-nav">
+  
+    
+      <div class="ts-nav-page">
+  </div>
+
+  </div>
+<div id="block-adminfeedbackblock" class="block block-admin-feedback block-admin-feedback-block">
+  
+    
+      <div id="feedback-message"><div id="upper-feedback-content"><h2>Был ли данный материал полезен?</h2>
+<input class="feedback-btn feedback-btn__yes button js-form-submit form-submit" data-node-id="3603" data-feedback="yes" type="submit" name="op" value="Да" />
+<input class="feedback-btn feedback-btn__no button js-form-submit form-submit" data-node-id="3603" data-feedback="no" type="submit" name="op" value="Нет" />
+</div>
+<form class="admin-feedback-form" data-drupal-selector="admin-feedback-form" action="https://academy.terrasoft.ua/docs/8-0/developer/razrabotka_marketplace_prilozheniya/razrabotka_prilozheniya/zashchita_koda_ot_plagiata/obzor" method="post" id="admin-feedback-form" accept-charset="UTF-8">
+  <div id="feedback-msg-result"></div><div class="js-form-item form-item js-form-type-textarea form-type-textarea js-form-item-feedback-message form-item-feedback-message form-no-label">
+        <div class="form-textarea-wrapper">
+  <textarea id="edit-feedback-msg" data-drupal-selector="edit-feedback-message" name="feedback_message" rows="5" cols="60" class="form-textarea resize-vertical"></textarea>
+</div>
+
+        </div>
+<input id="feedback-id" data-drupal-selector="edit-feedback-id" type="hidden" name="feedback_id" value="" />
+<input class="feedback-btn feedback-btn__send-comment button js-form-submit form-submit" data-drupal-selector="edit-feedback-send" type="submit" id="edit-feedback-send" name="op" value="Отправить" />
+<input autocomplete="off" data-drupal-selector="form-zqqosxqmdq7uxr4znghq9itltixa1vq4v6tlnwd7iqc" type="hidden" name="form_build_id" value="form-zQqoSXqMdq7uxR4zNgHq9itLtiXA1vQ4V6tLNWD7iQc" />
+<input data-drupal-selector="edit-admin-feedback-form" type="hidden" name="form_id" value="admin_feedback_form" />
+
+</form>
+</div>
+
+  </div>
+
+  </div>
+
+          </aside>
+              </main>
+    </div>
+  </div>
+
+  <footer role="contentinfo">
+    <div class="creatio-region creatio-region_footer">
+      <div class="creatio-container">
+          <div class="region region-footer">
+    <div id="block-footerua" class="block block-simple-block block-simple-blockfooter-ua">
+  
+    
+      <div class="footer">
+<div class="footer-left">
+<ul class="footer-socials"><li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_fb" href="https://www.facebook.com/terrasoft.ua" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_in" href="https://www.linkedin.com/company/terrasoft/" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_yt" href="https://www.youtube.com/c/TerrasoftUkraine" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_tg" href="https://t.me/Terrasoft_UA" target="_blank"> </a></li>
+</ul></div>
+
+<div class="footer-contact">
+<div class="footer-title">Будьте на связи!</div>
+
+<div class="footer-content">
+<div class="footer-items">
+<div class="footer-item"><a class="footer__link footer__link_phone" href="tel:+380443633133">+38 (044) 363-31-33</a></div>
+</div>
+
+<div class="footer-items">
+<div class="footer-item"><a class="footer__link footer__link_email" href="mailto:support@terrasoft.ua">support@terrasoft.ua</a></div>
+</div>
+</div>
+</div>
+</div>
+
+  </div>
+
+  </div>
+
+      </div>
+    </div>
+    <div class="creatio-region creatio-region_bottom">
+      <div class="creatio-container">
+          <div class="region region-bottom">
+    <div id="block-allrightsreservedua" class="block block-simple-block block-simple-blockfooter-bottom-ua">
+  
+    
+      <p>© 2002-2022 Terrasoft.  |  <a href="https://www.terrasoft.ua/privacy-policy" target="_blank">Конфиденциальность</a></p>
+
+  </div>
+
+  </div>
+
+      </div>
+    </div>
+  </footer>
+</div>
+<div class="creatio-bg"></div>
+
+
+  </div>
+
+    
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/docs\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/3603","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"ru"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"ajaxPageState":{"libraries":"admin_feedback\/admin_feedback_block,admin_feedback\/admin_feedback_css,classy\/base,classy\/messages,classy\/node,core\/drupal.ajax,core\/jquery.form,core\/normalize,creatio\/fancybox,creatio\/global,layout_discovery\/onecol,system\/base,ts_doc\/doc_version,ts_feedback\/ts_feedback,ts_nav\/breadcrumb,ts_nav\/doc_nav,ts_nav\/page_nav,ts_title_anchor\/ts_title_anchor","theme":"creatio","theme_token":null},"ajaxTrustedUrl":{"form_action_p_pvdeGsVG5zNF_XLGPTvYSKCf43t8qZYSwcfZl2uzM":true,"\/docs\/8-0\/developer\/razrabotka_marketplace_prilozheniya\/razrabotka_prilozheniya\/zashchita_koda_ot_plagiata\/obzor?ajax_form=1":true},"admin_feedback":{"yes_response":"\u0421\u043f\u0430\u0441\u0438\u0431\u043e \u0437\u0430 \u043e\u0431\u0440\u0430\u0442\u043d\u0443\u044e \u0441\u0432\u044f\u0437\u044c!","no_response":"\u0421\u043f\u0430\u0441\u0438\u0431\u043e \u0437\u0430 \u043e\u0431\u0440\u0430\u0442\u043d\u0443\u044e \u0441\u0432\u044f\u0437\u044c!","custom_text_response_on_no":{"value":"","format":"full_html"},"feedback_prompt_on_yes":true,"feedback_prompt_on_no":true,"feedback_enable_predefined_answers":false,"feedback_prompt":"\u041a\u0430\u043a \u043c\u043e\u0436\u043d\u043e \u0443\u043b\u0443\u0447\u0448\u0438\u0442\u044c \u044d\u0442\u0443 \u0441\u0442\u0430\u0442\u044c\u044e?"},"ajax":{"edit-feedback-send":{"callback":"::validateFeedbackMsg","event":"mousedown","keypress":true,"prevent":"click","url":"\/docs\/8-0\/developer\/razrabotka_marketplace_prilozheniya\/razrabotka_prilozheniya\/zashchita_koda_ot_plagiata\/obzor?ajax_form=1","dialogType":"ajax","submit":{"_triggering_element_name":"op","_triggering_element_value":"\u041e\u0442\u043f\u0440\u0430\u0432\u0438\u0442\u044c"}}},"user":{"uid":0,"permissionsHash":"9c2367dfcaba0fa15f0375f97aed64e146c908cee68508d13b79e3ee80e5162d"}}</script>
+<script src="../../../../../sites/default/files/js/js_Rr-7TvYD7NposuRFJwUqThxM7yJmw8vs03PQwu5gWd8.js"></script>
+
+
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+      <g id="svg-copy" class="svg-icon svg-icon_copy">
+        <path d="M15.111,18H1.889A1.848,1.848,0,0,1,0,16.2V3.6A1.848,1.848,0,0,1,1.889,1.8H5.837a2.87,2.87,0,0,1,5.326,0h3.948A1.848,1.848,0,0,1,17,3.6V16.2A1.848,1.848,0,0,1,15.111,18ZM3.777,12.6v1.8h6.611V12.6Zm0-3.6v1.8h9.445V9Zm0-3.6V7.2h9.445V5.4ZM8.5,1.8a.924.924,0,0,0-.944.9.945.945,0,0,0,1.889,0A.924.924,0,0,0,8.5,1.8Z"/>
+      </g>
+
+      <g id="svg-prev" class="svg-icon svg-icon_arrow">
+        <path d="M5.488,12.779,0,6.39,5.488,0" transform="translate(1 0.652)"/>
+      </g>
+
+      <g id="svg-next" class="svg-icon svg-icon_arrow">
+        <path d="M0,12.779,5.488,6.39,0,0" transform="translate(0.759 0.652)"/>
+      </g>
+    </svg>
+  </body>
+
+<!-- Mirrored from academy.terrasoft.ua/docs/8-0/developer/razrabotka_marketplace_prilozheniya/razrabotka_prilozheniya/zashchita_koda_ot_plagiata/obzor by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Mar 2022 08:20:07 GMT -->
+</html>

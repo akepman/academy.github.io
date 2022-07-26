@@ -1,0 +1,929 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# ">
+  
+<!-- Mirrored from academy.terrasoft.ua/docs/developer/instrumenty_razrabotki/pakety/paket_sborka/obzor by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 22 Mar 2022 21:35:02 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+          <!-- Google Tag Manager -->
+      <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          '../../../../../../www.googletagmanager.com/gtm5445.html?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-KLLB8G');</script>
+      <!-- End Google Tag Manager -->
+        <meta charset="utf-8" />
+<link rel="canonical" href="obzor.html" />
+<meta name="description" content="Пакет-сборка — пакет, исходный и автогенерируемый код которого компилируется в отдельную сборку. Начиная с версии 8.0 Creatio Atlas при создании нового пакета по умолчанию создается пакет-сборка. Это позволяет быстрее и удобнее переносить изменения между средами.
+
+Назначение пакета-сборки:" />
+<meta property="og:url" content="https://academy.terrasoft.ua/docs/developer/instrumenty_razrabotki/pakety/paket_sborka/obzor" />
+<meta property="og:title" content="Пакет-сборка" />
+<meta property="og:description" content="Пакет-сборка — пакет, исходный и автогенерируемый код которого компилируется в отдельную сборку. Начиная с версии 8.0 Creatio Atlas при создании нового пакета по умолчанию создается пакет-сборка. Это позволяет быстрее и удобнее переносить изменения между средами.
+
+Назначение пакета-сборки:" />
+<meta name="Generator" content="Drupal 9 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="../../../../themes/custom/creatio/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="revision" href="obzor.html" />
+
+    <title>Пакет-сборка | Creatio Academy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&amp;family=Open+Sans:ital,wght@0,300;0,400;0,600;1,400&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" media="all" href="../../../../sites/default/files/css/css_6lTP66__-yc6QXFp1zOwoeJ0HVigoYZP-SeoLLii000.css" />
+<link rel="stylesheet" media="all" href="../../../../sites/default/files/css/css_XQJDNhkF3xH5SZCcY-PI89Zu4nYIzQ5oR3SnUKyfXJU.css" />
+<link rel="stylesheet" media="print" href="../../../../sites/default/files/css/css_Zn4VHvcniOOtUwkIVwXzYr_0AI9gUVgZcPqaH4ViagU.css" />
+
+    
+  </head>
+  <body class="path-node page-node-type-developer-documentation">
+          <!-- Google Tag Manager (noscript) -->
+      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KLLB8G"
+                        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+      <!-- End Google Tag Manager (noscript) -->
+    
+        
+      <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    <div class="creatio-page d-flex flex-column">
+        <div class="region region-informer">
+    <div id="block-terrasoftpidtrimueukrainu" class="block block-simple-block block-simple-blockterrasoft-pidtrimue-ukrainu">
+  
+    
+      <style type="text/css">
+<!--/*--><![CDATA[/* ><!--*/
+@import url(../../../../../../www.terrasoft.ua/themes/custom/creatio/css/components/informer.css)
+
+/*--><!]]>*/
+</style><div class="ts-swu">
+<div class="creatio-container">
+<div class="ts-swu__cont">
+<div><a class="ts-swu__link" href="https://www.terrasoft.ua/terrasoft-stands-with-ukraine" target="_blank">Україна понад усе!</a> <span><a href="https://www.terrasoft.ua/terrasoft-stands-with-ukraine" target="_blank">Приєднуйтеся</a> до допомоги!</span></div>
+</div>
+</div></div>
+
+  </div>
+
+  </div>
+
+  
+  <header role="banner">
+          <div class="creatio-region creatio-region_top">
+        <div class="creatio-container">
+            <div class="region region-top">
+    <div id="block-menutoggle" class="block block-simple-block block-simple-blockmenu-toggle">
+  
+    
+      <div class="menu-toggle"><span> </span></div>
+
+  </div>
+<div id="block-logowhite-2" class="block block-simple-block block-simple-blocklogo-white">
+  
+    
+      <p><a class="site-logo" href="../../../../../index.html" rel="home"><img src="../../../../themes/custom/creatio/logo-white.svg" /></a></p>
+
+  </div>
+<div id="block-search" class="block block-simple-block block-simple-blocksearch">
+  
+    
+      <div class="search">
+<form action="https://academy.terrasoft.ua/search" class="search-form" method="get"><input class="search-form__input" name="search" placeholder="Поиск" type="search" /><input class="search-form__button" type="submit" value="Поиск" /> </form>
+
+<div class="search-toggle"> </div>
+</div>
+
+  </div>
+<nav role="navigation" aria-labelledby="block-sitesua-menu" id="block-sitesua" class="block block-menu navigation menu--sites-ua">
+            
+  <h2 class="visually-hidden" id="block-sitesua-menu">Sites UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="https://www.terrasoft.ua/" rel="nofollow" target="_blank">Terrasoft</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://community.terrasoft.ua/" rel="nofollow" target="_blank">Community</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://marketplace.terrasoft.ua/" rel="nofollow" target="_blank">Marketplace</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+<div id="block-usermenu" class="block block-ts-user block-ts-user-menu-block">
+  
+    
+      <ul class="user-menu">
+      <li class="user-menu__item">
+      <a class="user-menu__link" href="https://profile.terrasoft.ua/user/login?destination=academy/ua/docs/developer/instrumenty_razrabotki/pakety/paket_sborka/obzor">Войти</a>
+    </li>
+  </ul>
+
+  </div>
+<div id="block-usermenumobile" class="block block-ts-user block-ts-user-menu-mobile-block">
+  
+    
+      <ul class="user-menu-mobile">
+      <li class="user-menu-mobile__item">
+      <div class="user-menu-mobile__user user-menu-mobile__user_icon"></div>
+      <ul class="user-menu-mobile__submenu">
+        <li class="user-menu-mobile__subitem">
+          <a class="user-menu-mobile__sublink" href="https://profile.terrasoft.ua/user/login?destination=academy/ua/docs/developer/instrumenty_razrabotki/pakety/paket_sborka/obzor">Войти</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  </div>
+
+  </div>
+
+        </div>
+      </div>
+              <div class="creatio-region creatio-region_header">
+        <div class="creatio-container">
+            <div class="region region-header">
+    <div id="block-logo" class="block block-simple-block block-simple-blocklogo">
+  
+    
+      <p><a class="site-logo" href="../../../../../index.html" rel="home"><img src="../../../../themes/custom/creatio/logo.svg" /></a></p>
+
+  </div>
+<nav role="navigation" aria-labelledby="block-osnovnayanavigaciyaua-menu" id="block-osnovnayanavigaciyaua" class="block block-menu navigation menu--main-ua">
+            
+  <h2 class="visually-hidden" id="block-osnovnayanavigaciyaua-menu">Основная навигация UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="../../../../index.html" data-drupal-link-system-path="&lt;front&gt;">Документация</a>
+              </li>
+                <li class="menu-item">
+        <a href="../../../../../trainings.html">Тренинги</a>
+              </li>
+                <li class="menu-item">
+        <a href="../../../../certification.html" data-drupal-link-system-path="node/3084">Сертификация и тестирование</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+<nav role="navigation" aria-labelledby="block-sitesua-2-menu" id="block-sitesua-2" class="block block-menu navigation menu--sites-ua">
+            
+  <h2 class="visually-hidden" id="block-sitesua-2-menu">Sites UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="https://www.terrasoft.ua/" rel="nofollow" target="_blank">Terrasoft</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://community.terrasoft.ua/" rel="nofollow" target="_blank">Community</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://marketplace.terrasoft.ua/" rel="nofollow" target="_blank">Marketplace</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+
+  </div>
+
+        </div>
+      </div>
+              <div class="creatio-region creatio-region_breadcrumb">
+        <div class="creatio-container">
+            <div class="region region-breadcrumb">
+    <div id="block-logowhite" class="block block-simple-block block-simple-blocklogo-white">
+  
+    
+      <p><a class="site-logo" href="../../../../../index.html" rel="home"><img src="../../../../themes/custom/creatio/logo-white.svg" /></a></p>
+
+  </div>
+<div id="block-breadcrumbnaviagtion" class="block block-ts-nav block-ts-nav-bread">
+  
+    
+      <nav class="breadcrumb"><ol class="ts-nav-breadcrumb__list"><li class="ts-nav-breadcrumb__item"><a href="../../../../index.html" class="ts-nav-breadcrumb__link" title="Документация">Документация</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../../index2132.html?vid_1=2" class="ts-nav-breadcrumb__link" title="Для разработчика">Для разработчика</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../instrumenty_razrabotki.html" class="ts-nav-breadcrumb__link" title="Инструменты разработки" hreflang="zxx">Инструменты разработки</a></li>
+<li class="ts-nav-breadcrumb__item ts-nav-breadcrumb__item_mobile"><a href="../../pakety.html" class="ts-nav-breadcrumb__link" title="Пакеты" hreflang="ru">Пакеты</a></li>
+<li class="ts-nav-breadcrumb__item"><span class="ts-nav-breadcrumb__link ts-nav-breadcrumb__link_current" title="Пакет-сборка">Пакет-сборка</span></li>
+</ol>
+</nav>
+
+  </div>
+<div id="block-search-2" class="block block-simple-block block-simple-blocksearch">
+  
+    
+      <div class="search">
+<form action="https://academy.terrasoft.ua/search" class="search-form" method="get"><input class="search-form__input" name="search" placeholder="Поиск" type="search" /><input class="search-form__button" type="submit" value="Поиск" /> </form>
+
+<div class="search-toggle"> </div>
+</div>
+
+  </div>
+
+  </div>
+
+        </div>
+      </div>
+      </header>
+
+  <div class="creatio-region creatio-region_main">
+    <div class="creatio-container">
+                <div class="region region-breadcrumb-mobile">
+    <div id="block-breadcrumbnaviagtion-2" class="block block-ts-nav block-ts-nav-bread">
+  
+    
+      <nav class="breadcrumb"><ol class="ts-nav-breadcrumb__list"><li class="ts-nav-breadcrumb__item"><a href="../../../../index.html" class="ts-nav-breadcrumb__link" title="Документация">Документация</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../../index2132.html?vid_1=2" class="ts-nav-breadcrumb__link" title="Для разработчика">Для разработчика</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../instrumenty_razrabotki.html" class="ts-nav-breadcrumb__link" title="Инструменты разработки" hreflang="zxx">Инструменты разработки</a></li>
+<li class="ts-nav-breadcrumb__item ts-nav-breadcrumb__item_mobile"><a href="../../pakety.html" class="ts-nav-breadcrumb__link" title="Пакеты" hreflang="ru">Пакеты</a></li>
+<li class="ts-nav-breadcrumb__item"><span class="ts-nav-breadcrumb__link ts-nav-breadcrumb__link_current" title="Пакет-сборка">Пакет-сборка</span></li>
+</ol>
+</nav>
+
+  </div>
+
+  </div>
+
+      
+      <main class="creatio-main" role="main">
+                                                    
+        <div class="creatio-content creatio-content_small">
+          <div class="creatio-content__inner creatio-content__inner_bg">
+                            <div class="region region-messages">
+    <div data-drupal-messages-fallback class="hidden"></div>
+
+  </div>
+
+            
+              <div class="region region-content">
+    <div id="block-creatio-page-title" class="block block-core block-page-title-block">
+  
+    
+      
+  <h1 class="page-title"><span class="field field--name-title field--type-string field--label-hidden">Пакет-сборка</span>
+</h1>
+
+
+  </div>
+<div id="block-creatio-content" class="block block-system block-system-main-block">
+  
+    
+      
+<article data-history-node-id="3768" role="article" about="/docs/developer/instrumenty_razrabotki/pakety/paket_sborka/obzor" class="node node--type-developer-documentation node--view-mode-full">
+
+  
+    
+
+  
+  <div class="node__content">
+      <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocknodedeveloper-documentationfield-difficulty">
+  
+    
+      
+            <div class="field field--name-field-difficulty field--type-entity-reference field--label-hidden field__item"><div about="/docs/taxonomy/term/169" id="taxonomy-term-169" class="taxonomy-term vocabulary-difficulty">
+  
+  
+  <div class="content">
+      <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocktaxonomy-termdifficultyfield-icon">
+  
+    
+      
+            <div class="field field--name-field-icon field--type-image field--label-hidden field__item">  <img src="../../../../sites/default/files/difficulty/advanced.svg" alt="" loading="lazy" typeof="foaf:Image" />
+
+</div>
+      
+  </div>
+<div class="block block-layout-builder block-field-blocktaxonomy-termdifficultyname">
+  
+    
+      
+            <div class="field field--name-name field--type-string field--label-hidden field__item"><span style="color: #EF4524;">Сложный</span></div>
+      
+  </div>
+
+    </div>
+  </div>
+
+  </div>
+</div>
+</div>
+      
+  </div>
+<div class="block block-ts-doc block-ts-doc-downloads">
+  
+    
+      <a href="../../../../sites/default/files/pdf/node/3768/Paket_sborka_.pdf" target="_blank">PDF</a>
+  </div>
+<div class="block block-ts-doc block-ts-doc-versions">
+  
+    
+        <div class="ts-doc-versions">
+    <select class="ts-doc-versions__select">
+                                                <option value="/docs/8-0/developer/instrumenty_razrabotki/pakety/paket_sborka/obzor" selected>Версия 8.0</option>
+                              <option value="/docs/7-18/developer/instrumenty_razrabotki/pakety/paket_sborka/obzor">Версия 7.18</option>
+          </select>
+  </div>
+
+  </div>
+
+    </div>
+  </div>
+  <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocknodedeveloper-documentationbody">
+  
+    
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><p><strong>Пакет-сборка</strong> — пакет, исходный и автогенерируемый код которого компилируется в отдельную сборку. Начиная с версии 8.0 Creatio Atlas при создании нового пакета по умолчанию создается пакет-сборка. Это позволяет быстрее и удобнее переносить изменения между средами.</p>
+
+<p><strong>Назначение</strong> пакета-сборки:</p>
+
+<ul><li>Увеличение скорости разработки за счет снижения времени компиляции, поскольку компилируется только пакет-сборка.</li>
+	<li>Увеличение скорости поставки функциональности за счет отсутствия необходимости компиляции, поскольку пакет-сборка содержит в себе предварительно скомпилированную часть.</li>
+</ul><p><strong>Особенности</strong> пакета-сборки:</p>
+
+<ul><li>Не поддерживается доступ к объектам по протоколу OData версии 3. Для доступа к объектам в пакете-сборке используется протокол OData версии 4. Протокол OData описан в статье <a href="../../../integratsiya_i_vneshnij_api/servisy_raboty_s_dannymi/odata/obzor.html?id=15431">OData</a>.</li>
+	<li>Не допускается реализация бизнес-логики объектов через событийные подпроцессы дизайнера объекта. Для работы с событийной моделью необходимо использовать <span class="filled">EntityEventListener</span>. Набор событий <span class="filled">EntityEventListener</span> не полностью соответствует событийной модели, доступной через Creatio IDE. Событийный слой <span class="filled">Entity</span> описан в статье <a href="../../../back_end_razrabotka/biznes_logika_obektov/obzor.html?id=15267">Бизнес-логика объектов</a>.</li>
+	<li>В C#-коде пакетов не допускается использование типов <span class="filled">Entity</span> (например, приведение к этим типам), создание экземпляров этих типов через оператор <span class="filled">new</span> или при помощи рефлексии. Не зависимо от того, где создана эта <span class="filled">Entity</span>.</li>
+	<li>Новые колонки и методы объектов <span class="filled">Entity</span>, которые размещены в пакете-сборке, не доступны через базовый класс <span class="filled">Entity</span> (например, <span class="filled">ColumnValues.GetByName(nameValues)</span>).</li>
+	<li>Типы текущего пакета-сборки не доступны в конфигурации и доступны для других пакетов-сборок, которые зависят от текущего.</li>
+</ul><h2>Структура и зависимости пакета-сборки<a class="title-anchor" href="#title-3554-1" id="title-3554-1"> </a></h2>
+
+<p>Структура пакета-сборки в файловой системе не отличается от структуры простого пакета. Основное <strong>отличие</strong> пакета-сборки от простого пакета — значение свойств <span class="filled">Type</span> (тип пакета) и <span class="filled">ProjectPath</span> (относительный путь от корневого каталога пакета к файлу проекта пакета-сборки) файла <span class="filled">descriptor.json</span>. Структура простого пакета описана в статье <a href="../obshchiye_printsipy_raboty_s_paketami/obzor%23title-2105-2.html?id=15121&amp;anchor=title-2105-2">Общие принципы работы с пакетами</a>.</p>
+
+<p>Вспомогательные файлы пакета-сборки создаются или актуализируются:</p>
+
+<ul><li>При выгрузке пакета-сборки в файловую систему, если режим разработки в файловой системе включен.</li>
+	<li>При компиляции пакета-сборки, если режим разработки в файловой системе выключен.</li>
+	<li>При фиксации пакета-сборки в системе контроля версий, независимо от статуса режима разработки в файловой системе.</li>
+</ul><p><strong>Вспомогательные файлы</strong> пакета-сборки:</p>
+
+<ul><li><span class="filled">[Имя пакета].csproj</span> — файл проекта, который содержит компилируемое содержимое пакета-сборки.</li>
+	<li><span class="filled">Directory.Build.targets</span> — файл, который используется для исключения содержимого пакета-сборки из компиляции основной конфигурации.</li>
+</ul><p>Пакет-сборка позволяет ссылаться на внешние сборки.</p>
+
+<p><a name="add_reference" id="add_reference"></a>Чтобы для пакета-сборки <strong>настроить ссылку на внешнюю сборку</strong>:</p>
+
+<ol><li>Откройте файл <span class="filled">[Имя пакета].csproj</span> пакета-сборки.</li>
+	<li>Добавьте необходимую внешнюю сборку в любую секцию файла. Исключением является секция <span class="filled">Label="Package References"</span>, содержимое которой генерируется автоматически.</li>
+</ol><p>Пример настройки ссылок на Quartz и внешнюю библиотеку, которая содержится в каталоге <span class="filled">...\Terrasoft.Configuration\Lib</span> приведен ниже.</p>
+
+<div class="code">
+<div class="code__widgets">
+<div class="code__top">
+<div class="code__title">Пример настройки ссылок на внешние сборки</div>
+</div>
+
+<div class="code__source">
+<pre class="prettyprint">
+&lt;ItemGroup Label="3rd Party References"&gt;
+    &lt;Reference Include="Quartz"&gt;
+        &lt;HintPath&gt;$(CoreLibPath)\Quartz.dll&lt;/HintPath&gt;
+        &lt;Private&gt;false&lt;/Private&gt;
+    &lt;/Reference&gt;
+    &lt;Reference Include="ClassLibrary2"&gt;
+        &lt;HintPath&gt;$(ConfLibPath)/ClassLibrary2.PackageName.dll&lt;/HintPath&gt;
+        &lt;SpecificVersion&gt;False&lt;/SpecificVersion&gt;
+        &lt;Private&gt;False&lt;/Private&gt;
+    &lt;/Reference&gt;
+&lt;/ItemGroup&gt;
+</pre>
+</div>
+</div>
+</div>
+
+<p>Содержимое файла <span class="filled">[Имя пакета].csproj</span> пакета-сборки допускается менять вручную. Исключением является секция <span class="filled">Label="Package References"</span>, содержимое которой генерируется автоматически.</p>
+
+<p>При компиляции через Creatio IDE <span class="filled">TargetFramework</span> проекта соответствует <span class="filled">TargetFramework</span> ядра. При компиляции через внешнюю IDE используется значение по умолчанию "<span class="consolas">net472</span>", которое при необходимости можно изменить.</p>
+
+<p>В отличие от основного проекта конфигурации, в проект пакета-сборки не включены сторонние библиотеки. Для работы со сторонними библиотеками в файл проекта пакета-сборки подключите абстракции ядра или внешние сборки пакета.</p>
+
+<p><strong>Секции со ссылками</strong>, которые содержатся в пакете-сборке:</p>
+
+<ul><li>Системные библиотеки.</li>
+	<li>Внешние сборки пакета (<span class="filled">&lt;ItemGroup Label="Package Assembly References"&gt;&lt;/ItemGroup&gt;</span>).</li>
+	<li>Библиотеки ядра (<span class="filled">&lt;ItemGroup Label="Core References"&gt;&lt;/ItemGroup&gt;</span>).</li>
+	<li>Библиотеки зависимых пакетов (<span class="filled">&lt;ItemGroup Label="Package References"&gt;&lt;/ItemGroup&gt;</span>).</li>
+	<li>Внешние сборки (<span class="filled">&lt;ItemGroup Label="3rd Party References"&gt;&lt;/ItemGroup&gt;</span>).</li>
+</ul><h2>Операции с пакетом-сборкой<a class="title-anchor" href="#title-3554-2" id="title-3554-2"> </a></h2>
+
+<p>Creatio позволяет создать, компилировать и удалить пакет-сборку.</p>
+
+<h3>Создать пакет-сборку<a class="title-anchor" href="#title-3554-3" id="title-3554-3"> </a></h3>
+
+<ol><li>В приложении на платформе .NET Framework перейдите в дизайнер системы по кнопке <img src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/TryIt/scr_system_designer.png" />.</li>
+	<li>В блоке <span class="key">Конфигурирование разработчиком</span> (<span class="key">Admin area</span>) перейдите по ссылке <span class="key">Управление конфигурацией</span> (<span class="key">Advanced settings</span>).</li>
+	<li>В области работы с пакетами нажмите кнопку <img src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/CreateNewPackage/scr_pkg_create_button.png" />.</li>
+	<li>
+	<p>Установите признак <span class="key">Компилировать в отдельную сборку</span> (<span class="key">Compile into a separate assembly</span>). Начиная с версии 8.0 Creatio Atlas, признак установлен по умолчанию.</p>
+
+	<div class="media">
+	<div class="media__element"><img src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/PackageAssembly/scr_CreatePackageAssembly.png" /></div>
+	</div>
+	</li>
+	<li>Cоздайте пакет-сборку и установите его зависимости.</li>
+	<li>Разработайте пользовательскую функциональность.</li>
+	<li>В приложении на платформе .NET Framework выполните компиляцию пакета-сборки. Компиляция пакета-сборки описана в пункте <a href="obzor%23title-3554-4.html?id=15125&amp;anchor=title-3554-4">Компилировать пакет-сборку</a>.</li>
+	<li>Перенесите пакет-сборку на другую <a href="../../upravlenie_postavkami/rabochaya_sreda/obzor.html?id=15201">рабочую среду</a> на платформе .NET Core.</li>
+	<li>Выполните компиляцию перенесенного пакета-сборки. Компиляция пакета-сборки описана в пункте <a href="obzor%23title-3554-4.html?id=15125&amp;anchor=title-3554-4">Компилировать пакет-сборку</a>.</li>
+</ol><p>Очередность использования платформ (.NET Framework и .NET Core) для разработки пакета-сборки не имеет значения. Важно выполнить компиляцию пакета-сборки в приложениях на платформах .NET Framework и .NET Core. Это позволит пользователям использовать пакет-сборку в приложениях на платформах .NET Framework и .NET Core.</p>
+
+<p>В результате пакет-сборка будет доступен для поставки конечным пользователям.</p>
+
+<h3>Компилировать пакет-сборку<a class="title-anchor" href="#title-3554-4" id="title-3554-4"> </a></h3>
+
+<p><strong>Назначение</strong> компиляции пакета-сборки — ускорение разработки, поскольку отсутствует необходимость перекомпиляции всей конфигурации. Creatio позволяет выполнить компиляцию пакета-сборки, который содержит схемы <a href="../../creatio_ide/klientskij_modul/obzor%23title-3028-1.html?id=15102&amp;anchor=title-3028-1">клиентских модулей</a> (т. е. схемы с JavaScript-кодом).</p>
+
+<p><strong>Виды компиляции</strong> пакета-сборки:</p>
+
+<ul><li>
+	<p><strong>Компиляция конфигурации и всех пакетов-сборок</strong>.</p>
+
+	<p>Выполняется нажатием кнопки <span class="key">Перекомпилировать все</span> (<span class="key">Compile all</span>) в выпадающем списке кнопки <span class="key">Компилировать</span> (<span class="key">Compile</span>) панели инструментов Creatio IDE.</p>
+
+	<div class="media">
+	<div class="media__element"><img src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/PackageAssembly/scr_CompileAll.png" /></div>
+	</div>
+	</li>
+	<li>
+	<p><strong>Компиляция текущего пакета-сборки</strong>.</p>
+
+	<ul><li>
+		<p>Выполняется выбором пункта <span class="key">Компилировать</span> (<span class="key">Compile</span>) меню пакета Creatio IDE.</p>
+
+		<div class="media">
+		<div class="media__element"><img src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/PackageAssembly/scr_Compile.png" /></div>
+		</div>
+		</li>
+		<li>
+		<p>Выполняется нажатием кнопки <span class="key">Опубликовать</span> (<span class="key">Publish</span>) в дизайнере исходного кода. Если редактируемая схема типа <span class="key">Исходный код</span> (<span class="key">Source code</span>) находится в пакете-сборке, то будет выполнена компиляция только пакета-сборки, а не всей конфигурации. В другом случае будет выполнена компиляция всей конфигурации.</p>
+
+		<div class="media">
+		<div class="media__element"><img src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/PackageAssembly/scr_Publish.png" /></div>
+		</div>
+		</li>
+	</ul></li>
+</ul><p>В результате пакет-сборка будет скомпилирован. Если при компиляции пакета-сборки будет обнаружено отсутствие пакетов-сборок, от которых зависит текущий пакет-сборка, то приложение также выполнит их компиляцию.</p>
+
+<p>Скомпилированный пакет-сборка будет сохранен в:</p>
+
+<ul><li>Для приложений на платформе <strong>.NET Framework</strong> <span class="filled">...\Terrasoft.WebApp\<wbr></wbr>Terrasoft.Configuration\<wbr></wbr>Pkg\<wbr></wbr>[Имя пакета]\<wbr></wbr>Files\<wbr></wbr>Bin\<wbr></wbr>[Имя пакета].dll</span>.</li>
+	<li>Для приложений на платформе <strong>.NET Core</strong> <span class="filled">...\Terrasoft.WebApp\<wbr></wbr>Terrasoft.Configuration\<wbr></wbr>Pkg\<wbr></wbr>[Имя пакета]\<wbr></wbr>Files\<wbr></wbr>Bin\<wbr></wbr>netstandard\<wbr></wbr>[Имя пакета].dll</span>.</li>
+</ul><h3>Удалить пакет-сборку<a class="title-anchor" href="#title-3554-5" id="title-3554-5"> </a></h3>
+
+<p>Удаление пакета-сборки не отличается от удаления простого пакета и выполняется в пункте <span class="key">Удалить</span> (<span class="key">Delete</span>) меню пакета Creatio IDE.</p>
+
+<div class="media">
+<div class="media__element"><img src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/PackageAssembly/scr_Delete.png" /></div>
+</div>
+
+<p>Об удалении простого пакета читайте в статье <a href="../../creatio_ide/principy_razrabotki_v_creatio_ide/obzor_creatio_ide%23title-2093-5.html?id=15101&amp;anchor=title-2093-5">Принципы разработки в Creatio IDE</a>.</p>
+
+<p>В результате пакет-сборка будет удален из конфигурации приложения.</p>
+
+<h2>Конвертация пакетов<a class="title-anchor" href="#title-3554-6" id="title-3554-6"> </a></h2>
+
+<p><strong>Виды конвертации</strong>, которые позволяет выполнять Creatio:</p>
+
+<ul><li>Конвертация простого пакета в пакет-сборку.</li>
+	<li>Конвертация пакет-сборки в простой пакет.</li>
+</ul><p>Конвертация пакетов доступна для <strong>on-site приложений</strong>, поскольку требует доступа к базе данных. Для <strong>приложений cloud</strong> можно выполнить перемещение отдельных конфигурационных элементов в пакет-сборку.</p>
+
+<h3>Конвертировать простой пакет в пакет-сборку<a class="title-anchor" href="#title-3554-7" id="title-3554-7"> </a></h3>
+
+<p><strong>Способы</strong> конвертации простого пакета в пакет-сборку:</p>
+
+<ul><li>Ручная конвертация. Доступна для Creatio версий 7.18.3-7.18.5.</li>
+	<li>Автоматическая конвертация. Доступна для версии 8.0 Creatio Atlas и выше. Рекомендуемый способ.</li>
+</ul><p>Чтобы <strong>вручную</strong> конвертировать простой пакет в пакет-сборку:</p>
+
+<ol><li>Подготовьте конфигурационные элементы простого пакета к конвертации, переписав код в соответствии с особенностями пакета-сборки.</li>
+	<li>
+	<p>С помощью SQL-запроса подготовьте простой пакет к конвертации в пакет-сборку.</p>
+
+	<div class="code">
+	<div class="code__widgets">
+	<div class="code__source" data-tab="MS SQL">
+	<pre class="prettyprint">
+update [SysPackage]
+set [Type] = 1, [ProjectPath] = '', ModifiedOn = GETUTCDATE()
+where [Id] = 'PackageIdGuid'
+</pre>
+	</div>
+
+	<div class="code__source" data-tab="PostgreSQL">
+	<pre class="prettyprint">
+update "SysPackage"
+set "Type" = 1, "ProjectPath" = '', "ModifiedOn" = current_timestamp
+where "Id" = 'PackageIdGuid'
+</pre>
+	</div>
+	</div>
+	</div>
+
+	<p>Этот запрос выполнит переход в таблицу <span class="filled">[SysPackage]</span> базы данных. <strong>Действия</strong>, которые выполняются при выполнении запроса:</p>
+
+	<ul><li>Изменение значения колонки <span class="filled">[Type]</span> с "<span class="consolas">0</span>" (простой пакет) на "<span class="consolas">1</span>" (пакет-сборка).</li>
+		<li>Заполнение колонки <span class="filled">[ProjectPath]</span>. Имя проекта должно совпадать с именем пакета.</li>
+		<li>Актуализация значения колонки <span class="filled">[ModifiedOn]</span>.</li>
+	</ul></li>
+	<li>При необходимости, <a href="#add_reference">добавьте ссылки на внешние сборки</a>.</li>
+    <li>Перезагрузите приложение. Это необходимо, чтобы сбросить кэш.</li>
+	<li>
+        <p>Выполните генерацию всех схем простого пакета и его дочерних схем.</p>
+        
+        <ul><li><a href="../../creatio_ide/principy_razrabotki_v_creatio_ide/obzor_creatio_ide%23title-2093-2.html?id=15101&amp;anchor=title-2093-2">Перейдите в раздел <span class="key">Конфигурация</span></a> (<span class="key">Configuration</span>).</li>
+	        <li>
+                <p>В меню действий в группе <span class="key">Исходный код</span> (<span class="key">Source code</span>) выберите <span class="key">Сгенерировать для всех схем</span> (<span class="key">Generate for all schemas</span>).</p>
+            
+                <div class="media">
+                    <div class="media__element"><img src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/PackageAssembly/scr_generate_for_all_schemas.png" /></div>
+                </div>
+            </li>
+        </ul></li>
+    <li>Выполните компиляцию конфигурации.</li>
+</ol><p>Конвертация простого пакета в пакет-сборку для версии 8.0 Creatio Atlas и выше подразумевает изменение признака <span class="key">Компилировать в отдельную сборку</span> (<span class="key">Compile into a separate assembly</span>) в свойствах простого пакета.</p>
+
+<p>Чтобы <strong>автоматически</strong> конвертировать простой пакет в пакет-сборку:</p>
+
+<ol><li>В меню пакета выберите <span class="key">Свойства</span> (<span class="key">Properties</span>).</li>
+	<li>Установите признак <span class="key">Компилировать в отдельную сборку</span> (<span class="key">Compile into a separate assembly</span>).</li>
+	<li>
+		<p>Для применения изменений нажмите <span class="key">Применить</span> (<span class="key">Apply</span>).</p>
+	
+		<div class="media">
+			<div class="media__element"><img src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/PackageAssembly/8.0/convert_simple_package.gif" /></div>
+		</div>
+
+		<p><strong>Действия</strong>, которые выполняются при сохранении свойств пакета:</p>
+
+		<ul><li>Изменение в базе данных типа пакета (значение колонки <span class="filled">[Type]</span>). При установленном признаке <span class="key">Компилировать в отдельную сборку</span> (<span class="key">Compile into a separate assembly</span>) значение меняется с "<span class="consolas">0</span>" (простой пакет) на "<span class="consolas">1</span>" (пакет-сборка). При неустановленном признаке — с "<span class="consolas">1</span>" (пакет-сборка) на "<span class="consolas">0</span>" (простой пакет).</li>
+			<li>Удаление файлов пакета-сборки при неустановленном признаке <span class="key">Компилировать в отдельную сборку</span> (<span class="key">Compile into a separate assembly</span>).</li>
+			<li>Генерация всех требующих генерации схем.</li>
+		</ul></li>
+	<li>
+		<p>При необходимости выполните компиляцию конфигурации. Уведомление о необходимости выполнения компиляции отобразится в информационном окне.</p>
+
+		<div class="message message_warning">
+			<p><span class="message__bold message__bold_warning">Важно.</span> Без выполнения компиляции конфигурации при ее необходимости конвертация простого пакета в пакет-сборку считается незавершенной.</p>
+		</div>
+	
+	</li>
+</ol><p>В результате простой пакет будет конвертирован в пакет-сборку.</p>
+
+<h3>Конвертировать пакет-сборку в простой пакет<a class="title-anchor" href="#title-3554-8" id="title-3554-8"> </a></h3>
+
+<ol><li>Перейдите в базу данных и в таблице <span class="filled">[SysPackage]</span> найдите пакет-сборку, который планируется конвертировать в простой пакет.</li>
+	<li>
+	<p>С помощью SQL-запроса актуализируйте значения колонок <span class="filled">[Type]</span>, <span class="filled">[ProjectPath]</span>, <span class="filled">[ModifiedOn]</span>.</p>
+
+	<div class="code">
+	<div class="code__widgets">
+	<div class="code__source" data-tab="MS SQL">
+	<pre class="prettyprint">
+update [SysPackage]
+set [Type] = 0, [ProjectPath] = '', ModifiedOn = GETUTCDATE()
+where [Id] = 'PackageIdGuid'
+</pre>
+	</div>
+
+	<div class="code__source" data-tab="PostgreSQL">
+	<pre class="prettyprint">
+update "SysPackage"
+set "Type" = 0, "ProjectPath" = '', "ModifiedOn" = current_timestamp
+where "Id" = 'PackageIdGuid'
+</pre>
+	</div>
+	</div>
+	</div>
+	</li>
+	<li>
+	<p>В каталоге <span class="filled">...\Terrasoft.WebApp\<wbr></wbr>Terrasoft.Configuration\<wbr></wbr>Pkg\<wbr></wbr>[Имя пакета]</span> пакета-сборки удалите каталоги:</p>
+
+	<ul><li><span class="filled">Autogenerated</span></li>
+		<li><span class="filled">Files\<wbr></wbr>Bin</span></li>
+		<li><span class="filled">Files\<wbr></wbr>obj</span></li>
+	</ul></li>
+	<li>
+	<p>В каталоге <span class="filled">...\Terrasoft.WebApp\<wbr></wbr>Terrasoft.Configuration\<wbr></wbr>Pkg\<wbr></wbr>[Имя пакета]</span> пакета-сборки удалите файлы:</p>
+
+	<ul><li><span class="filled">Files\<wbr></wbr>[Имя пакета].csproj</span></li>
+		<li><span class="filled">Files\<wbr></wbr>Directory.Build.targets</span></li>
+	</ul></li>
+	<li>Перезагрузите приложение. Это необходимо, чтобы сбросить кэш.</li>
+	<li>
+        <p>Выполните генерацию всех схем простого пакета и его дочерних схем.</p>
+        
+        <ul><li><a href="../../creatio_ide/principy_razrabotki_v_creatio_ide/obzor_creatio_ide%23title-2093-2.html?id=15101&amp;anchor=title-2093-2">Перейдите в раздел <span class="key">Конфигурация</span></a> (<span class="key">Configuration</span>).</li>
+	        <li>
+                <p>В меню действий в группе <span class="key">Исходный код</span> (<span class="key">Source code</span>) выберите <span class="key">Сгенерировать для всех схем</span> (<span class="key">Generate for all schemas</span>).</p>
+            
+                <div class="media">
+                    <div class="media__element"><img src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/PackageAssembly/scr_generate_for_all_schemas.png" /></div>
+                </div>
+            </li>
+        </ul></li>
+    <li>Выполните компиляцию конфигурации.</li>
+</ol><p>В результате пакет-сборка будет конвертирован в простой пакет.</p>
+
+<h3>Переместить конфигурационные элементы в пакет-сборку<a class="title-anchor" href="#title-3554-10" id="title-3554-10"> </a></h3>
+
+<ol><li>Подготовьте конфигурационные элементы к перемещению в пакет-сборку, переписав код в соответствии с особенностями пакета-сборки.</li>
+	<li>Создайте пакет-сборку. Создание пакета-сборки описано в пункте <a href="obzor%23title-3554-3.html?id=15125&amp;anchor=title-3554-3">Создать пакет-сборку</a>.</li>
+	<li>Установите <a href="../obshchiye_printsipy_raboty_s_paketami/obzor%23title-2105-3.html?id=15121&amp;anchor=title-2105-3">зависимости</a> пакета-сборки. Зависимости пакета-сборки должны совпадать с зависимостями простого пакета, из которого планируется переместить конфигурационные элементы.</li>
+	<li>
+	<p>Выполните перемещение конфигурационных элементов.</p>
+
+	<ul><li>
+		<p>Чтобы <strong>переместить все конфигурационные элементы</strong>, в меню пакета, из которого планируется переместить конфигурационные элементы, нажмите <span class="key">Переместить все элементы</span> (<span class="key">Move all elements</span>).</p>
+
+		<div class="media">
+		<div class="media__element"><img src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/PackageAssembly/scr_MoveAllElements.png" /></div>
+		</div>
+		</li>
+		<li>
+		<p>Чтобы <strong>переместить отдельный конфигурационный элемент</strong>, в меню конфигурационного элемента нажмите <span class="key">Переместить в другой пакет</span> (<span class="key">Move to another package</span>).</p>
+
+		<div class="media">
+		<div class="media__element"><img src="../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/PackageAssembly/scr_MoveToAnotherPackage.png" /></div>
+		</div>
+		</li>
+	</ul></li>
+	<li>Выполните компиляцию конфигурации.</li>
+	<li>Обновите зависимости дочерних пакетов: замените родительский пакет на пакет-сборку, в который были перенесены конфигурационные элементы.</li>
+</ol><p>В результате конфигурационные элементы будут перемещены в пакет-сборку.</p>
+
+<h2>Импорт пакета-сборки<a class="title-anchor" href="#title-3554-11" id="title-3554-11"> </a></h2>
+
+<p>Импорт пакета-сборки не отличается от импорта простого пакета. Об импорте простого пакета читайте в статье <a href="../../upravlenie_postavkami/creatio_ide/obzor%23title-2131-1.html?id=15203&amp;anchor=title-2131-1">Перенос пакета</a>.</p>
+
+<p><strong>Особенности</strong> импорта пакета-сборки:</p>
+
+<ul><li>Содержимое пакета-сборки помещается в базу данных.</li>
+	<li>Копируется файловый контент пакета-сборки.</li>
+	<li>Компиляция конфигурации не запускается, поскольку пакет-сборка был скомпилирован при разработке и содержит в себе runtime-сборку.</li>
+	<li>Выполняется перезапуск сайта, инициализация веб-сервисов и фабрики классов, которые содержатся в пакете-сборке.</li>
+</ul></div>
+      
+  </div>
+<div class="block block-layout-builder block-field-blocknodedeveloper-documentationfield-linked">
+  
+    
+      
+  <div class="field field--name-field-linked field--type-entity-reference field--label-above">
+    <div class="field__label">Смотрите также</div>
+          <div class="field__items">
+              <div class="field__item"><a href="../../../back_end_razrabotka/biznes_logika_obektov/obzor.html" hreflang="ru">Бизнес-логика объектов</a></div>
+          <div class="field__item"><a href="../obshchiye_printsipy_raboty_s_paketami/obzor.html" hreflang="ru">Общие принципы работы с пакетами</a></div>
+          <div class="field__item"><a href="../../upravlenie_postavkami/rabochaya_sreda/obzor.html" hreflang="ru">Понятие рабочей среды</a></div>
+          <div class="field__item"><a href="../../../../7-18/developer/instrumenty_razrabotki/creatio_ide/principy_razrabotki_v_creatio_ide/obzor.html" hreflang="ru">Принципы разработки в Creatio IDE</a></div>
+          <div class="field__item"><a href="../../../../7-18/developer/instrumenty_razrabotki/creatio_ide/razrabotka_konfiguracionnykh_ehlementov/obzor.html" hreflang="ru">Разработка конфигурационных элементов</a></div>
+          <div class="field__item"><a href="../../../integratsiya_i_vneshnij_api/servisy_raboty_s_dannymi/odata/obzor.html" hreflang="ru">OData</a></div>
+              </div>
+      </div>
+
+  </div>
+
+    </div>
+  </div>
+
+  </div>
+
+</article>
+
+  </div>
+
+  </div>
+
+          </div>
+        </div>
+
+                  <aside class="creatio-sidebar creatio-sidebar_first" role="complementary">
+              <div class="region region-sidebar-first">
+    <div id="block-documentationnaviagtion" class="block block-ts-nav block-ts-nav-doc-nav">
+  
+    
+      <div class="ts-nav-block"><a href="../../../../index.html" class="ts-nav-block__link">Документация</a><div class="ts-nav-block__title">Для разработчика</div>
+</div>
+<div class="ts-nav-container"><ul class="ts-nav-menu"><li class="ts-nav-menu__item">
+  <a href="../../../s_chego_nachat.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">С чего начать&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../architecture.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Архитектура&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../instrumenty_razrabotki.html" class="ts-nav-menu__link ts-nav-menu__link_expanded ts-nav-menu__link_open" hreflang="zxx">Инструменты разработки&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+      <ul class="ts-nav-menu__children">
+      <li class="ts-nav-menu__item">
+  <a href="../../creatio_ide.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Creatio IDE&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../vneshnie_ide.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Внешние IDE&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../pakety.html" class="ts-nav-menu__link ts-nav-menu__link_expanded ts-nav-menu__link_open" hreflang="ru">Пакеты&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+      <ul class="ts-nav-menu__children">
+      <li class="ts-nav-menu__item">
+  <a href="../obshchiye_printsipy_raboty_s_paketami.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Обзор&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../paket_proekt/obzor.html" class="ts-nav-menu__link" hreflang="ru">Пакет-проект</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="obzor.html" class="ts-nav-menu__link ts-nav-menu__link_open" hreflang="ru">Пакет-сборка</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../development_tools/packages/fajlovyj_kontent.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Файловый контент&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+
+    </ul>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../sistemy_kontrolya_versij.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Системы контроля версий&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../development_tools/testirovanie.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Тестирование&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../development_tools/instrumenty_dlya_bazy_dannykh.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Инструменты для базы данных&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../logirovanie.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Логирование&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../otladka.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Отладка&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../upravlenie_postavkami.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Управление поставками&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+
+    </ul>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../back_end_razrabotka.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Back-end разработка&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../front_end_razrabotka_freedom_ui.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Front-end разработка Freedom UI&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../front_end_razrabotka.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Front-end разработка&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../integratsiya_i_vneshnij_api.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Интеграция и внешний API&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../ehlementy_interfejsa.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Элементы интерфейса&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../komponenty_prilozheniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Компоненты приложения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../razrabotka_mobilnogo_prilozheniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Разработка мобильного приложения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../razrabotka_marketplace_prilozheniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Разработка Marketplace-приложения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+</ul>
+</div>
+
+  </div>
+
+  </div>
+
+            <div class="creatio-sidebar__toggle"></div>
+          </aside>
+        
+                  <aside class="creatio-sidebar creatio-sidebar_second" role="complementary">
+              <div class="region region-sidebar-second">
+    <div id="block-example" class="block block-ts-nav block-ts-nav-page-nav">
+  
+    
+      <div class="ts-nav-page">
+  </div>
+
+  </div>
+<div id="block-adminfeedbackblock" class="block block-admin-feedback block-admin-feedback-block">
+  
+    
+      <div id="feedback-message"><div id="upper-feedback-content"><h2>Был ли данный материал полезен?</h2>
+<input class="feedback-btn feedback-btn__yes button js-form-submit form-submit" data-node-id="3768" data-feedback="yes" type="submit" name="op" value="Да" />
+<input class="feedback-btn feedback-btn__no button js-form-submit form-submit" data-node-id="3768" data-feedback="no" type="submit" name="op" value="Нет" />
+</div>
+<form class="admin-feedback-form" data-drupal-selector="admin-feedback-form" action="https://academy.terrasoft.ua/docs/developer/instrumenty_razrabotki/pakety/paket_sborka/obzor" method="post" id="admin-feedback-form" accept-charset="UTF-8">
+  <div id="feedback-msg-result"></div><div class="js-form-item form-item js-form-type-textarea form-type-textarea js-form-item-feedback-message form-item-feedback-message form-no-label">
+        <div class="form-textarea-wrapper">
+  <textarea id="edit-feedback-msg" data-drupal-selector="edit-feedback-message" name="feedback_message" rows="5" cols="60" class="form-textarea resize-vertical"></textarea>
+</div>
+
+        </div>
+<input id="feedback-id" data-drupal-selector="edit-feedback-id" type="hidden" name="feedback_id" value="" />
+<input class="feedback-btn feedback-btn__send-comment button js-form-submit form-submit" data-drupal-selector="edit-feedback-send" type="submit" id="edit-feedback-send" name="op" value="Отправить" />
+<input autocomplete="off" data-drupal-selector="form-tftexmjniuzgkmog9bm7blyizzubkua-2smajpbydxg" type="hidden" name="form_build_id" value="form-tFtExmjniUzGKMOg9Bm7bLyizZubkUa-2SmajpbYDXg" />
+<input data-drupal-selector="edit-admin-feedback-form" type="hidden" name="form_id" value="admin_feedback_form" />
+
+</form>
+</div>
+
+  </div>
+
+  </div>
+
+          </aside>
+              </main>
+    </div>
+  </div>
+
+  <footer role="contentinfo">
+    <div class="creatio-region creatio-region_footer">
+      <div class="creatio-container">
+          <div class="region region-footer">
+    <div id="block-footerua" class="block block-simple-block block-simple-blockfooter-ua">
+  
+    
+      <div class="footer">
+<div class="footer-left">
+<ul class="footer-socials"><li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_fb" href="https://www.facebook.com/terrasoft.ua" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_in" href="https://www.linkedin.com/company/terrasoft/" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_yt" href="https://www.youtube.com/c/TerrasoftUkraine" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_tg" href="https://t.me/Terrasoft_UA" target="_blank"> </a></li>
+</ul></div>
+
+<div class="footer-contact">
+<div class="footer-title">Будьте на связи!</div>
+
+<div class="footer-content">
+<div class="footer-items">
+<div class="footer-item"><a class="footer__link footer__link_phone" href="tel:+380443633133">+38 (044) 363-31-33</a></div>
+</div>
+
+<div class="footer-items">
+<div class="footer-item"><a class="footer__link footer__link_email" href="mailto:support@terrasoft.ua">support@terrasoft.ua</a></div>
+</div>
+</div>
+</div>
+</div>
+
+  </div>
+
+  </div>
+
+      </div>
+    </div>
+    <div class="creatio-region creatio-region_bottom">
+      <div class="creatio-container">
+          <div class="region region-bottom">
+    <div id="block-allrightsreservedua" class="block block-simple-block block-simple-blockfooter-bottom-ua">
+  
+    
+      <p>© 2002-2022 Terrasoft.  |  <a href="https://www.terrasoft.ua/privacy-policy" target="_blank">Конфиденциальность</a></p>
+
+  </div>
+
+  </div>
+
+      </div>
+    </div>
+  </footer>
+</div>
+<div class="creatio-bg"></div>
+
+
+  </div>
+
+    
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/docs\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/3768","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"ru"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"ajaxPageState":{"libraries":"admin_feedback\/admin_feedback_block,admin_feedback\/admin_feedback_css,classy\/base,classy\/messages,classy\/node,core\/drupal.ajax,core\/jquery.form,core\/normalize,creatio\/fancybox,creatio\/global,layout_discovery\/onecol,system\/base,ts_doc\/doc_version,ts_feedback\/ts_feedback,ts_nav\/breadcrumb,ts_nav\/doc_nav,ts_nav\/page_nav,ts_title_anchor\/ts_title_anchor","theme":"creatio","theme_token":null},"ajaxTrustedUrl":{"form_action_p_pvdeGsVG5zNF_XLGPTvYSKCf43t8qZYSwcfZl2uzM":true,"\/docs\/developer\/instrumenty_razrabotki\/pakety\/paket_sborka\/obzor?ajax_form=1":true},"admin_feedback":{"yes_response":"\u0421\u043f\u0430\u0441\u0438\u0431\u043e \u0437\u0430 \u043e\u0431\u0440\u0430\u0442\u043d\u0443\u044e \u0441\u0432\u044f\u0437\u044c!","no_response":"\u0421\u043f\u0430\u0441\u0438\u0431\u043e \u0437\u0430 \u043e\u0431\u0440\u0430\u0442\u043d\u0443\u044e \u0441\u0432\u044f\u0437\u044c!","custom_text_response_on_no":{"value":"","format":"full_html"},"feedback_prompt_on_yes":true,"feedback_prompt_on_no":true,"feedback_enable_predefined_answers":false,"feedback_prompt":"\u041a\u0430\u043a \u043c\u043e\u0436\u043d\u043e \u0443\u043b\u0443\u0447\u0448\u0438\u0442\u044c \u044d\u0442\u0443 \u0441\u0442\u0430\u0442\u044c\u044e?"},"ajax":{"edit-feedback-send":{"callback":"::validateFeedbackMsg","event":"mousedown","keypress":true,"prevent":"click","url":"\/docs\/developer\/instrumenty_razrabotki\/pakety\/paket_sborka\/obzor?ajax_form=1","dialogType":"ajax","submit":{"_triggering_element_name":"op","_triggering_element_value":"\u041e\u0442\u043f\u0440\u0430\u0432\u0438\u0442\u044c"}}},"user":{"uid":0,"permissionsHash":"9c2367dfcaba0fa15f0375f97aed64e146c908cee68508d13b79e3ee80e5162d"}}</script>
+<script src="../../../../sites/default/files/js/js_Rr-7TvYD7NposuRFJwUqThxM7yJmw8vs03PQwu5gWd8.js"></script>
+
+
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+      <g id="svg-copy" class="svg-icon svg-icon_copy">
+        <path d="M15.111,18H1.889A1.848,1.848,0,0,1,0,16.2V3.6A1.848,1.848,0,0,1,1.889,1.8H5.837a2.87,2.87,0,0,1,5.326,0h3.948A1.848,1.848,0,0,1,17,3.6V16.2A1.848,1.848,0,0,1,15.111,18ZM3.777,12.6v1.8h6.611V12.6Zm0-3.6v1.8h9.445V9Zm0-3.6V7.2h9.445V5.4ZM8.5,1.8a.924.924,0,0,0-.944.9.945.945,0,0,0,1.889,0A.924.924,0,0,0,8.5,1.8Z"/>
+      </g>
+
+      <g id="svg-prev" class="svg-icon svg-icon_arrow">
+        <path d="M5.488,12.779,0,6.39,5.488,0" transform="translate(1 0.652)"/>
+      </g>
+
+      <g id="svg-next" class="svg-icon svg-icon_arrow">
+        <path d="M0,12.779,5.488,6.39,0,0" transform="translate(0.759 0.652)"/>
+      </g>
+    </svg>
+  </body>
+
+<!-- Mirrored from academy.terrasoft.ua/docs/developer/instrumenty_razrabotki/pakety/paket_sborka/obzor by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 22 Mar 2022 21:35:17 GMT -->
+</html>

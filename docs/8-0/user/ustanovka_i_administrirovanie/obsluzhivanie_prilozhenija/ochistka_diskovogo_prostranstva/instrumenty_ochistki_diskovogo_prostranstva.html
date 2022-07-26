@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# ">
+  
+<!-- Mirrored from academy.terrasoft.ua/docs/8-0/user/ustanovka_i_administrirovanie/obsluzhivanie_prilozhenija/ochistka_diskovogo_prostranstva/instrumenty_ochistki_diskovogo_prostranstva by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Mar 2022 04:13:03 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+          <!-- Google Tag Manager -->
+      <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          '../../../../../../../www.googletagmanager.com/gtm5445.html?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-KLLB8G');</script>
+      <!-- End Google Tag Manager -->
+        <meta charset="utf-8" />
+<link rel="canonical" href="instrumenty_ochistki_diskovogo_prostranstva.html" />
+<meta name="description" content="При работе с большими объемами информации важной частью обслуживания базы данных является своевременное удаление устаревших и неактуальных записей. Это позволяет сохранять дисковое пространство на сервере базы данных, увеличивая ее быстродействие.
+
+Возможные причины быстрого роста базы данных 
+
+К стремительному росту базы данных могут приводить:" />
+<meta property="og:url" content="https://academy.terrasoft.ua/docs/8-0/user/ustanovka_i_administrirovanie/obsluzhivanie_prilozhenija/ochistka_diskovogo_prostranstva/instrumenty_ochistki_diskovogo_prostranstva" />
+<meta property="og:title" content="Инструменты очистки дискового пространства" />
+<meta property="og:description" content="При работе с большими объемами информации важной частью обслуживания базы данных является своевременное удаление устаревших и неактуальных записей. Это позволяет сохранять дисковое пространство на сервере базы данных, увеличивая ее быстродействие.
+
+Возможные причины быстрого роста базы данных 
+
+К стремительному росту базы данных могут приводить:" />
+<meta name="Generator" content="Drupal 9 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="../../../../../themes/custom/creatio/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="revision" href="instrumenty_ochistki_diskovogo_prostranstva.html" />
+
+    <title>Инструменты очистки дискового пространства | Creatio Academy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&amp;family=Open+Sans:ital,wght@0,300;0,400;0,600;1,400&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" media="all" href="../../../../../sites/default/files/css/css_6lTP66__-yc6QXFp1zOwoeJ0HVigoYZP-SeoLLii000.css" />
+<link rel="stylesheet" media="all" href="../../../../../sites/default/files/css/css_XQJDNhkF3xH5SZCcY-PI89Zu4nYIzQ5oR3SnUKyfXJU.css" />
+<link rel="stylesheet" media="print" href="../../../../../sites/default/files/css/css_Zn4VHvcniOOtUwkIVwXzYr_0AI9gUVgZcPqaH4ViagU.css" />
+
+    
+  </head>
+  <body class="path-node page-node-type-user-documentation">
+          <!-- Google Tag Manager (noscript) -->
+      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KLLB8G"
+                        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+      <!-- End Google Tag Manager (noscript) -->
+    
+        
+      <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    <div class="creatio-page d-flex flex-column">
+        <div class="region region-informer">
+    <div id="block-terrasoftpidtrimueukrainu" class="block block-simple-block block-simple-blockterrasoft-pidtrimue-ukrainu">
+  
+    
+      <style type="text/css">
+<!--/*--><![CDATA[/* ><!--*/
+@import url(../../../../../../../www.terrasoft.ua/themes/custom/creatio/css/components/informer.css)
+
+/*--><!]]>*/
+</style><div class="ts-swu">
+<div class="creatio-container">
+<div class="ts-swu__cont">
+<div><a class="ts-swu__link" href="https://www.terrasoft.ua/terrasoft-stands-with-ukraine" target="_blank">Україна понад усе!</a> <span><a href="https://www.terrasoft.ua/terrasoft-stands-with-ukraine" target="_blank">Приєднуйтеся</a> до допомоги!</span></div>
+</div>
+</div></div>
+
+  </div>
+
+  </div>
+
+  
+  <header role="banner">
+          <div class="creatio-region creatio-region_top">
+        <div class="creatio-container">
+            <div class="region region-top">
+    <div id="block-menutoggle" class="block block-simple-block block-simple-blockmenu-toggle">
+  
+    
+      <div class="menu-toggle"><span> </span></div>
+
+  </div>
+<div id="block-logowhite-2" class="block block-simple-block block-simple-blocklogo-white">
+  
+    
+      <p><a class="site-logo" href="../../../../../../index.html" rel="home"><img src="../../../../../themes/custom/creatio/logo-white.svg" /></a></p>
+
+  </div>
+<div id="block-search" class="block block-simple-block block-simple-blocksearch">
+  
+    
+      <div class="search">
+<form action="https://academy.terrasoft.ua/search" class="search-form" method="get"><input class="search-form__input" name="search" placeholder="Поиск" type="search" /><input class="search-form__button" type="submit" value="Поиск" /> </form>
+
+<div class="search-toggle"> </div>
+</div>
+
+  </div>
+<nav role="navigation" aria-labelledby="block-sitesua-menu" id="block-sitesua" class="block block-menu navigation menu--sites-ua">
+            
+  <h2 class="visually-hidden" id="block-sitesua-menu">Sites UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="https://www.terrasoft.ua/" rel="nofollow" target="_blank">Terrasoft</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://community.terrasoft.ua/" rel="nofollow" target="_blank">Community</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://marketplace.terrasoft.ua/" rel="nofollow" target="_blank">Marketplace</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+<div id="block-usermenu" class="block block-ts-user block-ts-user-menu-block">
+  
+    
+      <ul class="user-menu">
+      <li class="user-menu__item">
+      <a class="user-menu__link" href="https://profile.terrasoft.ua/user/login?destination=academy/ua/docs/8-0/user/ustanovka_i_administrirovanie/obsluzhivanie_prilozhenija/ochistka_diskovogo_prostranstva/instrumenty_ochistki_diskovogo_prostranstva">Войти</a>
+    </li>
+  </ul>
+
+  </div>
+<div id="block-usermenumobile" class="block block-ts-user block-ts-user-menu-mobile-block">
+  
+    
+      <ul class="user-menu-mobile">
+      <li class="user-menu-mobile__item">
+      <div class="user-menu-mobile__user user-menu-mobile__user_icon"></div>
+      <ul class="user-menu-mobile__submenu">
+        <li class="user-menu-mobile__subitem">
+          <a class="user-menu-mobile__sublink" href="https://profile.terrasoft.ua/user/login?destination=academy/ua/docs/8-0/user/ustanovka_i_administrirovanie/obsluzhivanie_prilozhenija/ochistka_diskovogo_prostranstva/instrumenty_ochistki_diskovogo_prostranstva">Войти</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  </div>
+
+  </div>
+
+        </div>
+      </div>
+              <div class="creatio-region creatio-region_header">
+        <div class="creatio-container">
+            <div class="region region-header">
+    <div id="block-logo" class="block block-simple-block block-simple-blocklogo">
+  
+    
+      <p><a class="site-logo" href="../../../../../../index.html" rel="home"><img src="../../../../../themes/custom/creatio/logo.svg" /></a></p>
+
+  </div>
+<nav role="navigation" aria-labelledby="block-osnovnayanavigaciyaua-menu" id="block-osnovnayanavigaciyaua" class="block block-menu navigation menu--main-ua">
+            
+  <h2 class="visually-hidden" id="block-osnovnayanavigaciyaua-menu">Основная навигация UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="../../../../../index.html" data-drupal-link-system-path="&lt;front&gt;">Документация</a>
+              </li>
+                <li class="menu-item">
+        <a href="../../../../../../trainings.html">Тренинги</a>
+              </li>
+                <li class="menu-item">
+        <a href="../../../../../certification.html" data-drupal-link-system-path="node/3084">Сертификация и тестирование</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+<nav role="navigation" aria-labelledby="block-sitesua-2-menu" id="block-sitesua-2" class="block block-menu navigation menu--sites-ua">
+            
+  <h2 class="visually-hidden" id="block-sitesua-2-menu">Sites UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="https://www.terrasoft.ua/" rel="nofollow" target="_blank">Terrasoft</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://community.terrasoft.ua/" rel="nofollow" target="_blank">Community</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://marketplace.terrasoft.ua/" rel="nofollow" target="_blank">Marketplace</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+
+  </div>
+
+        </div>
+      </div>
+              <div class="creatio-region creatio-region_breadcrumb">
+        <div class="creatio-container">
+            <div class="region region-breadcrumb">
+    <div id="block-logowhite" class="block block-simple-block block-simple-blocklogo-white">
+  
+    
+      <p><a class="site-logo" href="../../../../../../index.html" rel="home"><img src="../../../../../themes/custom/creatio/logo-white.svg" /></a></p>
+
+  </div>
+<div id="block-breadcrumbnaviagtion" class="block block-ts-nav block-ts-nav-bread">
+  
+    
+      <nav class="breadcrumb"><ol class="ts-nav-breadcrumb__list"><li class="ts-nav-breadcrumb__item"><a href="../../../../../index.html" class="ts-nav-breadcrumb__link" title="Документация">Документация</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../../../indexd993.html?vid_1=1" class="ts-nav-breadcrumb__link" title="Для пользователя">Для пользователя</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../ustanovka_i_administrirovanie.html" class="ts-nav-breadcrumb__link" title="Администрирование" hreflang="zxx">Администрирование</a></li>
+<li class="ts-nav-breadcrumb__item ts-nav-breadcrumb__item_mobile"><a href="../../obsluzhivanie_prilozhenija.html" class="ts-nav-breadcrumb__link" title="Обслуживание приложения" hreflang="ru">Обслуживание приложения</a></li>
+<li class="ts-nav-breadcrumb__item"><span class="ts-nav-breadcrumb__link ts-nav-breadcrumb__link_current" title="Инструменты очистки дискового пространства">Инструменты очистки дискового пространства</span></li>
+</ol>
+</nav>
+
+  </div>
+<div id="block-search-2" class="block block-simple-block block-simple-blocksearch">
+  
+    
+      <div class="search">
+<form action="https://academy.terrasoft.ua/search" class="search-form" method="get"><input class="search-form__input" name="search" placeholder="Поиск" type="search" /><input class="search-form__button" type="submit" value="Поиск" /> </form>
+
+<div class="search-toggle"> </div>
+</div>
+
+  </div>
+
+  </div>
+
+        </div>
+      </div>
+      </header>
+
+  <div class="creatio-region creatio-region_main">
+    <div class="creatio-container">
+                <div class="region region-breadcrumb-mobile">
+    <div id="block-breadcrumbnaviagtion-2" class="block block-ts-nav block-ts-nav-bread">
+  
+    
+      <nav class="breadcrumb"><ol class="ts-nav-breadcrumb__list"><li class="ts-nav-breadcrumb__item"><a href="../../../../../index.html" class="ts-nav-breadcrumb__link" title="Документация">Документация</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../../../indexd993.html?vid_1=1" class="ts-nav-breadcrumb__link" title="Для пользователя">Для пользователя</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../ustanovka_i_administrirovanie.html" class="ts-nav-breadcrumb__link" title="Администрирование" hreflang="zxx">Администрирование</a></li>
+<li class="ts-nav-breadcrumb__item ts-nav-breadcrumb__item_mobile"><a href="../../obsluzhivanie_prilozhenija.html" class="ts-nav-breadcrumb__link" title="Обслуживание приложения" hreflang="ru">Обслуживание приложения</a></li>
+<li class="ts-nav-breadcrumb__item"><span class="ts-nav-breadcrumb__link ts-nav-breadcrumb__link_current" title="Инструменты очистки дискового пространства">Инструменты очистки дискового пространства</span></li>
+</ol>
+</nav>
+
+  </div>
+
+  </div>
+
+      
+      <main class="creatio-main" role="main">
+                                                    
+        <div class="creatio-content creatio-content_small">
+          <div class="creatio-content__inner creatio-content__inner_bg">
+                            <div class="region region-messages">
+    <div data-drupal-messages-fallback class="hidden"></div>
+
+  </div>
+
+            
+              <div class="region region-content">
+    <div id="block-creatio-page-title" class="block block-core block-page-title-block">
+  
+    
+      
+  <h1 class="page-title"><span class="field field--name-title field--type-string field--label-hidden">Инструменты очистки дискового пространства</span>
+</h1>
+
+
+  </div>
+<div id="block-creatio-content" class="block block-system block-system-main-block">
+  
+    
+      
+<article data-history-node-id="3534" role="article" about="/docs/8-0/user/ustanovka_i_administrirovanie/obsluzhivanie_prilozhenija/ochistka_diskovogo_prostranstva/instrumenty_ochistki_diskovogo_prostranstva" class="node node--type-user-documentation node--view-mode-full">
+
+  
+    
+
+  
+  <div class="node__content">
+      <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-ts-doc block-ts-doc-downloads">
+  
+    
+      <a href="../../../../../sites/default/files/pdf/node/3534/Instrumenty_ochistki_diskovogo_prostranstva_.pdf" target="_blank">PDF</a>
+  </div>
+<div class="block block-ts-doc block-ts-doc-versions">
+  
+    
+        <div class="ts-doc-versions">
+    <select class="ts-doc-versions__select">
+                                                <option value="/docs/8-0/user/ustanovka_i_administrirovanie/obsluzhivanie_prilozhenija/ochistka_diskovogo_prostranstva/instrumenty_ochistki_diskovogo_prostranstva" selected>Версия 8.0</option>
+                              <option value="/docs/7-18/user/ustanovka_i_administrirovanie/obsluzhivanie_prilozhenija/ochistka_diskovogo_prostranstva/instrumenty_ochistki_diskovogo_prostranstva">Версия 7.18</option>
+                              <option value="/docs/7-17/user/ustanovka_i_administrirovanie/obsluzhivanie_prilozhenija/ochistka_diskovogo_prostranstva/instrumenty_ochistki_diskovogo_prostranstva">Версия 7.17</option>
+          </select>
+  </div>
+
+  </div>
+
+    </div>
+  </div>
+  <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocknodeuser-documentationfield-product">
+  
+    
+      
+  <div class="field field--name-field-product field--type-entity-reference field--label-above">
+    <div class="field__label">Продукты</div>
+          <div class="field__items">
+              <div class="field__item">Все продукты</div>
+              </div>
+      </div>
+
+  </div>
+<div class="block block-layout-builder block-field-blocknodeuser-documentationbody">
+  
+    
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><p>При работе с большими объемами информации важной частью обслуживания базы данных является своевременное удаление устаревших и неактуальных записей. Это позволяет сохранять дисковое пространство на сервере базы данных, увеличивая ее быстродействие.</p>
+
+<h2>Возможные причины быстрого роста базы данных<a class="title-anchor" href="#title-3534-4" id="title-3534-4"> </a></h2>
+
+<p>К стремительному росту базы данных могут приводить:</p>
+
+<ul><li>Некорректно настроенные или избыточные <strong>права доступа на записи</strong>. Например, когда права доступа на запись настроены индивидуально для большого количества пользователей, не объединенных в группы. В этом случае рекомендуем изменить настройки и актуализировать права доступа в приложении. Подробнее: <a href="../../../../../user/ustanovka_i_administrirovanie/upravlenie_polzovateljami_i_dostupom/upravleniye_dostupom.html">Управление доступом</a>.</li>
+	<li>Отсутствие ограничений на <strong>загрузку файлов</strong> в приложение. Файлы могут быть добавлены в приложение сотрудниками, загружены при синхронизации почты или прикреплены к сообщениям на портале самообслуживания. Рекомендуем ограничить размер загружаемых в приложение файлов до 10 Мб. Управлять этим ограничением можно в системной настройке “Максимальный размер загружаемого файла” (код “MaxFileSize”). Также рекомендуем регулярно проверять актуальность загруженных файлов и удалять устаревшие. Для этого в приложении можно настроить бизнес-процесс.</li>
+	<li><strong>Синхронизация всех писем</strong> из почтовых ящиков пользователей. Рекомендуем выбрать для загрузки в приложение только те папки почтового ящика, письма из которых необходимо обработать в приложении. Например, папки “Важные” или “Отмеченные”. Подробнее: <a href="../../nastrojka_bazovyh_intgracij/nastrojka_pochtovogo_yashika/nastrojki_pochty/izmenit_individualnye_nastrojki_uchetnoj_zapisi_pochty.html#title-3168-2">Настроить загрузку почты в систему</a>.</li>
+	<li>Включение <strong>трассировки процессов</strong> на длительный период. Отладка процессов обычно выполняется на среде разработки или тестовом сайте. В случае, когда необходимо собрать отладочную информацию на продуктовом сайте, рекомендуем отключать трассировку сразу по завершении анализа проблем с выполнением процесса. <a href="../../../biznes_processy/administrirovanie_biznes_processov/trassirovka_parametrov/vypolnit_trassirovku_parametrov_processa.html">Выполнить трассировку параметров процесса</a>.</li>
+	<li>Некорректная настройка <strong>логики выполнения бизнес-процессов</strong>, из-за которой процесс находится в состоянии “Выполняется” гораздо дольше необходимого. В этом случае в приложении сохраняются все временные файлы, которые имеют отношение к выполнению процесса. Рекомендуем моделировать бизнес-процессы таким образом, чтобы они имели однозначные условия завершения и не оставались в состоянии “Выполняется” дольше нескольких часов. Подробнее: <a href="../../../biznes_processy/administrirovanie_biznes_processov/vipolnenie_processa/prosmotret_informaciyu_o_vypolnenii_processov.html">Просмотреть информацию о выполнении процессов</a>.</li>
+	<li>Некорректная настройка <strong>чтения данных в бизнес-процессах</strong>. Значения, получаемые в бизнес-процессе при выполнении элемента <span class="key">Читать данные</span> хранятся в таблицах с временными данными до завершения выполнения процесса. В случаях, когда для выполнения бизнес-процесса нет необходимости получать значения всех колонок объекта, рекомендуем настраивать точный список значений, которые необходимо вычитать. Это позволит существенно сократить количество временных данных, хранящихся в приложении. Подробнее: <a href="../../../biznes_processy/spravka_po_elementam_processov/dejstviya_sistemy/chitat_dannye/element_processa_chitat_dannyje.html">Элемент процесса <span class="key">Читать данные</span></a>.</li>
+	<li>Избыточное <strong>логирование изменений</strong>. Рекомендуем включать логирование записей только в тех разделах, где необходимо отслеживать динамику смены данных, например, в продуктовом каталоге. Если вы хотите сохранять информацию об изменениях записей, то необходимо регулярно выполнять чистку журнала изменений от неактуальных данных. Подробнее: <a href="../../instrumenty_logirovanija/zhurnal_izmenenij/ochistka_logov/ochistit_logi_zhurnala_izmeneniy.html">Очистить логи журнала изменений</a>.</li>
+	<li>Некорректная <strong>настройка интеграции внешних сервисов</strong> с приложением Creatio. При отправке запроса к Creatio без заголовка ForceUseSession внешние сервисы вынуждены повторно выполнять аутентификацию. Подробнее: <a href="../../../../developer/integratsiya_i_vneshnij_api/servisy_raboty_s_dannymi/odata/obzor.html#title-2304-6">Аутентификация</a> (документация по разработке).</li>
+</ul><h2>Инструменты очистки базы данных Creatio<a class="title-anchor" href="#title-3534-5" id="title-3534-5"> </a></h2>
+
+<p>В Creatio для очистки дискового пространства предусмотрены следующие возможности:</p>
+
+<ul><li>архивация и автоматическая очистка журнала процессов,</li>
+	<li>очистка журнала изменений,</li>
+	<li>удаление записей в разделах,</li>
+	<li>удаление данных в ходе бизнес-процесса.</li>
+</ul><h3>Автоматическая очистка журнала процессов<a class="title-anchor" href="#title-3534-1" id="title-3534-1"> </a></h3>
+
+<p>В Creatio предусмотрено логирование всех запускаемых процессов. Это позволяет отслеживать узкие места спроектированных схем и оптимизировать их, а также анализировать эффективность работы сотрудников. Чтобы сократить объем используемого пространства, Creatio автоматически архивирует данные о процессах, которым больше 30 дней. Архивные записи сохраняются в системе и доступны для обработки еще 360 дней, после чего они автоматически удаляются. Вы можете управлять сроками архивации данных журнала и хранения архивных записей.</p>
+
+<p>Подробнее: <a href="../../../biznes_processy/administrirovanie_biznes_processov/vipolnenie_processa/prosmotret_informaciyu_o_vypolnenii_processov.html#title-2797-3">Архивирование записей журнала процессов</a>.</p>
+
+<h3>Очистка журнала изменений<a class="title-anchor" href="#title-3534-7" id="title-3534-7"> </a></h3>
+
+<p>Вы можете очищать историю журнала изменений, чтобы избежать хранения устаревших записей в системе. Рекомендуем регулярно очищать записи логов, чтобы в разделе <span class="key">Журнал изменений</span> содержалась только актуальная на данный момент информация.</p>
+
+<p>Подробнее: <a href="../../instrumenty_logirovanija/zhurnal_izmenenij/ochistka_logov/ochistit_logi_zhurnala_izmeneniy.html">Очистить логи журнала изменений</a>.</p>
+
+<h3>Удаление записей в разделах<a class="title-anchor" href="#title-3534-2" id="title-3534-2"> </a></h3>
+
+<p>В разделах приложения могут храниться неактуальные записи. Вы можете удалять такие записи выборочно или массово в любом разделе Creatio. Если у выбранной для удаления записи есть связи в других разделах системы, то Creatio предложит вам просмотреть их и принять решение о необходимости удаления. Вы можете удалить всю информацию или только выбранную запись и оставить все связанные данные.</p>
+
+<p>Подробнее: <a href="../../../bazis_platformy/dannye/udalenie_zapisey/udalit_zapisi.html">Удалить запись</a>.</p>
+
+<h3>Удаление данных в ходе бизнес-процесса<a class="title-anchor" href="#title-3534-3" id="title-3534-3"> </a></h3>
+
+<p>Вы можете автоматизировать очистку дискового пространства при помощи бизнес-процессов. Элемент процесса <span class="key">Удалить данные</span> позволяет удалить из любого объекта системы как одну запись, так и несколько записей, соответствующих определенным условиям. Например, вы можете создать бизнес-процесс, который будет удалять все запланированные активности, которые были отменены. Такой процесс может запускаться:</p>
+
+<ul><li><strong>По таймеру</strong>, в определенное время. Такое решение удобно тем, что процесс можно запускать с заданной периодичностью, например, раз в месяц, и во время наименьшей загруженности приложения, например, ночью.</li>
+	<li><strong>При наступлении определенного события</strong>. Такое решение удобно тем, что процесс запускается автоматически и только в том случае, когда в приложении есть данные для удаления.</li>
+	<li><strong>Вручную</strong>. Такое решение удобно тем, что пользователь сможет запустить процесс в любой момент, когда в этом возникнет необходимость.</li>
+</ul><p>Подробнее: <a href="../../../biznes_processy/spravka_po_elementam_processov/dejstviya_sistemy/udalit_dannye/element_processa_udalit_dannyje.html">Элемент процесса <span class="key">Удалить данные</span></a>.</p>
+</div>
+      
+  </div>
+<div class="block block-layout-builder block-field-blocknodeuser-documentationfield-linked-link">
+  
+    
+      
+  <div class="field field--name-field-linked-link field--type-link field--label-above">
+    <div class="field__label">Смотрите также</div>
+          <div class="field__items">
+              <div class="field__item"><a href="../../../../../user/biznes_processy/administrirovanie_biznes_processov/vipolnenie_processa/prosmotret_informaciyu_o_vypolnenii_processov.html#title-2797-3">Архивирование записей журнала процессов</a></div>
+          <div class="field__item"><a href="../../../../../user/bazis_platformy/dannye/udalenie_zapisey/udalit_zapisi.html">Удалить запись</a></div>
+          <div class="field__item"><a href="../../../../../user/biznes_processy/spravka_po_elementam_processov/dejstviya_sistemy/udalit_dannye/element_processa_udalit_dannyje.html">Элемент процесса [Удалить данные]</a></div>
+              </div>
+      </div>
+
+  </div>
+
+    </div>
+  </div>
+
+  </div>
+
+</article>
+
+  </div>
+
+  </div>
+
+          </div>
+        </div>
+
+                  <aside class="creatio-sidebar creatio-sidebar_first" role="complementary">
+              <div class="region region-sidebar-first">
+    <div id="block-documentationnaviagtion" class="block block-ts-nav block-ts-nav-doc-nav">
+  
+    
+      <div class="ts-nav-block"><a href="../../../../../index.html" class="ts-nav-block__link">Документация</a><div class="ts-nav-block__title">Для пользователя</div>
+</div>
+<div class="ts-nav-container"><ul class="ts-nav-menu"><li class="ts-nav-menu__item">
+  <a href="../../../nocode_platforma.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">No-сode платформа&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../bazis_platformy.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Базис платформы&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../instrumenty_crm.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Инструменты CRM&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../instrumenty_kastomizacii.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Инструменты кастомизации&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../biznes_processy.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Бизнес-процессы&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../instrumenty_marketinga.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Инструменты маркетинга&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../instrumenty_prodazh.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Инструменты продаж&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../instrumenty_servisa.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Инструменты сервиса&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../ustanovka_i_administrirovanie.html" class="ts-nav-menu__link ts-nav-menu__link_expanded ts-nav-menu__link_open" hreflang="zxx">Администрирование&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+      <ul class="ts-nav-menu__children">
+      <li class="ts-nav-menu__item">
+  <a href="../../upravlenie_polzovateljami_i_dostupom.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Пользователи и доступ&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../sistemnye_nastrojki_i_spravochniki.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Системные настройки и справочники&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../instrumenty_logirovanija.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Инструменты логирования&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../licenzirovanie.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Лицензирование&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../nastrojka_bazovyh_intgracij.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Настройка базовых интеграций&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../nactrojka_domena_email_rassylok.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Настройка домена для рассылок&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../nastrojki_bezopasnosti.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Настройки безопасности&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../obsluzhivanie_prilozhenija.html" class="ts-nav-menu__link ts-nav-menu__link_expanded ts-nav-menu__link_open" hreflang="ru">Обслуживание приложения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+      <ul class="ts-nav-menu__children">
+      <li class="ts-nav-menu__item">
+  <a href="instrumenty_ochistki_diskovogo_prostranstva.html" class="ts-nav-menu__link ts-nav-menu__link_active ts-nav-menu__link_open" hreflang="ru">Очистка дискового пространства</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../uskorenie_zagruzki_stranic/uskorit_obrabotku_slozhnyh_zaprosov.html" class="ts-nav-menu__link" hreflang="ru">Ускорение загрузки страниц</a>
+  </li>
+
+    </ul>
+  </li>
+
+    </ul>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../razvertyvanie_onsite.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Развертывание on-site&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../banki_i_finansy.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Банки и финансы&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../drugie_reshenija.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Другие решения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+</ul>
+</div>
+
+  </div>
+
+  </div>
+
+            <div class="creatio-sidebar__toggle"></div>
+          </aside>
+        
+                  <aside class="creatio-sidebar creatio-sidebar_second" role="complementary">
+              <div class="region region-sidebar-second">
+    <div id="block-example" class="block block-ts-nav block-ts-nav-page-nav">
+  
+    
+        <div class="ts-nav-title">Очистка дискового пространства</div>
+<div class="ts-nav-page">
+      <ul class="ts-nav-page__list">
+                                                <li class="ts-nav-page__item ts-nav-page__item_expanded ts-nav-page__item_open"><a href="instrumenty_ochistki_diskovogo_prostranstva.html" class="ts-nav-page__link ts-nav-page__link_expanded ts-nav-page__link_active">Инструменты очистки дискового пространства&nbsp;<span class="ts-nav-page__link-arrow"></span></a></li>
+          </ul>
+  </div>
+
+  </div>
+<div id="block-adminfeedbackblock" class="block block-admin-feedback block-admin-feedback-block">
+  
+    
+      <div id="feedback-message"><div id="upper-feedback-content"><h2>Был ли данный материал полезен?</h2>
+<input class="feedback-btn feedback-btn__yes button js-form-submit form-submit" data-node-id="3534" data-feedback="yes" type="submit" name="op" value="Да" />
+<input class="feedback-btn feedback-btn__no button js-form-submit form-submit" data-node-id="3534" data-feedback="no" type="submit" name="op" value="Нет" />
+</div>
+<form class="admin-feedback-form" data-drupal-selector="admin-feedback-form" action="https://academy.terrasoft.ua/docs/8-0/user/ustanovka_i_administrirovanie/obsluzhivanie_prilozhenija/ochistka_diskovogo_prostranstva/instrumenty_ochistki_diskovogo_prostranstva" method="post" id="admin-feedback-form" accept-charset="UTF-8">
+  <div id="feedback-msg-result"></div><div class="js-form-item form-item js-form-type-textarea form-type-textarea js-form-item-feedback-message form-item-feedback-message form-no-label">
+        <div class="form-textarea-wrapper">
+  <textarea id="edit-feedback-msg" data-drupal-selector="edit-feedback-message" name="feedback_message" rows="5" cols="60" class="form-textarea resize-vertical"></textarea>
+</div>
+
+        </div>
+<input id="feedback-id" data-drupal-selector="edit-feedback-id" type="hidden" name="feedback_id" value="" />
+<input class="feedback-btn feedback-btn__send-comment button js-form-submit form-submit" data-drupal-selector="edit-feedback-send" type="submit" id="edit-feedback-send" name="op" value="Отправить" />
+<input autocomplete="off" data-drupal-selector="form-cno3uo6dicctfyavssac-5pi16-eojovxwydofuauai" type="hidden" name="form_build_id" value="form-cnO3Uo6DiCctFyavssAc-5PI16-eoJOvXWYDOfuAuaI" />
+<input data-drupal-selector="edit-admin-feedback-form" type="hidden" name="form_id" value="admin_feedback_form" />
+
+</form>
+</div>
+
+  </div>
+
+  </div>
+
+          </aside>
+              </main>
+    </div>
+  </div>
+
+  <footer role="contentinfo">
+    <div class="creatio-region creatio-region_footer">
+      <div class="creatio-container">
+          <div class="region region-footer">
+    <div id="block-footerua" class="block block-simple-block block-simple-blockfooter-ua">
+  
+    
+      <div class="footer">
+<div class="footer-left">
+<ul class="footer-socials"><li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_fb" href="https://www.facebook.com/terrasoft.ua" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_in" href="https://www.linkedin.com/company/terrasoft/" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_yt" href="https://www.youtube.com/c/TerrasoftUkraine" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_tg" href="https://t.me/Terrasoft_UA" target="_blank"> </a></li>
+</ul></div>
+
+<div class="footer-contact">
+<div class="footer-title">Будьте на связи!</div>
+
+<div class="footer-content">
+<div class="footer-items">
+<div class="footer-item"><a class="footer__link footer__link_phone" href="tel:+380443633133">+38 (044) 363-31-33</a></div>
+</div>
+
+<div class="footer-items">
+<div class="footer-item"><a class="footer__link footer__link_email" href="mailto:support@terrasoft.ua">support@terrasoft.ua</a></div>
+</div>
+</div>
+</div>
+</div>
+
+  </div>
+
+  </div>
+
+      </div>
+    </div>
+    <div class="creatio-region creatio-region_bottom">
+      <div class="creatio-container">
+          <div class="region region-bottom">
+    <div id="block-allrightsreservedua" class="block block-simple-block block-simple-blockfooter-bottom-ua">
+  
+    
+      <p>© 2002-2022 Terrasoft.  |  <a href="https://www.terrasoft.ua/privacy-policy" target="_blank">Конфиденциальность</a></p>
+
+  </div>
+
+  </div>
+
+      </div>
+    </div>
+  </footer>
+</div>
+<div class="creatio-bg"></div>
+
+
+  </div>
+
+    
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/docs\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/3534","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"ru"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"ajaxPageState":{"libraries":"admin_feedback\/admin_feedback_block,admin_feedback\/admin_feedback_css,classy\/base,classy\/messages,classy\/node,core\/drupal.ajax,core\/jquery.form,core\/normalize,creatio\/creatio.lists,creatio\/fancybox,creatio\/global,layout_discovery\/onecol,system\/base,ts_doc\/doc_version,ts_feedback\/ts_feedback,ts_nav\/breadcrumb,ts_nav\/doc_nav,ts_nav\/page_nav,ts_title_anchor\/ts_title_anchor","theme":"creatio","theme_token":null},"ajaxTrustedUrl":{"form_action_p_pvdeGsVG5zNF_XLGPTvYSKCf43t8qZYSwcfZl2uzM":true,"\/docs\/8-0\/user\/ustanovka_i_administrirovanie\/obsluzhivanie_prilozhenija\/ochistka_diskovogo_prostranstva\/instrumenty_ochistki_diskovogo_prostranstva?ajax_form=1":true},"admin_feedback":{"yes_response":"\u0421\u043f\u0430\u0441\u0438\u0431\u043e \u0437\u0430 \u043e\u0431\u0440\u0430\u0442\u043d\u0443\u044e \u0441\u0432\u044f\u0437\u044c!","no_response":"\u0421\u043f\u0430\u0441\u0438\u0431\u043e \u0437\u0430 \u043e\u0431\u0440\u0430\u0442\u043d\u0443\u044e \u0441\u0432\u044f\u0437\u044c!","custom_text_response_on_no":{"value":"","format":"full_html"},"feedback_prompt_on_yes":true,"feedback_prompt_on_no":true,"feedback_enable_predefined_answers":false,"feedback_prompt":"\u041a\u0430\u043a \u043c\u043e\u0436\u043d\u043e \u0443\u043b\u0443\u0447\u0448\u0438\u0442\u044c \u044d\u0442\u0443 \u0441\u0442\u0430\u0442\u044c\u044e?"},"ajax":{"edit-feedback-send":{"callback":"::validateFeedbackMsg","event":"mousedown","keypress":true,"prevent":"click","url":"\/docs\/8-0\/user\/ustanovka_i_administrirovanie\/obsluzhivanie_prilozhenija\/ochistka_diskovogo_prostranstva\/instrumenty_ochistki_diskovogo_prostranstva?ajax_form=1","dialogType":"ajax","submit":{"_triggering_element_name":"op","_triggering_element_value":"\u041e\u0442\u043f\u0440\u0430\u0432\u0438\u0442\u044c"}}},"user":{"uid":0,"permissionsHash":"9c2367dfcaba0fa15f0375f97aed64e146c908cee68508d13b79e3ee80e5162d"}}</script>
+<script src="../../../../../sites/default/files/js/js_F2-Y4EzgTnESr58XByoLYEnsbi7ysTfMIKN1RvsMSWY.js"></script>
+
+
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+      <g id="svg-copy" class="svg-icon svg-icon_copy">
+        <path d="M15.111,18H1.889A1.848,1.848,0,0,1,0,16.2V3.6A1.848,1.848,0,0,1,1.889,1.8H5.837a2.87,2.87,0,0,1,5.326,0h3.948A1.848,1.848,0,0,1,17,3.6V16.2A1.848,1.848,0,0,1,15.111,18ZM3.777,12.6v1.8h6.611V12.6Zm0-3.6v1.8h9.445V9Zm0-3.6V7.2h9.445V5.4ZM8.5,1.8a.924.924,0,0,0-.944.9.945.945,0,0,0,1.889,0A.924.924,0,0,0,8.5,1.8Z"/>
+      </g>
+
+      <g id="svg-prev" class="svg-icon svg-icon_arrow">
+        <path d="M5.488,12.779,0,6.39,5.488,0" transform="translate(1 0.652)"/>
+      </g>
+
+      <g id="svg-next" class="svg-icon svg-icon_arrow">
+        <path d="M0,12.779,5.488,6.39,0,0" transform="translate(0.759 0.652)"/>
+      </g>
+    </svg>
+  </body>
+
+<!-- Mirrored from academy.terrasoft.ua/docs/8-0/user/ustanovka_i_administrirovanie/obsluzhivanie_prilozhenija/ochistka_diskovogo_prostranstva/instrumenty_ochistki_diskovogo_prostranstva by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Mar 2022 04:13:05 GMT -->
+</html>

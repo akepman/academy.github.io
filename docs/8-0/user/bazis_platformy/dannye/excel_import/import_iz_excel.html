@@ -1,0 +1,1073 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# ">
+  
+<!-- Mirrored from academy.terrasoft.ua/docs/8-0/user/bazis_platformy/dannye/excel_import/import_iz_excel by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Mar 2022 04:02:24 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+          <!-- Google Tag Manager -->
+      <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          '../../../../../../../www.googletagmanager.com/gtm5445.html?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-KLLB8G');</script>
+      <!-- End Google Tag Manager -->
+        <meta charset="utf-8" />
+<link rel="canonical" href="import_iz_excel.html" />
+<meta name="description" content="Для массового добавления записей в Creatio используйте импорт данных. Клиентскую базу, список продуктов, записи справочников или другие данные можно добавить в Creatio из файлов Excel за считанные минуты.
+
+Вы можете выполнить импорт из Excel перед началом работы с Creatio, когда нужно добавить в систему новые записи. Импорт также можно использовать для обновления и дополнения существующих записей." />
+<meta property="og:url" content="https://academy.terrasoft.ua/docs/8-0/user/bazis_platformy/dannye/excel_import/import_iz_excel" />
+<meta property="og:title" content="Импорт из Excel" />
+<meta property="og:description" content="Для массового добавления записей в Creatio используйте импорт данных. Клиентскую базу, список продуктов, записи справочников или другие данные можно добавить в Creatio из файлов Excel за считанные минуты.
+
+Вы можете выполнить импорт из Excel перед началом работы с Creatio, когда нужно добавить в систему новые записи. Импорт также можно использовать для обновления и дополнения существующих записей." />
+<meta name="Generator" content="Drupal 9 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="../../../../../themes/custom/creatio/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="revision" href="import_iz_excel.html" />
+
+    <title>Импорт из Excel | Creatio Academy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&amp;family=Open+Sans:ital,wght@0,300;0,400;0,600;1,400&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" media="all" href="../../../../../sites/default/files/css/css_6lTP66__-yc6QXFp1zOwoeJ0HVigoYZP-SeoLLii000.css" />
+<link rel="stylesheet" media="all" href="../../../../../sites/default/files/css/css_XQJDNhkF3xH5SZCcY-PI89Zu4nYIzQ5oR3SnUKyfXJU.css" />
+<link rel="stylesheet" media="print" href="../../../../../sites/default/files/css/css_Zn4VHvcniOOtUwkIVwXzYr_0AI9gUVgZcPqaH4ViagU.css" />
+
+    
+  </head>
+  <body class="path-node page-node-type-user-documentation">
+          <!-- Google Tag Manager (noscript) -->
+      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KLLB8G"
+                        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+      <!-- End Google Tag Manager (noscript) -->
+    
+        
+      <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    <div class="creatio-page d-flex flex-column">
+        <div class="region region-informer">
+    <div id="block-terrasoftpidtrimueukrainu" class="block block-simple-block block-simple-blockterrasoft-pidtrimue-ukrainu">
+  
+    
+      <style type="text/css">
+<!--/*--><![CDATA[/* ><!--*/
+@import url(../../../../../../../www.terrasoft.ua/themes/custom/creatio/css/components/informer.css)
+
+/*--><!]]>*/
+</style><div class="ts-swu">
+<div class="creatio-container">
+<div class="ts-swu__cont">
+<div><a class="ts-swu__link" href="https://www.terrasoft.ua/terrasoft-stands-with-ukraine" target="_blank">Україна понад усе!</a> <span><a href="https://www.terrasoft.ua/terrasoft-stands-with-ukraine" target="_blank">Приєднуйтеся</a> до допомоги!</span></div>
+</div>
+</div></div>
+
+  </div>
+
+  </div>
+
+  
+  <header role="banner">
+          <div class="creatio-region creatio-region_top">
+        <div class="creatio-container">
+            <div class="region region-top">
+    <div id="block-menutoggle" class="block block-simple-block block-simple-blockmenu-toggle">
+  
+    
+      <div class="menu-toggle"><span> </span></div>
+
+  </div>
+<div id="block-logowhite-2" class="block block-simple-block block-simple-blocklogo-white">
+  
+    
+      <p><a class="site-logo" href="../../../../../../index.html" rel="home"><img src="../../../../../themes/custom/creatio/logo-white.svg" /></a></p>
+
+  </div>
+<div id="block-search" class="block block-simple-block block-simple-blocksearch">
+  
+    
+      <div class="search">
+<form action="https://academy.terrasoft.ua/search" class="search-form" method="get"><input class="search-form__input" name="search" placeholder="Поиск" type="search" /><input class="search-form__button" type="submit" value="Поиск" /> </form>
+
+<div class="search-toggle"> </div>
+</div>
+
+  </div>
+<nav role="navigation" aria-labelledby="block-sitesua-menu" id="block-sitesua" class="block block-menu navigation menu--sites-ua">
+            
+  <h2 class="visually-hidden" id="block-sitesua-menu">Sites UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="https://www.terrasoft.ua/" rel="nofollow" target="_blank">Terrasoft</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://community.terrasoft.ua/" rel="nofollow" target="_blank">Community</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://marketplace.terrasoft.ua/" rel="nofollow" target="_blank">Marketplace</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+<div id="block-usermenu" class="block block-ts-user block-ts-user-menu-block">
+  
+    
+      <ul class="user-menu">
+      <li class="user-menu__item">
+      <a class="user-menu__link" href="https://profile.terrasoft.ua/user/login?destination=academy/ua/docs/8-0/user/bazis_platformy/dannye/excel_import/import_iz_excel">Войти</a>
+    </li>
+  </ul>
+
+  </div>
+<div id="block-usermenumobile" class="block block-ts-user block-ts-user-menu-mobile-block">
+  
+    
+      <ul class="user-menu-mobile">
+      <li class="user-menu-mobile__item">
+      <div class="user-menu-mobile__user user-menu-mobile__user_icon"></div>
+      <ul class="user-menu-mobile__submenu">
+        <li class="user-menu-mobile__subitem">
+          <a class="user-menu-mobile__sublink" href="https://profile.terrasoft.ua/user/login?destination=academy/ua/docs/8-0/user/bazis_platformy/dannye/excel_import/import_iz_excel">Войти</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  </div>
+
+  </div>
+
+        </div>
+      </div>
+              <div class="creatio-region creatio-region_header">
+        <div class="creatio-container">
+            <div class="region region-header">
+    <div id="block-logo" class="block block-simple-block block-simple-blocklogo">
+  
+    
+      <p><a class="site-logo" href="../../../../../../index.html" rel="home"><img src="../../../../../themes/custom/creatio/logo.svg" /></a></p>
+
+  </div>
+<nav role="navigation" aria-labelledby="block-osnovnayanavigaciyaua-menu" id="block-osnovnayanavigaciyaua" class="block block-menu navigation menu--main-ua">
+            
+  <h2 class="visually-hidden" id="block-osnovnayanavigaciyaua-menu">Основная навигация UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="../../../../../index.html" data-drupal-link-system-path="&lt;front&gt;">Документация</a>
+              </li>
+                <li class="menu-item">
+        <a href="../../../../../../trainings.html">Тренинги</a>
+              </li>
+                <li class="menu-item">
+        <a href="../../../../../certification.html" data-drupal-link-system-path="node/3084">Сертификация и тестирование</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+<nav role="navigation" aria-labelledby="block-sitesua-2-menu" id="block-sitesua-2" class="block block-menu navigation menu--sites-ua">
+            
+  <h2 class="visually-hidden" id="block-sitesua-2-menu">Sites UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="https://www.terrasoft.ua/" rel="nofollow" target="_blank">Terrasoft</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://community.terrasoft.ua/" rel="nofollow" target="_blank">Community</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://marketplace.terrasoft.ua/" rel="nofollow" target="_blank">Marketplace</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+
+  </div>
+
+        </div>
+      </div>
+              <div class="creatio-region creatio-region_breadcrumb">
+        <div class="creatio-container">
+            <div class="region region-breadcrumb">
+    <div id="block-logowhite" class="block block-simple-block block-simple-blocklogo-white">
+  
+    
+      <p><a class="site-logo" href="../../../../../../index.html" rel="home"><img src="../../../../../themes/custom/creatio/logo-white.svg" /></a></p>
+
+  </div>
+<div id="block-breadcrumbnaviagtion" class="block block-ts-nav block-ts-nav-bread">
+  
+    
+      <nav class="breadcrumb"><ol class="ts-nav-breadcrumb__list"><li class="ts-nav-breadcrumb__item"><a href="../../../../../index.html" class="ts-nav-breadcrumb__link" title="Документация">Документация</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../../../indexd993.html?vid_1=1" class="ts-nav-breadcrumb__link" title="Для пользователя">Для пользователя</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../bazis_platformy.html" class="ts-nav-breadcrumb__link" title="Базис платформы" hreflang="zxx">Базис платформы</a></li>
+<li class="ts-nav-breadcrumb__item ts-nav-breadcrumb__item_mobile"><a href="../../dannye.html" class="ts-nav-breadcrumb__link" title="Данные" hreflang="zxx">Данные</a></li>
+<li class="ts-nav-breadcrumb__item"><span class="ts-nav-breadcrumb__link ts-nav-breadcrumb__link_current" title="Импорт из Excel">Импорт из Excel</span></li>
+</ol>
+</nav>
+
+  </div>
+<div id="block-search-2" class="block block-simple-block block-simple-blocksearch">
+  
+    
+      <div class="search">
+<form action="https://academy.terrasoft.ua/search" class="search-form" method="get"><input class="search-form__input" name="search" placeholder="Поиск" type="search" /><input class="search-form__button" type="submit" value="Поиск" /> </form>
+
+<div class="search-toggle"> </div>
+</div>
+
+  </div>
+
+  </div>
+
+        </div>
+      </div>
+      </header>
+
+  <div class="creatio-region creatio-region_main">
+    <div class="creatio-container">
+                <div class="region region-breadcrumb-mobile">
+    <div id="block-breadcrumbnaviagtion-2" class="block block-ts-nav block-ts-nav-bread">
+  
+    
+      <nav class="breadcrumb"><ol class="ts-nav-breadcrumb__list"><li class="ts-nav-breadcrumb__item"><a href="../../../../../index.html" class="ts-nav-breadcrumb__link" title="Документация">Документация</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../../../indexd993.html?vid_1=1" class="ts-nav-breadcrumb__link" title="Для пользователя">Для пользователя</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../bazis_platformy.html" class="ts-nav-breadcrumb__link" title="Базис платформы" hreflang="zxx">Базис платформы</a></li>
+<li class="ts-nav-breadcrumb__item ts-nav-breadcrumb__item_mobile"><a href="../../dannye.html" class="ts-nav-breadcrumb__link" title="Данные" hreflang="zxx">Данные</a></li>
+<li class="ts-nav-breadcrumb__item"><span class="ts-nav-breadcrumb__link ts-nav-breadcrumb__link_current" title="Импорт из Excel">Импорт из Excel</span></li>
+</ol>
+</nav>
+
+  </div>
+
+  </div>
+
+      
+      <main class="creatio-main" role="main">
+                                                    
+        <div class="creatio-content creatio-content_small">
+          <div class="creatio-content__inner creatio-content__inner_bg">
+                            <div class="region region-messages">
+    <div data-drupal-messages-fallback class="hidden"></div>
+
+  </div>
+
+            
+              <div class="region region-content">
+    <div id="block-creatio-page-title" class="block block-core block-page-title-block">
+  
+    
+      
+  <h1 class="page-title"><span class="field field--name-title field--type-string field--label-hidden">Импорт из Excel</span>
+</h1>
+
+
+  </div>
+<div id="block-creatio-content" class="block block-system block-system-main-block">
+  
+    
+      
+<article data-history-node-id="2658" role="article" about="/docs/8-0/user/bazis_platformy/dannye/excel_import/import_iz_excel" class="node node--type-user-documentation node--view-mode-full">
+
+  
+    
+
+  
+  <div class="node__content">
+      <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-ts-doc block-ts-doc-downloads">
+  
+    
+      <a href="../../../../../sites/default/files/pdf/node/2658/Import_iz_Excel_.pdf" target="_blank">PDF</a>
+  </div>
+<div class="block block-ts-doc block-ts-doc-versions">
+  
+    
+        <div class="ts-doc-versions">
+    <select class="ts-doc-versions__select">
+                                                <option value="/docs/8-0/user/bazis_platformy/dannye/excel_import/import_iz_excel" selected>Версия 8.0</option>
+                              <option value="/docs/7-18/user/bazis_platformy/dannye/excel_import/import_iz_excel">Версия 7.18</option>
+                              <option value="/docs/7-17/user/bazis_platformy/dannye/excel_import/import_iz_excel">Версия 7.17</option>
+          </select>
+  </div>
+
+  </div>
+
+    </div>
+  </div>
+  <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocknodeuser-documentationfield-product">
+  
+    
+      
+  <div class="field field--name-field-product field--type-entity-reference field--label-above">
+    <div class="field__label">Продукты</div>
+          <div class="field__items">
+              <div class="field__item">Все продукты</div>
+              </div>
+      </div>
+
+  </div>
+<div class="block block-layout-builder block-field-blocknodeuser-documentationbody">
+  
+    
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><p>Для массового добавления записей в Creatio используйте <span class="FM_BlockName">импорт данных</span>. Клиентскую базу, список продуктов, записи справочников или другие данные можно добавить в Creatio из файлов Excel за считанные минуты.</p>
+
+<p>Вы можете выполнить импорт из Excel перед началом работы с Creatio, когда нужно добавить в систему новые записи. Импорт также можно использовать для обновления и дополнения существующих записей.</p>
+
+<div class="message message_warning">
+<p><span class="message__bold message__bold_warning">Важно.</span> Импорт рекомендуется выполнять после настройки прав доступа в системе, так как права доступа по умолчанию раздаются при создании записи.</p>
+</div>
+
+<p>Чтобы импортировать данные из книги Excel в Creatio:</p>
+
+<ol class="start"><li>
+	<p>Подготовьте файл импорта в формате *.xlsx. Примеры наиболее часто используемых файлов для импорта записей:</p>
+
+	<ul class="inner"><li>
+		<p><span><a href="../../../../../../sites/default/files/documents/docs/getting_started/files/%d0%9a%d0%be%d0%bd%d1%82%d1%80%d0%b0%d0%b3%d0%b5%d0%bd%d1%82.xlsx">Пример файла для импорта контрагентов</a>.</span> </p>
+		</li>
+		<li>
+		<p><span><a href="../../../../../../sites/default/files/documents/docs/getting_started/files/%d0%9a%d0%be%d0%bd%d1%82%d0%b0%d0%ba%d1%82.xlsx">Пример файла для импорта контактов</a></span>.</p>
+		</li>
+		<li>
+		<p><span><a href="../../../../../../sites/default/files/documents/docs/getting_started/files/%d0%9f%d1%80%d0%be%d0%b4%d1%83%d0%ba%d1%82.xlsx">Пример файла для импорта продуктов</a>.</span></p>
+		</li>
+	</ul></li>
+	<li>Запустите мастер импорта: перейдите в раздел, в который вы хотите импортировать данные, и нажмите кнопку <span class="key">Действия</span> —&gt; <span class="key">Импорт данных</span>. Таким образом вы можете также импортировать данные на деталь или в справочник. При этом объект, в который будут импортированы данные из вашего файла, система выберет автоматически.</li>
+	<li>Загрузите подготовленный файл Excel в Creatio: перетащите (drag&amp;drop) файл на страницу мастера импорта или нажмите кнопку <span class="key">Выбрать файл</span> и укажите путь к файлу. Сопоставьте колонки файла Excel с колонками (полями) выбранного объекта Creatio.</li>
+	<li>
+	<p>Выберите колонки, по которым будет определяться уникальность записи: установите признак для колонок, значения которых должны быть уникальными для результирующих записей. В зависимости от того, совпадает ли значение колонки импортируемого файла со значением в базе данных, Creatio будет создавать новую запись или обновлять существующую. Например, для контакта такой колонкой может быть ФИО: если контакт с таким же ФИО уже существует, Creatio обновит соответствующую запись; если контакт с таким ФИО в базе данных отсутствует, то в результате импорта будет создана новая запись.</p>
+	</li>
+	<li>
+	<p>Запустите импорт. Процесс будет выполняться в фоновом режиме, вы сможете продолжить работу с приложением.</p>
+
+	<p>В случае необходимости вы можете остановить импорт данных. Это можно сделать в разделе <span class="key">Журнал процессов</span>, остановив выполняющийся процесс “FileImportProcess“. При отмене импорта процесс переходит в состояние “Отменен”, импорт данных прекращается.</p>
+
+	<div class="message">
+	<p><span class="message__bold">На заметку.</span> Импорт данных можно запустить из дизайнера системы. В этом случае объект для импорта нужно будет указать вручную.</p>
+	</div>
+	</li>
+</ol><h2><a name="TOC_Рекомендации_поbc-1" id="TOC_Рекомендации_поbc-1"></a>Подготовить файл импорта<a class="title-anchor" href="#title-2658-1" id="title-2658-1"> </a></h2>
+
+<p>Чтобы успешно загрузить в Creatio данные из вашего файла Excel, убедитесь, что этот файл соответствует следующим условиям:</p>
+
+<ul><li>
+	<p>Файл в формате *.xlsx.</p>
+	</li>
+	<li>
+	<p>Файл не поврежден.</p>
+	</li>
+	<li>
+	<p>В файле не должно быть активных гиперссылок. Перед началом импорта отключите все активные гиперссылки в файле.</p>
+	</li>
+	<li>
+	<p>Файл содержит строку заголовков колонок и хотя бы одну строку данных.</p>
+	</li>
+	<li>
+	<p>Кроме строки заголовков колонок, в начале файла не содержится иных данных.</p>
+	</li>
+	<li>
+	<p>В файле нет скрытых листов и строк.</p>
+	</li>
+	<li>
+	<p>Количество строк в файле не превышает 50 000. Ограничение на количество строк в импортируемом файле является усредненным и зависит также от количества столбцов и объема информации, внесенной в качестве значений колонок.</p>
+	</li>
+</ul><p>При вводе значений в колонках импортируемого файла придерживайтесь следующих рекомендаций:</p>
+
+<ul><li>
+	<p>Убедитесь, что формат ячеек в файле Excel соответствует типу колонки в Creatio. Например, для колонки <span class="key">ФИО</span> контакта установите в Excel текстовый формат ячеек, а для колонки <span class="key">Начало</span> активности — формат “Дата”.</p>
+	</li>
+	<li>
+	<p>Значения в колонках дат вводите в одном из форматов:</p>
+	</li>
+</ul><div class="code">
+<div class="code__widgets">
+<div class="code__source">
+<pre class="prettyprint">
+ДД-ММ-ГГГГ;
+ДД.ММ.ГГГГ;
+ДД/ММ/ГГГГ.</pre>
+</div>
+</div>
+</div>
+
+<p class="indent">где ДД — день, ММ — месяц, ГГГГ — год.</p>
+
+<ul><li>
+	<p>Если вы импортируете значение в колонку даты/времени, то введите время после даты через пробел.</p>
+
+	<p>Ниже приведены примеры корректных значений в полях даты/времени.</p>
+	</li>
+</ul><div class="code">
+<div class="code__widgets">
+<div class="code__source">
+<pre class="prettyprint">
+31.01.2015 2:01:00 PM
+31.01.2015 14:02:00
+31/01/2015 2:03:00 PM
+31/01/2015 14:04:00
+31-01-2015 2:05:00 PM
+31-01-2015 14:06:00
+31.1.2015 2:07:00 PM
+31.01.2015 02:08:00 PM
+31.01.2015 02:09:00 pm
+31.01.15 02:10:00 AM</pre>
+</div>
+</div>
+</div>
+
+<ul><li>
+	<p>Значения в логических полях, например, <span class="key">Не использовать E-mail</span>, укажите в одном из следующих форматов в любом регистре:</p>
+	</li>
+</ul><div class="code">
+<div class="code__widgets">
+<div class="code__source">
+<pre class="prettyprint">
+Да/Нет
+True/False
+1/0
++/-
+Yes/No
+Истина/Ложь
+Y/N</pre>
+</div>
+</div>
+</div>
+
+<ul><li>
+	<p>Укажите значения в полях, обязательных для заполнения. Например, для контакта заполните поле <span class="key">ФИО</span>, а для контрагента — <span class="key">Название</span>. Исключение составляют те обязательные поля, для которых в системе выполняется автоматическое заполнение значениями по умолчанию. Если оставить значения таких полей в файле пустыми, то они будут заполнены значениями по умолчанию. Например, поля <span class="key">Состояние</span> и <span class="key">Ответственный</span>, которые присутствуют в большинстве разделов системы.</p>
+	</li>
+	<li>
+	<p>Значения справочных полей укажите в соответствии с существующими значениями в справочниках Creatio. Все значения справочных полей, которые не будут найдены в Creatio, создаются автоматически.</p>
+
+	<p>Чтобы избежать дублирования записей в справочниках системы, при подготовке файла импорта рекомендуем проверить введенные вами значения.</p>
+
+	<p>При проверке значений <strong>не учитываются начальные и замыкающие пробелы и регистр</strong>, но <strong>имеют значение специальные символы</strong>. Ниже приведены примеры обработки значений.</p>
+	</li>
+</ul><div class="code">
+<div class="code__widgets">
+<div class="code__source">
+<pre class="prettyprint">
+В файле импорта указан тип контакта “клиент”.
+В справочнике <span class="key">Типы контактов</span> содержится значение “Клиент”.</pre>
+</div>
+</div>
+</div>
+
+<p class="indent">В этом случае импортированная запись связывается с существующим значением. Новая запись в справочник добавлена не будет.</p>
+
+<div class="code">
+<div class="code__widgets">
+<div class="code__source">
+<pre class="prettyprint">
+В файле импорта указан тип контакта “«Клиент»”.
+В справочнике <span class="key">Типы контактов</span> содержится значение “Клиент”.</pre>
+</div>
+</div>
+</div>
+
+<p class="indent">В данном примере в результате импорта в справочник будет добавлена новая запись.</p>
+
+<div class="message">
+<p><span class="message__bold">На заметку.</span> Перед тем как начинать загрузку файла, убедитесь, что в вашем браузере отключены все плагины. Выполнение некоторых плагинов одновременно с загрузкой данных может привести к ошибкам импорта.</p>
+</div>
+
+<h2><a name="TOC_Как_выполнить_импортbc-2" id="TOC_Как_выполнить_импортbc-2"></a>Выполнить импорт клиентской базы<a class="title-anchor" href="#title-2658-2" id="title-2658-2"> </a></h2>
+
+<p>Рассмотрим пример импорта клиентской базы — списка контактов из файла Excel.</p>
+
+<div class="message message_warning">
+<p><span class="message__bold message__bold_warning">Важно.</span> Перед импортом контактов в систему убедитесь, что в системной настройке “Порядок ФИО” установлено значение “Last name, First name <span class="key">Middle name</span>“. Это необходимо для корректной разбивки ФИО контактов на отдельные колонки <span class="key">Фамилия</span>, <span class="key">Имя</span>, <span class="key">Отчество</span>.</p>
+</div>
+
+<p>Чтобы импортировать данные, перейдите в раздел <span class="key">Контакты</span> и нажмите кнопку <span class="key">Действия</span> —&gt; <span class="key">Импорт данных</span>. На отдельной вкладке браузера откроется страница загрузки данных с автоматически выбранным объектом для импорта.</p>
+
+<h3><a name="TOC_Загрузка_файлаbc-3" id="TOC_Загрузка_файлаbc-3"></a><a name="TOC_Загрузка_файла" id="TOC_Загрузка_файла"></a>1. Загрузить файл<a class="title-anchor" href="#title-2658-3" id="title-2658-3"> </a></h3>
+
+<p>Первая страница мастера предназначена для загрузки файла Excel в автоматически выбранный системой объект.</p>
+
+<div class="message">
+<p><span class="message__bold">На заметку.</span> Если вы открыли импорт данных из дизайнера системы, то объект для импорта нужно будет выбрать вручную.</p>
+</div>
+
+<p>Чтобы загрузить файл, нажмите кнопку <span class="key">Выбрать файл</span> и укажите файл Excel, содержащий вашу клиентскую базу. Вы также можете просто перетащить файл в соответствующую область с помощью мыши. На данном этапе будет выполнена проверка соответствия формата и объема файла требованиям системы.</p>
+
+<p>Для перехода на следующий шаг нажмите кнопку <span class="key">Далее</span>.</p>
+
+<div class="message">
+<p><span class="message__bold">На заметку.</span> Перед тем как начинать загрузку файла убедитесь, что в вашем браузере отключены все плагины. Выполнение некоторых плагинов одновременно с загрузкой данных может привести к ошибкам импорта.</p>
+</div>
+
+<h3><a name="TOC_Настройка_колонокbc-4" id="TOC_Настройка_колонокbc-4"></a><a name="TOC_Настройка_колонок" id="TOC_Настройка_колонок"></a>2. Настроить колонки<a class="title-anchor" href="#title-2658-4" id="title-2658-4"> </a></h3>
+
+<p>На второй странице мастера загрузки данных необходимо указать соответствие (маппинг) колонок в вашем файле и в Creatio. Для этого используются колонки основного объекта, выбранного на первом шаге, и связанных с ним объектов. При этом:</p>
+
+<ul><li>
+	<p>Если название колонки в файле полностью <strong>соответствует</strong> названию колонки в Creatio, то оно будет распознано системой автоматически. Например, если в вашем файле имя контакта указано в колонке “ФИО”, то автоматически будет установлено соответствие колонке <span class="key">ФИО</span> на странице контакта в Creatio. Автоматическое распознавание выполняется только по колонкам основного объекта.</p>
+	</li>
+	<li>
+	<p>Если название колонки в файле <strong>отличается</strong> от названия колонки в Creatio, то вам необходимо вручную задать сопоставление. Например, в файле импорта место работы контакта указано в колонке “Компания”. В этом случае вам необходимо вручную указать соответствие колонки “Компания” колонке <span class="key">Контрагент</span> контакта. Для этого нажмите на ссылку <span class="key">Выбрать колонку</span> (<a href="#XREF_66468_307"><span>Рис. 1</span></a>) и из списка колонок контакта Creatio выберите колонку <span class="key">Контрагент</span>.</p>
+	</li>
+</ul><div class="media">
+<div class="media__caption"><span class="FM_Picturecaptionnumber">Рис. 1</span><a name="XREF_66468_307" id="XREF_66468_307"></a> — Выбор колонки для настройки сопоставления</div>
+
+<div class="media__element"><img alt="chapter_universal_import_map_columns_select.png" id="image0" src="../../../../../sites/default/files/documentation/user/ru/base/BPMonlineHelp/chapter_universal_import/chapter_universal_import_map_columns_select.png" /> </div>
+</div>
+
+<h3><a name="TOC_Загрузка_дополнительнойbc-5" id="TOC_Загрузка_дополнительнойbc-5"></a><a name="TOC_Загрузка_дополнительной" id="TOC_Загрузка_дополнительной"></a>3. Загрузить дополнительную информацию<a class="title-anchor" href="#title-2658-5" id="title-2658-5"> </a></h3>
+
+<p>При импорте контактов и контрагентов есть возможность загрузить не только данные основного объекта, но и дополнительную информацию связанных объектов — записи на детали <span class="key">Средства связи</span> и <span class="key">Адреса</span>. Используйте эту возможность, если вам необходимо загрузить в систему несколько различных адресов или несколько средств связи одного типа, например, два мобильных телефона.</p>
+
+<div class="message">
+<p><span class="message__bold">На заметку.</span> Обратите внимание, что средства связи и адреса можно импортировать как в колонки основного объекта, так и на детали. При импорте в колонки основного объекта эти данные также будут сохранены на деталях. Однако в этом случае вы сможете загрузить только одно средство связи каждого типа из списка доступных, а также один адрес. Колонки, для которых настроено соответствие колонке основного объекта, могут использоваться для указания правил поиска дублей при импорте.</p>
+</div>
+
+<p>Для настройки соответствия с колонками деталей <span class="key">Средства связи</span> и <span class="key">Адреса</span> кликните по ссылке <span class="key">Дополнительные контактные данные</span> и выберите нужную колонку (<a href="#XREF_34553_308"><span>Рис. 2</span></a>).</p>
+
+<div class="media">
+<div class="media__caption"><span class="FM_Picturecaptionnumber">Рис. 2</span> — Выбор колонки для сопоставления деталей <span class="key">Средства связи</span> и <span class="key">Адреса</span></div>
+
+<div class="media__element"><img alt="chapter_universal_import_map_columns_additional_details.png" id="image1" src="../../../../../sites/default/files/documentation/user/ru/base/BPMonlineHelp/chapter_universal_import/chapter_universal_import_map_columns_additional_details.png" /> </div>
+</div>
+
+<div class="message">
+<p><span class="message__bold">На заметку.</span> На деталь <span class="key">Адреса</span> вы можете импортировать в Creatio по одному адресу каждого типа — один рабочий, один доставки и т.п.</p>
+</div>
+
+<p>Когда установлено соответствие для всех колонок, которые необходимо загрузить, нажмите кнопку <span class="key">Далее</span>.</p>
+
+<div class="message">
+<p><span class="message__bold">На заметку.</span> Если импорт данных осуществляется в раздел <span class="key">Контрагенты</span> и в файле импорта заполнена колонка “Основной контакт”, то у контактов в системе будет автоматически заполнена деталь <span class="key">Карьера</span> вкладки <span class="key">Место работы</span>.</p>
+</div>
+
+<h3><a name="TOC_Параметры_дублейbc-6" id="TOC_Параметры_дублейbc-6"></a><a name="TOC_Параметры_дублей" id="TOC_Параметры_дублей"></a>4. Настроить проверку дублей<a class="title-anchor" href="#title-2658-6" id="title-2658-6"> </a></h3>
+
+<p>Страница <span class="key">Параметры дублей</span> используется для ввода условий, по которым при импорте будет выполняться проверка дублирующихся данных. Если в файле импорта будет найдено несколько одинаковых записей, то в систему будет загружена только первая из них. Дублирующиеся записи не будут загружены в систему.</p>
+
+<p>Вы можете выполнять проверку дублей по значениям одной или нескольких колонок основного или связанного объектов, для которых было установлено соответствие на предыдущем шаге.</p>
+
+<div class="message">
+<p><span class="message__bold">На заметку.</span> Обратите внимание, что при выполнении поиска дублей для контактов и контрагентов по средствам связи и адресам используются колонки основного объекта, а не деталей <span class="key">Средства связи</span> и <span class="key">Адреса</span>.</p>
+</div>
+
+<p>Чтобы значения колонки использовались при проверке дублей, отметьте эту колонку флажком. При выборе нескольких колонок они участвуют в поиске, объединенные логическим оператором “И”. То есть, дубль будет определен по одинаковому значению во всех выбранных колонках. Например, для контактов можно настроить проверку по колонкам <span class="key">ФИО</span> и <span class="key">E-mail</span> (<a href="#XREF_12858_310"><span>Рис. 3</span></a>). И, если будет найдено несколько контактов, у которых совпадают ФИО и электронный адрес, то в систему будет загружен только один из них.</p>
+
+<div class="media">
+<div class="media__caption"><span class="FM_Picturecaptionnumber">Рис. 3</span><a name="XREF_12858_310" id="XREF_12858_310"></a> — Установка правил поиска дублей при загрузке данных</div>
+
+<div class="media__element"><img alt="chapter_universal_import_duplicate_management_select.png" id="image2" src="../../../../../sites/default/files/documentation/user/ru/base/BPMonlineHelp/chapter_universal_import/chapter_universal_import_duplicate_management_select.png" /> </div>
+</div>
+
+<div class="message">
+<p><span class="message__bold">На заметку.</span> Используйте условия поиска дублирующихся записей при выполнении импорта с целью обновления существующих данных в системе. Например, для массового обновления номеров телефона контактов. Для этого настройте поиск дублей таким образом, чтобы запись была идентифицирована как дубль. В этом случае для всех найденных в системе контактов, которые являются дублями, будут обновлены значения тех полей, которые заполнены в файле импорта. Те поля, которые не были заполнены в файле импорта, останутся в Creatio без изменений.</p>
+</div>
+
+<h3><a name="TOC_Загрузка_данныхbc-7" id="TOC_Загрузка_данныхbc-7"></a><a name="TOC_Загрузка_данных" id="TOC_Загрузка_данных"></a>5. Выполнить загрузку данных<a class="title-anchor" href="#title-2658-7" id="title-2658-7"> </a></h3>
+
+<p>После того как правила поиска дублей указаны, нажмите кнопку <span class="key">Начать загрузку данных</span>. Будет начата загрузка данных в систему. После начала импорта вы можете закрыть страницу — загрузка данных продолжится в фоновом режиме.</p>
+
+<p>По результатам выполнения импорта на странице отобразится сообщение с количеством загруженных записей. Вы также получите системное оповещение с названием файла и количеством загруженных записей в <span><a href="../../../../../7-17/user/bazis_platformy/kommunikacii/uvedomleniya/rabota_s_uvedomleniyami.html#HT_chapter_notifications_center">центре уведомлений</a></span>.</p>
+
+<div class="message">
+<p><span class="message__bold">На заметку.</span> В случае необходимости вы можете остановить импорт данных. Это можно сделать в разделе <span class="key">Журнал процессов</span>, остановив выполняющийся процесс “FileImportProcess“. При отмене импорта процесс переходит в состояние “Отменен”, импорт данных прекращается. Данные, которые успели импортироваться в систему до остановки процесса, вы сможете просмотреть в разделе.</p>
+</div>
+
+<p>Проверьте результат успешного импорта в разделе <span class="key">Контакты</span>. Из сообщения о завершении импорта вы сможете перейти прямо к загруженным записям. Все загруженные записи автоматически будут помечены тегом с датой и временем импорта. В дальнейшем вы сможете легко найти все импортированные записи, применив фильтр по тегу.</p>
+
+<p>Тегирование загруженных записей и переход к их списку после импорта выполняются только в случае, когда в качестве объекта для импорта был выбран раздел.</p>
+
+<p>Информацию о возможных ошибках загрузки данных вы можете просмотреть в справочнике <span class="key">Лог импорта из Excel</span>. Здесь отображаются данные о тех записях файла импорта, которые не удалось загрузить.</p>
+
+<p>Обратите внимание, что при загрузке данных все значения справочных полей, которые не были найдены в Creatio, создаются автоматически. Например, в систему могут быть добавлены города, типы контактов или контрагенты, указанные в файле для импорта контактов. Кроме того, если в файле импорта вы не заполнили значения в полях, для которых в системе предусмотрено автозаполнение, то в импортируемых записях эти поля будут автоматически заполнены значениями по умолчанию.</p>
+
+<h2><a name="TOC_Как_выполнить_импорт1bc-8" id="TOC_Как_выполнить_импорт1bc-8"></a><a name="TOC_Как_выполнить_импорт1" id="TOC_Как_выполнить_импорт1"></a><a name="CSH_4" id="CSH_4"></a><a name="HT_chapter_universal_import_communications" id="HT_chapter_universal_import_communications"></a><a name="XREF_88454" id="XREF_88454"></a>Выполнить импорт средств связи контакта<a class="title-anchor" href="#title-2658-8" id="title-2658-8"> </a></h2>
+
+<p>Вы можете импортировать не только основные контактные данные клиентов, но и дополнительную информацию, такую как средства связи и адреса. Они содержатся как в основном объекте (“Контакт”, “Контрагент”), так и на деталях на вкладке <span class="key">Основная информация</span>.</p>
+
+<ul><li>
+	<p>Если средства связи содержатся в общем файле импорта контактов или контрагентов, то они будут загружены вместе с основной информацией. При этом данные будут сохранены как в основной объект (“Контакт” или “Контрагент”), так и на детали <span class="key">Средства связи</span>. Но в этом случае вы сможете загрузить лишь одно средство связи каждого типа из списка доступных. Средства связи и адреса, которые содержатся в основном объекте, могут использоваться для поиска дублей при импорте. Подробнее этот случай рассмотрен при описании <span>импорта клиентской базы</span>.</p>
+	</li>
+	<li>
+	<p>Если же средства связи и адреса содержатся в отдельном файле, то их можно импортировать после импорта базы клиентов. Для этого при импорте выберите объект “Средство связи” контакта или контрагента.</p>
+	</li>
+</ul><p>Рассмотрим импорт средств связи из отдельного файла на примере номеров телефонов.</p>
+
+<p>Подготовьте файл импорта. Для этого в первую колонку введите ФИО контакта, во вторую — тип средства связи, например, мобильный телефон, а в третью — номер телефона. Чтобы импортировать для одного контакта несколько средств связи одного типа, каждому из номеров должна соответствовать отдельная полностью заполненная строка файла импорта. Данные в колонке “ФИО” должны полностью соответствовать данным клиентской базы, загруженной в систему ранее.</p>
+
+<p>Загрузите подготовленный файл в систему. Для этого:</p>
+
+<ol><li>Откройте дизайнер системы, нажав кнопку <img alt="btn_system_designer.png" id="image3" src="../../../../../sites/default/files/documentation/user/ru/base/BPMonlineHelp/chapter_universal_import/btn_system_designer.png" /> в правом верхнем углу приложения.</li>
+	<li>В группе <span class="key">Импорт и интеграции</span> кликните по ссылке <span class="key">Импорт данных</span>. На отдельной вкладке браузера откроется страница загрузки данных.</li>
+	<li>Нажмите кнопку <span class="key">Выбрать файл</span> и укажите подготовленный файл импорта или перетащите файл при помощи мыши в выделенную область страницы загрузки.</li>
+	<li>Нажмите кнопку <span class="key">Другое</span>, чтобы выбрать объект импорта (<a href="#XREF_73016_313"><span>Рис. 4</span></a>).
+	<div class="media">
+	<div class="media__caption"><span class="FM_Picturecaptionnumber">Рис. 4</span> — Выбор объекта импорта</div>
+
+	<div class="media__element"><img alt="chapter_universal_import_select_object_mobile.png" id="image4" src="../../../../../sites/default/files/documentation/user/ru/base/BPMonlineHelp/chapter_universal_import/chapter_universal_import_select_object_mobile.png" />  </div>
+	</div>
+	</li>
+	<li>Из появившегося списка выберите объект “Средства связи контакта” и нажмите кнопку <span class="key">Далее</span>.<br />
+	Если вы импортируете средства связи к записям раздела <span class="key">Контрагенты</span>, товыберите из списка объект <span class="key">Средства связи контрагента</span>.</li>
+	<li>
+	<p>На второй странице мастера загрузки данных укажите соответствие (маппинг) колонок в вашем файле и в Creatio. В данном случае колонки “Номер” и “Тип” определятся автоматически, а колонке “ФИО” необходимо назначить соответствие колонке “Контакт”.</p>
+
+	<div class="message">
+	<p><span class="message__bold">На заметку.</span> Для того чтобы при импорте данных автоматически определялось соответствие между колонками в файле импорта и Creatio, заголовки колонок файла должны соответствовать заголовкам полей в системе.</p>
+	</div>
+	</li>
+	<li>
+	<p>На странице <span class="key">Параметры дублей</span> выберите колонки “Контакт” и “Номер” — по их данным при импорте будет выполняться проверка дублирующихся записей. Далее нажмите кнопку <span class="key">Начать загрузку данных</span>.</p>
+
+	<p>После начала импорта вы можете закрыть страницу. Загрузка данных будет продолжена в фоновом режиме. Когда импорт завершится, в центре уведомлений появится соответствующее сообщение. Проверьте результаты загрузки в записях раздела <span class="key">Контакты</span>.</p>
+	</li>
+</ol><h2><a name="TOC_Как_выполнить_импорт2bc-9" id="TOC_Как_выполнить_импорт2bc-9"></a><a name="TOC_Как_выполнить_импорт2" id="TOC_Как_выполнить_импорт2"></a><a name="CSH_5" id="CSH_5"></a><a name="HT_chapter_universal_import_primary_adress" id="HT_chapter_universal_import_primary_adress"></a><a name="XREF_92221" id="XREF_92221"></a>Выполнить импорт адресов контакта<a class="title-anchor" href="#title-2658-9" id="title-2658-9"> </a></h2>
+
+<p>В записи контакта может содержаться информация о нескольких адресах разных типов: фактическом, домашнем, адресе доставки и т.п. Но только один из этих адресов может быть отмечен признаком <span class="key">Основной</span> и отображается в реестре раздела.</p>
+
+<p>Для загрузки адресов подготовьте файл импорта. Каждая строка этого файла должна содержать ФИО контакта в том виде, в котором эти данные представлены в системе, один из адресов и его тип. В колонке <span class="key">Основной</span> отметьте адрес, являющийся основным для данного контакта, установив для него значение “True”. Для остальных адресов установите значение “False”. Для корректной загрузки адреса страну, город и индекс укажите в отдельных колонках файла импорта (<a href="#XREF_16177_314"><span>Рис. 5</span></a>).</p>
+
+<div class="media">
+<div class="media__caption"><span class="FM_Picturecaptionnumber">Рис. 5</span> — Фрагмент файла, подготовленного для импорта адресов</div>
+
+<div class="media__element"><img alt="chapter_universal_import_prepare_file.png" id="image5" src="../../../../../sites/default/files/documentation/user/ru/base/BPMonlineHelp/chapter_universal_import/chapter_universal_import_prepare_file.png" /> </div>
+</div>
+
+<p>Чтобы импортировать подготовленные данные на деталь <span class="key">Адреса</span>, выполните следующие действия:</p>
+
+<ol><li>Перейдите в раздел <span class="key">Контакты</span> и откройте запись любого контакта.</li>
+	<li>На странице выбранного контакта нажмите кнопку <img alt="btn_detail_menu.png" id="image6" src="../../../../../sites/default/files/documentation/user/ru/base/BPMonlineHelp/chapter_universal_import/btn_detail_menu.png" /> детали <span class="key">Адреса</span> —&gt; <span class="key">Импорт данных</span>.</li>
+	<li>На открывшейся странице загрузки данных нажмите кнопку <span class="key">Выбрать файл</span> и укажите подготовленный файл импорта или перетащите файл при помощи мыши в выделенную область страницы загрузки.</li>
+	<li>На следующей странице мастера загрузки настройте соответствие колонок файла импорта и Creatio. В данном случае колонки “Адрес”, “Город”, “Страна”, “Индекс”, “Тип адреса” и “Основной” определятся автоматически, а колонке “ФИО” необходимо назначить соответствие колонке “Контакт”. Нажмите кнопку <span class="key">Далее</span>.
+	<div class="message">
+	<p><span class="message__bold">На заметку.</span> Для того чтобы при импорте данных автоматически определялось соответствие между колонками в файле импорта и Creatio, заголовки колонок файла должны соответствовать заголовкам полей в системе.</p>
+	</div>
+	</li>
+	<li>
+	<p>Задайте параметры для поиска дублей — колонки “Контакт”, “Тип адреса” и “Адрес”. Далее нажмите кнопку <span class="key">Начать загрузку данных</span>.</p>
+
+	<p>Загрузка данных производится в фоновом режиме. По завершении импорта вы получите сообщение в центре уведомлений. Проверьте результаты загрузки данных на примере адреса, который будет выведен в реестр раздела.</p>
+	</li>
+</ol><h2><a name="TOC_Как_обновить_ценыbc-10" id="TOC_Как_обновить_ценыbc-10"></a>Обновить цены продуктов<a class="title-anchor" href="#title-2658-10" id="title-2658-10"> </a></h2>
+
+<p>Чтобы произвести массовое обновление цен на продукты, удобнее всего воспользоваться импортом данных на деталь <span class="key">Цены</span> вкладки <span class="key">Цены и остатки</span> страницы продукта. Для этого подготовьте файл импорта, в котором будут указаны:</p>
+
+<ul><li>
+	<p>Уникальные коды продуктов, для которых необходимо изменить цены.</p>
+	</li>
+	<li>
+	<p>Валюта.</p>
+	</li>
+	<li>
+	<p>Новые цены на продукты.</p>
+	</li>
+	<li>
+	<p>Прайс-лист, из которого взяты цены.</p>
+	</li>
+</ul><p>Если один и тот же продукт фигурирует в нескольких прайс-листах, то каждому из них в файле импорта должна соответствовать отдельная строка (<a href="#XREF_23850_315"><span>Рис. 6</span></a><span>)</span>.</p>
+
+<div class="media">
+<div class="media__caption"><span class="FM_Picturecaptionnumber">Рис. 6</span> — Фрагмент файла, подготовленный для импорта на деталь <span class="key">Цены</span></div>
+
+<div class="media__element"><img alt="chapter_universal_import_prepare_file_prices.png" id="image7" src="../../../../../sites/default/files/documentation/user/ru/base/BPMonlineHelp/chapter_universal_import/chapter_universal_import_prepare_file_prices.png" /> </div>
+</div>
+
+<p>Чтобы импортировать подготовленные данные на деталь <span class="key">Цены</span>, выполните следующие действия:</p>
+
+<ol><li>Перейдите в раздел <span class="key">Продукты</span> и откройте запись любого продукта.</li>
+	<li>На странице выбранного продукта нажмите кнопку <img alt="btn_detail_menu00001.png" id="image8" src="../../../../../sites/default/files/documentation/user/ru/base/BPMonlineHelp/chapter_universal_import/btn_detail_menu00001.png" /> детали <span class="key">Цены</span> —&gt; <span class="key">Импорт данных</span>.</li>
+	<li>На открывшейся странице загрузки данных нажмите кнопку <span class="key">Выбрать файл</span> и укажите подготовленный файл импорта или перетащите файл при помощи мыши в выделенную область страницы загрузки.</li>
+	<li>На следующей странице мастера загрузки настройте соответствие колонок файла импорта и Creatio. Если названия всех колонок файла соответствуют заголовкам полей в Creatio, то система определит соответствие автоматически. Нажмите кнопку <span class="key">Далее</span>.</li>
+	<li>Выберите параметры для поиска дублей из предложенных системой — колонки "Продукт" (по уникальному коду) и "Прайс-лист". Далее нажмите кнопку <span class="key">Начать загрузку данных</span>.
+	<p>После завершения загрузки в центре уведомлений появится соответствующее сообщение. С результатами вы сможете ознакомиться в разделе <span class="key">Продукты</span>, а подробную информацию о выполнении импорта можно получить в справочнике <span class="key">Лог импорта из Excel</span>.</p>
+	</li>
+</ol><h2><a name="TOC_Как_обновить_данные_обbc-11" id="TOC_Как_обновить_данные_обbc-11"></a><a name="TOC_Как_обновить_данные_об" id="TOC_Как_обновить_данные_об"></a><a name="CSH_7" id="CSH_7"></a><a name="HT_chapter_universal_import_remains_update" id="HT_chapter_universal_import_remains_update"></a><a name="XREF_46055" id="XREF_46055"></a>Обновить данные об остатках продуктов на складах<a class="title-anchor" href="#title-2658-11" id="title-2658-11"> </a></h2>
+
+<p>Для добавления в Creatio актуальной информации об остатках продуктов на складах вы можете импортировать данные на деталь <span class="key">Остатки на складах</span> вкладки <span class="key">Цены и остатки</span> страницы продукта.</p>
+
+<p>Вначале подготовьте файл импорта и укажите в нем:</p>
+
+<ul><li>
+	<p>Уникальные коды продуктов, остатки которых необходимо обновить.</p>
+	</li>
+	<li>
+	<p>Склад, на котором хранятся продукты.</p>
+	</li>
+	<li>
+	<p>Количество оставшихся продуктов.</p>
+	</li>
+	<li>
+	<p>Если некоторые продукты были заказаны, но еще не оплачены, то укажите их количество в отдельной колонке.</p>
+	</li>
+	<li>
+	<p>Количество товаров, доступных для продажи.</p>
+	</li>
+</ul><p>Если одинаковые продукты хранятся на разных складах, то каждый из них должен быть представлен в файле импорта отдельной строкой. Продукты с нулевыми остатками также должны быть указаны в файле импорта (<a href="#XREF_55902_316"><span>Рис.  7</span></a>).</p>
+
+<div class="media">
+<div class="media__caption"><span class="FM_Picturecaptionnumber">Рис. 7</span> — Подготовленный файл импорта</div>
+
+<div class="media__element"><img alt="chapter_universal_import_prepare_file_remains.png" id="image9" src="../../../../../sites/default/files/documentation/user/ru/base/BPMonlineHelp/chapter_universal_import/chapter_universal_import_prepare_file_remains.png" /> </div>
+</div>
+
+<p>Чтобы импортировать данные из подготовленного файла на деталь <span class="key">Остатки на складах</span>, выполните следующие действия:</p>
+
+<ol><li>Перейдите в раздел <span class="key">Продукты</span> и откройте запись любого продукта.</li>
+	<li>На странице выбранного продукта нажмите кнопку <img alt="btn_detail_menu00002.png" id="image10" src="../../../../../sites/default/files/documentation/user/ru/base/BPMonlineHelp/chapter_universal_import/btn_detail_menu00002.png" /> детали <span class="key">Остатки на складах</span> —&gt; <span class="key">Импорт данных</span>.</li>
+	<li>На открывшейся странице загрузки данных нажмите кнопку <span class="key">Выбрать файл</span> и укажите подготовленный файл импорта или перетащите файл при помощи мыши в выделенную область страницы загрузки.</li>
+	<li>На следующей странице мастера загрузки настройте соответствие колонок файла импорта и полей детали <span class="key">Остатки</span>. Если названия всех колонок файла соответствуют заголовкам полей в Creatio, система определит соответствие автоматически. Нажмите кнопку <span class="key">Далее</span>.</li>
+	<li>Выберите параметры для поиска дублей из предложенных системой — колонки  "Продукт" (по уникальному коду) и "Склад". Нажмите кнопку <span class="key">Начать загрузку данных</span>.</li>
+	<li>Загрузка данных происходит в фоновом режиме. После ее завершения вы получите соответствующее уведомление. Результаты импорта можно просмотреть в журнале загрузок или на вкладке <span class="key">Цены и остатки</span> страницы продукта.</li>
+</ol><h2><a name="TOC_Часто_задаваемые_вопросыbc-12" id="TOC_Часто_задаваемые_вопросыbc-12"></a><a name="TOC_Часто_задаваемые_вопросы" id="TOC_Часто_задаваемые_вопросы"></a><a name="CSH_8" id="CSH_8"></a><a name="HT_chapter_universal_import_faq" id="HT_chapter_universal_import_faq"></a><a name="XREF_31841_Excel" id="XREF_31841_Excel"></a>Часто задаваемые вопросы по импорту из Excel<a class="title-anchor" href="#title-2658-12" id="title-2658-12"> </a></h2>
+
+<h3><a name="TOC_Перезапишутся_лиbc-13" id="TOC_Перезапишутся_лиbc-13"></a><a name="TOC_Перезапишутся_ли" id="TOC_Перезапишутся_ли"></a><a name="XREF_53209" id="XREF_53209"></a>Перезапишутся ли значения полей, если я выполню повторный импорт?<a class="title-anchor" href="#title-2658-13" id="title-2658-13"> </a></h3>
+
+<p>При импорте значений Creatio анализирует файл импорта, определяет колонки (по строке заголовков), а затем анализирует сами данные. Для проверки на дубли используются колонки, выбранные пользователем в ходе работы мастера импорта. При этом важно выбирать колонки c уникальными значениями, чтобы избежать ошибок и сохранить нужные данные. Если записи будут идентифицированы как дубли, то все значения полей из файла перезапишут текущие значения. В противном случае система создаст новые записи с импортируемыми значениями. Если в файле содержатся незаполненные колонки, то они не перезапишут и не удалят существующие значения.</p>
+
+<h3><a name="TOC_Почему_после_проведенияbc-14" id="TOC_Почему_после_проведенияbc-14"></a><a name="TOC_Почему_после_проведения" id="TOC_Почему_после_проведения"></a><a name="XREF_76020" id="XREF_76020"></a>Почему после проведения импорта продублировались записи?<a class="title-anchor" href="#title-2658-14" id="title-2658-14"> </a></h3>
+
+<p>В процессе импорта данных в Creatio выполняется проверка на дубли. Для проверки используются колонки, которые вы укажете в ходе работы мастера импорта. Для записей, которые идентифицируются как дубли, существующие значения в полях заменяются данными из файла импорта. Если на данном шаге выбрать колонки, в которых содержатся не уникальные значения, то записи не будут идентифицированы как дубли. В итоге система продублирует уже имеющиеся значения.</p>
+
+<h3><a name="TOC_Как_выполнить_импорт3bc-15" id="TOC_Как_выполнить_импорт3bc-15"></a><a name="TOC_Как_выполнить_импорт3" id="TOC_Как_выполнить_импорт3"></a><a name="XREF_38877" id="XREF_38877"></a>Как выполнить импорт записей на детали страницы?<a class="title-anchor" href="#title-2658-15" id="title-2658-15"> </a></h3>
+
+<p>Чтобы выполнить импорт записей на деталь страницы, перейдите на деталь, нажмите кнопку <img alt="btn_detail_menu00003.png" id="image11" src="../../../../../sites/default/files/documentation/user/ru/base/BPMonlineHelp/chapter_universal_import/btn_detail_menu00003.png" /> —&gt; <span class="key">Импорт данных</span>. На отдельной вкладке браузера откроется страница загрузки данных с автоматически выбранным системой объектом для импорта.</p>
+
+<h3><a name="TOC_Как_импортироватьbc-16" id="TOC_Как_импортироватьbc-16"></a><a name="TOC_Как_импортировать" id="TOC_Как_импортировать"></a><a name="XREF_49210" id="XREF_49210"></a>Как импортировать продукты с характеристиками?<a class="title-anchor" href="#title-2658-16" id="title-2658-16"> </a></h3>
+
+<p>В отличие от средств связи и адресов, вы не можете импортировать характеристики сразу же вместе с продуктами. Этот процесс нужно разделить на несколько этапов.</p>
+
+<ol><li>Импортируйте предварительно подготовленную таблицу со всеми продуктами и основной информацией по продуктам, включая обязательные для заполнения колонки "Название" и "Валюта", а также дополнительные колонки, например, "Код" и "Цена".</li>
+	<li>Далее вам необходимо заполнить справочник <span class="key">Характеристики</span>. Если характеристик немного, то их можно внести самостоятельно, указав название, тип и, по необходимости, описание. Чтобы импортировать характеристики, октройте одноименный справочник и нажмите кнопку <span class="key">Действия</span> —&gt; <span class="key">Импорт данных</span>. Файл для импорта должна содержать две обязательные колонки: "Название", которая содержит названия всех характеристик, и "Тип значения", например, "дробное число", "целое число".</li>
+	<li>Когда все характеристики добавлены в справочник, можно приступать к импорту характеристик в привязке к продуктам. Эта таблица должна содержать колонки с названиями или уникальными кодами продуктов, названиями характеристик и значениями этих характеристик.</li>
+</ol><h3><a name="TOC_Как_импортировать1bc-17" id="TOC_Как_импортировать1bc-17"></a><a name="TOC_Как_импортировать1" id="TOC_Как_импортировать1"></a><a name="XREF_95534" id="XREF_95534"></a>Как импортировать продажи с продуктами?<a class="title-anchor" href="#title-2658-17" id="title-2658-17"> </a></h3>
+
+<p>Импорт продаж с продуктами в Creatio нужно выполнять в несколько этапов: сначала продажи, а затем продукты с привязкой к продаже. Подготовьте таблицу с данными по продажам и таблицу c продуктами в привязке к продажам, а затем приступайте к импорту.</p>
+
+<ol><li>Перейдите в раздел <span class="key">Продажи</span> и нажмите кнопку <span class="key">Действия</span> —&gt; <span class="key">Импорт данных</span>. Загрузите вашу основную таблицу с продажами.</li>
+	<li>На странице любой продажи перейдите на деталь <span class="key">Продукты</span>, нажмите кнопку <img alt="btn_detail_menu00004.png" id="image12" src="../../../../../sites/default/files/documentation/user/ru/base/BPMonlineHelp/chapter_universal_import/btn_detail_menu00004.png" /> —&gt; <span class="key">Импорт данных</span> и загрузите таблицу с продуктами с привязкой к продаже. Обратите внимание, что названия продаж должны быть уникальными и повторять названия предварительно импортированных продаж. Если одинаковых продаж несколько, то продукт привяжется к первой в списке. Кроме того, названия продуктов должны соответствовать продуктам в разделе <span class="key">Продукты</span>, иначе система автоматически создаст новые записи.</li>
+</ol><h3><a name="TOC_Как_импортировать_лиды_сbc-18" id="TOC_Как_импортировать_лиды_сbc-18"></a><a name="TOC_Как_импортировать_лиды_с" id="TOC_Как_импортировать_лиды_с"></a><a name="XREF_12166" id="XREF_12166"></a>Как импортировать лиды с типами потребности?<a class="title-anchor" href="#title-2658-18" id="title-2658-18"> </a></h3>
+
+<p>Для того чтобы импортировать лиды с типами потребности, в файл импорта лидов необходимо включить поля с нужными значениями потребности. Если на втором шаге мастера импорта колонка "Тип потребности" не определилась автоматически, ее нужно выбрать вручную. Значения типов потребностей должны быть указаны так же, как и в справочнике <span class="key">Типы потребностей</span>. Если названия отличаются, или импортируется новая потребность, то в справочник будут автоматически добавлены новые значения.</p>
+
+<h3><a name="TOC_Как_импортировать2bc-19" id="TOC_Как_импортировать2bc-19"></a><a name="TOC_Как_импортировать2" id="TOC_Как_импортировать2"></a>Как импортировать наполнение справочника?<a class="title-anchor" href="#title-2658-19" id="title-2658-19"> </a></h3>
+
+<p>Чтобы импортировать наполнение справочника, заполните в файле для импорта колонки, которые соответствуют колонкам, отображающимся в необходимом вам справочнике, например, "Название" и "Описание". Откройте справочник, который вы хотите заполнить данными из Excel, и нажмите кнопку <span class="key">Действия</span> —&gt; <span class="key">Импорт данных</span>. После того, как вы сопоставите колонки и выберите параметры для поиска дублей, загрузите данные в систему.</p>
+
+<h3><a name="TOC_После_импортаbc-20" id="TOC_После_импортаbc-20"></a><a name="TOC_После_импорта" id="TOC_После_импорта"></a><a name="XREF_79655" id="XREF_79655"></a>После импорта некорректно отображается полнота наполнения профиля в реестре. Как ее обновить?<a class="title-anchor" href="#title-2658-20" id="title-2658-20"> </a></h3>
+
+<p>Значение показателя полноты профиля пересчитывается при открытии страницы контакта или контрагента, сохранении данных и изменении правил пересчета в справочнике. Поэтому после импорта контактов и контрагентов полнота наполнения профиля может отображаться некорректно. Для массового пересчета показателя полноты наполнения профиля после импорта нужно запустить бизнес-процесс “Обновить полноту профиля”.</p>
+
+<h3><a name="TOC_Как_импортом_обновитьbc-21" id="TOC_Как_импортом_обновитьbc-21"></a><a name="TOC_Как_импортом_обновить" id="TOC_Как_импортом_обновить"></a><a name="XREF_58715" id="XREF_58715"></a>Как импортом обновить значения одной колонки, а остальные оставить без изменений?<a class="title-anchor" href="#title-2658-21" id="title-2658-21"> </a></h3>
+
+<p>Если вам нужно изменить значения только одной колонки, то в файл импорта нужно включить минимум одну колонку для связи с данными раздела и поиска дублей, и непосредственно колонку с обновленными данными. В этом случае изменения не затронут другие значения в полях, которых нет в импортируемой таблице.</p>
+
+<h3><a name="TOC_Как_можно_провестиbc-22" id="TOC_Как_можно_провестиbc-22"></a><a name="TOC_Как_можно_провести" id="TOC_Как_можно_провести"></a><a name="XREF_82057" id="XREF_82057"></a>Как можно провести импорт, просмотреть результат, а потом вернуть базу в предыдущее состояние (до проведения импорта)?<a class="title-anchor" href="#title-2658-22" id="title-2658-22"> </a></h3>
+
+<p>Система Creatio рассчитана в первую очередь на накопление и анализ данных. Так что для возврата в предыдущее состояние нужно использовать возможности и функциональность самой базы данных. Тем не менее, у вас есть несколько вариантов для выполнения задачи:</p>
+
+<ul><li>
+	<p>Тестируйте импорт и настройки, работая с небольшими порциями данных (2-3 записи). В этом случае для возврата в исходное состояние нужно будет удалить всего несколько записей.</p>
+	</li>
+	<li>
+	<p>Вы можете запросить резервную копию (бэкап) базы данных, чтобы локально, на собственной площадке тестировать и настраивать систему.</p>
+	</li>
+	<li>
+	<p>Доработать функциональность Creatio, чтобы автоматически по расписанию удалять ненужные данные.</p>
+	</li>
+</ul><h3><a name="TOC_В_моем_файле_для_импортаbc-23" id="TOC_В_моем_файле_для_импортаbc-23"></a><a name="TOC_В_моем_файле_для_импорта" id="TOC_В_моем_файле_для_импорта"></a><a name="XREF_30918" id="XREF_30918"></a><a name="XREF_91702" id="XREF_91702"></a>В моем файле для импорта поля “Фамилия”, “Имя”, “Отчество” содержатся в разных колонках, а в Creatio — одно поле [ФИО]. Как импортировать контакты?<a class="title-anchor" href="#title-2658-23" id="title-2658-23"> </a></h3>
+
+<p>Колонка "ФИО" в объекте <span class="key">Контакт</span> обязательна для заполнения. Поэтому она должна быть указана в файле импорта. Если же в вашей таблице поля <span class="key">Фамилия</span>, <span class="key">Имя</span> и <span class="key">Отчество</span> разделены в отдельные колонки, то нужно выполнить несколько простых шагов:</p>
+
+<ol><li>Создать колонку "ФИО" в подготовленном для импорта файле.</li>
+	<li>Заполнить колонку "ФИО". При этом вы можете использовать <span><a href="https://support.office.com/ru-ru/article/Объединение-текста-из-двух-или-нескольких-ячеек-в-одну-81ba0946-ce78-42ed-b3c3-21340eb164a6?omkt=ru-RU&amp;ui=ru-RU&amp;rs=ru-RU&amp;ad=RU">формулу для объединения текста</a></span> из нескольких ячеек в одну.</li>
+	<li>Сохранить и импортировать полученный файл.</li>
+</ol><h3><a name="TOC_Какие_колонки_должныbc-24" id="TOC_Какие_колонки_должныbc-24"></a><a name="TOC_Какие_колонки_должны" id="TOC_Какие_колонки_должны"></a><a name="HT_check_columns_for_excel_import_file" id="HT_check_columns_for_excel_import_file"></a><a name="XREF_62099" id="XREF_62099"></a>Какие колонки должны быть в файле для импорта?<a class="title-anchor" href="#title-2658-24" id="title-2658-24"> </a></h3>
+
+<p>Если вы не знаете, какие колонки должны присутствовать в файле импорта, то можете воспользоваться одним из вариантов решения проблемы. Первый и самый простой: откройте раздел, в который нужно произвести импорт, и перепишите в таблицу названия нужных полей в качестве заголовков колонок.</p>
+
+<p>Кроме того, можно вывести в реестр все необходимые колонки и воспользоваться действием <span class="key">Экспорт в Excel</span>.</p>
+
+<p>Примеры файлов для импорта:</p>
+
+<ol class="inner"><li>
+	<p><span><a href="../../../../../../sites/default/files/documents/docs/getting_started/files/%d0%9a%d0%be%d0%bd%d1%82%d1%80%d0%b0%d0%b3%d0%b5%d0%bd%d1%82.xlsx">Пример файла для импорта контрагентов</a></span> </p>
+	</li>
+	<li>
+	<p><span><a href="../../../../../../sites/default/files/documents/docs/getting_started/files/%d0%9a%d0%be%d0%bd%d1%82%d0%b0%d0%ba%d1%82.xlsx">Пример файла для импорта контактов</a></span> </p>
+	</li>
+	<li>
+	<p><span><a href="../../../../../../sites/default/files/documents/docs/getting_started/files/%d0%9f%d1%80%d0%be%d0%b4%d1%83%d0%ba%d1%82.xlsx">Пример файла для импорта продуктов</a></span> </p>
+	</li>
+</ol><h3><a name="TOC_Как_импортировать3bc-25" id="TOC_Как_импортировать3bc-25"></a><a name="TOC_Как_импортировать3" id="TOC_Как_импортировать3"></a><a name="CSH_9" id="CSH_9"></a><a name="HT_how_to_import_system_users_from_excel" id="HT_how_to_import_system_users_from_excel"></a><a name="XREF_56989_Excel" id="XREF_56989_Excel"></a>Как импортировать пользователей из Excel?<a class="title-anchor" href="#title-2658-25" id="title-2658-25"> </a></h3>
+
+<p>В Creatio есть возможность импортировать из Excel список пользователей системы, а также пользователей портала. Подробнее читайте в статье "<span><a href="../../../../../user/ustanovka_i_administrirovanie/upravlenie_polzovateljami_i_dostupom/upravleniye_polzovateliami/import_polzovatelej_iz_excel/importirovat_polzovateley_iz_excel.html?product=administration&amp;ver=7&amp;id=2001">Импортировать пользователей из Excel</a></span>”.</p>
+</div>
+      
+  </div>
+<div class="block block-layout-builder block-field-blocknodeuser-documentationfield-linked-link">
+  
+    
+      
+  <div class="field field--name-field-linked-link field--type-link field--label-above">
+    <div class="field__label">Смотрите также</div>
+          <div class="field__items">
+              <div class="field__item"><a href="../gryppy/gruppy.html">Группы</a></div>
+          <div class="field__item"><a href="../tegi/tegi.html">Теги</a></div>
+          <div class="field__item"><a href="../filtry/filtry.html">Фильтры</a></div>
+          <div class="field__item"><a href="../../../../../7-17/user/bazis_platformy/dannye/excel_export/eksport_v_excel.html">Экспорт данных в Excel</a></div>
+              </div>
+      </div>
+
+  </div>
+
+    </div>
+  </div>
+
+  </div>
+
+</article>
+
+  </div>
+
+  </div>
+
+          </div>
+        </div>
+
+                  <aside class="creatio-sidebar creatio-sidebar_first" role="complementary">
+              <div class="region region-sidebar-first">
+    <div id="block-documentationnaviagtion" class="block block-ts-nav block-ts-nav-doc-nav">
+  
+    
+      <div class="ts-nav-block"><a href="../../../../../index.html" class="ts-nav-block__link">Документация</a><div class="ts-nav-block__title">Для пользователя</div>
+</div>
+<div class="ts-nav-container"><ul class="ts-nav-menu"><li class="ts-nav-menu__item">
+  <a href="../../../nocode_platforma.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">No-сode платформа&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../bazis_platformy.html" class="ts-nav-menu__link ts-nav-menu__link_expanded ts-nav-menu__link_open" hreflang="zxx">Базис платформы&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+      <ul class="ts-nav-menu__children">
+      <li class="ts-nav-menu__item">
+  <a href="../../interfejs.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Интерфейс&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../dannye.html" class="ts-nav-menu__link ts-nav-menu__link_expanded ts-nav-menu__link_open" hreflang="zxx">Данные&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+      <ul class="ts-nav-menu__children">
+      <li class="ts-nav-menu__item">
+  <a href="../filtry/filtry.html" class="ts-nav-menu__link" hreflang="ru">Фильтры</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../gryppy/gruppy.html" class="ts-nav-menu__link" hreflang="ru">Группы</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../tegi/tegi.html" class="ts-nav-menu__link" hreflang="ru">Теги</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="import_iz_excel.html" class="ts-nav-menu__link ts-nav-menu__link_active ts-nav-menu__link_open" hreflang="ru">Excel импорт</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../excel_export/export_v_excel.html" class="ts-nav-menu__link" hreflang="ru">Excel экспорт</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../dubli/poisk_i_obedinenie_dubly.html" class="ts-nav-menu__link" hreflang="ru">Дубли</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../dostup_na_zapis/nastroit_prava_dostupa_na_zapis.html" class="ts-nav-menu__link" hreflang="ru">Доступ на запись</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../udalenie_zapisey/udalit_zapisi.html" class="ts-nav-menu__link" hreflang="ru">Удаление записей</a>
+  </li>
+
+    </ul>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../kommunikacii.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Коммуникации&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../mobilnoe_prilozhenie.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Мобильное приложение&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../vypolnenie_biznes-processov.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Выполнение бизнес-процессов&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+
+    </ul>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../instrumenty_crm.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Инструменты CRM&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../instrumenty_kastomizacii.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Инструменты кастомизации&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../biznes_processy.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Бизнес-процессы&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../instrumenty_marketinga.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Инструменты маркетинга&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../instrumenty_prodazh.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Инструменты продаж&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../instrumenty_servisa.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Инструменты сервиса&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../ustanovka_i_administrirovanie.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Администрирование&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../razvertyvanie_onsite.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Развертывание on-site&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../banki_i_finansy.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Банки и финансы&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../drugie_reshenija.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Другие решения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+</ul>
+</div>
+
+  </div>
+
+  </div>
+
+            <div class="creatio-sidebar__toggle"></div>
+          </aside>
+        
+                  <aside class="creatio-sidebar creatio-sidebar_second" role="complementary">
+              <div class="region region-sidebar-second">
+    <div id="block-example" class="block block-ts-nav block-ts-nav-page-nav">
+  
+    
+        <div class="ts-nav-title">Excel импорт</div>
+<div class="ts-nav-page">
+      <ul class="ts-nav-page__list">
+                                                <li class="ts-nav-page__item ts-nav-page__item_expanded ts-nav-page__item_open"><a href="import_iz_excel.html" class="ts-nav-page__link ts-nav-page__link_expanded ts-nav-page__link_active">Импорт из Excel&nbsp;<span class="ts-nav-page__link-arrow"></span></a></li>
+          </ul>
+  </div>
+
+  </div>
+<div id="block-adminfeedbackblock" class="block block-admin-feedback block-admin-feedback-block">
+  
+    
+      <div id="feedback-message"><div id="upper-feedback-content"><h2>Был ли данный материал полезен?</h2>
+<input class="feedback-btn feedback-btn__yes button js-form-submit form-submit" data-node-id="2658" data-feedback="yes" type="submit" name="op" value="Да" />
+<input class="feedback-btn feedback-btn__no button js-form-submit form-submit" data-node-id="2658" data-feedback="no" type="submit" name="op" value="Нет" />
+</div>
+<form class="admin-feedback-form" data-drupal-selector="admin-feedback-form" action="https://academy.terrasoft.ua/docs/8-0/user/bazis_platformy/dannye/excel_import/import_iz_excel" method="post" id="admin-feedback-form" accept-charset="UTF-8">
+  <div id="feedback-msg-result"></div><div class="js-form-item form-item js-form-type-textarea form-type-textarea js-form-item-feedback-message form-item-feedback-message form-no-label">
+        <div class="form-textarea-wrapper">
+  <textarea id="edit-feedback-msg" data-drupal-selector="edit-feedback-message" name="feedback_message" rows="5" cols="60" class="form-textarea resize-vertical"></textarea>
+</div>
+
+        </div>
+<input id="feedback-id" data-drupal-selector="edit-feedback-id" type="hidden" name="feedback_id" value="" />
+<input class="feedback-btn feedback-btn__send-comment button js-form-submit form-submit" data-drupal-selector="edit-feedback-send" type="submit" id="edit-feedback-send" name="op" value="Отправить" />
+<input autocomplete="off" data-drupal-selector="form-y4xjtlgpxku4djyqrwfceujkhwps8illceztpd2yccg" type="hidden" name="form_build_id" value="form-y4xjTlgPXkU4djyQRwfCeUjKHWps8illceZTpd2yccg" />
+<input data-drupal-selector="edit-admin-feedback-form" type="hidden" name="form_id" value="admin_feedback_form" />
+
+</form>
+</div>
+
+  </div>
+
+  </div>
+
+          </aside>
+              </main>
+    </div>
+  </div>
+
+  <footer role="contentinfo">
+    <div class="creatio-region creatio-region_footer">
+      <div class="creatio-container">
+          <div class="region region-footer">
+    <div id="block-footerua" class="block block-simple-block block-simple-blockfooter-ua">
+  
+    
+      <div class="footer">
+<div class="footer-left">
+<ul class="footer-socials"><li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_fb" href="https://www.facebook.com/terrasoft.ua" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_in" href="https://www.linkedin.com/company/terrasoft/" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_yt" href="https://www.youtube.com/c/TerrasoftUkraine" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_tg" href="https://t.me/Terrasoft_UA" target="_blank"> </a></li>
+</ul></div>
+
+<div class="footer-contact">
+<div class="footer-title">Будьте на связи!</div>
+
+<div class="footer-content">
+<div class="footer-items">
+<div class="footer-item"><a class="footer__link footer__link_phone" href="tel:+380443633133">+38 (044) 363-31-33</a></div>
+</div>
+
+<div class="footer-items">
+<div class="footer-item"><a class="footer__link footer__link_email" href="mailto:support@terrasoft.ua">support@terrasoft.ua</a></div>
+</div>
+</div>
+</div>
+</div>
+
+  </div>
+
+  </div>
+
+      </div>
+    </div>
+    <div class="creatio-region creatio-region_bottom">
+      <div class="creatio-container">
+          <div class="region region-bottom">
+    <div id="block-allrightsreservedua" class="block block-simple-block block-simple-blockfooter-bottom-ua">
+  
+    
+      <p>© 2002-2022 Terrasoft.  |  <a href="https://www.terrasoft.ua/privacy-policy" target="_blank">Конфиденциальность</a></p>
+
+  </div>
+
+  </div>
+
+      </div>
+    </div>
+  </footer>
+</div>
+<div class="creatio-bg"></div>
+
+
+  </div>
+
+    
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/docs\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/2658","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"ru"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"ajaxPageState":{"libraries":"admin_feedback\/admin_feedback_block,admin_feedback\/admin_feedback_css,classy\/base,classy\/messages,classy\/node,core\/drupal.ajax,core\/jquery.form,core\/normalize,creatio\/creatio.lists,creatio\/fancybox,creatio\/global,layout_discovery\/onecol,system\/base,ts_doc\/doc_version,ts_feedback\/ts_feedback,ts_nav\/breadcrumb,ts_nav\/doc_nav,ts_nav\/page_nav,ts_title_anchor\/ts_title_anchor","theme":"creatio","theme_token":null},"ajaxTrustedUrl":{"form_action_p_pvdeGsVG5zNF_XLGPTvYSKCf43t8qZYSwcfZl2uzM":true,"\/docs\/8-0\/user\/bazis_platformy\/dannye\/excel_import\/import_iz_excel?ajax_form=1":true},"admin_feedback":{"yes_response":"\u0421\u043f\u0430\u0441\u0438\u0431\u043e \u0437\u0430 \u043e\u0431\u0440\u0430\u0442\u043d\u0443\u044e \u0441\u0432\u044f\u0437\u044c!","no_response":"\u0421\u043f\u0430\u0441\u0438\u0431\u043e \u0437\u0430 \u043e\u0431\u0440\u0430\u0442\u043d\u0443\u044e \u0441\u0432\u044f\u0437\u044c!","custom_text_response_on_no":{"value":"","format":"full_html"},"feedback_prompt_on_yes":true,"feedback_prompt_on_no":true,"feedback_enable_predefined_answers":false,"feedback_prompt":"\u041a\u0430\u043a \u043c\u043e\u0436\u043d\u043e \u0443\u043b\u0443\u0447\u0448\u0438\u0442\u044c \u044d\u0442\u0443 \u0441\u0442\u0430\u0442\u044c\u044e?"},"ajax":{"edit-feedback-send":{"callback":"::validateFeedbackMsg","event":"mousedown","keypress":true,"prevent":"click","url":"\/docs\/8-0\/user\/bazis_platformy\/dannye\/excel_import\/import_iz_excel?ajax_form=1","dialogType":"ajax","submit":{"_triggering_element_name":"op","_triggering_element_value":"\u041e\u0442\u043f\u0440\u0430\u0432\u0438\u0442\u044c"}}},"user":{"uid":0,"permissionsHash":"9c2367dfcaba0fa15f0375f97aed64e146c908cee68508d13b79e3ee80e5162d"}}</script>
+<script src="../../../../../sites/default/files/js/js_F2-Y4EzgTnESr58XByoLYEnsbi7ysTfMIKN1RvsMSWY.js"></script>
+
+
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+      <g id="svg-copy" class="svg-icon svg-icon_copy">
+        <path d="M15.111,18H1.889A1.848,1.848,0,0,1,0,16.2V3.6A1.848,1.848,0,0,1,1.889,1.8H5.837a2.87,2.87,0,0,1,5.326,0h3.948A1.848,1.848,0,0,1,17,3.6V16.2A1.848,1.848,0,0,1,15.111,18ZM3.777,12.6v1.8h6.611V12.6Zm0-3.6v1.8h9.445V9Zm0-3.6V7.2h9.445V5.4ZM8.5,1.8a.924.924,0,0,0-.944.9.945.945,0,0,0,1.889,0A.924.924,0,0,0,8.5,1.8Z"/>
+      </g>
+
+      <g id="svg-prev" class="svg-icon svg-icon_arrow">
+        <path d="M5.488,12.779,0,6.39,5.488,0" transform="translate(1 0.652)"/>
+      </g>
+
+      <g id="svg-next" class="svg-icon svg-icon_arrow">
+        <path d="M0,12.779,5.488,6.39,0,0" transform="translate(0.759 0.652)"/>
+      </g>
+    </svg>
+  </body>
+
+<!-- Mirrored from academy.terrasoft.ua/docs/8-0/user/bazis_platformy/dannye/excel_import/import_iz_excel by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Mar 2022 04:02:25 GMT -->
+</html>

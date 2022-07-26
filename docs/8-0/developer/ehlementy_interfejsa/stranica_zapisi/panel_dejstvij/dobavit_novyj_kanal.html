@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# ">
+  
+<!-- Mirrored from academy.terrasoft.ua/docs/8-0/developer/ehlementy_interfejsa/stranica_zapisi/panel_dejstvij/dobavit_novyj_kanal by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Mar 2022 08:20:08 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+          <!-- Google Tag Manager -->
+      <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          '../../../../../../../www.googletagmanager.com/gtm5445.html?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-KLLB8G');</script>
+      <!-- End Google Tag Manager -->
+        <meta charset="utf-8" />
+<link rel="canonical" href="dobavit_novyj_kanal.html" />
+<meta name="description" content="Описание примера 
+
+Добавить новый пользовательский канал в инструментальную панель действий страницы контакта. Канал должен полностью повторять функциональность канала фиксации результатов звонка (канал CallMessagePublisher)." />
+<meta property="og:url" content="https://academy.terrasoft.ua/docs/8-0/developer/ehlementy_interfejsa/stranica_zapisi/panel_dejstvij/dobavit_novyj_kanal" />
+<meta property="og:title" content="Добавить новый канал на панель действий" />
+<meta property="og:description" content="Описание примера 
+
+Добавить новый пользовательский канал в инструментальную панель действий страницы контакта. Канал должен полностью повторять функциональность канала фиксации результатов звонка (канал CallMessagePublisher)." />
+<meta name="Generator" content="Drupal 9 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="../../../../../themes/custom/creatio/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="revision" href="dobavit_novyj_kanal.html" />
+
+    <title>Добавить новый канал на панель действий | Creatio Academy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&amp;family=Open+Sans:ital,wght@0,300;0,400;0,600;1,400&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" media="all" href="../../../../../sites/default/files/css/css_6lTP66__-yc6QXFp1zOwoeJ0HVigoYZP-SeoLLii000.css" />
+<link rel="stylesheet" media="all" href="../../../../../sites/default/files/css/css_XQJDNhkF3xH5SZCcY-PI89Zu4nYIzQ5oR3SnUKyfXJU.css" />
+<link rel="stylesheet" media="print" href="../../../../../sites/default/files/css/css_Zn4VHvcniOOtUwkIVwXzYr_0AI9gUVgZcPqaH4ViagU.css" />
+
+    
+  </head>
+  <body class="path-node page-node-type-case">
+          <!-- Google Tag Manager (noscript) -->
+      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KLLB8G"
+                        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+      <!-- End Google Tag Manager (noscript) -->
+    
+        
+      <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    <div class="creatio-page d-flex flex-column">
+        <div class="region region-informer">
+    <div id="block-terrasoftpidtrimueukrainu" class="block block-simple-block block-simple-blockterrasoft-pidtrimue-ukrainu">
+  
+    
+      <style type="text/css">
+<!--/*--><![CDATA[/* ><!--*/
+@import url(../../../../../../../www.terrasoft.ua/themes/custom/creatio/css/components/informer.css)
+
+/*--><!]]>*/
+</style><div class="ts-swu">
+<div class="creatio-container">
+<div class="ts-swu__cont">
+<div><a class="ts-swu__link" href="https://www.terrasoft.ua/terrasoft-stands-with-ukraine" target="_blank">Україна понад усе!</a> <span><a href="https://www.terrasoft.ua/terrasoft-stands-with-ukraine" target="_blank">Приєднуйтеся</a> до допомоги!</span></div>
+</div>
+</div></div>
+
+  </div>
+
+  </div>
+
+  
+  <header role="banner">
+          <div class="creatio-region creatio-region_top">
+        <div class="creatio-container">
+            <div class="region region-top">
+    <div id="block-menutoggle" class="block block-simple-block block-simple-blockmenu-toggle">
+  
+    
+      <div class="menu-toggle"><span> </span></div>
+
+  </div>
+<div id="block-logowhite-2" class="block block-simple-block block-simple-blocklogo-white">
+  
+    
+      <p><a class="site-logo" href="../../../../../../index.html" rel="home"><img src="../../../../../themes/custom/creatio/logo-white.svg" /></a></p>
+
+  </div>
+<div id="block-search" class="block block-simple-block block-simple-blocksearch">
+  
+    
+      <div class="search">
+<form action="https://academy.terrasoft.ua/search" class="search-form" method="get"><input class="search-form__input" name="search" placeholder="Поиск" type="search" /><input class="search-form__button" type="submit" value="Поиск" /> </form>
+
+<div class="search-toggle"> </div>
+</div>
+
+  </div>
+<nav role="navigation" aria-labelledby="block-sitesua-menu" id="block-sitesua" class="block block-menu navigation menu--sites-ua">
+            
+  <h2 class="visually-hidden" id="block-sitesua-menu">Sites UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="https://www.terrasoft.ua/" rel="nofollow" target="_blank">Terrasoft</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://community.terrasoft.ua/" rel="nofollow" target="_blank">Community</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://marketplace.terrasoft.ua/" rel="nofollow" target="_blank">Marketplace</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+<div id="block-usermenu" class="block block-ts-user block-ts-user-menu-block">
+  
+    
+      <ul class="user-menu">
+      <li class="user-menu__item">
+      <a class="user-menu__link" href="https://profile.terrasoft.ua/user/login?destination=academy/ua/docs/8-0/developer/ehlementy_interfejsa/stranica_zapisi/panel_dejstvij/dobavit_novyj_kanal">Войти</a>
+    </li>
+  </ul>
+
+  </div>
+<div id="block-usermenumobile" class="block block-ts-user block-ts-user-menu-mobile-block">
+  
+    
+      <ul class="user-menu-mobile">
+      <li class="user-menu-mobile__item">
+      <div class="user-menu-mobile__user user-menu-mobile__user_icon"></div>
+      <ul class="user-menu-mobile__submenu">
+        <li class="user-menu-mobile__subitem">
+          <a class="user-menu-mobile__sublink" href="https://profile.terrasoft.ua/user/login?destination=academy/ua/docs/8-0/developer/ehlementy_interfejsa/stranica_zapisi/panel_dejstvij/dobavit_novyj_kanal">Войти</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  </div>
+
+  </div>
+
+        </div>
+      </div>
+              <div class="creatio-region creatio-region_header">
+        <div class="creatio-container">
+            <div class="region region-header">
+    <div id="block-logo" class="block block-simple-block block-simple-blocklogo">
+  
+    
+      <p><a class="site-logo" href="../../../../../../index.html" rel="home"><img src="../../../../../themes/custom/creatio/logo.svg" /></a></p>
+
+  </div>
+<nav role="navigation" aria-labelledby="block-osnovnayanavigaciyaua-menu" id="block-osnovnayanavigaciyaua" class="block block-menu navigation menu--main-ua">
+            
+  <h2 class="visually-hidden" id="block-osnovnayanavigaciyaua-menu">Основная навигация UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="../../../../../index.html" data-drupal-link-system-path="&lt;front&gt;">Документация</a>
+              </li>
+                <li class="menu-item">
+        <a href="../../../../../../trainings.html">Тренинги</a>
+              </li>
+                <li class="menu-item">
+        <a href="../../../../../certification.html" data-drupal-link-system-path="node/3084">Сертификация и тестирование</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+<nav role="navigation" aria-labelledby="block-sitesua-2-menu" id="block-sitesua-2" class="block block-menu navigation menu--sites-ua">
+            
+  <h2 class="visually-hidden" id="block-sitesua-2-menu">Sites UA</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="https://www.terrasoft.ua/" rel="nofollow" target="_blank">Terrasoft</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://community.terrasoft.ua/" rel="nofollow" target="_blank">Community</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://marketplace.terrasoft.ua/" rel="nofollow" target="_blank">Marketplace</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+
+  </div>
+
+        </div>
+      </div>
+              <div class="creatio-region creatio-region_breadcrumb">
+        <div class="creatio-container">
+            <div class="region region-breadcrumb">
+    <div id="block-logowhite" class="block block-simple-block block-simple-blocklogo-white">
+  
+    
+      <p><a class="site-logo" href="../../../../../../index.html" rel="home"><img src="../../../../../themes/custom/creatio/logo-white.svg" /></a></p>
+
+  </div>
+<div id="block-breadcrumbnaviagtion" class="block block-ts-nav block-ts-nav-bread">
+  
+    
+      <nav class="breadcrumb"><ol class="ts-nav-breadcrumb__list"><li class="ts-nav-breadcrumb__item"><a href="../../../../../index.html" class="ts-nav-breadcrumb__link" title="Документация">Документация</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../../../index2132.html?vid_1=2" class="ts-nav-breadcrumb__link" title="Для разработчика">Для разработчика</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../ehlementy_interfejsa.html" class="ts-nav-breadcrumb__link" title="Элементы интерфейса" hreflang="ru">Элементы интерфейса</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../stranica_zapisi.html" class="ts-nav-breadcrumb__link" title="Страница записи" hreflang="ru">Страница записи</a></li>
+<li class="ts-nav-breadcrumb__item ts-nav-breadcrumb__item_mobile"><a href="../../../interface_elements/page/panel_dejstvij.html" class="ts-nav-breadcrumb__link" title="Панель действий" hreflang="ru">Панель действий</a></li>
+<li class="ts-nav-breadcrumb__item"><span class="ts-nav-breadcrumb__link ts-nav-breadcrumb__link_current" title="Добавить новый канал">Добавить новый канал</span></li>
+</ol>
+</nav>
+
+  </div>
+<div id="block-search-2" class="block block-simple-block block-simple-blocksearch">
+  
+    
+      <div class="search">
+<form action="https://academy.terrasoft.ua/search" class="search-form" method="get"><input class="search-form__input" name="search" placeholder="Поиск" type="search" /><input class="search-form__button" type="submit" value="Поиск" /> </form>
+
+<div class="search-toggle"> </div>
+</div>
+
+  </div>
+
+  </div>
+
+        </div>
+      </div>
+      </header>
+
+  <div class="creatio-region creatio-region_main">
+    <div class="creatio-container">
+                <div class="region region-breadcrumb-mobile">
+    <div id="block-breadcrumbnaviagtion-2" class="block block-ts-nav block-ts-nav-bread">
+  
+    
+      <nav class="breadcrumb"><ol class="ts-nav-breadcrumb__list"><li class="ts-nav-breadcrumb__item"><a href="../../../../../index.html" class="ts-nav-breadcrumb__link" title="Документация">Документация</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../../../index2132.html?vid_1=2" class="ts-nav-breadcrumb__link" title="Для разработчика">Для разработчика</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../../ehlementy_interfejsa.html" class="ts-nav-breadcrumb__link" title="Элементы интерфейса" hreflang="ru">Элементы интерфейса</a></li>
+<li class="ts-nav-breadcrumb__item"><a href="../../stranica_zapisi.html" class="ts-nav-breadcrumb__link" title="Страница записи" hreflang="ru">Страница записи</a></li>
+<li class="ts-nav-breadcrumb__item ts-nav-breadcrumb__item_mobile"><a href="../../../interface_elements/page/panel_dejstvij.html" class="ts-nav-breadcrumb__link" title="Панель действий" hreflang="ru">Панель действий</a></li>
+<li class="ts-nav-breadcrumb__item"><span class="ts-nav-breadcrumb__link ts-nav-breadcrumb__link_current" title="Добавить новый канал">Добавить новый канал</span></li>
+</ol>
+</nav>
+
+  </div>
+
+  </div>
+
+      
+      <main class="creatio-main" role="main">
+                                                    
+        <div class="creatio-content creatio-content_small">
+          <div class="creatio-content__inner creatio-content__inner_bg">
+                            <div class="region region-messages">
+    <div data-drupal-messages-fallback class="hidden"></div>
+
+  </div>
+
+            
+              <div class="region region-content">
+    <div id="block-creatio-page-title" class="block block-core block-page-title-block">
+  
+    
+      
+  <h1 class="page-title"><span class="field field--name-title field--type-string field--label-hidden">Добавить новый канал на панель действий</span>
+</h1>
+
+
+  </div>
+<div id="block-creatio-content" class="block block-system block-system-main-block">
+  
+    
+      
+<article data-history-node-id="3190" role="article" about="/docs/8-0/developer/ehlementy_interfejsa/stranica_zapisi/panel_dejstvij/dobavit_novyj_kanal" class="node node--type-case node--view-mode-full">
+
+  
+    
+
+  
+  <div class="node__content">
+      <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocknodecasefield-difficulty">
+  
+    
+      
+            <div class="field field--name-field-difficulty field--type-entity-reference field--label-hidden field__item"><div about="/docs/8-0/taxonomy/term/169" id="taxonomy-term-169" class="taxonomy-term vocabulary-difficulty">
+  
+  
+  <div class="content">
+      <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocktaxonomy-termdifficultyfield-icon">
+  
+    
+      
+            <div class="field field--name-field-icon field--type-image field--label-hidden field__item">  <img src="../../../../../sites/default/files/difficulty/advanced.svg" alt="" loading="lazy" typeof="foaf:Image" />
+
+</div>
+      
+  </div>
+<div class="block block-layout-builder block-field-blocktaxonomy-termdifficultyname">
+  
+    
+      
+            <div class="field field--name-name field--type-string field--label-hidden field__item"><span style="color: #EF4524;">Сложный</span></div>
+      
+  </div>
+
+    </div>
+  </div>
+
+  </div>
+</div>
+</div>
+      
+  </div>
+<div class="block block-ts-doc block-ts-doc-downloads">
+  
+    
+      <a href="../../../../../sites/default/files/pdf/node/3190/Dobavit_novyy_kanal_na_panel_deystviy_.pdf" target="_blank">PDF</a>
+  </div>
+<div class="block block-ts-doc block-ts-doc-versions">
+  
+    
+        <div class="ts-doc-versions">
+    <select class="ts-doc-versions__select">
+                                                <option value="/docs/8-0/developer/ehlementy_interfejsa/stranica_zapisi/panel_dejstvij/dobavit_novyj_kanal" selected>Версия 8.0</option>
+                              <option value="/docs/7-18/developer/ehlementy_interfejsa/stranica_zapisi/panel_dejstvij/dobavit_novyj_kanal">Версия 7.18</option>
+                              <option value="/docs/7-17/developer/ehlementy_interfejsa/stranica_zapisi/panel_dejstvij/dobavit_novyj_kanal">Версия 7.17</option>
+                              <option value="/docs/7-16/developer/ehlementy_interfejsa/stranica_zapisi/panel_dejstvij/dobavit_novyj_kanal">Версия 7.16</option>
+          </select>
+  </div>
+
+  </div>
+
+    </div>
+  </div>
+  <div class="layout layout--onecol">
+    <div  class="layout__region layout__region--content">
+      <div class="block block-layout-builder block-field-blocknodecasebody">
+  
+    
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><h2>Описание примера<a class="title-anchor" href="#title-2238-2" id="title-2238-2"> </a></h2>
+
+<p>Добавить новый пользовательский канал в инструментальную панель действий страницы контакта. Канал должен полностью повторять функциональность канала фиксации результатов звонка (канал <span class="filled">CallMessagePublisher</span>).</p>
+
+<h2>Исходный код<a class="title-anchor" href="#title-2238-3" id="title-2238-3"> </a></h2>
+
+<p>Пакет с реализацией примера можно скачать по <a href="../../../../../../sites/default/files/documents/downloads/SDK/Packages/sdkActionsDashboardNewChannel_18.05.14_04.16.49.zip" target="_blank">ссылке</a>.</p>
+
+<h2>Алгоритм выполнения примера<a class="title-anchor" href="#title-2238-4" id="title-2238-4"> </a></h2>
+
+<h3>1. Добавить схему исходного кода <span class="filled">UsrCallsMessagePublisher</span><a class="title-anchor" href="#title-2238-5" id="title-2238-5"> </a></h3>
+
+<p>Для создания схемы исходного кода в разделе <span class="key">Конфигурация</span> на вкладке <span class="key">Схемы</span> выполните пункт меню <span class="key">Добавить</span> — <span class="key">Исходный код</span> (рис. 1).</p>
+
+<div class="media">
+<div class="media__caption">Рис. 1. — Добавление схемы исходного кода</div>
+
+<div class="media__element"><img alt="" border="0" src="../../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/ActionsDashboardNewChannel/scr_add_source_code.png" /></div>
+</div>
+
+<p>Для созданной схемы укажите (рис. 2):</p>
+
+<ul><li><span class="key">Заголовок</span> (<span class="key">Title</span>) — "Издатель сообщений логирования звонка" (Call message logging publisher);</li>
+	<li><span class="key">Название</span> (<span class="key">Name</span>) — "UsrCallsMessagePublisher".</li>
+</ul><div class="media">
+<div class="media__caption">Рис. 2. — Свойства схемы исходного кода</div>
+
+<div class="media__element"><img alt="" border="0" src="../../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/ActionsDashboardNewChannel/scr_source_code_props.png" /></div>
+</div>
+
+<p>В созданной схеме в пространстве имен <span class="filled">Terrasoft.Configuration</span> добавьте новый класс <span class="filled">CallsMessagePublisher</span>, наследуемый от класса <span class="filled">BaseMessagePublisher</span>. Класс <span class="filled">BaseMessagePublisher</span> содержит базовую логику сохранения объекта в базу данных и базовую логику обработчиков событий. Класс-наследник будет содержать логику для конкретного отправителя, например, заполнение колонок объекта <span class="filled">Activity</span> и последующую отправку сообщения.</p>
+
+<p>Для реализации нового класса <span class="filled">CallsMessagePublisher</span> в созданную схему добавьте следующий исходный код:</p>
+
+<div class="code">
+<div class="code__widgets">
+<div class="code__source">
+<pre class="prettyprint">
+<span>using</span> System.Collections.Generic;
+<span>using</span> Terrasoft.Core;
+
+<span>namespace</span> Terrasoft.Configuration
+{
+    <span>// Класс-наследник BaseMessagePublisher.
+</span>    <span>public</span> <span>class</span> CallsMessagePublisher : BaseMessagePublisher
+    {
+        <span>// Конструктор класса.
+</span>        <span>public</span> CallsMessagePublisher(UserConnection userConnection, Dictionary&lt;<span>string</span>, <span>string</span>&gt; entityFieldsData)
+            : <span>base</span>(userConnection, entityFieldsData) {
+            <span>//Схема, с которой будет работать CallsMessagePublisher.
+</span>            EntitySchemaName = <span>"Activity"</span>;
+        }
+    }
+}
+</pre>
+</div>
+</div>
+</div>
+
+<p>После этого сохраните и опубликуйте схему.</p>
+
+<h3>2. Создать схему замещающей модели представления <span class="filled">SectionActionsDashboard</span><a class="title-anchor" href="#title-2238-6" id="title-2238-6"> </a></h3>
+
+<p>Создайте схему замещающей модели представления, в которой в качестве родительского объекта укажите <span class="filled">SectionActionsDashboard</span> (рис. 3). Процесс создания схемы замещающей модели представления описан в статье "<a data-auto-update-caption="true" href="../../../../../node/2090.html">Cоздать клиентскую схему</a>".</p>
+
+<div class="media">
+<div class="media__caption">Рис. 3. — Свойства схемы замещающей модели представления</div>
+
+<div class="media__element"><img alt="" border="0" src="../../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/ActionsDashboardNewChannel/scr_client_schema_props.png" /></div>
+</div>
+
+<div class="message">
+<p><span class="message__bold">На заметку.</span></p>
+
+<p>Если нужно добавить канал только в одну страницу записи, то необходимо создать новый модуль с названием <span class="filled">имя_разделаSectionActionsDashboard</span> (например, <span class="filled">BooksSectionActionsDashboard</span>) и в качестве родительской схемы указать <span class="filled">SectionActionsDashboard</span> того раздела, в котором будет размещена страница записи.</p>
+</div>
+
+<p>В свойстве <span class="filled">diff</span> схемы замещающей модели представления установите операции вставки вкладки <span class="filled">CallsMessageTab</span> и контейнера сообщений, а также укажите модуль, который будет отрисовываться в данном канале на одной из вкладок. После этого новый канал будет виден на страницах записей тех разделов, в которых подключен <span class="filled">SectionActionsDashboard</span>.</p>
+
+<p>В свойстве <span class="filled">methods</span> переопределите метод <span class="filled">getSectionPublishers()</span>, который добавит созданный канал в список издателей сообщений, и метод <span class="filled">getExtendedConfig()</span>, в котором определяются параметры вкладки.</p>
+
+<p>Чтобы метод <span class="filled">getExtendedConfig()</span> отработал корректно, загрузите изображение иконки канала и укажите ее в параметре <span class="filled">ImageSrc</span>. Файл изображения иконки, используемый в данном примере, можно скачать <a href="../../../../../../sites/default/files/documents/docs/technic/SDK/7.15.0/Screenshots/ActionsDashboardNewChannel/CallsMessageTabImage.svg" target="_blank">здесь</a>.</p>
+
+<p>Переопределите метод <span class="filled">onGetRecordInfoForPublisher()</span> и добавьте метод <span class="filled">getContactEntityParameterValue()</span>, определяющие значение контакта из страницы записи раздела, в котором находится панель действий.</p>
+
+<p>Исходный код схемы замещающей модели представления:</p>
+
+<div class="code">
+<div class="code__widgets">
+<div class="code__source">
+<pre class="prettyprint">
+define(<span>"SectionActionsDashboard"</span>, [<span>"SectionActionsDashboardResources"</span>, <span>"UsrCallsMessagePublisherModule"</span>],
+    <span>function</span>(resources) {
+        <span>return</span> {
+            attributes: {},
+            messages: {},
+            methods: {
+                <span>// Метод задает настройки отображения вкладки канала в панели действий.
+</span>                getExtendedConfig: <span>function</span>() {
+                    <span>// Вызов родительского метода.
+</span>                    <span>var</span> config = <span>this</span>.callParent(arguments);
+                    <span>var</span> lczImages = resources.localizableImages;
+                    config.CallsMessageTab = {
+                        <span>// Изображение вкладки.
+</span>                        <span>"ImageSrc"</span>: <span>this</span>.Terrasoft.ImageUrlBuilder.getUrl(lczImages.CallsMessageTabImage),
+                        <span>// Значение маркера.
+</span>                        <span>"MarkerValue"</span>: <span>"calls-message-tab"</span>,
+                        <span>// Выравнивание.
+</span>                        <span>"Align"</span>: <span>this</span>.Terrasoft.Align.RIGHT,
+                        <span>// Тэг.
+</span>                        <span>"Tag"</span>: <span>"UsrCalls"</span>
+                    };
+                    <span>return</span> config;
+                },
+                <span>// Переопределяет родительский и добавляет значение контакта из страницы записи
+</span>                <span>// раздела, в котором находится панель действий.
+</span>                onGetRecordInfoForPublisher: <span>function</span>() {
+                    <span>var</span> info = <span>this</span>.callParent(arguments);
+                    info.additionalInfo.contact = <span>this</span>.getContactEntityParameterValue(info.relationSchemaName);
+                    <span>return</span> info;
+                },
+                <span>// Определяет значение контакта из страницы записи раздела,
+</span>                <span>// в котором находится панель действий.
+</span>                getContactEntityParameterValue: <span>function</span>(relationSchemaName) {
+                    <span>var</span> contact;
+                    <span>if</span> (relationSchemaName === <span>"Contact"</span>) {
+                        <span>var</span> id = <span>this</span>.getMasterEntityParameterValue(<span>"Id"</span>);
+                        <span>var</span> name = <span>this</span>.getMasterEntityParameterValue(<span>"Name"</span>);
+                        <span>if</span> (id &amp;&amp; name) {
+                            contact = {value: id, displayValue: name};
+                        }
+                    } <span>else</span> {
+                        contact = <span>this</span>.getMasterEntityParameterValue(<span>"Contact"</span>);
+                    }
+                    <span>return</span> contact;
+                },
+                <span>//Добавляет созданный канал в список издателей сообщений.
+</span>                getSectionPublishers: <span>function</span>() {
+                    <span>var</span> publishers = <span>this</span>.callParent(arguments);
+                    publishers.push(<span>"UsrCalls"</span>);
+                    <span>return</span> publishers;
+                }
+            },
+            <span>// Массив модификаций, с помощью которых строится представление модуля в интерфейсе системы.
+</span>            diff: <span>/**SCHEMA_DIFF*/</span>[
+                <span>// Добавление вкладки CallsMessageTab.
+</span>                {
+                    <span>// Тип операции — вставка.
+</span>                    <span>"operation"</span>: <span>"insert"</span>,
+                    <span>// Название вкладки.
+</span>                    <span>"name"</span>: <span>"CallsMessageTab"</span>,
+                    <span>// Название родительского элемента.
+</span>                    <span>"parentName"</span>: <span>"Tabs"</span>,
+                    <span>// Название свойства.
+</span>                    <span>"propertyName"</span>: <span>"tabs"</span>,
+                    <span>// Конфигурационный объект свойств.
+</span>                    <span>"values"</span>: {
+                        <span>// Массив дочерних элементов.
+</span>                        <span>"items"</span>: []
+                    }
+                },
+                <span>// Добавление контейнера сообщений.
+</span>                {
+                    <span>"operation"</span>: <span>"insert"</span>,
+                    <span>"name"</span>: <span>"CallsMessageTabContainer"</span>,
+                    <span>"parentName"</span>: <span>"CallsMessageTab"</span>,
+                    <span>"propertyName"</span>: <span>"items"</span>,
+                    <span>"values"</span>: {
+                        <span>// Тип элемента — контейнер.
+</span>                        <span>"itemType"</span>: <span>this</span>.Terrasoft.ViewItemType.CONTAINER,
+                        <span>// CSS-класс для контейнера.
+</span>                        <span>"classes"</span>: {
+                            <span>"wrapClassName"</span>: [<span>"calls-message-content"</span>]
+                        },
+                        <span>"items"</span>: []
+                    }
+                },
+                <span>// Добавление модуля UsrCallsMessageModule.
+</span>                {
+                    <span>"operation"</span>: <span>"insert"</span>,
+                    <span>"name"</span>: <span>"UsrCallsMessageModule"</span>,
+                    <span>"parentName"</span>: <span>"CallsMessageTab"</span>,
+                    <span>"propertyName"</span>: <span>"items"</span>,
+                    <span>"values"</span>: {
+                        <span>// CSS-класс для модуля вкладок.
+</span>                        <span>"classes"</span>: {
+                            <span>"wrapClassName"</span>: [<span>"calls-message-module"</span>, <span>"message-module"</span>]
+                        },
+                        <span>// Тип элемента — модуль.
+</span>                        <span>"itemType"</span>: <span>this</span>.Terrasoft.ViewItemType.MODULE,
+                        <span>// Название модуля.
+</span>                        <span>"moduleName"</span>: <span>"UsrCallsMessagePublisherModule"</span>,
+                        <span>// Привязка метода, выполняемого после отрисовки элемента.
+</span>                        <span>"afterrender"</span>: {
+                            <span>"bindTo"</span>: <span>"onMessageModuleRendered"</span>
+                        },
+                        <span>// Привязка метода, выполняемого после перерисовки элемента.
+</span>                        <span>"afterrerender"</span>: {
+                            <span>"bindTo"</span>: <span>"onMessageModuleRendered"</span>
+                        }
+                    }
+                }
+            ]<span>/**SCHEMA_DIFF*/</span>
+        };
+    }
+);
+</pre>
+</div>
+</div>
+</div>
+
+<h3>3. Создать модуль UsrCallsMessagePublisherModule<a class="title-anchor" href="#title-2238-7" id="title-2238-7"> </a></h3>
+
+<p>Модуль <span class="filled">UsrCallsMessagePublisherModule</span> служит контейнером для прорисовки в <span class="filled">SectionActionsDashboard</span> страницы <span class="filled">UsrCallsMessagePublisherPage</span>, в которой будет реализована логика добавляемого канала.</p>
+
+<p>Для модуля установите следующие значения (рис. 4):</p>
+
+<ul><li><span class="key">Заголовок</span> (<span class="key">Title</span>) — "Модуль издателя сообщений логирования звонка" ("Call messages logging publisher module");</li>
+	<li><span class="key">Название</span> (<span class="key">Name</span>) — "UsrCallsMessagePublisherModule"<span class="filled">.</span></li>
+</ul><div class="media">
+<div class="media__caption">Рис. 4. — Свойства модуля</div>
+
+<div class="media__element"><img alt="" border="0" src="../../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/ActionsDashboardNewChannel/scr_module_props.png" /></div>
+</div>
+
+<p>Исходный код модуля:</p>
+
+<div class="code">
+<div class="code__widgets">
+<div class="code__source">
+<pre class="prettyprint">
+define(<span>"UsrCallsMessagePublisherModule"</span>, [<span>"BaseMessagePublisherModule"</span>],
+    <span>function</span>() {
+        <span>// Определение класса.
+</span>        Ext.define(<span>"Terrasoft.configuration.UsrCallsMessagePublisherModule"</span>, {
+            <span>// Базовый класс.
+</span>            extend: <span>"Terrasoft.BaseMessagePublisherModule"</span>,
+            <span>// Сокращенное имя класса.
+</span>            alternateClassName: <span>"Terrasoft.UsrCallsMessagePublisherModule"</span>,
+            <span>// Инициализация страницы, которая будет отрисовываться в данном модуле.
+</span>            initSchemaName: <span>function</span>() {
+                <span>this</span>.schemaName = <span>"UsrCallsMessagePublisherPage"</span>;
+            }
+        });
+        <span>// Возвращает объект класса, определенного в модуле.
+</span>        <span>return</span> Terrasoft.UsrCallsMessagePublisherModule;
+    });
+</pre>
+</div>
+</div>
+</div>
+
+<h3>4. Создать страницу <span class="filled">UsrCallsMessagePublisherPage</span><a class="title-anchor" href="#title-2238-8" id="title-2238-8"> </a></h3>
+
+<p>Для создаваемой страницы установите в качестве родительского объекта схему <span class="filled">BaseMessagePublisherPage</span> пакета <span class="filled">MessagePublisher.</span> В качестве названия и заголовка укажите значение "UsrCallsMessagePublisherPage".</p>
+
+<p>В исходном коде страницы укажите имя схемы объекта, с которым будет работать страница (в данном случае <span class="filled">Activity</span>), реализуйте логику публикации сообщения и переопределите метод <span class="filled">getServiceConfig</span>, в котором укажите имя класса из конфигурации.</p>
+
+<div class="code">
+<div class="code__widgets">
+<div class="code__source">
+<pre class="prettyprint">
+<span>// Задает класс, который будет работать с данной страницей.
+</span>getServiceConfig: <span>function</span>() {
+   <span>return</span> {
+      className: <span>"Terrasoft.Configuration.CallsMessagePublisher"</span>
+   };
+}
+</pre>
+</div>
+</div>
+</div>
+
+<p>Реализация логики публикации сообщения содержит довольно большое количество методов, атрибутов и свойств. Полностью исходный код схемы <span class="filled">UsrCallsMessagePublisherPage</span> вы можете скачать по <a href="../../../../../../sites/default/files/documents/downloads/SDK/Packages/sdkActionsDashboardNewChannel_18.05.14_04.16.49.zip" target="_blank">ссылке</a>. В исходном коде показана реализация рабочего канала <span class="filled">CallMessagePublisher</span>, который используется для логирования входящих и исходящих звонков. Результатом выполнения данного примера будет новый рабочий канал в <span class="filled">SectionActionsDashboard</span> (рис. 5)<span class="filled">.</span></p>
+
+<div class="media">
+<div class="media__caption">Рис. 5. — Пример пользовательского канала <span class="filled">CallsMessagePublisherPage</span> в SectionActionsDashboard раздела <span class="key">Контакты</span></div>
+
+<div class="media__element"><img alt="" border="0" src="../../../../../../sites/default/files/documentation/sdk/ru/BPMonlineWebSDK/Screenshots/ActionsDashboardNewChannel/scr_calls_message_publisher_result.png" /></div>
+</div>
+</div>
+      
+  </div>
+
+    </div>
+  </div>
+
+  </div>
+
+</article>
+
+  </div>
+
+  </div>
+
+          </div>
+        </div>
+
+                  <aside class="creatio-sidebar creatio-sidebar_first" role="complementary">
+              <div class="region region-sidebar-first">
+    <div id="block-documentationnaviagtion" class="block block-ts-nav block-ts-nav-doc-nav">
+  
+    
+      <div class="ts-nav-block"><a href="../../../../../index.html" class="ts-nav-block__link">Документация</a><div class="ts-nav-block__title">Для разработчика</div>
+</div>
+<div class="ts-nav-container"><ul class="ts-nav-menu"><li class="ts-nav-menu__item">
+  <a href="../../../s_chego_nachat.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">С чего начать&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../architecture.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Архитектура&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../instrumenty_razrabotki.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Инструменты разработки&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../back_end_razrabotka.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Back-end разработка&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../front_end_razrabotka_freedom_ui.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Front-end разработка Freedom UI&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../front_end_razrabotka.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Front-end разработка&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../integratsiya_i_vneshnij_api.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Интеграция и внешний API&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../ehlementy_interfejsa.html" class="ts-nav-menu__link ts-nav-menu__link_expanded ts-nav-menu__link_open" hreflang="ru">Элементы интерфейса&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+      <ul class="ts-nav-menu__children">
+      <li class="ts-nav-menu__item">
+  <a href="../../glavnoe_menyu/obzor.html" class="ts-nav-menu__link" hreflang="ru">Главное меню</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../razdel.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Раздел&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../stranica_zapisi.html" class="ts-nav-menu__link ts-nav-menu__link_expanded ts-nav-menu__link_open" hreflang="ru">Страница записи&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+      <ul class="ts-nav-menu__children">
+      <li class="ts-nav-menu__item">
+  <a href="../../../interface_elements/page/obzor.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Обзор&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../interface_elements/page/panel_dejstvij.html" class="ts-nav-menu__link ts-nav-menu__link_expanded ts-nav-menu__link_open" hreflang="ru">Панель действий&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+      <ul class="ts-nav-menu__children">
+      <li class="ts-nav-menu__item">
+  <a href="obzor.html" class="ts-nav-menu__link ts-nav-menu__link_guide" hreflang="ru">Обзор</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="dobavit_panel_dejstvij.html" class="ts-nav-menu__link ts-nav-menu__link_case" hreflang="ru">Добавить панель действий</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="dobavit_novyj_kanal.html" class="ts-nav-menu__link ts-nav-menu__link_case ts-nav-menu__link_active" hreflang="ru">Добавить новый канал</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="dobavit_multiyazychnye_shablony_email_soobshchenij.html" class="ts-nav-menu__link ts-nav-menu__link_case" hreflang="ru">Добавить мультиязычные шаблоны email-сообщений</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="sozdat_polzovatelskuyu_stranicu_dejstviya_verifikacii.html" class="ts-nav-menu__link ts-nav-menu__link_case" hreflang="ru">Создать пользовательскую страницу действия верификации</a>
+  </li>
+
+    </ul>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../interface_elements/page/pole.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Поле&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../interface_elements/page/knopka.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Кнопка&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../interface_elements/page/hronologiya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Хронология&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../interface_elements/page/profil_svyazannoj_sushchnosti.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Профиль связанной сущности&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../interface_elements/page/html_ehlement_iframe.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">HTML-элемент iframe&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+
+    </ul>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../1215/detail.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Деталь&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../mini_kartochka.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Мини-карточка&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../modalnoe_okno.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Модальное окно&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../kommunikacionnaya_panel.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Коммуникационная панель&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../komandnaya_stroka/obzor.html" class="ts-nav-menu__link" hreflang="ru">Командная строка</a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../dashbordy.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Дашборды&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../chaty.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Чаты&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../upravlenie_ehlementami_interfejsa.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="ru">Управление элементами интерфейса&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+
+    </ul>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../komponenty_prilozheniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Компоненты приложения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../razrabotka_mobilnogo_prilozheniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Разработка мобильного приложения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+<li class="ts-nav-menu__item">
+  <a href="../../../razrabotka_marketplace_prilozheniya.html" class="ts-nav-menu__link ts-nav-menu__link_expanded" hreflang="zxx">Разработка Marketplace-приложения&nbsp;<span class="ts-nav-menu__link__arrow"></span></a>
+  </li>
+</ul>
+</div>
+
+  </div>
+
+  </div>
+
+            <div class="creatio-sidebar__toggle"></div>
+          </aside>
+        
+                  <aside class="creatio-sidebar creatio-sidebar_second" role="complementary">
+              <div class="region region-sidebar-second">
+    <div id="block-example" class="block block-ts-nav block-ts-nav-page-nav">
+  
+    
+      <div class="ts-nav-page">
+  </div>
+
+  </div>
+<div id="block-adminfeedbackblock" class="block block-admin-feedback block-admin-feedback-block">
+  
+    
+      <div id="feedback-message"><div id="upper-feedback-content"><h2>Был ли данный материал полезен?</h2>
+<input class="feedback-btn feedback-btn__yes button js-form-submit form-submit" data-node-id="3190" data-feedback="yes" type="submit" name="op" value="Да" />
+<input class="feedback-btn feedback-btn__no button js-form-submit form-submit" data-node-id="3190" data-feedback="no" type="submit" name="op" value="Нет" />
+</div>
+<form class="admin-feedback-form" data-drupal-selector="admin-feedback-form" action="https://academy.terrasoft.ua/docs/8-0/developer/ehlementy_interfejsa/stranica_zapisi/panel_dejstvij/dobavit_novyj_kanal" method="post" id="admin-feedback-form" accept-charset="UTF-8">
+  <div id="feedback-msg-result"></div><div class="js-form-item form-item js-form-type-textarea form-type-textarea js-form-item-feedback-message form-item-feedback-message form-no-label">
+        <div class="form-textarea-wrapper">
+  <textarea id="edit-feedback-msg" data-drupal-selector="edit-feedback-message" name="feedback_message" rows="5" cols="60" class="form-textarea resize-vertical"></textarea>
+</div>
+
+        </div>
+<input id="feedback-id" data-drupal-selector="edit-feedback-id" type="hidden" name="feedback_id" value="" />
+<input class="feedback-btn feedback-btn__send-comment button js-form-submit form-submit" data-drupal-selector="edit-feedback-send" type="submit" id="edit-feedback-send" name="op" value="Отправить" />
+<input autocomplete="off" data-drupal-selector="form-6jnhlzkax9ahdt6qz6zipn383lsrr1w0scqdbfkhst0" type="hidden" name="form_build_id" value="form-6JnHlzkAx9AhDt6Qz6ZiPn383lsRR1w0scQDbFkHst0" />
+<input data-drupal-selector="edit-admin-feedback-form" type="hidden" name="form_id" value="admin_feedback_form" />
+
+</form>
+</div>
+
+  </div>
+
+  </div>
+
+          </aside>
+              </main>
+    </div>
+  </div>
+
+  <footer role="contentinfo">
+    <div class="creatio-region creatio-region_footer">
+      <div class="creatio-container">
+          <div class="region region-footer">
+    <div id="block-footerua" class="block block-simple-block block-simple-blockfooter-ua">
+  
+    
+      <div class="footer">
+<div class="footer-left">
+<ul class="footer-socials"><li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_fb" href="https://www.facebook.com/terrasoft.ua" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_in" href="https://www.linkedin.com/company/terrasoft/" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_yt" href="https://www.youtube.com/c/TerrasoftUkraine" target="_blank"> </a></li>
+	<li class="footer-socials__item"><a class="footer-socials__link footer-socials__link_tg" href="https://t.me/Terrasoft_UA" target="_blank"> </a></li>
+</ul></div>
+
+<div class="footer-contact">
+<div class="footer-title">Будьте на связи!</div>
+
+<div class="footer-content">
+<div class="footer-items">
+<div class="footer-item"><a class="footer__link footer__link_phone" href="tel:+380443633133">+38 (044) 363-31-33</a></div>
+</div>
+
+<div class="footer-items">
+<div class="footer-item"><a class="footer__link footer__link_email" href="mailto:support@terrasoft.ua">support@terrasoft.ua</a></div>
+</div>
+</div>
+</div>
+</div>
+
+  </div>
+
+  </div>
+
+      </div>
+    </div>
+    <div class="creatio-region creatio-region_bottom">
+      <div class="creatio-container">
+          <div class="region region-bottom">
+    <div id="block-allrightsreservedua" class="block block-simple-block block-simple-blockfooter-bottom-ua">
+  
+    
+      <p>© 2002-2022 Terrasoft.  |  <a href="https://www.terrasoft.ua/privacy-policy" target="_blank">Конфиденциальность</a></p>
+
+  </div>
+
+  </div>
+
+      </div>
+    </div>
+  </footer>
+</div>
+<div class="creatio-bg"></div>
+
+
+  </div>
+
+    
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/docs\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/3190","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"ru"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"ajaxPageState":{"libraries":"admin_feedback\/admin_feedback_block,admin_feedback\/admin_feedback_css,classy\/base,classy\/messages,classy\/node,core\/drupal.ajax,core\/jquery.form,core\/normalize,creatio\/fancybox,creatio\/global,layout_discovery\/onecol,system\/base,ts_doc\/doc_version,ts_feedback\/ts_feedback,ts_nav\/breadcrumb,ts_nav\/doc_nav,ts_nav\/page_nav,ts_title_anchor\/ts_title_anchor","theme":"creatio","theme_token":null},"ajaxTrustedUrl":{"form_action_p_pvdeGsVG5zNF_XLGPTvYSKCf43t8qZYSwcfZl2uzM":true,"\/docs\/8-0\/developer\/ehlementy_interfejsa\/stranica_zapisi\/panel_dejstvij\/dobavit_novyj_kanal?ajax_form=1":true},"admin_feedback":{"yes_response":"\u0421\u043f\u0430\u0441\u0438\u0431\u043e \u0437\u0430 \u043e\u0431\u0440\u0430\u0442\u043d\u0443\u044e \u0441\u0432\u044f\u0437\u044c!","no_response":"\u0421\u043f\u0430\u0441\u0438\u0431\u043e \u0437\u0430 \u043e\u0431\u0440\u0430\u0442\u043d\u0443\u044e \u0441\u0432\u044f\u0437\u044c!","custom_text_response_on_no":{"value":"","format":"full_html"},"feedback_prompt_on_yes":true,"feedback_prompt_on_no":true,"feedback_enable_predefined_answers":false,"feedback_prompt":"\u041a\u0430\u043a \u043c\u043e\u0436\u043d\u043e \u0443\u043b\u0443\u0447\u0448\u0438\u0442\u044c \u044d\u0442\u0443 \u0441\u0442\u0430\u0442\u044c\u044e?"},"ajax":{"edit-feedback-send":{"callback":"::validateFeedbackMsg","event":"mousedown","keypress":true,"prevent":"click","url":"\/docs\/8-0\/developer\/ehlementy_interfejsa\/stranica_zapisi\/panel_dejstvij\/dobavit_novyj_kanal?ajax_form=1","dialogType":"ajax","submit":{"_triggering_element_name":"op","_triggering_element_value":"\u041e\u0442\u043f\u0440\u0430\u0432\u0438\u0442\u044c"}}},"user":{"uid":0,"permissionsHash":"9c2367dfcaba0fa15f0375f97aed64e146c908cee68508d13b79e3ee80e5162d"}}</script>
+<script src="../../../../../sites/default/files/js/js_Rr-7TvYD7NposuRFJwUqThxM7yJmw8vs03PQwu5gWd8.js"></script>
+
+
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+      <g id="svg-copy" class="svg-icon svg-icon_copy">
+        <path d="M15.111,18H1.889A1.848,1.848,0,0,1,0,16.2V3.6A1.848,1.848,0,0,1,1.889,1.8H5.837a2.87,2.87,0,0,1,5.326,0h3.948A1.848,1.848,0,0,1,17,3.6V16.2A1.848,1.848,0,0,1,15.111,18ZM3.777,12.6v1.8h6.611V12.6Zm0-3.6v1.8h9.445V9Zm0-3.6V7.2h9.445V5.4ZM8.5,1.8a.924.924,0,0,0-.944.9.945.945,0,0,0,1.889,0A.924.924,0,0,0,8.5,1.8Z"/>
+      </g>
+
+      <g id="svg-prev" class="svg-icon svg-icon_arrow">
+        <path d="M5.488,12.779,0,6.39,5.488,0" transform="translate(1 0.652)"/>
+      </g>
+
+      <g id="svg-next" class="svg-icon svg-icon_arrow">
+        <path d="M0,12.779,5.488,6.39,0,0" transform="translate(0.759 0.652)"/>
+      </g>
+    </svg>
+  </body>
+
+<!-- Mirrored from academy.terrasoft.ua/docs/8-0/developer/ehlementy_interfejsa/stranica_zapisi/panel_dejstvij/dobavit_novyj_kanal by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Mar 2022 08:20:09 GMT -->
+</html>
